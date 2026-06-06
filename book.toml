@@ -1,0 +1,11 @@
+[book]
+authors = ["opencode"]
+language = "en"
+multilingual = false
+src = "."
+title = "no-phase-skill"
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/connollydavid/agentic-no-phase-skill"
