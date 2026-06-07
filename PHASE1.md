@@ -5,7 +5,13 @@
 ### Goals
 - [x] Establish agentic-host directory structure
 - [x] Add no-phase-skill as git submodule
-- [ ] Define initial project scope and objectives
+- [x] Define initial project scope and objectives
+
+### Scope
+- Rust CLI binary (`no-phase`) that detects phase-synonym agentic tells in commit messages, markdown headers, and code comments
+- Agent skill (`SKILL.md`) for callable linting
+- Pre-commit hook wrapper for integration into git workflows
+- Vocabulary reference (`VOCABULARY.md`) as source of truth for flag/allowlist/gray-zone terms
 
 ### Success Criteria
 - Host structure is committed and pushed
