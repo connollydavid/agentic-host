@@ -21,3 +21,11 @@
 - test-integration.sh has 26 property tests from VOCABULARY.md should/must-not-match cases; all pass
 - Fixed is_numeral to reject ordinal words (e.g. "first") that contain Roman numeral chars
 - Removed allowlist pre-filter that was blocking valid phase-synonym matches in conventional commit messages
+
+### 2025-06-07 — Formal Spec & Property Testing
+- Converted to Cargo project (src/lib.rs, src/main.rs) for proptest support
+- Removed checked-in binary; added .gitignore; binary produced only by CI
+- Added 10 proptest property tests covering all VOCABULARY.md detection rules; all pass
+- Wrote no-phase.allium Allium specification for formal behavior definition
+- Updated CI: cargo build, proptest, integration tests, GitHub release on tag (v*)
+- Added README.md with usage, building, testing documentation
