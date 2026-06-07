@@ -3,12 +3,12 @@
 ## Phase 3: Formal Specification & Property Testing
 
 ### Goals
-- [ ] Remove checked-in binary; add `.gitignore`
-- [ ] Convert to Cargo project (required for proptest)
-- [ ] Write Allium spec (`.allium`) for no-phase detection behavior
-- [ ] Add proptest property-based tests
-- [ ] Update CI: cargo build, proptest test, GitHub release with binary artifact
-- [ ] Write README.md for no-phase-skill
+- [x] Remove checked-in binary; add `.gitignore`
+- [x] Convert to Cargo project (required for proptest)
+- [x] Write Allium spec (`.allium`) for no-phase detection behavior
+- [x] Add proptest property-based tests
+- [x] Update CI: cargo build, proptest test, GitHub release with binary artifact
+- [x] Write README.md for no-phase-skill
 
 ### Success Criteria
 - Binary is no longer committed; produced only by CI
