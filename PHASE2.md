@@ -3,9 +3,9 @@
 ## Phase 2: CI Pipeline
 
 ### Goals
-- [ ] GitHub Actions workflow: static binary build, conformance gates, integration tests
-- [ ] lint-skill.sh: mechanical conformance gates G1-G8
-- [ ] Integration tests from VOCABULARY.md should/must-not-match cases
+- [x] GitHub Actions workflow: static binary build, conformance gates, integration tests
+- [x] lint-skill.sh: mechanical conformance gates G1-G8
+- [x] Integration tests from VOCABULARY.md should/must-not-match cases
 
 ### Success Criteria
 - Workflow passes on push to main
