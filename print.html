@@ -90,7 +90,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="PLAN.html"><strong aria-hidden="true">1.</strong> PLAN.md</a></li><li class="chapter-item expanded "><a href="BOOTSTRAP.html"><strong aria-hidden="true">2.</strong> BOOTSTRAP.md</a></li><li class="chapter-item expanded "><a href="CI-PIPELINE.html"><strong aria-hidden="true">3.</strong> CI-PIPELINE.md</a></li><li class="chapter-item expanded "><a href="FORMAL-SPEC.html"><strong aria-hidden="true">4.</strong> FORMAL-SPEC.md</a></li><li class="chapter-item expanded "><a href="MEMORY.html"><strong aria-hidden="true">5.</strong> MEMORY.md</a></li><li class="chapter-item expanded "><a href="CLAUDE.html"><strong aria-hidden="true">6.</strong> CLAUDE.md</a></li><li class="chapter-item expanded "><a href="SKILL_AUTHORING.html"><strong aria-hidden="true">7.</strong> SKILL_AUTHORING.md</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="PLAN.html"><strong aria-hidden="true">1.</strong> PLAN.md</a></li><li class="chapter-item expanded "><a href="BOOTSTRAP.html"><strong aria-hidden="true">2.</strong> BOOTSTRAP.md</a></li><li class="chapter-item expanded "><a href="CI-PIPELINE.html"><strong aria-hidden="true">3.</strong> CI-PIPELINE.md</a></li><li class="chapter-item expanded "><a href="FORMAL-SPEC.html"><strong aria-hidden="true">4.</strong> FORMAL-SPEC.md</a></li><li class="chapter-item expanded "><a href="SKILL-HARDENING.html"><strong aria-hidden="true">5.</strong> SKILL-HARDENING.md</a></li><li class="chapter-item expanded "><a href="MEMORY.html"><strong aria-hidden="true">6.</strong> MEMORY.md</a></li><li class="chapter-item expanded "><a href="CLAUDE.html"><strong aria-hidden="true">7.</strong> CLAUDE.md</a></li><li class="chapter-item expanded "><a href="SKILL_AUTHORING.html"><strong aria-hidden="true">8.</strong> SKILL_AUTHORING.md</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -189,6 +189,8 @@ Bootstrap: initial setup and bootstrapping</li>
 CI Pipeline: build, conformance, integration tests</li>
 <li><input disabled="" type="checkbox" checked=""/>
 Formal Spec: Allium spec, proptest, release</li>
+<li><input disabled="" type="checkbox"/>
+Skill Hardening: hook fix, bare-numeral rule, release install path (see SKILL-HARDENING.md)</li>
 </ul>
 <h2 id="milestone-documents"><a class="header" href="#milestone-documents">Milestone documents</a></h2>
 <p>Milestones are named after their content, not numbered — ordinals name positions, and positions shift when plans are re-cut; names stay attached to their content. See BOOTSTRAP.md, CI-PIPELINE.md, FORMAL-SPEC.md.</p>
@@ -271,6 +273,32 @@ Write README.md for no-phase-skill</li>
 </ul>
 <h3 id="notes-2"><a class="header" href="#notes-2">Notes</a></h3>
 <p>Cargo conversion is required for proptest. Allium spec defines formal behavior. CI builds, tests, and releases.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="skill-hardeningmd"><a class="header" href="#skill-hardeningmd">SKILL-HARDENING.md</a></h1>
+<h2 id="skill-hardening"><a class="header" href="#skill-hardening">Skill Hardening</a></h2>
+<h3 id="goals-3"><a class="header" href="#goals-3">Goals</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"/>
+Fix pre-commit hook: dispatch on <code>$(basename "$0")</code> — git passes no hook name in <code>$1</code>; commit-msg receives the message file path</li>
+<li><input disabled="" type="checkbox"/>
+Implement bare-numeral header rule (<code>## 3</code>, <code>## 5.5</code>) in src, proptest, Allium spec, integration tests</li>
+<li><input disabled="" type="checkbox"/>
+Verify CI-YAML/Dockerfile scoping exclusions are implemented; implement if missing</li>
+<li><input disabled="" type="checkbox"/>
+SKILL.md: install via GitHub release download; note skill-discovery location (<code>.claude/skills/</code>)</li>
+<li><input disabled="" type="checkbox"/>
+Bump CI actions off Node 20 (forced Node 24 on 2026-06-16)</li>
+<li><input disabled="" type="checkbox"/>
+Cut v0.1.0 tag; verify the release job publishes the static binary</li>
+</ul>
+<h3 id="success-criteria-3"><a class="header" href="#success-criteria-3">Success Criteria</a></h3>
+<ul>
+<li>Hook installed as <code>pre-commit</code> or <code>commit-msg</code> blocks flagged commits and passes clean ones</li>
+<li>All VOCABULARY.md rules (including bare-numeral headers) covered by proptest and integration tests; CI green</li>
+<li>v0.1.0 release exists with a static linux-amd64 binary attached</li>
+<li>SKILL.md install instructions work without a local Rust toolchain</li>
+</ul>
+<h3 id="notes-3"><a class="header" href="#notes-3">Notes</a></h3>
+<p>Local cargo cannot build the project (2015 pre-nightly); all verification goes through CI. Depends on CI Pipeline being green (it is, since run 27242782567).</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="memorymd"><a class="header" href="#memorymd">MEMORY.md</a></h1>
 <h2 id="session-log"><a class="header" href="#session-log">Session Log</a></h2>
 <h3 id="2025-01-xx--initial-setup"><a class="header" href="#2025-01-xx--initial-setup">2025-01-XX — Initial Setup</a></h3>
