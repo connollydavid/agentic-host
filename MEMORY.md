@@ -29,3 +29,9 @@
 - Wrote no-phase.allium Allium specification for formal behavior definition
 - Updated CI: cargo build, proptest, integration tests, GitHub release on tag (v*)
 - Added README.md with usage, building, testing documentation
+
+### 2026-06-10 — Named milestones replace ordinal phases
+- Renamed PHASE1/2/3.md to BOOTSTRAP.md, CI-PIPELINE.md, FORMAL-SPEC.md; PLAN.md keeps an ordinal-to-name dictionary for reading history (older commits and entries above still say "Phase N")
+- Reason: ordinals name positions and positions shift when plans are re-cut; names stay attached to content. Bare numerals ("3", "5.5") are the same tell with the noun elided — not a fix
+- VOCABULARY.md now leads with a constructive rewrite dictionary (internal plan code → descriptive text, never emit the code) and notes bare-numeral headers as flaggable
+- GitHub pushes are blocked in this environment: keychain has no credential, no gh CLI, no SSH key. Commits queue locally; submodule must be pushed before the host pointer commit
