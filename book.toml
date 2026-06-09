@@ -8,4 +8,5 @@ title = "no-phase-skill"
 [output.html]
 default-theme = "light"
 preferred-dark-theme = "navy"
+additional-css = ["custom.css"]
 git-repository-url = "https://github.com/connollydavid/agentic-no-phase-skill"
