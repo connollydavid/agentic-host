@@ -1,6 +1,6 @@
-# PHASE3.md
+# FORMAL-SPEC.md
 
-## Phase 3: Formal Specification & Property Testing
+## Formal Specification & Property Testing
 
 ### Goals
 - [x] Remove checked-in binary; add `.gitignore`
