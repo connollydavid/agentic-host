@@ -1,3 +1,6 @@
 [submodule "no-phase-skill"]
 	path = no-phase-skill
 	url = https://github.com/connollydavid/no-phase-skill.git
+[submodule "andrej-karpathy-skills"]
+	path = andrej-karpathy-skills
+	url = https://github.com/connollydavid/andrej-karpathy-skills.git
