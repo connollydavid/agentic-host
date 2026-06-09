@@ -9,6 +9,7 @@ A project under agentic evolution. This plan tracks the evolution of the softwar
 - [x] Bootstrap: initial setup and bootstrapping
 - [x] CI Pipeline: build, conformance, integration tests
 - [x] Formal Spec: Allium spec, proptest, release
+- [ ] Skill Hardening: hook fix, bare-numeral rule, release install path (see SKILL-HARDENING.md)
 
 ## Milestone documents
 
