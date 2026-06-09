@@ -4,6 +4,17 @@ Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-s
 
 Tradeoff: These guidelines bias toward caution over speed. For trivial tasks, use judgment.
 
+## 0. Project Overview
+
+This repository is the agentic host folder for the `no-phase-skill` git submodule. The host repo holds planning documents (PLAN.md, milestone docs, MEMORY.md), mdBook site config, and Claude skills. The working codebase lives in the submodule.
+
+- Submodule: `no-phase-skill/` — a Rust CLI (`no-phase`) that detects phase-synonym agentic tells in commit messages, markdown headers, and code comments. VOCABULARY.md in the submodule is the source of truth for detection rules.
+- Build: `cargo build`; test: `cargo test`, `./test-integration.sh`, `./lint-skill.sh` (all inside `no-phase-skill/`).
+
+Submodule workflow: commit and push inside `no-phase-skill/` first (checkout `main` if in detached HEAD), then commit the updated pointer in the host repo and push. Never push a host commit whose submodule pointer is unpushed. If a mandated push fails (no auth, no network), stop, report the unpushed commits to the user, and do not start dependent work.
+
+Milestone naming: name milestones and their documents after content (BOOTSTRAP.md, CI-PIPELINE.md), never ordinals (PHASE1.md, M2) — ordinals name positions, and positions shift when plans are re-cut. Do not degenerate to bare numerals ("3", "5.5") either. Encode sequence with document order and named dependencies. PLAN.md keeps a dictionary mapping retired ordinal names to current names, for reading history only.
+
 ## 1. Think Before Coding
 
 Do not assume. Do not hide confusion. Surface tradeoffs explicitly.
@@ -63,14 +74,14 @@ For any task with more than one step, state a brief numbered plan before startin
 
 Strong success criteria (example: "test X passes") let you loop and self-correct without asking the user again. Weak success criteria (example: "make it work") force you to guess what "work" means. When success criteria are weak, ask the user to clarify before starting.
 
-## 5. Audited PLAN.md and PHASEx.md
+## 5. Audited PLAN.md and milestone docs
 
-All changes to PLAN.md and PHASEx.md files MUST be committed and pushed immediately.
+All changes to PLAN.md and milestone docs MUST be committed and pushed immediately.
 
 Rules:
-- Every edit to PLAN.md or any PHASEx.md file (e.g. PHASE1.md, PHASE2.md) triggers a git commit and git push. Do not batch these with other changes.
+- Every edit to PLAN.md or any milestone doc (e.g. BOOTSTRAP.md, CI-PIPELINE.md) triggers a git commit and git push. Do not batch these with other changes.
 - After completing a plan step in code, update the relevant plan file to reflect what was actually implemented, then commit and push that update as a separate commit.
-- PLAN.md and PHASEx.md files live in the top-level repository only. Never place plan files inside git submodules. Submodules contain the working codebase; planning documents are kept outside of them.
+- PLAN.md and milestone docs live in the top-level repository only. Never place plan files inside git submodules. Submodules contain the working codebase; planning documents are kept outside of them.
 
 ## 6. Maintain MEMORY.md
 
