@@ -181,18 +181,21 @@
 <h2 id="skill-hardening"><a class="header" href="#skill-hardening">Skill Hardening</a></h2>
 <h3 id="goals"><a class="header" href="#goals">Goals</a></h3>
 <ul>
-<li><input disabled="" type="checkbox"/>
-Fix pre-commit hook: dispatch on <code>$(basename "$0")</code> — git passes no hook name in <code>$1</code>; commit-msg receives the message file path</li>
-<li><input disabled="" type="checkbox"/>
-Implement bare-numeral header rule (<code>## 3</code>, <code>## 5.5</code>) in src, proptest, Allium spec, integration tests</li>
-<li><input disabled="" type="checkbox"/>
-Verify CI-YAML/Dockerfile scoping exclusions are implemented; implement if missing</li>
-<li><input disabled="" type="checkbox"/>
+<li><input disabled="" type="checkbox" checked=""/>
+Fix pre-commit hook: dispatch on <code>$(basename "$0")</code> — git passes no hook name in <code>$1</code>; commit-msg receives the message file path (verified in throwaway repo)</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Implement bare-numeral header rule (<code>## 3</code>, <code>## 5.5</code>) in src, proptest, Allium spec, integration tests (CI run 27243442903 green)</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Verify CI-YAML/Dockerfile scoping exclusions are implemented (<code>is_ci_file</code> in src/lib.rs, applied in scan_file)</li>
+<li><input disabled="" type="checkbox" checked=""/>
 SKILL.md: install via GitHub release download; note skill-discovery location (<code>.claude/skills/</code>)</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Bump CI actions off Node 20 via <code>FORCE_JAVASCRIPT_ACTIONS_TO_NODE24</code> (forced default on 2026-06-16)</li>
 <li><input disabled="" type="checkbox"/>
-Bump CI actions off Node 20 (forced Node 24 on 2026-06-16)</li>
+Release architecture matrix: prebuilt binaries for linux/macos/windows, amd64 + arm64</li>
 <li><input disabled="" type="checkbox"/>
-Cut v0.1.0 tag; verify the release job publishes the static binary</li>
+Cut v0.1.0 tag; verify the release job publishes all matrix binaries</li>
+<li>Deferred: crates.io publish — postponed until the skill is 100% complete (note: crates.io hosts source only; prebuilds stay on GitHub Releases)</li>
 </ul>
 <h3 id="success-criteria"><a class="header" href="#success-criteria">Success Criteria</a></h3>
 <ul>
