@@ -1,6 +1,6 @@
-# PHASE1.md
+# BOOTSTRAP.md
 
-## Phase 1: Initial Setup
+## Bootstrap: Initial Setup
 
 ### Goals
 - [x] Establish agentic-host directory structure
@@ -16,7 +16,7 @@
 ### Success Criteria
 - Host structure is committed and pushed
 - Submodule is configured and accessible
-- PLAN.md and PHASE1.md are tracked and auditable
+- PLAN.md and this document are tracked and auditable
 
 ### Notes
-Phase 1 focuses on establishing the scaffolding for agentic development. The software-under-development lives in the `no-phase-skill` submodule.
+Bootstrap establishes the scaffolding for agentic development. The software-under-development lives in the `no-phase-skill` submodule.

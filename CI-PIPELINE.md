@@ -1,6 +1,6 @@
-# PHASE2.md
+# CI-PIPELINE.md
 
-## Phase 2: CI Pipeline
+## CI Pipeline
 
 ### Goals
 - [x] GitHub Actions workflow: static binary build, conformance gates, integration tests

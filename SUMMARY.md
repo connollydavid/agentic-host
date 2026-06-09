@@ -1,9 +1,9 @@
 # Summary
 
 - [PLAN.md](PLAN.md)
-- [PHASE1.md](PHASE1.md)
-- [PHASE2.md](PHASE2.md)
-- [PHASE3.md](PHASE3.md)
+- [BOOTSTRAP.md](BOOTSTRAP.md)
+- [CI-PIPELINE.md](CI-PIPELINE.md)
+- [FORMAL-SPEC.md](FORMAL-SPEC.md)
 - [MEMORY.md](MEMORY.md)
 - [CLAUDE.md](CLAUDE.md)
 - [SKILL_AUTHORING.md](SKILL_AUTHORING.md)
