@@ -35,3 +35,9 @@
 - Reason: ordinals name positions and positions shift when plans are re-cut; names stay attached to content. Bare numerals ("3", "5.5") are the same tell with the noun elided — not a fix
 - VOCABULARY.md now leads with a constructive rewrite dictionary (internal plan code → descriptive text, never emit the code) and notes bare-numeral headers as flaggable
 - GitHub pushes are blocked in this environment: keychain has no credential, no gh CLI, no SSH key. Commits queue locally; submodule must be pushed before the host pointer commit
+
+### 2026-06-10 — CI fixed; push access restored; karpathy submodule
+- Pushes work now: gh CLI installed and authed (corrects the blocked-pushes entry above)
+- no-phase-skill CI had never passed: `set -e` + `json=$(... --stdin --json)` aborted test-integration.sh because no-phase exits 1 by design on flagged input. Fixed with `|| true`; run 27242782567 is the first green
+- Local cargo is 0.0.1-pre-nightly (2015) and cannot build the project — verify via CI, not locally
+- Added andrej-karpathy-skills submodule (informal peer of no-phase-skill; upstream source of CLAUDE.md) and replaced its PHASEx.md guidance with content-named milestone docs
