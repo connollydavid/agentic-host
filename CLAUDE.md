@@ -81,7 +81,7 @@ All changes to PLAN.md and milestone docs MUST be committed and pushed immediate
 Rules:
 - Every edit to PLAN.md or any milestone doc (e.g. BOOTSTRAP.md, CI-PIPELINE.md) triggers a git commit and git push. Do not batch these with other changes.
 - After completing a plan step in code, update the relevant plan file to reflect what was actually implemented, then commit and push that update as a separate commit.
-- PLAN.md and milestone docs live in the top-level repository only. Never place plan files inside git submodules. Submodules contain the working codebase; planning documents are kept outside of them.
+- PLAN.md and milestone docs live in the host repo (top level or topic folders), never inside git submodules. Submodules contain the working codebase; planning documents are kept outside of them.
 
 ## 6. Maintain MEMORY.md
 
