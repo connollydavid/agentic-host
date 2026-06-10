@@ -8,8 +8,8 @@
 - [x] Verify CI-YAML/Dockerfile scoping exclusions are implemented (`is_ci_file` in src/lib.rs, applied in scan_file)
 - [x] SKILL.md: install via GitHub release download; note skill-discovery location (`.claude/skills/`)
 - [x] Bump CI actions off Node 20 via `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24` (forced default on 2026-06-16)
-- [ ] Release architecture matrix: prebuilt binaries for linux/macos/windows, amd64 + arm64
-- [ ] Cut v0.1.0 tag; verify the release job publishes all matrix binaries
+- [x] Release architecture matrix: prebuilt binaries for linux/macos/windows, amd64 + arm64 (run 27243561995)
+- [x] Cut v0.1.0 tag; release publishes all six matrix binaries (needed `permissions: contents: write` on the release job)
 - Deferred: crates.io publish — postponed until the skill is 100% complete (note: crates.io hosts source only; prebuilds stay on GitHub Releases)
 
 ### Success Criteria
