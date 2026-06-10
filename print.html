@@ -350,6 +350,15 @@ Cut v0.1.0 tag; release publishes all six matrix binaries (needed <code>permissi
 <li>Local cargo is 0.0.1-pre-nightly (2015) and cannot build the project — verify via CI, not locally</li>
 <li>Added andrej-karpathy-skills submodule (informal peer of no-phase-skill; upstream source of CLAUDE.md) and replaced its PHASEx.md guidance with content-named milestone docs</li>
 </ul>
+<h3 id="2026-06-10--skill-hardening-shipped-v010-released"><a class="header" href="#2026-06-10--skill-hardening-shipped-v010-released">2026-06-10 — Skill Hardening shipped; v0.1.0 released</a></h3>
+<ul>
+<li>Hook bug: git passes no hook name in $1 (commit-msg gets the message file path), so the old <code>case "$1"</code> dispatch blocked every commit with exit 2; now dispatches on basename($0). Verified in a throwaway repo with a stub binary</li>
+<li>Bare-numeral header rule (## 3, ## 5.5) implemented for .md sources only; version-like headings (1.2.3) excluded; covered by proptest, Allium, integration tests</li>
+<li>Release job needs <code>permissions: contents: write</code> — default GITHUB_TOKEN is read-only and <code>gh release create</code> 403s without it; moving a tag is required to pick up workflow fixes (reruns use the tag's commit)</li>
+<li>v0.1.0 released with six prebuilt binaries (linux musl/macos/windows × amd64/arm64); arm64 linux builds natively on ubuntu-24.04-arm runners. crates.io publish deferred: it hosts source only, prebuilds live on GitHub Releases</li>
+<li>Local lint-skill.sh G1 fails because local python3 lacks PyYAML — environmental, CI has it</li>
+<li>Host mdBook site live at https://connollydavid.github.io/agentic-no-phase-skill/ (Pages enabled on gh-pages, legacy build type)</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="claudemd"><a class="header" href="#claudemd">CLAUDE.md</a></h1>
 <p>Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.</p>
 <p>Tradeoff: These guidelines bias toward caution over speed. For trivial tasks, use judgment.</p>
