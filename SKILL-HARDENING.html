@@ -191,10 +191,10 @@ Verify CI-YAML/Dockerfile scoping exclusions are implemented (<code>is_ci_file</
 SKILL.md: install via GitHub release download; note skill-discovery location (<code>.claude/skills/</code>)</li>
 <li><input disabled="" type="checkbox" checked=""/>
 Bump CI actions off Node 20 via <code>FORCE_JAVASCRIPT_ACTIONS_TO_NODE24</code> (forced default on 2026-06-16)</li>
-<li><input disabled="" type="checkbox"/>
-Release architecture matrix: prebuilt binaries for linux/macos/windows, amd64 + arm64</li>
-<li><input disabled="" type="checkbox"/>
-Cut v0.1.0 tag; verify the release job publishes all matrix binaries</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Release architecture matrix: prebuilt binaries for linux/macos/windows, amd64 + arm64 (run 27243561995)</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Cut v0.1.0 tag; release publishes all six matrix binaries (needed <code>permissions: contents: write</code> on the release job)</li>
 <li>Deferred: crates.io publish — postponed until the skill is 100% complete (note: crates.io hosts source only; prebuilds stay on GitHub Releases)</li>
 </ul>
 <h3 id="success-criteria"><a class="header" href="#success-criteria">Success Criteria</a></h3>
