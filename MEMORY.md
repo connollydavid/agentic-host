@@ -41,3 +41,11 @@
 - no-phase-skill CI had never passed: `set -e` + `json=$(... --stdin --json)` aborted test-integration.sh because no-phase exits 1 by design on flagged input. Fixed with `|| true`; run 27242782567 is the first green
 - Local cargo is 0.0.1-pre-nightly (2015) and cannot build the project — verify via CI, not locally
 - Added andrej-karpathy-skills submodule (informal peer of no-phase-skill; upstream source of CLAUDE.md) and replaced its PHASEx.md guidance with content-named milestone docs
+
+### 2026-06-10 — Skill Hardening shipped; v0.1.0 released
+- Hook bug: git passes no hook name in $1 (commit-msg gets the message file path), so the old `case "$1"` dispatch blocked every commit with exit 2; now dispatches on basename($0). Verified in a throwaway repo with a stub binary
+- Bare-numeral header rule (## 3, ## 5.5) implemented for .md sources only; version-like headings (1.2.3) excluded; covered by proptest, Allium, integration tests
+- Release job needs `permissions: contents: write` — default GITHUB_TOKEN is read-only and `gh release create` 403s without it; moving a tag is required to pick up workflow fixes (reruns use the tag's commit)
+- v0.1.0 released with six prebuilt binaries (linux musl/macos/windows × amd64/arm64); arm64 linux builds natively on ubuntu-24.04-arm runners. crates.io publish deferred: it hosts source only, prebuilds live on GitHub Releases
+- Local lint-skill.sh G1 fails because local python3 lacks PyYAML — environmental, CI has it
+- Host mdBook site live at https://connollydavid.github.io/agentic-no-phase-skill/ (Pages enabled on gh-pages, legacy build type)
