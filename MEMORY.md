@@ -61,3 +61,7 @@
 
 ### 2026-06-12 — Fake-issue-ref blind spot documented as a known limitation
 - no-phase-skill issue #3 (a bare #N from a private tracker masquerading as a GitHub ref evades the code-as-name rule) resolved docs-only in PR #4 (squash fa958ea): the offline matcher cannot resolve numbers against the live issue set, so the engine deliberately does not attempt it. VOCABULARY.md now states the obligation (cite issue numbers that exist; #N is not auto-vetted) and README records the false negative as by-design. The opt-in network resolver from the issue was skipped to keep the core offline.
+
+### 2026-06-12 — Retroactive audit mode shipped (--log)
+- no-phase-skill issue #5 (enforcement was forward-looking only; adopting/upgrading repos had no way to audit existing content against current rules) resolved in PR #6 (squash d3c280c): new `--log` mode runs every commit message from `git log -z` through the engine, sha-labelled output; README/SKILL.md document the one-shot adoption/upgrade audit (`--all` + `--log`). Baseline file skipped — stateless tool.
+- Per operator direction, "history is immutable" is a default, not a rule: docs guide an opt-in cleanup — archive the original history on a pushed branch, amend/rebase/filter-repo the tells, force-push with lease, and attach a `Superseded-by: <new-sha>` trailer to each replaced commit via `git notes` (push refs/notes/commits) so the archive stays coherent without rewriting it.
