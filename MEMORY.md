@@ -49,3 +49,8 @@
 - v0.1.0 released with six prebuilt binaries (linux musl/macos/windows × amd64/arm64); arm64 linux builds natively on ubuntu-24.04-arm runners. crates.io publish deferred: it hosts source only, prebuilds live on GitHub Releases
 - Local lint-skill.sh G1 fails because local python3 lacks PyYAML — environmental, CI has it
 - Host mdBook site live at https://connollydavid.github.io/agentic-no-phase-skill/ (Pages enabled on gh-pages, legacy build type)
+
+### 2026-06-12 — Internal code-as-name rule ported into the engine
+- A live slop subject in the sibling Agentic-MCP-Win32s project ("... nm regex (review B1)") exposed a no-phase gap: the engine only knew phase-synonyms, so an internal review label used as a name passed clean. Filed as no-phase-skill issue #1 (the finding's durable identity), fixed in PR #2: flag review|finding|blocker immediately followed by #N or a letter+digit code; GitHub refs (fixes #18, closes #35) and bare numerals (review 3 files) stay clean. CI green on the PR.
+- The local submodule's origin/main was 9 commits stale (bare-numeral headers feature, set -e JSON-test fix, rewrite dictionary docs had all landed upstream); branching from it caused avoidable conflicts. Fetch the submodule before branching.
+- Submodule pointer bump is owed only after PR #2 merges; the merge itself awaits operator authorisation.
