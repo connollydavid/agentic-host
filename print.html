@@ -376,6 +376,7 @@ Cut v0.1.0 tag; release publishes all six matrix binaries (needed <code>permissi
 </ul>
 <p>Submodule workflow: commit and push inside <code>no-phase-skill/</code> first (checkout <code>main</code> if in detached HEAD), then commit the updated pointer in the host repo and push. Never push a host commit whose submodule pointer is unpushed. If a mandated push fails (no auth, no network), stop, report the unpushed commits to the user, and do not start dependent work.</p>
 <p>Milestone naming: name milestones and their documents after content (BOOTSTRAP.md, CI-PIPELINE.md), never ordinals (PHASE1.md, M2) — ordinals name positions, and positions shift when plans are re-cut. Do not degenerate to bare numerals ("3", "5.5") either. Encode sequence with document order and named dependencies. PLAN.md keeps a dictionary mapping retired ordinal names to current names, for reading history only.</p>
+<p>GitHub usage: the git hooks lint only commit messages and staged files — issue and PR titles are not gated, and a PR title becomes the squash-merge subject. Before any <code>gh issue|pr create</code> or <code>edit</code>, lint the title: <code>echo "$TITLE" | no-phase --stdin</code> must exit 0. Quote live tell examples only in bodies, never in titles.</p>
 <h2 id="1-think-before-coding"><a class="header" href="#1-think-before-coding">1. Think Before Coding</a></h2>
 <p>Do not assume. Do not hide confusion. Surface tradeoffs explicitly.</p>
 <p>Before writing any code, do the following:</p>
