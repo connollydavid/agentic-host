@@ -58,3 +58,6 @@
 ### 2026-06-12 — Internal code-as-name rule merged; pointer-bump lesson
 - no-phase-skill PR #2 squash-merged (7740d66); issue #1 auto-closed via the fixes ref; host pointer bumped. Adversarial review fixes landed first: token rule declared authoritative over the shell regex, '#'-preserving trim (parenthesised codes now flag), self-flagging lib.rs comment and commit message rewritten tell-free, known gate limits documented.
 - Pointer-bump mistake (corrected in 0553ea9): a `cd` chain silently failed because the shell was already inside the submodule, so the host pointer ca86b98 recorded the deleted PR branch head instead of the merged squash commit. Before pushing a pointer bump, verify `git submodule status` shows a commit reachable from the submodule's origin/main.
+
+### 2026-06-12 — Fake-issue-ref blind spot documented as a known limitation
+- no-phase-skill issue #3 (a bare #N from a private tracker masquerading as a GitHub ref evades the code-as-name rule) resolved docs-only in PR #4 (squash fa958ea): the offline matcher cannot resolve numbers against the live issue set, so the engine deliberately does not attempt it. VOCABULARY.md now states the obligation (cite issue numbers that exist; #N is not auto-vetted) and README records the false negative as by-design. The opt-in network resolver from the issue was skipped to keep the core offline.
