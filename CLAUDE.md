@@ -91,7 +91,7 @@ MEMORY.md is a persistent scratchpad that records key decisions, discovered cons
 
 Rules:
 - After completing a significant task, resolving a non-obvious bug, or discovering an unexpected constraint, add a short entry to MEMORY.md. Each entry should be one to three sentences describing what happened and why it matters.
-- Update MEMORY.md in a separate commit. Do not bundle MEMORY.md changes with code changes. Commit and push immediately, following the same rule as PLAN.md and PHASEx.md (see section 5).
+- Update MEMORY.md in a separate commit. Do not bundle MEMORY.md changes with code changes. Commit and push immediately, following the same rule as PLAN.md and milestone docs (see the audited-plans rule above).
 - Do not wait until the end of a session to update MEMORY.md. Write entries as you go. If you are unsure whether something is worth recording, record it. Too many entries is better than a missing entry that causes repeated mistakes.
 - MEMORY.md lives in the top-level repository alongside PLAN.md. Do not place it inside submodules.
 - Do not delete or rewrite old entries. MEMORY.md is append-only. If an earlier entry turns out to be wrong, add a new entry that corrects it and references the old one.
