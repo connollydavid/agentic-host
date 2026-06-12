@@ -15,6 +15,8 @@ Submodule workflow: commit and push inside `no-phase-skill/` first (checkout `ma
 
 Milestone naming: name milestones and their documents after content (BOOTSTRAP.md, CI-PIPELINE.md), never ordinals (PHASE1.md, M2) — ordinals name positions, and positions shift when plans are re-cut. Do not degenerate to bare numerals ("3", "5.5") either. Encode sequence with document order and named dependencies. PLAN.md keeps a dictionary mapping retired ordinal names to current names, for reading history only.
 
+GitHub usage: the git hooks lint only commit messages and staged files — issue and PR titles are not gated, and a PR title becomes the squash-merge subject. Before any `gh issue|pr create` or `edit`, lint the title: `echo "$TITLE" | no-phase --stdin` must exit 0. Quote live tell examples only in bodies, never in titles.
+
 ## 1. Think Before Coding
 
 Do not assume. Do not hide confusion. Surface tradeoffs explicitly.
