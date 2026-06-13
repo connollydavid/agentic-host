@@ -392,6 +392,7 @@ Cut v0.1.0 tag; release publishes all six matrix binaries (needed <code>permissi
 <h3 id="2026-06-13--symlink-walker-bug-fixed"><a class="header" href="#2026-06-13--symlink-walker-bug-fixed">2026-06-13 — Symlink walker bug fixed</a></h3>
 <ul>
 <li>no-phase-skill issue #8 (the --all walker followed symlinks: duplicate scans, infinite loop on cycles) fixed in PR #9 (squash 07c9d40): entries whose symlink_metadata reports a symlink are skipped; integration tests cover once-only reporting and cycle termination. Host pointer bumped (e8b00bf). The host's --all baseline drops back to ~56 once the installed hook binary is refreshed.</li>
+<li>v0.1.1 released on 07c9d40 with all six platform binaries. Repo about boxes set tersely via <code>gh repo edit --description</code> (linted first); the host repo's homepage points at the Pages book.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="claudemd"><a class="header" href="#claudemd">CLAUDE.md</a></h1>
 <p>Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.</p>
