@@ -73,3 +73,6 @@
 - no-phase skill installed per its own SKILL.md: `.claude/skills/no-phase-skill` symlinks to the submodule (committed, ce78c63); binary + pre-commit + commit-msg hooks live in `.git/hooks` (local-only by git design — must be reinstalled per clone). Hooks verified: tell flagged exit 1, clean message exit 0.
 - Adoption audit rerun clean: history exit 0; --all flag count rose ~56→75 solely because the walker follows the new symlink and scans the submodule twice. Minor --all caveat: walkdir_simple follows symlinks (duplicate scans; cyclic symlinks would loop).
 - Recurring constraint: the pre-commit hook flags any commit staging MEMORY.md or PLAN.md, because both intentionally quote tells (baseline fixtures) and MEMORY is append-only so the lines cannot be reworded. Commit those files with `git commit --no-verify` after confirming the only flags are the recorded baseline ones; the commit-msg hook still gates the message itself.
+
+### 2026-06-13 — Symlink walker bug fixed
+- no-phase-skill issue #8 (the --all walker followed symlinks: duplicate scans, infinite loop on cycles) fixed in PR #9 (squash 07c9d40): entries whose symlink_metadata reports a symlink are skipped; integration tests cover once-only reporting and cycle termination. Host pointer bumped (e8b00bf). The host's --all baseline drops back to ~56 once the installed hook binary is refreshed.
