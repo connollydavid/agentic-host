@@ -76,3 +76,4 @@
 
 ### 2026-06-13 — Symlink walker bug fixed
 - no-phase-skill issue #8 (the --all walker followed symlinks: duplicate scans, infinite loop on cycles) fixed in PR #9 (squash 07c9d40): entries whose symlink_metadata reports a symlink are skipped; integration tests cover once-only reporting and cycle termination. Host pointer bumped (e8b00bf). The host's --all baseline drops back to ~56 once the installed hook binary is refreshed.
+- v0.1.1 released on 07c9d40 with all six platform binaries. Repo about boxes set tersely via `gh repo edit --description` (linted first); the host repo's homepage points at the Pages book.
