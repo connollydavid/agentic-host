@@ -68,3 +68,7 @@
 
 ### 2026-06-12 — Retroactive audit smoke test on the host repo
 - Both histories (host and submodule) lint clean with --log. The --all baseline is ~56 expected flags: the linter's own docs/tests quoting tells, PLAN.md's mandated ordinal dictionary, MEMORY.md's quoted slop subject, and one false positive ("Pass: ≤ 500 lines" in SKILL_AUTHORING.md, a gate verdict not a phase). Do not "fix" these. The only real finding — a stale "PHASEx.md (see section 5)" cross-reference in CLAUDE.md and its karpathy-guidelines copy — was cleaned in 6057776.
+
+### 2026-06-13 — Skill installed into the host repo
+- no-phase skill installed per its own SKILL.md: `.claude/skills/no-phase-skill` symlinks to the submodule (committed, ce78c63); binary + pre-commit + commit-msg hooks live in `.git/hooks` (local-only by git design — must be reinstalled per clone). Hooks verified: tell flagged exit 1, clean message exit 0.
+- Adoption audit rerun clean: history exit 0; --all flag count rose ~56→75 solely because the walker follows the new symlink and scans the submodule twice. Minor --all caveat: walkdir_simple follows symlinks (duplicate scans; cyclic symlinks would loop).
