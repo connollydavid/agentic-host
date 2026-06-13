@@ -279,6 +279,7 @@
 <ul>
 <li>The local toolchain is no longer broken: <code>cargo</code>/<code>rustc</code> are rustup-managed stable 1.95.0 (GNU host), and <code>cargo build --release</code>, <code>cargo test</code> (30 pass), <code>./test-integration.sh</code> (60/60), and <code>./lint-skill.sh</code> (G1-G8 all pass) all run clean locally. This supersedes the 2026-06-10 notes that cargo was <code>0.0.1-pre-nightly</code> and could not build (verify via CI), and that lint-skill.sh G1 failed for lack of PyYAML — python3 now has PyYAML 5.4.1.</li>
 <li>Going forward, build and test locally before pushing; CI is confirmation, not the only build path. <code>cargo</code>/<code>rustc</code>/<code>clippy</code> under ~/.cargo/bin are symlinks to the <code>rustup</code> shim, which resolves the active stable toolchain.</li>
+<li>CI does NOT run clippy — the <code>test</code> job runs only <code>cargo test</code>, <code>conformance</code> runs <code>lint-skill.sh</code>, and <code>build</code> runs <code>cargo build --release</code>. So clippy regressions are invisible to CI; run <code>cargo clippy --all-targets</code> locally. The repo is currently clippy-clean (the one <code>single_char_add_str</code> lint in main.rs was fixed in PR #12 / submodule 18c0329, host pointer 07510c2).</li>
 </ul>
 
                     </main>
