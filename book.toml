@@ -3,10 +3,10 @@ authors = ["opencode"]
 language = "en"
 multilingual = false
 src = "."
-title = "no-phase-skill"
+title = "agentic-host"
 
 [output.html]
 default-theme = "light"
 preferred-dark-theme = "navy"
 additional-css = ["custom.css"]
-git-repository-url = "https://github.com/connollydavid/agentic-no-phase-skill"
+git-repository-url = "https://github.com/connollydavid/agentic-host"
