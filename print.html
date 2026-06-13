@@ -383,6 +383,11 @@ Cut v0.1.0 tag; release publishes all six matrix binaries (needed <code>permissi
 <ul>
 <li>Both histories (host and submodule) lint clean with --log. The --all baseline is ~56 expected flags: the linter's own docs/tests quoting tells, PLAN.md's mandated ordinal dictionary, MEMORY.md's quoted slop subject, and one false positive ("Pass: ≤ 500 lines" in SKILL_AUTHORING.md, a gate verdict not a phase). Do not "fix" these. The only real finding — a stale "PHASEx.md (see section 5)" cross-reference in CLAUDE.md and its karpathy-guidelines copy — was cleaned in 6057776.</li>
 </ul>
+<h3 id="2026-06-13--skill-installed-into-the-host-repo"><a class="header" href="#2026-06-13--skill-installed-into-the-host-repo">2026-06-13 — Skill installed into the host repo</a></h3>
+<ul>
+<li>no-phase skill installed per its own SKILL.md: <code>.claude/skills/no-phase-skill</code> symlinks to the submodule (committed, ce78c63); binary + pre-commit + commit-msg hooks live in <code>.git/hooks</code> (local-only by git design — must be reinstalled per clone). Hooks verified: tell flagged exit 1, clean message exit 0.</li>
+<li>Adoption audit rerun clean: history exit 0; --all flag count rose ~56→75 solely because the walker follows the new symlink and scans the submodule twice. Minor --all caveat: walkdir_simple follows symlinks (duplicate scans; cyclic symlinks would loop).</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="claudemd"><a class="header" href="#claudemd">CLAUDE.md</a></h1>
 <p>Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.</p>
 <p>Tradeoff: These guidelines bias toward caution over speed. For trivial tasks, use judgment.</p>
