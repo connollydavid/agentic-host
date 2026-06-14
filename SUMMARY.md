@@ -2,6 +2,7 @@
 
 - [PLAN.md](PLAN.md)
   - [0001 — Migration protocol](plan/0001-migration-protocol/README.md)
+  - [0002 — Enforced remap dictionary](plan/0002-enforced-remap-dictionary/README.md)
 - [BOOTSTRAP.md](BOOTSTRAP.md)
 - [CI-PIPELINE.md](CI-PIPELINE.md)
 - [FORMAL-SPEC.md](FORMAL-SPEC.md)
@@ -22,3 +23,4 @@
   - [0005 — Migration protocol](call/0005-migration-protocol.md)
   - [0006 — host-lint sanctioned-vocabulary allow-list](call/0006-host-lint-sanctioned-vocabulary-allow-list.md)
   - [0007 — Adoption is a clean break; upgrade is a delta](call/0007-adoption-is-a-clean-break-upgrade-is-a-delta.md)
+  - [0008 — Enforced remap dictionary](call/0008-enforced-remap-dictionary.md)
