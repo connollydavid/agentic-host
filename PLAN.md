@@ -20,7 +20,7 @@ The `plan/` room holds methodology-level milestones as `NNNN-slug` folders (the 
 | Milestone | Status |
 |---|---|
 | [plan/0001-migration-protocol](plan/0001-migration-protocol/README.md) | done (protocol + tooling + host self-migration); external dogfoods pending |
-| [plan/0002-enforced-remap-dictionary](plan/0002-enforced-remap-dictionary/README.md) | spec (call/0008); host-lifecycle `remap` verb + dictionary format + completeness check; not built |
+| [plan/0002-enforced-remap-dictionary](plan/0002-enforced-remap-dictionary/README.md) | built (host-lifecycle 0.2.0 `remap --check`/`--apply`, call/0008); Win32s + pgs-release dogfoods pending |
 
 The earlier content-named docs above (BOOTSTRAP, CI-PIPELINE, …) predate the `plan/` room; folding them in is a possible later cleanup, not required.
 
