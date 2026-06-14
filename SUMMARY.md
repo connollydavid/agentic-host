@@ -24,3 +24,4 @@
   - [0006 — host-lint sanctioned-vocabulary allow-list](call/0006-host-lint-sanctioned-vocabulary-allow-list.md)
   - [0007 — Adoption is a clean break; upgrade is a delta](call/0007-adoption-is-a-clean-break-upgrade-is-a-delta.md)
   - [0008 — Enforced remap dictionary](call/0008-enforced-remap-dictionary.md)
+  - [0009 — Exclude the record from the audit](call/0009-exclude-the-record-from-the-audit.md)
