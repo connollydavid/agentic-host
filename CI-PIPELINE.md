@@ -14,4 +14,4 @@
 - All VOCABULARY.md test cases pass (should match / must not match)
 
 ### Notes
-Build runs in the no-phase-skill submodule. Three jobs: build, conformance, test.
+Build runs in the host-lint submodule. Three jobs: build, conformance, test.

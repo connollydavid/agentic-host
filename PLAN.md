@@ -1,8 +1,8 @@
 # PLAN.md
 
-## Project: no-phase-skill
+## Project: host-lint
 
-A project under agentic evolution. This plan tracks the evolution of the software in the `no-phase-skill` submodule.
+A project under agentic evolution. This plan tracks the evolution of the software in the `host-lint` submodule.
 
 ## Status
 
