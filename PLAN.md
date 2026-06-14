@@ -15,6 +15,14 @@ A project under agentic evolution. This plan tracks the evolution of the softwar
 
 Milestones are named after their content, not numbered — ordinals name positions, and positions shift when plans are re-cut; names stay attached to their content. See BOOTSTRAP.md, CI-PIPELINE.md, FORMAL-SPEC.md.
 
+The `plan/` room holds methodology-level milestones as `NNNN-slug` folders (the template's structure, adopted when this host migrated under the methodology). The number is identity; ordering lives here in the index, not in the name.
+
+| Milestone | Status |
+|---|---|
+| [plan/0001-migration-protocol](plan/0001-migration-protocol/README.md) | done (protocol + tooling + host self-migration); external dogfoods pending |
+
+The earlier content-named docs above (BOOTSTRAP, CI-PIPELINE, …) predate the `plan/` room; folding them in is a possible later cleanup, not required.
+
 Dictionary for reading history (old ordinal names in commits and MEMORY.md entries):
 
 | Old name | Current name |

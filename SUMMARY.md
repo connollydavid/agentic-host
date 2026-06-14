@@ -1,6 +1,7 @@
 # Summary
 
 - [PLAN.md](PLAN.md)
+  - [0001 — Migration protocol](plan/0001-migration-protocol/README.md)
 - [BOOTSTRAP.md](BOOTSTRAP.md)
 - [CI-PIPELINE.md](CI-PIPELINE.md)
 - [FORMAL-SPEC.md](FORMAL-SPEC.md)
