@@ -1,6 +1,6 @@
 # Adopt and upgrade existing repos by a cased, moded migration protocol
 
-- Status: accepted
+- Status: accepted (mode-selection refined by `call/0007`; the pgs-release "external provenance" note there is corrected)
 - Date: 2026-06-14
 
 ## Context and Problem Statement
