@@ -21,3 +21,4 @@
   - [0004 — The template is the versioned source](call/0004-template-is-versioned-source.md)
   - [0005 — Migration protocol](call/0005-migration-protocol.md)
   - [0006 — host-lint sanctioned-vocabulary allow-list](call/0006-host-lint-sanctioned-vocabulary-allow-list.md)
+  - [0007 — Adoption is a clean break; upgrade is a delta](call/0007-adoption-is-a-clean-break-upgrade-is-a-delta.md)
