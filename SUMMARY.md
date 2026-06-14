@@ -20,3 +20,4 @@
   - [0003 — Compose tools as referenced submodules](call/0003-compose-tools-as-referenced-submodules.md)
   - [0004 — The template is the versioned source](call/0004-template-is-versioned-source.md)
   - [0005 — Migration protocol](call/0005-migration-protocol.md)
+  - [0006 — host-lint sanctioned-vocabulary allow-list](call/0006-host-lint-sanctioned-vocabulary-allow-list.md)
