@@ -26,13 +26,15 @@ the pin recorded in host config rather than as a gitlink:
   tree). `<name>/` is the **canonical worktree** — the audited state, where CI and
   the verification lanes run. Parallel lines are sibling worktrees `<name>.<line>/`,
   one per agent or release branch; worktrees are never nested inside another
-  worktree (it breaks `.git` resolution).
+  worktree (it breaks `.git` resolution). A host may embed **several** software
+  components; each `<name>` is its own bare store plus worktrees.
 - **Recipe, not trees.** The bare store and all worktrees are local artifacts
-  (gitignored). The host commits a recipe (`.host-software`) — `url`, the **pinned
-  canonical SHA**, and the worktree set — that a setup step materializes:
-  `clone --bare` → set the `+refs/heads/*:refs/remotes/origin/*` fetch refspec →
-  `fetch` → `worktree add <name>` at the pinned SHA → init nested submodules per
-  worktree → add the parallel worktrees.
+  (gitignored). The host commits a recipe (`.host-software`) — **one `[software
+  "<name>"]` stanza per component**, mirroring `.gitmodules`, each recording `url`,
+  the **pinned canonical SHA**, and the worktree set — that a setup step
+  materializes: `clone --bare` → set the `+refs/heads/*:refs/remotes/origin/*` fetch
+  refspec → `fetch` → `worktree add <name>` at the pinned SHA → init nested
+  submodules per worktree → add the parallel worktrees.
 - **Audit moves to our tooling.** With no gitlink, `host-lifecycle` owns the "is
   `<name>/` at its recorded SHA?" check; the recipe's pinned SHA is the
   reproducibility anchor the gitlink used to be.
