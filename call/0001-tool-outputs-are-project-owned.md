@@ -49,9 +49,8 @@ include from the submodule), never vendor it into our tree.
 
 ## Consequences
 
-- Good: generated obligations, specs, and bug reports under a milestone's
-  `obligations/` are project-owned and Unlicense-clean — no attribution
-  obligation downstream.
+- Good: generated specs and bug reports under a milestone's `spec/` are
+  project-owned and Unlicense-clean — no attribution obligation downstream.
 - Good: the tools stay in their submodules under their own licenses; the
   separation is clean by construction.
 - Risk: the cleanliness depends on referencing tool boilerplate rather than

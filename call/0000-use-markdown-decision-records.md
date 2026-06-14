@@ -22,7 +22,7 @@ Adopt MADR (Markdown Architectural Decision Records) for this log:
 - Numbers are assigned at merge, so two branches do not collide on the same
   `NNNN`.
 - Disambiguation by home: a bare number at the plan root names a milestone; a
-  numbered file under `decisions/` names a decision.
+  numbered file under `call/` names a decision.
 
 ## Consequences
 
