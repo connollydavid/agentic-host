@@ -1,0 +1,5 @@
+# Software-under-test: bare store + worktrees (see .host-software, call/0010).
+# Materialized locally from the recipe; never tracked.
+/host-lint/
+/host-lint.git/
+/host-lint.*/
