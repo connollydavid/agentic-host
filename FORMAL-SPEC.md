@@ -5,10 +5,10 @@
 ### Goals
 - [x] Remove checked-in binary; add `.gitignore`
 - [x] Convert to Cargo project (required for proptest)
-- [x] Write Allium spec (`.allium`) for no-phase detection behavior
+- [x] Write Allium spec (`.allium`) for host-lint detection behavior
 - [x] Add proptest property-based tests
 - [x] Update CI: cargo build, proptest test, GitHub release with binary artifact
-- [x] Write README.md for no-phase-skill
+- [x] Write README.md for host-lint
 
 ### Success Criteria
 - Binary is no longer committed; produced only by CI
