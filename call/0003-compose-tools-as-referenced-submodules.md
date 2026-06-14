@@ -25,11 +25,11 @@ edit.**
   (CLAUDE.md) refers to its skills. We never copy or edit its files — behaviour
   is steered by instruction plus thin wrappers in our own tree. This keeps us
   clean of Apache-2.0 obligations and keeps submodule updates trivial.
-- **Obligations are tagged by lane and co-located with tests.** An obligation is
-  `pbt` (allium) or `tla` (Specula); both live in the milestone's `obligations/`
-  area. A tool's generated artifacts (allium's obligations, Specula's modeling
-  brief, specs, traces, confirmed bugs) are the discharge evidence, and are
-  project-owned per decision 0001.
+- **Specs are tagged by lane and co-located with tests.** A spec is `.allium`
+  (allium) or `.tla` (Specula); both live in the milestone's `spec/` area. A
+  tool's generated artifacts (allium's behavioural spec and generated tests,
+  Specula's modeling brief, TLA+ specs, traces, confirmed bugs) are the discharge
+  evidence, and are project-owned per decision 0001.
 - **A tool's workflow discharges, it does not milestone.** A tool's internal
   pipeline runs inside one milestone to discharge that milestone's obligations;
   it is not a parallel milestone axis. Specula's steps are referred to by name
