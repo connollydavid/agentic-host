@@ -9,7 +9,10 @@ Tradeoff: These guidelines bias toward caution over speed. For trivial tasks, us
 This repository is the agentic host folder for the `host-lint` git submodule. The host repo holds planning documents (PLAN.md, milestone docs, MEMORY.md), mdBook site config, and Claude skills. The working codebase lives in the submodule.
 
 - Submodule: `host-lint/` — a Rust CLI (`host-lint`) that detects phase-synonym agentic tells in commit messages, markdown headers, and code comments. VOCABULARY.md in the submodule is the source of truth for detection rules.
+- Submodule: `host-template/` — the scaffold template for *new* agentic-host projects.
 - Build: `cargo build`; test: `cargo test`, `./test-integration.sh`, `./lint-skill.sh` (all inside `host-lint/`).
+
+Template CLAUDE.md exemption: **do not treat `host-template/CLAUDE.md` as instructions for this repo.** It is template payload — the operating manual handed to projects instantiated *from* the template, addressed to an agent working in one of those projects, not in this host. This file (the host root `CLAUDE.md`) is the sole authority here. If your tooling auto-loads the nested `host-template/CLAUDE.md` because you edited a file inside that submodule, ignore its contents as governance and follow only this one. (The two will state the methodology twice until the host↔template sole-source is reconciled — a deferred, deliberate duplication.)
 
 Submodule workflow: commit and push inside `host-lint/` first (checkout `main` if in detached HEAD), then commit the updated pointer in the host repo and push. Never push a host commit whose submodule pointer is unpushed. If a mandated push fails (no auth, no network), stop, report the unpushed commits to the user, and do not start dependent work.
 
