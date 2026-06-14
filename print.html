@@ -197,7 +197,7 @@ Skill Hardening: hook fix, bare-numeral rule, release install path (see SKILL-HA
 <p>The <code>plan/</code> room holds methodology-level milestones as <code>NNNN-slug</code> folders (the template's structure, adopted when this host migrated under the methodology). The number is identity; ordering lives here in the index, not in the name.</p>
 <div class="table-wrapper"><table><thead><tr><th>Milestone</th><th>Status</th></tr></thead><tbody>
 <tr><td><a href="plan/0001-migration-protocol/README.html">plan/0001-migration-protocol</a></td><td>done (protocol + tooling + host self-migration); external dogfoods pending</td></tr>
-<tr><td><a href="plan/0002-enforced-remap-dictionary/README.html">plan/0002-enforced-remap-dictionary</a></td><td>spec (call/0008); host-lifecycle <code>remap</code> verb + dictionary format + completeness check; not built</td></tr>
+<tr><td><a href="plan/0002-enforced-remap-dictionary/README.html">plan/0002-enforced-remap-dictionary</a></td><td>built (host-lifecycle 0.2.0 <code>remap --check</code>/<code>--apply</code>, call/0008); Win32s + pgs-release dogfoods pending</td></tr>
 </tbody></table>
 </div>
 <p>The earlier content-named docs above (BOOTSTRAP, CI-PIPELINE, …) predate the <code>plan/</code> room; folding them in is a possible later cleanup, not required.</p>
@@ -242,7 +242,9 @@ provenance forbids a history rewrite).</li>
 <p>The full approved plan, with the grounded per-target audit, is the source for
 these.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="enforced-remap-dictionary"><a class="header" href="#enforced-remap-dictionary">Enforced remap dictionary</a></h1>
-<p>Status: <strong>spec</strong> (not built). Decision: <code>call/0008</code>. Builds on <code>host-lifecycle</code>
+<p>Status: <strong>built</strong> (<code>host-lifecycle</code> 0.2.0, <code>3e55417</code>; <code>remap --check</code>/<code>--apply</code>,
+8 tests + scratch integration green, CI green). Dogfood on Win32s pending.
+Decision: <code>call/0008</code>. Builds on <code>host-lifecycle</code>
 (the token-free migrator, <code>call/0003</code>), <code>host-lint</code> (the policy-free detector), and
 <code>.host-lint-allow</code> (<code>call/0006</code>).</p>
 <h2 id="goal"><a class="header" href="#goal">Goal</a></h2>
