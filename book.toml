@@ -1,7 +1,6 @@
 [book]
 authors = ["opencode"]
 language = "en"
-multilingual = false
 src = "."
 title = "agentic-host"
 
