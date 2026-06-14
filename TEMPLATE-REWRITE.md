@@ -1,5 +1,10 @@
 # TEMPLATE-REWRITE — rewrite host-template into the canonical agentic host
 
+> **Status: done (2026-06-14).** Executed as template `0e5dd7f` → `59315bb`
+> (rewrite `668b521` + host-lint pointer bump `59315bb`), host pointer bump
+> `cddf673`. All steps below landed; all follow-up tidy-ups completed (see the
+> closing note at the bottom).
+
 Plan for the parked "template content rewrite" work. The template scaffold exists
 (`tools/` submodules, `.claude/skills`, `cast`/`plan`/`call` seed, `STRUCTURE.md`);
 what remains is replacing the **inherited Karpathy-guidelines skin** with our own
@@ -64,11 +69,23 @@ to Unlicense. This is the coupled CLAUDE.md-rewrite → Unlicense-flip.
   (a C compiler compiling a C compiler). Defer the host-sync; reconcile later.
   This pass touches only the template's identity.
 
-## Follow-up tidy-ups (separate, not blocking the rewrite)
+## Follow-up tidy-ups (separate, not blocking the rewrite) — all done
 
-- Bump `tools/host-lint` submodule pointers (template + host) `a9a7cd3` → `c0b19f4`
-  to pick up the host-grammar refactor.
-- Refresh the host's **installed** git hooks — they still call the `no-phase`
-  binary (per-clone, local); point them at `host-lint`.
-- Update or close host issue #1 — its phase-naming topic is superseded by the
-  cast/spec/plan/call + three-lane design.
+- **Done.** Bumped `tools/host-lint` pointers (template + host) `a9a7cd3` →
+  `c0b19f4`. Verified `c0b19f4` is remote `main` head and the child of `a9a7cd3`,
+  so the bump is forward (the `git describe` `v0.1.2-2-ga9a7cd3` had made the
+  direction look ambiguous).
+- **Done.** Refreshed the host's installed git hooks: renamed the binary
+  `.git/hooks/no-phase` → `host-lint` and reinstalled the canonical `pre-commit`
+  script (which references `$SCRIPT_DIR/host-lint`) as both `pre-commit` and
+  `commit-msg`. Verified: blocks a tell, passes a clean message, passes a
+  Co-Authored-By trailer. (Local, per-clone — not committed.)
+- **Done.** Closed host issue #1 with a resolution comment — superseded by the
+  cast/spec/plan/call + three-lane design; the "don't pad" departure it proposed
+  was settled the other way (we zero-pad via host-grammar).
+
+## D2 (deferred) — host ↔ template sole-source
+
+Still deferred per the decision above: the host's own `CLAUDE.md` and the
+template's `CLAUDE.md` now state the methodology twice. Reconcile later (the
+self-hosting bootstrap). This pass touched only the template's identity.
