@@ -6,16 +6,16 @@ Tradeoff: These guidelines bias toward caution over speed. For trivial tasks, us
 
 ## 0. Project Overview
 
-This repository is the agentic host folder for the `no-phase-skill` git submodule. The host repo holds planning documents (PLAN.md, milestone docs, MEMORY.md), mdBook site config, and Claude skills. The working codebase lives in the submodule.
+This repository is the agentic host folder for the `host-lint` git submodule. The host repo holds planning documents (PLAN.md, milestone docs, MEMORY.md), mdBook site config, and Claude skills. The working codebase lives in the submodule.
 
-- Submodule: `no-phase-skill/` — a Rust CLI (`no-phase`) that detects phase-synonym agentic tells in commit messages, markdown headers, and code comments. VOCABULARY.md in the submodule is the source of truth for detection rules.
-- Build: `cargo build`; test: `cargo test`, `./test-integration.sh`, `./lint-skill.sh` (all inside `no-phase-skill/`).
+- Submodule: `host-lint/` — a Rust CLI (`host-lint`) that detects phase-synonym agentic tells in commit messages, markdown headers, and code comments. VOCABULARY.md in the submodule is the source of truth for detection rules.
+- Build: `cargo build`; test: `cargo test`, `./test-integration.sh`, `./lint-skill.sh` (all inside `host-lint/`).
 
-Submodule workflow: commit and push inside `no-phase-skill/` first (checkout `main` if in detached HEAD), then commit the updated pointer in the host repo and push. Never push a host commit whose submodule pointer is unpushed. If a mandated push fails (no auth, no network), stop, report the unpushed commits to the user, and do not start dependent work.
+Submodule workflow: commit and push inside `host-lint/` first (checkout `main` if in detached HEAD), then commit the updated pointer in the host repo and push. Never push a host commit whose submodule pointer is unpushed. If a mandated push fails (no auth, no network), stop, report the unpushed commits to the user, and do not start dependent work.
 
 Milestone naming: name milestones and their documents after content (BOOTSTRAP.md, CI-PIPELINE.md), never ordinals (PHASE1.md, M2) — ordinals name positions, and positions shift when plans are re-cut. Do not degenerate to bare numerals ("3", "5.5") either. Encode sequence with document order and named dependencies. PLAN.md keeps a dictionary mapping retired ordinal names to current names, for reading history only.
 
-GitHub usage: the git hooks lint only commit messages and staged files — issue and PR titles are not gated, and a PR title becomes the squash-merge subject. Before any `gh issue|pr create` or `edit`, lint the title: `echo "$TITLE" | no-phase --stdin` must exit 0. Quote live tell examples only in bodies, never in titles.
+GitHub usage: the git hooks lint only commit messages and staged files — issue and PR titles are not gated, and a PR title becomes the squash-merge subject. Before any `gh issue|pr create` or `edit`, lint the title: `echo "$TITLE" | host-lint --stdin` must exit 0. Quote live tell examples only in bodies, never in titles.
 
 ## 1. Think Before Coding
 
