@@ -20,6 +20,10 @@ Milestone naming: name milestones and their documents after content (BOOTSTRAP.m
 
 GitHub usage: the git hooks lint only commit messages and staged files — issue and PR titles are not gated, and a PR title becomes the squash-merge subject. Before any `gh issue|pr create` or `edit`, lint the title: `echo "$TITLE" | host-lint --stdin` must exit 0. Quote live tell examples only in bodies, never in titles.
 
+Agentic-host model: this repository is itself an agentic host, built on the methodology authored in `host-template`. Its rooms are personas in `cast/`, decisions in `call/` (MADR), milestones in `plan/<NNNN-slug>/` indexed by `PLAN.md`, and the software under development in submodules. Verification runs in three lanes — host-lint (naming hygiene, ours), allium (requirements + property-based testing), Specula (timing/concurrency via TLA+); our own tooling is the `host-*` family (host-grammar rules, host-lint checker, host-lifecycle generator/migrator).
+
+Copy-at-version: the methodology spine (the four principles below, plus audited plans and append-only memory) is a copy held at the template revision recorded in `.host` (decision `call/0004` makes the template the canonical, versioned source). To change the spine, change the template and re-run the migration (`host-template/MIGRATION.md`, decision `call/0005`) — do not fork the spine here in isolation. The nested `host-template/CLAUDE.md` is that source, not live governance for this repo (the exemption above).
+
 ## 1. Think Before Coding
 
 Do not assume. Do not hide confusion. Surface tradeoffs explicitly.
