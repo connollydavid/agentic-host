@@ -3,3 +3,10 @@
 /host-lint/
 /host-lint.git/
 /host-lint.*/
+
+# Skill symlink into the worktree — local, recreated after materialize. Tracking
+# it would dangle in a fresh clone / CI (worktree-absence coherence, call/0011).
+/.claude/skills/host-lint
+
+# Built mdBook output (never committed; rebuilt by CI).
+/book/
