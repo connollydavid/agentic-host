@@ -2,7 +2,7 @@
 
 ## Project: host-lint
 
-A project under agentic evolution. This plan tracks the evolution of the software in the `host-lint` submodule.
+A project under agentic evolution. This plan tracks the evolution of the `host-lint` software (a bare store with worktrees; see `call/0010` and `.host-software`).
 
 ## Status
 
