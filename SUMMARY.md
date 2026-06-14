@@ -17,3 +17,5 @@
   - [0001 — Tool outputs are project-owned](call/0001-tool-outputs-are-project-owned.md)
   - [0002 — Verification lanes by property type](call/0002-verification-lanes-by-property-type.md)
   - [0003 — Compose tools as referenced submodules](call/0003-compose-tools-as-referenced-submodules.md)
+  - [0004 — The template is the versioned source](call/0004-template-is-versioned-source.md)
+  - [0005 — Migration protocol](call/0005-migration-protocol.md)
