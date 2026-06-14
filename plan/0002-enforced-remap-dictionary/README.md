@@ -1,6 +1,8 @@
 # Enforced remap dictionary
 
-Status: **spec** (not built). Decision: `call/0008`. Builds on `host-lifecycle`
+Status: **built** (`host-lifecycle` 0.2.0, `3e55417`; `remap --check`/`--apply`,
+8 tests + scratch integration green, CI green). Dogfood on Win32s pending.
+Decision: `call/0008`. Builds on `host-lifecycle`
 (the token-free migrator, `call/0003`), `host-lint` (the policy-free detector), and
 `.host-lint-allow` (`call/0006`).
 
