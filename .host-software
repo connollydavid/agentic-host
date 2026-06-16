@@ -6,3 +6,7 @@
 	url       = https://github.com/connollydavid/host-lint.git
 	pin       = 7be61012f8aaf7a8154175020fff9e52130ae949
 	worktrees =
+[software "host"]
+	url       = https://github.com/connollydavid/host.git
+	pin       = 28d6f8300610e08ec4d3b09cedb50f57d3060742
+	worktrees =

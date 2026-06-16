@@ -3,6 +3,9 @@
 /host-lint/
 /host-lint.git/
 /host-lint.*/
+/host/
+/host.git/
+/host.*/
 
 # Skill symlink into the worktree — local, recreated after materialize. Tracking
 # it would dangle in a fresh clone / CI (worktree-absence coherence, call/0011).
