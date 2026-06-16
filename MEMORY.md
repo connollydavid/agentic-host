@@ -205,3 +205,10 @@
 - **Wiring.** Amends `call/0005` — the protocol no longer ships *as* the template's `MIGRATION.md`; that file reduces to a pointer at `host`. `call/0004` (single versioned source of the spine) intact.
 - **Invariant reaffirmed: a tool must not reference its host.** Audited — `host` references only the template (its dependency) and the `.agentic-host` stamp; host-lint / host-lifecycle / template source carry no forge reference (only gitignored Cargo `target/*.d` artifacts embed the local build path). Candidate for its own `call/` decision if elevated to governance.
 - **Follow-on (deferred, outward-facing):** materialize `connollydavid/host` + its `.host-software` stanza; move `MIGRATION.md`'s steps into `host`; reduce the template `MIGRATION.md` to a pointer. The `host` file is staged as `plan/0001-migration-protocol/host.draft.md` until then.
+
+### 2026-06-16 — `connollydavid/host` materialized as software in the forge
+- Created `https://github.com/connollydavid/host` (public, default branch `main`). Its single instruction file is `README.md` (so it renders when an agent or human is pointed at the repo URL) — the reviewed `host` draft content. No `LICENSE` (kept a true single file).
+- Embedded in this forge as a **bare store + worktree** per `call/0010`, exactly like host-lint: a `[software "host"]` stanza in `.host-software` (pin `28d6f83`), gitignored `/host/ /host.git/ /host.*/`, materialized by `host-lifecycle software --materialize`. `software --check` reports both components at their pin. The staged `plan/0001-…/host.draft.md` was removed — its content now lives in the host repo.
+- `host` is **not** a skill, so no `.claude/skills/host` symlink (unlike host-lint). It is a document pointed at by URL, not an invocable tool.
+- Software-first push order held: the host repo commit was pushed before the forge pin commit, so the pin is never unpushed.
+- Remaining follow-on (`call/0012`): move `MIGRATION.md`'s steps into the host repo and reduce the template `MIGRATION.md` to a pointer — a template-submodule change, not done here.
