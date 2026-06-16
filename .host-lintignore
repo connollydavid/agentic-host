@@ -7,7 +7,7 @@ host-lint/
 host-lint.git/
 
 # The referenced methodology template — audited upstream, not host content.
-template-agentic-host/
+host-template/
 
 # Generated mdBook output.
 book/

@@ -203,7 +203,7 @@ shipped as the template's <code>MIGRATION.md</code> and driven by <code>host-lif
 <li><strong>Case = starting state</strong> (decides how governance is established): <strong>(a)</strong> no
 <code>CLAUDE.md</code> → drop in the manual and elicit the repo's own conventions; <strong>(b)</strong>
 foreign <code>CLAUDE.md</code> → merge each rule (subsumed / project-specific / conflict →
-human); <strong>(c)</strong> carries a <code>.agentic-host</code> stamp → upgrade by diffing the
+human); <strong>(c)</strong> carries a <code>.host</code> stamp → upgrade by diffing the
 recorded revision against the current one. <code>host-lifecycle classify</code> reports the
 case.</li>
 <li><strong>Mode = blast radius</strong> (decides how the audit is applied): <strong>Preview</strong>
@@ -215,7 +215,7 @@ only when history-coherence value exceeds provenance/disruption cost, and never
 on history carrying provenance you do not control. <strong>History is immutable by
 default</strong> — outside Deep, legacy tells are acknowledged, not rewritten.</li>
 <li><strong>The stamp keys upgrades.</strong> <code>host-lifecycle adopt</code> scaffolds the rooms and
-writes <code>.agentic-host</code> (template + revision + date); <code>version</code> reads it. The
+writes <code>.host</code> (template + revision + date); <code>version</code> reads it. The
 recorded revision is what a case-(c) upgrade diffs from.</li>
 <li><strong>Mechanical work is token-free.</strong> <code>host-lifecycle</code> does the classify /
 scaffold / stamp; <code>host-lint --all</code>/<code>--log</code> does the audit. Model effort is

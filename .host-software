@@ -8,5 +8,5 @@
 	worktrees =
 [software "host"]
 	url       = https://github.com/connollydavid/host.git
-	pin       = 28d6f8300610e08ec4d3b09cedb50f57d3060742
+	pin       = 4930e6824e2571477207ac0308568fdb95a08e28
 	worktrees =
