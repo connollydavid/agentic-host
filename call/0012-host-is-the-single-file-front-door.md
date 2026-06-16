@@ -12,8 +12,8 @@ into a host and keep it current. The protocol prose also sits inside the templat
 which overloads it: the template is pulled toward serving a capability rather
 than being the versioned source of the techniques (`call/0004`).
 
-We want: point an agent or a human at **one URL**, and out comes an agentic-host
-folder with all the techniques present and **upgradable**. The open question was
+We want: point an agent or a human at **one URL**, and out comes an agentic
+project with all the techniques present and **upgradable**. The open question was
 *what owns what* — because a self-contained instruction file and a revision-keyed
 upgrade ledger cannot both be canonical without forking the spine.
 
@@ -35,7 +35,7 @@ Chosen option 3.
 - **`host` is a single instruction file** in its own repo
   (`https://github.com/connollydavid/host`). It is the front door: an agent or a
   human follows it to **adopt**, **migrate**, or **upgrade**, and ends with an
-  agentic-host folder carrying the methodology's techniques.
+  agentic project carrying the methodology's techniques.
 - **`host` is developed here as software, not as a tool submodule of this repo.**
   It gets a `[software "host"]` stanza in `.host-software` — a bare store with a
   worktree, pinned by SHA, gitignored — exactly like `host-lint` (`call/0010`). It

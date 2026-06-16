@@ -5,7 +5,7 @@
 
 ## Context and Problem Statement
 
-Architectural decisions for the agentic-host methodology need a durable, citable
+Architectural decisions for the host methodology need a durable, citable
 home — separate from MEMORY.md (lessons learned, backward-looking) and PLAN.md
 (the milestone index). Without one, the reasoning behind a choice evaporates and
 gets re-litigated.

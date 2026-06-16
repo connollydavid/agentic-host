@@ -1,4 +1,4 @@
-# TEMPLATE-REWRITE — rewrite host-template into the canonical agentic host
+# TEMPLATE-REWRITE — rewrite host-template into the canonical agentic project
 
 > **Status: done (2026-06-14).** Executed as template `0e5dd7f` → `59315bb`
 > (rewrite `668b521` + host-lint pointer bump `59315bb`), host pointer bump
@@ -22,7 +22,7 @@ to Unlicense. This is the coupled CLAUDE.md-rewrite → Unlicense-flip.
 - `README.md` — titled "Karpathy-Inspired Claude Code Guidelines"; has a plugin
   install section.
 - `CLAUDE.md` — the four Karpathy principles only (swept to say `host-lint`); no
-  agentic-host methodology.
+  host methodology.
 - `skills/karpathy-guidelines/` — the inherited single skill.
 - `.claude-plugin/{plugin.json,marketplace.json}` — plugin/marketplace metadata.
 - `LICENSE` — MIT, © "Jiayuan Zhang and the andrej-karpathy-skills contributors".
@@ -35,7 +35,7 @@ to Unlicense. This is the coupled CLAUDE.md-rewrite → Unlicense-flip.
    what makes the content ours and enables the Unlicense flip). **Tight framing
    (D1): write for weaker LLMs and lesser harnesses — crisp, explicit, directive;
    clarity over cleverness; never rely on a strong model to infer intent.** Outline:
-   - What an agentic host is — host = externalized *thought*, software = *action*;
+   - What an agentic project is — host = externalized *thought*, software = *action*;
      the five-W rooms (`cast`/`spec`/`plan`/Where-slot/`call`/tools).
    - The four working principles — think-before-coding, simplicity-first,
      surgical-changes, goal-driven-execution — Karpathy-inspired, rewritten,
@@ -50,7 +50,7 @@ to Unlicense. This is the coupled CLAUDE.md-rewrite → Unlicense-flip.
    - Audited plans + append-only MEMORY discipline.
    - Provenance — Karpathy's observations via Jiayuan Zhang (@forrestchang);
      personas via Powell, Keenan & McDaid (2007).
-3. **Reframe `README.md`** → "the agentic-host template": what it is, how to
+3. **Reframe `README.md`** → "the host template": what it is, how to
    instantiate (clone → `git submodule update --init` → replace `cast/` examples →
    add the software submodule), Provenance, Unlicense.
 4. **Flip `LICENSE` MIT → Unlicense** (the content is then ours; Provenance carries

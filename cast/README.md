@@ -13,7 +13,7 @@ operator and the agent eliciting the actual users of the software under
 development (allium's `elicit`). Add them here.
 
 For this repository the examples need no replacing: our software under
-development *is* the agentic host, whose operators are precisely a human
+development *is* the agentic project, whose operators are precisely a human
 developer and an agentic LLM — so Mara and Wren are both the example and the
 real cast. The example sits at the meta level it was drawn from.
 

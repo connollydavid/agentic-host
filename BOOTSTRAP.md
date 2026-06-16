@@ -3,7 +3,7 @@
 ## Bootstrap: Initial Setup
 
 ### Goals
-- [x] Establish agentic-host directory structure
+- [x] Establish agentic project directory structure
 - [x] Add host-lint as git submodule
 - [x] Define initial project scope and objectives
 

@@ -1,7 +1,7 @@
 # Migration protocol
 
 Build the protocol, tooling, and decisions for bringing an existing repo under
-the agentic-host methodology — and dogfood it by migrating this host.
+the host methodology — and dogfood it by migrating this host.
 
 - Status: done (protocol, tooling, host self-migration); follow-on external
   dogfoods pending.
@@ -18,7 +18,7 @@ the agentic-host methodology — and dogfood it by migrating this host.
   governance is established; **mode** (Preview / Shallow / Staged / Deep, with a
   selection rule and history-immutable-by-default) decides the blast radius.
 - **This host, migrated (case c, Shallow):** stamped at the template revision in
-  `.host`; the agentic-host model and copy-at-version sourcing recorded
+  `.host`; the host model and copy-at-version sourcing recorded
   in `CLAUDE.md`; this `plan/` room established.
 
 ## Follow-on (separate milestones, not in this one)

@@ -6,10 +6,10 @@ Tradeoff: These guidelines bias toward caution over speed. For trivial tasks, us
 
 ## 0. Project Overview
 
-This repository is the agentic host folder for the `host-lint` software. The host repo holds planning documents (PLAN.md, milestone docs, MEMORY.md), mdBook site config, and Claude skills. The working codebase lives in the `host-lint/` worktree.
+This repository is `agentic-host`; it develops the `host-lint` software. It holds planning documents (PLAN.md, milestone docs, MEMORY.md), mdBook site config, and Claude skills. The working codebase lives in the `host-lint/` worktree.
 
 - Software (the *Where* room): `host-lint/` — the canonical worktree of the `host-lint` bare store (`host-lint.git/`), embedded as a bare-store-with-worktrees per `call/0010` and pinned in `.host-software` (both gitignored, materialized locally). A Rust CLI (`host-lint`) that detects phase-synonym agentic tells in commit messages, markdown headers, and code comments. VOCABULARY.md in `host-lint/` is the source of truth for detection rules.
-- Submodule: `host-template/` — the scaffold template for *new* agentic-host projects.
+- Submodule: `host-template/` — the scaffold template for *new* agentic projects.
 - Build: `cargo build`; test: `cargo test`, `./test-integration.sh`, `./lint-skill.sh` (all inside `host-lint/`).
 - Fresh-clone setup: the worktree is absent until materialized (`call/0010`), so a fresh clone first runs `host-lifecycle software --materialize .`, then recreates the local skill symlink `ln -s ../../host-lint .claude/skills/host-lint` (gitignored — never tracked, or it would dangle in CI; worktree-absence coherence, `call/0011`). `host-lifecycle software --check .` must be clean (worktree at its pin, no tracked symlink into a worktree).
 
@@ -21,7 +21,7 @@ Milestone naming: name milestones and their documents after content (BOOTSTRAP.m
 
 GitHub usage: the git hooks lint only commit messages and staged files — issue and PR titles are not gated, and a PR title becomes the squash-merge subject. Before any `gh issue|pr create` or `edit`, lint the title: `echo "$TITLE" | host-lint --stdin` must not **flag** (exit 1 — a confirmed tell). A **warn** (exit 3) is advisory, exactly as the commit-msg hook treats it: host-lint's recall-biased Tier-3 rules also fire on genuine version strings and identifiers (e.g. `NT 3.1`, an AVOption decimal, a hardware designator), so on a warn confirm the flagged token is a real version/identifier and not a bare-numeral tell, then proceed — a legitimate version is no reason to mangle the title. Quote live tell examples only in bodies, never in titles.
 
-Agentic-host model: this repository is itself an agentic host, built on the methodology authored in `host-template`. Its rooms are personas in `cast/`, decisions in `call/` (MADR), milestones in `plan/<NNNN-slug>/` indexed by `PLAN.md`, and the software under development as bare stores with worktrees (the *Where* room; `call/0010`). Verification runs in three lanes — host-lint (naming hygiene, ours), allium (requirements + property-based testing), Specula (timing/concurrency via TLA+); our own tooling is the `host-*` family (host-grammar rules, host-lint checker, host-lifecycle generator/migrator).
+Agentic-host model: this repository is `agentic-host`, an agentic project built on the methodology authored in `host-template`. Its rooms are personas in `cast/`, decisions in `call/` (MADR), milestones in `plan/<NNNN-slug>/` indexed by `PLAN.md`, and the software under development as bare stores with worktrees (the *Where* room; `call/0010`). Verification runs in three lanes — host-lint (naming hygiene, ours), allium (requirements + property-based testing), Specula (timing/concurrency via TLA+); our own tooling is the `host-*` family (host-grammar rules, host-lint checker, host-lifecycle generator/migrator).
 
 Copy-at-version: the methodology spine (the four principles below, plus audited plans and append-only memory) is a copy held at the template revision recorded in `.host` (decision `call/0004` makes the template the canonical, versioned source). To change the spine, change the template and re-run the migration (`host-template/MIGRATION.md`, decision `call/0005`) — do not fork the spine here in isolation. The nested `host-template/CLAUDE.md` is that source, not live governance for this repo (the exemption above).
 
