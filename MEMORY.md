@@ -212,3 +212,9 @@
 - `host` is **not** a skill, so no `.claude/skills/host` symlink (unlike host-lint). It is a document pointed at by URL, not an invocable tool.
 - Software-first push order held: the host repo commit was pushed before the forge pin commit, so the pin is never unpushed.
 - Remaining follow-on (`call/0012`): move `MIGRATION.md`'s steps into the host repo and reduce the template `MIGRATION.md` to a pointer — a template-submodule change, not done here.
+
+### 2026-06-16 — `call/0012` follow-on done: MIGRATION folded into the host repo
+- Template (`connollydavid/template-agentic-host`, PR #1, `0401bff → 87cb5c1`): `MIGRATION.md` reduced from the full 201-line protocol to a ~13-line **pointer at `connollydavid/host`** (which now owns the adopt/migrate/upgrade process). The template keeps the techniques (the `CLAUDE.md` spine, scaffold, tool pins) and the revision-keyed `UPGRADING.md` ledger. Repointed the two sibling references: `STRUCTURE.md` ("follow the `host` repo") and the `UPGRADING.md` `8c28e33` citation (was "MIGRATION.md 'Converting an existing submodule'" → "the `host` repo").
+- The host README (the approved terse-complete process) was **not** re-expanded — it is canonical. The detailed 6-step "Converting an existing submodule" block from the old MIGRATION.md is condensed there (and the inline gist remains in the `UPGRADING.md` entry); the verbatim long form survives only in template git history.
+- Forge: bumped the template submodule pointer to `87cb5c1` and re-stamped `.agentic-host` `revision` to match. The fold touched no spine and added no ledger entry, so upgrading the forge was just the pointer bump + re-stamp (no `host-lifecycle upgrade` actions — and the built v0.4.1 binary here lacks the `upgrade` verb anyway).
+- Left as-is: `tools/host-lifecycle/README.md` still says "see the template's `MIGRATION.md`" (two lines) — it resolves through the pointer, so not broken; clean up when host-lifecycle is next touched (separate repo).
