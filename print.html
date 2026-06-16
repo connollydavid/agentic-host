@@ -729,6 +729,14 @@ self-hosting bootstrap). This pass touched only the template's identity.</p>
 <li><strong>Invariant reaffirmed: a tool must not reference its host.</strong> Audited — <code>host</code> references only the template (its dependency) and the <code>.agentic-host</code> stamp; host-lint / host-lifecycle / template source carry no forge reference (only gitignored Cargo <code>target/*.d</code> artifacts embed the local build path). Candidate for its own <code>call/</code> decision if elevated to governance.</li>
 <li><strong>Follow-on (deferred, outward-facing):</strong> materialize <code>connollydavid/host</code> + its <code>.host-software</code> stanza; move <code>MIGRATION.md</code>'s steps into <code>host</code>; reduce the template <code>MIGRATION.md</code> to a pointer. The <code>host</code> file is staged as <code>plan/0001-migration-protocol/host.draft.md</code> until then.</li>
 </ul>
+<h3 id="2026-06-16--connollydavidhost-materialized-as-software-in-the-forge"><a class="header" href="#2026-06-16--connollydavidhost-materialized-as-software-in-the-forge">2026-06-16 — <code>connollydavid/host</code> materialized as software in the forge</a></h3>
+<ul>
+<li>Created <code>https://github.com/connollydavid/host</code> (public, default branch <code>main</code>). Its single instruction file is <code>README.md</code> (so it renders when an agent or human is pointed at the repo URL) — the reviewed <code>host</code> draft content. No <code>LICENSE</code> (kept a true single file).</li>
+<li>Embedded in this forge as a <strong>bare store + worktree</strong> per <code>call/0010</code>, exactly like host-lint: a <code>[software "host"]</code> stanza in <code>.host-software</code> (pin <code>28d6f83</code>), gitignored <code>/host/ /host.git/ /host.*/</code>, materialized by <code>host-lifecycle software --materialize</code>. <code>software --check</code> reports both components at their pin. The staged <code>plan/0001-…/host.draft.md</code> was removed — its content now lives in the host repo.</li>
+<li><code>host</code> is <strong>not</strong> a skill, so no <code>.claude/skills/host</code> symlink (unlike host-lint). It is a document pointed at by URL, not an invocable tool.</li>
+<li>Software-first push order held: the host repo commit was pushed before the forge pin commit, so the pin is never unpushed.</li>
+<li>Remaining follow-on (<code>call/0012</code>): move <code>MIGRATION.md</code>'s steps into the host repo and reduce the template <code>MIGRATION.md</code> to a pointer — a template-submodule change, not done here.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="claudemd"><a class="header" href="#claudemd">CLAUDE.md</a></h1>
 <p>Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.</p>
 <p>Tradeoff: These guidelines bias toward caution over speed. For trivial tasks, use judgment.</p>
