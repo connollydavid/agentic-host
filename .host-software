@@ -4,5 +4,5 @@
 # The pin replaces a submodule gitlink as the reproducibility anchor.
 [software "host-lint"]
 	url       = https://github.com/connollydavid/host-lint.git
-	pin       = 09eeb9f66cac0ce51334ea9871b4d50c6a86e845
+	pin       = 7be61012f8aaf7a8154175020fff9e52130ae949
 	worktrees =
