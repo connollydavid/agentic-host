@@ -4,10 +4,10 @@
 # The pin replaces a submodule gitlink as the reproducibility anchor.
 [software "host-lint"]
 	url       = https://github.com/connollydavid/host-lint.git
-	pin       = 24ecf3288ee5177ab16a590e83580283b84ba761
+	pin       = 374b306bd4ec0924f3b60e3c6d0801bf3cdb4186
 	worktrees =
 	toolchain = 1.95.0
-	build     = CARGO_INCREMENTAL=0 RUSTFLAGS="--remap-path-prefix=$PWD=. --remap-path-prefix=${CARGO_HOME:-$HOME/.cargo}=/cargo" cargo build --release --locked
+	build     = CARGO_INCREMENTAL=0 RUSTFLAGS="--remap-path-prefix=$PWD=/src --remap-path-prefix=${CARGO_HOME:-$HOME/.cargo}=/cargo --remap-path-prefix=$(rustc --print sysroot)=/rust" cargo build --release --locked
 	deploy    = host-lint
 	artifact  = target/release/host-lint 782a084063f3733f5d50de54e92510afedc6bb54bb57355a719dbda5b2bcd850
 [software "host"]
