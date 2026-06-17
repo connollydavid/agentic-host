@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The canonical doc-site publisher is host-lifecycle book - agentic-host</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../custom.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Cast — who</li><li class="chapter-item expanded "><a href="../cast/index.html"><strong aria-hidden="true">1.</strong> Cast — the project's Who</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cast/applying-personas.html"><strong aria-hidden="true">1.1.</strong> Applying personas during planning</a></li><li class="chapter-item expanded "><a href="../cast/mara.html"><strong aria-hidden="true">1.2.</strong> Mara — the Human Operator</a></li><li class="chapter-item expanded "><a href="../cast/wren.html"><strong aria-hidden="true">1.3.</strong> Wren — the Agentic LLM Developer</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Plan — what & when</li><li class="chapter-item expanded "><a href="../PLAN.html"><strong aria-hidden="true">2.</strong> PLAN.md</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../plan/0001-migration-protocol/index.html"><strong aria-hidden="true">2.1.</strong> Migration protocol</a></li><li class="chapter-item expanded "><a href="../plan/0002-enforced-remap-dictionary/index.html"><strong aria-hidden="true">2.2.</strong> Enforced remap dictionary</a></li><li class="chapter-item expanded "><a href="../plan/0003-doc-site-publisher/index.html"><strong aria-hidden="true">2.3.</strong> Canonical doc-site publisher</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Software — where</li><li class="chapter-item expanded "><a href="../where.html"><strong aria-hidden="true">3.</strong> Software</a></li><li class="chapter-item expanded affix "><li class="part-title">Call — why</li><li class="chapter-item expanded "><a href="../call/0000-use-markdown-decision-records.html"><strong aria-hidden="true">4.</strong> Use Markdown decision records (MADR)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../call/0001-tool-outputs-are-project-owned.html"><strong aria-hidden="true">4.1.</strong> Tool outputs are project-owned, not under allium or Specula licenses</a></li><li class="chapter-item expanded "><a href="../call/0002-verification-lanes-by-property-type.html"><strong aria-hidden="true">4.2.</strong> Split verification into lanes by property type</a></li><li class="chapter-item expanded "><a href="../call/0003-compose-tools-as-referenced-submodules.html"><strong aria-hidden="true">4.3.</strong> Compose verification tools as referenced submodules</a></li><li class="chapter-item expanded "><a href="../call/0004-template-is-versioned-source.html"><strong aria-hidden="true">4.4.</strong> The template is the canonical, versioned source of the methodology</a></li><li class="chapter-item expanded "><a href="../call/0005-migration-protocol.html"><strong aria-hidden="true">4.5.</strong> Adopt and upgrade existing repos by a cased, moded migration protocol</a></li><li class="chapter-item expanded "><a href="../call/0006-host-lint-sanctioned-vocabulary-allow-list.html"><strong aria-hidden="true">4.6.</strong> host-lint exempts sanctioned vocabulary via a repo-root allow file</a></li><li class="chapter-item expanded "><a href="../call/0007-adoption-is-a-clean-break-upgrade-is-a-delta.html"><strong aria-hidden="true">4.7.</strong> Adoption is a clean break to a pristine state; upgrade is a Shallow delta</a></li><li class="chapter-item expanded "><a href="../call/0008-enforced-remap-dictionary.html"><strong aria-hidden="true">4.8.</strong> Adoption remap is enforced by a dictionary applied deterministically, then removed</a></li><li class="chapter-item expanded "><a href="../call/0009-exclude-the-record-from-the-audit.html"><strong aria-hidden="true">4.9.</strong> A migrated project excludes its append-only record from the audit</a></li><li class="chapter-item expanded "><a href="../call/0010-software-is-a-bare-store-with-worktrees.html"><strong aria-hidden="true">4.10.</strong> Embed the software as a bare store with named worktrees</a></li><li class="chapter-item expanded "><a href="../call/0011-worktree-absence-coherence.html"><strong aria-hidden="true">4.11.</strong> References to the software worktree must survive its absence</a></li><li class="chapter-item expanded "><a href="../call/0012-host-is-the-single-file-front-door.html"><strong aria-hidden="true">4.12.</strong> A single file named host is the front door that owns the adoption-and-upgrade process</a></li><li class="chapter-item expanded "><a href="../call/0013-reserve-agentic-host-for-this-repository.html"><strong aria-hidden="true">4.13.</strong> Reserve agentic-host for this repository; scrub the collision by a one-time history rewrite</a></li><li class="chapter-item expanded "><a href="../call/0014-canonical-doc-site-publisher.html" class="active"><strong aria-hidden="true">4.14.</strong> The canonical doc-site publisher is host-lifecycle book</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Reference — how</li><li class="chapter-item expanded "><a href="../CLAUDE.html"><strong aria-hidden="true">5.</strong> CLAUDE.md</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../BOOTSTRAP.html"><strong aria-hidden="true">5.1.</strong> BOOTSTRAP.md</a></li><li class="chapter-item expanded "><a href="../CI-PIPELINE.html"><strong aria-hidden="true">5.2.</strong> CI-PIPELINE.md</a></li><li class="chapter-item expanded "><a href="../FORMAL-SPEC.html"><strong aria-hidden="true">5.3.</strong> FORMAL-SPEC.md</a></li><li class="chapter-item expanded "><a href="../SKILL-HARDENING.html"><strong aria-hidden="true">5.4.</strong> SKILL-HARDENING.md</a></li><li class="chapter-item expanded "><a href="../SKILL_AUTHORING.html"><strong aria-hidden="true">5.5.</strong> SKILL_AUTHORING.md</a></li><li class="chapter-item expanded "><a href="../TEMPLATE-REWRITE.html"><strong aria-hidden="true">5.6.</strong> TEMPLATE-REWRITE — rewrite host-template into the canonical agentic project</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Memory</li><li class="chapter-item expanded "><a href="../MEMORY.html"><strong aria-hidden="true">6.</strong> Memory</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">agentic-host</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="the-canonical-doc-site-publisher-is-host-lifecycle-book"><a class="header" href="#the-canonical-doc-site-publisher-is-host-lifecycle-book">The canonical doc-site publisher is <code>host-lifecycle book</code></a></h1>
+<ul>
+<li>Status: accepted</li>
+<li>Date: 2026-06-17</li>
+<li>Refines: <code>call/0011</code> (worktree-absence coherence; the <code>src = "."</code> hazard).</li>
+</ul>
+<h2 id="context-and-problem-statement"><a class="header" href="#context-and-problem-statement">Context and Problem Statement</a></h2>
+<p>The methodology mandates five rooms (Who/What/When/Where/Why/How) and two spec
+formats, but shipped <strong>no canonical way to publish them</strong>. <code>host-template</code> carried
+only a one-line note ("scope <code>src</code> to <code>docs/</code>"); every adopter therefore hand-rolled
+an mdBook generator, and each got the same things wrong. A complete case-(b)
+adoption reported it (the <code>agentic-host</code> repo issue on doc-site gaps), and four of
+its findings reproduce on <strong>this repository's own published site</strong>:</p>
+<ul>
+<li>The Software/Where room — the action the project exists to produce — has no page,
+though <code>.host-software</code> carries the data to render a stub.</li>
+<li>Spec bodies (<code>.allium</code>/<code>.tla</code>) are never published.</li>
+<li>The sidebar is in source-call order, not the five-rooms lifecycle order (Cast,
+the Who, sits near the bottom).</li>
+<li>Nothing asserts a page per room, so a half-room site ships green.</li>
+</ul>
+<p>The root cause is singular: a missing, maintained publisher. Worse, this
+repository's own <code>book.toml</code> set <code>src = "."</code> — the exact hazard <code>call/0011</code> warned
+against — surviving only because CI prunes dangling symlinks and the worktrees are
+absent in checkout.</p>
+<h2 id="decision"><a class="header" href="#decision">Decision</a></h2>
+<p>Ship one canonical publisher, <strong><code>host-lifecycle book</code></strong>, and route every adopter
+(this repository included) through it instead of a hand-rolled generator.</p>
+<ol>
+<li><strong><code>src = "docs"</code>, never <code>"."</code>.</strong> <code>book</code> writes <code>book.toml</code> scoped to a generated
+<code>docs/</code>, encapsulating the <code>call/0011</code> rule once, centrally — so no adopter
+re-derives it wrong.</li>
+<li><strong>Lifecycle order.</strong> <code>SUMMARY.md</code> is emitted Cast (Who) → Plan + specs
+(What/When) → Software/Where → Call (Why) → Reference/CLAUDE (How) → Memory.</li>
+<li><strong>The Where stub is read from <code>.host-software</code>.</strong> Component, url, pin, worktrees,
+and the materialize command — from the committed recipe only, so it is safe in an
+un-materialized checkout (the worktrees themselves are never walked; <code>call/0011</code>).</li>
+<li><strong>Specs render.</strong> Each spec becomes a fenced code page, navigable from its
+milestone — the What contract is published, not listed as bare filenames.</li>
+<li><strong>A coverage gate.</strong> <code>host-lifecycle book --check</code> fails the build naming any room
+that has source material but renders no page with content; a room with no source
+(a fresh <code>call/</code>, a project with no software yet) is legitimately empty and
+skipped.</li>
+</ol>
+<p><code>book.toml</code> and <code>docs/</code> are generated output (gitignored), regenerated in CI before
+<code>mdbook build</code>. The publisher lives in <code>host-lifecycle</code> (the token-free generator),
+the reference Site workflow and the canonical-order documentation live in
+<code>host-template</code>, and the upgrade is recorded in the template's <code>UPGRADING.md</code> ledger
+(requires <code>host-lifecycle v0.6.1</code>).</p>
+<h2 id="consequences"><a class="header" href="#consequences">Consequences</a></h2>
+<ul>
+<li>Good: the four findings stop reproducing on this repository's site, and every
+future adopter inherits one maintained, tested artifact instead of a footgun.</li>
+<li>Good: the <code>src = "."</code> contradiction with the template's own guidance is resolved —
+this repository now obeys the rule it published.</li>
+<li>Neutral: the doc site is now a build-time generation step (run the publisher, then
+mdBook) rather than a hand-maintained <code>SUMMARY.md</code>.</li>
+<li>Limit: prose pulled in by copy keeps its own relative links; cross-room links
+resolve because <code>docs/</code> mirrors the room layout, but a generator change that moves
+a room would need the links revisited. The coverage gate guards room presence, not
+link correctness.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../call/0013-reserve-agentic-host-for-this-repository.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../CLAUDE.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../call/0013-reserve-agentic-host-for-this-repository.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../CLAUDE.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

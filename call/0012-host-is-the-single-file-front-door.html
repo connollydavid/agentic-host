@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>A single file named host is the front door that owns the adoption-and-upgrade process - agentic-host</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../custom.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Cast — who</li><li class="chapter-item expanded "><a href="../cast/index.html"><strong aria-hidden="true">1.</strong> Cast — the project's Who</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cast/applying-personas.html"><strong aria-hidden="true">1.1.</strong> Applying personas during planning</a></li><li class="chapter-item expanded "><a href="../cast/mara.html"><strong aria-hidden="true">1.2.</strong> Mara — the Human Operator</a></li><li class="chapter-item expanded "><a href="../cast/wren.html"><strong aria-hidden="true">1.3.</strong> Wren — the Agentic LLM Developer</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Plan — what & when</li><li class="chapter-item expanded "><a href="../PLAN.html"><strong aria-hidden="true">2.</strong> PLAN.md</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../plan/0001-migration-protocol/index.html"><strong aria-hidden="true">2.1.</strong> Migration protocol</a></li><li class="chapter-item expanded "><a href="../plan/0002-enforced-remap-dictionary/index.html"><strong aria-hidden="true">2.2.</strong> Enforced remap dictionary</a></li><li class="chapter-item expanded "><a href="../plan/0003-doc-site-publisher/index.html"><strong aria-hidden="true">2.3.</strong> Canonical doc-site publisher</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Software — where</li><li class="chapter-item expanded "><a href="../where.html"><strong aria-hidden="true">3.</strong> Software</a></li><li class="chapter-item expanded affix "><li class="part-title">Call — why</li><li class="chapter-item expanded "><a href="../call/0000-use-markdown-decision-records.html"><strong aria-hidden="true">4.</strong> Use Markdown decision records (MADR)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../call/0001-tool-outputs-are-project-owned.html"><strong aria-hidden="true">4.1.</strong> Tool outputs are project-owned, not under allium or Specula licenses</a></li><li class="chapter-item expanded "><a href="../call/0002-verification-lanes-by-property-type.html"><strong aria-hidden="true">4.2.</strong> Split verification into lanes by property type</a></li><li class="chapter-item expanded "><a href="../call/0003-compose-tools-as-referenced-submodules.html"><strong aria-hidden="true">4.3.</strong> Compose verification tools as referenced submodules</a></li><li class="chapter-item expanded "><a href="../call/0004-template-is-versioned-source.html"><strong aria-hidden="true">4.4.</strong> The template is the canonical, versioned source of the methodology</a></li><li class="chapter-item expanded "><a href="../call/0005-migration-protocol.html"><strong aria-hidden="true">4.5.</strong> Adopt and upgrade existing repos by a cased, moded migration protocol</a></li><li class="chapter-item expanded "><a href="../call/0006-host-lint-sanctioned-vocabulary-allow-list.html"><strong aria-hidden="true">4.6.</strong> host-lint exempts sanctioned vocabulary via a repo-root allow file</a></li><li class="chapter-item expanded "><a href="../call/0007-adoption-is-a-clean-break-upgrade-is-a-delta.html"><strong aria-hidden="true">4.7.</strong> Adoption is a clean break to a pristine state; upgrade is a Shallow delta</a></li><li class="chapter-item expanded "><a href="../call/0008-enforced-remap-dictionary.html"><strong aria-hidden="true">4.8.</strong> Adoption remap is enforced by a dictionary applied deterministically, then removed</a></li><li class="chapter-item expanded "><a href="../call/0009-exclude-the-record-from-the-audit.html"><strong aria-hidden="true">4.9.</strong> A migrated project excludes its append-only record from the audit</a></li><li class="chapter-item expanded "><a href="../call/0010-software-is-a-bare-store-with-worktrees.html"><strong aria-hidden="true">4.10.</strong> Embed the software as a bare store with named worktrees</a></li><li class="chapter-item expanded "><a href="../call/0011-worktree-absence-coherence.html"><strong aria-hidden="true">4.11.</strong> References to the software worktree must survive its absence</a></li><li class="chapter-item expanded "><a href="../call/0012-host-is-the-single-file-front-door.html" class="active"><strong aria-hidden="true">4.12.</strong> A single file named host is the front door that owns the adoption-and-upgrade process</a></li><li class="chapter-item expanded "><a href="../call/0013-reserve-agentic-host-for-this-repository.html"><strong aria-hidden="true">4.13.</strong> Reserve agentic-host for this repository; scrub the collision by a one-time history rewrite</a></li><li class="chapter-item expanded "><a href="../call/0014-canonical-doc-site-publisher.html"><strong aria-hidden="true">4.14.</strong> The canonical doc-site publisher is host-lifecycle book</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Reference — how</li><li class="chapter-item expanded "><a href="../CLAUDE.html"><strong aria-hidden="true">5.</strong> CLAUDE.md</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../BOOTSTRAP.html"><strong aria-hidden="true">5.1.</strong> BOOTSTRAP.md</a></li><li class="chapter-item expanded "><a href="../CI-PIPELINE.html"><strong aria-hidden="true">5.2.</strong> CI-PIPELINE.md</a></li><li class="chapter-item expanded "><a href="../FORMAL-SPEC.html"><strong aria-hidden="true">5.3.</strong> FORMAL-SPEC.md</a></li><li class="chapter-item expanded "><a href="../SKILL-HARDENING.html"><strong aria-hidden="true">5.4.</strong> SKILL-HARDENING.md</a></li><li class="chapter-item expanded "><a href="../SKILL_AUTHORING.html"><strong aria-hidden="true">5.5.</strong> SKILL_AUTHORING.md</a></li><li class="chapter-item expanded "><a href="../TEMPLATE-REWRITE.html"><strong aria-hidden="true">5.6.</strong> TEMPLATE-REWRITE — rewrite host-template into the canonical agentic project</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Memory</li><li class="chapter-item expanded "><a href="../MEMORY.html"><strong aria-hidden="true">6.</strong> Memory</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">agentic-host</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="a-single-file-named-host-is-the-front-door-that-owns-the-adoption-and-upgrade-process"><a class="header" href="#a-single-file-named-host-is-the-front-door-that-owns-the-adoption-and-upgrade-process">A single file named <code>host</code> is the front door that owns the adoption-and-upgrade process</a></h1>
+<ul>
+<li>Status: accepted</li>
+<li>Date: 2026-06-16</li>
+</ul>
+<h2 id="context-and-problem-statement"><a class="header" href="#context-and-problem-statement">Context and Problem Statement</a></h2>
+<p><code>call/0005</code> defined the migration protocol and shipped it <em>as the template's
+<code>MIGRATION.md</code></em>, driven by <code>host-lifecycle</code>. But adoption has no front door: there
+is no single thing an agent (or a patient human) can be pointed at to turn a repo
+into a host and keep it current. The protocol prose also sits inside the template,
+which overloads it: the template is pulled toward serving a capability rather
+than being the versioned source of the techniques (<code>call/0004</code>).</p>
+<p>We want: point an agent or a human at <strong>one URL</strong>, and out comes an agentic
+project with all the techniques present and <strong>upgradable</strong>. The open question was
+<em>what owns what</em> — because a self-contained instruction file and a revision-keyed
+upgrade ledger cannot both be canonical without forking the spine.</p>
+<h2 id="considered-options"><a class="header" href="#considered-options">Considered Options</a></h2>
+<ol>
+<li><strong>Template doubles as a plugin marketplace.</strong> One URL, but inverts the
+template's role from <em>source of techniques</em> to <em>server of capabilities</em>, the
+overload <code>call/0004</code> exists to avoid.</li>
+<li><strong>Standalone repo, multi-file plugin/skill.</strong> Cleaner separation, but more to
+maintain and it buries the front door inside an engine.</li>
+<li><strong>Standalone repo, a single instruction file named <code>host</code> that owns the
+<em>process</em>; the template keeps the <em>techniques</em> and the <em>ledger</em>.</strong> One file,
+one URL, no overload.</li>
+</ol>
+<h2 id="decision-outcome"><a class="header" href="#decision-outcome">Decision Outcome</a></h2>
+<p>Chosen option 3.</p>
+<ul>
+<li><strong><code>host</code> is a single instruction file</strong> in its own repo
+(<code>https://github.com/connollydavid/host</code>). It is the front door: an agent or a
+human follows it to <strong>adopt</strong>, <strong>migrate</strong>, or <strong>upgrade</strong>, and ends with an
+agentic project carrying the methodology's techniques.</li>
+<li><strong><code>host</code> is developed here as software, not as a tool submodule of this repo.</strong>
+It gets a <code>[software "host"]</code> stanza in <code>.host-software</code> — a bare store with a
+worktree, pinned by SHA, gitignored — exactly like <code>host-lint</code> (<code>call/0010</code>). It
+is <em>consumed</em> downstream as a submodule; it is <em>developed</em> here as a worktree.</li>
+<li><strong><code>host</code> owns the process; the template owns the techniques and the ledger.</strong>
+This is the split that keeps "upgradable" true with no fork:
+<ul>
+<li><strong><code>host</code></strong> = the adopt/migrate/upgrade <strong>procedure</strong> (what <code>MIGRATION.md</code>'s
+steps were). Stable; rarely edited.</li>
+<li><strong>template</strong> = the <strong>techniques</strong> (the <code>CLAUDE.md</code> spine, the room scaffold,
+the tool pins) <em>and</em> the revision-keyed <strong>upgrade ledger</strong> (<code>UPGRADING.md</code>,
+one <code>[upgrade "&lt;revision&gt;"]</code> stanza per structural migration). The ledger is
+data the template's own changes generate, so it lives with them.</li>
+</ul>
+</li>
+<li><strong>Upgradability is automatic and lockstep-free.</strong> A produced folder records its
+adopted template revision in <code>.host</code>. To upgrade, <code>host</code> tells the
+operator to run <code>host-lifecycle upgrade &lt;dir&gt;</code>, which prints every template
+ledger entry newer than the stamp; apply them; re-stamp. The procedure (<code>host</code>)
+does not change when the template adds a ledger entry — only the template does.</li>
+<li><strong>Copy-at-version, not embed.</strong> A produced folder copies the spine in at the
+adopted revision and stamps it (<code>call/0004</code>); it does not submodule the
+template. (This forge embeds the template as a submodule for development
+convenience only — it is adopter-zero, not a produced folder.)</li>
+</ul>
+<p>This <strong>amends <code>call/0005</code></strong>: the protocol is no longer shipped <em>as the template's
+<code>MIGRATION.md</code></em>. Its procedural content moves to <code>host</code>; the template's
+<code>MIGRATION.md</code> is reduced to a pointer at <code>host</code>. <code>UPGRADING.md</code> stays in the
+template. The cased/moded protocol itself (<code>call/0005</code>) and the clean-break /
+delta distinction (<code>call/0007</code>) are unchanged — only their home moves.</p>
+<h2 id="consequences"><a class="header" href="#consequences">Consequences</a></h2>
+<ul>
+<li>Good: one URL, one file, dual-audience (agent or human). The template stops
+drifting toward being a capability server; <code>call/0004</code> holds.</li>
+<li>Good: <code>host</code> stays a stable single file because the per-revision ledger — the
+part that churns — remains in the template with the techniques that cause it. No
+lockstep between <code>host</code> and template revisions.</li>
+<li>Cost: the procedure and the ledger now live in two repos, so a reader must
+follow one reference (<code>host</code> → the template's ledger) instead of reading one
+document. The single-file ideal is "self-contained <em>procedure</em>", not
+"everything inline".</li>
+<li>Cost: a new repo to maintain and a new <code>.host-software</code> stanza in this forge.</li>
+<li>Migration of this decision itself: move <code>MIGRATION.md</code>'s steps into <code>host</code>,
+leave <code>UPGRADING.md</code> in the template, and replace the template <code>MIGRATION.md</code>
+with a pointer — tracked as follow-on work, not done by accepting this record.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../call/0011-worktree-absence-coherence.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../call/0013-reserve-agentic-host-for-this-repository.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../call/0011-worktree-absence-coherence.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../call/0013-reserve-agentic-host-for-this-repository.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
