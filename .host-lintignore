@@ -15,3 +15,8 @@ book/
 # The append-only record (call/0009): acknowledged history, left verbatim.
 MEMORY.md
 plan/*/README.md
+
+# Adopter case studies quote external projects' historical naming verbatim
+# (e.g. "Phase N" from a migrated repo) — acknowledged external history, not
+# host's own authored naming. Same rationale as the record (call/0009).
+case-studies/

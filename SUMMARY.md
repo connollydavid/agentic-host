@@ -27,3 +27,5 @@
   - [0009 — Exclude the record from the audit](call/0009-exclude-the-record-from-the-audit.md)
   - [0010 — Software is a bare store with worktrees](call/0010-software-is-a-bare-store-with-worktrees.md)
   - [0011 — Worktree-absence coherence](call/0011-worktree-absence-coherence.md)
+- [Case study — yarn-agentic](case-studies/yarn-agentic.md)
+  - [Findings & bug report](case-studies/yarn-agentic-findings.md)
