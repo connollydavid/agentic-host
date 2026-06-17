@@ -4,12 +4,12 @@
 # The pin replaces a submodule gitlink as the reproducibility anchor.
 [software "host-lint"]
 	url       = https://github.com/connollydavid/host-lint.git
-	pin       = 2361ae0b341296de4d101b8b139c2bca9dec33c8
+	pin       = 43b8ccd3e362b83f328902f1652e2df989a3f5ae
 	worktrees =
 	toolchain = rust:1.95.0@sha256:f49565f188ee00bc2a18dd418183f2c5f23ef7d6e691890517ed341a598f67c3
 	build     = CARGO_INCREMENTAL=0 cargo build --release --locked
 	deploy    = host-lint
-	artifact  = target/release/host-lint a7e276c068bcc26cf1bde44cede196d1c103ee8f5d4f7e9391be4e23573adf11
+	artifact  = target/release/host-lint 600e5c9700f03e3d9c32ce6f1c9c3a0ee0190cf3ed81e8315f510387dba63f8e
 [software "host"]
 	url       = https://github.com/connollydavid/host.git
 	pin       = 4930e6824e2571477207ac0308568fdb95a08e28
