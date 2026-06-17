@@ -1,7 +1,8 @@
 # Enforced remap dictionary
 
-Status: **built** (`host-lifecycle` 0.2.0, `3e55417`; `remap --check`/`--apply`,
-8 tests + scratch integration green, CI green). Dogfood on Win32s pending.
+Status: **done** (`host-lifecycle` 0.2.0, `3e55417`; `remap --check`/`--apply`,
+8 tests + scratch integration green, CI green). External dogfood satisfied by the
+`yarn-agentic` case-(b) adoption (issue #6); see "Dogfood — closed" below.
 Decision: `call/0008`. Builds on `host-lifecycle`
 (the token-free migrator, `call/0003`), `host-lint` (the policy-free detector), and
 `.host-lint-allow` (`call/0006`).
@@ -45,13 +46,16 @@ dependency-free parse style as `.host` / `.host-lint-allow`.
 - Originals are recoverable: the archive exists before any substitution.
 - `host-lint` is unchanged — it gains no dictionary awareness (policy-free).
 
-## Dogfood
+## Dogfood — closed
 
-The Agentic-MCP-Win32s adoption: author `.host-remap` (the milestone names plus any
-sub-codes chosen for denumbering), run `--check` until every tell is
-map/allow/acknowledged, `--apply`, confirm the diff is only-substitutions and the
-archive is present, then remove the scaffold — durable map captured in the migration
-`call/`.
+`remap` was exercised end-to-end by the **`yarn-agentic`** case-(b) adoption (issue
+#6): a 131-milestone corpus renamed to `NNNN-slug`, cross-references rewritten in
+scannable files, the durable map captured in that project's migration `call/`. That
+run also surfaced the `remap` spec-blind spot — declared substitutions did not reach
+`.allium`/`.tla`/`.cfg` — now fixed (spec-aware `remap`, host-lifecycle v0.6.0,
+`plan/0003`). The originally-planned **Agentic-MCP-Win32s** dogfood is **descoped**
+(its earlier attempt was rejected; superseded by `yarn-agentic` as the live `remap`
+exercise).
 
 ## Out of scope
 
