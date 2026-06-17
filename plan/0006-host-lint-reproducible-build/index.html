@@ -176,30 +176,34 @@
                     <main>
                         <h1 id="host-lint-reproducible-build"><a class="header" href="#host-lint-reproducible-build">host-lint reproducible build</a></h1>
 <p>Close the follow-on gap from <code>plan/0005</code>: this repo's own software, <strong>host-lint</strong>, now
-has a recorded, verified reproducible build — so the <code>.host-software</code> pin is a true
-production anchor for it, not just a source pin. host-lint is greenfield (initiated under
-the methodology), so the spine requires this; there is no <code>repro-exempt</code> for it.</p>
-<p>Surfaced and fixed (software-first, in the host-lint repo, commit <code>24ecf32</code>):</p>
-<ul>
-<li><strong><code>Cargo.lock</code> was gitignored</strong> — a binary with floating dependencies cannot build
-reproducibly. Tracked it (it pins <code>host-grammar</code>'s git rev).</li>
-<li><strong>No pinned toolchain</strong> — added <code>rust-toolchain.toml</code> (channel <code>1.95.0</code>), the dominant
-source of artifact-hash drift.</li>
-</ul>
-<p>Provenance recorded in <code>.host-software</code> <code>[software "host-lint"]</code>:</p>
-<ul>
-<li><code>build</code> — <code>CARGO_INCREMENTAL=0 RUSTFLAGS="--remap-path-prefix=$PWD=. --remap-path-prefix=${CARGO_HOME:-$HOME/.cargo}=/cargo" cargo build --release --locked</code> (path remapping neutralises the build-dir difference between the canonical worktree and <code>--verify-build</code>'s throwaway one).</li>
-<li><code>toolchain = 1.95.0</code>, <code>deploy = host-lint</code>, <code>artifact = target/release/host-lint &lt;sha256&gt;</code>.</li>
-</ul>
-<p>Proven: a double-build in two separate worktrees at the pin yields the <strong>same</strong> sha256
-(<code>782a0840…</code>); <code>host-lifecycle software --verify-build .</code> rebuilds from the pin and
-reproduces it; <code>software --check .</code> attests it. A standing
-<code>.github/workflows/reproducible-build.yml</code> re-proves it on every push and weekly.</p>
+has a recorded, <strong>environment-independently reproducible</strong> build — so the <code>.host-software</code>
+pin is a true production anchor for it. host-lint is greenfield (initiated under the
+methodology), so the spine requires this; there is no <code>repro-exempt</code> for it.</p>
+<p>Driving it through the methodology surfaced the real defects and the genuine difficulty,
+software-first in the host-lint repo:</p>
+<ol>
+<li><strong><code>Cargo.lock</code> was gitignored</strong> (<code>24ecf32</code>) — a binary with floating dependencies
+cannot reproduce. Tracked it (it pins <code>host-grammar</code>'s git rev).</li>
+<li><strong>No pinned toolchain</strong> (<code>24ecf32</code>) — added <code>rust-toolchain.toml</code> (channel <code>1.95.0</code>).</li>
+<li><strong>Build metadata embedded the host</strong> (<code>2361ae0</code>) — the release binary carried the
+<code>.note.gnu.build-id</code> and a <code>.comment</code> section naming the build host's toolchain/distro.
+Set <code>[profile.release] strip = true</code> and <code>--build-id=none</code> (<code>.cargo/config.toml</code>), in
+source. (Path remapping was tried and shown to be a no-op — paths were not the diff.)</li>
+<li><strong>The build environment itself differed</strong> — even with the above, a local (WSL) build
+and a GitHub-CI build diverged, because <code>ld</code>/<code>gcc</code>/distro differ. Bit-for-bit identity
+needs a <strong>fixed build environment</strong>, so the canonical environment is pinned to the
+<code>rust:1.95.0</code> image <strong>by digest</strong> (<code>sha256:f49565f1…</code>).</li>
+</ol>
+<p>Provenance recorded in <code>.host-software</code> <code>[software "host-lint"]</code>: <code>build = CARGO_INCREMENTAL=0 cargo build --release --locked</code> (determinism config lives in the host-lint source),
+<code>toolchain = rust:1.95.0@sha256:f49565f1…</code> (the pinned environment), <code>deploy = host-lint</code>,
+<code>artifact = target/release/host-lint a7e276c0…</code>.</p>
+<p>Proven: a double-build in the pinned container yields the same sha (<code>a7e276c0…</code>); the
+<code>reproducible-build.yml</code> CI job runs in that same digest-pinned image and
+<code>host-lifecycle software --verify-build .</code> reproduces it (green). <code>software --check .</code>
+attests the artifact.</p>
 <p>Scope: the <code>host</code> component is a README front-door (no compiled artifact), so it carries
-no build provenance. <strong>Open hardening:</strong> same-environment reproducibility (pinned
-toolchain) is what this milestone guarantees; full container-level environment-independence
-is future work — if CI's hash diverges from the recorded one, that divergence is the next
-finding to chase (and CI's value becomes canonical).</p>
+no build provenance. Reproducibility is now environment-independent <strong>given the pinned
+image</strong> — the legitimate standard (anyone with that image reproduces the binary).</p>
 
                     </main>
 
