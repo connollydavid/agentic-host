@@ -1,6 +1,6 @@
 # References to the software worktree must survive its absence
 
-- Status: accepted
+- Status: superseded by the methodology spine (host-template @ 94a1ac7)
 - Date: 2026-06-15
 - Refines: `call/0010` (the bare-store-with-worktrees embedding).
 

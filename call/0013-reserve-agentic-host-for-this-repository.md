@@ -1,6 +1,7 @@
 # Reserve `agentic-host` for this repository; scrub the collision by a one-time history rewrite
 
 - Status: accepted
+- Scope: instance
 - Date: 2026-06-16
 
 ## Context and Problem Statement

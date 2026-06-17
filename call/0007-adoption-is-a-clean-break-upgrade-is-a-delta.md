@@ -1,6 +1,6 @@
 # Adoption is a clean break to a pristine state; upgrade is a Shallow delta
 
-- Status: accepted
+- Status: superseded by the methodology spine (host-template @ 94a1ac7)
 - Date: 2026-06-14
 - Refines: `call/0005` (does not supersede it — the cased/moded protocol stands; this corrects how mode is chosen and fixes a factual error in a target audit).
 

@@ -1,6 +1,6 @@
 # Adoption remap is enforced by a dictionary applied deterministically, then removed
 
-- Status: accepted
+- Status: superseded by the methodology spine (host-template @ 94a1ac7)
 - Date: 2026-06-14
 - Relates to: `call/0007` (clean-break tier 2 is "map-only"), `call/0006` (the allow-list), `call/0003` (tools composed as submodules), `CLAUDE.md` §6 (the append-only escape valve this enforces).
 

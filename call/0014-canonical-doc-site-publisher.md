@@ -1,6 +1,6 @@
 # The canonical doc-site publisher is `host-lifecycle book`
 
-- Status: accepted
+- Status: superseded by the methodology spine (host-template @ 94a1ac7)
 - Date: 2026-06-17
 - Refines: `call/0011` (worktree-absence coherence; the `src = "."` hazard).
 

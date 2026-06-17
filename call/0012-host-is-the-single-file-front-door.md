@@ -1,6 +1,6 @@
 # A single file named `host` is the front door that owns the adoption-and-upgrade process
 
-- Status: accepted
+- Status: superseded by the methodology spine (host-template @ 94a1ac7)
 - Date: 2026-06-16
 
 ## Context and Problem Statement

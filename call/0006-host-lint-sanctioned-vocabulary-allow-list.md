@@ -1,6 +1,6 @@
 # host-lint exempts sanctioned vocabulary via a repo-root allow file
 
-- Status: accepted
+- Status: superseded by the methodology spine (host-template @ 94a1ac7)
 - Date: 2026-06-14
 
 ## Context and Problem Statement

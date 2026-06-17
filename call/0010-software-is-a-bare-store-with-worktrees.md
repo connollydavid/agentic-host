@@ -1,6 +1,6 @@
 # Embed the software as a bare store with named worktrees
 
-- Status: accepted
+- Status: superseded by the methodology spine (host-template @ 94a1ac7)
 - Date: 2026-06-14
 - Relates: `call/0003` (compose tools as referenced submodules — the software
   embedding is the counterpart question for the "Where" room).

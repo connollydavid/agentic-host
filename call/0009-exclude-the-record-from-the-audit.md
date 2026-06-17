@@ -1,6 +1,6 @@
 # A migrated project excludes its append-only record from the audit
 
-- Status: accepted
+- Status: superseded by the methodology spine (host-template @ 94a1ac7)
 - Date: 2026-06-14
 - Refines: `call/0007` (the record tier). Builds on `host-lint` `.host-lintignore`.
 
