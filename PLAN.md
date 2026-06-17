@@ -25,6 +25,7 @@ The `plan/` room holds methodology-level milestones as `NNNN-slug` folders (the 
 | [plan/0004-anti-ouroboros](plan/0004-anti-ouroboros/README.md) | done (host-lifecycle v0.7.0 `validate` scope gate; methodology folded to the template spine; this repo's methodology decisions superseded in place); resolves issue #9 |
 | [plan/0005-reproducible-build-anchor](plan/0005-reproducible-build-anchor/README.md) | done (host-lifecycle v0.8.0 `software --verify-build`; spine requires reproducible builds for greenfield software, case-decision escape for migrated); resolves issue #10 |
 | [plan/0006-host-lint-reproducible-build](plan/0006-host-lint-reproducible-build/README.md) | done (host-lint tracks Cargo.lock + pins toolchain; reproducible build proven, provenance recorded, `software --verify-build` + CI green) |
+| [plan/0007-agentic-tell-grammar](plan/0007-agentic-tell-grammar/README.md) | done (host-grammar `tells` engine — token-free trope adaptation, lexical + equation layers + density score; host-lint v0.3.0 `--stdin`/`--prose`; allium spec + property-based lane incl. anaphora refinement; re-pin `600e5c97` reproducible) |
 
 The earlier content-named docs above (BOOTSTRAP, CI-PIPELINE, …) predate the `plan/` room; folding them in is a possible later cleanup, not required.
 
