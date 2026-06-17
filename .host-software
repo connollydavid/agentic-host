@@ -6,10 +6,10 @@
 	url       = https://github.com/connollydavid/host-lint.git
 	pin       = 2361ae0b341296de4d101b8b139c2bca9dec33c8
 	worktrees =
-	toolchain = 1.95.0
+	toolchain = rust:1.95.0@sha256:f49565f188ee00bc2a18dd418183f2c5f23ef7d6e691890517ed341a598f67c3
 	build     = CARGO_INCREMENTAL=0 cargo build --release --locked
 	deploy    = host-lint
-	artifact  = target/release/host-lint fffd5d9ac63d0ae78a30536905f3010583b0c291396dada2f46d164786b98a65
+	artifact  = target/release/host-lint a7e276c068bcc26cf1bde44cede196d1c103ee8f5d4f7e9391be4e23573adf11
 [software "host"]
 	url       = https://github.com/connollydavid/host.git
 	pin       = 4930e6824e2571477207ac0308568fdb95a08e28

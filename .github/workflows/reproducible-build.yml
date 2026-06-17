@@ -1,6 +1,9 @@
 # Prove host-lint's build is reproducible: rebuild from the recorded pin and check the
 # artifact reproduces its recorded sha256 (the production anchor; plan/0005, plan/0006).
-# host-lint is greenfield, so it must reproduce — there is no repro-exempt for it.
+# Bit-for-bit reproducibility needs a fixed toolchain AND a fixed OS/linker, so the job
+# runs in a digest-pinned container — the one canonical build environment the recorded
+# artifact hash (in .host-software) is produced in. host-lint is greenfield, so it must
+# reproduce; there is no repro-exempt for it.
 name: Reproducible build
 
 on:
@@ -12,14 +15,15 @@ on:
 jobs:
   verify-build:
     runs-on: ubuntu-latest
+    container:
+      image: rust:1.95.0@sha256:f49565f188ee00bc2a18dd418183f2c5f23ef7d6e691890517ed341a598f67c3
     steps:
       - uses: actions/checkout@v4
+      - name: Trust the workspace (container runs as root)
+        run: git config --global --add safe.directory '*'
       - name: Install host-lifecycle (pinned to v0.8.0)
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev bde9203bf8efe8e36aa26d6b8ea946661dfba234 --root "$HOME/.local"
-      - run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev bde9203bf8efe8e36aa26d6b8ea946661dfba234 --root /usr/local
       - name: Materialize the software (bare store + worktrees)
         run: host-lifecycle software --materialize .
-      # host-lint's rust-toolchain.toml pins the channel; rustup installs it on first
-      # cargo invocation inside the rebuilt worktree.
       - name: Verify reproducibility (rebuild from the pin; compare the artifact)
         run: host-lifecycle software --verify-build .
