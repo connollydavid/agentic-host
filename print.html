@@ -292,8 +292,8 @@ Skill Hardening: hook fix, bare-numeral rule, release install path (see SKILL-HA
 <p>Milestones are named after their content, not numbered — ordinals name positions, and positions shift when plans are re-cut; names stay attached to their content. See BOOTSTRAP.md, CI-PIPELINE.md, FORMAL-SPEC.md.</p>
 <p>The <code>plan/</code> room holds methodology-level milestones as <code>NNNN-slug</code> folders (the template's structure, adopted when this host migrated under the methodology). The number is identity; ordering lives here in the index, not in the name.</p>
 <div class="table-wrapper"><table><thead><tr><th>Milestone</th><th>Status</th></tr></thead><tbody>
-<tr><td><a href="plan/0001-migration-protocol/README.html">plan/0001-migration-protocol</a></td><td>done (protocol + tooling + host self-migration); external dogfoods pending</td></tr>
-<tr><td><a href="plan/0002-enforced-remap-dictionary/README.html">plan/0002-enforced-remap-dictionary</a></td><td>built (host-lifecycle 0.2.0 <code>remap --check</code>/<code>--apply</code>, call/0008); Win32s + pgs-release dogfoods pending</td></tr>
+<tr><td><a href="plan/0001-migration-protocol/README.html">plan/0001-migration-protocol</a></td><td>done (protocol + tooling + host self-migration); external case-(b) dogfood satisfied by the yarn-agentic adoption (issue #6); Win32s + pgs-release descoped</td></tr>
+<tr><td><a href="plan/0002-enforced-remap-dictionary/README.html">plan/0002-enforced-remap-dictionary</a></td><td>done (host-lifecycle 0.2.0 <code>remap --check</code>/<code>--apply</code>, call/0008); remap exercised by yarn-agentic (issue #6); Win32s dogfood descoped</td></tr>
 <tr><td><a href="plan/0003-doc-site-publisher/README.html">plan/0003-doc-site-publisher</a></td><td>built (host-lifecycle v0.6.1 <code>book</code>/<code>book --check</code>, call/0014); dogfooded on this repo's site</td></tr>
 </tbody></table>
 </div>
@@ -308,8 +308,9 @@ Skill Hardening: hook fix, bare-numeral rule, release install path (see SKILL-HA
 <p>Build the protocol, tooling, and decisions for bringing an existing repo under
 the host methodology — and dogfood it by migrating this host.</p>
 <ul>
-<li>Status: done (protocol, tooling, host self-migration); follow-on external
-dogfoods pending.</li>
+<li>Status: <strong>done.</strong> Protocol, tooling, and host self-migration shipped; the
+external case-(b) dogfood is satisfied by the completed <code>yarn-agentic</code> adoption
+(see "External dogfood" below).</li>
 <li>Decisions: <code>call/0004</code> (the template is the versioned source), <code>call/0005</code>
 (the cased, moded migration protocol).</li>
 </ul>
@@ -326,21 +327,29 @@ selection rule and history-immutable-by-default) decides the blast radius.</li>
 <code>.host</code>; the host model and copy-at-version sourcing recorded
 in <code>CLAUDE.md</code>; this <code>plan/</code> room established.</li>
 </ul>
-<h2 id="follow-on-separate-milestones-not-in-this-one"><a class="header" href="#follow-on-separate-milestones-not-in-this-one">Follow-on (separate milestones, not in this one)</a></h2>
-<p>Validate the protocol on real external repos:</p>
+<h2 id="external-dogfood--closed"><a class="header" href="#external-dogfood--closed">External dogfood — closed</a></h2>
+<p>The goal of the follow-on was to validate the protocol on a real external repo.
+That is <strong>satisfied</strong> by the <strong><code>yarn-agentic</code></strong> adoption (reported in <code>agentic-host</code>
+issue #6): a complete case-(b) migration of a mature <strong>131-milestone</strong> inference
+project (two embedded forks, 18 spec-bearing milestones, 153 spec files), staged as
+five reviewed PRs to <code>main</code>, ending green (<code>validate plan/call</code>, <code>software --check</code>,
+the spec gate, published site). That is a <em>larger</em> case-(b) stressor than the two
+originally listed, and it surfaced real defects (the doc-site gaps fixed in
+<code>plan/0003</code> / <code>call/0014</code>, plus four host-lifecycle tooling fixes) — exactly what a
+dogfood is for.</p>
+<p>The originally-listed candidates are therefore <strong>descoped</strong>:</p>
 <ul>
-<li><strong>Agentic-MCP-Win32s</strong> — case c, Shallow: re-point the renamed tool submodules,
-rename its ordinal-named milestone docs, reconcile its <code>AGENTS.md</code>.</li>
-<li><strong>pgs-release</strong> — case b, Staged Shallow (not Deep): merge its foreign
-<code>CLAUDE.md</code>, rename its many ordinal-named milestone docs and their
-cross-references, acknowledge the legacy history (the upstream patch-series
-provenance forbids a history rewrite).</li>
+<li><strong>pgs-release</strong> (case b) — superseded by <code>yarn-agentic</code>, the larger case-(b)
+exercise. Left unmigrated.</li>
+<li><strong>Agentic-MCP-Win32s</strong> (case c) — its earlier attempt over-reached (rewrote the
+append-only record) and was rejected; the <code>.host-lint-allow</code> / exclude-don't-rewrite
+fixes it prompted (<code>call/0006</code>, <code>call/0009</code>) already landed. Left unmigrated; can be
+re-attempted later as its own milestone if a case-(c) exercise is wanted.</li>
 </ul>
-<p>The full approved plan, with the grounded per-target audit, is the source for
-these.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="enforced-remap-dictionary"><a class="header" href="#enforced-remap-dictionary">Enforced remap dictionary</a></h1>
-<p>Status: <strong>built</strong> (<code>host-lifecycle</code> 0.2.0, <code>3e55417</code>; <code>remap --check</code>/<code>--apply</code>,
-8 tests + scratch integration green, CI green). Dogfood on Win32s pending.
+<p>Status: <strong>done</strong> (<code>host-lifecycle</code> 0.2.0, <code>3e55417</code>; <code>remap --check</code>/<code>--apply</code>,
+8 tests + scratch integration green, CI green). External dogfood satisfied by the
+<code>yarn-agentic</code> case-(b) adoption (issue #6); see "Dogfood — closed" below.
 Decision: <code>call/0008</code>. Builds on <code>host-lifecycle</code>
 (the token-free migrator, <code>call/0003</code>), <code>host-lint</code> (the policy-free detector), and
 <code>.host-lint-allow</code> (<code>call/0006</code>).</p>
@@ -379,12 +388,15 @@ in the migration <code>call/</code> decision, not left in the tree.</li>
 <li>Originals are recoverable: the archive exists before any substitution.</li>
 <li><code>host-lint</code> is unchanged — it gains no dictionary awareness (policy-free).</li>
 </ul>
-<h2 id="dogfood"><a class="header" href="#dogfood">Dogfood</a></h2>
-<p>The Agentic-MCP-Win32s adoption: author <code>.host-remap</code> (the milestone names plus any
-sub-codes chosen for denumbering), run <code>--check</code> until every tell is
-map/allow/acknowledged, <code>--apply</code>, confirm the diff is only-substitutions and the
-archive is present, then remove the scaffold — durable map captured in the migration
-<code>call/</code>.</p>
+<h2 id="dogfood--closed"><a class="header" href="#dogfood--closed">Dogfood — closed</a></h2>
+<p><code>remap</code> was exercised end-to-end by the <strong><code>yarn-agentic</code></strong> case-(b) adoption (issue
+#6): a 131-milestone corpus renamed to <code>NNNN-slug</code>, cross-references rewritten in
+scannable files, the durable map captured in that project's migration <code>call/</code>. That
+run also surfaced the <code>remap</code> spec-blind spot — declared substitutions did not reach
+<code>.allium</code>/<code>.tla</code>/<code>.cfg</code> — now fixed (spec-aware <code>remap</code>, host-lifecycle v0.6.0,
+<code>plan/0003</code>). The originally-planned <strong>Agentic-MCP-Win32s</strong> dogfood is <strong>descoped</strong>
+(its earlier attempt was rejected; superseded by <code>yarn-agentic</code> as the live <code>remap</code>
+exercise).</p>
 <h2 id="out-of-scope"><a class="header" href="#out-of-scope">Out of scope</a></h2>
 <ul>
 <li>An ongoing drift gate (<code>call/0008</code>: redundant with <code>host-lint</code> and a per-commit
@@ -433,7 +445,7 @@ the repo ships <code>custom.css</code>.</li>
 in the body (unit test).</li>
 <li><code>--dry-run</code> writes nothing.</li>
 </ul>
-<h2 id="dogfood-1"><a class="header" href="#dogfood-1">Dogfood</a></h2>
+<h2 id="dogfood"><a class="header" href="#dogfood">Dogfood</a></h2>
 <p>This repository (adopter zero): replace the hand-maintained <code>SUMMARY.md</code> and the
 <code>src = "."</code> <code>book.toml</code> with <code>host-lifecycle book</code>, re-pin <code>tools/host-lifecycle</code> to
 <code>v0.6.1</code>, re-stamp <code>.host</code> to the template revision that introduced the publisher,

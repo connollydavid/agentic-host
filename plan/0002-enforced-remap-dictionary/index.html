@@ -175,8 +175,9 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="enforced-remap-dictionary"><a class="header" href="#enforced-remap-dictionary">Enforced remap dictionary</a></h1>
-<p>Status: <strong>built</strong> (<code>host-lifecycle</code> 0.2.0, <code>3e55417</code>; <code>remap --check</code>/<code>--apply</code>,
-8 tests + scratch integration green, CI green). Dogfood on Win32s pending.
+<p>Status: <strong>done</strong> (<code>host-lifecycle</code> 0.2.0, <code>3e55417</code>; <code>remap --check</code>/<code>--apply</code>,
+8 tests + scratch integration green, CI green). External dogfood satisfied by the
+<code>yarn-agentic</code> case-(b) adoption (issue #6); see "Dogfood — closed" below.
 Decision: <code>call/0008</code>. Builds on <code>host-lifecycle</code>
 (the token-free migrator, <code>call/0003</code>), <code>host-lint</code> (the policy-free detector), and
 <code>.host-lint-allow</code> (<code>call/0006</code>).</p>
@@ -215,12 +216,15 @@ in the migration <code>call/</code> decision, not left in the tree.</li>
 <li>Originals are recoverable: the archive exists before any substitution.</li>
 <li><code>host-lint</code> is unchanged — it gains no dictionary awareness (policy-free).</li>
 </ul>
-<h2 id="dogfood"><a class="header" href="#dogfood">Dogfood</a></h2>
-<p>The Agentic-MCP-Win32s adoption: author <code>.host-remap</code> (the milestone names plus any
-sub-codes chosen for denumbering), run <code>--check</code> until every tell is
-map/allow/acknowledged, <code>--apply</code>, confirm the diff is only-substitutions and the
-archive is present, then remove the scaffold — durable map captured in the migration
-<code>call/</code>.</p>
+<h2 id="dogfood--closed"><a class="header" href="#dogfood--closed">Dogfood — closed</a></h2>
+<p><code>remap</code> was exercised end-to-end by the <strong><code>yarn-agentic</code></strong> case-(b) adoption (issue
+#6): a 131-milestone corpus renamed to <code>NNNN-slug</code>, cross-references rewritten in
+scannable files, the durable map captured in that project's migration <code>call/</code>. That
+run also surfaced the <code>remap</code> spec-blind spot — declared substitutions did not reach
+<code>.allium</code>/<code>.tla</code>/<code>.cfg</code> — now fixed (spec-aware <code>remap</code>, host-lifecycle v0.6.0,
+<code>plan/0003</code>). The originally-planned <strong>Agentic-MCP-Win32s</strong> dogfood is <strong>descoped</strong>
+(its earlier attempt was rejected; superseded by <code>yarn-agentic</code> as the live <code>remap</code>
+exercise).</p>
 <h2 id="out-of-scope"><a class="header" href="#out-of-scope">Out of scope</a></h2>
 <ul>
 <li>An ongoing drift gate (<code>call/0008</code>: redundant with <code>host-lint</code> and a per-commit

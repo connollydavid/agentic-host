@@ -178,8 +178,9 @@
 <p>Build the protocol, tooling, and decisions for bringing an existing repo under
 the host methodology — and dogfood it by migrating this host.</p>
 <ul>
-<li>Status: done (protocol, tooling, host self-migration); follow-on external
-dogfoods pending.</li>
+<li>Status: <strong>done.</strong> Protocol, tooling, and host self-migration shipped; the
+external case-(b) dogfood is satisfied by the completed <code>yarn-agentic</code> adoption
+(see "External dogfood" below).</li>
 <li>Decisions: <code>call/0004</code> (the template is the versioned source), <code>call/0005</code>
 (the cased, moded migration protocol).</li>
 </ul>
@@ -196,18 +197,25 @@ selection rule and history-immutable-by-default) decides the blast radius.</li>
 <code>.host</code>; the host model and copy-at-version sourcing recorded
 in <code>CLAUDE.md</code>; this <code>plan/</code> room established.</li>
 </ul>
-<h2 id="follow-on-separate-milestones-not-in-this-one"><a class="header" href="#follow-on-separate-milestones-not-in-this-one">Follow-on (separate milestones, not in this one)</a></h2>
-<p>Validate the protocol on real external repos:</p>
+<h2 id="external-dogfood--closed"><a class="header" href="#external-dogfood--closed">External dogfood — closed</a></h2>
+<p>The goal of the follow-on was to validate the protocol on a real external repo.
+That is <strong>satisfied</strong> by the <strong><code>yarn-agentic</code></strong> adoption (reported in <code>agentic-host</code>
+issue #6): a complete case-(b) migration of a mature <strong>131-milestone</strong> inference
+project (two embedded forks, 18 spec-bearing milestones, 153 spec files), staged as
+five reviewed PRs to <code>main</code>, ending green (<code>validate plan/call</code>, <code>software --check</code>,
+the spec gate, published site). That is a <em>larger</em> case-(b) stressor than the two
+originally listed, and it surfaced real defects (the doc-site gaps fixed in
+<code>plan/0003</code> / <code>call/0014</code>, plus four host-lifecycle tooling fixes) — exactly what a
+dogfood is for.</p>
+<p>The originally-listed candidates are therefore <strong>descoped</strong>:</p>
 <ul>
-<li><strong>Agentic-MCP-Win32s</strong> — case c, Shallow: re-point the renamed tool submodules,
-rename its ordinal-named milestone docs, reconcile its <code>AGENTS.md</code>.</li>
-<li><strong>pgs-release</strong> — case b, Staged Shallow (not Deep): merge its foreign
-<code>CLAUDE.md</code>, rename its many ordinal-named milestone docs and their
-cross-references, acknowledge the legacy history (the upstream patch-series
-provenance forbids a history rewrite).</li>
+<li><strong>pgs-release</strong> (case b) — superseded by <code>yarn-agentic</code>, the larger case-(b)
+exercise. Left unmigrated.</li>
+<li><strong>Agentic-MCP-Win32s</strong> (case c) — its earlier attempt over-reached (rewrote the
+append-only record) and was rejected; the <code>.host-lint-allow</code> / exclude-don't-rewrite
+fixes it prompted (<code>call/0006</code>, <code>call/0009</code>) already landed. Left unmigrated; can be
+re-attempted later as its own milestone if a case-(c) exercise is wanted.</li>
 </ul>
-<p>The full approved plan, with the grounded per-target audit, is the source for
-these.</p>
 
                     </main>
 
