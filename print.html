@@ -2311,6 +2311,12 @@ self-hosting bootstrap). This pass touched only the template's identity.</p>
 <li>Trigger is root-manifest-only, so the agentic-host root (manifests live in worktrees/submodules, not at root) classifies <code>c</code>, not a false refusal; <code>.host</code>/<code>.host-software</code> presence is the already-a-host exclusion.</li>
 <li>Driven through the method: software-first (host-lifecycle d38bad5 + tag v0.12.0), spine MUST in host-template CLAUDE.md "Never adopt a software repository in place" + UPGRADING <code>ae1e688</code>, then applied here (template pointer 3dbc74c, .host re-stamped 3dbc74c, CI install rev bumped). <code>upgrade .</code> up to date; <code>software --check .</code> clean.</li>
 </ul>
+<h3 id="2026-06-18--commit-subject-decoration-tells-flag-not-warn-plan0020"><a class="header" href="#2026-06-18--commit-subject-decoration-tells-flag-not-warn-plan0020">2026-06-18 — commit-subject decoration tells flag, not warn (plan/0020)</a></h3>
+<ul>
+<li>Prose tells are warn-tier (advisory) by design — density is the signal, not any single device. One exception now: on a <code>--stdin</code> scan, a <code>decoration</code> tell (em/en-dash, smart quote, arrow) on the FIRST line (the commit subject, or a gh title piped the same way → squash-merge subject + front-door text) escalates warn→flag (exit 1). Body prose and <code>--prose</code> docs stay advisory. host-lint v0.4.0, <code>escalate_subject_decoration</code> in main.rs <code>--stdin</code>.</li>
+<li>Modelled end-to-end per method: spec rule <code>FlagSubjectDecoration</code> + <code>Line.is_subject</code>/<code>has_decoration</code> (allium check+analyse clean on 3.4.2), 3 new obligations dispositioned (47 total), 2 new tests, VOCABULARY §6 records the exception. No host-template/spine change — it is a backward-compatible tool feature, not a methodology action.</li>
+<li>Re-pin gotcha confirmed (again): <code>software --verify-build</code> run LOCALLY (WSL) reports DRIFT because the canonical artifact hash is the rust:1.95.0 CONTAINER build; the recorded 9594271d came from a clean-room container build and CI verifies it in-container. Local DRIFT == the <code>--check</code> "note", expected, not a defect. Never overwrite the canonical hash with a local one.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
