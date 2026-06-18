@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Specs live with the software (dogfood allium, relocate specula) - agentic-host</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../custom.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">agentic-host</a></li><li class="chapter-item expanded affix "><li class="part-title">Cast — who</li><li class="chapter-item expanded "><a href="../../cast/index.html"><strong aria-hidden="true">1.</strong> Cast — the project's Who</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cast/applying-personas.html"><strong aria-hidden="true">1.1.</strong> Applying personas during planning</a></li><li class="chapter-item expanded "><a href="../../cast/mara.html"><strong aria-hidden="true">1.2.</strong> Mara — the Human Operator</a></li><li class="chapter-item expanded "><a href="../../cast/wren.html"><strong aria-hidden="true">1.3.</strong> Wren — the Agentic LLM Developer</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Plan — what & when</li><li class="chapter-item expanded "><a href="../../PLAN.html"><strong aria-hidden="true">2.</strong> PLAN.md</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../plan/0001-migration-protocol/index.html"><strong aria-hidden="true">2.1.</strong> Migration protocol</a></li><li class="chapter-item expanded "><a href="../../plan/0002-enforced-remap-dictionary/index.html"><strong aria-hidden="true">2.2.</strong> Enforced remap dictionary</a></li><li class="chapter-item expanded "><a href="../../plan/0003-doc-site-publisher/index.html"><strong aria-hidden="true">2.3.</strong> Canonical doc-site publisher</a></li><li class="chapter-item expanded "><a href="../../plan/0004-anti-ouroboros/index.html"><strong aria-hidden="true">2.4.</strong> Anti-ouroboros: methodology to the spine</a></li><li class="chapter-item expanded "><a href="../../plan/0005-reproducible-build-anchor/index.html"><strong aria-hidden="true">2.5.</strong> Reproducible-build production anchor</a></li><li class="chapter-item expanded "><a href="../../plan/0006-host-lint-reproducible-build/index.html"><strong aria-hidden="true">2.6.</strong> host-lint reproducible build</a></li><li class="chapter-item expanded "><a href="../../plan/0007-agentic-tell-grammar/index.html"><strong aria-hidden="true">2.7.</strong> Agentic-tell grammar engine</a></li><li class="chapter-item expanded "><a href="../../plan/0008-parallel-prose-scan/index.html"><strong aria-hidden="true">2.8.</strong> Parallel prose scan for large documents</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../plan/0008-parallel-prose-scan/spec-index.html"><strong aria-hidden="true">2.8.1.</strong> specs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../plan/0008-parallel-prose-scan/spec/ParallelScan.cfg.html"><strong aria-hidden="true">2.8.1.1.</strong> ParallelScan.cfg</a></li><li class="chapter-item expanded "><a href="../../plan/0008-parallel-prose-scan/spec/ParallelScan.tla.html"><strong aria-hidden="true">2.8.1.2.</strong> ParallelScan.tla</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../plan/0009-install-hooks/index.html"><strong aria-hidden="true">2.9.</strong> Install commit hooks from the software recipe</a></li><li class="chapter-item expanded "><a href="../../plan/0010-markdown-aware-prose/index.html"><strong aria-hidden="true">2.10.</strong> Markdown-aware prose scanning</a></li><li class="chapter-item expanded "><a href="../../plan/0011-multi-platform-builds/index.html"><strong aria-hidden="true">2.11.</strong> Per-platform builds in the software recipe</a></li><li class="chapter-item expanded "><a href="../../plan/0012-specs-live-with-software/index.html" class="active"><strong aria-hidden="true">2.12.</strong> Specs live with the software (dogfood allium, relocate specula)</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Software — where</li><li class="chapter-item expanded "><a href="../../where.html"><strong aria-hidden="true">3.</strong> Software</a></li><li class="chapter-item expanded affix "><li class="part-title">Call — why</li><li class="chapter-item expanded "><a href="../../call/0013-reserve-agentic-host-for-this-repository.html"><strong aria-hidden="true">4.</strong> Reserve agentic-host for this repository; scrub the collision by a one-time history rewrite</a></li><li class="chapter-item expanded "><a href="../../call/0015-parallel-scan-escalates-to-the-timing-lane.html"><strong aria-hidden="true">5.</strong> Parallelizing the prose scan escalates run-accumulation to the timing lane</a></li><li class="chapter-item expanded affix "><li class="part-title">Reference — how</li><li class="chapter-item expanded "><a href="../../CLAUDE.html"><strong aria-hidden="true">6.</strong> CLAUDE.md</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../BOOTSTRAP.html"><strong aria-hidden="true">6.1.</strong> BOOTSTRAP.md</a></li><li class="chapter-item expanded "><a href="../../CI-PIPELINE.html"><strong aria-hidden="true">6.2.</strong> CI-PIPELINE.md</a></li><li class="chapter-item expanded "><a href="../../FORMAL-SPEC.html"><strong aria-hidden="true">6.3.</strong> FORMAL-SPEC.md</a></li><li class="chapter-item expanded "><a href="../../SKILL-HARDENING.html"><strong aria-hidden="true">6.4.</strong> SKILL-HARDENING.md</a></li><li class="chapter-item expanded "><a href="../../SKILL_AUTHORING.html"><strong aria-hidden="true">6.5.</strong> SKILL_AUTHORING.md</a></li><li class="chapter-item expanded "><a href="../../STRUCTURE.html"><strong aria-hidden="true">6.6.</strong> Structure</a></li><li class="chapter-item expanded "><a href="../../TEMPLATE-REWRITE.html"><strong aria-hidden="true">6.7.</strong> TEMPLATE-REWRITE — rewrite host-template into the canonical agentic project</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Memory</li><li class="chapter-item expanded "><a href="../../MEMORY.html"><strong aria-hidden="true">7.</strong> Memory</a></li><li class="chapter-item expanded affix "><li class="part-title">Archive / Record</li><li class="chapter-item expanded "><a href="../../call/0000-use-markdown-decision-records.html"><strong aria-hidden="true">8.</strong> Use Markdown decision records (MADR) (superseded)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../call/0001-tool-outputs-are-project-owned.html"><strong aria-hidden="true">8.1.</strong> Tool outputs are project-owned, not under allium or Specula licenses (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0002-verification-lanes-by-property-type.html"><strong aria-hidden="true">8.2.</strong> Split verification into lanes by property type (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0003-compose-tools-as-referenced-submodules.html"><strong aria-hidden="true">8.3.</strong> Compose verification tools as referenced submodules (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0004-template-is-versioned-source.html"><strong aria-hidden="true">8.4.</strong> The template is the canonical, versioned source of the methodology (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0005-migration-protocol.html"><strong aria-hidden="true">8.5.</strong> Adopt and upgrade existing repos by a cased, moded migration protocol (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0006-host-lint-sanctioned-vocabulary-allow-list.html"><strong aria-hidden="true">8.6.</strong> host-lint exempts sanctioned vocabulary via a repo-root allow file (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0007-adoption-is-a-clean-break-upgrade-is-a-delta.html"><strong aria-hidden="true">8.7.</strong> Adoption is a clean break to a pristine state; upgrade is a Shallow delta (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0008-enforced-remap-dictionary.html"><strong aria-hidden="true">8.8.</strong> Adoption remap is enforced by a dictionary applied deterministically, then removed (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0009-exclude-the-record-from-the-audit.html"><strong aria-hidden="true">8.9.</strong> A migrated project excludes its append-only record from the audit (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0010-software-is-a-bare-store-with-worktrees.html"><strong aria-hidden="true">8.10.</strong> Embed the software as a bare store with named worktrees (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0011-worktree-absence-coherence.html"><strong aria-hidden="true">8.11.</strong> References to the software worktree must survive its absence (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0012-host-is-the-single-file-front-door.html"><strong aria-hidden="true">8.12.</strong> A single file named host is the front door that owns the adoption-and-upgrade process (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0014-canonical-doc-site-publisher.html"><strong aria-hidden="true">8.13.</strong> The canonical doc-site publisher is host-lifecycle book (superseded)</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">agentic-host</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="specs-live-with-the-software-dogfood-allium-relocate-specula"><a class="header" href="#specs-live-with-the-software-dogfood-allium-relocate-specula">Specs live with the software (dogfood allium, relocate specula)</a></h1>
+<h2 id="the-smell-a-methodology-bug"><a class="header" href="#the-smell-a-methodology-bug">The smell (a methodology bug)</a></h2>
+<p>The five-room model puts behaviour/timing specs in the <strong>host</strong>, at
+<code>plan/&lt;milestone&gt;/spec/</code> — quarantined from the software they describe. That is a
+bad smell: a spec and the code it constrains should move, version, and break
+together, the way a test lives next to its code. The concrete instance:
+<code>ParallelScan.tla</code> sits in <code>agentic-host/plan/0008/spec/</code> while the code it specs
+(<code>scan_chunked</code>) lives in <code>host-grammar</code>. The <code>.allium</code> specs were already
+correctly co-located in their software repos (<code>host-grammar.allium</code>,
+<code>host-lint.allium</code>), which makes the <code>.tla</code> placement the outlier.</p>
+<p><strong>Fix:</strong> specs (<code>.allium</code>, <code>.tla</code>) live in the <strong>software repo</strong>, beside the code,
+and are verified by <strong>that repo's CI</strong>. The host's <code>plan/&lt;milestone&gt;/</code> references
+a spec by path/pin; it does not contain it. This is a spine change to the
+template's "What" room.</p>
+<h2 id="work"><a class="header" href="#work">Work</a></h2>
+<h3 id="1-dogfood-allium-for-real-the-trigger"><a class="header" href="#1-dogfood-allium-for-real-the-trigger">1. Dogfood allium for real (the trigger)</a></h3>
+<p>Both <code>.allium</code> files are hand-written pseudo-syntax that the real
+<code>allium-cli 3.4.2</code> rejects (no <code>-- allium: N</code> version marker; free-form English
+clauses are not valid block items). Rewrite each into conformant allium until the
+<strong>advanced gate</strong> passes:</p>
+<ul>
+<li><code>allium check &lt;spec&gt;</code> — parse + structural diagnostics (no <code>error</code> severity).</li>
+<li><code>allium analyse &lt;spec&gt;</code> — process completeness: data flow, reachability,
+terminal states, deadlock/conflict, invariant verification (no <code>error</code>).</li>
+</ul>
+<p>Then wire a CI lane in <strong>each software repo</strong> (install <code>allium-cli@3.4.2</code>, run
+<code>check</code> + <code>analyse</code>, fail on <code>error</code> diagnostics):</p>
+<ul>
+<li><code>host-grammar</code> — has no CI today; add the workflow.</li>
+<li><code>host-lint</code> — add the lane alongside its existing pipeline.</li>
+</ul>
+<h3 id="2-relocate-specula-to-the-software"><a class="header" href="#2-relocate-specula-to-the-software">2. Relocate specula to the software</a></h3>
+<ul>
+<li>Move <code>ParallelScan.tla</code> + <code>ParallelScan.cfg</code> from <code>agentic-host/plan/0008/spec/</code>
+into <code>host-grammar</code> (the software it specs).</li>
+<li>Add a specula/TLC lane to <code>host-grammar</code> CI (Temurin <code>21</code> + <code>tla2tools v1.8.0</code>,
+the versions the host lane proved), mirroring the retired <code>specula.yml</code>.</li>
+<li>Retire <code>agentic-host/.github/workflows/specula.yml</code>; <code>plan/0008</code> references the
+spec's new home.</li>
+</ul>
+<h3 id="3-methodology-spine-fix"><a class="header" href="#3-methodology-spine-fix">3. Methodology spine fix</a></h3>
+<p>The "What" room moves from the host to the software. Update the template spine —
+<code>CLAUDE.md</code> (the Specs section + the rooms table) and <code>STRUCTURE.md</code> — so specs
+co-locate with the software and lanes run in the software's CI, with the host
+<code>plan/</code> referencing them. Add an <code>UPGRADING.md</code> ledger entry and bump the
+submodule pointer. (Methodology change → recorded in the template spine +
+ledger, not an agentic-host <code>call/</code>; the <code>plan/0011</code> precedent.)</p>
+<h2 id="verification"><a class="header" href="#verification">Verification</a></h2>
+<ul>
+<li><code>allium check</code> <strong>and</strong> <code>allium analyse</code> exit clean (no <code>error</code>) on both specs,
+proven green in <code>host-grammar</code> and <code>host-lint</code> CI.</li>
+<li>TLC green in <code>host-grammar</code> CI; <code>agentic-host</code> no longer hosts a spec or a
+specula lane.</li>
+<li>Template spine reframed; <code>UPGRADING</code> entry added; <code>host-lifecycle validate</code>
+unaffected.</li>
+</ul>
+<h2 id="notes--honesty"><a class="header" href="#notes--honesty">Notes / honesty</a></h2>
+<ul>
+<li><code>allium analyse</code> is the advanced gate; if a pure data-flow spec (no stateful
+entity lifecycle) trivially satisfies reachability/terminal checks, that is a
+true result, not a bypass — recorded as such.</li>
+<li>Re-pinning: <code>host-grammar</code> is a cargo git dep of <code>host-lint</code>; a spec-only change
+does not alter the build artifact, so <code>host-lint</code>'s recorded artifact hash is
+unchanged when its <code>host-grammar</code> rev bumps.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../plan/0011-multi-platform-builds/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../where.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../plan/0011-multi-platform-builds/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../where.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
