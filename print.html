@@ -1820,6 +1820,14 @@ self-hosting bootstrap). This pass touched only the template's identity.</p>
 <li>Old host-lifecycle revs ignore the new <code>hooks</code> key (unknown keys are dropped), so the CI jobs pinned to v0.8.0/v0.7.1 are unaffected; they don't use <code>--install-hooks</code>.</li>
 <li>Fresh-clone setup in CLAUDE.md now ends: materialize → skill symlink → build host-lint → <code>software --install-hooks .</code>.</li>
 </ul>
+<h3 id="2026-06-18--plan0010-markdown-aware-prose-scanning"><a class="header" href="#2026-06-18--plan0010-markdown-aware-prose-scanning">2026-06-18 — plan/0010 markdown-aware prose scanning</a></h3>
+<ul>
+<li><code>host-grammar::scan_prose_markdown</code> + <code>tell_score_markdown</code> (via <strong>pulldown-cmark</strong>, 6 tiny pure-Rust deps — the same parser mdBook uses here, so the reproducible anchor holds). Parses markdown into prose blocks: <strong>code blocks and inline code excluded</strong>, <strong>link/image URLs dropped</strong> (visible text kept), <strong>headings scanned for diction but not counted as prose paragraphs or sentence runs</strong> (parallel <code>## Section one/two/three</code> headings were tripping anaphora). <code>shape()</code> reads bold-first from the parse. host-lint routes <code>.md</code> sources to it; titles/comments/commit-messages stay on the plain engine.</li>
+<li><strong>Triggered by dogfooding <code>--prose</code> on the host README.</strong> Real bug it exposed: the flat engine scanned <em>fenced code blocks as prose</em> (em-dashes/words/arrows inside code falsely flagged) — the serious correctness issue, not just the heading miscount.</li>
+<li><strong>punchy-fragments tuned to strictly-more-than-half</strong> single-sentence paragraphs (<code>&gt; 0.5</code>, was <code>&gt;= 0.5</code>): a short doc (the README's 4 body paragraphs) is not staccato. A definition refinement ("more than half"), not an overfit.</li>
+<li><strong>The property lane earned its keep again:</strong> <code>every_tell_has_positive_weight</code> (arbitrary Unicode) caught a latent panic — <code>lexical()</code> computed match indices on the lowercased copy but sliced the <em>original</em> text; a length-changing case-fold (e.g. before a multi-byte <code>→</code>) put the slice off a char boundary. Fixed by slicing the lowercased copy. Lesson: never mix byte indices between a string and its <code>to_lowercase()</code>.</li>
+<li>Re-pin: host-grammar <code>bba4895</code> → host-lint <code>b6ad359</code> → <code>.host-software</code> artifact <code>daead690</code>, reproducible in the pinned container. README now <code>host-lint --prose</code> exit 0.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
