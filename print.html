@@ -319,7 +319,7 @@ Skill Hardening: hook fix, bare-numeral rule, release install path (see SKILL-HA
 <tr><td><a href="plan/0011-multi-platform-builds/README.html">plan/0011-multi-platform-builds</a></td><td>done (host-lifecycle v0.9.0 <code>[build "&lt;name&gt;" "&lt;platform&gt;"]</code> per-platform builds sharing one source pin; <code>--check</code>/<code>--verify-build</code> attest each on its <code>attest-host</code>, skip foreign hosts; flat single-build form preserved; spine recorded in host-template <code>c137567</code> + UPGRADING; resolves issue #1)</td></tr>
 <tr><td><a href="plan/0012-specs-live-with-software/README.html">plan/0012-specs-live-with-software</a></td><td>done (both <code>.allium</code> specs rewritten to conform to real <code>allium-cli 3.4.2</code> — <code>check</code> + <code>analyse</code> exit clean; allium lane wired in <code>host-grammar</code> and <code>host-lint</code> CI; <code>ParallelScan.tla</code> + Specula lane relocated into <code>host-grammar</code>, removed from the host; spine reframed — the "What" room lives with the software, host-template <code>b6232a5</code> + UPGRADING; host-lint re-pinned <code>22f4bae</code>)</td></tr>
 <tr><td><a href="plan/0013-verdict-lifecycle/README.html">plan/0013-verdict-lifecycle</a></td><td>done (host-lint.allium models the flag/warn/clean decision as a <code>Check</code> status transition graph driven by a boundary <code>surface LintRun</code>; <code>allium analyse</code> now verifies reachability/terminal/deadlock over a real lifecycle — <code>check</code> + <code>analyse</code> exit 0, zero findings; host-lint re-pinned <code>b3cfac9</code>, spec-only so the artifact is unchanged)</td></tr>
-<tr><td><a href="plan/0015-discharge-obligations/README.html">plan/0015-discharge-obligations</a></td><td>in progress (use the wired skills — <code>weed</code> for spec↔code alignment, <code>propagate</code> to discharge <code>allium plan</code> obligations with tests — on host-grammar and host-lint; add <code>allium plan</code> to the CI lanes)</td></tr>
+<tr><td><a href="plan/0015-discharge-obligations/README.html">plan/0015-discharge-obligations</a></td><td>done (<code>weed</code> run for real — caught + fixed a host-lint spec bug <code>internal-code-as-name</code> flag→warn <code>6f94916</code>, and extended host-grammar to cover <code>countdown</code>/<code>ing-tail</code>/<code>false-range</code> <code>068f3eb</code>; <code>allium plan</code> wired into both CI lanes; host-lint re-pinned <code>9a2efe7</code>. Full <code>propagate</code> obligation→test mapping deferred to the <code>plan/0016</code> enforcement gate)</td></tr>
 <tr><td><a href="plan/0014-mandate-and-wire-the-lanes/README.html">plan/0014-mandate-and-wire-the-lanes</a></td><td>done (spine tightened to a conditional RFC-2119 MUST — a present <code>.allium</code>/<code>.tla</code> requires its tool, skills, and CI lane incl. allium <code>check</code>+<code>analyse</code>+<code>plan</code> with obligations discharged; UPGRADING <code>c771d60</code>; migration tested by full-aligning this host — wired <code>tools/{allium,specula,host-lifecycle}</code> + <code>link-skills.sh</code>, 16 skills generated/gitignored, <code>--check</code> clean, allium+specula skills now live)</td></tr>
 </tbody></table>
 </div>
@@ -1081,9 +1081,25 @@ test job).</li>
 <li>Every <code>allium plan</code> obligation maps to a test in the component's suite.</li>
 <li>CI runs <code>check</code> + <code>analyse</code> + <code>plan</code>; the test job stays green.</li>
 </ul>
-<h2 id="note"><a class="header" href="#note">Note</a></h2>
-<p>This is the first milestone authored with the allium skills live (<code>plan/0014</code>
-wired them). Spec edits go through <code>tend</code>, not hand-editing.</p>
+<h2 id="outcome-2"><a class="header" href="#outcome-2">Outcome</a></h2>
+<ul>
+<li><strong><code>weed</code> ran for real</strong> (first use of the wired skills) and caught a genuine
+spec bug: <code>host-lint.allium</code> modelled <code>DetectInternalCodeAsName</code> as <code>flag</code>, but
+the code (<code>check_code_label_prefix</code>) is Tier-3 <strong>Warn</strong> — fixed the spec
+(host-lint <code>6f94916</code>). For host-grammar, <code>weed</code> confirmed the five modelled
+weights all align with <code>tells.rs</code> but the spec was a <strong>partial model</strong>; added
+the missing structural equations <code>countdown</code>/<code>ing-tail</code>/<code>false-range</code>
+(host-grammar <code>068f3eb</code>). The lexical-phrase corpus stays an intentional
+abstraction.</li>
+<li><strong><code>allium plan</code></strong> wired into both software CI lanes (<code>check</code> + <code>analyse</code> +
+<code>plan</code>), so obligations are emitted on every run.</li>
+</ul>
+<h2 id="deferred-1"><a class="header" href="#deferred-1">Deferred</a></h2>
+<p>Full <code>propagate</code> test-generation — mechanically mapping every one of the 44+
+<code>allium plan</code> obligations to a named test — is deferred. The proptest +
+integration suites already exercise the behaviour (tell types, severities, exit
+codes); a dedicated obligation→test manifest is a follow-on, and the host-lifecycle
+enforcement gate (<code>plan/0016</code>) is the mechanism that will require it.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software--where"><a class="header" href="#software--where">Software — where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees — not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
@@ -2063,6 +2079,11 @@ self-hosting bootstrap). This pass touched only the template's identity.</p>
 <ul>
 <li>The allium skills (elicit/distill/tend/weed/propagate) and specula skills were never wired in this host — <code>tools/</code> did not exist — so specs got hand-authored via the CLI (the wrong half of the lifecycle). Fix, in the user's order: (1) tightened the spine to a conditional RFC-2119 MUST — a component carrying a <code>.allium</code> MUST wire <code>tools/allium</code> + skills and gate <code>check</code>+<code>analyse</code>+<code>plan</code> in the software's CI with the <code>plan</code> obligations discharged by tests; a <code>.tla</code> MUST wire <code>tools/specula</code> + a TLC lane; adopting a lane stays optional, but a present spec without its full lane is a defect. host-template <code>c771d60</code> + UPGRADING <code>c771d60</code> (so every upgrader fixes it). (2) Tested the migration by applying that entry to this host (full alignment): added <code>tools/{allium,specula,host-lifecycle}</code> submodules + <code>link-skills.sh</code>, gitignored <code>.claude/skills/*</code>, generated 16 skill symlinks (allium x6, specula x10, host-lint). <code>software --check</code> stays clean (generated symlinks are untracked, so no HAZARD). A <code>/reload-skills</code> then made the allium+specula skills live.</li>
 <li>allium's full lifecycle is more than check+analyse: <code>allium plan</code> derives test obligations (config defaults, entity fields, enum comparability, invariants, rule pre/post, transitions) the suite must discharge; the skills are distill (spec from code), elicit (spec from conversation), tend (edit/migrate specs), weed (spec↔code alignment), propagate (generate tests). See [[specs-colocate-with-software]].</li>
+</ul>
+<h3 id="2026-06-18--used-the-allium-skills-for-real-weed-caught-a-spec-bug-plan0015"><a class="header" href="#2026-06-18--used-the-allium-skills-for-real-weed-caught-a-spec-bug-plan0015">2026-06-18 — used the allium skills for real; weed caught a spec bug (plan/0015)</a></h3>
+<ul>
+<li>First use of the wired skills. <code>weed</code> (spec↔code alignment) on host-lint found a genuine spec bug I'd introduced by hand-authoring: <code>DetectInternalCodeAsName</code> was modelled <code>severity: flag</code>, but the implementation (<code>check_code_label_prefix</code>, lib.rs:236, "Warned, not flagged") is Tier-3 Warn (exit 3) — moved it to warn-tier (host-lint <code>6f94916</code>). The verdict lifecycle (Check) was confirmed a faithful abstraction of main.rs (any flag→exit 1, else any warn→exit 3, else 0). For host-grammar, weed confirmed the five modelled weights align with tells.rs (tricolon 0.9, neg-parallelism 1.2, self-answered 1.0, anaphora/listicle (L-2)^2) but the spec was partial; added <code>countdown</code> 1.3 / <code>ing-tail</code> 0.7 / <code>false-range</code> 0.5 (host-grammar <code>068f3eb</code>). Lexical corpus left as an intentional abstraction.</li>
+<li>Wired <code>allium plan</code> into both software CI lanes (check + analyse + plan). Full <code>propagate</code> obligation→test mapping (44+ obligations) deferred — the host-lifecycle enforcement gate (plan/0016) is the mechanism that will require discharge. Lesson: distil/weed BEFORE trusting a hand-written spec; hand-authoring overstated a severity. See [[use-the-wired-skills]].</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>

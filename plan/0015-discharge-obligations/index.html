@@ -207,9 +207,25 @@ test job).</li>
 <li>Every <code>allium plan</code> obligation maps to a test in the component's suite.</li>
 <li>CI runs <code>check</code> + <code>analyse</code> + <code>plan</code>; the test job stays green.</li>
 </ul>
-<h2 id="note"><a class="header" href="#note">Note</a></h2>
-<p>This is the first milestone authored with the allium skills live (<code>plan/0014</code>
-wired them). Spec edits go through <code>tend</code>, not hand-editing.</p>
+<h2 id="outcome"><a class="header" href="#outcome">Outcome</a></h2>
+<ul>
+<li><strong><code>weed</code> ran for real</strong> (first use of the wired skills) and caught a genuine
+spec bug: <code>host-lint.allium</code> modelled <code>DetectInternalCodeAsName</code> as <code>flag</code>, but
+the code (<code>check_code_label_prefix</code>) is Tier-3 <strong>Warn</strong> — fixed the spec
+(host-lint <code>6f94916</code>). For host-grammar, <code>weed</code> confirmed the five modelled
+weights all align with <code>tells.rs</code> but the spec was a <strong>partial model</strong>; added
+the missing structural equations <code>countdown</code>/<code>ing-tail</code>/<code>false-range</code>
+(host-grammar <code>068f3eb</code>). The lexical-phrase corpus stays an intentional
+abstraction.</li>
+<li><strong><code>allium plan</code></strong> wired into both software CI lanes (<code>check</code> + <code>analyse</code> +
+<code>plan</code>), so obligations are emitted on every run.</li>
+</ul>
+<h2 id="deferred"><a class="header" href="#deferred">Deferred</a></h2>
+<p>Full <code>propagate</code> test-generation — mechanically mapping every one of the 44+
+<code>allium plan</code> obligations to a named test — is deferred. The proptest +
+integration suites already exercise the behaviour (tell types, severities, exit
+codes); a dedicated obligation→test manifest is a follow-on, and the host-lifecycle
+enforcement gate (<code>plan/0016</code>) is the mechanism that will require it.</p>
 
                     </main>
 
