@@ -106,7 +106,9 @@ the spec lane chain is `c771d60 depends b6232a5`, `b8c54fc depends c771d60`,
 - **Bly:** takes the late fix now; the deferred rest stays tooling-visible.
 - **Sable:** the mechanical record cannot overstate completeness; fails loud.
 - **Fen:** `--record` + machine output + the guard mean the tool carries every
-  state change; a fumble re-lists, never buries.
+  state change; a fumble re-lists, never buries. **Fen is a real model**
+  (`qwen3.5-4b`, Q8_0, local via the `pal` MCP), so this is tested empirically,
+  not asserted — see the acceptance gate below.
 
 ## Verification (milestone done)
 
@@ -115,3 +117,12 @@ fixture adopter behind HEAD correctly reports a cherry-applied late entry as
 APPLIED and the skipped earlier ones as PENDING; the guard blocks a debt-burying
 re-stamp; version tagged; applied here with `upgrade .` up to date and
 `software --check .` clean.
+
+**Fen acceptance gate (real model, A/B).** Drive the actual `qwen3.5-4b` (Q8_0,
+via the `pal` MCP) through the upgrade loop on a fixture adopter behind HEAD:
+given the machine-readable `upgrade` output and the `--record` command, the 4B
+must complete a correct cherry-apply (apply the independent late entry, record it,
+leave the earlier ones PENDING) without hand-editing `.host`. Baseline: the same
+model given the *prose / hand-edit* flow is expected to fumble (mis-edit the stamp
+or bury the debt). The gate passes when the tool-carried flow succeeds where the
+prose flow fails — proving the design serves Fen, not a simulation of Fen.
