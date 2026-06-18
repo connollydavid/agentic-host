@@ -324,13 +324,16 @@ ancestry; sparse annotations; orphaned SHAs don't break it.</li>
 pending; a later cold read cannot be deceived (re-check + fail-safe).</li>
 <li><strong>Fen (real <code>qwen3.5-4b</code>):</strong> <code>--next</code> + ordinal <code>--record</code> + confirmation mean the
 tool carries every state change; the model never reasons about ancestry, hand-edits
-<code>.host</code>, or emits constrained output. <strong>Baseline not yet cleanly established:</strong> the
-probe via the <code>pal</code> MCP wedged, but metrics traced that to an <em>engine</em> decode hang
-in the qwen3.5 hybrid/recurrent CUDA path triggered by <code>pal</code>'s ~1341-token system
-prompt — an infra bug, not a Fen result. The gate must drive the model with a
-<strong>minimal prompt</strong> (no large system prompt), which both dodges the engine trigger
-and <em>is</em> the faithful Fen condition — the real tool-carried flow hands the model a
-one-line <code>upgrade --next</code> instruction, well under any prefill threshold.</li>
+<code>.host</code>, or emits constrained output. <strong>Baseline captured (Vulkan build):</strong> handed
+today's single-<code>revision</code> flow, the real 4B set <code>revision = "7de7cb1"</code> (the newest
+applied entry) and justified it — <em>"there are no entries newer than it to remain
+pending"</em> — which <strong>buries the four unapplied entries</strong> (they are ancestors of the
+fix, so they vanish from <code>upgrade</code>). It did not hang and did not refuse; it produced
+a valid file with confidently wrong semantics. That is the exact unsafe path v2
+makes impossible, and proof the model needs the tool to carry the semantics. (The
+earlier MCP wedges were a CUDA recurrent-path decode bug, prompt-size-triggered;
+the text model on the <strong>Vulkan</strong> build clears it. The probe is still flaky under
+load, so the gate drives the model with a minimal prompt and pins the build.)</li>
 </ul>
 <h2 id="verification-milestone-done"><a class="header" href="#verification-milestone-done">Verification (milestone done)</a></h2>
 <p><code>cargo test</code> + clippy green; every build-step check passes. <strong>Fail-safe invariant
