@@ -26,6 +26,7 @@ The `plan/` room holds methodology-level milestones as `NNNN-slug` folders (the 
 | [plan/0005-reproducible-build-anchor](plan/0005-reproducible-build-anchor/README.md) | done (host-lifecycle v0.8.0 `software --verify-build`; spine requires reproducible builds for greenfield software, case-decision escape for migrated); resolves issue #10 |
 | [plan/0006-host-lint-reproducible-build](plan/0006-host-lint-reproducible-build/README.md) | done (host-lint tracks Cargo.lock + pins toolchain; reproducible build proven, provenance recorded, `software --verify-build` + CI green) |
 | [plan/0007-agentic-tell-grammar](plan/0007-agentic-tell-grammar/README.md) | done (host-grammar `tells` engine — token-free trope adaptation, lexical + equation layers + density score; host-lint v0.3.0 `--stdin`/`--prose`; allium spec + property-based lane incl. anaphora refinement; re-pin `600e5c97` reproducible) |
+| [plan/0008-parallel-prose-scan](plan/0008-parallel-prose-scan/README.md) | in progress (parallelize `scan_prose` for large docs via `std::thread::scope`; both lanes per `call/0015` — PBT parallel==sequential, TLA+ interleaving safety/liveness via TLC in CI) |
 
 The earlier content-named docs above (BOOTSTRAP, CI-PIPELINE, …) predate the `plan/` room; folding them in is a possible later cleanup, not required.
 
