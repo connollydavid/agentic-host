@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Honest partial upgrades: an applied-set stamp the tool carries - agentic-host</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../custom.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">agentic-host</a></li><li class="chapter-item expanded affix "><li class="part-title">Cast — who</li><li class="chapter-item expanded "><a href="../../cast/index.html"><strong aria-hidden="true">1.</strong> Cast — the project's Who</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cast/applying-personas.html"><strong aria-hidden="true">1.1.</strong> Applying personas during planning</a></li><li class="chapter-item expanded "><a href="../../cast/bly.html"><strong aria-hidden="true">1.2.</strong> Bly — the Adopter Agent, Behind</a></li><li class="chapter-item expanded "><a href="../../cast/fen.html"><strong aria-hidden="true">1.3.</strong> Fen — the Low-Reliability Agent</a></li><li class="chapter-item expanded "><a href="../../cast/mara.html"><strong aria-hidden="true">1.4.</strong> Mara — the Human Operator</a></li><li class="chapter-item expanded "><a href="../../cast/orin.html"><strong aria-hidden="true">1.5.</strong> Orin — the Methodology Maintainer</a></li><li class="chapter-item expanded "><a href="../../cast/sable.html"><strong aria-hidden="true">1.6.</strong> Sable — the Cold-Start Auditor</a></li><li class="chapter-item expanded "><a href="../../cast/wren.html"><strong aria-hidden="true">1.7.</strong> Wren — the Agentic LLM Developer</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Plan — what & when</li><li class="chapter-item expanded "><a href="../../PLAN.html"><strong aria-hidden="true">2.</strong> PLAN.md</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../plan/0001-migration-protocol/index.html"><strong aria-hidden="true">2.1.</strong> Migration protocol</a></li><li class="chapter-item expanded "><a href="../../plan/0002-enforced-remap-dictionary/index.html"><strong aria-hidden="true">2.2.</strong> Enforced remap dictionary</a></li><li class="chapter-item expanded "><a href="../../plan/0003-doc-site-publisher/index.html"><strong aria-hidden="true">2.3.</strong> Canonical doc-site publisher</a></li><li class="chapter-item expanded "><a href="../../plan/0004-anti-ouroboros/index.html"><strong aria-hidden="true">2.4.</strong> Anti-ouroboros: methodology to the spine</a></li><li class="chapter-item expanded "><a href="../../plan/0005-reproducible-build-anchor/index.html"><strong aria-hidden="true">2.5.</strong> Reproducible-build production anchor</a></li><li class="chapter-item expanded "><a href="../../plan/0006-host-lint-reproducible-build/index.html"><strong aria-hidden="true">2.6.</strong> host-lint reproducible build</a></li><li class="chapter-item expanded "><a href="../../plan/0007-agentic-tell-grammar/index.html"><strong aria-hidden="true">2.7.</strong> Agentic-tell grammar engine</a></li><li class="chapter-item expanded "><a href="../../plan/0008-parallel-prose-scan/index.html"><strong aria-hidden="true">2.8.</strong> Parallel prose scan for large documents</a></li><li class="chapter-item expanded "><a href="../../plan/0009-install-hooks/index.html"><strong aria-hidden="true">2.9.</strong> Install commit hooks from the software recipe</a></li><li class="chapter-item expanded "><a href="../../plan/0010-markdown-aware-prose/index.html"><strong aria-hidden="true">2.10.</strong> Markdown-aware prose scanning</a></li><li class="chapter-item expanded "><a href="../../plan/0011-multi-platform-builds/index.html"><strong aria-hidden="true">2.11.</strong> Per-platform builds in the software recipe</a></li><li class="chapter-item expanded "><a href="../../plan/0012-specs-live-with-software/index.html"><strong aria-hidden="true">2.12.</strong> Specs live with the software (dogfood allium, relocate specula)</a></li><li class="chapter-item expanded "><a href="../../plan/0013-verdict-lifecycle/index.html"><strong aria-hidden="true">2.13.</strong> A real verdict lifecycle so allium analyse bites</a></li><li class="chapter-item expanded "><a href="../../plan/0014-mandate-and-wire-the-lanes/index.html"><strong aria-hidden="true">2.14.</strong> Verification lanes are mandatory when used — wire them, don't just reference</a></li><li class="chapter-item expanded "><a href="../../plan/0015-discharge-obligations/index.html"><strong aria-hidden="true">2.15.</strong> Close the obligation loop — use the skills, discharge allium plan</a></li><li class="chapter-item expanded "><a href="../../plan/0016-spec-lane-enforcement-gate/index.html"><strong aria-hidden="true">2.16.</strong> Enforcement gate: a spec without its lane is a HAZARD</a></li><li class="chapter-item expanded "><a href="../../plan/0017-obligation-discharge/index.html"><strong aria-hidden="true">2.17.</strong> Total obligation discharge, per component</a></li><li class="chapter-item expanded "><a href="../../plan/0018-wire-lifecycle-as-skill/index.html"><strong aria-hidden="true">2.18.</strong> Wire host-lifecycle as phase skills; the phases are an unconditional MUST</a></li><li class="chapter-item expanded "><a href="../../plan/0019-refuse-adopt-in-place/index.html"><strong aria-hidden="true">2.19.</strong> Refuse to adopt a software repository in place</a></li><li class="chapter-item expanded "><a href="../../plan/0020-subject-decoration-flags/index.html"><strong aria-hidden="true">2.20.</strong> Flag decoration tells on the commit subject line</a></li><li class="chapter-item expanded "><a href="../../plan/0021-worktrees-under-host-tree/index.html"><strong aria-hidden="true">2.21.</strong> Materialized worktrees must live under the host tree</a></li><li class="chapter-item expanded "><a href="../../plan/0022-honest-partial-upgrades/index.html" class="active"><strong aria-hidden="true">2.22.</strong> Honest partial upgrades: an applied-set stamp the tool carries</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Software — where</li><li class="chapter-item expanded "><a href="../../where.html"><strong aria-hidden="true">3.</strong> Software</a></li><li class="chapter-item expanded affix "><li class="part-title">Call — why</li><li class="chapter-item expanded "><a href="../../call/0013-reserve-agentic-host-for-this-repository.html"><strong aria-hidden="true">4.</strong> Reserve agentic-host for this repository; scrub the collision by a one-time history rewrite</a></li><li class="chapter-item expanded "><a href="../../call/0015-parallel-scan-escalates-to-the-timing-lane.html"><strong aria-hidden="true">5.</strong> Parallelizing the prose scan escalates run-accumulation to the timing lane</a></li><li class="chapter-item expanded affix "><li class="part-title">Reference — how</li><li class="chapter-item expanded "><a href="../../CLAUDE.html"><strong aria-hidden="true">6.</strong> CLAUDE.md</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../BOOTSTRAP.html"><strong aria-hidden="true">6.1.</strong> BOOTSTRAP.md</a></li><li class="chapter-item expanded "><a href="../../CI-PIPELINE.html"><strong aria-hidden="true">6.2.</strong> CI-PIPELINE.md</a></li><li class="chapter-item expanded "><a href="../../FORMAL-SPEC.html"><strong aria-hidden="true">6.3.</strong> FORMAL-SPEC.md</a></li><li class="chapter-item expanded "><a href="../../SKILL-HARDENING.html"><strong aria-hidden="true">6.4.</strong> SKILL-HARDENING.md</a></li><li class="chapter-item expanded "><a href="../../SKILL_AUTHORING.html"><strong aria-hidden="true">6.5.</strong> SKILL_AUTHORING.md</a></li><li class="chapter-item expanded "><a href="../../STRUCTURE.html"><strong aria-hidden="true">6.6.</strong> Structure</a></li><li class="chapter-item expanded "><a href="../../TEMPLATE-REWRITE.html"><strong aria-hidden="true">6.7.</strong> TEMPLATE-REWRITE — rewrite host-template into the canonical agentic project</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Memory</li><li class="chapter-item expanded "><a href="../../MEMORY.html"><strong aria-hidden="true">7.</strong> Memory</a></li><li class="chapter-item expanded affix "><li class="part-title">Archive / Record</li><li class="chapter-item expanded "><a href="../../call/0000-use-markdown-decision-records.html"><strong aria-hidden="true">8.</strong> Use Markdown decision records (MADR) (superseded)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../call/0001-tool-outputs-are-project-owned.html"><strong aria-hidden="true">8.1.</strong> Tool outputs are project-owned, not under allium or Specula licenses (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0002-verification-lanes-by-property-type.html"><strong aria-hidden="true">8.2.</strong> Split verification into lanes by property type (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0003-compose-tools-as-referenced-submodules.html"><strong aria-hidden="true">8.3.</strong> Compose verification tools as referenced submodules (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0004-template-is-versioned-source.html"><strong aria-hidden="true">8.4.</strong> The template is the canonical, versioned source of the methodology (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0005-migration-protocol.html"><strong aria-hidden="true">8.5.</strong> Adopt and upgrade existing repos by a cased, moded migration protocol (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0006-host-lint-sanctioned-vocabulary-allow-list.html"><strong aria-hidden="true">8.6.</strong> host-lint exempts sanctioned vocabulary via a repo-root allow file (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0007-adoption-is-a-clean-break-upgrade-is-a-delta.html"><strong aria-hidden="true">8.7.</strong> Adoption is a clean break to a pristine state; upgrade is a Shallow delta (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0008-enforced-remap-dictionary.html"><strong aria-hidden="true">8.8.</strong> Adoption remap is enforced by a dictionary applied deterministically, then removed (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0009-exclude-the-record-from-the-audit.html"><strong aria-hidden="true">8.9.</strong> A migrated project excludes its append-only record from the audit (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0010-software-is-a-bare-store-with-worktrees.html"><strong aria-hidden="true">8.10.</strong> Embed the software as a bare store with named worktrees (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0011-worktree-absence-coherence.html"><strong aria-hidden="true">8.11.</strong> References to the software worktree must survive its absence (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0012-host-is-the-single-file-front-door.html"><strong aria-hidden="true">8.12.</strong> A single file named host is the front door that owns the adoption-and-upgrade process (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0014-canonical-doc-site-publisher.html"><strong aria-hidden="true">8.13.</strong> The canonical doc-site publisher is host-lifecycle book (superseded)</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">agentic-host</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="honest-partial-upgrades-an-applied-set-stamp-the-tool-carries"><a class="header" href="#honest-partial-upgrades-an-applied-set-stamp-the-tool-carries">Honest partial upgrades: an applied-set stamp the tool carries</a></h1>
+<h2 id="why"><a class="header" href="#why">Why</a></h2>
+<p>The <code>.host</code> stamp records a <strong>single</strong> <code>revision</code>; <code>host-lifecycle upgrade</code> lists
+UPGRADING ledger entries newer than it (by git ancestry) as pending. That encodes
+one assumption — <strong>entries are applied in ancestry order, contiguously</strong>. A real
+adopter several revisions behind may need a <em>late, independent</em> entry (a worktree
+bugfix, <code>7de7cb1</code>) without an <em>earlier, large, unrelated</em> one (the specs-to-
+software migration, <code>b6232a5 … 821a216</code>). The single revision cannot express
+"applied the late one, skipped the early ones". The only workaround today — jump
+the watermark and note the debt in prose <code>MEMORY</code> — <strong>fails unsafe</strong>: <code>upgrade</code>
+then reports "up to date" while the migration is still owed, and the debt
+disappears from the tooling.</p>
+<p>This was found in the field (a stuck adopter), and the root cause is that the
+upgrade model was designed only from the maintainer's seat — always at HEAD,
+applying entries in order. So the design here was worked from four added
+stakeholder personas instead (<code>cast/</code>): <strong>Orin</strong> (maintainer), <strong>Bly</strong> (adopter
+behind), <strong>Sable</strong> (cold-start auditor), <strong>Fen</strong> (low-reliability agent whose tool
+calls cannot be trusted). All four independently chose the same stamp model, and
+Fen + Bly added the tool-assist requirements that turn "expressible" into
+"tool-carried and fumble-proof".</p>
+<h2 id="the-design"><a class="header" href="#the-design">The design</a></h2>
+<h3 id="stamp-model--watermark--applied-set-fail-safe"><a class="header" href="#stamp-model--watermark--applied-set-fail-safe">Stamp model — watermark + applied set (fail-safe)</a></h3>
+<p><code>.host</code> keeps <code>revision</code> as a <strong>contiguous baseline</strong> (every ledger entry
+ancestor-or-equal to it is applied) and gains an optional <code>applied = &lt;id&gt; …</code>
+listing entries <em>above</em> the watermark applied out of order.</p>
+<pre><code>template = "…/host-template"
+revision = "699db99"            # contiguous baseline
+applied  = "7de7cb1 ae1e688"   # cherry-applied above it, out of order
+adopted  = "YYYY-MM-DD"
+name     = "…"
+</code></pre>
+<p>An entry is <strong>applied</strong> ⇔ <code>ancestor-or-equal(revision)</code> <strong>or</strong> its id ∈ <code>applied</code>.
+<code>upgrade</code> reports the complement. <strong>Fail-safe property:</strong> a forgotten id re-lists
+(over-reports pending) — it can never hide owed work. The dangerous "advance the
+watermark past unapplied work" operation is removed entirely (see guard).</p>
+<p>Back-compat: an existing <code>.host</code> with no <code>applied</code> line behaves exactly as today.</p>
+<h3 id="dependency-hints-on-ledger-entries"><a class="header" href="#dependency-hints-on-ledger-entries">Dependency hints on ledger entries</a></h3>
+<p>UPGRADING entries gain optional <code>independent = true</code> or <code>depends = &lt;id&gt; [&lt;id&gt; …]</code>.
+<code>upgrade</code> uses them to (a) advise which pending entries are safe to apply alone,
+and (b) <strong>fail loud</strong> when the stamp records an entry applied whose declared
+<code>depends</code> is <em>not</em> applied (an inconsistent record). Back-fill the existing
+ledger: <code>7de7cb1</code> (worktrees) and <code>ae1e688</code> (adopt-in-place) are <code>independent</code>;
+the spec lane chain is <code>c771d60 depends b6232a5</code>, <code>b8c54fc depends c771d60</code>,
+<code>821a216 depends b6232a5 c771d60</code>. Absent annotation = independence undeclared
+(the tool says so; it does not assume safe).</p>
+<h3 id="the-tool-carries-the-process-fen--bly"><a class="header" href="#the-tool-carries-the-process-fen--bly">The tool carries the process (Fen + Bly)</a></h3>
+<ul>
+<li><strong><code>host-lifecycle upgrade --record &lt;id&gt;</code></strong> — records an applied entry by writing
+<code>.host</code> itself (idempotent; re-record is a no-op). An agent <strong>never hand-edits
+the stamp</strong>.</li>
+<li><strong>Machine-readable <code>upgrade</code> output</strong> — one line per entry:
+<code>&lt;id&gt;  &lt;title&gt;  [independent | depends: &lt;id&gt;…]  PENDING|APPLIED</code>, ordered by
+ancestry, so the agent reads status without parsing prose.</li>
+<li><strong>Watermark-advance guard</strong> — advancing <code>revision</code> to <code>&lt;rev&gt;</code> is refused (exit
+non-zero) if any entry ancestor-or-equal <code>&lt;rev&gt;</code> is neither in range nor in
+<code>applied</code>. Debt cannot be buried by stamping early. This is the structural
+teeth, in the spirit of the worktree-escape HAZARD.</li>
+<li><strong>Consistency check</strong> — <code>upgrade</code> (and <code>software --check</code> where cheap) errors
+loud on an applied entry with an unapplied <code>depends</code>.</li>
+</ul>
+<h2 id="build-software-first-each-step-with-its-check"><a class="header" href="#build-software-first-each-step-with-its-check">Build (software-first; each step with its check)</a></h2>
+<ol>
+<li><strong>host-lifecycle stamp parse</strong> → read <code>applied</code> from <code>.host</code>; helper
+<code>is_applied(entry, revision, applied)</code> (ancestry OR membership).
+<em>verify:</em> unit tests for in-range, in-applied, neither.</li>
+<li><strong>Ledger parse</strong> → read <code>independent</code>/<code>depends</code> per <code>[upgrade]</code> entry.
+<em>verify:</em> parse test incl. multi-id <code>depends</code> and absent (undeclared).</li>
+<li><strong><code>upgrade</code> rewrite</strong> → compute applied set, machine-readable listing,
+dependency advice + loud consistency error.
+<em>verify:</em> fixture ledger + stamp → expected pending/applied lines; an applied
+entry with an unapplied dep → non-zero.</li>
+<li><strong><code>upgrade --record &lt;id&gt;</code></strong> → idempotent stamp write.
+<em>verify:</em> record adds id; re-record no-ops; bad id rejected.</li>
+<li><strong>Watermark-advance guard</strong> → refuse advancing <code>revision</code> past an unapplied
+entry. <em>verify:</em> guard test (advance blocked with a gap; allowed when
+contiguous).</li>
+<li><strong>Back-fill ledger annotations</strong> in host-template UPGRADING.
+<em>verify:</em> <code>upgrade</code> marks <code>7de7cb1</code> independent; lane chain shows <code>depends</code>.</li>
+<li><strong>Spine</strong> → host-template CLAUDE.md upgrade-model section + README <em>Upgrading</em>
+rewrite (applied-set, <code>--record</code>, the guard); UPGRADING entry for this change.
+<em>verify:</em> docs describe the model; <code>validate</code> clean.</li>
+<li><strong>Bundle the two pending <code>host=</code> corrections</strong> (the <code>host=windows</code>→omit
+example and the <code>host=</code> vs <code>attest-host</code> materialize-OS-vs-build-OS wording);
+correct the issue #2 comment.</li>
+<li><strong>Apply here</strong> → version bump + tag, re-pin <code>tools/host-lifecycle</code>, re-stamp
+<code>.host</code> (it gains no <code>applied</code> line — agentic-host is contiguous at HEAD), bump
+CI rev; MEMORY entry. <em>verify:</em> <code>upgrade .</code> up to date; <code>software --check .</code>
+clean; tests + clippy green.</li>
+</ol>
+<h2 id="persona-acceptance-the-design-serves-each-seat"><a class="header" href="#persona-acceptance-the-design-serves-each-seat">Persona acceptance (the design serves each seat)</a></h2>
+<ul>
+<li><strong>Orin:</strong> the stamp is the contract, readable without prose; sparse annotations.</li>
+<li><strong>Bly:</strong> takes the late fix now; the deferred rest stays tooling-visible.</li>
+<li><strong>Sable:</strong> the mechanical record cannot overstate completeness; fails loud.</li>
+<li><strong>Fen:</strong> <code>--record</code> + machine output + the guard mean the tool carries every
+state change; a fumble re-lists, never buries.</li>
+</ul>
+<h2 id="verification-milestone-done"><a class="header" href="#verification-milestone-done">Verification (milestone done)</a></h2>
+<p><code>cargo test</code> + clippy green; the five build-step checks pass; <code>upgrade</code> on a
+fixture adopter behind HEAD correctly reports a cherry-applied late entry as
+APPLIED and the skipped earlier ones as PENDING; the guard blocks a debt-burying
+re-stamp; version tagged; applied here with <code>upgrade .</code> up to date and
+<code>software --check .</code> clean.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../plan/0021-worktrees-under-host-tree/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../where.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../plan/0021-worktrees-under-host-tree/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../where.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
