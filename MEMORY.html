@@ -512,6 +512,13 @@
 <li><strong>Self-upgrade gap found:</strong> the materialized host-lint worktree tracks the pin, but the installed <code>.git/hooks/host-lint</code> binary is a manual copy (untracked) and was stale — our own commit-msg hook ran the pre-prose tool until refreshed. <code>host-lifecycle</code> does not sync the hook binary from the pin (fresh-clone setup recreates the skill symlink but not the hook). Candidate follow-up: have host-lifecycle install/refresh the hook binary at the pin.</li>
 <li><strong>Re-pin:</strong> host-grammar <code>d83b348</code> → host-lint <code>dff6895</code> → <code>.host-software</code> artifact <code>4655f966…</code>, double-build reproducible in the pinned container.</li>
 </ul>
+<h3 id="2026-06-18--plan0009-host-lifecycle-v081-software---install-hooks"><a class="header" href="#2026-06-18--plan0009-host-lifecycle-v081-software---install-hooks">2026-06-18 — plan/0009 host-lifecycle v0.8.1: software --install-hooks</a></h3>
+<ul>
+<li>Closes the fresh-clone hook-sync gap from plan/0008. <code>host-lifecycle software --install-hooks .</code> copies each component's <code>hooks</code> dispatch script into the repo's hooks dir (resolved via <code>git rev-parse --git-path hooks</code>) as <strong>pre-commit</strong> and <strong>commit-msg</strong>, plus the deploy binary the script invokes. New optional <code>hooks = &lt;script&gt;</code> field on the <code>.host-software</code> stanza (host-lint's is <code>pre-commit</code>).</li>
+<li><strong>Gate = worktree-at-pin, NOT byte hash.</strong> The recorded <code>artifact</code> hash is the <em>pinned container's</em> output; a local toolchain legitimately differs, and requiring a match would force a Docker build just to get the gating hook. So install-hooks requires the worktree at its recorded pin (audited source) + the artifact present; the canonical-hash match is an informational note (<code>verified</code> vs <code>local build</code>), never a blocker. (Same reason <code>software --check</code>'s artifact attestation is environment-sensitive.)</li>
+<li>Old host-lifecycle revs ignore the new <code>hooks</code> key (unknown keys are dropped), so the CI jobs pinned to v0.8.0/v0.7.1 are unaffected; they don't use <code>--install-hooks</code>.</li>
+<li>Fresh-clone setup in CLAUDE.md now ends: materialize → skill symlink → build host-lint → <code>software --install-hooks .</code>.</li>
+</ul>
 
                     </main>
 
