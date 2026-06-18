@@ -538,6 +538,11 @@
 <li>This is a <strong>spine change</strong> (the <code>.host-software</code> schema is methodology), so the design is recorded in the template spine (host-template STRUCTURE.md + CLAUDE.md + UPGRADING ledger <code>c137567</code>, requires v0.9.0) and <strong>not</strong> as an agentic-host <code>call/</code> — an accepted methodology-scoped decision fails the anti-ouroboros <code>validate</code> gate. Precedent: plan/0005 (reproducible-build anchor) recorded its spine change the same way, with no agentic-host methodology call/. plan/0011.</li>
 <li>Deferred: automated cross-OS worktree materialization (checkout a Windows tree from an ext4 bare store). The recipe records each platform build; a human materializes the foreign-OS worktree and runs <code>--verify-build</code> there.</li>
 </ul>
+<h3 id="2026-06-18----check-artifact-mismatch-is-a-note-not-drift-host-lifecycle-v091"><a class="header" href="#2026-06-18----check-artifact-mismatch-is-a-note-not-drift-host-lifecycle-v091">2026-06-18 — --check artifact mismatch is a note, not DRIFT (host-lifecycle v0.9.1)</a></h3>
+<ul>
+<li><code>software --check</code> hard-failed (DRIFT, exit 1) when a locally-built artifact was present in the canonical worktree and its hash differed from the recorded canonical hash. But the canonical hash is the <em>pinned container's</em> output; a local toolchain legitimately differs, so the DRIFT only ever fired on a dev box that had run <code>cargo build</code> (fresh clones and CI — which builds in the container — were already clean, since <code>target/</code> is gitignored and the artifact is absent). This contradicted the <code>--install-hooks</code> decision (plan/0009), which already gates on worktree-at-pin and treats the hash as informational.</li>
+<li>Fix: <code>--check</code>'s artifact attestation now prints <code>verified</code> on a match and <code>note … local build (differs from canonical)</code> on a mismatch — never a failure. The worktree-at-pin gate stays in <code>software_check</code>; <code>--verify-build</code> (container/CI) remains the reproducibility <em>proof</em>. Spine clarified in host-template <code>d3dc5ed</code> + UPGRADING (requires v0.9.1). plan/0011 follow-on.</li>
+</ul>
 
                     </main>
 

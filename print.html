@@ -946,6 +946,17 @@ OS with a wrong hash and absent artifact yields <strong>0</strong> provenance fa
 <li>Back-compat: the existing flat-form tests (<code>parses_build_provenance</code>,
 <code>provenance_attestation_and_exemption</code>, <code>install_hooks…</code>) pass unchanged.</li>
 </ul>
+<h2 id="follow-on---check-local-build-note-host-lifecycle-v091"><a class="header" href="#follow-on---check-local-build-note-host-lifecycle-v091">Follow-on: <code>--check</code> local-build note (host-lifecycle v0.9.1)</a></h2>
+<p>Surfaced while verifying this milestone: on a dev box that had run a local
+<code>cargo build</code>, <code>software --check</code> reported the canonical-hash mismatch as a hard
+<code>DRIFT</code> (exit 1), even though a local toolchain legitimately differs from the
+pinned build host's output. This contradicted the <code>--install-hooks</code> decision
+(<code>plan/0009</code>), which already gates on worktree-at-pin and treats the hash as
+informational. The artifact attestation in <code>--check</code> now does the same: a match
+is <code>verified</code>, a local-toolchain mismatch is a <code>note</code> (not a failure), and
+<code>--verify-build</code> remains the reproducibility proof. The DRIFT only ever fired on
+a dev box — fresh clones and CI (which builds in the pinned container) were
+already clean. Spine clarified in host-template <code>d3dc5ed</code> + UPGRADING.</p>
 <h2 id="not-done-here-1"><a class="header" href="#not-done-here-1">Not done here</a></h2>
 <p>agentic-host's own <code>.host-software</code> ships only single-platform <code>host-lint</code>, so
 it gains no <code>[build …]</code> section and is not re-pinned. CI installs host-lifecycle
@@ -1909,6 +1920,11 @@ self-hosting bootstrap). This pass touched only the template's identity.</p>
 <li>One source <code>pin</code> can ship on several platforms: host-lifecycle v0.9.0 adds <code>[build "&lt;name&gt;" "&lt;platform&gt;"]</code> subsections, each with its own <code>build</code>/<code>toolchain</code>/<code>artifact</code>/<code>deploy</code>/<code>repro-exempt</code> plus an <code>attest-host</code> (the OS from <code>std::env::consts::OS</code> that reproduces it). <code>--check</code>/<code>--verify-build</code> iterate the builds and attest each only on its <code>attest-host</code>, <strong>skipping</strong> foreign-host builds rather than failing — a Linux runner can't reproduce the Windows artifact. The flat single-build form is preserved as the default <code>builds_view</code> entry (no attest-host → attest anywhere), so single-platform components are untouched.</li>
 <li>This is a <strong>spine change</strong> (the <code>.host-software</code> schema is methodology), so the design is recorded in the template spine (host-template STRUCTURE.md + CLAUDE.md + UPGRADING ledger <code>c137567</code>, requires v0.9.0) and <strong>not</strong> as an agentic-host <code>call/</code> — an accepted methodology-scoped decision fails the anti-ouroboros <code>validate</code> gate. Precedent: plan/0005 (reproducible-build anchor) recorded its spine change the same way, with no agentic-host methodology call/. plan/0011.</li>
 <li>Deferred: automated cross-OS worktree materialization (checkout a Windows tree from an ext4 bare store). The recipe records each platform build; a human materializes the foreign-OS worktree and runs <code>--verify-build</code> there.</li>
+</ul>
+<h3 id="2026-06-18----check-artifact-mismatch-is-a-note-not-drift-host-lifecycle-v091"><a class="header" href="#2026-06-18----check-artifact-mismatch-is-a-note-not-drift-host-lifecycle-v091">2026-06-18 — --check artifact mismatch is a note, not DRIFT (host-lifecycle v0.9.1)</a></h3>
+<ul>
+<li><code>software --check</code> hard-failed (DRIFT, exit 1) when a locally-built artifact was present in the canonical worktree and its hash differed from the recorded canonical hash. But the canonical hash is the <em>pinned container's</em> output; a local toolchain legitimately differs, so the DRIFT only ever fired on a dev box that had run <code>cargo build</code> (fresh clones and CI — which builds in the container — were already clean, since <code>target/</code> is gitignored and the artifact is absent). This contradicted the <code>--install-hooks</code> decision (plan/0009), which already gates on worktree-at-pin and treats the hash as informational.</li>
+<li>Fix: <code>--check</code>'s artifact attestation now prints <code>verified</code> on a match and <code>note … local build (differs from canonical)</code> on a mismatch — never a failure. The worktree-at-pin gate stays in <code>software_check</code>; <code>--verify-build</code> (container/CI) remains the reproducibility <em>proof</em>. Spine clarified in host-template <code>d3dc5ed</code> + UPGRADING (requires v0.9.1). plan/0011 follow-on.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>

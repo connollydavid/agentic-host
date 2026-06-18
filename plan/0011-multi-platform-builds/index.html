@@ -239,6 +239,17 @@ OS with a wrong hash and absent artifact yields <strong>0</strong> provenance fa
 <li>Back-compat: the existing flat-form tests (<code>parses_build_provenance</code>,
 <code>provenance_attestation_and_exemption</code>, <code>install_hooks…</code>) pass unchanged.</li>
 </ul>
+<h2 id="follow-on---check-local-build-note-host-lifecycle-v091"><a class="header" href="#follow-on---check-local-build-note-host-lifecycle-v091">Follow-on: <code>--check</code> local-build note (host-lifecycle v0.9.1)</a></h2>
+<p>Surfaced while verifying this milestone: on a dev box that had run a local
+<code>cargo build</code>, <code>software --check</code> reported the canonical-hash mismatch as a hard
+<code>DRIFT</code> (exit 1), even though a local toolchain legitimately differs from the
+pinned build host's output. This contradicted the <code>--install-hooks</code> decision
+(<code>plan/0009</code>), which already gates on worktree-at-pin and treats the hash as
+informational. The artifact attestation in <code>--check</code> now does the same: a match
+is <code>verified</code>, a local-toolchain mismatch is a <code>note</code> (not a failure), and
+<code>--verify-build</code> remains the reproducibility proof. The DRIFT only ever fired on
+a dev box — fresh clones and CI (which builds in the pinned container) were
+already clean. Spine clarified in host-template <code>d3dc5ed</code> + UPGRADING.</p>
 <h2 id="not-done-here"><a class="header" href="#not-done-here">Not done here</a></h2>
 <p>agentic-host's own <code>.host-software</code> ships only single-platform <code>host-lint</code>, so
 it gains no <code>[build …]</code> section and is not re-pinned. CI installs host-lifecycle
