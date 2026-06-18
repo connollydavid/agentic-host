@@ -10,6 +10,7 @@
 	build     = CARGO_INCREMENTAL=0 cargo build --release --locked
 	deploy    = host-lint
 	artifact  = target/release/host-lint 4655f96643d5f93b552e09c97cba3c127d32eb74444e8bd19d7dd78f3c66ec0b
+	hooks     = pre-commit
 [software "host"]
 	url       = https://github.com/connollydavid/host.git
 	pin       = 4930e6824e2571477207ac0308568fdb95a08e28
