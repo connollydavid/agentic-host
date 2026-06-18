@@ -1,129 +1,181 @@
 # Honest partial upgrades: an applied-set stamp the tool carries
 
+> **v2** — pivoted after an adversarial design review (see `design-review.md`).
+> The original design keyed "applied" off **git ancestry** of ledger SHAs; the
+> review proved that foundation wrong (below), so v2 keys off **ledger order**
+> and an **explicit applied set**. The clusters after the pivot fold in the
+> review's confirmed blockers/majors.
+
 ## Why
 
 The `.host` stamp records a **single** `revision`; `host-lifecycle upgrade` lists
-UPGRADING ledger entries newer than it (by git ancestry) as pending. That encodes
-one assumption — **entries are applied in ancestry order, contiguously**. A real
-adopter several revisions behind may need a *late, independent* entry (a worktree
-bugfix, `7de7cb1`) without an *earlier, large, unrelated* one (the specs-to-
-software migration, `b6232a5 … 821a216`). The single revision cannot express
-"applied the late one, skipped the early ones". The only workaround today — jump
-the watermark and note the debt in prose `MEMORY` — **fails unsafe**: `upgrade`
-then reports "up to date" while the migration is still owed, and the debt
-disappears from the tooling.
+ledger entries newer than it as pending. That assumes entries are applied in
+order, contiguously. A real adopter behind HEAD may need a *late, independent*
+entry (a worktree bugfix) without an *earlier, large, unrelated* one (a spec
+migration). The single revision can't express "applied the late one, skipped the
+early ones", and the field workaround — jump the watermark, note the debt in
+prose — **fails unsafe** (`upgrade` then reports "up to date" while work is owed).
 
-This was found in the field (a stuck adopter), and the root cause is that the
-upgrade model was designed only from the maintainer's seat — always at HEAD,
-applying entries in order. So the design here was worked from four added
-stakeholder personas instead (`cast/`): **Orin** (maintainer), **Bly** (adopter
-behind), **Sable** (cold-start auditor), **Fen** (low-reliability agent whose tool
-calls cannot be trusted). All four independently chose the same stamp model, and
-Fen + Bly added the tool-assist requirements that turn "expressible" into
-"tool-carried and fumble-proof".
+Worked from four added personas (`cast/`: Orin, Bly, Fen — Sable folded into Bly),
+the first design chose **watermark + applied set**, with "applied iff
+ancestor-or-equal(revision) OR id ∈ applied". An adversarial design review then
+proved that foundation is wrong, verified against real history:
 
-## The design
+- **Git ancestry of ledger SHAs is not the dependency order.** `7de7cb1` (the
+  "independent" worktree fix) is a **descendant** of `b6232a5` (the spec
+  migration), so a git-ancestry watermark reaching the fix would mark the whole
+  migration applied. The linear chain is a commit artifact, not a dependency DAG.
+- **Ancestry isn't even reliable.** The three earliest ledger keys (`8c28e33`,
+  `325f2cf`, `71d12a8`) are **not ancestors of template HEAD** (rebased history),
+  so any `merge-base --is-ancestor` against them fails — the computation is
+  undefined for real entries.
+- The watermark `revision` is virtually never itself a ledger-keyed commit, so
+  "advance revision to `<rev>`" has no natural target.
 
-### Stamp model — watermark + applied set (fail-safe)
+## The pivot: ledger order, explicit applied set — no git ancestry
 
-`.host` keeps `revision` as a **contiguous baseline** (every ledger entry
-ancestor-or-equal to it is applied) and gains an optional `applied = <id> …`
-listing entries *above* the watermark applied out of order.
+The ledger (`UPGRADING.md`) is the source of truth and defines a **total order by
+stanza position** (file order), with each entry identified by its `[upgrade
+"<id>"]` **key string**. The tool never resolves those ids as git commits.
+
+`.host` gains two optional fields:
 
 ```
 template = "…/host-template"
-revision = "699db99"            # contiguous baseline
-applied  = "7de7cb1 ae1e688"   # cherry-applied above it, out of order
+baseline = "<id>"            # every ledger entry AT-OR-BEFORE this stanza position is applied
+applied  = "<id> <id> …"     # individual entries AFTER the baseline, applied out of order
+revision = "<sha>"           # retained: the template commit the docs were last reconciled to
 adopted  = "YYYY-MM-DD"
 name     = "…"
 ```
 
-An entry is **applied** ⇔ `ancestor-or-equal(revision)` **or** its id ∈ `applied`.
-`upgrade` reports the complement. **Fail-safe property:** a forgotten id re-lists
-(over-reports pending) — it can never hide owed work. The dangerous "advance the
-watermark past unapplied work" operation is removed entirely (see guard).
+An entry is **applied** ⇔ its ledger position ≤ `baseline`'s position **or** its id
+∈ `applied`. Pure string/position math — no `merge-base`, so orphaned/rebased SHAs
+and the descendant≠depends trap both dissolve. **Fail-safe:** an id not recorded is
+pending and re-lists; the unsafe "advance past unapplied work" move is structurally
+removed (the baseline only advances across a fully-applied contiguous run).
 
-Back-compat: an existing `.host` with no `applied` line behaves exactly as today.
+Initial adoption sets `baseline` to the latest entry (compact — no list). A
+cherry-applied late entry goes into `applied` (baseline stays put; the skipped
+earlier entries remain pending). When a contiguous run is finally complete, advance
+`baseline` across it and prune those ids from `applied`.
 
-### Dependency hints on ledger entries
+## Hardening clusters (from the review)
 
-UPGRADING entries gain optional `independent = true` or `depends = <id> [<id> …]`.
-`upgrade` uses them to (a) advise which pending entries are safe to apply alone,
-and (b) **fail loud** when the stamp records an entry applied whose declared
-`depends` is *not* applied (an inconsistent record). Back-fill the existing
-ledger: `7de7cb1` (worktrees) and `ae1e688` (adopt-in-place) are `independent`;
-the spec lane chain is `c771d60 depends b6232a5`, `b8c54fc depends c771d60`,
-`821a216 depends b6232a5 c771d60`. Absent annotation = independence undeclared
-(the tool says so; it does not assume safe).
+### 1. `--record` is a *verified* claim, not a bare assertion (blocker)
 
-### The tool carries the process (Fen + Bly)
+`upgrade --record <id|ordinal>`:
+- **Validates** the id is a real ledger entry (reject unknown / typo / wrong-repo
+  SHA / ambiguous). Accepts a **ledger ordinal** or unambiguous form so Fen never
+  retypes a hex SHA; the tool canonicalizes to the id.
+- Where the entry declares a machine-checkable post-condition `verify = <check>`
+  (a `host-lifecycle`/shell check; e.g. the worktree-escape check for `7de7cb1`),
+  `--record` **runs it and refuses** to record on failure. Where no post-condition
+  exists, recording **requires** an explicit `--unverified call/NNNN` citation
+  (resolved like `repro-exempt`), so an un-attestable claim leaves a `call/` trail.
+- **Atomic** write (temp+rename); **provenance** line `applied = <id>
+  recorded=<date> via=<verify|call/NNNN>` (append-only); refuses if the entry's
+  `depends` are unapplied.
 
-- **`host-lifecycle upgrade --record <id>`** — records an applied entry by writing
-  `.host` itself (idempotent; re-record is a no-op). An agent **never hand-edits
-  the stamp**.
-- **Machine-readable `upgrade` output** — one line per entry:
-  `<id>  <title>  [independent | depends: <id>…]  PENDING|APPLIED`, ordered by
-  ancestry, so the agent reads status without parsing prose.
-- **Watermark-advance guard** — advancing `revision` to `<rev>` is refused (exit
-  non-zero) if any entry ancestor-or-equal `<rev>` is neither in range nor in
-  `applied`. Debt cannot be buried by stamping early. This is the structural
-  teeth, in the spirit of the worktree-escape HAZARD.
-- **Consistency check** — `upgrade` (and `software --check` where cheap) errors
-  loud on an applied entry with an unapplied `depends`.
+### 2. `software --check` re-checks every claim (blocker)
+
+`software --check` (and `verify`) gain stamp+ledger plumbing: they re-run each
+applied entry's `verify` post-condition and emit a loud `DRIFT` on any
+claimed-but-unsatisfied entry — symmetric with the existing repro-exempt/artifact
+attestation. This is the teeth against a recorded lie (the unsafe direction the
+membership set alone can't catch).
+
+### 3. Robust stamp I/O (blocker)
+
+- Every `.host` writer (`adopt`/`stamp_body`, `--record`, baseline advance)
+  **preserves all fields** — `name`, `applied`, `baseline`, unknown lines — instead
+  of rewriting from a fixed list (today it silently drops `name`).
+- The stamp parser tolerates an inline `# comment` after a quoted value and defined
+  whitespace; the `applied` serialization has a defined separator + dedup + stable
+  order so repeated `--record` is byte-idempotent.
+
+### 4. The tool carries the process for Fen (blocker)
+
+- `host-lifecycle upgrade --next` prints (and, with `--record`, the agent runs) the
+  **single next action** — no multi-line listing to parse, no column to read.
+- Accept **ordinals**, not SHAs; print a **positive confirmation** after a record
+  ("recorded <id> (<title>); N still pending"). The tool parses the ledger; the
+  model never emits structured/grammar-constrained output (the wedge lesson).
+
+### 5. Dependency hints, reconciled (major)
+
+- `depends = <id> …` (logical entry prerequisite) is distinct from the existing
+  `requires = host-lifecycle vX.Y.Z` (tool-version); the plan names and checks both.
+- Define: transitive deps, a `depends` into baseline range = satisfied, and reject
+  cycles / self-deps / both-`independent`-and-`depends` / unknown dep ids. `--record`
+  refuses an entry whose `depends` aren't applied (fail-safe).
+- Back-fill by **logical** dependency (not git ancestry): the spec-lane chain
+  `c771d60→b6232a5`, `b8c54fc→c771d60`, `821a216→b6232a5,c771d60`; `7de7cb1` and
+  `ae1e688` are `independent`.
+
+### 6. Migration, version, docs, tests (completeness)
+
+- **Migrate existing `.host`**: a documented (and tool-assisted) conversion of the
+  legacy single-`revision` watermark to `baseline` (+ empty `applied`), so current
+  adopters are not silently mis-read.
+- `host-lifecycle version` prints `baseline` + `applied` + pending count (today it
+  prints only `revision` and would mislead once an applied set exists).
+- Spine `CLAUDE.md` + README *Upgrading* + the UPGRADING entry describe the **new
+  two-field model**, not the old one.
+- Bundle the two pending `host=` corrections (the `host=windows`→omit example and
+  the `host=` vs `attest-host` materialize-OS-vs-build-OS wording) + the issue #2
+  comment fix; specify before/after text.
 
 ## Build (software-first; each step with its check)
 
-1. **host-lifecycle stamp parse** → read `applied` from `.host`; helper
-   `is_applied(entry, revision, applied)` (ancestry OR membership).
-   *verify:* unit tests for in-range, in-applied, neither.
-2. **Ledger parse** → read `independent`/`depends` per `[upgrade]` entry.
-   *verify:* parse test incl. multi-id `depends` and absent (undeclared).
-3. **`upgrade` rewrite** → compute applied set, machine-readable listing,
-   dependency advice + loud consistency error.
-   *verify:* fixture ledger + stamp → expected pending/applied lines; an applied
-   entry with an unapplied dep → non-zero.
-4. **`upgrade --record <id>`** → idempotent stamp write.
-   *verify:* record adds id; re-record no-ops; bad id rejected.
-5. **Watermark-advance guard** → refuse advancing `revision` past an unapplied
-   entry. *verify:* guard test (advance blocked with a gap; allowed when
-   contiguous).
-6. **Back-fill ledger annotations** in host-template UPGRADING.
-   *verify:* `upgrade` marks `7de7cb1` independent; lane chain shows `depends`.
-7. **Spine** → host-template CLAUDE.md upgrade-model section + README *Upgrading*
-   rewrite (applied-set, `--record`, the guard); UPGRADING entry for this change.
-   *verify:* docs describe the model; `validate` clean.
-8. **Bundle the two pending `host=` corrections** (the `host=windows`→omit
-   example and the `host=` vs `attest-host` materialize-OS-vs-build-OS wording);
-   correct the issue #2 comment.
-9. **Apply here** → version bump + tag, re-pin `tools/host-lifecycle`, re-stamp
-   `.host` (it gains no `applied` line — agentic-host is contiguous at HEAD), bump
-   CI rev; MEMORY entry. *verify:* `upgrade .` up to date; `software --check .`
-   clean; tests + clippy green.
+1. **Stamp model** — parse `baseline`/`applied`; `is_applied(entry)` by ledger
+   position OR membership (no git). Robust parse (comments/whitespace) + all-field
+   preserving writer + defined `applied` serialization. *verify:* unit tests incl.
+   orphaned-SHA keys, comment-after-value, field preservation, byte-idempotent write.
+2. **Ledger parse** — stanza order; `independent`/`depends`/`verify`; reject
+   cycles/self-dep/both. *verify:* parse tests + a malformed-ledger test.
+3. **`upgrade` rewrite** — list pending by ledger order ∖ applied; `--next`;
+   machine-readable; dependency advice; loud consistency error. *verify:* fixture
+   ledger+stamp → expected pending/next; inconsistent dep → non-zero.
+4. **`--record`** — validate id, ordinal input, `verify` post-condition or
+   `--unverified call/NNNN`, atomic, provenance, deps-gate, idempotent. *verify:*
+   record/validate/idempotent/reject-unknown/reject-unverified tests.
+5. **baseline advance** — only across a fully-applied contiguous run; prune absorbed
+   ids. *verify:* advance blocked on a gap; allowed + prunes when contiguous.
+6. **`software --check` plumbing** — re-check applied post-conditions, surface
+   partial state, loud DRIFT on a stale claim. *verify:* check flags a lie.
+7. **Back-fill ledger** `independent`/`depends`/`verify` (logical). *verify:*
+   `upgrade` advice matches the real dependency structure.
+8. **version output + migration** of legacy `.host`. *verify:* version shows
+   baseline/applied/pending; a legacy stamp converts.
+9. **Spine + README + UPGRADING** (new model) + the two `host=` corrections +
+   issue #2 comment. *verify:* docs describe the two-field model; `validate` clean.
+10. **Apply here** — version bump + tag, re-pin, migrate agentic-host's own `.host`
+    to `baseline`, bump CI rev; MEMORY. *verify:* `upgrade .` up to date;
+    `software --check .` clean; tests + clippy green.
 
-## Persona acceptance (the design serves each seat)
+## Persona acceptance
 
-- **Orin:** the stamp is the contract, readable without prose; sparse annotations.
-- **Bly:** takes the late fix now; the deferred rest stays tooling-visible — and a
-  later *cold* read of the stamp (Bly with no memory, or a CI gate) cannot be
-  deceived into "up to date" while work is owed; the record fails safe.
-- **Fen:** `--record` + machine output + the guard mean the tool carries every
-  state change; a fumble re-lists, never buries. **Fen is a real model**
-  (`qwen3.5-4b`, Q8_0, local via the `pal` MCP), so this is tested empirically,
-  not asserted — see the acceptance gate below.
+- **Orin:** the stamp is the contract, read by ledger position not fragile git
+  ancestry; sparse annotations; orphaned SHAs don't break it.
+- **Bly:** cherry-applies the late independent entry now; the deferred rest stays
+  pending; a later cold read cannot be deceived (re-check + fail-safe).
+- **Fen (real `qwen3.5-4b`):** `--next` + ordinal `--record` + confirmation mean the
+  tool carries every state change; the model never reasons about ancestry, hand-edits
+  `.host`, or emits constrained output. **Baseline observed:** handed today's flow,
+  the real 4B *wedges* on the reasoning+edit task (it doesn't answer wrong, it hangs)
+  — the bar the tool surface must clear.
 
 ## Verification (milestone done)
 
-`cargo test` + clippy green; the five build-step checks pass; `upgrade` on a
-fixture adopter behind HEAD correctly reports a cherry-applied late entry as
-APPLIED and the skipped earlier ones as PENDING; the guard blocks a debt-burying
-re-stamp; version tagged; applied here with `upgrade .` up to date and
-`software --check .` clean.
-
-**Fen acceptance gate (real model, A/B).** Drive the actual `qwen3.5-4b` (Q8_0,
-via the `pal` MCP) through the upgrade loop on a fixture adopter behind HEAD:
-given the machine-readable `upgrade` output and the `--record` command, the 4B
-must complete a correct cherry-apply (apply the independent late entry, record it,
-leave the earlier ones PENDING) without hand-editing `.host`. Baseline: the same
-model given the *prose / hand-edit* flow is expected to fumble (mis-edit the stamp
-or bury the debt). The gate passes when the tool-carried flow succeeds where the
-prose flow fails — proving the design serves Fen, not a simulation of Fen.
+`cargo test` + clippy green; every build-step check passes. **Fail-safe invariant
+test:** no sequence of (record, advance, hand-edit, run) makes `upgrade` report clean
+while a ledger entry is unapplied — including a recorded-but-unverified claim, which
+`software --check` must flag. **Round-trip:** parse→write→parse is byte-stable.
+**Orphaned-SHA test:** a rebased ledger key is handled by position, never by
+`merge-base`. **Fen acceptance gate (real model, A/B + adversarial leg):** the 4B
+completes a cherry-apply via `--next`/`--record` without hand-editing `.host`
+(after the timeout/server are healthy); and when induced to `--record` an entry it
+did **not** perform, the tool refuses (no `verify`/citation) or `software --check`
+later flags it. Pin/fallback the external model so the gate is reproducible.
+Applied here with `upgrade .` up to date and `software --check .` clean; tagged.
