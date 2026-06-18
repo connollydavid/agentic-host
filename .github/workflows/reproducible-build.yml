@@ -21,8 +21,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Trust the workspace (container runs as root)
         run: git config --global --add safe.directory '*'
-      - name: Install host-lifecycle (pinned to v0.11.1)
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 0566e266a0275a7fff80d676d9cd49118bdaac05 --root /usr/local
+      - name: Install host-lifecycle (pinned to v0.12.0)
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev d38bad51ee743277f97690b9c2552c7a0b9ab91d --root /usr/local
       - name: Materialize the software (bare store + worktrees)
         run: host-lifecycle software --materialize .
       - name: Check the software (pins, spec lanes, obligations, no HAZARD)
