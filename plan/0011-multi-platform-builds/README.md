@@ -72,6 +72,19 @@ exactly what lets each host attest only what it can build.
 - Back-compat: the existing flat-form tests (`parses_build_provenance`,
   `provenance_attestation_and_exemption`, `install_hooks…`) pass unchanged.
 
+## Follow-on: `--check` local-build note (host-lifecycle v0.9.1)
+
+Surfaced while verifying this milestone: on a dev box that had run a local
+`cargo build`, `software --check` reported the canonical-hash mismatch as a hard
+`DRIFT` (exit 1), even though a local toolchain legitimately differs from the
+pinned build host's output. This contradicted the `--install-hooks` decision
+(`plan/0009`), which already gates on worktree-at-pin and treats the hash as
+informational. The artifact attestation in `--check` now does the same: a match
+is `verified`, a local-toolchain mismatch is a `note` (not a failure), and
+`--verify-build` remains the reproducibility proof. The DRIFT only ever fired on
+a dev box — fresh clones and CI (which builds in the pinned container) were
+already clean. Spine clarified in host-template `d3dc5ed` + UPGRADING.
+
 ## Not done here
 
 agentic-host's own `.host-software` ships only single-platform `host-lint`, so
