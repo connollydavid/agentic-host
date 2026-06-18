@@ -585,6 +585,11 @@
 <li>Adversarial completeness findings + fixes: (1) <strong>CI host-lifecycle pins badly stale</strong> — mdbook.yml at ~v0.7.1, reproducible-build.yml at ~v0.8.0; bumped both to v0.11.1 (0566e26) so CI publishes with the current generator. (2) <strong>host-grammar had no cargo-test CI</strong> — its prose_properties.rs PBTs (which host-grammar.obligations maps obligations to) were named but never executed; added a test job (2a7867c) so the discharge is real. Verify sweep otherwise clean: validate plan/+call/ ok, software --check clean (lane + obligations present), book --check ok.</li>
 <li>Open (reported, not yet fixed): the host front-door README installs the allium skill via <code>/plugin install</code>/<code>npx</code> rather than the mandated tools/ submodule + link-skills.sh, and omits the obligations + host-lifecycle phase-skill steps; agentic-host's own CI does not run <code>software --check</code> (the gates are enforced in the software repos' CI, so this is defense-in-depth only).</li>
 </ul>
+<h3 id="2026-06-18--tag-every-release-missing-tags-back-filled-now-a-spine-rule"><a class="header" href="#2026-06-18--tag-every-release-missing-tags-back-filled-now-a-spine-rule">2026-06-18 — tag every release (missing tags back-filled; now a spine rule)</a></h3>
+<ul>
+<li>Audit caught: many version bumps shipped without git tags. host-lifecycle was tagged only to v0.8.0 but had shipped v0.8.1/v0.9.0/v0.9.1/v0.10.0/v0.11.0/v0.11.1; host-lint was at 0.3.0 with no v0.3.0 tag (and it has a tag-triggered release job); host-grammar 0.2.0 untagged. Back-filled annotated tags at each bump commit and pushed them (host-lint v0.3.0 fires its release-on-tag workflow). Bumping Cargo.toml is NOT releasing — the tag is the release.</li>
+<li>New spine rule (host-template <code>07ea321</code>, user: "make this a release rule"): a manifest version bump MUST carry a matching annotated <code>vX.Y.Z</code> tag at the release commit, pushed alongside; an untagged bump is an unreleased version; never re-pin to a version-bumped commit with no matching tag. UPGRADING entry tells upgraders to back-fill + tag henceforth.</li>
+</ul>
 
                     </main>
 
