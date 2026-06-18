@@ -48,6 +48,11 @@ the model the TLA+ spec checks (`call/0015`).
   (a Specula lane job installs Java + tla2tools and runs the check on every
   push).
 
+> **Relocated (plan/0012).** `ParallelScan.tla` + `.cfg` and the Specula lane now
+> live in **host-grammar** (`spec/`, `.github/workflows/specula.yml`) — the spec
+> lives with the code it constrains (`scan_chunked`), not in this host. The paths
+> below describe the original layout.
+
 ## Lifecycle / chain (software-first)
 
 1. **host-grammar**: add `scan_prose_parallel` (or make `scan_prose` parallel
