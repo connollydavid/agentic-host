@@ -103,8 +103,9 @@ the spec lane chain is `c771d60 depends b6232a5`, `b8c54fc depends c771d60`,
 ## Persona acceptance (the design serves each seat)
 
 - **Orin:** the stamp is the contract, readable without prose; sparse annotations.
-- **Bly:** takes the late fix now; the deferred rest stays tooling-visible.
-- **Sable:** the mechanical record cannot overstate completeness; fails loud.
+- **Bly:** takes the late fix now; the deferred rest stays tooling-visible — and a
+  later *cold* read of the stamp (Bly with no memory, or a CI gate) cannot be
+  deceived into "up to date" while work is owed; the record fails safe.
 - **Fen:** `--record` + machine output + the guard mean the tool carries every
   state change; a fumble re-lists, never buries. **Fen is a real model**
   (`qwen3.5-4b`, Q8_0, local via the `pal` MCP), so this is tested empirically,

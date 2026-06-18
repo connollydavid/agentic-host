@@ -16,3 +16,6 @@
 /book.toml
 /docs/
 /book/
+
+# personal Claude Code overrides (not tracked)
+.claude/settings.local.json
