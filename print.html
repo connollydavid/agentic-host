@@ -315,7 +315,7 @@ Skill Hardening: hook fix, bare-numeral rule, release install path (see SKILL-HA
 <tr><td><a href="plan/0007-agentic-tell-grammar/README.html">plan/0007-agentic-tell-grammar</a></td><td>done (host-grammar <code>tells</code> engine — token-free trope adaptation, lexical + equation layers + density score; host-lint v0.3.0 <code>--stdin</code>/<code>--prose</code>; allium spec + property-based lane incl. anaphora refinement; re-pin <code>600e5c97</code> reproducible)</td></tr>
 <tr><td><a href="plan/0008-parallel-prose-scan/README.html">plan/0008-parallel-prose-scan</a></td><td>done (<code>scan_prose_parallel</code>/<code>scan_chunked</code> via <code>std::thread::scope</code>, no new deps; both lanes per <code>call/0015</code> — PBT <code>scan_chunked == scan_prose</code>, TLA+ <code>ParallelScan</code> TLC-checked in the Specula CI lane; re-pin <code>4655f966</code> reproducible)</td></tr>
 <tr><td><a href="plan/0009-install-hooks/README.html">plan/0009-install-hooks</a></td><td>done (host-lifecycle v0.8.1 <code>software --install-hooks</code>; new <code>hooks</code> field; gates on worktree-at-pin; closes the plan/0008 fresh-clone hook-sync gap; dogfooded)</td></tr>
-<tr><td><a href="plan/0010-markdown-aware-prose/README.html">plan/0010-markdown-aware-prose</a></td><td>in progress (<code>scan_prose_markdown</code> via pulldown-cmark — skip code blocks, headings not counted as paragraphs, strip link URLs; fixes the README false-positives)</td></tr>
+<tr><td><a href="plan/0010-markdown-aware-prose/README.html">plan/0010-markdown-aware-prose</a></td><td>done (<code>scan_prose_markdown</code>/<code>tell_score_markdown</code> via pulldown-cmark — code blocks excluded, link URLs dropped, headings not counted as paragraphs/runs; host-lint routes <code>.md</code>; README lints clean; re-pin <code>daead690</code>; PBT caught + fixed a lexical Unicode panic)</td></tr>
 </tbody></table>
 </div>
 <p>The earlier content-named docs above (BOOTSTRAP, CI-PIPELINE, …) predate the <code>plan/</code> room; folding them in is a possible later cleanup, not required.</p>
@@ -867,6 +867,19 @@ commit/push.</li>
 <li>agentic-host: re-pin, rebuild in the pinned container, record artifact,
 <code>software --verify-build</code>; PLAN.md + MEMORY; re-lint the README clean.</li>
 </ol>
+<h2 id="outcome-1"><a class="header" href="#outcome-1">Outcome</a></h2>
+<p>Done. host-grammar <code>bba4895</code> (<code>scan_prose_markdown</code> + <code>tell_score_markdown</code>,
+pulldown-cmark), host-lint <code>b6ad359</code> routes <code>.md</code> to the markdown-aware scan,
+re-pin artifact <code>daead690</code> reproducible. The host README now lints clean
+(<code>host-lint --prose README.md</code> → exit 0). Two extra results fell out:</p>
+<ul>
+<li>The property lane caught a latent panic — <code>lexical()</code> sliced the original text
+with indices computed from the lowercased copy, which breaks on a multi-byte
+char after a length-changing case-fold. Fixed.</li>
+<li><code>punchy-fragments</code> now fires on <em>strictly more than half</em> single-sentence
+paragraphs, so a short doc (the README is 4 body paragraphs) is not staccato.
+This is a definition refinement, not an overfit to one file.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software--where"><a class="header" href="#software--where">Software — where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees — not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .

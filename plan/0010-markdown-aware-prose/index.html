@@ -216,6 +216,19 @@ commit/push.</li>
 <li>agentic-host: re-pin, rebuild in the pinned container, record artifact,
 <code>software --verify-build</code>; PLAN.md + MEMORY; re-lint the README clean.</li>
 </ol>
+<h2 id="outcome"><a class="header" href="#outcome">Outcome</a></h2>
+<p>Done. host-grammar <code>bba4895</code> (<code>scan_prose_markdown</code> + <code>tell_score_markdown</code>,
+pulldown-cmark), host-lint <code>b6ad359</code> routes <code>.md</code> to the markdown-aware scan,
+re-pin artifact <code>daead690</code> reproducible. The host README now lints clean
+(<code>host-lint --prose README.md</code> → exit 0). Two extra results fell out:</p>
+<ul>
+<li>The property lane caught a latent panic — <code>lexical()</code> sliced the original text
+with indices computed from the lowercased copy, which breaks on a multi-byte
+char after a length-changing case-fold. Fixed.</li>
+<li><code>punchy-fragments</code> now fires on <em>strictly more than half</em> single-sentence
+paragraphs, so a short doc (the README is 4 body paragraphs) is not staccato.
+This is a definition refinement, not an overfit to one file.</li>
+</ul>
 
                     </main>
 
