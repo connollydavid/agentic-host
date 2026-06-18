@@ -44,3 +44,17 @@ No new concurrency, so this stays in the allium lane (no TLA+). Property tests:
 2. host-lint: route `.md` to the markdown-aware scan; tests; commit/push.
 3. agentic-host: re-pin, rebuild in the pinned container, record artifact,
    `software --verify-build`; PLAN.md + MEMORY; re-lint the README clean.
+
+## Outcome
+
+Done. host-grammar `bba4895` (`scan_prose_markdown` + `tell_score_markdown`,
+pulldown-cmark), host-lint `b6ad359` routes `.md` to the markdown-aware scan,
+re-pin artifact `daead690` reproducible. The host README now lints clean
+(`host-lint --prose README.md` → exit 0). Two extra results fell out:
+
+- The property lane caught a latent panic — `lexical()` sliced the original text
+  with indices computed from the lowercased copy, which breaks on a multi-byte
+  char after a length-changing case-fold. Fixed.
+- `punchy-fragments` now fires on *strictly more than half* single-sentence
+  paragraphs, so a short doc (the README is 4 body paragraphs) is not staccato.
+  This is a definition refinement, not an overfit to one file.
