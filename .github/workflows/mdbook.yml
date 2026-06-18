@@ -20,7 +20,7 @@ jobs:
       - name: Install the publisher (host-lifecycle, pinned)
         # Pinned to the v0.7.1 commit: book recurses nested specs (#7) and moves
         # retired (Status: superseded) decisions into an Archive/Record section (#8).
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 7357672e857dcf6bfd8b93f4c27989f0f7f76b27 --root "$HOME/.local"
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 0566e266a0275a7fff80d676d9cd49118bdaac05 --root "$HOME/.local"
       - name: Generate the book (lifecycle order; every room)
         # Writes book.toml (src = "docs", never ".") + docs/; --check fails the build
         # unless every room with source renders a page. Reads the committed
