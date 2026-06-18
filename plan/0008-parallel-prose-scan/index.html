@@ -190,22 +190,21 @@ is not worth it.</li>
 <li><strong>Split</strong> the sentence vector into K contiguous chunks (K = available
 parallelism), with <code>std::thread::scope</code> — no new dependency, so the
 digest-pinned reproducible-build anchor is untouched.</li>
-<li>Each worker computes, for its chunk, an owned <strong>partial result</strong>:
-<ul>
-<li>lexical tells and per-sentence structural tells (negative parallelism,
-tricolon, participial tail, false range) — independent;</li>
-<li>a <strong>run summary</strong> for each cross-sentence equation (anaphora, countdown,
-listicle): <code>(prefix_run, interior_run_scores, suffix_run)</code> plus the
-boundary state for countdown / self-answered adjacency.</li>
-</ul>
-</li>
-<li><strong>Merge</strong> adjacent partials left-to-right (sequential, associative): a left
-suffix run and a right prefix run with the same opener join; interior runs
-finalize. Output is assembled in document order.</li>
+<li>Each worker computes, for its chunk, an owned <strong>partial</strong>: the per-sentence
+structural tells (negative parallelism, tricolon, participial tail, false
+range) plus the chunk's <strong>run summary</strong> — its ordered per-sentence metadata
+(opener, first word, is-question, word count).</li>
+<li><strong>Merge</strong> (sequential): concatenate the partials by chunk index. The run
+summary is a list, so the merge monoid is <strong>concatenation</strong> — a run that
+straddles a chunk boundary simply rejoins when the metadata lists are
+concatenated. The cross-sentence equations (anaphora, countdown,
+self-answered, listicle) then run once over the merged metadata. Lexical and
+paragraph-shape tells are computed once on the whole text. Output order is
+<code>lexical ++ per-sentence ++ run ++ shape</code> — the one order both paths produce.</li>
 </ol>
 <p>Workers hold no shared mutable state — each returns an owned partial; the merge
-is sequential. This keeps the implementation equal to the model the TLA+ spec
-checks (<code>call/0015</code>).</p>
+is sequential and keyed on chunk index. This keeps the implementation equal to
+the model the TLA+ spec checks (<code>call/0015</code>).</p>
 <h2 id="verification-lanes"><a class="header" href="#verification-lanes">Verification lanes</a></h2>
 <ul>
 <li><strong>allium / PBT (functional).</strong> New property: for all sentence sequences and
@@ -232,11 +231,18 @@ artifact, <code>software --verify-build</code>; PLAN.md + MEMORY entries.</li>
 </ol>
 <h2 id="verification"><a class="header" href="#verification">Verification</a></h2>
 <ul>
-<li>host-grammar PBT green incl. the parallel==sequential refinement.</li>
-<li>TLC green on the bounded model (locally and in CI).</li>
-<li>Reproducible build re-pin verified in the pinned container.</li>
-<li>Self-dogfood: <code>host-lint --prose</code> over this repo's large docs still advisory.</li>
+<li>host-grammar PBT green incl. <code>scan_chunked == scan_prose</code> for all k.</li>
+<li>TLC green on the bounded model (locally and in CI via the Specula workflow).</li>
+<li>Reproducible re-pin: host-grammar <code>d83b348</code> → host-lint <code>dff6895</code> →
+<code>.host-software</code> artifact <code>4655f966…</code>, double-build reproducible in the
+pinned <code>rust:1.95.0</code> container.</li>
 </ul>
+<h2 id="outcome"><a class="header" href="#outcome">Outcome</a></h2>
+<p>Done. <code>host-grammar::scan_prose_parallel</code> splits the per-sentence tokenization
+across cores above a 64-sentence threshold; <code>scan_chunked(text, k)</code> forces <code>k</code>
+for the property lane. host-lint <code>--prose</code> routes through it transparently
+(advisory, warn-tier). Both lanes green: PBT proves the merge math, TLC proves
+the interleaving safety/liveness.</p>
 
                     </main>
 
