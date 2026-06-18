@@ -162,13 +162,16 @@ membership set alone can't catch).
   pending; a later cold read cannot be deceived (re-check + fail-safe).
 - **Fen (real `qwen3.5-4b`):** `--next` + ordinal `--record` + confirmation mean the
   tool carries every state change; the model never reasons about ancestry, hand-edits
-  `.host`, or emits constrained output. **Baseline not yet cleanly established:** the
-  probe via the `pal` MCP wedged, but metrics traced that to an *engine* decode hang
-  in the qwen3.5 hybrid/recurrent CUDA path triggered by `pal`'s ~1341-token system
-  prompt — an infra bug, not a Fen result. The gate must drive the model with a
-  **minimal prompt** (no large system prompt), which both dodges the engine trigger
-  and *is* the faithful Fen condition — the real tool-carried flow hands the model a
-  one-line `upgrade --next` instruction, well under any prefill threshold.
+  `.host`, or emits constrained output. **Baseline captured (Vulkan build):** handed
+  today's single-`revision` flow, the real 4B set `revision = "7de7cb1"` (the newest
+  applied entry) and justified it — *"there are no entries newer than it to remain
+  pending"* — which **buries the four unapplied entries** (they are ancestors of the
+  fix, so they vanish from `upgrade`). It did not hang and did not refuse; it produced
+  a valid file with confidently wrong semantics. That is the exact unsafe path v2
+  makes impossible, and proof the model needs the tool to carry the semantics. (The
+  earlier MCP wedges were a CUDA recurrent-path decode bug, prompt-size-triggered;
+  the text model on the **Vulkan** build clears it. The probe is still flaky under
+  load, so the gate drives the model with a minimal prompt and pins the build.)
 
 ## Verification (milestone done)
 
