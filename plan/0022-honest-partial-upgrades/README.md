@@ -162,9 +162,13 @@ membership set alone can't catch).
   pending; a later cold read cannot be deceived (re-check + fail-safe).
 - **Fen (real `qwen3.5-4b`):** `--next` + ordinal `--record` + confirmation mean the
   tool carries every state change; the model never reasons about ancestry, hand-edits
-  `.host`, or emits constrained output. **Baseline observed:** handed today's flow,
-  the real 4B *wedges* on the reasoning+edit task (it doesn't answer wrong, it hangs)
-  — the bar the tool surface must clear.
+  `.host`, or emits constrained output. **Baseline not yet cleanly established:** the
+  probe via the `pal` MCP wedged, but metrics traced that to an *engine* decode hang
+  in the qwen3.5 hybrid/recurrent CUDA path triggered by `pal`'s ~1341-token system
+  prompt — an infra bug, not a Fen result. The gate must drive the model with a
+  **minimal prompt** (no large system prompt), which both dodges the engine trigger
+  and *is* the faithful Fen condition — the real tool-carried flow hands the model a
+  one-line `upgrade --next` instruction, well under any prefill threshold.
 
 ## Verification (milestone done)
 
