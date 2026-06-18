@@ -1,4 +1,4 @@
 template = "https://github.com/connollydavid/host-template"
-revision = "191a01a"
+revision = "07ea321"
 adopted  = "2026-06-14"
 name     = "agentic-host"
