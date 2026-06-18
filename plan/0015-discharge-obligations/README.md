@@ -34,7 +34,23 @@ skills as intended.
 - Every `allium plan` obligation maps to a test in the component's suite.
 - CI runs `check` + `analyse` + `plan`; the test job stays green.
 
-## Note
+## Outcome
 
-This is the first milestone authored with the allium skills live (`plan/0014`
-wired them). Spec edits go through `tend`, not hand-editing.
+- **`weed` ran for real** (first use of the wired skills) and caught a genuine
+  spec bug: `host-lint.allium` modelled `DetectInternalCodeAsName` as `flag`, but
+  the code (`check_code_label_prefix`) is Tier-3 **Warn** — fixed the spec
+  (host-lint `6f94916`). For host-grammar, `weed` confirmed the five modelled
+  weights all align with `tells.rs` but the spec was a **partial model**; added
+  the missing structural equations `countdown`/`ing-tail`/`false-range`
+  (host-grammar `068f3eb`). The lexical-phrase corpus stays an intentional
+  abstraction.
+- **`allium plan`** wired into both software CI lanes (`check` + `analyse` +
+  `plan`), so obligations are emitted on every run.
+
+## Deferred
+
+Full `propagate` test-generation — mechanically mapping every one of the 44+
+`allium plan` obligations to a named test — is deferred. The proptest +
+integration suites already exercise the behaviour (tell types, severities, exit
+codes); a dedicated obligation→test manifest is a follow-on, and the host-lifecycle
+enforcement gate (`plan/0016`) is the mechanism that will require it.
