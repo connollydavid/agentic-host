@@ -29,6 +29,7 @@ The `plan/` room holds methodology-level milestones as `NNNN-slug` folders (the 
 | [plan/0008-parallel-prose-scan](plan/0008-parallel-prose-scan/README.md) | done (`scan_prose_parallel`/`scan_chunked` via `std::thread::scope`, no new deps; both lanes per `call/0015` — PBT `scan_chunked == scan_prose`, TLA+ `ParallelScan` TLC-checked in the Specula CI lane; re-pin `4655f966` reproducible) |
 | [plan/0009-install-hooks](plan/0009-install-hooks/README.md) | done (host-lifecycle v0.8.1 `software --install-hooks`; new `hooks` field; gates on worktree-at-pin; closes the plan/0008 fresh-clone hook-sync gap; dogfooded) |
 | [plan/0010-markdown-aware-prose](plan/0010-markdown-aware-prose/README.md) | done (`scan_prose_markdown`/`tell_score_markdown` via pulldown-cmark — code blocks excluded, link URLs dropped, headings not counted as paragraphs/runs; host-lint routes `.md`; README lints clean; re-pin `daead690`; PBT caught + fixed a lexical Unicode panic) |
+| [plan/0011-multi-platform-builds](plan/0011-multi-platform-builds/README.md) | done (host-lifecycle v0.9.0 `[build "<name>" "<platform>"]` per-platform builds sharing one source pin; `--check`/`--verify-build` attest each on its `attest-host`, skip foreign hosts; flat single-build form preserved; spine recorded in host-template `c137567` + UPGRADING; resolves issue #1) |
 
 The earlier content-named docs above (BOOTSTRAP, CI-PIPELINE, …) predate the `plan/` room; folding them in is a possible later cleanup, not required.
 
