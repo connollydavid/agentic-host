@@ -887,7 +887,7 @@ This is a definition refinement, not an overfit to one file.</li>
 <h2 id="host-lint"><a class="header" href="#host-lint">host-lint</a></h2>
 <ul>
 <li>url: https://github.com/connollydavid/host-lint.git</li>
-<li>pin: <code>b6ad359ed2ca82ba919f8ee14cfb242a5169dabb</code></li>
+<li>pin: <code>7244f5a6489f10b490f4f0abdcae0b69da6a548d</code></li>
 <li>worktrees: — (single canonical line)</li>
 </ul>
 <h2 id="host"><a class="header" href="#host">host</a></h2>
@@ -1827,6 +1827,11 @@ self-hosting bootstrap). This pass touched only the template's identity.</p>
 <li><strong>punchy-fragments tuned to strictly-more-than-half</strong> single-sentence paragraphs (<code>&gt; 0.5</code>, was <code>&gt;= 0.5</code>): a short doc (the README's 4 body paragraphs) is not staccato. A definition refinement ("more than half"), not an overfit.</li>
 <li><strong>The property lane earned its keep again:</strong> <code>every_tell_has_positive_weight</code> (arbitrary Unicode) caught a latent panic — <code>lexical()</code> computed match indices on the lowercased copy but sliced the <em>original</em> text; a length-changing case-fold (e.g. before a multi-byte <code>→</code>) put the slice off a char boundary. Fixed by slicing the lowercased copy. Lesson: never mix byte indices between a string and its <code>to_lowercase()</code>.</li>
 <li>Re-pin: host-grammar <code>bba4895</code> → host-lint <code>b6ad359</code> → <code>.host-software</code> artifact <code>daead690</code>, reproducible in the pinned container. README now <code>host-lint --prose</code> exit 0.</li>
+</ul>
+<h3 id="2026-06-18--decoration-tells-report-every-occurrence-not-just-the-first"><a class="header" href="#2026-06-18--decoration-tells-report-every-occurrence-not-just-the-first">2026-06-18 — decoration tells: report every occurrence, not just the first</a></h3>
+<ul>
+<li><code>lexical()</code> had <code>if decoration { break }</code> ("one decoration tell per phrase is enough signal"), so a doc with 20 em-dashes surfaced <strong>one</strong> finding and the rest had to be found by hand; re-running after a fix just revealed the next. Removed the break: every em-dash / smart-quote / arrow is now its own finding, so <code>--prose</code> lists them all and the gate keeps warning until each is gone. Density reflects the real decoration volume (the conservative abs+density gate keeps it from over-firing on a few stray dashes). host-grammar <code>8091261</code> → host-lint <code>7244f5a</code> → artifact <code>bb1489cf</code>.</li>
+<li>Surfaced by cleaning the <code>host</code> front-door README (20 em-dashes, only 1 flagged). Lesson: a recall-biased "one signal is enough" is wrong for <em>actionable</em> cleanup tells — flag every instance.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
