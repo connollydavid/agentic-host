@@ -25,5 +25,7 @@ jobs:
         run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 0566e266a0275a7fff80d676d9cd49118bdaac05 --root /usr/local
       - name: Materialize the software (bare store + worktrees)
         run: host-lifecycle software --materialize .
+      - name: Check the software (pins, spec lanes, obligations, no HAZARD)
+        run: host-lifecycle software --check .
       - name: Verify reproducibility (rebuild from the pin; compare the artifact)
         run: host-lifecycle software --verify-build .
