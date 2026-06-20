@@ -11,7 +11,7 @@ either rewritten (governed, map-only) or kept. Applying it to a real target
 (Agentic-MCP-Win32s) showed rewriting the record is the wrong trade: the record is
 a dense lab-notebook where token-substitution produces awkward prose
 (`"the bridge core bridge first-green"`) and ~25 review/tracking codes
-(`finding #7`, `weed #1`, `R1`/`F1`/`G1`) resist content-naming. So a "full clean
+(`weed #1`, `R1`/`F1`/`G1`, and the like) resist content-naming. So a "full clean
 break" of the record is expensive and degrades it.
 
 The decisive fact, **verified on the target**: nothing re-scans the historical
@@ -36,7 +36,7 @@ plan/*/README.md
 - The **record** is left verbatim and excluded, so `--all` is genuinely `0` without
   a rewrite and without abusing the token allow-list. Old milestone names survive
   only where history lives; the renamed `plan/<NNNN-slug>/` folders are the implicit
-  old→new map (a reader hitting `Phase 4` in the record finds
+  old→new map (a reader hitting an old ordinal name in the record finds
   `plan/0004-command-execution/`).
 - `host-lint` stays general/policy-free — it honours an ignore file the way
   `git`/`ripgrep` do; the *methodology* supplies the policy by writing the file.

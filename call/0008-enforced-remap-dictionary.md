@@ -39,12 +39,12 @@ must not leave the old vocabulary behind as a permanent artifact.
   confined to the one-time `host-lifecycle` applier; the engine never learns policy.
   After a clean remap there are no tells, so a policy-free fault is exactly right:
   anything that faults later is a genuine new tell to fix, not something to resolve.
-- **Two-stage; the scaffold is removed.** Stage 1 applies the map with the
+- **Removable scaffold, applied then cleaned.** Applying the map runs with the
   dictionary committed (so the diff reviews as *only* mapped substitutions, beside
-  the archive). Stage 2 deletes the dictionary file: the repo must not permanently
-  carry an artifact whose content is the old phase names. The durable copy lives in
+  the archive). A follow-up deletes the dictionary file: the repo must not permanently
+  carry an artifact whose content is the old ordinal names. The durable copy lives in
   the migration `call/` decision (documenting old→new is appropriate *there*) and in
-  the stage-1 commit, recoverable via `git` — the Rosetta stone sits in the same
+  the apply commit, recoverable via `git` — the Rosetta stone sits in the same
   stratum (history/decision) as the old names it decodes; the live tree stays clean.
 - **Coupling.** Removable-scaffold requires the **full** clean break: the live
   *record* is remapped too (archived), so nothing live still references an old name.
@@ -57,7 +57,7 @@ must not leave the old vocabulary behind as a permanent artifact.
 - Good: "map-only" is a mechanical guarantee, not a promise; PR #1's spatial drift
   and fabrication cannot recur under the applier.
 - Good: the completeness check makes the residual explicit and human-dispositioned
-  (the irreducible non-mappable codes — `finding #7`, a bare `5.0` — are surfaced and
+  (the irreducible non-mappable codes — review codes, bare version-like numbers — are surfaced and
   consciously allow-listed or acknowledged, never silently left or invented away).
 - Good: no permanent old-vocabulary artifact and no redundant ongoing gate.
 - Cost: more human input up front — a canonical name for every flagged concept. That

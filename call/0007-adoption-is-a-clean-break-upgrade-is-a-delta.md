@@ -43,7 +43,7 @@ A **clean break** is unbundled by risk, because the tiers are not equally safe:
    rewritten at adoption **only archive-first + map-only + recorded** — the
    document analog of a Deep history rewrite, governed by `CLAUDE.md` §6. Original
    archived verbatim; only mapped rename tokens substituted; unmapped identifiers
-   (`finding #7`, `rmcp 1.7`, work-item codes) left byte-for-byte; the diff shows
+   (review codes, version strings, work-item codes) left byte-for-byte; the diff shows
    nothing but substitutions. Never free-form, never self-authorized.
 3. **Git commit history**: **acknowledged, not rewritten, by default** — even in a
    clean break. Re-shaing every commit (re-pointing tags, diverging branches,

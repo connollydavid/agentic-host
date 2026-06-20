@@ -17,7 +17,7 @@ This bit hard on the first external dogfood. The Agentic-MCP-Win32s migration
 (PR #1) chased "zero tells" the only way the tool allowed: by rewriting protected
 content — append-only `MEMORY.md` and closed, immutable milestone bodies — which
 violated two standing rules and dissolved precise historical identifiers
-(`finding #7`, work-item codes) into vague prose. The missing capability, not the
+(review codes, work-item codes) into vague prose. The missing capability, not the
 agent's judgement alone, forced the over-reach.
 
 ## Considered Options
@@ -41,9 +41,9 @@ case-insensitively, at word boundaries — so the occurrence never flags in any
 mode (`--stdin`, files, `--all`, `--log`); a missing file means no allow-list, so
 the feature is opt-in and behaviour is unchanged.
 
-The word-boundary rule keeps an entry honest: allow-listing `phase 1` clears
-`phase 1` but not the longer tell `phase 12`, and a *different* tell on the same
-line still flags (`section 1 covers phase 4` still reports `phase 4`). Masking
+The word-boundary rule keeps an entry honest: an entry masks only its exact
+phrase, not a longer tell that merely shares its prefix, and a *different* tell on
+the same line still flags (the concrete demonstration lives in host-lint's README). Masking
 reuses the existing classifier untouched rather than adding a parallel suppress
 path.
 
