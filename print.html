@@ -1771,15 +1771,17 @@ rung via host-prove and gates on <strong>PASS-at-bound</strong>, replacing <code
 the offline <code>src.contains</code> stays, honestly a presence <em>lint</em>). The verdict-interpretation
 (<code>verdict_discharges</code>) is a pure, unit-tested function; the runner shells host-prove. <code>software --check</code> HAZARDs a <code>.allium</code>/<code>.tla</code>/<code>.cfg</code> under <code>plan/*/spec/</code> (#12). Remaining: record/recompute
 <code>inputs</code> digests for the offline staleness signal.</li>
-<li><strong>host-lint</strong> ✓ (v0.5.0, <code>ed00abc</code>) — the <code>LEXICON</code> file (replacing <code>.host-lint-allow</code>) +
+<li><strong>host-lint</strong> ✓ (v0.6.0, <code>c2c6979</code>) — the <code>LEXICON</code> file (replacing <code>.host-lint-allow</code>) +
 parser (phrase/URL split, <code>#</code>+non-digit comment carve-out) + the three guards reusing
 <code>classify_line</code> (master-key, no-laundering = the phrase is itself a flag-tell, citation gate =
-<code>#N</code>/<code>owner/repo#N</code> needs a URL) + the <code>lexicon add/rm/list/--check/--check-urls</code> CRUD + the
-committed <code># host-lint: strict</code> warn-&gt;flag escalation (#13). Spec: <code>config.strict</code> + the
+<code>#N</code>/<code>owner/repo#N</code> needs a URL — plus an <strong>opt-in</strong> <code>PROJ-NNNN</code> jira-key gate, declared per
+project key via <code># host-lint: jira-key PROJ</code>, so standards tokens like <code>RFC-2119</code> stay
+vocabulary by default) + the <code>lexicon add/rm/list/--check/--check-urls</code> CRUD + the committed
+<code># host-lint: strict</code> warn-&gt;flag escalation (#13). Spec: <code>config.strict</code> + the
 <code>EscalateUnderStrict</code> rule, allium check/analyse clean, obligations dispositioned. host-lint
 does <strong>not</strong> enable strict on itself — its own source carries warn-tier rule examples, which
-strict would escalate to blocking flags. 90/90 integration green; <code>--verify-build</code> reproduces
-the re-pinned artifact <code>dd0a111</code> in the recorded container.</li>
+strict would escalate to blocking flags. 93/93 integration green; <code>--verify-build</code> reproduces
+the re-pinned artifact <code>7922649</code> in the recorded container.</li>
 <li><strong>adopt/upgrade</strong> — seed LEXICON + the strict default at adoption (host-lifecycle).</li>
 <li><strong>spine</strong> — <code>call/0018</code> principle (discharge = pinned re-derivation; enforcement
 project-pluggable) + the LEXICON principles in host-template <code>CLAUDE.md</code> + an UPGRADING entry;
