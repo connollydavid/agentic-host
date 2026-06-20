@@ -1715,7 +1715,7 @@ already shipping here</strong> — <code>.host-software</code>'s <code>artifact 
 spec in the software repo</strong> (respects specs-co-locate, plan/0012). Newline-keyed, <code>.host-software</code>
 style:</p>
 <pre><code>claim    = apalache:Reconstructs          # the disposition verbatim (or url:&lt;cited-url&gt; for LEXICON)
-verdict  = PROVEN Reconstructs            # verdict.py's exact PASS line — the word the weak model matches
+verdict  = PROVEN Reconstructs            # host-prove's exact PASS line — the word the weak model matches
 bound    = length=12                      # REQUIRED for bounded tools; `unbounded` only for tlaps; absent =&gt; HAZARD
 inputs   = &lt;blob-sha&gt; spec/Reconstructs.tla   # one per consumed input, via `git hash-object` (LEXICON: content-sha = sha256(body))
 tool     = apalache-mc@0.58.0             # resolved from tools.lock
@@ -1724,8 +1724,8 @@ sig      = ed25519:&lt;base64&gt;               # CI-only signature over the can
 <ul>
 <li><strong>Minter</strong> = the CI lane that already runs the verifier (plan/0023's kani/apalache/tlaps lanes;
 LEXICON minted by a network-having lane that fetches the URL once). After exit 0 it runs
-<code>verdict.py</code>, <code>git hash-object</code>es the inputs, signs with an <strong>ed25519 private key held only in CI
-secrets</strong>. The <strong>agent commits</strong> the <code>.att</code> (no CI write-back / push-loop); CI fails if a committed
+<code>host-prove</code> (the Rust binary — see the build chain), <code>git hash-object</code>es the inputs, signs with an
+<strong>ed25519 private key held only in CI secrets</strong>. The <strong>agent commits</strong> the <code>.att</code> (no CI write-back / push-loop); CI fails if a committed
 token does not match a fresh run.</li>
 <li><strong>Consumer</strong> = <code>host-lifecycle obligations</code> / <code>software --check</code>, <strong>offline</strong> in the hook path:
 ed25519-verify <code>sig</code> against the <strong>public key shipped in the binary</strong>, recompute the input digests
@@ -1774,8 +1774,12 @@ re-stale.</li>
 </ul>
 <h2 id="build-chain-software-first"><a class="header" href="#build-chain-software-first">Build chain (software-first)</a></h2>
 <ol>
-<li><strong>host-prove</strong> — <code>verdict.py</code> emits the bound; add a <code>sign</code>/<code>attest</code> step run by the lanes; fix
-the skill CI snippets (#10) + create <code>kani-conformance/references/</code>; honest <code>tools.lock</code>/README (#11).</li>
+<li><strong>host-prove</strong> — <strong>rewrite the Python <code>verdict.py</code> as a Rust binary</strong> (no unpinned interpreter on
+the trust path — the host#14 discipline; host-prove joins host-lint/host-lifecycle/host-grammar as
+Rust, retiring the project's lone <code>.py</code>). The binary parses the verifier output into the fixed
+verdict vocabulary, emits the <code>bound</code> (#9), and ed25519-<code>sign</code>s the token (the lanes run it after
+exit 0). Keep the thin <code>*_check.sh</code> wrappers (invoke the tool, pipe to the binary). Fix the skill
+CI snippets (#10) + create <code>kani-conformance/references/</code>; honest <code>tools.lock</code>/README (#11).</li>
 <li><strong>host-lifecycle</strong> — consume + ed25519-verify the token, replace <code>src.contains</code>, check the bound,
 add the <code>plan/*/spec/</code> gate (#12), ship the public key, add the ed25519 dep (keep it lean).</li>
 <li><strong>host-lint</strong> — LEXICON loader + the three guards + named citation-gated shapes + <code>lexicon</code> CRUD
