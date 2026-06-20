@@ -1789,9 +1789,12 @@ the re-pinned artifact <code>7922649</code> in the recorded container.</li>
 directive (so adoption never blocks an existing repo); the scaffold's examples use all-caps
 version designators (<code>NT 3.1</code>), so it is itself lint-clean. Note: strict is <strong>opt-in</strong>, not a
 silent default — the seed makes the mechanism discoverable; the operator audits (<code>host-lint --all</code>) and curates with <code>lexicon add</code>, then uncomments the directive.</li>
-<li><strong>spine</strong> — <code>call/0018</code> principle (discharge = pinned re-derivation; enforcement
-project-pluggable) + the LEXICON principles in host-template <code>CLAUDE.md</code> + an UPGRADING entry;
-then agentic-host re-records.</li>
+<li><strong>spine</strong> ✓ (host-template <code>897ce0d</code>/<code>c7aa1ac</code>) — host-template <code>CLAUDE.md</code> gains the <code>call/0018</code>
+re-derivation-discharge principle (AVAILABLE ≠ DISCHARGED; <code>--rederive</code> re-runs in the pinned
+toolchain; input-digest staleness; enforcement project-pluggable) and the LEXICON principle on
+the hygiene lane (declare-not-silence; warn→flag escalation). An <code>[upgrade "897ce0d"]</code> ledger
+entry (<code>depends 4a98d92</code>, machine-checkable <code>verify</code>) lands it; agentic-host bumped the submodule
+pointer and recorded <code>897ce0d</code> applied (the verify post-condition passed). All five rungs done.</li>
 </ol>
 <h2 id="verification-14"><a class="header" href="#verification-14">Verification</a></h2>
 <p><code>obligations --prove</code> (in the <code>verify</code> lane, runnable anywhere) rejects a stub proof (re-run
@@ -1804,9 +1807,10 @@ name-presence), while the <code>allium</code> job's offline <code>obligations</c
 against the ledger. The dogfood surfaced and fixed a latent host-lifecycle bug (<code>obligation_gaps</code>
 matched the whole rung, not just the proof name → a rung with <code>bound=</code>/<code>spec=</code>/<code>inputs=</code> was
 falsely ABSENT) — shipped as <strong>v0.18.1 (<code>ca0dfe2</code>)</strong>. Whole-suite green across all repos.</p>
-<p>Remaining: the <strong>spine</strong> entry (item 5) — <code>call/0018</code> + the LEXICON principle in host-template
-<code>CLAUDE.md</code> + an UPGRADING entry; then agentic-host re-records and host#8–#13 close together. No
-keys, no <code>.att</code>, no CI overfit, no parallel-checkout friction.</p>
+<p><strong>The build chain is complete — all five rungs done</strong> (host-prove, host-lifecycle, host-lint,
+adopt/upgrade seed, spine). The only remaining step is closing host#8–#13 together (a GitHub
+write, pending authorization), with the whole suite green. No keys, no <code>.att</code>, no CI overfit, no
+parallel-checkout friction.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0025--lifecycle-receipts--a-tool-readable-phase-manifest--a-strict-tool-carried-release-phase"><a class="header" href="#plan0025--lifecycle-receipts--a-tool-readable-phase-manifest--a-strict-tool-carried-release-phase">plan/0025 — Lifecycle receipts + a tool-readable phase manifest + a strict, tool-carried release phase</a></h1>
 <blockquote>
 <p><strong>Status:</strong> design hardened by an adversarial review (39 findings, proceed-with-changes) — see
