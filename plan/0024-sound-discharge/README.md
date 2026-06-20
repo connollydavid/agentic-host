@@ -86,9 +86,12 @@ A `lexicon add/rm/list` CRUD **computes** the phrase so the weak agent never aut
    command for a weak agent, no shell wrappers, no unpinned `python3` (`verdict.py` retired). Emits
    the `bound` (#9); wireable CI snippets + the created `kani-conformance/references/` (#10); honest
    `tools.lock`/README — Kani is a cargo-locked source build (#11). Off the trust path; no crypto.
-2. **host-lifecycle** — `obligations --prove` re-runs each declared rung in its pinned toolchain
-   and gates on PASS-at-bound, replacing `src.contains` (#8); record + recompute `inputs` digests
-   for staleness; add the `plan/*/spec/` gate (#12).
+2. **host-lifecycle** ✓ (v0.17.0, `5708dd8`) — `obligations --rederive <dir>` re-runs each declared
+   rung via host-prove and gates on **PASS-at-bound**, replacing `src.contains`-as-discharge (#8/#9;
+   the offline `src.contains` stays, honestly a presence *lint*). The verdict-interpretation
+   (`verdict_discharges`) is a pure, unit-tested function; the runner shells host-prove. `software
+   --check` HAZARDs a `.allium`/`.tla`/`.cfg` under `plan/*/spec/` (#12). Remaining: record/recompute
+   `inputs` digests for the offline staleness signal.
 3. **host-lint** — LEXICON loader + the three guards + named citation-gated shapes + `lexicon` CRUD
    + the committed `strict` switch (#13).
 4. **adopt/upgrade** — seed LEXICON + the strict default at adoption (host-lifecycle).
