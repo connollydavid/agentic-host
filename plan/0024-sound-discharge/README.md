@@ -86,12 +86,15 @@ A `lexicon add/rm/list` CRUD **computes** the phrase so the weak agent never aut
    command for a weak agent, no shell wrappers, no unpinned `python3` (`verdict.py` retired). Emits
    the `bound` (#9); wireable CI snippets + the created `kani-conformance/references/` (#10); honest
    `tools.lock`/README — Kani is a cargo-locked source build (#11). Off the trust path; no crypto.
-2. **host-lifecycle** ✓ (v0.17.0, `5708dd8`) — `obligations --rederive <dir>` re-runs each declared
+2. **host-lifecycle** ✓ (v0.18.0, `b5f022b`) — `obligations --rederive <dir>` re-runs each declared
    rung via host-prove and gates on **PASS-at-bound**, replacing `src.contains`-as-discharge (#8/#9;
    the offline `src.contains` stays, honestly a presence *lint*). The verdict-interpretation
    (`verdict_discharges`) is a pure, unit-tested function; the runner shells host-prove. `software
-   --check` HAZARDs a `.allium`/`.tla`/`.cfg` under `plan/*/spec/` (#12). Remaining: record/recompute
-   `inputs` digests for the offline staleness signal.
+   --check` HAZARDs a `.allium`/`.tla`/`.cfg` under `plan/*/spec/` (#12). **Input-digest staleness**
+   (v0.18.0, `call/0018`'s offline signal): a rung declares `inputs=<files>`; `--rederive
+   --record-digests` fingerprints them (`git hash-object`) into a committed `<manifest>.digests`
+   ledger, and an offline `obligations` run reports `STALE` if the inputs drifted without a fresh
+   re-derivation — `--record-digests` requires `--rederive`, so `--rederive` stays read-only/CI-safe.
 3. **host-lint** ✓ (v0.6.0, `c2c6979`) — the `LEXICON` file (replacing `.host-lint-allow`) +
    parser (phrase/URL split, `#`+non-digit comment carve-out) + the three guards reusing
    `classify_line` (master-key, no-laundering = the phrase is itself a flag-tell, citation gate =
@@ -103,7 +106,12 @@ A `lexicon add/rm/list` CRUD **computes** the phrase so the weak agent never aut
    does **not** enable strict on itself — its own source carries warn-tier rule examples, which
    strict would escalate to blocking flags. 93/93 integration green; `--verify-build` reproduces
    the re-pinned artifact `7922649` in the recorded container.
-4. **adopt/upgrade** — seed LEXICON + the strict default at adoption (host-lifecycle).
+4. **adopt/upgrade** ✓ (host-lifecycle v0.18.0) — `adopt` seeds a comment-only `LEXICON` scaffold
+   (skip-if-exists) documenting the format + how to opt into strict / jira-key gating. No active
+   directive (so adoption never blocks an existing repo); the scaffold's examples use all-caps
+   version designators (`NT 3.1`), so it is itself lint-clean. Note: strict is **opt-in**, not a
+   silent default — the seed makes the mechanism discoverable; the operator audits (`host-lint
+   --all`) and curates with `lexicon add`, then uncomments the directive.
 5. **spine** — `call/0018` principle (discharge = pinned re-derivation; enforcement
    project-pluggable) + the LEXICON principles in host-template `CLAUDE.md` + an UPGRADING entry;
    then agentic-host re-records.
