@@ -1766,7 +1766,7 @@ the <code>plan/0025</code> receipt make <em>not</em> running it visible.</li>
 command for a weak agent, no shell wrappers, no unpinned <code>python3</code> (<code>verdict.py</code> retired). Emits
 the <code>bound</code> (#9); wireable CI snippets + the created <code>kani-conformance/references/</code> (#10); honest
 <code>tools.lock</code>/README — Kani is a cargo-locked source build (#11). Off the trust path; no crypto.</li>
-<li><strong>host-lifecycle</strong> ✓ (v0.18.0, <code>b5f022b</code>) — <code>obligations --rederive &lt;dir&gt;</code> re-runs each declared
+<li><strong>host-lifecycle</strong> ✓ (v0.18.1, <code>ca0dfe2</code>) — <code>obligations --rederive &lt;dir&gt;</code> re-runs each declared
 rung via host-prove and gates on <strong>PASS-at-bound</strong>, replacing <code>src.contains</code>-as-discharge (#8/#9;
 the offline <code>src.contains</code> stays, honestly a presence <em>lint</em>). The verdict-interpretation
 (<code>verdict_discharges</code>) is a pure, unit-tested function; the runner shells host-prove. <code>software --check</code> HAZARDs a <code>.allium</code>/<code>.tla</code>/<code>.cfg</code> under <code>plan/*/spec/</code> (#12). <strong>Input-digest staleness</strong>
@@ -1796,8 +1796,17 @@ then agentic-host re-records.</li>
 <h2 id="verification-14"><a class="header" href="#verification-14">Verification</a></h2>
 <p><code>obligations --prove</code> (in the <code>verify</code> lane, runnable anywhere) rejects a stub proof (re-run
 fails) and a boundless/stale disposition; a vacuous proof is out of scope (documented). LEXICON:
-the 4B re-tested against the <strong>built</strong> <code>lexicon</code> tool. Whole-suite green across all repos; #8–#13
-closed. No keys, no <code>.att</code>, no CI overfit, no parallel-checkout friction.</p>
+the 4B re-tested against the <strong>built</strong> <code>lexicon</code> tool.</p>
+<p><strong><code>--rederive</code> dogfood — DONE.</strong> host-lint's two <code>kani:</code> rungs now declare <code>inputs=src/lib.rs</code> and
+carry a committed <code>host-lint.obligations.digests</code> ledger; host-lint CI re-derives them through
+host-prove and gates on PASS (the <code>kani</code> job — the real <code>call/0018</code> discharge, replacing
+name-presence), while the <code>allium</code> job's offline <code>obligations</code> enforces input-digest staleness
+against the ledger. The dogfood surfaced and fixed a latent host-lifecycle bug (<code>obligation_gaps</code>
+matched the whole rung, not just the proof name → a rung with <code>bound=</code>/<code>spec=</code>/<code>inputs=</code> was
+falsely ABSENT) — shipped as <strong>v0.18.1 (<code>ca0dfe2</code>)</strong>. Whole-suite green across all repos.</p>
+<p>Remaining: the <strong>spine</strong> entry (item 5) — <code>call/0018</code> + the LEXICON principle in host-template
+<code>CLAUDE.md</code> + an UPGRADING entry; then agentic-host re-records and host#8–#13 close together. No
+keys, no <code>.att</code>, no CI overfit, no parallel-checkout friction.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0025--lifecycle-receipts--a-tool-readable-phase-manifest--a-strict-tool-carried-release-phase"><a class="header" href="#plan0025--lifecycle-receipts--a-tool-readable-phase-manifest--a-strict-tool-carried-release-phase">plan/0025 — Lifecycle receipts + a tool-readable phase manifest + a strict, tool-carried release phase</a></h1>
 <blockquote>
 <p><strong>Status:</strong> design hardened by an adversarial review (39 findings, proceed-with-changes) — see
