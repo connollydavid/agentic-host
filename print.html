@@ -487,9 +487,10 @@ tells and never consults the dictionary (<code>call/0008</code>: fault, policy-f
 <h2 id="dictionary-format-proposed"><a class="header" href="#dictionary-format-proposed">Dictionary format (proposed)</a></h2>
 <p>A plain transient file at the repo root, e.g. <code>.host-remap</code>: one <code>old&lt;TAB&gt;new</code> per
 line; <code>#</code> comments and blank lines ignored. <code>old</code> is a literal concept token/phrase
-(<code>Phase 4</code>, <code>PHASE4</code>, <code>Phase 5.0</code>); <code>new</code> is the human-supplied canonical
-content-name. Matched case-insensitively and <strong>word-bounded</strong>, reusing the
-allow-list masking discipline so <code>Phase 1</code> cannot clip <code>Phase 12</code>. Same hand-rolled,
+(an ordinal tell in any spelling — spaced, concatenated, or decimal-suffixed); <code>new</code>
+is the human-supplied canonical content-name. Matched case-insensitively and
+<strong>word-bounded</strong>, reusing the allow-list masking discipline so a short tell cannot
+clip a longer one that contains it as a prefix. Same hand-rolled,
 dependency-free parse style as <code>.host</code> / <code>.host-lint-allow</code>.</p>
 <h2 id="verbs-host-lifecycle-matching-the-existing-match-argsget1-style"><a class="header" href="#verbs-host-lifecycle-matching-the-existing-match-argsget1-style">Verbs (<code>host-lifecycle</code>, matching the existing <code>match args.get(1)</code> style)</a></h2>
 <ul>
@@ -501,7 +502,7 @@ token is undispositioned. Token-free; the human reads the list and supplies name
 preserved archive, or assert a clean tree + tag), then substitute <strong>only</strong>
 declared entries, word-bounded, across tracked text files; never touch an unmapped
 token. Print changed-vs-skipped. Deterministic.</li>
-<li>Stage 2 is an ordinary <code>git rm .host-remap</code> + commit; the durable map is embedded
+<li>Teardown is an ordinary <code>git rm .host-remap</code> + commit; the durable map is embedded
 in the migration <code>call/</code> decision, not left in the tree.</li>
 </ul>
 <h2 id="invariants-verification-lane"><a class="header" href="#invariants-verification-lane">Invariants (verification lane)</a></h2>
@@ -1967,11 +1968,11 @@ stale; a release with no attestation cannot discharge; the Fen test reaches the 
 host-prove v0.1.1 releases carry receipts; the next release is cut through the orchestration.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0026--open-bug-closure-the-full-sequenced-plan-for-every-open-issue"><a class="header" href="#plan0026--open-bug-closure-the-full-sequenced-plan-for-every-open-issue">plan/0026 — Open-bug closure: the full sequenced plan for every open issue</a></h1>
 <blockquote>
-<p><strong>STATUS: COMPLETE (2026-06-20).</strong> All 8 tracked bugs closed, whole-suite green. Stage 0:
-host-lint#7 (v0.4.3), host#14 (host-lifecycle v0.16.0). Stage 1 (plan/0024): host#8, #9, #10,
+<p><strong>STATUS: COMPLETE (2026-06-20).</strong> All 8 tracked bugs closed, whole-suite green. Standalone
+fixes: host-lint#7 (v0.4.3), host#14 (host-lifecycle v0.16.0). plan/0024: host#8, #9, #10,
 #11, #12, #13 — closed together after a completeness review that caught and fixed one residual
 (#11's tools.lock header still overstated uniform SHA256; host-prove f0852e5). connollydavid/host
-has zero open issues. The Stage-2 release-orchestration track (plan/0025) is separate, future work.</p>
+has zero open issues. The plan/0025 release-orchestration track is separate, future work.</p>
 </blockquote>
 <p>The single plan that closes <strong>every</strong> open bug across the project, in dependency order. It does
 not re-specify the mechanisms (those live in plan/0024 and plan/0025); it is the coverage map +
@@ -1979,35 +1980,36 @@ the critical path + the per-stage closure criteria, so no open bug is orphaned a
 order is unambiguous.</p>
 <h2 id="every-open-bug-8-and-what-closes-it"><a class="header" href="#every-open-bug-8-and-what-closes-it">Every open bug (8), and what closes it</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Bug</th><th>One line</th><th>Closed by</th><th>Mechanism</th></tr></thead><tbody>
-<tr><td><strong>host-lint#7</strong></td><td><code>--all</code> ignores <code>.gitignore</code> — walks <code>build/</code>, vendored deps, <code>.git/</code>; slow + noisy; contradicts the "scan tracked files" docs</td><td><strong>Stage 0</strong> (standalone host-lint fix)</td><td><code>--all</code> scans actually-tracked files (<code>git ls-files</code>) / a gitignore-aware walk; doc matches behaviour</td></tr>
-<tr><td><strong>host#14</strong></td><td><code>software --verify-build</code> builds with ambient rust, ignoring the recorded <code>toolchain</code> pin</td><td><strong>Stage 0</strong> (standalone host-lifecycle fix)</td><td>build the recipe inside the recorded digest-pinned <code>toolchain</code> container; <code>--check</code> HAZARDs <code>artifact</code> with no <code>toolchain</code>; skip cleanly when no runtime</td></tr>
-<tr><td><strong>host#8</strong></td><td>rung discharge is name-presence (<code>src.contains</code>), not a real PASS</td><td><strong>Stage 1</strong> (plan/0024)</td><td>discharge = re-run the verifier in the pinned toolchain (<code>obligations --prove</code>); <code>src.contains</code> removed</td></tr>
-<tr><td><strong>host#9</strong></td><td>bounded rungs' soundness bound (<code>--length</code>/<code>--unwind</code>) unrepresentable + dropped</td><td><strong>Stage 1</strong> (plan/0024)</td><td><code>bound</code> is a required signed field; extend <code>verdict.py</code> to emit it <strong>first</strong></td></tr>
-<tr><td><strong>host#10</strong></td><td>host-prove rung CI lanes un-wireable in a separate repo (host-relative paths, wrapper HAZARD, broken <code>references/</code>)</td><td><strong>Stage 1</strong> (plan/0024)</td><td>wireable CI snippets, expose the literal tool name, create <code>references/</code></td></tr>
-<tr><td><strong>host#11</strong></td><td>host-prove README/<code>tools.lock</code> overstate uniform SHA256 (Kani is a cargo-locked source build)</td><td><strong>Stage 1</strong> (plan/0024)</td><td>honest wording: <code>git hash-object</code> inputs + tool from <code>tools.lock</code>; Kani ≠ SHA256 binary</td></tr>
-<tr><td><strong>host#12</strong></td><td>specs under <code>plan/*/spec/</code> evade the mandatory lanes</td><td><strong>Stage 1</strong> (plan/0024)</td><td><code>spec_lane_problems</code> HAZARDs a <code>plan/*/spec/</code> spec + a declared rung with no re-derivable lane</td></tr>
-<tr><td><strong>host#13</strong></td><td>LEXICON: tell-shaped tokens have no provenance → can only warn</td><td><strong>Stage 1</strong> (plan/0024)</td><td>line-based LEXICON; URL liveness checked by a network-having lane; warn → error</td></tr>
-<tr><td><strong>host#14</strong> <em>(orchestration home)</em></td><td>the strict release that consumes the pinned-toolchain build</td><td><strong>Stage 2</strong> (plan/0025)</td><td>host#14's fix is Stage 0; its <em>use</em> (release builds in the pinned toolchain) lands with the release phase</td></tr>
+<tr><td><strong>host-lint#7</strong></td><td><code>--all</code> ignores <code>.gitignore</code> — walks <code>build/</code>, vendored deps, <code>.git/</code>; slow + noisy; contradicts the "scan tracked files" docs</td><td><strong>Standalone</strong> (host-lint fix)</td><td><code>--all</code> scans actually-tracked files (<code>git ls-files</code>) / a gitignore-aware walk; doc matches behaviour</td></tr>
+<tr><td><strong>host#14</strong></td><td><code>software --verify-build</code> builds with ambient rust, ignoring the recorded <code>toolchain</code> pin</td><td><strong>Standalone</strong> (host-lifecycle fix)</td><td>build the recipe inside the recorded digest-pinned <code>toolchain</code> container; <code>--check</code> HAZARDs <code>artifact</code> with no <code>toolchain</code>; skip cleanly when no runtime</td></tr>
+<tr><td><strong>host#8</strong></td><td>rung discharge is name-presence (<code>src.contains</code>), not a real PASS</td><td><strong>plan/0024</strong></td><td>discharge = re-run the verifier in the pinned toolchain (<code>obligations --prove</code>); <code>src.contains</code> removed</td></tr>
+<tr><td><strong>host#9</strong></td><td>bounded rungs' soundness bound (<code>--length</code>/<code>--unwind</code>) unrepresentable + dropped</td><td><strong>plan/0024</strong></td><td><code>bound</code> is a required signed field; extend <code>verdict.py</code> to emit it <strong>first</strong></td></tr>
+<tr><td><strong>host#10</strong></td><td>host-prove rung CI lanes un-wireable in a separate repo (host-relative paths, wrapper HAZARD, broken <code>references/</code>)</td><td><strong>plan/0024</strong></td><td>wireable CI snippets, expose the literal tool name, create <code>references/</code></td></tr>
+<tr><td><strong>host#11</strong></td><td>host-prove README/<code>tools.lock</code> overstate uniform SHA256 (Kani is a cargo-locked source build)</td><td><strong>plan/0024</strong></td><td>honest wording: <code>git hash-object</code> inputs + tool from <code>tools.lock</code>; Kani ≠ SHA256 binary</td></tr>
+<tr><td><strong>host#12</strong></td><td>specs under <code>plan/*/spec/</code> evade the mandatory lanes</td><td><strong>plan/0024</strong></td><td><code>spec_lane_problems</code> HAZARDs a <code>plan/*/spec/</code> spec + a declared rung with no re-derivable lane</td></tr>
+<tr><td><strong>host#13</strong></td><td>LEXICON: tell-shaped tokens have no provenance → can only warn</td><td><strong>plan/0024</strong></td><td>line-based LEXICON; URL liveness checked by a network-having lane; warn → error</td></tr>
+<tr><td><strong>host#14</strong> <em>(orchestration home)</em></td><td>the strict release that consumes the pinned-toolchain build</td><td><strong>plan/0025</strong></td><td>host#14's fix is standalone; its <em>use</em> (release builds in the pinned toolchain) lands with the release work</td></tr>
 </tbody></table>
 </div>
 <p><strong>Coverage: 8/8 mapped, no orphans.</strong> host-lint#7 and host#14 were the only open bugs without a
-milestone; both are Stage-0 standalone fixes. #8–#13 are plan/0024. The orchestration/receipts
+milestone; both are standalone fixes. #8–#13 are plan/0024. The orchestration/receipts
 meta-gap (not a GitHub bug, but the root of this session's findings) is plan/0025.</p>
 <h2 id="dependency-dag--critical-path"><a class="header" href="#dependency-dag--critical-path">Dependency DAG / critical path</a></h2>
-<pre><code>Stage 0 (independent quick wins, no deps):
+<pre><code>Standalone fixes (independent, no deps):
    host-lint#7  ──▶ host-lint patch release
-   host#14      ──▶ host-lifecycle release ─────────────┐
-                                                         │ (release builds in pinned toolchain)
-Stage 1 (the big milestone, independent of Stage 0):     │
-   plan/0024  host-prove(#9,#10,#11) ▶ host-lifecycle(#8,#12) ▶ host-lint LEXICON(#13) ▶ seed ▶ spine
-                                                         │ (release build re-derivation = host#14, done)
-Stage 2 (depends on Stage 0 host#14 + Stage 1 plan/0024):▼
-   plan/0025  host-lifecycle(manifest+receipts+release) ▶ spine manifest ▶ dogfood releases
+   host#14      ──▶ host-lifecycle release  (its build is re-derived in the pinned
+                    toolchain — that re-derivation IS host#14, already done)
+
+plan/0024 (the big milestone, independent of the standalone fixes):
+   host-prove(#9,#10,#11) ▶ host-lifecycle(#8,#12) ▶ host-lint LEXICON(#13) ▶ seed ▶ spine
+
+plan/0025 (consumes the standalone host#14 build + plan/0024):
+   host-lifecycle(manifest+receipts+release) ▶ spine manifest ▶ dogfood releases
 </code></pre>
 <p>Critical path = plan/0024 → plan/0025 (the longest chain). host-lint#7 and host#14 are off the
 critical path and can land immediately.</p>
 <h2 id="the-sequence"><a class="header" href="#the-sequence">The sequence</a></h2>
-<h3 id="stage-0--standalone-quick-wins-close-host-lint7--host14"><a class="header" href="#stage-0--standalone-quick-wins-close-host-lint7--host14">Stage 0 — standalone quick wins (close host-lint#7 + host#14)</a></h3>
+<h3 id="standalone-quick-wins-close-host-lint7--host14"><a class="header" href="#standalone-quick-wins-close-host-lint7--host14">Standalone quick wins (close host-lint#7 + host#14)</a></h3>
 <ul>
 <li><strong>host-lint#7</strong> — replace the naive <code>walkdir_simple</code> in the <code>--all</code> path with a tracked-file
 scan (<code>git ls-files</code>, honest to the docs) or a <code>.gitignore</code>-aware walk; verify on a repo with a
@@ -2019,7 +2021,7 @@ container (not ambient rust); <code>software_check</code> HAZARDs an <code>artif
 skip cleanly (clear message) when no container runtime is present — never silent ambient-DRIFT.
 host-lifecycle minor release, tag, re-pin CI. <strong>Closes host#14.</strong> (Also: plan/0025 build-step-1.)</li>
 </ul>
-<h3 id="stage-1--plan0024-sound-discharge-by-re-derivation--lexicon-closes-host813"><a class="header" href="#stage-1--plan0024-sound-discharge-by-re-derivation--lexicon-closes-host813">Stage 1 — plan/0024 (sound discharge by re-derivation + LEXICON; closes host#8–#13)</a></h3>
+<h3 id="plan0024--sound-discharge-by-re-derivation--lexicon-closes-host813"><a class="header" href="#plan0024--sound-discharge-by-re-derivation--lexicon-closes-host813">plan/0024 — sound discharge by re-derivation + LEXICON (closes host#8–#13)</a></h3>
 <p>Re-scoped by <strong><code>call/0018</code></strong> (the CI-signed token was a deal-breaker — per-adopter key management —
 and "CI-green" overfits GitHub): discharge = <strong>re-derivation in the recorded pinned toolchain</strong>, no
 keys, portable to any CI or none. Build chain is software-first:</p>
@@ -2036,8 +2038,8 @@ gates on PASS-at-bound, replacing <code>src.contains</code> (<strong>#8</strong>
 <li><strong>spine</strong> — <code>call/0018</code> (discharge = pinned re-derivation; enforcement project-pluggable) + the
 <code>AVAILABLE ≠ DISCHARGED</code> / LEXICON principles + an UPGRADING entry; agentic-host re-records.</li>
 </ol>
-<h3 id="stage-2--plan0025-orchestration--receipts--strict-release-the-meta-gap-finalizes-host14"><a class="header" href="#stage-2--plan0025-orchestration--receipts--strict-release-the-meta-gap-finalizes-host14">Stage 2 — plan/0025 (orchestration + receipts + strict release; the meta-gap, finalizes host#14)</a></h3>
-<p>Depends on Stage 0 (host#14, the build re-derivation) + Stage 1 (plan/0024 sound discharge). Build per
+<h3 id="plan0025--orchestration--receipts--strict-release-the-meta-gap-finalizes-host14"><a class="header" href="#plan0025--orchestration--receipts--strict-release-the-meta-gap-finalizes-host14">plan/0025 — orchestration + receipts + strict release (the meta-gap, finalizes host#14)</a></h3>
+<p>Depends on the standalone host#14 (the build re-derivation) + plan/0024 (sound discharge). Build per
 plan/0025 (hardened R1–R6): host-lifecycle manifest parser + receipts ledger + release
 orchestration → spine lifecycle manifest + the "every phase emits a receipt" rule + UPGRADING →
 dogfood by re-cutting host-lint / host-prove releases <strong>through</strong> <code>host-lifecycle release</code>.</p>
@@ -2057,7 +2059,7 @@ real-4B test (the attestation design panel's CI-signed token was later dropped �
 re-derivation needs no keys); plan/0025 by the 39-finding adversarial review
 (<code>plan/0025/design-review.md</code>). The remaining live de-risk is the Fen (4B) ergonomics test of the
 <code>host-lifecycle release</code> UX, run <strong>after</strong> its prototype exists (the UX is tool-computed; a live
-test beats a mock). Stage 0 fixes need no design de-risk (they are bounded corrections).</p>
+test beats a mock). The standalone fixes need no design de-risk (they are bounded corrections).</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0027--host-lintignore-fenced-blocks-idiomatic-literal-citation-exclusion-call0019"><a class="header" href="#plan0027--host-lintignore-fenced-blocks-idiomatic-literal-citation-exclusion-call0019">plan/0027 — <code>host-lint:ignore</code> fenced blocks: idiomatic literal-citation exclusion (call/0019)</a></h1>
 <p>The host develops host-lint, so its own docs cite tell-shaped tokens; <code>call/</code> is linted on
 purpose, and <code>--no-verify</code> was the wrong escape (it hid a real tell). This milestone ships the

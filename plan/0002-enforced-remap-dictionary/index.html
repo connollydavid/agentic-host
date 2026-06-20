@@ -190,9 +190,10 @@ tells and never consults the dictionary (<code>call/0008</code>: fault, policy-f
 <h2 id="dictionary-format-proposed"><a class="header" href="#dictionary-format-proposed">Dictionary format (proposed)</a></h2>
 <p>A plain transient file at the repo root, e.g. <code>.host-remap</code>: one <code>old&lt;TAB&gt;new</code> per
 line; <code>#</code> comments and blank lines ignored. <code>old</code> is a literal concept token/phrase
-(<code>Phase 4</code>, <code>PHASE4</code>, <code>Phase 5.0</code>); <code>new</code> is the human-supplied canonical
-content-name. Matched case-insensitively and <strong>word-bounded</strong>, reusing the
-allow-list masking discipline so <code>Phase 1</code> cannot clip <code>Phase 12</code>. Same hand-rolled,
+(an ordinal tell in any spelling — spaced, concatenated, or decimal-suffixed); <code>new</code>
+is the human-supplied canonical content-name. Matched case-insensitively and
+<strong>word-bounded</strong>, reusing the allow-list masking discipline so a short tell cannot
+clip a longer one that contains it as a prefix. Same hand-rolled,
 dependency-free parse style as <code>.host</code> / <code>.host-lint-allow</code>.</p>
 <h2 id="verbs-host-lifecycle-matching-the-existing-match-argsget1-style"><a class="header" href="#verbs-host-lifecycle-matching-the-existing-match-argsget1-style">Verbs (<code>host-lifecycle</code>, matching the existing <code>match args.get(1)</code> style)</a></h2>
 <ul>
@@ -204,7 +205,7 @@ token is undispositioned. Token-free; the human reads the list and supplies name
 preserved archive, or assert a clean tree + tag), then substitute <strong>only</strong>
 declared entries, word-bounded, across tracked text files; never touch an unmapped
 token. Print changed-vs-skipped. Deterministic.</li>
-<li>Stage 2 is an ordinary <code>git rm .host-remap</code> + commit; the durable map is embedded
+<li>Teardown is an ordinary <code>git rm .host-remap</code> + commit; the durable map is embedded
 in the migration <code>call/</code> decision, not left in the tree.</li>
 </ul>
 <h2 id="invariants-verification-lane"><a class="header" href="#invariants-verification-lane">Invariants (verification lane)</a></h2>
