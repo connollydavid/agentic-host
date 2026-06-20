@@ -3,3 +3,4 @@ revision = "a5fef9d"
 adopted  = "2026-06-14"
 name     = "agentic-host"
 baseline = "a22704e"
+applied = 897ce0d recorded=2026-06-20 via=verify
