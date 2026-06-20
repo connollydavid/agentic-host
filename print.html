@@ -4012,6 +4012,12 @@ input <em>is</em> the anti-fabrication guarantee, not overhead to optimise away.
 <li>Status: superseded by the methodology spine (host-template @ 94a1ac7)</li>
 <li>Date: 2026-06-14</li>
 <li>Refines: <code>call/0007</code> (the record tier). Builds on <code>host-lint</code> <code>.host-lintignore</code>.</li>
+<li>Superseded in part by <code>call/0019</code>: the <code>plan/*/README.md</code> blanket exclusion in
+the Decision Outcome below is <strong>retired</strong>. Editable plan docs stay linted; an
+irreducible literal citation is boxed in a <code>host-lint:ignore</code> fence (the per-block
+mechanism), not path-excluded. Only the append-only record (<code>MEMORY.md</code>) remains
+path-excluded. The blanket exclusion existed only because path-exclusion was the
+sole mechanism in 2026-06.</li>
 </ul>
 <h2 id="context-and-problem-statement-14"><a class="header" href="#context-and-problem-statement-14">Context and Problem Statement</a></h2>
 <p><code>call/0007</code> left the record (append-only <code>MEMORY.md</code>, closed milestone bodies)
