@@ -1,5 +1,18 @@
 # plan/0027 — `host-lint:ignore` fenced blocks: idiomatic literal-citation exclusion (call/0019)
 
+> **STATUS: COMPLETE (2026-06-20).** Shipped through host-lint's own lifecycle: the
+> block (host-lint v0.7.0) skips a fenced block tagged `host-lint:ignore`; specced,
+> tested (regression `bbd0687` pins the boundary — an ignore region, a still-scanned
+> code block, then a second ignore region), released, applied repo-wide. The Apply
+> phase settled into a **three-way rule**: reword a pedagogical example or a doc's
+> own ordinal label; box an irreducible literal citation (the PLAN.md retired-ordinal
+> dictionary, the frozen plan/0022 + plan/0025 design-reviews); path-exclude only the
+> append-only `MEMORY.md`. That corrected an interim blanket `plan/*/*.md` exclusion
+> and retired call/0009's plan exclusion (`call/0019`). Spine landed: host-template
+> `da000aa` box clause + UPGRADING `97ddf52`; agentic-host recorded da000aa (`.host`
+> 0 pending). `host-lint --all` is flag-clean repo-wide; `--no-verify` retired. The
+> decision rule was validated down to the local weak-agent bar (Qwen-3.5-4B @ Q8_0).
+
 The host develops host-lint, so its own docs cite tell-shaped tokens; `call/` is linted on
 purpose, and `--no-verify` was the wrong escape (it hid a real tell). This milestone ships the
 idiomatic fix recorded in `call/0019` — host-lint skips a fenced block tagged `host-lint:ignore`
