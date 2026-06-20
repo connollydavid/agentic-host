@@ -260,9 +260,11 @@ the <code>plan/0025</code> receipt make <em>not</em> running it visible.</li>
 command for a weak agent, no shell wrappers, no unpinned <code>python3</code> (<code>verdict.py</code> retired). Emits
 the <code>bound</code> (#9); wireable CI snippets + the created <code>kani-conformance/references/</code> (#10); honest
 <code>tools.lock</code>/README — Kani is a cargo-locked source build (#11). Off the trust path; no crypto.</li>
-<li><strong>host-lifecycle</strong> — <code>obligations --prove</code> re-runs each declared rung in its pinned toolchain
-and gates on PASS-at-bound, replacing <code>src.contains</code> (#8); record + recompute <code>inputs</code> digests
-for staleness; add the <code>plan/*/spec/</code> gate (#12).</li>
+<li><strong>host-lifecycle</strong> ✓ (v0.17.0, <code>5708dd8</code>) — <code>obligations --rederive &lt;dir&gt;</code> re-runs each declared
+rung via host-prove and gates on <strong>PASS-at-bound</strong>, replacing <code>src.contains</code>-as-discharge (#8/#9;
+the offline <code>src.contains</code> stays, honestly a presence <em>lint</em>). The verdict-interpretation
+(<code>verdict_discharges</code>) is a pure, unit-tested function; the runner shells host-prove. <code>software --check</code> HAZARDs a <code>.allium</code>/<code>.tla</code>/<code>.cfg</code> under <code>plan/*/spec/</code> (#12). Remaining: record/recompute
+<code>inputs</code> digests for the offline staleness signal.</li>
 <li><strong>host-lint</strong> — LEXICON loader + the three guards + named citation-gated shapes + <code>lexicon</code> CRUD
 <ul>
 <li>the committed <code>strict</code> switch (#13).</li>
