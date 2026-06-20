@@ -417,7 +417,7 @@ Skill Hardening: hook fix, bare-numeral rule, release install path (see SKILL-HA
 <tr><td><a href="plan/0021-worktrees-under-host-tree/README.html">plan/0021-worktrees-under-host-tree</a></td><td>done (host-lifecycle v0.13.0: a <code>worktree =</code> line may carry <code>store=&lt;path&gt;</code>/<code>host=&lt;os&gt;</code> — <code>materialize</code> realises an external store via an in-tree symlink/junction handle, <code>--check</code> HAZARDs any worktree path escaping the host root or a store-backed line with no resolving handle; spine Where-room invariant enforced in host-template <code>7de7cb1</code> + UPGRADING; tools/host-lifecycle <code>5a5802f</code>, host-template <code>431f781</code>; resolves connollydavid/host#2)</td></tr>
 <tr><td><a href="plan/0022-honest-partial-upgrades/README.html">plan/0022-honest-partial-upgrades</a></td><td>done (host-lifecycle v0.14.0 <code>8ecb302</code>: the <code>.host</code> stamp records <code>baseline</code> [ledger position] + an explicit <code>applied</code> set, no git ancestry; <code>upgrade</code> lists pending by position + <code>--next</code>; verified <code>--record</code> [deps-gate, <code>verify</code> or <code>--unverified call/NNNN</code>, atomic, append-only]; <code>--advance</code> compacts; <code>software --check</code> re-checks every claim; <code>version</code> shows applied state; legacy stamps auto-migrate. Spine + UPGRADING <code>3f7c065</code>/<code>a5fef9d</code>, ledger dep annotations, README + <code>host=</code> clarification. Dogfooded: agentic-host migrated to baseline <code>3f7c065</code>, <code>upgrade .</code>/<code>software --check .</code> clean) — pivot validated by a 50-finding design review</td></tr>
 <tr><td><a href="plan/0023-verification-ladder-tiers/README.html">plan/0023-verification-ladder-tiers</a></td><td>done (new tool host-prove v0.1.0 — <code>apalache-symbolic</code>/<code>tlaps-proof</code>/<code>kani-conformance</code> skills + fixture-tested verdict parser + version+SHA256-pinned installers; host-lifecycle v0.15.0 opt-in <code>kani:</code>/<code>apalache:</code>/<code>tlaps:</code> dispositions + conditional, inert-until-declared lane HAZARD; spine reframed as a ladder with the rungs <code>4a98d92</code> + UPGRADING entry [machine-checkable <code>verify</code>] + host README. Dogfooded: Kani proofs in host-lint <code>a7ae5e9</code> [<code>is_review_code</code>, <code>seg_glob</code> — char/byte targets after <code>str::split</code>→memchr blew CBMC up; artifact byte-identical], Apalache PROVEN [all N,K] + TLAPS ALL-PROVED in host-grammar <code>fbd2e6c</code>. Weak-agent Qwen-3.5-4B held the safety-critical routing [refused to weaken a failing proof]) — resolves connollydavid/host#3 and #4</td></tr>
-<tr><td><a href="plan/0025-lifecycle-receipts-and-strict-release/README.html">plan/0025-lifecycle-receipts-and-strict-release</a></td><td>planned (design recorded <code>call/0017</code>; de-risk loop next). Makes the lifecycle machine-readable (a tool-readable phase manifest in the spine, replacing the three prose copies + adding modality), gives every phase a <strong>receipt</strong> [done-with-evidence | skip-with-reason — silent skipping becomes a <code>software --check</code> HAZARD, equal for weak+strong agents], and adds a strict, tool-carried <code>release</code> phase [verify → build-in-pinned-toolchain (host#14) → attest (plan/0024, BUILT≠RELEASED) → re-pin → tag → receipt]. Decisions A/B/C resolved against history + personas + case studies: conditional/recurring phases, migrated <code>call/</code> escape, strictest+tool-driven. Grew out of the orchestration gap + the strong-agent methodology-skip this session exhibited</td></tr>
+<tr><td><a href="plan/0025-lifecycle-receipts-and-strict-release/README.html">plan/0025-lifecycle-receipts-and-strict-release</a></td><td>planned (design recorded <code>call/0017</code>, then <strong>adversarially hardened</strong> — <code>design-review.md</code>, 39 findings [23 high], proceed-with-changes → revisions R1–R6: re-verifiable receipts, tool-computed <code>n-a</code>, content-validated skip escape, adopted-revision manifest read, no degraded release; Fen 4B test + build next). Makes the lifecycle machine-readable (a tool-readable phase manifest in the spine, replacing the three prose copies + adding modality), gives every phase a <strong>receipt</strong> [done-with-evidence | skip-with-reason — silent skipping becomes a <code>software --check</code> HAZARD, equal for weak+strong agents], and adds a strict, tool-carried <code>release</code> phase [verify → build-in-pinned-toolchain (host#14) → attest (plan/0024, BUILT≠RELEASED) → re-pin → tag → receipt]. Decisions A/B/C resolved against history + personas + case studies: conditional/recurring phases, migrated <code>call/</code> escape, strictest+tool-driven. Grew out of the orchestration gap + the strong-agent methodology-skip this session exhibited</td></tr>
 <tr><td><a href="plan/0024-attestation-tokens/README.html">plan/0024-attestation-tokens</a></td><td>planned (design de-risked before code: LEXICON adversarial review [24 confirmed flaws, proceed-with-changes] + real Qwen-3.5-4B test [it launders a tell + fabricates a URL → 3 mechanical guards] + attestation design panel [4 candidates → CI-signed token]; recorded in <code>call/0016</code>). A CI-signed ed25519 attestation token binds {claim, verdict, bound, input-digests, tool} — minted by the CI lane after a real verifier PASS, verified offline by <code>host-lifecycle</code>, replacing <code>obligation_gaps</code>'s <code>src.contains</code> name-presence: discharge now requires a real PASS [#8], carries the soundness bound [#9], and the same primitive grounds LEXICON #13 URL provenance. Fixes connollydavid/host#8–#12, implements #13. Honest non-goal: property-triviality [a vacuous proof still passes] is a review concern, not mechanizable</td></tr>
 </tbody></table>
 </div>
@@ -1792,6 +1792,15 @@ a vacuous proof is <em>out of scope</em> (documented). LEXICON: the 4B re-tested
 <code>lexicon</code> tool (the guards refuse the laundering it tried). Whole-suite green across all repos;
 #8–#13 closed.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0025--lifecycle-receipts--a-tool-readable-phase-manifest--a-strict-tool-carried-release-phase"><a class="header" href="#plan0025--lifecycle-receipts--a-tool-readable-phase-manifest--a-strict-tool-carried-release-phase">plan/0025 — Lifecycle receipts + a tool-readable phase manifest + a strict, tool-carried release phase</a></h1>
+<blockquote>
+<p><strong>Status:</strong> design hardened by an adversarial review (39 findings, proceed-with-changes) — see
+<code>design-review.md</code>. The sections below incorporate revisions R1–R6: receipts must be
+mechanically re-verifiable (a <code>recheck =</code> command or a signed/digest evidence — never a
+plaintext self-assertion); <code>n-a</code> is tool-computed and a protected core (<code>verify</code>) is
+un-skippable; the skip escape is content-validated and not greenfield-reachable; the manifest is
+read at the adopted revision and a missing one HAZARDs; release has no degraded mode (plan/0024
+is a hard prerequisite — block, never a soft <code>done</code>).</p>
+</blockquote>
 <h2 id="context-1"><a class="header" href="#context-1">Context</a></h2>
 <p>Two facts, surfaced this session, are one problem:</p>
 <ol>
@@ -1825,9 +1834,16 @@ tool    = host-lifecycle@0.16.0     # who wrote it
 already journals upgrades). Fen never hand-edits it; <code>host-lifecycle release --record</code> /
 <code>&lt;phase&gt; --record</code> writes it atomically. The <strong>spec</strong> (which phases exist + modality) lives in
 the template manifest; the <strong>record</strong> (what this project did to each) lives here.</li>
-<li><strong><code>software --check</code> re-verifies every receipt</strong> — a <code>done</code> whose evidence no longer holds
-(stale hash, missing tag, failed re-run) re-opens as a HAZARD; a manifest phase with no receipt
-is a HAZARD. This is the gate that makes silent skipping impossible for both agent classes.</li>
+<li><strong><code>software --check</code> re-verifies every receipt — by a closed mechanism, never self-assertion
+(R1).</strong> Each manifest phase declares a <code>recheck =</code> command (the analog of UPGRADING's
+<code>verify =</code>) that <code>--check</code> re-executes, OR its evidence is a recomputable digest / signed
+attestation (the done-path binds verdict↔inputs like the plan/0024 token). A <code>done</code> whose
+re-check fails re-opens as a HAZARD; a manifest phase with no receipt is a HAZARD. <strong>A phase
+whose evidence cannot be re-derived offline may not be <code>done</code></strong> — it is <code>n-a</code>/<code>skip</code> with cited
+authorization. <code>n-a</code> is <strong>tool-computed</strong> from project state (not agent-asserted), and a
+protected core (<code>verify</code> and anything a green gate depends on, <code>skippable = false</code>) refuses
+<code>skip</code>/<code>n-a</code> outright (R2). This is the gate that makes silent skipping impossible for both
+agent classes.</li>
 </ul>
 <h2 id="the-lifecycle-manifest-the-tool-readable-journal-spine-level"><a class="header" href="#the-lifecycle-manifest-the-tool-readable-journal-spine-level">The lifecycle manifest (the tool-readable journal, spine-level)</a></h2>
 <p>A single parseable file in host-template (same git-config style as <code>UPGRADING.md</code> /
@@ -1841,10 +1857,11 @@ prose copies. One stanza per phase, in order:</p>
     evidence  = attestation + tag + re-pinned .host-software
     requires  = verify
 </code></pre>
-<p><code>host-lifecycle</code> reads it for ordering, <code>--next</code>, and the <code>software --check</code> receipt gate; the
-<code>book</code> "lifecycle order" derives from it; an agent reads it to see the whole lifecycle at a
-glance. <strong>Decision A (<code>call/0017</code>)</strong>: modality is first-class, so the spine's "unconditional"
-rule becomes "every phase emits a receipt," not "every phase runs."</p>
+<p><code>host-lifecycle</code> reads it — <strong>at the project's adopted <code>.host</code> revision</strong> (<code>git show &lt;revision&gt;:&lt;manifest&gt;</code>), not the live template working tree, and a missing/unresolvable manifest
+when <code>.host</code> exists is a <strong>HAZARD</strong>, never a silent pass (R4) — for ordering, <code>--next</code>, and the
+<code>software --check</code> receipt gate; the <code>book</code> "lifecycle order" derives from it; an agent reads it
+to see the whole lifecycle at a glance. <strong>Decision A (<code>call/0017</code>)</strong>: modality is first-class, so
+the spine's "unconditional" rule becomes "every phase emits a receipt," not "every phase runs."</p>
 <h2 id="the-strict-tool-carried-release-phase"><a class="header" href="#the-strict-tool-carried-release-phase">The strict, tool-carried <code>release</code> phase</a></h2>
 <p><code>host-lifecycle release &lt;component&gt;</code> — single commands, the tool holds the sequence (so Fen can
 run it; <strong>strict = maximum enforcement, minimum agent steps</strong>):</p>
@@ -1858,14 +1875,26 @@ run it; <strong>strict = maximum enforcement, minimum agent steps</strong>):</p>
 component (host-lint: bump → lock → reproducible build → re-hash) vs tool (host-prove: tag
 only, no artifact). The orchestration reads the recipe; it is not one fixed procedure.</li>
 <li><strong>attest</strong> — require a CI attestation (<strong>plan/0024</strong>) binding the verdict + inputs, so
-<strong>BUILT ≠ RELEASED</strong>: a hand-rolled or stale build mints no token and cannot discharge.</li>
-<li><strong>re-pin + tag</strong> — re-pin <code>.host-software</code>, push the annotated <code>vX.Y.Z</code> tag (the
-tag-every-release rule becomes a mechanical receipt check, not a MEMORY note).</li>
-<li><strong>receipt</strong> — <code>release --record</code> writes the release receipt atomically.</li>
+<strong>BUILT ≠ RELEASED</strong>: a hand-rolled or stale build mints no token and cannot discharge.
+Absent the attestation primitive, an artifact-bearing release is a <strong>hard STOP</strong> (a <code>blocked</code>
+receipt) — there is <strong>no degraded "attestation-pending" <code>done</code></strong> (R5).</li>
+<li><strong>re-pin + tag</strong> — done <strong>last and resumably</strong>, after attestation: re-pin <code>.host-software</code>,
+push the annotated <code>vX.Y.Z</code> tag (the tag-every-release rule becomes a mechanical receipt
+check, not a MEMORY note). The tool <strong>computes</strong> the version (Fen picks a bump <em>level</em>
+<code>major|minor|patch</code>; the tool edits Cargo.toml + Cargo.lock) and <strong>computes</strong> the hash from a
+verified container build, refusing to write a canonical hash from anything else — when no
+container runtime is present, release BLOCKS (the re-pin/re-hash hazard the strong agent
+nearly hit this session is never handed to Fen) (R5/R6). The build step is a per-<code>BuildView</code>
+loop mirroring <code>builds_view()</code>, not a binary artifact-vs-tool guess.</li>
+<li><strong>receipt</strong> — <code>release --record</code> writes the release receipt atomically, recording the pin
+released + the blob/commit <code>verify</code> ran against; re-check asserts equality (R5).</li>
 </ul>
 </li>
-<li><strong>Migrated escape (Decision B)</strong>: <code>release --record &lt;component&gt; --skip call/NNNN</code> for a
-case-(b) component with its own foreign release process (mirrors <code>repro-exempt</code>).</li>
+<li><strong>Migrated escape (Decision B), content-validated (R3)</strong>: <code>release --record &lt;component&gt; --skip call/NNNN</code> only for a component whose recipe shows foreign/migrated provenance (a
+<code>repro-exempt</code>-class marker — never greenfield); the cited decision is <strong>parsed</strong> (require
+<code>Status: accepted</code> + a <code>Scope:</code>/<code>authorizes-skip:</code> header naming this phase and component;
+citing the meta-decision is forbidden), and the skip records the decision body's
+<code>git hash-object</code> so a changed justification re-opens.</li>
 </ol>
 <p><strong>Decision C = strictest (<code>call/0017</code>, operator).</strong> Gated on host#14 + plan/0024; no shallow
 interim.</p>
@@ -1874,9 +1903,9 @@ interim.</p>
 <li><strong>host#14</strong> — <code>software --verify-build</code> runs the recipe <strong>in the recorded <code>toolchain</code>
 container</strong>; <code>software --check</code> HAZARDs an <code>artifact</code> with no <code>toolchain</code>; skip cleanly when no
 container runtime (never silent ambient-DRIFT). [host-lifecycle]</li>
-<li><strong>plan/0024 attestation</strong> — the CI-signed token (its own milestone); the strict release
-consumes it. May land in parallel; the release phase degrades to "attestation pending" until
-it exists, recorded as such.</li>
+<li><strong>plan/0024 attestation</strong> — the CI-signed token (its own milestone); a <strong>hard prerequisite</strong>
+of the release work (R5), not a parallel track: release orchestration is not built or shipped
+until the token consumer exists, so no degraded path ever enters a released binary.</li>
 <li><strong>host-lifecycle</strong> — manifest parser; the receipts ledger (<code>--record</code> / <code>--next</code> / re-check in
 <code>software --check</code>); the <code>release</code> orchestration reading the manifest + <code>.host-software</code> recipe.</li>
 <li><strong>spine (host-template)</strong> — the lifecycle manifest (dedup the three prose copies, add
@@ -2186,6 +2215,24 @@ cannot catch it.</li>
 <li><strong>A new orchestrator tool</strong> — rejected: it fragments lifecycle ownership across two binaries;
 host-lifecycle already owns every phase. (The operator's earlier skepticism — "are you correct
 in suggesting a new one?" — was right.)</li>
+</ul>
+<h2 id="review-hardening-post-adversarial-review"><a class="header" href="#review-hardening-post-adversarial-review">Review hardening (post-adversarial-review)</a></h2>
+<p>An adversarial review of the implementing milestone (<code>plan/0025/design-review.md</code>, 39 findings,
+proceed-with-changes) confirmed the decision but forced the mechanism to be strictly mechanical —
+the first cut's receipts were too self-asserted. The decision stands as written, refined by:</p>
+<ul>
+<li><strong>A receipt is never a plaintext self-assertion.</strong> <code>done</code> requires a re-runnable <code>recheck =</code>
+post-condition or signed/digest evidence; a phase whose evidence cannot be re-derived offline
+may not be <code>done</code>. (Inherits, not weakens, <code>call/0016</code>'s anti-forgery standard.)</li>
+<li><strong><code>n-a</code> is tool-computed from project state</strong>, not agent-asserted; a protected core (<code>verify</code>)
+is un-skippable; phase modality constrains the legal dispositions, gate-enforced.</li>
+<li><strong>The skip escape is content-validated</strong> — the cited decision is parsed (accepted Status, a
+Scope/<code>authorizes-skip:</code> header naming this phase+component, content-hashed), allowed only for
+recipe-proven migrated components, never greenfield. Mere file-existence is insufficient.</li>
+<li><strong>The manifest is read at the adopted revision; a missing one HAZARDs</strong> (never a silent pass).</li>
+<li><strong>Release has no degraded mode</strong> — plan/0024 is a hard prerequisite; absent it, an
+artifact-bearing release blocks. The tool computes the version and the hash; irreversible
+mutations (tag, re-pin) run last and resumably, after attestation.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="claudemd"><a class="header" href="#claudemd">CLAUDE.md</a></h1>
 <p>Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.</p>

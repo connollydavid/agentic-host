@@ -264,6 +264,24 @@ cannot catch it.</li>
 host-lifecycle already owns every phase. (The operator's earlier skepticism — "are you correct
 in suggesting a new one?" — was right.)</li>
 </ul>
+<h2 id="review-hardening-post-adversarial-review"><a class="header" href="#review-hardening-post-adversarial-review">Review hardening (post-adversarial-review)</a></h2>
+<p>An adversarial review of the implementing milestone (<code>plan/0025/design-review.md</code>, 39 findings,
+proceed-with-changes) confirmed the decision but forced the mechanism to be strictly mechanical —
+the first cut's receipts were too self-asserted. The decision stands as written, refined by:</p>
+<ul>
+<li><strong>A receipt is never a plaintext self-assertion.</strong> <code>done</code> requires a re-runnable <code>recheck =</code>
+post-condition or signed/digest evidence; a phase whose evidence cannot be re-derived offline
+may not be <code>done</code>. (Inherits, not weakens, <code>call/0016</code>'s anti-forgery standard.)</li>
+<li><strong><code>n-a</code> is tool-computed from project state</strong>, not agent-asserted; a protected core (<code>verify</code>)
+is un-skippable; phase modality constrains the legal dispositions, gate-enforced.</li>
+<li><strong>The skip escape is content-validated</strong> — the cited decision is parsed (accepted Status, a
+Scope/<code>authorizes-skip:</code> header naming this phase+component, content-hashed), allowed only for
+recipe-proven migrated components, never greenfield. Mere file-existence is insufficient.</li>
+<li><strong>The manifest is read at the adopted revision; a missing one HAZARDs</strong> (never a silent pass).</li>
+<li><strong>Release has no degraded mode</strong> — plan/0024 is a hard prerequisite; absent it, an
+artifact-bearing release blocks. The tool computes the version and the hash; irreversible
+mutations (tag, re-pin) run last and resumably, after attestation.</li>
+</ul>
 
                     </main>
 
