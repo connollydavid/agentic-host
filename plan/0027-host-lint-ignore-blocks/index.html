@@ -175,6 +175,20 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="plan0027--host-lintignore-fenced-blocks-idiomatic-literal-citation-exclusion-call0019"><a class="header" href="#plan0027--host-lintignore-fenced-blocks-idiomatic-literal-citation-exclusion-call0019">plan/0027 — <code>host-lint:ignore</code> fenced blocks: idiomatic literal-citation exclusion (call/0019)</a></h1>
+<blockquote>
+<p><strong>STATUS: COMPLETE (2026-06-20).</strong> Shipped through host-lint's own lifecycle: the
+block (host-lint v0.7.0) skips a fenced block tagged <code>host-lint:ignore</code>; specced,
+tested (regression <code>bbd0687</code> pins the boundary — an ignore region, a still-scanned
+code block, then a second ignore region), released, applied repo-wide. The Apply
+phase settled into a <strong>three-way rule</strong>: reword a pedagogical example or a doc's
+own ordinal label; box an irreducible literal citation (the PLAN.md retired-ordinal
+dictionary, the frozen plan/0022 + plan/0025 design-reviews); path-exclude only the
+append-only <code>MEMORY.md</code>. That corrected an interim blanket <code>plan/*/*.md</code> exclusion
+and retired call/0009's plan exclusion (<code>call/0019</code>). Spine landed: host-template
+<code>da000aa</code> box clause + UPGRADING <code>97ddf52</code>; agentic-host recorded da000aa (<code>.host</code>
+0 pending). <code>host-lint --all</code> is flag-clean repo-wide; <code>--no-verify</code> retired. The
+decision rule was validated down to the local weak-agent bar (Qwen-3.5-4B @ Q8_0).</p>
+</blockquote>
 <p>The host develops host-lint, so its own docs cite tell-shaped tokens; <code>call/</code> is linted on
 purpose, and <code>--no-verify</code> was the wrong escape (it hid a real tell). This milestone ships the
 idiomatic fix recorded in <code>call/0019</code> — host-lint skips a fenced block tagged <code>host-lint:ignore</code>
