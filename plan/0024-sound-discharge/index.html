@@ -255,11 +255,11 @@ the <code>plan/0025</code> receipt make <em>not</em> running it visible.</li>
 </ul>
 <h2 id="build-chain-software-first"><a class="header" href="#build-chain-software-first">Build chain (software-first)</a></h2>
 <ol>
-<li><strong>host-prove</strong> — keep the version+SHA256-pinned proof toolchains; the verdict/bound parser
-becomes a small <strong>Rust</strong> binary (no unpinned <code>python3</code>; an agent-UX aid, off the trust path) —
-parse the verifier output into the fixed verdict vocabulary and emit the <code>bound</code> (#9). Fix the
-skill CI snippets (#10) + create <code>kani-conformance/references/</code>; honest <code>tools.lock</code>/README (#11).
-<strong>No signer, no crypto.</strong></li>
+<li><strong>host-prove</strong> ✓ (v0.2.0, <code>91719aa</code>) — a small <strong>Rust</strong> binary that <strong>runs the verifier itself</strong>
+(<code>cargo kani</code> / <code>apalache-mc</code> / <code>tlapm</code> via <code>std::process</code>) and parses in one process: one
+command for a weak agent, no shell wrappers, no unpinned <code>python3</code> (<code>verdict.py</code> retired). Emits
+the <code>bound</code> (#9); wireable CI snippets + the created <code>kani-conformance/references/</code> (#10); honest
+<code>tools.lock</code>/README — Kani is a cargo-locked source build (#11). Off the trust path; no crypto.</li>
 <li><strong>host-lifecycle</strong> — <code>obligations --prove</code> re-runs each declared rung in its pinned toolchain
 and gates on PASS-at-bound, replacing <code>src.contains</code> (#8); record + recompute <code>inputs</code> digests
 for staleness; add the <code>plan/*/spec/</code> gate (#12).</li>
