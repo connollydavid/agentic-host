@@ -86,3 +86,22 @@ is invisible to the gate of another.
 - **A new orchestrator tool** — rejected: it fragments lifecycle ownership across two binaries;
   host-lifecycle already owns every phase. (The operator's earlier skepticism — "are you correct
   in suggesting a new one?" — was right.)
+
+## Review hardening (post-adversarial-review)
+
+An adversarial review of the implementing milestone (`plan/0025/design-review.md`, 39 findings,
+proceed-with-changes) confirmed the decision but forced the mechanism to be strictly mechanical —
+the first cut's receipts were too self-asserted. The decision stands as written, refined by:
+
+- **A receipt is never a plaintext self-assertion.** `done` requires a re-runnable `recheck =`
+  post-condition or signed/digest evidence; a phase whose evidence cannot be re-derived offline
+  may not be `done`. (Inherits, not weakens, `call/0016`'s anti-forgery standard.)
+- **`n-a` is tool-computed from project state**, not agent-asserted; a protected core (`verify`)
+  is un-skippable; phase modality constrains the legal dispositions, gate-enforced.
+- **The skip escape is content-validated** — the cited decision is parsed (accepted Status, a
+  Scope/`authorizes-skip:` header naming this phase+component, content-hashed), allowed only for
+  recipe-proven migrated components, never greenfield. Mere file-existence is insufficient.
+- **The manifest is read at the adopted revision; a missing one HAZARDs** (never a silent pass).
+- **Release has no degraded mode** — plan/0024 is a hard prerequisite; absent it, an
+  artifact-bearing release blocks. The tool computes the version and the hash; irreversible
+  mutations (tag, re-pin) run last and resumably, after attestation.
