@@ -81,11 +81,11 @@ A `lexicon add/rm/list` CRUD **computes** the phrase so the weak agent never aut
 
 ## Build chain (software-first)
 
-1. **host-prove** — keep the version+SHA256-pinned proof toolchains; the verdict/bound parser
-   becomes a small **Rust** binary (no unpinned `python3`; an agent-UX aid, off the trust path) —
-   parse the verifier output into the fixed verdict vocabulary and emit the `bound` (#9). Fix the
-   skill CI snippets (#10) + create `kani-conformance/references/`; honest `tools.lock`/README (#11).
-   **No signer, no crypto.**
+1. **host-prove** ✓ (v0.2.0, `91719aa`) — a small **Rust** binary that **runs the verifier itself**
+   (`cargo kani` / `apalache-mc` / `tlapm` via `std::process`) and parses in one process: one
+   command for a weak agent, no shell wrappers, no unpinned `python3` (`verdict.py` retired). Emits
+   the `bound` (#9); wireable CI snippets + the created `kani-conformance/references/` (#10); honest
+   `tools.lock`/README — Kani is a cargo-locked source build (#11). Off the trust path; no crypto.
 2. **host-lifecycle** — `obligations --prove` re-runs each declared rung in its pinned toolchain
    and gates on PASS-at-bound, replacing `src.contains` (#8); record + recompute `inputs` digests
    for staleness; add the `plan/*/spec/` gate (#12).
