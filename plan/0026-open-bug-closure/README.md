@@ -1,5 +1,11 @@
 # plan/0026 — Open-bug closure: the full sequenced plan for every open issue
 
+> **STATUS: COMPLETE (2026-06-20).** All 8 tracked bugs closed, whole-suite green. Stage 0:
+> host-lint#7 (v0.4.3), host#14 (host-lifecycle v0.16.0). Stage 1 (plan/0024): host#8, #9, #10,
+> #11, #12, #13 — closed together after a completeness review that caught and fixed one residual
+> (#11's tools.lock header still overstated uniform SHA256; host-prove f0852e5). connollydavid/host
+> has zero open issues. The Stage-2 release-orchestration track (plan/0025) is separate, future work.
+
 The single plan that closes **every** open bug across the project, in dependency order. It does
 not re-specify the mechanisms (those live in plan/0024 and plan/0025); it is the coverage map +
 the critical path + the per-stage closure criteria, so no open bug is orphaned and the build
