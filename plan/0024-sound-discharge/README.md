@@ -112,9 +112,12 @@ A `lexicon add/rm/list` CRUD **computes** the phrase so the weak agent never aut
    version designators (`NT 3.1`), so it is itself lint-clean. Note: strict is **opt-in**, not a
    silent default — the seed makes the mechanism discoverable; the operator audits (`host-lint
    --all`) and curates with `lexicon add`, then uncomments the directive.
-5. **spine** — `call/0018` principle (discharge = pinned re-derivation; enforcement
-   project-pluggable) + the LEXICON principles in host-template `CLAUDE.md` + an UPGRADING entry;
-   then agentic-host re-records.
+5. **spine** ✓ (host-template `897ce0d`/`c7aa1ac`) — host-template `CLAUDE.md` gains the `call/0018`
+   re-derivation-discharge principle (AVAILABLE ≠ DISCHARGED; `--rederive` re-runs in the pinned
+   toolchain; input-digest staleness; enforcement project-pluggable) and the LEXICON principle on
+   the hygiene lane (declare-not-silence; warn→flag escalation). An `[upgrade "897ce0d"]` ledger
+   entry (`depends 4a98d92`, machine-checkable `verify`) lands it; agentic-host bumped the submodule
+   pointer and recorded `897ce0d` applied (the verify post-condition passed). All five rungs done.
 
 ## Verification
 
@@ -130,6 +133,7 @@ against the ledger. The dogfood surfaced and fixed a latent host-lifecycle bug (
 matched the whole rung, not just the proof name → a rung with `bound=`/`spec=`/`inputs=` was
 falsely ABSENT) — shipped as **v0.18.1 (`ca0dfe2`)**. Whole-suite green across all repos.
 
-Remaining: the **spine** entry (item 5) — `call/0018` + the LEXICON principle in host-template
-`CLAUDE.md` + an UPGRADING entry; then agentic-host re-records and host#8–#13 close together. No
-keys, no `.att`, no CI overfit, no parallel-checkout friction.
+**The build chain is complete — all five rungs done** (host-prove, host-lifecycle, host-lint,
+adopt/upgrade seed, spine). The only remaining step is closing host#8–#13 together (a GitHub
+write, pending authorization), with the whole suite green. No keys, no `.att`, no CI overfit, no
+parallel-checkout friction.
