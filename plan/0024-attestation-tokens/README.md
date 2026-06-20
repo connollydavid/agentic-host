@@ -39,7 +39,7 @@ style:
 
 ```
 claim    = apalache:Reconstructs          # the disposition verbatim (or url:<cited-url> for LEXICON)
-verdict  = PROVEN Reconstructs            # verdict.py's exact PASS line — the word the weak model matches
+verdict  = PROVEN Reconstructs            # host-prove's exact PASS line — the word the weak model matches
 bound    = length=12                      # REQUIRED for bounded tools; `unbounded` only for tlaps; absent => HAZARD
 inputs   = <blob-sha> spec/Reconstructs.tla   # one per consumed input, via `git hash-object` (LEXICON: content-sha = sha256(body))
 tool     = apalache-mc@0.58.0             # resolved from tools.lock
@@ -48,8 +48,8 @@ sig      = ed25519:<base64>               # CI-only signature over the canonical
 
 - **Minter** = the CI lane that already runs the verifier (plan/0023's kani/apalache/tlaps lanes;
   LEXICON minted by a network-having lane that fetches the URL once). After exit 0 it runs
-  `verdict.py`, `git hash-object`es the inputs, signs with an **ed25519 private key held only in CI
-  secrets**. The **agent commits** the `.att` (no CI write-back / push-loop); CI fails if a committed
+  `host-prove` (the Rust binary — see the build chain), `git hash-object`es the inputs, signs with an
+  **ed25519 private key held only in CI secrets**. The **agent commits** the `.att` (no CI write-back / push-loop); CI fails if a committed
   token does not match a fresh run.
 - **Consumer** = `host-lifecycle obligations` / `software --check`, **offline** in the hook path:
   ed25519-verify `sig` against the **public key shipped in the binary**, recompute the input digests
@@ -103,8 +103,12 @@ the phrase so the weak agent never authors it.
 
 ## Build chain (software-first)
 
-1. **host-prove** — `verdict.py` emits the bound; add a `sign`/`attest` step run by the lanes; fix
-   the skill CI snippets (#10) + create `kani-conformance/references/`; honest `tools.lock`/README (#11).
+1. **host-prove** — **rewrite the Python `verdict.py` as a Rust binary** (no unpinned interpreter on
+   the trust path — the host#14 discipline; host-prove joins host-lint/host-lifecycle/host-grammar as
+   Rust, retiring the project's lone `.py`). The binary parses the verifier output into the fixed
+   verdict vocabulary, emits the `bound` (#9), and ed25519-`sign`s the token (the lanes run it after
+   exit 0). Keep the thin `*_check.sh` wrappers (invoke the tool, pipe to the binary). Fix the skill
+   CI snippets (#10) + create `kani-conformance/references/`; honest `tools.lock`/README (#11).
 2. **host-lifecycle** — consume + ed25519-verify the token, replace `src.contains`, check the bound,
    add the `plan/*/spec/` gate (#12), ship the public key, add the ed25519 dep (keep it lean).
 3. **host-lint** — LEXICON loader + the three guards + named citation-gated shapes + `lexicon` CRUD
