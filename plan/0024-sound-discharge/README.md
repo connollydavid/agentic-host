@@ -86,7 +86,7 @@ A `lexicon add/rm/list` CRUD **computes** the phrase so the weak agent never aut
    command for a weak agent, no shell wrappers, no unpinned `python3` (`verdict.py` retired). Emits
    the `bound` (#9); wireable CI snippets + the created `kani-conformance/references/` (#10); honest
    `tools.lock`/README — Kani is a cargo-locked source build (#11). Off the trust path; no crypto.
-2. **host-lifecycle** ✓ (v0.18.0, `b5f022b`) — `obligations --rederive <dir>` re-runs each declared
+2. **host-lifecycle** ✓ (v0.18.1, `ca0dfe2`) — `obligations --rederive <dir>` re-runs each declared
    rung via host-prove and gates on **PASS-at-bound**, replacing `src.contains`-as-discharge (#8/#9;
    the offline `src.contains` stays, honestly a presence *lint*). The verdict-interpretation
    (`verdict_discharges`) is a pure, unit-tested function; the runner shells host-prove. `software
@@ -120,5 +120,16 @@ A `lexicon add/rm/list` CRUD **computes** the phrase so the weak agent never aut
 
 `obligations --prove` (in the `verify` lane, runnable anywhere) rejects a stub proof (re-run
 fails) and a boundless/stale disposition; a vacuous proof is out of scope (documented). LEXICON:
-the 4B re-tested against the **built** `lexicon` tool. Whole-suite green across all repos; #8–#13
-closed. No keys, no `.att`, no CI overfit, no parallel-checkout friction.
+the 4B re-tested against the **built** `lexicon` tool.
+
+**`--rederive` dogfood — DONE.** host-lint's two `kani:` rungs now declare `inputs=src/lib.rs` and
+carry a committed `host-lint.obligations.digests` ledger; host-lint CI re-derives them through
+host-prove and gates on PASS (the `kani` job — the real `call/0018` discharge, replacing
+name-presence), while the `allium` job's offline `obligations` enforces input-digest staleness
+against the ledger. The dogfood surfaced and fixed a latent host-lifecycle bug (`obligation_gaps`
+matched the whole rung, not just the proof name → a rung with `bound=`/`spec=`/`inputs=` was
+falsely ABSENT) — shipped as **v0.18.1 (`ca0dfe2`)**. Whole-suite green across all repos.
+
+Remaining: the **spine** entry (item 5) — `call/0018` + the LEXICON principle in host-template
+`CLAUDE.md` + an UPGRADING entry; then agentic-host re-records and host#8–#13 close together. No
+keys, no `.att`, no CI overfit, no parallel-checkout friction.
