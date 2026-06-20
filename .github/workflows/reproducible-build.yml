@@ -1,9 +1,10 @@
 # Prove host-lint's build is reproducible: rebuild from the recorded pin and check the
 # artifact reproduces its recorded sha256 (the production anchor; plan/0005, plan/0006).
-# Bit-for-bit reproducibility needs a fixed toolchain AND a fixed OS/linker, so the job
-# runs in a digest-pinned container — the one canonical build environment the recorded
-# artifact hash (in .host-software) is produced in. host-lint is greenfield, so it must
-# reproduce; there is no repro-exempt for it.
+# Bit-for-bit reproducibility needs a fixed toolchain AND a fixed OS/linker, so the build
+# runs inside the digest-pinned `toolchain` container recorded in .host-software — and
+# host-lifecycle >= 0.16.0 `--verify-build` now drives that container itself (host#14), so
+# this job runs on the bare runner (where docker is available) rather than inside a
+# container. host-lint is greenfield, so it must reproduce; there is no repro-exempt for it.
 name: Reproducible build
 
 on:
@@ -15,17 +16,13 @@ on:
 jobs:
   verify-build:
     runs-on: ubuntu-latest
-    container:
-      image: rust:1.95.0@sha256:f49565f188ee00bc2a18dd418183f2c5f23ef7d6e691890517ed341a598f67c3
     steps:
       - uses: actions/checkout@v4
-      - name: Trust the workspace (container runs as root)
-        run: git config --global --add safe.directory '*'
-      - name: Install host-lifecycle (pinned to v0.15.1)
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 2a24deb0e5bcb3b3c09f50c39d7cfb84c445eafa --root /usr/local
+      - name: Install host-lifecycle (pinned to v0.16.0)
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev a1e38115e71311b715f94f93d946ce5e0b2499f0
       - name: Materialize the software (bare store + worktrees)
         run: host-lifecycle software --materialize .
       - name: Check the software (pins, spec lanes, obligations, no HAZARD)
         run: host-lifecycle software --check .
-      - name: Verify reproducibility (rebuild from the pin; compare the artifact)
+      - name: Verify reproducibility (rebuild inside the recorded toolchain container)
         run: host-lifecycle software --verify-build .
