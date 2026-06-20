@@ -10,3 +10,6 @@
 [submodule "tools/host-lifecycle"]
 	path = tools/host-lifecycle
 	url = https://github.com/connollydavid/host-lifecycle.git
+[submodule "tools/host-prove"]
+	path = tools/host-prove
+	url = https://github.com/connollydavid/host-prove
