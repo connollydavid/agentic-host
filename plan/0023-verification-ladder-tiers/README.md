@@ -64,5 +64,7 @@ a fixed verdict vocabulary — makes the rung robust regardless of the serving l
 ## Verification
 
 `software --check` clean (incl. the new "Kani lane present (declares kani:)" line);
-`validate plan/`/`call/` ok; `upgrade .` up to date at baseline `4a98d92`. Whole suite
+`validate plan/`/`call/` ok; `upgrade .` up to date at baseline `a22704e` (the
+fixture-exclusion entry, which this milestone shipped on top of the deeper-rungs entry
+`4a98d92`). Whole suite
 green across host-prove, host-lifecycle, host-lint, host-grammar, and this host.
