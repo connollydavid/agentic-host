@@ -269,8 +269,11 @@ stale build yields a different hash and cannot discharge. Re-derivation runs any
 local / pre-push) — no token, no key (<code>call/0018</code>).</li>
 <li><strong>re-pin + tag</strong> — done <strong>last and resumably</strong>, after attestation: re-pin <code>.host-software</code>,
 push the annotated <code>vX.Y.Z</code> tag (the tag-every-release rule becomes a mechanical receipt
-check, not a MEMORY note). The tool <strong>computes</strong> the version (Fen picks a bump <em>level</em>
-<code>major|minor|patch</code>; the tool edits Cargo.toml + Cargo.lock) and <strong>computes</strong> the hash from a
+check, not a MEMORY note). The tool <strong>computes</strong> the version — NOT a free semver-level pick: the Fen de-risk had
+the 4B correctly reason "removing a public flag is breaking" yet answer <code>minor</code>, so the tool
+asks a concrete change-class question (remove/rename a public flag or change output? add a
+flag? neither?) and itself maps the answer to <code>major|minor|patch</code>, editing Cargo.toml +
+Cargo.lock — Fen never names the semver level. It <strong>computes</strong> the hash from a
 verified container build, refusing to write a canonical hash from anything else — when no
 container runtime is present, release BLOCKS (the re-pin/re-hash hazard the strong agent
 nearly hit this session is never handed to Fen) (R5/R6). The build step is a per-<code>BuildView</code>
@@ -283,7 +286,11 @@ released + the blob/commit <code>verify</code> ran against; re-check asserts equ
 <code>repro-exempt</code>-class marker — never greenfield); the cited decision is <strong>parsed</strong> (require
 <code>Status: accepted</code> + a <code>Scope:</code>/<code>authorizes-skip:</code> header naming this phase and component;
 citing the meta-decision is forbidden), and the skip records the decision body's
-<code>git hash-object</code> so a changed justification re-opens.</li>
+<code>git hash-object</code> so a changed justification re-opens. <strong>The skip citation is an exact-token
+field a 4B fumbles</strong> (Fen de-risk: it emitted <code>--skip reproducible-build/0031</code>, conflating the
+phase name with the decision id) — so <code>release --next</code> prints the <em>literal</em> skip command for the
+eligible component (<code>release --record legacy-c --skip call/0031</code>) to copy, and <code>--record</code>
+rejects a citation that is not a bare <code>call/NNNN</code> (never constructed from the phase name).</li>
 </ol>
 <p><strong>Decision C = strictest (<code>call/0017</code>, operator).</strong> Gated on host#14's pinned re-derivation
 (<code>call/0018</code>); no shallow interim.</p>
@@ -307,10 +314,29 @@ minor-version release the operator actually asked for, now on rails.</li>
 </ol>
 <h2 id="de-risk-before-building-the-established-loop"><a class="header" href="#de-risk-before-building-the-established-loop">De-risk before building (the established loop)</a></h2>
 <p>Per the operator's standing pattern ("adversarially review, test design on our weaker agents
-first then implement"), before code: an adversarial design review of this milestone, then a real
-Fen (Qwen-3.5-4B) ergonomics test of the <code>release --next</code> / <code>--record</code> / skip flow — the strict
-path must be executable by the 4B, or strictness defeats its own goal. Findings fold back here
-before implementation.</p>
+first then implement"), before code: an adversarial design review of this milestone (done — 39
+findings, <code>design-review.md</code>), then a real Fen (Qwen-3.5-4B @ Q8_0) ergonomics test of the
+<code>release</code> flow — the strict path must be executable by the 4B, or strictness defeats its own goal.</p>
+<p><strong>Fen ergonomics test — DONE (2026-06-20): proceed-to-build with three fold-backs.</strong> Two runs
+(twelve situations) against the local 4B. The load-bearing strict behaviours all held: it refused
+an explicit hand-roll temptation ("just run cargo/git yourself" → STOP), STOPped on both blocks
+(verify-red; no container runtime → never an ambient build), recognized DONE, ran the exact command
+<code>--next</code> printed, and distinguished an <strong>authorized</strong> skip (cited <code>call/NNNN</code> for a migrated
+component → did it) from an <strong>un</strong>authorized one (→ refused). The two fumbles were both
+exact-judgment steps, so the design tool-carries them rather than leaving them to 4B free choice:</p>
+<ol>
+<li><strong>One driver, no agent-named sub-steps.</strong> Run 1 had the 4B <em>infer</em> <code>release host-lint --verify</code>
+for the first step instead of asking <code>--next</code>; run 2 (which led with <code>release &lt;component&gt;</code> as the
+driver) had it run the whole-flow command correctly. So the agent-facing surface is the single
+<code>host-lifecycle release &lt;component&gt;</code>; <code>--next</code> is the tool's internal resume cursor that prints
+the next <em>literal</em> command, never a menu the agent assembles.</li>
+<li><strong>Tool maps the bump level from a concrete change-class answer</strong> — the 4B reasoned "breaking" yet
+answered <code>minor</code>; folded into the re-pin+tag step above.</li>
+<li><strong><code>--next</code> prints the exact <code>--skip call/NNNN</code> command and <code>--record</code> validates the token</strong> — the
+4B emitted <code>--skip reproducible-build/0031</code>; folded into the migrated-escape step above.</li>
+</ol>
+<p>All three push toward the design's own "tool holds the sequence, minimum agent steps" principle;
+none blocks the build. Implementation proceeds with them folded in.</p>
 <h2 id="non-goals--residual-risks-recorded-honestly"><a class="header" href="#non-goals--residual-risks-recorded-honestly">Non-goals / residual risks (recorded honestly)</a></h2>
 <ul>
 <li><strong>Copy-at-version skew</strong> — a project behind on upgrades carries an older manifest, so receipt
