@@ -92,8 +92,15 @@ A `lexicon add/rm/list` CRUD **computes** the phrase so the weak agent never aut
    (`verdict_discharges`) is a pure, unit-tested function; the runner shells host-prove. `software
    --check` HAZARDs a `.allium`/`.tla`/`.cfg` under `plan/*/spec/` (#12). Remaining: record/recompute
    `inputs` digests for the offline staleness signal.
-3. **host-lint** — LEXICON loader + the three guards + named citation-gated shapes + `lexicon` CRUD
-   + the committed `strict` switch (#13).
+3. **host-lint** ✓ (v0.5.0, `ed00abc`) — the `LEXICON` file (replacing `.host-lint-allow`) +
+   parser (phrase/URL split, `#`+non-digit comment carve-out) + the three guards reusing
+   `classify_line` (master-key, no-laundering = the phrase is itself a flag-tell, citation gate =
+   `#N`/`owner/repo#N` needs a URL) + the `lexicon add/rm/list/--check/--check-urls` CRUD + the
+   committed `# host-lint: strict` warn->flag escalation (#13). Spec: `config.strict` + the
+   `EscalateUnderStrict` rule, allium check/analyse clean, obligations dispositioned. host-lint
+   does **not** enable strict on itself — its own source carries warn-tier rule examples, which
+   strict would escalate to blocking flags. 90/90 integration green; `--verify-build` reproduces
+   the re-pinned artifact `dd0a111` in the recorded container.
 4. **adopt/upgrade** — seed LEXICON + the strict default at adoption (host-lifecycle).
 5. **spine** — `call/0018` principle (discharge = pinned re-derivation; enforcement
    project-pluggable) + the LEXICON principles in host-template `CLAUDE.md` + an UPGRADING entry;
