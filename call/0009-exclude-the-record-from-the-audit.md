@@ -3,6 +3,12 @@
 - Status: superseded by the methodology spine (host-template @ 94a1ac7)
 - Date: 2026-06-14
 - Refines: `call/0007` (the record tier). Builds on `host-lint` `.host-lintignore`.
+- Superseded in part by `call/0019`: the `plan/*/README.md` blanket exclusion in
+  the Decision Outcome below is **retired**. Editable plan docs stay linted; an
+  irreducible literal citation is boxed in a `host-lint:ignore` fence (the per-block
+  mechanism), not path-excluded. Only the append-only record (`MEMORY.md`) remains
+  path-excluded. The blanket exclusion existed only because path-exclusion was the
+  sole mechanism in 2026-06.
 
 ## Context and Problem Statement
 
