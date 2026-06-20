@@ -1,5 +1,6 @@
 # plan/0022 design review — confirmed findings
 
+```host-lint:ignore
 Adversarial design review (workflow `wf_43f48892`, 58 agents, 7 dimensions × find→verify). 51 candidates, 50 confirmed, 1 dropped. 98% confirm rate means the verifier ran lenient; the load-bearing ancestry claims were re-verified by hand against host-template history (orphaned SHAs and descendant≠depends both confirmed). Findings drive the v2 design in README.md.
 
 
@@ -233,6 +234,7 @@ Concretely:
 **Fix.** Fix stamp_field (tools/host-lifecycle/src/main.rs:302-311) so it ignores anything after the quoted value, then add parse tests AND make the README example self-consistent.
 
 1. Rewrite the value extraction to take the substring between the first quote pair (discarding any trailing ` # comment`), with a loose fallback for the legacy unquoted form:
+```
 
 ```rust
 fn stamp_field(text: &str, key: &str) -> Option<String> {
@@ -257,6 +259,7 @@ fn stamp_field(text: &str, key: &str) -> Option<String> {
 }
 ```
 
+```host-lint:ignore
 This was compiled and verified against: the README's commented `revision`/`applied` lines (now parse to "699db99" and "7de7cb1 ae1e688"), the legacy comment-free quoted form, the existing loose `revision=v0.1.0` test case (main.rs:2811), and the empty-as-absent case (main.rs:3519) — all correct.
 
 2. Add parse tests covering the design's own format:
@@ -721,3 +724,4 @@ Update step 4's verification to add: "recording a `depends`-declared id whose pr
 
 
 *Full per-finding scenarios/fixes for minors omitted; see the workflow transcript `subagents/workflows/wf_43f48892-0e9` if needed.*
+```

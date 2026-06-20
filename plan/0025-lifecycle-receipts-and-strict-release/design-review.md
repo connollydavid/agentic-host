@@ -1,5 +1,6 @@
 # plan/0025 — adversarial design review outcome (proceed-with-changes)
 
+```host-lint:ignore
 > **Reconciliation (`call/0018`, after this review):** R5 below assumed plan/0024's CI-signed
 > attestation token and made it a hard prerequisite. That token was later dropped (per-adopter key
 > management was a deal-breaker; it complicated parallel checkouts). Read "attestation"/"token"
@@ -105,3 +106,4 @@ track.
 - `continuous`-phase receipt semantics (verify/publish go stale on the next commit) — R1's
   `recheck =` makes staleness *detectable*; whether a continuous phase wants a per-checkpoint
   receipt vs a standing one is settled during host-lifecycle implementation.
+```

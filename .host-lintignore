@@ -12,9 +12,5 @@ host-template/
 # Generated mdBook output.
 book/
 
-# The append-only record (call/0009): acknowledged history, left verbatim. The
-# per-milestone working docs (READMEs, design reviews) reference numbered plan
-# steps and old milestone names; the curated PLAN.md index and the call/ decisions
-# stay linted (call/ caught a real ordinal tell; see call/0019).
+# The append-only record (call/0009): MEMORY.md is frozen history, never reworked.
 MEMORY.md
-plan/*/*.md

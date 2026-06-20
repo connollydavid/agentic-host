@@ -19,9 +19,10 @@ tells and never consults the dictionary (`call/0008`: fault, policy-free).
 
 A plain transient file at the repo root, e.g. `.host-remap`: one `old<TAB>new` per
 line; `#` comments and blank lines ignored. `old` is a literal concept token/phrase
-(`Phase 4`, `PHASE4`, `Phase 5.0`); `new` is the human-supplied canonical
-content-name. Matched case-insensitively and **word-bounded**, reusing the
-allow-list masking discipline so `Phase 1` cannot clip `Phase 12`. Same hand-rolled,
+(an ordinal tell in any spelling — spaced, concatenated, or decimal-suffixed); `new`
+is the human-supplied canonical content-name. Matched case-insensitively and
+**word-bounded**, reusing the allow-list masking discipline so a short tell cannot
+clip a longer one that contains it as a prefix. Same hand-rolled,
 dependency-free parse style as `.host` / `.host-lint-allow`.
 
 ## Verbs (`host-lifecycle`, matching the existing `match args.get(1)` style)
@@ -34,7 +35,7 @@ dependency-free parse style as `.host` / `.host-lint-allow`.
   preserved archive, or assert a clean tree + tag), then substitute **only**
   declared entries, word-bounded, across tracked text files; never touch an unmapped
   token. Print changed-vs-skipped. Deterministic.
-- Stage 2 is an ordinary `git rm .host-remap` + commit; the durable map is embedded
+- Teardown is an ordinary `git rm .host-remap` + commit; the durable map is embedded
   in the migration `call/` decision, not left in the tree.
 
 ## Invariants (verification lane)
