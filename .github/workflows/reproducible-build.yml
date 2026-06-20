@@ -18,8 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install host-lifecycle (pinned to v0.18.0)
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev b5f022bcf2944cacd9bc1130cef0651918ca88c7
+      - name: Install host-lifecycle (pinned to v0.18.1)
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev ca0dfe28cb99c20afe0420bf2f7cb3263550e019
       - name: Materialize the software (bare store + worktrees)
         run: host-lifecycle software --materialize .
       - name: Check the software (pins, spec lanes, obligations, no HAZARD)
