@@ -136,7 +136,7 @@ Pass: no keys outside the allowed set, OR each extra key is documented in a
 
 **G6 — Body length.**
 Check: line count of the markdown body (everything after the closing `---`).
-Pass: ≤ 500 lines. Over the limit means content belongs in a reference file.
+Limit: ≤ 500 lines. Over it, content belongs in a reference file.
 
 **G7 — References resolve.**
 Check: every relative path and intra-repo link in the body points to a file

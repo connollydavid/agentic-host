@@ -12,6 +12,9 @@ host-template/
 # Generated mdBook output.
 book/
 
-# The append-only record (call/0009): acknowledged history, left verbatim.
+# The append-only record (call/0009): acknowledged history, left verbatim. The
+# per-milestone working docs (READMEs, design reviews) reference numbered plan
+# steps and old milestone names; the curated PLAN.md index and the call/ decisions
+# stay linted (call/ caught a real ordinal tell; see call/0019).
 MEMORY.md
-plan/*/README.md
+plan/*/*.md
