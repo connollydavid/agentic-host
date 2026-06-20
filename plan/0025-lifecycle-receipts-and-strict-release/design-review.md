@@ -1,5 +1,12 @@
 # plan/0025 — adversarial design review outcome (proceed-with-changes)
 
+> **Reconciliation (`call/0018`, after this review):** R5 below assumed plan/0024's CI-signed
+> attestation token and made it a hard prerequisite. That token was later dropped (per-adopter key
+> management was a deal-breaker; it complicated parallel checkouts). Read "attestation"/"token"
+> here as **re-derivation in the pinned toolchain**: the release's BUILT ≠ RELEASED is the host#14
+> build re-derivation (shipped, keyless), and a proof receipt re-derives via `obligations --prove`.
+> The review's findings stand; only the attestation *mechanism* changed.
+
 An adversarial design review (8 attack dimensions → per-finding adversarial verify → ranked
 synthesis; ultracode workflow `wf_ab7d738d-356`, 48 agents) returned **39 confirmed/plausible
 flaws: 23 high, 14 medium, 2 low**. The architecture holds — the receipt primitive, the

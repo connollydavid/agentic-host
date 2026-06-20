@@ -1,6 +1,12 @@
 # Rung discharge requires a signed verifier-pass attestation, not name-presence
 
-- Status: accepted
+- Status: superseded by `call/0018` — the CI-signed ed25519 token requires per-adopter
+  key management (a deal-breaker: operator burden + a fragile, human-rooted trust anchor)
+  and complicates the bare-store/parallel-worktree model (per-project secrets + `.att`
+  files in every worktree). `call/0018` keeps this decision's principle (`AVAILABLE ≠
+  DISCHARGED` — discharge needs a real PASS) but replaces the mechanism with **re-derivation
+  in a pinned toolchain** (no keys, no CI overfit). The body below is the historical record
+  of the rejected approach.
 - Date: 2026-06-20
 - Scope: host-prove, host-lifecycle, host-lint (the verification toolchain)
 - Relates: `call/0002` (verification lanes by property type — the rungs extend it);

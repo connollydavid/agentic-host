@@ -24,7 +24,7 @@ mis-recording the artifact hash (the byte-identity assumption). A **weak** agent
 4B) skips structurally — it cannot assemble multi-step orchestration. Instructions are advisory;
 they fail for **both** classes, for different reasons. The methodology already has nine
 receipt-like mechanisms (obligation `waived:`, the `.host` applied-set, `upgrade --unverified
-call/NNNN`, `repro-exempt = call/NNNN`, the `.att` attestation token, `.host-lintignore`,
+call/NNNN`, `repro-exempt = call/NNNN`, the `software --verify-build` artifact re-derivation, `.host-lintignore`,
 `call/` `Status:`, `.host-software` artifact hashes, append-only MEMORY/PLAN descopes) — and
 most already record skips. But no single format binds them, so a skip recorded in one mechanism
 is invisible to the gate of another.

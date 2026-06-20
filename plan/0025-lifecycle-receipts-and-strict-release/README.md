@@ -5,8 +5,14 @@
 > mechanically re-verifiable (a `recheck =` command or a signed/digest evidence — never a
 > plaintext self-assertion); `n-a` is tool-computed and a protected core (`verify`) is
 > un-skippable; the skip escape is content-validated and not greenfield-reachable; the manifest is
-> read at the adopted revision and a missing one HAZARDs; release has no degraded mode (plan/0024
-> is a hard prerequisite — block, never a soft `done`).
+> read at the adopted revision and a missing one HAZARDs; release has no degraded mode.
+>
+> **Update (`call/0018`):** the CI-signed attestation token is dropped — per-adopter key management
+> was a deal-breaker and it complicated parallel checkouts. Where this doc says "attestation" /
+> "token", read **re-derivation in the recorded pinned toolchain**: the release's BUILT ≠ RELEASED
+> is the **host#14 build re-derivation** (shipped, keyless), and a proof receipt re-derives via
+> `obligations --prove`. plan/0024 is now the keyless discharge milestone — *not* a crypto
+> prerequisite of the release. Enforcement is project-pluggable (no CI overfit).
 
 ## Context
 
@@ -28,7 +34,7 @@ a **receipt** (done-with-evidence or skip-with-reason), and add a **strict, tool
 ## The unifying primitive: a receipt
 
 The methodology already has nine receipt-like mechanisms (obligation `waived:`, `.host`
-applied-set, `upgrade --unverified call/NNNN`, `repro-exempt`, the `.att` attestation,
+applied-set, `upgrade --unverified call/NNNN`, `repro-exempt`, the `software --verify-build` artifact re-derivation,
 `.host-lintignore`, `call/` `Status:`, `.host-software` artifact hashes, PLAN/MEMORY descopes) —
 most already record skips. They are not bound by one format, so a skip in one is invisible to
 another's gate. A **receipt** generalises them:
@@ -92,10 +98,11 @@ run it; **strict = maximum enforcement, minimum agent steps**):
      (**host#14**); never ambient rust. Branch on the `.host-software` recipe: artifact-bearing
      component (host-lint: bump → lock → reproducible build → re-hash) vs tool (host-prove: tag
      only, no artifact). The orchestration reads the recipe; it is not one fixed procedure.
-   - **attest** — require a CI attestation (**plan/0024**) binding the verdict + inputs, so
-     **BUILT ≠ RELEASED**: a hand-rolled or stale build mints no token and cannot discharge.
-     Absent the attestation primitive, an artifact-bearing release is a **hard STOP** (a `blocked`
-     receipt) — there is **no degraded "attestation-pending" `done`** (R5).
+   - **re-derive (BUILT ≠ RELEASED)** — the build re-derives in the recorded `toolchain` container
+     and must reproduce the recorded `artifact` hash (**host#14**, `software --verify-build`,
+     keyless, shipped); a proof obligation re-runs via `obligations --prove`. A hand-rolled or
+     stale build yields a different hash and cannot discharge. Re-derivation runs anywhere (any CI /
+     local / pre-push) — no token, no key (`call/0018`).
    - **re-pin + tag** — done **last and resumably**, after attestation: re-pin `.host-software`,
      push the annotated `vX.Y.Z` tag (the tag-every-release rule becomes a mechanical receipt
      check, not a MEMORY note). The tool **computes** the version (Fen picks a bump *level*
@@ -113,17 +120,18 @@ run it; **strict = maximum enforcement, minimum agent steps**):
    citing the meta-decision is forbidden), and the skip records the decision body's
    `git hash-object` so a changed justification re-opens.
 
-**Decision C = strictest (`call/0017`, operator).** Gated on host#14 + plan/0024; no shallow
-interim.
+**Decision C = strictest (`call/0017`, operator).** Gated on host#14's pinned re-derivation
+(`call/0018`); no shallow interim.
 
 ## Build order (software-first; each pushed before its dependents)
 
 1. **host#14** — `software --verify-build` runs the recipe **in the recorded `toolchain`
    container**; `software --check` HAZARDs an `artifact` with no `toolchain`; skip cleanly when no
    container runtime (never silent ambient-DRIFT). [host-lifecycle]
-2. **plan/0024 attestation** — the CI-signed token (its own milestone); a **hard prerequisite**
-   of the release work (R5), not a parallel track: release orchestration is not built or shipped
-   until the token consumer exists, so no degraded path ever enters a released binary.
+2. **plan/0024 (sound discharge, `call/0018`)** — the keyless re-derivation discharge. The
+   release's build attestation is **host#14** (already shipped), so plan/0024 is no longer a crypto
+   prerequisite of release; its `obligations --prove` is needed only for a release that carries
+   deep-proof obligations.
 3. **host-lifecycle** — manifest parser; the receipts ledger (`--record` / `--next` / re-check in
    `software --check`); the `release` orchestration reading the manifest + `.host-software` recipe.
 4. **spine (host-template)** — the lifecycle manifest (dedup the three prose copies, add
@@ -149,7 +157,9 @@ before implementation.
 - **Receipt triviality** — a `done` receipt attests the evidence held, not that the phase was done
   *well* (a green verify can still be a weak verify). Bounds what this fixes; same honest limit as
   `call/0016`'s property-triviality.
-- **Attestation key-management** inherited from `call/0016` / plan/0024.
+- **No keys / no key-management burden** — discharge is re-derivation in a pinned toolchain
+  (`call/0018`), not a signed token, so the per-adopter key management and parallel-checkout
+  friction that sank `call/0016` are gone.
 
 ## Verification
 
