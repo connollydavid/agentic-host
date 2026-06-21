@@ -42,7 +42,7 @@ All software lives under one `software/` directory; each component is a folder; 
 ```
 software/
   <component>/
-    .git/                 # the bare object store (shared); exact store-dir name is a design knob
+    .git/                 # the bare object store (shared) — store-dir name LOCKED to .git (operator); verify git repo-discovery + the host-root tree-walk treat it as the object store
     heads/<branch>/       # a branch worktree; <branch> keeps its slashes: heads/feature/login, heads/release/2.0
     tags/<tag>/           # a tag worktree, detached at the tag: tags/v1.2.0; nests the same way
 ```
