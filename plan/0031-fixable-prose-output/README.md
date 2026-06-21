@@ -61,9 +61,14 @@ bug — it maps every tell to the *first* occurrence of its excerpt. So:
   em-dash lines (not ten at line 12), each with a column; one em-dash → one record; a mechanical trope
   carries a `fix`; a synthetic-diagnosis trope is advisory (present in output, does **not** make `--docs`
   exit non-zero on its own).
-- **4B (the executability proof, the acceptance gate):** drive Qwen-3.5-4B through cleaning one real doc
-  using the new located + fix-hinted output; confirm it locates and fixes each trope without looping —
-  the bar `plan/0030` D5 needs. If the 4B cannot, escalate (only then) to an engine offset.
+- **4B acceptance — PASSED (atomic).** Qwen-3.5-4B (`unsloth/Qwen3.5-4B-MTP-GGUF`) applied the located +
+  fix-hinted output correctly **one fix at a time**: a mechanical decoration fix (`robust — it … — and` →
+  commas) and a no-fix reword (`delve` → `look at`), and it **correctly ignored the advisory `note`**. It
+  could *not* do the six mixed edits in one shot (it echoed the doc, though it still parsed which to
+  ignore). Finding: the format is weak-agent-usable at the **per-occurrence** granularity the clean uses;
+  the compound-in-one-shot failure **confirms** `plan/0030` D5's one-doc / one-fix cadence and STOP rule
+  (drive a weak agent atomically, never hand it the whole doc). No engine offset needed. A 27B sanity run
+  agreed. (Golden tests prove the mechanics deterministically; the 4B proves the goal.)
 - Whole-suite green (66 unit + integration + clippy); new host-lint release re-pinned in `.host-software`
   with `software --verify-build` green. **Bundled with `plan/0030`'s D1 (`--docs`) as one host-lint
   release** — `--docs` only pays off with fixable output, so they ship together.
