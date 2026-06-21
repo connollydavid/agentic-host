@@ -21,7 +21,7 @@ jobs:
         with:
           submodules: true # host-template carries the lifecycle.manifest the receipt gate reads
       - name: Install host-lifecycle (pinned; ships the manifest + receipt gate)
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev a32b3fc6bbd02155490e28b25ae4bd0c8c44c7bc
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 629e9c326f5b5ee9b7fd4eabe479c4a108c9b65c
       - name: Materialize the software (bare store + worktrees)
         run: host-lifecycle software --materialize .
       - name: Check the software (pins, spec lanes, obligations, no HAZARD)

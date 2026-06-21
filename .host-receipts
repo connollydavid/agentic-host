@@ -57,3 +57,9 @@
     reason = host is the upstream methodology and tracker repo, embedded read-only; not released from agentic-host
     tool = host-lifecycle@0.18.1
     recorded = 2026-06-21
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.8.0@3132c01a01a298425cd2e9550566b268f31faed52f1a8e3a6e0830fd71a4a9f2
+    tool = host-lifecycle@0.19.1
+    recorded = 2026-06-21
