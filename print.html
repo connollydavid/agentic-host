@@ -424,7 +424,7 @@ Skill Hardening: hook fix, bare-numeral rule, release install path (see SKILL-HA
 <tr><td><a href="plan/0028-host-family-as-where-components/README.html">plan/0028-host-family-as-where-components</a></td><td>planned; <strong>adversarially reviewed</strong> (<code>design-review.md</code>, ~18 findings across 5 independent lenses, <strong>proceed-with-major-revisions</strong> — the linear order is not a valid topological sort [the graph is cyclic: host-lifecycle is both the migration tool and a migration target], a pre-existing host-grammar reproducibility defect must be closed first [its <code>Cargo.lock</code> already carries two host-grammar revs — the generator/checker symmetry is broken today], and <strong>two findings reopen <code>call/0020</code></strong>: the spine classifies host-* as <code>tools/</code> so the residency change is a spine change not an instance one [spine-contradiction], and the worktree-built host-lifecycle gating/releasing itself dissolves the independent-verifier property [self-certification]. Re-cut recommended into a Readiness pass [producer pins/locks/repro, no releases] then an atomic Cutover pass [component-add + receipt back-fill + orchestrated releases via the worktree binary; CI rewire last]. Sound kernel: <code>release &lt;tool&gt;</code> genuinely cannot resolve on a submodule, multi-component is first-class, per-tool projects rightly rejected. Operator decisions owed: spine-first-or-owned-divergence, self-cert gating, host-lint-moves-or-frozen). <code>call/0020</code>: agentic-host is a <strong>multi-software development host</strong> — everything <code>host-*</code> is software developed here and belongs in <code>.host-software</code> as a <strong>Where component</strong>, while <code>tools/</code> holds only the external referenced tools [allium, specula]. Corrects the <code>plan/0025</code> false "tooling vs Where-room software" binary [the methodology already supports one-or-more software; <code>embed</code>/<code>release</code> are <code>recurring-per-component</code>]. Migration [per-target, heterogeneous — audited]: host-lifecycle [Rust binary, 7 skills] + host-prove [Rust binary + <code>tools.lock</code>, 3 skills] move from <code>tools/</code> submodules to artifact-bearing Where components; host-grammar [shared library] from a git-dep to a repo-only tag-only Where component [closing host-lifecycle's currently-<strong>unpinned</strong> host-grammar dep]; <code>link-skills.sh</code> generalized to wire a Where component's skills from its worktree [the host-lint model]. Folds in the deferred <code>plan/0025</code> #41/#50 dogfood — <code>release &lt;component&gt;</code> now resolves, so each tool is cut through <code>host-lifecycle release</code> [incl. host-lifecycle's <code>0.19.0</code> bootstrap release]. Software-first across host-grammar -&gt; host-lifecycle -&gt; host-prove -&gt; agentic-host. Risks: bootstrap circularity [host-lifecycle materializes itself], reproducible-build prerequisites, the skill-wiring mechanism change [<code>call/0005</code> dangling-symlink hazard]. <strong>Prerequisite: plan/0029</strong> — the generic tool+spine capability the migration applies)</td></tr>
 <tr><td><a href="plan/0029-where-room-component-model/README.html">plan/0029-where-room-component-model</a></td><td><strong>built + self-upgraded</strong> (host-lifecycle <strong>v0.19.0</strong> released — nested <code>software/&lt;name&gt;/&lt;branch&gt;</code> layout [<code>.git</code> store + branch-keyed worktrees, canonical = the recorded <code>branch</code> default <code>main</code> at the pin, <strong>decision A</strong>], <code>--item &lt;name&gt;[@&lt;branch&gt;]</code> addressing, re-materialize prune, dangling-generated-link check in <code>software --check</code>, tag-only first release; spine <code>0cd6b0a</code> [the layout + the <strong>residency carve-out</strong> that genuinely resolves 0028's spine-contradiction] + an UPGRADING entry; agentic-host <strong>self-upgraded</strong> onto the new layout [old root-scattered worktrees torn down, <code>.gitignore</code> → <code>/software/</code>, <code>.host</code> recorded <code>0cd6b0a</code>, CI on v0.19.0], <strong>whole-suite green</strong> [host-lifecycle CI + agentic-host reproducible-build doing a cold new-layout materialize + Site]; also cleared the deferred #40/#41 version-floor debt [the manifest/receipt/release features now carry an honest 0.19.0]. Residuals, honestly noted: the Fen-4B ergonomics run, a tool teardown subcommand + dirty-worktree guard, and porcelain/case-collision robustness are deferred refinements. Reviewed + re-cut first: <code>design-review.md</code>, 5 lenses; re-cut applied — <strong>uniform layout kept</strong> [operator: reduce churn], the <strong>tool-residency spine clause folded in</strong> [operator: now genuinely resolves 0028's spine-contradiction], the overfit cut and the false claims dropped. Was <em>both</em> overfit and oversold: cut the agentic-host-shaped overfit [the named binary/library/docs <strong>shapes</strong> are just <code>{host-lint, host-grammar, host}</code> → use the <code>artifact?</code>/<code>build?</code> recipe booleans the tool already keys on; <code>tags/&lt;tag&gt;/</code> worktrees are exercised by no one and break release/check on detached HEAD → key by <strong>branch only</strong>; <code>release &lt;item&gt;@&lt;ref&gt;</code> is unmotivated]; and two headline claims are <strong>false against the source</strong> ["layout-only/recipe-unchanged" — the flat layout is hardcoded at ~14 sites and the <code>worktrees=</code>/<code>&lt;dir&gt;</code> recipe fields encode it; and it does <strong>not</strong> resolve <code>plan/0028</code>'s spine-contradiction, which was about host-lint-as-Where vs reference-don't-vendor, untouched here]. Sound core: the nested multi-component layout is genuinely generic and the no-artifact path <strong>already works</strong> in the tool. Also: <code>software --check</code> two-positional ambiguity → the specifier must be a <code>--item</code> flag; <code>/software/</code> must be excluded from <code>remap</code>/tree-walks [<code>call/0011</code> Site-CI-red class]; the generated-link check is net-new [can't reuse the tracked-only symlink hazard]. <strong><code>.git</code> store-dir name locked</strong> [operator], with a git-discovery caveat to verify) (<strong>generic capability — tool + spine, for every adopter, no project-specific names</strong>: makes the Where room a first-class <strong>multi-component</strong> model. Components have <strong>shapes</strong> dispatched by the <em>declared recipe</em> never a name — artifact-bearing binary | <strong>library</strong> [released but no artifact, the missing tag-only release/receipt branch] | docs/text-only [already works, proven by <code>host</code>]. An <strong>(item, branch) specifier</strong> for <code>software --materialize/--check/--verify-build</code> + <code>release</code> [default-all, backward-compatible]. A <strong>nested layout</strong> <code>software/&lt;component&gt;/&lt;branch&gt;/</code> separating the bare store from per-branch worktrees, so (item, branch) is a literal path and one <code>/software/</code> ignore replaces the per-component triplets. Component-shipped skills wired from worktrees + a generated-link integrity check in <code>software --check</code> [the gate sees only <em>tracked</em> symlinks today]. Delivered as a <strong>spine change + UPGRADING migration</strong>, designed and <strong>Fen-tested against a neutral synthetic fixture</strong> [a binary + a library + a docs component + a parallel branch] before agentic-host touches it. Resolves the <code>plan/0028</code> review's blocking <em>spine-contradiction</em> and most of <em>grammar-pin-mess</em>/<em>library-component-slot</em>/<em>new-link-loop</em>; <code>plan/0028</code> re-cut to depend on it)</td></tr>
 <tr><td><a href="plan/0030-prose-hygiene-lane/README.html">plan/0030-prose-hygiene-lane</a></td><td>planned; <strong>adversarially reviewed</strong> (<code>design-review.md</code>, 5 independent lenses, <strong>re-scope</strong> verdict) + Qwen-3.5-4B clear-case classification 10/10. Re-scoped from a three-strand sketch to: <strong>D1</strong> a single <code>--docs</code> mode walks <strong>authored markdown only</strong> + honors <code>.host-lintignore</code> (scope determines type — <code>--all</code> stays naming-everywhere, <code>--docs</code> is prose-on-docs and never scans code; today there is no repo-wide prose mode, the <code>--prose</code> branch short-circuits before <code>--all</code>, so the spine's <code>recheck</code> is inert); <strong>D2</strong> weak-agent-fixable output (per-occurrence spans + fix hints + advisory tiers) <strong>carved out to plan/0031</strong> (it grew into a multi-repo engine question — the over-emission of ten identical records for one em-dash lives in <code>host_grammar</code>; D5's clean depends on plan/0031); <strong>D3</strong> re-derivable record exclusion (machine-readable inline <code>STATUS:</code> + MADR <code>Status:</code> → reword <strong>Live</strong> to zero, <strong>box</strong> immutable-record citations in <code>host-lint:ignore</code> fences per <code>call/0019</code>, path-exclude <strong>append-only</strong> <code>MEMORY.md</code>) — <strong>no hash-freeze ack file</strong> (it would be the project's first self-asserted receipt, inverting <code>call/0017</code>'s re-derivation, and its edit-lapses-clean rule would force rewriting the very records it protects, against <code>CLAUDE.md</code> §6; the shipped fence + <code>.host-lintignore</code> already meet the need); <strong>D4</strong> wire <code>host-lint --docs</code> into the <code>verify</code> <code>recheck =</code> (applies the already-authored spine <code>950fbd6</code>, re-derivable via the existing <code>.host-receipts</code> receipt) + a <code>.gitattributes</code> <code>eol=lf</code> for cross-platform determinism. The repo-wide clean (<strong>D5</strong>, ~1,652 trope-lines, one doc per commit + STOP rule) waits for the operator's literal front-door sentence. <strong>Receipts-family re-homing deferred</strong> to its own dual-format <code>host-lifecycle</code> migration milestone (the settled ontology is recorded — <code>.host-receipts</code> = adopt/upgrade, <code>.host-lifecycle-receipts</code> = operational executions, applied-set moved out of <code>.host</code>; but moving/splitting those shipped files un-applies every recorded upgrade in the gate binary, HAZARDs the embed/release gate, and the CI cold-installs a pinned old-format binary → needs a binary that reads both layouts first); <code>.host-prove-receipts</code> cut until host-prove emits receipts. <strong>D1 built + tested</strong> (in the worktree, awaiting the host-lint release + re-pin): host-lint <code>--docs</code> — a markdown-only <code>git ls-files</code> walk honoring <code>.host-lintignore</code>, excluding code/<code>MEMORY.md</code>/symlinks; 66 unit + <strong>97/97 integration</strong> (4 new <code>--docs</code> cases) + clippy clean; a live run audits 72 authored <code>.md</code> and scans no code</td></tr>
-<tr><td><a href="plan/0031-fixable-prose-output/README.html">plan/0031-fixable-prose-output</a></td><td>planned (spun out of plan/0030 D2). Makes the prose <strong>output</strong> weak-agent-fixable — the precondition for plan/0030's triggered clean (D5): <strong>E1</strong> one record per real occurrence (the engine over-emits <strong>ten</strong> identical <code>decoration</code> records for <strong>one</strong> em-dash on <code>call/0019</code> line 12 — confirmed live); <strong>E2</strong> a column per occurrence (<code>file:line:col</code>; <code>host_grammar</code>'s <code>Tell</code> carries no byte offset today); <strong>E3</strong> a mechanical fix-hint keyed on trope id (decoration → drop or replace with a comma; emitted as a <code>fix</code> JSON field); <strong>E4</strong> advisory tiers — density/structural tropes (<code>tell-density</code>, <code>bold-first-bullets</code>, span-less self-answered-question) are advisory, not part of the clean-to-zero gate, so "zero" terminates. <strong>Open fork</strong> (to settle with 4B + adversarial review, as plan/0030 was): where E1+E2 live — host-lint-side occurrence-mapping (contained, recommended for the output) vs fixing the over-emission at the source in <code>host_grammar</code> (more correct, opens the remote repo; also check whether the over-emission inflates the density score). host-lint changes are surgical; the engine fork decides the blast radius</td></tr>
+<tr><td><a href="plan/0031-fixable-prose-output/README.html">plan/0031-fixable-prose-output</a></td><td>planned (spun out of plan/0030 D2). Makes the prose <strong>output</strong> weak-agent-fixable — the precondition for plan/0030's triggered clean (D5): <strong>E1+E2</strong> locate each occurrence with a column (<code>file:line:col</code>): host-lint's <code>locate_line</code> collapses all ten <code>decoration</code> records onto line 12, but <code>call/0019</code> has <strong>ten real em-dashes</strong> (lines 12/15/23/24/34/38/41/42/56) and the engine correctly emits <strong>one tell each</strong> — so occurrence-mapping assigns the k-th tell to the k-th occurrence, exactly; <strong>E3</strong> a mechanical fix-hint keyed on trope id (decoration → drop or replace with a comma; emitted as a <code>fix</code> JSON field); <strong>E4</strong> advisory tiers — density/structural tropes (<code>tell-density</code>, <code>bold-first-bullets</code>, span-less self-answered-question) are advisory, not part of the clean-to-zero gate, so "zero" terminates. <strong>Fork resolved by data:</strong> host-lint-side, exact — the engine is correct (10 em-dashes → 10 tells), the bug is host-lint's first-occurrence <code>locate_line</code>; no <code>host_grammar</code> change, density-score concern moot. The 4B clean-one-doc test is the acceptance gate. <strong>Bundled with plan/0030's D1 (<code>--docs</code>) as one host-lint release</strong> (<code>--docs</code> only pays off with fixable output)</td></tr>
 </tbody></table>
 </div>
 <p>The earlier content-named docs above (BOOTSTRAP, CI-PIPELINE, …) predate the <code>plan/</code> room; folding them in is a possible later cleanup, not required.</p>
@@ -2576,102 +2576,91 @@ authorization; any unpushable commit stops the line and is reported.</li>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0031--fixable-prose-output-one-record-per-occurrence-a-column-a-mechanical-fix-advisory-tiers"><a class="header" href="#plan0031--fixable-prose-output-one-record-per-occurrence-a-column-a-mechanical-fix-advisory-tiers">plan/0031 — Fixable prose output: one record per occurrence, a column, a mechanical fix, advisory tiers</a></h1>
 <blockquote>
 <p>Spun out of <code>plan/0030</code>'s D2 (operator: "this needs a plan"). <code>plan/0030</code> made the prose lane real
-and walkable (<code>host-lint --docs</code>, shipped); this milestone makes its <strong>output weak-agent-fixable</strong>,
-which is the precondition for <code>plan/0030</code>'s triggered clean (D5). The one open design decision — where
-the over-emission + column fix lives (the <code>host_grammar</code> engine vs <code>host-lint</code>) — is laid out below
-for the same 4B + adversarial-review rigor <code>plan/0030</code> got, <strong>not yet settled</strong>.</p>
+and walkable (<code>host-lint --docs</code>, shipped); this milestone makes its <strong>output weak-agent-fixable</strong> —
+the precondition for <code>plan/0030</code>'s triggered clean (D5). The fix-site fork (engine vs host-lint) that
+this plan was opened to settle is <strong>now resolved by investigation</strong>: the defect is a <code>host-lint</code>
+localization bug, not an engine over-emission, so the whole milestone is <strong>host-lint-side</strong>
+(see <em>Diagnosis</em>). No <code>host_grammar</code> change.</p>
 </blockquote>
 <h2 id="context-5"><a class="header" href="#context-5">Context</a></h2>
 <p><code>plan/0030</code> shipped <code>host-lint --docs</code> — the repo-wide prose audit walks authored markdown. But the
-prose <strong>output</strong> defeats a weak agent doing the clean (<code>plan/0030</code> D5), in four concrete ways, all
-verified against the live tool:</p>
+prose <strong>output</strong> defeats a weak agent doing the clean (<code>plan/0030</code> D5), in three ways:</p>
 <ul>
-<li><strong>Over-emission.</strong> <code>call/0019</code> line 12 has <strong>one</strong> em-dash and <strong>one</strong> period, yet the engine emits
-<strong>ten</strong> byte-identical <code>decoration</code> records (all <code>line 12</code>, <code>text "—"</code>). A weak agent cannot count
-occurrences, pick a span, or know when it is done — it loops or strips every dash. (A clean
-single-em-dash line emits exactly one record, so the defect is specific to the markdown scan path.)</li>
-<li><strong>No column.</strong> <code>host-lint</code> derives <code>Match.line</code> by re-locating the excerpt's <em>first</em> line
-(<code>locate_line</code>); there is no column, and <code>host_grammar</code>'s <code>Tell</code> struct carries <strong>no byte offset</strong>.
-A trope on a busy line has no locatable fix point.</li>
-<li><strong>Span-less tropes.</strong> <code>bold-first-bullets</code> reports "21/23 bullets open with bold lead-ins";
-<code>tell-density</code> reports a whole-document score; a self-answered-question can report with no single
-span. A clean-to-<strong>zero</strong> bar over these is an unterminating loop — there is nothing to edit.</li>
+<li><strong>Mislocalization (the headline defect).</strong> <code>call/0019</code> has <strong>ten</strong> em-dashes (lines 12, 15, 23, 24,
+34, 38, 41, 42, 56), and the engine correctly emits <strong>one</strong> <code>decoration</code> tell per em-dash — but
+<code>host-lint</code>'s <code>locate_line(input, excerpt)</code> returns the <strong>first</strong> line containing the excerpt, so all
+ten records collapse onto <code>line 12</code>. A weak agent sees ten identical <code>line 12: —</code> and cannot tell
+which dash is where, that there are ten distinct ones, or when it is done. There is also no <strong>column</strong>.</li>
+<li><strong>Span-less tropes.</strong> <code>tell-density</code> (a whole-document score), <code>bold-first-bullets</code> ("21/23 bullets
+open with bold lead-ins"), <code>anaphora</code>/<code>punchy-fragments</code> (cross-sentence patterns) report a synthetic
+diagnosis whose text does not appear literally in the source. A clean-to-<strong>zero</strong> bar over these is an
+unterminating loop — there is nothing to edit.</li>
 <li><strong>Volume.</strong> ~1,100+ <code>--docs</code> warning-lines across the authored docs; a long mechanical campaign needs
-reliable per-occurrence output or a weak agent drifts.</li>
+reliable, located output or a weak agent drifts.</li>
 </ul>
-<h2 id="deliverables-3"><a class="header" href="#deliverables-3">Deliverables</a></h2>
+<h2 id="diagnosis-resolves-the-fork"><a class="header" href="#diagnosis-resolves-the-fork">Diagnosis (resolves the fork)</a></h2>
+<p>The fork was "fix the over-emission in the engine vs work around it in host-lint." Investigation showed
+there <strong>is no over-emission</strong>: for <code>call/0019</code>, em-dashes in the file = 10, <code>decoration</code> tells emitted =
+10 (one-to-one). The engine is the source of truth and it is correct. host-lint's <code>locate_line</code> is the
+bug — it maps every tell to the <em>first</em> occurrence of its excerpt. So:</p>
 <ul>
-<li><strong>E1 — one record per real occurrence</strong> (kill the over-emission). One em-dash → one record; N em-dashes
-→ N records. <em>(Site: see Decision.)</em></li>
-<li><strong>E2 — a column per occurrence</strong> (<code>file:line:col</code>), so every locatable trope names an exact fix point.
-<em>(Site: see Decision.)</em></li>
+<li>The fix is <strong>host-lint-side and exact</strong>, not heuristic: there are exactly as many tells of a given
+<code>(id, excerpt)</code> as there are occurrences of that excerpt, so mapping the <em>k</em>-th tell to the <em>k</em>-th
+occurrence assigns each a distinct, correct position. No phantom duplicates to drop, no smearing.</li>
+<li><strong>No <code>host_grammar</code> change</strong>, no rev-bump, no touching its allium/property lanes.</li>
+<li>The <strong>density-score concern is moot</strong> — <code>tell_score</code> counts correctly because the engine emits the
+right number of tells.</li>
+</ul>
+<h2 id="deliverables-all-host-lint"><a class="header" href="#deliverables-all-host-lint">Deliverables (all host-lint)</a></h2>
+<ul>
+<li><strong>E1 + E2 — locate each occurrence with a column.</strong> Replace <code>locate_line</code>'s first-occurrence search
+with <strong>occurrence-mapping</strong>: group tells by <code>(id, excerpt)</code>; for each group, walk the successive
+positions of the excerpt in the source and assign tell <em>k</em> → occurrence <em>k</em>, yielding <code>file:line:col</code>.
+Ten em-dashes → ten records at their real <code>line:col</code>; one em-dash → one record. Output becomes
+<code>path:line:col: …</code>.</li>
 <li><strong>E3 — a mechanical fix-hint</strong> keyed on the trope <code>id</code> (e.g. <code>decoration</code> → "drop it, or replace with
-a comma/period"; <code>arrow</code> → "use a word"), emitted in the text line and as a <code>fix</code> field in <code>--json</code>.
-Only mechanically-rewritable tropes carry a <code>fix</code>. <em>(host-lint.)</em></li>
-<li><strong>E4 — advisory tiers.</strong> Structural / density tropes (<code>tell-density</code>, <code>bold-first-bullets</code>, a span-less
-self-answered-question) are <strong>advisory</strong> — printed for awareness but <strong>not</strong> part of the clean-to-zero
-gate; the <code>--docs</code> exit code is driven by <strong>locatable</strong> tropes only. So "zero" is achievable and
-terminating. <em>(host-lint.)</em></li>
+a comma/period"; <code>arrow</code> → "use a word"), in the text line and as a <code>fix</code> field in <code>--json</code>. Only
+mechanically-rewritable tropes carry a <code>fix</code>.</li>
+<li><strong>E4 — advisory tiers.</strong> A tell whose excerpt does <strong>not</strong> appear literally in the source (the
+synthetic whole-document diagnoses: <code>tell-density</code>, <code>bold-first-bullets</code>, <code>anaphora</code>,
+<code>punchy-fragments</code>, a span-less self-answered-question) is <strong>advisory</strong> — emitted once for awareness
+but <strong>not</strong> part of the clean-to-zero gate. Locatable tropes drive the exit code; advisory ones do not.
+So "zero" is achievable and terminating. (The locatable-vs-advisory split is <em>derived</em> — found in
+source → locatable, not found → advisory — so no hardcoded id list to maintain.)</li>
 </ul>
-<h2 id="decision--where-e1--e2-live-the-fork-to-settle-with-4b--review"><a class="header" href="#decision--where-e1--e2-live-the-fork-to-settle-with-4b--review">Decision — where E1 + E2 live (the fork, to settle with 4B + review)</a></h2>
-<p>The column and the over-emission can be fixed in the engine (the source of truth for tropes) or worked
-around in <code>host-lint</code>. Three options, with the tradeoff named:</p>
-<ul>
-<li><strong>A — host-lint-side (recommended for the output).</strong> <code>host-lint</code> occurrence-maps each tell to the
-successive positions of its excerpt in the content: surplus phantom tells (10 tells, 1 occurrence) are
-dropped → one record; the position yields <code>line:col</code>; N real occurrences → N distinct columns. E3/E4
-are host-lint-side regardless. <strong>No <code>host_grammar</code> change</strong>, contained and fast; the cost is that it is
-heuristic (matches by excerpt string) and the engine stays over-emitting for any other caller.</li>
-<li><strong>B — fix the over-emission at the source</strong> (<code>host_grammar</code>'s <code>scan_prose_markdown</code>) so it emits one
-tell per occurrence, and keep columns host-lint-side. Smaller engine change than C (a markdown-scan
-bug fix, no <code>Tell</code> API change), more correct than A; opens the remote <code>host-grammar</code> repo (its tests +
-allium spec + a push + a rev-bump).</li>
-<li><strong>C — full engine offset API.</strong> Add a byte offset to <code>Tell</code> and thread it through every detector, so
-each tell carries an exact span from the source; <code>host-lint</code> just renders it. Most precise, biggest
-blast radius (all detectors + the allium spec + property tests).</li>
-</ul>
-<p><strong>Recommendation:</strong> do the <strong>output</strong> host-lint-side (A) — it is contained and the clean (the actual
-goal) only needs locatable output — <strong>and</strong> separately verify whether the over-emission also inflates
-the engine's <strong>density score</strong> (<code>tell_score</code>/<code>tell_score_markdown</code> are computed independently of the
-tell list); if it does, that is a genuine <code>host_grammar</code> correctness bug worth fixing at the source
-(option B), independent of the output. Settle A-vs-B with a 4B clean-one-doc run and an adversarial
-review, as <code>plan/0030</code> was.</p>
 <h2 id="verification-18"><a class="header" href="#verification-18">Verification</a></h2>
 <ul>
-<li><strong>Golden tests</strong> (host-lint): one em-dash → exactly one record with a column; N em-dashes → N records
-with distinct columns; the <code>call/0019</code> line-12 regression → exactly one <code>decoration</code> record; a
-mechanical trope carries a <code>fix</code>; a structural trope is advisory (present in output, does <strong>not</strong> make
-<code>--docs</code> exit non-zero on its own).</li>
-<li><strong>Density-score check:</strong> confirm whether the markdown over-emission inflates <code>tell_score_markdown</code>; if
-so, fix in <code>host_grammar</code> and add a property test.</li>
-<li><strong>4B (the executability proof):</strong> drive Qwen-3.5-4B through cleaning one real doc using the new output;
-confirm it locates and fixes each trope without looping (the bar <code>plan/0030</code> D5 needs).</li>
-<li>Whole-suite green; if <code>host_grammar</code> is touched, its allium + property lanes green and the rev bumped
-in host-lint's <code>Cargo.toml</code>; new host-lint release re-pinned in <code>.host-software</code>, <code>--verify-build</code>
-green.</li>
+<li><strong>Golden tests</strong> (host-lint): the <code>call/0019</code> regression — ten <code>decoration</code> records at the ten real
+em-dash lines (not ten at line 12), each with a column; one em-dash → one record; a mechanical trope
+carries a <code>fix</code>; a synthetic-diagnosis trope is advisory (present in output, does <strong>not</strong> make <code>--docs</code>
+exit non-zero on its own).</li>
+<li><strong>4B (the executability proof, the acceptance gate):</strong> drive Qwen-3.5-4B through cleaning one real doc
+using the new located + fix-hinted output; confirm it locates and fixes each trope without looping —
+the bar <code>plan/0030</code> D5 needs. If the 4B cannot, escalate (only then) to an engine offset.</li>
+<li>Whole-suite green (66 unit + integration + clippy); new host-lint release re-pinned in <code>.host-software</code>
+with <code>software --verify-build</code> green. <strong>Bundled with <code>plan/0030</code>'s D1 (<code>--docs</code>) as one host-lint
+release</strong> — <code>--docs</code> only pays off with fixable output, so they ship together.</li>
 </ul>
 <h2 id="push-order"><a class="header" href="#push-order">Push order</a></h2>
-<p>If host-lint-only (A): <strong>host-lint</strong> (E1–E4 + tests) → re-pin → release. If the source fix (B/C) is
-taken: <strong>host-grammar</strong> (fix + tests + spec, push, tag) → <strong>host-lint</strong> (rev-bump + E2–E4) → re-pin →
-release.</p>
+<p>host-lint-only: <strong>host-lint</strong> (E1–E4 + golden tests, on top of the already-built D1) → <code>cargo test</code> +
+clippy + integration green → 4B acceptance → bump version → re-pin <code>.host-software</code> → <code>--verify-build</code> →
+CI. No upstream repo.</p>
 <h2 id="relationship-to-plan0030"><a class="header" href="#relationship-to-plan0030">Relationship to plan/0030</a></h2>
-<p><code>plan/0030</code> owns the <strong>lane</strong> (<code>--docs</code>, shipped), the re-derivable <strong>classification</strong> (<code>STATUS:</code> +
-<code>Status:</code>), and the <strong>gate wiring</strong> (D4). This milestone owns the <strong>fixable output</strong>. <code>plan/0030</code>'s D5
-(the triggered repo-wide clean) <strong>depends on this</strong> — the clean is not weak-agent-executable until the
-output is one-record-per-occurrence, columned, and tiered. <code>plan/0030</code>'s D4 gate can wire <code>--docs</code> now,
-but the gate only goes green after D5, which waits on this milestone and on the operator's front-door
-sentence.</p>
+<p><code>plan/0030</code> owns the <strong>lane</strong> (<code>--docs</code>, built), the re-derivable <strong>classification</strong> (<code>STATUS:</code> +
+<code>Status:</code>), and the <strong>gate wiring</strong> (D4). This milestone owns the <strong>fixable output</strong>, and its host-lint
+work ships in the <strong>same release</strong> as <code>plan/0030</code>'s D1. <code>plan/0030</code>'s D5 (the triggered repo-wide clean)
+depends on this — the clean is not weak-agent-executable until the output is located, columned, fix-hinted,
+and tiered.</p>
 <h2 id="risks--honesty-3"><a class="header" href="#risks--honesty-3">Risks / honesty</a></h2>
 <ul>
-<li>The host-lint occurrence-mapping (A) is heuristic: it matches by excerpt string and assumes the engine
-emits ≥ the real occurrence count (true for the over-emission, the case that matters). A trope whose
-excerpt does not appear literally in the source (the synthetic <code>tell-density</code> message) is special-cased
-to the advisory tier (E4), line 1, no column.</li>
-<li>Advisory-tiering (E4) is a severity-model change: <code>--docs</code> must distinguish "locatable trope → gate"
-from "structural trope → advisory". Kept simple — a fixed list of advisory trope ids — to stay
-weak-agent-legible.</li>
-<li>If the density score is inflated (open question above), that is a pre-existing <code>host_grammar</code> bug this
-milestone surfaces; fixing it is option B's territory and may move the rev.</li>
+<li>Occurrence-mapping matches by excerpt string. It is exact when tell-count == occurrence-count (the
+confirmed reality). If a future detector ever emits a tell whose excerpt is a non-literal normalization
+(curly→straight quotes, collapsed whitespace), that tell would not be found and would fall to the
+advisory tier (a conservative under-gate, not a wrong location). Worth a property test.</li>
+<li>Advisory-tiering changes the prose exit model slightly: a doc with <em>only</em> synthetic-diagnosis tropes
+now exits 0 under <code>--docs</code> (gate passes) instead of warn. That is the intended "zero is achievable"
+behavior; the existing <code>--stdin</code>/<code>--prose</code> tests assert on locatable tropes, which still warn.</li>
+<li>The 4B acceptance gate is the real check; golden tests prove the mechanics, the 4B proves the goal.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software--where"><a class="header" href="#software--where">Software — where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees — not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
