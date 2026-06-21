@@ -2281,13 +2281,16 @@ has a <strong>shape</strong> declared by its recipe. The tool operates on a comp
 <strong>store</strong> is separated from the per-<strong>branch</strong> worktrees:</p>
 <pre><code>software/
   &lt;component&gt;/
-    .git/            # the bare object store (shared); exact store-dir name is a design knob
-    &lt;branch&gt;/        # a worktree checked out on &lt;branch&gt;; the pin's branch is the canonical one
-    &lt;other-branch&gt;/  # additional parallel lines, one folder per branch
+    .git/                 # the bare object store (shared); exact store-dir name is a design knob
+    heads/&lt;branch&gt;/       # a branch worktree; &lt;branch&gt; keeps its slashes: heads/feature/login, heads/release/2.0
+    tags/&lt;tag&gt;/           # a tag worktree, detached at the tag: tags/v1.2.0; nests the same way
 </code></pre>
 <ul>
-<li><strong>(item, branch) is now a literal path</strong> — <code>software/&lt;item&gt;/&lt;branch&gt;/</code> — so the addressing in the
-next section maps directly to the filesystem.</li>
+<li><strong>(item, ref) is a literal path</strong> — <code>software/&lt;item&gt;/heads/&lt;branch&gt;/</code> or <code>software/&lt;item&gt;/tags/&lt;tag&gt;/</code>.
+The worktree key is a <strong>full git ref-path: slashes are preserved as directories</strong>, so feature
+branches and namespaced refs/tags nest naturally. Mirroring git's <code>refs/heads</code> / <code>refs/tags</code> keeps a
+branch and a same-named tag — and the <code>.git</code> store — from ever colliding. The canonical worktree is
+just the pin's branch (e.g. <code>heads/main/</code>).</li>
 <li><strong>One <code>.gitignore</code> entry</strong> (<code>/software/</code>) replaces the per-component triplets.</li>
 <li>The <strong>"worktrees live under the host root"</strong> rule generalizes to "under <code>software/</code>"; the off-tree
 <code>store=&lt;path&gt;</code> escape (a foreign filesystem/platform, e.g. a Windows Dev Drive reached from WSL)
@@ -2295,13 +2298,15 @@ still applies, with <code>software/&lt;component&gt;/&lt;store-or-branch&gt;</co
 <li>Skill symlinks repoint to <code>software/&lt;component&gt;/&lt;branch&gt;/…</code> (generated, never tracked — <code>call/0005</code>).</li>
 </ul>
 <h3 id="addressing"><a class="header" href="#addressing">Addressing</a></h3>
-<pre><code>host-lifecycle software --materialize|--check|--verify-build [&lt;item&gt;[@&lt;branch&gt;]] [&lt;dir&gt;]
-host-lifecycle release &lt;item&gt;[@&lt;branch&gt;] ...
+<pre><code>host-lifecycle software --materialize|--check|--verify-build [&lt;item&gt;[@&lt;ref&gt;]] [&lt;dir&gt;]
+host-lifecycle release &lt;item&gt;[@&lt;ref&gt;] ...
 </code></pre>
 <ul>
 <li><strong>Omit the specifier → all components, canonical worktrees</strong> (today's behavior; backward-compatible).</li>
 <li><code>&lt;item&gt;</code> → that one component's canonical worktree (the targeted bootstrap/check/build).</li>
-<li><code>&lt;item&gt;@&lt;branch&gt;</code> → a specific parallel line.</li>
+<li><code>&lt;item&gt;@&lt;ref&gt;</code> → a specific worktree, where <code>&lt;ref&gt;</code> is a branch (possibly nested, <code>feature/login</code>)
+or a tag (<code>v1.2.0</code>); the tool resolves the ref's type to pick <code>heads/</code> vs <code>tags/</code>. Parse: the item
+is up to the first <code>@</code>, the rest is the ref-path (slashes intact).</li>
 </ul>
 <h3 id="shapes-branch-on-the-declared-recipe-never-on-a-name"><a class="header" href="#shapes-branch-on-the-declared-recipe-never-on-a-name">Shapes (branch on the declared recipe, never on a name)</a></h3>
 <ul>
