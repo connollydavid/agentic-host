@@ -6,6 +6,11 @@
 > this plan was opened to settle is **now resolved by investigation**: the defect is a `host-lint`
 > localization bug, not an engine over-emission, so the whole milestone is **host-lint-side**
 > (see *Diagnosis*). No `host_grammar` change.
+>
+> **Status: SHIPPED** in host-lint **v0.8.0** (`e652ffc`) — occurrence-mapping + fix-hints + advisory
+> tiers; golden tests + the **4B acceptance** (atomic) passed; `software --verify-build` reproduces the
+> artifact in the pinned container. The release run was also the first real `host-lifecycle release` on a
+> host-* Where component, and it surfaced + fixed two release-tool bugs (→ host-lifecycle **v0.19.1**).
 
 ## Context
 

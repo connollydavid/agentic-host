@@ -44,7 +44,7 @@ weak-agent (Fen / Qwen-3.5-4B) bar.
 
 ## Deliverables
 
-### D1 — `--docs`: a repo-wide prose mode over authored docs *(host-lint)*
+### D1 — `--docs`: a repo-wide prose mode over authored docs *(host-lint — shipped v0.8.0)*
 
 Add a single, logically-named mode — **`host-lint --docs`** — for the repo-wide prose audit, rather than
 overloading `--prose --all`. The principle is **scope determines type**: naming tells hide anywhere, so
