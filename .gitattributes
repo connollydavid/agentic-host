@@ -1,0 +1,3 @@
+# Normalize authored docs to LF so host-lint --docs and the verify gate see identical
+# bytes across the Windows/WSL/Linux-CI split (plan/0030 D3/D4 determinism).
+*.md text eol=lf

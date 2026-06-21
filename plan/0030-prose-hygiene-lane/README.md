@@ -79,8 +79,13 @@ tool can re-check):
 | **Append-only** | the agent's memory log (`MEMORY.md`) | whole-file `.host-lintignore` (already present) |
 
 To make "Live vs Immutable record" re-derivable rather than inferred from prose, **add an inline
-`STATUS:` line to every `plan/NNNN/README.md`** (only 8 of 29 carry one today) and read the MADR
-`Status:` field. Classification becomes a field lookup a weak agent can do, not an adjudication of
+`STATUS:` line to every `plan/NNNN/README.md`** (only 4 of 31 carry one today) and read the MADR
+`Status:` field. The convention is the existing form — a `> **STATUS: <STATE> (date).**` blockquote near
+the top — and the predicate reads the `<STATE>` token: `COMPLETE` / `done` / `shipped` → **Record**,
+anything else (`planned`, `built`, in-progress) → **Live**. The `.gitattributes` (`*.md text eol=lf`)
+lands now for cross-platform determinism; the 27 `STATUS:` additions are applied with the triggered clean
+(D5), where the classification is consumed. Classification becomes a field lookup a weak agent can do,
+not an adjudication of
 "deferred" vs "done" from a status paragraph. No new file format, no content hash, no edit-lapses-clean
 trap — the exclusion is the existing, diff-visible, line-precise fence + ignore, and a future real trope
 edited into a record is still caught (the fence boxes only the quoted span, the rest stays scanned).
