@@ -1,7 +1,7 @@
-# plan/0030 — The prose-hygiene lane: a walking `--prose`, weak-agent-fixable output, and re-derivable record exclusion
+# plan/0030 — The prose-hygiene lane: a walking docs audit (`--docs`), weak-agent-fixable output, and re-derivable record exclusion
 
 > **Re-scoped after a five-lens adversarial review** (`design-review.md`) and a Qwen-3.5-4B
-> classification probe. The original sketch bundled three strands: a `--prose --all` walk, a
+> classification probe. The original sketch bundled three strands: a repo-wide prose walk, a
 > hash-pinned `.host-lint-receipts` ack file, and a receipts-family re-homing. The review came back
 > convergent and grounded in the repo's own shipped code and prior decisions, and the operator took
 > two decisions from it:
@@ -29,13 +29,13 @@
 
 `host-lint --prose` (the tropes.fyi LLM-slop detector — `plan/0007`/`0008`/`0010`) ships and works on a
 file or stdin, but it is **unused by the lifecycle** and **does not walk**: the `--prose` branch
-(`main.rs:453`) short-circuits before `--all` and never loads `.host-lintignore`, so `--prose --all`
-scans nothing useful. The spine already carries the standing rule —
+(`main.rs:453`) short-circuits before `--all` and never loads `.host-lintignore`, so there is no repo-wide prose
+audit today. The spine already carries the standing rule —
 **"Prose hygiene is the same lane, applied continuously"** (host-template `950fbd6`,
 `CLAUDE.md:220-229`): the `verify` phase applies the prose audit and `software --check` re-verifies by
-re-running `--prose`, `MEMORY.md` excepted via `.host-lintignore`. But that rule's enforcement
-(`recheck = host-lint --prose` in `lifecycle.manifest`) is **inert until `--prose` can walk the tree**,
-and `950fbd6` is **pending** in `.host` (recording it now would HAZARD on the ~1,652 existing
+re-running the prose audit, `MEMORY.md` excepted via `.host-lintignore`. But that rule's enforcement
+(a `recheck =` in `lifecycle.manifest`) is **inert until a repo-wide prose mode walks the tree** — D1
+adds it as `host-lint --docs` — and `950fbd6` is **pending** in `.host` (recording it now would HAZARD on the ~1,652 existing
 trope-lines). The front-door README (`software/host/main/README.md`) already encodes the prose clean as
 a triggered migration step.
 
@@ -44,12 +44,18 @@ So the lane is authored but toothless. Three things make it real and dogfoodable
 
 ## Deliverables
 
-### D1 — `--prose --all` walks the tree and honors `.host-lintignore` *(host-lint)*
+### D1 — `--docs`: a repo-wide prose mode over authored docs *(host-lint)*
 
-Make the prose lane reuse the naming `--all` walk (`run_all_files`: `git ls-files`, `path_ignored`,
-`is_scannable`, `.md` routing). `--prose --all` then audits every tracked authored doc, excluding the
-same paths the naming `--all` excludes (`book/`, the embedded software worktrees, `host-template/`) plus
-`.host-lintignore`. This is the capability `950fbd6`'s `recheck` already assumes.
+Add a single, logically-named mode — **`host-lint --docs`** — for the repo-wide prose audit, rather than
+overloading `--prose --all`. The principle is **scope determines type**: naming tells hide anywhere, so
+`--all` scans every scannable file (code + docs); prose tropes live only in authored narrative, so
+`--docs` walks **markdown only**. It reuses the `--all` directory walk (`git ls-files`, `path_ignored`,
+the `book/` / embedded-worktree / `host-template/` exclusions, `.host-lintignore`) but **restricts to
+`.md`** and **skips generated markdown** (`SUMMARY.md` from `host-lifecycle book` — a file the generator
+overwrites cannot be hand-cleaned). Prose-scanning `.rs`/`.toml`/`.sh` would flag em-dashes and tricolons
+in code comments and string literals (false positives, and a nonsensical clean-to-zero bar over source).
+`--all` (naming, everywhere) and `--docs` (prose, docs) are the two single-flag repo modes; `--prose
+[file]` stays for one doc or stdin. This is the capability `950fbd6`'s `recheck` already assumes.
 
 ### D2 — weak-agent-fixable `--prose` output *(host-lint / host-grammar)*
 
@@ -90,19 +96,21 @@ edited into a record is still caught (the fence boxes only the quoted span, the 
 
 ### D4 — wire the lane into the `verify` gate, re-derivably *(adopted spine copy + manifest)*
 
-Apply the already-authored spine rule `950fbd6`: add `host-lint --prose --all` (honoring
-`.host-lintignore`) to the `verify` phase `recheck =` in this project's `lifecycle.manifest`, so
+Apply the already-authored spine rule `950fbd6`: add `host-lint --docs` to the `verify` phase
+`recheck =` in this project's `lifecycle.manifest`, so
 `software --check` re-runs the prose audit and a regressed doc re-opens the **existing** `.host-receipts`
 `verify` receipt as a HAZARD (re-derivation, per `call/0017` — *not* the deferred re-homing). Add a
 `.gitattributes` (`*.md text eol=lf`) so the walk is identical across the Windows/WSL/Linux-CI split.
 The `upgrade --record 950fbd6` happens as part of D5 (recording it before the docs are clean would
-HAZARD).
+HAZARD). The `950fbd6` ledger text names `host-lint --prose`, written before this mode existed; the
+recheck uses `host-lint --docs` (the repo-wide mode D1 adds) — the spine wording can be refreshed in a
+later prose-rule touch.
 
 ### D5 — the triggered clean (waits for the operator's front-door sentence)
 
 On the literal sentence *"Read and follow https://github.com/connollydavid/host to keep this repository
 an agentic project."*, follow the front-door README to bring agentic-host to exemplar state: run
-`host-lint --prose --all`; for each flagged doc apply the D3 disposition (clean Live to zero locatable
+`host-lint --docs`; for each flagged doc apply the D3 disposition (clean Live to zero locatable
 tropes; box record citations in fences; `MEMORY.md` already excluded); **one doc per commit** (audited
 docs, each a verifiable goal — `--prose <doc>` returns clean and `host-lint <doc>` stays naming-clean
 before the next); then `host-lifecycle upgrade --record 950fbd6`; whole-suite green.
@@ -147,25 +155,25 @@ deliberately reuses the **existing** `.host-receipts` `verify` receipt (D4), dep
 
 ## Verification
 
-- **D1:** `host-lint --prose --all` from the repo root walks every tracked authored doc, excludes
-  `book/` + the software worktrees + `host-template/` + `.host-lintignore` entries (parity with the
-  naming `--all`); a unit/integration test asserts the walk + ignore honoring.
+- **D1:** `host-lint --docs` from the repo root walks every tracked **`.md`** doc, excludes `book/` +
+  the software worktrees + `host-template/` + generated `SUMMARY.md` + `.host-lintignore` entries, and
+  skips non-markdown (no prose-scanning code); a unit/integration test asserts the walk + ignore honoring.
 - **D2:** golden tests — one em-dash → exactly one record with a column; a mechanical trope carries a
   `fix:`; a density/structural trope reports as advisory, not a GATE failure. De-dup verified.
 - **D3:** every `plan/NNNN/README.md` carries an inline `STATUS:`; the disposition table is documented;
   a classification helper (or the documented predicate) maps each doc to Live/Record/Append-only from
   path + `STATUS:`/`Status:` alone.
-- **D4:** `lifecycle.manifest` `verify` `recheck` includes `host-lint --prose --all`; breaking a doc to
+- **D4:** `lifecycle.manifest` `verify` `recheck` includes `host-lint --docs`; breaking a doc to
   slop re-opens the `verify` receipt as a HAZARD (non-vacuous); `.gitattributes` present; `software
   --check .` green.
-- **D5 (on trigger):** `host-lint --prose --all` clean across Live docs (records boxed, `MEMORY.md`
+- **D5 (on trigger):** `host-lint --docs` clean across Live docs (records boxed, `MEMORY.md`
   excepted); `.host` records `950fbd6`, 0 pending; whole-suite green (reproducible-build cold
   materialize + Site). Per-doc commits.
 - New host-lint release re-pinned in `.host-software` with `software --verify-build` green.
 
 ## Push order (software-first)
 
-1. **host-lint** — D1 (walk) + D2 (spans/fix/dedup/advisory-scoping); new release; tests + CI green;
+1. **host-lint** — D1 (`--docs` markdown walk) + D2 (spans/fix/dedup/advisory-scoping); new release; tests + CI green;
    re-pin in `.host-software`, `--verify-build`.
 2. **agentic-host** — D3 (`STATUS:` lines + disposition table), D4 (`lifecycle.manifest` recheck +
    `.gitattributes`); `PLAN.md` row; `design-review.md`; `MEMORY.md` entry (separate commits, audited).
