@@ -182,6 +182,10 @@ the precondition for <code>plan/0030</code>'s triggered clean (D5). The fix-site
 this plan was opened to settle is <strong>now resolved by investigation</strong>: the defect is a <code>host-lint</code>
 localization bug, not an engine over-emission, so the whole milestone is <strong>host-lint-side</strong>
 (see <em>Diagnosis</em>). No <code>host_grammar</code> change.</p>
+<p><strong>Status: SHIPPED</strong> in host-lint <strong>v0.8.0</strong> (<code>e652ffc</code>) — occurrence-mapping + fix-hints + advisory
+tiers; golden tests + the <strong>4B acceptance</strong> (atomic) passed; <code>software --verify-build</code> reproduces the
+artifact in the pinned container. The release run was also the first real <code>host-lifecycle release</code> on a
+host-* Where component, and it surfaced + fixed two release-tool bugs (→ host-lifecycle <strong>v0.19.1</strong>).</p>
 </blockquote>
 <h2 id="context"><a class="header" href="#context">Context</a></h2>
 <p><code>plan/0030</code> shipped <code>host-lint --docs</code> — the repo-wide prose audit walks authored markdown. But the
