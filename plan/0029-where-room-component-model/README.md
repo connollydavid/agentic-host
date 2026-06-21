@@ -42,13 +42,16 @@ All software lives under one `software/` directory; each component is a folder; 
 ```
 software/
   <component>/
-    .git/            # the bare object store (shared); exact store-dir name is a design knob
-    <branch>/        # a worktree checked out on <branch>; the pin's branch is the canonical one
-    <other-branch>/  # additional parallel lines, one folder per branch
+    .git/                 # the bare object store (shared); exact store-dir name is a design knob
+    heads/<branch>/       # a branch worktree; <branch> keeps its slashes: heads/feature/login, heads/release/2.0
+    tags/<tag>/           # a tag worktree, detached at the tag: tags/v1.2.0; nests the same way
 ```
 
-- **(item, branch) is now a literal path** — `software/<item>/<branch>/` — so the addressing in the
-  next section maps directly to the filesystem.
+- **(item, ref) is a literal path** — `software/<item>/heads/<branch>/` or `software/<item>/tags/<tag>/`.
+  The worktree key is a **full git ref-path: slashes are preserved as directories**, so feature
+  branches and namespaced refs/tags nest naturally. Mirroring git's `refs/heads` / `refs/tags` keeps a
+  branch and a same-named tag — and the `.git` store — from ever colliding. The canonical worktree is
+  just the pin's branch (e.g. `heads/main/`).
 - **One `.gitignore` entry** (`/software/`) replaces the per-component triplets.
 - The **"worktrees live under the host root"** rule generalizes to "under `software/`"; the off-tree
   `store=<path>` escape (a foreign filesystem/platform, e.g. a Windows Dev Drive reached from WSL)
@@ -58,13 +61,15 @@ software/
 ### Addressing
 
 ```
-host-lifecycle software --materialize|--check|--verify-build [<item>[@<branch>]] [<dir>]
-host-lifecycle release <item>[@<branch>] ...
+host-lifecycle software --materialize|--check|--verify-build [<item>[@<ref>]] [<dir>]
+host-lifecycle release <item>[@<ref>] ...
 ```
 
 - **Omit the specifier → all components, canonical worktrees** (today's behavior; backward-compatible).
 - `<item>` → that one component's canonical worktree (the targeted bootstrap/check/build).
-- `<item>@<branch>` → a specific parallel line.
+- `<item>@<ref>` → a specific worktree, where `<ref>` is a branch (possibly nested, `feature/login`)
+  or a tag (`v1.2.0`); the tool resolves the ref's type to pick `heads/` vs `tags/`. Parse: the item
+  is up to the first `@`, the rest is the ref-path (slashes intact).
 
 ### Shapes (branch on the declared recipe, never on a name)
 
