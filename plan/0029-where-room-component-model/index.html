@@ -212,7 +212,7 @@ has a <strong>shape</strong> declared by its recipe. The tool operates on a comp
 <strong>store</strong> is separated from the per-<strong>branch</strong> worktrees:</p>
 <pre><code>software/
   &lt;component&gt;/
-    .git/                 # the bare object store (shared); exact store-dir name is a design knob
+    .git/                 # the bare object store (shared) — store-dir name LOCKED to .git (operator); verify git repo-discovery + the host-root tree-walk treat it as the object store
     heads/&lt;branch&gt;/       # a branch worktree; &lt;branch&gt; keeps its slashes: heads/feature/login, heads/release/2.0
     tags/&lt;tag&gt;/           # a tag worktree, detached at the tag: tags/v1.2.0; nests the same way
 </code></pre>
