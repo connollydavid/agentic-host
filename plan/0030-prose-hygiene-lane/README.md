@@ -39,8 +39,8 @@ adds it as `host-lint --docs` — and `950fbd6` is **pending** in `.host` (recor
 trope-lines). The front-door README (`software/host/main/README.md`) already encodes the prose clean as
 a triggered migration step.
 
-So the lane is authored but toothless. Three things make it real and dogfoodable down to the weak-agent
-(Fen / Qwen-3.5-4B) bar.
+So the lane is authored but toothless. The deliverables below make it real and dogfoodable down to the
+weak-agent (Fen / Qwen-3.5-4B) bar.
 
 ## Deliverables
 
@@ -57,23 +57,14 @@ in code comments and string literals (false positives, and a nonsensical clean-t
 `--all` (naming, everywhere) and `--docs` (prose, docs) are the two single-flag repo modes; `--prose
 [file]` stays for one doc or stdin. This is the capability `950fbd6`'s `recheck` already assumes.
 
-### D2 — weak-agent-fixable `--prose` output *(host-lint / host-grammar)*
+### D2 — weak-agent-fixable output → carved out to `plan/0031`
 
-The clean, not the classify, is the hard part for a weak agent, and the current output defeats it: one
-em-dash emits **ten byte-identical records** (no column), and some tropes report a whole-document
-diagnosis with no location at all ("21/23 bullets open with bold lead-ins"). Fix the tool so the clean
-is mechanical:
-
-- **Per-occurrence span.** Emit a column/byte offset per *distinct* occurrence and de-duplicate — one
-  record per occurrence, never N identical lines.
-- **Fix hint** where the rewrite is mechanical (a decoration dash/arrow → its plain-prose form), so the
-  agent matches a fixed vocabulary and applies a known edit (the "internalise tool orchestration for
-  weak agents" principle: one command, parsed verdict, exact span, suggested fix).
-- **Scope the zero-bar to *locatable* tropes.** Density/structural diagnoses (bold-lead-in density,
-  a self-answered-question with no single span) stay **advisory** (warn), like the existing
-  tell-density score; the **clean-to-zero GATE applies only to locatable, mechanically-fixable
-  tropes.** A zero bar over an unlocatable diagnosis is an unterminating loop — this makes "zero" both
-  achievable and weak-agent-executable.
+The clean (not the classify) is the hard part for a weak agent, and the current output defeats it: one
+em-dash emits **ten byte-identical records** with no column, and some tropes report a whole-document
+diagnosis with no location at all. Making the output one-record-per-occurrence + columned + fix-hinted +
+advisory-tiered grew into a multi-repo engine question (the over-emission lives in `host_grammar`), so it
+is now its own milestone — **`plan/0031` (fixable prose output)**. `plan/0030`'s D5 (the triggered clean)
+**depends on `plan/0031`**: the clean is not weak-agent-executable until the output is locatable.
 
 ### D3 — re-derivable immutable-record classification (no self-asserted acks) *(methodology + small tool support)*
 
@@ -115,9 +106,9 @@ tropes; box record citations in fences; `MEMORY.md` already excluded); **one doc
 docs, each a verifiable goal — `--prose <doc>` returns clean and `host-lint <doc>` stays naming-clean
 before the next); then `host-lifecycle upgrade --record 950fbd6`; whole-suite green.
 **STOP rule:** if removing a trope would change a normative claim or force a naming tell (exit 1), box
-it or leave it and record — never mangle a doc to force the gate green. D2 (spans + fixes) and D3
-(re-derivable classes) are what make this executable at the 4B bar; until they ship, the clean is a
-manual cryptographic-and-judgement task and must not start.
+it or leave it and record — never mangle a doc to force the gate green. `plan/0031`'s fixable output
+(spans + fixes + advisory tiers) and D3 (re-derivable classes) are what make this executable at the 4B
+bar; until they ship, the clean is a manual cryptographic-and-judgement task and must not start.
 
 ## Deferred — the receipts-family re-homing (its own milestone)
 
@@ -150,7 +141,7 @@ deliberately reuses the **existing** `.host-receipts` `verify` receipt (D4), dep
   unlocatable structural tropes), simplicity (STRAND 3 is a re-architecture smuggled beside a small
   feature; lean on the shipped fence + ignore). Recorded in `design-review.md`.
 - **Qwen-3.5-4B:** 10/10 correct on clear-case GATE/FREEZE/APPEND classification, "no ambiguity" —
-  necessary but not sufficient: the *clean* is the hard part (D2), and classification at the margin
+  necessary but not sufficient: the *clean* is the hard part (now `plan/0031`), and classification at the margin
   needs the machine-readable `STATUS:`/`Status:` of D3, not status-paragraph inference.
 
 ## Verification
@@ -158,8 +149,8 @@ deliberately reuses the **existing** `.host-receipts` `verify` receipt (D4), dep
 - **D1:** `host-lint --docs` from the repo root walks every tracked **`.md`** doc, excludes `book/` +
   the software worktrees + `host-template/` + generated `SUMMARY.md` + `.host-lintignore` entries, and
   skips non-markdown (no prose-scanning code); a unit/integration test asserts the walk + ignore honoring.
-- **D2:** golden tests — one em-dash → exactly one record with a column; a mechanical trope carries a
-  `fix:`; a density/structural trope reports as advisory, not a GATE failure. De-dup verified.
+- **D2 → `plan/0031`:** the fixable-output golden tests (one record per occurrence + column, mechanical
+  `fix:`, advisory tiers) are verified in that milestone; `plan/0030`'s D5 clean depends on them.
 - **D3:** every `plan/NNNN/README.md` carries an inline `STATUS:`; the disposition table is documented;
   a classification helper (or the documented predicate) maps each doc to Live/Record/Append-only from
   path + `STATUS:`/`Status:` alone.
@@ -173,7 +164,7 @@ deliberately reuses the **existing** `.host-receipts` `verify` receipt (D4), dep
 
 ## Push order (software-first)
 
-1. **host-lint** — D1 (`--docs` markdown walk) + D2 (spans/fix/dedup/advisory-scoping); new release; tests + CI green;
+1. **host-lint** — D1 (`--docs` markdown walk); new release; tests + CI green; (D2's output overhaul ships separately in `plan/0031`)
    re-pin in `.host-software`, `--verify-build`.
 2. **agentic-host** — D3 (`STATUS:` lines + disposition table), D4 (`lifecycle.manifest` recheck +
    `.gitattributes`); `PLAN.md` row; `design-review.md`; `MEMORY.md` entry (separate commits, audited).
@@ -186,8 +177,8 @@ classification proves worth generalizing for every adopter, propose it as a foll
 
 ## Risks / honesty
 
-- The `--prose` span/fix work depends on `host_grammar`'s trope engine exposing per-occurrence offsets;
-  if a trope class is genuinely span-less it stays advisory (D2), not forced to zero.
+- The fixable-output work (spans / fixes / advisory tiers) is `plan/0031`; its engine-vs-host-lint fork
+  and the span-less-trope handling are settled there. `plan/0030` ships the lane, classification, and gate.
 - The triggered clean is a long mechanical campaign (~1,652 lines); the per-doc verifiable-goal cadence
   (D5) is what keeps a weak agent from drifting — not optional.
 - Deferring the re-homing means the receipts family stays as plan/0025 shipped it (one `.host-receipts`,
