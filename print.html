@@ -2477,8 +2477,13 @@ tool can re-check):</p>
 </tbody></table>
 </div>
 <p>To make "Live vs Immutable record" re-derivable rather than inferred from prose, <strong>add an inline
-<code>STATUS:</code> line to every <code>plan/NNNN/README.md</code></strong> (only 8 of 29 carry one today) and read the MADR
-<code>Status:</code> field. Classification becomes a field lookup a weak agent can do, not an adjudication of
+<code>STATUS:</code> line to every <code>plan/NNNN/README.md</code></strong> (only 4 of 31 carry one today) and read the MADR
+<code>Status:</code> field. The convention is the existing form — a <code>&gt; **STATUS: &lt;STATE&gt; (date).**</code> blockquote near
+the top — and the predicate reads the <code>&lt;STATE&gt;</code> token: <code>COMPLETE</code> / <code>done</code> / <code>shipped</code> → <strong>Record</strong>,
+anything else (<code>planned</code>, <code>built</code>, in-progress) → <strong>Live</strong>. The <code>.gitattributes</code> (<code>*.md text eol=lf</code>)
+lands now for cross-platform determinism; the 27 <code>STATUS:</code> additions are applied with the triggered clean
+(D5), where the classification is consumed. Classification becomes a field lookup a weak agent can do,
+not an adjudication of
 "deferred" vs "done" from a status paragraph. No new file format, no content hash, no edit-lapses-clean
 trap — the exclusion is the existing, diff-visible, line-precise fence + ignore, and a future real trope
 edited into a record is still caught (the fence boxes only the quoted span, the rest stays scanned).</p>
