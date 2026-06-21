@@ -1,0 +1,59 @@
+[receipt "adopt"]
+    disposition = done
+    evidence = a5fef9d (.host stamp: template + revision adopted)
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "classify"]
+    disposition = skip
+    reason = greenfield adoption; classify is the pre-adoption preview and leaves no durable artifact to re-derive
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "embed" "host-lint"]
+    disposition = done
+    evidence = pin bbd068758df7 (.host-software)
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "embed" "host"]
+    disposition = done
+    evidence = pin 10fa18159aa0 (.host-software)
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "remap"]
+    disposition = skip
+    reason = greenfield content-named project; no ordinal to content live-file rename applies
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "verify"]
+    disposition = done
+    evidence = gate sweep green at 6426a84 (validate, software --check, book --check, hook tell test)
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "publish"]
+    disposition = done
+    evidence = doc-site CI lane wired (.github/workflows/mdbook.yml)
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "upgrade"]
+    disposition = done
+    evidence = applied-set 897ce0d, da000aa (.host)
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.7.0 (artifact 1c83967adcb18e88a88768e80a349f870cc06b17aa85899ace49985406862bb9)
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "release" "host"]
+    disposition = skip
+    reason = host is the upstream methodology and tracker repo, embedded read-only; not released from agentic-host
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21

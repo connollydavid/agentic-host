@@ -18,8 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install host-lifecycle (pinned to v0.18.1)
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev ca0dfe28cb99c20afe0420bf2f7cb3263550e019
+        with:
+          submodules: true # host-template carries the lifecycle.manifest the receipt gate reads
+      - name: Install host-lifecycle (pinned; ships the manifest + receipt gate)
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 6446e8b8cd8c7b1645bf3821a825d036162282d5
       - name: Materialize the software (bare store + worktrees)
         run: host-lifecycle software --materialize .
       - name: Check the software (pins, spec lanes, obligations, no HAZARD)
