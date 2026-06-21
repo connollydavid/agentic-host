@@ -2634,9 +2634,14 @@ source → locatable, not found → advisory — so no hardcoded id list to main
 em-dash lines (not ten at line 12), each with a column; one em-dash → one record; a mechanical trope
 carries a <code>fix</code>; a synthetic-diagnosis trope is advisory (present in output, does <strong>not</strong> make <code>--docs</code>
 exit non-zero on its own).</li>
-<li><strong>4B (the executability proof, the acceptance gate):</strong> drive Qwen-3.5-4B through cleaning one real doc
-using the new located + fix-hinted output; confirm it locates and fixes each trope without looping —
-the bar <code>plan/0030</code> D5 needs. If the 4B cannot, escalate (only then) to an engine offset.</li>
+<li><strong>4B acceptance — PASSED (atomic).</strong> Qwen-3.5-4B (<code>unsloth/Qwen3.5-4B-MTP-GGUF</code>) applied the located +
+fix-hinted output correctly <strong>one fix at a time</strong>: a mechanical decoration fix (<code>robust — it … — and</code> →
+commas) and a no-fix reword (<code>delve</code> → <code>look at</code>), and it <strong>correctly ignored the advisory <code>note</code></strong>. It
+could <em>not</em> do the six mixed edits in one shot (it echoed the doc, though it still parsed which to
+ignore). Finding: the format is weak-agent-usable at the <strong>per-occurrence</strong> granularity the clean uses;
+the compound-in-one-shot failure <strong>confirms</strong> <code>plan/0030</code> D5's one-doc / one-fix cadence and STOP rule
+(drive a weak agent atomically, never hand it the whole doc). No engine offset needed. A 27B sanity run
+agreed. (Golden tests prove the mechanics deterministically; the 4B proves the goal.)</li>
 <li>Whole-suite green (66 unit + integration + clippy); new host-lint release re-pinned in <code>.host-software</code>
 with <code>software --verify-build</code> green. <strong>Bundled with <code>plan/0030</code>'s D1 (<code>--docs</code>) as one host-lint
 release</strong> — <code>--docs</code> only pays off with fixable output, so they ship together.</li>
