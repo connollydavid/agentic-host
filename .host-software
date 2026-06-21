@@ -13,5 +13,5 @@
 	hooks     = pre-commit
 [software "host"]
 	url       = https://github.com/connollydavid/host.git
-	pin       = bb597771f2507608700bdb364916d2b9af557899
+	pin       = cd49094ed0a24e9125e5d357ce9a67ddb266c7ec
 	worktrees =
