@@ -182,6 +182,12 @@ host (including the dev WSL), <code>software --install-hooks</code> installs tha
 than a local rebuild, and the recorded artifact is the same binary the producer CI distributes.
 Depends on <code>plan/0028</code> (the host-* family is now uniform Where-room software) and the
 reproducible-build production anchor (<code>plan/0005</code>, <code>plan/0006</code>).</p>
+<p><strong>Adversarially reviewed</strong> (<code>design-review.md</code>, 5 lenses, <strong>re-scope</strong>): three payoffs are
+over-claimed (the install-hooks divergence is sanctioned by design, the canonical will not
+byte-match the producer CI asset unless producer CI is converted to the pinned recipe, and "any
+Linux" conflates OS with architecture), host-prove conversion is scope creep, and a simpler
+older-glibc image was never weighed. The body below is the pre-review plan; it is re-cut once the
+operator settles the pivotal goal (portability for the hook versus distribute-equals-certify).</p>
 </blockquote>
 <h2 id="context"><a class="header" href="#context">Context</a></h2>
 <p><code>.host-software</code> records each artifact as <code>target/release/&lt;bin&gt;</code>, built by
