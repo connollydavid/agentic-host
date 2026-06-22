@@ -181,6 +181,13 @@ is software developed here and belongs in <code>.host-software</code> as a Where
 holds only the external referenced tools (allium, specula). This milestone is the migration that
 realizes that decision, and it folds in the deferred <code>plan/0025</code> #41/#50 dogfood (<code>release</code> on the
 tools), which becomes possible exactly because the tools become resolvable Where components.</p>
+<p><strong>Re-cut after adversarial review</strong> (<code>design-review.md</code>, <em>proceed only with major revisions</em>) and the
+operator rulings recorded below. The blocking <em>spine-contradiction</em> is <strong>resolved by <code>plan/0029</code></strong>,
+which folded the tool-residency clause into the spine, so <code>call/0020</code> now <em>applies</em> that clause rather
+than forking it. The remaining open decisions are settled in <strong>Operator rulings</strong>. The invalid linear
+build order is replaced by the <strong>two-pass bootstrap</strong> (Readiness then Cutover) that names and breaks the
+genuine host-lifecycle bootstrap cycle. This milestone now <strong>depends on <code>plan/0029</code></strong> for the nested
+layout, addressing, recipe-dispatch, and skill-link integrity it builds on.</p>
 </blockquote>
 <h2 id="context"><a class="header" href="#context">Context</a></h2>
 <p><code>plan/0025</code> shipped the receipt gate and a tool-carried <code>release</code> phase, but it surfaced a false
@@ -189,94 +196,168 @@ host-lifecycle and host-prove are <code>tools/</code> submodules and host-gramma
 <code>release host-lifecycle</code> could not resolve, and the dogfood was deferred. <code>call/0020</code> corrects this:
 the methodology already supports more than one software-under-development (<code>.host-software</code> is
 "one or more components"; <code>embed</code>/<code>release</code> are <code>recurring-per-component</code>; agentic-host already
-carries two). The fix is to make the residency uniform: the host-lint model for the whole family.</p>
+carries two). The fix is to make the residency uniform, the host-lint model for the whole family.</p>
+<p><code>plan/0029</code> then made the multi-component Where room first-class and generic (the nested
+<code>software/&lt;component&gt;/&lt;branch&gt;/</code> layout, <code>--item</code> addressing, recipe-dispatch on <code>artifact?</code>/<code>build?</code>,
+the generated-link integrity check) and folded the residency clause into the spine. agentic-host is
+already migrated to the nested layout (<code>software/host-lint/main/</code>, <code>software/host/main/</code>). This milestone
+is what proceeds on top: add the rest of the family as components.</p>
+<h2 id="operator-rulings-2026-06-22"><a class="header" href="#operator-rulings-2026-06-22">Operator rulings (2026-06-22)</a></h2>
+<p>The design-review left four decision-level findings. One is discharged by <code>plan/0029</code>; the other three
+were ruled by the operator:</p>
+<ol>
+<li>
+<p><strong>Spine-first vs owned divergence, RESOLVED by <code>plan/0029</code>.</strong> <code>plan/0029</code> amended <code>host-template</code> so
+the spine distinguishes an <em>adopter</em> (references the host-* tools as submodules, "reference, don't
+vendor") from a <em>development host</em> (develops and embeds the tools it authors as Where components).
+<code>call/0020</code> now applies that spine clause; there is no isolated fork. No further action here beyond
+confirming the applied baseline carries it.</p>
+</li>
+<li>
+<p><strong>Self-certification: gate with the <em>released, pinned</em> host-lifecycle.</strong> agentic-host's
+<code>software --check</code>, <code>--verify-build</code>, and <code>release</code> are run by the <strong>released, pinned</strong> host-lifecycle
+(its producer-CI tagged build, recorded in <code>.host-software</code>), never by the worktree build. The worktree
+build is only ever the <em>next version under development</em>. The rationale the operator named is
+<strong>avoiding mixed state</strong>: a moving, possibly-uncommitted worktree binary certifying its own release
+conflates the thing being developed with the thing vouching for the release, whereas a released pin is
+a fixed, known-good, immutable certifier. This preserves the independent-verifier rung (the analogue,
+one rung up, of the spine's "self-referential software is excluded, not bypassed").</p>
+</li>
+<li>
+<p><strong>host-grammar pin: converge on a new tag at proofs HEAD, and re-release host-lint.</strong> Cut a host-grammar
+tag at the proofs HEAD (<code>fbd2e6c</code>, which carries the <code>plan/0023</code> Apalache/TLAPS work) and pin <strong>both</strong>
+host-lifecycle and host-lint to it, restoring the "what host-lifecycle emits is what host-lint accepts"
+symmetry on a current grammar. host-lint therefore changes too: its <code>Cargo.lock</code>, its binary bytes, and
+its recorded <code>artifact</code> sha256 all move, so it is <strong>re-released</strong> (re-pinned, new release receipt, green
+<code>--verify-build</code>). The rejected alternative was freezing the grammar at the stale <code>8091261</code>, which would
+drop the verification-ladder proofs from what the toolchain compiles against.</p>
+</li>
+<li>
+<p><strong>Spec lane: host-lifecycle and host-prove become spec-bearing.</strong> Uniform with host-lint: author an
+<code>.allium</code> spec plus <code>.obligations</code> for each, and wire the <strong>allium lane</strong> in each tool's producer CI.
+This activates the spec/obligation MUST and re-derivation digests for those components; it is real
+authoring work (via the <code>elicit</code>/<code>distill</code> skills) and a standing gate obligation, deliberately
+accepted.</p>
+</li>
+</ol>
 <h2 id="per-target-audit-the-migration-is-heterogeneous-do-not-treat-as-one-case"><a class="header" href="#per-target-audit-the-migration-is-heterogeneous-do-not-treat-as-one-case">Per-target audit (the migration is heterogeneous; do not treat as one case)</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Component</th><th>Now</th><th>Shape</th><th>Producer CI</th><th>Becomes</th><th>Release</th></tr></thead><tbody>
-<tr><td>host-lint</td><td><code>.host-software</code> Where ✓</td><td>Rust <strong>binary</strong> (artifact)</td><td>own</td><td>unchanged (reference model)</td><td>artifact-bearing</td></tr>
-<tr><td>host-lifecycle</td><td><code>tools/</code> submodule</td><td>Rust <strong>binary</strong> (artifact), <strong>7</strong> phase skills</td><td><code>ci.yml</code></td><td><code>.host-software</code> Where, artifact-bearing</td><td>build + re-derive + tag</td></tr>
-<tr><td>host-prove</td><td><code>tools/</code> submodule</td><td>Rust <strong>binary</strong> + <code>install/</code>+<code>tools.lock</code>, <strong>3</strong> skills</td><td><code>ci.yml</code></td><td><code>.host-software</code> Where, artifact-bearing</td><td>build + re-derive + tag (verifiers stay pinned in <code>tools.lock</code>)</td></tr>
-<tr><td>host-grammar</td><td>git dep (host-lifecycle <strong>unpinned</strong>)</td><td><strong>library</strong> crate (no binary)</td><td>own repo</td><td><code>.host-software</code> Where, repo-only</td><td><strong>tag-only</strong> (no artifact); dependents keep git-rev dep, pinned to its tag</td></tr>
-<tr><td>allium, specula</td><td><code>tools/</code> submodule</td><td>external (JUXT / specula-org)</td><td>upstream</td><td><strong>stay</strong> in <code>tools/</code></td><td>n/a</td></tr>
+<tr><td>host-lint</td><td><code>.host-software</code> Where, yes</td><td>Rust <strong>binary</strong> (artifact), spec-bearing</td><td>own</td><td><strong>re-release</strong> onto new host-grammar tag (new artifact hash plus receipt)</td><td>artifact-bearing</td></tr>
+<tr><td>host-lifecycle</td><td><code>tools/</code> submodule</td><td>Rust <strong>binary</strong> (artifact), <strong>7</strong> phase skills</td><td><code>ci.yml</code></td><td><code>.host-software</code> Where, artifact-bearing, <strong>now spec-bearing</strong></td><td>build, re-derive, tag</td></tr>
+<tr><td>host-prove</td><td><code>tools/</code> submodule</td><td>Rust <strong>binary</strong> plus <code>install/</code>+<code>tools.lock</code>, <strong>3</strong> skills</td><td><code>ci.yml</code></td><td><code>.host-software</code> Where, artifact-bearing, <strong>now spec-bearing</strong></td><td>build, re-derive, tag (verifiers stay pinned in <code>tools.lock</code>; the artifact is only <code>target/release/host-prove</code>)</td></tr>
+<tr><td>host-grammar</td><td>git dep (host-lifecycle <strong>unpinned</strong>)</td><td><strong>library</strong> crate (no binary)</td><td>own repo</td><td><code>.host-software</code> Where, repo-only (no <code>artifact</code>/<code>build</code>, so the recipe-dispatch tag-only path, <code>plan/0029</code>)</td><td><strong>tag-only</strong>; dependents keep git-rev dep, pinned to its tag</td></tr>
+<tr><td>allium, specula</td><td><code>tools/</code> submodule</td><td>external (JUXT / specula-org)</td><td>upstream</td><td><strong>stay</strong> in <code>tools/</code> (external by <em>source</em>, not by name)</td><td>n/a</td></tr>
 </tbody></table>
 </div>
-<h2 id="deliverables"><a class="header" href="#deliverables">Deliverables</a></h2>
+<p>Membership criterion (per <code>plan/0029</code>'s residency clause): a <code>.host-software</code> component is <strong>software whose
+canonical source repo is developed in this host</strong>, not "anything name-prefixed <code>host-*</code>". allium and specula
+are external by source; a hypothetical externally-developed <code>host-foo</code> would correctly <em>not</em> be a component.</p>
+<h2 id="the-migration-two-passes-readiness-then-cutover"><a class="header" href="#the-migration-two-passes-readiness-then-cutover">The migration: two passes (Readiness, then Cutover)</a></h2>
+<p>The single-artifact authority rule throughout: <strong>the producer repo's tag is the release</strong>; the
+orchestration <em>consumes</em> it (re-pins <code>.host-software</code>, records the receipt) and never mints a competing
+tag (the design-review's <em>dual-release-authority</em> fix).</p>
+<h3 id="readiness-pass-producer-repos-software-first-no-component-additions-no-orchestration-releases-yet"><a class="header" href="#readiness-pass-producer-repos-software-first-no-component-additions-no-orchestration-releases-yet">Readiness pass (producer repos; software-first; no component additions, no orchestration releases yet)</a></h3>
 <ol>
-<li><strong>Producer-side readiness (each in its own repo, pushed first, software-first).</strong>
-<ul>
-<li><strong>host-grammar:</strong> confirm/cut a released tag the dependents can pin to; its own CI green.</li>
-<li><strong>host-lifecycle:</strong> pin its <code>host-grammar</code> dependency to that tag (closes the current <em>unpinned</em>
-dep, a reproducibility hole), prove a reproducible build (record <code>toolchain</code> + <code>artifact</code>
-sha256 from a container build, host#14), and cut its deferred <strong>0.19.0</strong> version + tag (folds in
-<code>plan/0025</code> #41/#50, disambiguating the 0.18.1-labeled feature build).</li>
-<li><strong>host-prove:</strong> same reproducible-build readiness; confirm <code>tools.lock</code> provenance is checked in
-its own CI; tag at its current <code>0.2.0</code> (or bump as warranted).</li>
-</ul>
-</li>
-<li><strong>agentic-host structural migration.</strong>
-<ul>
-<li><code>.gitmodules</code>: drop the <code>tools/host-lifecycle</code> and <code>tools/host-prove</code> submodules.</li>
-<li><code>.host-software</code>: add <code>[software "host-lifecycle"]</code>, <code>[software "host-prove"]</code> (artifact-bearing,
-with <code>toolchain</code>/<code>build</code>/<code>artifact</code>/<code>deploy</code>), and <code>[software "host-grammar"]</code> (repo-only,
-tag-only).</li>
-<li><strong>Skill wiring:</strong> generalize <code>link-skills.sh</code> so a <code>.host-software</code> Where component's skills wire
-from its worktree (host-lifecycle's 7, host-prove's 3), the host-lint pattern, extended to
-multi-skill components; reconcile the fresh-clone setup in <code>CLAUDE.md</code> §0 accordingly. The
-tracked-symlink-into-an-unmaterialized-path hazard (<code>call/0005</code>) still governs: generated, never
-tracked.</li>
-<li><strong>Bootstrap:</strong> host-lifecycle is the tool that materializes <code>.host-software</code>, including itself;
-the fresh-clone order becomes build-host-lifecycle-from-its-worktree, then materialize the rest.</li>
-</ul>
-</li>
-<li><strong>Dogfood the orchestration on the tools.</strong> With the tools now resolvable Where components, cut
-each through <code>host-lifecycle release &lt;component&gt;</code> and record the receipts in the project ledger,
-the <code>plan/0025</code> dogfood, now on rails (and <code>release host-lifecycle</code> is the bootstrap dogfood:
-version N releases N+1).</li>
-<li><strong>Records:</strong> this plan, <code>call/0020</code>, <code>PLAN.md</code>, <code>MEMORY.md</code>; re-pin/re-record as the migration
-lands (each pushed in its own audited commit).</li>
+<li><strong>host-grammar (pushed first).</strong> Confirm or cut the tag at the proofs HEAD (<code>fbd2e6c</code>); its own CI green
+(allium/TLA plus the <code>plan/0023</code> Apalache/TLAPS lanes). This is the grammar both dependents converge on.</li>
+<li><strong>host-lifecycle.</strong> Rev-pin <strong>both</strong> git deps in <code>Cargo.toml</code>, host-grammar to the new tag and
+host-lint to its project pin, and <strong>commit <code>Cargo.lock</code></strong> (it is gitignored today). Ensure exactly
+<strong>one</strong> host-grammar entry in the lockfile, equal to host-lint's pin (<code>cargo tree -d</code> clean; today the
+lock carries two, <code>8091261</code> via host-lint and a floating <code>fbd2e6c</code> direct). Add the reproducibility
+hardening host-lint already uses (<code>strip = true</code>, <code>.cargo/config.toml</code> <code>-C link-arg=--build-id=none</code>).
+Author its <code>.allium</code> plus <code>.obligations</code> and wire the allium lane in <code>ci.yml</code> (spec-bearing ruling).
+Prove a clean double-build reproduces a hash in its own repo and CI (container build in the pinned
+toolchain). Do <strong>not</strong> tag a release through the orchestration here; the 0.19.0 cut belongs to the
+Cutover.</li>
+<li><strong>host-prove.</strong> Same reproducibility hardening and double-build proof (its Rust binary has <strong>zero</strong>
+external deps and its lockfile is already committed; the recorded <code>artifact</code> is <strong>only</strong>
+<code>target/release/host-prove</code>, never the <code>tools.lock</code> verifiers, since TLAPS is Linux-only and Kani is
+<code>sha256=n/a</code>). Author its <code>.allium</code> plus <code>.obligations</code> and wire the allium lane. Linux-only, so
+<code>attest-host = linux</code> (WSL2 counts as linux).</li>
 </ol>
-<h2 id="build--push-order-software-first-each-pushed-before-its-dependents"><a class="header" href="#build--push-order-software-first-each-pushed-before-its-dependents">Build / push order (software-first; each pushed before its dependents)</a></h2>
+<h3 id="cutover-pass-agentic-host-atomic-where-the-receipt-gate-demands-it"><a class="header" href="#cutover-pass-agentic-host-atomic-where-the-receipt-gate-demands-it">Cutover pass (agentic-host; atomic where the receipt gate demands it)</a></h3>
+<p>Run by the <strong>released, pinned</strong> host-lifecycle (self-cert ruling), with the worktree binary used only to
+perform the release dogfood. One coherent change, because the <code>recurring-per-component</code> receipt gate goes
+RED the instant a new component appears in <code>.host-software</code> without its back-filled receipts, and
+<code>reproducible-build.yml</code> runs <code>software --check .</code> on every push to main (a main-only-triggered failure,
+the <code>complete-means-whole-suite-green</code> trap):</p>
 <ol>
-<li><strong>host-grammar:</strong> released tag; CI green.</li>
-<li><strong>host-lifecycle:</strong> pin host-grammar, reproducible build, 0.19.0 tag.</li>
-<li><strong>host-prove:</strong> reproducible build, tag.</li>
-<li><strong>agentic-host:</strong> <code>.gitmodules</code> + <code>.host-software</code> + <code>link-skills.sh</code> + CI; materialize; back-fill
-/ cut release receipts through the orchestration.</li>
-<li><strong>Records:</strong> plan row, MEMORY, re-pins.</li>
+<li><strong>Drop the submodules fully:</strong> remove <code>tools/host-lifecycle</code> and <code>tools/host-prove</code> from <code>.gitmodules</code>
+<strong>and</strong> prune <code>.git/modules/tools/host-{lifecycle,prove}</code> (de-registration, not just a <code>.gitmodules</code>
+edit).</li>
+<li><strong>Add the <code>.host-software</code> stanzas</strong> under the nested layout: <code>[software "host-lifecycle"]</code> and
+<code>[software "host-prove"]</code> (artifact-bearing: <code>toolchain</code>/<code>build</code>/<code>artifact</code>/<code>deploy</code>, <code>attest-host</code>),
+and <code>[software "host-grammar"]</code> (repo-only: no <code>artifact</code>/<code>build</code>, the recipe-dispatch tag-only path).
+The uniform <code>/software/</code> ignore from <code>plan/0029</code> already covers their worktrees (no per-component
+triplets to add).</li>
+<li><strong>Re-release host-lint</strong> onto the new host-grammar tag: re-pin its <code>.host-software</code> <code>pin</code> and <code>artifact</code>
+sha256, with a green <code>--verify-build</code> and a new <code>release host-lint</code> receipt (ruling #3, host-lint's
+bytes move with the new grammar).</li>
+<li><strong>Skill wiring:</strong> the generated-link walk and the component-skill dir-shape port already exist from
+<code>plan/0029</code>'s link-integrity deliverable; the cutover wires host-lifecycle's <strong>7</strong> and host-prove's
+<strong>3</strong> skills from their worktrees and folds the manual host-lint <code>ln -s</code> step into the same mechanism so
+no link is created twice.</li>
+<li><strong>Fresh-clone order:</strong> rewrite <code>CLAUDE.md</code> §0 step by step with the <strong>seed-first</strong> sequence,
+<code>cargo install --git &lt;host-lifecycle&gt; --rev &lt;pin&gt;</code> where the seed <code>--rev</code> <strong>MUST equal</strong> the
+<code>.host-software</code> host-lifecycle pin (else seed and materialized source diverge silently), because the
+materializer cannot be served from the thing it materializes (the genuine bootstrap cycle).</li>
+<li><strong>Materialize</strong> the new components via the seed binary; <strong>back-fill the receipts in the same commit</strong>
+as the <code>.host-software</code> add (atomic, so the gate is never RED on a push to main). Define host-grammar's
+<strong>tag-only</strong> <code>release</code> receipt shape (it has no artifact).</li>
+<li><strong>Release dogfood:</strong> cut each tool through <code>host-lifecycle release &lt;component&gt;</code> run by the freshly-built
+<strong>worktree</strong> binary (0.18.1 cutting <strong>0.19.0</strong>, version N releases N+1), the <strong>producer tag being
+authoritative</strong>; the orchestration consumes it and records the receipt. (This is the one place the
+worktree build acts; the standing gate stays on the released pin.)</li>
+<li><strong>CI rewire last,</strong> pinned to the sha the cutover produced, and add a <strong>cold-clone CI job</strong> that
+exercises the documented seed path and asserts all <strong>eleven</strong> software-skill links resolve (host-lint 1
+plus host-lifecycle 7 plus host-prove 3; <code>host</code> 0) and none are tracked. No such job exists today, and
+<code>link-skills.sh</code> is run by zero workflows, so the generated-link regression has no gate backstop
+otherwise (<code>software --check</code>'s symlink HAZARD only catches <em>tracked</em> symlinks).</li>
 </ol>
+<h3 id="records"><a class="header" href="#records">Records</a></h3>
+<p>This plan, <code>call/0020</code>, <code>PLAN.md</code>, <code>MEMORY.md</code>; re-pins and re-records as the migration lands, each pushed
+in its own audited commit.</p>
 <h2 id="verification-whole-suite-green-complete-means-whole-suite-green"><a class="header" href="#verification-whole-suite-green-complete-means-whole-suite-green">Verification (whole-suite green, <code>complete-means-whole-suite-green</code>)</a></h2>
 <ul>
-<li><code>host-lifecycle software --check .</code> clean: every new Where component at its pin, no
-tracked-symlink-into-unmaterialized hazards, every phase receipt present (now recurring over the
+<li>The <strong>released, pinned</strong> <code>host-lifecycle software --check .</code> clean: every new Where component at its
+pin, no tracked-symlink-into-unmaterialized hazards, every phase receipt present (now recurring over the
 enlarged component set), every recheck holding.</li>
-<li><code>host-lifecycle software --verify-build .</code> green for each artifact-bearing component (host-lint,
-host-lifecycle, host-prove), reproducible from the pin in the recorded toolchain.</li>
-<li><code>link-skills.sh</code> resolves the host-lifecycle (7) and host-prove (3) skills from their worktrees;
-<code>book --check</code> renders; the commit-hook tell test passes.</li>
+<li><code>software --verify-build .</code> green for each artifact-bearing component (host-lint, host-lifecycle,
+host-prove), reproducible from the pin in the recorded toolchain; host-grammar's no-artifact stanza is a
+clean <code>--check</code> and tag-only case (recipe-dispatch, <code>plan/0029</code>).</li>
+<li>The allium lane is green in host-lifecycle's and host-prove's own CI, and their <code>.obligations</code>
+re-derivation digests hold in agentic-host's gate (spec-bearing ruling).</li>
+<li>The generated-link walk resolves the host-lifecycle (7) and host-prove (3) skills from their worktrees;
+<code>book --check</code> renders from stubs with all stanzas present and no worktrees materialized; the commit-hook
+tell test passes.</li>
 <li>Each tool's <strong>own</strong> producer CI green; <code>release</code> dogfooded on host-lifecycle (0.19.0 cut through the
-orchestration, receipt recorded).</li>
+orchestration by the worktree binary, producer tag authoritative, receipt recorded).</li>
+<li>A <strong>cold-clone CI job</strong> reaches green via the seed-first path (the bootstrap-cycle proof).</li>
 <li>Whole-suite green across every repo.</li>
 </ul>
 <h2 id="risks--honesty"><a class="header" href="#risks--honesty">Risks / honesty</a></h2>
 <ul>
-<li><strong>Bootstrap circularity:</strong> host-lifecycle materializes itself; mitigated by the existing
-build-from-worktree-first setup, but the fresh-clone path needs care (and a CI proof that a cold
-clone reaches green).</li>
-<li><strong>Reproducibility prerequisites:</strong> host-lifecycle's host-grammar dep is currently unpinned, so its
-build is not yet reproducible; that must be fixed <em>before</em> it can carry an <code>artifact</code> hash. Same
-diligence for host-prove.</li>
-<li><strong>Skill-wiring is a real mechanism change</strong> that touches <code>link-skills.sh</code> and the fresh-clone setup;
-a regression there dangles skills or trips a tree-walker (<code>call/0005</code>); guard with the
-software-check symlink hazard and a cold-clone CI check.</li>
-<li><strong>host-grammar as a library Where component</strong> has no deployable artifact, so <code>release</code> is tag-only;
-confirm the orchestration's tag-only branch covers a repo-only component cleanly.</li>
-<li><strong>Scope:</strong> this is a multi-repo structural migration, not a relabel; sequence strictly
-software-first and report any unpushable commit rather than proceeding.</li>
+<li><strong>Bootstrap circularity is real, not hand-waved:</strong> host-lifecycle materializes itself, so the cutover
+names the seed-from-pin step and pins the seed <code>--rev</code> to the <code>.host-software</code> pin; the cold-clone CI job
+proves it.</li>
+<li><strong>Reproducibility substrate is bigger than "one unpinned dep":</strong> both git deps in host-lifecycle must be
+rev-pinned, <code>Cargo.lock</code> committed, exactly one host-grammar entry, strip/build-id hardening on both
+host-lifecycle and host-prove, done in Readiness before any artifact hash is recorded.</li>
+<li><strong>Spec-bearing is added scope:</strong> two new <code>.allium</code> specs plus obligations plus lanes, accepted by ruling
+#4; authored via the wired skills, not by hand.</li>
+<li><strong>Self-cert sequencing:</strong> the standing gate runs the released pin; the worktree binary acts only in the
+release dogfood step. Keeping these separate is what avoids the mixed state the operator flagged.</li>
+<li><strong>Skill-wiring is a real mechanism</strong> (generated, untracked links with no tracked-symlink backstop); the
+cold-clone link-resolution job is the guard.</li>
+<li><strong>Multi-repo, software-first:</strong> sequence strictly producer-first; report any unpushable commit and stop
+rather than proceeding with a dangling pin.</li>
 </ul>
-<h2 id="spine-follow-up-separate-not-in-this-milestone"><a class="header" href="#spine-follow-up-separate-not-in-this-milestone">Spine follow-up (separate, not in this milestone)</a></h2>
-<p>The general pattern (<em>a development host embeds the tools it develops as Where software; an adopter
-references them</em>) may warrant a clarification in <code>host-template</code> (the spine), so a future
-tool-developing host has it stated. That is a methodology change (made in the template, propagated by
-migration), tracked separately from this project-scoped migration.</p>
+<h2 id="spine-follow-up"><a class="header" href="#spine-follow-up">Spine follow-up</a></h2>
+<p>The residency clause this milestone needs is <strong>already in the spine</strong> (<code>plan/0029</code> amended <code>host-template</code>:
+adopter references versus development-host embeds). The remaining spine-shaped item (that the template
+prose gain a first-class notion of an artifact-free <em>library</em> component) is already covered by
+<code>plan/0029</code>'s recipe-dispatch model, where a stanza with no artifact takes the tag-only path, together with
+its <code>STRUCTURE.md</code> update. This project-scoped migration carries it no further.</p>
 
                     </main>
 
