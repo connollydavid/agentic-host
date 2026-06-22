@@ -164,8 +164,13 @@ membership set alone can't catch).
   tool carries every state change; the model never reasons about ancestry, hand-edits
   `.host`, or emits constrained output. **Baseline captured (Vulkan build):** handed
   today's single-`revision` flow, the real 4B set `revision = "7de7cb1"` (the newest
-  applied entry) and justified it (*"there are no entries newer than it to remain
-  pending"*), which **buries the four unapplied entries** (they are ancestors of the
+  applied entry) and justified it with this verbatim reasoning:
+
+  ```host-lint:ignore
+  "there are no entries newer than it to remain pending"
+  ```
+
+  which **buries the four unapplied entries** (they are ancestors of the
   fix, so they vanish from `upgrade`). It did not hang and did not refuse; it produced
   a valid file with confidently wrong semantics. That is the exact unsafe path v2
   makes impossible, and proof the model needs the tool to carry the semantics. (The
