@@ -1,162 +1,191 @@
-# plan/0032: Static musl artifacts, the binary we ship is the binary we certify
+# plan/0032: Hermetic static builds, distribute equals certify, via a pinned dependency bundle
 
-> **Goal (re-cut to distribute-equals-certify, operator ruling 2026-06-22):** each host-* tool's
+> **Goal (re-cut to hermetic-via-bundle, operator rulings 2026-06-22):** each host-* tool's
 > distributed `x86_64-unknown-linux-musl` binary becomes a statically linked build that is also the
-> `.host-software` canonical artifact `--verify-build` reproduces. The release asset and the
-> certified artifact become one file, built by one recorded recipe in one digest-pinned image. A
-> static musl binary also runs on any Linux host regardless of libc or distro, which retires the
-> `plan/0028` hook-portability divergence as a side effect. Depends on `plan/0028` and the
-> reproducible-build production anchor (`plan/0005`, `plan/0006`).
+> `.host-software` canonical artifact `--verify-build` reproduces (distribute equals certify), and
+> the build is genuinely hermetic: its dependencies come from a reusable, versioned, hash-pinned
+> bundle published as a downloadable release and consumed offline, not fetched from upstreams at
+> build time. The pattern (build the dependency layer once, publish it as a release, download and
+> verify it, build with no network) is the `pgs-release` `sysroot-vN`/`deps-vN` pattern. This plan
+> makes that pattern a **spine MUST** for any project shipping static release binaries, and applies
+> it to the host-* family. Depends on `plan/0028` and the reproducible-build anchor (`plan/0005`,
+> `plan/0006`).
 >
-> **Adversarially reviewed** (`design-review.md`, 5 lenses, re-scope) and re-cut to this goal. The
-> review's findings are resolved below. The decisive change from the first draft: converging each
-> producer's release CI onto the recorded recipe is now an in-scope deliverable, so
-> distribute-equals-certify holds by construction rather than by claim.
+> **Adversarially reviewed** (`design-review.md`, 5 lenses, re-scope) and re-cut twice: first to
+> distribute-equals-certify, then to fold in the dependency-bundle hermeticity mechanism and the
+> spine requirement. The bundle is the proper resolution of the review's M5 finding (the dropped
+> hermeticity claim): with deps pinned in a downloaded bundle and the build run under `--network
+> none`, the recorded build is network-free, so `--verify-build` enforces hermeticity rather than
+> the plan merely asserting it.
 
 ## Context
 
-The reproducible-build anchor reproduces, for each artifact-bearing tool, the `.host-software`
-recipe inside the recorded digest-pinned `toolchain` container and checks the sha256 (`plan/0005`,
-`plan/0006`). Today that recipe builds a glibc-dynamic `target/release/<bin>` in `rust:1.95.0`. Two
-consequences:
+The reproducible-build anchor reproduces each tool's `.host-software` recipe inside the recorded
+digest-pinned `toolchain` container and checks the sha256 (`plan/0005`, `plan/0006`). Two gaps
+remain: the certified binary is glibc-dynamic and does not run on a host with an older glibc (the
+`plan/0028` `GLIBC_2.39` divergence), and the build is not hermetic, since it fetches the
+`host-grammar` git dependency and the crates.io deps over the network (the design-review's M5). The
+producer release CI separately cross-compiles static musl assets by a different recipe, so the
+shipped binary is not the certified one.
 
-- The certified binary is not the distributed one. Each producer's release CI already
-  cross-compiles static musl assets (host-lint and host-lifecycle ship the full musl plus darwin
-  and windows matrix), but it builds them on a stock runner with `rustup target add` and a plain
-  `cargo build --release --target`, a different recipe from the one `--verify-build` reproduces. The
-  project ships binaries the anchor never reproduced: the shipped artifact carries no
-  reproducibility guarantee.
-- The certified glibc binary does not run on a host with an older glibc (the dev WSL:
-  `GLIBC_2.39 not found`), which is why `plan/0028`'s `--install-hooks` installed a local build
-  instead of the canonical one.
+`pgs-release` solved the equivalent problem for a heavier dependency layer. Its `build-deps.yml`
+builds the static dependency sysroot (zlib, freetype, fribidi, harfbuzz, libass) once per platform
+and publishes it as a versioned GitHub release (`sysroot-v2`, with raw dep tarballs under
+`deps-v1`); its `ffmpeg-release.yml` then downloads that pinned sysroot and builds against it rather
+than rebuilding the dependency chain from upstream each run. The build inputs become one pinned,
+hash-verifiable bundle from the project's own release, not many upstream fetches.
 
-The goal makes the distributed binary and the certified binary one file. A statically linked musl
-binary is the right form: it is reproducible, it carries no glibc dependency so it runs on any Linux
-host and in a distroless or Alpine image, and it is what the producer CI already ships. The work is
-to build that one binary by the one recorded recipe in both places, the orchestration's
-`--verify-build` and the producer's release job.
+For the pure-Rust host-* tools the dependency layer is the cargo dependency set (the tools share
+almost all of it). The same pattern applies: vendor the shared dependency sources once, publish them
+as a versioned hash-pinned release bundle, and have every build download and verify that bundle and
+build offline. Combined with the static musl link and a pinned toolchain image, the build is
+hermetic, reproducible, and portable, and the certified artifact is the distributed one.
 
 ## Decisions (operator rulings, 2026-06-22)
 
 1. **Distribute equals certify.** Each tool's `x86_64-unknown-linux-musl` release asset is built by
-   the recorded `.host-software` recipe in the pinned image, so it is byte-identical to what
-   `--verify-build` reproduces. This is the load-bearing deliverable the first draft omitted.
-2. **Static musl, not an older-glibc image.** An older-glibc base image would fix only the
-   dev-host-run symptom with a one-field change, and it still depends on a glibc floor, so it gives
-   no distribution-portable binary. Static musl gives a single binary that runs on any Linux libc
-   and distro, the distribution property the goal is about. The older-glibc option is recorded and
-   rejected on that ground.
+   the recorded recipe in the pinned image and bundle, so it is byte-identical to what
+   `--verify-build` reproduces.
+2. **Static musl, not an older-glibc image.** Static musl gives a single binary that runs on any
+   Linux libc and distro, the distribution property the goal is about; an older-glibc image would
+   fix only the dev-host-run symptom and still carry a glibc floor. Recorded and rejected on that
+   ground.
 3. **All three artifact tools, and host-prove gains a release pipeline.** host-lint and
-   host-lifecycle already ship release assets; host-prove ships none, so distribute-equals-certify
-   is vacuous for it until it does. The plan adds a release job to host-prove's CI (the musl asset
-   plus a tagged release), so all three distribute-equals-certify uniformly. This is the priced
-   uniformity the review asked for, not unscoped padding.
+   host-lifecycle already ship release assets; host-prove ships none, so it gains a release job (the
+   musl asset plus a tagged release) and converts too, so all three distribute-equals-certify
+   uniformly.
 4. **The recorded toolchain is `clux/muslrust:1.95.0-stable`, digest-pinned.** It ships the
-   `x86_64-unknown-linux-musl` target and std at Rust 1.95.0. (`messense/rust-musl-cross` has no
-   1.95.0 tag, so it is not a candidate.) The pinned digest is recorded in Readiness. The image is
-   chosen for a deterministic toolchain version, not for hermeticity: the build still fetches the
-   git and registry dependencies over the network, so it is not hermetic, and that claim is dropped.
-5. **The anchor certifies `x86_64-unknown-linux-musl`.** That is the primary distributable and the
-   CI gate's host arch. `attest-host` is OS-granular, not arch-granular, so x86_64 scope is enforced
-   by the amd64 CI runner and the recorded target triple, not by the recipe. The other shipped
-   assets are handled under "Cross-platform trust boundary" below.
+   `x86_64-unknown-linux-musl` target and std at Rust 1.95.0.
+5. **Hermeticity via a reusable downloadable dependency bundle.** Vendor the host-* dependency set
+   once, publish it as a versioned, hash-pinned release bundle (e.g. `vendor-v1`), and consume it
+   offline. The build downloads and sha256-verifies the bundle, source-replaces onto the vendored
+   crates, and runs `cargo build --release --locked --offline` under `--network none`. This is the
+   real resolution of the dropped hermeticity claim.
+6. **The pattern is a spine MUST.** `host-template` gains a requirement: a project that ships static
+   or hermetic release binaries MUST build its dependency layer once, publish it as a reusable
+   versioned hash-pinned downloadable release bundle, and have downstream builds consume that pinned
+   bundle offline rather than fetch dependencies at build time. Applied through an `UPGRADING.md`
+   ledger entry and the migration onto agentic-host, and made verifiable: the recorded build runs
+   with no network, so a build that reaches for the network fails the gate.
+7. **The anchor certifies `x86_64-unknown-linux-musl`.** `attest-host` is OS-granular, not
+   arch-granular, so the x86_64 scope rests on the amd64 CI runner and the recorded target triple.
+   arm64, darwin, and windows assets ship with a checksums manifest and are stated uncertified, an
+   explicit trust boundary.
+
+## The dependency bundle (producer, consumer, tooling)
+
+- **Producer.** A workflow runs `cargo vendor` over the three tools' lockfiles (`cargo vendor`
+  vendors the crates.io deps and the `host-grammar` git dependency), tarballs the vendor directory,
+  computes its sha256, and publishes it as a versioned release (`vendor-vN`) with the tarball and the
+  recorded hash. Reusable: one bundle serves all three tools, since their dependency sets overlap.
+  Versioned: bump `vendor-vN` only when the dependency set changes, so the input is stable.
+- **Consumer.** The build downloads `vendor-vN`, verifies the sha256, extracts it, source-replaces
+  crates-io and the git source onto the vendored directory via `.cargo/config.toml`, and builds
+  `--release --locked --offline` with no network.
+- **Tooling.** `host-lifecycle` gains a `deps-bundle = <url> <sha256>` recipe field; `--verify-build`
+  and `release` fetch and verify the bundle on the host (the one controlled, pinned download), stage
+  it into the build mount, and run `run_build_in_container` with `--network none`. The
+  `HOST_LIFECYCLE_DOCKER_NETWORK` escape is retired for these components, since the build no longer
+  needs network. This is the verifiable form of the MUST: the gate proves the build is network-free.
+
+## The spine change (host-template)
+
+`host-template` gains the MUST in its build guidance (the analog of `pgs-release`'s "Static Builds"
+rule, raised to the dependency-bundle pattern), an `UPGRADING.md` ledger entry that records the new
+requirement and a machine-checkable verify command, and the migration applies it onto agentic-host
+(the `.host` baseline advances and is re-recorded). The host-* tools are the first adopters.
 
 ## Per-component recipe change
 
-For each of host-lint, host-lifecycle, host-prove, three `.host-software` lines move:
+For each of host-lint, host-lifecycle, host-prove, the `.host-software` stanza gains and moves:
 
 - `toolchain` = `clux/muslrust:1.95.0-stable@sha256:<digest recorded in Readiness>`.
-- `build` = `CARGO_INCREMENTAL=0 cargo build --release --locked --target x86_64-unknown-linux-musl`,
-  with the static-linking and build-id flags pinned in the recipe (see Readiness) rather than left
-  to `.cargo/config.toml`, which a per-target image env var can shadow.
+- `deps-bundle` = `<vendor-vN release url> <sha256>`.
+- `build` = `CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl`,
+  with the static-linking and build-id flags pinned in the recipe (see Readiness).
 - `artifact` = `target/x86_64-unknown-linux-musl/release/<bin> <new sha256>`.
 
 The crates are pure Rust with no C dependencies, so the musl target builds without a C cross-linker.
 
-## Producer-CI convergence (the distribute-equals-certify deliverable)
+## Producer-CI convergence (distribute equals certify)
 
 Each producer's release job builds the `x86_64-unknown-linux-musl` asset by the recorded recipe: the
-same `clux/muslrust:1.95.0-stable@sha256:...` image as a container job (not `rustup target add` on a
-stock runner), `--locked`, `CARGO_INCREMENTAL=0`, and the same strip, build-id, and crt-static
-flags. The uploaded asset is then byte-identical to the artifact `--verify-build` reproduces and the
-sha recorded in `.host-software`. host-prove gains this release job (it has none today). The
-darwin, windows, and arm64 matrix jobs keep their mechanism but see the trust boundary below.
+pinned `clux/muslrust:1.95.0-stable` image as a container job, the same downloaded `vendor-vN`
+bundle, `--locked --offline`, and the same strip, build-id, and crt-static flags. The uploaded asset
+is then byte-identical to the artifact `--verify-build` reproduces and the sha recorded in
+`.host-software`. host-prove gains this release job. The arm64, darwin, and windows matrix jobs keep
+their mechanism but see the trust boundary in decision 7.
 
 ## Readiness (blocking gates, before any hash is recorded)
 
 1. Confirm and digest-pin `clux/muslrust:1.95.0-stable`; record the digest.
-2. Prove a reproducible double-build of each tool in that image, and `readelf -n` the binary to
-   confirm no `.note.gnu.build-id` section. If the image sets a
-   `CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_RUSTFLAGS` that shadows `.cargo/config.toml`, move
-   `--build-id=none` (and pin `+crt-static` and the static-PIE choice) into the recorded `build` via
-   `RUSTFLAGS`, so the flags survive. No hash is recorded until the double-build reproduces.
-3. Add the release job to host-prove's CI.
+2. Produce the `vendor-vN` bundle (`cargo vendor` over the three lockfiles), publish it as a release,
+   and record its sha256.
+3. Add `deps-bundle` support and the `--network none` offline build to `host-lifecycle`
+   (`run_build_in_container`, `software_verify_build`, `release`); unit-test it.
+4. Prove a reproducible double-build of each tool in the pinned image, offline against the bundle,
+   under `--network none`; `readelf -n` the binary to confirm no `.note.gnu.build-id`. If the image
+   shadows `.cargo/config.toml` with a `CARGO_TARGET_*_RUSTFLAGS`, move the build-id and crt-static
+   flags into the recorded `build` via `RUSTFLAGS`. No hash is recorded until the offline double-build
+   reproduces.
+5. Add the release job to host-prove's CI.
+6. Author the spine MUST in `host-template` plus its `UPGRADING.md` ledger entry.
 
 ## Cutover (atomic re-release round, software-first)
 
 The recipe change moves every artifact hash, so each tool re-releases through
-`host-lifecycle release <c> --change-class neither` (a build-recipe change; patch bumps host-lint
-0.8.2, host-lifecycle 0.19.3, host-prove 0.2.2). `current_version` reads the last tag, so a re-run
-is version-idempotent. Per component: edit the three recipe lines in the working tree only (so
-`release` reads them and builds the musl artifact), run `release`, push the producer worktree and
-tag, then collect the new pin and hash. The musl-edited `.host-software` is never committed to main
-with a stale hash or pin: one host commit carries the toolchain, build, artifact path and hash, pin,
-and back-filled receipts together, or `--verify-build` reddens CI at the old pin.
-
-Two `plan/0028`-class steps recur:
-
-- Before `--install-hooks`, the musl binary must exist at the new recipe path in
-  `software/host-lint/main`. Produce it by the recorded recipe (the `release` or `--verify-build`
-  container build, copied into the canonical worktree, or a local musl build), since the old
-  `target/release/host-lint` workaround path no longer matches the recipe. The installed canonical
-  musl binary then runs on the dev host, so the `plan/0028` local-build divergence retires for the
-  hook binary.
-- After host-lifecycle's own re-release, reinstall the gate driver from the released 0.19.3 commit
-  before the final whole-suite green.
-
-## Cross-platform trust boundary
-
-`x86_64-unknown-linux-musl` is reproducibility-certified by `--verify-build`.
-`aarch64-unknown-linux-musl` may be added as a second recorded build with its own sha (the CI matrix
-already produces it) if an arm gate host is available; until then it is a shipped-but-uncertified
-asset. The darwin and windows assets are cross-OS and stay distributables, not anchor artifacts;
-reproducing them needs platform runners, a separate and larger effort. The release publishes a
-checksums manifest for every asset, and the plan states plainly that only the linux-x86_64-musl
-asset is reproducibility-certified, so the trust boundary is explicit at the release surface rather
-than implied.
+`host-lifecycle release <c> --change-class neither` (patch bumps host-lint 0.8.2, host-prove 0.2.2;
+host-lifecycle bumps for both the `deps-bundle` feature and the recipe, a feature, so
+`--change-class adds-flag`, a minor bump to 0.20.0). Per component: edit the recipe lines in the
+working tree, run `release` (which builds offline against the bundle in the pinned image), push the
+producer worktree and tag, then collect the new pin and hash. The musl-and-bundle-edited
+`.host-software` is never committed to main with a stale hash or pin: one host commit carries the
+toolchain, deps-bundle, build, artifact path and hash, pins, and back-filled receipts together. The
+spine migration (the `.host` baseline advance) lands with it or in its own audited commit. The
+`plan/0028`-class recurrences carry over: place the musl binary at the new recipe path before
+`--install-hooks`, and reinstall the host-lifecycle gate driver from its released commit before the
+final green.
 
 ## Verification (whole-suite green)
 
 - Each tool's `x86_64-unknown-linux-musl` build reproduces one sha256 on a double build in the
-  pinned image (build-id-free, confirmed by `readelf`), recorded as the canonical artifact.
-- `software --verify-build .` green for all three under the released pinned host-lifecycle.
+  pinned image, offline against the pinned bundle under `--network none`, build-id-free (confirmed by
+  `readelf`).
+- `software --verify-build .` green for all three under the released pinned host-lifecycle, with no
+  network reachable during the build (the hermeticity gate, the verifiable form of the MUST).
 - The producer release job's uploaded `x86_64-unknown-linux-musl` asset byte-matches the recorded
-  canonical sha for that tag (the distribute-equals-certify check, true by construction).
-- `software --install-hooks .` installs the canonical musl host-lint, and the installed
-  `commit-msg` hook runs on the dev host.
-- `software --check`, `book --check`, the cold-clone CI job, and the commit-hook tell test stay
-  green; whole-suite green across every repo.
+  canonical sha for that tag (distribute equals certify, true by construction).
+- `software --install-hooks .` installs the canonical musl host-lint, and the installed `commit-msg`
+  hook runs on the dev host.
+- `host-lifecycle upgrade .` shows the new baseline (the spine MUST applied); `software --check`,
+  `book --check`, the cold-clone CI job, and the commit-hook tell test stay green; whole-suite green
+  across every repo.
 
 ## Risks / honesty
 
-- **The build is not hermetic** (the git and registry dependencies fetch over the network); the
-  pinned image buys a deterministic toolchain version, not network isolation. Vendoring plus
-  `--network none` is a possible later hardening, out of scope here.
-- **A second full re-release round** so soon after the `plan/0028` cutover, and it now also covers
-  the producer-CI convergence and the host-prove release pipeline. The cost is real, and it is the
-  price of distribute-equals-certify. The `plan/0028` MEMORY lessons still apply: atomic re-pin,
-  gate-driver reinstall, and the working-dir trap.
-- **`attest-host` is OS-granular, not arch-granular**, so the anchor's x86_64 scope rests on the CI
-  runner and target triple, not the recipe; an arch-level attest is a host-lifecycle feature
-  request, out of scope.
-- **Only the linux-x86_64-musl asset is reproducibility-certified**; arm64, darwin, and windows
-  ship with a checksums manifest and are stated as uncertified, an explicit trust boundary.
-- **musl reproducibility is proven in Readiness, not assumed** (the double-build and `readelf`
-  gate); the build-id and crt-static flags are pinned in the recipe so an image env var cannot
-  shadow them.
+- **This is a large milestone**, larger than the first draft: it adds a `host-lifecycle` feature (the
+  `deps-bundle` field and the offline `--network none` build), a producer bundle workflow, a spine
+  MUST with its migration, the producer-CI convergence, and the host-prove release pipeline, on top
+  of the static musl conversion and a software-first re-release round. The cost is deliberate, the
+  price of a verifiable hermetic distribute-equals-certify build. The `plan/0028` MEMORY lessons
+  (atomic re-pin, gate-driver reinstall, the working-dir trap) carry over.
+- **`host-lifecycle` consumes its own bundle**, a bootstrap step: the gate driver that runs the
+  offline build is seeded from its released commit, and the bundle it downloads is pinned by sha, so
+  the controlled download precedes the network-free build, as in the `pgs-release` sysroot download.
+- **`cargo vendor` must capture the `host-grammar` git dependency**, not only crates.io; the bundle
+  and the source-replacement config must cover the git source, or the offline build fails to resolve
+  it. Readiness proves the offline build before any hash is recorded.
+- **The bundle is versioned and maintained**: a dependency change requires a new `vendor-vN` and a
+  re-pin. The bundle's host location (an agentic-host release or a dedicated deps location) is an
+  execution detail settled in Readiness.
+- **`attest-host` is OS-granular, not arch-granular**, so the x86_64 scope rests on the CI runner and
+  target triple; an arch-level attest is a host-lifecycle feature request, out of scope. Only the
+  linux-x86_64-musl asset is reproducibility-certified; the other assets ship with a checksums
+  manifest and are stated uncertified.
 
 ## Records
 
-This plan, a new `call/` decision recording the distribute-equals-certify production-anchor change,
-`PLAN.md`, `MEMORY.md`; re-pins, receipts, and the producer-CI convergence as the round lands, each
-pushed in its own audited commit.
+This plan, a new `call/` decision recording the hermetic-bundle production-anchor change and the
+spine MUST, `PLAN.md`, `MEMORY.md`, the `host-template` `UPGRADING.md` ledger entry and the re-recorded
+`.host` baseline; re-pins, receipts, the bundle release, and the producer-CI convergence as the round
+lands, each pushed in its own audited commit.
