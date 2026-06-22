@@ -2,6 +2,7 @@
 
 - Status: accepted
 - Date: 2026-06-20
+- Scope: host-lint (the `host-lint:ignore` fenced-block skip) and agentic-host's authored docs (the literal-citation disposition).
 - Relates to: `call/0006` (the sanctioned-vocabulary allowlist), `call/0009` (exclude the generated record from the audit), `CLAUDE.md` §0 (host-lint is the hygiene lane).
 
 ## Context and Problem Statement
