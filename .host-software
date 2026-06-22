@@ -4,29 +4,31 @@
 # The pin replaces a submodule gitlink as the reproducibility anchor.
 [software "host-lint"]
 	url       = https://github.com/connollydavid/host-lint.git
-	pin       = 1386e9ae2d5cfcd645b968f4ec1fda28fc1f84b6
+	pin       = ba479258ba4aefe1d70bf7a3acc280738f559659
 	worktrees =
-	toolchain = rust:1.95.0@sha256:f49565f188ee00bc2a18dd418183f2c5f23ef7d6e691890517ed341a598f67c3
-	build     = CARGO_INCREMENTAL=0 cargo build --release --locked
+	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
+	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lint
-	artifact  = target/release/host-lint 4e76682b1893e9641208cc8d52434bcc3c40a9a51565b4b21a82ccbf842b8d43
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lint a099c27d8ce3912bec11f4f7e2140ef37b5c8d03f320aad2a882244e98f8bac8
+	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v1/vendor.tar.gz f11417633fcc05a5b94761963c1a3fdce01777d9a68a32320268f22af3dbfbdf
 	hooks     = pre-commit
 [software "host-lifecycle"]
 	url       = https://github.com/connollydavid/host-lifecycle.git
-	pin       = 6fa94cf247cfde5d98288ea4133c5f29239a7850
+	pin       = a38b0c073bbd1fbf46940d282d9fc52af35126fc
 	worktrees =
-	toolchain = rust:1.95.0@sha256:f49565f188ee00bc2a18dd418183f2c5f23ef7d6e691890517ed341a598f67c3
-	build     = CARGO_INCREMENTAL=0 cargo build --release --locked
+	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
+	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lifecycle
-	artifact  = target/release/host-lifecycle ad3bf89a55c9fb22854a6bc1ba722f4157115aa693619034c411fe15cd264f55
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle 7d0903340be787183661c4cb933af82886f22af436a179e8a856117386d950d0
+	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v1/vendor.tar.gz f11417633fcc05a5b94761963c1a3fdce01777d9a68a32320268f22af3dbfbdf
 [software "host-prove"]
 	url       = https://github.com/connollydavid/host-prove.git
-	pin       = 135539bbd4eacbb40b87f3cf9f9a8e3d7ad173b8
+	pin       = 3ca95fc049937733aef87ed5e0368e4988a87d52
 	worktrees =
-	toolchain = rust:1.95.0@sha256:f49565f188ee00bc2a18dd418183f2c5f23ef7d6e691890517ed341a598f67c3
-	build     = CARGO_INCREMENTAL=0 cargo build --release --locked
+	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
+	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-prove
-	artifact  = target/release/host-prove 8e3742f8b7d7ac2d8abc83890179d6417eb8f0a25dddea7ee75cd2b67fcec695
+	artifact  = target/x86_64-unknown-linux-musl/release/host-prove 520cdd109d96c8996402792065cd9c0198f13f97ebefd62ff15edb8c0030f366
 [software "host-grammar"]
 	url       = https://github.com/connollydavid/host-grammar
 	pin       = 9d51468ab1f0a7e253cd2ee7d149d7325e65f47b
