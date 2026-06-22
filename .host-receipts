@@ -63,3 +63,45 @@
     evidence = v0.8.0@3132c01a01a298425cd2e9550566b268f31faed52f1a8e3a6e0830fd71a4a9f2
     tool = host-lifecycle@0.19.1
     recorded = 2026-06-21
+
+[receipt "embed" "host-lifecycle"]
+    disposition = done
+    evidence = pin 6fa94cf247cf (.host-software)
+    tool = host-lifecycle@0.19.2
+    recorded = 2026-06-22
+
+[receipt "embed" "host-prove"]
+    disposition = done
+    evidence = pin 135539bbd4ea (.host-software)
+    tool = host-lifecycle@0.19.2
+    recorded = 2026-06-22
+
+[receipt "embed" "host-grammar"]
+    disposition = done
+    evidence = pin 9d51468ab1f0 (.host-software)
+    tool = host-lifecycle@0.19.2
+    recorded = 2026-06-22
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.19.2@ad3bf89a55c9fb22854a6bc1ba722f4157115aa693619034c411fe15cd264f55
+    tool = host-lifecycle@0.19.2
+    recorded = 2026-06-22
+
+[receipt "release" "host-prove"]
+    disposition = done
+    evidence = v0.2.1@8e3742f8b7d7ac2d8abc83890179d6417eb8f0a25dddea7ee75cd2b67fcec695
+    tool = host-lifecycle@0.19.2
+    recorded = 2026-06-22
+
+[receipt "release" "host-grammar"]
+    disposition = done
+    evidence = v0.3.0 (repo-only grammar/spec home; tag-only release, no artifact)
+    tool = host-lifecycle@0.19.2
+    recorded = 2026-06-22
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.8.1@4e76682b1893e9641208cc8d52434bcc3c40a9a51565b4b21a82ccbf842b8d43
+    tool = host-lifecycle@0.19.2
+    recorded = 2026-06-22

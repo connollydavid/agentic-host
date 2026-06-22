@@ -4,13 +4,33 @@
 # The pin replaces a submodule gitlink as the reproducibility anchor.
 [software "host-lint"]
 	url       = https://github.com/connollydavid/host-lint.git
-	pin       = e652ffc3fb517ad1bf185e73a6d4a050d8365c7f
+	pin       = 1386e9ae2d5cfcd645b968f4ec1fda28fc1f84b6
 	worktrees =
 	toolchain = rust:1.95.0@sha256:f49565f188ee00bc2a18dd418183f2c5f23ef7d6e691890517ed341a598f67c3
 	build     = CARGO_INCREMENTAL=0 cargo build --release --locked
 	deploy    = host-lint
-	artifact  = target/release/host-lint 3132c01a01a298425cd2e9550566b268f31faed52f1a8e3a6e0830fd71a4a9f2
+	artifact  = target/release/host-lint 4e76682b1893e9641208cc8d52434bcc3c40a9a51565b4b21a82ccbf842b8d43
 	hooks     = pre-commit
+[software "host-lifecycle"]
+	url       = https://github.com/connollydavid/host-lifecycle.git
+	pin       = 6fa94cf247cfde5d98288ea4133c5f29239a7850
+	worktrees =
+	toolchain = rust:1.95.0@sha256:f49565f188ee00bc2a18dd418183f2c5f23ef7d6e691890517ed341a598f67c3
+	build     = CARGO_INCREMENTAL=0 cargo build --release --locked
+	deploy    = host-lifecycle
+	artifact  = target/release/host-lifecycle ad3bf89a55c9fb22854a6bc1ba722f4157115aa693619034c411fe15cd264f55
+[software "host-prove"]
+	url       = https://github.com/connollydavid/host-prove.git
+	pin       = 135539bbd4eacbb40b87f3cf9f9a8e3d7ad173b8
+	worktrees =
+	toolchain = rust:1.95.0@sha256:f49565f188ee00bc2a18dd418183f2c5f23ef7d6e691890517ed341a598f67c3
+	build     = CARGO_INCREMENTAL=0 cargo build --release --locked
+	deploy    = host-prove
+	artifact  = target/release/host-prove 8e3742f8b7d7ac2d8abc83890179d6417eb8f0a25dddea7ee75cd2b67fcec695
+[software "host-grammar"]
+	url       = https://github.com/connollydavid/host-grammar
+	pin       = 9d51468ab1f0a7e253cd2ee7d149d7325e65f47b
+	worktrees =
 [software "host"]
 	url       = https://github.com/connollydavid/host.git
 	pin       = 9445588ef13d08a62682805f992528dd75cea784
