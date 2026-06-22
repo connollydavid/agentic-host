@@ -6,6 +6,13 @@
 > than a local rebuild, and the recorded artifact is the same binary the producer CI distributes.
 > Depends on `plan/0028` (the host-* family is now uniform Where-room software) and the
 > reproducible-build production anchor (`plan/0005`, `plan/0006`).
+>
+> **Adversarially reviewed** (`design-review.md`, 5 lenses, **re-scope**): three payoffs are
+> over-claimed (the install-hooks divergence is sanctioned by design, the canonical will not
+> byte-match the producer CI asset unless producer CI is converted to the pinned recipe, and "any
+> Linux" conflates OS with architecture), host-prove conversion is scope creep, and a simpler
+> older-glibc image was never weighed. The body below is the pre-review plan; it is re-cut once the
+> operator settles the pivotal goal (portability for the hook versus distribute-equals-certify).
 
 ## Context
 
