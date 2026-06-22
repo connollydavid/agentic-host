@@ -14,3 +14,6 @@ book/
 
 # The append-only record (call/0009): MEMORY.md is frozen history, never reworked.
 MEMORY.md
+
+# Dated review artifacts — the immutable record (spine: path-exclude dated reviews).
+plan/*/design-review.md

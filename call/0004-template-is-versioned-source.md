@@ -7,8 +7,8 @@
 
 The methodology is stated in two places: the host's own `CLAUDE.md` (which
 governs this meta-repo) and the template's `CLAUDE.md` (the canonical manual
-shipped to projects built from the template). They share a spine — the four
-working principles, audited plans, append-only memory — and will drift as the
+shipped to projects built from the template). They share a spine (the four
+working principles, audited plans, append-only memory) and will drift as the
 methodology moves. The host also *builds* the template whose methodology it
 follows, which makes "where is the single source?" awkward: a template's
 `CLAUDE.md` is addressed to an agent working in an *instantiated* project, not in
@@ -17,12 +17,12 @@ this host, and an existing exemption already forbids treating the nested templat
 
 ## Considered Options
 
-1. **Diverge** — declare them not-duplicates; sync the shared spine by a
+1. **Diverge**: declare them not-duplicates; sync the shared spine by a
    documented checklist when it changes.
-2. **Template canonical, host live-references it** — shrink the host `CLAUDE.md`
+2. **Template canonical, host live-references it**: shrink the host `CLAUDE.md`
    to a pointer at the template's.
 3. **Extract a shared spine** both files import.
-4. **Copy-at-version** — the template is the source; every project holds a copy
+4. **Copy-at-version**: the template is the source; every project holds a copy
    of the spine at the revision it adopted, recorded in a stamp; upgrading re-runs
    a migration.
 
@@ -54,4 +54,4 @@ Chosen option 4: **the template is the canonical, versioned source; each project
   is bounded by whether a project re-runs the upgrade migration, and made visible
   by the recorded revision.
 - Deferred: fully reconciling the host's own `CLAUDE.md` wording with the template
-  beyond the spine refresh — the broader duplication — is out of scope here.
+  beyond the spine refresh (the broader duplication) is out of scope here.

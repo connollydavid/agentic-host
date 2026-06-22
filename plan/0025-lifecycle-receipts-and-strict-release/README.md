@@ -1,17 +1,17 @@
-# plan/0025 — Lifecycle receipts + a tool-readable phase manifest + a strict, tool-carried release phase
+# plan/0025: Lifecycle receipts + a tool-readable phase manifest + a strict, tool-carried release phase
 
-> **Status:** design hardened by an adversarial review (39 findings, proceed-with-changes) — see
-> `design-review.md`. The sections below incorporate revisions R1–R6: receipts must be
-> mechanically re-verifiable (a `recheck =` command or a signed/digest evidence — never a
+> **Status:** design hardened by an adversarial review (39 findings, proceed-with-changes); see
+> `design-review.md`. The sections below incorporate revisions R1 to R6: receipts must be
+> mechanically re-verifiable (a `recheck =` command or a signed/digest evidence, never a
 > plaintext self-assertion); `n-a` is tool-computed and a protected core (`verify`) is
 > un-skippable; the skip escape is content-validated and not greenfield-reachable; the manifest is
 > read at the adopted revision and a missing one HAZARDs; release has no degraded mode.
 >
-> **Update (`call/0018`):** the CI-signed attestation token is dropped — per-adopter key management
+> **Update (`call/0018`):** the CI-signed attestation token is dropped; per-adopter key management
 > was a deal-breaker and it complicated parallel checkouts. Where this doc says "attestation" /
 > "token", read **re-derivation in the recorded pinned toolchain**: the release's BUILT ≠ RELEASED
 > is the **host#14 build re-derivation** (shipped, keyless), and a proof receipt re-derives via
-> `obligations --prove`. plan/0024 is now the keyless discharge milestone — *not* a crypto
+> `obligations --prove`. plan/0024 is now the keyless discharge milestone, *not* a crypto
 > prerequisite of the release. Enforcement is project-pluggable (no CI overfit).
 
 ## Context
@@ -21,8 +21,8 @@ Two facts, surfaced this session, are one problem:
 1. **The lifecycle does not orchestrate end to end.** The phase order lives only in spine prose,
    re-typed three times (CLAUDE.md / STRUCTURE.md / UPGRADING.md); the descriptions live
    separately in seven `SKILL.md` frontmatters; `host-lifecycle` has no phase-order constant; and
-   there is **no `release` phase** — so every release is hand-rolled with raw git/cargo/docker.
-2. **Agents skip the methodology — strong and weak alike.** A strong agent (this session) skipped
+   there is **no `release` phase**, so every release is hand-rolled with raw git/cargo/docker.
+2. **Agents skip the methodology, strong and weak alike.** A strong agent (this session) skipped
    the `verify` gate and hand-rolled host-lint v0.4.2, nearly mis-recording the artifact hash. A
    weak agent (Fen) cannot assemble multi-step orchestration at all. Instructions are advisory;
    they fail for both.
@@ -35,7 +35,7 @@ a **receipt** (done-with-evidence or skip-with-reason), and add a **strict, tool
 
 The methodology already has nine receipt-like mechanisms (obligation `waived:`, `.host`
 applied-set, `upgrade --unverified call/NNNN`, `repro-exempt`, the `software --verify-build` artifact re-derivation,
-`.host-lintignore`, `call/` `Status:`, `.host-software` artifact hashes, PLAN/MEMORY descopes) —
+`.host-lintignore`, `call/` `Status:`, `.host-software` artifact hashes, PLAN/MEMORY descopes);
 most already record skips. They are not bound by one format, so a skip in one is invisible to
 another's gate. A **receipt** generalises them:
 
@@ -52,12 +52,12 @@ tool    = host-lifecycle@0.16.0     # who wrote it
   already journals upgrades). Fen never hand-edits it; `host-lifecycle release --record` /
   `<phase> --record` writes it atomically. The **spec** (which phases exist + modality) lives in
   the template manifest; the **record** (what this project did to each) lives here.
-- **`software --check` re-verifies every receipt — by a closed mechanism, never self-assertion
+- **`software --check` re-verifies every receipt by a closed mechanism, never self-assertion
   (R1).** Each manifest phase declares a `recheck =` command (the analog of UPGRADING's
   `verify =`) that `--check` re-executes, OR its evidence is a recomputable digest / signed
   attestation (the done-path binds verdict↔inputs like the plan/0024 token). A `done` whose
   re-check fails re-opens as a HAZARD; a manifest phase with no receipt is a HAZARD. **A phase
-  whose evidence cannot be re-derived offline may not be `done`** — it is `n-a`/`skip` with cited
+  whose evidence cannot be re-derived offline may not be `done`**: it is `n-a`/`skip` with cited
   authorization. `n-a` is **tool-computed** from project state (not agent-asserted), and a
   protected core (`verify` and anything a green gate depends on, `skippable = false`) refuses
   `skip`/`n-a` outright (R2). This is the gate that makes silent skipping impossible for both
@@ -66,7 +66,7 @@ tool    = host-lifecycle@0.16.0     # who wrote it
 ## The lifecycle manifest (the tool-readable journal, spine-level)
 
 A single parseable file in host-template (same git-config style as `UPGRADING.md` /
-`.host-software` — a format the tool already parses, no new parser family), replacing the three
+`.host-software`, a format the tool already parses, no new parser family) replaces the three
 prose copies. One stanza per phase, in order:
 
 ```

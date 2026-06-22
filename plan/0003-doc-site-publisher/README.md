@@ -12,19 +12,19 @@ generator, `call/0003`) and the bare-store software model (`call/0010`/`call/001
 A token-free `host-lifecycle book` that publishes all five rooms in one maintained
 artifact, so no adopter hand-rolls a generator that drops a room or sets `src = "."`
 (the `call/0011` hazard). Concretely it must: scope `src` to a generated `docs/`;
-emit `SUMMARY.md` in lifecycle order (Who → What/When → Where → Why → How → Memory);
+emit `SUMMARY.md` in lifecycle order (Who, What/When, Where, Why, How, Memory);
 render every spec as a fenced page; emit a Where stub parsed from `.host-software`;
 and gate room coverage so a half-room site cannot ship green.
 
 ## What was built
 
-- **`host-lifecycle book <dir> [--dry-run]`** — writes `book.toml` (`src = "docs"`),
+- **`host-lifecycle book <dir> [--dry-run]`**: writes `book.toml` (`src = "docs"`),
   rebuilds `docs/` (copying room prose, generating spec pages and the Where stub),
   and writes `docs/SUMMARY.md` in lifecycle order.
-- **`host-lifecycle book --check <dir>`** — fails (exit 1) naming any room with
+- **`host-lifecycle book --check <dir>`**: fails (exit 1) naming any room with
   source material that renders no page with content; skips a room with no source.
 - The Where stub reads `.host-software` only (name, url, pin, worktrees, materialize
-  command), so it renders with no worktree on disk — safe in an un-materialized
+  command), so it renders with no worktree on disk, safe in an un-materialized
   checkout.
 
 Two host-lifecycle tooling fixes filed in the same report rode along in `v0.6.0`:
@@ -34,7 +34,7 @@ spec-aware `remap` (declared substitutions now reach `.allium`/`.tla`/`.cfg`).
 
 ## Invariants (verification lane)
 
-- `SUMMARY.md` part order is exactly Cast → Plan → Software → Call → Reference →
+- `SUMMARY.md` part order is exactly Cast, Plan, Software, Call, Reference,
   Memory (unit test).
 - `--check` fails when a room with source renders nothing, passes when every such
   room renders a content page, and skips a source-less room (unit test).
@@ -55,6 +55,6 @@ gh-pages redeploys with a Where section and lifecycle-ordered nav.
 ## Out of scope
 
 - Making the bare-store embedding optional for single-line components (case-study
-  friction, not a filed defect) — would need its own decision.
+  friction rather than a filed defect); would need its own decision.
 - Link-correctness checking across rooms (the gate guards room presence, not links).
-- Rewriting the reporter's own generator — that is the adopter's, not ours.
+- Rewriting the reporter's own generator; that is the adopter's, not ours.

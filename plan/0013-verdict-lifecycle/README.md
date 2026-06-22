@@ -4,7 +4,7 @@
 
 `plan/0012` made both `.allium` specs conform and pass `allium analyse`, but the
 prose/naming entities are pure functions with no stateful lifecycle, so the
-advanced gate (reachability, terminal states, deadlock) had little to verify —
+advanced gate (reachability, terminal states, deadlock) had little to verify:
 honest, but a thin example. host-lint's actual flag/warn/clean decision **is** a
 state machine (it maps the worst-severity match onto an exit code), so modelling
 it gives `analyse` something real to check and makes host-lint.allium a genuine
@@ -29,7 +29,7 @@ entity Check {
 ```
 
 - A boundary `surface LintRun` faces an `Invocation` (the commit hook or CLI run)
-  and **provides** the `ScanStarts` / `ScanCompletes` external triggers — without
+  and **provides** the `ScanStarts` / `ScanCompletes` external triggers; without
   this, `analyse` reports the triggers as unreachable.
 - `StartScan` assigns the initial `scanning` status; `RecordFlag` / `RecordWarn`
   set `saw_flag` / `saw_warn` as `Match`es are created; `VerdictBlocked` /
@@ -37,8 +37,8 @@ entity Check {
   `ScanCompletes`, with mutually exclusive `requires` encoding flag-beats-warn.
 - An invariant `FlagBeatsWarn` states a blocked verdict is never downgraded.
 
-This end-to-end chain — `Line.created` → detection rules → `Match.created` →
-`Record*` → `ScanCompletes` → verdict — is what `analyse` now traces.
+This end-to-end chain (`Line.created` to detection rules to `Match.created` to
+`Record*` to `ScanCompletes` to verdict) is what `analyse` now traces.
 
 ## Verification
 
@@ -46,7 +46,7 @@ This end-to-end chain — `Line.created` → detection rules → `Match.created`
   enriched spec; the existing allium CI lane (`plan/0012`) gates it.
 - The gate demonstrably bites: an earlier draft without the surface drew an
   `unreachable_trigger` finding, and one without `StartScan` drew
-  `status.unreachableValue` for `scanning` — both real, both resolved.
+  `status.unreachableValue` for `scanning`, both real, both resolved.
 
 ## Methodology
 

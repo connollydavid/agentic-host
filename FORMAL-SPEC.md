@@ -18,4 +18,4 @@
 - README.md documents project, usage, building, and testing
 
 ### Notes
-Cargo conversion is required for proptest. Allium spec defines formal behavior. CI builds, tests, and releases.
+Cargo conversion is required for proptest. Allium spec defines formal behavior. CI builds and tests the project, then publishes releases.

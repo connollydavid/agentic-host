@@ -6,7 +6,7 @@
 ## Context and Problem Statement
 
 Architectural decisions for the host methodology need a durable, citable
-home — separate from MEMORY.md (lessons learned, backward-looking) and PLAN.md
+home, separate from MEMORY.md (lessons learned, backward-looking) and PLAN.md
 (the milestone index). Without one, the reasoning behind a choice evaporates and
 gets re-litigated.
 
@@ -29,4 +29,4 @@ Adopt MADR (Markdown Architectural Decision Records) for this log:
 - Good: decisions carry structured status and supersession and a stable, citable
   identity; this log documents its own format as record zero.
 - Neutral: this is one of two numbered registers (milestones and decisions),
-  told apart by home — kept explicit to avoid confusion.
+  told apart by home, kept explicit to avoid confusion.

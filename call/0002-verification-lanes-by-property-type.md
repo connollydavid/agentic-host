@@ -14,7 +14,7 @@ is routed to the tool that actually covers it.
 ## Considered Options
 
 1. One tool for everything (forces a single tool to cover properties it cannot).
-2. Lanes by property type — route each concern to the tool suited to it.
+2. Lanes by property type: route each concern to the tool suited to it.
 
 ## Decision Outcome
 
@@ -26,13 +26,13 @@ Chosen option 2: **three lanes, one per property class.**
 | Requirements + property-based testing | functional and data invariants ("for all inputs") | allium | MIT |
 | Timing + concurrency | temporal, ordering, interleaving invariants ("for all interleavings"), via model checking | Specula / TLA+ | Apache-2.0 |
 
-TLA+ is reserved strictly for its home ground — timing and concurrency. It is
+TLA+ is reserved strictly for its home ground: timing and concurrency. It is
 not a general requirements tool; that is allium's lane.
 
 ### Escalation bridge
 
 When an allium property depends on interleaving or timing that property-based
-testing cannot adequately explore, it escalates from the property-based lane to
+testing cannot adequately explore, it escalates out of the property-based lane into
 the timing-and-concurrency lane. allium identifies such a property; Specula
 proves the temporal ones.
 

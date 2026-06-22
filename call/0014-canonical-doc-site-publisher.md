@@ -13,7 +13,7 @@ an mdBook generator, and each got the same things wrong. A complete case-(b)
 adoption reported it (the `agentic-host` repo issue on doc-site gaps), and four of
 its findings reproduce on **this repository's own published site**:
 
-- The Software/Where room — the action the project exists to produce — has no page,
+- The Software/Where room (the action the project exists to produce) has no page,
   though `.host-software` carries the data to render a stub.
 - Spec bodies (`.allium`/`.tla`) are never published.
 - The sidebar is in source-call order, not the five-rooms lifecycle order (Cast,
@@ -21,8 +21,8 @@ its findings reproduce on **this repository's own published site**:
 - Nothing asserts a page per room, so a half-room site ships green.
 
 The root cause is singular: a missing, maintained publisher. Worse, this
-repository's own `book.toml` set `src = "."` — the exact hazard `call/0011` warned
-against — surviving only because CI prunes dangling symlinks and the worktrees are
+repository's own `book.toml` set `src = "."` (the exact hazard `call/0011` warned
+against) and survived only because CI prunes dangling symlinks and the worktrees are
 absent in checkout.
 
 ## Decision
@@ -31,15 +31,15 @@ Ship one canonical publisher, **`host-lifecycle book`**, and route every adopter
 (this repository included) through it instead of a hand-rolled generator.
 
 1. **`src = "docs"`, never `"."`.** `book` writes `book.toml` scoped to a generated
-   `docs/`, encapsulating the `call/0011` rule once, centrally — so no adopter
+   `docs/`, encapsulating the `call/0011` rule once, centrally, so no adopter
    re-derives it wrong.
-2. **Lifecycle order.** `SUMMARY.md` is emitted Cast (Who) → Plan + specs
-   (What/When) → Software/Where → Call (Why) → Reference/CLAUDE (How) → Memory.
+2. **Lifecycle order.** `SUMMARY.md` is emitted Cast (Who), then Plan + specs
+   (What/When), then Software/Where, then Call (Why), then Reference/CLAUDE (How), then Memory.
 3. **The Where stub is read from `.host-software`.** Component, url, pin, worktrees,
-   and the materialize command — from the committed recipe only, so it is safe in an
+   and the materialize command, from the committed recipe only, so it is safe in an
    un-materialized checkout (the worktrees themselves are never walked; `call/0011`).
 4. **Specs render.** Each spec becomes a fenced code page, navigable from its
-   milestone — the What contract is published, not listed as bare filenames.
+   milestone; the What contract is published, not listed as bare filenames.
 5. **A coverage gate.** `host-lifecycle book --check` fails the build naming any room
    that has source material but renders no page with content; a room with no source
    (a fresh `call/`, a project with no software yet) is legitimately empty and
@@ -55,7 +55,7 @@ the reference Site workflow and the canonical-order documentation live in
 
 - Good: the four findings stop reproducing on this repository's site, and every
   future adopter inherits one maintained, tested artifact instead of a footgun.
-- Good: the `src = "."` contradiction with the template's own guidance is resolved —
+- Good: the `src = "."` contradiction with the template's own guidance is resolved;
   this repository now obeys the rule it published.
 - Neutral: the doc site is now a build-time generation step (run the publisher, then
   mdBook) rather than a hand-maintained `SUMMARY.md`.

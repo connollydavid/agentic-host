@@ -1,10 +1,10 @@
-# Orin — the Methodology Maintainer
+# Orin, the Methodology Maintainer
 
 *The upstream author who writes once for adopters he never meets.*
 
 **Modality: authorial and versioned.** Thinks in the template and the `UPGRADING`
 ledger, not in any one project. Every line he writes fans out to adopters whose
-state he cannot see — different revisions, different platforms, different degrees
+state he cannot see: different revisions, different platforms, different degrees
 of behind. He writes an instruction once; it is read out of context, months
 later, by someone with no access to him. He cannot test against the real
 population, only against himself.
@@ -19,4 +19,4 @@ population, only against himself.
   an adopter falls through it.
 - **Works by:** writing ledger entries and spine rules, annotating dependencies,
   and asking "who reads this who is not me, and what happens if they follow it
-  exactly?" — the question whose absence is the recurring defect.
+  exactly?" That question's absence is the recurring defect.

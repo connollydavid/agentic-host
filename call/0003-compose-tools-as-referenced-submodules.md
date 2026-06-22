@@ -22,8 +22,8 @@ Chosen option 2: **each tool is a referenced submodule; we orchestrate, never
 edit.**
 
 - **Reference, never vendor.** Each tool is a git submodule; our methodology
-  (CLAUDE.md) refers to its skills. We never copy or edit its files — behaviour
-  is steered by instruction plus thin wrappers in our own tree. This keeps us
+  (CLAUDE.md) refers to its skills. Its files are never copied or edited;
+  behaviour is steered by instruction plus thin wrappers in our own tree. This keeps us
   clean of Apache-2.0 obligations and keeps submodule updates trivial.
 - **Specs are tagged by lane and co-located with tests.** A spec is `.allium`
   (allium) or `.tla` (Specula); both live in the milestone's `spec/` area. A
@@ -33,14 +33,14 @@ edit.**
 - **A tool's workflow discharges, it does not milestone.** A tool's internal
   pipeline runs inside one milestone to discharge that milestone's obligations;
   it is not a parallel milestone axis. Specula's steps are referred to by name
-  (Code Analysis, Spec Generation, and so on), never as ordinal phases — keeping
+  (Code Analysis, Spec Generation, and so on), never as ordinal phases; this keeps
   our own host-lint convention.
 - **Lane choice is a decision.** Choosing a lane for a concern, or classifying a
   Specula target category, is itself an architectural decision and gets its own
   record.
 - **Boilerplate is referenced, not vendored.** Verbatim tool boilerplate (a
   Specula trace-module, an allium template) is pulled in by reference, never
-  copied — the carve-out from decision 0001.
+  copied; this is the carve-out from decision 0001.
 
 ## Consequences
 

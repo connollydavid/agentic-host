@@ -6,7 +6,7 @@
 ## Context and Problem Statement
 
 Decision 0004 makes the template a versioned source and says projects adopt a
-revision — but nothing defined *how* an existing repo becomes a host, or how one
+revision, but nothing defined *how* an existing repo becomes a host, or how one
 that adopted an earlier revision upgrades. Real targets show the shapes vary: a
 repo with no `CLAUDE.md`, a repo with a foreign `CLAUDE.md` predating the
 methodology (with deep ordinal-naming debt in files and history), and our own
@@ -16,8 +16,8 @@ sometimes forbidden (when the history carries provenance others depend on).
 
 ## Considered Options
 
-1. **Ad hoc** — migrate each repo by hand, deciding everything case by case.
-2. **A defined protocol** — one skeleton with a small set of explicit choices.
+1. **Ad hoc**: migrate each repo by hand, deciding everything case by case.
+2. **A defined protocol**: one skeleton with a small set of explicit choices.
 
 ## Decision Outcome
 
@@ -25,9 +25,9 @@ Chosen option 2: **a single protocol, parameterised by two orthogonal axes,
 shipped as the template's `MIGRATION.md` and driven by `host-lifecycle`.**
 
 - **Case = starting state** (decides how governance is established): **(a)** no
-  `CLAUDE.md` → drop in the manual and elicit the repo's own conventions; **(b)**
-  foreign `CLAUDE.md` → merge each rule (subsumed / project-specific / conflict →
-  human); **(c)** carries a `.host` stamp → upgrade by diffing the
+  `CLAUDE.md`: drop in the manual and elicit the repo's own conventions; **(b)**
+  foreign `CLAUDE.md`: merge each rule (subsumed / project-specific / conflict to
+  human); **(c)** carries a `.host` stamp: upgrade by diffing the
   recorded revision against the current one. `host-lifecycle classify` reports the
   case.
 - **Mode = blast radius** (decides how the audit is applied): **Preview**
@@ -37,7 +37,7 @@ shipped as the template's `MIGRATION.md` and driven by `host-lifecycle`.**
 - **Selection rule.** Default Shallow; escalate to Staged on volume; choose Deep
   only when history-coherence value exceeds provenance/disruption cost, and never
   on history carrying provenance you do not control. **History is immutable by
-  default** — outside Deep, legacy tells are acknowledged, not rewritten.
+  default**: outside Deep, legacy tells are acknowledged, not rewritten.
 - **The stamp keys upgrades.** `host-lifecycle adopt` scaffolds the rooms and
   writes `.host` (template + revision + date); `version` reads it. The
   recorded revision is what a case-(c) upgrade diffs from.

@@ -3,7 +3,7 @@
 ## The smell (a methodology bug)
 
 The five-room model puts behaviour/timing specs in the **host**, at
-`plan/<milestone>/spec/` — quarantined from the software they describe. That is a
+`plan/<milestone>/spec/`, quarantined from the software they describe. That is a
 bad smell: a spec and the code it constrains should move, version, and break
 together, the way a test lives next to its code. The concrete instance:
 `ParallelScan.tla` sits in `agentic-host/plan/0008/spec/` while the code it specs
@@ -25,32 +25,32 @@ Both `.allium` files are hand-written pseudo-syntax that the real
 clauses are not valid block items). Rewrite each into conformant allium until the
 **advanced gate** passes:
 
-- `allium check <spec>` — parse + structural diagnostics (no `error` severity).
-- `allium analyse <spec>` — process completeness: data flow, reachability,
+- `allium check <spec>`, parse + structural diagnostics (no `error` severity).
+- `allium analyse <spec>`, process completeness: data flow, reachability,
   terminal states, deadlock/conflict, invariant verification (no `error`).
 
 Then wire a CI lane in **each software repo** (install `allium-cli@3.4.2`, run
 `check` + `analyse`, fail on `error` diagnostics):
 
-- `host-grammar` — has no CI today; add the workflow.
-- `host-lint` — add the lane alongside its existing pipeline.
+- `host-grammar`: has no CI today; add the workflow.
+- `host-lint`: add the lane alongside its existing pipeline.
 
 ### 2. Relocate specula to the software
 
 - Move `ParallelScan.tla` + `ParallelScan.cfg` from `agentic-host/plan/0008/spec/`
   into `host-grammar` (the software it specs).
 - Add a specula/TLC lane to `host-grammar` CI (Temurin `21` + `tla2tools v1.8.0`,
-  the versions the host lane proved), mirroring the retired `specula.yml`.
+  the versions the host lane proved); it mirrors the retired `specula.yml`.
 - Retire `agentic-host/.github/workflows/specula.yml`; `plan/0008` references the
   spec's new home.
 
 ### 3. Methodology spine fix
 
-The "What" room moves from the host to the software. Update the template spine —
-`CLAUDE.md` (the Specs section + the rooms table) and `STRUCTURE.md` — so specs
+The "What" room moves out of the host and into the software. Update the template spine,
+`CLAUDE.md` (the Specs section + the rooms table) and `STRUCTURE.md`, so specs
 co-locate with the software and lanes run in the software's CI, with the host
 `plan/` referencing them. Add an `UPGRADING.md` ledger entry and bump the
-submodule pointer. (Methodology change → recorded in the template spine +
+submodule pointer. (Methodology change, so recorded in the template spine +
 ledger, not an agentic-host `call/`; the `plan/0011` precedent.)
 
 ## Verification
@@ -66,7 +66,7 @@ ledger, not an agentic-host `call/`; the `plan/0011` precedent.)
 
 - `allium analyse` is the advanced gate; if a pure data-flow spec (no stateful
   entity lifecycle) trivially satisfies reachability/terminal checks, that is a
-  true result, not a bypass — recorded as such.
+  true result, not a bypass, recorded as such.
 - Re-pinning: `host-grammar` is a cargo git dep of `host-lint`; a spec-only change
   does not alter the build artifact, so `host-lint`'s recorded artifact hash is
   unchanged when its `host-grammar` rev bumps.

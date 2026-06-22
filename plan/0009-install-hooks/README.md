@@ -2,7 +2,7 @@
 
 A host-lifecycle point release (**v0.8.1**) closing the fresh-clone gap surfaced
 in `plan/0008`: `software --materialize` and the skill symlink were automated,
-but the commit hooks were not — so a fresh clone (or a stale checkout) ran an
+but the commit hooks were not, so a fresh clone (or a stale checkout) ran an
 old host-lint, or none, on its own commits.
 
 ## What shipped
@@ -15,7 +15,7 @@ via `git rev-parse --git-path hooks`, so worktrees and a custom `core.hooksPath`
 resolve correctly.
 
 - New optional `hooks = <script>` field on the software stanza (relative to the
-  canonical worktree). Absent → the component is skipped.
+  canonical worktree). Absent, the component is skipped.
 - **Gate: worktree-at-pin, not byte hash.** The worktree must be at its recorded
   `pin` (the audited source) and the artifact must exist. The recorded artifact
   hash is the *pinned container's* output; a local toolchain legitimately
@@ -35,7 +35,7 @@ after materialize + the skill symlink.
   script (as both hook names) and the binary when the worktree is at its pin, and
   blocks when it is off-pin.
 - Dogfooded on this repo: `software --install-hooks .` installed `pre-commit`,
-  `commit-msg`, and the `host-lint` binary, noting the local build differs from
+  `commit-msg`, and the `host-lint` binary; it noted the local build differs from
   the canonical hash. Our own commit-msg hook now runs the v0.3.0 prose-capable
   tool.
 

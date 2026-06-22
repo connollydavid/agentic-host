@@ -23,7 +23,7 @@ break" of the record is expensive and degrades it.
 The decisive fact, **verified on the target**: nothing re-scans the historical
 tree. The commit hooks lint only the commit subject and the *staged diff*; CI runs
 no linter (`mdbook` only). `host-lint --all` is a manual one-shot for migration
-events. So old names sitting in the record cost **zero** on an ongoing basis — they
+events. So old names sitting in the record cost **zero** on an ongoing basis; they
 are read by no automated gate, ever.
 
 ## Decision Outcome
@@ -42,9 +42,9 @@ plan/*/README.md
 - The **record** is left verbatim and excluded, so `--all` is genuinely `0` without
   a rewrite and without abusing the token allow-list. Old milestone names survive
   only where history lives; the renamed `plan/<NNNN-slug>/` folders are the implicit
-  old→new map (a reader hitting an old ordinal name in the record finds
+  old-to-new map (a reader hitting an old ordinal name in the record finds
   `plan/0004-command-execution/`).
-- `host-lint` stays general/policy-free — it honours an ignore file the way
+- `host-lint` stays general/policy-free; it honours an ignore file the way
   `git`/`ripgrep` do; the *methodology* supplies the policy by writing the file.
 
 **Token rationale (the deciding lens):** rewriting the record is one-time cost with
@@ -58,7 +58,7 @@ its recurring payback and stays.
 - Good: `--all` means "no live tells," cleanly, with no record rewrite, no lossy
   prose, no allow-list abuse.
 - Good: this is the concrete resolution of the deferred baseline question
-  (`call/0006`) for the record class — a path exclusion, not a per-finding baseline.
+  (`call/0006`) for the record class, a path exclusion, not a per-finding baseline.
 - Cost: a reader auditing *history* must run `host-lint` against the excluded paths
   deliberately; that is the rare, correct time to look. The exclusion is explicit
   and reviewable in `.host-lintignore`.

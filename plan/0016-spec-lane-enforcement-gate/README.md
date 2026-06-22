@@ -21,19 +21,19 @@ teeth, so it is enforced, not only reviewed.
 
 `find_specs` + `read_workflows` back the check; `spec_lane_problems` reports the
 HAZARD count. One test (`spec_lane_gate_requires_a_lane_when_a_spec_is_present`):
-no workflow → HAZARD, `check`+`analyse` → clean, add a `.tla` → HAZARD, add TLC →
-clean, absent worktree → skipped.
+no workflow then HAZARD, `check`+`analyse` then clean, add a `.tla` then HAZARD, add TLC then
+clean, absent worktree then skipped.
 
 ## Verification
 
 - 36 host-lifecycle tests pass; clippy clean.
 - Live on this host: `software --check` prints `ok host-lint allium lane present
-  (check + analyse)` — host-lint carries `host-lint.allium` and its CI runs the
+  (check + analyse)`; host-lint carries `host-lint.allium` and its CI runs the
   lane. `host` carries no spec, so it is silent.
 
 ## Scope
 
 The gate enforces lane **presence** (the workflow runs the commands), not that
-every `allium plan` obligation is discharged by a named test — that deeper check
+every `allium plan` obligation is discharged by a named test; that deeper check
 (`propagate` coverage) remains review-driven. Presence is the decisive, mechanical
 floor that stops a spec shipping as undecorated reference.

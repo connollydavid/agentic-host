@@ -49,7 +49,7 @@ description is the most common reason a correct skill never triggers.
 ## 3. Body
 
 Procedural knowledge: workflows, decision points, gotchas. Three loading tiers
-operate here — frontmatter is always resident, the `SKILL.md` body is read once
+operate here: frontmatter is always resident, the `SKILL.md` body is read once
 the skill triggers, and supporting files are read only when the body points to
 them. Push depth outward:
 
@@ -60,7 +60,7 @@ For OOXML internals see OOXML.md
 ```
 
 The linked file costs nothing until the task needs it. Scripts cost only their
-output, not their source, because they run under bash rather than being read —
+output, not their source, because they run under bash rather than being read,
 so deterministic logic belongs in a script, not in prose the agent has to
 re-derive each time.
 
@@ -105,45 +105,45 @@ or a reference doc the agent compares against.
 
 ## 5. Conformance gates
 
-Each gate has an ID, an assertion, the check, and the pass condition. Mechanical
+Each gate carries an ID and an assertion alongside its check and pass condition. Mechanical
 gates are phrased so a linter can evaluate them. Run mechanical gates first;
 they are cheap and catch the structural failures.
 
 ### Mechanical
 
-**G1 — Frontmatter present and parseable.**
+**G1: Frontmatter present and parseable.**
 Check: file begins with a `---` fenced block that parses as YAML.
 Pass: parse succeeds and yields a mapping.
 
-**G2 — Required keys.**
+**G2: Required keys.**
 Check: the mapping contains `name` and `description`, both non-empty strings.
 Pass: both present and non-empty.
 
-**G3 — Name format.**
+**G3: Name format.**
 Check: `name` is lowercase, hyphen-separated, ≤ 64 chars, and equals the
 containing directory name.
 Pass: matches `^[a-z0-9]+(-[a-z0-9]+)*$`, length ≤ 64, equals dirname.
 
-**G4 — Description length.**
+**G4: Description length.**
 Check: `description` length ≤ 1024 chars.
 Pass: within bound. (Empty or one-word descriptions also fail G9.)
 
-**G5 — Portable frontmatter only.**
+**G5: Portable frontmatter only.**
 Check: frontmatter keys are a subset of `{name, description}` for a skill
 declaring itself universal. Extra keys are reported, not silently accepted.
 Pass: no keys outside the allowed set, OR each extra key is documented in a
 `# Portability notes` section as a known tool-specific extension.
 
-**G6 — Body length.**
+**G6: Body length.**
 Check: line count of the markdown body (everything after the closing `---`).
 Limit: ≤ 500 lines. Over it, content belongs in a reference file.
 
-**G7 — References resolve.**
+**G7: References resolve.**
 Check: every relative path and intra-repo link in the body points to a file
 that exists in the skill directory.
 Pass: zero dangling references.
 
-**G8 — Imperative density.**
+**G8: Imperative density.**
 Check: count of standalone all-caps directives (`MUST`, `ALWAYS`, `NEVER`) in
 the body.
 Pass: each occurrence is accompanied within the same paragraph by a reason. A
@@ -152,33 +152,33 @@ linter approximates this by flagging any such token whose sentence contains no
 
 ### Judgement
 
-**G9 — Description triggers.**
+**G9: Description triggers.**
 Assertion: the description names the artifacts, file types, and verbs a user
 would actually say, not an abstract category.
 Fail signal: you cannot list three realistic user phrasings the description
 would match.
 
-**G10 — Reason over rule.**
+**G10: Reason over rule.**
 Assertion: rules in the body explain why, so the agent can generalise.
 Fail signal: imperatives that would leave the agent guessing on an unlisted
 edge case.
 
-**G11 — Disclosure discipline.**
+**G11: Disclosure discipline.**
 Assertion: detail used in a minority of runs lives in a reference file, not the
 body.
 Fail signal: the body is near the G6 limit because of content most tasks skip.
 
-**G12 — Logic in scripts.**
+**G12: Logic in scripts.**
 Assertion: deterministic, repeatable procedures are scripts the agent executes,
 not prose it re-derives.
 Fail signal: the body walks through a fixed algorithm step by step in English.
 
-**G13 — Real invocation.**
+**G13: Real invocation.**
 Assertion: the skill has been triggered on at least one genuine task end to end,
 not only read back.
 Fail signal: no record of the skill firing and producing correct output.
 
-**G14 — Cross-agent dry run.**
+**G14: Cross-agent dry run.**
 Assertion: the skill has been dropped into at least one second agent's skills
 directory and triggered there.
 Fail signal: only ever exercised in the agent it was written for.
@@ -187,8 +187,8 @@ Fail signal: only ever exercised in the agent it was written for.
 
 ## 6. Ship checklist
 
-A skill ships when G1–G8 pass mechanically and G9–G14 have no open fail signal.
-A future `lint-skill.sh` reads this file's mechanical section and asserts G1–G8
+A skill ships when G1 through G8 pass mechanically and G9 through G14 have no open fail signal.
+A future `lint-skill.sh` reads this file's mechanical section and asserts G1 through G8
 directly; the judgement gates stay a human or agent review step.
 
 ## 7. Sources

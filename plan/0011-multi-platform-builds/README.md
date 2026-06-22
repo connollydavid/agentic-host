@@ -1,11 +1,11 @@
 # Per-platform builds in the software recipe
 
 `connollydavid/host#1`: a single component, built from one source `pin`, can
-ship on several platforms — e.g. a CUDA server built once for `linux-cuda` and
+ship on several platforms, e.g. a CUDA server built once for `linux-cuda` and
 once for `windows-msvc-cuda` from the same commit. The flat `.host-software`
 build fields (`build`/`toolchain`/`artifact`/`deploy`/`repro-exempt`) recorded
 exactly **one** build per component, so a second platform had nowhere to live.
-The workarounds — a fake second component, or overloading `worktree =` — both
+The workarounds (a fake second component, or overloading `worktree =`) both
 break the one-pin audit anchor.
 
 ## What shipped (host-lifecycle v0.9.0)
@@ -35,13 +35,13 @@ A per-platform build subsection, nested under the component stanza:
 - **`attest-host`** names the OS (`std::env::consts::OS`: `linux`/`windows`/
   `macos`) that reproduces this build. `software --check` and `--verify-build`
   iterate the builds and attest each only on its `attest-host`; a build whose
-  host is not the current one is **skipped, not failed** — the way an exempt
+  host is not the current one is **skipped, not failed**, the way an exempt
   build is skipped. A Linux runner cannot reproduce the Windows artifact and is
   not asked to.
 - **`repro-exempt` is per-build**, not per-component: one platform may be proven
   reproducible while another carries a case-decision exemption.
 - The flat single-build form is preserved as the default build (it becomes one
-  `builds_view` entry with no `attest-host`, attesting on any host — the
+  `builds_view` entry with no `attest-host` and attests on any host, the
   pre-issue-#1 behaviour). Single-platform components need no change.
 - The Where stub (`host-lifecycle book`) lists a component's platforms.
 
@@ -49,7 +49,7 @@ A per-platform build subsection, nested under the component stanza:
 
 The `.host-software` schema is methodology, so the design is recorded in the
 template spine, not as an agentic-host `call/` (an accepted methodology-scoped
-decision fails the anti-ouroboros `validate` gate — see `call/0004`). The
+decision fails the anti-ouroboros `validate` gate; see `call/0004`). The
 template carries it as prose in `STRUCTURE.md` + `CLAUDE.md` and as an
 `UPGRADING.md` ledger entry keyed to template `c137567`, requiring
 host-lifecycle v0.9.0. This mirrors how `plan/0005` (the reproducible-build
@@ -82,7 +82,7 @@ pinned build host's output. This contradicted the `--install-hooks` decision
 informational. The artifact attestation in `--check` now does the same: a match
 is `verified`, a local-toolchain mismatch is a `note` (not a failure), and
 `--verify-build` remains the reproducibility proof. The DRIFT only ever fired on
-a dev box — fresh clones and CI (which builds in the pinned container) were
+a dev box; fresh clones and CI (which builds in the pinned container) were
 already clean. Spine clarified in host-template `d3dc5ed` + UPGRADING.
 
 ## Not done here
