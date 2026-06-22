@@ -425,7 +425,7 @@ Skill Hardening: hook fix, bare-numeral rule, release install path (see SKILL-HA
 <tr><td><a href="plan/0029-where-room-component-model/README.html">plan/0029-where-room-component-model</a></td><td><strong>built + self-upgraded</strong> (host-lifecycle <strong>v0.19.0</strong> released, with a nested <code>software/&lt;name&gt;/&lt;branch&gt;</code> layout [<code>.git</code> store + branch-keyed worktrees, canonical = the recorded <code>branch</code> default <code>main</code> at the pin, <strong>decision A</strong>], <code>--item &lt;name&gt;[@&lt;branch&gt;]</code> addressing, re-materialize prune, dangling-generated-link check in <code>software --check</code>, tag-only first release; spine <code>0cd6b0a</code> [the layout + the <strong>residency carve-out</strong> that genuinely resolves 0028's spine-contradiction] + an UPGRADING entry; agentic-host <strong>self-upgraded</strong> onto the new layout [old root-scattered worktrees torn down, <code>.gitignore</code> now <code>/software/</code>, <code>.host</code> recorded <code>0cd6b0a</code>, CI on v0.19.0], <strong>whole-suite green</strong> [host-lifecycle CI + agentic-host reproducible-build doing a cold new-layout materialize + Site]; also cleared the deferred #40/#41 version-floor debt [the manifest/receipt/release features now carry an honest 0.19.0]. Residuals, honestly noted: the Fen-4B ergonomics run, a tool teardown subcommand + dirty-worktree guard, and porcelain/case-collision robustness are deferred refinements. Reviewed + re-cut first: <code>design-review.md</code>, 5 lenses; re-cut applied: <strong>uniform layout kept</strong> [operator: reduce churn], the <strong>tool-residency spine clause folded in</strong> [operator: now genuinely resolves 0028's spine-contradiction], the overfit cut and the false claims dropped. Was <em>both</em> overfit and oversold: cut the agentic-host-shaped overfit [the named binary/library/docs <strong>shapes</strong> are just <code>{host-lint, host-grammar, host}</code>, so use the <code>artifact?</code>/<code>build?</code> recipe booleans the tool already keys on; <code>tags/&lt;tag&gt;/</code> worktrees are exercised by no one and break release/check on detached HEAD, so key by <strong>branch only</strong>; <code>release &lt;item&gt;@&lt;ref&gt;</code> is unmotivated]; and two headline claims are <strong>false against the source</strong> ["layout-only/recipe-unchanged": the flat layout is hardcoded at ~14 sites and the <code>worktrees=</code>/<code>&lt;dir&gt;</code> recipe fields encode it; and it does <strong>not</strong> resolve <code>plan/0028</code>'s spine-contradiction, which was about host-lint-as-Where vs reference-don't-vendor, untouched here]. Sound core: the nested multi-component layout is genuinely generic and the no-artifact path <strong>already works</strong> in the tool. Also: <code>software --check</code> two-positional ambiguity, so the specifier must be a <code>--item</code> flag; <code>/software/</code> must be excluded from <code>remap</code>/tree-walks [<code>call/0011</code> Site-CI-red class]; the generated-link check is net-new [can't reuse the tracked-only symlink hazard]. <strong><code>.git</code> store-dir name locked</strong> [operator], with a git-discovery caveat to verify) (<strong>generic capability, tool + spine, for every adopter, no project-specific names</strong>: makes the Where room a first-class <strong>multi-component</strong> model. Components have <strong>shapes</strong> dispatched by the <em>declared recipe</em> never a name: artifact-bearing binary | <strong>library</strong> [released but no artifact, the missing tag-only release/receipt branch] | docs/text-only [already works, proven by <code>host</code>]. An <strong>(item, branch) specifier</strong> for <code>software --materialize/--check/--verify-build</code> + <code>release</code> [default-all, backward-compatible]. A <strong>nested layout</strong> <code>software/&lt;component&gt;/&lt;branch&gt;/</code> separating the bare store from per-branch worktrees, so (item, branch) is a literal path and one <code>/software/</code> ignore replaces the per-component triplets. Component-shipped skills wired from worktrees + a generated-link integrity check in <code>software --check</code> [the gate sees only <em>tracked</em> symlinks today]. Delivered as a <strong>spine change + UPGRADING migration</strong>, designed and <strong>Fen-tested against a neutral synthetic fixture</strong> [a binary + a library + a docs component + a parallel branch] before agentic-host touches it. Resolves the <code>plan/0028</code> review's blocking <em>spine-contradiction</em> and most of <em>grammar-pin-mess</em>/<em>library-component-slot</em>/<em>new-link-loop</em>; <code>plan/0028</code> re-cut to depend on it)</td></tr>
 <tr><td><a href="plan/0030-prose-hygiene-lane/README.html">plan/0030-prose-hygiene-lane</a></td><td><strong>DONE</strong> (triggered prose-clean shipped + verified); <strong>adversarially reviewed</strong> (<code>design-review.md</code>, 5 independent lenses, <strong>re-scope</strong> verdict) + Qwen-3.5-4B clear-case classification 10/10. A re-scope of the original three-strand sketch into these decisions: <strong>D1</strong> a single <code>--docs</code> mode walks <strong>authored markdown only</strong> + honors <code>.host-lintignore</code> (scope determines type: <code>--all</code> stays naming-everywhere, <code>--docs</code> is prose-on-docs and never scans code; today there is no repo-wide prose mode, the <code>--prose</code> branch short-circuits before <code>--all</code>, so the spine's <code>recheck</code> is inert); <strong>D2</strong> weak-agent-fixable output (per-occurrence spans + fix hints + advisory tiers) <strong>carved out to plan/0031</strong> (it grew into a multi-repo engine question; the over-emission of ten identical records for one em-dash lives in <code>host_grammar</code>; D5's clean depends on plan/0031); <strong>D3</strong> re-derivable record exclusion (machine-readable inline <code>STATUS:</code> + MADR <code>Status:</code>, so reword <strong>Live</strong> to zero, <strong>box</strong> immutable-record citations in <code>host-lint:ignore</code> fences per <code>call/0019</code>, path-exclude <strong>append-only</strong> <code>MEMORY.md</code>); <strong>no hash-freeze ack file</strong> (it would be the project's first self-asserted receipt, inverting <code>call/0017</code>'s re-derivation, and its edit-lapses-clean rule would force rewriting the very records it protects, against <code>CLAUDE.md</code> §6; the shipped fence + <code>.host-lintignore</code> already meet the need); <strong>D4</strong> wire <code>host-lint --docs</code> into the <code>verify</code> <code>recheck =</code> (applies the already-authored spine <code>950fbd6</code>, re-derivable via the existing <code>.host-receipts</code> receipt) + a <code>.gitattributes</code> <code>eol=lf</code> for cross-platform determinism. The repo-wide clean (<strong>D5</strong>) ran on the front-door sentence: <code>host-lint --docs</code> is zero across the authored docs (about 1,010 tropes reworded across ~60 docs by parallel agents plus hand fixes, meaning preserved; <code>MEMORY.md</code> and dated reviews path-excluded), 950fbd6 recorded in <code>.host</code> (0 pending), and the front-door Verify passes (validate plan/ + call/, software --check clean, --all flag-clean, --docs zero, a tell-commit blocked, the site builds). <strong>D4</strong> (wiring <code>host-lint --docs</code> into the verify <code>recheck</code> for ongoing enforcement) is a flagged spine follow-up: the shared recheck needs a portable host-lint invocation, since agentic-host's host-lint is the embedded Where software rather than a PATH tool. <strong>Receipts-family re-homing deferred</strong> to its own dual-format <code>host-lifecycle</code> migration milestone (the settled ontology is recorded: <code>.host-receipts</code> = adopt/upgrade, <code>.host-lifecycle-receipts</code> = operational executions, applied-set moved out of <code>.host</code>; but moving/splitting those shipped files un-applies every recorded upgrade in the gate binary, HAZARDs the embed/release gate, and the CI cold-installs a pinned old-format binary, so it needs a binary that reads both layouts first); <code>.host-prove-receipts</code> cut until host-prove emits receipts. <strong>D1 shipped in host-lint v0.8.0</strong> (<code>e652ffc</code>): host-lint <code>--docs</code> is a markdown-only <code>git ls-files</code> walk that honors <code>.host-lintignore</code> and excludes code/<code>MEMORY.md</code>/symlinks; 66 unit + <strong>97/97 integration</strong> (4 new <code>--docs</code> cases) + clippy clean; a live run audits 72 authored <code>.md</code> and scans no code</td></tr>
 <tr><td><a href="plan/0031-fixable-prose-output/README.html">plan/0031-fixable-prose-output</a></td><td><strong>SHIPPED</strong> in host-lint v0.8.0 (<code>e652ffc</code>); spun out of plan/0030 D2. Makes the prose <strong>output</strong> weak-agent-fixable, the precondition for plan/0030's triggered clean (D5): <strong>E1+E2</strong> locate each occurrence with a column (<code>file:line:col</code>): host-lint's <code>locate_line</code> collapses all ten <code>decoration</code> records onto line 12, but <code>call/0019</code> has <strong>ten real em-dashes</strong> (lines 12/15/23/24/34/38/41/42/56) and the engine correctly emits <strong>one tell each</strong>, so occurrence-mapping assigns the k-th tell to the k-th occurrence, exactly; <strong>E3</strong> a mechanical fix-hint keyed on trope id (decoration becomes drop or replace with a comma; emitted as a <code>fix</code> JSON field); <strong>E4</strong> advisory tiers: density/structural tropes (<code>tell-density</code>, <code>bold-first-bullets</code>, span-less self-answered-question) are advisory, not part of the clean-to-zero gate, so "zero" terminates. <strong>Fork resolved by data:</strong> host-lint-side, exact; the engine is correct (10 em-dashes yield 10 tells), the bug is host-lint's first-occurrence <code>locate_line</code>; no <code>host_grammar</code> change, density-score concern moot. The 4B clean-one-doc test is the acceptance gate. <strong>Bundled with plan/0030's D1 (<code>--docs</code>) as one host-lint release</strong> (<code>--docs</code> only pays off with fixable output). <strong>Shipped + reproducible:</strong> the located/columned/fix-hinted/advisory-tiered output via host-lint-side occurrence-mapping (no engine change), golden tests + 4B acceptance passed (atomic; per-occurrence cadence confirmed). The first real <code>host-lifecycle release</code> run on a host-* Where component surfaced + fixed two release-tool bugs (current version now read from the last tag, not the bumped Cargo.toml; Cargo.lock synced so the pinned <code>--locked</code> build works), then host-lifecycle v0.19.1 (<code>629e9c3</code>); <code>software --verify-build</code> reproduces artifact <code>3132c01</code> in the pinned <code>rust:1.95.0</code> container</td></tr>
-<tr><td><a href="plan/0032-static-builds/README.html">plan/0032-static-builds</a></td><td><strong>planned; adversarially reviewed then re-cut twice</strong> (<code>design-review.md</code>, 5 lenses, <strong>re-scope</strong>, then the G2 ruling, then the hermetic-bundle + spine-MUST ruling): the recorded <code>.host-software</code> canonical artifact for each host-* binary becomes a statically linked <code>x86_64-unknown-linux-musl</code> build, so the reproducible binary runs on any Linux host (the <code>plan/0028</code> <code>GLIBC_2.39</code> divergence, where <code>--install-hooks</code> had to install a local build differing from the canonical hash, retires) and equals the binary the producer CI already distributes as a release asset. <strong>Operator rulings (2026-06-22)</strong>: all three artifact tools convert (host-lint, host-lifecycle, host-prove; host-prove's CI also gains a musl build, where today it produces only the glibc binary); the recorded toolchain is a digest-pinned musl-cross image at Rust 1.95.0, hermetic, with no in-recipe <code>rustup target add</code> network fetch. Per component three recipe lines move (<code>toolchain</code>, <code>build</code> gains <code>--target x86_64-unknown-linux-musl</code>, the <code>artifact</code> path), the strip and build-id hardening carries over, and the pure-Rust crates need no C cross-linker. Lands as a software-first re-release round through <code>host-lifecycle release &lt;c&gt; --change-class neither</code>, then one atomic agentic-host re-pin and re-record. Risk: confirm a 1.95.0 musl-cross image exists and pin its digest, else fall back to the in-recipe target-add with the hermeticity cost noted. Depends on <code>plan/0028</code>. <strong>Review (re-scope)</strong>: the install-hooks divergence is sanctioned by design (the hash-match is informational, <code>plan/0009</code>), the canonical will not byte-match the shipped CI asset unless each producer CI is converted to the pinned recipe, host-prove conversion is scope creep (no hooks, no release asset), and "any Linux" conflates OS with architecture (<code>attest-host</code> is OS-granular only); a simpler older-glibc canonical image was never weighed. <strong>Re-cut to distribute-equals-certify</strong> (G2, 2026-06-22): each producer's release CI converges onto the recorded musl recipe in the pinned image, so the shipped <code>x86_64-unknown-linux-musl</code> asset is byte-identical to the certified artifact; static musl is chosen over older-glibc for distribution portability (a single binary on any Linux libc/distro); host-prove gains a release pipeline so it too distributes-equals-certifies; <code>clux/muslrust:1.95.0-stable</code> is the pinned toolchain; x86_64-linux is reproducibility-certified while arm64/darwin/windows ship with a checksums manifest and are stated uncertified. <strong>Re-cut again</strong> (2026-06-22) to fold in the <strong>dependency-bundle hermeticity mechanism + a spine MUST</strong>: vendor the shared dep set once and publish it as a versioned hash-pinned downloadable release bundle (<code>vendor-vN</code>, the <code>pgs-release</code> <code>sysroot-vN</code> pattern), consume it offline under <code>--network none</code> so the recorded build is network-free and <code>--verify-build</code> enforces hermeticity (the proper M5 resolution, not a dropped claim); <code>host-lifecycle</code> gains a <code>deps-bundle</code> recipe field plus the offline build; <code>host-template</code> gains the MUST (a project shipping static release binaries consumes a pinned hash-verified bundle and builds offline, not fetch-at-build) applied via <code>UPGRADING.md</code> + migration. A large milestone: a host-lifecycle feature, a producer bundle workflow, the spine migration, producer-CI convergence, a host-prove release pipeline, the static musl conversion, and a software-first re-release round</td></tr>
+<tr><td><a href="plan/0032-static-builds/README.html">plan/0032-static-builds</a></td><td><strong>planned; adversarially reviewed twice, re-cut three times</strong> (<code>design-review.md</code> 5 lenses <strong>re-scope</strong>; <code>design-review-2.md</code> delta on the bundle/MUST surface <strong>proceed-with-major-revisions</strong>; rulings: G2, then hermetic-bundle + spine-MUST, then MUST-on-the-property): the recorded <code>.host-software</code> canonical artifact for each host-* binary becomes a statically linked <code>x86_64-unknown-linux-musl</code> build, so the reproducible binary runs on any Linux host (the <code>plan/0028</code> <code>GLIBC_2.39</code> divergence, where <code>--install-hooks</code> had to install a local build differing from the canonical hash, retires) and equals the binary the producer CI already distributes as a release asset. <strong>Operator rulings (2026-06-22)</strong>: all three artifact tools convert (host-lint, host-lifecycle, host-prove; host-prove's CI also gains a musl build, where today it produces only the glibc binary); the recorded toolchain is a digest-pinned musl-cross image at Rust 1.95.0, hermetic, with no in-recipe <code>rustup target add</code> network fetch. Per component three recipe lines move (<code>toolchain</code>, <code>build</code> gains <code>--target x86_64-unknown-linux-musl</code>, the <code>artifact</code> path), the strip and build-id hardening carries over, and the pure-Rust crates need no C cross-linker. Lands as a software-first re-release round through <code>host-lifecycle release &lt;c&gt; --change-class neither</code>, then one atomic agentic-host re-pin and re-record. Risk: confirm a 1.95.0 musl-cross image exists and pin its digest, else fall back to the in-recipe target-add with the hermeticity cost noted. Depends on <code>plan/0028</code>. <strong>Review (re-scope)</strong>: the install-hooks divergence is sanctioned by design (the hash-match is informational, <code>plan/0009</code>), the canonical will not byte-match the shipped CI asset unless each producer CI is converted to the pinned recipe, host-prove conversion is scope creep (no hooks, no release asset), and "any Linux" conflates OS with architecture (<code>attest-host</code> is OS-granular only); a simpler older-glibc canonical image was never weighed. <strong>Re-cut to distribute-equals-certify</strong> (G2, 2026-06-22): each producer's release CI converges onto the recorded musl recipe in the pinned image, so the shipped <code>x86_64-unknown-linux-musl</code> asset is byte-identical to the certified artifact; static musl is chosen over older-glibc for distribution portability (a single binary on any Linux libc/distro); host-prove gains a release pipeline so it too distributes-equals-certifies; <code>clux/muslrust:1.95.0-stable</code> is the pinned toolchain; x86_64-linux is reproducibility-certified while arm64/darwin/windows ship with a checksums manifest and are stated uncertified. <strong>Re-cut again</strong> (2026-06-22) to fold in the <strong>dependency-bundle hermeticity mechanism + a spine MUST</strong>: vendor the shared dep set once and publish it as a versioned hash-pinned downloadable release bundle (<code>vendor-vN</code>, the <code>pgs-release</code> <code>sysroot-vN</code> pattern), consume it offline under <code>--network none</code> so the recorded build is network-free and <code>--verify-build</code> enforces hermeticity (the proper M5 resolution, not a dropped claim); <code>host-lifecycle</code> gains a <code>deps-bundle</code> recipe field plus the offline build; <code>host-template</code> gains the MUST (a project shipping static release binaries consumes a pinned hash-verified bundle and builds offline, not fetch-at-build) applied via <code>UPGRADING.md</code> + migration. A large milestone: a host-lifecycle feature, a producer bundle workflow, the spine migration, producer-CI convergence, a host-prove release pipeline, the static musl conversion, and a software-first re-release round. <strong>Delta-reviewed + re-cut again</strong> (2026-06-22): the MUST attaches to the <strong>property</strong> (reproduce release binaries offline from pinned inputs) with a <code>hermetic-exempt = call/NNNN</code> escape and an honest gate invariant (a component recording <code>deps-bundle</code> MUST build under <code>--network none</code> with a matching bundle sha), authored in <code>host-template</code> first; <strong>host-lint owns the bundle</strong> (its lock is the dependency superset; hosting on agentic-host would invert the host-to-software direction); <strong>host-prove has no third-party deps</strong>, so it gets static-musl plus the release pipeline but no bundle; a Readiness prerequisite <strong>reconciles host-lifecycle's stale <code>host-lint</code> git rev</strong> (<code>93a43fa</code> to the certified <code>1386e9a</code>, a latent plan/0028 gap); and the host-lifecycle staging (fetch, verify, extract, merge-config, thread network-mode) is specified</td></tr>
 </tbody></table>
 </div>
 <p>The earlier content-named docs above (BOOTSTRAP, CI-PIPELINE, …) predate the <code>plan/</code> room; folding them in is a possible later cleanup, not required.</p>
@@ -2796,180 +2796,196 @@ behavior; the existing <code>--stdin</code>/<code>--prose</code> tests assert on
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0032-hermetic-static-builds-distribute-equals-certify-via-a-pinned-dependency-bundle"><a class="header" href="#plan0032-hermetic-static-builds-distribute-equals-certify-via-a-pinned-dependency-bundle">plan/0032: Hermetic static builds, distribute equals certify, via a pinned dependency bundle</a></h1>
 <blockquote>
-<p><strong>Goal (re-cut to hermetic-via-bundle, operator rulings 2026-06-22):</strong> each host-* tool's
-distributed <code>x86_64-unknown-linux-musl</code> binary becomes a statically linked build that is also the
-<code>.host-software</code> canonical artifact <code>--verify-build</code> reproduces (distribute equals certify), and
-the build is genuinely hermetic: its dependencies come from a reusable, versioned, hash-pinned
-bundle published as a downloadable release and consumed offline, not fetched from upstreams at
-build time. The pattern (build the dependency layer once, publish it as a release, download and
-verify it, build with no network) is the <code>pgs-release</code> <code>sysroot-vN</code>/<code>deps-vN</code> pattern. This plan
-makes that pattern a <strong>spine MUST</strong> for any project shipping static release binaries, and applies
-it to the host-* family. Depends on <code>plan/0028</code> and the reproducible-build anchor (<code>plan/0005</code>,
-<code>plan/0006</code>).</p>
-<p><strong>Adversarially reviewed</strong> (<code>design-review.md</code>, 5 lenses, re-scope) and re-cut twice: first to
-distribute-equals-certify, then to fold in the dependency-bundle hermeticity mechanism and the
-spine requirement. The bundle is the proper resolution of the review's M5 finding (the dropped
-hermeticity claim): with deps pinned in a downloaded bundle and the build run under <code>--network none</code>, the recorded build is network-free, so <code>--verify-build</code> enforces hermeticity rather than
-the plan merely asserting it.</p>
+<p><strong>Goal:</strong> each host-* tool's distributed <code>x86_64-unknown-linux-musl</code> binary becomes a statically
+linked build that is also the <code>.host-software</code> canonical artifact <code>--verify-build</code> reproduces
+(distribute equals certify), and the build is genuinely hermetic: its dependencies come from a
+pinned, hash-verified bundle published as a downloadable release and consumed offline, not fetched
+at build time. The spine gains a MUST on the underlying property, and the host-* family is the
+first adopter. Depends on <code>plan/0028</code> and the reproducible-build anchor (<code>plan/0005</code>, <code>plan/0006</code>).</p>
+<p><strong>Adversarially reviewed twice</strong> (<code>design-review.md</code>, then <code>design-review-2.md</code> on the bundle and
+spine surface) and re-cut three times. This version resolves the delta review: the MUST attaches to
+the property with a <code>hermetic-exempt</code> escape and an honest gate invariant, host-lint owns the
+bundle, host-prove is a no-dependency case, the host-lifecycle staging is specified, and the
+producer git-rev inconsistency is reconciled first.</p>
 </blockquote>
 <h2 id="context-6"><a class="header" href="#context-6">Context</a></h2>
 <p>The reproducible-build anchor reproduces each tool's <code>.host-software</code> recipe inside the recorded
-digest-pinned <code>toolchain</code> container and checks the sha256 (<code>plan/0005</code>, <code>plan/0006</code>). Two gaps
-remain: the certified binary is glibc-dynamic and does not run on a host with an older glibc (the
-<code>plan/0028</code> <code>GLIBC_2.39</code> divergence), and the build is not hermetic, since it fetches the
-<code>host-grammar</code> git dependency and the crates.io deps over the network (the design-review's M5). The
-producer release CI separately cross-compiles static musl assets by a different recipe, so the
-shipped binary is not the certified one.</p>
-<p><code>pgs-release</code> solved the equivalent problem for a heavier dependency layer. Its <code>build-deps.yml</code>
-builds the static dependency sysroot (zlib, freetype, fribidi, harfbuzz, libass) once per platform
-and publishes it as a versioned GitHub release (<code>sysroot-v2</code>, with raw dep tarballs under
-<code>deps-v1</code>); its <code>ffmpeg-release.yml</code> then downloads that pinned sysroot and builds against it rather
-than rebuilding the dependency chain from upstream each run. The build inputs become one pinned,
-hash-verifiable bundle from the project's own release, not many upstream fetches.</p>
-<p>For the pure-Rust host-* tools the dependency layer is the cargo dependency set (the tools share
-almost all of it). The same pattern applies: vendor the shared dependency sources once, publish them
-as a versioned hash-pinned release bundle, and have every build download and verify that bundle and
-build offline. Combined with the static musl link and a pinned toolchain image, the build is
-hermetic, reproducible, and portable, and the certified artifact is the distributed one.</p>
+digest-pinned <code>toolchain</code> container and checks the sha256 (<code>plan/0005</code>, <code>plan/0006</code>). Today that
+recipe builds a glibc-dynamic <code>target/release/&lt;bin&gt;</code> in <code>rust:1.95.0</code>. Two gaps: the certified binary
+does not run on a host with an older glibc (the <code>plan/0028</code> <code>GLIBC_2.39</code> divergence), and the build
+fetches the <code>host-grammar</code> git dependency and the crates.io deps over the network, so it is not
+hermetic. The producer release CI separately cross-compiles static musl assets by a different recipe,
+so the shipped binary is not the certified one.</p>
+<p>The canonical <code>connollydavid/pgs-release</code> solved the analogous problem: <code>build-deps.yml</code> builds the
+static dependency sysroot once and publishes it as the <code>sysroot-v2</code> release, and <code>ffmpeg-release.yml</code>
+downloads that pinned sysroot and builds against it rather than rebuilding from upstream. The build
+inputs become one pinned, hash-verifiable bundle from the project's own release.</p>
+<p>For the pure-Rust host-* tools the dependency layer is the cargo dependency set. The same pattern
+applies: vendor the dependency sources once, publish them as a versioned hash-pinned release bundle,
+and have each build download and verify that bundle and build offline. Combined with the static musl
+link and a pinned toolchain image, the build is hermetic, reproducible, and portable, and the
+certified artifact is the distributed one.</p>
 <h2 id="decisions-operator-rulings-2026-06-22"><a class="header" href="#decisions-operator-rulings-2026-06-22">Decisions (operator rulings, 2026-06-22)</a></h2>
 <ol>
 <li><strong>Distribute equals certify.</strong> Each tool's <code>x86_64-unknown-linux-musl</code> release asset is built by
-the recorded recipe in the pinned image and bundle, so it is byte-identical to what
-<code>--verify-build</code> reproduces.</li>
+the recorded recipe in the pinned image and bundle, byte-identical to what <code>--verify-build</code>
+reproduces.</li>
 <li><strong>Static musl, not an older-glibc image.</strong> Static musl gives a single binary that runs on any
-Linux libc and distro, the distribution property the goal is about; an older-glibc image would
-fix only the dev-host-run symptom and still carry a glibc floor. Recorded and rejected on that
-ground.</li>
-<li><strong>All three artifact tools, and host-prove gains a release pipeline.</strong> host-lint and
-host-lifecycle already ship release assets; host-prove ships none, so it gains a release job (the
-musl asset plus a tagged release) and converts too, so all three distribute-equals-certify
-uniformly.</li>
+Linux libc and distro; an older-glibc image fixes only the dev-host-run symptom. Recorded and
+rejected on that ground.</li>
+<li><strong>All three artifact tools convert; host-prove gains a release pipeline.</strong> host-lint and
+host-lifecycle ship release assets; host-prove gains a release job (the musl asset plus a tagged
+release). All three get the static-musl plus offline <code>--network none</code> build.</li>
 <li><strong>The recorded toolchain is <code>clux/muslrust:1.95.0-stable</code>, digest-pinned.</strong> It ships the
 <code>x86_64-unknown-linux-musl</code> target and std at Rust 1.95.0.</li>
-<li><strong>Hermeticity via a reusable downloadable dependency bundle.</strong> Vendor the host-* dependency set
-once, publish it as a versioned, hash-pinned release bundle (e.g. <code>vendor-v1</code>), and consume it
-offline. The build downloads and sha256-verifies the bundle, source-replaces onto the vendored
-crates, and runs <code>cargo build --release --locked --offline</code> under <code>--network none</code>. This is the
-real resolution of the dropped hermeticity claim.</li>
-<li><strong>The pattern is a spine MUST.</strong> <code>host-template</code> gains a requirement: a project that ships static
-or hermetic release binaries MUST build its dependency layer once, publish it as a reusable
-versioned hash-pinned downloadable release bundle, and have downstream builds consume that pinned
-bundle offline rather than fetch dependencies at build time. Applied through an <code>UPGRADING.md</code>
-ledger entry and the migration onto agentic-host, and made verifiable: the recorded build runs
-with no network, so a build that reaches for the network fails the gate.</li>
+<li><strong>host-lint owns the dependency bundle.</strong> host-lint's lockfile is the dependency superset
+(host-lifecycle's third-party set is a subset; host-prove has no third-party dependencies). The
+bundle is published on host-lint's releases as <code>vendor-vN</code>. host-lifecycle consumes host-lint's
+bundle (it already depends on host-lint); host-prove vendors nothing and builds offline against an
+empty source set. Hosting the bundle on host-lint, not agentic-host, keeps each tool depending only
+on host-lint and never inverts the host-to-software direction.</li>
+<li><strong>The spine MUST is on the property, with an escape and an honest gate invariant.</strong>
+<code>host-template</code> requires that a component distributing release binaries MUST be able to reproduce
+them offline from pinned inputs. The downloadable bundle is the recommended mechanism, documented in
+build guidance, not the MUST itself. A <code>hermetic-exempt = call/NNNN</code> escape (mirroring the anchor's
+<code>repro-exempt</code>) covers a component that cannot vendor offline (a fetching <code>build.rs</code>, or a non-Rust
+toolchain). The enforceable gate invariant is specific: a component that records a <code>deps-bundle</code>
+MUST build offline under <code>--network none</code>, and its staged bundle sha MUST match the recorded hash.
+The MUST is authored in <code>host-template</code> first and migrated onto agentic-host; the agentic-host
+<code>call/</code> records only the software decision (the <code>deps-bundle</code> production-anchor change,
+instance-scoped), never the methodology MUST.</li>
 <li><strong>The anchor certifies <code>x86_64-unknown-linux-musl</code>.</strong> <code>attest-host</code> is OS-granular, not
 arch-granular, so the x86_64 scope rests on the amd64 CI runner and the recorded target triple.
 arm64, darwin, and windows assets ship with a checksums manifest and are stated uncertified, an
 explicit trust boundary.</li>
 </ol>
-<h2 id="the-dependency-bundle-producer-consumer-tooling"><a class="header" href="#the-dependency-bundle-producer-consumer-tooling">The dependency bundle (producer, consumer, tooling)</a></h2>
+<h2 id="the-dependency-bundle"><a class="header" href="#the-dependency-bundle">The dependency bundle</a></h2>
 <ul>
-<li><strong>Producer.</strong> A workflow runs <code>cargo vendor</code> over the three tools' lockfiles (<code>cargo vendor</code>
-vendors the crates.io deps and the <code>host-grammar</code> git dependency), tarballs the vendor directory,
-computes its sha256, and publishes it as a versioned release (<code>vendor-vN</code>) with the tarball and the
-recorded hash. Reusable: one bundle serves all three tools, since their dependency sets overlap.
-Versioned: bump <code>vendor-vN</code> only when the dependency set changes, so the input is stable.</li>
-<li><strong>Consumer.</strong> The build downloads <code>vendor-vN</code>, verifies the sha256, extracts it, source-replaces
-crates-io and the git source onto the vendored directory via <code>.cargo/config.toml</code>, and builds
-<code>--release --locked --offline</code> with no network.</li>
-<li><strong>Tooling.</strong> <code>host-lifecycle</code> gains a <code>deps-bundle = &lt;url&gt; &lt;sha256&gt;</code> recipe field; <code>--verify-build</code>
-and <code>release</code> fetch and verify the bundle on the host (the one controlled, pinned download), stage
-it into the build mount, and run <code>run_build_in_container</code> with <code>--network none</code>. The
-<code>HOST_LIFECYCLE_DOCKER_NETWORK</code> escape is retired for these components, since the build no longer
-needs network. This is the verifiable form of the MUST: the gate proves the build is network-free.</li>
+<li><strong>Producer (on host-lint).</strong> <code>cargo vendor --locked --sync &lt;host-lifecycle&gt;/Cargo.toml &lt;out&gt;</code> run
+from host-lint's manifest (host-prove contributes nothing) produces one vendor directory covering
+host-lint's superset plus host-lifecycle's git <code>host-lint</code> crate. Its full stdout is captured: the
+<code>[source.*]</code> block has three keys, <code>crates-io</code> and the two git sources (<code>host-grammar</code> and
+<code>host-lint</code>), whose <code>?rev=</code> keys must match the lockfiles byte-for-byte. The directory is tarred
+with normalized metadata (<code>tar --sort=name --mtime=@0 --owner=0 --group=0 --numeric-owner</code>, <code>gzip -n</code>) so the tarball sha is reproducible, published as <code>vendor-vN</code> with its sha recorded. The scope is
+<code>--release</code>; the vendored <code>proptest</code> dev-dependency tree is unused by the release build.</li>
+<li><strong>Consumer.</strong> The build downloads <code>vendor-vN</code>, verifies the sha256, extracts it, merges the
+<code>[source.*]</code> stanzas into the existing <code>.cargo/config.toml</code> (preserving the build-id rustflags),
+and builds <code>--release --locked --offline --target x86_64-unknown-linux-musl</code> under <code>--network none</code>.</li>
+<li><strong>One source of truth for the pin.</strong> The <code>deps-bundle = &lt;url&gt; &lt;sha256&gt;</code> pin lives in
+<code>.host-software</code>. Each producer CI needs the same url and sha to converge; rather than two
+hand-edited copies, the producer repo commits a <code>deps-bundle.lock</code> that <code>software --check</code> asserts
+equals <code>.host-software</code>, so drift fails the gate.</li>
 </ul>
+<h2 id="the-host-lifecycle-feature"><a class="header" href="#the-host-lifecycle-feature">The host-lifecycle feature</a></h2>
+<p><code>host-lifecycle</code> gains a <code>deps-bundle</code> recipe field and a bundle-staging step shared by
+<code>--verify-build</code> and <code>release</code>: fetch the bundle on the host (the one controlled, pinned download),
+verify its sha256, extract it into the build worktree's <code>vendor/</code>, and merge the vendored-sources
+<code>[source.*]</code> stanzas into that worktree's <code>.cargo/config.toml</code>. <code>run_build_in_container</code> gains a
+network-mode parameter: a bundle-bearing component builds under <code>--network none</code>; a component with no
+<code>deps-bundle</code> keeps the existing <code>HOST_LIFECYCLE_DOCKER_NETWORK</code> behaviour, so the change is additive
+for not-yet-converted components. The gate asserts the staged bundle sha matches the recorded hash
+before building (the provenance proof; <code>--network none</code> is the egress proof). After a <code>release</code>
+build, the staged config edit is reverted and <code>vendor/</code> removed so the canonical worktree is not left
+dirty; <code>vendor/</code> is gitignored in each producer. <code>install_hooks</code> only copies the artifact, so it
+stays bundle-unaware. The producer <code>cargo vendor</code> job and the gate-driver <code>cargo install --rev</code> seed
+are network-allowed by design; the MUST scopes only to the per-component container build.</p>
 <h2 id="the-spine-change-host-template"><a class="header" href="#the-spine-change-host-template">The spine change (host-template)</a></h2>
-<p><code>host-template</code> gains the MUST in its build guidance (the analog of <code>pgs-release</code>'s "Static Builds"
-rule, raised to the dependency-bundle pattern), an <code>UPGRADING.md</code> ledger entry that records the new
-requirement and a machine-checkable verify command, and the migration applies it onto agentic-host
-(the <code>.host</code> baseline advances and is re-recorded). The host-* tools are the first adopters.</p>
+<p><code>host-template</code> build guidance gains the property MUST and documents the bundle as the recommended
+mechanism, plus the <code>hermetic-exempt = call/NNNN</code> escape and the <code>deps-bundle</code> recipe field and its
+gate invariant. An <code>UPGRADING.md</code> ledger entry records the requirement with a machine-checkable verify
+command, and the migration applies it onto agentic-host (the <code>.host</code> baseline advances and is
+re-recorded). The host-* tools are the first adopters; the methodology is authored in the template,
+not forked in the instance.</p>
 <h2 id="per-component-recipe-change"><a class="header" href="#per-component-recipe-change">Per-component recipe change</a></h2>
-<p>For each of host-lint, host-lifecycle, host-prove, the <code>.host-software</code> stanza gains and moves:</p>
+<p>For host-lint and host-lifecycle (and host-prove for the toolchain and offline build, with no bundle):</p>
 <ul>
 <li><code>toolchain</code> = <code>clux/muslrust:1.95.0-stable@sha256:&lt;digest recorded in Readiness&gt;</code>.</li>
-<li><code>deps-bundle</code> = <code>&lt;vendor-vN release url&gt; &lt;sha256&gt;</code>.</li>
+<li><code>deps-bundle</code> = <code>&lt;host-lint vendor-vN url&gt; &lt;sha256&gt;</code> (host-lint and host-lifecycle; host-prove omits
+it and builds offline against an empty source set).</li>
 <li><code>build</code> = <code>CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl</code>,
 with the static-linking and build-id flags pinned in the recipe (see Readiness).</li>
 <li><code>artifact</code> = <code>target/x86_64-unknown-linux-musl/release/&lt;bin&gt; &lt;new sha256&gt;</code>.</li>
 </ul>
-<p>The crates are pure Rust with no C dependencies, so the musl target builds without a C cross-linker.</p>
 <h2 id="producer-ci-convergence-distribute-equals-certify"><a class="header" href="#producer-ci-convergence-distribute-equals-certify">Producer-CI convergence (distribute equals certify)</a></h2>
 <p>Each producer's release job builds the <code>x86_64-unknown-linux-musl</code> asset by the recorded recipe: the
-pinned <code>clux/muslrust:1.95.0-stable</code> image as a container job, the same downloaded <code>vendor-vN</code>
-bundle, <code>--locked --offline</code>, and the same strip, build-id, and crt-static flags. The uploaded asset
-is then byte-identical to the artifact <code>--verify-build</code> reproduces and the sha recorded in
-<code>.host-software</code>. host-prove gains this release job. The arm64, darwin, and windows matrix jobs keep
-their mechanism but see the trust boundary in decision 7.</p>
+pinned <code>clux/muslrust:1.95.0-stable</code> image as a container job, the downloaded <code>vendor-vN</code> bundle (per
+its committed <code>deps-bundle.lock</code>), <code>--locked --offline</code>, and the same strip, build-id, and crt-static
+flags. The uploaded asset is then byte-identical to the artifact <code>--verify-build</code> reproduces. The
+arm64, darwin, and windows matrix jobs keep their mechanism but see the trust boundary in decision 7.</p>
 <h2 id="readiness-blocking-gates-before-any-hash-is-recorded"><a class="header" href="#readiness-blocking-gates-before-any-hash-is-recorded">Readiness (blocking gates, before any hash is recorded)</a></h2>
 <ol>
+<li><strong>Reconcile</strong> host-lifecycle's <code>host-lint</code> git dependency to the certified host-lint pin (it
+currently pins the pre-bump <code>93a43fa</code>, not the released <code>1386e9a</code>), so the host-lint inside
+host-lifecycle is the certified one and the bundle carries a single host-lint revision.</li>
 <li>Confirm and digest-pin <code>clux/muslrust:1.95.0-stable</code>; record the digest.</li>
-<li>Produce the <code>vendor-vN</code> bundle (<code>cargo vendor</code> over the three lockfiles), publish it as a release,
-and record its sha256.</li>
-<li>Add <code>deps-bundle</code> support and the <code>--network none</code> offline build to <code>host-lifecycle</code>
-(<code>run_build_in_container</code>, <code>software_verify_build</code>, <code>release</code>); unit-test it.</li>
+<li>Produce the <code>vendor-vN</code> bundle (<code>cargo vendor --locked --sync</code>), capture and commit the full
+<code>[source.*]</code> config, normalize the tarball, and prove the bundle sha double-produces on two
+machines before recording it. Publish it on host-lint with a <code>deps-bundle.lock</code>.</li>
+<li>Add the <code>deps-bundle</code> field, the staging step, the config merge, and the <code>--network none</code> path to
+<code>host-lifecycle</code> (<code>run_build_in_container</code>, <code>software_verify_build</code>, <code>release</code>, and the
+<code>software --check</code> sha-and-drift assertions); unit-test it.</li>
 <li>Prove a reproducible double-build of each tool in the pinned image, offline against the bundle,
-under <code>--network none</code>; <code>readelf -n</code> the binary to confirm no <code>.note.gnu.build-id</code>. If the image
-shadows <code>.cargo/config.toml</code> with a <code>CARGO_TARGET_*_RUSTFLAGS</code>, move the build-id and crt-static
-flags into the recorded <code>build</code> via <code>RUSTFLAGS</code>. No hash is recorded until the offline double-build
-reproduces.</li>
+under <code>--network none</code>; <code>readelf -n</code> confirms no <code>.note.gnu.build-id</code>. If the image shadows
+<code>.cargo/config.toml</code> via a <code>CARGO_TARGET_*_RUSTFLAGS</code>, move the build-id and crt-static flags into
+the recorded <code>build</code> via <code>RUSTFLAGS</code>. Prove the config merge leaves the artifact hash unchanged.</li>
 <li>Add the release job to host-prove's CI.</li>
-<li>Author the spine MUST in <code>host-template</code> plus its <code>UPGRADING.md</code> ledger entry.</li>
+<li>Author the spine change in <code>host-template</code> first and push it before the migration: the property
+MUST with its recommended-bundle guidance, and the <code>hermetic-exempt</code> escape. Define the
+<code>deps-bundle</code> gate invariant and add an <code>UPGRADING.md</code> ledger entry there as well.</li>
 </ol>
 <h2 id="cutover-atomic-re-release-round-software-first"><a class="header" href="#cutover-atomic-re-release-round-software-first">Cutover (atomic re-release round, software-first)</a></h2>
 <p>The recipe change moves every artifact hash, so each tool re-releases through
-<code>host-lifecycle release &lt;c&gt; --change-class neither</code> (patch bumps host-lint 0.8.2, host-prove 0.2.2;
-host-lifecycle bumps for both the <code>deps-bundle</code> feature and the recipe, a feature, so
-<code>--change-class adds-flag</code>, a minor bump to 0.20.0). Per component: edit the recipe lines in the
-working tree, run <code>release</code> (which builds offline against the bundle in the pinned image), push the
-producer worktree and tag, then collect the new pin and hash. The musl-and-bundle-edited
-<code>.host-software</code> is never committed to main with a stale hash or pin: one host commit carries the
-toolchain, deps-bundle, build, artifact path and hash, pins, and back-filled receipts together. The
-spine migration (the <code>.host</code> baseline advance) lands with it or in its own audited commit. The
-<code>plan/0028</code>-class recurrences carry over: place the musl binary at the new recipe path before
-<code>--install-hooks</code>, and reinstall the host-lifecycle gate driver from its released commit before the
-final green.</p>
+<code>host-lifecycle release &lt;c&gt; --change-class &lt;class&gt;</code> (host-lint and host-prove are fix-only patch bumps,
+0.8.2 and 0.2.2; host-lifecycle adds the <code>deps-bundle</code> feature, so a minor bump to 0.20.0). Per
+component: edit the recipe lines in the working tree, run <code>release</code> (which stages the bundle and
+builds offline in the pinned image), push the producer worktree and tag, then collect the new pin and
+hash. The musl-and-bundle-edited <code>.host-software</code> is never committed to main with a stale hash or pin:
+one host commit carries the toolchain, deps-bundle, build, artifact path and hash, pins, and
+back-filled receipts together. The spine migration (the <code>.host</code> baseline advance) lands with it or in
+its own audited commit. The <code>plan/0028</code>-class recurrences carry over: place the musl binary at the new
+recipe path before <code>--install-hooks</code>, and reinstall the host-lifecycle gate driver from its released
+commit before the final green.</p>
 <h2 id="verification-whole-suite-green"><a class="header" href="#verification-whole-suite-green">Verification (whole-suite green)</a></h2>
 <ul>
-<li>Each tool's <code>x86_64-unknown-linux-musl</code> build reproduces one sha256 on a double build in the
-pinned image, offline against the pinned bundle under <code>--network none</code>, build-id-free (confirmed by
-<code>readelf</code>).</li>
-<li><code>software --verify-build .</code> green for all three under the released pinned host-lifecycle, with no
-network reachable during the build (the hermeticity gate, the verifiable form of the MUST).</li>
-<li>The producer release job's uploaded <code>x86_64-unknown-linux-musl</code> asset byte-matches the recorded
-canonical sha for that tag (distribute equals certify, true by construction).</li>
-<li><code>software --install-hooks .</code> installs the canonical musl host-lint, and the installed <code>commit-msg</code>
-hook runs on the dev host.</li>
-<li><code>host-lifecycle upgrade .</code> shows the new baseline (the spine MUST applied); <code>software --check</code>,
+<li>The <code>vendor-vN</code> bundle tarball sha double-produces on two machines (a verifiable input).</li>
+<li>Each tool's <code>x86_64-unknown-linux-musl</code> build reproduces one sha256 on a double build in the pinned
+image, offline against the bundle under <code>--network none</code>, build-id-free (confirmed by <code>readelf</code>).</li>
+<li><code>software --verify-build .</code> green for all three under the released pinned host-lifecycle: the staged
+bundle sha matches the recorded hash and the build runs with no network (the two-part hermeticity
+proof, provenance plus egress).</li>
+<li>The producer release asset byte-matches the recorded canonical sha for that tag (distribute equals
+certify), and <code>software --check</code> confirms the producer <code>deps-bundle.lock</code> equals <code>.host-software</code>.</li>
+<li><code>software --install-hooks .</code> installs the canonical musl host-lint, which runs on the dev host.</li>
+<li><code>host-lifecycle upgrade .</code> shows the new baseline (the property MUST applied); <code>software --check</code>,
 <code>book --check</code>, the cold-clone CI job, and the commit-hook tell test stay green; whole-suite green
 across every repo.</li>
 </ul>
 <h2 id="risks--honesty-4"><a class="header" href="#risks--honesty-4">Risks / honesty</a></h2>
 <ul>
-<li><strong>This is a large milestone</strong>, larger than the first draft: it adds a <code>host-lifecycle</code> feature (the
-<code>deps-bundle</code> field and the offline <code>--network none</code> build), a producer bundle workflow, a spine
-MUST with its migration, the producer-CI convergence, and the host-prove release pipeline, on top
-of the static musl conversion and a software-first re-release round. The cost is deliberate, the
-price of a verifiable hermetic distribute-equals-certify build. The <code>plan/0028</code> MEMORY lessons
-(atomic re-pin, gate-driver reinstall, the working-dir trap) carry over.</li>
-<li><strong><code>host-lifecycle</code> consumes its own bundle</strong>, a bootstrap step: the gate driver that runs the
-offline build is seeded from its released commit, and the bundle it downloads is pinned by sha, so
-the controlled download precedes the network-free build, as in the <code>pgs-release</code> sysroot download.</li>
-<li><strong><code>cargo vendor</code> must capture the <code>host-grammar</code> git dependency</strong>, not only crates.io; the bundle
-and the source-replacement config must cover the git source, or the offline build fails to resolve
-it. Readiness proves the offline build before any hash is recorded.</li>
-<li><strong>The bundle is versioned and maintained</strong>: a dependency change requires a new <code>vendor-vN</code> and a
-re-pin. The bundle's host location (an agentic-host release or a dedicated deps location) is an
-execution detail settled in Readiness.</li>
-<li><strong><code>attest-host</code> is OS-granular, not arch-granular</strong>, so the x86_64 scope rests on the CI runner and
-target triple; an arch-level attest is a host-lifecycle feature request, out of scope. Only the
-linux-x86_64-musl asset is reproducibility-certified; the other assets ship with a checksums
-manifest and are stated uncertified.</li>
+<li><strong>This is a large milestone</strong>: a <code>host-lifecycle</code> feature (the <code>deps-bundle</code> field, the staging,
+the config merge, the network-mode threading, the sha-and-drift gate), a producer bundle workflow on
+host-lint, a spine MUST with its migration, the producer-CI convergence, the host-prove release
+pipeline, the static musl conversion, and a software-first re-release round. The cost is deliberate,
+the price of a verifiable hermetic distribute-equals-certify build.</li>
+<li><strong>The hermeticity proof is two-part, not one.</strong> <code>--network none</code> proves no egress; the staged-bundle
+sha match proves provenance. Both are gate assertions, since <code>--network none</code> alone could pass while
+consuming an image-baked cache.</li>
+<li><strong><code>host-lifecycle</code> consumes host-lint's bundle</strong>, a controlled pinned download that precedes the
+network-free build; the producer <code>cargo vendor</code> and the gate-driver seed are network-allowed by
+design and are not gated.</li>
+<li><strong>The bundle is versioned and maintained</strong>: a dependency change requires a new <code>vendor-vN</code>, a re-pin
+in <code>.host-software</code> and the producer <code>deps-bundle.lock</code>, and a re-release. The <code>software --check</code>
+drift assertion keeps the two pins in step.</li>
+<li><strong><code>attest-host</code> is OS-granular, not arch-granular</strong>; only the linux-x86_64-musl asset is
+reproducibility-certified, the others ship with a checksums manifest and are stated uncertified. An
+arch-level attest is a host-lifecycle feature request, out of scope.</li>
 </ul>
 <h2 id="records-1"><a class="header" href="#records-1">Records</a></h2>
-<p>This plan, a new <code>call/</code> decision recording the hermetic-bundle production-anchor change and the
-spine MUST, <code>PLAN.md</code>, <code>MEMORY.md</code>, the <code>host-template</code> <code>UPGRADING.md</code> ledger entry and the re-recorded
-<code>.host</code> baseline; re-pins, receipts, the bundle release, and the producer-CI convergence as the round
-lands, each pushed in its own audited commit.</p>
+<p>The <code>host-template</code> build guidance, its <code>UPGRADING.md</code> ledger entry, and the re-recorded <code>.host</code>
+baseline (the methodology MUST, authored in the template first); an agentic-host <code>call/</code> decision
+recording only the software <code>deps-bundle</code> production-anchor change (instance-scoped); this plan,
+<code>PLAN.md</code>, <code>MEMORY.md</code>; re-pins, receipts, the host-lint bundle release, and the producer-CI
+convergence as the round lands, each pushed in its own audited commit.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software--where"><a class="header" href="#software--where">Software — where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees — not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
