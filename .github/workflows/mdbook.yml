@@ -18,9 +18,9 @@ jobs:
           curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.40/mdbook-v0.4.40-x86_64-unknown-linux-gnu.tar.gz | tar -xz -C "$HOME/.local/bin"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
       - name: Install the publisher (host-lifecycle, pinned)
-        # Pinned to v0.18.1: book recurses nested specs and moves retired
+        # Pinned to v0.20.0: book recurses nested specs and moves retired
         # (Status: superseded) decisions into an Archive/Record section.
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 629e9c326f5b5ee9b7fd4eabe479c4a108c9b65c --root "$HOME/.local"
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev a38b0c073bbd1fbf46940d282d9fc52af35126fc --root "$HOME/.local"
       - name: Generate the book (lifecycle order; every room)
         # Writes book.toml (src = "docs", never ".") + docs/; --check fails the build
         # unless every room with source renders a page. Reads the committed
