@@ -818,6 +818,22 @@
 <li>Records: plan/0028 README status, PLAN.md row, MEMORY, <code>.host</code> re-record if baseline moves.</li>
 </ol>
 <p>GOTCHAS (all confirmed this session): <code>gh auth switch --user connollydavid</code> before EVERY push (active account reverts; it's a private concern, keep out of docs). Commit subjects must have NO decoration (em-dash/arrow) and no bare ordinals — lint with <code>software/host-lint/main/target/debug/host-lint --stdin</code> (the release binary is glibc-incompatible with this WSL; the debug binary works). The commit-msg hook enforces this and WILL block a bad subject. host-lint:ignore/<code>--prose</code> clean: authored docs (plan/0028 README, PLAN.md) must stay zero locatable tropes; MEMORY.md is lint-excluded.</p>
+<h2 id="2026-06-22--plan0028-cutover-complete-the-whole-milestone-is-done-whole-suite-green"><a class="header" href="#2026-06-22--plan0028-cutover-complete-the-whole-milestone-is-done-whole-suite-green">2026-06-22 — plan/0028 CUTOVER COMPLETE (the whole milestone is done; whole-suite green)</a></h2>
+<p>The Cutover landed and is pushed. The host-* family is now uniform Where-room software in <code>.host-software</code>; <code>tools/</code> holds only allium + specula. Released producers (each cut by the tool-carried <code>host-lifecycle release &lt;c&gt; --change-class neither</code>, the producer tag IS the release, the orchestration consumed it via re-pin + receipt):</p>
+<ul>
+<li>host-grammar v0.3.0 pin 9d51468 (repo-only; the version-bump commit sits directly on the proofs HEAD fbd2e6c, so ruling #3 holds)</li>
+<li>host-lint v0.8.1 pin 1386e9a artifact 4e76682b1893e9641208cc8d52434bcc3c40a9a51565b4b21a82ccbf842b8d43 (re-released onto new grammar)</li>
+<li>host-lifecycle v0.19.2 pin 6fa94cf artifact ad3bf89a55c9fb22854a6bc1ba722f4157115aa693619034c411fe15cd264f55</li>
+<li>host-prove v0.2.1 pin 135539b artifact 8e3742f8b7d7ac2d8abc83890179d6417eb8f0a25dddea7ee75cd2b67fcec695</li>
+</ul>
+<p>Atomic agentic-host commit e7d952d (stanzas + host-lint re-pin + submodule drop + generalized link-skills.sh + back-filled embed/release receipts, all in one commit so the recurring-per-component gate is never RED on push). CLAUDE.md §0 rewritten seed-first (1152cb7); cold-clone CI job added (2c125f8); plan/0028 README + PLAN row marked complete (41ae1c0). The gate is the released pinned host-lifecycle v0.19.2 at /home/david/.local/bin (installed by <code>cargo install --path software/host-lifecycle/main --root /home/david/.local</code> from the clean tagged worktree = the released pin); <code>software --check</code> + <code>--verify-build</code> green (all three artifacts reproduce in rust:1.95.0), book --check renders, all 11 skill links resolve.</p>
+<p>LESSONS (cost real time; record so next cutover does not repeat):</p>
+<ul>
+<li>The installed host-lifecycle was PRE-629e9c3 and lacked the Cargo.lock self-version sync, so <code>release</code> bumped Cargo.toml but not the lock and the <code>--locked</code> container build failed. Fix: build a fresh driver from the CURRENT pinned worktree source (<code>cargo build --release</code> in software/host-lifecycle/main) and drive the release with THAT, then install the new release as the gate. The gate binary must come from the current pin's source, never a stale install.</li>
+<li><code>--install-hooks</code> copies whatever sits at target/release/<bin>. Right after <code>release</code>, that is the CONTAINER (rust:1.95.0, glibc 2.39) binary, which does NOT run on this WSL (GLIBC_2.39 not found), so the commit hooks would fail on every commit. Fix: <code>cargo build --release</code> LOCALLY in software/host-lint/main BEFORE <code>--install-hooks</code>; the tool then installs the local binary and reports "local build (differs from canonical hash)", which is expected and correct (the canonical-hash match is informational, not a gate; the binary need only run locally).</li>
+<li>host-prove's binary DOES embed the version (its hash changed on the 0.2.0-&gt;0.2.1 bump), contrary to the earlier guess that it was stable. Always let the tool-carried <code>release</code> recompute the canonical hash; never reuse a provisional/pre-bump hash.</li>
+<li>Bash working-dir persists across calls: after <code>cd</code>-ing into a worktree, a later <code>host-lifecycle ... .</code> resolves <code>.</code> to the worktree and fails "cannot read .host-software". Always cd to the repo root before a host-lifecycle command.</li>
+</ul>
 
                     </main>
 
