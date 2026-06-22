@@ -189,6 +189,30 @@ build order is replaced by the <strong>two-pass bootstrap</strong> (Readiness th
 genuine host-lifecycle bootstrap cycle. This milestone now <strong>depends on <code>plan/0029</code></strong> for the nested
 layout, addressing, recipe-dispatch, and skill-link integrity it builds on.</p>
 </blockquote>
+<h2 id="status-landed-2026-06-22"><a class="header" href="#status-landed-2026-06-22">Status: landed (2026-06-22)</a></h2>
+<p>Both passes are complete and pushed; the whole suite is green. The Readiness pass hardened
+and spec-bore the producers; the Cutover pass made the atomic agentic-host change. Each
+release was cut by the tool-carried <code>host-lifecycle release &lt;component&gt; --change-class neither</code>
+(the tool computes the version), the producer tag is the release, and the orchestration
+consumed it (re-pin plus receipt):</p>
+<div class="table-wrapper"><table><thead><tr><th>Component</th><th>Release</th><th>Pin</th><th>Recorded artifact sha256</th></tr></thead><tbody>
+<tr><td>host-grammar</td><td>v0.3.0</td><td><code>9d51468</code></td><td>repo-only (no artifact; the version-bump commit sits directly on the proofs HEAD <code>fbd2e6c</code>, so ruling #3 holds)</td></tr>
+<tr><td>host-lint</td><td>v0.8.1</td><td><code>1386e9a</code></td><td><code>4e76682b1893…</code> (re-released onto the new grammar)</td></tr>
+<tr><td>host-lifecycle</td><td>v0.19.2</td><td><code>6fa94cf</code></td><td><code>ad3bf89a55c9…</code></td></tr>
+<tr><td>host-prove</td><td>v0.2.1</td><td><code>135539b</code></td><td><code>8e3742f8b7d7…</code></td></tr>
+</tbody></table>
+</div>
+<p>The atomic agentic-host commit (<code>e7d952d</code>) added the three stanzas, re-pinned host-lint,
+dropped the two submodules (with <code>.git/modules</code> pruned), generalized <code>link-skills.sh</code> to wire
+both <code>tools/</code> submodules and <code>software/&lt;name&gt;/main/</code> worktrees, and back-filled every embed and
+release receipt in the one commit. The released pinned host-lifecycle (<code>6fa94cf</code>, installed by
+<code>cargo install --rev</code>) gates this repo (self-cert): <code>software --check</code> and <code>--verify-build</code> are
+green (all three artifacts reproduce in the recorded container), all eleven software-skill links
+resolve, <code>book --check</code> renders, and the commit-hook tell test passes. <code>CLAUDE.md</code> §0 carries the
+seed-first fresh-clone order, and a cold-clone CI job guards the seed path and link integrity.</p>
+<p>One note against the plan as written: the version cuts are host-lifecycle 0.19.2, host-prove
+0.2.1, and host-lint 0.8.1 (the producers had already advanced past the <code>0.19.0</code> placeholder the
+plan used; the tool computed each from the change class).</p>
 <h2 id="context"><a class="header" href="#context">Context</a></h2>
 <p><code>plan/0025</code> shipped the receipt gate and a tool-carried <code>release</code> phase, but it surfaced a false
 "tooling vs Where-room software" binary: host-lint is a <code>.host-software</code> Where component, while
