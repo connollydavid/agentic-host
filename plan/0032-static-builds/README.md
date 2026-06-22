@@ -202,7 +202,26 @@ commit before the final green.
 ## Records
 
 The `host-template` build guidance, its `UPGRADING.md` ledger entry, and the re-recorded `.host`
-baseline (the methodology MUST, authored in the template first); an agentic-host `call/` decision
-recording only the software `deps-bundle` production-anchor change (instance-scoped); this plan,
-`PLAN.md`, `MEMORY.md`; re-pins, receipts, the host-lint bundle release, and the producer-CI
-convergence as the round lands, each pushed in its own audited commit.
+baseline (the methodology MUST, authored in the template first); `call/0021` recording only the
+software `deps-bundle` production-anchor change (instance-scoped); this plan, `PLAN.md`, `MEMORY.md`;
+re-pins, receipts, the host-lint bundle release, and the producer-CI convergence as the round lands,
+each pushed in its own audited commit.
+
+## Landed (2026-06-22)
+
+The software-first re-release round and the atomic agentic-host change shipped:
+
+| component | tag | pin | static-musl artifact sha256 |
+|---|---|---|---|
+| host-lint | `v0.8.2` | `ba479258` | `a099c27d8ce3912bec11f4f7e2140ef37b5c8d03f320aad2a882244e98f8bac8` |
+| host-prove | `v0.2.2` | `3ca95fc0` | `520cdd109d96c8996402792065cd9c0198f13f97ebefd62ff15edb8c0030f366` |
+| host-lifecycle | `v0.20.0` | `a38b0c07` | `7d0903340be787183661c4cb933af82886f22af436a179e8a856117386d950d0` |
+
+Each artifact reproduced offline in `clux/muslrust:1.95.0-stable@sha256:15a72a4a…` against the pinned
+`vendor-v1` bundle (sha `f1141763…`), host-prove against an empty source set. One atomic commit
+(`86e19db`) re-pinned `.host-software`, back-filled the three release receipts, recorded `ecce498`
+applied, and bumped the `host-template` pointer to `455fba8`. The released `0.20.0` binary gated
+green: `software --check`, `software --verify-build` (reproduces all three offline under
+`--network none`), `book --check`, and the commit-hook tell test; `--install-hooks` installed the
+canonical musl host-lint, retiring the `plan/0028` local-build workaround. agentic-host CI re-pinned
+to the certified `0.20.0` (`eff82b8`).
