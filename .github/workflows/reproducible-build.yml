@@ -28,3 +28,36 @@ jobs:
         run: host-lifecycle software --check .
       - name: Verify reproducibility (rebuild inside the recorded toolchain container)
         run: host-lifecycle software --verify-build .
+
+  cold-clone:
+    # Exercise the fresh-clone seed path end to end: a checkout carries no
+    # host-lifecycle and no worktrees, so seed the materializer by its recorded pin,
+    # materialize every component, wire the skill links, and assert each generated link
+    # resolves and none is tracked (worktree-absence coherence, call/0005).
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true # allium + specula + host-template arrive by submodule
+      - name: Seed host-lifecycle by its recorded pin (the materializer cannot materialize itself)
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 6fa94cf247cfde5d98288ea4133c5f29239a7850
+      - name: Materialize every .host-software component
+        run: host-lifecycle software --materialize .
+      - name: Wire the skill links from submodules and worktrees
+        run: ./link-skills.sh
+      - name: Every generated skill link resolves
+        run: |
+          bad=0
+          for l in .claude/skills/*; do
+            [ -e "$l" ] || { echo "DANGLING: $l -> $(readlink "$l")"; bad=1; }
+          done
+          [ "$bad" = 0 ] || { echo "dangling skill link(s) present"; exit 1; }
+      - name: The eleven software-component skill links are present
+        run: |
+          n=$(ls -l .claude/skills/ | grep -c '../../software/')
+          echo "software-component skill links: $n"
+          [ "$n" = 11 ] || { echo "expected 11 software-component links, got $n"; exit 1; }
+      - name: No skill link is tracked
+        run: |
+          tracked=$(git ls-files .claude/skills)
+          [ -z "$tracked" ] || { echo "tracked skill link(s): $tracked"; exit 1; }
