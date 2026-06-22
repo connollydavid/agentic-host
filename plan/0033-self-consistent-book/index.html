@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>plan/0033: the generated book is correct and obeys the prose-hygiene rule - agentic-host</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../custom.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">agentic-host</a></li><li class="chapter-item expanded affix "><li class="part-title">Cast — who</li><li class="chapter-item expanded "><a href="../../cast/index.html"><strong aria-hidden="true">1.</strong> Cast, the project's Who</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cast/applying-personas.html"><strong aria-hidden="true">1.1.</strong> Applying personas during planning</a></li><li class="chapter-item expanded "><a href="../../cast/bly.html"><strong aria-hidden="true">1.2.</strong> Bly, the Adopter Agent (writes the stamp now, reads it cold later)</a></li><li class="chapter-item expanded "><a href="../../cast/fen.html"><strong aria-hidden="true">1.3.</strong> Fen, the Low-Reliability Agent (qwen3.5-4b, Q8_0)</a></li><li class="chapter-item expanded "><a href="../../cast/mara.html"><strong aria-hidden="true">1.4.</strong> Mara, the Human Operator</a></li><li class="chapter-item expanded "><a href="../../cast/orin.html"><strong aria-hidden="true">1.5.</strong> Orin, the Methodology Maintainer</a></li><li class="chapter-item expanded "><a href="../../cast/wren.html"><strong aria-hidden="true">1.6.</strong> Wren, the Agentic LLM Developer</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Plan — what & when</li><li class="chapter-item expanded "><a href="../../PLAN.html"><strong aria-hidden="true">2.</strong> PLAN.md</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../plan/0001-migration-protocol/index.html"><strong aria-hidden="true">2.1.</strong> Migration protocol</a></li><li class="chapter-item expanded "><a href="../../plan/0002-enforced-remap-dictionary/index.html"><strong aria-hidden="true">2.2.</strong> Enforced remap dictionary</a></li><li class="chapter-item expanded "><a href="../../plan/0003-doc-site-publisher/index.html"><strong aria-hidden="true">2.3.</strong> Canonical doc-site publisher</a></li><li class="chapter-item expanded "><a href="../../plan/0004-anti-ouroboros/index.html"><strong aria-hidden="true">2.4.</strong> Anti-ouroboros: methodology to the spine</a></li><li class="chapter-item expanded "><a href="../../plan/0005-reproducible-build-anchor/index.html"><strong aria-hidden="true">2.5.</strong> Reproducible-build production anchor</a></li><li class="chapter-item expanded "><a href="../../plan/0006-host-lint-reproducible-build/index.html"><strong aria-hidden="true">2.6.</strong> host-lint reproducible build</a></li><li class="chapter-item expanded "><a href="../../plan/0007-agentic-tell-grammar/index.html"><strong aria-hidden="true">2.7.</strong> Agentic-tell grammar engine</a></li><li class="chapter-item expanded "><a href="../../plan/0008-parallel-prose-scan/index.html"><strong aria-hidden="true">2.8.</strong> Parallel prose scan for large documents</a></li><li class="chapter-item expanded "><a href="../../plan/0009-install-hooks/index.html"><strong aria-hidden="true">2.9.</strong> Install commit hooks from the software recipe</a></li><li class="chapter-item expanded "><a href="../../plan/0010-markdown-aware-prose/index.html"><strong aria-hidden="true">2.10.</strong> Markdown-aware prose scanning</a></li><li class="chapter-item expanded "><a href="../../plan/0011-multi-platform-builds/index.html"><strong aria-hidden="true">2.11.</strong> Per-platform builds in the software recipe</a></li><li class="chapter-item expanded "><a href="../../plan/0012-specs-live-with-software/index.html"><strong aria-hidden="true">2.12.</strong> Specs live with the software (dogfood allium, relocate specula)</a></li><li class="chapter-item expanded "><a href="../../plan/0013-verdict-lifecycle/index.html"><strong aria-hidden="true">2.13.</strong> A real verdict lifecycle so allium analyse bites</a></li><li class="chapter-item expanded "><a href="../../plan/0014-mandate-and-wire-the-lanes/index.html"><strong aria-hidden="true">2.14.</strong> Verification lanes are mandatory when used: wire them, don't just reference</a></li><li class="chapter-item expanded "><a href="../../plan/0015-discharge-obligations/index.html"><strong aria-hidden="true">2.15.</strong> Close the obligation loop: use the skills, discharge allium plan</a></li><li class="chapter-item expanded "><a href="../../plan/0016-spec-lane-enforcement-gate/index.html"><strong aria-hidden="true">2.16.</strong> Enforcement gate: a spec without its lane is a HAZARD</a></li><li class="chapter-item expanded "><a href="../../plan/0017-obligation-discharge/index.html"><strong aria-hidden="true">2.17.</strong> Total obligation discharge, per component</a></li><li class="chapter-item expanded "><a href="../../plan/0018-wire-lifecycle-as-skill/index.html"><strong aria-hidden="true">2.18.</strong> Wire host-lifecycle as phase skills; the phases are an unconditional MUST</a></li><li class="chapter-item expanded "><a href="../../plan/0019-refuse-adopt-in-place/index.html"><strong aria-hidden="true">2.19.</strong> Refuse to adopt a software repository in place</a></li><li class="chapter-item expanded "><a href="../../plan/0020-subject-decoration-flags/index.html"><strong aria-hidden="true">2.20.</strong> Flag decoration tells on the commit subject line</a></li><li class="chapter-item expanded "><a href="../../plan/0021-worktrees-under-host-tree/index.html"><strong aria-hidden="true">2.21.</strong> Materialized worktrees must live under the host tree</a></li><li class="chapter-item expanded "><a href="../../plan/0022-honest-partial-upgrades/index.html"><strong aria-hidden="true">2.22.</strong> Honest partial upgrades: an applied-set stamp the tool carries</a></li><li class="chapter-item expanded "><a href="../../plan/0023-verification-ladder-tiers/index.html"><strong aria-hidden="true">2.23.</strong> plan/0023: Verification-ladder tiers: solver (#3) + code-conformance (#4)</a></li><li class="chapter-item expanded "><a href="../../plan/0024-sound-discharge/index.html"><strong aria-hidden="true">2.24.</strong> plan/0024: Sound discharge by re-derivation in a pinned toolchain (no keys, no CI overfit)</a></li><li class="chapter-item expanded "><a href="../../plan/0025-lifecycle-receipts-and-strict-release/index.html"><strong aria-hidden="true">2.25.</strong> plan/0025: Lifecycle receipts + a tool-readable phase manifest + a strict, tool-carried release phase</a></li><li class="chapter-item expanded "><a href="../../plan/0026-open-bug-closure/index.html"><strong aria-hidden="true">2.26.</strong> plan/0026, Open-bug closure: the full sequenced plan for every open issue</a></li><li class="chapter-item expanded "><a href="../../plan/0027-host-lint-ignore-blocks/index.html"><strong aria-hidden="true">2.27.</strong> plan/0027, host-lint:ignore fenced blocks: idiomatic literal-citation exclusion (call/0019)</a></li><li class="chapter-item expanded "><a href="../../plan/0028-host-family-as-where-components/index.html"><strong aria-hidden="true">2.28.</strong> plan/0028: The host-* family as Where-room software components</a></li><li class="chapter-item expanded "><a href="../../plan/0029-where-room-component-model/index.html"><strong aria-hidden="true">2.29.</strong> plan/0029: A first-class multi-component Where room: recipe-dispatched shapes, addressing, layout, and tool residency</a></li><li class="chapter-item expanded "><a href="../../plan/0030-prose-hygiene-lane/index.html"><strong aria-hidden="true">2.30.</strong> plan/0030: The prose-hygiene lane: a walking docs audit (--docs), weak-agent-fixable output, and re-derivable record exclusion</a></li><li class="chapter-item expanded "><a href="../../plan/0031-fixable-prose-output/index.html"><strong aria-hidden="true">2.31.</strong> plan/0031: Fixable prose output: one record per occurrence, a column, a mechanical fix, advisory tiers</a></li><li class="chapter-item expanded "><a href="../../plan/0032-static-builds/index.html"><strong aria-hidden="true">2.32.</strong> plan/0032: Hermetic static builds, distribute equals certify, via a pinned dependency bundle</a></li><li class="chapter-item expanded "><a href="../../plan/0033-self-consistent-book/index.html" class="active"><strong aria-hidden="true">2.33.</strong> plan/0033: the generated book is correct and obeys the prose-hygiene rule</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Software — where</li><li class="chapter-item expanded "><a href="../../where.html"><strong aria-hidden="true">3.</strong> Software</a></li><li class="chapter-item expanded affix "><li class="part-title">Call — why</li><li class="chapter-item expanded "><a href="../../call/0013-reserve-agentic-host-for-this-repository.html"><strong aria-hidden="true">4.</strong> Reserve agentic-host for this repository; scrub the collision by a one-time history rewrite</a></li><li class="chapter-item expanded "><a href="../../call/0015-parallel-scan-escalates-to-the-timing-lane.html"><strong aria-hidden="true">5.</strong> Parallelizing the prose scan escalates run-accumulation to the timing lane</a></li><li class="chapter-item expanded "><a href="../../call/0017-every-phase-emits-a-receipt.html"><strong aria-hidden="true">6.</strong> Every lifecycle phase discharges to a tool-written receipt; release is a strict, tool-carried phase</a></li><li class="chapter-item expanded "><a href="../../call/0018-discharge-is-re-derivation-in-a-pinned-toolchain.html"><strong aria-hidden="true">7.</strong> Discharge is re-derivation in a pinned toolchain, not a signed attestation; enforcement is project-pluggable</a></li><li class="chapter-item expanded "><a href="../../call/0019-literal-citations-in-host-lint-ignore-blocks.html"><strong aria-hidden="true">8.</strong> Literal tell-citations live in a host-lint:ignore fenced block, never --no-verify</a></li><li class="chapter-item expanded "><a href="../../call/0020-host-family-is-where-room-software.html"><strong aria-hidden="true">9.</strong> The host-* family is software developed here, embedded as Where-room components</a></li><li class="chapter-item expanded "><a href="../../call/0021-host-family-builds-hermetically-against-a-pinned-bundle.html"><strong aria-hidden="true">10.</strong> The host-* static-musl releases build hermetically against a pinned dependency bundle</a></li><li class="chapter-item expanded affix "><li class="part-title">Reference — how</li><li class="chapter-item expanded "><a href="../../CLAUDE.html"><strong aria-hidden="true">11.</strong> CLAUDE.md</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../BOOTSTRAP.html"><strong aria-hidden="true">11.1.</strong> BOOTSTRAP.md</a></li><li class="chapter-item expanded "><a href="../../CI-PIPELINE.html"><strong aria-hidden="true">11.2.</strong> CI-PIPELINE.md</a></li><li class="chapter-item expanded "><a href="../../FORMAL-SPEC.html"><strong aria-hidden="true">11.3.</strong> FORMAL-SPEC.md</a></li><li class="chapter-item expanded "><a href="../../SKILL-HARDENING.html"><strong aria-hidden="true">11.4.</strong> SKILL-HARDENING.md</a></li><li class="chapter-item expanded "><a href="../../SKILL_AUTHORING.html"><strong aria-hidden="true">11.5.</strong> SKILL_AUTHORING.md</a></li><li class="chapter-item expanded "><a href="../../STRUCTURE.html"><strong aria-hidden="true">11.6.</strong> Structure</a></li><li class="chapter-item expanded "><a href="../../TEMPLATE-REWRITE.html"><strong aria-hidden="true">11.7.</strong> TEMPLATE-REWRITE: rewrite host-template into the canonical agentic project</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Memory</li><li class="chapter-item expanded "><a href="../../MEMORY.html"><strong aria-hidden="true">12.</strong> Memory</a></li><li class="chapter-item expanded affix "><li class="part-title">Archive / Record</li><li class="chapter-item expanded "><a href="../../call/0000-use-markdown-decision-records.html"><strong aria-hidden="true">13.</strong> Use Markdown decision records (MADR) (superseded)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../call/0001-tool-outputs-are-project-owned.html"><strong aria-hidden="true">13.1.</strong> Tool outputs are project-owned, not under allium or Specula licenses (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0002-verification-lanes-by-property-type.html"><strong aria-hidden="true">13.2.</strong> Split verification into lanes by property type (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0003-compose-tools-as-referenced-submodules.html"><strong aria-hidden="true">13.3.</strong> Compose verification tools as referenced submodules (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0004-template-is-versioned-source.html"><strong aria-hidden="true">13.4.</strong> The template is the canonical, versioned source of the methodology (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0005-migration-protocol.html"><strong aria-hidden="true">13.5.</strong> Adopt and upgrade existing repos by a cased, moded migration protocol (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0006-host-lint-sanctioned-vocabulary-allow-list.html"><strong aria-hidden="true">13.6.</strong> host-lint exempts sanctioned vocabulary via a repo-root allow file (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0007-adoption-is-a-clean-break-upgrade-is-a-delta.html"><strong aria-hidden="true">13.7.</strong> Adoption is a clean break to a pristine state; upgrade is a Shallow delta (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0008-enforced-remap-dictionary.html"><strong aria-hidden="true">13.8.</strong> Adoption remap is enforced by a dictionary applied deterministically, then removed (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0009-exclude-the-record-from-the-audit.html"><strong aria-hidden="true">13.9.</strong> A migrated project excludes its append-only record from the audit (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0010-software-is-a-bare-store-with-worktrees.html"><strong aria-hidden="true">13.10.</strong> Embed the software as a bare store with named worktrees (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0011-worktree-absence-coherence.html"><strong aria-hidden="true">13.11.</strong> References to the software worktree must survive its absence (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0012-host-is-the-single-file-front-door.html"><strong aria-hidden="true">13.12.</strong> A single file named host is the front door that owns the adoption-and-upgrade process (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0014-canonical-doc-site-publisher.html"><strong aria-hidden="true">13.13.</strong> The canonical doc-site publisher is host-lifecycle book (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0016-discharge-requires-a-signed-pass-attestation.html"><strong aria-hidden="true">13.14.</strong> Rung discharge requires a signed verifier-pass attestation, not name-presence (superseded)</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">agentic-host</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="plan0033-the-generated-book-is-correct-and-obeys-the-prose-hygiene-rule"><a class="header" href="#plan0033-the-generated-book-is-correct-and-obeys-the-prose-hygiene-rule">plan/0033: the generated book is correct and obeys the prose-hygiene rule</a></h1>
+<blockquote>
+<p><strong>Goal:</strong> close <code>connollydavid/host#15</code>. The methodology's own published book has two
+defects. First, <code>host-lifecycle book</code> emits a generated home-page link to a room landing
+whose source is <code>README.md</code>, and mdBook serves that page at <code>index.html</code> while rewriting the
+in-content link to <code>README.html</code>, so the link is a 404. Second, the rendered book carries
+em-dashes that the prose-hygiene rule (<code>plan/0030</code>) forbids in authored docs: the five
+generated room separators and roughly 113 em-dashes in the spine
+(<code>host-template/CLAUDE.md</code> and <code>STRUCTURE.md</code>) that every adopter renders in the Reference
+section. Operator ruling: clean fully, so the book obeys the rule the methodology preaches.</p>
+</blockquote>
+<h2 id="context"><a class="header" href="#context">Context</a></h2>
+<p><code>host#15</code> was observed building the mdBook for an adopted project. Two findings:</p>
+<ol>
+<li>
+<p><strong>Dead room-landing link.</strong> <code>host-lifecycle book</code> generates the home page (<code>docs/index.md</code>)
+with a bullet per room linking the room's first page. For a room whose landing file is
+<code>README.md</code> (the Cast room is the example), the emitted link is <code>cast/README.md</code>. mdBook
+applies its README-to-index rule and serves that page at <code>cast/index.html</code>, but it rewrites
+the in-content link to <code>cast/README.html</code>, which is never generated. The home page (and the
+aggregated <code>print.html</code>) therefore carry a 404. The sidebar nav link works, because mdBook
+maps <code>SUMMARY</code> chapter links through the README-to-index rule; only the generated in-content
+link breaks.</p>
+</li>
+<li>
+<p><strong>The methodology breaks its own prose-hygiene rule.</strong> <code>plan/0030</code> shipped a rule: authored
+docs carry zero prose tropes, and a decoration em-dash is a flagged trope. The rendered book
+shows em-dashes anyway, from two tool-controlled sources: the generated nav separators that
+<code>host-lifecycle book</code> writes for the five room part-titles, and the spine prose
+(<code>host-template/CLAUDE.md</code> and <code>STRUCTURE.md</code>) that renders verbatim in every adopter's
+Reference section. <code>host-lint --prose</code> flags roughly 96 em-dashes in the spine <code>CLAUDE.md</code>
+and 17 in <code>STRUCTURE.md</code>, plus a few other tropes (negative parallelism, a false range, a
+decoration arrow, an anaphora run).</p>
+</li>
+</ol>
+<h2 id="decision-operator-ruling-2026-06-22"><a class="header" href="#decision-operator-ruling-2026-06-22">Decision (operator ruling, 2026-06-22)</a></h2>
+<p><strong>Clean fully.</strong> Both tool-generated sources move off the em-dash, and the spine prose is
+reworded to <code>host-lint --prose</code> clean with meaning preserved. The alternative (an explicit
+exemption for the spine and the generated nav) was weighed and rejected: the methodology should
+obey the rule it asks every adopter to obey, and the issue itself notes that cleaning is the
+fix that makes the methodology consistent.</p>
+<h2 id="part-a-the-host-lifecycle-book-generator"><a class="header" href="#part-a-the-host-lifecycle-book-generator">Part A: the <code>host-lifecycle book</code> generator</a></h2>
+<p>Two changes in the <code>book</code> generator, with unit tests:</p>
+<ul>
+<li><strong>Home-page room links resolve.</strong> When the generated home overview links a room landing whose
+destination basename is <code>README.md</code>, link the page mdBook actually serves (<code>&lt;dir&gt;/index.md</code>,
+which mdBook rewrites to <code>&lt;dir&gt;/index.html</code>) rather than <code>&lt;dir&gt;/README.md</code>. The <code>SUMMARY</code> nav
+links already resolve through mdBook's README-to-index rule and stay as they are.</li>
+<li><strong>Nav separators carry no em-dash.</strong> The five room part-titles (Cast, Plan, Software, Call,
+Reference) use a colon separator ("Cast: who") in place of the em-dash, so the generated
+sidebar and home overview obey the prose-hygiene rule on every page.</li>
+</ul>
+<p>The change alters the generated book output, so it ships as a <code>host-lifecycle</code> release (a fix to
+the generator). The recorded musl artifact moves, so <code>.host-software</code> re-pins and the release
+receipt is back-filled.</p>
+<h2 id="part-b-the-spine-prose"><a class="header" href="#part-b-the-spine-prose">Part B: the spine prose</a></h2>
+<p><code>host-template/CLAUDE.md</code> and <code>STRUCTURE.md</code> are reworded so <code>host-lint --prose</code> reports zero on
+both. Em-dashes become commas, colons, parentheses, or sentence breaks; the few other flagged
+tropes are reworded in place. Meaning is preserved exactly: only flagged punctuation and phrasing
+change, and every identifier, version string, citation, and rule stays byte-for-byte. The spine
+commit is pushed in <code>host-template</code>, then the agentic-host submodule pointer is bumped to it so
+the rendered Reference section is clean. This is a prose-only spine revision with no new adopter
+action, so it carries no <code>UPGRADING.md</code> ledger entry.</p>
+<h2 id="lifecycle-run-software-first"><a class="header" href="#lifecycle-run-software-first">Lifecycle run (software-first)</a></h2>
+<ol>
+<li>Implement Part A in the <code>host-lifecycle</code> worktree, with unit tests; <code>cargo test</code> and clippy
+clean.</li>
+<li>Implement Part B in the <code>host-template</code> worktree; verify <code>host-lint --prose</code> is zero on both
+files; commit and push <code>host-template</code>.</li>
+<li><code>host-lifecycle release host-lifecycle --change-class neither</code> (a generator fix), run its
+printed commit, push, and tag steps, and collect the new pin and musl artifact hash.</li>
+<li>One atomic agentic-host commit: re-pin <code>.host-software</code> <code>host-lifecycle</code>, back-fill the
+release receipt, and bump the <code>host-template</code> submodule pointer.</li>
+<li>Reinstall the gate driver from the released commit.</li>
+<li>Gate with the released binary: <code>software --check</code>, <code>software --verify-build</code> (the artifact
+reproduces), <code>book</code> then <code>book --check</code>, and a direct check that the generated <code>docs/index.md</code>
+no longer links a <code>README.md</code>, that the generated nav carries no em-dash, and that the
+rendered spine pages are prose-clean.</li>
+<li>CI rewire: move the agentic-host workflow <code>host-lifecycle</code> install pins to the released
+commit.</li>
+<li>Records: this plan, the <code>PLAN.md</code> row, <code>MEMORY.md</code>, and a close comment on <code>host#15</code>.</li>
+</ol>
+<h2 id="verification-whole-suite-green"><a class="header" href="#verification-whole-suite-green">Verification (whole-suite green)</a></h2>
+<ul>
+<li>A <code>cargo test</code> case proves the home overview links the served page for a <code>README.md</code> landing,
+and a case proves the generated nav part-titles carry no em-dash.</li>
+<li><code>host-lint --prose</code> is zero on <code>host-template/CLAUDE.md</code> and <code>STRUCTURE.md</code>.</li>
+<li>The regenerated <code>docs/index.md</code> contains no <code>](</code>-link ending in <code>README.md</code>, and the generated
+<code>docs/SUMMARY.md</code> part-titles carry no em-dash.</li>
+<li><code>software --check</code>, <code>software --verify-build</code>, and <code>book --check</code> are green; the producer and
+agentic-host CI runs are green across every repo.</li>
+</ul>
+<h2 id="records"><a class="header" href="#records">Records</a></h2>
+<p>This plan, the <code>PLAN.md</code> row, <code>MEMORY.md</code>, and the <code>host#15</code> close comment. No <code>call/</code> decision is
+needed: Part A is a tool bugfix and Part B is a prose-clean of the spine, neither a methodology
+decision.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../plan/0032-static-builds/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../where.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../plan/0032-static-builds/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../where.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
