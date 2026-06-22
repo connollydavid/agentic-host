@@ -21,9 +21,14 @@
 >    **Deferred** below.
 >
 > This milestone is what remains: make the prose audit a **real, walking, weak-agent-executable gate
-> lane**, with immutable records excluded soundly by the *existing* mechanisms. Execution of the
-> repo-wide clean still waits for the operator's literal front-door sentence (the triggered migration,
-> D5); the design and the tooling land now.
+> lane**, with immutable records excluded soundly by the *existing* mechanisms.
+>
+> **D5 done (triggered on the front-door sentence):** `host-lint --docs` is zero across the authored
+> docs (about 1,010 tropes reworded across ~60 docs, meaning preserved; `MEMORY.md` and dated reviews
+> path-excluded), 950fbd6 is recorded in `.host`, and the front-door Verify passes. **D4** (wiring
+> `--docs` into the verify recheck for ongoing enforcement) is a flagged spine follow-up: the shared
+> recheck needs a portable host-lint invocation, since agentic-host's host-lint is the embedded Where
+> software, not a PATH tool.
 
 ## Context
 
