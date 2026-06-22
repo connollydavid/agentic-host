@@ -14,6 +14,34 @@
 > genuine host-lifecycle bootstrap cycle. This milestone now **depends on `plan/0029`** for the nested
 > layout, addressing, recipe-dispatch, and skill-link integrity it builds on.
 
+## Status: landed (2026-06-22)
+
+Both passes are complete and pushed; the whole suite is green. The Readiness pass hardened
+and spec-bore the producers; the Cutover pass made the atomic agentic-host change. Each
+release was cut by the tool-carried `host-lifecycle release <component> --change-class neither`
+(the tool computes the version), the producer tag is the release, and the orchestration
+consumed it (re-pin plus receipt):
+
+| Component | Release | Pin | Recorded artifact sha256 |
+|-----------|---------|-----|--------------------------|
+| host-grammar | v0.3.0 | `9d51468` | repo-only (no artifact; the version-bump commit sits directly on the proofs HEAD `fbd2e6c`, so ruling #3 holds) |
+| host-lint | v0.8.1 | `1386e9a` | `4e76682b1893…` (re-released onto the new grammar) |
+| host-lifecycle | v0.19.2 | `6fa94cf` | `ad3bf89a55c9…` |
+| host-prove | v0.2.1 | `135539b` | `8e3742f8b7d7…` |
+
+The atomic agentic-host commit (`e7d952d`) added the three stanzas, re-pinned host-lint,
+dropped the two submodules (with `.git/modules` pruned), generalized `link-skills.sh` to wire
+both `tools/` submodules and `software/<name>/main/` worktrees, and back-filled every embed and
+release receipt in the one commit. The released pinned host-lifecycle (`6fa94cf`, installed by
+`cargo install --rev`) gates this repo (self-cert): `software --check` and `--verify-build` are
+green (all three artifacts reproduce in the recorded container), all eleven software-skill links
+resolve, `book --check` renders, and the commit-hook tell test passes. `CLAUDE.md` §0 carries the
+seed-first fresh-clone order, and a cold-clone CI job guards the seed path and link integrity.
+
+One note against the plan as written: the version cuts are host-lifecycle 0.19.2, host-prove
+0.2.1, and host-lint 0.8.1 (the producers had already advanced past the `0.19.0` placeholder the
+plan used; the tool computed each from the change class).
+
 ## Context
 
 `plan/0025` shipped the receipt gate and a tool-carried `release` phase, but it surfaced a false
