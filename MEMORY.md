@@ -578,3 +578,19 @@ CUTOVER STEPS (atomic where noted):
 11. Records: plan/0028 README status, PLAN.md row, MEMORY, `.host` re-record if baseline moves.
 
 GOTCHAS (all confirmed this session): `gh auth switch --user connollydavid` before EVERY push (active account reverts; it's a private concern, keep out of docs). Commit subjects must have NO decoration (em-dash/arrow) and no bare ordinals — lint with `software/host-lint/main/target/debug/host-lint --stdin` (the release binary is glibc-incompatible with this WSL; the debug binary works). The commit-msg hook enforces this and WILL block a bad subject. host-lint:ignore/`--prose` clean: authored docs (plan/0028 README, PLAN.md) must stay zero locatable tropes; MEMORY.md is lint-excluded.
+
+## 2026-06-22 — plan/0028 CUTOVER COMPLETE (the whole milestone is done; whole-suite green)
+
+The Cutover landed and is pushed. The host-* family is now uniform Where-room software in `.host-software`; `tools/` holds only allium + specula. Released producers (each cut by the tool-carried `host-lifecycle release <c> --change-class neither`, the producer tag IS the release, the orchestration consumed it via re-pin + receipt):
+- host-grammar v0.3.0 pin 9d51468 (repo-only; the version-bump commit sits directly on the proofs HEAD fbd2e6c, so ruling #3 holds)
+- host-lint v0.8.1 pin 1386e9a artifact 4e76682b1893e9641208cc8d52434bcc3c40a9a51565b4b21a82ccbf842b8d43 (re-released onto new grammar)
+- host-lifecycle v0.19.2 pin 6fa94cf artifact ad3bf89a55c9fb22854a6bc1ba722f4157115aa693619034c411fe15cd264f55
+- host-prove v0.2.1 pin 135539b artifact 8e3742f8b7d7ac2d8abc83890179d6417eb8f0a25dddea7ee75cd2b67fcec695
+
+Atomic agentic-host commit e7d952d (stanzas + host-lint re-pin + submodule drop + generalized link-skills.sh + back-filled embed/release receipts, all in one commit so the recurring-per-component gate is never RED on push). CLAUDE.md §0 rewritten seed-first (1152cb7); cold-clone CI job added (2c125f8); plan/0028 README + PLAN row marked complete (41ae1c0). The gate is the released pinned host-lifecycle v0.19.2 at /home/david/.local/bin (installed by `cargo install --path software/host-lifecycle/main --root /home/david/.local` from the clean tagged worktree = the released pin); `software --check` + `--verify-build` green (all three artifacts reproduce in rust:1.95.0), book --check renders, all 11 skill links resolve.
+
+LESSONS (cost real time; record so next cutover does not repeat):
+- The installed host-lifecycle was PRE-629e9c3 and lacked the Cargo.lock self-version sync, so `release` bumped Cargo.toml but not the lock and the `--locked` container build failed. Fix: build a fresh driver from the CURRENT pinned worktree source (`cargo build --release` in software/host-lifecycle/main) and drive the release with THAT, then install the new release as the gate. The gate binary must come from the current pin's source, never a stale install.
+- `--install-hooks` copies whatever sits at target/release/<bin>. Right after `release`, that is the CONTAINER (rust:1.95.0, glibc 2.39) binary, which does NOT run on this WSL (GLIBC_2.39 not found), so the commit hooks would fail on every commit. Fix: `cargo build --release` LOCALLY in software/host-lint/main BEFORE `--install-hooks`; the tool then installs the local binary and reports "local build (differs from canonical hash)", which is expected and correct (the canonical-hash match is informational, not a gate; the binary need only run locally).
+- host-prove's binary DOES embed the version (its hash changed on the 0.2.0->0.2.1 bump), contrary to the earlier guess that it was stable. Always let the tool-carried `release` recompute the canonical hash; never reuse a provisional/pre-bump hash.
+- Bash working-dir persists across calls: after `cd`-ing into a worktree, a later `host-lifecycle ... .` resolves `.` to the worktree and fails "cannot read .host-software". Always cd to the repo root before a host-lifecycle command.
