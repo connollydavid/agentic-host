@@ -197,9 +197,13 @@ orthogonal to the prose need. The settled ontology stands; only its build is seq
 <strong>Deferred</strong> below.</li>
 </ol>
 <p>This milestone is what remains: make the prose audit a <strong>real, walking, weak-agent-executable gate
-lane</strong>, with immutable records excluded soundly by the <em>existing</em> mechanisms. Execution of the
-repo-wide clean still waits for the operator's literal front-door sentence (the triggered migration,
-D5); the design and the tooling land now.</p>
+lane</strong>, with immutable records excluded soundly by the <em>existing</em> mechanisms.</p>
+<p><strong>D5 done (triggered on the front-door sentence):</strong> <code>host-lint --docs</code> is zero across the authored
+docs (about 1,010 tropes reworded across ~60 docs, meaning preserved; <code>MEMORY.md</code> and dated reviews
+path-excluded), 950fbd6 is recorded in <code>.host</code>, and the front-door Verify passes. <strong>D4</strong> (wiring
+<code>--docs</code> into the verify recheck for ongoing enforcement) is a flagged spine follow-up: the shared
+recheck needs a portable host-lint invocation, since agentic-host's host-lint is the embedded Where
+software, not a PATH tool.</p>
 </blockquote>
 <h2 id="context"><a class="header" href="#context">Context</a></h2>
 <p><code>host-lint --prose</code> (the tropes.fyi LLM-slop detector, <code>plan/0007</code>/<code>0008</code>/<code>0010</code>) ships and works on a
