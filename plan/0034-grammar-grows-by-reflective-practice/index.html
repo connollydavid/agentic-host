@@ -179,7 +179,7 @@
 <h2 id="context"><a class="header" href="#context">Context</a></h2>
 <p>host#16 reports that host-lint does not catch positional references to milestone
 checklist items. The shapes, quoted as the lane would receive them:</p>
-<pre><code class="language-host-lint:ignore">box 7        boxes 4-8        box-1        steps 3-5
+<pre><code class="language-host-lint:ignore">box 7        boxes 4-8        steps 3-5        step 3-5
 </code></pre>
 <p>The meeting that produced this milestone established, against the adopter where the
 shape emerged (reviewed in a scratch checkout only, never referenced in tracked files):</p>
@@ -246,10 +246,13 @@ proves to over-flag is narrowed by a later grammar release.</li>
 <p>A software <code>call/</code> for harvest tooling is deferred until that tooling is built (see
 Follow-ups).</p>
 <h3 id="detection-host-lint"><a class="header" href="#detection-host-lint">Detection (host-lint)</a></h3>
-<p>A1. Add <code>box</code>, <code>boxes</code>, and <code>steps</code> to <code>FLAG_TERMS</code>, and accept a numeric range
-(<code>N-M</code>) and a glued hyphen-digit form (the noun joined to a numeral by a hyphen)
-after the noun, in <code>src/lib.rs</code>. Severity stays a flag, like the existing
-ordinal nouns. Verify by: synthetic fixtures for the four shapes above all flag.
+<p>A1. Add <code>box</code>, <code>boxes</code>, and <code>steps</code> to <code>FLAG_TERMS</code> and accept a numeric range
+(<code>N-M</code>) after the noun, in <code>src/lib.rs</code>. Severity stays a flag, like the existing
+ordinal nouns. The glued hyphen-digit form stays out of scope: a legitimate glued
+term has no numeral-free <code>LEXICON</code> prefix, so it could not be escaped, and it is the
+same class as a noun-glued numeral; a hyphenated reference is the minority shape, a
+documented residual. Verify by: synthetic fixtures for the box/boxes/steps and range
+shapes all flag.
 A2. Preserve the boundaries. The literal checklist mark stays clean (it carries no
 noun-plus-numeral), a content-named reference stays clean, and the <code>box</code>
 disposition verb stays clean (no trailing numeral). Verify by: the mark, a
