@@ -8,7 +8,7 @@ host#16 reports that host-lint does not catch positional references to milestone
 checklist items. The shapes, quoted as the lane would receive them:
 
 ```host-lint:ignore
-box 7        boxes 4-8        box-1        steps 3-5
+box 7        boxes 4-8        steps 3-5        step 3-5
 ```
 
 The meeting that produced this milestone established, against the adopter where the
@@ -83,10 +83,13 @@ Follow-ups).
 
 ### Detection (host-lint)
 
-A1. Add `box`, `boxes`, and `steps` to `FLAG_TERMS`, and accept a numeric range
-    (`N-M`) and a glued hyphen-digit form (the noun joined to a numeral by a hyphen)
-    after the noun, in `src/lib.rs`. Severity stays a flag, like the existing
-    ordinal nouns. Verify by: synthetic fixtures for the four shapes above all flag.
+A1. Add `box`, `boxes`, and `steps` to `FLAG_TERMS` and accept a numeric range
+    (`N-M`) after the noun, in `src/lib.rs`. Severity stays a flag, like the existing
+    ordinal nouns. The glued hyphen-digit form stays out of scope: a legitimate glued
+    term has no numeral-free `LEXICON` prefix, so it could not be escaped, and it is the
+    same class as a noun-glued numeral; a hyphenated reference is the minority shape, a
+    documented residual. Verify by: synthetic fixtures for the box/boxes/steps and range
+    shapes all flag.
 A2. Preserve the boundaries. The literal checklist mark stays clean (it carries no
     noun-plus-numeral), a content-named reference stays clean, and the `box`
     disposition verb stays clean (no trailing numeral). Verify by: the mark, a
