@@ -1,6 +1,6 @@
 # Every lifecycle phase discharges to a tool-written receipt; release is a strict, tool-carried phase
 
-- Status: accepted
+- Status: superseded by the spine (host-template @ 617e420 — the lifecycle manifest, every phase emits a receipt)
 - Date: 2026-06-20
 - Scope: host-lifecycle, host-template (the lifecycle tool and the spine it reads)
 - Relates: `call/0016` (the attestation primitive, same idea, here applied to phases not
