@@ -821,3 +821,28 @@ real annotation is a bare HTML comment on a restatement line. Three host-lifecyc
 v0.24.0 (reconcile+validate-scope+restates), v0.24.1 (skills, tagged but never pinned — superseded before
 re-pin), v0.24.2 (backtick fix; current pin 9a1a586 / b214f090). CI host-lifecycle `--rev` still on v0.23.0,
 bumped in #66 with the final verify.
+
+---
+
+## plan/0036 COMPLETE (#66): adopted + dogfooded the reconcile arm; all seven symptoms reconciled; whole-suite green
+
+agentic-host adopted the two-arm doctrine (`upgrade --record d5a0034`, applied-set now in .host-receipts).
+The reconcile dogfood ran THROUGH the new check: I annotated the drifted restatements with inline
+`<!-- host-reconcile: KIND -->` markers (still drifted), ran `host-lifecycle reconcile .`, it flagged
+exactly four — README.md:4 (family omits host-prove), CLAUDE.md:24 (verification omits host-prove),
+STRUCTURE.md:9 (spec under plan/), STRUCTURE.md:11 (Where not software/) — then I reworded each to match
+the spine until reconcile was clean. CLAUDE.md:9 (already lists all four family tools) was annotated to
+guard against future drift. The seven symptom findings are all resolved: 1-4 via the reconcile dogfood, 5
+(call/0017) superseded in #65, 6 (host-prove pin) by releasing v0.2.3 (3d1bba7, artifact a322e0f) which
+absorbs the CI-only commit into a release tag so the pin no longer sits past its tag, 7 (orphan
+plan/0001-foundation/ removed — was empty+untracked; PLAN.md Skill-Hardening box checked with the
+crates.io deferral noted). Final local sweep all green (validate plan/+call/, software --check, reconcile,
+prose, book --check). HEAD = 49f3ef4, whole-suite CI green (agentic-host reproducible-build + site;
+host-template; host-lifecycle v0.24.2; host-prove v0.2.3).
+
+**LESSON (CI/recheck coupling):** a host-template pointer bump that adds a NEW tool subcommand to the
+verify-phase `recheck` (here `&& host-lifecycle reconcile .`) MUST be accompanied by the CI host-lifecycle
+`--rev` bump in the same push. I bumped the pointer (3c36f3e) but deferred the CI rev to the end (49f3ef4),
+so CI ran v0.23.0 (no `reconcile` subcommand) against the new recheck and the reproducible-build job's
+`software --check` was RED for that window (3c36f3e..0324b16). HEAD is green, but the intermediate reds
+were avoidable. The recheck command and the CI-installed binary that runs it are a unit; bump them together.
