@@ -9,7 +9,7 @@ A project under agentic evolution. This plan tracks the evolution of the `host-l
 - [x] Bootstrap: initial setup and bootstrapping
 - [x] CI Pipeline: build, conformance, integration tests
 - [x] Formal Spec: Allium spec, proptest, release
-- [ ] Skill Hardening: hook fix, bare-numeral rule, release install path (see SKILL-HARDENING.md)
+- [x] Skill Hardening: hook fix, bare-numeral rule, release install path (see SKILL-HARDENING.md; crates.io publish deferred until the skill is complete)
 
 ## Milestone documents
 
