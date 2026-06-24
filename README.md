@@ -1,7 +1,7 @@
 # agentic-host
 
 The methodology's meta and management home, and itself an agentic project that
-develops the `host-*` tooling (`host-lint`, `host-lifecycle`, `host-prove`, `host-grammar`). <!-- host-reconcile: family -->
+develops the `host-*` [components](STRUCTURE.md#components).
 
 ## Adopters: do not treat this repo's top-level contents as methodology
 

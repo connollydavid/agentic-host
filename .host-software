@@ -34,6 +34,15 @@
 	pin       = 9d51468ab1f0a7e253cd2ee7d149d7325e65f47b
 	worktrees =
 [software "host"]
+	# the single-file front door (the methodology's entry point), set apart from the
+	# host-* tools: it is the front door, not a component (plan/0039).
 	url       = https://github.com/connollydavid/host.git
 	pin       = 1dc9cb98cc22608efbb8d0f1794d72bef6fe9575
 	worktrees =
+	front-door = true
+
+# The verification ladder's drivers (plan/0039): the project-local `verifiers`, sourced
+# here rather than the shared spine manifest. A doc that names the verifiers must name this
+# whole set; the reconcile coverage check holds the home in STRUCTURE.md to it.
+[verification]
+	drivers = host-lint allium specula host-prove
