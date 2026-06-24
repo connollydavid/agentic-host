@@ -1,5 +1,13 @@
 # Prose-gate the meta repos
 
+**Status: complete (landed 2026-06-24).** host-template (`9268d76`) and host (`1dc9cb9`)
+are prose-clean and each carries a `Prose` CI gate pinned to host-lifecycle v0.24.2
+(host's is its first CI workflow); both gates are green in CI. The agentic-host pointer
+and host pin moved in `0813795`; whole-suite CI is green. The one apparent blocker, the
+`harness` ai-diction on `` `kani:<harness>` ``, was a density artifact (two occurrences
+crossed the gate; one is clean), cleared by rewording the second occurrence, so no engine
+change was needed.
+
 ## Context
 
 plan/0036 stopped the *instance* docs (this repo's `README`/`CLAUDE`/`STRUCTURE`)
