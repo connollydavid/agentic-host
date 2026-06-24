@@ -692,3 +692,23 @@ finding #1) and the receipts-family re-homing as its own milestone. The re-homin
 support must be ONGOING, not a one-time shim (copy-at-version: adopters cross the boundary at their own
 pace), following the existing legacy-`.host`-stamp auto-migrate-on-read precedent: an `UPGRADING`
 ledger entry per adopter plus permanent old-layout read tolerance.
+
+Campaign Stage 4 DONE (2026-06-24): plan/0030 D4 wired + plan/0036 prose-gate contradiction
+resolved, via **host-lifecycle v0.22.0** (`167d2e6`, artifact `bb6fc4eb`). The portability
+problem (agentic-host's host-lint is embedded Where software, not on PATH) dissolved on a key
+realization: **host-lifecycle already links the `host_lint` crate**, so the prose audit runs
+IN-PROCESS. New `host-lifecycle prose <dir>` mirrors `host-lint --docs` (git ls-files .md walk
+honoring `.host-lintignore`, `scan_prose_text`, the same Flag->1/Warn->3 verdict) with zero PATH
+dependency. The spine `verify` recheck now chains `host-lifecycle prose .` after `validate`
+(`lifecycle.manifest`, spine `e280a8d` + UPGRADING `641efef`, adopted applied=`e280a8d`); CLAUDE.md
+reconciled; the `--preview`/`--next` release flag (silently ignored before) is fixed. **The gate
+caught two real regressions while landing**, proving it non-vacuous: (a) a decoration em dash in
+`call/0021:10`, a genuine post-D5 regression that slipped in because D4 was not yet wired (reworded);
+(b) my own commit message "finding #1", a positional-reference tell (Flag) the commit-msg hook
+blocked (reworded). **Lesson on engine identity:** the stale PATH `host-lint` binary's `--docs`
+UNDER-reported (missed the call/0021 em dash); the gate uses host-lifecycle's linked engine
+(`host-grammar` 9d51468, the same pin host-lint v0.9.2 carries), which is authoritative. After a
+host-lifecycle release, install the new binary to PATH before running `software --check`, since the
+recheck shells `host-lifecycle prose`. Whole-suite green (host-lifecycle CI main+tag, agentic-host
+Site + reproducible-build running the in-process prose recheck in CI). Remaining: the receipts-family
+re-homing (Stage 5).
