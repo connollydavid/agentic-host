@@ -6,7 +6,7 @@ A project under agentic evolution. This plan tracks the evolution of the `host-l
 
 ## Open work
 
-As of 2026-06-24, plan/0001 through plan/0038 are complete, and **plan/0039 (concepts-as-uris) is designed and validated but not yet built**: the reconcile arm's evolution to concept-as-URI (see the table row). One open issue: connollydavid/host-lifecycle#1, the `next` footgun surfaced while cutting plan/0039. A re-evaluation can read this line plus the plan/0039 row and stop.
+As of 2026-06-24, plan/0001 through plan/0038 are complete, and **plan/0039 (concepts-as-uris) is designed and validated, build underway**: the reconcile arm's evolution to concept-as-URI (see the table row). The design was refined 2026-06-24 — project-local facts sourced from `.host-software`, the lifecycle manifest hardened to phases-only, and `host` set apart as the front door — see plan/0039's "Refinements this session". One open issue: connollydavid/host-lifecycle#1, the `next` footgun surfaced while cutting plan/0039. A re-evaluation can read this line plus the plan/0039 row and stop.
 
 The named follow-ups from completed plans, pre-resolved so a scan needs no cross-check:
 
@@ -15,6 +15,7 @@ The named follow-ups from completed plans, pre-resolved so a scan needs no cross
 | Mechanize the `gather` discovery sweep | plan/0034 | Done (plan/0035, host-lint `gather`). |
 | Wire the prose audit into the verify recheck (D4) | plan/0030 | Done (host-lifecycle v0.22.0). |
 | Mechanize the reconcile reflection, the `gather` sibling | plan/0036 | Open by choice; no milestone cut. |
+| Seed the front-door `host` from the spine (copy-at-version, so it cannot drift) | plan/0039 | Open; named this session, doctrine states the rule, no milestone cut yet. |
 
 Two ideas were deliberately declined and should not be reopened: a project-local ban surface (speculative, recorded in `call/0022`) and a glued hyphen-digit tell form (no `LEXICON` escape exists for it, plan/0034).
 

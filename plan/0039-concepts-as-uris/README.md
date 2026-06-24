@@ -57,6 +57,14 @@ agentic-host accepts running in the gap as the first mover: its inline annotatio
 - An adopter without a book or `.host-software` skips the project-scoped checks rather than dangling.
 - The host's verify gate (validate, reconcile, prose, book) is green, and the whole-suite CI is green across the affected repos.
 
+## Refinements this session (the design as it now stands)
+
+Settled in discussion, checked against the cast and the real Qwen-3.5-4B, and kept in plain words for the weak agent — **spine, copy-at-version, point, front-door**:
+
+- **Project-local facts, enforced.** `components` and `verifiers` come from the project's own `.host-software`, never the spine manifest. The manifest is hardened to **phases only** — `manifest --check` rejects any other stanza — so an overfit cannot creep back into the shared spine. `components` are the `.host-software` members; `verifiers` are a `[verification] drivers` stanza (absent → skipped, fail-safe). The cast and a real 4B run backed the move; the 4B's reliable failure is exact-format emission, not the judgment, so the edit is tool-carried and the prose only points.
+- **`host` is the front door, not a component.** Of the members, the four tools (host-lint, host-lifecycle, host-prove, host-grammar) are the `components`; the single-file `host` is the **front door**, the methodology's entry point, set apart by `front-door = true`. This corrects a stale comment that called it "repo-self": agentic-host, the dev environment, is not a member at all and stays invisible to adopters.
+- **The principle reaches the front door.** One **spine**; everything else is a **copy-at-version** of it or **points** at it — never a restatement. The front-door `host` and every adopter are both copies-at-version of the spine, so "an adopter becomes host" is just *a copy of the one source*. Seeding the front door from the spine, so it cannot drift, is the named next application; the doctrine states the rule here, the build follows.
+
 ## Records
 
 This document, a MEMORY entry, and a software `call/` for the concept-as-URI decision authored at build time. The `host-lifecycle next` footgun surfaced while allocating this number is filed as connollydavid/host-lifecycle#1.
