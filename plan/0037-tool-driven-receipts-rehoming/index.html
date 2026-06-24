@@ -273,6 +273,18 @@ boundary at its own pace.</li>
 operator settled it in <code>plan/0030</code> and chose to execute it. It earns its risk by making
 the receipts model uniform and the applied-set live with the version trail it belongs to.</li>
 </ul>
+<h2 id="landed-2026-06-24"><a class="header" href="#landed-2026-06-24">Landed (2026-06-24)</a></h2>
+<p>Shipped 100% tool-driven in host-lifecycle <strong>v0.23.0</strong> (<code>6e15e01</code>, artifact <code>76be6d9e</code>): the
+<code>migrate-receipts</code> subcommand, the dual-format reader, and ontology-routed writes; 80 tests,
+clippy clean. The spine description update is <code>ac32d1c</code> and the <code>UPGRADING</code> ledger entry is
+<code>4d2ebe9</code>, adopted in agentic-host (<code>applied=ac32d1c</code>). agentic-host dogfooded the migration
+through the tool: the applied-set (8 entries) moved into <code>.host-receipts</code>, the 26 operational
+receipts split into <code>.host-lifecycle-receipts</code>, and adopt and upgrade stayed in <code>.host-receipts</code>.
+<code>software --check</code> reports 0 HAZARDs on the migrated layout, <code>--verify-build</code> reproduces, and the
+whole suite is green (host-lifecycle CI main and tag, agentic-host Site and the reproducible-build
+cold-clone reading the migrated layout). Fen (Qwen-3.5-4B) reached <code>host-lifecycle migrate-receipts .</code>
+unaided. The verify gate from <code>plan/0030</code> D4 caught an <code>ing-tail</code> trope in this very README during
+the release, a live demonstration that the gate enforces prose hygiene.</p>
 
                     </main>
 
