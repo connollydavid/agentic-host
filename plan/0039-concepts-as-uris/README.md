@@ -10,7 +10,7 @@ A replacement was explored and validated. Each methodology concept becomes a URI
 
 ## The design (refined-B)
 
-Each concept (the project's `components`, the `verifiers`, the `software-root`, the `spec-home`) has one canonical definition at a stable `{#id}` anchor in an authored doc, `STRUCTURE.md`. Everywhere else points to it with a relative-path link (`STRUCTURE.md#components`), which renders and resolves under stock mdBook with no custom generator pass. There is **no generated `concepts.md`**: with all four definitions in one doc, a page of links back to them is pure redundancy (see "Refinements this session"). Drift is caught not by generating the definition but by the coverage check, which holds each project-local home to its full `.host-software` set; the tool carries the concept vocabulary, so no file enumerates it.
+Each concept (the project's `components`, the `verifiers`, the `software-root`, the `spec-home`) has one canonical definition at a stable `{#id}` anchor in an authored doc, `STRUCTURE.md`. Everywhere else points to it with a relative-path link (`STRUCTURE.md#components`), which renders and resolves under stock mdBook with no custom generator pass. There is **no generated `concepts.md`**: with all four definitions in one doc, a page of links back to them is pure redundancy (see "Refinements this session"). Drift is caught by the coverage check, which holds each project-local home to its full `.host-software` set; the tool carries the concept vocabulary, so no file enumerates it.
 
 reconcile stops scanning inline annotations and runs three checks instead:
 
@@ -59,11 +59,11 @@ agentic-host accepts running in the gap as the first mover: its inline annotatio
 
 ## Refinements this session (the design as it now stands)
 
-Settled in discussion, checked against the cast and the real Qwen-3.5-4B, and kept in plain words for the weak agent — **spine, copy-at-version, point, front-door**:
+Settled in discussion, checked against the cast and the real Qwen-3.5-4B, and kept in plain words for the weak agent (**spine, copy-at-version, point, front-door**):
 
-- **Project-local facts, enforced.** `components` and `verifiers` come from the project's own `.host-software`, never the spine manifest. The manifest is hardened to **phases only** — `manifest --check` rejects any other stanza — so an overfit cannot creep back into the shared spine. `components` are the `.host-software` members; `verifiers` are a `[verification] drivers` stanza (absent → skipped, fail-safe). The cast and a real 4B run backed the move; the 4B's reliable failure is exact-format emission, not the judgment, so the edit is tool-carried and the prose only points.
+- **Project-local facts, enforced.** `components` and `verifiers` come from the project's own `.host-software`, never the spine manifest. The manifest is hardened to **phases only** (`manifest --check` rejects any other stanza), so an overfit cannot creep back into the shared spine. `components` are the `.host-software` members; `verifiers` are a `[verification] drivers` stanza (absent means skipped, fail-safe). The cast and a real 4B run backed the move; the 4B's reliable failure is exact-format emission rather than the judgment, so the edit is tool-carried and the prose only points.
 - **`host` is the front door, not a component.** Of the members, the four tools (host-lint, host-lifecycle, host-prove, host-grammar) are the `components`; the single-file `host` is the **front door**, the methodology's entry point, set apart by `front-door = true`. This corrects a stale comment that called it "repo-self": agentic-host, the dev environment, is not a member at all and stays invisible to adopters.
-- **The principle reaches the front door.** One **spine**; everything else is a **copy-at-version** of it or **points** at it — never a restatement. The front-door `host` and every adopter are both copies-at-version of the spine, so "an adopter becomes host" is just *a copy of the one source*. Seeding the front door from the spine, so it cannot drift, is the named next application; the doctrine states the rule here, the build follows.
+- **The principle reaches the front door.** One **spine**; everything else is a **copy-at-version** of it or **points** at it, never a restatement. The front-door `host` and every adopter are both copies-at-version of the spine, so "an adopter becomes host" is just *a copy of the one source*. Seeding the front door from the spine, so it cannot drift, is the named next application; the doctrine states the rule here, the build follows.
 
 ## Records
 
