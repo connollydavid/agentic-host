@@ -358,7 +358,8 @@ in <code>.host-software</code> and the producer <code>deps-bundle.lock</code>, a
 drift assertion keeps the two pins in step.</li>
 <li><strong><code>attest-host</code> is OS-granular, not arch-granular</strong>; only the linux-x86_64-musl asset is
 reproducibility-certified, the others ship with a checksums manifest and are stated uncertified. An
-arch-level attest is a host-lifecycle feature request, out of scope.</li>
+arch-level attest is a host-lifecycle feature request, out of scope and <strong>not
+pursued</strong>: the checksums manifest is the stated boundary.</li>
 </ul>
 <h2 id="records"><a class="header" href="#records">Records</a></h2>
 <p>The <code>host-template</code> build guidance, its <code>UPGRADING.md</code> ledger entry, and the re-recorded <code>.host</code>

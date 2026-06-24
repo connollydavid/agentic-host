@@ -479,7 +479,9 @@ exercise. Left unmigrated.</li>
 <li><strong>Agentic-MCP-Win32s</strong> (case c): its earlier attempt over-reached (rewrote the
 append-only record) and was rejected; the <code>.host-lint-allow</code> / exclude-don't-rewrite
 fixes it prompted (<code>call/0006</code>, <code>call/0009</code>) already landed. Left unmigrated; can be
-re-attempted later as its own milestone if a case-(c) exercise is wanted.</li>
+re-attempted later as its own milestone if a case-(c) exercise is wanted.
+<strong>Dormant, not pursued</strong>: the host's own migration already exercised case-(c),
+and no external case-(c) dogfood is planned.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="enforced-remap-dictionary"><a class="header" href="#enforced-remap-dictionary">Enforced remap dictionary</a></h1>
 <p>Status: <strong>done</strong> (<code>host-lifecycle</code> 0.2.0, <code>3e55417</code>; <code>remap --check</code>/<code>--apply</code>,
@@ -590,7 +592,8 @@ gh-pages redeploys with a Where section and lifecycle-ordered nav.</p>
 <h2 id="out-of-scope-1"><a class="header" href="#out-of-scope-1">Out of scope</a></h2>
 <ul>
 <li>Making the bare-store embedding optional for single-line components (case-study
-friction rather than a filed defect); would need its own decision.</li>
+friction rather than a filed defect); would need its own decision. <strong>Not pursued</strong>:
+no filed defect, dormant unless a case study forces it.</li>
 <li>Link-correctness checking across rooms (the gate guards room presence, not links).</li>
 <li>Rewriting the reporter's own generator; that is the adopter's, not ours.</li>
 </ul>
@@ -2991,7 +2994,8 @@ in <code>.host-software</code> and the producer <code>deps-bundle.lock</code>, a
 drift assertion keeps the two pins in step.</li>
 <li><strong><code>attest-host</code> is OS-granular, not arch-granular</strong>; only the linux-x86_64-musl asset is
 reproducibility-certified, the others ship with a checksums manifest and are stated uncertified. An
-arch-level attest is a host-lifecycle feature request, out of scope.</li>
+arch-level attest is a host-lifecycle feature request, out of scope and <strong>not
+pursued</strong>: the checksums manifest is the stated boundary.</li>
 </ul>
 <h2 id="records-1"><a class="header" href="#records-1">Records</a></h2>
 <p>The <code>host-template</code> build guidance, its <code>UPGRADING.md</code> ledger entry, and the re-recorded <code>.host</code>
@@ -3264,7 +3268,9 @@ the shipped fix.</li>
 software milestone that would carry the deferred software <code>call/</code>). <strong>Closed by
 <code>plan/0035</code></strong> (host-lint <code>gather</code> + the verify/adopt reflection step shipped; the
 deferred software decision is <code>call/0022</code>).</li>
-<li>A constrained local-ban surface only if a genuinely non-universal tell is found.</li>
+<li>A constrained local-ban surface only if a genuinely non-universal tell is found.
+<strong>Dormant</strong>: none has appeared, so there is no trigger and nothing to build
+(reaffirmed in <code>plan/0035</code>).</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0035-gather-emergent-tells"><a class="header" href="#plan0035-gather-emergent-tells">plan/0035: gather emergent tells</a></h1>
 <p>Mechanizes the candidate-tell discovery the plan/0034 doctrine defines (the named
