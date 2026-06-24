@@ -176,84 +176,94 @@
                     <main>
                         <h1 id="reconcile-internal-contradictions"><a class="header" href="#reconcile-internal-contradictions">Reconcile internal contradictions</a></h1>
 <h2 id="context"><a class="header" href="#context">Context</a></h2>
-<p>A deep audit (first run 2026-06-24, re-run after the deferred-item campaign) found a
-set of contradictions where the host's own instance docs restate methodology the spine
-has since moved: the <code>STRUCTURE.md</code> room map, the <code>README.md</code> tool list, and the
-<code>CLAUDE.md</code> verification model. Each staled when a past milestone changed the spine
-cleanly. <code>plan/0012</code> moved specs to live with the software; <code>plan/0029</code> moved the Where
-room to the nested <code>software/&lt;name&gt;/&lt;branch&gt;/</code> layout; <code>plan/0023</code> added <code>host-prove</code>
-and the six-rung ladder. Every one of those propagated correctly, yet each also staled
-the host's own restatement of the same concept, and nothing prompted a re-reading.</p>
-<p>So the contradictions are symptoms of one root cause: <strong>migration and upgrade propagate
-a spine change but never prompt a re-examination of the project's own instance docs for
-the drift that change introduces.</strong> The drift accumulates silently until a manual audit
-catches it. The audit this milestone rests on was that demonstration: needing a
-deep manual sweep to find this drift is itself the evidence that a reflective practice
-the methodology should carry is absent.</p>
-<p>This milestone reconciles the drift and closes the gap that produced it. Fixing the
-stale docs alone would let the next spine change stale them again.</p>
-<h2 id="the-practice-that-closes-the-gap-the-spine-doctrine"><a class="header" href="#the-practice-that-closes-the-gap-the-spine-doctrine">The practice that closes the gap (the spine doctrine)</a></h2>
-<p>The hygiene grammar already grows by reflective practice (<code>plan/0034</code>): because an agent
-seldom perceives its own register as a tell, reflection is prompted at the verify gate
-and at adoption. Migration drift has the same shape one level up. An agent applying a
-spine change seldom re-reads the project's own restatements of methodology against it,
-so the spine gains a sibling reflective practice:</p>
-<p>When a spine change is applied (an upgrade record, an adoption), the operator and the
-agent re-examine the project's own instance docs for drift the change introduced, and
-reconcile them in place. In scope are the restatements the spine does not own
-verbatim: the <code>STRUCTURE.md</code> room map, the <code>README.md</code> and <code>CLAUDE.md</code> tool list and
-verification model, and the recorded Where layout. The reflection is prompted at the
-same moments as the grammar reflection (the upgrade record, the verify gate, adoption);
-the agent assists and the operator validates; a confirmed divergence is reconciled
-against the spine. Discovery is mechanizable later as a check that flags known
-divergence shapes such as a spec path under <code>plan/</code> or a Where path off <code>software/</code>,
-the way the gather mechanized tell-discovery after the grammar doctrine. That
-mechanization is a named follow-up, not this milestone.</p>
-<p>Authority: this is a methodology change, so it lives in the spine (<code>host-template</code>),
-never a project <code>call/</code> (anti-ouroboros). It ships as a <code>CLAUDE.md</code> doctrine plus a
-reflection step in the <code>upgrade</code>, <code>adopt</code>, and <code>verify</code> skills, with an <code>UPGRADING</code>
-ledger entry, adopted in agentic-host like any spine change.</p>
-<h2 id="the-drift-to-reconcile-now-the-symptoms"><a class="header" href="#the-drift-to-reconcile-now-the-symptoms">The drift to reconcile now (the symptoms)</a></h2>
-<div class="table-wrapper"><table><thead><tr><th>Finding</th><th>Evidence</th><th>Fix</th><th>Authority</th></tr></thead><tbody>
-<tr><td>Root <code>CLAUDE.md</code> contradicts itself and the spine on the verification model. The "Agentic-host model" paragraph says verification runs in three lanes and lists the host-* family without <code>host-prove</code>, while the same file's overview names <code>host-prove</code> the ladder driver and the spine defines a six-rung ladder.</td><td><code>CLAUDE.md:24</code> vs <code>CLAUDE.md:9</code> and <code>:11</code> and <code>host-template/CLAUDE.md</code> "The verification ladder".</td><td>Rewrite the paragraph to the six-rung ladder and include <code>host-prove</code>.</td><td>host-local prose</td></tr>
-<tr><td><code>STRUCTURE.md</code> (the room map) is a stale local copy. It places the What room at <code>plan/&lt;NNNN&gt;/spec/</code> (the spine forbids a spec under <code>plan/</code>, and root <code>CLAUDE.md:14</code> says specs live with the software), and the Where room at <code>host-lint/</code> (the retired root-scattered layout, now <code>software/&lt;name&gt;/&lt;branch&gt;/</code>), naming only host-lint of the five embedded components.</td><td><code>STRUCTURE.md:9</code> and <code>:11</code> vs <code>host-template/STRUCTURE.md</code> (correct: What and Where at <code>&lt;software&gt;/</code>), root <code>CLAUDE.md</code>, and the live <code>software/</code> tree.</td><td>Sync the host room map to the spine and the real layout. This also removes the conceptual root of the orphan <code>plan/0001-foundation/spec/</code> directory.</td><td>host-local prose</td></tr>
-<tr><td>Root <code>CLAUDE.md</code> points a spine change at a procedure file that is now a redirect stub.</td><td><code>CLAUDE.md:26</code> ("re-run the migration (<code>host-template/MIGRATION.md</code>)") vs <code>host-template/MIGRATION.md</code> (a redirect to the <code>host</code> repo; routine spine changes propagate via <code>host-lifecycle upgrade</code>).</td><td>Point the sentence at the live mechanism; keep the load-bearing "do not fork the spine in isolation".</td><td>host-local prose</td></tr>
-<tr><td><code>README.md</code> names only three host-* tools, omitting <code>host-prove</code>.</td><td><code>README.md:4</code> ("<code>host-grammar</code>, <code>host-lint</code>, <code>host-lifecycle</code>") vs <code>CLAUDE.md:9</code> and <code>.host-software</code> (host-prove is embedded and released).</td><td>Add <code>host-prove</code>.</td><td>host-local prose</td></tr>
-<tr><td><code>call/0017</code> authored a methodology rule now resident in the spine, yet remains <code>accepted</code> in the software-only Why room.</td><td><code>call/0017:5</code> (<code>Scope:</code> includes <code>host-template</code>) and its body ("a real spine semantics change"); the rule lives in <code>host-template/CLAUDE.md</code> and is applied as <code>.host</code> rev <code>617e420</code>.</td><td>Retire <code>call/0017</code> the MADR way: <code>Status: superseded by the spine</code>, in place. Review <code>call/0018</code> under the same test (its scope is software and the spine cites it by name, so it reads softer); keep or retire with a recorded reason. <code>call/0021</code> was checked and is clean.</td><td>host-local <code>call/</code> status</td></tr>
-<tr><td>The <code>host-prove</code> <code>.host-software</code> pin sits one CI-only commit past its release tag.</td><td><code>.host-software</code> host-prove <code>pin = 5e01f58</code> (<code>git describe</code> = <code>v0.2.2-1-g5e01f58</code>); the <code>v0.2.2</code> tag is <code>3ca95fc</code>; the extra commit touches only <code>ci.yml</code>, so the artifact still reproduces.</td><td>Re-pin to the tag commit <code>3ca95fc</code>, or record the artifact-preserving pin-advance rationale.</td><td>host-local <code>.host-software</code></td></tr>
-<tr><td>Two record-tidiness defects.</td><td>An empty untracked <code>plan/0001-foundation/spec/</code> left from the host#12 live-trigger probe (a number collision with <code>0001-migration-protocol</code>); and PLAN.md's Skill-Hardening status box is unchecked while <code>SKILL-HARDENING.md</code> shows every goal done.</td><td>Remove the orphan directory; check the PLAN.md box and fold in the standing crates.io deferral.</td><td>host-local</td></tr>
+<p>A deep audit found contradictions where the host's own docs restate methodology the
+spine has moved: the <code>STRUCTURE.md</code> room map, the <code>README.md</code> and <code>CLAUDE.md</code> tool list
+and verification model, the recorded Where layout. Each staled when a past spine change
+landed cleanly (specs-to-software in plan/0012, the nested layout in plan/0029, host-prove
+and the ladder in plan/0023) and nothing re-read the restatement.</p>
+<p>The contradictions are symptoms of one root cause: migration and upgrade propagate a spine
+change but never prompt a re-examination of the project's own restatements. Needing a deep
+manual audit to find this drift is itself the evidence that a reflective practice the
+methodology should carry is absent. This milestone closes the gap and reconciles the drift.</p>
+<p>A de-risk review (five lenses plus Qwen-3.5-4B, recorded in <code>design-review.md</code>) reshaped
+the doctrine: the draft's scope rule was inoperable (4B could not apply an abstract
+describes-versus-uses test), its blanket cadence was alarm fatigue, and its primary trigger
+was wrong for a development host. The settled design follows.</p>
+<h2 id="the-doctrine-the-root-cause-fix-in-the-spine"><a class="header" href="#the-doctrine-the-root-cause-fix-in-the-spine">The doctrine (the root-cause fix, in the spine)</a></h2>
+<p>Widen the existing "grows by reflective practice" doctrine to one principle: an agent
+perceives neither the register it emits nor the restatements its own change stales, so both
+are re-examined on purpose, prompted at the trust boundaries, mechanical-first, and
+operator-validated. Two arms under it:</p>
+<ul>
+<li><strong>gather</strong> (plan/0034, plan/0035): forward, emergent tells in the corpus, a confirmed
+tell graduates upstream, cadence-driven.</li>
+<li><strong>reconcile</strong> (new): backward, the project's own restatements of methodology, a confirmed
+drift fixed locally and never propagated, fired by a specific spine move.</li>
+</ul>
+<p>Settled rules:</p>
+<ul>
+<li><strong>Prefer pointing over paraphrasing.</strong> An instance doc should point at the spine, not
+restate it; a restatement that remains is a reconciliation liability reconcile maintains.</li>
+<li><strong>Scope is machine-checkable and annotation-backed, not a judgment</strong> (the <code>LEXICON</code> and
+obligations house style): a restatement that must stay carries a declared assertion the
+tool checks against a source of truth. That is what makes it operable at the weak-agent bar.</li>
+<li><strong>Trigger is conditional and host-aware.</strong> A new <code>restates =</code> field on the <code>UPGRADING</code>
+stanza marks a drift-capable entry, and reconcile fires on it, naming which restatement to
+re-read. For a development host that authors spine changes with no upgrade record, the
+<strong>verify gate</strong> is the binding trigger: it runs the check when a drift-capable change
+landed since the last reconcile receipt, and records <code>n-a</code> otherwise. Adoption runs the
+full reconcile once.</li>
+<li><strong>Disposition is three-way</strong> (reuse tell-disposition): reword a live restatement, box a
+frozen citation, forward-correct an immutable record (<code>call/</code>, a <code>Status: done</code> doc,
+<code>MEMORY.md</code>).</li>
+<li><strong>A sibling <code>validate</code> check</strong> HAZARDs an <code>accepted</code> <code>call/</code> decision whose <code>Scope:</code> names
+<code>host-template</code>, closing decision-status drift (the <code>call/0017</code> class) mechanically.</li>
+</ul>
+<p>Authority: this is methodology, so it lives in the spine (<code>host-template</code>), never a project
+<code>call/</code>. The count-versus-stanzas tool check is dropped as noise (the live family disagrees,
+5 against 4 against 3); the tool check is a set-diff, and the verification-model check is a
+positive assertion that every rung-driver is named.</p>
+<h2 id="build-order"><a class="header" href="#build-order">Build order</a></h2>
+<ol>
+<li>Seed the two spine truth data the checks need: an explicit host-* tool-family list and a
+verification-model datum (the manifest carries neither today).</li>
+<li>host-lifecycle gains the annotation-backed reconcile check (a Where-root off <code>software/</code>,
+a spec path asserted under <code>plan/</code>, the host-* family set-diff, a verification-model
+omission), the <code>restates =</code> read, and the <code>validate</code> decision-scope check; released
+through the lifecycle and re-pinned.</li>
+<li>Spine: widen the doctrine and add the <code>UPGRADING</code> entry; wire the reconcile step into the
+<code>upgrade</code>, <code>adopt</code>, and <code>verify</code> skills (gather stays where it is).</li>
+<li>agentic-host adopts, then reconciles the symptom drift below as the doctrine's first
+dogfood run, through the new check rather than by hand.</li>
+</ol>
+<h2 id="the-symptom-drift-the-first-dogfood"><a class="header" href="#the-symptom-drift-the-first-dogfood">The symptom drift (the first dogfood)</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Finding</th><th>Evidence</th><th>Disposition</th></tr></thead><tbody>
+<tr><td>Root <code>CLAUDE.md</code> contradicts itself and the spine on the verification model (three lanes, <code>host-prove</code> omitted, against the six-rung ladder).</td><td><code>CLAUDE.md:24</code> vs <code>:9</code>/<code>:11</code> and the spine ladder.</td><td>reword live</td></tr>
+<tr><td><code>STRUCTURE.md</code> is a stale room map: What at <code>plan/&lt;NNNN&gt;/spec/</code>, Where at <code>host-lint/</code>, only host-lint of five components named.</td><td><code>STRUCTURE.md:9</code>/<code>:11</code> vs <code>host-template/STRUCTURE.md</code> and the live <code>software/</code> tree.</td><td>reword live; also clears the orphan <code>plan/0001-foundation/spec/</code></td></tr>
+<tr><td>Root <code>CLAUDE.md</code> points a spine change at a redirect stub.</td><td><code>CLAUDE.md:26</code> vs <code>host-template/MIGRATION.md</code>.</td><td>reword live</td></tr>
+<tr><td><code>README.md</code> names only three host-* tools and omits <code>host-prove</code>.</td><td><code>README.md:4</code> vs <code>.host-software</code>.</td><td>reword live</td></tr>
+<tr><td><code>call/0017</code> authored a now-spine-resident rule yet stays <code>accepted</code>.</td><td><code>call/0017:5</code> (Scope names <code>host-template</code>); rule in <code>host-template/CLAUDE.md</code>, applied <code>617e420</code>.</td><td><code>Status: superseded by the spine</code>; review <code>call/0018</code>; <code>call/0021</code> clean</td></tr>
+<tr><td>The <code>host-prove</code> <code>.host-software</code> pin sits one CI-only commit past its <code>v0.2.2</code> tag.</td><td><code>pin = 5e01f58</code> (<code>v0.2.2-1-g5e01f58</code>); tag <code>3ca95fc</code>; the extra commit is <code>ci.yml</code> only.</td><td>re-pin to the tag, or record the rationale</td></tr>
+<tr><td>Two record-tidiness defects.</td><td>the empty orphan <code>plan/0001-foundation/spec/</code>; PLAN.md's Skill-Hardening box unchecked while <code>SKILL-HARDENING.md</code> is done.</td><td>remove the dir; check the box with the crates.io deferral noted</td></tr>
 </tbody></table>
 </div>
-<p>The session auto-memory staled the same way during the campaign (the prose lane is now
-wired and clean, the applied-set moved, the tools are at v0.23.0). That is the agent's
-own working memory, the same drift shape at a different layer; it is corrected directly
-as memory hygiene, not tracked as a milestone finding.</p>
-<h2 id="resolved-during-the-deferred-item-campaign"><a class="header" href="#resolved-during-the-deferred-item-campaign">Resolved during the deferred-item campaign</a></h2>
-<ul>
-<li><strong>Prose-hygiene gate</strong> (the original headline finding): the spine documented a
-<code>verify</code> recheck that re-runs the prose audit, but <code>lifecycle.manifest</code> ran only
-<code>validate</code>. Closed in host-lifecycle v0.22.0 (<code>plan/0030</code> D4): the recheck chains
-<code>host-lifecycle prose .</code>, so <code>software --check</code> re-runs the audit and re-opens a
-regressed doc as a HAZARD.</li>
-</ul>
+<p>Resolved already in the campaign: the prose-hygiene gate the spine asserted but
+<code>lifecycle.manifest</code> did not implement (plan/0030 D4, host-lifecycle v0.22.0). The session
+auto-memory staled the same way and is corrected directly as memory hygiene, not tracked here.</p>
 <h2 id="verification"><a class="header" href="#verification">Verification</a></h2>
 <ul>
-<li>The spine carries the migration-reflection doctrine, the <code>upgrade</code>/<code>adopt</code>/<code>verify</code>
-skills prompt it, an <code>UPGRADING</code> entry records it, and agentic-host adopts it.</li>
-<li>Root <code>CLAUDE.md</code>: the verification-model paragraph names <code>host-prove</code> and the six-rung
-ladder, with no surviving "three lanes" claim; the migration sentence resolves to a
-live mechanism.</li>
-<li><code>STRUCTURE.md</code>: the What and Where rooms point at the software, never <code>plan/spec/</code> or
-the root-scattered layout; <code>software --check</code> and the doc-site build stay green.</li>
-<li><code>README.md</code>: the host-* tool list includes <code>host-prove</code>.</li>
-<li><code>call/0017</code>: <code>Status: superseded by the spine</code>; <code>host-lifecycle validate plan/ call/</code>
-clean; <code>call/0018</code> dispositioned with a recorded reason.</li>
-<li><code>host-prove</code> pin: <code>git -C software/host-prove/main describe --tags</code> reports an exact
-<code>v0.2.2</code>, or a recorded rationale; <code>software --check</code> and <code>--verify-build</code> green.</li>
-<li>Tidiness: <code>plan/0001-foundation/</code> is gone; PLAN.md records Skill-Hardening complete
-with the crates.io deferral noted.</li>
+<li>The spine carries the widened doctrine; an <code>UPGRADING</code> entry records it; the
+<code>upgrade</code>/<code>adopt</code>/<code>verify</code> skills prompt reconcile; agentic-host adopts it.</li>
+<li>The reconcile check flags a planted drift (a Where-root off <code>software/</code>, a missing
+rung-driver) and stays silent on a clean doc; <code>validate</code> HAZARDs a <code>host-template</code>-scoped
+<code>accepted</code> decision. A Fen (Qwen-3.5-4B) run reaches the reconcile action on a concrete
+flag unaided.</li>
+<li>The symptom drift above reconciles to clean: root <code>CLAUDE.md</code>, <code>STRUCTURE.md</code>, <code>README.md</code>
+match the spine and the live layout; <code>call/0017</code> is superseded; the <code>host-prove</code> pin is at
+its tag or cited; the orphan dir is gone; the PLAN.md box is checked.</li>
+<li><code>software --check</code>, <code>validate plan/ call/</code>, the prose gate, and the doc-site build are
+green; whole-suite green across the affected repos at close.</li>
 </ul>
-<p>Whole-suite green across the affected repos at close.</p>
 
                     </main>
 
