@@ -872,3 +872,52 @@ at :355 and prose "named harness" at :365); the two summed past the gate, flaggi
 Corollary: `scan_prose_text` (the prose audit) takes NO allowlist, so a LEXICON entry cannot mask a prose
 trope (LEXICON masks only the naming audit, `scan_text_with_allow`); a legitimate-but-flagged prose word is
 cleared by rewording/reducing density or boxing in a `host-lint:ignore` fence, never by LEXICON.
+
+---
+
+## plan/0039 cut: the reconcile arm evolves to concept-as-URI (designed, not built)
+
+The operator rejected EVERY inline form of the reconcile annotation on aesthetic grounds (a trailing
+comment, a comment-pair wrapping a span, a markdown link carrying the directive, an out-of-line metadata
+block). The objection is structural, not cosmetic: any inline annotation is checker machinery sitting in
+the prose, and clean prose is the whole point. The 5 shipped `<!-- host-reconcile: KIND -->` annotations
+(plan/0036) were deleted from agentic-host's CLAUDE.md/README/STRUCTURE.
+
+**The settled replacement (refined-B):** each methodology concept is a URI. One canonical definition at a
+stable `{#id}` anchor on a concepts page (generated from `.host-software` for the project-scoped ones, so
+it cannot drift); everywhere else POINTS to it with a relative-path link (`concepts.md#components`) instead
+of restating. Validated empirically: stock mdBook v0.5.2 resolves the relative `#id` links with no custom
+generator pass; the real Qwen-3.5-4B authored pointer links 3/3 (incl. the `verifiers` route the inline
+classification step had failed) because pointing carries no "is this a restatement?" judgment, the exact
+step that exhausted the 4B on every inline form. Lineage cited outward: DRY/SSOT (Hunt & Thomas),
+reflection-on-action (Schön), Linked Data (Berners-Lee). Citation principle (operator): kind to predecessors
+and peers OUTWARD; rigorous with ourselves INWARD.
+
+**`family` -> `components`:** "family" was an agentic-host overfit (host-* tools happen to share a prefix);
+the methodology's own word for the `.host-software` set is "components". Renamed across the host-lifecycle
+binary + its tests + the spine `lifecycle.manifest` `[components]` stanza, NO ALIAS (an alias split
+validation across two surfaces — the `restates=` ledger-gate uses RECONCILE_KINDS, the assertion-match used
+the alias — so a `restates = family` flagged unknown; operator vetoed the alias, "fix properly"). Suite green
+(86/86).
+
+**The bite lesson (two cast reviews, both this session):** link-integrity ("the link resolves") is NOT the
+bite the inline check had. A dropped component is simply never linked, so nothing catches the absence;
+"definitions match SSOT" is tautological (generated from it). So refined-B needs a **coverage check** (every
+`.host-software` component/verifier MUST be referenced somewhere, drop-fails-by-absence) + a **declared-anchor
+check** (target must be a known concept id, not any resolving fragment). Cutover is **deprecate-then-retire**,
+fail-safe: a retired checker HARD-FAILS on a surviving annotation (never silently inert, the cold-adopter
+fail-unsafe Bly flagged); a bookless adopter SKIPS, not no-ops (Orin). Retiring a days-old spine mechanism is
+itself churn, so deprecate first, retire one spine revision later via UPGRADING.
+
+**First-mover gap (operator decision):** agentic-host's annotations are already deleted, so its restatements
+(the tool list, the layout) are briefly UNGUARDED until the coverage check ships. Operator accepted this as a
+calculated risk; an adopter is never asked to take it.
+
+**State at write-up:** plan/0039 cut + PLAN.md row committed (558da13). The `family`->`components` rename,
+the manifest `[components]`, and the 5 doc deletions are UNCOMMITTED in the working tree (the binary change
+deploys via `host-lifecycle release`, not an agentic-host commit, since `software/` is gitignored). The build
+(concepts page, the 3 checks, deprecate inline, spine doctrine rewrite, UPGRADING, release) is pending.
+
+**Aside:** filed connollydavid/host-lifecycle#1 — `host-lifecycle next <dir>` returns `0000` for a directory
+with no numbered entries (e.g. the host root) instead of erroring, a fail-unsafe footgun at the weak-agent
+bar. `next plan` -> `0039` and `next call` -> `0023` are correct.
