@@ -180,7 +180,7 @@
 <p>The reconcile arm (plan/0036) guards a project's own restatements of methodology against drift after a spine change, using an inline annotation: a doc line carries <code>&lt;!-- host-reconcile: KIND --&gt;</code> and the tool checks that line against a single source of truth (the component set, the verifiers, the layout). The operator rejected every inline-annotation form on aesthetic grounds: a comment trailing a sentence, a comment pair wrapping a span, a markdown link carrying the directive, and an out-of-line metadata block. The objection is structural rather than cosmetic: any inline annotation is checker machinery sitting in the prose, and prose that reads clean is the whole point.</p>
 <p>A replacement was explored and validated. Each methodology concept becomes a URI: one canonical definition at a stable address, and every mention points to it with a plain link rather than restating it. This is the single-source-of-truth principle (DRY, Hunt and Thomas) made concrete, and the reflection-on-action lineage the doctrine already borrows (Schon); the addressing is the first Linked Data principle (Berners-Lee), names for things made dereferenceable. The decision records carry these as outward citations, kind to predecessors and peers; the project holds itself to the same rule with rigor, which is the inward face of the one principle.</p>
 <h2 id="the-design-refined-b"><a class="header" href="#the-design-refined-b">The design (refined-B)</a></h2>
-<p>Each concept (the project's <code>components</code>, the <code>verifiers</code>, the <code>software-root</code>, the <code>spec-home</code>) has one canonical definition on a concepts page, at a stable anchor, generated from <code>.host-software</code> for the project-scoped ones so it cannot drift. Everywhere else points to it with a relative-path link (<code>concepts.md#components</code>), which renders and resolves under stock mdBook with no custom generator pass.</p>
+<p>Each concept (the project's <code>components</code>, the <code>verifiers</code>, the <code>software-root</code>, the <code>spec-home</code>) has one canonical definition at a stable <code>{#id}</code> anchor in an authored doc, <code>STRUCTURE.md</code>. Everywhere else points to it with a relative-path link (<code>STRUCTURE.md#components</code>), which renders and resolves under stock mdBook with no custom generator pass. There is <strong>no generated <code>concepts.md</code></strong>: with all four definitions in one doc, a page of links back to them is pure redundancy (see "Refinements this session"). Drift is caught not by generating the definition but by the coverage check, which holds each project-local home to its full <code>.host-software</code> set; the tool carries the concept vocabulary, so no file enumerates it.</p>
 <p>reconcile stops scanning inline annotations and runs three checks instead:</p>
 <ul>
 <li><strong>link-integrity</strong>: every concept link resolves to a declared concept anchor.</li>
@@ -198,20 +198,20 @@
 <ol>
 <li>Rename <code>family</code> to <code>components</code> across the binary, its tests, and the spine manifest (done in the working tree, the suite green).</li>
 <li>Mark inline reconcile deprecated, naming the concept-as-URI successor, and keep it checking under the new name so the bite holds during the transition.</li>
-<li>Build the concepts page (generated from <code>.host-software</code>) and the coverage, declared-anchor, and link-integrity checks.</li>
+<li>Add the concept homes (<code>{#id}</code> anchors) to <code>STRUCTURE.md</code>, and build the coverage, declared-anchor, and link-integrity checks.</li>
 <li>Convert the host's restatements to pointers.</li>
 <li>Retire the inline mechanism one spine revision later, via an <code>UPGRADING</code> entry that over-reports the owed migration and hard-fails any surviving annotation.</li>
 </ol>
 <p>agentic-host accepts running in the gap as the first mover: its inline annotations are already removed, so its restatements are briefly unguarded until the coverage check ships. The operator accepted this as a calculated risk; an adopter is not asked to take it, since the deprecate-then-retire path and the fail-safe cutover protect the adopter.</p>
 <h2 id="validation-already-in-hand"><a class="header" href="#validation-already-in-hand">Validation already in hand</a></h2>
 <ul>
-<li>The concept-as-URI scheme renders and resolves under stock mdBook v0.5.2: the <code>{#id}</code> heading anchors are honored, a relative <code>concepts.md#id</code> link rewrites to <code>concepts.html#id</code>, and every link resolves.</li>
+<li>The concept-as-URI scheme renders and resolves under stock mdBook v0.5.2: the <code>{#id}</code> heading anchors are honored, a relative <code>STRUCTURE.md#id</code> link rewrites to <code>STRUCTURE.html#id</code>, and every link resolves.</li>
 <li>The real weak agent (Qwen-3.5-4B) authored concept pointer links unaided and correct, three of three, the <code>verifiers</code> route among them, which the inline scheme's classification step had failed. The reason is structural: pointing carries no judgment of whether a span is a restatement, the step that exhausted the model before.</li>
 <li>The <code>family</code> to <code>components</code> rename builds clean with the whole suite green.</li>
 </ul>
 <h2 id="verification-for-the-build"><a class="header" href="#verification-for-the-build">Verification (for the build)</a></h2>
 <ul>
-<li>The concepts page is generated from <code>.host-software</code> and the generated definitions match it.</li>
+<li>Each project-local concept's home in <code>STRUCTURE.md</code> names its full <code>.host-software</code> set (coverage), with no generated <code>concepts.md</code>.</li>
 <li>reconcile flags a dropped component (coverage), a link to an undeclared concept (declared-anchor), and a broken link (link-integrity), and stays silent on a clean set.</li>
 <li>A surviving inline annotation hard-fails once the mechanism is deprecated, and never silently passes.</li>
 <li>A weak-agent run reaches the right pointer on a concrete case unaided.</li>
