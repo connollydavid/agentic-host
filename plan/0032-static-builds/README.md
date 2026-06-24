@@ -197,7 +197,8 @@ commit before the final green.
   drift assertion keeps the two pins in step.
 - **`attest-host` is OS-granular, not arch-granular**; only the linux-x86_64-musl asset is
   reproducibility-certified, the others ship with a checksums manifest and are stated uncertified. An
-  arch-level attest is a host-lifecycle feature request, out of scope.
+  arch-level attest is a host-lifecycle feature request, out of scope and **not
+  pursued**: the checksums manifest is the stated boundary.
 
 ## Records
 

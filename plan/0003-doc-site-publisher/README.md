@@ -55,6 +55,7 @@ gh-pages redeploys with a Where section and lifecycle-ordered nav.
 ## Out of scope
 
 - Making the bare-store embedding optional for single-line components (case-study
-  friction rather than a filed defect); would need its own decision.
+  friction rather than a filed defect); would need its own decision. **Not pursued**:
+  no filed defect, dormant unless a case study forces it.
 - Link-correctness checking across rooms (the gate guards room presence, not links).
 - Rewriting the reporter's own generator; that is the adopter's, not ours.

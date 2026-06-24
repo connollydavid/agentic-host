@@ -42,3 +42,5 @@ The originally-listed candidates are therefore **descoped**:
   append-only record) and was rejected; the `.host-lint-allow` / exclude-don't-rewrite
   fixes it prompted (`call/0006`, `call/0009`) already landed. Left unmigrated; can be
   re-attempted later as its own milestone if a case-(c) exercise is wanted.
+  **Dormant, not pursued**: the host's own migration already exercised case-(c),
+  and no external case-(c) dogfood is planned.

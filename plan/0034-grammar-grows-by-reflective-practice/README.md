@@ -172,3 +172,5 @@ all repos are green; host#16 is closed.
   `plan/0035`** (host-lint `gather` + the verify/adopt reflection step shipped; the
   deferred software decision is `call/0022`).
 - A constrained local-ban surface only if a genuinely non-universal tell is found.
+  **Dormant**: none has appeared, so there is no trigger and nothing to build
+  (reaffirmed in `plan/0035`).
