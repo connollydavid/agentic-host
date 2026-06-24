@@ -217,4 +217,6 @@ The residency clause this milestone needs is **already in the spine** (`plan/002
 adopter references versus development-host embeds). The remaining spine-shaped item (that the template
 prose gain a first-class notion of an artifact-free *library* component) is already covered by
 `plan/0029`'s recipe-dispatch model, where a stanza with no artifact takes the tag-only path, together with
-its `STRUCTURE.md` update. This project-scoped migration carries it no further.
+its `STRUCTURE.md` update. This project-scoped migration carries it no further. **Closed**: `plan/0029` shipped
+the recipe-dispatch model (a no-artifact stanza takes the tag-only path) and the
+residency clause; nothing remains here.

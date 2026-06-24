@@ -4,7 +4,7 @@
 > fixes: host-lint#7 (v0.4.3), host#14 (host-lifecycle v0.16.0). plan/0024: host#8, #9, #10,
 > #11, #12, #13, closed together after a completeness review that caught and fixed one residual
 > (#11's tools.lock header still overstated uniform SHA256; host-prove f0852e5). connollydavid/host
-> has zero open issues. The plan/0025 release-orchestration track is separate, future work.
+> has zero open issues. The plan/0025 release-orchestration track is separate work, since landed in plan/0028 + plan/0029.
 
 The single plan that closes **every** open bug across the project, in dependency order. It does
 not re-specify the mechanisms (those live in plan/0024 and plan/0025); it is the coverage map +

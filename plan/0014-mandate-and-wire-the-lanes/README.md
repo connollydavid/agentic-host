@@ -59,3 +59,6 @@ brings this host into alignment with no surprises.
 An enforcement *gate* in host-lifecycle (fail when a materialized component carries
 a spec with no lane) is the ultimate teeth; recorded as a candidate follow-on so
 the MUST is mechanically checked, not only reviewed.
+
+**Closed by `plan/0016`**: `host-lifecycle software --check` HAZARDs a materialized
+component whose `.allium`/`.tla` carries no CI lane, so the MUST is mechanically gated.

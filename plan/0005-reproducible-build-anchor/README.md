@@ -29,6 +29,8 @@ What landed (host-lifecycle **v0.8.0**, template `e49d8d9`):
 Follow-on (not in this milestone): wiring host-lint's *own* reproducible build into
 this repo's `.host-software` (real determinism work: pinned toolchain, reproducible
 release artifact). This milestone delivers the mechanism and the requirement; applying
-it to our software is its own task.
+it to our software is its own task. **Closed by `plan/0006`**: host-lint's own
+reproducible build is wired into `.host-software` (pinned toolchain, reproduced
+artifact, `software --verify-build` + CI green).
 
 Resolves issue #10.

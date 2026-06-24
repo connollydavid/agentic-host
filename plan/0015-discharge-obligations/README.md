@@ -54,3 +54,7 @@ Full `propagate` test-generation (mechanically mapping every one of the 44+
 integration suites already exercise the behaviour (tell types, severities, exit
 codes); a dedicated obligation-to-test manifest is a follow-on, and the host-lifecycle
 enforcement gate (`plan/0016`) is the mechanism that will require it.
+
+**Closed by `plan/0017`**: every `allium plan` obligation is dispositioned in a
+`<spec>.obligations` manifest, CI-checked via `obligations --tests`; host-lint 44 +
+host-grammar 39 obligations mapped to named tests.

@@ -168,5 +168,7 @@ all repos are green; host#16 is closed.
 ## Follow-ups
 
 - Mechanize the harvest and the verify-gate reflection prompt in the skills (a
-  software milestone that would carry the deferred software `call/`).
+  software milestone that would carry the deferred software `call/`). **Closed by
+  `plan/0035`** (host-lint `gather` + the verify/adopt reflection step shipped; the
+  deferred software decision is `call/0022`).
 - A constrained local-ban surface only if a genuinely non-universal tell is found.
