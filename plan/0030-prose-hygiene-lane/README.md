@@ -28,7 +28,11 @@
 > path-excluded), 950fbd6 is recorded in `.host`, and the front-door Verify passes. **D4** (wiring
 > `--docs` into the verify recheck for ongoing enforcement) is a flagged spine follow-up: the shared
 > recheck needs a portable host-lint invocation, since agentic-host's host-lint is the embedded Where
-> software, not a PATH tool.
+> software, not a PATH tool. **Closed 2026-06-24** (host-lifecycle v0.22.0): the recheck chains
+> `host-lifecycle prose .`, host-lint's `--docs` audit run in-process via the linked engine, so the
+> gate needs no host-lint on PATH. Spine `e280a8d` + UPGRADING `641efef`, adopted in agentic-host;
+> `software --check` re-runs the prose audit, and it immediately caught a real regression (a
+> decoration em dash in `call/0021`).
 
 ## Context
 

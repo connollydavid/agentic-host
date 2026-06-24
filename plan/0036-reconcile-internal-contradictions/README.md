@@ -20,7 +20,7 @@ work.
 
 | Finding | Evidence | Fix | Authority |
 |---|---|---|---|
-| The spine asserts a prose-hygiene gate it does not implement. The `verify` receipt is documented as re-verified by re-running the prose audit, so a regressed doc re-opens as a HAZARD; the manifest the gate reads runs only `validate`. | `host-template/CLAUDE.md:226`; applied ledger entry `host-template/UPGRADING.md:165` (`950fbd6`, recorded in `.host`); contradicted by `host-template/lifecycle.manifest:61` (`recheck = host-lifecycle validate plan/ call/`, no prose term). | Reconcile the spine record with reality: either land the recheck wiring, or correct the docs and the applied ledger entry so they stop asserting an unimplemented gate. The wiring path itself is tracked separately as plan/0030 D4 and is not duplicated here; this plan owns making the **record honest**. | spine (host-template), re-propagated |
+| The spine asserts a prose-hygiene gate it does not implement. The `verify` receipt is documented as re-verified by re-running the prose audit, so a regressed doc re-opens as a HAZARD; the manifest the gate reads runs only `validate`. | `host-template/CLAUDE.md:226`; applied ledger entry `host-template/UPGRADING.md:165` (`950fbd6`, recorded in `.host`); contradicted by `host-template/lifecycle.manifest:61` (`recheck = host-lifecycle validate plan/ call/`, no prose term). | Reconcile the spine record with reality: either land the recheck wiring, or correct the docs and the applied ledger entry so they stop asserting an unimplemented gate. The wiring path itself is tracked separately as plan/0030 D4 and is not duplicated here; this plan owns making the **record honest**. **RESOLVED 2026-06-24** (deferred-item campaign): D4 landed in host-lifecycle v0.22.0 (the verify recheck chains `host-lifecycle prose .`, in-process), so the spine claim is now true and the gate enforces it. | spine (host-template), re-propagated |
 | Root `CLAUDE.md` contradicts itself and the spine on the verification model. The "Agentic-host model" paragraph says verification runs in three lanes and lists the host-* family without `host-prove`, while the same file's overview lists `host-prove` and the spine defines a six-rung ladder it drives. | `CLAUDE.md` "Agentic-host model" paragraph vs `CLAUDE.md` overview (the four-tool family, `host-prove` as the ladder driver) and `host-template/CLAUDE.md` "The verification ladder". | Update the host paragraph to the six-rung ladder and include `host-prove`. | host-local (instance prose) |
 | Root `CLAUDE.md` points spine changes at a procedure file that is now a redirect stub. | `CLAUDE.md` ("re-run the migration (`host-template/MIGRATION.md`)") vs `host-template/MIGRATION.md` (a redirect to the `host` repo; routine spine changes propagate via `host-lifecycle upgrade`). | Point the sentence at the live mechanism; keep the load-bearing "do not fork the spine in isolation". | host-local (instance prose) |
 | `call/0017` authored a methodology rule now resident in the spine, yet remains `accepted` in the software-only Why room. | `call/0017:5` (`Scope:` includes `host-template`) and its body ("a real spine semantics change"); the rule lives in `host-template/lifecycle.manifest` and is applied as `.host` rev `617e420`. | Retire `call/0017` the MADR way: `Status: superseded by the spine`, in place. Review `call/0018` under the same test (software-scoped but authored a now-resident principle); keep or retire with a recorded reason. `call/0021` was checked and is clean (software-scoped, cites the spine MUST). | host-local (`call/` status) |
@@ -29,9 +29,10 @@ work.
 
 ## Out of scope
 
-The prose-gate **wiring** decision (plan/0030 D4) and every previously deferred
-follow-up stay in their existing homes, untouched. This plan does not re-track
-them.
+The prose-gate **wiring** (plan/0030 D4) has since closed during the deferred-item
+campaign (host-lifecycle v0.22.0), which also resolved this plan's prose-gate finding.
+Every other previously deferred follow-up stays in its existing home, untouched. This
+plan does not re-track them.
 
 ## Verification
 
