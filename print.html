@@ -5322,6 +5322,27 @@ host-lifecycle release, install the new binary to PATH before running <code>soft
 recheck shells <code>host-lifecycle prose</code>. Whole-suite green (host-lifecycle CI main+tag, agentic-host
 Site + reproducible-build running the in-process prose recheck in CI). Remaining: the receipts-family
 re-homing (Stage 5).</p>
+<p>Campaign Stage 5 DONE (2026-06-24): the receipts-family re-homing, <strong>100% tool-driven</strong>, via
+<strong>host-lifecycle v0.23.0</strong> (<code>6e15e01</code>, artifact <code>76be6d9e</code>). plan/0037. The <code>migrate-receipts &lt;dir&gt;</code>
+subcommand moves the applied-set out of <code>.host</code> into <code>.host-receipts</code> and splits the operational
+receipts into a new <code>.host-lifecycle-receipts</code>, idempotently; the dual-format reader (<code>read_applied_ids</code>,
+<code>read_all_receipts</code>, <code>applied_file</code>) unions BOTH layouts so the gate stays green across the boundary and
+an un-migrated adopter is read correctly (permanent back-compat). The 6-of-8 ontology ambiguity the prior
+review flagged is resolved by one rule: a receipt is methodology-version (<code>.host-receipts</code>) only for
+<code>adopt</code> and <code>upgrade</code>; everything else host-lifecycle runs is operational (<code>.host-lifecycle-receipts</code>).
+Writes route by that rule (<code>append_receipt</code>, the <code>upgrade --record</code> applied-write, <code>--advance</code> compaction).
+Spine <code>ac32d1c</code> (the stamp/receipts description) + UPGRADING <code>4d2ebe9</code>, adopted <code>applied=ac32d1c</code>.
+agentic-host dogfooded the migration through the tool (8 applied lines moved, 26 operational receipts
+split); <code>software --check</code> 0 HAZARDs on the migrated layout, <code>--verify-build</code> reproduces, whole-suite
+green, Fen-4B reached <code>migrate-receipts .</code> unaided. <strong>Lessons:</strong> (a) the verify gate (plan/0030 D4) caught
+an <code>ing-tail</code> trope in plan/0037's own README during the release and BLOCKED it, a live proof the gate
+works; (b) <code>host-lifecycle prose .</code> / <code>host-lint --docs</code> only scan TRACKED files (git ls-files), so a NEW
+untracked doc is NOT prose-checked until committed or <code>git add</code>-ed (my pre-commit check on plan/0037 was
+vacuous); (c) <code>migrate-receipts --help</code> has no positional, so it defaulted dir to <code>.</code> and migrated the repo
+root (the <code>--</code>-flag is skipped by the arg finder) — harmless here since it WAS the intended dogfood, but a
+reminder that these subcommands default the dir to the cwd. The whole deferred-item closure campaign
+(Stages 1-5) is now complete; plan/0036 (the contradiction sweep) remains the next milestone, with its
+prose-gate finding already resolved.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
