@@ -5191,6 +5191,25 @@ finding #1) and the receipts-family re-homing as its own milestone. The re-homin
 support must be ONGOING, not a one-time shim (copy-at-version: adopters cross the boundary at their own
 pace), following the existing legacy-<code>.host</code>-stamp auto-migrate-on-read precedent: an <code>UPGRADING</code>
 ledger entry per adopter plus permanent old-layout read tolerance.</p>
+<p>Campaign Stage 4 DONE (2026-06-24): plan/0030 D4 wired + plan/0036 prose-gate contradiction
+resolved, via <strong>host-lifecycle v0.22.0</strong> (<code>167d2e6</code>, artifact <code>bb6fc4eb</code>). The portability
+problem (agentic-host's host-lint is embedded Where software, not on PATH) dissolved on a key
+realization: <strong>host-lifecycle already links the <code>host_lint</code> crate</strong>, so the prose audit runs
+IN-PROCESS. New <code>host-lifecycle prose &lt;dir&gt;</code> mirrors <code>host-lint --docs</code> (git ls-files .md walk
+honoring <code>.host-lintignore</code>, <code>scan_prose_text</code>, the same Flag-&gt;1/Warn-&gt;3 verdict) with zero PATH
+dependency. The spine <code>verify</code> recheck now chains <code>host-lifecycle prose .</code> after <code>validate</code>
+(<code>lifecycle.manifest</code>, spine <code>e280a8d</code> + UPGRADING <code>641efef</code>, adopted applied=<code>e280a8d</code>); CLAUDE.md
+reconciled; the <code>--preview</code>/<code>--next</code> release flag (silently ignored before) is fixed. <strong>The gate
+caught two real regressions while landing</strong>, proving it non-vacuous: (a) a decoration em dash in
+<code>call/0021:10</code>, a genuine post-D5 regression that slipped in because D4 was not yet wired (reworded);
+(b) my own commit message "finding #1", a positional-reference tell (Flag) the commit-msg hook
+blocked (reworded). <strong>Lesson on engine identity:</strong> the stale PATH <code>host-lint</code> binary's <code>--docs</code>
+UNDER-reported (missed the call/0021 em dash); the gate uses host-lifecycle's linked engine
+(<code>host-grammar</code> 9d51468, the same pin host-lint v0.9.2 carries), which is authoritative. After a
+host-lifecycle release, install the new binary to PATH before running <code>software --check</code>, since the
+recheck shells <code>host-lifecycle prose</code>. Whole-suite green (host-lifecycle CI main+tag, agentic-host
+Site + reproducible-build running the in-process prose recheck in CI). Remaining: the receipts-family
+re-homing (Stage 5).</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
