@@ -5560,6 +5560,20 @@ deploys via <code>host-lifecycle release</code>, not an agentic-host commit, sin
 <p><strong>Aside:</strong> filed connollydavid/host-lifecycle#1 — <code>host-lifecycle next &lt;dir&gt;</code> returns <code>0000</code> for a directory
 with no numbered entries (e.g. the host root) instead of erroring, a fail-unsafe footgun at the weak-agent
 bar. <code>next plan</code> -&gt; <code>0039</code> and <code>next call</code> -&gt; <code>0023</code> are correct.</p>
+<h2 id="plan0039-design-refined-and-build-started-2026-06-24-corrects-the-entry-above"><a class="header" href="#plan0039-design-refined-and-build-started-2026-06-24-corrects-the-entry-above">plan/0039 design refined and build started (2026-06-24, corrects the entry above)</a></h2>
+<p>The plan/0039 entry above is superseded on three points; corrected here (append-only). (1) <strong>No generated
+<code>concepts.md</code>.</strong> All four concept definitions live at <code>{#id}</code> anchors in <code>STRUCTURE.md</code> and are pointed at
+directly (<code>[text](STRUCTURE.md#id)</code>); a page of links back to one doc is redundant. The tool carries the
+concept vocabulary (<code>CONCEPT_IDS</code>, spine-level); the coverage check guards drift. Vocabulary is spine, values
+are project-local. (2) <strong>The lifecycle manifest is hardened to phases-only</strong> (<code>manifest --check</code> rejects any
+non-<code>[phase]</code> stanza); <code>components</code>/<code>verifiers</code> are sourced from the project's own <code>.host-software</code>, never the
+shared spine — separation of concerns, no overfit creeps back. (3) <strong><code>host</code> is the front door, not "repo-self".</strong>
+Of the <code>.host-software</code> members the four tools are <code>components</code>; the single-file <code>host</code> is set apart by
+<code>front-door = true</code>. agentic-host (the dev environment) is NOT a <code>.host-software</code> member and must stay invisible
+to adopters; the old comment calling the <code>host</code> member "the project's own repo" was wrong. The front-door
+principle: one spine, everything else a copy-at-version or a pointer, never a restatement. Landed in the
+host-lifecycle worktree: project-local sourcing, manifest hardening, the three checks (link-integrity,
+declared-anchor, coverage). Pending: convert agentic-host's docs to pointers, spine doctrine, release.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
