@@ -846,3 +846,29 @@ verify-phase `recheck` (here `&& host-lifecycle reconcile .`) MUST be accompanie
 so CI ran v0.23.0 (no `reconcile` subcommand) against the new recheck and the reproducible-build job's
 `software --check` was RED for that window (3c36f3e..0324b16). HEAD is green, but the intermediate reds
 were avoidable. The recheck command and the CI-installed binary that runs it are a unit; bump them together.
+
+---
+
+## plan/0038 COMPLETE: the spine and front-door now prose-gate themselves
+
+The prose rule was stated in the spine but enforced only on adopted projects (via the verify-phase
+recheck), never on the meta repos that author it. plan/0038 closes that: host-template (`9268d76`, 90 warns
+reworded to zero across 11 docs) and host (`1dc9cb9`, 29 warns in its single README) are prose-clean and each
+carries a `Prose` GitHub Actions gate pinned to host-lifecycle v0.24.2 (`host-lifecycle prose .`, fail on any
+trope). host's is its FIRST CI workflow ever. Both green in CI; agentic-host pointer + host re-pin in
+`0813795`; whole-suite green. The seven `UPGRADING` verify phrases stayed byte-for-byte (no applied-upgrade
+re-verification broke). No `UPGRADING` ledger entry: adopters already run the prose gate via the verify
+phase, so this only brought the meta repos under the existing rule. The bulk reword was done by four parallel
+subagents (one per file-group), then verified centrally (prose zero on both repos + the seven phrases intact +
+`software --check` green) and the diffs reviewed.
+
+**LESSON (ai-diction is density-weighted, not a per-token flag).** The `harness` ai-diction on
+`` `kani:<harness>` `` (plan/0033 called it an "accepted residual that cannot be reworded") is NOT a hard
+false positive. ai-diction words carry weight 0.5 ("one word is never a verdict"); the gate is an absolute/
+density threshold over the DOCUMENT. host-template/CLAUDE.md had `harness` TWICE (the `kani:<harness>` token
+at :355 and prose "named harness" at :365); the two summed past the gate, flagging :355. In isolation a single
+`harness` line is clean. Rewording the :365 prose occurrence ("the named harness, invariant, or theorem" ->
+"the rung's named target") dropped the count to one and cleared the flag, no token rename, no engine change.
+Corollary: `scan_prose_text` (the prose audit) takes NO allowlist, so a LEXICON entry cannot mask a prose
+trope (LEXICON masks only the naming audit, `scan_text_with_allow`); a legitimate-but-flagged prose word is
+cleared by rewording/reducing density or boxing in a `host-lint:ignore` fence, never by LEXICON.
