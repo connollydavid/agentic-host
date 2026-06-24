@@ -787,3 +787,37 @@ revs together. The release gate itself stayed green because `run_verify` shells 
 = the installed v0.23.0 (no host-template check) at release time. After #64 I installed v0.24.0 locally for
 the #65/#66 dogfood, so LOCAL `validate call/` now exits 1 on call/0017 — a deliberate local-red window
 closed in #66. Annotation form is inline-trailing (same source line / table row as the restatement).
+
+---
+
+## plan/0036 #65 done: two-arm doctrine in the spine + reconcile skill wiring (host-lifecycle v0.24.2)
+
+Spine (host-template d5a0034 + UPGRADING d85658f, host pointer 3c36f3e): CLAUDE.md's living-grammar
+doctrine widened to ONE self-blindness principle with two arms — **gather** (forward, tells, graduates
+upstream) and **reconcile** (backward, the project's own restatements, fixed local, never propagates).
+States prefer-pointing, annotation-backed machine-checkable scope, the conditional+host-aware trigger
+(`restates=` field; **the verify gate is the binding trigger for a development host**), three-way
+disposition, and the sibling validate-scope check. The verify-phase `recheck` in lifecycle.manifest now
+chains `&& host-lifecycle reconcile .`, so the gate enforces reconcile. UPGRADING entry keyed d5a0034
+requires host-lifecycle v0.24.2. Skills wired: `verify` (binding reconcile in Reflect), `adopt` (full
+reconcile once), `upgrade` (new Reflect step, fires on a recorded `restates=`).
+
+**call/0017 superseded early (3ed423c/60b3c2b).** The new `validate` check (v0.24.0) flags an accepted
+call/ whose Scope names host-template, and `validate call/` is in the gate recheck — so with v0.24.x
+installed the gate was RED until call/0017 was superseded. Rather than dodge the check by downgrading the
+PATH binary, I acted on what it found (the honest dogfood): forward-corrected call/0017 to `Status:
+superseded by the methodology spine (host-template @ 617e420 ...)`. So one of the seven symptom findings
+landed in #65; #66 accounts for all seven. The em-dash in my first Status reword tripped the prose gate
+(decoration trope, Warn → prose exits 3 → gate RED); reworded to a comma clause. Lesson: the prose recheck
+blocks on Warn (not just Flag), because `host-lifecycle prose` exits 3 on a warn and the `&&` recheck
+treats nonzero as red.
+
+**Backtick fix (v0.24.2, the non-obvious one).** reconcile scans for the literal `<!-- host-reconcile:
+KIND -->` marker. The spine CLAUDE.md and UPGRADING.md *document* that syntax, and **every case-(a)
+adopter copies the spine CLAUDE.md verbatim**, so an adopter's own `reconcile .` would false-positive on
+the quoted example (unknown kind `KIND`). Fix: `reconcile_scan` skips a marker that opens inside an
+inline-code span (odd backtick count before it) — documentation of the syntax, not a live directive. A
+real annotation is a bare HTML comment on a restatement line. Three host-lifecycle releases this session:
+v0.24.0 (reconcile+validate-scope+restates), v0.24.1 (skills, tagged but never pinned — superseded before
+re-pin), v0.24.2 (backtick fix; current pin 9a1a586 / b214f090). CI host-lifecycle `--rev` still on v0.23.0,
+bumped in #66 with the final verify.
