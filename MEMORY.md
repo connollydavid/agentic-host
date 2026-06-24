@@ -734,3 +734,29 @@ root (the `--`-flag is skipped by the arg finder) — harmless here since it WAS
 reminder that these subcommands default the dir to the cwd. The whole deferred-item closure campaign
 (Stages 1-5) is now complete; plan/0036 (the contradiction sweep) remains the next milestone, with its
 prose-gate finding already resolved.
+
+RESUME ANCHOR (2026-06-24, written before a compact): plan/0036 is OPEN with a **settled design**, ready
+to build in order. A second deep audit (after the campaign; drift was expected) plus a de-risk review (five
+lenses + Qwen-3.5-4B, recorded in `plan/0036-reconcile-internal-contradictions/design-review.md`, verdict
+proceed-with-major-revisions) reshaped it. **The contradictions are symptoms of a missing migration
+reflective practice**: a spine change propagates but nothing re-reads the project's own restatements of
+methodology, so STRUCTURE.md / README.md / CLAUDE.md staled across plan/0012, plan/0023, plan/0029. The
+**doctrine** (the root-cause, integral fix, per operator: "show, don't tell" via the audit): widen the
+existing "grows by reflective practice" spine doctrine to ONE self-blindness principle with two arms,
+**gather** (forward, tells, graduates upstream, cadence-driven) and **reconcile** (backward, the project's
+own restatements, fixed locally, fired by a specific spine move). Settled rules from the review: prefer
+pointing over paraphrasing; scope is machine-checkable and **annotation-backed** (not the inoperable
+"describes vs uses" the 4B could not apply); the trigger is conditional via a new `UPGRADING` `restates =`
+field, and **for a development host the verify gate is the binding trigger** (agentic-host authors its own
+spine changes, so `upgrade --record` never fired for the drifts); three-way disposition (reword live, box
+frozen, forward-correct the immutable); a **sibling `validate` check** HAZARDs an `accepted` call/ whose
+Scope names host-template (closes the call/0017 class). Drop the count-vs-stanzas tool shape as noise.
+**Ordered run = tasks #63 -> #64 -> #65 -> #66** (the plan/0036 README "Build order"): (1) seed spine
+truth data (tool-family list + verification-model datum) in host-template; (2) host-lifecycle reconcile
+check + validate-scope check + `restates=` read, release + re-pin; (3) widen the spine doctrine + UPGRADING
+entry + wire reconcile into upgrade/adopt/verify skills; (4) agentic-host adopt, then dogfood the seven
+symptom findings (root CLAUDE.md three-lanes/host-prove; STRUCTURE.md room map; CLAUDE.md migration pointer;
+README host-prove; call/0017 supersede; host-prove pin to tag; orphan `plan/0001-foundation/spec/`; PLAN.md
+Skill-Hardening box) THROUGH the new check, then verify + whole-suite green. On resume, read
+`plan/0036/README.md` and `design-review.md`, then execute #63 first. agentic-host main is clean at the
+pushed HEAD.
