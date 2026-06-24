@@ -98,3 +98,17 @@ tool-less `.host-receipts` holds the project's methodology-version trail.
 - **Value is organizational.** This is an ontology refinement, not a defect fix; the
   operator settled it in `plan/0030` and chose to execute it. It earns its risk by making
   the receipts model uniform and the applied-set live with the version trail it belongs to.
+
+## Landed (2026-06-24)
+
+Shipped 100% tool-driven in host-lifecycle **v0.23.0** (`6e15e01`, artifact `76be6d9e`): the
+`migrate-receipts` subcommand, the dual-format reader, and ontology-routed writes; 80 tests,
+clippy clean. The spine description update is `ac32d1c` and the `UPGRADING` ledger entry is
+`4d2ebe9`, adopted in agentic-host (`applied=ac32d1c`). agentic-host dogfooded the migration
+through the tool: the applied-set (8 entries) moved into `.host-receipts`, the 26 operational
+receipts split into `.host-lifecycle-receipts`, and adopt and upgrade stayed in `.host-receipts`.
+`software --check` reports 0 HAZARDs on the migrated layout, `--verify-build` reproduces, and the
+whole suite is green (host-lifecycle CI main and tag, agentic-host Site and the reproducible-build
+cold-clone reading the migrated layout). Fen (Qwen-3.5-4B) reached `host-lifecycle migrate-receipts .`
+unaided. The verify gate from `plan/0030` D4 caught an `ing-tail` trope in this very README during
+the release, a live demonstration that the gate enforces prose hygiene.
