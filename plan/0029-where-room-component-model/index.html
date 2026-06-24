@@ -336,6 +336,16 @@ residency clause that resolves its spine-contradiction.</li>
 <li>Resolves <code>plan/0028</code>'s <em>spine-contradiction</em> (residency clause here), <em>library-component-slot</em> (recipe
 dispatch), and <em>new-link-loop</em> (the link-integrity check).</li>
 </ul>
+<h2 id="residuals-closed-host-lifecycle-v0210"><a class="header" href="#residuals-closed-host-lifecycle-v0210">Residuals closed (host-lifecycle v0.21.0)</a></h2>
+<p>The deferred refinements landed in host-lifecycle v0.21.0 (<code>bf23391</code>, artifact
+<code>a3364020</code>): a <code>software --teardown [--item &lt;name&gt;[@&lt;branch&gt;]] [--force]</code> subcommand
+that removes a component's worktrees and bare store and <strong>refuses to destroy a
+worktree holding uncommitted or unpushed work</strong> unless <code>--force</code>; a branch-collision
+HAZARD in <code>software --check</code> for branches that collide as a path (case-folding, the
+<code>/mnt/c</code> edge) or in git's worktree admin (a shared ref leaf); and a Fen (Qwen-3.5-4B)
+ergonomics pass, where the weak agent reached the targeted <code>--teardown --item</code> command
+unaided. The "resolve worktrees via porcelain" risk is closed defensively: a colliding
+leaf or case is HAZARDed at check time rather than silently mis-resolved.</p>
 
                     </main>
 
