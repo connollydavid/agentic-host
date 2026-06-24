@@ -203,7 +203,11 @@ docs (about 1,010 tropes reworded across ~60 docs, meaning preserved; <code>MEMO
 path-excluded), 950fbd6 is recorded in <code>.host</code>, and the front-door Verify passes. <strong>D4</strong> (wiring
 <code>--docs</code> into the verify recheck for ongoing enforcement) is a flagged spine follow-up: the shared
 recheck needs a portable host-lint invocation, since agentic-host's host-lint is the embedded Where
-software, not a PATH tool.</p>
+software, not a PATH tool. <strong>Closed 2026-06-24</strong> (host-lifecycle v0.22.0): the recheck chains
+<code>host-lifecycle prose .</code>, host-lint's <code>--docs</code> audit run in-process via the linked engine, so the
+gate needs no host-lint on PATH. Spine <code>e280a8d</code> + UPGRADING <code>641efef</code>, adopted in agentic-host;
+<code>software --check</code> re-runs the prose audit, and it immediately caught a real regression (a
+decoration em dash in <code>call/0021</code>).</p>
 </blockquote>
 <h2 id="context"><a class="header" href="#context">Context</a></h2>
 <p><code>host-lint --prose</code> (the tropes.fyi LLM-slop detector, <code>plan/0007</code>/<code>0008</code>/<code>0010</code>) ships and works on a
