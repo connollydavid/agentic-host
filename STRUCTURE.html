@@ -179,9 +179,9 @@
 Its rooms:</p>
 <div class="table-wrapper"><table><thead><tr><th>W</th><th>room</th><th>holds</th></tr></thead><tbody>
 <tr><td>Who</td><td><code>cast/</code></td><td>personas</td></tr>
-<tr><td>What</td><td><code>plan/&lt;NNNN&gt;/spec/</code></td><td>specs (<code>.allium</code> / <code>.tla</code>)</td></tr>
+<tr><td>What</td><td>with the software</td><td>specs (<code>.allium</code> / <code>.tla</code>), co-located in each component's repo <!-- host-reconcile: spec-path --></td></tr>
 <tr><td>When</td><td><code>plan/</code></td><td>milestone index and folders (see <code>PLAN.md</code>)</td></tr>
-<tr><td>Where</td><td><code>host-lint/</code></td><td>the software under development, a bare store with worktrees (<code>.host-software</code>)</td></tr>
+<tr><td>Where</td><td><code>software/&lt;name&gt;/main/</code></td><td>the <code>host-*</code> family under development, bare stores with worktrees (<code>.host-software</code>) <!-- host-reconcile: where-root --></td></tr>
 <tr><td>Why</td><td><code>call/</code></td><td>decisions about the software (MADR); <strong>instance-only; binds no adopter</strong>. Settled methodology decisions stay as immutable history, marked <code>Status: superseded by the spine</code></td></tr>
 <tr><td>How</td><td><code>CLAUDE.md</code> + tooling</td><td>this repo's manual and the <code>host-*</code> tools</td></tr>
 </tbody></table>
