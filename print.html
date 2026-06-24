@@ -3433,7 +3433,7 @@ applied-set in <code>.host-receipts</code>; the receipt gate unions <code>.host-
 <code>.host-lifecycle-receipts</code>. So the gate stays green across the boundary, and an adopter
 that has not yet run <code>migrate-receipts</code> is still read correctly. The old-layout reader
 is permanent, retired only by a later decision once no supported adopter is on the old
-side, following the legacy single-<code>revision</code> <code>.host</code> stamp that the binary still
+side. It mirrors the legacy single-<code>revision</code> <code>.host</code> stamp, which the binary still
 auto-migrates on read today.</p>
 </li>
 <li>
