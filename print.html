@@ -5412,6 +5412,27 @@ README host-prove; call/0017 supersede; host-prove pin to tag; orphan <code>plan
 Skill-Hardening box) THROUGH the new check, then verify + whole-suite green. On resume, read
 <code>plan/0036/README.md</code> and <code>design-review.md</code>, then execute #63 first. agentic-host main is clean at the
 pushed HEAD.</p>
+<hr />
+<h2 id="plan0036-63-64-done-spine-truth-data--host-lifecycle-reconcilevalidate-scope-v0240"><a class="header" href="#plan0036-63-64-done-spine-truth-data--host-lifecycle-reconcilevalidate-scope-v0240">plan/0036 #63-#64 done: spine truth data + host-lifecycle reconcile/validate-scope (v0.24.0)</a></h2>
+<p>#63 seeded the spine truth data in <code>host-template/lifecycle.manifest</code> as two new stanzas AFTER the phase
+stanzas (the phase parser skips a non-<code>[phase]</code> header and ignores their keys; a dedicated <code>parse_spine_facts</code>
+reads them): <code>[family] tools = host-lint host-lifecycle host-prove host-grammar</code> and <code>[verification] drivers = host-lint allium specula host-prove</code> (the rung-drivers; host-grammar is NOT a driver, host-lint
+is). host-template cdd0eff, host pointer-bump 94201e8.</p>
+<p>#64 shipped host-lifecycle <strong>v0.24.0</strong> (commit 4742525, tag v0.24.0, artifact b3251b18, re-pinned, host
+ebe512b). New: (a) <code>reconcile &lt;dir&gt;</code> — annotation-backed: walks tracked .md (the prose-audit walk), finds
+inline <code>&lt;!-- host-reconcile: KIND --&gt;</code> markers, checks each against spine truth/layout. KINDS = family,
+verification, where-root, spec-path (the <code>RECONCILE_KINDS</code> const). Scope is the annotated set, NOT a
+judgment — the one-time drift discovery is a human audit, the annotation makes recurrence mechanical. (b)
+<code>validate</code> now HAZARDs an accepted call/ whose <code>Scope:</code> names host-template (closes the call/0017 class).
+(c) <code>UPGRADING</code> <code>restates =</code> field parsed onto <code>Upgrade</code>; <code>validate_ledger</code> gates its kinds to RECONCILE_KINDS.
+86 tests, clippy clean.</p>
+<p><strong>Sequencing decision (greenness):</strong> the new <code>validate</code> check flags call/0017 (still accepted), and
+<code>validate call/</code> is in the verify-gate recheck. So the CI host-lifecycle <code>--rev</code> bump was DELIBERATELY
+DEFERRED from #64 to #66 — CI keeps installing v0.23.0 (green) until #66 supersedes call/0017 and bumps the
+revs together. The release gate itself stayed green because <code>run_verify</code> shells <code>host-lifecycle</code> from PATH
+= the installed v0.23.0 (no host-template check) at release time. After #64 I installed v0.24.0 locally for
+the #65/#66 dogfood, so LOCAL <code>validate call/</code> now exits 1 on call/0017 — a deliberate local-red window
+closed in #66. Annotation form is inline-trailing (same source line / table row as the restatement).</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
