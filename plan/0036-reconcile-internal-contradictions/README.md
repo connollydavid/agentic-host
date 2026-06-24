@@ -1,5 +1,14 @@
 # Reconcile internal contradictions
 
+**Status: complete (landed 2026-06-24).** The spine carries the widened doctrine
+(`host-template` `d5a0034`); host-lifecycle `v0.24.2` (`9a1a586`) ships the
+annotation-backed `reconcile` check, the `validate` host-template-scope check, and the
+`restates =` field, with reconcile wired into the verify recheck and the
+`upgrade`/`adopt`/`verify` skills; agentic-host adopted the doctrine and reconciled all
+seven symptoms below through the check; `validate`/`software --check`/`reconcile`/`prose`/
+`book --check` are green and the whole-suite CI is green. See `PLAN.md` for the landed
+detail.
+
 ## Context
 
 A deep audit found contradictions where the host's own docs restate methodology the
