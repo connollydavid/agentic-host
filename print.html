@@ -380,12 +380,13 @@ holds.</li>
 <h2 id="project-host-lint"><a class="header" href="#project-host-lint">Project: host-lint</a></h2>
 <p>A project under agentic evolution. This plan tracks the evolution of the <code>host-lint</code> software (a bare store with worktrees; see <code>call/0010</code> and <code>.host-software</code>).</p>
 <h2 id="open-work"><a class="header" href="#open-work">Open work</a></h2>
-<p>As of 2026-06-24, plan/0001 through plan/0038 are complete, and <strong>plan/0039 (concepts-as-uris) is designed and validated but not yet built</strong>: the reconcile arm's evolution to concept-as-URI (see the table row). One open issue: connollydavid/host-lifecycle#1, the <code>next</code> footgun surfaced while cutting plan/0039. A re-evaluation can read this line plus the plan/0039 row and stop.</p>
+<p>As of 2026-06-24, plan/0001 through plan/0038 are complete, and <strong>plan/0039 (concepts-as-uris) is designed and validated, build underway</strong>: the reconcile arm's evolution to concept-as-URI (see the table row). The design was refined 2026-06-24 — project-local facts sourced from <code>.host-software</code>, the lifecycle manifest hardened to phases-only, and <code>host</code> set apart as the front door — see plan/0039's "Refinements this session". One open issue: connollydavid/host-lifecycle#1, the <code>next</code> footgun surfaced while cutting plan/0039. A re-evaluation can read this line plus the plan/0039 row and stop.</p>
 <p>The named follow-ups from completed plans, pre-resolved so a scan needs no cross-check:</p>
 <div class="table-wrapper"><table><thead><tr><th>Follow-up</th><th>Named in</th><th>Disposition</th></tr></thead><tbody>
 <tr><td>Mechanize the <code>gather</code> discovery sweep</td><td>plan/0034</td><td>Done (plan/0035, host-lint <code>gather</code>).</td></tr>
 <tr><td>Wire the prose audit into the verify recheck (D4)</td><td>plan/0030</td><td>Done (host-lifecycle v0.22.0).</td></tr>
 <tr><td>Mechanize the reconcile reflection, the <code>gather</code> sibling</td><td>plan/0036</td><td>Open by choice; no milestone cut.</td></tr>
+<tr><td>Seed the front-door <code>host</code> from the spine (copy-at-version, so it cannot drift)</td><td>plan/0039</td><td>Open; named this session, doctrine states the rule, no milestone cut yet.</td></tr>
 </tbody></table>
 </div>
 <p>Two ideas were deliberately declined and should not be reopened: a project-local ban surface (speculative, recorded in <code>call/0022</code>) and a glued hyphen-digit tell form (no <code>LEXICON</code> escape exists for it, plan/0034).</p>
@@ -3655,6 +3656,13 @@ stay green; whole-suite CI green across the affected repos at close.</li>
 <li>A weak-agent run reaches the right pointer on a concrete case unaided.</li>
 <li>An adopter without a book or <code>.host-software</code> skips the project-scoped checks rather than dangling.</li>
 <li>The host's verify gate (validate, reconcile, prose, book) is green, and the whole-suite CI is green across the affected repos.</li>
+</ul>
+<h2 id="refinements-this-session-the-design-as-it-now-stands"><a class="header" href="#refinements-this-session-the-design-as-it-now-stands">Refinements this session (the design as it now stands)</a></h2>
+<p>Settled in discussion, checked against the cast and the real Qwen-3.5-4B, and kept in plain words for the weak agent — <strong>spine, copy-at-version, point, front-door</strong>:</p>
+<ul>
+<li><strong>Project-local facts, enforced.</strong> <code>components</code> and <code>verifiers</code> come from the project's own <code>.host-software</code>, never the spine manifest. The manifest is hardened to <strong>phases only</strong> — <code>manifest --check</code> rejects any other stanza — so an overfit cannot creep back into the shared spine. <code>components</code> are the <code>.host-software</code> members; <code>verifiers</code> are a <code>[verification] drivers</code> stanza (absent → skipped, fail-safe). The cast and a real 4B run backed the move; the 4B's reliable failure is exact-format emission, not the judgment, so the edit is tool-carried and the prose only points.</li>
+<li><strong><code>host</code> is the front door, not a component.</strong> Of the members, the four tools (host-lint, host-lifecycle, host-prove, host-grammar) are the <code>components</code>; the single-file <code>host</code> is the <strong>front door</strong>, the methodology's entry point, set apart by <code>front-door = true</code>. This corrects a stale comment that called it "repo-self": agentic-host, the dev environment, is not a member at all and stays invisible to adopters.</li>
+<li><strong>The principle reaches the front door.</strong> One <strong>spine</strong>; everything else is a <strong>copy-at-version</strong> of it or <strong>points</strong> at it — never a restatement. The front-door <code>host</code> and every adopter are both copies-at-version of the spine, so "an adopter becomes host" is just <em>a copy of the one source</em>. Seeding the front door from the spine, so it cannot drift, is the named next application; the doctrine states the rule here, the build follows.</li>
 </ul>
 <h2 id="records-4"><a class="header" href="#records-4">Records</a></h2>
 <p>This document, a MEMORY entry, and a software <code>call/</code> for the concept-as-URI decision authored at build time. The <code>host-lifecycle next</code> footgun surfaced while allocating this number is filed as connollydavid/host-lifecycle#1.</p>

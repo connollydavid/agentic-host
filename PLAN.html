@@ -178,12 +178,13 @@
 <h2 id="project-host-lint"><a class="header" href="#project-host-lint">Project: host-lint</a></h2>
 <p>A project under agentic evolution. This plan tracks the evolution of the <code>host-lint</code> software (a bare store with worktrees; see <code>call/0010</code> and <code>.host-software</code>).</p>
 <h2 id="open-work"><a class="header" href="#open-work">Open work</a></h2>
-<p>As of 2026-06-24, plan/0001 through plan/0038 are complete, and <strong>plan/0039 (concepts-as-uris) is designed and validated but not yet built</strong>: the reconcile arm's evolution to concept-as-URI (see the table row). One open issue: connollydavid/host-lifecycle#1, the <code>next</code> footgun surfaced while cutting plan/0039. A re-evaluation can read this line plus the plan/0039 row and stop.</p>
+<p>As of 2026-06-24, plan/0001 through plan/0038 are complete, and <strong>plan/0039 (concepts-as-uris) is designed and validated, build underway</strong>: the reconcile arm's evolution to concept-as-URI (see the table row). The design was refined 2026-06-24 — project-local facts sourced from <code>.host-software</code>, the lifecycle manifest hardened to phases-only, and <code>host</code> set apart as the front door — see plan/0039's "Refinements this session". One open issue: connollydavid/host-lifecycle#1, the <code>next</code> footgun surfaced while cutting plan/0039. A re-evaluation can read this line plus the plan/0039 row and stop.</p>
 <p>The named follow-ups from completed plans, pre-resolved so a scan needs no cross-check:</p>
 <div class="table-wrapper"><table><thead><tr><th>Follow-up</th><th>Named in</th><th>Disposition</th></tr></thead><tbody>
 <tr><td>Mechanize the <code>gather</code> discovery sweep</td><td>plan/0034</td><td>Done (plan/0035, host-lint <code>gather</code>).</td></tr>
 <tr><td>Wire the prose audit into the verify recheck (D4)</td><td>plan/0030</td><td>Done (host-lifecycle v0.22.0).</td></tr>
 <tr><td>Mechanize the reconcile reflection, the <code>gather</code> sibling</td><td>plan/0036</td><td>Open by choice; no milestone cut.</td></tr>
+<tr><td>Seed the front-door <code>host</code> from the spine (copy-at-version, so it cannot drift)</td><td>plan/0039</td><td>Open; named this session, doctrine states the rule, no milestone cut yet.</td></tr>
 </tbody></table>
 </div>
 <p>Two ideas were deliberately declined and should not be reopened: a project-local ban surface (speculative, recorded in <code>call/0022</code>) and a glued hyphen-digit tell form (no <code>LEXICON</code> escape exists for it, plan/0034).</p>
