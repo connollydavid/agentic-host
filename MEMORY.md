@@ -760,3 +760,30 @@ README host-prove; call/0017 supersede; host-prove pin to tag; orphan `plan/0001
 Skill-Hardening box) THROUGH the new check, then verify + whole-suite green. On resume, read
 `plan/0036/README.md` and `design-review.md`, then execute #63 first. agentic-host main is clean at the
 pushed HEAD.
+
+---
+
+## plan/0036 #63-#64 done: spine truth data + host-lifecycle reconcile/validate-scope (v0.24.0)
+
+#63 seeded the spine truth data in `host-template/lifecycle.manifest` as two new stanzas AFTER the phase
+stanzas (the phase parser skips a non-`[phase]` header and ignores their keys; a dedicated `parse_spine_facts`
+reads them): `[family] tools = host-lint host-lifecycle host-prove host-grammar` and `[verification]
+drivers = host-lint allium specula host-prove` (the rung-drivers; host-grammar is NOT a driver, host-lint
+is). host-template cdd0eff, host pointer-bump 94201e8.
+
+#64 shipped host-lifecycle **v0.24.0** (commit 4742525, tag v0.24.0, artifact b3251b18, re-pinned, host
+ebe512b). New: (a) `reconcile <dir>` — annotation-backed: walks tracked .md (the prose-audit walk), finds
+inline `<!-- host-reconcile: KIND -->` markers, checks each against spine truth/layout. KINDS = family,
+verification, where-root, spec-path (the `RECONCILE_KINDS` const). Scope is the annotated set, NOT a
+judgment — the one-time drift discovery is a human audit, the annotation makes recurrence mechanical. (b)
+`validate` now HAZARDs an accepted call/ whose `Scope:` names host-template (closes the call/0017 class).
+(c) `UPGRADING` `restates =` field parsed onto `Upgrade`; `validate_ledger` gates its kinds to RECONCILE_KINDS.
+86 tests, clippy clean.
+
+**Sequencing decision (greenness):** the new `validate` check flags call/0017 (still accepted), and
+`validate call/` is in the verify-gate recheck. So the CI host-lifecycle `--rev` bump was DELIBERATELY
+DEFERRED from #64 to #66 — CI keeps installing v0.23.0 (green) until #66 supersedes call/0017 and bumps the
+revs together. The release gate itself stayed green because `run_verify` shells `host-lifecycle` from PATH
+= the installed v0.23.0 (no host-template check) at release time. After #64 I installed v0.24.0 locally for
+the #65/#66 dogfood, so LOCAL `validate call/` now exits 1 on call/0017 — a deliberate local-red window
+closed in #66. Annotation form is inline-trailing (same source line / table row as the restatement).
