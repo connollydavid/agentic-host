@@ -175,6 +175,13 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="prose-gate-the-meta-repos"><a class="header" href="#prose-gate-the-meta-repos">Prose-gate the meta repos</a></h1>
+<p><strong>Status: complete (landed 2026-06-24).</strong> host-template (<code>9268d76</code>) and host (<code>1dc9cb9</code>)
+are prose-clean and each carries a <code>Prose</code> CI gate pinned to host-lifecycle v0.24.2
+(host's is its first CI workflow); both gates are green in CI. The agentic-host pointer
+and host pin moved in <code>0813795</code>; whole-suite CI is green. The one apparent blocker, the
+<code>harness</code> ai-diction on <code>`kani:&lt;harness&gt;`</code>, was a density artifact (two occurrences
+crossed the gate; one is clean), cleared by rewording the second occurrence, so no engine
+change was needed.</p>
 <h2 id="context"><a class="header" href="#context">Context</a></h2>
 <p>plan/0036 stopped the <em>instance</em> docs (this repo's <code>README</code>/<code>CLAUDE</code>/<code>STRUCTURE</code>)
 drifting from the spine, and the verify gate already runs <code>host-lifecycle prose .</code> over
