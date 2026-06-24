@@ -10,7 +10,7 @@ A replacement was explored and validated. Each methodology concept becomes a URI
 
 ## The design (refined-B)
 
-Each concept (the project's `components`, the `verifiers`, the `software-root`, the `spec-home`) has one canonical definition on a concepts page, at a stable anchor, generated from `.host-software` for the project-scoped ones so it cannot drift. Everywhere else points to it with a relative-path link (`concepts.md#components`), which renders and resolves under stock mdBook with no custom generator pass.
+Each concept (the project's `components`, the `verifiers`, the `software-root`, the `spec-home`) has one canonical definition at a stable `{#id}` anchor in an authored doc, `STRUCTURE.md`. Everywhere else points to it with a relative-path link (`STRUCTURE.md#components`), which renders and resolves under stock mdBook with no custom generator pass. There is **no generated `concepts.md`**: with all four definitions in one doc, a page of links back to them is pure redundancy (see "Refinements this session"). Drift is caught not by generating the definition but by the coverage check, which holds each project-local home to its full `.host-software` set; the tool carries the concept vocabulary, so no file enumerates it.
 
 reconcile stops scanning inline annotations and runs three checks instead:
 
@@ -36,7 +36,7 @@ The second reviewed the fork (retire inline reconcile for concept-as-URI, or kee
 
 1. Rename `family` to `components` across the binary, its tests, and the spine manifest (done in the working tree, the suite green).
 2. Mark inline reconcile deprecated, naming the concept-as-URI successor, and keep it checking under the new name so the bite holds during the transition.
-3. Build the concepts page (generated from `.host-software`) and the coverage, declared-anchor, and link-integrity checks.
+3. Add the concept homes (`{#id}` anchors) to `STRUCTURE.md`, and build the coverage, declared-anchor, and link-integrity checks.
 4. Convert the host's restatements to pointers.
 5. Retire the inline mechanism one spine revision later, via an `UPGRADING` entry that over-reports the owed migration and hard-fails any surviving annotation.
 
@@ -44,13 +44,13 @@ agentic-host accepts running in the gap as the first mover: its inline annotatio
 
 ## Validation already in hand
 
-- The concept-as-URI scheme renders and resolves under stock mdBook v0.5.2: the `{#id}` heading anchors are honored, a relative `concepts.md#id` link rewrites to `concepts.html#id`, and every link resolves.
+- The concept-as-URI scheme renders and resolves under stock mdBook v0.5.2: the `{#id}` heading anchors are honored, a relative `STRUCTURE.md#id` link rewrites to `STRUCTURE.html#id`, and every link resolves.
 - The real weak agent (Qwen-3.5-4B) authored concept pointer links unaided and correct, three of three, the `verifiers` route among them, which the inline scheme's classification step had failed. The reason is structural: pointing carries no judgment of whether a span is a restatement, the step that exhausted the model before.
 - The `family` to `components` rename builds clean with the whole suite green.
 
 ## Verification (for the build)
 
-- The concepts page is generated from `.host-software` and the generated definitions match it.
+- Each project-local concept's home in `STRUCTURE.md` names its full `.host-software` set (coverage), with no generated `concepts.md`.
 - reconcile flags a dropped component (coverage), a link to an undeclared concept (declared-anchor), and a broken link (link-integrity), and stays silent on a clean set.
 - A surviving inline annotation hard-fails once the mechanism is deprecated, and never silently passes.
 - A weak-agent run reaches the right pointer on a concrete case unaided.
