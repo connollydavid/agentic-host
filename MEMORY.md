@@ -669,3 +669,26 @@ plan/0034 CI follow-up — **a release that changes `src/lib.rs` must re-derive 
 plan/0034 **COMPLETE** (2026-06-24): `connollydavid/host#16` closed. Detection (host-lint **v0.9.1**, pin `592aeeb` / artifact `eb521a2c`) plus the reflective grammar-growth doctrine in the spine (`host-template` `27d815b` + UPGRADING `6d3075b`, adopted in agentic-host at `e31a31e`) are shipped; the weak-agent (Qwen-3.5-4B, thinking off) classified the clear cases 5/5; the skipped kani-digest receipt was recorded and promoted into the v0.9.1 point release. **Whole-suite CI green across all repos, zero in-flight**: agentic-host Site + Reproducible build on HEAD `7a82efc`, host-lint v0.9.1 (main + tag, every job), host-template, host-grammar, host-lifecycle, host-prove (host is the tracker, no CI). The `/tmp/yarn-agentic` review clone was removed. Named follow-ups, none started: mechanize the candidate-tell harvest + the verify-gate reflection prompt in the skills; a constrained project-local ban surface only if a genuinely non-universal tell ever appears; fix the local host-prove -> `cargo kani` ENOENT on the `/mnt/c` WSL mount (CI is unaffected).
 
 plan/0035 **COMPLETE** (2026-06-24): mechanized the plan/0034 doctrine's discovery (the named follow-up). (1) **host-lint `gather` subcommand** (v0.9.2, `dd7304e`, artifact `03292e56`): the inverse of the flag scan. It runs `git log` and scans tracked markdown headers itself (one command, parse-free), surfaces a recurring word-then-numeral shape the grammar does NOT catch (dropping `FLAG_TERMS`, the `PREV_SKIP`/`UNITS` allowlists, a `#` reference, a four-or-more-digit year or hash, and a unit-bearing quantity), and reports the residue ranked; advisory (exit 0, never gates), recurrence at least twice. `gather_candidates` + `GATHER_STOP` in lib.rs, a `gather` subcommand dispatch in main.rs (mirrors `lexicon`). The dogfood on agentic-host surfaced a real candidate, `lens` (the `## Lens 1/2/3` design-review headers, a positional-naming tell the lane misses). (2) **Reflection wiring**: the host-lifecycle `verify` and `adopt` skills gained a `## Reflect` step (run gather, operator triages: propose upstream, declare in `LEXICON`, or leave). (3) `call/0022` records the software decision (gather surfaces mechanically, the operator validates, the tool never auto-graduates a tell nor auto-bans one; Scope = host-lint + host-lifecycle). No project-local ban surface (YAGNI). (4) Weak-agent (Qwen-3.5-4B) triage 3/3: a universal positional label -> PROPOSE, a hardware designator -> DECLARE, a verb-count -> LEAVE. **Two process lessons applied this milestone**: (a) re-derive the kani digest BEFORE tagging (so v0.9.2 CI went green first try, unlike v0.9.0); (b) a skill FEATURE change ships as a version bump, not a silent artifact-preserving pin-advance past the tag, so the host-lifecycle skill wiring was promoted to a v0.20.2 point release (`717276f`, artifact `ea9f01db`) with the CI install pins in `mdbook.yml` + `reproducible-build.yml` bumped. The artifact-preserving pin-advance is reserved for a pure CI-fix with no new capability.
+
+Deferred-item closure campaign (2026-06-24, operator-directed): before working `plan/0036` (the
+reconcile-internal-contradictions sweep, which is opened but deliberately left for the END), close
+every deferred item across plans 0001-0035; track any NEW contradiction found into `plan/0036`, one
+release at a time, following the full lifecycle (verify gate, `host-lifecycle release`, receipts).
+A complete cross-checked inventory found 3 genuinely-open (the rest were 7 stale-but-done notes and
+~17 decided-against non-goals). **Done so far:** (Stage 1) corrected the 7 stale notes in place to
+record where each actually landed; (Stage 2) stamped the 4 open-ended escape-hatches dormant (Win32s
+case-(c), bare-store-optional, arch-attest, project-local ban); (Stage 3) **closed the plan/0029
+residuals via host-lifecycle v0.21.0** (`bf23391`, artifact `a3364020`): `software --teardown [--item]
+[--force]` removes a component's worktrees + bare store and refuses to destroy a worktree with
+uncommitted/unpushed work without `--force`; a branch-collision HAZARD in `software --check`
+(case-insensitive and worktree-admin-leaf); 77 tests + clippy clean; Fen-4B reached the targeted
+`--teardown --item` command unaided; whole-suite green (host-lifecycle CI main+tag, agentic-host Site +
+reproducible-build cold-clone at the new pin). The change-class for a new subcommand is `feature`
+(minor: 0.20.2 -> 0.21.0). **Latent bug found, not yet fixed:** `host-lifecycle release ... --preview`
+is silently ignored by the release CLI arg parser, so a "preview" runs the real build/bump; harmless
+here (the real release path is correct) but worth folding a fix into the next host-lifecycle release.
+**Remaining campaign work:** plan/0030 D4 (wire the prose recheck portably; also clears `plan/0036`
+finding #1) and the receipts-family re-homing as its own milestone. The re-homing's dual-format
+support must be ONGOING, not a one-time shim (copy-at-version: adopters cross the boundary at their own
+pace), following the existing legacy-`.host`-stamp auto-migrate-on-read precedent: an `UPGRADING`
+ledger entry per adopter plus permanent old-layout read tolerance.
