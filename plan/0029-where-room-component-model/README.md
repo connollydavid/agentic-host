@@ -170,3 +170,15 @@ parallel worktree, so uncommitted work is never lost), then update `.gitignore` 
   residency clause that resolves its spine-contradiction.
 - Resolves `plan/0028`'s *spine-contradiction* (residency clause here), *library-component-slot* (recipe
   dispatch), and *new-link-loop* (the link-integrity check).
+
+## Residuals closed (host-lifecycle v0.21.0)
+
+The deferred refinements landed in host-lifecycle v0.21.0 (`bf23391`, artifact
+`a3364020`): a `software --teardown [--item <name>[@<branch>]] [--force]` subcommand
+that removes a component's worktrees and bare store and **refuses to destroy a
+worktree holding uncommitted or unpushed work** unless `--force`; a branch-collision
+HAZARD in `software --check` for branches that collide as a path (case-folding, the
+`/mnt/c` edge) or in git's worktree admin (a shared ref leaf); and a Fen (Qwen-3.5-4B)
+ergonomics pass, where the weak agent reached the targeted `--teardown --item` command
+unaided. The "resolve worktrees via porcelain" risk is closed defensively: a colliding
+leaf or case is HAZARDed at check time rather than silently mis-resolved.
