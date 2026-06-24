@@ -4,6 +4,20 @@
 
 A project under agentic evolution. This plan tracks the evolution of the `host-lint` software (a bare store with worktrees; see `call/0010` and `.host-software`).
 
+## Open work
+
+As of 2026-06-24 there is no open milestone work. Every milestone in the table below (plan/0001 through plan/0038) is complete, and the issue trackers for host, host-lint, host-lifecycle, host-prove, and host-grammar carry zero open issues. A re-evaluation can stop here unless this line stops being true.
+
+The named follow-ups from completed plans, pre-resolved so a scan needs no cross-check:
+
+| Follow-up | Named in | Disposition |
+|---|---|---|
+| Mechanize the `gather` discovery sweep | plan/0034 | Done (plan/0035, host-lint `gather`). |
+| Wire the prose audit into the verify recheck (D4) | plan/0030 | Done (host-lifecycle v0.22.0). |
+| Mechanize the reconcile reflection, the `gather` sibling | plan/0036 | Open by choice; no milestone cut. |
+
+Two ideas were deliberately declined and should not be reopened: a project-local ban surface (speculative, recorded in `call/0022`) and a glued hyphen-digit tell form (no `LEXICON` escape exists for it, plan/0034).
+
 ## Status
 
 - [x] Bootstrap: initial setup and bootstrapping
