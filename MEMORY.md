@@ -712,3 +712,25 @@ host-lifecycle release, install the new binary to PATH before running `software 
 recheck shells `host-lifecycle prose`. Whole-suite green (host-lifecycle CI main+tag, agentic-host
 Site + reproducible-build running the in-process prose recheck in CI). Remaining: the receipts-family
 re-homing (Stage 5).
+
+Campaign Stage 5 DONE (2026-06-24): the receipts-family re-homing, **100% tool-driven**, via
+**host-lifecycle v0.23.0** (`6e15e01`, artifact `76be6d9e`). plan/0037. The `migrate-receipts <dir>`
+subcommand moves the applied-set out of `.host` into `.host-receipts` and splits the operational
+receipts into a new `.host-lifecycle-receipts`, idempotently; the dual-format reader (`read_applied_ids`,
+`read_all_receipts`, `applied_file`) unions BOTH layouts so the gate stays green across the boundary and
+an un-migrated adopter is read correctly (permanent back-compat). The 6-of-8 ontology ambiguity the prior
+review flagged is resolved by one rule: a receipt is methodology-version (`.host-receipts`) only for
+`adopt` and `upgrade`; everything else host-lifecycle runs is operational (`.host-lifecycle-receipts`).
+Writes route by that rule (`append_receipt`, the `upgrade --record` applied-write, `--advance` compaction).
+Spine `ac32d1c` (the stamp/receipts description) + UPGRADING `4d2ebe9`, adopted `applied=ac32d1c`.
+agentic-host dogfooded the migration through the tool (8 applied lines moved, 26 operational receipts
+split); `software --check` 0 HAZARDs on the migrated layout, `--verify-build` reproduces, whole-suite
+green, Fen-4B reached `migrate-receipts .` unaided. **Lessons:** (a) the verify gate (plan/0030 D4) caught
+an `ing-tail` trope in plan/0037's own README during the release and BLOCKED it, a live proof the gate
+works; (b) `host-lifecycle prose .` / `host-lint --docs` only scan TRACKED files (git ls-files), so a NEW
+untracked doc is NOT prose-checked until committed or `git add`-ed (my pre-commit check on plan/0037 was
+vacuous); (c) `migrate-receipts --help` has no positional, so it defaulted dir to `.` and migrated the repo
+root (the `--`-flag is skipped by the arg finder) — harmless here since it WAS the intended dogfood, but a
+reminder that these subcommands default the dir to the cwd. The whole deferred-item closure campaign
+(Stages 1-5) is now complete; plan/0036 (the contradiction sweep) remains the next milestone, with its
+prose-gate finding already resolved.
