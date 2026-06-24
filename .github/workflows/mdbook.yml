@@ -18,12 +18,12 @@ jobs:
           curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.40/mdbook-v0.4.40-x86_64-unknown-linux-gnu.tar.gz | tar -xz -C "$HOME/.local/bin"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
       - name: Install the publisher (host-lifecycle, pinned)
-        # Pinned to v0.22.0: book recurses nested specs and moves retired
+        # Pinned to v0.23.0: book recurses nested specs and moves retired
         # (Status: superseded) decisions into an Archive/Record section, and
         # links README-landing rooms to their served index with a colon nav
-        # separator (host#15); v0.22.0 adds the in-process prose recheck and
-        # software --teardown (plan/0030 D4, plan/0029).
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 167d2e6d6aef2ecff1ef7cd408fd1639e6a9f1eb --root "$HOME/.local"
+        # separator (host#15); v0.23.0 adds migrate-receipts and the dual-format
+        # receipts reader (plan/0037).
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 6e15e01914eb6cb8bdecb22bf687a7e3ecef14d1 --root "$HOME/.local"
       - name: Generate the book (lifecycle order; every room)
         # Writes book.toml (src = "docs", never ".") + docs/; --check fails the build
         # unless every room with source renders a page. Reads the committed

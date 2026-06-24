@@ -1,0 +1,161 @@
+[receipt "classify"]
+    disposition = skip
+    reason = greenfield adoption; classify is the pre-adoption preview and leaves no durable artifact to re-derive
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "embed" "host-lint"]
+    disposition = done
+    evidence = pin bbd068758df7 (.host-software)
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "embed" "host"]
+    disposition = done
+    evidence = pin 10fa18159aa0 (.host-software)
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "remap"]
+    disposition = skip
+    reason = greenfield content-named project; no ordinal to content live-file rename applies
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "verify"]
+    disposition = done
+    evidence = gate sweep green at 6426a84 (validate, software --check, book --check, hook tell test)
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "publish"]
+    disposition = done
+    evidence = doc-site CI lane wired (.github/workflows/mdbook.yml)
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.7.0 (artifact 1c83967adcb18e88a88768e80a349f870cc06b17aa85899ace49985406862bb9)
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "release" "host"]
+    disposition = skip
+    reason = host is the upstream methodology and tracker repo, embedded read-only; not released from agentic-host
+    tool = host-lifecycle@0.18.1
+    recorded = 2026-06-21
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.8.0@3132c01a01a298425cd2e9550566b268f31faed52f1a8e3a6e0830fd71a4a9f2
+    tool = host-lifecycle@0.19.1
+    recorded = 2026-06-21
+
+[receipt "embed" "host-lifecycle"]
+    disposition = done
+    evidence = pin 6fa94cf247cf (.host-software)
+    tool = host-lifecycle@0.19.2
+    recorded = 2026-06-22
+
+[receipt "embed" "host-prove"]
+    disposition = done
+    evidence = pin 135539bbd4ea (.host-software)
+    tool = host-lifecycle@0.19.2
+    recorded = 2026-06-22
+
+[receipt "embed" "host-grammar"]
+    disposition = done
+    evidence = pin 9d51468ab1f0 (.host-software)
+    tool = host-lifecycle@0.19.2
+    recorded = 2026-06-22
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.19.2@ad3bf89a55c9fb22854a6bc1ba722f4157115aa693619034c411fe15cd264f55
+    tool = host-lifecycle@0.19.2
+    recorded = 2026-06-22
+
+[receipt "release" "host-prove"]
+    disposition = done
+    evidence = v0.2.1@8e3742f8b7d7ac2d8abc83890179d6417eb8f0a25dddea7ee75cd2b67fcec695
+    tool = host-lifecycle@0.19.2
+    recorded = 2026-06-22
+
+[receipt "release" "host-grammar"]
+    disposition = done
+    evidence = v0.3.0 (repo-only grammar/spec home; tag-only release, no artifact)
+    tool = host-lifecycle@0.19.2
+    recorded = 2026-06-22
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.8.1@4e76682b1893e9641208cc8d52434bcc3c40a9a51565b4b21a82ccbf842b8d43
+    tool = host-lifecycle@0.19.2
+    recorded = 2026-06-22
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.8.2@a099c27d8ce3912bec11f4f7e2140ef37b5c8d03f320aad2a882244e98f8bac8
+    tool = host-lifecycle@0.20.0
+    recorded = 2026-06-22
+
+[receipt "release" "host-prove"]
+    disposition = done
+    evidence = v0.2.2@520cdd109d96c8996402792065cd9c0198f13f97ebefd62ff15edb8c0030f366
+    tool = host-lifecycle@0.20.0
+    recorded = 2026-06-22
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.20.0@7d0903340be787183661c4cb933af82886f22af436a179e8a856117386d950d0
+    tool = host-lifecycle@0.20.0
+    recorded = 2026-06-22
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.20.1@662cb632b4f5ac0b9b4ef62e0155b64a1c05626bfbb546c6df09127da2b89111
+    tool = host-lifecycle@0.20.1
+    recorded = 2026-06-22
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.9.0@cd3277e0f9554915fe2775af789245184bf483fc02a898c185748ab75f9172b2
+    tool = host-lifecycle@0.20.1
+    recorded = 2026-06-23
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.9.1@eb521a2c65abd6006479d6679e475bb0b3fd88d5484316ce6e46371980c30ee4
+    tool = host-lifecycle@0.20.1
+    recorded = 2026-06-23
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.9.2@03292e56ee61f09fc89fc8b01710c9ff064d9b61d1d50e359e9e3bbf4c47c432
+    tool = host-lifecycle@0.20.1
+    recorded = 2026-06-24
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.20.2@ea9f01db936c909dfd1d50d85a0c242e62966acd0ea88eb5dc377cb3ea73c5c3
+    tool = host-lifecycle@0.20.1
+    recorded = 2026-06-24
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.21.0@a3364020e47e6d0d697d8cedc69e5e03c202de59976db5c8f0b24746d9477c22
+    tool = host-lifecycle@0.20.1
+    recorded = 2026-06-24
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.22.0@bb6fc4ebd3e65a624f0c1e45b23ea43fec5aecfcf89e40a1866c042a7570b5a1
+    tool = host-lifecycle@0.22.0
+    recorded = 2026-06-24
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.23.0@76be6d9e47636bea80dc6e4642e7ad01b38ae00df3cc2c05a9b2f32ac7f4883c
+    tool = host-lifecycle@0.23.0
+    recorded = 2026-06-24
