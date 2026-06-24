@@ -179,9 +179,9 @@
 Its rooms:</p>
 <div class="table-wrapper"><table><thead><tr><th>W</th><th>room</th><th>holds</th></tr></thead><tbody>
 <tr><td>Who</td><td><code>cast/</code></td><td>personas</td></tr>
-<tr><td>What</td><td>with the software</td><td>specs (<code>.allium</code> / <code>.tla</code>), co-located in each component's repo <!-- host-reconcile: spec-path --></td></tr>
+<tr><td>What</td><td>with the software</td><td>specs (<code>.allium</code> / <code>.tla</code>) at the <a href="#spec-home">spec-home</a>, co-located in each component's repo</td></tr>
 <tr><td>When</td><td><code>plan/</code></td><td>milestone index and folders (see <code>PLAN.md</code>)</td></tr>
-<tr><td>Where</td><td><code>software/&lt;name&gt;/main/</code></td><td>the <code>host-*</code> family under development, bare stores with worktrees (<code>.host-software</code>) <!-- host-reconcile: where-root --></td></tr>
+<tr><td>Where</td><td><code>software/&lt;name&gt;/main/</code></td><td>the <code>host-*</code> <a href="#components">components</a> under development in the <a href="#software-root">software-root</a>: bare stores with worktrees (<code>.host-software</code>)</td></tr>
 <tr><td>Why</td><td><code>call/</code></td><td>decisions about the software (MADR); <strong>instance-only; binds no adopter</strong>. Settled methodology decisions stay as immutable history, marked <code>Status: superseded by the spine</code></td></tr>
 <tr><td>How</td><td><code>CLAUDE.md</code> + tooling</td><td>this repo's manual and the <code>host-*</code> tools</td></tr>
 </tbody></table>
@@ -189,6 +189,16 @@ Its rooms:</p>
 <p><strong>Adopter boundary.</strong> The normative methodology lives in <code>host-template/</code> (the
 versioned source you copy-at-version), not in this repo's top-level rooms. This
 repo's <code>call/</code> is its own Why room; do not read it as normative. See <code>README.md</code>.</p>
+<h2 id="concepts"><a class="header" href="#concepts">Concepts</a></h2>
+<p>The methodology concepts this project defines once and points at from everywhere else. Each has a stable <code>{#id}</code> anchor; other docs link to it rather than restate it.</p>
+<h3 id="components"><a class="header" href="#components">Components</a></h3>
+<p>The <code>host-*</code> components under development: host-lint, host-lifecycle, host-prove, host-grammar. Each is a bare store with worktrees under <code>software/&lt;name&gt;/main/</code>, pinned in <code>.host-software</code>. The single-file <code>host</code> front door is set apart (<code>front-door = true</code>), not a component; agentic-host, the development environment, is not one either.</p>
+<h3 id="verifiers"><a class="header" href="#verifiers">Verifiers</a></h3>
+<p>The verification ladder's drivers, base to deep: host-lint (naming hygiene), allium (requirements and property-based testing), specula (bounded timing via TLA+), host-prove (the deeper symbolic, proof, and conformance rungs).</p>
+<h3 id="software-root"><a class="header" href="#software-root">Software-root</a></h3>
+<p>Where the software under development lives: <code>software/</code>.</p>
+<h3 id="spec-home"><a class="header" href="#spec-home">Spec-home</a></h3>
+<p>Where specifications live: with their software, co-located in each component's repo, never under <code>plan/</code>.</p>
 
                     </main>
 
