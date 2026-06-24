@@ -5433,6 +5433,28 @@ verify-phase <code>recheck</code> (here <code>&amp;&amp; host-lifecycle reconcil
 so CI ran v0.23.0 (no <code>reconcile</code> subcommand) against the new recheck and the reproducible-build job's
 <code>software --check</code> was RED for that window (3c36f3e..0324b16). HEAD is green, but the intermediate reds
 were avoidable. The recheck command and the CI-installed binary that runs it are a unit; bump them together.</p>
+<hr />
+<h2 id="plan0038-complete-the-spine-and-front-door-now-prose-gate-themselves"><a class="header" href="#plan0038-complete-the-spine-and-front-door-now-prose-gate-themselves">plan/0038 COMPLETE: the spine and front-door now prose-gate themselves</a></h2>
+<p>The prose rule was stated in the spine but enforced only on adopted projects (via the verify-phase
+recheck), never on the meta repos that author it. plan/0038 closes that: host-template (<code>9268d76</code>, 90 warns
+reworded to zero across 11 docs) and host (<code>1dc9cb9</code>, 29 warns in its single README) are prose-clean and each
+carries a <code>Prose</code> GitHub Actions gate pinned to host-lifecycle v0.24.2 (<code>host-lifecycle prose .</code>, fail on any
+trope). host's is its FIRST CI workflow ever. Both green in CI; agentic-host pointer + host re-pin in
+<code>0813795</code>; whole-suite green. The seven <code>UPGRADING</code> verify phrases stayed byte-for-byte (no applied-upgrade
+re-verification broke). No <code>UPGRADING</code> ledger entry: adopters already run the prose gate via the verify
+phase, so this only brought the meta repos under the existing rule. The bulk reword was done by four parallel
+subagents (one per file-group), then verified centrally (prose zero on both repos + the seven phrases intact +
+<code>software --check</code> green) and the diffs reviewed.</p>
+<p><strong>LESSON (ai-diction is density-weighted, not a per-token flag).</strong> The <code>harness</code> ai-diction on
+<code>`kani:&lt;harness&gt;`</code> (plan/0033 called it an "accepted residual that cannot be reworded") is NOT a hard
+false positive. ai-diction words carry weight 0.5 ("one word is never a verdict"); the gate is an absolute/
+density threshold over the DOCUMENT. host-template/CLAUDE.md had <code>harness</code> TWICE (the <code>kani:&lt;harness&gt;</code> token
+at :355 and prose "named harness" at :365); the two summed past the gate, flagging :355. In isolation a single
+<code>harness</code> line is clean. Rewording the :365 prose occurrence ("the named harness, invariant, or theorem" -&gt;
+"the rung's named target") dropped the count to one and cleared the flag, no token rename, no engine change.
+Corollary: <code>scan_prose_text</code> (the prose audit) takes NO allowlist, so a LEXICON entry cannot mask a prose
+trope (LEXICON masks only the naming audit, <code>scan_text_with_allow</code>); a legitimate-but-flagged prose word is
+cleared by rewording/reducing density or boxing in a <code>host-lint:ignore</code> fence, never by LEXICON.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
