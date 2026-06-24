@@ -176,48 +176,54 @@
                     <main>
                         <h1 id="reconcile-internal-contradictions"><a class="header" href="#reconcile-internal-contradictions">Reconcile internal contradictions</a></h1>
 <h2 id="context"><a class="header" href="#context">Context</a></h2>
-<p>A cross-cutting audit of the plans, decisions, spine, and governance docs (run
-2026-06-24) surfaced a set of internal contradictions and stale records: places
-where two of the project's own assertions cannot both be true, or where a record
-states something the implementation does not do. This milestone owns the fixes for
-those findings.</p>
-<p>Scope discipline: this plan holds <strong>only</strong> the newly surfaced findings, each of
-which had no prior home. Previously deferred follow-ups (the plan/0029 residuals,
-the plan/0030 receipts-family re-homing, the plan/0035 gather-corpus and
-host-prove kani-ENOENT items, the plan/0034 project-local ban surface) keep their
-existing homes and are deliberately <strong>not</strong> restated here; re-listing a tracked
-item would duplicate its record. PLAN.md remains the single index of all open
-work.</p>
-<h2 id="findings-and-dispositions"><a class="header" href="#findings-and-dispositions">Findings and dispositions</a></h2>
+<p>A cross-cutting audit of the plans, decisions, spine, and governance docs first ran
+2026-06-24 and surfaced a set of internal contradictions: places where two of the
+project's own assertions cannot both be true, or where a record states something the
+implementation does not do. A second deep audit, after the deferred-item closure
+campaign shipped host-lifecycle v0.21.0 through v0.23.0 and re-homed the receipts
+family, refreshed this inventory. The campaign was expected to introduce drift, and it
+did, so the table below is the current accurate set. This milestone owns the fixes.</p>
+<p>Scope discipline: this plan holds the contradiction findings, each of which had no
+prior home. Previously deferred follow-ups keep their existing homes and are not
+restated here. PLAN.md remains the single index of all open work.</p>
+<h2 id="open-findings-and-dispositions"><a class="header" href="#open-findings-and-dispositions">Open findings and dispositions</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Finding</th><th>Evidence</th><th>Fix</th><th>Authority</th></tr></thead><tbody>
-<tr><td>The spine asserts a prose-hygiene gate it does not implement. The <code>verify</code> receipt is documented as re-verified by re-running the prose audit, so a regressed doc re-opens as a HAZARD; the manifest the gate reads runs only <code>validate</code>.</td><td><code>host-template/CLAUDE.md:226</code>; applied ledger entry <code>host-template/UPGRADING.md:165</code> (<code>950fbd6</code>, recorded in <code>.host</code>); contradicted by <code>host-template/lifecycle.manifest:61</code> (<code>recheck = host-lifecycle validate plan/ call/</code>, no prose term).</td><td>Reconcile the spine record with reality: either land the recheck wiring, or correct the docs and the applied ledger entry so they stop asserting an unimplemented gate. The wiring path itself is tracked separately as plan/0030 D4 and is not duplicated here; this plan owns making the <strong>record honest</strong>. <strong>RESOLVED 2026-06-24</strong> (deferred-item campaign): D4 landed in host-lifecycle v0.22.0 (the verify recheck chains <code>host-lifecycle prose .</code>, in-process), so the spine claim is now true and the gate enforces it.</td><td>spine (host-template), re-propagated</td></tr>
-<tr><td>Root <code>CLAUDE.md</code> contradicts itself and the spine on the verification model. The "Agentic-host model" paragraph says verification runs in three lanes and lists the host-* family without <code>host-prove</code>, while the same file's overview lists <code>host-prove</code> and the spine defines a six-rung ladder it drives.</td><td><code>CLAUDE.md</code> "Agentic-host model" paragraph vs <code>CLAUDE.md</code> overview (the four-tool family, <code>host-prove</code> as the ladder driver) and <code>host-template/CLAUDE.md</code> "The verification ladder".</td><td>Update the host paragraph to the six-rung ladder and include <code>host-prove</code>.</td><td>host-local (instance prose)</td></tr>
-<tr><td>Root <code>CLAUDE.md</code> points spine changes at a procedure file that is now a redirect stub.</td><td><code>CLAUDE.md</code> ("re-run the migration (<code>host-template/MIGRATION.md</code>)") vs <code>host-template/MIGRATION.md</code> (a redirect to the <code>host</code> repo; routine spine changes propagate via <code>host-lifecycle upgrade</code>).</td><td>Point the sentence at the live mechanism; keep the load-bearing "do not fork the spine in isolation".</td><td>host-local (instance prose)</td></tr>
-<tr><td><code>call/0017</code> authored a methodology rule now resident in the spine, yet remains <code>accepted</code> in the software-only Why room.</td><td><code>call/0017:5</code> (<code>Scope:</code> includes <code>host-template</code>) and its body ("a real spine semantics change"); the rule lives in <code>host-template/lifecycle.manifest</code> and is applied as <code>.host</code> rev <code>617e420</code>.</td><td>Retire <code>call/0017</code> the MADR way: <code>Status: superseded by the spine</code>, in place. Review <code>call/0018</code> under the same test (software-scoped but authored a now-resident principle); keep or retire with a recorded reason. <code>call/0021</code> was checked and is clean (software-scoped, cites the spine MUST).</td><td>host-local (<code>call/</code> status)</td></tr>
-<tr><td>The <code>host-prove</code> <code>.host-software</code> pin sits one CI-only commit past its release tag.</td><td><code>.host-software</code> host-prove <code>pin = 5e01f58</code> (<code>git describe</code> = <code>v0.2.2-1-g5e01f58</code>); the <code>v0.2.2</code> tag is <code>3ca95fc</code>; the extra commit touches only <code>ci.yml</code>, so the artifact still reproduces.</td><td>Re-pin to the tag commit <code>3ca95fc</code> (doctrine: the pin is the released tag commit), or record the artifact-preserving pin-advance rationale if kept.</td><td>host-local (<code>.host-software</code>)</td></tr>
-<tr><td>Two record-tidiness defects surfaced alongside the audit.</td><td>An empty untracked <code>plan/0001-foundation/spec/</code> left from the host#12 live-trigger probe (a number collision with <code>0001-migration-protocol</code>, and a <code>plan/*/spec/</code> dir is itself a methodology smell); and PLAN.md's Skill-Hardening status box is unchecked while <code>SKILL-HARDENING.md</code> shows every goal done.</td><td>Remove the orphan directory; check the PLAN.md box and fold in the standing crates.io deferral.</td><td>host-local</td></tr>
+<tr><td>Root <code>CLAUDE.md</code> contradicts itself and the spine on the verification model. The "Agentic-host model" paragraph says verification runs in three lanes and lists the host-* family without <code>host-prove</code>, while the same file's overview names <code>host-prove</code> the ladder driver and the spine defines a six-rung ladder.</td><td><code>CLAUDE.md:24</code> vs <code>CLAUDE.md:9</code> and <code>:11</code> and <code>host-template/CLAUDE.md</code> "The verification ladder".</td><td>Rewrite the paragraph to the six-rung ladder and include <code>host-prove</code>.</td><td>host-local prose</td></tr>
+<tr><td><code>STRUCTURE.md</code> (the room map) is a stale local copy. It places the What room at <code>plan/&lt;NNNN&gt;/spec/</code> (the spine forbids a spec under <code>plan/</code>, and root <code>CLAUDE.md:14</code> says specs live with the software), and the Where room at <code>host-lint/</code> (the retired root-scattered layout, now <code>software/&lt;name&gt;/&lt;branch&gt;/</code>), naming only host-lint of the five embedded components.</td><td><code>STRUCTURE.md:9</code> and <code>:11</code> vs <code>host-template/STRUCTURE.md</code> (correct: What/Where at <code>&lt;software&gt;/</code>), root <code>CLAUDE.md</code>, and the live <code>software/</code> tree.</td><td>Sync the host room map to the spine and the real layout. This also removes the conceptual root of the orphan <code>plan/0001-foundation/spec/</code> directory.</td><td>host-local prose</td></tr>
+<tr><td>Root <code>CLAUDE.md</code> points a spine change at a procedure file that is now a redirect stub.</td><td><code>CLAUDE.md:26</code> ("re-run the migration (<code>host-template/MIGRATION.md</code>)") vs <code>host-template/MIGRATION.md</code> (a redirect to the <code>host</code> repo; routine spine changes propagate via <code>host-lifecycle upgrade</code>).</td><td>Point the sentence at the live mechanism; keep the load-bearing "do not fork the spine in isolation".</td><td>host-local prose</td></tr>
+<tr><td><code>README.md</code> names only three host-* tools, omitting <code>host-prove</code>.</td><td><code>README.md:4</code> ("<code>host-grammar</code>, <code>host-lint</code>, <code>host-lifecycle</code>") vs <code>CLAUDE.md:9</code> and <code>.host-software</code> (host-prove is embedded and released).</td><td>Add <code>host-prove</code>.</td><td>host-local prose</td></tr>
+<tr><td><code>call/0017</code> authored a methodology rule now resident in the spine, yet remains <code>accepted</code> in the software-only Why room.</td><td><code>call/0017:5</code> (<code>Scope:</code> includes <code>host-template</code>) and its body ("a real spine semantics change"); the rule lives in <code>host-template/CLAUDE.md</code> and is applied as <code>.host</code> rev <code>617e420</code>.</td><td>Retire <code>call/0017</code> the MADR way: <code>Status: superseded by the spine</code>, in place. Review <code>call/0018</code> under the same test (its scope is software and the spine cites it by name, so it reads softer); keep or retire with a recorded reason. <code>call/0021</code> was checked and is clean.</td><td>host-local <code>call/</code> status</td></tr>
+<tr><td>The <code>host-prove</code> <code>.host-software</code> pin sits one CI-only commit past its release tag.</td><td><code>.host-software</code> host-prove <code>pin = 5e01f58</code> (<code>git describe</code> = <code>v0.2.2-1-g5e01f58</code>); the <code>v0.2.2</code> tag is <code>3ca95fc</code>; the extra commit touches only <code>ci.yml</code>, so the artifact still reproduces.</td><td>Re-pin to the tag commit <code>3ca95fc</code>, or record the artifact-preserving pin-advance rationale.</td><td>host-local <code>.host-software</code></td></tr>
+<tr><td>Two record-tidiness defects.</td><td>An empty untracked <code>plan/0001-foundation/spec/</code> left from the host#12 live-trigger probe (a number collision with <code>0001-migration-protocol</code>); and PLAN.md's Skill-Hardening status box is unchecked while <code>SKILL-HARDENING.md</code> shows every goal done.</td><td>Remove the orphan directory; check the PLAN.md box and fold in the standing crates.io deferral.</td><td>host-local</td></tr>
 </tbody></table>
 </div>
-<h2 id="out-of-scope"><a class="header" href="#out-of-scope">Out of scope</a></h2>
-<p>The prose-gate <strong>wiring</strong> (plan/0030 D4) has since closed during the deferred-item
-campaign (host-lifecycle v0.22.0), which also resolved this plan's prose-gate finding.
-Every other previously deferred follow-up stays in its existing home, untouched. This
-plan does not re-track them.</p>
-<h2 id="verification"><a class="header" href="#verification">Verification</a></h2>
-<p>Each fix is verified concretely:</p>
+<h2 id="resolved-during-the-deferred-item-campaign"><a class="header" href="#resolved-during-the-deferred-item-campaign">Resolved during the deferred-item campaign</a></h2>
 <ul>
-<li>Prose gate: <code>host-template/lifecycle.manifest</code> and the two prose copies agree
-(either the manifest re-runs the prose audit and <code>software --check</code> exercises
-it, or the docs no longer claim it does); <code>software --check</code> green.</li>
+<li><strong>Prose-hygiene gate</strong> (the original headline finding): the spine documented a
+<code>verify</code> recheck that re-runs the prose audit, but <code>lifecycle.manifest</code> ran only
+<code>validate</code>. Closed in host-lifecycle v0.22.0 (plan/0030 D4): the recheck chains
+<code>host-lifecycle prose .</code>, so <code>software --check</code> re-runs the audit and re-opens a
+regressed doc as a HAZARD. The spine claim is now true and the gate enforces it.</li>
+</ul>
+<h2 id="related-drift-handled-separately-as-memory-hygiene"><a class="header" href="#related-drift-handled-separately-as-memory-hygiene">Related drift, handled separately as memory hygiene</a></h2>
+<p>The second audit also found the session auto-memory stale after the campaign (the
+prose lane is now wired and clean, the applied-set moved to <code>.host-receipts</code>, the
+tools are at v0.23.0). That is the agent's own working memory, not a repository
+contradiction, so it is corrected directly rather than tracked as a milestone finding.</p>
+<h2 id="verification"><a class="header" href="#verification">Verification</a></h2>
+<ul>
 <li>Root <code>CLAUDE.md</code>: the verification-model paragraph names <code>host-prove</code> and the
 six-rung ladder, with no surviving "three lanes" claim; the migration sentence
 resolves to a live mechanism.</li>
-<li><code>call/0017</code>: <code>Status: superseded by the spine</code>; <code>host-lifecycle validate plan/ call/</code> clean; <code>call/0018</code> dispositioned with a recorded reason.</li>
-<li><code>host-prove</code> pin: <code>git -C software/host-prove/main describe --tags</code> reports an
-exact <code>v0.2.2</code> (no <code>-N-g</code> suffix), or a recorded rationale; <code>software --check</code>
-and <code>software --verify-build</code> green.</li>
-<li>Tidiness: <code>plan/0001-foundation/</code> is gone; PLAN.md line records Skill-Hardening
-complete with the crates.io deferral noted.</li>
+<li><code>STRUCTURE.md</code>: the What and Where rooms point at the software, never <code>plan/spec/</code>
+or the root-scattered layout; <code>software --check</code> and the doc-site build stay green.</li>
+<li><code>README.md</code>: the host-* tool list includes <code>host-prove</code>.</li>
+<li><code>call/0017</code>: <code>Status: superseded by the spine</code>; <code>host-lifecycle validate plan/ call/</code>
+clean; <code>call/0018</code> dispositioned with a recorded reason.</li>
+<li><code>host-prove</code> pin: <code>git -C software/host-prove/main describe --tags</code> reports an exact
+<code>v0.2.2</code>, or a recorded rationale; <code>software --check</code> and <code>--verify-build</code> green.</li>
+<li>Tidiness: <code>plan/0001-foundation/</code> is gone; PLAN.md records Skill-Hardening complete
+with the crates.io deferral noted.</li>
 </ul>
 <p>Whole-suite green across the affected repos at close.</p>
 
