@@ -921,3 +921,19 @@ deploys via `host-lifecycle release`, not an agentic-host commit, since `softwar
 **Aside:** filed connollydavid/host-lifecycle#1 — `host-lifecycle next <dir>` returns `0000` for a directory
 with no numbered entries (e.g. the host root) instead of erroring, a fail-unsafe footgun at the weak-agent
 bar. `next plan` -> `0039` and `next call` -> `0023` are correct.
+
+## plan/0039 design refined and build started (2026-06-24, corrects the entry above)
+
+The plan/0039 entry above is superseded on three points; corrected here (append-only). (1) **No generated
+`concepts.md`.** All four concept definitions live at `{#id}` anchors in `STRUCTURE.md` and are pointed at
+directly (`[text](STRUCTURE.md#id)`); a page of links back to one doc is redundant. The tool carries the
+concept vocabulary (`CONCEPT_IDS`, spine-level); the coverage check guards drift. Vocabulary is spine, values
+are project-local. (2) **The lifecycle manifest is hardened to phases-only** (`manifest --check` rejects any
+non-`[phase]` stanza); `components`/`verifiers` are sourced from the project's own `.host-software`, never the
+shared spine — separation of concerns, no overfit creeps back. (3) **`host` is the front door, not "repo-self".**
+Of the `.host-software` members the four tools are `components`; the single-file `host` is set apart by
+`front-door = true`. agentic-host (the dev environment) is NOT a `.host-software` member and must stay invisible
+to adopters; the old comment calling the `host` member "the project's own repo" was wrong. The front-door
+principle: one spine, everything else a copy-at-version or a pointer, never a restatement. Landed in the
+host-lifecycle worktree: project-local sourcing, manifest hardening, the three checks (link-integrity,
+declared-anchor, coverage). Pending: convert agentic-host's docs to pointers, spine doctrine, release.
