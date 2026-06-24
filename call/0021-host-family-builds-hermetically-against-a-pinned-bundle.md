@@ -7,7 +7,7 @@
   "a component shipping static release binaries reproduces them offline from pinned inputs");
   `plan/0032` (the milestone); `plan/0028` (the `GLIBC_2.39` divergence this retires);
   `call/0010` (the `.host-software` recipe); `call/0018` (discharge is re-derivation in a
-  pinned toolchain — this adds offline hermeticity to that re-derivation).
+  pinned toolchain, to which this adds offline hermeticity).
 
 ## Context and Problem Statement
 
