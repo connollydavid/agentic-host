@@ -49,7 +49,7 @@ tool-less `.host-receipts` holds the project's methodology-version trail.
    `.host-lifecycle-receipts`. So the gate stays green across the boundary, and an adopter
    that has not yet run `migrate-receipts` is still read correctly. The old-layout reader
    is permanent, retired only by a later decision once no supported adopter is on the old
-   side, following the legacy single-`revision` `.host` stamp that the binary still
+   side. It mirrors the legacy single-`revision` `.host` stamp, which the binary still
    auto-migrates on read today.
 
 3. **Writes route by the ontology.** After this lands, `upgrade --record` appends the
