@@ -25,3 +25,10 @@
     evidence = host-lifecycle v0.26.1 released (commit 2f606e29, tag v0.26.1); .host-software re-pinned + release receipt recorded; software --check green and --verify-build reproduces artifact adf5c10a offline; 3 CI install pins bumped (7b1ffaa)
     tool = host-lifecycle@0.26.1
     recorded = 2026-06-25
+
+[receipt "plan/0041#close-the-issue"]
+    disposition = done
+    verify = attested operator
+    evidence = connollydavid/host-lifecycle#1 CLOSED (auto-closed by release commit 2f606e29 'closes ...#1'); closing comment added referencing v0.26.1, call/0025, plan/0041
+    tool = host-lifecycle@0.26.1
+    recorded = 2026-06-25
