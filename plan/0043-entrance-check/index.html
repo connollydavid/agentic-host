@@ -243,9 +243,10 @@ singleton constraint settle the form on the dedicated stanza.</p>
 <p>The legacy per-member marker, both <code>front-door = true</code> and the <code>entrance = true</code> that
 agentic-host adopted in <code>call/0027</code>, is accepted by the deprecation shim as the front-door
 entrance during the transition, mapped to the equivalent stanza. The shim warns and names
-the stanza form. Its retirement (a hard fail on a surviving per-member marker) stays the
-named follow-up the deprecate-then-retire path already owes, a release after the spine and
-agentic-host move to the stanza.</p>
+the stanza form. Its retirement landed in this milestone as host-lifecycle v0.30.0 (the
+operator chose to retire now, rather than a release later): a surviving per-member marker is a
+loud problem in every consumer, never the entrance, and the spine and agentic-host carry no
+legacy marker.</p>
 <h3 id="the-concept-set-checked-against-its-homes"><a class="header" href="#the-concept-set-checked-against-its-homes">The concept set, checked against its homes</a></h3>
 <p>The <code>restates</code> concepts select what the check holds, each against the structured home it
 already reads: the lifecycle phases against the manifest, the wired tools against the
@@ -344,6 +345,15 @@ the whole suite is green.</p>
 <li>depends: #validate-4b</li>
 <li>verify: attested operator</li>
 </ul>
+<h3 id="retire-shim"><a class="header" href="#retire-shim">Retire the legacy per-member marker</a></h3>
+<p>Retire the deprecate-then-retire shim: a surviving per-member <code>front-door = true</code> or
+<code>entrance = true</code> becomes a loud problem in every consumer, never the entrance. Add the spine
+retirement doctrine and an adopter <code>UPGRADING</code> entry, gated so the live spine no longer teaches
+the legacy marker. Ship a host-lifecycle release, then re-pin and adopt.</p>
+<ul>
+<li>depends: #release-and-re-pin</li>
+<li>verify: attested operator</li>
+</ul>
 <h2 id="risks"><a class="header" href="#risks">Risks</a></h2>
 <ul>
 <li>The milestone touches the spine, the tool, and the agentic-host declaration at once. The
@@ -370,8 +380,9 @@ Qwen-3.5-4B run validated the declaration form and the stanza ergonomics (<code>
 host-template <code>ba86125</code> carries the doctrine and the adopter <code>UPGRADING</code> entry; agentic-host
 migrated its <code>.host-software</code> to the stanza and adopted the revision. Supersedes the
 agentic-host-local scope of plan/0040 and the scope half of <code>call/0026</code>, carries <code>call/0027</code> to
-completion, and is recorded in <code>call/0028</code>. The legacy per-member marker is accepted by the
-deprecation shim, warned, until a later revision retires it (the named follow-up). The whole
+completion, and is recorded in <code>call/0028</code>. The legacy per-member marker was then retired (host-lifecycle v0.30.0,
+host-template <code>de8a517</code>): a surviving one is a loud problem in every consumer, which completes
+the deprecate-then-retire path. The whole
 suite is green.</p>
 
                     </main>
