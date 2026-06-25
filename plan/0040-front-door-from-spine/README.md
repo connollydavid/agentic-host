@@ -38,6 +38,9 @@ weighed and declined:
 
 ## The design (proposed, for adversarial review)
 
+The adversarial review superseded the fragment mechanism below; see
+`design-review.md` and the "Settled" section. This records what was proposed.
+
 The README is assembled from two kinds of section:
 
 - **Spine-derived** sections (the rooms, the stamp format, the ladder and pins,
@@ -84,11 +87,33 @@ flows through without a hand edit.
   host-lifecycle `front-door` capability is generic tooling, exercised only by
   agentic-host for the published front door.
 
+## Settled (design review)
+
+The two-lens adversarial review (`design-review.md`) found the fragment mechanism
+flawed: a hand-authored template fragment is a second source of truth, so
+`front-door --check` would prove the README matches the fragment and never that the
+fragment matches `CLAUDE.md`. It relocates drift rather than removing it. The four
+decisions are settled as:
+
+- **Procedure home.** Keep the split; the host repo owns the procedure (the
+  `MIGRATION.md` pointer is live and assigns the procedure there).
+- **Section granularity.** Split by structured source, not by spine-derived.
+  Coverage-check the phases against `lifecycle.manifest` and the wired tools against
+  the `.host-software` `[verification]` drivers plus the lifecycle engine; generate
+  the `.host` stamp block from the tool's format. The version pins, the
+  lanes-mandatory rule, and the tool descriptions have no structured home and stay
+  authored. A structured pin home is a named follow-up.
+- **Check strictness.** Byte-exact on the generated stamp block, coverage on the
+  structured fact-sets, run on every gate sweep. The procedure prose stays authored,
+  so the front door's teaching quality is preserved.
+- **Scope.** agentic-host-local, no `UPGRADING` entry. The binding check runs in the
+  agentic-host verify recheck, where the spine sources live; the front-door repo
+  keeps its plan/0038 prose gate and cannot run the coverage check itself.
+
 ## Build sequence
 
-The build sequence as a task graph (plan/0042), to run after the review settles
-the design. Each entry is an anchored task. The milestone is in its design phase,
-so no task is built yet, and the chain is linear.
+The build sequence as a task graph (plan/0042). Each entry is an anchored task, the
+chain is linear, and each task carries a receipt in `.host-task-receipts`.
 
 ### Settle the open decisions by review {#settle-open-decisions}
 
@@ -99,27 +124,31 @@ subdoc with a proceed verdict.
 
 ### Add the front-door generator {#add-front-door-generator}
 
-Add the `front-door` generator and `--check` to host-lifecycle; the template
-carries the front-door section fragments. The unit tests pass and a
-regenerate-then-diff reproduces the committed README.
+Add the `front-door` and `front-door --check` subcommands to host-lifecycle: phase
+coverage against `lifecycle.manifest`, tool coverage against the `.host-software`
+`[verification]` drivers plus the lifecycle engine, and byte-exact generation of the
+`.host` stamp block. No template fragments (the review rejected them as a second
+source). The unit tests pass.
 
 - depends: #settle-open-decisions
 - verify: cd software/host-lifecycle/main && cargo test
 
-### Section and regenerate the front door {#section-and-regenerate}
+### Bring the front door in line {#section-and-regenerate}
 
-Section the front-door README, regenerate it from the pinned template, and write
-the seed stamp, so `front-door --check` is clean, the README reads unchanged in
-meaning, and `host-lifecycle prose` is clean.
+Add the omitted `release` phase, confirm every wired tool is named, regenerate the
+`.host` stamp block, and write the seed stamp, so `front-door --check` is clean, the
+README reads unchanged in meaning, and `host-lifecycle prose` is clean.
 
 - depends: #add-front-door-generator
 - verify: attested operator
 
 ### Wire the front-door check {#wire-the-check}
 
-Wire `front-door --check` into the `host` repo CI and into the agentic-host verify
-recheck, so a spine move that stales the front door is caught: a deliberately
-staled section fails the check, and the whole-suite CI is green.
+Wire `front-door --check` into the agentic-host verify recheck, where the spine
+sources live, so a spine move that stales the front door is caught (a deliberately
+staled section fails the check). The front-door repo keeps its plan/0038 prose gate;
+it cannot run the coverage check itself, since it does not carry the sources. The
+whole-suite CI is green.
 
 - depends: #section-and-regenerate
 - verify: attested operator
