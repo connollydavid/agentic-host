@@ -123,3 +123,31 @@
     evidence = Retired the deprecate-then-retire shim (host-lifecycle v0.30.0, 94984a1): a surviving per-member front-door = true / entrance = true is a loud problem in every consumer (parse_project_facts pushes it; entrance and reconcile exit 2), never the entrance. Spine retirement doctrine + adopter UPGRADING entry (host-template de8a517, requires v0.30.0); agentic-host adopted it (upgrade --record de8a517 via verify). The live spine teaches only the stanza. cargo test 102 + retired-marker tests, clippy clean; entrance --check clean on the stanza, a legacy marker exits 2.
     tool = host-lifecycle@0.30.0
     recorded = 2026-06-25
+
+[receipt "plan/0044#settle-by-data"]
+    disposition = done
+    verify = attested operator
+    evidence = gather-data.md: direct-rope Fen run; (A) lane consistency + (ii) surgical word boundary + (b) no new abuse surface
+    tool = host-lifecycle@0.30.0
+    recorded = 2026-06-25
+
+[receipt "plan/0044#extend-mask"]
+    disposition = done
+    verify = cd software/host-lint/main && cargo test
+    evidence = cargo test green: 73 unit (2 new) + 110 integration (2 new); clippy clean
+    tool = host-lifecycle@0.30.0
+    recorded = 2026-06-25
+
+[receipt "plan/0044#readme-claim"]
+    disposition = done
+    verify = attested operator
+    evidence = README masked-modes wording adds --prose and --docs; prose gate clean
+    tool = host-lifecycle@0.30.0
+    recorded = 2026-06-25
+
+[receipt "plan/0044#release-and-close"]
+    disposition = done
+    verify = attested operator
+    evidence = host-lint v0.10.0@5106ee7a (commit f1474e8, tag pushed); .host-software re-pinned; release receipt recorded; host-lint issue #16 closed
+    tool = host-lifecycle@0.30.0
+    recorded = 2026-06-25
