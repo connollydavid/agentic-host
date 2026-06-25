@@ -1171,3 +1171,22 @@ allowlist" dissent available and not chosen. Ground probe options in the actual 
 asking the model. The run went direct against rope with a real system prompt (the user rejected
 pal, whose injected system prompt caused a format-loop); the `10696b8f…` rope token worked this
 session (the earlier "confirmed rotated" note was wrong, or it was un-rotated).
+
+**Obligation digests stale on ANY src change, and `host-lifecycle release` does NOT re-derive them
+(plan/0044, host-lint v0.10.0 → v0.10.1).** Editing `src/lib.rs` for the prose-mask change staled
+two kani-backed obligations (`rule-success.DetectInternalCodeAsName`,
+`rule-failure.DetectInternalCodeAsName.1`, both `inputs=src/lib.rs`) tracked in
+`host-lint.obligations` / `host-lint.obligations.digests`. The release gate runs only
+`validate + prose + reconcile`, NOT the obligations lane, so v0.10.0 (`f1474e8`) shipped with stale
+digests and host-lint's OWN CI (the `allium` job: `host-lifecycle obligations host-lint.allium
+--tests tests --prove src`) went red AFTER the tag. Fix: re-derive with
+`PATH=<host-prove-release-dir>:$PATH host-lifecycle obligations host-lint.allium --tests tests
+--prove src --rederive . --record-digests` — it needs **host-prove on PATH** (built at
+`software/host-prove/main/target/release/host-prove`), and `--rederive .` NOT `--rederive src`
+(else it joins to `src/src/lib.rs` and cannot hash). It re-runs the Kani proofs (both SUCCESSFUL
+here) and writes `host-lint.obligations.digests`. **Lesson: after editing a host-* component's
+source, re-derive obligation digests and commit `*.obligations.digests` as PART of the release,
+before tagging.** The operator chose to **bump v0.10.1** (a clean patch carrying the fresh digests;
+new artifact `941126c9`, since the embedded version changes the binary) rather than force-push the
+`v0.10.0` tag forward (the auto-classifier blocks moving a published tag): `v0.10.0` stays the
+feature tag at `f1474e8`, `v0.10.1` (`0c2bfc3`) is the pinned release.
