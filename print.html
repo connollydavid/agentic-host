@@ -6156,6 +6156,43 @@ artifact <code>e3e1ef02</code>), re-pinned, dogfood-verified (reconcile + <code>
 NEW doc only AFTER <code>git add</code>/commit — checking an untracked file reports a false clean. Two diction tropes
 (false-range from a <code>from … to</code> pair, negative-parallelism from "honors no other") slipped into committed docs
 this way and were fixed in a follow-up. See [[ai-diction-traps-in-my-writing]].</p>
+<h2 id="plan0042-complete--the-receipted-task-graph-host-lifecycle-v0260-2026-06-25"><a class="header" href="#plan0042-complete--the-receipted-task-graph-host-lifecycle-v0260-2026-06-25">plan/0042 complete — the receipted task graph (host-lifecycle v0.26.0, 2026-06-25)</a></h2>
+<p>In-plan tasks became first-class. A task is an anchored <code>### </code> heading under <code>## Build sequence</code>,
+keyed <code>plan/NNNN#anchor</code> (a stable global id, not a position), with <code>- depends:</code> (a local
+<code>#anchor</code> or a cross-milestone <code>plan/NNNN#anchor</code>), <code>- verify:</code> (a shell command, or <code>attested &lt;call/NNNN | operator&gt;</code>), and <code>- inputs:</code> (files a mechanical verify covers). The project's tasks
+form ONE graph across milestones; the tool derives the parallel frontier (tasks whose deps all
+carry a done receipt), default linear. Shipped in host-lifecycle v0.26.0 (<code>430876c</code>, artifact
+<code>52e8414a</code>): the <code>tasks</code> subcommand (status / check / record / rederive / new), the
+<code>.host-task-receipts</code> ledger (a deliberate third receipt kind, <code>call/0024</code>), the per-task gate in
+<code>software --check</code>, the task-anchor link checker, and <code>tasks --new</code> (scaffolds the heading). Spine
+doctrine in host-template <code>2229dbb</code> + UPGRADING <code>71a1613</code> (requires v0.26.0), adopted. Whole-suite
+CI green across all three repos.</p>
+<p><strong>Operator rulings (overrode the five-lens review's re-scope):</strong> build the graph NOW as forward
+infrastructure for <em>arbitrary-complexity adopters</em> — "no consumer in agentic-host's own linear
+history" is the wrong lens, the consumer is the adopter. A NEW top-level <code>.host-task-receipts</code> file
+(over the ontology objection that a task receipt is operational). <strong>Adopter-facing and mandatory.</strong>
+The bare <code>#N</code> GitHub-reference unsafety is a <em>future</em> plan (enforce full URLs); plan/0042's task
+references use the full relative-path anchor, so it was reframed: anchoring is for <em>stable task
+identity</em>, not the <code>#N</code> collision (the review showed no plan ever references a step by number).</p>
+<p><strong>Two design corrections surfaced during the build (both implemented + tested):</strong></p>
+<ol>
+<li><strong>The gate is completion-aware.</strong> A task with no receipt is a HAZARD only when its milestone is
+marked complete (read from the README <code>## Status</code>); an OPEN milestone's tasks are pending, not
+gated. This matches the operator's "every <em>completed</em> milestone owes a receipt" scope; the first
+per-task-always-HAZARD gate over-fired on open milestones (0040/0041 are open).</li>
+<li><strong>Fenced code blocks are masked</strong> in both the parser and the reference check, so example syntax
+in a doc (a worked example, a ledger stanza) is not parsed as a real task or flagged.</li>
+</ol>
+<p><strong>Staleness took both halves of <code>call/0018</code>:</strong> a mechanical <code>done</code> records its <code>inputs</code> digest and
+goes STALE on input drift (cheap offline); <code>tasks --rederive</code> re-runs the command and refreshes it.
+An attested <code>done</code> resolves its citation (weaker, labeled as such). A verify that changed since the
+receipt is stale; an orphan receipt (anchor removed) is a reverse-drift HAZARD.</p>
+<p><strong>4B (Fen) validation:</strong> the form is fail-safe. The 4B authors <code>depends</code>/<code>verify</code>/<code>inputs</code> well
+(within-milestone six of six, cross-milestone four of four) but slips on the exact <em>anchor</em> form
+when hand-typing; <code>tasks --new</code> carries the anchor (the fill-in-the-blank fold-back), and any
+residual slip (e.g. over-qualifying a local ref) fails loud as a dangling-dependency HAZARD. Frame
+authoring as the prerequisite question ("what must finish first?"), never "what runs in parallel?"
+See [[qwen-4b-weak-agent-eval]].</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
