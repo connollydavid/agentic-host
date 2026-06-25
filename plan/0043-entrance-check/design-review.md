@@ -131,3 +131,26 @@ and fold in the exit-code comment, with the marker parse left on `entrance = tru
 reconcile's component model stays intact. The entrance check's honest scope is recorded: it
 holds any document that restates the phase, tool, and stamp facts, which today is the front
 door.
+
+## Operator re-cut
+
+The operator overruled the re-scope. plan/0043 is the effort for the whole entrance work, so it
+expands to encompass every aspect rather than narrowing to the spine reconciliation. The
+review's blocking findings become design requirements the milestone must meet, not reasons to
+defer:
+
+- **The marker-break is designed out.** The entrance marker keys on the `entrance` key present
+  with a non-empty value, parsed once into the concept set, with `true` meaning the full set. A
+  member stays set apart whatever its value form, so the value never demotes the front door into
+  reconcile's components. Good design closes the seam; it is not a reason to wait. A regression
+  test pins both `facts.entrance` and `facts.components` for the value form.
+- **The concept set is wired, not decorative.** The declared concepts select what the check
+  holds, each against its structured home, so the value is verified rather than ignored.
+- **The scope is stated, not over-claimed.** The entrance check holds any document that restates
+  a concept with a structured home. A document that restates only home-less doctrine declares no
+  checkable concept, and the per-document declaration says so plainly, rather than the tool
+  pretending a coverage it cannot deliver.
+- **The spine reconciliation lands inside this milestone,** beside the marker work, so the value
+  form and the spine rename ship together and no state is half-renamed.
+
+The expanded design and its build sequence are in `README.md`.
