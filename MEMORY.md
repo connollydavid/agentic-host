@@ -1089,3 +1089,20 @@ docs; entrance = coverage + generation for can't-link docs).
 the probe ALSO demanded a strict format ("output ONLY") — judge by the converged reasoning BEFORE the
 loop, and keep probe prompts short with no conflicting format demand. See [[qwen-4b-weak-agent-eval]],
 [[qwen-pal-model-infra]].
+
+**Entrance rename landed standalone, with a deprecate-then-retire migration (2026-06-25).** The operator
+pulled the `front-door` → `entrance` rename forward out of plan/0043 (which keeps the opt-in
+generalization), as a standalone hardwired/agentic-host-local change. Shipped as TWO host-lifecycle
+releases: **v0.28.0** = the rename with no alias (subcommand + the `.host-software` flag `front-door =
+true` → `entrance = true` + code + CI), change-class `removes-flag` (a renamed public flag is Breaking →
+pre-1.0 minor bump); **v0.28.1** = the migration, change-class `neither` (a backward-compat shim →
+patch). **The migration is plan/0039's deprecate-then-retire:** `parse_project_facts` accepts a legacy
+`front-door = true` as the entrance (so a pre-rename `.host-software` is NOT silently demoted to a
+component), and the `entrance` command warns and names the rename so the old spelling never passes
+silently; the shim is slated for removal a release later. The full plan/0039 retire step (a hard-fail +
+an adopter UPGRADING entry) waits until the generalization makes entrances adopter-facing. `call/0027`
+records it. **Operator directives that shaped it:** comments stay FORWARD-LOOKING (no "renamed from
+front-door" provenance asides — I had added several and was told to strip them); the MIGRATION is the
+one place the old spelling lives ("let migration deal with transition"). **Lesson: a rename with no
+alias OWES a migration** — without the shim a stray `front-door = true` silently becomes a component (a
+confusing HAZARD), the silent failure plan/0039's fail-safe forbids.
