@@ -39,3 +39,10 @@
     evidence = Two-lens adversarial review recorded in plan/0040-front-door-from-spine/design-review.md; verdict proceed-with-changes (re-scope to structured-source generation + coverage); four open decisions settled
     tool = host-lifecycle@0.26.1
     recorded = 2026-06-25
+
+[receipt "plan/0040#add-front-door-generator"]
+    disposition = done
+    verify = cd software/host-lifecycle/main && cargo test
+    evidence = front-door + front-door --check subcommands added (phase coverage from manifest, tool coverage from .host-software drivers + lifecycle engine, byte-exact .host stamp generation); cargo test 102 passed (incl. front_door_covers_phases_tools_and_stamp), clippy clean; live run HAZARDs the omitted release phase
+    tool = host-lifecycle@0.26.1
+    recorded = 2026-06-25
