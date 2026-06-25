@@ -4292,15 +4292,22 @@ true to what the tool reads, so the machinery is ready without over-claiming a c
 cannot yet exercise.</li>
 </ul>
 <h2 id="status-4"><a class="header" href="#status-4">Status</a></h2>
-<p>Open, in build. The adversarial review (three independent reviewers, <code>design-review.md</code>)
-returned a re-scope verdict; the operator re-cut it to expand the milestone to encompass
-every aspect, with the review's blocking findings folded in as design requirements. Operator
-decisions recorded: opt-in and reusable; the name <code>entrance</code> by Qwen-3.5-4B data; the
-standalone sibling of reconcile; the declaration is a single <code>[entrance]</code> stanza, a global
-singleton among the components, reaching any document by path, with the named member set
-apart from <code>components</code> as the front door is today. Supersedes the agentic-host-local scope
-of plan/0040 and the scope half of <code>call/0026</code>, and carries the rename and migration of
-<code>call/0027</code> toward completion.</p>
+<p>complete, released as host-lifecycle v0.29.0 (2026-06-25; <code>dbeb3db</code>, artifact <code>01171b92</code>). The
+entrance check reads a singleton <code>[entrance]</code> stanza in <code>.host-software</code> that names the member
+and the document within it (default <code>README.md</code>), held complete against the concepts it
+<code>restates</code>, reaching any document by path, the standalone sibling of reconcile. A three-reviewer
+adversarial design review returned a re-scope verdict; the operator re-cut it to expand the
+milestone, folding the review's blocking findings in as design requirements. A three-reviewer
+adversarial code review (<code>code-review.md</code>) then found and fixed two blocking defects before
+release: the parse <code>problems</code> reached only the entrance command, so a typo'd member re-demoted
+the front door through reconcile; and an empty <code>restates</code> checked nothing yet reported clean. A
+Qwen-3.5-4B run validated the declaration form and the stanza ergonomics (<code>gather-data.md</code>).
+host-template <code>ba86125</code> carries the doctrine and the adopter <code>UPGRADING</code> entry; agentic-host
+migrated its <code>.host-software</code> to the stanza and adopted the revision. Supersedes the
+agentic-host-local scope of plan/0040 and the scope half of <code>call/0026</code>, carries <code>call/0027</code> to
+completion, and is recorded in <code>call/0028</code>. The legacy per-member marker is accepted by the
+deprecation shim, warned, until a later revision retires it (the named follow-up). The whole
+suite is green.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
