@@ -183,3 +183,9 @@
     evidence = v0.25.0@e3e1ef023466c8ad33e6b8843db7a91457e154c8455bb6336fa561ac3142aac1
     tool = host-lifecycle@0.24.2
     recorded = 2026-06-24
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.26.0@52e8414ade5920013bc345462f96fcc76520547c07037c867ceb06028547bfb6
+    tool = host-lifecycle@0.26.0
+    recorded = 2026-06-25
