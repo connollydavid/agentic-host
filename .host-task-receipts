@@ -151,3 +151,10 @@
     evidence = host-lint v0.10.0@5106ee7a (commit f1474e8, tag pushed); .host-software re-pinned; release receipt recorded; host-lint issue #16 closed
     tool = host-lifecycle@0.30.0
     recorded = 2026-06-25
+
+[receipt "plan/0044#release-and-close"]
+    disposition = done
+    verify = attested operator
+    evidence = host-lint v0.10.1@941126c9 (commit 0c2bfc3, tag pushed); feature shipped as v0.10.0 then v0.10.1 re-derived the staled DetectInternalCodeAsName obligation digests; .host-software re-pinned; receipt recorded; host-lint #16 closed
+    tool = host-lifecycle@0.30.0
+    recorded = 2026-06-25
