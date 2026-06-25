@@ -6824,6 +6824,17 @@ file, <code>next</code> numberless dir). The earlier #6/gather-data framing ("1=
 the real convention rather than changing the code. (c) <strong>The entrance is the single set-apart entry point</strong>
 (a non-component member); a doc INSIDE a real tool component is not the singleton entrance (a recorded
 boundary, not a code change).</p>
+<p><strong>UPDATE — the shim retirement landed in plan/0043 (host-lifecycle v0.30.0, 2026-06-25).</strong> The operator
+chose to retire NOW and to FOLD it into plan/0043 ("it was connected"), not a separate plan: a surviving
+per-member <code>front-door = true</code> / <code>entrance = true</code> is a loud problem in EVERY consumer (the parser pushes
+it; entrance and reconcile exit <code>2</code>), never the entrance. Spine retirement doctrine + UPGRADING <code>de8a517</code>
+(requires v0.30.0); the live spine teaches only the stanza. The UPGRADING-key gotcha was handled cleanly
+this time (commit the doctrine + entry with a placeholder, push, THEN re-key to the pushed commit, no
+amend). <strong>New gotcha: a task receipt and its task must land together (task commit first).</strong> The
+audited-docs rule split the infra commit (the <code>.host-task-receipts</code> receipt for <code>#retire-shim</code>) from the
+plan/0043 commit (the <code>#retire-shim</code> TASK); committing the receipt first left an orphan-receipt HAZARD at
+that intermediate commit, so its CI went red (the HEAD, carrying both, is green). Next time: commit the
+milestone-doc task BEFORE the receipt, or land them in one commit.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
