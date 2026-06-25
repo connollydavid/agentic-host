@@ -960,3 +960,45 @@ artifact `e3e1ef02`), re-pinned, dogfood-verified (reconcile + `software --check
 NEW doc only AFTER `git add`/commit — checking an untracked file reports a false clean. Two diction tropes
 (false-range from a `from … to` pair, negative-parallelism from "honors no other") slipped into committed docs
 this way and were fixed in a follow-up. See [[ai-diction-traps-in-my-writing]].
+
+## plan/0042 complete — the receipted task graph (host-lifecycle v0.26.0, 2026-06-25)
+
+In-plan tasks became first-class. A task is an anchored `### ` heading under `## Build sequence`,
+keyed `plan/NNNN#anchor` (a stable global id, not a position), with `- depends:` (a local
+`#anchor` or a cross-milestone `plan/NNNN#anchor`), `- verify:` (a shell command, or `attested
+<call/NNNN | operator>`), and `- inputs:` (files a mechanical verify covers). The project's tasks
+form ONE graph across milestones; the tool derives the parallel frontier (tasks whose deps all
+carry a done receipt), default linear. Shipped in host-lifecycle v0.26.0 (`430876c`, artifact
+`52e8414a`): the `tasks` subcommand (status / check / record / rederive / new), the
+`.host-task-receipts` ledger (a deliberate third receipt kind, `call/0024`), the per-task gate in
+`software --check`, the task-anchor link checker, and `tasks --new` (scaffolds the heading). Spine
+doctrine in host-template `2229dbb` + UPGRADING `71a1613` (requires v0.26.0), adopted. Whole-suite
+CI green across all three repos.
+
+**Operator rulings (overrode the five-lens review's re-scope):** build the graph NOW as forward
+infrastructure for *arbitrary-complexity adopters* — "no consumer in agentic-host's own linear
+history" is the wrong lens, the consumer is the adopter. A NEW top-level `.host-task-receipts` file
+(over the ontology objection that a task receipt is operational). **Adopter-facing and mandatory.**
+The bare `#N` GitHub-reference unsafety is a *future* plan (enforce full URLs); plan/0042's task
+references use the full relative-path anchor, so it was reframed: anchoring is for *stable task
+identity*, not the `#N` collision (the review showed no plan ever references a step by number).
+
+**Two design corrections surfaced during the build (both implemented + tested):**
+1. **The gate is completion-aware.** A task with no receipt is a HAZARD only when its milestone is
+   marked complete (read from the README `## Status`); an OPEN milestone's tasks are pending, not
+   gated. This matches the operator's "every *completed* milestone owes a receipt" scope; the first
+   per-task-always-HAZARD gate over-fired on open milestones (0040/0041 are open).
+2. **Fenced code blocks are masked** in both the parser and the reference check, so example syntax
+   in a doc (a worked example, a ledger stanza) is not parsed as a real task or flagged.
+
+**Staleness took both halves of `call/0018`:** a mechanical `done` records its `inputs` digest and
+goes STALE on input drift (cheap offline); `tasks --rederive` re-runs the command and refreshes it.
+An attested `done` resolves its citation (weaker, labeled as such). A verify that changed since the
+receipt is stale; an orphan receipt (anchor removed) is a reverse-drift HAZARD.
+
+**4B (Fen) validation:** the form is fail-safe. The 4B authors `depends`/`verify`/`inputs` well
+(within-milestone six of six, cross-milestone four of four) but slips on the exact *anchor* form
+when hand-typing; `tasks --new` carries the anchor (the fill-in-the-blank fold-back), and any
+residual slip (e.g. over-qualifying a local ref) fails loud as a dangling-dependency HAZARD. Frame
+authoring as the prerequisite question ("what must finish first?"), never "what runs in parallel?"
+See [[qwen-4b-weak-agent-eval]].
