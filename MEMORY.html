@@ -1268,6 +1268,21 @@ docs; entrance = coverage + generation for can't-link docs).</p>
 the probe ALSO demanded a strict format ("output ONLY") — judge by the converged reasoning BEFORE the
 loop, and keep probe prompts short with no conflicting format demand. See [[qwen-4b-weak-agent-eval]],
 [[qwen-pal-model-infra]].</p>
+<p><strong>Entrance rename landed standalone, with a deprecate-then-retire migration (2026-06-25).</strong> The operator
+pulled the <code>front-door</code> → <code>entrance</code> rename forward out of plan/0043 (which keeps the opt-in
+generalization), as a standalone hardwired/agentic-host-local change. Shipped as TWO host-lifecycle
+releases: <strong>v0.28.0</strong> = the rename with no alias (subcommand + the <code>.host-software</code> flag <code>front-door = true</code> → <code>entrance = true</code> + code + CI), change-class <code>removes-flag</code> (a renamed public flag is Breaking →
+pre-1.0 minor bump); <strong>v0.28.1</strong> = the migration, change-class <code>neither</code> (a backward-compat shim →
+patch). <strong>The migration is plan/0039's deprecate-then-retire:</strong> <code>parse_project_facts</code> accepts a legacy
+<code>front-door = true</code> as the entrance (so a pre-rename <code>.host-software</code> is NOT silently demoted to a
+component), and the <code>entrance</code> command warns and names the rename so the old spelling never passes
+silently; the shim is slated for removal a release later. The full plan/0039 retire step (a hard-fail +
+an adopter UPGRADING entry) waits until the generalization makes entrances adopter-facing. <code>call/0027</code>
+records it. <strong>Operator directives that shaped it:</strong> comments stay FORWARD-LOOKING (no "renamed from
+front-door" provenance asides — I had added several and was told to strip them); the MIGRATION is the
+one place the old spelling lives ("let migration deal with transition"). <strong>Lesson: a rename with no
+alias OWES a migration</strong> — without the shim a stray <code>front-door = true</code> silently becomes a component (a
+confusing HAZARD), the silent failure plan/0039's fail-safe forbids.</p>
 
                     </main>
 

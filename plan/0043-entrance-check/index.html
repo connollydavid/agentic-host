@@ -175,8 +175,8 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="plan0043-the-entrance-check-a-reusable-standalone-document-check"><a class="header" href="#plan0043-the-entrance-check-a-reusable-standalone-document-check">plan/0043: the entrance check (a reusable standalone-document check)</a></h1>
-<p>The front-door check (plan/0040, host-lifecycle v0.27.0) holds the one published front
-door of agentic-host to the spine. The same problem recurs wherever a project keeps a
+<p>The entrance check (plan/0040, host-lifecycle v0.27.0) holds the one published
+entrance of agentic-host to the spine. The same problem recurs wherever a project keeps a
 self-contained document that restates the methodology and cannot link to it: an
 adopter-authored standalone <code>SKILL.md</code>, or any project's operator-and-agent landing
 page. This milestone generalizes the check into an opt-in, reusable capability and
@@ -187,7 +187,7 @@ plan/0040.</p>
 loaded on its own), so it cannot point at a canonical definition with a link the way an
 in-host doc does (the reconcile arm). It restates, and the restatement stales silently
 when the spine moves. plan/0040 solved this for one document, hardwired: the tool finds
-the <code>.host-software</code> member marked <code>front-door = true</code> and checks its README against the
+the <code>.host-software</code> member marked <code>entrance = true</code> and checks its README against the
 manifest phases, the <code>.host-software</code> tools, and the <code>.host</code> stamp format. Nothing lets
 another project, or another document, opt in.</p>
 <h2 id="decision-operator-this-review"><a class="header" href="#decision-operator-this-review">Decision (operator, this review)</a></h2>
@@ -206,12 +206,18 @@ alias, the plan/0039 way (a name that overfits is fixed, never aliased).</li>
 <li><strong>The standalone sibling of <code>reconcile</code>.</strong> reconcile holds a linkable document honest
 with pointers and coverage; <code>entrance</code> holds a self-contained document honest with
 coverage and generation, because it cannot link.</li>
+<li><strong>The rename landed standalone, ahead of this milestone.</strong> The operator pulled the
+rename forward: <code>front-door</code> became <code>entrance</code> with no alias, carried by a
+deprecate-then-retire migration (the parser accepts a legacy <code>front-door = true</code> with a
+deprecation warning, slated for removal a release later). Released as host-lifecycle
+v0.28.0 and the v0.28.1 migration; <code>call/0027</code> records it. The remaining work of this
+milestone is the opt-in generalization.</li>
 </ul>
 <h2 id="the-design-proposed-for-adversarial-review"><a class="header" href="#the-design-proposed-for-adversarial-review">The design (proposed, for adversarial review)</a></h2>
 <ul>
 <li><strong>Declared out of the prose.</strong> A project declares which documents are entrances, and
 which spine concepts each restates, in configuration (the natural home is
-<code>.host-software</code>, generalizing the <code>front-door = true</code> flag), never a marker inside the
+<code>.host-software</code>, generalizing the <code>entrance = true</code> flag), never a marker inside the
 document. A marker in the prose is the machinery the methodology already rejected
 (plan/0039), and the routing rule below keeps the document clean.</li>
 <li><strong>The routing rule, settled in the plan/0040 review and now general:</strong> generate what
@@ -227,14 +233,16 @@ unlike plan/0040, which was agentic-host-local with neither.</li>
 <li><strong>The declaration form.</strong> How a project names an entrance and the concepts it restates:
 a per-document <code>.host-software</code> stanza, a flag plus a concept list, or a small
 dedicated file. The form must read at the weak-agent bar.</li>
-<li><strong>One concept set or many.</strong> A front door restates every concept; a skill may restate
+<li><strong>One concept set or many.</strong> A published entrance restates every concept; a skill may restate
 only the phases. So an entrance declares which concepts it must keep complete, rather
 than the check requiring all of them everywhere.</li>
 <li><strong>Refactor or extend <code>reconcile</code>.</strong> Whether <code>entrance</code> is a separate subcommand or a
 mode that shares the coverage core with reconcile.</li>
-<li><strong>The rename blast radius.</strong> <code>front-door</code> to <code>entrance</code> across the subcommand, the
-<code>front-door = true</code> flag, the tests, and the agentic-host front door (the first
-instance migrates to the general form).</li>
+<li><strong>The rename blast radius (resolved).</strong> The rename landed standalone in <code>call/0027</code>:
+the subcommand, the <code>.host-software</code> flag, the tests, and the agentic-host CI
+invocation, with a deprecate-then-retire migration for a legacy <code>front-door = true</code>.
+The first instance is migrated; the general declaration form stays the open decision
+above.</li>
 </ul>
 <h2 id="build-sequence"><a class="header" href="#build-sequence">Build sequence</a></h2>
 <p>The build sequence as a task graph (plan/0042), to run after the review settles the
@@ -248,9 +256,9 @@ proceed verdict.</p>
 <li>verify: attested operator</li>
 </ul>
 <h3 id="implement-entrance"><a class="header" href="#implement-entrance">Implement the entrance check</a></h3>
-<p>Generalize the front-door check to a declared, opt-in entrance check, rename <code>front-door</code>
-to <code>entrance</code>, and keep the routing rule (generate format blocks, coverage prose). The
-unit tests pass.</p>
+<p>Generalize the entrance check to a declared, opt-in capability, and keep the routing rule
+(generate format blocks, coverage prose). The rename itself landed standalone (<code>call/0027</code>),
+so this task is the opt-in generalization on top of it. The unit tests pass.</p>
 <ul>
 <li>depends: #settle-open-decisions</li>
 <li>verify: cd software/host-lifecycle/main &amp;&amp; cargo test</li>
@@ -271,7 +279,7 @@ Qwen-3.5-4B run.</p>
 <li>verify: attested operator</li>
 </ul>
 <h3 id="release-and-re-pin"><a class="header" href="#release-and-re-pin">Migrate agentic-host and release</a></h3>
-<p>Migrate the agentic-host front door to the general entrance form (the first instance),
+<p>Migrate the agentic-host entrance declaration to the general opt-in form (the first instance),
 release host-lifecycle, re-pin <code>.host-software</code>, record the receipt and a <code>call/</code>
 decision that supersedes the scope of <code>call/0026</code>, and bump the CI install pins. The
 released binary gates green; the whole suite is green.</p>
@@ -291,8 +299,11 @@ itself.</li>
 </ul>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
 <p>Open, design phase. Operator decisions recorded (opt-in and reusable; the name <code>entrance</code>
-by Qwen-3.5-4B data; the standalone sibling of reconcile). Awaiting adversarial review of
-the open decisions before building. Supersedes the agentic-host-local scope of plan/0040
+by Qwen-3.5-4B data; the standalone sibling of reconcile). The rename landed standalone
+ahead of the milestone (host-lifecycle v0.28.0 plus a v0.28.1 deprecate-then-retire
+migration, <code>call/0027</code>); the remaining work is the opt-in generalization, awaiting
+adversarial review of the remaining decisions (declaration form, concept-set model,
+reconcile relationship). Supersedes the agentic-host-local scope of plan/0040
 and the scope half of <code>call/0026</code>.</p>
 
                     </main>

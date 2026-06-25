@@ -380,7 +380,7 @@ holds.</li>
 <h2 id="project-host-lint"><a class="header" href="#project-host-lint">Project: host-lint</a></h2>
 <p>A project under agentic evolution. This plan tracks the evolution of the <code>host-lint</code> software (a bare store with worktrees; see <code>call/0010</code> and <code>.host-software</code>).</p>
 <h2 id="open-work"><a class="header" href="#open-work">Open work</a></h2>
-<p>As of 2026-06-25, plan/0001 through plan/0042 are complete (plan/0040 and plan/0041 landed this session). plan/0039 (concepts-as-uris) shipped the reconcile arm's evolution to concept-as-URI, released as host-lifecycle v0.25.0. Its two named follow-ups are milestones: plan/0040 (front-door-from-spine, the copy-at-version generation of the front-door <code>host</code> repo, operator ruling generate from the spine) and plan/0041 (next-fails-closed, closing connollydavid/host-lifecycle#1, operator ruling fail closed with the form set by 4B data). plan/0042 (receipted-task-graph) shipped the in-plan task graph as host-lifecycle v0.26.0 (see its table row): in-plan tasks are anchored, receipted nodes in one project-wide dependency graph for parallel sub-agents, built as forward infrastructure for arbitrary-complexity adopters. plan/0040 and plan/0041 were its first consumers, each dogfooded as an anchored task graph: plan/0040 shipped the front-door check (host-lifecycle v0.27.0) and plan/0041 shipped fail-closed <code>next</code> as host-lifecycle v0.26.1, which closed connollydavid/host-lifecycle#1. The plan/0040 review spun out two follow-ups: plan/0043 (entrance-check, open, design phase), which generalizes the front-door check into an opt-in, reusable entrance check (the standalone sibling of reconcile, named <code>entrance</code> by Qwen-3.5-4B data) and supersedes the agentic-host-local scope of plan/0040; and a structured pin home for the version pins (not yet cut). A future plan will enforce full GitHub URLs in place of bare <code>#N</code> issue references. A re-evaluation can read this line plus the follow-up table and the milestone rows and stop.</p>
+<p>As of 2026-06-25, plan/0001 through plan/0042 are complete (plan/0040 and plan/0041 landed this session). plan/0039 (concepts-as-uris) shipped the reconcile arm's evolution to concept-as-URI, released as host-lifecycle v0.25.0. Its two named follow-ups are milestones: plan/0040 (front-door-from-spine, the copy-at-version generation of the front-door <code>host</code> repo, operator ruling generate from the spine) and plan/0041 (next-fails-closed, closing connollydavid/host-lifecycle#1, operator ruling fail closed with the form set by 4B data). plan/0042 (receipted-task-graph) shipped the in-plan task graph as host-lifecycle v0.26.0 (see its table row): in-plan tasks are anchored, receipted nodes in one project-wide dependency graph for parallel sub-agents, built as forward infrastructure for arbitrary-complexity adopters. plan/0040 and plan/0041 were its first consumers, each dogfooded as an anchored task graph: plan/0040 shipped the front-door check (host-lifecycle v0.27.0) and plan/0041 shipped fail-closed <code>next</code> as host-lifecycle v0.26.1, which closed connollydavid/host-lifecycle#1. The plan/0040 review spun out two follow-ups: plan/0043 (entrance-check, open, design phase), which generalizes the front-door check into an opt-in, reusable entrance check (the standalone sibling of reconcile, named <code>entrance</code> by Qwen-3.5-4B data), with the rename pulled forward and landed standalone (host-lifecycle v0.28.0 plus a v0.28.1 deprecate-then-retire migration, call/0027), and supersedes the agentic-host-local scope of plan/0040; and a structured pin home for the version pins (not yet cut). A future plan will enforce full GitHub URLs in place of bare <code>#N</code> issue references. A re-evaluation can read this line plus the follow-up table and the milestone rows and stop.</p>
 <p>The named follow-ups from completed plans, pre-resolved so a scan needs no cross-check:</p>
 <div class="table-wrapper"><table><thead><tr><th>Follow-up</th><th>Named in</th><th>Disposition</th></tr></thead><tbody>
 <tr><td>Mechanize the <code>gather</code> discovery sweep</td><td>plan/0034</td><td>Done (plan/0035, host-lint <code>gather</code>).</td></tr>
@@ -451,7 +451,7 @@ Skill Hardening: hook fix, bare-numeral rule, release install path (see SKILL-HA
 <tr><td><a href="plan/0040-front-door-from-spine/README.html">plan/0040-front-door-from-spine</a></td><td><strong>complete, released as host-lifecycle v0.27.0 (2026-06-25; <code>302e87f8</code>, artifact <code>0f63d960</code>)</strong>: the <code>front-door</code>/<code>front-door --check</code> subcommands hold the single-file front door to the spine's structured facts (phase coverage from the manifest, tool coverage from <code>.host-software</code>, byte-exact <code>.host</code> stamp generation). A two-lens adversarial review (design-review.md) rejected the original template-fragment mechanism as a second source of truth; re-scoped to generate only from structured data, with the version pins de-scoped (no structured home, a pin-home follow-up). Caught and fixed a live drift (the front door had dropped the <code>release</code> phase); <code>call/0026</code>; the binding check runs as a step in agentic-host CI. Build sequence dogfooded as an anchored receipted task graph. Picks up the plan/0039 front-door follow-on.</td></tr>
 <tr><td><a href="plan/0041-next-fails-closed/README.html">plan/0041-next-fails-closed</a></td><td><strong>complete, released as host-lifecycle v0.26.1 (2026-06-25; <code>2f606e29</code>, artifact <code>adf5c10a</code>)</strong>: <code>next</code> fails closed on a non-directory or a directory with no <code>NNNN-slug</code> entries: it exits non-zero with a diagnostic and a did-you-mean that names a known room, with no more silent <code>0000</code> for a typo'd or non-room path. The fresh-empty-room case folds in with no special flag. Form set by a Qwen-3.5-4B (Fen) ergonomics check (gather-data.md); <code>call/0025</code>; unit test covers a populated room (unchanged), an empty directory, a missing path, and the host root; re-pinned, release receipt recorded, CI install pins bumped; <code>software --check</code> and <code>--verify-build</code> green; connollydavid/host-lifecycle#1 closed. Build sequence dogfooded as an anchored receipted task graph (each of the five tasks carries a <code>.host-task-receipts</code> receipt).</td></tr>
 <tr><td><a href="plan/0042-receipted-task-graph/README.html">plan/0042-receipted-task-graph</a></td><td><strong>complete, released as host-lifecycle v0.26.0 (2026-06-25; <code>430876c</code>, artifact <code>52e8414a</code>)</strong>. In-plan tasks are anchored receipted nodes in one project-wide dependency graph: a task is an anchored <code>### </code> heading keyed <code>plan/NNNN#anchor</code> under <code>## Build sequence</code>, with <code>depends</code> (a local <code>#anchor</code> or a cross-milestone <code>plan/NNNN#anchor</code>), <code>verify</code> (mechanical or attested), and <code>inputs</code>; the tool derives the parallel frontier, default linear. <strong>Shipped:</strong> the host-lifecycle <code>tasks</code> subcommand (status/check/record/rederive/new), the <code>.host-task-receipts</code> ledger (a deliberate third receipt kind, call/0024), the completion-aware per-task gate in <code>software --check</code> (citation-resolve for attested, input-digest staleness for mechanical, verify-drift, skip-citation, orphan reverse-check; an open milestone's tasks are pending, a complete one owes a receipt), the task-anchor link checker (fenced examples masked), and <code>tasks --new</code> scaffolding (the 4B fold-back). The graph passed the Qwen-3.5-4B bar (six of six within-plan, four of four cross-plan; the form is fail-safe, an authoring slip becomes a loud HAZARD). Spine doctrine in host-template (<code>2229dbb</code>) + UPGRADING (<code>71a1613</code>, requires v0.26.0), adopted; call/0024; five-lens adversarial review in design-review.md, operator re-cut (build the graph now, a new ledger file, adopter-facing and mandatory). Dogfooded: plan/0040 and plan/0041 build sequences re-expressed as anchored task graphs. Whole-suite CI green across all three repos.</td></tr>
-<tr><td><a href="plan/0043-entrance-check/README.html">plan/0043-entrance-check</a></td><td>open, design phase (spun out of the plan/0040 review). Generalizes the front-door check into an opt-in, reusable <strong>entrance</strong> check: any project may declare a self-contained document (a published front door, a standalone <code>SKILL.md</code>, an operator-and-agent landing page) and have it held to the spine, inert until declared. The standalone sibling of <code>reconcile</code> (reconcile holds linkable docs with pointers; entrance holds self-contained docs with coverage and generation, because they cannot link). Name <code>entrance</code> settled by Qwen-3.5-4B data (<code>landing</code>/<code>threshold</code>/<code>welcome</code> mis-cued; <code>foyer</code> was the model's metaphor pick but reads too domestic; operator chose <code>entrance</code>). <code>front-door</code> renamed to <code>entrance</code>, no alias (the plan/0039 way). Adopter-facing: spine doctrine + an UPGRADING entry. Supersedes the agentic-host-local scope of plan/0040 and the scope half of call/0026; v0.27.0's front-door check is its first instance. Awaiting adversarial review of the open decisions (declaration form, concept-set model, reconcile relationship, rename blast radius).</td></tr>
+<tr><td><a href="plan/0043-entrance-check/README.html">plan/0043-entrance-check</a></td><td>open, design phase (spun out of the plan/0040 review). Generalizes the front-door check into an opt-in, reusable <strong>entrance</strong> check: any project may declare a self-contained document (a published front door, a standalone <code>SKILL.md</code>, an operator-and-agent landing page) and have it held to the spine, inert until declared. The standalone sibling of <code>reconcile</code> (reconcile holds linkable docs with pointers; entrance holds self-contained docs with coverage and generation, because they cannot link). Name <code>entrance</code> settled by Qwen-3.5-4B data (<code>landing</code>/<code>threshold</code>/<code>welcome</code> mis-cued; <code>foyer</code> was the model's metaphor pick but reads too domestic; operator chose <code>entrance</code>). <strong>The rename landed standalone ahead of the generalization</strong> (operator pulled it forward): <code>front-door</code> renamed to <code>entrance</code> with no alias (the plan/0039 way), plus a deprecate-then-retire migration (the parser accepts a legacy <code>front-door = true</code> with a warning), released as host-lifecycle v0.28.0 and the v0.28.1 migration, recorded in <code>call/0027</code>. The remaining scope is the opt-in generalization (adopter-facing: spine doctrine and an UPGRADING entry), which supersedes the agentic-host-local scope of plan/0040 and the scope half of call/0026; the entrance check at v0.28.x is its first instance. Awaiting adversarial review of the remaining decisions (declaration form, concept-set model, reconcile relationship); the rename blast radius is resolved.</td></tr>
 </tbody></table>
 </div>
 <p>The earlier content-named docs above (BOOTSTRAP, CI-PIPELINE, …) predate the <code>plan/</code> room; folding them in is a possible later cleanup, not required.</p>
@@ -4109,8 +4109,8 @@ shipped; the spine doctrine is in host-template (<code>2229dbb</code>) and adopt
 plan/0041 are dogfooded (their build sequences re-expressed as anchored task graphs).
 Whole-suite CI green across all three repos.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0043-the-entrance-check-a-reusable-standalone-document-check"><a class="header" href="#plan0043-the-entrance-check-a-reusable-standalone-document-check">plan/0043: the entrance check (a reusable standalone-document check)</a></h1>
-<p>The front-door check (plan/0040, host-lifecycle v0.27.0) holds the one published front
-door of agentic-host to the spine. The same problem recurs wherever a project keeps a
+<p>The entrance check (plan/0040, host-lifecycle v0.27.0) holds the one published
+entrance of agentic-host to the spine. The same problem recurs wherever a project keeps a
 self-contained document that restates the methodology and cannot link to it: an
 adopter-authored standalone <code>SKILL.md</code>, or any project's operator-and-agent landing
 page. This milestone generalizes the check into an opt-in, reusable capability and
@@ -4121,7 +4121,7 @@ plan/0040.</p>
 loaded on its own), so it cannot point at a canonical definition with a link the way an
 in-host doc does (the reconcile arm). It restates, and the restatement stales silently
 when the spine moves. plan/0040 solved this for one document, hardwired: the tool finds
-the <code>.host-software</code> member marked <code>front-door = true</code> and checks its README against the
+the <code>.host-software</code> member marked <code>entrance = true</code> and checks its README against the
 manifest phases, the <code>.host-software</code> tools, and the <code>.host</code> stamp format. Nothing lets
 another project, or another document, opt in.</p>
 <h2 id="decision-operator-this-review"><a class="header" href="#decision-operator-this-review">Decision (operator, this review)</a></h2>
@@ -4140,12 +4140,18 @@ alias, the plan/0039 way (a name that overfits is fixed, never aliased).</li>
 <li><strong>The standalone sibling of <code>reconcile</code>.</strong> reconcile holds a linkable document honest
 with pointers and coverage; <code>entrance</code> holds a self-contained document honest with
 coverage and generation, because it cannot link.</li>
+<li><strong>The rename landed standalone, ahead of this milestone.</strong> The operator pulled the
+rename forward: <code>front-door</code> became <code>entrance</code> with no alias, carried by a
+deprecate-then-retire migration (the parser accepts a legacy <code>front-door = true</code> with a
+deprecation warning, slated for removal a release later). Released as host-lifecycle
+v0.28.0 and the v0.28.1 migration; <code>call/0027</code> records it. The remaining work of this
+milestone is the opt-in generalization.</li>
 </ul>
 <h2 id="the-design-proposed-for-adversarial-review-1"><a class="header" href="#the-design-proposed-for-adversarial-review-1">The design (proposed, for adversarial review)</a></h2>
 <ul>
 <li><strong>Declared out of the prose.</strong> A project declares which documents are entrances, and
 which spine concepts each restates, in configuration (the natural home is
-<code>.host-software</code>, generalizing the <code>front-door = true</code> flag), never a marker inside the
+<code>.host-software</code>, generalizing the <code>entrance = true</code> flag), never a marker inside the
 document. A marker in the prose is the machinery the methodology already rejected
 (plan/0039), and the routing rule below keeps the document clean.</li>
 <li><strong>The routing rule, settled in the plan/0040 review and now general:</strong> generate what
@@ -4161,14 +4167,16 @@ unlike plan/0040, which was agentic-host-local with neither.</li>
 <li><strong>The declaration form.</strong> How a project names an entrance and the concepts it restates:
 a per-document <code>.host-software</code> stanza, a flag plus a concept list, or a small
 dedicated file. The form must read at the weak-agent bar.</li>
-<li><strong>One concept set or many.</strong> A front door restates every concept; a skill may restate
+<li><strong>One concept set or many.</strong> A published entrance restates every concept; a skill may restate
 only the phases. So an entrance declares which concepts it must keep complete, rather
 than the check requiring all of them everywhere.</li>
 <li><strong>Refactor or extend <code>reconcile</code>.</strong> Whether <code>entrance</code> is a separate subcommand or a
 mode that shares the coverage core with reconcile.</li>
-<li><strong>The rename blast radius.</strong> <code>front-door</code> to <code>entrance</code> across the subcommand, the
-<code>front-door = true</code> flag, the tests, and the agentic-host front door (the first
-instance migrates to the general form).</li>
+<li><strong>The rename blast radius (resolved).</strong> The rename landed standalone in <code>call/0027</code>:
+the subcommand, the <code>.host-software</code> flag, the tests, and the agentic-host CI
+invocation, with a deprecate-then-retire migration for a legacy <code>front-door = true</code>.
+The first instance is migrated; the general declaration form stays the open decision
+above.</li>
 </ul>
 <h2 id="build-sequence-3"><a class="header" href="#build-sequence-3">Build sequence</a></h2>
 <p>The build sequence as a task graph (plan/0042), to run after the review settles the
@@ -4182,9 +4190,9 @@ proceed verdict.</p>
 <li>verify: attested operator</li>
 </ul>
 <h3 id="implement-entrance"><a class="header" href="#implement-entrance">Implement the entrance check</a></h3>
-<p>Generalize the front-door check to a declared, opt-in entrance check, rename <code>front-door</code>
-to <code>entrance</code>, and keep the routing rule (generate format blocks, coverage prose). The
-unit tests pass.</p>
+<p>Generalize the entrance check to a declared, opt-in capability, and keep the routing rule
+(generate format blocks, coverage prose). The rename itself landed standalone (<code>call/0027</code>),
+so this task is the opt-in generalization on top of it. The unit tests pass.</p>
 <ul>
 <li>depends: #settle-open-decisions</li>
 <li>verify: cd software/host-lifecycle/main &amp;&amp; cargo test</li>
@@ -4205,7 +4213,7 @@ Qwen-3.5-4B run.</p>
 <li>verify: attested operator</li>
 </ul>
 <h3 id="release-and-re-pin"><a class="header" href="#release-and-re-pin">Migrate agentic-host and release</a></h3>
-<p>Migrate the agentic-host front door to the general entrance form (the first instance),
+<p>Migrate the agentic-host entrance declaration to the general opt-in form (the first instance),
 release host-lifecycle, re-pin <code>.host-software</code>, record the receipt and a <code>call/</code>
 decision that supersedes the scope of <code>call/0026</code>, and bump the CI install pins. The
 released binary gates green; the whole suite is green.</p>
@@ -4225,8 +4233,11 @@ itself.</li>
 </ul>
 <h2 id="status-4"><a class="header" href="#status-4">Status</a></h2>
 <p>Open, design phase. Operator decisions recorded (opt-in and reusable; the name <code>entrance</code>
-by Qwen-3.5-4B data; the standalone sibling of reconcile). Awaiting adversarial review of
-the open decisions before building. Supersedes the agentic-host-local scope of plan/0040
+by Qwen-3.5-4B data; the standalone sibling of reconcile). The rename landed standalone
+ahead of the milestone (host-lifecycle v0.28.0 plus a v0.28.1 deprecate-then-retire
+migration, <code>call/0027</code>); the remaining work is the opt-in generalization, awaiting
+adversarial review of the remaining decisions (declaration form, concept-set model,
+reconcile relationship). Supersedes the agentic-host-local scope of plan/0040
 and the scope half of <code>call/0026</code>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
@@ -5020,7 +5031,7 @@ accepts a legacy <code>front-door = true</code> as the entrance, so a pre-rename
 keeps working rather than dropping to a component; the <code>entrance</code> command warns and
 names the rename, so the old spelling never passes silently. The shim is slated for
 removal a release later. Released as host-lifecycle v0.28.1.</li>
-<li>Comments read forward-looking, naming <code>entrance</code>; the migration shim is the one place
+<li>Comments stay forward-looking and name <code>entrance</code>; the migration shim is the one place
 the old spelling lives.</li>
 <li>The scope stays agentic-host-local. No adopter declares an entrance, so no <code>UPGRADING</code>
 entry is owed; the generalization that would make entrances adopter-facing stays with
@@ -6626,6 +6637,21 @@ docs; entrance = coverage + generation for can't-link docs).</p>
 the probe ALSO demanded a strict format ("output ONLY") — judge by the converged reasoning BEFORE the
 loop, and keep probe prompts short with no conflicting format demand. See [[qwen-4b-weak-agent-eval]],
 [[qwen-pal-model-infra]].</p>
+<p><strong>Entrance rename landed standalone, with a deprecate-then-retire migration (2026-06-25).</strong> The operator
+pulled the <code>front-door</code> → <code>entrance</code> rename forward out of plan/0043 (which keeps the opt-in
+generalization), as a standalone hardwired/agentic-host-local change. Shipped as TWO host-lifecycle
+releases: <strong>v0.28.0</strong> = the rename with no alias (subcommand + the <code>.host-software</code> flag <code>front-door = true</code> → <code>entrance = true</code> + code + CI), change-class <code>removes-flag</code> (a renamed public flag is Breaking →
+pre-1.0 minor bump); <strong>v0.28.1</strong> = the migration, change-class <code>neither</code> (a backward-compat shim →
+patch). <strong>The migration is plan/0039's deprecate-then-retire:</strong> <code>parse_project_facts</code> accepts a legacy
+<code>front-door = true</code> as the entrance (so a pre-rename <code>.host-software</code> is NOT silently demoted to a
+component), and the <code>entrance</code> command warns and names the rename so the old spelling never passes
+silently; the shim is slated for removal a release later. The full plan/0039 retire step (a hard-fail +
+an adopter UPGRADING entry) waits until the generalization makes entrances adopter-facing. <code>call/0027</code>
+records it. <strong>Operator directives that shaped it:</strong> comments stay FORWARD-LOOKING (no "renamed from
+front-door" provenance asides — I had added several and was told to strip them); the MIGRATION is the
+one place the old spelling lives ("let migration deal with transition"). <strong>Lesson: a rename with no
+alias OWES a migration</strong> — without the shim a stray <code>front-door = true</code> silently becomes a component (a
+confusing HAZARD), the silent failure plan/0039's fail-safe forbids.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
