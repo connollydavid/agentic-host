@@ -214,7 +214,7 @@ host root exits non-zero.</li>
 </ul>
 <h2 id="build-sequence"><a class="header" href="#build-sequence">Build sequence</a></h2>
 <p>The build sequence as a task graph (plan/0042): each entry is an anchored task.
-The milestone is open, so no task is built yet, and the chain is linear.</p>
+The chain is linear, and each task carries a receipt in <code>.host-task-receipts</code>.</p>
 <h3 id="gather-data"><a class="header" href="#gather-data">Gather the failure-form data</a></h3>
 <p>Show the 4B the footgun and the candidate failure forms (usage to stderr with a
 non-zero exit, a distinct error message, with and without the did-you-mean hint),
@@ -259,8 +259,18 @@ create-the-first-entry message, or a <code>--first</code> flag) is added. The bl
 is low: the change is localized to the <code>next</code> function.</li>
 </ul>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
-<p>Open, ready to build. Operator ruling recorded (fail closed; the form by 4B data).
-Independent of plan/0040.</p>
+<p>complete, released as host-lifecycle v0.26.1 (2026-06-25; <code>2f606e29</code>, artifact
+<code>adf5c10a</code>). <code>next</code> fails closed: a non-directory or a directory with no <code>NNNN-slug</code>
+entries exits non-zero (code <code>2</code>) with a diagnostic and a did-you-mean drawn from the
+known rooms, instead of the silent <code>0000</code> fallback that returned a plausible wrong
+number for a typo'd or non-room path. The fresh-empty-room case folds into fail-closed
+with no special flag. The form was settled by a Qwen-3.5-4B (Fen) ergonomics check
+(gather-data.md): the weak agent recovered the intended room from the diagnostic and
+recognized the empty room as a first-entry case. <code>call/0025</code> records the decision; a
+unit test covers a populated room (unchanged), an empty directory, a missing path, and
+the host root. Re-pinned, release receipt recorded, CI install pins bumped; <code>software --check</code> and <code>--verify-build</code> green; connollydavid/host-lifecycle#1 closed. The build
+sequence is dogfooded as an anchored receipted task graph (each of the five tasks
+carries a <code>.host-task-receipts</code> receipt).</p>
 
                     </main>
 
