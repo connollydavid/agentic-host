@@ -1049,3 +1049,43 @@ manifest nor `.host-software`); that asymmetry is recorded. `call/0026`. Dogfood
 graph. **General lesson: a generator is drift-proof only for facts with a real structured source; for
 sourceless facts, coverage or an honest "authored, not gated" beats a fake generator that gives false
 assurance.** See [[reconcile-moves-to-concept-uri]].
+
+## Decision review of plan/0040 + plan/0041 — three outcomes + the entrance generalization (2026-06-25)
+
+After shipping plan/0040 (front-door check, v0.27.0) and plan/0041 (fail-closed next, v0.26.1), a
+decision review settled three things and spun out plan/0043.
+
+1. **Front-door phases: keep COVERAGE (not generation), decided on methodology-aesthetic grounds.**
+Both designs passed the Fen bar (Fen honored a generated-region "do not edit" marker AND fixed a
+coverage-flagged omission), so safety did not decide it. The decisive precedent is plan/0039's "no
+checker machinery in the prose" (why reconcile dropped inline annotations): a `<!-- generated -->`
+marker is machinery in teaching prose. And the spine ITSELF restates phase NAMES in clean prose
+(the manifest holds the structured fields). **The routing principle: generate what is naturally a
+format/data block (the `.host` stamp), coverage-check what is naturally prose (phase/tool names),
+never a generation marker in teaching prose.** So coverage was right, not the under-delivery I feared
+in the review. Decision rule: **when multiple designs pass the weak-agent bar, decide on
+methodology-aesthetic fit.**
+
+2. **Fail-closed next exit code = 2 confirmed; the earlier 4B preference for 1 was an EDUCATION GAP.**
+Re-ran the Fen probe with the convention documented (1 = unexpected/internal error, 2 = expected
+logic/usage error): Fen then routed next-on-a-numberless-dir to 2 and a genuine disk fault to 1. So
+exit 2 stands (tool-consistent with adopt/next arg errors); document the convention so it is not a
+gap for the next maintainer (fold a comment in at the next host-lifecycle release).
+
+3. **The capability is OPT-IN / REUSABLE, not agentic-host-only → plan/0043 (entrance-check).** The
+front-door's shape (a self-contained doc that restates the spine and CANNOT link) recurs for an
+adopter-authored standalone `SKILL.md` and any project's operator-and-agent landing page. Operator
+ruling (the standing "build for arbitrary-complexity adopters" value): make it opt-in/reusable,
+superseding plan/0040 decision-4 + the scope half of call/0026. **Named `entrance` by Qwen-3.5-4B
+data** — `landing` mis-cued (deployment), `threshold` (numeric limit), `welcome` (greeting); `foyer`
+was the model's metaphor-first pick but "too domestic for software"; operator chose `entrance`
+(clear, fits host/rooms/guest, software-resonant). `front-door` renamed with no alias (the plan/0039
+way). The declaration stays OUT of the prose (a `.host-software` flag generalizing `front-door = true`,
+never a marker — outcome 1). The standalone sibling of `reconcile` (reconcile = pointers for linkable
+docs; entrance = coverage + generation for can't-link docs).
+
+**pal/Fen ops note (reinforced):** the rope HTTPS token is still rotated; use pal. pal's injected
+"comprehensive response / use continuation_id" footer repeatedly drove the 4B into a format-loop when
+the probe ALSO demanded a strict format ("output ONLY") — judge by the converged reasoning BEFORE the
+loop, and keep probe prompts short with no conflicting format demand. See [[qwen-4b-weak-agent-eval]],
+[[qwen-pal-model-infra]].
