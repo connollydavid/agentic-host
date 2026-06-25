@@ -206,7 +206,7 @@ once at a <code>{#id}</code> anchor on a heading (its home) and pointed at with 
 link. <code>reconcile</code> runs three checks over the tracked docs: link-integrity (every concept
 link resolves to its home), declared-anchor (the link names a real concept), and coverage
 (each project-local home names its full <code>.host-software</code> set, so a dropped tool fails by
-absence). A home is a heading ending in <code>{#id}</code> (mdBook honors no other placement) and its
+absence). A home is a heading ending in <code>{#id}</code> (the placement mdBook honors) and its
 section runs to the next heading of the same or higher level.</p>
 <p>The inline annotation is deprecated: it keeps checking during the transition and is warned,
 and the form retires a spine revision later. The cutover is fail-safe, since a surviving
