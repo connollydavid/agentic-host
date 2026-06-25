@@ -937,3 +937,26 @@ to adopters; the old comment calling the `host` member "the project's own repo" 
 principle: one spine, everything else a copy-at-version or a pointer, never a restatement. Landed in the
 host-lifecycle worktree: project-local sourcing, manifest hardening, the three checks (link-integrity,
 declared-anchor, coverage). Pending: convert agentic-host's docs to pointers, spine doctrine, release.
+
+## plan/0039 complete: concept-as-URI shipped as host-lifecycle v0.25.0 (2026-06-25)
+
+The reconcile arm now sources project facts from `.host-software` (components are the `[software]` members
+minus a `front-door = true` member; verifiers are a `[verification]` drivers stanza) and runs three checks
+over the tracked docs: link-integrity, declared-anchor, and coverage (each project-local home names its full
+`.host-software` set). The lifecycle manifest is hardened to phases-only (`manifest --check` rejects any other
+stanza). agentic-host's own docs are converted to concept-as-URI: four homes in `STRUCTURE.md` (`{#components}`
+etc.), CLAUDE.md/README pointing at them. The spine doctrine + the `UPGRADING` entry (`[upgrade 7be692f]`) are
+in host-template (`e4f6207`); `call/0023` records the software decision.
+
+**Adversarial review + a real Qwen-3.5-4B run caught two holes before release:** a `{#id}` must sit at the END
+of a heading (mdBook slugifies a start-placed one to a different id, so a start-placed home passed reconcile but
+404'd) and `home_section` must run to the next *same-or-higher* heading (the 4B authored a sub-headed home whose
+members fell outside a stop-at-any-heading section, falsely failing coverage). Both fixed in code with tests.
+The 4B authored a home, a `[verification]` stanza, and an annotation-to-pointer migration once the doctrine
+*showed* the exact forms (the worked example) — it near-misses unaided. Released v0.25.0 (commit `0f2a4da`,
+artifact `e3e1ef02`), re-pinned, dogfood-verified (reconcile + `software --check` green on the released binary).
+
+**Process slip recorded:** `host-lifecycle prose` scans **tracked** files (via `git ls-files`), so prose-check a
+NEW doc only AFTER `git add`/commit — checking an untracked file reports a false clean. Two diction tropes
+(false-range from a `from … to` pair, negative-parallelism from "honors no other") slipped into committed docs
+this way and were fixed in a follow-up. See [[ai-diction-traps-in-my-writing]].
