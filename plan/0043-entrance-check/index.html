@@ -232,7 +232,9 @@ unlike plan/0040, which was agentic-host-local with neither.</li>
 <ul>
 <li><strong>The declaration form.</strong> How a project names an entrance and the concepts it restates:
 a per-document <code>.host-software</code> stanza, a flag plus a concept list, or a small
-dedicated file. The form must read at the weak-agent bar.</li>
+dedicated file. The form must read at the weak-agent bar. The Fen runs in
+<code>gather-data.md</code> lean to a concept-list value on the member (<code>entrance = &lt;concepts&gt;</code>),
+since the entrance is an existing <code>[software]</code> member; the review confirms.</li>
 <li><strong>One concept set or many.</strong> A published entrance restates every concept; a skill may restate
 only the phases. So an entrance declares which concepts it must keep complete, rather
 than the check requiring all of them everywhere.</li>
@@ -244,21 +246,47 @@ invocation, with a deprecate-then-retire migration for a legacy <code>front-door
 The first instance is migrated; the general declaration form stays the open decision
 above.</li>
 </ul>
+<h2 id="carried-in-from-the-pre-generalization-audit-2026-06-25"><a class="header" href="#carried-in-from-the-pre-generalization-audit-2026-06-25">Carried in from the pre-generalization audit (2026-06-25)</a></h2>
+<p>A sweep before the generalization, with the Fen runs recorded in <code>gather-data.md</code>, added
+these inputs for the review:</p>
+<ul>
+<li><strong>The <code>entrance = true</code> flag is already a spine concept.</strong> host-template (<code>CLAUDE.md</code>,
+<code>UPGRADING.md</code>) documents <code>front-door = true</code> as the adopter-facing marker reconcile uses
+to set the front door apart from <code>components</code>. <code>call/0027</code>'s standalone rename changed the
+tool's preferred spelling agentic-host-locally and left the spine on <code>front-door = true</code>, a
+divergence the shim absorbs without a break. So the generalization builds on an existing
+concept: it reconciles this flag, renames it in the spine, and ships the adopter <code>UPGRADING</code>
+entry that also retires the deprecate-then-retire shim (a hard fail on a surviving
+<code>front-door = true</code>).</li>
+<li><strong>The declaration form, with a Fen leaning.</strong> Three Fen runs over the candidate forms
+reject the boolean-with-restates pair (<code>entrance = true</code> reads ambiguous, the pair
+redundant) and, when the entrance is an existing <code>[software]</code> member carrying <code>url</code> and
+<code>pin</code> (agentic-host's case), point at a concept-list value on the member: <code>entrance = &lt;concepts&gt;</code> both marks the member and names what it keeps complete. So <code>entrance = true</code>
+generalizes to <code>entrance = phases tools</code>, or an all-concepts value for a full front door.
+The review confirms the form; see <code>gather-data.md</code>.</li>
+<li><strong>Fold the exit-code convention into this milestone's release.</strong> The plan/0040 and
+plan/0041 review deferred a one-line comment (exit <code>1</code> is an unexpected or internal fault,
+exit <code>2</code> an expected logic or usage error). Fen routed every test scenario by it correctly,
+including the no-entries case to <code>2</code> (matching fail-closed <code>next</code>), so the comment rides the
+generalization release. v0.28.0 and v0.28.1 shipped without it.</li>
+</ul>
 <h2 id="build-sequence"><a class="header" href="#build-sequence">Build sequence</a></h2>
 <p>The build sequence as a task graph (plan/0042), to run after the review settles the
 design. Each entry is an anchored task, the chain is linear, and each task carries a
 receipt.</p>
 <h3 id="settle-open-decisions"><a class="header" href="#settle-open-decisions">Settle the open decisions by review</a></h3>
-<p>Settle the declaration form, the concept-set model, the reconcile relationship, and the
-rename blast radius by adversarial review, recorded in a design-review subdoc with a
-proceed verdict.</p>
+<p>Settle the declaration form, the concept-set model, and the reconcile relationship by
+adversarial review (the declaration form starts from the <code>gather-data.md</code> leaning),
+recorded in a design-review subdoc with a proceed verdict.</p>
 <ul>
 <li>verify: attested operator</li>
 </ul>
 <h3 id="implement-entrance"><a class="header" href="#implement-entrance">Implement the entrance check</a></h3>
 <p>Generalize the entrance check to a declared, opt-in capability, and keep the routing rule
 (generate format blocks, coverage prose). The rename itself landed standalone (<code>call/0027</code>),
-so this task is the opt-in generalization on top of it. The unit tests pass.</p>
+so this task is the opt-in generalization on top of it. Fold in the audit's exit-code
+convention comment (exit <code>1</code> unexpected, exit <code>2</code> expected logic), Fen-validated in
+<code>gather-data.md</code>. The unit tests pass.</p>
 <ul>
 <li>depends: #settle-open-decisions</li>
 <li>verify: cd software/host-lifecycle/main &amp;&amp; cargo test</li>
