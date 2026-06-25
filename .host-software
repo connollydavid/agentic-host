@@ -14,12 +14,12 @@
 	hooks     = pre-commit
 [software "host-lifecycle"]
 	url       = https://github.com/connollydavid/host-lifecycle.git
-	pin       = 302e87f8a591b0bb2a56b4c4195151e0820dabc7
+	pin       = b0b96cf7b2a95fb4d93b0f266fd9ce2e78fc16b2
 	worktrees =
 	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lifecycle
-	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle 0f63d960b4b0772b6c58b58bec22814894b0479baed73521ec44b4116efc9c38
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle bab813d8d086407f0aac8c222f0e3bbb31fa546201cf227211331e91feffe23f
 	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v1/vendor.tar.gz f11417633fcc05a5b94761963c1a3fdce01777d9a68a32320268f22af3dbfbdf
 [software "host-prove"]
 	url       = https://github.com/connollydavid/host-prove.git
@@ -34,12 +34,12 @@
 	pin       = 9d51468ab1f0a7e253cd2ee7d149d7325e65f47b
 	worktrees =
 [software "host"]
-	# the single-file front door (the methodology's entry point), set apart from the
-	# host-* tools: it is the front door, not a component (plan/0039).
+	# the single-file entrance (the methodology's entry point), set apart from the
+	# host-* tools: it is the entrance, not a component (plan/0039).
 	url       = https://github.com/connollydavid/host.git
 	pin       = e73ee98434e9d2b9227f6a1b7c93210652045a6f
 	worktrees =
-	front-door = true
+	entrance  = true
 
 # The verification ladder's drivers (plan/0039): the project-local `verifiers`, sourced
 # here rather than the shared spine manifest. A doc that names the verifiers must name this

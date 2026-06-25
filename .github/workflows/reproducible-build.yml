@@ -21,17 +21,17 @@ jobs:
         with:
           submodules: true # host-template carries the lifecycle.manifest the receipt gate reads
       - name: Install host-lifecycle (released pinned; ships the manifest + receipt gate)
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 302e87f8a591b0bb2a56b4c4195151e0820dabc7
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev b0b96cf7b2a95fb4d93b0f266fd9ce2e78fc16b2
       - name: Materialize the software (bare store + worktrees)
         run: host-lifecycle software --materialize .
       - name: Check the software (pins, spec lanes, obligations, no HAZARD)
         run: host-lifecycle software --check .
-      - name: Check the front door (phases + wired tools covered, .host stamp canonical — plan/0040)
-        # The binding front-door check runs here, where the spine sources (the manifest,
-        # .host-software) and the materialized host worktree are present; the front-door
+      - name: Check the entrance (phases + wired tools covered, .host stamp canonical — plan/0040)
+        # The binding entrance check runs here, where the spine sources (the manifest,
+        # .host-software) and the materialized host worktree are present; the entrance
         # repo itself cannot run it (it carries neither). agentic-host-local, no adopter
         # obligation and no spine change.
-        run: host-lifecycle front-door --check .
+        run: host-lifecycle entrance --check .
       - name: Verify reproducibility (rebuild inside the recorded toolchain container)
         run: host-lifecycle software --verify-build .
 
@@ -46,7 +46,7 @@ jobs:
         with:
           submodules: true # allium + specula + host-template arrive by submodule
       - name: Seed host-lifecycle by its recorded pin (the materializer cannot materialize itself)
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 302e87f8a591b0bb2a56b4c4195151e0820dabc7
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev b0b96cf7b2a95fb4d93b0f266fd9ce2e78fc16b2
       - name: Materialize every .host-software component
         run: host-lifecycle software --materialize .
       - name: Wire the skill links from submodules and worktrees
