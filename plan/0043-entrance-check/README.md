@@ -60,7 +60,9 @@ another project, or another document, opt in.
 
 - **The declaration form.** How a project names an entrance and the concepts it restates:
   a per-document `.host-software` stanza, a flag plus a concept list, or a small
-  dedicated file. The form must read at the weak-agent bar.
+  dedicated file. The form must read at the weak-agent bar. The Fen runs in
+  `gather-data.md` lean to a concept-list value on the member (`entrance = <concepts>`),
+  since the entrance is an existing `[software]` member; the review confirms.
 - **One concept set or many.** A published entrance restates every concept; a skill may restate
   only the phases. So an entrance declares which concepts it must keep complete, rather
   than the check requiring all of them everywhere.
@@ -72,6 +74,32 @@ another project, or another document, opt in.
   The first instance is migrated; the general declaration form stays the open decision
   above.
 
+## Carried in from the pre-generalization audit (2026-06-25)
+
+A sweep before the generalization, with the Fen runs recorded in `gather-data.md`, added
+these inputs for the review:
+
+- **The `entrance = true` flag is already a spine concept.** host-template (`CLAUDE.md`,
+  `UPGRADING.md`) documents `front-door = true` as the adopter-facing marker reconcile uses
+  to set the front door apart from `components`. `call/0027`'s standalone rename changed the
+  tool's preferred spelling agentic-host-locally and left the spine on `front-door = true`, a
+  divergence the shim absorbs without a break. So the generalization builds on an existing
+  concept: it reconciles this flag, renames it in the spine, and ships the adopter `UPGRADING`
+  entry that also retires the deprecate-then-retire shim (a hard fail on a surviving
+  `front-door = true`).
+- **The declaration form, with a Fen leaning.** Three Fen runs over the candidate forms
+  reject the boolean-with-restates pair (`entrance = true` reads ambiguous, the pair
+  redundant) and, when the entrance is an existing `[software]` member carrying `url` and
+  `pin` (agentic-host's case), point at a concept-list value on the member: `entrance =
+  <concepts>` both marks the member and names what it keeps complete. So `entrance = true`
+  generalizes to `entrance = phases tools`, or an all-concepts value for a full front door.
+  The review confirms the form; see `gather-data.md`.
+- **Fold the exit-code convention into this milestone's release.** The plan/0040 and
+  plan/0041 review deferred a one-line comment (exit `1` is an unexpected or internal fault,
+  exit `2` an expected logic or usage error). Fen routed every test scenario by it correctly,
+  including the no-entries case to `2` (matching fail-closed `next`), so the comment rides the
+  generalization release. v0.28.0 and v0.28.1 shipped without it.
+
 ## Build sequence
 
 The build sequence as a task graph (plan/0042), to run after the review settles the
@@ -80,9 +108,9 @@ receipt.
 
 ### Settle the open decisions by review {#settle-open-decisions}
 
-Settle the declaration form, the concept-set model, the reconcile relationship, and the
-rename blast radius by adversarial review, recorded in a design-review subdoc with a
-proceed verdict.
+Settle the declaration form, the concept-set model, and the reconcile relationship by
+adversarial review (the declaration form starts from the `gather-data.md` leaning),
+recorded in a design-review subdoc with a proceed verdict.
 
 - verify: attested operator
 
@@ -90,7 +118,9 @@ proceed verdict.
 
 Generalize the entrance check to a declared, opt-in capability, and keep the routing rule
 (generate format blocks, coverage prose). The rename itself landed standalone (`call/0027`),
-so this task is the opt-in generalization on top of it. The unit tests pass.
+so this task is the opt-in generalization on top of it. Fold in the audit's exit-code
+convention comment (exit `1` unexpected, exit `2` expected logic), Fen-validated in
+`gather-data.md`. The unit tests pass.
 
 - depends: #settle-open-decisions
 - verify: cd software/host-lifecycle/main && cargo test
