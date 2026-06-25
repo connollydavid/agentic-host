@@ -1106,3 +1106,34 @@ front-door" provenance asides — I had added several and was told to strip them
 one place the old spelling lives ("let migration deal with transition"). **Lesson: a rename with no
 alias OWES a migration** — without the shim a stray `front-door = true` silently becomes a component (a
 confusing HAZARD), the silent failure plan/0039's fail-safe forbids.
+
+**plan/0043 COMPLETE: the entrance check generalized to a singleton `[entrance]` stanza (host-lifecycle
+v0.29.0, 2026-06-25).** Any project declares ONE entrance in a `[entrance]` stanza in `.host-software`:
+`member` (the `[software]` member it belongs to, set apart from `components`), `document` (the file within
+it, default `README.md`, so a `SKILL.md` or a landing page is reached by path), `restates` (`true` for
+all, or a subset of the closed vocabulary `phases`/`tools`/`stamp`). `host-lifecycle entrance --check`
+holds it complete against the declared concepts; the standalone sibling of `reconcile` (reconcile =
+pointers for linkable docs; entrance = coverage + generation for self-contained docs). Spine doctrine +
+adopter UPGRADING entry in host-template `ba86125`; agentic-host migrated its `.host-software` from the
+legacy per-member `entrance = true` to the stanza. `call/0028` records it; supersedes call/0026 scope,
+completes call/0027.
+
+**The journey (operator-shaped):** the three-reviewer design review returned RE-SCOPE (defer the
+generalization); the **operator OVERRULED → EXPAND** (see [[review-findings-are-requirements-not-descope]]).
+A three-reviewer **code review** of the diff then caught TWO blocking defects before release: (1) the parse
+`problems` field reached only the `entrance` command, so a typo'd `member` left the real front door in
+`components` and reconcile demanded STRUCTURE.md name it — the call/0027 silent demotion RELOCATED to
+another consumer; fix = surface `problems` in `reconcile` too. (2) an empty `restates =` parsed to "check
+nothing" and reported clean (fail-open); fix = a problem. **Lesson: a parse-`problems` guard must fire in
+EVERY consumer of the parsed facts, not just the command that owns the feature.**
+
+**Two gotchas worth keeping:** (a) **UPGRADING entry key must be a PUSHED commit.** I keyed it to the
+pre-amend SHA (dangling, never pushed); `upgrade`/CI resolve the key by git ancestry, so a fresh clone
+can't find it. Fix = re-key to the pushed doctrine commit. Don't amend-then-key; commit the doctrine,
+push, THEN key the entry to that pushed SHA. (b) **exit-code convention: the codebase is the standard
+linter one** — `0` clean, `1` the check found drift/HAZARDs, `2` cannot-proceed-on-input (missing/malformed
+file, `next` numberless dir). The earlier #6/gather-data framing ("1=unexpected, 2=expected-logic", so a
+`--check` drift → 2) mis-described the 29 `exit(1)` sites; the code comment + gather-data were corrected to
+the real convention rather than changing the code. (c) **The entrance is the single set-apart entry point**
+(a non-component member); a doc INSIDE a real tool component is not the singleton entrance (a recorded
+boundary, not a code change).
