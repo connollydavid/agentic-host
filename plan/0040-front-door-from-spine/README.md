@@ -179,6 +179,19 @@ Release host-lifecycle, re-pin `.host-software`, and record the receipt and a
 
 ## Status
 
-Open, design phase. Operator ruling recorded (generate from the spine). Awaiting
-adversarial review of the open decisions before building. Independent of
-plan/0041.
+complete, released as host-lifecycle v0.27.0 (2026-06-25; `302e87f8`, artifact
+`0f63d960`). The `front-door` and `front-door --check` subcommands hold the
+single-file front door (the `.host-software` member marked `front-door = true`) to
+the spine's structured facts: coverage of the lifecycle phases (the manifest) and the
+wired tools (the `.host-software` verifier drivers plus the lifecycle engine), and
+byte-exact generation of the `.host` stamp block. A two-lens adversarial review
+(design-review.md) rejected the original template-fragment mechanism as a second
+source of truth, so the design was re-scoped to generate only from structured data;
+the version pins, the lanes rule, and the tool prose have no structured home and stay
+authored, with a structured pin home as a named follow-up. The check found and the
+milestone fixed a live drift (the front door had dropped the `release` phase). The
+binding check runs as a step in agentic-host's CI (the reproducible-build job); the
+front-door repo keeps its plan/0038 prose gate and cannot run the coverage check
+itself. `call/0026` records the decision; the build sequence is dogfooded as an
+anchored receipted task graph (each of the five tasks carries a `.host-task-receipts`
+receipt). Whole-suite CI green.
