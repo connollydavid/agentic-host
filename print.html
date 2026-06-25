@@ -390,6 +390,7 @@ holds.</li>
 <tr><td>The <code>next</code> footgun (connollydavid/host-lifecycle#1): <code>next</code> yields <code>0000</code> on a dir with no numbered entries</td><td>plan/0039</td><td>Done (plan/0041, host-lifecycle v0.26.1): <code>next</code> fails closed; the issue is closed.</td></tr>
 <tr><td>Enforce full GitHub URLs in place of bare <code>#N</code> issue references (a bare <code>#N</code> is not a safe full URL)</td><td>operator, plan/0042 review</td><td>Future plan, not yet cut.</td></tr>
 <tr><td>Generalize the front-door check to an opt-in, reusable standalone-document check</td><td>plan/0040 review</td><td>Now a milestone: plan/0043 (entrance-check); name <code>entrance</code> by 4B data; supersedes the agentic-host-local scope of plan/0040.</td></tr>
+<tr><td>Retire the <code>front-door = true</code> deprecation shim (the parser accepts the legacy flag; the entrance command warns)</td><td>call/0027 (plan/0039 deprecate-then-retire)</td><td>Tied to plan/0043: retire with a hard-fail once the generalization renames the spine flag and ships the adopter UPGRADING entry.</td></tr>
 <tr><td>A structured pin home so the front-door version pins become drift-proof (they have no canonical source today)</td><td>plan/0040 review</td><td>Future plan, not yet cut.</td></tr>
 </tbody></table>
 </div>
@@ -5445,7 +5446,7 @@ repo's <code>call/</code> is its own Why room; do not read it as normative. See 
 <h2 id="concepts"><a class="header" href="#concepts">Concepts</a></h2>
 <p>The methodology concepts this project defines once and points at from everywhere else. Each has a stable <code>{#id}</code> anchor; other docs link to it rather than restate it.</p>
 <h3 id="components"><a class="header" href="#components">Components</a></h3>
-<p>The <code>host-*</code> components under development: host-lint, host-lifecycle, host-prove, host-grammar. Each is a bare store with worktrees under <code>software/&lt;name&gt;/main/</code>, pinned in <code>.host-software</code>. The single-file <code>host</code> front door is set apart (<code>front-door = true</code>), not a component; agentic-host, the development environment, is not one either.</p>
+<p>The <code>host-*</code> components under development: host-lint, host-lifecycle, host-prove, host-grammar. Each is a bare store with worktrees under <code>software/&lt;name&gt;/main/</code>, pinned in <code>.host-software</code>. The single-file <code>host</code> front door is set apart (<code>entrance = true</code>), not a component; agentic-host, the development environment, is not one either.</p>
 <h3 id="verifiers"><a class="header" href="#verifiers">Verifiers</a></h3>
 <p>The verification ladder's drivers, base to deep: host-lint (naming hygiene), allium (requirements and property-based testing), specula (bounded timing via TLA+), host-prove (the deeper symbolic, proof, and conformance rungs).</p>
 <h3 id="software-root"><a class="header" href="#software-root">Software-root</a></h3>

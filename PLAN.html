@@ -188,6 +188,7 @@
 <tr><td>The <code>next</code> footgun (connollydavid/host-lifecycle#1): <code>next</code> yields <code>0000</code> on a dir with no numbered entries</td><td>plan/0039</td><td>Done (plan/0041, host-lifecycle v0.26.1): <code>next</code> fails closed; the issue is closed.</td></tr>
 <tr><td>Enforce full GitHub URLs in place of bare <code>#N</code> issue references (a bare <code>#N</code> is not a safe full URL)</td><td>operator, plan/0042 review</td><td>Future plan, not yet cut.</td></tr>
 <tr><td>Generalize the front-door check to an opt-in, reusable standalone-document check</td><td>plan/0040 review</td><td>Now a milestone: plan/0043 (entrance-check); name <code>entrance</code> by 4B data; supersedes the agentic-host-local scope of plan/0040.</td></tr>
+<tr><td>Retire the <code>front-door = true</code> deprecation shim (the parser accepts the legacy flag; the entrance command warns)</td><td>call/0027 (plan/0039 deprecate-then-retire)</td><td>Tied to plan/0043: retire with a hard-fail once the generalization renames the spine flag and ships the adopter UPGRADING entry.</td></tr>
 <tr><td>A structured pin home so the front-door version pins become drift-proof (they have no canonical source today)</td><td>plan/0040 review</td><td>Future plan, not yet cut.</td></tr>
 </tbody></table>
 </div>
