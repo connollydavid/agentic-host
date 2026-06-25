@@ -37,7 +37,7 @@
 	# the single-file front door (the methodology's entry point), set apart from the
 	# host-* tools: it is the front door, not a component (plan/0039).
 	url       = https://github.com/connollydavid/host.git
-	pin       = 1dc9cb98cc22608efbb8d0f1794d72bef6fe9575
+	pin       = e73ee98434e9d2b9227f6a1b7c93210652045a6f
 	worktrees =
 	front-door = true
 
