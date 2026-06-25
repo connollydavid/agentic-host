@@ -84,22 +84,54 @@ flows through without a hand edit.
   host-lifecycle `front-door` capability is generic tooling, exercised only by
   agentic-host for the published front door.
 
-## Build sequence (after the review settles the design)
+## Build sequence
 
-1. Settle the open decisions by adversarial review. Verify: a recorded
-   design-review subdoc with a proceed verdict.
-2. Add the `front-door` generator and `--check` to host-lifecycle, with the
-   template carrying the front-door section fragments. Verify: unit tests, and a
-   regenerate-then-diff that reproduces the committed README.
-3. Section the front-door README, regenerate it from the pinned template, and
-   write the seed stamp. Verify: `front-door --check` clean; the README reads
-   unchanged in meaning; `host-lifecycle prose` clean.
-4. Wire `front-door --check` into the `host` repo CI and into the agentic-host
-   verify recheck, so a spine move that stales the front door is caught. Verify: a
-   deliberately staled section fails the check; whole-suite CI green.
-5. Release host-lifecycle, re-pin `.host-software`, record the receipt and a
-   `call/` decision. Verify: the released binary gates green; `software --check`
-   and `--verify-build` clean.
+The build sequence as a task graph (plan/0042), to run after the review settles
+the design. Each entry is an anchored task. The milestone is in its design phase,
+so no task is built yet, and the chain is linear.
+
+### Settle the open decisions by review {#settle-open-decisions}
+
+Settle the open decisions by adversarial review, recorded in a design-review
+subdoc with a proceed verdict.
+
+- verify: attested operator
+
+### Add the front-door generator {#add-front-door-generator}
+
+Add the `front-door` generator and `--check` to host-lifecycle; the template
+carries the front-door section fragments. The unit tests pass and a
+regenerate-then-diff reproduces the committed README.
+
+- depends: #settle-open-decisions
+- verify: cd software/host-lifecycle/main && cargo test
+
+### Section and regenerate the front door {#section-and-regenerate}
+
+Section the front-door README, regenerate it from the pinned template, and write
+the seed stamp, so `front-door --check` is clean, the README reads unchanged in
+meaning, and `host-lifecycle prose` is clean.
+
+- depends: #add-front-door-generator
+- verify: attested operator
+
+### Wire the front-door check {#wire-the-check}
+
+Wire `front-door --check` into the `host` repo CI and into the agentic-host verify
+recheck, so a spine move that stales the front door is caught: a deliberately
+staled section fails the check, and the whole-suite CI is green.
+
+- depends: #section-and-regenerate
+- verify: attested operator
+
+### Release and re-pin {#release-and-re-pin}
+
+Release host-lifecycle, re-pin `.host-software`, and record the receipt and a
+`call/` decision. The released binary gates green, and `software --check` and
+`--verify-build` are clean.
+
+- depends: #wire-the-check
+- verify: attested operator
 
 ## Risks
 

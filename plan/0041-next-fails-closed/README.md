@@ -48,21 +48,49 @@ explicit affordance is added then, not pre-emptively.
 
 ## Build sequence
 
-1. Gather Qwen-3.5-4B data on the failure UX. Show the 4B the footgun and the
-   candidate failure forms (usage to stderr with a non-zero exit; a distinct error
-   message; with and without the did-you-mean hint), and record which form it
-   recovers from. Verify: a recorded data note naming the chosen form.
-2. Implement the fail-closed `next` with the chosen form and the unit test.
-   Verify: the test passes; `next .` exits non-zero; `next plan` still prints the
-   correct next number.
-3. Record a small `call/` decision (fail-closed `next`, the 4B-validated form).
-   Verify: `host-lifecycle validate call/` reports ok.
-4. Release host-lifecycle (`--change-class neither`, a patch bump), re-pin
-   `.host-software`, record the receipt, and bump the CI install pins. Verify: the
-   released binary gates green; `software --check` and `--verify-build` clean;
-   whole-suite CI green.
-5. Close connollydavid/host-lifecycle#1. Verify: the issue is closed with the
-   release reference.
+The build sequence as a task graph (plan/0042): each entry is an anchored task.
+The milestone is open, so no task is built yet, and the chain is linear.
+
+### Gather the failure-form data {#gather-data}
+
+Show the 4B the footgun and the candidate failure forms (usage to stderr with a
+non-zero exit, a distinct error message, with and without the did-you-mean hint),
+and record which form it recovers from. The recorded data note names the chosen
+form.
+
+- verify: attested operator
+
+### Implement the fail-closed next {#implement-fail-closed}
+
+Implement the fail-closed `next` with the chosen form and the unit test, so `next .`
+exits non-zero while `next plan` still prints the correct next number.
+
+- depends: #gather-data
+- verify: cd software/host-lifecycle/main && cargo test
+
+### Record the call decision {#record-the-call-decision}
+
+Record a small `call/` decision (fail-closed `next`, the 4B-validated form).
+
+- depends: #implement-fail-closed
+- verify: host-lifecycle validate call/
+
+### Release and re-pin {#release-and-re-pin}
+
+Release host-lifecycle (`--change-class neither`, a patch bump), re-pin
+`.host-software`, record the receipt, and bump the CI install pins. The released
+binary gates green, `software --check` and `--verify-build` are clean, and the
+whole-suite CI is green.
+
+- depends: #record-the-call-decision
+- verify: attested operator
+
+### Close the issue {#close-the-issue}
+
+Close connollydavid/host-lifecycle#1 with the release reference.
+
+- depends: #release-and-re-pin
+- verify: attested operator
 
 ## Risks
 
