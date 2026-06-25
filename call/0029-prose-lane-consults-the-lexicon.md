@@ -60,6 +60,6 @@ confirmed the lane-consistency reading and the surgical word boundary, and judge
 adequately bounded with the dissent option available and not chosen (`gather-data.md`).
 Regression tests pin the behaviour: a declared phrase clears the trope within the phrase, a
 standalone occurrence still flags, an empty allowlist leaves the scan unchanged, and the
-density score drops by the masked phrase alone. The release line is recorded here once the
-host-lint version ships, with `.host-software` re-pinned, host-lint issue #16 closed, and the
-whole suite green.
+density score drops by the masked phrase alone. Released as host-lint v0.10.0 (`f1474e8`,
+artifact `5106ee7a`), with `.host-software` re-pinned, the release receipt recorded, host-lint
+issue #16 closed, and the whole suite green.
