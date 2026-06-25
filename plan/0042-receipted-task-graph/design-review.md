@@ -165,7 +165,30 @@ Drop:
    milestone (the inert-until-declared ladder pattern)? A blanket mandatory
    receipt-per-task gate taxes adopters who write small linear plans.
 
+## Resolution (operator, 2026-06-25)
+
+The operator settled the three decisions, overriding the re-scope on the first and
+third with a stated rationale, and confirmed the cross-plan capability:
+
+- **The graph: build now.** The methodology serves projects of arbitrary
+  complexity, not this repo's own linear history, so "no consumer in agentic-host"
+  is the wrong lens; the consumer is the arbitrary-complexity adopter. The graph is
+  built now as forward infrastructure, with cross-milestone `depends` confirmed at
+  the 4B bar (four of four: read a `plan/NNNN#anchor` dependency, author a mixed
+  local-plus-cross-plan `depends`).
+- **The ledger: a new top-level `.host-task-receipts`.** The operator accepted the
+  ontology cost for the physical separation; it is recorded as a deliberate third
+  receipt kind in the build's `call/` decision.
+- **Scope: adopter-facing and mandatory.** The receipt-per-task gate is a hard rule
+  for every adopter.
+
+The `#N` GitHub reference matter is acknowledged (a bare `#N` is not a safe full
+URL) and deferred to a future plan that enforces full URLs; plan/0042's task
+references use full relative-path anchors and never the `#N` form. The review's
+soundness findings (both halves of call/0018, the per-task trigger, the heading
+disambiguation, the separate link checker, the skip-citation, the drift reverse
+check, and the resource-isolation precondition) are folded into the re-cut README.
+
 ## Status
 
-Recorded. Awaiting the operator re-cut on the three decisions, then the plan/0042
-README is re-cut to the minimal core.
+Resolved. The plan/0042 README is re-cut to the settled design; ready to build.
