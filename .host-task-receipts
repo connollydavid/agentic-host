@@ -4,3 +4,10 @@
     evidence = Qwen-3.5-4B (Fen) run recorded in plan/0041-next-fails-closed/gather-data.md; chosen form: distinct diagnostic + did-you-mean line, non-zero exit (code 2)
     tool = host-lifecycle@0.26.0
     recorded = 2026-06-25
+
+[receipt "plan/0041#implement-fail-closed"]
+    disposition = done
+    verify = cd software/host-lifecycle/main && cargo test
+    evidence = cargo test: 101 passed (incl. next_fails_closed_on_numberless_dirs); cargo clippy clean; built-binary check: next . exits 2 with a did-you-mean for a real room, next plan unchanged
+    tool = host-lifecycle@0.26.0
+    recorded = 2026-06-25
