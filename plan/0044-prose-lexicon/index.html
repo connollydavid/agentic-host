@@ -274,7 +274,17 @@ removes-findings change class, and an adopter reads the masked-modes wording to 
 new reach.</li>
 </ul>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
-<p>in progress.</p>
+<p>complete, released as host-lint v0.10.0 (2026-06-25; <code>f1474e8</code>, artifact <code>5106ee7a</code>). The
+<code>--prose</code> and <code>--docs</code> lanes consult the per-repo LEXICON: <code>scan_prose_text</code> masks a declared
+phrase with the naming lane's <code>mask_allowed</code> before both the per-tell scan and the document
+density score, so a declared <code>rehost harness</code> clears the trope on <code>harness</code> within that phrase
+and a standalone occurrence still flags. The README masked-modes wording adds <code>--prose</code> and
+<code>--docs</code>. Validated at the Qwen-3.5-4B bar (<code>gather-data.md</code>): lane consistency, the surgical
+word boundary, and the abuse-bounding confirmed, with the dissent option available and not
+chosen. The first abuse-guard probe was contaminated by an option asserting a multi-word rule
+the tool does not enforce; it was recorded and discarded, then re-run with honest options.
+<code>call/0029</code> records the decision. No spine change, since the doctrine is met rather than
+changed. host-lint issue #16 is closed. The whole suite is green.</p>
 
                     </main>
 
