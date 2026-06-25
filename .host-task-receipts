@@ -46,3 +46,10 @@
     evidence = front-door + front-door --check subcommands added (phase coverage from manifest, tool coverage from .host-software drivers + lifecycle engine, byte-exact .host stamp generation); cargo test 102 passed (incl. front_door_covers_phases_tools_and_stamp), clippy clean; live run HAZARDs the omitted release phase
     tool = host-lifecycle@0.26.1
     recorded = 2026-06-25
+
+[receipt "plan/0040#section-and-regenerate"]
+    disposition = done
+    verify = attested operator
+    evidence = Added the release phase to the front-door README (host e73ee98), re-pinned .host-software; front-door --check clean (all phases + tools named, stamp canonical), host prose clean, software --check at pin. Stamp regeneration is a no-op (already canonical); no seed stamp (re-scope).
+    tool = host-lifecycle@0.26.1
+    recorded = 2026-06-25
