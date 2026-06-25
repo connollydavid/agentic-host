@@ -1149,3 +1149,25 @@ audited-docs rule split the infra commit (the `.host-task-receipts` receipt for 
 plan/0043 commit (the `#retire-shim` TASK); committing the receipt first left an orphan-receipt HAZARD at
 that intermediate commit, so its CI went red (the HEAD, carrying both, is green). Next time: commit the
 milestone-doc task BEFORE the receipt, or land them in one commit.
+
+**plan/0044 (prose-lane LEXICON, host-lint v0.10.0, `f1474e8`, artifact `5106ee7a`, closes
+host-lint #16).** The `--prose`/`--docs` lanes now consult the per-repo LEXICON:
+`scan_prose_text` masks a declared phrase with the naming lane's `mask_allowed` before BOTH the
+per-tell scan AND the document density score (`tell_score`), so a declared `rehost harness`
+clears the ai-diction trope on `harness` within that phrase and a standalone occurrence still
+flags. `mask_allowed` is byte-length-preserving, so offsets into the masked text still index the
+original for the reported excerpt. No new abuse surface: the same provenance-gated entries the
+naming lane masks with (a letter required, no flag-tier laundering, tracker-ref URL), and the
+density denominator is the SENTENCE count, so a mask only subtracts its own weight and can never
+inflate the denominator to dilute other tells. No spine change: the living-grammar doctrine ("a
+legitimate tell-shaped token stays in the LEXICON") is MET, not changed, so no host-template
+UPGRADING entry (operator agreed). **Data-gathering gotcha: a multiple-choice option that asserts
+a false premise contaminates the weak-agent result.** The first abuse-guard probe offered an
+option claiming LEXICON requires multi-word phrases; `validate_lexicon_entry` enforces no such
+rule (a single legitimate word is a valid entry). Fen accepted the false premise, so the run was
+discarded and re-run with honest options; Fen then chose lane-consistency `(A)`, the surgical
+word boundary `(ii)`, and "no new muting power" `(b)`, with the "separate stricter prose
+allowlist" dissent available and not chosen. Ground probe options in the actual code before
+asking the model. The run went direct against rope with a real system prompt (the user rejected
+pal, whose injected system prompt caused a format-loop); the `10696b8f…` rope token worked this
+session (the earlier "confirmed rotated" note was wrong, or it was un-rotated).
