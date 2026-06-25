@@ -3768,9 +3768,11 @@ authored. A structured pin home is a named follow-up.</li>
 <li><strong>Check strictness.</strong> Byte-exact on the generated stamp block, coverage on the
 structured fact-sets, run on every gate sweep. The procedure prose stays authored,
 so the front door's teaching quality is preserved.</li>
-<li><strong>Scope.</strong> agentic-host-local, no <code>UPGRADING</code> entry. The binding check runs in the
-agentic-host verify recheck, where the spine sources live; the front-door repo
-keeps its plan/0038 prose gate and cannot run the coverage check itself.</li>
+<li><strong>Scope.</strong> agentic-host-local, no <code>UPGRADING</code> entry. The binding check runs as a
+step in agentic-host's CI (the reproducible-build job), where the spine sources are
+materialized; it is a separate step, not the shared spine recheck, so no adopter
+without a front door runs it. The front-door repo keeps its plan/0038 prose gate and
+cannot run the coverage check itself.</li>
 </ul>
 <h2 id="build-sequence"><a class="header" href="#build-sequence">Build sequence</a></h2>
 <p>The build sequence as a task graph (plan/0042). Each entry is an anchored task, the
@@ -3800,11 +3802,12 @@ README reads unchanged in meaning, and <code>host-lifecycle prose</code> is clea
 <li>verify: attested operator</li>
 </ul>
 <h3 id="wire-the-check"><a class="header" href="#wire-the-check">Wire the front-door check</a></h3>
-<p>Wire <code>front-door --check</code> into the agentic-host verify recheck, where the spine
-sources live, so a spine move that stales the front door is caught (a deliberately
-staled section fails the check). The front-door repo keeps its plan/0038 prose gate;
-it cannot run the coverage check itself, since it does not carry the sources. The
-whole-suite CI is green.</p>
+<p>Wire <code>front-door --check</code> as a step in the agentic-host CI (the reproducible-build
+job), where the spine sources are materialized, so a spine move that stales the front
+door is caught (a deliberately staled section fails the check). It is a separate step,
+not the shared spine recheck, so no adopter without a front door runs it. The
+front-door repo keeps its plan/0038 prose gate; it cannot run the coverage check
+itself, since it does not carry the sources. The whole-suite CI is green.</p>
 <ul>
 <li>depends: #section-and-regenerate</li>
 <li>verify: attested operator</li>
