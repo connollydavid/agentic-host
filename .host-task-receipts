@@ -60,3 +60,10 @@
     evidence = Added 'host-lifecycle front-door --check .' as a step in reproducible-build.yml (agentic-host CI, where sources are materialized; lands atomically with the v0.27.0 pin in the release commit). Deliberately-staled front door fails the check: stamp drift HAZARDs (exit 1), and a phase named nowhere HAZARDs (the original release omission). Separate CI step, not the spine recheck, so no adopter obligation.
     tool = host-lifecycle@0.26.1
     recorded = 2026-06-25
+
+[receipt "plan/0040#release-and-re-pin"]
+    disposition = done
+    verify = attested operator
+    evidence = host-lifecycle v0.27.0 released (302e87f8, tag v0.27.0, artifact 0f63d960); .host-software re-pinned + release receipt; CI install pins bumped and front-door --check wired into the reproducible-build job; call/0026 recorded; software --check, --verify-build (offline reproduce), and front-door --check all green
+    tool = host-lifecycle@0.27.0
+    recorded = 2026-06-25
