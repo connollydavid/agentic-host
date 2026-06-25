@@ -1131,6 +1131,25 @@ to adopters; the old comment calling the <code>host</code> member "the project's
 principle: one spine, everything else a copy-at-version or a pointer, never a restatement. Landed in the
 host-lifecycle worktree: project-local sourcing, manifest hardening, the three checks (link-integrity,
 declared-anchor, coverage). Pending: convert agentic-host's docs to pointers, spine doctrine, release.</p>
+<h2 id="plan0039-complete-concept-as-uri-shipped-as-host-lifecycle-v0250-2026-06-25"><a class="header" href="#plan0039-complete-concept-as-uri-shipped-as-host-lifecycle-v0250-2026-06-25">plan/0039 complete: concept-as-URI shipped as host-lifecycle v0.25.0 (2026-06-25)</a></h2>
+<p>The reconcile arm now sources project facts from <code>.host-software</code> (components are the <code>[software]</code> members
+minus a <code>front-door = true</code> member; verifiers are a <code>[verification]</code> drivers stanza) and runs three checks
+over the tracked docs: link-integrity, declared-anchor, and coverage (each project-local home names its full
+<code>.host-software</code> set). The lifecycle manifest is hardened to phases-only (<code>manifest --check</code> rejects any other
+stanza). agentic-host's own docs are converted to concept-as-URI: four homes in <code>STRUCTURE.md</code> (<code>{#components}</code>
+etc.), CLAUDE.md/README pointing at them. The spine doctrine + the <code>UPGRADING</code> entry (<code>[upgrade 7be692f]</code>) are
+in host-template (<code>e4f6207</code>); <code>call/0023</code> records the software decision.</p>
+<p><strong>Adversarial review + a real Qwen-3.5-4B run caught two holes before release:</strong> a <code>{#id}</code> must sit at the END
+of a heading (mdBook slugifies a start-placed one to a different id, so a start-placed home passed reconcile but
+404'd) and <code>home_section</code> must run to the next <em>same-or-higher</em> heading (the 4B authored a sub-headed home whose
+members fell outside a stop-at-any-heading section, falsely failing coverage). Both fixed in code with tests.
+The 4B authored a home, a <code>[verification]</code> stanza, and an annotation-to-pointer migration once the doctrine
+<em>showed</em> the exact forms (the worked example) — it near-misses unaided. Released v0.25.0 (commit <code>0f2a4da</code>,
+artifact <code>e3e1ef02</code>), re-pinned, dogfood-verified (reconcile + <code>software --check</code> green on the released binary).</p>
+<p><strong>Process slip recorded:</strong> <code>host-lifecycle prose</code> scans <strong>tracked</strong> files (via <code>git ls-files</code>), so prose-check a
+NEW doc only AFTER <code>git add</code>/commit — checking an untracked file reports a false clean. Two diction tropes
+(false-range from a <code>from … to</code> pair, negative-parallelism from "honors no other") slipped into committed docs
+this way and were fixed in a follow-up. See [[ai-diction-traps-in-my-writing]].</p>
 
                     </main>
 
