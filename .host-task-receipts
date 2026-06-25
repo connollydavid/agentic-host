@@ -32,3 +32,10 @@
     evidence = connollydavid/host-lifecycle#1 CLOSED (auto-closed by release commit 2f606e29 'closes ...#1'); closing comment added referencing v0.26.1, call/0025, plan/0041
     tool = host-lifecycle@0.26.1
     recorded = 2026-06-25
+
+[receipt "plan/0040#settle-open-decisions"]
+    disposition = done
+    verify = attested operator
+    evidence = Two-lens adversarial review recorded in plan/0040-front-door-from-spine/design-review.md; verdict proceed-with-changes (re-scope to structured-source generation + coverage); four open decisions settled
+    tool = host-lifecycle@0.26.1
+    recorded = 2026-06-25
