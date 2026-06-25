@@ -81,9 +81,10 @@ singleton constraint settle the form on the dedicated stanza.
 The legacy per-member marker, both `front-door = true` and the `entrance = true` that
 agentic-host adopted in `call/0027`, is accepted by the deprecation shim as the front-door
 entrance during the transition, mapped to the equivalent stanza. The shim warns and names
-the stanza form. Its retirement (a hard fail on a surviving per-member marker) stays the
-named follow-up the deprecate-then-retire path already owes, a release after the spine and
-agentic-host move to the stanza.
+the stanza form. Its retirement landed in this milestone as host-lifecycle v0.30.0 (the
+operator chose to retire now, rather than a release later): a surviving per-member marker is a
+loud problem in every consumer, never the entrance, and the spine and agentic-host carry no
+legacy marker.
 
 ### The concept set, checked against its homes
 
@@ -201,6 +202,16 @@ the whole suite is green.
 - depends: #validate-4b
 - verify: attested operator
 
+### Retire the legacy per-member marker {#retire-shim}
+
+Retire the deprecate-then-retire shim: a surviving per-member `front-door = true` or
+`entrance = true` becomes a loud problem in every consumer, never the entrance. Add the spine
+retirement doctrine and an adopter `UPGRADING` entry, gated so the live spine no longer teaches
+the legacy marker. Ship a host-lifecycle release, then re-pin and adopt.
+
+- depends: #release-and-re-pin
+- verify: attested operator
+
 ## Risks
 
 - The milestone touches the spine, the tool, and the agentic-host declaration at once. The
@@ -228,6 +239,7 @@ Qwen-3.5-4B run validated the declaration form and the stanza ergonomics (`gathe
 host-template `ba86125` carries the doctrine and the adopter `UPGRADING` entry; agentic-host
 migrated its `.host-software` to the stanza and adopted the revision. Supersedes the
 agentic-host-local scope of plan/0040 and the scope half of `call/0026`, carries `call/0027` to
-completion, and is recorded in `call/0028`. The legacy per-member marker is accepted by the
-deprecation shim, warned, until a later revision retires it (the named follow-up). The whole
+completion, and is recorded in `call/0028`. The legacy per-member marker was then retired (host-lifecycle v0.30.0,
+host-template `de8a517`): a surviving one is a loud problem in every consumer, which completes
+the deprecate-then-retire path. The whole
 suite is green.
