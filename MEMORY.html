@@ -1322,6 +1322,27 @@ audited-docs rule split the infra commit (the <code>.host-task-receipts</code> r
 plan/0043 commit (the <code>#retire-shim</code> TASK); committing the receipt first left an orphan-receipt HAZARD at
 that intermediate commit, so its CI went red (the HEAD, carrying both, is green). Next time: commit the
 milestone-doc task BEFORE the receipt, or land them in one commit.</p>
+<p><strong>plan/0044 (prose-lane LEXICON, host-lint v0.10.0, <code>f1474e8</code>, artifact <code>5106ee7a</code>, closes
+host-lint #16).</strong> The <code>--prose</code>/<code>--docs</code> lanes now consult the per-repo LEXICON:
+<code>scan_prose_text</code> masks a declared phrase with the naming lane's <code>mask_allowed</code> before BOTH the
+per-tell scan AND the document density score (<code>tell_score</code>), so a declared <code>rehost harness</code>
+clears the ai-diction trope on <code>harness</code> within that phrase and a standalone occurrence still
+flags. <code>mask_allowed</code> is byte-length-preserving, so offsets into the masked text still index the
+original for the reported excerpt. No new abuse surface: the same provenance-gated entries the
+naming lane masks with (a letter required, no flag-tier laundering, tracker-ref URL), and the
+density denominator is the SENTENCE count, so a mask only subtracts its own weight and can never
+inflate the denominator to dilute other tells. No spine change: the living-grammar doctrine ("a
+legitimate tell-shaped token stays in the LEXICON") is MET, not changed, so no host-template
+UPGRADING entry (operator agreed). <strong>Data-gathering gotcha: a multiple-choice option that asserts
+a false premise contaminates the weak-agent result.</strong> The first abuse-guard probe offered an
+option claiming LEXICON requires multi-word phrases; <code>validate_lexicon_entry</code> enforces no such
+rule (a single legitimate word is a valid entry). Fen accepted the false premise, so the run was
+discarded and re-run with honest options; Fen then chose lane-consistency <code>(A)</code>, the surgical
+word boundary <code>(ii)</code>, and "no new muting power" <code>(b)</code>, with the "separate stricter prose
+allowlist" dissent available and not chosen. Ground probe options in the actual code before
+asking the model. The run went direct against rope with a real system prompt (the user rejected
+pal, whose injected system prompt caused a format-loop); the <code>10696b8f…</code> rope token worked this
+session (the earlier "confirmed rotated" note was wrong, or it was un-rotated).</p>
 
                     </main>
 
