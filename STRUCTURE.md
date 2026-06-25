@@ -22,7 +22,7 @@ The methodology concepts this project defines once and points at from everywhere
 
 ### Components {#components}
 
-The `host-*` components under development: host-lint, host-lifecycle, host-prove, host-grammar. Each is a bare store with worktrees under `software/<name>/main/`, pinned in `.host-software`. The single-file `host` front door is set apart (`entrance = true`), not a component; agentic-host, the development environment, is not one either.
+The `host-*` components under development: host-lint, host-lifecycle, host-prove, host-grammar. Each is a bare store with worktrees under `software/<name>/main/`, pinned in `.host-software`. The single-file `host` entrance is set apart (it is the `member` of the `[entrance]` stanza), not a component; agentic-host, the development environment, is not one either.
 
 ### Verifiers {#verifiers}
 

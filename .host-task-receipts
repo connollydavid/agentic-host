@@ -67,3 +67,52 @@
     evidence = host-lifecycle v0.27.0 released (302e87f8, tag v0.27.0, artifact 0f63d960); .host-software re-pinned + release receipt; CI install pins bumped and front-door --check wired into the reproducible-build job; call/0026 recorded; software --check, --verify-build (offline reproduce), and front-door --check all green
     tool = host-lifecycle@0.27.0
     recorded = 2026-06-25
+
+[receipt "plan/0043#settle-open-decisions"]
+    disposition = done
+    verify = attested operator
+    evidence = Three-reviewer adversarial review (design-review.md) returned re-scope; operator re-cut to expand the milestone. Declaration confirmed as a singleton [entrance] stanza reaching any document by path, member set apart; marker-break designed out. Decisions settled: stanza declaration form, restates concept-set against homes, separate-subcommand reconcile sibling, spine reconciliation in milestone.
+    tool = host-lifecycle@0.28.1
+    recorded = 2026-06-25
+
+[receipt "plan/0043#implement-entrance"]
+    disposition = done
+    verify = cd software/host-lifecycle/main && cargo test
+    evidence = Singleton [entrance] stanza implemented in host-lifecycle: parse reads [entrance] (member, document default README.md, restates with true sentinel + closed {phases,tools,stamp} vocabulary), member set apart from components, legacy per-member marker shimmed with a deprecation warning naming the stanza, entrance_readme resolves the document path, entrance_problems routes by restates, exit-code convention comment added. cargo test 102 passed (new stanza/singleton/unknown-concept/member tests), clippy clean; legacy entrance=true on agentic-host warns + checks clean.
+    tool = host-lifecycle@0.28.1
+    recorded = 2026-06-25
+
+[receipt "plan/0043#implement-entrance"]
+    disposition = done
+    verify = cd software/host-lifecycle/main && cargo test
+    evidence = Singleton [entrance] stanza implemented and adversarially reviewed (code-review.md, three reviewers). Two blocking defects found and fixed: problems were surfaced only to entrance, so a typo'd member reintroduced the call/0027 silent demotion via reconcile (reconcile now surfaces problems, exit 2); an empty restates parsed to check-nothing and reported clean (now a problem, exit 2). Parser holes fixed: sub-named [entrance "x"] flagged, document path-escape rejected, true sentinel case-insensitive, duplicate member flagged. Exit-code framing corrected to issues-found(1)/cannot-proceed(2). cargo test 102 + new problem-path tests, clippy clean; verified on the binary.
+    tool = host-lifecycle@0.28.1
+    recorded = 2026-06-25
+
+[receipt "plan/0043#spine-doctrine"]
+    disposition = done
+    verify = attested operator
+    evidence = host-template ba86125: the components concept definition sets the entrance member apart with an [entrance] stanza (was front-door = true); added the entrance-check doctrine (reconcile's standalone sibling, the [entrance] stanza form) to CLAUDE.md; added UPGRADING entry 2dbcfd7 (requires host-lifecycle v0.29.0) migrating a legacy per-member marker to the stanza. host-template prose clean (host-lint --docs exit 0).
+    tool = host-lifecycle@0.28.1
+    recorded = 2026-06-25
+
+[receipt "plan/0043#migrate-agentic-host"]
+    disposition = done
+    verify = attested operator
+    evidence = Migrated .host-software from the per-member entrance = true to the [entrance] stanza (member=host, document=README.md, restates=true); STRUCTURE.md marker reference updated to the stanza; adopted host-template b7cc250 (upgrade --record ba86125 via verify, 0 pending). entrance --check clean via the stanza (no deprecation warning), reconcile clean, software --check at pin.
+    tool = host-lifecycle@0.29.0
+    recorded = 2026-06-25
+
+[receipt "plan/0043#validate-4b"]
+    disposition = done
+    verify = attested operator
+    evidence = Qwen-3.5-4B via pal (gather-data records the runs): authoring fill-in-the-blank for a skill restating only phases gave member=my-skill, document=SKILL.md, restates=phases (converged before the pal format-loop); comprehension gave the entrance document, the phases and tools concepts, and the .host stamp correctly excluded. Singleton, document path, restates subset, and the closed vocabulary all read correctly.
+    tool = host-lifecycle@0.29.0
+    recorded = 2026-06-25
+
+[receipt "plan/0043#release-and-re-pin"]
+    disposition = done
+    verify = attested operator
+    evidence = Released host-lifecycle v0.29.0 (dbeb3db, artifact 01171b92); re-pinned .host-software; bumped host-template pointer to b7cc250 and adopted ba86125; CI install pins bumped to dbeb3db; release receipt recorded; call/0028 records the decision (supersedes the scope of call/0026, carries call/0027 to completion). Whole-suite verification follows in CI.
+    tool = host-lifecycle@0.29.0
+    recorded = 2026-06-25

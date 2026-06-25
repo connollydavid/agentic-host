@@ -21,7 +21,7 @@ jobs:
         with:
           submodules: true # host-template carries the lifecycle.manifest the receipt gate reads
       - name: Install host-lifecycle (released pinned; ships the manifest + receipt gate)
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev b0b96cf7b2a95fb4d93b0f266fd9ce2e78fc16b2
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev dbeb3db01738aa3a69e0a7ec51ceb44cfbc298e7
       - name: Materialize the software (bare store + worktrees)
         run: host-lifecycle software --materialize .
       - name: Check the software (pins, spec lanes, obligations, no HAZARD)
@@ -46,7 +46,7 @@ jobs:
         with:
           submodules: true # allium + specula + host-template arrive by submodule
       - name: Seed host-lifecycle by its recorded pin (the materializer cannot materialize itself)
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev b0b96cf7b2a95fb4d93b0f266fd9ce2e78fc16b2
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev dbeb3db01738aa3a69e0a7ec51ceb44cfbc298e7
       - name: Materialize every .host-software component
         run: host-lifecycle software --materialize .
       - name: Wire the skill links from submodules and worktrees
