@@ -4215,8 +4215,8 @@ set-apart member), kept a single tested source so a change serves both consumers
 fields, and ships an adopter <code>UPGRADING</code> ledger entry that migrates a legacy per-member
 marker to the stanza, whose verify post-condition holds <code>entrance --check</code>, <code>reconcile</code>, and
 <code>software --check</code> green so a misapplied migration shows loudly at apply time. The exit-code
-convention comment (exit <code>1</code> an unexpected fault, exit <code>2</code> an expected logic error),
-validated in <code>gather-data.md</code>, folds into the same release.</p>
+convention comment (exit <code>1</code> for the issues a command finds, exit <code>2</code> when it cannot proceed
+on its input), refined by the code review in <code>code-review.md</code>, folds into the same release.</p>
 <h2 id="build-sequence-3"><a class="header" href="#build-sequence-3">Build sequence</a></h2>
 <p>The build sequence as a task graph (plan/0042), each entry an anchored task carrying a
 receipt. The tool gains the stanza first, then the spine documents it, then agentic-host
