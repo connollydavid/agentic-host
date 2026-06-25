@@ -213,23 +213,44 @@ an empty existing directory exits non-zero; a missing path exits non-zero; the
 host root exits non-zero.</li>
 </ul>
 <h2 id="build-sequence"><a class="header" href="#build-sequence">Build sequence</a></h2>
-<ol>
-<li>Gather Qwen-3.5-4B data on the failure UX. Show the 4B the footgun and the
-candidate failure forms (usage to stderr with a non-zero exit; a distinct error
-message; with and without the did-you-mean hint), and record which form it
-recovers from. Verify: a recorded data note naming the chosen form.</li>
-<li>Implement the fail-closed <code>next</code> with the chosen form and the unit test.
-Verify: the test passes; <code>next .</code> exits non-zero; <code>next plan</code> still prints the
-correct next number.</li>
-<li>Record a small <code>call/</code> decision (fail-closed <code>next</code>, the 4B-validated form).
-Verify: <code>host-lifecycle validate call/</code> reports ok.</li>
-<li>Release host-lifecycle (<code>--change-class neither</code>, a patch bump), re-pin
-<code>.host-software</code>, record the receipt, and bump the CI install pins. Verify: the
-released binary gates green; <code>software --check</code> and <code>--verify-build</code> clean;
-whole-suite CI green.</li>
-<li>Close connollydavid/host-lifecycle#1. Verify: the issue is closed with the
-release reference.</li>
-</ol>
+<p>The build sequence as a task graph (plan/0042): each entry is an anchored task.
+The milestone is open, so no task is built yet, and the chain is linear.</p>
+<h3 id="gather-data"><a class="header" href="#gather-data">Gather the failure-form data</a></h3>
+<p>Show the 4B the footgun and the candidate failure forms (usage to stderr with a
+non-zero exit, a distinct error message, with and without the did-you-mean hint),
+and record which form it recovers from. The recorded data note names the chosen
+form.</p>
+<ul>
+<li>verify: attested operator</li>
+</ul>
+<h3 id="implement-fail-closed"><a class="header" href="#implement-fail-closed">Implement the fail-closed next</a></h3>
+<p>Implement the fail-closed <code>next</code> with the chosen form and the unit test, so <code>next .</code>
+exits non-zero while <code>next plan</code> still prints the correct next number.</p>
+<ul>
+<li>depends: #gather-data</li>
+<li>verify: cd software/host-lifecycle/main &amp;&amp; cargo test</li>
+</ul>
+<h3 id="record-the-call-decision"><a class="header" href="#record-the-call-decision">Record the call decision</a></h3>
+<p>Record a small <code>call/</code> decision (fail-closed <code>next</code>, the 4B-validated form).</p>
+<ul>
+<li>depends: #implement-fail-closed</li>
+<li>verify: host-lifecycle validate call/</li>
+</ul>
+<h3 id="release-and-re-pin"><a class="header" href="#release-and-re-pin">Release and re-pin</a></h3>
+<p>Release host-lifecycle (<code>--change-class neither</code>, a patch bump), re-pin
+<code>.host-software</code>, record the receipt, and bump the CI install pins. The released
+binary gates green, <code>software --check</code> and <code>--verify-build</code> are clean, and the
+whole-suite CI is green.</p>
+<ul>
+<li>depends: #record-the-call-decision</li>
+<li>verify: attested operator</li>
+</ul>
+<h3 id="close-the-issue"><a class="header" href="#close-the-issue">Close the issue</a></h3>
+<p>Close connollydavid/host-lifecycle#1 with the release reference.</p>
+<ul>
+<li>depends: #release-and-re-pin</li>
+<li>verify: attested operator</li>
+</ul>
 <h2 id="risks"><a class="header" href="#risks">Risks</a></h2>
 <ul>
 <li>A freshly-scaffolded empty room now errors. If that path is more common than

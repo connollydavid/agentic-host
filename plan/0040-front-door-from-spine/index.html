@@ -251,23 +251,48 @@ adopters have no front door (the plan/0038 precedent for meta-repo work). The
 host-lifecycle <code>front-door</code> capability is generic tooling, exercised only by
 agentic-host for the published front door.</li>
 </ul>
-<h2 id="build-sequence-after-the-review-settles-the-design"><a class="header" href="#build-sequence-after-the-review-settles-the-design">Build sequence (after the review settles the design)</a></h2>
-<ol>
-<li>Settle the open decisions by adversarial review. Verify: a recorded
-design-review subdoc with a proceed verdict.</li>
-<li>Add the <code>front-door</code> generator and <code>--check</code> to host-lifecycle, with the
-template carrying the front-door section fragments. Verify: unit tests, and a
-regenerate-then-diff that reproduces the committed README.</li>
-<li>Section the front-door README, regenerate it from the pinned template, and
-write the seed stamp. Verify: <code>front-door --check</code> clean; the README reads
-unchanged in meaning; <code>host-lifecycle prose</code> clean.</li>
-<li>Wire <code>front-door --check</code> into the <code>host</code> repo CI and into the agentic-host
-verify recheck, so a spine move that stales the front door is caught. Verify: a
-deliberately staled section fails the check; whole-suite CI green.</li>
-<li>Release host-lifecycle, re-pin <code>.host-software</code>, record the receipt and a
-<code>call/</code> decision. Verify: the released binary gates green; <code>software --check</code>
-and <code>--verify-build</code> clean.</li>
-</ol>
+<h2 id="build-sequence"><a class="header" href="#build-sequence">Build sequence</a></h2>
+<p>The build sequence as a task graph (plan/0042), to run after the review settles
+the design. Each entry is an anchored task. The milestone is in its design phase,
+so no task is built yet, and the chain is linear.</p>
+<h3 id="settle-open-decisions"><a class="header" href="#settle-open-decisions">Settle the open decisions by review</a></h3>
+<p>Settle the open decisions by adversarial review, recorded in a design-review
+subdoc with a proceed verdict.</p>
+<ul>
+<li>verify: attested operator</li>
+</ul>
+<h3 id="add-front-door-generator"><a class="header" href="#add-front-door-generator">Add the front-door generator</a></h3>
+<p>Add the <code>front-door</code> generator and <code>--check</code> to host-lifecycle; the template
+carries the front-door section fragments. The unit tests pass and a
+regenerate-then-diff reproduces the committed README.</p>
+<ul>
+<li>depends: #settle-open-decisions</li>
+<li>verify: cd software/host-lifecycle/main &amp;&amp; cargo test</li>
+</ul>
+<h3 id="section-and-regenerate"><a class="header" href="#section-and-regenerate">Section and regenerate the front door</a></h3>
+<p>Section the front-door README, regenerate it from the pinned template, and write
+the seed stamp, so <code>front-door --check</code> is clean, the README reads unchanged in
+meaning, and <code>host-lifecycle prose</code> is clean.</p>
+<ul>
+<li>depends: #add-front-door-generator</li>
+<li>verify: attested operator</li>
+</ul>
+<h3 id="wire-the-check"><a class="header" href="#wire-the-check">Wire the front-door check</a></h3>
+<p>Wire <code>front-door --check</code> into the <code>host</code> repo CI and into the agentic-host verify
+recheck, so a spine move that stales the front door is caught: a deliberately
+staled section fails the check, and the whole-suite CI is green.</p>
+<ul>
+<li>depends: #section-and-regenerate</li>
+<li>verify: attested operator</li>
+</ul>
+<h3 id="release-and-re-pin"><a class="header" href="#release-and-re-pin">Release and re-pin</a></h3>
+<p>Release host-lifecycle, re-pin <code>.host-software</code>, and record the receipt and a
+<code>call/</code> decision. The released binary gates green, and <code>software --check</code> and
+<code>--verify-build</code> are clean.</p>
+<ul>
+<li>depends: #wire-the-check</li>
+<li>verify: attested operator</li>
+</ul>
 <h2 id="risks"><a class="header" href="#risks">Risks</a></h2>
 <ul>
 <li>The spine-derived sections are audience-adapted, so the template fragments must
