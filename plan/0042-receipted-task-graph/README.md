@@ -158,7 +158,9 @@ the parallelism is the tool's to compute.
 
 ## Status
 
-Design settled by operator ruling after the five-lens adversarial review (build the
-graph now, a new `.host-task-receipts` file, adopter-facing and mandatory), with the
-review's soundness fixes folded in and cross-plan references confirmed at the 4B bar.
-Ready to build. plan/0040 and plan/0041 are its first consumers.
+complete, released as host-lifecycle v0.26.0 (2026-06-25). The `tasks` subcommand,
+the `.host-task-receipts` ledger (call/0024), the completion-aware per-task gate in
+`software --check`, the task-anchor link checker, and the `tasks --new` scaffolding
+shipped; the spine doctrine is in host-template (`2229dbb`) and adopted. plan/0040 and
+plan/0041 are dogfooded (their build sequences re-expressed as anchored task graphs).
+Whole-suite CI green across all three repos.
