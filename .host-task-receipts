@@ -53,3 +53,10 @@
     evidence = Added the release phase to the front-door README (host e73ee98), re-pinned .host-software; front-door --check clean (all phases + tools named, stamp canonical), host prose clean, software --check at pin. Stamp regeneration is a no-op (already canonical); no seed stamp (re-scope).
     tool = host-lifecycle@0.26.1
     recorded = 2026-06-25
+
+[receipt "plan/0040#wire-the-check"]
+    disposition = done
+    verify = attested operator
+    evidence = Added 'host-lifecycle front-door --check .' as a step in reproducible-build.yml (agentic-host CI, where sources are materialized; lands atomically with the v0.27.0 pin in the release commit). Deliberately-staled front door fails the check: stamp drift HAZARDs (exit 1), and a phase named nowhere HAZARDs (the original release omission). Separate CI step, not the spine recheck, so no adopter obligation.
+    tool = host-lifecycle@0.26.1
+    recorded = 2026-06-25
