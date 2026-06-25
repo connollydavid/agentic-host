@@ -215,12 +215,19 @@ the whole suite is green.
 
 ## Status
 
-Open, in build. The adversarial review (three independent reviewers, `design-review.md`)
-returned a re-scope verdict; the operator re-cut it to expand the milestone to encompass
-every aspect, with the review's blocking findings folded in as design requirements. Operator
-decisions recorded: opt-in and reusable; the name `entrance` by Qwen-3.5-4B data; the
-standalone sibling of reconcile; the declaration is a single `[entrance]` stanza, a global
-singleton among the components, reaching any document by path, with the named member set
-apart from `components` as the front door is today. Supersedes the agentic-host-local scope
-of plan/0040 and the scope half of `call/0026`, and carries the rename and migration of
-`call/0027` toward completion.
+complete, released as host-lifecycle v0.29.0 (2026-06-25; `dbeb3db`, artifact `01171b92`). The
+entrance check reads a singleton `[entrance]` stanza in `.host-software` that names the member
+and the document within it (default `README.md`), held complete against the concepts it
+`restates`, reaching any document by path, the standalone sibling of reconcile. A three-reviewer
+adversarial design review returned a re-scope verdict; the operator re-cut it to expand the
+milestone, folding the review's blocking findings in as design requirements. A three-reviewer
+adversarial code review (`code-review.md`) then found and fixed two blocking defects before
+release: the parse `problems` reached only the entrance command, so a typo'd member re-demoted
+the front door through reconcile; and an empty `restates` checked nothing yet reported clean. A
+Qwen-3.5-4B run validated the declaration form and the stanza ergonomics (`gather-data.md`).
+host-template `ba86125` carries the doctrine and the adopter `UPGRADING` entry; agentic-host
+migrated its `.host-software` to the stanza and adopted the revision. Supersedes the
+agentic-host-local scope of plan/0040 and the scope half of `call/0026`, carries `call/0027` to
+completion, and is recorded in `call/0028`. The legacy per-member marker is accepted by the
+deprecation shim, warned, until a later revision retires it (the named follow-up). The whole
+suite is green.
