@@ -327,10 +327,12 @@ one milestone cannot silently wedge another.</li>
 no-recursion rule are load-bearing for safety.</li>
 </ul>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
-<p>Design settled by operator ruling after the five-lens adversarial review (build the
-graph now, a new <code>.host-task-receipts</code> file, adopter-facing and mandatory), with the
-review's soundness fixes folded in and cross-plan references confirmed at the 4B bar.
-Ready to build. plan/0040 and plan/0041 are its first consumers.</p>
+<p>complete, released as host-lifecycle v0.26.0 (2026-06-25). The <code>tasks</code> subcommand,
+the <code>.host-task-receipts</code> ledger (call/0024), the completion-aware per-task gate in
+<code>software --check</code>, the task-anchor link checker, and the <code>tasks --new</code> scaffolding
+shipped; the spine doctrine is in host-template (<code>2229dbb</code>) and adopted. plan/0040 and
+plan/0041 are dogfooded (their build sequences re-expressed as anchored task graphs).
+Whole-suite CI green across all three repos.</p>
 
                     </main>
 
