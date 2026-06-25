@@ -106,9 +106,11 @@ decisions are settled as:
 - **Check strictness.** Byte-exact on the generated stamp block, coverage on the
   structured fact-sets, run on every gate sweep. The procedure prose stays authored,
   so the front door's teaching quality is preserved.
-- **Scope.** agentic-host-local, no `UPGRADING` entry. The binding check runs in the
-  agentic-host verify recheck, where the spine sources live; the front-door repo
-  keeps its plan/0038 prose gate and cannot run the coverage check itself.
+- **Scope.** agentic-host-local, no `UPGRADING` entry. The binding check runs as a
+  step in agentic-host's CI (the reproducible-build job), where the spine sources are
+  materialized; it is a separate step, not the shared spine recheck, so no adopter
+  without a front door runs it. The front-door repo keeps its plan/0038 prose gate and
+  cannot run the coverage check itself.
 
 ## Build sequence
 
@@ -144,11 +146,12 @@ README reads unchanged in meaning, and `host-lifecycle prose` is clean.
 
 ### Wire the front-door check {#wire-the-check}
 
-Wire `front-door --check` into the agentic-host verify recheck, where the spine
-sources live, so a spine move that stales the front door is caught (a deliberately
-staled section fails the check). The front-door repo keeps its plan/0038 prose gate;
-it cannot run the coverage check itself, since it does not carry the sources. The
-whole-suite CI is green.
+Wire `front-door --check` as a step in the agentic-host CI (the reproducible-build
+job), where the spine sources are materialized, so a spine move that stales the front
+door is caught (a deliberately staled section fails the check). It is a separate step,
+not the shared spine recheck, so no adopter without a front door runs it. The
+front-door repo keeps its plan/0038 prose gate; it cannot run the coverage check
+itself, since it does not carry the sources. The whole-suite CI is green.
 
 - depends: #section-and-regenerate
 - verify: attested operator

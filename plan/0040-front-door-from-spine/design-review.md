@@ -89,8 +89,10 @@ prose stays hand-authored and untouched.
 No adopter obligation and no `UPGRADING` ledger entry: most adopters have no front
 door, and the plan/0038 precedent for meta-repo work applies. The check needs the
 spine sources (the manifest and `.host-software`), which live in agentic-host, not
-in the front-door repo. So the binding check runs in agentic-host's verify recheck,
-where the front-door is a materialized component and the sources are present. The
+in the front-door repo. So the binding check runs in agentic-host's CI (the
+reproducible-build job), where the front-door is a materialized component and the
+sources are present. It is a separate CI step rather than the shared spine recheck,
+so no adopter without a front door runs it and no `UPGRADING` entry is owed. The
 front-door repo keeps the prose gate it gained in plan/0038; it cannot run the
 coverage check itself, because it does not carry the sources, and that asymmetry is
 recorded rather than papered over. A `call/` decision records the capability.
@@ -115,5 +117,5 @@ milestone says so plainly rather than claiming a drift-proofing it cannot delive
 Proceed with changes. The generation surface narrows to the stamp block; the
 phases and tools move from prose fragments to coverage against their real homes;
 the pins are de-scoped to authored with a pin-home follow-up; and the binding check
-runs in agentic-host's verify recheck. The milestone then delivers its stated goal
+runs as a step in agentic-host's CI. The milestone then delivers its stated goal
 for every fact that has a home, and is honest about the facts that do not.
