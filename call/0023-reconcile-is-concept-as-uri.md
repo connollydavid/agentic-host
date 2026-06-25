@@ -34,7 +34,7 @@ once at a `{#id}` anchor on a heading (its home) and pointed at with a `[text](F
 link. `reconcile` runs three checks over the tracked docs: link-integrity (every concept
 link resolves to its home), declared-anchor (the link names a real concept), and coverage
 (each project-local home names its full `.host-software` set, so a dropped tool fails by
-absence). A home is a heading ending in `{#id}` (mdBook honors no other placement) and its
+absence). A home is a heading ending in `{#id}` (the placement mdBook honors) and its
 section runs to the next heading of the same or higher level.
 
 The inline annotation is deprecated: it keeps checking during the transition and is warned,
