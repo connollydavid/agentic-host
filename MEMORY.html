@@ -1343,6 +1343,22 @@ allowlist" dissent available and not chosen. Ground probe options in the actual 
 asking the model. The run went direct against rope with a real system prompt (the user rejected
 pal, whose injected system prompt caused a format-loop); the <code>10696b8f…</code> rope token worked this
 session (the earlier "confirmed rotated" note was wrong, or it was un-rotated).</p>
+<p><strong>Obligation digests stale on ANY src change, and <code>host-lifecycle release</code> does NOT re-derive them
+(plan/0044, host-lint v0.10.0 → v0.10.1).</strong> Editing <code>src/lib.rs</code> for the prose-mask change staled
+two kani-backed obligations (<code>rule-success.DetectInternalCodeAsName</code>,
+<code>rule-failure.DetectInternalCodeAsName.1</code>, both <code>inputs=src/lib.rs</code>) tracked in
+<code>host-lint.obligations</code> / <code>host-lint.obligations.digests</code>. The release gate runs only
+<code>validate + prose + reconcile</code>, NOT the obligations lane, so v0.10.0 (<code>f1474e8</code>) shipped with stale
+digests and host-lint's OWN CI (the <code>allium</code> job: <code>host-lifecycle obligations host-lint.allium --tests tests --prove src</code>) went red AFTER the tag. Fix: re-derive with
+<code>PATH=&lt;host-prove-release-dir&gt;:$PATH host-lifecycle obligations host-lint.allium --tests tests --prove src --rederive . --record-digests</code> — it needs <strong>host-prove on PATH</strong> (built at
+<code>software/host-prove/main/target/release/host-prove</code>), and <code>--rederive .</code> NOT <code>--rederive src</code>
+(else it joins to <code>src/src/lib.rs</code> and cannot hash). It re-runs the Kani proofs (both SUCCESSFUL
+here) and writes <code>host-lint.obligations.digests</code>. <em><em>Lesson: after editing a host-</em> component's
+source, re-derive obligation digests and commit <code>*.obligations.digests</code> as PART of the release,
+before tagging.</em>* The operator chose to <strong>bump v0.10.1</strong> (a clean patch carrying the fresh digests;
+new artifact <code>941126c9</code>, since the embedded version changes the binary) rather than force-push the
+<code>v0.10.0</code> tag forward (the auto-classifier blocks moving a published tag): <code>v0.10.0</code> stays the
+feature tag at <code>f1474e8</code>, <code>v0.10.1</code> (<code>0c2bfc3</code>) is the pinned release.</p>
 
                     </main>
 

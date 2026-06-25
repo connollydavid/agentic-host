@@ -274,7 +274,7 @@ removes-findings change class, and an adopter reads the masked-modes wording to 
 new reach.</li>
 </ul>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
-<p>complete, released as host-lint v0.10.0 (2026-06-25; <code>f1474e8</code>, artifact <code>5106ee7a</code>). The
+<p>complete, released as host-lint v0.10.1 (2026-06-25; <code>0c2bfc3</code>, artifact <code>941126c9</code>). The
 <code>--prose</code> and <code>--docs</code> lanes consult the per-repo LEXICON: <code>scan_prose_text</code> masks a declared
 phrase with the naming lane's <code>mask_allowed</code> before both the per-tell scan and the document
 density score, so a declared <code>rehost harness</code> clears the trope on <code>harness</code> within that phrase
@@ -284,7 +284,10 @@ word boundary, and the abuse-bounding confirmed, with the dissent option availab
 chosen. The first abuse-guard probe was contaminated by an option asserting a multi-word rule
 the tool does not enforce; it was recorded and discarded, then re-run with honest options.
 <code>call/0029</code> records the decision. No spine change, since the doctrine is met rather than
-changed. host-lint issue #16 is closed. The whole suite is green.</p>
+changed. The <code>src/lib.rs</code> edit staled two Kani-backed obligations (<code>DetectInternalCodeAsName</code>),
+which host-lint's own obligations lane caught after the first tag; the feature shipped as
+v0.10.0, then v0.10.1 re-derived the obligation digests through host-prove and is the pinned
+release. host-lint issue #16 is closed. The whole suite is green.</p>
 
                     </main>
 
