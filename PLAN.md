@@ -19,6 +19,7 @@ The named follow-ups from completed plans, pre-resolved so a scan needs no cross
 | The `next` footgun (connollydavid/host-lifecycle#1): `next` yields `0000` on a dir with no numbered entries | plan/0039 | Done (plan/0041, host-lifecycle v0.26.1): `next` fails closed; the issue is closed. |
 | Enforce full GitHub URLs in place of bare `#N` issue references (a bare `#N` is not a safe full URL) | operator, plan/0042 review | Future plan, not yet cut. |
 | Generalize the front-door check to an opt-in, reusable standalone-document check | plan/0040 review | Now a milestone: plan/0043 (entrance-check); name `entrance` by 4B data; supersedes the agentic-host-local scope of plan/0040. |
+| Retire the `front-door = true` deprecation shim (the parser accepts the legacy flag; the entrance command warns) | call/0027 (plan/0039 deprecate-then-retire) | Tied to plan/0043: retire with a hard-fail once the generalization renames the spine flag and ships the adopter UPGRADING entry. |
 | A structured pin home so the front-door version pins become drift-proof (they have no canonical source today) | plan/0040 review | Future plan, not yet cut. |
 
 Two ideas were deliberately declined and should not be reopened: a project-local ban surface (speculative, recorded in `call/0022`) and a glued hyphen-digit tell form (no `LEXICON` escape exists for it, plan/0034).
