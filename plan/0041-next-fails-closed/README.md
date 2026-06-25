@@ -49,7 +49,7 @@ explicit affordance is added then, not pre-emptively.
 ## Build sequence
 
 The build sequence as a task graph (plan/0042): each entry is an anchored task.
-The milestone is open, so no task is built yet, and the chain is linear.
+The chain is linear, and each task carries a receipt in `.host-task-receipts`.
 
 ### Gather the failure-form data {#gather-data}
 
@@ -101,5 +101,16 @@ Close connollydavid/host-lifecycle#1 with the release reference.
 
 ## Status
 
-Open, ready to build. Operator ruling recorded (fail closed; the form by 4B data).
-Independent of plan/0040.
+complete, released as host-lifecycle v0.26.1 (2026-06-25; `2f606e29`, artifact
+`adf5c10a`). `next` fails closed: a non-directory or a directory with no `NNNN-slug`
+entries exits non-zero (code `2`) with a diagnostic and a did-you-mean drawn from the
+known rooms, instead of the silent `0000` fallback that returned a plausible wrong
+number for a typo'd or non-room path. The fresh-empty-room case folds into fail-closed
+with no special flag. The form was settled by a Qwen-3.5-4B (Fen) ergonomics check
+(gather-data.md): the weak agent recovered the intended room from the diagnostic and
+recognized the empty room as a first-entry case. `call/0025` records the decision; a
+unit test covers a populated room (unchanged), an empty directory, a missing path, and
+the host root. Re-pinned, release receipt recorded, CI install pins bumped; `software
+--check` and `--verify-build` green; connollydavid/host-lifecycle#1 closed. The build
+sequence is dogfooded as an anchored receipted task graph (each of the five tasks
+carries a `.host-task-receipts` receipt).
