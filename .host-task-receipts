@@ -18,3 +18,10 @@
     evidence = call/0025-next-fails-closed.md written and accepted; host-lifecycle validate call/ = ok; prose clean
     tool = host-lifecycle@0.26.0
     recorded = 2026-06-25
+
+[receipt "plan/0041#release-and-re-pin"]
+    disposition = done
+    verify = attested operator
+    evidence = host-lifecycle v0.26.1 released (commit 2f606e29, tag v0.26.1); .host-software re-pinned + release receipt recorded; software --check green and --verify-build reproduces artifact adf5c10a offline; 3 CI install pins bumped (7b1ffaa)
+    tool = host-lifecycle@0.26.1
+    recorded = 2026-06-25
