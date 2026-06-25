@@ -34,7 +34,7 @@ reads `front-door = true` is silently demoted to a component, the silent failure
   keeps working rather than dropping to a component; the `entrance` command warns and
   names the rename, so the old spelling never passes silently. The shim is slated for
   removal a release later. Released as host-lifecycle v0.28.1.
-- Comments read forward-looking, naming `entrance`; the migration shim is the one place
+- Comments stay forward-looking and name `entrance`; the migration shim is the one place
   the old spelling lives.
 - The scope stays agentic-host-local. No adopter declares an entrance, so no `UPGRADING`
   entry is owed; the generalization that would make entrances adopter-facing stays with
