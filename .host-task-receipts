@@ -11,3 +11,10 @@
     evidence = cargo test: 101 passed (incl. next_fails_closed_on_numberless_dirs); cargo clippy clean; built-binary check: next . exits 2 with a did-you-mean for a real room, next plan unchanged
     tool = host-lifecycle@0.26.0
     recorded = 2026-06-25
+
+[receipt "plan/0041#record-the-call-decision"]
+    disposition = done
+    verify = host-lifecycle validate call/
+    evidence = call/0025-next-fails-closed.md written and accepted; host-lifecycle validate call/ = ok; prose clean
+    tool = host-lifecycle@0.26.0
+    recorded = 2026-06-25
