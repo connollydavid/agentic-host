@@ -52,3 +52,9 @@ fail-closed `next` decision (plan/0041). The convention wording is clear enough 
 agent to route a new error, so the one-line comment is safe to write into the generalization
 release. The second run hit the documented pal format-loop after it converged, so the
 reasoning before the loop is what counts here.
+
+The code review of the implementation (`code-review.md`) refined the framing: the tool's
+established convention is issues-found versus cannot-proceed, so a `--check` drift exits `1`
+(the issue the check finds) and a cannot-proceed input exits `2` (the no-entries case above).
+The probe still shows a weak agent routes a stated convention correctly; the comment shipped is
+worded to the established convention.

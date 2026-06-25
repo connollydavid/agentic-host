@@ -128,8 +128,8 @@ host-template replaces the `front-door = true` prose with the `[entrance]` stanz
 fields, and ships an adopter `UPGRADING` ledger entry that migrates a legacy per-member
 marker to the stanza, whose verify post-condition holds `entrance --check`, `reconcile`, and
 `software --check` green so a misapplied migration shows loudly at apply time. The exit-code
-convention comment (exit `1` an unexpected fault, exit `2` an expected logic error),
-validated in `gather-data.md`, folds into the same release.
+convention comment (exit `1` for the issues a command finds, exit `2` when it cannot proceed
+on its input), refined by the code review in `code-review.md`, folds into the same release.
 
 ## Build sequence
 
