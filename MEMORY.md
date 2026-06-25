@@ -1002,3 +1002,50 @@ when hand-typing; `tasks --new` carries the anchor (the fill-in-the-blank fold-b
 residual slip (e.g. over-qualifying a local ref) fails loud as a dangling-dependency HAZARD. Frame
 authoring as the prerequisite question ("what must finish first?"), never "what runs in parallel?"
 See [[qwen-4b-weak-agent-eval]].
+
+## plan/0041 complete — next fails closed (host-lifecycle v0.26.1, 2026-06-25)
+
+`host-lifecycle next <dir>` silently returned `0000` when pointed at a directory with no
+`NNNN-slug` entries (the host root, a typo, an empty room), so a garbled argument produced a
+plausible-but-wrong number. Now it fails closed: a non-directory or a numberless directory exits
+non-zero (code 2, the tool's existing path-error code) with a diagnostic and a did-you-mean drawn
+from the *known rooms* (so a generated/build dir like `book/` is never suggested). The
+fresh-empty-room case folds into fail-closed with no special flag.
+
+**The form was set by a real Qwen-3.5-4B (Fen) ergonomics check, via pal.** The rope HTTPS token had
+rotated (401), so the run went through the **pal MCP front-end** (`mcp__pal__chat`, model `qwen3.5-4b`,
+same backend at `http://127.0.0.1:4001/v1`, framed-as-user-content) — a working fallback when rope's
+bearer is stale; ask the user for the new rope token only when a true system prompt is needed. Fen
+recovered the intended room from every candidate form and preferred the did-you-mean line, and
+recognized the empty room as a first-entry case unaided (no affordance needed). `call/0025`; closed
+connollydavid/host-lifecycle#1. Dogfooded as a receipted task graph (plan/0042).
+
+## plan/0040 complete — the front-door check, re-scoped by adversarial review (host-lifecycle v0.27.0, 2026-06-25)
+
+The single-file front door (the `host` repo, the `.host-software` member marked `front-door = true`)
+restates the spine and is outside any host's verify gate, so it stales silently (it had already
+dropped the `release` phase). The original plan was to *generate* its spine-derived sections from
+**hand-authored "front-door fragments" carried in the template**.
+
+**The adversarial review killed that mechanism (two independent lenses, unanimous): a template
+fragment is a SECOND SOURCE OF TRUTH.** `front-door --check` would prove `README == regenerate(fragment)`
+and never `fragment == CLAUDE.md` — it relocates the drift rather than removing it, the exact
+self-blindness reconcile (plan/0036) closes, one layer up. Proven by two live drifts: the omitted
+`release` phase, and the version pins (Rust/allium/TLA+/Temurin), which have **no structured canonical
+home at all** (scattered across prose + per-component CI YAML inside materialized worktrees).
+
+**Re-scope (the lesson): generate ONLY from structured data the tool already reads.** The shipped
+`front-door`/`front-door --check`: (a) **coverage** of the lifecycle phases against `lifecycle.manifest`
+(checked as a backtick token, since "release" recurs in prose like "GitHub releases") and of the wired
+tools against `.host-software` `[verification]` drivers + the lifecycle engine — the plan/0039
+coverage bite, applied to a link-free doc; (b) byte-exact **generation** of the `.host` stamp block
+from the tool's format. The pins/lanes-rule/tool-prose have no home and stay **authored, not gated** (a
+structured pin home is a named follow-up); don't pretend a prose fragment makes them drift-proof.
+
+**Wiring is agentic-host-local: a separate step in the reproducible-build CI** (where the spine sources
+are materialized), NOT the shared spine recheck — so no adopter without a front door runs it and no
+UPGRADING entry is owed. The front-door repo can't run the check itself (it carries neither the
+manifest nor `.host-software`); that asymmetry is recorded. `call/0026`. Dogfooded as a receipted task
+graph. **General lesson: a generator is drift-proof only for facts with a real structured source; for
+sourceless facts, coverage or an honest "authored, not gated" beats a fake generator that gives false
+assurance.** See [[reconcile-moves-to-concept-uri]].
