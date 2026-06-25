@@ -6785,6 +6785,34 @@ front-door" provenance asides — I had added several and was told to strip them
 one place the old spelling lives ("let migration deal with transition"). <strong>Lesson: a rename with no
 alias OWES a migration</strong> — without the shim a stray <code>front-door = true</code> silently becomes a component (a
 confusing HAZARD), the silent failure plan/0039's fail-safe forbids.</p>
+<p><strong>plan/0043 COMPLETE: the entrance check generalized to a singleton <code>[entrance]</code> stanza (host-lifecycle
+v0.29.0, 2026-06-25).</strong> Any project declares ONE entrance in a <code>[entrance]</code> stanza in <code>.host-software</code>:
+<code>member</code> (the <code>[software]</code> member it belongs to, set apart from <code>components</code>), <code>document</code> (the file within
+it, default <code>README.md</code>, so a <code>SKILL.md</code> or a landing page is reached by path), <code>restates</code> (<code>true</code> for
+all, or a subset of the closed vocabulary <code>phases</code>/<code>tools</code>/<code>stamp</code>). <code>host-lifecycle entrance --check</code>
+holds it complete against the declared concepts; the standalone sibling of <code>reconcile</code> (reconcile =
+pointers for linkable docs; entrance = coverage + generation for self-contained docs). Spine doctrine +
+adopter UPGRADING entry in host-template <code>ba86125</code>; agentic-host migrated its <code>.host-software</code> from the
+legacy per-member <code>entrance = true</code> to the stanza. <code>call/0028</code> records it; supersedes call/0026 scope,
+completes call/0027.</p>
+<p><strong>The journey (operator-shaped):</strong> the three-reviewer design review returned RE-SCOPE (defer the
+generalization); the <strong>operator OVERRULED → EXPAND</strong> (see [[review-findings-are-requirements-not-descope]]).
+A three-reviewer <strong>code review</strong> of the diff then caught TWO blocking defects before release: (1) the parse
+<code>problems</code> field reached only the <code>entrance</code> command, so a typo'd <code>member</code> left the real front door in
+<code>components</code> and reconcile demanded STRUCTURE.md name it — the call/0027 silent demotion RELOCATED to
+another consumer; fix = surface <code>problems</code> in <code>reconcile</code> too. (2) an empty <code>restates =</code> parsed to "check
+nothing" and reported clean (fail-open); fix = a problem. <strong>Lesson: a parse-<code>problems</code> guard must fire in
+EVERY consumer of the parsed facts, not just the command that owns the feature.</strong></p>
+<p><strong>Two gotchas worth keeping:</strong> (a) <strong>UPGRADING entry key must be a PUSHED commit.</strong> I keyed it to the
+pre-amend SHA (dangling, never pushed); <code>upgrade</code>/CI resolve the key by git ancestry, so a fresh clone
+can't find it. Fix = re-key to the pushed doctrine commit. Don't amend-then-key; commit the doctrine,
+push, THEN key the entry to that pushed SHA. (b) <strong>exit-code convention: the codebase is the standard
+linter one</strong> — <code>0</code> clean, <code>1</code> the check found drift/HAZARDs, <code>2</code> cannot-proceed-on-input (missing/malformed
+file, <code>next</code> numberless dir). The earlier #6/gather-data framing ("1=unexpected, 2=expected-logic", so a
+<code>--check</code> drift → 2) mis-described the 29 <code>exit(1)</code> sites; the code comment + gather-data were corrected to
+the real convention rather than changing the code. (c) <strong>The entrance is the single set-apart entry point</strong>
+(a non-component member); a doc INSIDE a real tool component is not the singleton entrance (a recorded
+boundary, not a code change).</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
