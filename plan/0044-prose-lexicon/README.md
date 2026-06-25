@@ -122,7 +122,7 @@ whole suite is green.
 
 ## Status
 
-complete, released as host-lint v0.10.0 (2026-06-25; `f1474e8`, artifact `5106ee7a`). The
+complete, released as host-lint v0.10.1 (2026-06-25; `0c2bfc3`, artifact `941126c9`). The
 `--prose` and `--docs` lanes consult the per-repo LEXICON: `scan_prose_text` masks a declared
 phrase with the naming lane's `mask_allowed` before both the per-tell scan and the document
 density score, so a declared `rehost harness` clears the trope on `harness` within that phrase
@@ -132,4 +132,7 @@ word boundary, and the abuse-bounding confirmed, with the dissent option availab
 chosen. The first abuse-guard probe was contaminated by an option asserting a multi-word rule
 the tool does not enforce; it was recorded and discarded, then re-run with honest options.
 `call/0029` records the decision. No spine change, since the doctrine is met rather than
-changed. host-lint issue #16 is closed. The whole suite is green.
+changed. The `src/lib.rs` edit staled two Kani-backed obligations (`DetectInternalCodeAsName`),
+which host-lint's own obligations lane caught after the first tag; the feature shipped as
+v0.10.0, then v0.10.1 re-derived the obligation digests through host-prove and is the pinned
+release. host-lint issue #16 is closed. The whole suite is green.
