@@ -1187,6 +1187,45 @@ when hand-typing; <code>tasks --new</code> carries the anchor (the fill-in-the-b
 residual slip (e.g. over-qualifying a local ref) fails loud as a dangling-dependency HAZARD. Frame
 authoring as the prerequisite question ("what must finish first?"), never "what runs in parallel?"
 See [[qwen-4b-weak-agent-eval]].</p>
+<h2 id="plan0041-complete--next-fails-closed-host-lifecycle-v0261-2026-06-25"><a class="header" href="#plan0041-complete--next-fails-closed-host-lifecycle-v0261-2026-06-25">plan/0041 complete — next fails closed (host-lifecycle v0.26.1, 2026-06-25)</a></h2>
+<p><code>host-lifecycle next &lt;dir&gt;</code> silently returned <code>0000</code> when pointed at a directory with no
+<code>NNNN-slug</code> entries (the host root, a typo, an empty room), so a garbled argument produced a
+plausible-but-wrong number. Now it fails closed: a non-directory or a numberless directory exits
+non-zero (code 2, the tool's existing path-error code) with a diagnostic and a did-you-mean drawn
+from the <em>known rooms</em> (so a generated/build dir like <code>book/</code> is never suggested). The
+fresh-empty-room case folds into fail-closed with no special flag.</p>
+<p><strong>The form was set by a real Qwen-3.5-4B (Fen) ergonomics check, via pal.</strong> The rope HTTPS token had
+rotated (401), so the run went through the <strong>pal MCP front-end</strong> (<code>mcp__pal__chat</code>, model <code>qwen3.5-4b</code>,
+same backend at <code>http://127.0.0.1:4001/v1</code>, framed-as-user-content) — a working fallback when rope's
+bearer is stale; ask the user for the new rope token only when a true system prompt is needed. Fen
+recovered the intended room from every candidate form and preferred the did-you-mean line, and
+recognized the empty room as a first-entry case unaided (no affordance needed). <code>call/0025</code>; closed
+connollydavid/host-lifecycle#1. Dogfooded as a receipted task graph (plan/0042).</p>
+<h2 id="plan0040-complete--the-front-door-check-re-scoped-by-adversarial-review-host-lifecycle-v0270-2026-06-25"><a class="header" href="#plan0040-complete--the-front-door-check-re-scoped-by-adversarial-review-host-lifecycle-v0270-2026-06-25">plan/0040 complete — the front-door check, re-scoped by adversarial review (host-lifecycle v0.27.0, 2026-06-25)</a></h2>
+<p>The single-file front door (the <code>host</code> repo, the <code>.host-software</code> member marked <code>front-door = true</code>)
+restates the spine and is outside any host's verify gate, so it stales silently (it had already
+dropped the <code>release</code> phase). The original plan was to <em>generate</em> its spine-derived sections from
+<strong>hand-authored "front-door fragments" carried in the template</strong>.</p>
+<p><strong>The adversarial review killed that mechanism (two independent lenses, unanimous): a template
+fragment is a SECOND SOURCE OF TRUTH.</strong> <code>front-door --check</code> would prove <code>README == regenerate(fragment)</code>
+and never <code>fragment == CLAUDE.md</code> — it relocates the drift rather than removing it, the exact
+self-blindness reconcile (plan/0036) closes, one layer up. Proven by two live drifts: the omitted
+<code>release</code> phase, and the version pins (Rust/allium/TLA+/Temurin), which have <strong>no structured canonical
+home at all</strong> (scattered across prose + per-component CI YAML inside materialized worktrees).</p>
+<p><strong>Re-scope (the lesson): generate ONLY from structured data the tool already reads.</strong> The shipped
+<code>front-door</code>/<code>front-door --check</code>: (a) <strong>coverage</strong> of the lifecycle phases against <code>lifecycle.manifest</code>
+(checked as a backtick token, since "release" recurs in prose like "GitHub releases") and of the wired
+tools against <code>.host-software</code> <code>[verification]</code> drivers + the lifecycle engine — the plan/0039
+coverage bite, applied to a link-free doc; (b) byte-exact <strong>generation</strong> of the <code>.host</code> stamp block
+from the tool's format. The pins/lanes-rule/tool-prose have no home and stay <strong>authored, not gated</strong> (a
+structured pin home is a named follow-up); don't pretend a prose fragment makes them drift-proof.</p>
+<p><strong>Wiring is agentic-host-local: a separate step in the reproducible-build CI</strong> (where the spine sources
+are materialized), NOT the shared spine recheck — so no adopter without a front door runs it and no
+UPGRADING entry is owed. The front-door repo can't run the check itself (it carries neither the
+manifest nor <code>.host-software</code>); that asymmetry is recorded. <code>call/0026</code>. Dogfooded as a receipted task
+graph. <strong>General lesson: a generator is drift-proof only for facts with a real structured source; for
+sourceless facts, coverage or an honest "authored, not gated" beats a fake generator that gives false
+assurance.</strong> See [[reconcile-moves-to-concept-uri]].</p>
 
                     </main>
 
