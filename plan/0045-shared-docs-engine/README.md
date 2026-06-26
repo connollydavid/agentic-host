@@ -130,8 +130,9 @@ clean and the whole suite is green.
 
 ## Status
 
-complete, released as host-lint v0.10.2 (`5a9d2c5`, artifact `85c1fc58`) and host-lifecycle
-v0.30.1 (`46d481c`, artifact `23c27bff`, on `vendor-v2` sha `4e49536b`). host-lint's
+complete, released as host-lint v0.10.3 (`63348a6`, artifact `753ac4f6`) and host-lifecycle
+v0.30.1 (`46d481c`, artifact `23c27bff`, on `vendor-v2` sha `4e49536b`); host-lifecycle embeds the
+host-lint library at v0.10.2 (`5a9d2c5`), which is engine-identical to v0.10.3. host-lint's
 `Lexicon`, `load_lexicon`, and `run_docs` are public library items; its binary and
 host-lifecycle's `prose_audit` call the same engine, so the embedded prose recheck cannot lag
 a future host-lint change. The fixture confirms the fix end to end: with the LEXICON the
@@ -141,3 +142,12 @@ offline release build sees host-lint v0.10.2; host-lint stays on `vendor-v1`. Th
 install pins (agentic-host reproducible-build and mdbook, host-template and host prose) move to
 v0.30.1. No spine change, since the doctrine is met rather than changed. `software --check` and
 the fixture are green; connollydavid/host-lifecycle#2 is closed.
+
+host-lint was first tagged v0.10.2 at `5a9d2c5`, but the `src/lib.rs` edit staled its two kani
+obligation digests (`DetectInternalCodeAsName`), so that tag's CI failed the obligations staleness
+lint (the kani proofs and all six binaries passed). The digests were re-derived by fingerprinting
+the new source (`git hash-object src/lib.rs` into `host-lint.obligations.digests`), which is
+artifact-preserving because the ledger is not compiled, and promoted into a clean v0.10.3 tag, the
+pinned release. v0.10.2 stays a superseded tag. host-lifecycle keeps embedding the host-lint
+library at `5a9d2c5` (engine-identical to v0.10.3), so no vendor regeneration or host-lifecycle
+re-release was needed.
