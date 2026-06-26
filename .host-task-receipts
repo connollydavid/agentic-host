@@ -158,3 +158,38 @@
     evidence = host-lint v0.10.1@941126c9 (commit 0c2bfc3, tag pushed); feature shipped as v0.10.0 then v0.10.1 re-derived the staled DetectInternalCodeAsName obligation digests; .host-software re-pinned; receipt recorded; host-lint #16 closed
     tool = host-lifecycle@0.30.0
     recorded = 2026-06-25
+
+[receipt "plan/0045#reproduce"]
+    disposition = done
+    verify = attested operator
+    evidence = fixture diverges: host-lint --docs masks the declared phrase (exit 0) while host-lifecycle prose warns (exit 3) on the same repo; root cause is embedded host_lint v0.8.1 whose scan_prose_text takes no allowlist
+    tool = host-lifecycle@0.30.1
+    recorded = 2026-06-26
+
+[receipt "plan/0045#share-engine"]
+    disposition = done
+    verify = cd software/host-lint/main && cargo test
+    evidence = host-lint v0.10.2@5a9d2c5: Lexicon/load_lexicon/run_docs public in lib, binary calls them, run_docs returns Result; cargo test green (75 unit incl 2 new + integration), clippy clean; --docs behaviour byte-identical
+    tool = host-lifecycle@0.30.1
+    recorded = 2026-06-26
+
+[receipt "plan/0045#consume-engine"]
+    disposition = done
+    verify = cd software/host-lifecycle/main && cargo test
+    evidence = host-lifecycle host-lint dep bumped to v0.10.2; prose_audit calls the shared loader+walk; cargo test green (103 incl new prose_audit_honours_lexicon_masking); fixture exits 0 with LEXICON, 3 without
+    tool = host-lifecycle@0.30.1
+    recorded = 2026-06-26
+
+[receipt "plan/0045#vendor-v2"]
+    disposition = done
+    verify = attested operator
+    evidence = vendor-v2 published on host-lint releases (sha 4e49536b) covering host-lint v0.10.2 source; host-lifecycle deps-bundle re-pinned in .host-software + deps-bundle.lock; offline --network none release build reproduced hash 23c27bff
+    tool = host-lifecycle@0.30.1
+    recorded = 2026-06-26
+
+[receipt "plan/0045#release-and-close"]
+    disposition = done
+    verify = attested operator
+    evidence = host-lint v0.10.2 + host-lifecycle v0.30.1 released and tagged; .host-software re-pinned; 5 CI install pins bumped; release receipts recorded; software --check clean; host-lifecycle#2 closed
+    tool = host-lifecycle@0.30.1
+    recorded = 2026-06-26
