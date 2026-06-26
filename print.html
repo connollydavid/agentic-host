@@ -7715,6 +7715,47 @@ identical. Bumping them would cascade two more repos for zero behavioral change.
 moment they exist (gitignore a genuine scratch file). The <code>verify</code> recheck in <code>software --check</code>
 picks this up too.</li>
 </ul>
+<h2 id="plan0048--a-declared-rungs-re-deriver-must-be-runnable-corrects-the-wsl-enoent-misdiagnosis"><a class="header" href="#plan0048--a-declared-rungs-re-deriver-must-be-runnable-corrects-the-wsl-enoent-misdiagnosis">plan/0048 — a declared rung's re-deriver must be runnable; CORRECTS the WSL-ENOENT misdiagnosis</a></h2>
+<p><strong>The misdiagnosis (lines 667, 669, 1264 are WRONG and superseded by this entry).</strong> Those entries
+say <code>host-prove</code>'s local spawn of <code>cargo kani</code> fails with <code>ENOENT</code> on the <code>/mnt/c</code> WSL mount, a
+host-prove-invocation gap blamed on the filesystem, repeated three times across two weeks. <strong>That is
+false.</strong> The re-derivation runs fine on <code>/mnt/c</code>. The real causes were two: (1) <strong>host-prove was never
+installed on PATH</strong> by the local setup — host-lint's CI installs it, but the fresh-clone discipline
+never did, so <code>host-prove</code> was <code>command not found</code> and the spawn error read as a filesystem <code>ENOENT</code>;
+and (2) the <code>obligations --rederive</code> invocation handed host-prove <code>src/</code> rather than the <strong>crate root</strong>
+(host-prove's <code>run_kani</code> does <code>current_dir(dir)</code>, so <code>--dir</code> must be the dir holding <code>Cargo.toml</code>).
+Once host-prove is installed (<code>cargo install --path software/host-prove/main --root ~/.local --force</code>)
+and pointed at the crate root, <code>host-prove kani --harness ... --dir software/host-lint/main</code> →
+<code>SUCCESSFUL</code>, and <code>host-lifecycle obligations host-lint.allium --tests tests --rederive .</code> re-derives
+<strong>both rungs, 50 dispositioned, clean, on <code>/mnt/c</code></strong>.</p>
+<p><strong>Why it hid for two weeks (call/0018, turned on the re-deriver itself).</strong> The kani proof is verified
+by a <em>second</em> path — CI runs <code>cargo kani</code> directly and re-derives there — so the local re-derivation's
+brokenness was invisible, and a <code>command not found</code> reads as a filesystem fault, so it was filed as a
+WSL problem and never re-opened. The re-deriver was referenced, materialized, and its CI lane present,
+yet <strong>not runnable on the box that needed it</strong>: available but never discharged, the very <code>call/0018</code>
+distinction (AVAILABLE ≠ DISCHARGED).</p>
+<p><strong>The migration (not a tactical fix to this one host).</strong> Generalized the spine invariant "declare a
+deeper rung, oblige its lane" into "oblige a lane that is <strong>runnable</strong>, not merely present in CI
+config." <code>software --check</code> (host-lifecycle <strong>v0.31.0</strong>, pin <code>3958b62</code>, artifact <code>fe428240</code>) now
+probes that a declaring component's re-deriver (the shared driver host-prove) <strong>executes</strong> — a cheap
+<code>--help</code> probe, never the proof — and HAZARDs when it cannot, beside the existing no-CI-lane HAZARD.
+Narrowed to host-prove only (NOT the specific verifier): TLAPS is CI-only by design (plan/0023) and
+the apalache JVM is optional locally. Decoupled into its own <code>tier_rederiver_problems</code> (the probe
+inside <code>spec_lane_problems</code> broke <code>tier_lanes_are_opt_in_and_inert</code>'s exact-count asserts; that fn
+stays pure/portable). 105 tests green with host-prove hidden; the gate HAZARDs correctly when it is.</p>
+<p><strong>Earned digest, not hand-edited (the born-red root).</strong> The recurring born-red was the <em>hand-recorded</em>
+digest standing in for a proof that no longer ran. The digest a rung records is now <strong>earned</strong> only by
+<code>obligations --rederive --record-digests</code> (records on a pass), never a hand edit, so the cheap offline
+staleness check soundly means a passing re-derivation on the current code. Validated with Fen (real
+qwen3.5-4b, neutral framing after discarding a leading round): a PATH probe alone is insufficient
+(six of eight see on-PATH ≠ works), a recorded pass on the current code is best (eight of eight); the
+4B reconstructed call/0018 from first principles.</p>
+<p><strong>Spine + ledger.</strong> <code>host-template/CLAUDE.md</code> doctrine widened (verify phrase <strong>"a re-deriver that
+runs"</strong>); one independent version-gated <code>UPGRADING</code> entry keyed <code>6174996</code> (<code>requires = host-lifecycle v0.31.0</code>), pushed at host-template <code>4182df9</code>. agentic-host advanced its host-template
+pointer so the entry reads <strong>PENDING</strong> here; <strong>adoption is deferred to the operator trigger</strong> "Read
+and follow https://github.com/connollydavid/host to keep this repository an agentic project" — which
+records the entry, installs host-prove in the fresh-clone setup and the CI that runs <code>software --check</code>, and bumps the CI host-lifecycle pins. Until then host-prove is installed locally only, so
+local <code>software --check</code> is green while the ledger entry stays unrecorded.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
