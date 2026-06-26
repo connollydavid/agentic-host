@@ -228,3 +228,24 @@
     evidence = host-lifecycle v0.30.2 (f2b4607, artifact 3a9e59ce, vendor-v2) released+tagged; .host-software re-pinned; release receipt recorded; host-template pointer -> cecb0eb; upgrade --record e068828; mdbook.yml publish_dir -> mdBook/out + rev v0.30.2; reproducible-build.yml rev v0.30.2; software --check clean
     tool = host-lifecycle@0.30.2
     recorded = 2026-06-26
+
+[receipt "plan/0047#investigate-decide"]
+    disposition = done
+    verify = attested operator
+    evidence = reproduced: untracked authored .md skipped by git ls-files walk (clean), staged/committed flagged; skip is intentional (excludes generated/vendored/worktrees) and staging closes it; cast (Bly overstates-completeness, Fen silent-trap, Orin fail-unsafe) frames silent-partial-clean as a defect; operator chose fix (a) widen the walk
+    tool = host-lifecycle@0.30.2
+    recorded = 2026-06-26
+
+[receipt "plan/0047#scan-working-tree"]
+    disposition = done
+    verify = cd software/host-lint/main && cargo test
+    evidence = run_docs walks git ls-files (tracked+staged) + git ls-files --others --exclude-standard (untracked-non-ignored) via a git_paths helper; disjoint sets, no dedup; per-file logic unchanged (.md only, .host-lintignore, symlink skip); new test run_docs_scans_untracked_authored_but_not_gitignored; cargo test 76 pass, clippy -D warnings clean
+    tool = host-lifecycle@0.30.2
+    recorded = 2026-06-26
+
+[receipt "plan/0047#validate"]
+    disposition = done
+    verify = attested operator
+    evidence = CLI: #17 repro untracked authored.md flagged (exit 3), gitignored gen excluded; agentic-host: git ls-files --others --exclude-standard finds no .md (generated mdBook/+book.toml gitignored), --docs exit 0 -> CI unchanged. Fen (real qwen3.5-4b via rope): new walk catches unstaged doc 5/5, old walk misses 3/3. Cast Bly/Fen/Mara/Orin served; no spine change
+    tool = host-lifecycle@0.30.2
+    recorded = 2026-06-26
