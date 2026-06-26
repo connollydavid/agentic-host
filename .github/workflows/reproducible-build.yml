@@ -21,7 +21,11 @@ jobs:
         with:
           submodules: true # host-template carries the lifecycle.manifest the receipt gate reads
       - name: Install host-lifecycle (released pinned; ships the manifest + receipt gate)
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 0de2843781b398147c73fce4d0aa818c94b16242
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 3958b6248eaf3e7ad6b017fc597cd7e30f17a59b
+      - name: Install host-prove (the shared re-deriver the runnability gate probes — plan/0048)
+        # software --check (>= v0.31.0) HAZARDs a declared deeper rung whose re-deriver does not
+        # run; agentic-host declares kani:/apalache:/tlaps:, so the gate needs host-prove on PATH.
+        run: cargo install --git https://github.com/connollydavid/host-prove --rev 3d1bba79e817f43cdc64ed0e7438e7fdeeae7378
       - name: Materialize the software (bare store + worktrees)
         run: host-lifecycle software --materialize .
       - name: Check the software (pins, spec lanes, obligations, no HAZARD)
@@ -46,7 +50,7 @@ jobs:
         with:
           submodules: true # allium + specula + host-template arrive by submodule
       - name: Seed host-lifecycle by its recorded pin (the materializer cannot materialize itself)
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 0de2843781b398147c73fce4d0aa818c94b16242
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 3958b6248eaf3e7ad6b017fc597cd7e30f17a59b
       - name: Materialize every .host-software component
         run: host-lifecycle software --materialize .
       - name: Wire the skill links from submodules and worktrees
