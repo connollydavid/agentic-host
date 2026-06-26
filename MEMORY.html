@@ -1437,6 +1437,53 @@ so no vendor-v3 and no host-lifecycle re-release; the host-lint TOOL pin (v0.10.
 embedded LIBRARY (v0.10.2) legitimately differ, as host-lifecycle sat on host-lint v0.8.1 while the
 tool was at v0.10.1. <strong>Lesson reinforced: re-derive kani digests BEFORE the first tag</strong> and the whole
 v0.10.x detour disappears. Pinned release is now host-lint <strong>v0.10.3</strong> / <code>63348a6</code> / <code>753ac4f6</code>.</p>
+<h2 id="2026-06-26--plan0046-complete-the-generated-book-moves-to-mdbook-freeing-docs-host-lifecycle3"><a class="header" href="#2026-06-26--plan0046-complete-the-generated-book-moves-to-mdbook-freeing-docs-host-lifecycle3">2026-06-26 — plan/0046 COMPLETE: the generated book moves to mdBook/, freeing docs/ (host-lifecycle#3)</a></h2>
+<p><code>connollydavid/host-lifecycle#3</code> closed. The reporter filed it as "<code>book</code> clobbers a tracked
+<code>docs/</code>" (a destructive-<code>book</code> data-loss bug). The real defect is narrower: <code>host-lifecycle book</code>
+<strong>reserved</strong> <code>docs/</code> as its generated output and wiped it each run (<code>fs::remove_dir_all</code>), which is
+correct-by-contract for a greenfield host (the methodology gitignores <code>docs/</code>), but a <strong>migration
+gap</strong> — <code>classify</code>/<code>adopt</code> never inspect a pre-existing tracked <code>docs/</code>, so a project migrating in
+with hand-written docs there loses them. <strong>Operator reframed it as a location decision</strong> (not a
+<code>book</code> bug, not a classify-guard): move the generated trees off <code>docs/</code> and the footgun dissolves.</p>
+<p><strong>Fix:</strong> <code>host-lifecycle book</code> now writes the generated mdBook source to <code>mdBook/src/</code> and the built
+HTML to <code>mdBook/out/</code>, with <code>book.toml</code> kept at the repo root, so <code>mdbook build</code> still runs from the
+root (<code>book_toml</code> sets <code>src = "mdBook/src"</code> + <code>[build] build-dir = "mdBook/out"</code>). <code>docs/</code> is freed.
+One gitignored <code>mdBook/</code> entry replaces today's three (<code>book.toml</code> stays, <code>/docs/</code> + <code>/book/</code> →
+<code>/mdBook/</code>). Released <strong>host-lifecycle v0.30.2</strong> (<code>f2b4607</code>, artifact <code>3a9e59ce</code>, on vendor-v2 — no
+host-lint dep change, bundle still valid). A regression test (<code>write_book_targets_mdbook_dir_and_ leaves_docs_intact</code>) pins it.</p>
+<p><strong>This was decided with data + the cast (the user's process, run in full):</strong></p>
+<ul>
+<li><strong>Fen (real qwen3.5-4b via rope, true system prompt) is reachable from env now.</strong> The token lives
+in <code>$ROPE_TOKEN</code> (exported from <code>~/.profile</code>, added by the user); the harness snapshots env at
+session start, so <code>set -a; . ~/.profile; set +a</code> reloads it. Read it from env, never ask. Use
+<code>enable_thinking:false</code> via <code>chat_template_kwargs</code> to suppress the always-on <code>&lt;think&gt;</code> (the
+<code>/no_think</code> directive is NOT honored by this server, and the non-thinking <em>sampler</em> alone does not
+disable it). See [[qwen-pal-model-infra]].</li>
+<li><strong>First probe (mdBook idiom) picked <code>src/</code> 4/5; a fair tie-break that also stated the ensemble
+conventions flipped to a consolidated <code>book/</code> 3-2 (4-1 by reasoning).</strong> The reconciler was the fact
+that mdBook's <code>src</code>/<code>build-dir</code> are configurable (we already set <code>src = "docs"</code>), so a custom path
+is NOT "fighting mdBook." Acceptance test: the 4B judged <code>docs/</code> safe under the new layout <strong>5/5</strong>
+and reproduced the footgun on the old layout <strong>3/3</strong> — the weak agent perceives the fix.</li>
+<li><strong>The cast (cast/*.md — Mara/Wren/Bly/Orin/Fen) confirmed the layout and set 4 shipping
+requirements</strong> the naive fix would miss: the adopter <code>UPGRADING</code> entry must be <strong>independent</strong>
+(Bly), <strong>fail-safe</strong> cleanup that re-lists if skipped (Bly), <strong>tool-carried</strong> no hand-edit (Fen),
+and <strong>version-gated</strong> <code>requires</code> the new binary (Orin).</li>
+<li>Operator chose the folder name <strong><code>mdBook/</code></strong> (brand casing) over <code>book/</code>/<code>mdbook/</code>.</li>
+</ul>
+<p><strong>Spine + adoption (host-template <code>e068828</code>):</strong> STRUCTURE.md doctrine + <code>.gitignore</code> (<code>/mdBook/</code>) +
+an <code>UPGRADING</code> entry keyed <code>e068828</code>, <code>independent = true</code>, <code>requires host-lifecycle v0.30.2</code>,
+<code>verify = grep -rqs "mdBook/src" host-template/STRUCTURE.md</code>. <code>call/0014</code> is already
+superseded-by-spine, so no new agentic-host <code>call/</code>. agentic-host adopted it with
+<code>upgrade --record e068828</code> (recorded out-of-order against baseline <code>de8a517</code>, the fail-safe partial
+model). <strong>Gotcha: the UPGRADING rev is a self-referential label</strong> — you cannot key an entry to the
+SHA of the commit that contains it. <code>git commit --amend</code> changes the SHA and orphans the key; the
+clean move is to commit the entry, then re-key it to the pushed revision in a tiny follow-up commit
+(the rev is a label, ordered by file position, ancestry not checked).</p>
+<p><strong>CI:</strong> mdbook.yml <code>publish_dir</code> → <code>./mdBook/out</code> + the generate comment, paired with the
+host-lifecycle rev bump to v0.30.2 (the publish path and the rev are coupled — the new binary writes
+mdBook/out; change them together or the Site publishes an empty dir). reproducible-build.yml rev
+bumped too. plan/0046 dogfooded as 5 anchored receipted tasks. <code>software --check</code> clean; the local
+<code>host-lifecycle book .</code> + <code>mdbook build</code> produced <code>mdBook/out</code>. host-lifecycle#3 closed.</p>
 
                     </main>
 
