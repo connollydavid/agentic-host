@@ -4,23 +4,23 @@
 # The pin replaces a submodule gitlink as the reproducibility anchor.
 [software "host-lint"]
 	url       = https://github.com/connollydavid/host-lint.git
-	pin       = 0c2bfc34889cc45439fc05577ea4e227e84d5f5f
+	pin       = 5a9d2c562c24598999f6909efbdcfb029d40a8ec
 	worktrees =
 	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lint
-	artifact  = target/x86_64-unknown-linux-musl/release/host-lint 941126c92faa7dcabf6c73345dd9191447f8b1d48cdbd127652437c6342f9276
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lint 85c1fc58795cb25ce7b9df00a1267152184a058d12530f88bca050b7389c835a
 	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v1/vendor.tar.gz f11417633fcc05a5b94761963c1a3fdce01777d9a68a32320268f22af3dbfbdf
 	hooks     = pre-commit
 [software "host-lifecycle"]
 	url       = https://github.com/connollydavid/host-lifecycle.git
-	pin       = 94984a11f4d75a861c136051f853afc3d053a506
+	pin       = 46d481cd755302fcd5eaa47ddbbda814b3016567
 	worktrees =
 	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lifecycle
-	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle d0d1be802aca4e7f5963cfd957e95c014f571e1e632ead540fa42e591b6bd934
-	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v1/vendor.tar.gz f11417633fcc05a5b94761963c1a3fdce01777d9a68a32320268f22af3dbfbdf
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle 23c27bff2754061fde95ecb741eab019841940b74662d6d59671a2af2d9f08ab
+	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v2/vendor.tar.gz 4e49536bf1ae45c88c2118f14cf823cf7854e781ec5536ed214afcebe8f8881c
 [software "host-prove"]
 	url       = https://github.com/connollydavid/host-prove.git
 	pin       = 3d1bba79e817f43cdc64ed0e7438e7fdeeae7378
@@ -38,7 +38,7 @@
 	# host-* tools: it is the entrance, not a component (plan/0039). Declared in the
 	# `[entrance]` stanza below (plan/0043).
 	url       = https://github.com/connollydavid/host.git
-	pin       = e73ee98434e9d2b9227f6a1b7c93210652045a6f
+	pin       = 699d423033bb3f04234f7e6c7edb562a9f8f75f6
 	worktrees =
 
 # The single-file entrance (plan/0043): the `host` member's README, held complete against
