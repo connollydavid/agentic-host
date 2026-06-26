@@ -145,4 +145,16 @@ is green and that the Site workflow serves `mdBook/out`.
 
 ## Status
 
-in progress.
+complete, released as host-lifecycle v0.30.2 (`f2b4607`, artifact `3a9e59ce`). `host-lifecycle
+book` writes its generated source to `mdBook/src/` and the built HTML to `mdBook/out/`, with
+`book.toml` kept at the repo root, so `mdbook build` runs from the root unchanged. `docs/` is freed
+for authored content, which closes connollydavid/host-lifecycle#3 at its root: the generator no
+longer reserves `docs/`, so the migration footgun cannot recur and the classify-time guard is
+unnecessary. The spine carries the doctrine and the gitignore (host-template `e068828`) plus an
+independent, version-gated, fail-safe `UPGRADING` entry (`e068828`, requires host-lifecycle
+v0.30.2); agentic-host adopted it through the ledger (`upgrade --record e068828`). The decision was
+settled against the real qwen3.5-4b, which read `docs/` as out of harm's way under the new layout in
+every run and reproduced the footgun on the old layout in every run, and the five cast personas
+confirmed it. A regression test pins the generator to `mdBook/src` and proves an authored `docs/`
+is left intact. `software --check` is clean and the Site workflow serves `mdBook/out`. The whole
+suite is green.
