@@ -1190,3 +1190,56 @@ before tagging.** The operator chose to **bump v0.10.1** (a clean patch carrying
 new artifact `941126c9`, since the embedded version changes the binary) rather than force-push the
 `v0.10.0` tag forward (the auto-classifier blocks moving a published tag): `v0.10.0` stays the
 feature tag at `f1474e8`, `v0.10.1` (`0c2bfc3`) is the pinned release.
+
+## 2026-06-26 — plan/0045 COMPLETE: the embedded prose engine catches up (host-lifecycle#2)
+
+`connollydavid/host-lifecycle#2` closed. plan/0044 gave host-lint's prose lane the LEXICON mask,
+but host-lifecycle runs that lane in-process for its verify-phase prose recheck while pinning the
+`host_lint` crate at **v0.8.1**, whose `scan_prose_text` predates the mask (signature `(input,
+source, matches)`, no allowlist param). So the embedded engine could not consult LEXICON even in
+principle, and an adopter with a legitimate declared domain noun on a governed surface would hit a
+permanently-failing verify recheck (0 flags, advisory warns, `prose` still `exit(3)`). The bug is
+**latent**: NO repo in the tree carries a LEXICON yet, so a constructed fixture (a tracked doc with
+`harness` twice + a sibling LEXICON declaring the phrase) demonstrates it — `host-lint --docs`
+masks (exit 0) while `host-lifecycle prose` warns (exit 3) on the same repo.
+
+**Fix = share the engine into the lib (operator chose shared-lib over replicate-in-host-lifecycle, a
+2-release path over 1, to close the drift CLASS not the instance).** `Lexicon`, `load_lexicon`, and
+`run_docs` moved from host-lint's **binary** (`main.rs`) into the `host_lint` **library** as `pub`
+items; `run_docs` now returns `Result<Vec<Match>,String>` instead of `process::exit` (the binary
+prints+exits, an embedder surfaces it). host-lint's CLI is byte-identical (LEXICON honored exit 0,
+undeclared warn exit 3, git-failure message+exit 2 unchanged). host-lifecycle's `prose_audit`
+shrank to `host_lint::load_lexicon(root).phrases_lc` + `host_lint::run_docs(root,&allow,&ignore)` —
+the hand-reimplemented `--docs` walk is gone, so walk+loader+mask are all shared and cannot drift.
+Released **host-lint v0.10.2** (`5a9d2c5`, artifact `85c1fc58`) and **host-lifecycle v0.30.1**
+(`46d481c`, artifact `23c27bff`).
+
+**The predicted vendor-v2 finally happened.** The 2026-06-22 plan/0032 Cutover note warned "Do NOT
+bump host-lifecycle's host-lint git dep ... Bumping it would force a vendor-v2." This milestone IS
+that bump (host-lint dep `1386e9a` v0.8.1 → `5a9d2c5` v0.10.2), so the shared offline bundle was
+regenerated: `cargo vendor --locked --sync ../../host-lifecycle/main/Cargo.toml vendor` from
+host-lint's manifest, deterministic tar (`--sort=name --mtime=@0 --owner=0 --group=0
+--numeric-owner | gzip -n`), published as **`vendor-v2` on connollydavid/host-lint** (sha
+`4e49536bf1ae45c88c2118f14cf823cf7854e781ec5536ed214afcebe8f8881c`). host-lifecycle's `deps-bundle`
+(`.host-software` + `deps-bundle.lock`) re-pinned to vendor-v2; **host-lint stays on vendor-v1** (its
+closure is unchanged and its build ignores the host-lint-crate entry, so v0.10.2 built fine on v1).
+Two release gotchas hit and resolved: (a) the first `release host-lifecycle` FAILED at the offline
+build because `.host-software` still pointed at vendor-v1 (no host-lint v0.10.2 source) — fix the
+deps-bundle pin BEFORE the release; (b) a release that fails after the version bump leaves
+`Cargo.toml`/`Cargo.lock` bumped (0.30.0→0.30.1), so re-running double-bumps to 0.30.2 — **revert
+the version to 0.30.0 (keeping the dep change) before re-running** so it lands on 0.30.1.
+
+**Vendor-leftover false-HAZARD (new gotcha).** Producing the bundle left `vendor/` in
+`software/host-lint/main` (gitignored). `software --check`'s spec-lane scan (`find_specs`) walks the
+**filesystem, not gitignore**, so it found `vendor/host-grammar/spec/ParallelScan.tla` + the vendored
+`apalache:`/`tlaps:` obligations and raised 3 phantom HAZARDs against host-lint (whose OWN obligations
+are `kani:`-only, identical at both pins). **`rm -rf vendor vendor-config.toml` after producing a
+bundle**, then re-check. Cleared immediately.
+
+Whole-suite: `.host-software` re-pinned (host-lint, host-lifecycle, host); host-template submodule
+pointer + host worktree bumped (their `prose.yml` CI moved `9a1a586` v0.24.2 → v0.30.1); agentic-host
+CI (reproducible-build ×2, mdbook) moved `94984a1` → `46d481c`; release receipts recorded; plan/0045
+build sequence dogfooded as 5 anchored receipted tasks. `software --check` clean (all at pin, no
+hazards); local host-lifecycle reinstalled to v0.30.1. **No spine change** — the doctrine (a
+legitimate token stays in the per-project LEXICON, both lanes) is met, not changed; no UPGRADING
+entry. The deferred follow-up still stands (PLAN.md): enforce full GitHub URLs over bare `#N` refs.
