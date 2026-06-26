@@ -4926,13 +4926,15 @@ HAZARD the migration adds.</li>
 passes; the earned digest and the pluggable re-derivation carry that, as <code>call/0018</code> intends.</li>
 </ul>
 <h2 id="status-9"><a class="header" href="#status-9">Status</a></h2>
-<p>migration built and released; adoption awaits the operator trigger. The runnability gate ships in
-host-lifecycle v0.31.0 (<code>software --check</code> HAZARDs a declared rung whose re-deriver does not execute).
-The spine doctrine and the version-gated <code>UPGRADING</code> entry <code>6174996</code> ("a re-deriver that runs") are
-pushed; <code>.host-software</code> is re-pinned to v0.31.0 and the host-template pointer is advanced, so the
-entry reads PENDING here. The memory misdiagnosis is corrected. The remaining <code>#adopt</code> step (record
-the entry, install host-prove in setup and CI, bump the CI pins) runs on the operator's trigger,
-"Read and follow https://github.com/connollydavid/host to keep this repository an agentic project."</p>
+<p>complete. The runnability gate ships in host-lifecycle v0.31.0 (<code>software --check</code> HAZARDs a declared
+rung whose re-deriver does not execute). The spine doctrine and the version-gated <code>UPGRADING</code> entry
+<code>6174996</code> ("a re-deriver that runs") are pushed; <code>.host-software</code> is re-pinned to v0.31.0. The memory
+misdiagnosis is corrected. On the operator's trigger, "Read and follow
+https://github.com/connollydavid/host to keep this repository an agentic project," agentic-host
+adopted the entry the case-(c) way: <code>upgrade --record 6174996</code> passed its verify and recorded the
+applied claim, host-prove is installed in the fresh-clone setup and in the CI that runs <code>software --check</code>, and both CI host-lifecycle pins are at v0.31.0. <code>software --check</code> is green (the gate reports
+the re-deriver runnable for both declaring components), and the whole suite is green across
+agentic-host, host-lifecycle, and host-template.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
