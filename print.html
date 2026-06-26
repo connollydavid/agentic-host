@@ -7758,6 +7758,21 @@ pointer so the entry reads <strong>PENDING</strong> here; <strong>adoption is de
 and follow https://github.com/connollydavid/host to keep this repository an agentic project" — which
 records the entry, installs host-prove in the fresh-clone setup and the CI that runs <code>software --check</code>, and bumps the CI host-lifecycle pins. Until then host-prove is installed locally only, so
 local <code>software --check</code> is green while the ledger entry stays unrecorded.</p>
+<p><strong>Adopted (the operator triggered it).</strong> Followed the <code>host</code> front-door as a case-(c) upgrade. The
+host-template pointer was already at the target <code>4182df9</code>, so the work was: <code>upgrade --record</code>, install
+host-prove where the gate runs, and bump the CI pins. agentic-host now installs host-prove in the
+fresh-clone setup (<code>cargo install --path software/host-prove/main --root ~/.local</code>, CLAUDE.md) and in
+the reproducible-build CI before <code>software --check</code> (pin <code>3d1bba79</code>), and both CI host-lifecycle pins
+(mdbook.yml + reproducible-build.yml) are at v0.31.0 (<code>3958b62</code>). <code>software --check</code> reports the
+re-deriver runnable for both declaring components; whole-suite CI green on <code>bcf3d75</code>.</p>
+<p><strong>GOTCHA for a future adoption: an all-digit <code>UPGRADING</code> key collides with the ordinal parser.</strong>
+<code>host-lifecycle upgrade --record &lt;id&gt;</code> takes "an unambiguous prefix or a ledger ordinal," and it tries
+the ordinal parse first. The entry key <code>6174996</code> is a git-SHA prefix that happens to be all decimal
+digits, so <code>--record 6174996</code> was read as ordinal 6174996 and failed "out of range (1..=37)." Record
+it by its <strong>ledger ordinal</strong> instead (it was the last entry, position 37: <code>upgrade --record 37 .</code>).
+A key with any hex letter (a-f) would not collide. The applied claim lands in <code>.host-receipts</code> as
+<code>applied = 6174996 recorded=... via=verify</code> (an out-of-order applied entry, not a baseline advance),
+and the <code>.host</code> baseline stays <code>de8a517</code>.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
