@@ -1426,3 +1426,20 @@ and follow https://github.com/connollydavid/host to keep this repository an agen
 records the entry, installs host-prove in the fresh-clone setup and the CI that runs `software
 --check`, and bumps the CI host-lifecycle pins. Until then host-prove is installed locally only, so
 local `software --check` is green while the ledger entry stays unrecorded.
+
+**Adopted (the operator triggered it).** Followed the `host` front-door as a case-(c) upgrade. The
+host-template pointer was already at the target `4182df9`, so the work was: `upgrade --record`, install
+host-prove where the gate runs, and bump the CI pins. agentic-host now installs host-prove in the
+fresh-clone setup (`cargo install --path software/host-prove/main --root ~/.local`, CLAUDE.md) and in
+the reproducible-build CI before `software --check` (pin `3d1bba79`), and both CI host-lifecycle pins
+(mdbook.yml + reproducible-build.yml) are at v0.31.0 (`3958b62`). `software --check` reports the
+re-deriver runnable for both declaring components; whole-suite CI green on `bcf3d75`.
+
+**GOTCHA for a future adoption: an all-digit `UPGRADING` key collides with the ordinal parser.**
+`host-lifecycle upgrade --record <id>` takes "an unambiguous prefix or a ledger ordinal," and it tries
+the ordinal parse first. The entry key `6174996` is a git-SHA prefix that happens to be all decimal
+digits, so `--record 6174996` was read as ordinal 6174996 and failed "out of range (1..=37)." Record
+it by its **ledger ordinal** instead (it was the last entry, position 37: `upgrade --record 37 .`).
+A key with any hex letter (a-f) would not collide. The applied claim lands in `.host-receipts` as
+`applied = 6174996 recorded=... via=verify` (an out-of-order applied entry, not a baseline advance),
+and the `.host` baseline stays `de8a517`.
