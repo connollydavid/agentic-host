@@ -263,3 +263,31 @@
     evidence = agentic-host CI pins (mdbook.yml + reproducible-build.yml x2) -> v0.30.3; host-template/host prose CI left at v0.30.1 (fresh-checkout behavior unchanged by #17); release receipts recorded; software --check clean; host-lint#17 to close
     tool = host-lifecycle@0.30.3
     recorded = 2026-06-26
+
+[receipt "plan/0048#validate-strictness"]
+    disposition = done
+    verify = attested operator
+    evidence = Fen (real qwen3.5-4b, rope, non-leading after discarding a leading round): flaw-spot on PATH check 6/8 see on-PATH != works (version mismatch, wrong args, fake exe returning success); strictness poll 8/8 prefer a recorded pass on the CURRENT code over on-PATH or smoke-run (=the digest earned by a passing re-derivation). Reverses the cheap-PATH-probe proposal toward runnability-that-executes + earned digest
+    tool = host-lifecycle@0.30.3
+    recorded = 2026-06-26
+
+[receipt "plan/0048#runnability-gate"]
+    disposition = done
+    verify = cd software/host-lifecycle/main && cargo test
+    evidence = software --check probes that a declaring component re-deriver (host-prove) executes and HAZARDs when it cannot, decoupled into tier_rederiver_problems (spec_lane_problems kept pure). cd software/host-lifecycle/main && cargo test = 105 passed; integration: HAZARD with host-prove hidden, ok when present
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-26
+
+[receipt "plan/0048#spine-and-release"]
+    disposition = done
+    verify = attested operator
+    evidence = host-template doctrine widened (phrase "a re-deriver that runs") + version-gated UPGRADING entry 6174996 (requires host-lifecycle v0.31.0) pushed at 4182df9. Released host-lifecycle v0.31.0 (3958b62, artifact fe428240); .host-software re-pinned; host-template pointer advanced so the entry is PENDING; MEMORY misdiagnosis corrected (d5e1e37)
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-26
+
+[receipt "plan/0048#diagnose-audit"]
+    disposition = done
+    verify = attested operator
+    evidence = reproduced the false ENOENT: host-prove was command-not-found (not installed) and was handed src/ rather than the crate root; with host-prove installed and --dir at the crate root, host-prove kani returned SUCCESSFUL and obligations --rederive recorded both rungs proved, fifty dispositioned, on /mnt/c. Audit: the local install step was missed (CI installs host-prove, the fresh-clone discipline never did); the WSL-ENOENT was misdiagnosed and repeated three times in memory; available-but-never-discharged locally. The cast settled the migration shape (couple the proxy to the proof)
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-26
