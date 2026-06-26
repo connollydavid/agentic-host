@@ -193,3 +193,31 @@
     evidence = host-lint v0.10.2 + host-lifecycle v0.30.1 released and tagged; .host-software re-pinned; 5 CI install pins bumped; release receipts recorded; software --check clean; host-lifecycle#2 closed
     tool = host-lifecycle@0.30.1
     recorded = 2026-06-26
+
+[receipt "plan/0046#decide-layout"]
+    disposition = done
+    verify = attested operator
+    evidence = Fen (real qwen3.5-4b via rope, true system prompt): fair tie-break favoured consolidation once ensemble conventions stated; acceptance test 5/5 docs-safe under mdBook/ layout, 3/3 footgun under old docs/-as-output; five cast personas confirmed + set 4 UPGRADING requirements
+    tool = host-lifecycle@0.30.1
+    recorded = 2026-06-26
+
+[receipt "plan/0046#book-generator"]
+    disposition = done
+    verify = cd software/host-lifecycle/main && cargo test
+    evidence = write_book -> mdBook/src; book_toml src="mdBook/src" + build-dir="mdBook/out"; help/doc-comments/dry-run/error strings + book_toml test renamed; new regression test write_book_targets_mdbook_dir_and_leaves_docs_intact; cargo test 104 pass, clippy -D warnings clean
+    tool = host-lifecycle@0.30.1
+    recorded = 2026-06-26
+
+[receipt "plan/0046#spine-and-ledger"]
+    disposition = done
+    verify = attested operator
+    evidence = host-template e068828: STRUCTURE.md doctrine -> mdBook/src + mdBook/out (book.toml at root); .gitignore /book.toml + /mdBook/; UPGRADING entry e068828 (independent, requires host-lifecycle v0.30.2, fail-safe cleanup, verify greps mdBook/src in STRUCTURE.md); pushed cecb0eb; host-template prose CI clean
+    tool = host-lifecycle@0.30.1
+    recorded = 2026-06-26
+
+[receipt "plan/0046#repoint-agentic-host"]
+    disposition = done
+    verify = attested operator
+    evidence = agentic-host .gitignore -> /book.toml + /mdBook/ (dropped /docs/ + /book/); removed stale generated docs/ + book/; regenerated with new binary: book . -> book.toml(src=mdBook/src, build-dir=mdBook/out) + mdBook/src/SUMMARY.md + 95 pages, book --check green, local mdbook build -> mdBook/out. mdbook.yml publish_dir -> mdBook/out is applied with the CI rev bump in the release commit (coupled).
+    tool = host-lifecycle@0.30.1
+    recorded = 2026-06-26
