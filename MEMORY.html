@@ -1484,6 +1484,48 @@ host-lifecycle rev bump to v0.30.2 (the publish path and the rev are coupled —
 mdBook/out; change them together or the Site publishes an empty dir). reproducible-build.yml rev
 bumped too. plan/0046 dogfooded as 5 anchored receipted tasks. <code>software --check</code> clean; the local
 <code>host-lifecycle book .</code> + <code>mdbook build</code> produced <code>mdBook/out</code>. host-lifecycle#3 closed.</p>
+<h2 id="2026-06-26--plan0047-complete-the-prose-lane-audits-the-authored-working-tree-host-lint17"><a class="header" href="#2026-06-26--plan0047-complete-the-prose-lane-audits-the-authored-working-tree-host-lint17">2026-06-26 — plan/0047 COMPLETE: the prose lane audits the authored working tree (host-lint#17)</a></h2>
+<p><code>connollydavid/host-lint#17</code> closed. The shared <code>run_docs</code> (host-lint lib, <code>--docs</code> + the
+<code>host-lifecycle prose</code> recheck) walked <code>git ls-files</code> (tracked and staged only), so a <strong>brand-new
+authored doc that was not yet staged was silently skipped</strong> — a pre-commit <code>prose</code> read clean, then
+the verify recheck HAZARDed the same doc once committed, with no content change. <strong>Unlike #3 the
+description was accurate</strong>: I'd hit this skip myself (had to <code>git add</code> plan READMEs before
+<code>host-lifecycle prose</code> saw them), and the auto-memory already documented it.</p>
+<p><strong>Reframing (the user was unsure).</strong> The skip is <em>partly intentional</em> — <code>git ls-files</code> is exactly
+what excludes generated/vendored/gitignored/worktree content — and <strong>staging closes the gap</strong> (<code>git add</code> puts the file in the index, which <code>ls-files</code> lists). So the window is only create-but-unstaged,
+with a documented workaround. What made it a real defect was the <strong>cast</strong>: a <code>prose: clean</code> that
+silently skipped a file is Bly's "overstates completeness," Fen's silent trap (clean pre-commit →
+HAZARD post-commit), and Orin's "fails unsafe when followed literally." Operator chose fix (a).</p>
+<p><strong>Fix:</strong> <code>run_docs</code> now walks <code>git ls-files</code> <strong>plus</strong> <code>git ls-files --others --exclude-standard</code>
+(untracked files git would offer to add). The two sets are disjoint (in-index vs not), so no dedup.
+<code>--exclude-standard</code> keeps gitignored output, vendored deps, and un-materialized worktrees out, so a
+<strong>fresh CI checkout is unchanged</strong> (no untracked authored files there) — only a local pre-commit /
+working-tree run gains the coverage. Released <strong>host-lint v0.10.4</strong> (<code>ce683be</code>, <code>a9ef0865</code>) +
+<strong>host-lifecycle v0.30.3</strong> (<code>0de2843</code>, <code>cf59cc16</code>, on <strong>vendor-v3</strong> <code>817a71d9</code>).</p>
+<p><strong>Validation (the user asked for careful validation):</strong> unit test pins tracked-scanned /
+untracked-scanned / gitignored-excluded; CLI repro confirmed (untracked authored caught, generated
+excluded); on agentic-host <code>git ls-files --others --exclude-standard</code> finds no <code>.md</code>, so the verify
+recheck is unaffected. <strong>Fen acceptance (real qwen3.5-4b via rope): new walk catches a new unstaged
+doc 5/5, old walk misses it 3/3</strong> (the 2 "unparsed" were <code>**Q: YES**</code> — markdown-bold broke the
+grep, so a true 5/5). <strong>No spine change</strong> — the walk scope is a host-lint implementation detail, NOT
+spine doctrine (the spine never states the mechanism), so zero adopter <code>UPGRADING</code> churn.</p>
+<p><strong>Process notes:</strong></p>
+<ul>
+<li><strong>Cascade is the plan/0045 shape</strong> (shared <code>run_docs</code> → host-lint release → host-lifecycle dep bump
+→ vendor-v3 → host-lifecycle release → re-pin). <strong>The kani digests were re-derived BEFORE tagging
+this time</strong> (the plan/0045 lesson applied first try: <code>git hash-object src/lib.rs</code> → <code>cc31f540</code>
+into <code>host-lint.obligations.digests</code>, committed with the release), so the <strong>v0.10.4 tag is green</strong>
+— no born-red detour. And <code>rm -rf vendor vendor-config.toml</code> after producing the bundle (no
+vendor-leftover false-HAZARD).</li>
+<li><strong>Only agentic-host's own CI pins</strong> (mdbook.yml + reproducible-build.yml) bumped to v0.30.3; the
+<strong>host-template + host prose CIs stay at v0.30.1</strong> on purpose — #17 changes only local-uncommitted
+behavior, and their CI runs on a fresh checkout (no untracked authored files), so their verdict is
+identical. Bumping them would cascade two more repos for zero behavioral change.</li>
+<li><strong>New behavior to remember:</strong> <code>host-lifecycle prose</code> / <code>--docs</code> now scans untracked-non-ignored
+<code>.md</code>, so a working-tree draft is audited before it is staged. Keep new docs prose-clean from the
+moment they exist (gitignore a genuine scratch file). The <code>verify</code> recheck in <code>software --check</code>
+picks this up too.</li>
+</ul>
 
                     </main>
 
