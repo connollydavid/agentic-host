@@ -4900,12 +4900,21 @@ tests cover a declared rung with a runnable driver, with a missing driver, and w
 <li>depends: #validate-strictness</li>
 <li>verify: cd software/host-lifecycle/main &amp;&amp; cargo test</li>
 </ul>
-<h3 id="spine-and-adopt"><a class="header" href="#spine-and-adopt">Spine doctrine, ledger, and adoption</a></h3>
+<h3 id="spine-and-release"><a class="header" href="#spine-and-release">Spine doctrine, ledger, and release</a></h3>
 <p>Generalize the host-template doctrine and add the independent, version-gated <code>UPGRADING</code> entry. Release
-host-lifecycle, re-pin, install host-prove in setup and CI, adopt the entry, correct the memory, and
-confirm the whole suite is green.</p>
+host-lifecycle, re-pin <code>.host-software</code>, advance the host-template pointer so the entry is PENDING, and
+correct the memory. The migration is now built and published; adopting it on this host is its own step.</p>
 <ul>
 <li>depends: #runnability-gate</li>
+<li>verify: attested operator</li>
+</ul>
+<h3 id="adopt"><a class="header" href="#adopt">agentic-host adopts the entry</a></h3>
+<p>On the operator's trigger, "Read and follow https://github.com/connollydavid/host to keep this
+repository an agentic project," adopt like any project: record the ledger entry, install host-prove in
+the fresh-clone setup and the CI that runs <code>software --check</code>, bump the CI host-lifecycle pins, and
+confirm the whole suite is green. The gate goes green by being runnable.</p>
+<ul>
+<li>depends: #spine-and-release</li>
 <li>verify: attested operator</li>
 </ul>
 <h2 id="risks-8"><a class="header" href="#risks-8">Risks</a></h2>
@@ -4917,7 +4926,13 @@ HAZARD the migration adds.</li>
 passes; the earned digest and the pluggable re-derivation carry that, as <code>call/0018</code> intends.</li>
 </ul>
 <h2 id="status-9"><a class="header" href="#status-9">Status</a></h2>
-<p>in progress.</p>
+<p>migration built and released; adoption awaits the operator trigger. The runnability gate ships in
+host-lifecycle v0.31.0 (<code>software --check</code> HAZARDs a declared rung whose re-deriver does not execute).
+The spine doctrine and the version-gated <code>UPGRADING</code> entry <code>6174996</code> ("a re-deriver that runs") are
+pushed; <code>.host-software</code> is re-pinned to v0.31.0 and the host-template pointer is advanced, so the
+entry reads PENDING here. The memory misdiagnosis is corrected. The remaining <code>#adopt</code> step (record
+the entry, install host-prove in setup and CI, bump the CI pins) runs on the operator's trigger,
+"Read and follow https://github.com/connollydavid/host to keep this repository an agentic project."</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
