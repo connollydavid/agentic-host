@@ -1,11 +1,3 @@
-applied = 897ce0d recorded=2026-06-20 via=verify
-applied = da000aa recorded=2026-06-20 via=verify
-applied = 617e420 recorded=2026-06-21 via=verify
-applied = 0cd6b0a recorded=2026-06-21 via=verify
-applied = 950fbd6 recorded=2026-06-22 via=verify
-applied = ecce498 recorded=2026-06-22 via=verify
-applied = 27d815b recorded=2026-06-23 via=verify
-applied = e280a8d recorded=2026-06-24 via=verify
 
 [receipt "adopt"]
     disposition = done
@@ -18,9 +10,3 @@ applied = e280a8d recorded=2026-06-24 via=verify
     evidence = applied-set 897ce0d, da000aa (.host)
     tool = host-lifecycle@0.18.1
     recorded = 2026-06-21
-applied = ac32d1c recorded=2026-06-24 via=verify
-applied = d5a0034 recorded=2026-06-24 via=verify
-applied = 7be692f recorded=2026-06-25 via=verify
-applied = 2229dbb recorded=2026-06-25 via=verify
-applied = ba86125 recorded=2026-06-25 via=verify
-applied = de8a517 recorded=2026-06-25 via=verify
