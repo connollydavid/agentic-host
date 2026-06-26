@@ -1443,3 +1443,14 @@ it by its **ledger ordinal** instead (it was the last entry, position 37: `upgra
 A key with any hex letter (a-f) would not collide. The applied claim lands in `.host-receipts` as
 `applied = 6174996 recorded=... via=verify` (an out-of-order applied entry, not a baseline advance),
 and the `.host` baseline stays `de8a517`.
+
+**GOTCHA: marking a milestone "complete" must not land in a commit before its task receipts.** The
+task gate (`software --check`, run by the reproducible-build CI) HAZARDs `task <key> — no receipt (its
+milestone is marked complete)` and exits 1 when a plan README Status reads complete but a task in that
+milestone has no receipt yet. plan/0048 hit it: commit `8d1dad7` flipped the README to complete, but
+the `#adopt` receipt was committed in the next commit (`9ec9087`), so `8d1dad7`'s CI went red on the
+verify-build job (the commits on either side passed). The branch self-heals at the next commit (HEAD
+stayed green), but a red run sits in history. Fix the ordering: commit the backing receipts in the
+same commit as the status flip or earlier, never after. This refines [[complete-means-whole-suite-green]]
+to intra-sequence commit ordering, not just cross-repo sweeps. Re-running the red intermediate commit
+is pointless; its tree is genuinely inconsistent.
