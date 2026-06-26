@@ -124,13 +124,23 @@ tests cover a declared rung with a runnable driver, with a missing driver, and w
 - depends: #validate-strictness
 - verify: cd software/host-lifecycle/main && cargo test
 
-### Spine doctrine, ledger, and adoption {#spine-and-adopt}
+### Spine doctrine, ledger, and release {#spine-and-release}
 
 Generalize the host-template doctrine and add the independent, version-gated `UPGRADING` entry. Release
-host-lifecycle, re-pin, install host-prove in setup and CI, adopt the entry, correct the memory, and
-confirm the whole suite is green.
+host-lifecycle, re-pin `.host-software`, advance the host-template pointer so the entry is PENDING, and
+correct the memory. The migration is now built and published; adopting it on this host is its own step.
 
 - depends: #runnability-gate
+- verify: attested operator
+
+### agentic-host adopts the entry {#adopt}
+
+On the operator's trigger, "Read and follow https://github.com/connollydavid/host to keep this
+repository an agentic project," adopt like any project: record the ledger entry, install host-prove in
+the fresh-clone setup and the CI that runs `software --check`, bump the CI host-lifecycle pins, and
+confirm the whole suite is green. The gate goes green by being runnable.
+
+- depends: #spine-and-release
 - verify: attested operator
 
 ## Risks
@@ -143,4 +153,10 @@ confirm the whole suite is green.
 
 ## Status
 
-in progress.
+migration built and released; adoption awaits the operator trigger. The runnability gate ships in
+host-lifecycle v0.31.0 (`software --check` HAZARDs a declared rung whose re-deriver does not execute).
+The spine doctrine and the version-gated `UPGRADING` entry `6174996` ("a re-deriver that runs") are
+pushed; `.host-software` is re-pinned to v0.31.0 and the host-template pointer is advanced, so the
+entry reads PENDING here. The memory misdiagnosis is corrected. The remaining `#adopt` step (record
+the entry, install host-prove in setup and CI, bump the CI pins) runs on the operator's trigger,
+"Read and follow https://github.com/connollydavid/host to keep this repository an agentic project."
