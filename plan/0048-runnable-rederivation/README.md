@@ -153,10 +153,13 @@ confirm the whole suite is green. The gate goes green by being runnable.
 
 ## Status
 
-migration built and released; adoption awaits the operator trigger. The runnability gate ships in
-host-lifecycle v0.31.0 (`software --check` HAZARDs a declared rung whose re-deriver does not execute).
-The spine doctrine and the version-gated `UPGRADING` entry `6174996` ("a re-deriver that runs") are
-pushed; `.host-software` is re-pinned to v0.31.0 and the host-template pointer is advanced, so the
-entry reads PENDING here. The memory misdiagnosis is corrected. The remaining `#adopt` step (record
-the entry, install host-prove in setup and CI, bump the CI pins) runs on the operator's trigger,
-"Read and follow https://github.com/connollydavid/host to keep this repository an agentic project."
+complete. The runnability gate ships in host-lifecycle v0.31.0 (`software --check` HAZARDs a declared
+rung whose re-deriver does not execute). The spine doctrine and the version-gated `UPGRADING` entry
+`6174996` ("a re-deriver that runs") are pushed; `.host-software` is re-pinned to v0.31.0. The memory
+misdiagnosis is corrected. On the operator's trigger, "Read and follow
+https://github.com/connollydavid/host to keep this repository an agentic project," agentic-host
+adopted the entry the case-(c) way: `upgrade --record 6174996` passed its verify and recorded the
+applied claim, host-prove is installed in the fresh-clone setup and in the CI that runs `software
+--check`, and both CI host-lifecycle pins are at v0.31.0. `software --check` is green (the gate reports
+the re-deriver runnable for both declaring components), and the whole suite is green across
+agentic-host, host-lifecycle, and host-template.
