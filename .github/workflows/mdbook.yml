@@ -18,9 +18,10 @@ jobs:
           curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.40/mdbook-v0.4.40-x86_64-unknown-linux-gnu.tar.gz | tar -xz -C "$HOME/.local/bin"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
       - name: Install the publisher (host-lifecycle, pinned)
-        # Pinned to v0.30.2: book writes its source to mdBook/src and the built HTML to
-        # mdBook/out (book.toml at root, build from root), freeing docs/ for authored content
-        # (plan/0046, host-lifecycle#3); v0.30.1: the in-process prose recheck embeds the
+        # Pinned to v0.30.3: --docs/prose audits the authored working tree, including untracked
+        # non-ignored files (plan/0047, host-lint#17); v0.30.2: book writes its source to mdBook/src
+        # and the built HTML to mdBook/out (book.toml at root, build from root), freeing docs/ for
+        # authored content (plan/0046, host-lifecycle#3); v0.30.1: the in-process prose recheck embeds the
         # host-lint engine that honors the per-repo LEXICON in the prose lane (host-lifecycle#2); v0.30.0
         # book recurses nested specs and moves retired
         # (Status: superseded) decisions into an Archive/Record section, and
@@ -31,7 +32,7 @@ jobs:
         # entrance check (plan/0040); v0.29.0 generalizes it to a declared
         # `[entrance]` stanza (plan/0043); v0.30.0 retires the legacy per-member
         # marker (plan/0043).
-        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev f2b46070729169baba0f3eed5fcb6f7ad6afd82e --root "$HOME/.local"
+        run: cargo install --git https://github.com/connollydavid/host-lifecycle --rev 0de2843781b398147c73fce4d0aa818c94b16242 --root "$HOME/.local"
       - name: Generate the book (lifecycle order; every room)
         # Writes book.toml at the root (src = "mdBook/src", build-dir = "mdBook/out", never ".")
         # + mdBook/src/; --check fails the build unless every room with source renders a page.
