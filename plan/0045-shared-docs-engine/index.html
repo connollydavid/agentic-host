@@ -283,8 +283,9 @@ bundle is hash-pinned and its offline build is verified by the release gate, so 
 bundle fails the gate rather than shipping.</li>
 </ul>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
-<p>complete, released as host-lint v0.10.2 (<code>5a9d2c5</code>, artifact <code>85c1fc58</code>) and host-lifecycle
-v0.30.1 (<code>46d481c</code>, artifact <code>23c27bff</code>, on <code>vendor-v2</code> sha <code>4e49536b</code>). host-lint's
+<p>complete, released as host-lint v0.10.3 (<code>63348a6</code>, artifact <code>753ac4f6</code>) and host-lifecycle
+v0.30.1 (<code>46d481c</code>, artifact <code>23c27bff</code>, on <code>vendor-v2</code> sha <code>4e49536b</code>); host-lifecycle embeds the
+host-lint library at v0.10.2 (<code>5a9d2c5</code>), which is engine-identical to v0.10.3. host-lint's
 <code>Lexicon</code>, <code>load_lexicon</code>, and <code>run_docs</code> are public library items; its binary and
 host-lifecycle's <code>prose_audit</code> call the same engine, so the embedded prose recheck cannot lag
 a future host-lint change. The fixture confirms the fix end to end: with the LEXICON the
@@ -294,6 +295,14 @@ offline release build sees host-lint v0.10.2; host-lint stays on <code>vendor-v1
 install pins (agentic-host reproducible-build and mdbook, host-template and host prose) move to
 v0.30.1. No spine change, since the doctrine is met rather than changed. <code>software --check</code> and
 the fixture are green; connollydavid/host-lifecycle#2 is closed.</p>
+<p>host-lint was first tagged v0.10.2 at <code>5a9d2c5</code>, but the <code>src/lib.rs</code> edit staled its two kani
+obligation digests (<code>DetectInternalCodeAsName</code>), so that tag's CI failed the obligations staleness
+lint (the kani proofs and all six binaries passed). The digests were re-derived by fingerprinting
+the new source (<code>git hash-object src/lib.rs</code> into <code>host-lint.obligations.digests</code>), which is
+artifact-preserving because the ledger is not compiled, and promoted into a clean v0.10.3 tag, the
+pinned release. v0.10.2 stays a superseded tag. host-lifecycle keeps embedding the host-lint
+library at <code>5a9d2c5</code> (engine-identical to v0.10.3), so no vendor regeneration or host-lifecycle
+re-release was needed.</p>
 
                     </main>
 
