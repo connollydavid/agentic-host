@@ -294,7 +294,18 @@ the generator no longer writes there. The classify-time guard discussed under #3
 needed, because the reserved name is gone.</li>
 </ul>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
-<p>in progress.</p>
+<p>complete, released as host-lifecycle v0.30.2 (<code>f2b4607</code>, artifact <code>3a9e59ce</code>). <code>host-lifecycle book</code> writes its generated source to <code>mdBook/src/</code> and the built HTML to <code>mdBook/out/</code>, with
+<code>book.toml</code> kept at the repo root, so <code>mdbook build</code> runs from the root unchanged. <code>docs/</code> is freed
+for authored content, which closes connollydavid/host-lifecycle#3 at its root: the generator no
+longer reserves <code>docs/</code>, so the migration footgun cannot recur and the classify-time guard is
+unnecessary. The spine carries the doctrine and the gitignore (host-template <code>e068828</code>) plus an
+independent, version-gated, fail-safe <code>UPGRADING</code> entry (<code>e068828</code>, requires host-lifecycle
+v0.30.2); agentic-host adopted it through the ledger (<code>upgrade --record e068828</code>). The decision was
+settled against the real qwen3.5-4b, which read <code>docs/</code> as out of harm's way under the new layout in
+every run and reproduced the footgun on the old layout in every run, and the five cast personas
+confirmed it. A regression test pins the generator to <code>mdBook/src</code> and proves an authored <code>docs/</code>
+is left intact. <code>software --check</code> is clean and the Site workflow serves <code>mdBook/out</code>. The whole
+suite is green.</p>
 
                     </main>
 
