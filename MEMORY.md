@@ -1265,3 +1265,16 @@ whose local host-prove→`cargo kani` spawn still ENOENTs on the `/mnt/c` WSL mo
 `git hash-object` is deterministic and the proof is independently CI-verified. Whole-suite green:
 host-lint main `9d2d81d`, host-lifecycle v0.30.1, host-template + host Prose, agentic-host Site +
 Reproducible build (`f293999`, the `--verify-build` reproduces `85c1fc58` and `23c27bff` offline).
+
+**Promoted the digest fix to a clean tag (operator asked "should we re-release?" — yes, per
+precedent).** The artifact-preserving pin-advance left the pinned commit (`9d2d81d`) UNtagged and the
+v0.10.2 tag badge red, but plan/0034 and plan/0044 both PROMOTED the interim digest fix into a clean
+tagged point release rather than leaving the red tag (v0.9.0→v0.9.1, v0.10.0→v0.10.1). Followed that:
+released **host-lint v0.10.3** (`63348a6`, new artifact `753ac4f6` — the version string changes the
+binary; digests stay fresh since `src/lib.rs` is untouched by a version bump), tagged at the
+digest-fixed source so its CI is green, and re-pinned `.host-software` to it. **No cascade**:
+host-lifecycle stays embedding host-lint @ `5a9d2c5` (v0.10.2 library, engine-identical to v0.10.3),
+so no vendor-v3 and no host-lifecycle re-release; the host-lint TOOL pin (v0.10.3) and host-lifecycle's
+embedded LIBRARY (v0.10.2) legitimately differ, as host-lifecycle sat on host-lint v0.8.1 while the
+tool was at v0.10.1. **Lesson reinforced: re-derive kani digests BEFORE the first tag** and the whole
+v0.10.x detour disappears. Pinned release is now host-lint **v0.10.3** / `63348a6` / `753ac4f6`.
