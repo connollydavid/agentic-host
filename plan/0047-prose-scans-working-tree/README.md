@@ -101,4 +101,17 @@ Bump the CI install pins, record the receipts, close the issue, and confirm the 
 
 ## Status
 
-in progress.
+complete, released as host-lint v0.10.4 (`ce683be`, artifact `a9ef0865`) and host-lifecycle v0.30.3
+(`0de2843`, artifact `cf59cc16`, on `vendor-v3` sha `817a71d9`). The shared `run_docs` walks
+`git ls-files` (tracked and staged) plus `git ls-files --others --exclude-standard` (untracked
+non-ignored), so a new authored doc is audited before it is staged and a pre-commit run is never
+silently clean over a file it skipped. `--exclude-standard` holds generated output, vendored deps,
+and un-materialized worktrees out, so a fresh CI checkout is unchanged. connollydavid/host-lint#17 is
+closed. Validated end to end and at the weak-agent bar: the real qwen3.5-4b judged the new walk
+catches a new unstaged doc in every run and judged the old walk misses it in every run; a unit test
+pins a tracked doc scanned, an untracked doc scanned, a gitignored generated doc excluded; on
+agentic-host the new walk finds no untracked markdown, so the verify recheck stays clean. No spine
+change, since the walk scope is a host-lint implementation detail rather than spine doctrine. The
+`src/lib.rs` edit staled the kani obligation digests, which were re-derived before tagging (the
+plan/0045 lesson applied first try, so the v0.10.4 tag is green). `software --check` is clean and the
+whole suite is green.

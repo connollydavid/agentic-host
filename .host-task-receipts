@@ -249,3 +249,17 @@
     evidence = CLI: #17 repro untracked authored.md flagged (exit 3), gitignored gen excluded; agentic-host: git ls-files --others --exclude-standard finds no .md (generated mdBook/+book.toml gitignored), --docs exit 0 -> CI unchanged. Fen (real qwen3.5-4b via rope): new walk catches unstaged doc 5/5, old walk misses 3/3. Cast Bly/Fen/Mara/Orin served; no spine change
     tool = host-lifecycle@0.30.2
     recorded = 2026-06-26
+
+[receipt "plan/0047#release-cascade"]
+    disposition = done
+    verify = attested operator
+    evidence = host-lint v0.10.4 (ce683be, a9ef0865; kani digests re-derived cc31f540 BEFORE tagging, green first try) released+tagged; host-lifecycle host-lint dep -> ce683be; vendor-v3 published (817a71d9); host-lifecycle v0.30.3 (0de2843, cf59cc16) built offline against vendor-v3, released+tagged; .host-software re-pinned; vendor leftovers cleaned
+    tool = host-lifecycle@0.30.3
+    recorded = 2026-06-26
+
+[receipt "plan/0047#close-and-verify"]
+    disposition = done
+    verify = attested operator
+    evidence = agentic-host CI pins (mdbook.yml + reproducible-build.yml x2) -> v0.30.3; host-template/host prose CI left at v0.30.1 (fresh-checkout behavior unchanged by #17); release receipts recorded; software --check clean; host-lint#17 to close
+    tool = host-lifecycle@0.30.3
+    recorded = 2026-06-26
