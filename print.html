@@ -7170,6 +7170,51 @@ before tagging.</em>* The operator chose to <strong>bump v0.10.1</strong> (a cle
 new artifact <code>941126c9</code>, since the embedded version changes the binary) rather than force-push the
 <code>v0.10.0</code> tag forward (the auto-classifier blocks moving a published tag): <code>v0.10.0</code> stays the
 feature tag at <code>f1474e8</code>, <code>v0.10.1</code> (<code>0c2bfc3</code>) is the pinned release.</p>
+<h2 id="2026-06-26--plan0045-complete-the-embedded-prose-engine-catches-up-host-lifecycle2"><a class="header" href="#2026-06-26--plan0045-complete-the-embedded-prose-engine-catches-up-host-lifecycle2">2026-06-26 — plan/0045 COMPLETE: the embedded prose engine catches up (host-lifecycle#2)</a></h2>
+<p><code>connollydavid/host-lifecycle#2</code> closed. plan/0044 gave host-lint's prose lane the LEXICON mask,
+but host-lifecycle runs that lane in-process for its verify-phase prose recheck while pinning the
+<code>host_lint</code> crate at <strong>v0.8.1</strong>, whose <code>scan_prose_text</code> predates the mask (signature <code>(input, source, matches)</code>, no allowlist param). So the embedded engine could not consult LEXICON even in
+principle, and an adopter with a legitimate declared domain noun on a governed surface would hit a
+permanently-failing verify recheck (0 flags, advisory warns, <code>prose</code> still <code>exit(3)</code>). The bug is
+<strong>latent</strong>: NO repo in the tree carries a LEXICON yet, so a constructed fixture (a tracked doc with
+<code>harness</code> twice + a sibling LEXICON declaring the phrase) demonstrates it — <code>host-lint --docs</code>
+masks (exit 0) while <code>host-lifecycle prose</code> warns (exit 3) on the same repo.</p>
+<p><strong>Fix = share the engine into the lib (operator chose shared-lib over replicate-in-host-lifecycle, a
+2-release path over 1, to close the drift CLASS not the instance).</strong> <code>Lexicon</code>, <code>load_lexicon</code>, and
+<code>run_docs</code> moved from host-lint's <strong>binary</strong> (<code>main.rs</code>) into the <code>host_lint</code> <strong>library</strong> as <code>pub</code>
+items; <code>run_docs</code> now returns <code>Result&lt;Vec&lt;Match&gt;,String&gt;</code> instead of <code>process::exit</code> (the binary
+prints+exits, an embedder surfaces it). host-lint's CLI is byte-identical (LEXICON honored exit 0,
+undeclared warn exit 3, git-failure message+exit 2 unchanged). host-lifecycle's <code>prose_audit</code>
+shrank to <code>host_lint::load_lexicon(root).phrases_lc</code> + <code>host_lint::run_docs(root,&amp;allow,&amp;ignore)</code> —
+the hand-reimplemented <code>--docs</code> walk is gone, so walk+loader+mask are all shared and cannot drift.
+Released <strong>host-lint v0.10.2</strong> (<code>5a9d2c5</code>, artifact <code>85c1fc58</code>) and <strong>host-lifecycle v0.30.1</strong>
+(<code>46d481c</code>, artifact <code>23c27bff</code>).</p>
+<p><strong>The predicted vendor-v2 finally happened.</strong> The 2026-06-22 plan/0032 Cutover note warned "Do NOT
+bump host-lifecycle's host-lint git dep ... Bumping it would force a vendor-v2." This milestone IS
+that bump (host-lint dep <code>1386e9a</code> v0.8.1 → <code>5a9d2c5</code> v0.10.2), so the shared offline bundle was
+regenerated: <code>cargo vendor --locked --sync ../../host-lifecycle/main/Cargo.toml vendor</code> from
+host-lint's manifest, deterministic tar (<code>--sort=name --mtime=@0 --owner=0 --group=0 --numeric-owner | gzip -n</code>), published as <strong><code>vendor-v2</code> on connollydavid/host-lint</strong> (sha
+<code>4e49536bf1ae45c88c2118f14cf823cf7854e781ec5536ed214afcebe8f8881c</code>). host-lifecycle's <code>deps-bundle</code>
+(<code>.host-software</code> + <code>deps-bundle.lock</code>) re-pinned to vendor-v2; <strong>host-lint stays on vendor-v1</strong> (its
+closure is unchanged and its build ignores the host-lint-crate entry, so v0.10.2 built fine on v1).
+Two release gotchas hit and resolved: (a) the first <code>release host-lifecycle</code> FAILED at the offline
+build because <code>.host-software</code> still pointed at vendor-v1 (no host-lint v0.10.2 source) — fix the
+deps-bundle pin BEFORE the release; (b) a release that fails after the version bump leaves
+<code>Cargo.toml</code>/<code>Cargo.lock</code> bumped (0.30.0→0.30.1), so re-running double-bumps to 0.30.2 — <strong>revert
+the version to 0.30.0 (keeping the dep change) before re-running</strong> so it lands on 0.30.1.</p>
+<p><strong>Vendor-leftover false-HAZARD (new gotcha).</strong> Producing the bundle left <code>vendor/</code> in
+<code>software/host-lint/main</code> (gitignored). <code>software --check</code>'s spec-lane scan (<code>find_specs</code>) walks the
+<strong>filesystem, not gitignore</strong>, so it found <code>vendor/host-grammar/spec/ParallelScan.tla</code> + the vendored
+<code>apalache:</code>/<code>tlaps:</code> obligations and raised 3 phantom HAZARDs against host-lint (whose OWN obligations
+are <code>kani:</code>-only, identical at both pins). <strong><code>rm -rf vendor vendor-config.toml</code> after producing a
+bundle</strong>, then re-check. Cleared immediately.</p>
+<p>Whole-suite: <code>.host-software</code> re-pinned (host-lint, host-lifecycle, host); host-template submodule
+pointer + host worktree bumped (their <code>prose.yml</code> CI moved <code>9a1a586</code> v0.24.2 → v0.30.1); agentic-host
+CI (reproducible-build ×2, mdbook) moved <code>94984a1</code> → <code>46d481c</code>; release receipts recorded; plan/0045
+build sequence dogfooded as 5 anchored receipted tasks. <code>software --check</code> clean (all at pin, no
+hazards); local host-lifecycle reinstalled to v0.30.1. <strong>No spine change</strong> — the doctrine (a
+legitimate token stays in the per-project LEXICON, both lanes) is met, not changed; no UPGRADING
+entry. The deferred follow-up still stands (PLAN.md): enforce full GitHub URLs over bare <code>#N</code> refs.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
