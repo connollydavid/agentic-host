@@ -1582,6 +1582,15 @@ it by its <strong>ledger ordinal</strong> instead (it was the last entry, positi
 A key with any hex letter (a-f) would not collide. The applied claim lands in <code>.host-receipts</code> as
 <code>applied = 6174996 recorded=... via=verify</code> (an out-of-order applied entry, not a baseline advance),
 and the <code>.host</code> baseline stays <code>de8a517</code>.</p>
+<p><strong>GOTCHA: marking a milestone "complete" must not land in a commit before its task receipts.</strong> The
+task gate (<code>software --check</code>, run by the reproducible-build CI) HAZARDs <code>task &lt;key&gt; — no receipt (its milestone is marked complete)</code> and exits 1 when a plan README Status reads complete but a task in that
+milestone has no receipt yet. plan/0048 hit it: commit <code>8d1dad7</code> flipped the README to complete, but
+the <code>#adopt</code> receipt was committed in the next commit (<code>9ec9087</code>), so <code>8d1dad7</code>'s CI went red on the
+verify-build job (the commits on either side passed). The branch self-heals at the next commit (HEAD
+stayed green), but a red run sits in history. Fix the ordering: commit the backing receipts in the
+same commit as the status flip or earlier, never after. This refines [[complete-means-whole-suite-green]]
+to intra-sequence commit ordering, not just cross-repo sweeps. Re-running the red intermediate commit
+is pointless; its tree is genuinely inconsistent.</p>
 
                     </main>
 
