@@ -1330,3 +1330,50 @@ host-lifecycle rev bump to v0.30.2 (the publish path and the rev are coupled —
 mdBook/out; change them together or the Site publishes an empty dir). reproducible-build.yml rev
 bumped too. plan/0046 dogfooded as 5 anchored receipted tasks. `software --check` clean; the local
 `host-lifecycle book .` + `mdbook build` produced `mdBook/out`. host-lifecycle#3 closed.
+
+## 2026-06-26 — plan/0047 COMPLETE: the prose lane audits the authored working tree (host-lint#17)
+
+`connollydavid/host-lint#17` closed. The shared `run_docs` (host-lint lib, `--docs` + the
+`host-lifecycle prose` recheck) walked `git ls-files` (tracked and staged only), so a **brand-new
+authored doc that was not yet staged was silently skipped** — a pre-commit `prose` read clean, then
+the verify recheck HAZARDed the same doc once committed, with no content change. **Unlike #3 the
+description was accurate**: I'd hit this skip myself (had to `git add` plan READMEs before
+`host-lifecycle prose` saw them), and the auto-memory already documented it.
+
+**Reframing (the user was unsure).** The skip is *partly intentional* — `git ls-files` is exactly
+what excludes generated/vendored/gitignored/worktree content — and **staging closes the gap** (`git
+add` puts the file in the index, which `ls-files` lists). So the window is only create-but-unstaged,
+with a documented workaround. What made it a real defect was the **cast**: a `prose: clean` that
+silently skipped a file is Bly's "overstates completeness," Fen's silent trap (clean pre-commit →
+HAZARD post-commit), and Orin's "fails unsafe when followed literally." Operator chose fix (a).
+
+**Fix:** `run_docs` now walks `git ls-files` **plus** `git ls-files --others --exclude-standard`
+(untracked files git would offer to add). The two sets are disjoint (in-index vs not), so no dedup.
+`--exclude-standard` keeps gitignored output, vendored deps, and un-materialized worktrees out, so a
+**fresh CI checkout is unchanged** (no untracked authored files there) — only a local pre-commit /
+working-tree run gains the coverage. Released **host-lint v0.10.4** (`ce683be`, `a9ef0865`) +
+**host-lifecycle v0.30.3** (`0de2843`, `cf59cc16`, on **vendor-v3** `817a71d9`).
+
+**Validation (the user asked for careful validation):** unit test pins tracked-scanned /
+untracked-scanned / gitignored-excluded; CLI repro confirmed (untracked authored caught, generated
+excluded); on agentic-host `git ls-files --others --exclude-standard` finds no `.md`, so the verify
+recheck is unaffected. **Fen acceptance (real qwen3.5-4b via rope): new walk catches a new unstaged
+doc 5/5, old walk misses it 3/3** (the 2 "unparsed" were `**Q: YES**` — markdown-bold broke the
+grep, so a true 5/5). **No spine change** — the walk scope is a host-lint implementation detail, NOT
+spine doctrine (the spine never states the mechanism), so zero adopter `UPGRADING` churn.
+
+**Process notes:**
+- **Cascade is the plan/0045 shape** (shared `run_docs` → host-lint release → host-lifecycle dep bump
+  → vendor-v3 → host-lifecycle release → re-pin). **The kani digests were re-derived BEFORE tagging
+  this time** (the plan/0045 lesson applied first try: `git hash-object src/lib.rs` → `cc31f540`
+  into `host-lint.obligations.digests`, committed with the release), so the **v0.10.4 tag is green**
+  — no born-red detour. And `rm -rf vendor vendor-config.toml` after producing the bundle (no
+  vendor-leftover false-HAZARD).
+- **Only agentic-host's own CI pins** (mdbook.yml + reproducible-build.yml) bumped to v0.30.3; the
+  **host-template + host prose CIs stay at v0.30.1** on purpose — #17 changes only local-uncommitted
+  behavior, and their CI runs on a fresh checkout (no untracked authored files), so their verdict is
+  identical. Bumping them would cascade two more repos for zero behavioral change.
+- **New behavior to remember:** `host-lifecycle prose` / `--docs` now scans untracked-non-ignored
+  `.md`, so a working-tree draft is audited before it is staged. Keep new docs prose-clean from the
+  moment they exist (gitignore a genuine scratch file). The `verify` recheck in `software --check`
+  picks this up too.
