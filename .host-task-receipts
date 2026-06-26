@@ -291,3 +291,10 @@
     evidence = reproduced the false ENOENT: host-prove was command-not-found (not installed) and was handed src/ rather than the crate root; with host-prove installed and --dir at the crate root, host-prove kani returned SUCCESSFUL and obligations --rederive recorded both rungs proved, fifty dispositioned, on /mnt/c. Audit: the local install step was missed (CI installs host-prove, the fresh-clone discipline never did); the WSL-ENOENT was misdiagnosed and repeated three times in memory; available-but-never-discharged locally. The cast settled the migration shape (couple the proxy to the proof)
     tool = host-lifecycle@0.31.0
     recorded = 2026-06-26
+
+[receipt "plan/0048#adopt"]
+    disposition = done
+    verify = attested operator
+    evidence = operator triggered "Read and follow https://github.com/connollydavid/host". Case (c) upgrade: host-template pointer at the target (4182df9); upgrade --record 6174996 passed verify and appended the applied claim to .host-receipts; CLAUDE.md fresh-clone setup installs host-prove; reproducible-build CI installs host-prove before software --check and both CI host-lifecycle pins bumped to v0.31.0. software --check green (runnability gate ok for both declaring components); whole-suite CI green on bcf3d75 (Site + Reproducible build, gate runs with host-prove on PATH)
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-26
