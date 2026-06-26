@@ -7215,6 +7215,27 @@ build sequence dogfooded as 5 anchored receipted tasks. <code>software --check</
 hazards); local host-lifecycle reinstalled to v0.30.1. <strong>No spine change</strong> — the doctrine (a
 legitimate token stays in the per-project LEXICON, both lanes) is met, not changed; no UPGRADING
 entry. The deferred follow-up still stands (PLAN.md): enforce full GitHub URLs over bare <code>#N</code> refs.</p>
+<p><strong>plan/0045 follow-up — the kani-digest gotcha bit again (I should have pre-empted it).</strong> host-lint
+<strong>v0.10.2's CI was born red</strong> on the allium job's "Lint obligations (inputs not stale)" step: my
+<code>src/lib.rs</code> edit changed <code>git hash-object src/lib.rs</code>, so the two <code>DetectInternalCodeAsName</code>
+kani-obligation digests in <code>host-lint.obligations.digests</code> (<code>131dca5e…</code>, recorded at v0.10.1) went
+STALE. The kani PROOFS themselves passed (✓ kani job) and all six platform binaries built — only the
+staleness lint failed. This is the EXACT plan/0034 + plan/0044 warning ("after any host-lint source
+change, re-derive + re-record the kani digests BEFORE tagging"), and I tagged v0.10.2 without it.
+<strong>Fixed artifact-preserving</strong> (plan/0034 precedent): re-recorded the digests to the fresh
+<code>4698c20e0b254f3b7a361f7cac3d81c194bb1386</code> (the digests file is not compiled, so the binary stays
+<code>85c1fc58</code>), committed on host-lint main (<code>9d2d81d</code>, only <code>host-lint.obligations.digests</code> changed),
+and advanced the <code>.host-software</code> host-lint pin <code>5a9d2c5</code> → <code>9d2d81d</code> with the artifact hash
+UNCHANGED. host-lint main CI on <code>9d2d81d</code> is green. <strong>No cascade</strong>: the digest fix does not touch the
+host-lint LIBRARY code, so host-lifecycle stays embedding host-lint @ <code>5a9d2c5</code> (vendor-v2 still
+valid, no host-lifecycle re-release). The <strong>v0.10.2 TAG badge stays red</strong> on the obligations-lint job
+(the binaries published; moving a published tag is blocked by the auto-classifier), the same
+accepted state as plan/0034's red v0.9.0 tag — main is green at the pinned commit and the recorded
+artifact is the released one. The digest was recorded directly (not via <code>obligations --rederive</code>,
+whose local host-prove→<code>cargo kani</code> spawn still ENOENTs on the <code>/mnt/c</code> WSL mount); sound because
+<code>git hash-object</code> is deterministic and the proof is independently CI-verified. Whole-suite green:
+host-lint main <code>9d2d81d</code>, host-lifecycle v0.30.1, host-template + host Prose, agentic-host Site +
+Reproducible build (<code>f293999</code>, the <code>--verify-build</code> reproduces <code>85c1fc58</code> and <code>23c27bff</code> offline).</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
