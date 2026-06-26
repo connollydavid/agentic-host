@@ -1377,3 +1377,52 @@ spine doctrine (the spine never states the mechanism), so zero adopter `UPGRADIN
   `.md`, so a working-tree draft is audited before it is staged. Keep new docs prose-clean from the
   moment they exist (gitignore a genuine scratch file). The `verify` recheck in `software --check`
   picks this up too.
+
+## plan/0048 — a declared rung's re-deriver must be runnable; CORRECTS the WSL-ENOENT misdiagnosis
+
+**The misdiagnosis (lines 667, 669, 1264 are WRONG and superseded by this entry).** Those entries
+say `host-prove`'s local spawn of `cargo kani` fails with `ENOENT` on the `/mnt/c` WSL mount, a
+host-prove-invocation gap blamed on the filesystem, repeated three times across two weeks. **That is
+false.** The re-derivation runs fine on `/mnt/c`. The real causes were two: (1) **host-prove was never
+installed on PATH** by the local setup — host-lint's CI installs it, but the fresh-clone discipline
+never did, so `host-prove` was `command not found` and the spawn error read as a filesystem `ENOENT`;
+and (2) the `obligations --rederive` invocation handed host-prove `src/` rather than the **crate root**
+(host-prove's `run_kani` does `current_dir(dir)`, so `--dir` must be the dir holding `Cargo.toml`).
+Once host-prove is installed (`cargo install --path software/host-prove/main --root ~/.local --force`)
+and pointed at the crate root, `host-prove kani --harness ... --dir software/host-lint/main` →
+`SUCCESSFUL`, and `host-lifecycle obligations host-lint.allium --tests tests --rederive .` re-derives
+**both rungs, 50 dispositioned, clean, on `/mnt/c`**.
+
+**Why it hid for two weeks (call/0018, turned on the re-deriver itself).** The kani proof is verified
+by a *second* path — CI runs `cargo kani` directly and re-derives there — so the local re-derivation's
+brokenness was invisible, and a `command not found` reads as a filesystem fault, so it was filed as a
+WSL problem and never re-opened. The re-deriver was referenced, materialized, and its CI lane present,
+yet **not runnable on the box that needed it**: available but never discharged, the very `call/0018`
+distinction (AVAILABLE ≠ DISCHARGED).
+
+**The migration (not a tactical fix to this one host).** Generalized the spine invariant "declare a
+deeper rung, oblige its lane" into "oblige a lane that is **runnable**, not merely present in CI
+config." `software --check` (host-lifecycle **v0.31.0**, pin `3958b62`, artifact `fe428240`) now
+probes that a declaring component's re-deriver (the shared driver host-prove) **executes** — a cheap
+`--help` probe, never the proof — and HAZARDs when it cannot, beside the existing no-CI-lane HAZARD.
+Narrowed to host-prove only (NOT the specific verifier): TLAPS is CI-only by design (plan/0023) and
+the apalache JVM is optional locally. Decoupled into its own `tier_rederiver_problems` (the probe
+inside `spec_lane_problems` broke `tier_lanes_are_opt_in_and_inert`'s exact-count asserts; that fn
+stays pure/portable). 105 tests green with host-prove hidden; the gate HAZARDs correctly when it is.
+
+**Earned digest, not hand-edited (the born-red root).** The recurring born-red was the *hand-recorded*
+digest standing in for a proof that no longer ran. The digest a rung records is now **earned** only by
+`obligations --rederive --record-digests` (records on a pass), never a hand edit, so the cheap offline
+staleness check soundly means a passing re-derivation on the current code. Validated with Fen (real
+qwen3.5-4b, neutral framing after discarding a leading round): a PATH probe alone is insufficient
+(six of eight see on-PATH ≠ works), a recorded pass on the current code is best (eight of eight); the
+4B reconstructed call/0018 from first principles.
+
+**Spine + ledger.** `host-template/CLAUDE.md` doctrine widened (verify phrase **"a re-deriver that
+runs"**); one independent version-gated `UPGRADING` entry keyed `6174996` (`requires =
+host-lifecycle v0.31.0`), pushed at host-template `4182df9`. agentic-host advanced its host-template
+pointer so the entry reads **PENDING** here; **adoption is deferred to the operator trigger** "Read
+and follow https://github.com/connollydavid/host to keep this repository an agentic project" — which
+records the entry, installs host-prove in the fresh-clone setup and the CI that runs `software
+--check`, and bumps the CI host-lifecycle pins. Until then host-prove is installed locally only, so
+local `software --check` is green while the ledger entry stays unrecorded.
