@@ -1243,3 +1243,25 @@ build sequence dogfooded as 5 anchored receipted tasks. `software --check` clean
 hazards); local host-lifecycle reinstalled to v0.30.1. **No spine change** — the doctrine (a
 legitimate token stays in the per-project LEXICON, both lanes) is met, not changed; no UPGRADING
 entry. The deferred follow-up still stands (PLAN.md): enforce full GitHub URLs over bare `#N` refs.
+
+**plan/0045 follow-up — the kani-digest gotcha bit again (I should have pre-empted it).** host-lint
+**v0.10.2's CI was born red** on the allium job's "Lint obligations (inputs not stale)" step: my
+`src/lib.rs` edit changed `git hash-object src/lib.rs`, so the two `DetectInternalCodeAsName`
+kani-obligation digests in `host-lint.obligations.digests` (`131dca5e…`, recorded at v0.10.1) went
+STALE. The kani PROOFS themselves passed (✓ kani job) and all six platform binaries built — only the
+staleness lint failed. This is the EXACT plan/0034 + plan/0044 warning ("after any host-lint source
+change, re-derive + re-record the kani digests BEFORE tagging"), and I tagged v0.10.2 without it.
+**Fixed artifact-preserving** (plan/0034 precedent): re-recorded the digests to the fresh
+`4698c20e0b254f3b7a361f7cac3d81c194bb1386` (the digests file is not compiled, so the binary stays
+`85c1fc58`), committed on host-lint main (`9d2d81d`, only `host-lint.obligations.digests` changed),
+and advanced the `.host-software` host-lint pin `5a9d2c5` → `9d2d81d` with the artifact hash
+UNCHANGED. host-lint main CI on `9d2d81d` is green. **No cascade**: the digest fix does not touch the
+host-lint LIBRARY code, so host-lifecycle stays embedding host-lint @ `5a9d2c5` (vendor-v2 still
+valid, no host-lifecycle re-release). The **v0.10.2 TAG badge stays red** on the obligations-lint job
+(the binaries published; moving a published tag is blocked by the auto-classifier), the same
+accepted state as plan/0034's red v0.9.0 tag — main is green at the pinned commit and the recorded
+artifact is the released one. The digest was recorded directly (not via `obligations --rederive`,
+whose local host-prove→`cargo kani` spawn still ENOENTs on the `/mnt/c` WSL mount); sound because
+`git hash-object` is deterministic and the proof is independently CI-verified. Whole-suite green:
+host-lint main `9d2d81d`, host-lifecycle v0.30.1, host-template + host Prose, agentic-host Site +
+Reproducible build (`f293999`, the `--verify-build` reproduces `85c1fc58` and `23c27bff` offline).
