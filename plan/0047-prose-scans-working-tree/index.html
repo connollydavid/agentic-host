@@ -258,7 +258,20 @@ the <code>--exclude-standard</code> filter excludes.</li>
 host-lifecycle release with a regenerated bundle, the same shape as plan/0045.</li>
 </ul>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
-<p>in progress.</p>
+<p>complete, released as host-lint v0.10.4 (<code>ce683be</code>, artifact <code>a9ef0865</code>) and host-lifecycle v0.30.3
+(<code>0de2843</code>, artifact <code>cf59cc16</code>, on <code>vendor-v3</code> sha <code>817a71d9</code>). The shared <code>run_docs</code> walks
+<code>git ls-files</code> (tracked and staged) plus <code>git ls-files --others --exclude-standard</code> (untracked
+non-ignored), so a new authored doc is audited before it is staged and a pre-commit run is never
+silently clean over a file it skipped. <code>--exclude-standard</code> holds generated output, vendored deps,
+and un-materialized worktrees out, so a fresh CI checkout is unchanged. connollydavid/host-lint#17 is
+closed. Validated end to end and at the weak-agent bar: the real qwen3.5-4b judged the new walk
+catches a new unstaged doc in every run and judged the old walk misses it in every run; a unit test
+pins a tracked doc scanned, an untracked doc scanned, a gitignored generated doc excluded; on
+agentic-host the new walk finds no untracked markdown, so the verify recheck stays clean. No spine
+change, since the walk scope is a host-lint implementation detail rather than spine doctrine. The
+<code>src/lib.rs</code> edit staled the kani obligation digests, which were re-derived before tagging (the
+plan/0045 lesson applied first try, so the v0.10.4 tag is green). <code>software --check</code> is clean and the
+whole suite is green.</p>
 
                     </main>
 
