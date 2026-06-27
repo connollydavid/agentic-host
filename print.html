@@ -4998,16 +4998,37 @@ document costs only the slice a task needs.</li>
 <p>The specification is closed over the superset of content kinds; the build lands one
 kind at a time, each with a conformance fixture that re-derives byte for byte. The
 modality families are prose, structured data, office documents, fixed-layout
-documents, raster images, vector graphics, electronic mail, electronic design, and
-engineering geometry. Many kinds share a reader, so the breadth collapses to a small
-set of mechanisms: a zip reader for the Office and 3D-printing containers, a
-compound-file reader for legacy Office and Outlook mail, an XML reader for vector
-graphics and several design kinds, fixed-layout extraction, optical character
-recognition, and the engineering parsers. Engineering geometry covers mechanical CAD
-and the 3D-printing kinds (mesh, the container kinds, the toolpath kind, and the
-parametric source kind).</p>
+documents, raster images, vector graphics, electronic mail, electronic design,
+engineering geometry, and audio-visual media. Each family holds several kinds. Prose
+covers Markdown and HTML and the documentation markups, the TeX family and
+reStructuredText and AsciiDoc and Org-mode among them, along with RTF and EPUB and the
+manual page. Structured data covers JSON and CSV and YAML and XML, the config and
+tabular kinds (TOML, the INI family, JSON Lines, the calendar and contact kinds, the
+Jupyter notebook), and the columnar Parquet and Arrow. Electronic design covers the
+SPICE netlist alongside KiCad and Gerber and Eagle. Engineering geometry covers
+mechanical CAD and the 3D-printing kinds (mesh, the container kinds, the toolpath kind,
+and the parametric source kind).</p>
+<p>Many kinds share a reader, so the breadth collapses to a small set of mechanisms: a zip
+reader for the Office and EPUB and 3D-printing containers, a compound-file reader for
+legacy Office and Outlook mail, an XML reader for vector graphics and several design
+kinds, fixed-layout extraction, optical character recognition, columnar decoding,
+media-container metadata, and the engineering parsers.</p>
+<p>Audio-visual media follows the recognition split of <code>call/0030</code>. The attested layer
+holds what re-derives deterministically, the container metadata such as duration and
+codec and stream layout. The transcript and the description are machine-learning
+output, so they live in the overlay through the provider-agnostic adapter, the same way
+the text inside an image does. The columnar kinds re-derive deterministically and stay
+in the attested layer, since a schema and its statistics are a parse rather than an
+inference.</p>
+<p>The component's remit is external reference material, not code. Source code and the
+interface and schema definition kinds, an API description or a protocol schema, are
+software; they belong to the <em>Where</em> room and the <code>host-*</code> tooling rather than to a
+reference reader, and they are out of scope here. Archives are out of scope as well,
+since a container of arbitrary files is a packaging concern rather than a content kind.
+The pluggable model of <code>call/0033</code> carries the superset as the menu, and an adopting
+project enables the subset its corpus needs.</p>
 <h2 id="decisions"><a class="header" href="#decisions">Decisions</a></h2>
-<p>The design is settled across three records.</p>
+<p>The design is settled across four records.</p>
 <ul>
 <li><code>call/0030</code> fixes the component shape and these mechanism choices: the overlay is a Loro
 document, recognition is hybrid (a deterministic engine for the attested layer and a
@@ -5021,10 +5042,13 @@ refusal.</li>
 target has no settled industry answer: a deterministic structure-and-metadata summary keyed on
 the model tree, with a parsed-against-computed reproducibility split and an extensible per-format
 default.</li>
+<li><code>call/0033</code> fixes the reader architecture: each format is a pluggable Cargo feature, every reader
+is pure-Rust with no C dependency, the best reader per format is chosen on merit, the dependency
+licences are per plugin with AGPL banned and GPL flagged, and the in-scope set is the adopting
+project's choice.</li>
 </ul>
-<p>The canonicalisation rules, the reference tokenizer the token accounting reports against, the query
-surface a running project calls, and the licence compatibility of the parser dependencies are
-build-time details settled inside the milestone.</p>
+<p>The canonicalisation rules, the reference tokenizer the token accounting reports against, and the
+query surface a running project calls are build-time details settled inside the milestone.</p>
 <h2 id="validation-1"><a class="header" href="#validation-1">Validation</a></h2>
 <p>The agent-facing surfaces are validated at the weak-agent bar before the design locks,
 the way plan/0042 and plan/0039 were. The probe set, its adversarial review, and the
@@ -5062,8 +5086,8 @@ PDF. Each carries its fixture.</p>
 <li>verify: cd software/host-reference/main &amp;&amp; cargo test</li>
 </ul>
 <h3 id="recognition-and-engineering"><a class="header" href="#recognition-and-engineering">Recognition and engineering</a></h3>
-<p>Land the recognition path for scanned PDF and image. Add the EDA layout normalisers and the
-engineering geometry of <code>call/0032</code>. Each carries its fixture.</p>
+<p>Land the recognition path for scanned PDF and image and audio-visual media. Add the EDA layout
+normalisers and the engineering geometry of <code>call/0032</code>. Each carries its fixture.</p>
 <ul>
 <li>depends: #office-mail-fixed-layout</li>
 <li>verify: cd software/host-reference/main &amp;&amp; cargo test</li>
@@ -5088,7 +5112,10 @@ the text-cheap-kinds task: its normalisers and conformance fixtures have landed 
 <code>host-reference-core</code> contract and the CLI (prose, structured data, markup, vector, and the SPICE
 netlist). The component is pinned source-only in <code>.host-software</code>, and <code>software --check</code> is green.
 The build sequence above is an anchored receipted task graph (plan/0042), and the ready frontier is
-office-and-mail-and-fixed-layout.</p>
+office-and-mail-and-fixed-layout. The format menu has since widened (the documentation markups, the
+TeX family, more config and tabular kinds, the columnar kinds, the audio-visual family, and more
+electronic-design kinds); these readers land as receipted increments within their families as the
+build proceeds.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
