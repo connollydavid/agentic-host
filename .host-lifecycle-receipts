@@ -279,3 +279,15 @@
     evidence = v0.31.0@fe428240dcfe289ed4e14d81e1a2d7fb93ec93aed4c0e4122115648ea64b2df2
     tool = host-lifecycle@0.30.3
     recorded = 2026-06-26
+
+[receipt "embed" "host-reference"]
+    disposition = done
+    evidence = pin 88c6bcfcfc53 (.host-software); materialized as a bare store with worktree
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-27
+
+[receipt "release" "host-reference"]
+    disposition = skip
+    reason = not yet released; source-only scaffold, the reproducible-build release lands in the plan/0049 build wave
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-27

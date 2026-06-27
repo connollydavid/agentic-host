@@ -33,6 +33,14 @@
 	url       = https://github.com/connollydavid/host-grammar
 	pin       = 9d51468ab1f0a7e253cd2ee7d149d7325e65f47b
 	worktrees =
+[software "host-reference"]
+	# greenfield component (plan/0049, call/0030). Source-only for now: the
+	# reproducible-build provenance (toolchain/build/artifact/deps-bundle) lands in
+	# the build wave once the CLI is functional, the same shape the other artifact
+	# components carry.
+	url       = https://github.com/connollydavid/host-reference.git
+	pin       = 88c6bcfcfc531a96a4592154904b0a882e02fd00
+	worktrees =
 [software "host"]
 	# the single-file entrance (the methodology's entry point), set apart from the
 	# host-* tools: it is the entrance, not a component (plan/0039). Declared in the
