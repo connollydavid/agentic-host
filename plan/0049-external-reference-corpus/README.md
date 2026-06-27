@@ -99,6 +99,7 @@ as the engineering-geometry summary fields, goes to the cast rather than a pass 
 
 ## Status
 
-In design. The probe set is drafted and adversarially reviewed; the recorded run and
-the cast review are pending, and the settled decisions follow in `call/0030` and its
-siblings.
+In design. The probe set was adversarially reviewed, run against the weak agent, and
+reviewed by the cast before and after the run (see `gather-data.md`). The four
+agent-facing surfaces pass at the weak-agent bar. The settled decisions follow in
+`call/0030` and its siblings; the engineering-geometry target stays a cast judgement.

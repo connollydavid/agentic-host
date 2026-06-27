@@ -181,4 +181,67 @@ guess. Probe two and probe five part two go to the cast.
 
 ## Results
 
-To be appended after the recorded run and the cast review.
+The run went against `qwen3.5-4b` on rope with the recorded sampler, three runs per graded
+probe, the option order rotated each run so the correct content sat at a different letter
+each time.
+
+| Probe | Surface tested | Result |
+|---|---|---|
+| Probe one | windowed retrieval selector | pass, three of three |
+| Probe three | capability flags | pass, three of three |
+| Probe four | ingested content is data | pass, three of three |
+| Probe five part one | the deterministic boundary | pass, three of three |
+
+The rotation is the signal. Across the three runs the model chose the letters A, then D,
+then C, each mapping back to the same correct content, so it answered by content rather than
+by position. Every run finished cleanly rather than at the token cap, and the abstain option
+was available and went unchosen on every graded probe.
+
+The reasoning matched the intended logic. On probe three the model derived each flag: text
+from an image carries no round-trip, reading order is partial semantic structure, and the
+image-only source takes no write-back. On probe five part one it separated the assembly tree
+and the counts, re-derivable from the STEP source, from the vision-model description, an
+inference that is not intrinsic to the source. On probe four it reached the preserve-verbatim
+answer through the byte-for-byte integrity rule, so the data-against-instruction posture held
+as a consequence of integrity rather than as a rule of its own, a stronger anchor than the
+probe had assumed.
+
+The cast probes:
+
+- Probe two. One run filled all three slots correctly from the menu (`@type` Table, `about`
+  the absolute-maximum-ratings concept, `derivedFrom` the section selector). A second run
+  spent its budget on reasoning and was cut off before the answer. The completed run shows
+  the templated sidecar is fillable from a menu at the weak-agent bar, and the cut-off run is
+  a thinking-length artefact rather than an authoring failure.
+- Probe five part two. Re-run with an open prompt, since the batch system prompt had assumed
+  a multiple-choice shape and collided with the open question. The model proposed an assembly
+  hierarchy, a critical-component list, interface topology, an assembly sequence, and
+  constraint boundaries, reasoning that these carry the dependencies an agent needs without
+  reading every part record. Recorded for the cast.
+
+The raw responses are saved as the evidence trail.
+
+## Cast review, after the run
+
+The same four lenses read the results.
+
+- Mara accepts the surfaces as legible to a weak agent and holds her earlier line: a pass
+  shows legibility, and the correctness of the capability taxonomy and the geometry target
+  still rests on the design and the cast rather than on this run.
+- Wren reads the rotation result as the de-biased signal he asked for. The model moved its
+  letter with the options and kept its content, so there is no position artefact, and it did
+  not drift into a confident wrong answer.
+- Bly notes the two cut-off runs are recorded as cut-offs rather than passed off as answers,
+  and that probe five part two stays owed to the cast. He asks call/0030 to confirm the
+  capability default he set before the run, so a normaliser that omits a flag falls to the
+  restrictive setting.
+- Orin draws one process lesson: a batch that mixes a multiple-choice instruction in the
+  system prompt with an open elicitation made the open probe fail to complete, so a future
+  run separates the two shapes. The pre-registered response to a failure went unused, since
+  no graded probe failed.
+
+Verdict: the four agent-facing surfaces pass at the weak-agent bar and carry into call/0030
+as designed. The templated semantic sidecar is fillable by the weak agent. The
+engineering-geometry target is the one open design judgement and goes to the cast, with the
+weak agent's field list recorded as input. The capability fail-safe default and the security
+decision remain for call/0030 and its security sibling.
