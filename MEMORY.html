@@ -1612,6 +1612,23 @@ truncated mid-think and the answer never emitted; 8000 finished cleanly. Force t
 parseable final line (<code>ANSWER: X</code>) and rotate the option order across runs, so a pass is content
 reasoning rather than a position or string-match artefact. See [[qwen-4b-weak-agent-eval]] and
 [[weak-agent-probe-no-false-premise]].</p>
+<h2 id="plan0049--host-reference-embedded-source-only-prose-density-check-needs-host-lifecycle-prose"><a class="header" href="#plan0049--host-reference-embedded-source-only-prose-density-check-needs-host-lifecycle-prose">plan/0049 — host-reference embedded source-only; prose density check needs <code>host-lifecycle prose</code></a></h2>
+<p>The host-reference component was scaffolded (a Cargo workspace, <code>host-reference-core</code> carrying the
+<code>Normalizer</code> trait and the two-layer types, plus a CLI skeleton), pushed to the new public repo
+connollydavid/host-reference at <code>88c6bcf</code>, and embedded source-only in <code>.host-software</code> (url, pin,
+worktrees, no build provenance). The reproducible-build artifact, the deps-bundle, and
+<code>--verify-build</code> land in the plan/0049 build wave once the CLI is functional; the release receipt is
+a deliberate <code>skip</code> until then. <code>software --check</code> is green. A greenfield component still needs its
+embed and release receipts (<code>host-lifecycle receipt --record</code>), and adding a <code>.host-software</code>
+component forces its mention in the <code>STRUCTURE.md</code> components home or reconcile HAZARDs by coverage.</p>
+<p><strong>GOTCHA: check authored-doc prose with <code>host-lifecycle prose</code>, not <code>host-lint --docs &lt;file&gt;</code>.</strong> I
+pre-linted call/0030 through call/0032 and the plan/0049 docs with <code>host-lint --docs &lt;file&gt;</code> (exit 0)
+and the commit hook passed, yet <code>software --check</code> then re-opened the verify phase: <code>host-lifecycle prose</code> flagged ten ai-diction warns (negative-parallelism, tricolon, ing-tail) that the <code>--docs &lt;file&gt;</code> mode does not surface. The density tropes are caught by <code>host-lifecycle prose</code> (the gate
+engine) and by the commit-msg <code>host-lint --stdin</code> (it flagged the antithesis in my own fix commit's
+message), so a doc can pass the per-file <code>--docs</code> check and the hook while still failing the gate.
+Before committing authored markdown, run <code>host-lifecycle prose</code>, and watch antithesis ("not X but
+Y"), three-beat lists, and trailing -ing clauses in prose and in commit messages. See
+[[prose-clean-on-front-door-trigger]] and [[ai-diction-traps-in-my-writing]].</p>
 
                     </main>
 
