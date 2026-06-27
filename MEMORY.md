@@ -1454,3 +1454,28 @@ stayed green), but a red run sits in history. Fix the ordering: commit the backi
 same commit as the status flip or earlier, never after. This refines [[complete-means-whole-suite-green]]
 to intra-sequence commit ordering, not just cross-repo sweeps. Re-running the red intermediate commit
 is pointless; its tree is genuinely inconsistent.
+
+## plan/0049 — external reference corpus cut; host-reference agent surfaces pass at the Fen bar
+
+plan/0049 cut (in design): a new component `host-reference`, a reference compiler that normalises
+external documentation (mixed shapes: Markdown, HTML, PDF, Office, images, structured data, electronic
+design, mechanical and 3D-printing CAD) into a token-lean form an agent reads in context, with a
+deterministic immutable layer (re-derived, attested) and a collaborative overlay for annotations and
+edits. Design direction and the open questions are in plan/0049/README.md; the adversarially reviewed
+weak-agent probe set, the cast review (pre and post), and the run are in plan/0049/gather-data.md. The
+four agent-facing surfaces (windowed retrieval selector, capability flags, content-is-data posture, the
+deterministic immutable-against-overlay boundary) passed three of three each against `qwen3.5-4b` on
+rope, with the option order rotated so the pass reflects content reasoning and not position. Decisions
+follow in call/0030, with a security sibling and the engineering-geometry target left to the cast.
+
+**GOTCHA for a future Fen probe run: do not put a multiple-choice instruction in a shared system prompt
+when an open elicitation probe is in the same batch.** The system prompt said to answer the
+multiple-choice question; the open geometry-elicitation probe spent its whole token budget reconciling
+that mismatch and truncated before answering. Run an open elicitation with its own open-ended system
+prompt, or split the batch by response shape.
+
+**GOTCHA: give the thinking model room.** `qwen3.5-4b` thinks before it answers, so `max_tokens` 1500
+truncated mid-think and the answer never emitted; 8000 finished cleanly. Force the answer onto a
+parseable final line (`ANSWER: X`) and rotate the option order across runs, so a pass is content
+reasoning rather than a position or string-match artefact. See [[qwen-4b-weak-agent-eval]] and
+[[weak-agent-probe-no-false-premise]].
