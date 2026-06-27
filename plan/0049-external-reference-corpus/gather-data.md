@@ -44,6 +44,41 @@ The revised set adds an abstain option to every probe, pins the system prompt, a
 randomises the option order across runs. The cast reviews the authoring probe and the
 open part, since the same author wrote the design and the probes.
 
+## Cast review, before the run
+
+The review lenses are Mara, Wren, Bly, and Orin. Fen is the run itself, the acceptance
+test, so it is not a lens. Four findings changed the instrument before the run.
+
+- Wren and Mara asked for a stated success bar, since a result with no pre-registered
+  threshold is read after the fact and flatters the design. The bar is pre-registered
+  below.
+- Orin asked what happens when Fen fails a probe, and required the answer to be written
+  before the run, so a failure cannot be waved away. The response to a failure is
+  pre-registered below.
+- Mara warned against over-reading a pass: a pass shows the surface is legible to a weak
+  agent, and says nothing about whether the surface is the right design. The pass
+  criteria say so.
+- Bly required two fail-safe rules. The capability model defaults an absent or unknown
+  flag to the most restrictive setting (no round-trip, no write-back), so a normaliser
+  that forgets to declare cannot over-claim editability. The result record marks an
+  unsettled question as owed rather than implying it is settled, so a cold read
+  over-reports the remaining work rather than hiding it. Both fold into call/0030.
+
+## Pass criteria and the response to a failure
+
+The graded probes are probe one, probe three, probe four, and probe five part one.
+Probe two and probe five part two are cast judgements and are unscored.
+
+A graded probe passes when the intended option is chosen in all three runs. A run that
+chooses the abstain option does not count as a wrong answer. A probe that abstains
+across the runs is read as a framing gap to fix in the probe, or a context gap to fix
+in the surface, and is not a pass. A run that chooses a wrong option is a failure
+signal.
+
+When a graded probe fails, the surface is read as illegible to a weak agent, and the
+design of that surface is revised rather than the result set aside. This is written
+before the run so a failure cannot be reinterpreted after it.
+
 ## The system prompt
 
 A senior engineer reviewing the host-reference design, answering a self-contained
@@ -81,8 +116,8 @@ Given a fixed context block and a menu of concept identifiers and selectors, the
 fills three slots of a JSON-LD sidecar entry for the fact that one span states the
 absolute-maximum ratings of part 2N2222A. Each slot is a choice from the menu rather
 than free composition. This tests whether the model can place known pieces into a
-template, the form plan/0042 found a weak agent handles. The result feeds the cast as
-well, since authoring is a judgement.
+template, the form plan/0042 found a weak agent handles. This probe is unscored and goes to
+the cast, since authoring is a judgement.
 
 ## Probe three: capability flags
 
