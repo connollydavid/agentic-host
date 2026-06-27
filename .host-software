@@ -39,7 +39,7 @@
 	# the spec-and-release task once the CLI is functional, the same shape the other artifact
 	# components carry.
 	url       = https://github.com/connollydavid/host-reference.git
-	pin       = 77b69ee2bd6c9b0ee7694b42e6007f3f8cba9fe1
+	pin       = e3e3845b7fd9523d8671a17066cf40c628014228
 	worktrees =
 [software "host"]
 	# the single-file entrance (the methodology's entry point), set apart from the
