@@ -59,18 +59,42 @@ Four properties carry the design:
 The specification is closed over the superset of content kinds; the build lands one
 kind at a time, each with a conformance fixture that re-derives byte for byte. The
 modality families are prose, structured data, office documents, fixed-layout
-documents, raster images, vector graphics, electronic mail, electronic design, and
-engineering geometry. Many kinds share a reader, so the breadth collapses to a small
-set of mechanisms: a zip reader for the Office and 3D-printing containers, a
-compound-file reader for legacy Office and Outlook mail, an XML reader for vector
-graphics and several design kinds, fixed-layout extraction, optical character
-recognition, and the engineering parsers. Engineering geometry covers mechanical CAD
-and the 3D-printing kinds (mesh, the container kinds, the toolpath kind, and the
-parametric source kind).
+documents, raster images, vector graphics, electronic mail, electronic design,
+engineering geometry, and audio-visual media. Each family holds several kinds. Prose
+covers Markdown and HTML and the documentation markups, the TeX family and
+reStructuredText and AsciiDoc and Org-mode among them, along with RTF and EPUB and the
+manual page. Structured data covers JSON and CSV and YAML and XML, the config and
+tabular kinds (TOML, the INI family, JSON Lines, the calendar and contact kinds, the
+Jupyter notebook), and the columnar Parquet and Arrow. Electronic design covers the
+SPICE netlist alongside KiCad and Gerber and Eagle. Engineering geometry covers
+mechanical CAD and the 3D-printing kinds (mesh, the container kinds, the toolpath kind,
+and the parametric source kind).
+
+Many kinds share a reader, so the breadth collapses to a small set of mechanisms: a zip
+reader for the Office and EPUB and 3D-printing containers, a compound-file reader for
+legacy Office and Outlook mail, an XML reader for vector graphics and several design
+kinds, fixed-layout extraction, optical character recognition, columnar decoding,
+media-container metadata, and the engineering parsers.
+
+Audio-visual media follows the recognition split of `call/0030`. The attested layer
+holds what re-derives deterministically, the container metadata such as duration and
+codec and stream layout. The transcript and the description are machine-learning
+output, so they live in the overlay through the provider-agnostic adapter, the same way
+the text inside an image does. The columnar kinds re-derive deterministically and stay
+in the attested layer, since a schema and its statistics are a parse rather than an
+inference.
+
+The component's remit is external reference material, not code. Source code and the
+interface and schema definition kinds, an API description or a protocol schema, are
+software; they belong to the *Where* room and the `host-*` tooling rather than to a
+reference reader, and they are out of scope here. Archives are out of scope as well,
+since a container of arbitrary files is a packaging concern rather than a content kind.
+The pluggable model of `call/0033` carries the superset as the menu, and an adopting
+project enables the subset its corpus needs.
 
 ## Decisions
 
-The design is settled across three records.
+The design is settled across four records.
 
 - `call/0030` fixes the component shape and these mechanism choices: the overlay is a Loro
   document, recognition is hybrid (a deterministic engine for the attested layer and a
@@ -84,10 +108,13 @@ The design is settled across three records.
   target has no settled industry answer: a deterministic structure-and-metadata summary keyed on
   the model tree, with a parsed-against-computed reproducibility split and an extensible per-format
   default.
+- `call/0033` fixes the reader architecture: each format is a pluggable Cargo feature, every reader
+  is pure-Rust with no C dependency, the best reader per format is chosen on merit, the dependency
+  licences are per plugin with AGPL banned and GPL flagged, and the in-scope set is the adopting
+  project's choice.
 
-The canonicalisation rules, the reference tokenizer the token accounting reports against, the query
-surface a running project calls, and the licence compatibility of the parser dependencies are
-build-time details settled inside the milestone.
+The canonicalisation rules, the reference tokenizer the token accounting reports against, and the
+query surface a running project calls are build-time details settled inside the milestone.
 
 ## Validation
 
@@ -135,8 +162,8 @@ PDF. Each carries its fixture.
 
 ### Recognition and engineering {#recognition-and-engineering}
 
-Land the recognition path for scanned PDF and image. Add the EDA layout normalisers and the
-engineering geometry of `call/0032`. Each carries its fixture.
+Land the recognition path for scanned PDF and image and audio-visual media. Add the EDA layout
+normalisers and the engineering geometry of `call/0032`. Each carries its fixture.
 
 - depends: #office-mail-fixed-layout
 - verify: cd software/host-reference/main && cargo test
@@ -164,4 +191,7 @@ the text-cheap-kinds task: its normalisers and conformance fixtures have landed 
 `host-reference-core` contract and the CLI (prose, structured data, markup, vector, and the SPICE
 netlist). The component is pinned source-only in `.host-software`, and `software --check` is green.
 The build sequence above is an anchored receipted task graph (plan/0042), and the ready frontier is
-office-and-mail-and-fixed-layout.
+office-and-mail-and-fixed-layout. The format menu has since widened (the documentation markups, the
+TeX family, more config and tabular kinds, the columnar kinds, the audio-visual family, and more
+electronic-design kinds); these readers land as receipted increments within their families as the
+build proceeds.
