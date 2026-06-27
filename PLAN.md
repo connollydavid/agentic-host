@@ -22,6 +22,7 @@ The named follow-ups from completed plans, pre-resolved so a scan needs no cross
 | Retire the legacy per-member entrance marker (`front-door = true` / `entrance = true`) | call/0027 / plan/0043 (plan/0039 deprecate-then-retire) | Done (plan/0043, host-lifecycle v0.30.0): the marker is retired; a surviving one is a loud problem in every consumer, with the spine retirement doctrine and adopter UPGRADING entry. |
 | A structured pin home so the front-door version pins become drift-proof (they have no canonical source today) | plan/0040 review | Future plan, not yet cut. |
 | A sanctioned construct for a group of tasks (without one, an author reaches for an ordinal group-name, a tell host-lint did not catch) | plan/0049, operator review | Open: filed [connollydavid/host-lifecycle#4](https://github.com/connollydavid/host-lifecycle/issues/4) with plan/0049 as the case study; adding the ordinal-group form to host-lint is a `gather` candidate. |
+| A per-consumer or multilingual tokenizer lens, since tiktoken o200k_base over-counts CJK and other non-Latin scripts against a model-native tokenizer such as Fen's | plan/0049, operator | Open: tiktoken o200k_base is the pinned reference now (call/0030, settled in plan/0049); a per-consumer tokenizer behind the same call site is future work. |
 
 Two ideas were deliberately declined and should not be reopened: a project-local ban surface (speculative, recorded in `call/0022`) and a glued hyphen-digit tell form (no `LEXICON` escape exists for it, plan/0034).
 
