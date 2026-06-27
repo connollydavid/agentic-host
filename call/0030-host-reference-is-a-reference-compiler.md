@@ -18,8 +18,8 @@
 An agentic project applies rigour to what it produces. The build is reproducible, the authored
 prose is linted, the specifications are checked. The material it consumes has none of that
 treatment. External reference knowledge, the vendor documents and datasheets and schematics an
-agent reasons over, enters the context window raw, unpinned, token-heavy, and with no trail back
-to its source. The `reference` memory kind records only a pointer to such material, not its
+agent reasons over, enters the context window raw and unpinned. It is heavy in tokens, and
+nothing records where it came from. The `reference` memory kind records only a pointer to such material, not its
 content. So there is no inbound counterpart to the outbound discipline.
 
 The primary goal is in-context interpretation: let an agent understand external material inside
@@ -61,8 +61,8 @@ Four properties carry the design.
   kind such as PDF carries its edits in a standard sidecar (the W3C Web Annotation model, and XFDF
   for PDF) rather than a mutated original.
 - Tiered, range-addressable views. A cheap skeleton is always resident; a full slice is fetched on
-  demand by page range, section, offset, or token budget, so a large document never costs its whole
-  size. Each ingest records the raw token count against the normalised token count, so the saving
+  demand by page range, section, offset, or token budget, so a large document costs only the slice
+  a task needs. Each ingest records the raw token count against the normalised token count, so the saving
   is a measured number.
 
 The format superset is specified once and built one kind at a time, each kind with a conformance
@@ -72,8 +72,8 @@ recognition, and the engineering parsers).
 
 Two settled mechanism choices, taken from 2026 practice and the weak-agent run.
 
-- The overlay is a Loro document. It is Rust-native, so it fits a pure-Rust reproducible workspace
-  with no second toolchain, its model is version-controlled by design, and its encoding is compact.
+- The overlay is a Loro document. It is Rust-native, so a pure-Rust reproducible workspace can use
+  it without a second toolchain. Its model is version-controlled by design, and its encoding is compact.
   Automerge is the recorded fallback if a Git-like change-attribution feature is later required.
 - Optical character recognition is hybrid. A pinned deterministic engine reads clean scans into the
   immutable layer. The provider-agnostic vision adapter reads diagrams, noisy scans, and handwriting

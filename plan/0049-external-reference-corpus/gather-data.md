@@ -46,7 +46,7 @@ open part, since the same author wrote the design and the probes.
 
 ## Cast review, before the run
 
-The review lenses are Mara, Wren, Bly, and Orin. Fen is the run itself, the acceptance
+The review lenses are the four cast personas, named in the findings below. Fen is the run itself, the acceptance
 test, so it is not a lens. Four findings changed the instrument before the run.
 
 - Wren and Mara asked for a stated success bar, since a result with no pre-registered
@@ -159,7 +159,7 @@ in a pinned toolchain, and so belongs in the overlay rather than the attested la
 
 - (A) a description produced by a vision model from a rendered image
 - (B) the assembly tree with units and bounding boxes
-- (C) the count of solids, faces, and edges
+- (C) the count of solids and faces and edges
 - (D) abstain
 
 The intended answer is (A): a model reading is not reproducible, so it sits in the
@@ -216,8 +216,8 @@ The cast probes:
 - Probe five part two. Re-run with an open prompt, since the batch system prompt had assumed
   a multiple-choice shape and collided with the open question. The model proposed an assembly
   hierarchy, a critical-component list, interface topology, an assembly sequence, and
-  constraint boundaries, reasoning that these carry the dependencies an agent needs without
-  reading every part record. Recorded for the cast.
+  constraint boundaries. These fields carry the dependencies an agent needs without reading
+  every part record. Recorded for the cast.
 
 The raw responses are saved as the evidence trail.
 

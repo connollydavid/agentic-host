@@ -17,7 +17,8 @@ and the cast review return. The probe set and its adversarial review live in
 An agentic project already applies rigour to what it produces. The build is
 reproducible, the authored prose is linted, the specifications are checked. The
 material it consumes has none of that treatment. External reference knowledge enters
-an agent's context raw, unpinned, token-heavy, and with no trail back to its source.
+an agent's context raw and unpinned. It is heavy in tokens, and nothing records where it
+came from.
 The `reference` memory kind records only a pointer to the content. There is no inbound
 counterpart to the outbound discipline, and `host-reference` is that counterpart.
 
@@ -51,7 +52,7 @@ Four properties carry the design:
   in a standard sidecar rather than a mutated original.
 - Tiered, range-addressable views. A cheap skeleton is always resident; a full slice
   is fetched on demand by page range, section, offset, or token budget, so a large
-  document never costs its whole size.
+  document costs only the slice a task needs.
 
 ## Format coverage
 

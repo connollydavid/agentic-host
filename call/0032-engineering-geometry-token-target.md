@@ -84,7 +84,7 @@ The defaults, each becoming a normaliser's conformance fixture:
 
 - STEP: the assembly tree, part names, units, instance and topology counts, declared materials, the
   product-manufacturing annotations, and a canonical per-part bounding box.
-- DXF: layers, block definitions, entity counts by kind, every text and dimension value, and units.
+- DXF: the layers and block definitions, the per-kind entity counts, every text and dimension value, and the units.
 - STL and OBJ: object and group names, triangle and vertex counts, declared units, and the canonical
   bounding box, volume, surface area, and watertight flag.
 - 3MF and AMF: the model tree, object names, materials, build items, metadata, and units.

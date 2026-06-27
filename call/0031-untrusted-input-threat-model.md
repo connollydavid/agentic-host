@@ -77,7 +77,7 @@ use, and a changed source invalidates exactly its spans.
 
 ## Considered Options
 
-1. **Defensive parsing, a legible untrusted boundary, and fail-safe refusal (chosen).** It hardens
+1. **Defensive parsing behind a legible untrusted boundary, with a fail-safe refusal (chosen).** It hardens
    the host against the file-level classes and gives the consumer the segregation primitive the
    injection guidance requires, without pretending to solve the consumer's enforcement.
 2. **Sanitise content by stripping instruction-like text.** Rejected: it loses fidelity and
