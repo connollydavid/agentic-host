@@ -76,10 +76,10 @@ JSON-LD bound to the `plan/0039` vocabulary, the round-trip law is a per-kind le
 the property-based lane, and an undeclared capability defaults to the most restrictive
 setting.
 
-Two decisions remain, each its own record:
+`call/0031` settles the untrusted-input threat model: ingested material is untrusted, met by
+defensive parsing with hard bounds, a legible untrusted boundary, and a fail-safe recorded
+refusal. One decision remains:
 
-- `call/0031`: the threat model for untrusted input, since the component's whole job is
-  bringing external material into an agent's context.
 - `call/0032`: the token target for engineering geometry, which has no settled industry
   answer and so rests with the cast.
 
