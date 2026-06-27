@@ -220,7 +220,7 @@ The design is settled and the build is under way. The scaffold and the embed are
 the text-cheap-kinds task: its normalisers and conformance fixtures have landed behind the
 `host-reference-core` contract and the CLI (prose, structured data, markup, vector, and the SPICE
 netlist). The component is pinned source-only in `.host-software`, and `software --check` is green.
-The build sequence above is an anchored receipted task graph (plan/0042). The format menu has since
-widened across the prose and structured and electronic-design and audio-visual families, so the ready
-frontier is now the expanded prose and structured readers alongside office-and-mail-and-fixed-layout.
-The per-kind pins live in `readers.md`, and the library-less kinds are deferred.
+The build sequence above is an anchored receipted task graph (plan/0042). The pluggable foundation and
+the expanded prose and structured readers have landed, each reader a feature-gated crate, and the
+per-kind pins live in `readers.md`; the library-less kinds stay deferred. The ready frontier is now
+office-and-mail-and-fixed-layout.
