@@ -1479,3 +1479,25 @@ truncated mid-think and the answer never emitted; 8000 finished cleanly. Force t
 parseable final line (`ANSWER: X`) and rotate the option order across runs, so a pass is content
 reasoning rather than a position or string-match artefact. See [[qwen-4b-weak-agent-eval]] and
 [[weak-agent-probe-no-false-premise]].
+
+## plan/0049 — host-reference embedded source-only; prose density check needs `host-lifecycle prose`
+
+The host-reference component was scaffolded (a Cargo workspace, `host-reference-core` carrying the
+`Normalizer` trait and the two-layer types, plus a CLI skeleton), pushed to the new public repo
+connollydavid/host-reference at `88c6bcf`, and embedded source-only in `.host-software` (url, pin,
+worktrees, no build provenance). The reproducible-build artifact, the deps-bundle, and
+`--verify-build` land in the plan/0049 build wave once the CLI is functional; the release receipt is
+a deliberate `skip` until then. `software --check` is green. A greenfield component still needs its
+embed and release receipts (`host-lifecycle receipt --record`), and adding a `.host-software`
+component forces its mention in the `STRUCTURE.md` components home or reconcile HAZARDs by coverage.
+
+**GOTCHA: check authored-doc prose with `host-lifecycle prose`, not `host-lint --docs <file>`.** I
+pre-linted call/0030 through call/0032 and the plan/0049 docs with `host-lint --docs <file>` (exit 0)
+and the commit hook passed, yet `software --check` then re-opened the verify phase: `host-lifecycle
+prose` flagged ten ai-diction warns (negative-parallelism, tricolon, ing-tail) that the `--docs
+<file>` mode does not surface. The density tropes are caught by `host-lifecycle prose` (the gate
+engine) and by the commit-msg `host-lint --stdin` (it flagged the antithesis in my own fix commit's
+message), so a doc can pass the per-file `--docs` check and the hook while still failing the gate.
+Before committing authored markdown, run `host-lifecycle prose`, and watch antithesis ("not X but
+Y"), three-beat lists, and trailing -ing clauses in prose and in commit messages. See
+[[prose-clean-on-front-door-trigger]] and [[ai-diction-traps-in-my-writing]].
