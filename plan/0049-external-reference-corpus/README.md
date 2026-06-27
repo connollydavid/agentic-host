@@ -116,6 +116,16 @@ The design is settled across four records.
 The canonicalisation rules, the reference tokenizer the token accounting reports against, and the
 query surface a running project calls are build-time details settled inside the milestone.
 
+## Readers and dependencies
+
+Each kind binds the best maintained pure-Rust reader, pinned with its version and licence in
+[`readers.md`](readers.md), which also carries the licence watch-list and the pure-Rust feature
+discipline. Almost every pick is permissive. The GPL `openscad-rs` runs out-of-process under
+`call/0033`, which doubles as the first real test of the plugin API, since the OpenSCAD plugin drives
+that helper through the same `Normalizer` interface as every in-process reader. The manual page and
+TeX and IGES have no pure-Rust library, so they are deferred rather than hand-rolled or bound to a C
+library. A `cargo-deny` lane denies AGPL and flags GPL.
+
 ## Validation
 
 The agent-facing surfaces are validated at the weak-agent bar before the design locks,
@@ -150,6 +160,17 @@ Land the text-cheap normalisers that `call/0030` groups under the text and data 
 mechanisms, each with a conformance fixture that re-derives byte for byte.
 
 - depends: #embed-component
+- verify: cd software/host-reference/main && cargo test
+
+### The expanded prose and structured readers {#expand-prose-and-structured-readers}
+
+Land the documentation markups and the extra config and tabular kinds behind their features, each
+with a conformance fixture. The prose readers are reStructuredText and AsciiDoc and Org-mode and RTF
+and EPUB and BibTeX; the structured readers are TOML and the INI family and JSON Lines and the
+calendar and contact kinds and the Jupyter notebook and the columnar Parquet and Arrow. The pins live
+in `readers.md`.
+
+- depends: #text-cheap-kinds
 - verify: cd software/host-reference/main && cargo test
 
 ### Office and mail and fixed-layout {#office-mail-fixed-layout}
@@ -190,8 +211,7 @@ The design is settled and the build is under way. The scaffold and the embed are
 the text-cheap-kinds task: its normalisers and conformance fixtures have landed behind the
 `host-reference-core` contract and the CLI (prose, structured data, markup, vector, and the SPICE
 netlist). The component is pinned source-only in `.host-software`, and `software --check` is green.
-The build sequence above is an anchored receipted task graph (plan/0042), and the ready frontier is
-office-and-mail-and-fixed-layout. The format menu has since widened (the documentation markups, the
-TeX family, more config and tabular kinds, the columnar kinds, the audio-visual family, and more
-electronic-design kinds); these readers land as receipted increments within their families as the
-build proceeds.
+The build sequence above is an anchored receipted task graph (plan/0042). The format menu has since
+widened across the prose and structured and electronic-design and audio-visual families, so the ready
+frontier is now the expanded prose and structured readers alongside office-and-mail-and-fixed-layout.
+The per-kind pins live in `readers.md`, and the library-less kinds are deferred.
