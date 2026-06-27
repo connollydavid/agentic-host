@@ -392,6 +392,7 @@ holds.</li>
 <tr><td>Generalize the front-door check to an opt-in, reusable standalone-document check</td><td>plan/0040 review</td><td>Done (plan/0043, host-lifecycle v0.29.0): the opt-in entrance check declared by a singleton <code>[entrance]</code> stanza; spine doctrine and adopter UPGRADING entry shipped.</td></tr>
 <tr><td>Retire the legacy per-member entrance marker (<code>front-door = true</code> / <code>entrance = true</code>)</td><td>call/0027 / plan/0043 (plan/0039 deprecate-then-retire)</td><td>Done (plan/0043, host-lifecycle v0.30.0): the marker is retired; a surviving one is a loud problem in every consumer, with the spine retirement doctrine and adopter UPGRADING entry.</td></tr>
 <tr><td>A structured pin home so the front-door version pins become drift-proof (they have no canonical source today)</td><td>plan/0040 review</td><td>Future plan, not yet cut.</td></tr>
+<tr><td>A sanctioned construct for a group of tasks (without one, an author reaches for an ordinal group-name, a tell host-lint did not catch)</td><td>plan/0049, operator review</td><td>Open: filed https://github.com/connollydavid/host-lifecycle/issues/4 with plan/0049 as the case study; adding the ordinal-group form to host-lint is a <code>gather</code> candidate.</td></tr>
 </tbody></table>
 </div>
 <p>Two ideas were deliberately declined and should not be reopened: a project-local ban surface (speculative, recorded in <code>call/0022</code>) and a glued hyphen-digit tell form (no <code>LEXICON</code> escape exists for it, plan/0034).</p>
