@@ -1501,3 +1501,15 @@ message), so a doc can pass the per-file `--docs` check and the hook while still
 Before committing authored markdown, run `host-lifecycle prose`, and watch antithesis ("not X but
 Y"), three-beat lists, and trailing -ing clauses in prose and in commit messages. See
 [[prose-clean-on-front-door-trigger]] and [[ai-diction-traps-in-my-writing]].
+
+**GOTCHA: do not name a group of tasks by ordinal; host-lint will not catch it.** When I gave
+plan/0049 a build-sequence task graph, I named the task groups by ordinal (the rejected
+position-naming the milestone rule forbids). It passed `host-lint`, `host-lifecycle prose`, and
+`software --check`, and the operator caught it by eye. Two gaps, filed as
+https://github.com/connollydavid/host-lifecycle/issues/4 with plan/0049 as the case study: the task
+model has no sanctioned construct for a group of tasks (so an author reaches for an ordinal name),
+and host-lint's VOCABULARY does not carry the ordinal-group form (a `gather` candidate, plan/0035).
+For now: name every task and task group by content, and let the order live in the `depends` edges.
+The fix renamed the groups to `text-cheap-kinds`, `office-mail-fixed-layout`,
+`recognition-and-engineering`, `overlay`, and `spec-and-release`. See [[no-forge-word]] for the
+related ban-by-name discipline.
