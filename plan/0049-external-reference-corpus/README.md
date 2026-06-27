@@ -159,8 +159,9 @@ build with its deps-bundle, and release through `host-lifecycle`.
 
 ## Status
 
-The design is settled, and the build has begun. The scaffold and the embed are done. The workspace
-is scaffolded (`host-reference-core` and the CLI skeleton) and builds and tests green on the pinned
-toolchain. The component is embedded source-only at `connollydavid/host-reference` `88c6bcf`, and
-`software --check` is green. The build sequence above is an anchored receipted task graph
-(plan/0042); the ready frontier is the text-cheap kinds.
+The design is settled and the build is under way. The scaffold and the embed are done, and so is
+the text-cheap-kinds task: its normalisers and conformance fixtures have landed behind the
+`host-reference-core` contract and the CLI (prose, structured data, markup, vector, and the SPICE
+netlist). The component is pinned source-only in `.host-software`, and `software --check` is green.
+The build sequence above is an anchored receipted task graph (plan/0042), and the ready frontier is
+office-and-mail-and-fixed-layout.

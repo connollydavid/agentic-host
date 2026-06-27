@@ -312,3 +312,10 @@
     evidence = public repo created and scaffold pushed; pinned source-only in .host-software; materialized as bare store + worktree; embed/release phase receipts recorded; software --check green
     tool = host-lifecycle@0.31.0
     recorded = 2026-06-27
+
+[receipt "plan/0049#text-cheap-kinds"]
+    disposition = done
+    verify = cd software/host-reference/main && cargo test
+    evidence = prose (md/txt), structured data (json/csv/yaml/xml), html5, vector (svg), and spice netlist normalisers landed, each with a conformance fixture and committed golden; cargo test green (18 binaries); pinned at 8e7cf0d
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-27
