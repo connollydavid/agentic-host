@@ -162,6 +162,15 @@ mechanisms, each with a conformance fixture that re-derives byte for byte.
 - depends: #embed-component
 - verify: cd software/host-reference/main && cargo test
 
+### The pluggable foundation {#pluggable-foundation}
+
+Retrofit the text-cheap readers behind Cargo features in the CLI, the text-cheap set on by default
+and the heavier readers reserved for their own opt-in features (call/0033). Add the `cargo-deny` lane
+that denies AGPL and flags GPL. A build with no features compiles to an empty registry.
+
+- depends: #text-cheap-kinds
+- verify: cd software/host-reference/main && cargo test && cargo deny check licenses advisories
+
 ### The expanded prose and structured readers {#expand-prose-and-structured-readers}
 
 Land the documentation markups and the extra config and tabular kinds behind their features, each
@@ -170,7 +179,7 @@ and EPUB and BibTeX; the structured readers are TOML and the INI family and JSON
 calendar and contact kinds and the Jupyter notebook and the columnar Parquet and Arrow. The pins live
 in `readers.md`.
 
-- depends: #text-cheap-kinds
+- depends: #pluggable-foundation
 - verify: cd software/host-reference/main && cargo test
 
 ### Office and mail and fixed-layout {#office-mail-fixed-layout}
@@ -178,7 +187,7 @@ in `readers.md`.
 Land the office and mail normalisers over the shared container readers, and add the born-digital
 PDF. Each carries its fixture.
 
-- depends: #text-cheap-kinds
+- depends: #pluggable-foundation
 - verify: cd software/host-reference/main && cargo test
 
 ### Recognition and engineering {#recognition-and-engineering}
