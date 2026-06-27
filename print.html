@@ -6484,6 +6484,13 @@ enabling its plugin is a knowing choice. A <code>cargo-deny</code> lane enforces
 surfaces GPL. The current readers are all permissive (MIT, Apache-2.0, or Unlicense), so the build
 carries no GPL and no AGPL today; <code>mail-parser</code> is Apache-2.0 or MIT, the parser crate rather than
 the AGPL Stalwart server.</li>
+<li>A GPL reader, were one ever the only option for a format, runs out-of-process behind an
+arms-length boundary (a pipe or a socket or a command line, the FSF aggregation position), so our
+plugin and the build stay permissive rather than taking on the copyleft. The boundary stays
+arms-length, not a shared-memory or tightly-coupled call that the FSF reads as equivalent to
+linking. Such a plugin is flagged GPL and is opt-in, and it carries a dependency on the external
+binary, which leaves the in-process pure-Rust model. LGPL may link directly; AGPL has no such
+escape and stays banned.</li>
 </ul>
 <h2 id="considered-options-12"><a class="header" href="#considered-options-12">Considered Options</a></h2>
 <ol>
