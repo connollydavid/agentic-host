@@ -1513,3 +1513,19 @@ For now: name every task and task group by content, and let the order live in th
 The fix renamed the groups to `text-cheap-kinds`, `office-mail-fixed-layout`,
 `recognition-and-engineering`, `overlay`, and `spec-and-release`. See [[no-forge-word]] for the
 related ban-by-name discipline.
+
+### 2026-06-27 — host-reference expand wave: skeletons are structure, not content
+
+The expand-wave readers (data extensions ndjson/tsv/ipynb/toml; the config crate ini/properties/env;
+the calendar crate ics/vcf; the columnar crate parquet/arrow) confirmed the core principle: a Tier-0
+skeleton is the SHAPE of a document (keys and types, columns and row counts, sections, component
+tallies, a vCard's property union), never the values. That shape is where the token saving lives (a
+Jupyter notebook 182→41, a Parquet file 721→28); the full content stays in the Tier-1 view. Three
+supporting lessons held across the wave. Determinism is met by reading only what re-derives
+identically everywhere: a dotenv emits keys, not interpolated values; the columnar reader reads file
+metadata, not data pages, so no compression codec is linked; and a binary fixture is generated in-test
+by the pinned writer, not committed. `cargo-deny` reviews each reader's licence as it lands (the config
+crate added the permissive BSD-3-Clause and CC0-1.0). And a no-fix informational advisory
+(RUSTSEC-2024-0436, `paste` unmaintained via parquet) takes a documented per-id ignore, so the lane
+still catches real vulnerabilities. Each reader is a feature-gated crate (call/0033): the light ones
+join the text-cheap default, the heavier ones (calendar, columnar) stay opt-in.
