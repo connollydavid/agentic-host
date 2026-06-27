@@ -278,6 +278,14 @@ project's choice.</li>
 </ul>
 <p>The canonicalisation rules, the reference tokenizer the token accounting reports against, and the
 query surface a running project calls are build-time details settled inside the milestone.</p>
+<h2 id="readers-and-dependencies"><a class="header" href="#readers-and-dependencies">Readers and dependencies</a></h2>
+<p>Each kind binds the best maintained pure-Rust reader, pinned with its version and licence in
+<a href="readers.html"><code>readers.md</code></a>, which also carries the licence watch-list and the pure-Rust feature
+discipline. Almost every pick is permissive. The GPL <code>openscad-rs</code> runs out-of-process under
+<code>call/0033</code>, which doubles as the first real test of the plugin API, since the OpenSCAD plugin drives
+that helper through the same <code>Normalizer</code> interface as every in-process reader. The manual page and
+TeX and IGES have no pure-Rust library, so they are deferred rather than hand-rolled or bound to a C
+library. A <code>cargo-deny</code> lane denies AGPL and flags GPL.</p>
 <h2 id="validation"><a class="header" href="#validation">Validation</a></h2>
 <p>The agent-facing surfaces are validated at the weak-agent bar before the design locks,
 the way plan/0042 and plan/0039 were. The probe set, its adversarial review, and the
@@ -305,6 +313,16 @@ materialize the bare store and worktree. Record the embed and release receipts.<
 mechanisms, each with a conformance fixture that re-derives byte for byte.</p>
 <ul>
 <li>depends: #embed-component</li>
+<li>verify: cd software/host-reference/main &amp;&amp; cargo test</li>
+</ul>
+<h3 id="expand-prose-and-structured-readers"><a class="header" href="#expand-prose-and-structured-readers">The expanded prose and structured readers</a></h3>
+<p>Land the documentation markups and the extra config and tabular kinds behind their features, each
+with a conformance fixture. The prose readers are reStructuredText and AsciiDoc and Org-mode and RTF
+and EPUB and BibTeX; the structured readers are TOML and the INI family and JSON Lines and the
+calendar and contact kinds and the Jupyter notebook and the columnar Parquet and Arrow. The pins live
+in <code>readers.md</code>.</p>
+<ul>
+<li>depends: #text-cheap-kinds</li>
 <li>verify: cd software/host-reference/main &amp;&amp; cargo test</li>
 </ul>
 <h3 id="office-mail-fixed-layout"><a class="header" href="#office-mail-fixed-layout">Office and mail and fixed-layout</a></h3>
@@ -340,11 +358,10 @@ build with its deps-bundle, and release through <code>host-lifecycle</code>.</p>
 the text-cheap-kinds task: its normalisers and conformance fixtures have landed behind the
 <code>host-reference-core</code> contract and the CLI (prose, structured data, markup, vector, and the SPICE
 netlist). The component is pinned source-only in <code>.host-software</code>, and <code>software --check</code> is green.
-The build sequence above is an anchored receipted task graph (plan/0042), and the ready frontier is
-office-and-mail-and-fixed-layout. The format menu has since widened (the documentation markups, the
-TeX family, more config and tabular kinds, the columnar kinds, the audio-visual family, and more
-electronic-design kinds); these readers land as receipted increments within their families as the
-build proceeds.</p>
+The build sequence above is an anchored receipted task graph (plan/0042). The format menu has since
+widened across the prose and structured and electronic-design and audio-visual families, so the ready
+frontier is now the expanded prose and structured readers alongside office-and-mail-and-fixed-layout.
+The per-kind pins live in <code>readers.md</code>, and the library-less kinds are deferred.</p>
 
                     </main>
 
