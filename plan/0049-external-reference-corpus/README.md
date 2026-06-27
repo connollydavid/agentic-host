@@ -96,11 +96,71 @@ the way plan/0042 and plan/0039 were. The probe set, its adversarial review, and
 recorded run live in `gather-data.md`. A design judgement with no settled answer, such
 as the engineering-geometry summary fields, goes to the cast rather than a pass rate.
 
+## Build sequence
+
+The build runs as an anchored task graph (plan/0042): each task carries a receipt in
+`.host-task-receipts`, and a later wave stays pending until its turn. Wave zero, the scaffold and
+the embed, is done.
+
+### Scaffold the workspace {#scaffold-workspace}
+
+Author the Cargo workspace on the pinned toolchain. The `host-reference-core` library carries the
+`Normalizer` trait and the two-layer types, and a thin CLI sits over it.
+
+- verify: cd software/host-reference/main && cargo test
+
+### Embed the component {#embed-component}
+
+Create the public repo and push the scaffold. Pin it source-only in `.host-software` and
+materialize the bare store and worktree. Record the embed and release receipts.
+
+- depends: #scaffold-workspace
+- verify: attested operator
+
+### Wave one, the text-cheap kinds {#wave-one}
+
+Land the text-cheap normalisers that `call/0030` groups under the text and data and XML
+mechanisms, each with a conformance fixture that re-derives byte for byte.
+
+- depends: #embed-component
+- verify: cd software/host-reference/main && cargo test
+
+### Wave two, office and mail and fixed-layout {#wave-two}
+
+Land the office and mail normalisers over the shared container readers, and add the born-digital
+PDF. Each carries its fixture.
+
+- depends: #wave-one
+- verify: cd software/host-reference/main && cargo test
+
+### Wave three, recognition and engineering {#wave-three}
+
+Land the recognition path for scanned PDF and image. Add the EDA layout normalisers and the
+engineering geometry of `call/0032`. Each carries its fixture.
+
+- depends: #wave-two
+- verify: cd software/host-reference/main && cargo test
+
+### Wave four, the overlay {#wave-four}
+
+Land the Loro overlay and the write-back path over the W3C Web Annotation selectors, with the
+round-trip law proptested per kind.
+
+- depends: #wave-three
+- verify: cd software/host-reference/main && cargo test
+
+### Wave five, the spec and the release {#wave-five}
+
+Add the `.allium` spec with its lanes and obligations, and wire the CI. Establish the reproducible
+build with its deps-bundle, and release through `host-lifecycle`.
+
+- depends: #wave-four
+- verify: host-lifecycle software --verify-build .
+
 ## Status
 
-The design is settled. The probe set was adversarially reviewed, run against the weak agent,
-and reviewed by the cast before and after the run (see `gather-data.md`); the four agent-facing
-surfaces pass at the weak-agent bar; and the three decisions are recorded (`call/0030`,
-`call/0031`, `call/0032`). The next move is the build: embed the `host-reference` store, scaffold
-the Rust workspace, and land each content kind with its conformance fixture, run as a receipted
-task graph (`plan/0042`).
+The design is settled, and the build has begun. Wave zero is done. The workspace is scaffolded
+(`host-reference-core` and the CLI skeleton) and builds and tests green on the pinned toolchain.
+The component is embedded source-only at `connollydavid/host-reference` `88c6bcf`, and `software
+--check` is green. The build sequence above tracks the waves as an anchored receipted task graph
+(plan/0042); wave one is next.

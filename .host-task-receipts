@@ -298,3 +298,17 @@
     evidence = operator triggered "Read and follow https://github.com/connollydavid/host". Case (c) upgrade: host-template pointer at the target (4182df9); upgrade --record 6174996 passed verify and appended the applied claim to .host-receipts; CLAUDE.md fresh-clone setup installs host-prove; reproducible-build CI installs host-prove before software --check and both CI host-lifecycle pins bumped to v0.31.0. software --check green (runnability gate ok for both declaring components); whole-suite CI green on bcf3d75 (Site + Reproducible build, gate runs with host-prove on PATH)
     tool = host-lifecycle@0.31.0
     recorded = 2026-06-26
+
+[receipt "plan/0049#scaffold-workspace"]
+    disposition = done
+    verify = cd software/host-reference/main && cargo test
+    evidence = cargo build and cargo test green on the pinned 1.95.0 toolchain; pushed at 88c6bcf
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-27
+
+[receipt "plan/0049#embed-component"]
+    disposition = done
+    verify = attested operator
+    evidence = public repo created and scaffold pushed; pinned source-only in .host-software; materialized as bare store + worktree; embed/release phase receipts recorded; software --check green
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-27
