@@ -67,25 +67,26 @@ recognition, and the engineering parsers. Engineering geometry covers mechanical
 and the 3D-printing kinds (mesh, the container kinds, the toolpath kind, and the
 parametric source kind).
 
-## Open questions
+## Decisions
 
-`call/0030` settles the component shape and these mechanism choices: the overlay is a
-Loro document, recognition is hybrid (a deterministic engine for the attested layer and
-a provider-agnostic vision adapter for the overlay), the semantic layer is a sidecar in
-JSON-LD bound to the `plan/0039` vocabulary, the round-trip law is a per-kind lens law in
-the property-based lane, and an undeclared capability defaults to the most restrictive
-setting.
+The design is settled across three records.
 
-`call/0031` settles the untrusted-input threat model: ingested material is untrusted, met by
-defensive parsing with hard bounds, a legible untrusted boundary, and a fail-safe recorded
-refusal. One decision remains:
+- `call/0030` fixes the component shape and these mechanism choices: the overlay is a Loro
+  document, recognition is hybrid (a deterministic engine for the attested layer and a
+  provider-agnostic vision adapter for the overlay), the semantic layer is a sidecar in JSON-LD
+  bound to the `plan/0039` vocabulary, the round-trip law is a per-kind lens law in the
+  property-based lane, and an undeclared capability defaults to the most restrictive setting.
+- `call/0031` fixes the untrusted-input threat model: ingested material is untrusted, met by
+  defensive parsing with hard bounds, a legible untrusted boundary, and a fail-safe recorded
+  refusal.
+- `call/0032` fixes the engineering-geometry token target, taken to the cast since the summary
+  target has no settled industry answer: a deterministic structure-and-metadata summary keyed on
+  the model tree, with a parsed-against-computed reproducibility split and an extensible per-format
+  default.
 
-- `call/0032`: the token target for engineering geometry, which has no settled industry
-  answer and so rests with the cast.
-
-The canonicalisation rules, the reference tokenizer the token accounting reports against,
-the query surface a running project calls, and the licence compatibility of the parser
-dependencies are build-time details settled inside the milestone.
+The canonicalisation rules, the reference tokenizer the token accounting reports against, the query
+surface a running project calls, and the licence compatibility of the parser dependencies are
+build-time details settled inside the milestone.
 
 ## Validation
 
@@ -96,7 +97,9 @@ as the engineering-geometry summary fields, goes to the cast rather than a pass 
 
 ## Status
 
-In design. The probe set was adversarially reviewed, run against the weak agent, and
-reviewed by the cast before and after the run (see `gather-data.md`). The four
-agent-facing surfaces pass at the weak-agent bar. The settled decisions follow in
-`call/0030` and its siblings; the engineering-geometry target stays a cast judgement.
+The design is settled. The probe set was adversarially reviewed, run against the weak agent,
+and reviewed by the cast before and after the run (see `gather-data.md`); the four agent-facing
+surfaces pass at the weak-agent bar; and the three decisions are recorded (`call/0030`,
+`call/0031`, `call/0032`). The next move is the build: embed the `host-reference` store, scaffold
+the Rust workspace, and land each content kind with its conformance fixture, run as a receipted
+task graph (`plan/0042`).
