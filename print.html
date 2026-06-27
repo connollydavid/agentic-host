@@ -5086,6 +5086,14 @@ mechanisms, each with a conformance fixture that re-derives byte for byte.</p>
 <li>depends: #embed-component</li>
 <li>verify: cd software/host-reference/main &amp;&amp; cargo test</li>
 </ul>
+<h3 id="pluggable-foundation"><a class="header" href="#pluggable-foundation">The pluggable foundation</a></h3>
+<p>Retrofit the text-cheap readers behind Cargo features in the CLI, the text-cheap set on by default
+and the heavier readers reserved for their own opt-in features (call/0033). Add the <code>cargo-deny</code> lane
+that denies AGPL and flags GPL. A build with no features compiles to an empty registry.</p>
+<ul>
+<li>depends: #text-cheap-kinds</li>
+<li>verify: cd software/host-reference/main &amp;&amp; cargo test &amp;&amp; cargo deny check licenses advisories</li>
+</ul>
 <h3 id="expand-prose-and-structured-readers"><a class="header" href="#expand-prose-and-structured-readers">The expanded prose and structured readers</a></h3>
 <p>Land the documentation markups and the extra config and tabular kinds behind their features, each
 with a conformance fixture. The prose readers are reStructuredText and AsciiDoc and Org-mode and RTF
@@ -5093,14 +5101,14 @@ and EPUB and BibTeX; the structured readers are TOML and the INI family and JSON
 calendar and contact kinds and the Jupyter notebook and the columnar Parquet and Arrow. The pins live
 in <code>readers.md</code>.</p>
 <ul>
-<li>depends: #text-cheap-kinds</li>
+<li>depends: #pluggable-foundation</li>
 <li>verify: cd software/host-reference/main &amp;&amp; cargo test</li>
 </ul>
 <h3 id="office-mail-fixed-layout"><a class="header" href="#office-mail-fixed-layout">Office and mail and fixed-layout</a></h3>
 <p>Land the office and mail normalisers over the shared container readers, and add the born-digital
 PDF. Each carries its fixture.</p>
 <ul>
-<li>depends: #text-cheap-kinds</li>
+<li>depends: #pluggable-foundation</li>
 <li>verify: cd software/host-reference/main &amp;&amp; cargo test</li>
 </ul>
 <h3 id="recognition-and-engineering"><a class="header" href="#recognition-and-engineering">Recognition and engineering</a></h3>
