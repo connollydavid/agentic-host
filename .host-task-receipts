@@ -319,3 +319,10 @@
     evidence = prose (md/txt), structured data (json/csv/yaml/xml), html5, vector (svg), and spice netlist normalisers landed, each with a conformance fixture and committed golden; cargo test green (18 binaries); pinned at 8e7cf0d
     tool = host-lifecycle@0.31.0
     recorded = 2026-06-27
+
+[receipt "plan/0049#pluggable-foundation"]
+    disposition = done
+    verify = cd software/host-reference/main && cargo test && cargo deny check licenses advisories
+    evidence = each reader is an optional dependency behind a Cargo feature in the CLI; default builds the text-cheap set, --no-default-features compiles to an empty registry, and --all-features and single-feature builds compile; cargo test green across the conformance fixtures; deny.toml added, cargo deny check licenses advisories ok (allow-list trimmed to the encountered Apache-2.0/MIT/Unicode-3.0/Unlicense, a GPL crate needs a named exception, AGPL never); pinned at 1f47798
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-27
