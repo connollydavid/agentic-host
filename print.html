@@ -5083,11 +5083,12 @@ build with its deps-bundle, and release through <code>host-lifecycle</code>.</p>
 <li>verify: host-lifecycle software --verify-build .</li>
 </ul>
 <h2 id="status-10"><a class="header" href="#status-10">Status</a></h2>
-<p>The design is settled, and the build has begun. The scaffold and the embed are done. The workspace
-is scaffolded (<code>host-reference-core</code> and the CLI skeleton) and builds and tests green on the pinned
-toolchain. The component is embedded source-only at <code>connollydavid/host-reference</code> <code>88c6bcf</code>, and
-<code>software --check</code> is green. The build sequence above is an anchored receipted task graph
-(plan/0042); the ready frontier is the text-cheap kinds.</p>
+<p>The design is settled and the build is under way. The scaffold and the embed are done, and so is
+the text-cheap-kinds task: its normalisers and conformance fixtures have landed behind the
+<code>host-reference-core</code> contract and the CLI (prose, structured data, markup, vector, and the SPICE
+netlist). The component is pinned source-only in <code>.host-software</code>, and <code>software --check</code> is green.
+The build sequence above is an anchored receipted task graph (plan/0042), and the ready frontier is
+office-and-mail-and-fixed-layout.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
