@@ -47,8 +47,10 @@ embedded-media extraction.
   layer holds only what re-derives deterministically: the image metadata and its alt-text and the
   structure. A pinned model that proves cross-host deterministic could later promote the text into
   the attested layer. This refines the deterministic-recognition note of `call/0030`.
-- The in-scope format set is the agent's judgement per project. The methodology carries the superset
-  of readers; a project enables the subset it needs.
+- The in-scope format set is the adopter's judgement, not ours. The methodology carries the superset
+  of readers and the open plugin interface; the adopting project enables the subset its corpus needs
+  and may author further readers on the interface. We build the menu and the interface and leave the
+  scope to the project.
 - Licences are per plugin, and copyleft is bounded. Each plugin's licence is the one its libraries
   carry, so a project reads a plugin's licence before it enables it. AGPL is never allowed, a hard
   rule. GPL is avoided where a permissive reader exists, and any GPL reader is expressly noted, so
@@ -87,4 +89,4 @@ The normalisers already built (prose, structured data, HTML, vector, netlist) ar
 feature gates, the Office and mail and fixed-layout readers each land behind a feature, and a
 `cargo-deny` lane denies AGPL and surfaces GPL. The conformance fixtures and `software --check` stay
 green. The operator set the direction this session: pluggable, pure-Rust, the best reader per format,
-the agent's judgement on the in-scope set, and copyleft bounded with AGPL banned.
+the adopter's judgement on the in-scope set, and copyleft bounded with AGPL banned.
