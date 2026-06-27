@@ -291,3 +291,9 @@
     reason = not yet released; source-only scaffold, the reproducible-build release lands in the plan/0049 build wave
     tool = host-lifecycle@0.31.0
     recorded = 2026-06-27
+
+[receipt "release" "host-reference"]
+    disposition = skip
+    reason = not yet released; source-only scaffold, the reproducible-build release lands with the spec-and-release task of plan/0049
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-27

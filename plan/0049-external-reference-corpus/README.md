@@ -99,8 +99,8 @@ as the engineering-geometry summary fields, goes to the cast rather than a pass 
 ## Build sequence
 
 The build runs as an anchored task graph (plan/0042): each task carries a receipt in
-`.host-task-receipts`, and a later wave stays pending until its turn. Wave zero, the scaffold and
-the embed, is done.
+`.host-task-receipts`, and a downstream task stays pending until its prerequisites carry receipts.
+The order lives in the `depends` edges rather than the names. The scaffold and the embed are done.
 
 ### Scaffold the workspace {#scaffold-workspace}
 
@@ -117,7 +117,7 @@ materialize the bare store and worktree. Record the embed and release receipts.
 - depends: #scaffold-workspace
 - verify: attested operator
 
-### Wave one, the text-cheap kinds {#wave-one}
+### The text-cheap kinds {#text-cheap-kinds}
 
 Land the text-cheap normalisers that `call/0030` groups under the text and data and XML
 mechanisms, each with a conformance fixture that re-derives byte for byte.
@@ -125,42 +125,42 @@ mechanisms, each with a conformance fixture that re-derives byte for byte.
 - depends: #embed-component
 - verify: cd software/host-reference/main && cargo test
 
-### Wave two, office and mail and fixed-layout {#wave-two}
+### Office and mail and fixed-layout {#office-mail-fixed-layout}
 
 Land the office and mail normalisers over the shared container readers, and add the born-digital
 PDF. Each carries its fixture.
 
-- depends: #wave-one
+- depends: #text-cheap-kinds
 - verify: cd software/host-reference/main && cargo test
 
-### Wave three, recognition and engineering {#wave-three}
+### Recognition and engineering {#recognition-and-engineering}
 
 Land the recognition path for scanned PDF and image. Add the EDA layout normalisers and the
 engineering geometry of `call/0032`. Each carries its fixture.
 
-- depends: #wave-two
+- depends: #office-mail-fixed-layout
 - verify: cd software/host-reference/main && cargo test
 
-### Wave four, the overlay {#wave-four}
+### The overlay {#overlay}
 
 Land the Loro overlay and the write-back path over the W3C Web Annotation selectors, with the
 round-trip law proptested per kind.
 
-- depends: #wave-three
+- depends: #recognition-and-engineering
 - verify: cd software/host-reference/main && cargo test
 
-### Wave five, the spec and the release {#wave-five}
+### The spec and the release {#spec-and-release}
 
 Add the `.allium` spec with its lanes and obligations, and wire the CI. Establish the reproducible
 build with its deps-bundle, and release through `host-lifecycle`.
 
-- depends: #wave-four
+- depends: #overlay
 - verify: host-lifecycle software --verify-build .
 
 ## Status
 
-The design is settled, and the build has begun. Wave zero is done. The workspace is scaffolded
-(`host-reference-core` and the CLI skeleton) and builds and tests green on the pinned toolchain.
-The component is embedded source-only at `connollydavid/host-reference` `88c6bcf`, and `software
---check` is green. The build sequence above tracks the waves as an anchored receipted task graph
-(plan/0042); wave one is next.
+The design is settled, and the build has begun. The scaffold and the embed are done. The workspace
+is scaffolded (`host-reference-core` and the CLI skeleton) and builds and tests green on the pinned
+toolchain. The component is embedded source-only at `connollydavid/host-reference` `88c6bcf`, and
+`software --check` is green. The build sequence above is an anchored receipted task graph
+(plan/0042); the ready frontier is the text-cheap kinds.
