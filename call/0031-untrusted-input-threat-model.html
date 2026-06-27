@@ -242,7 +242,7 @@ for byte what was re-derived from the pinned source, so nothing is tampered with
 use, and a changed source invalidates exactly its spans.</p>
 <h2 id="considered-options"><a class="header" href="#considered-options">Considered Options</a></h2>
 <ol>
-<li><strong>Defensive parsing, a legible untrusted boundary, and fail-safe refusal (chosen).</strong> It hardens
+<li><strong>Defensive parsing behind a legible untrusted boundary, with a fail-safe refusal (chosen).</strong> It hardens
 the host against the file-level classes and gives the consumer the segregation primitive the
 injection guidance requires, without pretending to solve the consumer's enforcement.</li>
 <li><strong>Sanitise content by stripping instruction-like text.</strong> Rejected: it loses fidelity and
