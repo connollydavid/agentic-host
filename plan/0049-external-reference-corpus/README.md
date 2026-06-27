@@ -69,26 +69,23 @@ parametric source kind).
 
 ## Open questions
 
-The design leaves several questions to settle by data and by the cast before
-`call/0030` locks them:
+`call/0030` settles the component shape and these mechanism choices: the overlay is a
+Loro document, recognition is hybrid (a deterministic engine for the attested layer and
+a provider-agnostic vision adapter for the overlay), the semantic layer is a sidecar in
+JSON-LD bound to the `plan/0039` vocabulary, the round-trip law is a per-kind lens law in
+the property-based lane, and an undeclared capability defaults to the most restrictive
+setting.
 
-- The overlay data structure for conflict-free collaborative edits.
-- The token target for engineering geometry, which has no settled industry answer and
-  so leans on the cast.
-- The strength of the round-trip law per content kind.
-- The boundary for optical character recognition: a deterministic engine for the
-  attested layer, with a model-based reader confined to the overlay and recorded with
-  its provenance. The model-based reader is provider-agnostic behind one adapter.
-- The serialisation of the semantic layer, and how it binds to the concept vocabulary
-  of plan/0039.
-- The threat model for untrusted input, which is substantial enough to warrant its own
-  `call/` decision, since the component's whole job is bringing external material into
-  an agent's context.
-- The query surface a running project uses to pull a skeleton or a windowed view.
-- The canonicalisation rules and the reference tokenizer the token accounting reports
-  against.
-- The licence compatibility of the parser dependencies with the component's own
-  licence.
+Two decisions remain, each its own record:
+
+- `call/0031`: the threat model for untrusted input, since the component's whole job is
+  bringing external material into an agent's context.
+- `call/0032`: the token target for engineering geometry, which has no settled industry
+  answer and so rests with the cast.
+
+The canonicalisation rules, the reference tokenizer the token accounting reports against,
+the query surface a running project calls, and the licence compatibility of the parser
+dependencies are build-time details settled inside the milestone.
 
 ## Validation
 
