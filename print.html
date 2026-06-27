@@ -5030,8 +5030,8 @@ recorded run live in <code>gather-data.md</code>. A design judgement with no set
 as the engineering-geometry summary fields, goes to the cast rather than a pass rate.</p>
 <h2 id="build-sequence-9"><a class="header" href="#build-sequence-9">Build sequence</a></h2>
 <p>The build runs as an anchored task graph (plan/0042): each task carries a receipt in
-<code>.host-task-receipts</code>, and a later wave stays pending until its turn. Wave zero, the scaffold and
-the embed, is done.</p>
+<code>.host-task-receipts</code>, and a downstream task stays pending until its prerequisites carry receipts.
+The order lives in the <code>depends</code> edges rather than the names. The scaffold and the embed are done.</p>
 <h3 id="scaffold-workspace"><a class="header" href="#scaffold-workspace">Scaffold the workspace</a></h3>
 <p>Author the Cargo workspace on the pinned toolchain. The <code>host-reference-core</code> library carries the
 <code>Normalizer</code> trait and the two-layer types, and a thin CLI sits over it.</p>
@@ -5045,46 +5045,47 @@ materialize the bare store and worktree. Record the embed and release receipts.<
 <li>depends: #scaffold-workspace</li>
 <li>verify: attested operator</li>
 </ul>
-<h3 id="wave-one"><a class="header" href="#wave-one">Wave one, the text-cheap kinds</a></h3>
+<h3 id="text-cheap-kinds"><a class="header" href="#text-cheap-kinds">The text-cheap kinds</a></h3>
 <p>Land the text-cheap normalisers that <code>call/0030</code> groups under the text and data and XML
 mechanisms, each with a conformance fixture that re-derives byte for byte.</p>
 <ul>
 <li>depends: #embed-component</li>
 <li>verify: cd software/host-reference/main &amp;&amp; cargo test</li>
 </ul>
-<h3 id="wave-two"><a class="header" href="#wave-two">Wave two, office and mail and fixed-layout</a></h3>
+<h3 id="office-mail-fixed-layout"><a class="header" href="#office-mail-fixed-layout">Office and mail and fixed-layout</a></h3>
 <p>Land the office and mail normalisers over the shared container readers, and add the born-digital
 PDF. Each carries its fixture.</p>
 <ul>
-<li>depends: #wave-one</li>
+<li>depends: #text-cheap-kinds</li>
 <li>verify: cd software/host-reference/main &amp;&amp; cargo test</li>
 </ul>
-<h3 id="wave-three"><a class="header" href="#wave-three">Wave three, recognition and engineering</a></h3>
+<h3 id="recognition-and-engineering"><a class="header" href="#recognition-and-engineering">Recognition and engineering</a></h3>
 <p>Land the recognition path for scanned PDF and image. Add the EDA layout normalisers and the
 engineering geometry of <code>call/0032</code>. Each carries its fixture.</p>
 <ul>
-<li>depends: #wave-two</li>
+<li>depends: #office-mail-fixed-layout</li>
 <li>verify: cd software/host-reference/main &amp;&amp; cargo test</li>
 </ul>
-<h3 id="wave-four"><a class="header" href="#wave-four">Wave four, the overlay</a></h3>
+<h3 id="overlay"><a class="header" href="#overlay">The overlay</a></h3>
 <p>Land the Loro overlay and the write-back path over the W3C Web Annotation selectors, with the
 round-trip law proptested per kind.</p>
 <ul>
-<li>depends: #wave-three</li>
+<li>depends: #recognition-and-engineering</li>
 <li>verify: cd software/host-reference/main &amp;&amp; cargo test</li>
 </ul>
-<h3 id="wave-five"><a class="header" href="#wave-five">Wave five, the spec and the release</a></h3>
+<h3 id="spec-and-release"><a class="header" href="#spec-and-release">The spec and the release</a></h3>
 <p>Add the <code>.allium</code> spec with its lanes and obligations, and wire the CI. Establish the reproducible
 build with its deps-bundle, and release through <code>host-lifecycle</code>.</p>
 <ul>
-<li>depends: #wave-four</li>
+<li>depends: #overlay</li>
 <li>verify: host-lifecycle software --verify-build .</li>
 </ul>
 <h2 id="status-10"><a class="header" href="#status-10">Status</a></h2>
-<p>The design is settled, and the build has begun. Wave zero is done. The workspace is scaffolded
-(<code>host-reference-core</code> and the CLI skeleton) and builds and tests green on the pinned toolchain.
-The component is embedded source-only at <code>connollydavid/host-reference</code> <code>88c6bcf</code>, and <code>software --check</code> is green. The build sequence above tracks the waves as an anchored receipted task graph
-(plan/0042); wave one is next.</p>
+<p>The design is settled, and the build has begun. The scaffold and the embed are done. The workspace
+is scaffolded (<code>host-reference-core</code> and the CLI skeleton) and builds and tests green on the pinned
+toolchain. The component is embedded source-only at <code>connollydavid/host-reference</code> <code>88c6bcf</code>, and
+<code>software --check</code> is green. The build sequence above is an anchored receipted task graph
+(plan/0042); the ready frontier is the text-cheap kinds.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
