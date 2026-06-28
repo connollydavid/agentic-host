@@ -1603,3 +1603,21 @@ explicit `from_tensor` with an `NdTensor` of shape `[H, W, C]` and `DimOrder::Hw
 `rten_tensor::prelude::*` for `.view()`; the `from_bytes((h, w))` path misread the channels and
 returned garbage. The conformance test builds the helper on demand via `env!("CARGO")` and points the
 plugin at it through `HOST_REFERENCE_OCR_HELPER`.
+
+### 2026-06-28 — the OCR helper became its own repo (host-reference-ocr) for full CC-BY-SA confinement
+
+Extending the entry above: the only pure-Rust OCR engine carries CC-BY-SA-4.0 model weights, so the
+operator directed the helper into its own public repo, `connollydavid/host-reference-ocr`, with the
+licence metadata and citations stated upfront. The CC-BY-SA models now leave the `host-reference` repo
+entirely. `host-reference` keeps only the permissive `ocr` plugin; the engine and models are a separate
+embedded software component (`call/0034`). Three lessons. First, a new software component triggers the
+full embed flow, and `software --check` HAZARDs until it is complete: the component must be a
+`.host-software` stanza materialized as a bare store with worktree, `STRUCTURE.md`'s `{#components}`
+home must name it, and the `embed` and `release` lifecycle receipts must be recorded with
+`host-lifecycle receipt --record <phase> --component <name>`; missing any of these re-opens the verify
+recheck. Second, the plugin's conformance test no longer builds the helper (correcting the prior
+entry): it points `HOST_REFERENCE_OCR_HELPER` at a runtime stub script that asserts a real image path
+and emits fixed text, so the plugin's plumbing and formatting are tested permissively, while the real
+engine is conformance-tested in the helper repo via `env!("CARGO_BIN_EXE_host-reference-ocr-helper")`.
+Third, a public repo's visibility is the operator's decision, not the agent's: the auto-mode classifier
+blocks a unilateral `gh repo create --public`, and rightly, so ask before publishing.
