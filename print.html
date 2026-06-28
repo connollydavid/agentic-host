@@ -8547,6 +8547,15 @@ deflate-independent, so the content id is stable in any build configuration. Thi
 future zip-backed fixture (3MF, more office formats). Two process notes: verify in the full workspace,
 not just the single crate; and the broken commit landed because the shell command did not gate the
 git step on the test result, so gate commits on a green test.</p>
+<h3 id="2026-06-28--stage-the-denytoml-entry-with-its-reader-the-dev-disk-filled"><a class="header" href="#2026-06-28--stage-the-denytoml-entry-with-its-reader-the-dev-disk-filled">2026-06-28 — stage the deny.toml entry with its reader; the dev disk filled</a></h3>
+<p>Two operational gotchas from the office wave. When a reader adds a licence to deny.toml's allow-list,
+stage that deny.toml change in the SAME commit as the reader. The epub crate's Zlib entry was added
+but not staged with it, so the pinned epub state's cargo-deny lane was actually missing Zlib and only
+the local working copy (with the uncommitted entry) passed; a fresh-clone CI check would have failed.
+It surfaced when a later <code>git status</code> still showed deny.toml modified. Separately, the dev disk
+(/mnt/c, a WSL-mounted Windows drive) reached 100% full and git could not write the commit object
+("unable to write loose object file", exit 128, not a test failure); <code>cargo clean</code> in the worktree
+reclaimed 11.4 GiB and unblocked it, and a full host-reference build leaves target/ around 12 GiB.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
