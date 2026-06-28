@@ -8698,6 +8698,21 @@ and emits fixed text, so the plugin's plumbing and formatting are tested permiss
 engine is conformance-tested in the helper repo via <code>env!("CARGO_BIN_EXE_host-reference-ocr-helper")</code>.
 Third, a public repo's visibility is the operator's decision, not the agent's: the auto-mode classifier
 blocks a unilateral <code>gh repo create --public</code>, and rightly, so ask before publishing.</p>
+<h3 id="2026-06-28--openscad-is-the-second-out-of-process-plugin-gpl-the-call0033-original-case"><a class="header" href="#2026-06-28--openscad-is-the-second-out-of-process-plugin-gpl-the-call0033-original-case">2026-06-28 — OpenSCAD is the second out-of-process plugin (GPL, the call/0033 original case)</a></h3>
+<p>Wired the OpenSCAD helper the same way as OCR. The GPL-3.0 <code>openscad-rs</code> parser lives in its own public
+repo, <code>connollydavid/host-reference-openscad</code>, embedded as a source-only component; its helper binary
+is GPL too because it links <code>openscad-rs</code>. The permissive <code>host-reference-openscad</code> plugin (no
+<code>openscad-rs</code> dependency) writes the <code>.scad</code> to a temp file, runs the helper at arm's length, and
+tallies the statement kinds it prints (one per line) into the structure skeleton. The <code>host-reference</code>
+lockfile carries no <code>openscad-rs</code>. This is the GPL case <code>call/0033</code> originally wrote the out-of-process
+rule for; OCR (CC-BY-SA, <code>call/0034</code>) reached it first, OpenSCAD is the second, and both drive the
+helper through the same <code>Normalizer</code> interface. Practical notes: <code>openscad-rs</code> is edition 2024 and
+builds on the 1.95 toolchain; <code>parse(source)</code> returns <code>SourceFile { statements: Vec&lt;Statement&gt; }</code>, and
+the helper tallies by the Debug-first-token of each <code>Statement</code> (ModuleDefinition, Assignment,
+ModuleInstantiation), the same trick the DXF reader uses. The helper repo's <code>cargo-deny</code> must name BOTH
+<code>openscad-rs</code> and the helper binary as GPL-3.0 exceptions, because the root crate's own licence is
+checked too, and <code>ISC</code> was needed for <code>is_ci</code> (transitive via <code>miette</code>). The plugin's conformance uses
+a stub helper; the real parser is conformance-tested in the helper repo.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
