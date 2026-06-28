@@ -1,0 +1,582 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>plan/0050 host-reference review: findings from the reference-compiler audit - agentic-host</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../custom.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">agentic-host</a></li><li class="chapter-item expanded affix "><li class="part-title">Cast: who</li><li class="chapter-item expanded "><a href="../../cast/index.html"><strong aria-hidden="true">1.</strong> Cast, the project's Who</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../cast/applying-personas.html"><strong aria-hidden="true">1.1.</strong> Applying personas during planning</a></li><li class="chapter-item expanded "><a href="../../cast/bly.html"><strong aria-hidden="true">1.2.</strong> Bly, the Adopter Agent (writes the stamp now, reads it cold later)</a></li><li class="chapter-item expanded "><a href="../../cast/fen.html"><strong aria-hidden="true">1.3.</strong> Fen, the Low-Reliability Agent (qwen3.5-4b, Q8_0)</a></li><li class="chapter-item expanded "><a href="../../cast/mara.html"><strong aria-hidden="true">1.4.</strong> Mara, the Human Operator</a></li><li class="chapter-item expanded "><a href="../../cast/orin.html"><strong aria-hidden="true">1.5.</strong> Orin, the Methodology Maintainer</a></li><li class="chapter-item expanded "><a href="../../cast/wren.html"><strong aria-hidden="true">1.6.</strong> Wren, the Agentic LLM Developer</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Plan: what & when</li><li class="chapter-item expanded "><a href="../../PLAN.html"><strong aria-hidden="true">2.</strong> PLAN.md</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../plan/0001-migration-protocol/index.html"><strong aria-hidden="true">2.1.</strong> Migration protocol</a></li><li class="chapter-item expanded "><a href="../../plan/0002-enforced-remap-dictionary/index.html"><strong aria-hidden="true">2.2.</strong> Enforced remap dictionary</a></li><li class="chapter-item expanded "><a href="../../plan/0003-doc-site-publisher/index.html"><strong aria-hidden="true">2.3.</strong> Canonical doc-site publisher</a></li><li class="chapter-item expanded "><a href="../../plan/0004-anti-ouroboros/index.html"><strong aria-hidden="true">2.4.</strong> Anti-ouroboros: methodology to the spine</a></li><li class="chapter-item expanded "><a href="../../plan/0005-reproducible-build-anchor/index.html"><strong aria-hidden="true">2.5.</strong> Reproducible-build production anchor</a></li><li class="chapter-item expanded "><a href="../../plan/0006-host-lint-reproducible-build/index.html"><strong aria-hidden="true">2.6.</strong> host-lint reproducible build</a></li><li class="chapter-item expanded "><a href="../../plan/0007-agentic-tell-grammar/index.html"><strong aria-hidden="true">2.7.</strong> Agentic-tell grammar engine</a></li><li class="chapter-item expanded "><a href="../../plan/0008-parallel-prose-scan/index.html"><strong aria-hidden="true">2.8.</strong> Parallel prose scan for large documents</a></li><li class="chapter-item expanded "><a href="../../plan/0009-install-hooks/index.html"><strong aria-hidden="true">2.9.</strong> Install commit hooks from the software recipe</a></li><li class="chapter-item expanded "><a href="../../plan/0010-markdown-aware-prose/index.html"><strong aria-hidden="true">2.10.</strong> Markdown-aware prose scanning</a></li><li class="chapter-item expanded "><a href="../../plan/0011-multi-platform-builds/index.html"><strong aria-hidden="true">2.11.</strong> Per-platform builds in the software recipe</a></li><li class="chapter-item expanded "><a href="../../plan/0012-specs-live-with-software/index.html"><strong aria-hidden="true">2.12.</strong> Specs live with the software (dogfood allium, relocate specula)</a></li><li class="chapter-item expanded "><a href="../../plan/0013-verdict-lifecycle/index.html"><strong aria-hidden="true">2.13.</strong> A real verdict lifecycle so allium analyse bites</a></li><li class="chapter-item expanded "><a href="../../plan/0014-mandate-and-wire-the-lanes/index.html"><strong aria-hidden="true">2.14.</strong> Verification lanes are mandatory when used: wire them, don't just reference</a></li><li class="chapter-item expanded "><a href="../../plan/0015-discharge-obligations/index.html"><strong aria-hidden="true">2.15.</strong> Close the obligation loop: use the skills, discharge allium plan</a></li><li class="chapter-item expanded "><a href="../../plan/0016-spec-lane-enforcement-gate/index.html"><strong aria-hidden="true">2.16.</strong> Enforcement gate: a spec without its lane is a HAZARD</a></li><li class="chapter-item expanded "><a href="../../plan/0017-obligation-discharge/index.html"><strong aria-hidden="true">2.17.</strong> Total obligation discharge, per component</a></li><li class="chapter-item expanded "><a href="../../plan/0018-wire-lifecycle-as-skill/index.html"><strong aria-hidden="true">2.18.</strong> Wire host-lifecycle as phase skills; the phases are an unconditional MUST</a></li><li class="chapter-item expanded "><a href="../../plan/0019-refuse-adopt-in-place/index.html"><strong aria-hidden="true">2.19.</strong> Refuse to adopt a software repository in place</a></li><li class="chapter-item expanded "><a href="../../plan/0020-subject-decoration-flags/index.html"><strong aria-hidden="true">2.20.</strong> Flag decoration tells on the commit subject line</a></li><li class="chapter-item expanded "><a href="../../plan/0021-worktrees-under-host-tree/index.html"><strong aria-hidden="true">2.21.</strong> Materialized worktrees must live under the host tree</a></li><li class="chapter-item expanded "><a href="../../plan/0022-honest-partial-upgrades/index.html"><strong aria-hidden="true">2.22.</strong> Honest partial upgrades: an applied-set stamp the tool carries</a></li><li class="chapter-item expanded "><a href="../../plan/0023-verification-ladder-tiers/index.html"><strong aria-hidden="true">2.23.</strong> plan/0023: Verification-ladder tiers: solver (#3) + code-conformance (#4)</a></li><li class="chapter-item expanded "><a href="../../plan/0024-sound-discharge/index.html"><strong aria-hidden="true">2.24.</strong> plan/0024: Sound discharge by re-derivation in a pinned toolchain (no keys, no CI overfit)</a></li><li class="chapter-item expanded "><a href="../../plan/0025-lifecycle-receipts-and-strict-release/index.html"><strong aria-hidden="true">2.25.</strong> plan/0025: Lifecycle receipts + a tool-readable phase manifest + a strict, tool-carried release phase</a></li><li class="chapter-item expanded "><a href="../../plan/0026-open-bug-closure/index.html"><strong aria-hidden="true">2.26.</strong> plan/0026, Open-bug closure: the full sequenced plan for every open issue</a></li><li class="chapter-item expanded "><a href="../../plan/0027-host-lint-ignore-blocks/index.html"><strong aria-hidden="true">2.27.</strong> plan/0027, host-lint:ignore fenced blocks: idiomatic literal-citation exclusion (call/0019)</a></li><li class="chapter-item expanded "><a href="../../plan/0028-host-family-as-where-components/index.html"><strong aria-hidden="true">2.28.</strong> plan/0028: The host-* family as Where-room software components</a></li><li class="chapter-item expanded "><a href="../../plan/0029-where-room-component-model/index.html"><strong aria-hidden="true">2.29.</strong> plan/0029: A first-class multi-component Where room: recipe-dispatched shapes, addressing, layout, and tool residency</a></li><li class="chapter-item expanded "><a href="../../plan/0030-prose-hygiene-lane/index.html"><strong aria-hidden="true">2.30.</strong> plan/0030: The prose-hygiene lane: a walking docs audit (--docs), weak-agent-fixable output, and re-derivable record exclusion</a></li><li class="chapter-item expanded "><a href="../../plan/0031-fixable-prose-output/index.html"><strong aria-hidden="true">2.31.</strong> plan/0031: Fixable prose output: one record per occurrence, a column, a mechanical fix, advisory tiers</a></li><li class="chapter-item expanded "><a href="../../plan/0032-static-builds/index.html"><strong aria-hidden="true">2.32.</strong> plan/0032: Hermetic static builds, distribute equals certify, via a pinned dependency bundle</a></li><li class="chapter-item expanded "><a href="../../plan/0033-self-consistent-book/index.html"><strong aria-hidden="true">2.33.</strong> plan/0033: the generated book is correct and obeys the prose-hygiene rule</a></li><li class="chapter-item expanded "><a href="../../plan/0034-grammar-grows-by-reflective-practice/index.html"><strong aria-hidden="true">2.34.</strong> plan/0034: the hygiene grammar grows by reflective practice (fixes host#16)</a></li><li class="chapter-item expanded "><a href="../../plan/0035-gather-emergent-tells/index.html"><strong aria-hidden="true">2.35.</strong> plan/0035: gather emergent tells</a></li><li class="chapter-item expanded "><a href="../../plan/0036-reconcile-internal-contradictions/index.html"><strong aria-hidden="true">2.36.</strong> Reconcile internal contradictions</a></li><li class="chapter-item expanded "><a href="../../plan/0037-tool-driven-receipts-rehoming/index.html"><strong aria-hidden="true">2.37.</strong> Re-home the receipts family, entirely tool-driven</a></li><li class="chapter-item expanded "><a href="../../plan/0038-prose-gate-meta-repos/index.html"><strong aria-hidden="true">2.38.</strong> Prose-gate the meta repos</a></li><li class="chapter-item expanded "><a href="../../plan/0039-concepts-as-uris/index.html"><strong aria-hidden="true">2.39.</strong> plan/0039: Concepts as URIs (reconcile by pointing, not annotating)</a></li><li class="chapter-item expanded "><a href="../../plan/0040-front-door-from-spine/index.html"><strong aria-hidden="true">2.40.</strong> plan/0040: front-door from spine</a></li><li class="chapter-item expanded "><a href="../../plan/0041-next-fails-closed/index.html"><strong aria-hidden="true">2.41.</strong> plan/0041: next fails closed</a></li><li class="chapter-item expanded "><a href="../../plan/0042-receipted-task-graph/index.html"><strong aria-hidden="true">2.42.</strong> plan/0042: receipted task graph</a></li><li class="chapter-item expanded "><a href="../../plan/0043-entrance-check/index.html"><strong aria-hidden="true">2.43.</strong> plan/0043: the entrance check (a reusable standalone-document check)</a></li><li class="chapter-item expanded "><a href="../../plan/0044-prose-lexicon/index.html"><strong aria-hidden="true">2.44.</strong> plan/0044: LEXICON masking reaches the prose lane</a></li><li class="chapter-item expanded "><a href="../../plan/0045-shared-docs-engine/index.html"><strong aria-hidden="true">2.45.</strong> plan/0045: The embedded prose engine catches up</a></li><li class="chapter-item expanded "><a href="../../plan/0046-book-to-mdbook-dir/index.html"><strong aria-hidden="true">2.46.</strong> plan/0046: the generated book moves to mdBook/, freeing docs/</a></li><li class="chapter-item expanded "><a href="../../plan/0047-prose-scans-working-tree/index.html"><strong aria-hidden="true">2.47.</strong> plan/0047: the prose lane audits the authored working tree, not just the tracked subset</a></li><li class="chapter-item expanded "><a href="../../plan/0048-runnable-rederivation/index.html"><strong aria-hidden="true">2.48.</strong> plan/0048: a declared rung's re-deriver must be runnable, and its digest earned</a></li><li class="chapter-item expanded "><a href="../../plan/0049-external-reference-corpus/index.html"><strong aria-hidden="true">2.49.</strong> plan/0049: external reference corpus</a></li><li class="chapter-item expanded "><a href="../../plan/0050-host-reference-review/index.html" class="active"><strong aria-hidden="true">2.50.</strong> plan/0050 host-reference review: findings from the reference-compiler audit</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Software: where</li><li class="chapter-item expanded "><a href="../../where.html"><strong aria-hidden="true">3.</strong> Software</a></li><li class="chapter-item expanded affix "><li class="part-title">Call: why</li><li class="chapter-item expanded "><a href="../../call/0013-reserve-agentic-host-for-this-repository.html"><strong aria-hidden="true">4.</strong> Reserve agentic-host for this repository; scrub the collision by a one-time history rewrite</a></li><li class="chapter-item expanded "><a href="../../call/0015-parallel-scan-escalates-to-the-timing-lane.html"><strong aria-hidden="true">5.</strong> Parallelizing the prose scan escalates run-accumulation to the timing lane</a></li><li class="chapter-item expanded "><a href="../../call/0018-discharge-is-re-derivation-in-a-pinned-toolchain.html"><strong aria-hidden="true">6.</strong> Discharge is re-derivation in a pinned toolchain, not a signed attestation; enforcement is project-pluggable</a></li><li class="chapter-item expanded "><a href="../../call/0019-literal-citations-in-host-lint-ignore-blocks.html"><strong aria-hidden="true">7.</strong> Literal tell-citations live in a host-lint:ignore fenced block, never --no-verify</a></li><li class="chapter-item expanded "><a href="../../call/0020-host-family-is-where-room-software.html"><strong aria-hidden="true">8.</strong> The host-* family is software developed here, embedded as Where-room components</a></li><li class="chapter-item expanded "><a href="../../call/0021-host-family-builds-hermetically-against-a-pinned-bundle.html"><strong aria-hidden="true">9.</strong> The host-* static-musl releases build hermetically against a pinned dependency bundle</a></li><li class="chapter-item expanded "><a href="../../call/0022-emergent-tell-discovery-is-a-mechanical-gather.html"><strong aria-hidden="true">10.</strong> Emergent-tell discovery is a mechanical gather that the operator triages</a></li><li class="chapter-item expanded "><a href="../../call/0023-reconcile-is-concept-as-uri.html"><strong aria-hidden="true">11.</strong> Reconcile is concept-as-URI: project-local facts and three checks</a></li><li class="chapter-item expanded "><a href="../../call/0024-in-plan-tasks-are-a-receipted-graph.html"><strong aria-hidden="true">12.</strong> In-plan tasks are a receipted graph: anchored nodes, a third ledger, prerequisite edges</a></li><li class="chapter-item expanded "><a href="../../call/0025-next-fails-closed.html"><strong aria-hidden="true">13.</strong> next fails closed on a directory with no numbered entries</a></li><li class="chapter-item expanded "><a href="../../call/0026-front-door-check.html"><strong aria-hidden="true">14.</strong> The front-door check: cover the spine's structured facts, generate the stamp</a></li><li class="chapter-item expanded "><a href="../../call/0027-entrance-rename-and-migration.html"><strong aria-hidden="true">15.</strong> Rename the front-door check to entrance, with a deprecate-then-retire migration</a></li><li class="chapter-item expanded "><a href="../../call/0028-entrance-generalized-to-a-stanza.html"><strong aria-hidden="true">16.</strong> The entrance check generalizes to a declared [entrance] stanza</a></li><li class="chapter-item expanded "><a href="../../call/0029-prose-lane-consults-the-lexicon.html"><strong aria-hidden="true">17.</strong> The prose lane consults the per-project LEXICON</a></li><li class="chapter-item expanded "><a href="../../call/0030-host-reference-is-a-reference-compiler.html"><strong aria-hidden="true">18.</strong> host-reference is a reference compiler: a deterministic normalised layer and a collaborative overlay</a></li><li class="chapter-item expanded "><a href="../../call/0031-untrusted-input-threat-model.html"><strong aria-hidden="true">19.</strong> Ingested material is untrusted: defensive parsing, a legible boundary, fail-safe refusal</a></li><li class="chapter-item expanded "><a href="../../call/0032-engineering-geometry-token-target.html"><strong aria-hidden="true">20.</strong> The engineering-geometry token target is a deterministic structure-and-metadata summary</a></li><li class="chapter-item expanded "><a href="../../call/0033-pluggable-pure-rust-readers.html"><strong aria-hidden="true">21.</strong> host-reference is pluggable and pure-Rust: each format stands up by feature, with the best pure-Rust reader</a></li><li class="chapter-item expanded "><a href="../../call/0034-ocr-is-the-first-out-of-process-plugin.html"><strong aria-hidden="true">22.</strong> OCR ships now as the first out-of-process plugin, attested behind an arms-length boundary</a></li><li class="chapter-item expanded affix "><li class="part-title">Reference: how</li><li class="chapter-item expanded "><a href="../../CLAUDE.html"><strong aria-hidden="true">23.</strong> CLAUDE.md</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../BOOTSTRAP.html"><strong aria-hidden="true">23.1.</strong> BOOTSTRAP.md</a></li><li class="chapter-item expanded "><a href="../../CI-PIPELINE.html"><strong aria-hidden="true">23.2.</strong> CI-PIPELINE.md</a></li><li class="chapter-item expanded "><a href="../../FORMAL-SPEC.html"><strong aria-hidden="true">23.3.</strong> FORMAL-SPEC.md</a></li><li class="chapter-item expanded "><a href="../../SKILL-HARDENING.html"><strong aria-hidden="true">23.4.</strong> SKILL-HARDENING.md</a></li><li class="chapter-item expanded "><a href="../../SKILL_AUTHORING.html"><strong aria-hidden="true">23.5.</strong> SKILL_AUTHORING.md</a></li><li class="chapter-item expanded "><a href="../../STRUCTURE.html"><strong aria-hidden="true">23.6.</strong> Structure</a></li><li class="chapter-item expanded "><a href="../../TEMPLATE-REWRITE.html"><strong aria-hidden="true">23.7.</strong> TEMPLATE-REWRITE: rewrite host-template into the canonical agentic project</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Memory</li><li class="chapter-item expanded "><a href="../../MEMORY.html"><strong aria-hidden="true">24.</strong> Memory</a></li><li class="chapter-item expanded affix "><li class="part-title">Archive / Record</li><li class="chapter-item expanded "><a href="../../call/0000-use-markdown-decision-records.html"><strong aria-hidden="true">25.</strong> Use Markdown decision records (MADR) (superseded)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../call/0001-tool-outputs-are-project-owned.html"><strong aria-hidden="true">25.1.</strong> Tool outputs are project-owned, not under allium or Specula licenses (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0002-verification-lanes-by-property-type.html"><strong aria-hidden="true">25.2.</strong> Split verification into lanes by property type (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0003-compose-tools-as-referenced-submodules.html"><strong aria-hidden="true">25.3.</strong> Compose verification tools as referenced submodules (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0004-template-is-versioned-source.html"><strong aria-hidden="true">25.4.</strong> The template is the canonical, versioned source of the methodology (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0005-migration-protocol.html"><strong aria-hidden="true">25.5.</strong> Adopt and upgrade existing repos by a cased, moded migration protocol (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0006-host-lint-sanctioned-vocabulary-allow-list.html"><strong aria-hidden="true">25.6.</strong> host-lint exempts sanctioned vocabulary via a repo-root allow file (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0007-adoption-is-a-clean-break-upgrade-is-a-delta.html"><strong aria-hidden="true">25.7.</strong> Adoption is a clean break to a pristine state; upgrade is a Shallow delta (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0008-enforced-remap-dictionary.html"><strong aria-hidden="true">25.8.</strong> Adoption remap is enforced by a dictionary applied deterministically, then removed (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0009-exclude-the-record-from-the-audit.html"><strong aria-hidden="true">25.9.</strong> A migrated project excludes its append-only record from the audit (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0010-software-is-a-bare-store-with-worktrees.html"><strong aria-hidden="true">25.10.</strong> Embed the software as a bare store with named worktrees (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0011-worktree-absence-coherence.html"><strong aria-hidden="true">25.11.</strong> References to the software worktree must survive its absence (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0012-host-is-the-single-file-front-door.html"><strong aria-hidden="true">25.12.</strong> A single file named host is the front door that owns the adoption-and-upgrade process (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0014-canonical-doc-site-publisher.html"><strong aria-hidden="true">25.13.</strong> The canonical doc-site publisher is host-lifecycle book (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0016-discharge-requires-a-signed-pass-attestation.html"><strong aria-hidden="true">25.14.</strong> Rung discharge requires a signed verifier-pass attestation, not name-presence (superseded)</a></li><li class="chapter-item expanded "><a href="../../call/0017-every-phase-emits-a-receipt.html"><strong aria-hidden="true">25.15.</strong> Every lifecycle phase discharges to a tool-written receipt; release is a strict, tool-carried phase (superseded)</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">agentic-host</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="plan0050-host-reference-review-findings-from-the-reference-compiler-audit"><a class="header" href="#plan0050-host-reference-review-findings-from-the-reference-compiler-audit">plan/0050 host-reference review: findings from the reference-compiler audit</a></h1>
+<p>This milestone records a maximum-effort review of <code>host-reference</code>, the reference compiler
+delivered by plan/0049. It is a findings record, not a remediation plan: nothing here is fixed
+in this milestone. Each finding carries its file, its mechanism, and the concrete input that
+triggers it, so a later remediation plan can pick the work up cold. The disposition for every
+finding below is the same — <em>recorded, remediation deferred</em> — and is not repeated per entry.</p>
+<h2 id="what-was-reviewed"><a class="header" href="#what-was-reviewed">What was reviewed</a></h2>
+<ul>
+<li>Repository: <code>connollydavid/host-reference</code>, pull request #1, "host-reference: external reference compiler".</li>
+<li>Head: <code>review/0049</code> at <code>ea92185</code> (identical to <code>host-reference</code> <code>main</code>, released v0.1.1).</li>
+<li>Base: <code>review-base/scaffold</code> at <code>88c6bcf</code>.</li>
+<li>Diff: 174 files, about 11,219 insertions and 38 deletions — roughly forty feature-gated
+normaliser crates plus the shared <code>core</code>, the <code>cli</code>, the <code>overlay</code> crate, the <code>.allium</code>
+specification with its obligations manifest, the <code>deny.toml</code> licence lane, and the CI workflow.</li>
+</ul>
+<p>The review ran locally at maximum recall (the cloud <code>code-review ultra</code> lane was unavailable, so its
+local fallback ran): ten independent finder angles in parallel — five correctness groups across the
+crates, plus the overlay lens laws, a cross-cutting determinism audit, the CLI and core dispatch, the
+conformance harness and removed-behaviour audit, the specification and CI coverage, and a reuse and
+altitude pass — followed by targeted verification (several findings were confirmed by executing the
+code at the reviewed revision) and one gap sweep. Findings were deduped and ranked.</p>
+<h2 id="the-contract-the-findings-test-against"><a class="header" href="#the-contract-the-findings-test-against">The contract the findings test against</a></h2>
+<p>Every reader implements one trait, <code>Normalizer</code> (<code>crates/core/src/lib.rs</code>): <code>skeleton</code> returns the
+<code>Tier0</code> skeleton, <code>view</code> a windowed <code>Tier1</code> slice, <code>put</code> a write-back patch. The invariants the
+findings measure against:</p>
+<ul>
+<li><strong>Determinism is the premise.</strong> A <code>skeleton</code> output is serialized by <code>core::serialize_tier0</code> and
+compared byte for byte against a committed golden fixture in each crate's <code>tests/conformance.rs</code>.
+The component's whole claim is that output is "a pure function of the source bytes and the pinned
+toolchain" (call/0018, call/0030). Any non-determinism that reaches serialized output is a real
+defect.</li>
+<li><strong>Refusals are explicit (call/0031).</strong> A parse that hits a resource bound or a hostile structure
+must return <code>Error::Refused</code> (or <code>Error::Parse</code>). A panic, a hang, or a silent partial on malformed
+input is forbidden.</li>
+<li><strong>The source map is faithful.</strong> Each <code>Span.origin</code> is a byte range into the source; it must satisfy
+<code>start &lt;= end &lt;= len</code> and point at the true origin of the region it labels.</li>
+<li><strong>String slicing in Rust panics</strong> on a non-char-boundary or out-of-range index, so any <code>view</code> or
+<code>skeleton</code> that slices a <code>&amp;str</code> by a computed offset on arbitrary input is a panic candidate.</li>
+</ul>
+<h2 id="correctness-findings-ranked"><a class="header" href="#correctness-findings-ranked">Correctness findings, ranked</a></h2>
+<p>The fifteen most severe, in order. The line numbers are at the reviewed revision.</p>
+<ol>
+<li>
+<p><strong>A <code>view</code> selector with a large length overflows and panics instead of refusing</strong> —
+<code>crates/cli/src/main.rs</code> <code>parse_selector</code> (the root) and every <code>view</code> <code>CharOffset</code> arm
+(<code>crates/data/src/lib.rs:75</code>, <code>config:59</code>, <code>prose:123</code>, <code>asciidoc:54</code>, <code>bibtex:52</code>, <code>org:51</code>,
+<code>rst:54</code>, <code>html:92</code>, <code>netlist:110</code>, <code>vector:106</code>, and <code>calendar</code>). <code>parse_selector</code> accepts an
+unbounded <code>len</code>; each <code>view</code> computes <code>s + *len</code> <em>before</em> <code>floor_boundary</code> clamps it.
+<code>host-reference view notes.txt --select offset:1:18446744073709551615</code> panics with "attempt to add
+with overflow" in a debug build; in release the sum wraps below <code>s</code>, <code>floor_boundary</code> returns
+<code>end &lt; start</code>, and <code>text[start..end]</code> panics "slice index starts at 1 but ends at 0". Confirmed by
+execution. The contract demands a clean <code>Error::Parse</code>. Fix belongs at the source, in
+<code>parse_selector</code> (a <code>checked_add</code> or an explicit bound).</p>
+</li>
+<li>
+<p><strong>No reader ever constructs <code>Error::Refused</code>; the hostile-input obligation is waived but
+unrealised</strong> — <code>host-reference.obligations</code> (the <code>RefuseHostileInput</code> disposition). A grep for
+<code>Error::Refused</code> across <code>crates/**/lib.rs</code> matches only the <code>core</code> enum definition; no reader
+builds it, and <code>Source</code> carries no size or trust field. The obligations manifest waives
+<code>RefuseHostileInput</code> as "realised per reader as <code>Error::Refused</code> where a bound is hit," but that
+realisation does not exist, and the obligations check only verifies that test <em>names</em> resolve, so
+CI stays green. Every malformed or oversized untrusted document therefore hits a panic, a hang, or
+a silent partial — the exact call/0031 failure the spec forbids. Findings 3, 4, and the further
+findings on the office, EPUB, and audio-visual readers are concrete instances of this systemic gap.</p>
+</li>
+<li>
+<p><strong>The PDF reader aborts the process on many loadable PDFs</strong> — <code>crates/pdf/src/lib.rs:60</code> (and the
+<code>view</code> path at <code>:42</code>). <code>pdf_extract::extract_text_from_mem</code> carries roughly twenty <code>panic!</code>/<code>todo!</code>
+sites for structures <code>lopdf</code> loads but <code>pdf-extract</code> 0.12 does not handle (an unsupported CMap, an
+image soft mask, a missing glyph width). The call site maps <code>Err</code>, not an unwind, so a single
+crafted-but-loadable PDF aborts the CLI instead of returning <code>Error::Refused</code>. (Mechanism certain;
+the trigger is a specific PDF.)</p>
+</li>
+<li>
+<p><strong>The calendar reader returns success on malformed input</strong> — <code>crates/calendar/src/lib.rs:94</code>.
+<code>calendar_shape</code> (and <code>vcard_shape</code>) match only <code>Entry::ICalendar</code>/<code>Entry::VCard</code>; calcard's error
+variants (<code>InvalidLine</code>, <code>UnterminatedComponent</code>, <code>UnexpectedComponentEnd</code>) are dropped. A
+truncated <code>.ics</code> (a <code>BEGIN:VCALENDAR</code> with no matching <code>END</code>), or pure garbage, returns
+<code>Ok("calendar: 0 components")</code> — a silent partial the contract bans. (The parser terminates, so
+this is a silent-success bug, not a hang.)</p>
+</li>
+<li>
+<p><strong>An overlay <code>TextQuote</code> selector silently re-anchors to the wrong occurrence</strong> —
+<code>crates/overlay/src/lib.rs:54</code>. When the <code>prefix + exact + suffix</code> context no longer matches (for
+example after a re-derivation drops surrounding text), resolution falls back to <code>text.find(exact)</code>,
+the <em>first</em> bare occurrence. For <code>"on the cat, off the cat"</code> with <code>prefix:"off "</code>, the annotation
+re-anchors to offset 0 instead of 12, and <code>write_back</code> then splices the edit into the wrong span
+with no ambiguity error — the opposite of the "survives re-derivation" property selectors exist to
+provide. Confirmed by execution.</p>
+</li>
+<li>
+<p><strong>The image and OCR readers claim the same extensions; the image reader wins and OCR is dead</strong> —
+<code>crates/cli/src/main.rs:95</code> and <code>:99</code>. Both <code>detect</code> exactly <code>png|jpg|jpeg|gif|bmp|tif|tiff|webp</code>,
+and <code>pick</code> returns the first reader whose <code>detect</code> is true, in registry-push order; <code>image</code> is
+pushed first. A build with both features (<code>--features "image ocr"</code>) routes every raster to image
+metadata, so the OCR reader never runs. The recognised-text path is silently unreachable in that
+configuration.</p>
+</li>
+<li>
+<p><strong>A format hint is not lowercased, so an uppercase extension is reported unsupported</strong> —
+<code>crates/cli/src/main.rs:124</code>. Every <code>detect</code> matches lowercase tokens only. <code>host-reference skeleton README.MD</code> (or <code>PHOTO.JPG</code>, <code>data.JSON</code>) yields "unsupported: no normaliser is registered
+for this kind" even with the relevant feature enabled. Common, legitimate input is rejected.</p>
+</li>
+<li>
+<p><strong>The prose and HTML heading outlines ignore fenced code blocks</strong> — <code>crates/prose/src/lib.rs:89</code>
+and <code>crates/html/src/lib.rs:38</code>. A line beginning with <code>#</code> then a space is treated as an ATX
+heading with no fence awareness, so a <code>#</code> line inside a triple-backtick block is emitted as a
+spurious outline entry, with a source-map span pointing at the code line. Wrong skeleton on very
+ordinary Markdown.</p>
+</li>
+<li>
+<p><strong>The out-of-process helpers are resolved by PATH or an environment variable and are not pinned</strong>
+— <code>crates/ocr/src/lib.rs:74</code> and <code>crates/openscad/src/lib.rs:82</code>. The skeleton body and token
+counts of these two readers are the stdout of <code>host-reference-ocr-helper</code> /
+<code>host-reference-openscad-helper</code>, selected from <code>HOST_REFERENCE_OCR_HELPER</code> /
+<code>HOST_REFERENCE_OPENSCAD_HELPER</code> or a bare PATH lookup, neither of which is in <code>Cargo.lock</code>. The
+same source bytes yield different attested skeletons across machines or helper versions — directly
+against the "pure function of the source bytes and the pinned toolchain" premise. The goldens stay
+green only because the conformance tests stub the helper.</p>
+</li>
+<li>
+<p><strong>Both out-of-process helpers stage input at a predictable shared temp path</strong> —
+<code>crates/ocr/src/lib.rs:80</code> and <code>crates/openscad/src/lib.rs:89</code>. The path is
+<code>temp_dir()/host-reference-ocr-&lt;content_id&gt;.&lt;ext&gt;</code> (and the OpenSCAD analogue), fully predictable
+from the bytes, opened with <code>File::create</code> (follows symlinks, truncates) and removed
+unconditionally. A pre-planted symlink at that path is followed and its target truncated (a local
+symlink attack); two concurrent calls on the same bytes collide, one's truncate or <code>remove_file</code>
+racing the other's helper read, producing intermittent "helper failed" — non-deterministic. An
+<code>O_EXCL</code> temp file with a random suffix is the fix.</p>
+</li>
+<li>
+<p><strong>The overlay lens is not very-well-behaved, and the proptests do not test the law they name</strong> —
+<code>crates/overlay/tests/lens_law.rs:45</code> (and <code>:6</code>). The fixed-offset splice lens violates PutPut
+whenever a replacement's length differs from the span it replaces: for <code>"abcdef"</code>, origin <code>2..4</code>,
+<code>v="X"</code> then <code>w="QQ"</code>, <code>put(put(s,v),w)</code> is <code>"abQQf"</code> but <code>put(s,w)</code> is <code>"abQQef"</code> (confirmed by
+execution), so the "well-behaved lens" claim in <code>src/lib.rs:5</code> is only partly true. The PutPut law
+is neither stated nor tested, and the <code>put_get</code> test re-implements the splice formula as its own
+oracle rather than composing a read-back through <code>get</code>, so it cannot catch a <code>get</code>/<code>put</code> mismatch.</p>
+</li>
+<li>
+<p><strong>CI never compiles the CLI with any non-default reader feature</strong> — <code>.github/workflows/ci.yml</code>
+(the <code>build</code>, <code>test</code>, and <code>lint</code> jobs). The build uses default (<code>text</code>) features;
+<code>cargo test --workspace</code> and <code>cargo clippy --workspace --all-targets</code> build the <code>host-reference</code>
+crate with default features too. Each reader crate is exercised as a workspace <em>member</em>, but the
+CLI's <code>#[cfg(feature = "office")]</code> (and the other sixteen non-default) <code>reg.push(...)</code> arms and
+their <code>use</code> imports are compiled by no job. Rename a type in a heavy reader and forget the CLI:
+CI is green, but <code>cargo build --features office</code> breaks for a consumer. A <code>--all-features</code> (or
+per-feature) compile job closes it.</p>
+</li>
+<li>
+<p><strong>A reStructuredText section title drops all inline markup</strong> — <code>crates/rst/src/lib.rs:108</code>.
+<code>inline_text</code> collects only <code>TextOrInlineElement::String</code> children, so a title with emphasis,
+strong, or literal markup renders with those portions silently omitted: <code>Install </code>pip<code> </code> yields
+<code>Install </code>, and a title that is entirely markup (<code>*Important*</code>) yields an empty or <code>(untitled)</code>
+entry. Wrong outline in the attested skeleton.</p>
+</li>
+<li>
+<p><strong>The SPICE net heuristic counts comments and value tokens as nets</strong> —
+<code>crates/netlist/src/lib.rs:73</code>. Every token between the first and the last on a line is treated as
+a net, so <code>R1 in out 1k ; load resistor</code> yields nets <code>{in, out, 1k, ;, load}</code> (five) rather than
+<code>{in, out}</code>, and <code>V1 in 0 DC 5</code> yields <code>{in, 0, DC}</code>. The wrong (but stable) net set is baked into
+the conformance golden.</p>
+</li>
+<li>
+<p><strong>The canonical serialized form has no delimiter escaping, so document content can inject a
+section break</strong> — <code>crates/core/src/lib.rs:199</code> together with the data reader's <code>field</code>/<code>shape</code>
+(<code>crates/data/src/lib.rs</code>). <code>serialize_tier0</code> emits the markdown body verbatim between the literal
+lines <code>== markdown ==</code>, <code>== source-map ==</code>, and <code>== tokens ==</code>. The data reader interpolates JSON
+object keys (and CSV headers) into the body unescaped, and a JSON key may contain a real newline.
+A document <code>{"x\n== source-map ==\ny": 1}</code> injects a second literal <code>== source-map ==</code> line into
+the markdown section, so any consumer that parses the canonical attested form mis-splits it. The
+form needs an escape or a length-prefixed framing.</p>
+</li>
+</ol>
+<h2 id="further-correctness-findings"><a class="header" href="#further-correctness-findings">Further correctness findings</a></h2>
+<p>Beyond the ranked fifteen, all real, cut only by the output cap:</p>
+<ul>
+<li>
+<p><strong>The HTML <code>view</code> reports the wrong source-map origin</strong> — <code>crates/html/src/lib.rs:99</code>. <code>view</code>
+returns a slice of the <em>converted</em> markdown (<code>md[start..end]</code>) but reports <code>origin: 0..bytes.len()</code>,
+the raw-HTML byte length. The span neither reflects the returned window nor points at the true
+origin of the returned text, breaking the bidirectional source map. (The <code>data</code> <code>view</code> is correct
+because its text is the source bytes; the HTML conversion makes the offsets incomparable.)</p>
+</li>
+<li>
+<p><strong>The PDF title is decoded as UTF-8 when PDF strings are commonly UTF-16BE</strong> —
+<code>crates/pdf/src/lib.rs:76</code>. <code>pdf_title</code> runs <code>from_utf8_lossy</code> over the Info <code>/Title</code> bytes; a
+Word- or Acrobat-exported title carried as UTF-16BE (BOM <code>0xFEFF</code>) decodes to mojibake. Wrong, but
+deterministic, skeleton output.</p>
+</li>
+<li>
+<p><strong>The Parquet conformance golden is pinned to the <code>parquet-rs</code> patch version</strong> —
+<code>crates/columnar/tests/conformance.rs</code> and its golden. The test generates the Parquet buffer in
+memory; the bytes embed <code>created_by = "parquet-rs version X.Y.Z"</code>, so the golden's content id
+(<code>e9b68265a677</code>) and <code>raw_tokens</code> (721) are a function of the dependency version, not the source.
+<code>Cargo.toml</code> pins <code>parquet = "59"</code> (a caret range), so a routine <code>cargo update</code> within the range
+changes the golden and the test fails with a confusing "tier-0 drifted" message unrelated to any
+source change. The Arrow golden is immune (Arrow IPC embeds no version string), which makes the
+asymmetry concrete. <code>--locked</code> CI does not flake; a maintainer bumping the lock would.</p>
+</li>
+<li>
+<p><strong>The audio reader fabricates a duration from a hostile chunk size</strong> — <code>crates/av/src/lib.rs:92</code>.
+<code>audio_shape</code> trusts the declared data-chunk count; a WAV with a bogus <code>data</code> size (<code>0xFFFFFFFF</code>)
+yields an "attested" duration that is a lie derived from the header, where the contract wants a
+refusal.</p>
+</li>
+<li>
+<p><strong>The audio-visual reader can panic on a malformed MP4 box</strong> — <code>crates/av/src/lib.rs:103</code>. An MP4
+whose 32-bit box size is smaller than the 8-byte header, or larger than the file, can drive an
+under/overflow in <code>mp4</code> 0.14's box parsing; the panic propagates out of <code>skeleton</code> (no
+<code>catch_unwind</code>) instead of refusing. A concrete instance of finding 2.</p>
+</li>
+<li>
+<p><strong>The office and EPUB readers have no resource bound</strong> — <code>crates/office/src/lib.rs:53</code> and
+<code>crates/epub/src/lib.rs:55</code>. Raw bytes go straight to <code>undoc</code> / <code>rbook</code>, whose zip layer
+decompresses parts without a cap, so a small deflate-bomb archive expands to multiple gigabytes and
+OOMs or hangs rather than refusing. Concrete instances of finding 2.</p>
+</li>
+<li>
+<p><strong>A degenerate overlay <code>TextQuote</code> resolves to an empty span rather than <code>None</code></strong> —
+<code>crates/overlay/src/lib.rs:50</code>. An empty <code>exact</code> makes <code>str::find("")</code> return <code>Some(0)</code>, so a
+meaningless selector resolves to <code>0..0</code> and <code>write_back</code> builds an empty-span insertion at byte 0
+instead of refusing.</p>
+</li>
+<li>
+<p><strong>A dotless path routes by its whole filename</strong> — <code>crates/cli/src/main.rs:124</code>. <code>hint</code> is
+<code>path.rsplit('.').next()</code>, so a file literally named <code>net</code> (or <code>org</code>, <code>obj</code>, <code>step</code>, <code>env</code>) has
+hint <code>net</code> and is parsed as a SPICE netlist. Unusual input, real misroute.</p>
+</li>
+<li>
+<p><strong>The <code>view</code> of most metadata readers ignores its selector</strong> — <code>crates/rtf/src/lib.rs:50</code>, and
+similarly <code>av</code>, <code>columnar</code>, <code>eda</code>, <code>geometry</code>, <code>image</code>, <code>office</code>, <code>epub</code>, <code>mail</code>, <code>openscad</code>,
+<code>pdf</code>. A windowed or token-budgeted request silently returns the whole document, blowing any token
+budget the caller relied on. For the tiny engineering tallies this is harmless; for the RTF
+de-styled text it is a real deviation from the trait's documented windowed slice.</p>
+</li>
+<li>
+<p><strong>An obligation is discharged by the wrong test</strong> — <code>host-reference.obligations:35</code>.
+<code>rule-failure.Window.1</code> is the hostile-input branch of the Window rule (<code>not source.hostile</code>), but
+it is mapped to <code>window_refuses_an_unsupported_selector</code>, which exercises selector refusal, a
+different concern. With no <code>hostile</code> field on <code>Source</code>, the failure path is discharged in name only.</p>
+</li>
+<li>
+<p><strong>No <code>cargo fmt --check</code> runs in CI</strong> — <code>.github/workflows/ci.yml</code> (the <code>lint</code> job). The job gates
+clippy with <code>-D warnings</code> and <code>cargo-deny</code>, but never checks formatting, so source-format drift can
+land on a repo whose premise is reproducible artifacts. Low severity (style, not correctness).</p>
+</li>
+</ul>
+<h2 id="overlay-lens-laws-and-proptest-integrity"><a class="header" href="#overlay-lens-laws-and-proptest-integrity">Overlay lens laws and proptest integrity</a></h2>
+<p>The overlay's "lens law" proptests are the weakest verification in the PR; findings 11 and the empty
+<code>TextQuote</code> above are the substantive bugs, and these are the test-integrity gaps around them
+(<code>crates/overlay/tests/lens_law.rs</code> and <code>tests/overlay.rs</code>):</p>
+<ul>
+<li>The law tests construct the <code>Edit</code> by hand from pre-clamped, pre-sorted offsets and call
+<code>normalizer.put</code> directly, so neither <code>resolve</code> (selector to range, with its bounds and
+boundary checks) nor <code>write_back</code> (selector to <code>Edit</code>) is ever property-tested for any law.</li>
+<li>The text generators are <code>".{0,80}"</code>, which excludes newlines, the one character that makes the
+prose normaliser's structure non-trivial, so the prose lens law never sees multi-line input.</li>
+<li>The reversed-range guards (<code>end.max(start)</code> in <code>put</code>, the <code>start &lt;= end</code> branch in <code>resolve</code>) are
+never exercised, because every test pre-sorts its offsets.</li>
+<li>The CRDT merge test (<code>tests/overlay.rs:31</code>) asserts only one merge direction and set membership, not
+convergence or deterministic ordering, and <code>Overlay::new</code> carries a random peer id, so a
+non-convergent or order-divergent merge would still pass.</li>
+</ul>
+<h2 id="reuse-simplification-and-altitude"><a class="header" href="#reuse-simplification-and-altitude">Reuse, simplification, and altitude</a></h2>
+<p>Quality observations on the new code, in descending value. These are not defects in behaviour; the
+cost named is duplication or a metric that does not mean what it claims.</p>
+<ul>
+<li>
+<p><strong>The golden-test harness is copy-pasted across roughly twenty-three <code>conformance.rs</code> files</strong>
+(<code>crates/*/tests/conformance.rs</code>), varying only by the normaliser type name. A shared
+<code>testkit::check_fixture::&lt;N: Normalizer&gt;</code> in a dev-dependency crate would own the bless protocol,
+the golden filename, and the drift message once instead of in twenty-three places.</p>
+</li>
+<li>
+<p><strong><code>floor_boundary</code> and the UTF-8 decode helper are each defined identically in eleven-to-thirteen
+crates</strong> (<code>prose</code>, <code>data</code>, <code>config</code>, <code>rst</code>, <code>asciidoc</code>, <code>org</code>, <code>rtf</code>, <code>bibtex</code>, <code>calendar</code>,
+<code>netlist</code>, <code>vector</code>). They belong in <code>core</code>; a fix to boundary handling currently has to be applied
+in every copy and can drift between them.</p>
+</li>
+<li>
+<p><strong>Every reader hand-builds the <code>Tier0</code></strong> (content id, two token counts, a whole-document span), and
+the text readers repeat an identical <code>CharOffset</code> <code>view</code> body. A <code>Tier0::whole(source, outline)</code>
+constructor and a <code>core::char_offset_view</code> helper would collapse both.</p>
+</li>
+<li>
+<p><strong><code>raw_tokens</code> is computed three incompatible ways</strong> — <code>count_tokens(text)</code> (text readers),
+<code>count_tokens(&amp;from_utf8_lossy(bytes))</code> (<code>pdf</code>, <code>geometry</code>, <code>columnar</code>, <code>eda</code>, <code>epub</code>, <code>mail</code>,
+<code>office</code>, <code>openscad</code>), and bare <code>bytes.len()</code> (<code>image</code>, <code>av</code>, <code>ocr</code>). The headline savings ratio the
+<code>Tier0</code> design exists to report is therefore measured on different bases across modalities and is
+not comparable. The basis decision belongs in one <code>core</code> policy.</p>
+</li>
+<li>
+<p><strong>The <code>view</code> boilerplate that ignores its selector</strong> (the further-finding above) would disappear
+behind a default trait method on <code>Normalizer</code> that returns the skeleton's markdown when no
+windowing is supported.</p>
+</li>
+<li>
+<p><strong>The registry dispatches by first match in insertion order, with no collision check</strong>
+(<code>crates/cli/src/main.rs</code>). The order is load-bearing but unenforced; a registry keyed by extension
+would make dispatch explicit and surface the image/OCR collision (finding 6) at construction instead
+of as a silent wrong pick.</p>
+</li>
+<li>
+<p><strong>The ATX-heading outline is implemented twice</strong> (<code>prose</code> and <code>html</code>). A
+<code>core::markdown_heading_outline</code> would serve both and any future Markdown-targeting reader.</p>
+</li>
+</ul>
+<h2 id="what-was-checked-and-cleared"><a class="header" href="#what-was-checked-and-cleared">What was checked and cleared</a></h2>
+<p>The negative results matter as much as the findings: they say what a remediation plan does not need to
+re-examine. All confirmed at the reviewed revision.</p>
+<ul>
+<li><strong>Determinism is otherwise clean.</strong> No <code>HashMap</code> or <code>HashSet</code> reaches serialized output anywhere in
+<code>crates/*/src</code>; every tally is a <code>Vec</code> or <code>BTreeMap</code>/<code>BTreeSet</code> and is sorted before emission.
+<code>serde_json</code> is at its default (sorted <code>BTreeMap</code>, no <code>preserve_order</code> anywhere), and the data
+reader sorts object keys regardless. <code>ply-rs-bw</code> is backed by <code>indexmap</code> (file order), EXIF fields
+are sorted, MP4 tracks are sorted by id, config keys are sorted. No float is formatted into any
+golden (every numeric output is an integer count or the exif crate's exact rational display). No
+time, randomness, environment, or threading reaches output — with the sole exception of the two
+out-of-process helpers (findings 9 and 10).</li>
+<li><strong>The conformance harness is sound.</strong> Every normaliser crate ships a <code>tests/conformance.rs</code> on one
+correct pattern: load or generate the input, <code>serialize_tier0(skeleton)</code>, and <code>assert_eq!</code> against a
+committed golden. The golden is rewritten only under <code>HOST_REFERENCE_BLESS=1</code>, which returns
+immediately, so a normal run never writes the file it then reads. All golden files are tracked and
+non-empty; <code>cargo test --workspace --locked</code> runs the assertions; no <code>#[ignore]</code>, no <code>assert!(true)</code>,
+no self-comparison, no early return. The OCR test golden encodes a stub helper's fixed output, which
+is correctly scoped to this crate's plumbing rather than the engine (the engine lives out of process,
+finding 9).</li>
+<li><strong>The removed-behaviour audit is clean.</strong> The only deletions in the diff are the version bump, the
+expanded members list, the regenerated <code>Cargo.lock</code>, and the old CLI placeholder stub (a blanket
+refusal) replaced by real registry dispatch. Every error path from the stub is re-established
+(missing path, unknown command, unknown kind all exit 2 with a clean error); <code>deny.toml</code> and
+<code>.gitignore</code> are new files, not edits.</li>
+<li><strong>Member, feature, and registry coverage is consistent.</strong> Every crate directory is in the workspace
+<code>members</code>; every reader has a matching CLI feature and a <code>registry()</code> push; <code>overlay</code> is correctly
+not a CLI reader.</li>
+<li><strong>The licence lane is complete.</strong> Every otherwise-unallowed SPDX token in the tree appears only as an
+OR alternative beside an allowed licence; the three advisory ignores are unmaintained-only and mask
+no vulnerability; AGPL is banned and GPL flagged, with the GPL confined to the OpenSCAD helper's own
+repository.</li>
+<li><strong>The core helpers hold.</strong> <code>serialize_tier0</code>'s span sort key <code>(start, end, source)</code> is a total,
+stable order; <code>count_tokens</code>'s <code>expect</code> loads the vocab embedded in the crate, so it cannot fail at
+runtime; <code>content_id</code>'s six-byte prefix is fine for keying a single source's map. The CLI's argv
+handling is panic-free (missing arguments and a directory path map to an <code>Error</code>).</li>
+<li><strong>The named library panics did not reproduce.</strong> <code>stl_io</code> streams triangles and does not preallocate
+from a declared count, <code>ply-rs-bw</code> caps preallocation, and the G-code and SPICE paths return
+<code>Error::Parse</code> rather than indexing into absent coordinates.</li>
+</ul>
+<h2 id="disposition"><a class="header" href="#disposition">Disposition</a></h2>
+<p>Everything above is recorded for a future remediation plan and is not actioned in this milestone. The
+must-fix cluster, when that plan is cut, is findings 1 through 4: bound the selector at its source, and
+make the readers return <code>Error::Refused</code> on a resource bound or a hostile structure instead of
+panicking, hanging, or silently zeroing — the call/0031 contract the component asserts but does not yet
+keep. The determinism discipline and the conformance harness are sound foundations to build that on.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../plan/0049-external-reference-corpus/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../where.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../plan/0049-external-reference-corpus/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../where.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
