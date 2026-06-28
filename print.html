@@ -8713,6 +8713,22 @@ ModuleInstantiation), the same trick the DXF reader uses. The helper repo's <cod
 <code>openscad-rs</code> and the helper binary as GPL-3.0 exceptions, because the root crate's own licence is
 checked too, and <code>ISC</code> was needed for <code>is_ci</code> (transitive via <code>miette</code>). The plugin's conformance uses
 a stub helper; the real parser is conformance-tested in the helper repo.</p>
+<h3 id="2026-06-28--step-3mf-and-amf-delivered-in-process-geometry-complete-bar-iges"><a class="header" href="#2026-06-28--step-3mf-and-amf-delivered-in-process-geometry-complete-bar-iges">2026-06-28 — STEP, 3MF, and AMF delivered in-process; geometry complete bar IGES</a></h3>
+<p>The three deferred geometry kinds joined the in-process <code>geometry</code> crate (not out-of-process; their
+readers are permissive). 3MF through <code>threemf</code> 0.8 (<code>read</code> returns <code>Vec&lt;Model&gt;</code>, each
+<code>model.resources.object[].mesh</code> with <code>vertices.vertex</code> and <code>triangles.triangle</code>); its licence is 0BSD,
+added to the deny allow-list. AMF through <code>roxmltree</code> over the uncompressed XML (counts of object,
+mesh, vertex, triangle); a compressed AMF zip is refused with a clear message rather than handled, a
+deliberate scope cut. STEP through <code>ruststep</code> 0.4: the schema-agnostic parser is
+<code>ruststep::parser::exchange::exchange_file</code> (a nom parser returning <code>IResult</code>, so destructure
+<code>let (_, exchange) = ...</code>), NOT a <code>parse</code> function; <code>exchange.data</code> is <code>Vec&lt;DataSection&gt;</code>, each section
+has <code>entities: Vec&lt;EntityInstance&gt;</code>, and <code>EntityInstance::Simple { record, .. }</code> carries <code>record.name</code>
+(the entity keyword) for the type tally. ruststep pulls the unmaintained <code>proc-macro-error</code>
+(RUSTSEC-2024-0370) through <code>ruststep-derive</code>; accepted in deny on the same footing as <code>paste</code>, which
+is what cleared STEP past the maturity-rule deferral readers.md had reserved for it. The 3MF fixture is
+a static zip generated once with Python (<code>zipfile</code>, Stored); AMF and STEP fixtures are hand-authored
+text. Engineering geometry is now complete except IGES, which stays deferred because every working
+reader is C++.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
