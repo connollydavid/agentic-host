@@ -309,3 +309,15 @@
     evidence = source release of host-reference-ocr at 1a652b6: cargo test green (a byte-for-byte conformance golden over a synthetic text image, run-to-run deterministic on a host), clippy and cargo-deny clean. Code is Unlicense; the embedded ocrs models are CC-BY-SA-4.0, attributed in NOTICE.md and README.md and confined to this helper. Reproducible-build provenance is deferred to host-reference's spec-and-release task, the same source-only posture host-reference carries.
     tool = host-lifecycle@0.31.0
     recorded = 2026-06-28
+
+[receipt "embed" "host-reference-openscad"]
+    disposition = done
+    evidence = host-reference-openscad created as a public repo at 829c3d7, pinned source-only in .host-software, materialized as a bare store with worktree. It is the out-of-process OpenSCAD helper (call/0033, call/0034), carrying the GPL-3.0 openscad-rs parser, which host-reference's permissive openscad plugin runs at arm's length.
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-28
+
+[receipt "release" "host-reference-openscad"]
+    disposition = done
+    evidence = source release of host-reference-openscad at 829c3d7: cargo test green (a byte-for-byte conformance golden over a small .scad, deterministic), clippy and cargo-deny clean (openscad-rs and the helper binary are the flagged GPL-3.0 exceptions, nothing else GPL, AGPL banned). Code and binary are GPL-3.0-or-later, stated upfront in README.md and LICENSE with openscad-rs and OpenSCAD cited. Reproducible-build provenance deferred to the spec-and-release task.
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-28

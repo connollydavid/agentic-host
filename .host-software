@@ -39,7 +39,7 @@
 	# the spec-and-release task once the CLI is functional, the same shape the other artifact
 	# components carry.
 	url       = https://github.com/connollydavid/host-reference.git
-	pin       = 405fa85043506d24772ecb7ab673289ee2776644
+	pin       = 577deb8c44263efe3371d43b2b8a5511d48b081e
 	worktrees =
 [software "host-reference-ocr"]
 	# the out-of-process OCR helper (call/0034). host-reference's permissive `ocr` plugin runs this
@@ -48,6 +48,14 @@
 	# reproducible-build provenance lands with the spec-and-release task.
 	url       = https://github.com/connollydavid/host-reference-ocr.git
 	pin       = 1a652b609b3f4688af43856d294b160f2c5be664
+	worktrees =
+[software "host-reference-openscad"]
+	# the out-of-process OpenSCAD helper (call/0033, call/0034). host-reference's permissive `openscad`
+	# plugin runs this binary at arm's length, so the GPL-3.0 openscad-rs parser is confined here, off
+	# the permissive plugin's side of the boundary. Source-only like host-reference; the
+	# reproducible-build provenance lands with the spec-and-release task.
+	url       = https://github.com/connollydavid/host-reference-openscad.git
+	pin       = 829c3d7e9c36a8b1aa9c62ea789d6ab964a7589f
 	worktrees =
 [software "host"]
 	# the single-file entrance (the methodology's entry point), set apart from the
