@@ -1764,6 +1764,24 @@ is what cleared STEP past the maturity-rule deferral readers.md had reserved for
 a static zip generated once with Python (<code>zipfile</code>, Stored); AMF and STEP fixtures are hand-authored
 text. Engineering geometry is now complete except IGES, which stays deferred because every working
 reader is C++.</p>
+<h3 id="2026-06-28--the-overlay-node-loro-mutable-layer-web-annotation-selectors-per-kind-lens-law"><a class="header" href="#2026-06-28--the-overlay-node-loro-mutable-layer-web-annotation-selectors-per-kind-lens-law">2026-06-28 — the overlay node: Loro mutable layer, Web Annotation selectors, per-kind lens law</a></h3>
+<p>The <code>#overlay</code> node landed (plan/0049). <code>host-reference-overlay</code> is a Loro CRDT document (loro 1.13,
+the <code>call/0030</code>-settled CRDT) holding annotations anchored to the immutable layer by W3C Web Annotation
+selectors: <code>TextPosition { start, end }</code> and <code>TextQuote { prefix, exact, suffix }</code>. TextQuote
+re-locates by content, so an annotation survives a re-derivation that shifts offsets (tested).
+<code>export</code>/<code>import</code> persist a snapshot; <code>merge</code> folds in a concurrent replica (CRDT union). For a
+deterministic merge test, give each replica a distinct peer through <code>Overlay::with_peer(id)</code>
+(<code>doc.set_peer_id</code>), since two <code>LoroDoc::new()</code> replicas could otherwise share op ids and dedupe to
+one. The write-back path (<code>write_back</code>) resolves a selector to a span and drives the normaliser's
+<code>put</code>; the default <code>put</code> refuses, the <code>call/0030</code> fail-safe. The per-kind round-trip lens law is
+proptested (proptest 1.11) in the property-based lane: GetPut (a no-op edit changes nothing) and PutGet
+(the edit is exactly the splice) hold for the write-back kinds, prose and data, both the UTF-8
+text-splice lens that floors indices to char boundaries. loro API notes:
+<code>doc.get_list(key).push(string)</code>; <code>list.get(i)</code> returns <code>Option&lt;ValueOrContainer&gt;</code> and <code>.into_value()</code>
+returns a <code>Result</code>, not an <code>Option</code>; <code>doc.export(ExportMode::Snapshot)</code>; <code>doc.import(&amp;bytes)</code>. deny
+gained BSL-1.0 (a loro dependency) and accepted RUSTSEC-2023-0089 (atomic-polyfill unmaintained, deep
+under loro through postcard and heapless), on the same footing as paste and proc-macro-error. Only
+<code>plan/0049#spec-and-release</code> (the <code>.allium</code> spec, the wired CI, and the reproducible build) remains.</p>
 
                     </main>
 
