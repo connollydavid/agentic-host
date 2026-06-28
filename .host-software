@@ -39,7 +39,15 @@
 	# the spec-and-release task once the CLI is functional, the same shape the other artifact
 	# components carry.
 	url       = https://github.com/connollydavid/host-reference.git
-	pin       = 5ef7698b284fc19b93f73819ea7884a91cac0343
+	pin       = 405fa85043506d24772ecb7ab673289ee2776644
+	worktrees =
+[software "host-reference-ocr"]
+	# the out-of-process OCR helper (call/0034). host-reference's permissive `ocr` plugin runs this
+	# binary at arm's length, so the ocrs/rten engine and the CC-BY-SA-4.0 ocrs models are confined
+	# here, off the permissive plugin's side of the boundary. Source-only like host-reference; the
+	# reproducible-build provenance lands with the spec-and-release task.
+	url       = https://github.com/connollydavid/host-reference-ocr.git
+	pin       = 1a652b609b3f4688af43856d294b160f2c5be664
 	worktrees =
 [software "host"]
 	# the single-file entrance (the methodology's entry point), set apart from the

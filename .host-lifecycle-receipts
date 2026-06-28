@@ -297,3 +297,15 @@
     reason = not yet released; source-only scaffold, the reproducible-build release lands with the spec-and-release task of plan/0049
     tool = host-lifecycle@0.31.0
     recorded = 2026-06-27
+
+[receipt "embed" "host-reference-ocr"]
+    disposition = done
+    evidence = host-reference-ocr created as a public repo at 1a652b6, pinned source-only in .host-software, materialized as a bare store with worktree at software/host-reference-ocr/main. It is the out-of-process OCR helper (call/0034), carrying ocrs/rten and the CC-BY-SA-4.0 ocrs models embedded, which host-reference's permissive ocr plugin runs at arm's length.
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-28
+
+[receipt "release" "host-reference-ocr"]
+    disposition = done
+    evidence = source release of host-reference-ocr at 1a652b6: cargo test green (a byte-for-byte conformance golden over a synthetic text image, run-to-run deterministic on a host), clippy and cargo-deny clean. Code is Unlicense; the embedded ocrs models are CC-BY-SA-4.0, attributed in NOTICE.md and README.md and confined to this helper. Reproducible-build provenance is deferred to host-reference's spec-and-release task, the same source-only posture host-reference carries.
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-28
