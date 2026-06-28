@@ -57,7 +57,7 @@
 	worktrees =
 	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
-	deploy    = host-reference-ocr-helper
+	deploy    = host-reference-ocr
 	artifact  = target/x86_64-unknown-linux-musl/release/host-reference-ocr-helper 6f02a3ce5414f552c8e301a664d363a5a743d17d019e71b11843d621a9149f6e
 	deps-bundle = https://github.com/connollydavid/host-reference-ocr/releases/download/vendor-v1/vendor.tar.gz 81b26ba949ba5c7abcd84076f80aca3874a87dac216171b2f463c02eef1d8955
 [software "host-reference-openscad"]
@@ -71,7 +71,7 @@
 	worktrees =
 	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
-	deploy    = host-reference-openscad-helper
+	deploy    = host-reference-openscad
 	artifact  = target/x86_64-unknown-linux-musl/release/host-reference-openscad-helper e9a8662b0f4fc1a2c872c340687422ce46be79e4b4cfbba911fd22263cc66419
 	deps-bundle = https://github.com/connollydavid/host-reference-openscad/releases/download/vendor-v1/vendor.tar.gz 96e11b3c2892573e356a10db3e42eb73f6043e76cfb22c06849727ba89d432d9
 [software "host"]
