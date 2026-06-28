@@ -214,6 +214,21 @@ build with its deps-bundle, and release through `host-lifecycle`.
 - depends: #overlay
 - verify: host-lifecycle software --verify-build .
 
+### Harden untrusted input and remediate the review {#harden-untrusted-input}
+
+Fold the `plan/0050` review findings back into this milestone rather than deferring them to a separate
+plan (the operator's call: a review finding is a requirement, not a descope). The must-fix cluster is
+the `call/0031` refusal contract, which the obligations manifest asserts but no reader keeps: bound the
+`view` selector at its source so an oversized length returns `Error::Parse` instead of overflowing into
+a panic (finding 1), and make readers return `Error::Refused` on a resource bound or a hostile
+structure instead of panicking, hanging, or silently zeroing (findings 2 through 4 and the office,
+EPUB, and audio-visual instances). The determinism holes in the two out-of-process helpers, the overlay
+re-anchoring, the lens-law proptests, and the CI feature-compile gap follow. `plan/0051` is reserved
+for the other review cluster.
+
+- depends: #spec-and-release
+- verify: cd software/host-reference/main && cargo test
+
 ## Status
 
 The design is settled and the build is under way. The scaffold and the embed are done, and so is
@@ -241,4 +256,10 @@ established. host-reference is released as v0.1.1 through the tool-carried seque
 default-feature binary re-derives byte-identically in the pinned muslrust toolchain from the vendored
 deps-bundle, proven by `software --verify-build`. Releasing the first workspace component took a
 host-lifecycle fix (v0.31.2): it reads and bumps the version in `[workspace.package]` and syncs every
-member's lock entry. The milestone is complete: every node in the task graph carries a receipt.
+member's lock entry. Every node through the release carries a receipt.
+
+The milestone then re-opened to absorb the `plan/0050` review. A maximum-recall audit of the released
+host-reference found the determinism discipline and the conformance harness sound, but the `call/0031`
+explicit-refusal contract asserted yet kept by no reader, and an unbounded `view` selector overflowing
+into a panic. Rather than defer that to a separate plan, the harden-untrusted-input node folds the
+remediation back in; `plan/0051` is reserved for the other review cluster.
