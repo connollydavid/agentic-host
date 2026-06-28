@@ -333,3 +333,10 @@
     evidence = the documentation markups and the extra config and tabular and columnar kinds landed as feature-gated crates: the data crate gained JSON Lines, TSV, Jupyter, and TOML; new crates config (INI, properties, dotenv), calendar (iCalendar, vCard via calcard), columnar (Parquet and Arrow via the apache crates, metadata-only so no codec is linked), bibtex (biblatex), rst (rst_parser with document_tree), org (orgize 0.9 stable rather than the 0.10 alpha), asciidoc (asciidork), rtf (rtf-parser, paragraphs counted from the raw par breaks), and epub (rbook ToC outline, in-test zip fixture). Each carries a conformance fixture and committed golden; cargo test green across the workspace; cargo-deny clean with BSD-3-Clause, CC0-1.0, and Zlib added as readers landed and RUSTSEC-2024-0436 (paste unmaintained) ignored. The light readers join the text-cheap default; the heavier ones stay opt-in. Pinned at ae6646f
     tool = host-lifecycle@0.31.0
     recorded = 2026-06-28
+
+[receipt "plan/0049#office-mail-fixed-layout"]
+    disposition = done
+    verify = cd software/host-reference/main && cargo test
+    evidence = the office documents read through undoc in one crate (docx heading outline via the resolved level or the Word heading style id, pptx slide names, xlsx sheet names, each with the title and resource count); internet mail (.eml) through mail-parser (the envelope: subject, from, to, date, attachment count); born-digital PDF through lopdf and pdf-extract (page count, title, text preview, full text in the view). Outlook .msg is skipped, its binary OLE2 fixture disproportionate for a niche format and eml covering internet mail (readers.md). The binary fixtures (OOXML, PDF) are generated in-test with Stored or uncompressed streams, so the content id is deterministic regardless of zip feature unification. cargo test green across the workspace; clippy and cargo-deny clean (undoc, mail-parser, lopdf, and pdf-extract dependencies all permissive). The office, mail, and pdf readers are each opt-in. The litchi fork was evaluated and dropped for undoc. Pinned at 9ae8639
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-28
