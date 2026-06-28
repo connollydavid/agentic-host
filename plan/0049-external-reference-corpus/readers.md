@@ -44,7 +44,7 @@ A few kinds have no pure-Rust library, so they take a scoped in-house parser, li
 |---|---|---|---|
 | DOCX, PPTX, XLSX | `undoc` 0.5.2 | MIT | one pure-Rust crate reading text, structure, embedded images, and metadata; `calamine` stays an option for an XLSX tabular schema |
 | EML | `mail-parser` 0.11.4 | Apache-2.0 OR MIT | the parser crate rather than the AGPL Stalwart server |
-| MSG | `msg_parser` 0.3.6 with `cfb` 0.14.0 | MIT | `msg_parser` covers the common fields, `cfb` reaches the low-level streams |
+| MSG | skipped | n/a | Outlook .msg is a binary OLE2 file whose conformance fixture would be disproportionate to build for a niche format; EML covers internet mail |
 | Born-digital PDF | `pdf-extract` 0.12.0 over `lopdf` 0.42.0 | MIT | keep the default `flate2` backend for the pure-Rust path |
 
 ## Recognition and audio-visual
