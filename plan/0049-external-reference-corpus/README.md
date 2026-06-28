@@ -222,5 +222,9 @@ the text-cheap-kinds task: its normalisers and conformance fixtures have landed 
 netlist). The component is pinned source-only in `.host-software`, and `software --check` is green.
 The build sequence above is an anchored receipted task graph (plan/0042). The pluggable foundation and
 the expanded prose and structured readers have landed, each reader a feature-gated crate, and the
-per-kind pins live in `readers.md`; the library-less kinds stay deferred. The ready frontier is now
-office-and-mail-and-fixed-layout.
+per-kind pins live in `readers.md`; the library-less kinds stay deferred. Office and mail and
+fixed-layout have landed (DOCX, PPTX, XLSX over undoc; EML over mail-parser; born-digital PDF over
+lopdf and pdf-extract), and so has recognition-and-engineering: the attested deterministic readers of
+the recognition split, image and audio-visual container metadata alongside the EDA and
+engineering-geometry parsers. The machine-learning half of recognition, OCR and transcription, is
+deferred to the overlay node by the `call/0030` split. The ready frontier is now the overlay.

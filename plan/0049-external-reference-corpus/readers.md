@@ -53,18 +53,18 @@ The deterministic parses stay in the attested layer; the machine-learning output
 
 | Task | Reader | Licence | Layer | Notes |
 |---|---|---|---|---|
-| Image decode and metadata | `image` 0.25.10 with `kamadak-exif` 0.6.1 | MIT OR Apache-2.0, and BSD-2-Clause | attested | dimensions, colour, EXIF |
-| OCR | `ocrs` 0.12.2 over `rten` 0.24.0 | MIT OR Apache-2.0 | overlay | carries ML weights, and inference is not bit-deterministic |
-| Audio metadata | `symphonia` 0.6.0 with `lofty` 0.24.0 | MPL-2.0, and MIT OR Apache-2.0 | attested | duration, codec, channels, sample rate |
-| Video metadata | `mp4parse` 0.17.0, `matroska` 0.30.1 | MPL-2.0, and MIT OR Apache-2.0 | attested | container track metadata |
-| Transcription | `candle` 0.11.0 with Whisper | MIT OR Apache-2.0 | overlay | Whisper weights are MIT, and inference is not bit-deterministic |
+| Image decode and metadata | `image` 0.25 with `kamadak-exif` 0.6 | MIT OR Apache-2.0, and BSD-2-Clause | attested | format, dimensions, EXIF |
+| OCR | `ocrs` over `rten` | MIT OR Apache-2.0 | overlay | carries ML weights, and inference is not bit-deterministic; lands in #overlay |
+| Audio metadata | `symphonia` 0.5 | MPL-2.0 | attested | codec, sample rate, channels, duration; symphonia alone carried these, so `lofty` was not needed |
+| Video metadata | `mp4` 0.14 | MIT | attested | per-track type, dimensions, duration; Matroska deferred until a fixture and a need arise |
+| Transcription | `candle` with Whisper | MIT OR Apache-2.0 | overlay | Whisper weights are MIT, and inference is not bit-deterministic; lands in #overlay |
 
 ## Electronic design
 
 | Kind | Reader | Licence | Notes |
 |---|---|---|---|
 | SPICE netlist | in-house | n/a | landed in the text-cheap kinds |
-| KiCad schematic, PCB | `kiutils_kicad` 0.3.0 | MIT | typed S-expression read; `lexpr` is a generic fallback |
+| KiCad schematic, PCB | `lexpr` 0.2 | MIT OR Apache-2.0 | the generic fallback was taken: a tally of the top-level S-expression forms. `kiutils_kicad` reads from a path, not the bytes a `Source` carries, so it did not fit the reader contract |
 | Gerber | `gerber_parser` 0.5.0 with `gerber-types` 0.7.0 | MIT OR Apache-2.0 | pin at or above 0.2.0, below which it was AGPL |
 | Eagle | `roxmltree` 0.21.1 | MIT OR Apache-2.0 | a generic XML read, since Eagle 6 and later is XML; no dedicated crate |
 
@@ -83,6 +83,28 @@ The deterministic parses stay in the attested layer; the machine-learning output
 | OpenSCAD | `openscad-rs` 0.1.0, run out-of-process | GPL-3.0, flagged | a separate GPL helper binary behind an arms-length boundary, per `call/0033`; the plugin is opt-in |
 | glTF, GLB | `gltf` 1.4.1 | MIT OR Apache-2.0 | both the JSON and the binary container |
 | PLY | `ply-rs-bw` 4.0.0 | MIT | the maintained fork; the original carries a security advisory |
+
+## Recognition-and-engineering: what landed
+
+The `#recognition-and-engineering` wave landed the attested, deterministic readers of the recognition
+split. Each is a feature-gated `Normalizer` with byte-for-byte conformance fixtures, built and pinned
+on its own lifecycle pass.
+
+- Image (`image` feature): format, pixel dimensions, and EXIF.
+- Audio-visual (`av` feature, the new `AudioVisual` modality): audio codec, sample rate, channels,
+  and duration through symphonia; video per-track type, dimensions, and duration through `mp4`.
+- Electronic design (`eda` feature): KiCad form tally, Eagle element tally, Gerber command count.
+- Engineering geometry (`geometry` feature): STL, glTF, DXF, OBJ, PLY, and G-code.
+
+The machine-learning half of recognition stays out of this wave by design. OCR over an image and the
+transcript of audio-visual media are non-deterministic inference, so they ride the provider-agnostic
+overlay adapter of `call/0030` and land in `#overlay`, the next node. The image and audio-visual
+readers here declare `ocr: false`, the attested reader's honest capability.
+
+Four geometry kinds wait. STEP joins the deferred set under the maturity rule, since `ruststep` is the
+only pure-Rust reader and it is immature. 3MF and AMF are zip-and-XML containers whose fixture
+overhead is not yet earned by a corpus need. OpenSCAD is the GPL out-of-process helper, an opt-in
+plugin and its own task as described below.
 
 ## Licence watch-list
 
