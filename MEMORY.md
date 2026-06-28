@@ -1718,3 +1718,17 @@ not the binary name (`host-reference-ocr-helper`) — the binary is named in the
 it to the binary name drifts `software --check` ("not a recorded worktree"). And both helpers are
 single-crate, so they release straight through host-lifecycle with no workspace gap. `ocrs`/`rten` do
 build on musl. `software --verify-build` is green across all six artifact components.
+
+### 2026-06-28 — host-reference review: the call/0031 refusal contract is unrealised (plan/0050)
+
+A maximum-effort review of host-reference v0.1.1 (pull request #1, `review/0049`) found the determinism
+discipline and the conformance harness sound, but the explicit-refusal half of call/0031 asserted in the
+obligations manifest and realised in NO reader: `Error::Refused` is constructed nowhere in `crates/**`,
+so a malformed or oversized untrusted document panics (a `pdf-extract` panic site, a malformed-MP4 box),
+hangs (an office/EPUB deflate-bomb has no resource bound), or returns a silent partial (a truncated
+`.ics` yields `Ok("0 components")`). The obligations gate did not catch it because it checks only that
+test NAMES resolve, not that the waiver body is real. Separately, an unbounded `view` selector overflows
+`s + *len` into a panic from ordinary CLI input (`offset:1:<usize::MAX>`), and CI never compiles the CLI
+with any non-default reader feature, so the cfg-gated registry arms for seventeen readers are unbuilt.
+The full ranked findings, the reuse/altitude notes, and the checked-and-cleared negatives are in
+`plan/0050-host-reference-review/README.md`; nothing is fixed yet (remediation is a future plan).
