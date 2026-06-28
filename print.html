@@ -8758,6 +8758,32 @@ returns a <code>Result</code>, not an <code>Option</code>; <code>doc.export(Expo
 gained BSL-1.0 (a loro dependency) and accepted RUSTSEC-2023-0089 (atomic-polyfill unmaintained, deep
 under loro through postcard and heapless), on the same footing as paste and proc-macro-error. Only
 <code>plan/0049#spec-and-release</code> (the <code>.allium</code> spec, the wired CI, and the reproducible build) remains.</p>
+<h3 id="2026-06-28--spec-and-release-the-reproducible-build-and-releasing-the-first-workspace-component"><a class="header" href="#2026-06-28--spec-and-release-the-reproducible-build-and-releasing-the-first-workspace-component">2026-06-28 — spec-and-release: the reproducible build, and releasing the first workspace component</a></h3>
+<p>The final plan/0049 node. <code>host-reference.allium</code> distils the Normalizer contract via the <code>distill</code>
+skill (<code>allium check</code>/<code>analyse</code> clean, infos only, zero warnings — warnings fail <code>allium check</code>);
+<code>host-reference.obligations</code> dispositions all 41 obligations (structural for spec-integrity, named
+contract tests in <code>crates/core/tests/contract.rs</code> for the trait rules, waivers for the overlay /
+recognition / hostile-input rules realised outside the trait). The CI mirrors host-lint. Several hard
+lessons on the reproducible build:</p>
+<ul>
+<li>The recorded artifact digest must come from a build at the SAME mount path <code>software --verify-build</code>
+uses, <code>/src</code>, not an ad-hoc <code>/volume</code> docker mount: the binary embeds crate paths (panic strings), so
+a <code>/volume</code> build drifts from verify-build's <code>/src</code> rebuild. Build at <code>/src</code> to record the digest.</li>
+<li>The deps-bundle tarball ships <code>vendor/</code> plus a <code>vendor-config.toml</code> source-replacement snippet;
+verify-build downloads it, sha-checks, extracts, merges the snippet into <code>.cargo/config.toml</code>, and
+builds <code>--offline</code> under <code>--network none</code>. <code>cargo vendor</code> vendors the whole lockfile (host-reference's
+was 485 crates, 330M source, a 52M bundle), even though the canonical <code>-p host-reference</code> build only
+compiles the default <code>text</code> deps.</li>
+<li>Releasing the FIRST workspace component needed a host-lifecycle fix (v0.31.2, two patches). <code>release</code>
+read and bumped <code>[package] version</code> from the component root; a virtual workspace keeps the version in
+<code>[workspace.package]</code>, so <code>cargo_version</code>/<code>set_cargo_version</code> now fall back to it. And the version
+bump cascades to every member that inherits <code>version.workspace</code>, so the lock sync now bumps every
+such member (not just the deploy crate), or the pinned <code>--locked</code> rebuild fails on a stale member.</li>
+<li>A version bump changes the binary digest (the version is embedded), so the released v0.1.1 hash
+(629c959) differs from the 0.1.0 build (05a949); that is expected, and the release re-verifies.</li>
+</ul>
+<p>host-reference is released v0.1.1 through the tool-carried sequence, verified reproducible. The
+plan/0049 milestone is complete: every task-graph node carries a receipt.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
