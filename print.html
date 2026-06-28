@@ -6621,11 +6621,14 @@ fixed engine over fixed bytes is the deterministic parse that <code>call/0030</c
 layer, and the vendored pinned models are the pinned model that <code>call/0033</code> named as the promotion
 path.</li>
 <li>It is the first out-of-process plugin, ahead of OpenSCAD. The <code>host-reference-ocr-helper</code> binary
-embeds <code>ocrs</code>, <code>rten</code>, and the CC-BY-SA-4.0 ocrs models. The permissive <code>host-reference-ocr</code> plugin
-writes the image to a temporary file, runs the helper as a separate process, and reads the
-recognised text from its stdout. The two are an aggregation, not a linkage, so the plugin and its
-dependents stay permissive and the copyleft weights never enter their distribution as a derivative.
-This is the same arms-length boundary <code>call/0033</code> specified for GPL, applied to a content licence.</li>
+embeds <code>ocrs</code>, <code>rten</code>, and the CC-BY-SA-4.0 ocrs models, and it is its own component, the public
+<code>host-reference-ocr</code> repo embedded in <code>.host-software</code>. So the <code>host-reference</code> repo and workspace
+carry neither the engine nor the copyleft models. The permissive <code>host-reference-ocr</code> plugin writes
+the image to a temporary file, runs the helper as a separate process, and reads the recognised text
+from its stdout. The two are an aggregation, not a linkage, so the plugin and its dependents stay
+permissive and the copyleft weights never enter their distribution as a derivative. This is the same
+arms-length boundary <code>call/0033</code> specified for GPL, applied to a content licence, taken one step
+further by giving the helper its own repository.</li>
 <li>The plugin implements the same <code>Normalizer</code> interface as every in-process reader, which proves the
 interface drives an out-of-process helper with no special case. That is the interface test
 <code>call/0033</code> wanted from the OpenSCAD route.</li>
@@ -6639,9 +6642,10 @@ spec-and-release task lands.</li>
 </ul>
 <h2 id="consequences-18"><a class="header" href="#consequences-18">Consequences</a></h2>
 <ul>
-<li>The CC-BY-SA-4.0 models are confined to the helper and attributed in its <code>NOTICE.md</code>. The licence
-watch-list in <code>readers.md</code> records the first content-copyleft dependency and its confinement behind
-the boundary.</li>
+<li>The CC-BY-SA-4.0 models are confined to the separate <code>host-reference-ocr</code> repo and attributed in its
+<code>NOTICE.md</code>, with the licence split (Unlicense code, CC-BY-SA-4.0 models) and the citations stated
+upfront in its <code>README.md</code>. The licence watch-list in <code>readers.md</code> records the first
+content-copyleft dependency and its confinement behind the boundary.</li>
 <li>A consumer that enables the <code>ocr</code> feature must install the helper binary. The default text build
 pays nothing for OCR.</li>
 <li>OpenSCAD remains the planned GPL out-of-process plugin. OCR is the first instance of the pattern and
