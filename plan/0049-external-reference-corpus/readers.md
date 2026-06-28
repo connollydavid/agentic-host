@@ -72,13 +72,13 @@ The deterministic parses stay in the attested layer; the machine-learning output
 
 | Kind | Reader | Licence | Notes |
 |---|---|---|---|
-| STEP | `ruststep` 0.4.0 | Apache-2.0 | pure-Rust but immature; deferred rather than hand-rolled if it proves unworkable |
+| STEP | `ruststep` 0.4.0 | Apache-2.0 | delivered: the schema-agnostic `exchange_file` parser gives an entity-type tally. It pulls the unmaintained `proc-macro-error` (RUSTSEC-2024-0370) through `ruststep-derive`, accepted on the same footing as `paste` |
 | IGES | deferred | n/a | no pure-Rust reader exists, every working reader is C++ |
 | DXF | `dxf` 0.6.1 | MIT | ASCII, binary, and the legacy DXB |
 | STL | `stl_io` 0.11.0 | MIT | binary and ASCII, with zero runtime dependencies |
 | OBJ | `tobj` 4.0.4 | MIT | a Rust port rather than a tinyobjloader binding |
-| 3MF | `threemf` 0.8.0 | 0BSD | pure-Rust only on the deflate path, so the C zip codecs stay off |
-| AMF | `quick-xml` 0.40.1 with `zip` | MIT | a generic XML read, with deflate for the compressed variant; no dedicated crate |
+| 3MF | `threemf` 0.8.0 | 0BSD | delivered: `read` gives the mesh, vertex, and triangle counts; pure-Rust on the deflate path |
+| AMF | `roxmltree` 0.20 | MIT OR Apache-2.0 | delivered for the uncompressed XML: object, mesh, vertex, and triangle counts. A compressed AMF (zip) is refused with a clear message for now |
 | G-code | `gcode` 0.7.0 | MIT OR Apache-2.0 | a tokenizer that does not interpret machine state |
 | OpenSCAD | `openscad-rs` 0.1, out-of-process | GPL-3.0, flagged | delivered (call/0034): the GPL parser lives in the separate `host-reference-openscad` repo, and the permissive `openscad` plugin runs it at arm's length and tallies the statement kinds; opt-in |
 | glTF, GLB | `gltf` 1.4.1 | MIT OR Apache-2.0 | both the JSON and the binary container |
@@ -94,7 +94,7 @@ on its own lifecycle pass.
 - Audio-visual (`av` feature, the new `AudioVisual` modality): audio codec, sample rate, channels,
   and duration through symphonia; video per-track type, dimensions, and duration through `mp4`.
 - Electronic design (`eda` feature): KiCad form tally, Eagle element tally, Gerber command count.
-- Engineering geometry (`geometry` feature): STL, glTF, DXF, OBJ, PLY, and G-code.
+- Engineering geometry (`geometry` feature): STL, glTF, DXF, OBJ, PLY, G-code, 3MF, AMF, and STEP.
 
 OCR is delivered too, as the first out-of-process plugin (`call/0034`). The only pure-Rust OCR engine,
 `ocrs` over `rten`, carries CC-BY-SA-4.0 model weights, so the `call/0033` arms-length rule built for
@@ -108,9 +108,11 @@ the `call/0030` overlay adapter in `#overlay`; the audio-visual reader here decl
 OpenSCAD is delivered too, as the second out-of-process plugin (`call/0033`, `call/0034`), the same
 shape as OCR: the GPL-3.0 `openscad-rs` parser lives in its own repo, `host-reference-openscad`, and
 the permissive `openscad` plugin runs that helper at arm's length and tallies the statement kinds it
-prints. Three geometry kinds still wait. STEP joins the deferred set under the maturity rule, since
-`ruststep` is the only pure-Rust reader and it is immature. 3MF and AMF are zip-and-XML containers
-whose fixture overhead is not yet earned by a corpus need.
+prints. STEP, 3MF, and AMF are in too, in-process in the geometry crate: 3MF through `threemf`, AMF
+through `roxmltree` over the uncompressed XML, and STEP through `ruststep`'s schema-agnostic parser,
+which earned an accepted unmaintained advisory (`proc-macro-error` through `ruststep-derive`) rather
+than the deferral the maturity rule had reserved for it. The engineering-geometry modality is now
+complete bar IGES, which stays deferred because every working reader is C++.
 
 ## Licence watch-list
 
@@ -170,5 +172,6 @@ parser or reach for a C library, the build defers them until a pure-Rust library
 - IGES: every working reader is C++.
 
 This keeps the pure-Rust line and the scope discipline together. A kind earns a reader when a
-pure-Rust library can carry it, and it waits otherwise. STEP sits just inside the line on `ruststep`,
-and it joins the deferred set rather than a hand-rolled parser if that crate proves unworkable.
+pure-Rust library can carry it, and it waits otherwise. STEP sat just inside the line on `ruststep`,
+and it cleared it: the crate parses, so STEP is delivered rather than deferred, at the cost of one
+accepted unmaintained advisory.
