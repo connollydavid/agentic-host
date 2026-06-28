@@ -403,7 +403,7 @@ deps-bundle, proven by <code>software --verify-build</code>. Releasing the first
 host-lifecycle fix (v0.31.2): it reads and bumps the version in <code>[workspace.package]</code> and syncs every
 member's lock entry. Every node through the release carries a receipt.</p>
 <p>The milestone then re-opened to absorb the <code>plan/0050</code> review. A maximum-recall audit of the released
-host-reference found the determinism discipline and the conformance harness sound, but the <code>call/0031</code>
+host-reference found the determinism discipline and the conformance fixtures sound, but the <code>call/0031</code>
 explicit-refusal contract asserted yet kept by no reader, and an unbounded <code>view</code> selector overflowing
 into a panic. Rather than defer that to a separate plan, the harden-untrusted-input node folds the
 remediation back in; <code>plan/0051</code> is reserved for the other review cluster.</p>

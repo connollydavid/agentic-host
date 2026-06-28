@@ -468,7 +468,7 @@ Skill Hardening: hook fix, bare-numeral rule, release install path (see SKILL-HA
 <tr><td><a href="plan/0047-prose-scans-working-tree/README.html">plan/0047-prose-scans-working-tree</a></td><td><strong>complete, released as host-lint v0.10.4 (2026-06-26; <code>ce683be</code>, artifact <code>a9ef0865</code>) and host-lifecycle v0.30.3 (<code>0de2843</code>, artifact <code>cf59cc16</code>, on <code>vendor-v3</code> sha <code>817a71d9</code>)</strong>: widens the prose lane (<code>host-lint --docs</code> and the <code>host-lifecycle prose</code> recheck that embeds it) to audit the authored working tree, which closes connollydavid/host-lint#17. The shared <code>run_docs</code> walked <code>git ls-files</code> (tracked and staged only), so a brand-new authored doc was silently skipped pre-commit and then flagged by the verify recheck once committed, with no content change. The walk now adds <code>git ls-files --others --exclude-standard</code> (untracked files git would offer to add); <code>--exclude-standard</code> keeps gitignored output, vendored deps, and un-materialized worktrees out, as the bare walk did. The skip was partly intentional (the walk excludes generated content) and staging closes it, but the cast frames a silently-partial <code>clean</code> as the fail-unsafe anti-pattern Bly and Fen and Orin guard against, so the operator widened the walk. No spine change (the walk scope is not spine doctrine), so no adopter <code>UPGRADING</code> entry. Validated: the real qwen3.5-4b judged the new walk catches a new unstaged doc 5/5 and the old walk misses it 3/3; a unit test pins tracked-scanned, untracked-scanned, gitignored-excluded; CI is unchanged (a fresh checkout has no untracked authored files). Cascaded through a host-lint release and a host-lifecycle release with a regenerated bundle (<code>vendor-v3</code>), the same shape as plan/0045; host-lint v0.10.4 re-derived the kani digests before tagging (the plan/0045 lesson applied first try, so the tag is green). <code>software --check</code> is clean, the whole suite is green, and connollydavid/host-lint#17 is closed.</td></tr>
 <tr><td><a href="plan/0048-runnable-rederivation/README.html">plan/0048-runnable-rederivation</a></td><td><strong>complete, released as host-lifecycle v0.31.0 (2026-06-26; <code>3958b62</code>, artifact <code>fe428240</code>)</strong>: makes a declared deeper rung's re-deriver runnable and its obligation digest earned, expressed as a spine migration so it reaches every adopter rather than patching one host. The recurring born-red tag (a host-lint <code>src/lib.rs</code> change stales the kani digest while the proof itself passes) traced to a missed setup step rather than the release tooling: host-prove was never installed on PATH locally (host-lint's CI installs it), and it was handed <code>src/</code> rather than the crate root, so the sanctioned <code>obligations --rederive --record-digests</code> could not run, which had been misdiagnosed for two weeks as a <code>/mnt/c</code> WSL <code>ENOENT</code>. With host-prove installed and pointed at the crate root, the full re-derivation runs clean on <code>/mnt/c</code>. The migration widens the existing spine invariant: a declared rung obliges its lane to be runnable rather than merely present (available-is-not-runnable-is-not-discharged); <code>software --check</code> probes that the re-deriver executes and HAZARDs when it cannot, and the digest is earned by a passing re-derivation in place of a hand edit. Validated against the real qwen3.5-4b with neutral framing: a PATH probe reads as too weak (6 of 8 see that on-PATH is not works), and a recorded pass on the current code is preferred 8 of 8 (the digest done right). The cast reframed the release-guard idea into this; the WSL misdiagnosis is corrected in MEMORY. Spine change at host-template <code>4182df9</code> (the doctrine phrase "a re-deriver that runs" plus the independent, version-gated <code>UPGRADING</code> entry <code>6174996</code> requiring host-lifecycle v0.31.0); the milestone was self-originated, so it closes no GitHub issue. On the operator's trigger agentic-host adopted it the case-(c) way: <code>upgrade --record 6174996</code> recorded the applied claim, host-prove is installed in the fresh-clone setup and in the reproducible-build CI before <code>software --check</code>, and both agentic-host CI host-lifecycle pins move to v0.31.0. <code>software --check</code> reports the re-deriver runnable for both declaring components and the whole suite is green.</td></tr>
 <tr><td><a href="plan/0049-external-reference-corpus/README.html">plan/0049-external-reference-corpus</a></td><td><strong>in design</strong>: adds the <code>host-reference</code> component, a reference compiler that reads external documentation in mixed shapes (Markdown, HTML, PDF, Office, images, structured data, electronic design, mechanical and 3D-printing CAD) and normalises it into a token-lean form an agent can interpret in context, with a deterministic immutable layer (reproducible and attested) and a collaborative overlay for annotations and edits. The format superset is specified; the build lands one content kind at a time, each with a conformance fixture. The direction, the open questions, and the validation approach are in the README; the adversarially reviewed weak-agent probe set is in <code>gather-data.md</code>. The four agent-facing surfaces pass at the weak-agent bar (three of three each, option order rotated), with the cast reviewing before and after the run; decisions land in <code>call/0030</code> and siblings next, and the engineering-geometry target stays a cast judgement.</td></tr>
-<tr><td><a href="plan/0050-host-reference-review/README.html">plan/0050-host-reference-review</a></td><td><strong>a findings record, not a remediation plan</strong>: a maximum-effort recall review of the <code>host-reference</code> component delivered by plan/0049 (<a href="https://github.com/connollydavid/host-reference/pull/1">host-reference#1</a>, head <code>review/0049</code> at <code>ea92185</code>, released v0.1.1), measured against the call/0031 untrusted-input contract and the call/0018 determinism premise. The headline: the determinism discipline and the conformance harness are sound (no hash-map ordering, no time, and no randomness reaches a golden, and every golden is byte-compared against a committed fixture), but the explicit-refusal half of call/0031 is asserted in the obligations manifest yet realised in no reader — <code>Error::Refused</code> is constructed nowhere, so a malformed or oversized untrusted document panics, hangs, or returns a silent partial; and an unbounded <code>view</code> selector overflows into a panic from ordinary CLI input. The full ranked findings, the reuse-and-altitude observations, and the checked-and-cleared negatives are in the README. Nothing is fixed here; remediation is deferred to a future plan.</td></tr>
+<tr><td><a href="plan/0050-host-reference-review/README.html">plan/0050-host-reference-review</a></td><td><strong>a findings record, not a remediation plan</strong>: a maximum-effort recall review of the <code>host-reference</code> component delivered by plan/0049 (<a href="https://github.com/connollydavid/host-reference/pull/1">host-reference#1</a>, head <code>review/0049</code> at <code>ea92185</code>, released v0.1.1), measured against the call/0031 untrusted-input contract and the call/0018 determinism premise. The headline: the determinism discipline and the conformance fixtures are sound (no hash-map ordering, no time, and no randomness reaches a golden, and every golden is byte-compared against a committed fixture), but the explicit-refusal half of call/0031 is asserted in the obligations manifest yet realised in no reader: <code>Error::Refused</code> is constructed nowhere, so a malformed or oversized untrusted document panics, hangs, or returns a silent partial; and an unbounded <code>view</code> selector overflows into a panic from ordinary CLI input. The full ranked findings, the reuse-and-altitude observations, and the checked-and-cleared negatives are in the README. Nothing is fixed here; remediation is deferred to a future plan.</td></tr>
 </tbody></table>
 </div>
 <p>The earlier content-named docs above (BOOTSTRAP, CI-PIPELINE, …) predate the <code>plan/</code> room; folding them in is a possible later cleanup, not required.</p>
@@ -5175,7 +5175,7 @@ deps-bundle, proven by <code>software --verify-build</code>. Releasing the first
 host-lifecycle fix (v0.31.2): it reads and bumps the version in <code>[workspace.package]</code> and syncs every
 member's lock entry. Every node through the release carries a receipt.</p>
 <p>The milestone then re-opened to absorb the <code>plan/0050</code> review. A maximum-recall audit of the released
-host-reference found the determinism discipline and the conformance harness sound, but the <code>call/0031</code>
+host-reference found the determinism discipline and the conformance fixtures sound, but the <code>call/0031</code>
 explicit-refusal contract asserted yet kept by no reader, and an unbounded <code>view</code> selector overflowing
 into a panic. Rather than defer that to a separate plan, the harden-untrusted-input node folds the
 remediation back in; <code>plan/0051</code> is reserved for the other review cluster.</p>
@@ -5184,22 +5184,22 @@ remediation back in; <code>plan/0051</code> is reserved for the other review clu
 delivered by plan/0049. It is a findings record, not a remediation plan: nothing here is fixed
 in this milestone. Each finding carries its file, its mechanism, and the concrete input that
 triggers it, so a later remediation plan can pick the work up cold. The disposition for every
-finding below is the same — <em>recorded, remediation deferred</em> — and is not repeated per entry.</p>
+finding below is the same (<em>recorded, remediation deferred</em>) and is not repeated per entry.</p>
 <h2 id="what-was-reviewed"><a class="header" href="#what-was-reviewed">What was reviewed</a></h2>
 <ul>
 <li>Repository: <code>connollydavid/host-reference</code>, pull request #1, "host-reference: external reference compiler".</li>
 <li>Head: <code>review/0049</code> at <code>ea92185</code> (identical to <code>host-reference</code> <code>main</code>, released v0.1.1).</li>
 <li>Base: <code>review-base/scaffold</code> at <code>88c6bcf</code>.</li>
-<li>Diff: 174 files, about 11,219 insertions and 38 deletions — roughly forty feature-gated
+<li>Diff: 174 files, about 11,219 insertions and 38 deletions: roughly forty feature-gated
 normaliser crates plus the shared <code>core</code>, the <code>cli</code>, the <code>overlay</code> crate, the <code>.allium</code>
 specification with its obligations manifest, the <code>deny.toml</code> licence lane, and the CI workflow.</li>
 </ul>
 <p>The review ran locally at maximum recall (the cloud <code>code-review ultra</code> lane was unavailable, so its
-local fallback ran): ten independent finder angles in parallel — five correctness groups across the
+local fallback ran). Ten independent finder angles ran in parallel: five correctness groups across the
 crates, plus the overlay lens laws, a cross-cutting determinism audit, the CLI and core dispatch, the
-conformance harness and removed-behaviour audit, the specification and CI coverage, and a reuse and
-altitude pass — followed by targeted verification (several findings were confirmed by executing the
-code at the reviewed revision) and one gap sweep. Findings were deduped and ranked.</p>
+conformance fixtures and removed-behaviour audit, the specification and CI coverage, and a reuse and
+altitude pass. Targeted verification followed (several findings were confirmed by executing the code at
+the reviewed revision), then one gap sweep. Findings were deduped and ranked.</p>
 <h2 id="the-contract-the-findings-test-against"><a class="header" href="#the-contract-the-findings-test-against">The contract the findings test against</a></h2>
 <p>Every reader implements one trait, <code>Normalizer</code> (<code>crates/core/src/lib.rs</code>): <code>skeleton</code> returns the
 <code>Tier0</code> skeleton, <code>view</code> a windowed <code>Tier1</code> slice, <code>put</code> a write-back patch. The invariants the
@@ -5222,7 +5222,7 @@ input is forbidden.</li>
 <p>The fifteen most severe, in order. The line numbers are at the reviewed revision.</p>
 <ol>
 <li>
-<p><strong>A <code>view</code> selector with a large length overflows and panics instead of refusing</strong> —
+<p><strong>A <code>view</code> selector with a large length overflows and panics instead of refusing.</strong>
 <code>crates/cli/src/main.rs</code> <code>parse_selector</code> (the root) and every <code>view</code> <code>CharOffset</code> arm
 (<code>crates/data/src/lib.rs:75</code>, <code>config:59</code>, <code>prose:123</code>, <code>asciidoc:54</code>, <code>bibtex:52</code>, <code>org:51</code>,
 <code>rst:54</code>, <code>html:92</code>, <code>netlist:110</code>, <code>vector:106</code>, and <code>calendar</code>). <code>parse_selector</code> accepts an
@@ -5235,17 +5235,17 @@ execution. The contract demands a clean <code>Error::Parse</code>. Fix belongs a
 </li>
 <li>
 <p><strong>No reader ever constructs <code>Error::Refused</code>; the hostile-input obligation is waived but
-unrealised</strong> — <code>host-reference.obligations</code> (the <code>RefuseHostileInput</code> disposition). A grep for
+unrealised.</strong> <code>host-reference.obligations</code> (the <code>RefuseHostileInput</code> disposition). A grep for
 <code>Error::Refused</code> across <code>crates/**/lib.rs</code> matches only the <code>core</code> enum definition; no reader
 builds it, and <code>Source</code> carries no size or trust field. The obligations manifest waives
 <code>RefuseHostileInput</code> as "realised per reader as <code>Error::Refused</code> where a bound is hit," but that
 realisation does not exist, and the obligations check only verifies that test <em>names</em> resolve, so
 CI stays green. Every malformed or oversized untrusted document therefore hits a panic, a hang, or
-a silent partial — the exact call/0031 failure the spec forbids. Findings 3, 4, and the further
+a silent partial, the exact call/0031 failure the spec forbids. Findings 3, 4, and the further
 findings on the office, EPUB, and audio-visual readers are concrete instances of this systemic gap.</p>
 </li>
 <li>
-<p><strong>The PDF reader aborts the process on many loadable PDFs</strong> — <code>crates/pdf/src/lib.rs:60</code> (and the
+<p><strong>The PDF reader aborts the process on many loadable PDFs.</strong> <code>crates/pdf/src/lib.rs:60</code> (and the
 <code>view</code> path at <code>:42</code>). <code>pdf_extract::extract_text_from_mem</code> carries roughly twenty <code>panic!</code>/<code>todo!</code>
 sites for structures <code>lopdf</code> loads but <code>pdf-extract</code> 0.12 does not handle (an unsupported CMap, an
 image soft mask, a missing glyph width). The call site maps <code>Err</code>, not an unwind, so a single
@@ -5253,24 +5253,24 @@ crafted-but-loadable PDF aborts the CLI instead of returning <code>Error::Refuse
 the trigger is a specific PDF.)</p>
 </li>
 <li>
-<p><strong>The calendar reader returns success on malformed input</strong> — <code>crates/calendar/src/lib.rs:94</code>.
+<p><strong>The calendar reader returns success on malformed input.</strong> <code>crates/calendar/src/lib.rs:94</code>.
 <code>calendar_shape</code> (and <code>vcard_shape</code>) match only <code>Entry::ICalendar</code>/<code>Entry::VCard</code>; calcard's error
 variants (<code>InvalidLine</code>, <code>UnterminatedComponent</code>, <code>UnexpectedComponentEnd</code>) are dropped. A
 truncated <code>.ics</code> (a <code>BEGIN:VCALENDAR</code> with no matching <code>END</code>), or pure garbage, returns
-<code>Ok("calendar: 0 components")</code> — a silent partial the contract bans. (The parser terminates, so
+<code>Ok("calendar: 0 components")</code>, a silent partial the contract bans. (The parser terminates, so
 this is a silent-success bug, not a hang.)</p>
 </li>
 <li>
-<p><strong>An overlay <code>TextQuote</code> selector silently re-anchors to the wrong occurrence</strong> —
+<p><strong>An overlay <code>TextQuote</code> selector silently re-anchors to the wrong occurrence.</strong>
 <code>crates/overlay/src/lib.rs:54</code>. When the <code>prefix + exact + suffix</code> context no longer matches (for
 example after a re-derivation drops surrounding text), resolution falls back to <code>text.find(exact)</code>,
 the <em>first</em> bare occurrence. For <code>"on the cat, off the cat"</code> with <code>prefix:"off "</code>, the annotation
 re-anchors to offset 0 instead of 12, and <code>write_back</code> then splices the edit into the wrong span
-with no ambiguity error — the opposite of the "survives re-derivation" property selectors exist to
+with no ambiguity error, the opposite of the "survives re-derivation" property selectors exist to
 provide. Confirmed by execution.</p>
 </li>
 <li>
-<p><strong>The image and OCR readers claim the same extensions; the image reader wins and OCR is dead</strong> —
+<p><strong>The image and OCR readers claim the same extensions; the image reader wins and OCR is dead.</strong>
 <code>crates/cli/src/main.rs:95</code> and <code>:99</code>. Both <code>detect</code> exactly <code>png|jpg|jpeg|gif|bmp|tif|tiff|webp</code>,
 and <code>pick</code> returns the first reader whose <code>detect</code> is true, in registry-push order; <code>image</code> is
 pushed first. A build with both features (<code>--features "image ocr"</code>) routes every raster to image
@@ -5278,39 +5278,39 @@ metadata, so the OCR reader never runs. The recognised-text path is silently unr
 configuration.</p>
 </li>
 <li>
-<p><strong>A format hint is not lowercased, so an uppercase extension is reported unsupported</strong> —
+<p><strong>A format hint is not lowercased, so an uppercase extension is reported unsupported.</strong>
 <code>crates/cli/src/main.rs:124</code>. Every <code>detect</code> matches lowercase tokens only. <code>host-reference skeleton README.MD</code> (or <code>PHOTO.JPG</code>, <code>data.JSON</code>) yields "unsupported: no normaliser is registered
 for this kind" even with the relevant feature enabled. Common, legitimate input is rejected.</p>
 </li>
 <li>
-<p><strong>The prose and HTML heading outlines ignore fenced code blocks</strong> — <code>crates/prose/src/lib.rs:89</code>
+<p><strong>The prose and HTML heading outlines ignore fenced code blocks.</strong> <code>crates/prose/src/lib.rs:89</code>
 and <code>crates/html/src/lib.rs:38</code>. A line beginning with <code>#</code> then a space is treated as an ATX
 heading with no fence awareness, so a <code>#</code> line inside a triple-backtick block is emitted as a
 spurious outline entry, with a source-map span pointing at the code line. Wrong skeleton on very
 ordinary Markdown.</p>
 </li>
 <li>
-<p><strong>The out-of-process helpers are resolved by PATH or an environment variable and are not pinned</strong>
-— <code>crates/ocr/src/lib.rs:74</code> and <code>crates/openscad/src/lib.rs:82</code>. The skeleton body and token
+<p><strong>The out-of-process helpers are resolved by PATH or an environment variable and are not pinned.</strong>
+<code>crates/ocr/src/lib.rs:74</code> and <code>crates/openscad/src/lib.rs:82</code>. The skeleton body and token
 counts of these two readers are the stdout of <code>host-reference-ocr-helper</code> /
 <code>host-reference-openscad-helper</code>, selected from <code>HOST_REFERENCE_OCR_HELPER</code> /
 <code>HOST_REFERENCE_OPENSCAD_HELPER</code> or a bare PATH lookup, neither of which is in <code>Cargo.lock</code>. The
-same source bytes yield different attested skeletons across machines or helper versions — directly
+same source bytes yield different attested skeletons across machines or helper versions, directly
 against the "pure function of the source bytes and the pinned toolchain" premise. The goldens stay
 green only because the conformance tests stub the helper.</p>
 </li>
 <li>
-<p><strong>Both out-of-process helpers stage input at a predictable shared temp path</strong> —
+<p><strong>Both out-of-process helpers stage input at a predictable shared temp path.</strong>
 <code>crates/ocr/src/lib.rs:80</code> and <code>crates/openscad/src/lib.rs:89</code>. The path is
 <code>temp_dir()/host-reference-ocr-&lt;content_id&gt;.&lt;ext&gt;</code> (and the OpenSCAD analogue), fully predictable
 from the bytes, opened with <code>File::create</code> (follows symlinks, truncates) and removed
 unconditionally. A pre-planted symlink at that path is followed and its target truncated (a local
-symlink attack); two concurrent calls on the same bytes collide, one's truncate or <code>remove_file</code>
-racing the other's helper read, producing intermittent "helper failed" — non-deterministic. An
-<code>O_EXCL</code> temp file with a random suffix is the fix.</p>
+symlink attack); two concurrent calls on the same bytes collide, with one's truncate or
+<code>remove_file</code> racing the other's helper read. That race is non-deterministic and surfaces as an
+intermittent "helper failed". An <code>O_EXCL</code> temp file with a random suffix is the fix.</p>
 </li>
 <li>
-<p><strong>The overlay lens is not very-well-behaved, and the proptests do not test the law they name</strong> —
+<p><strong>The overlay lens is not very-well-behaved, and the proptests do not test the law they name.</strong>
 <code>crates/overlay/tests/lens_law.rs:45</code> (and <code>:6</code>). The fixed-offset splice lens violates PutPut
 whenever a replacement's length differs from the span it replaces: for <code>"abcdef"</code>, origin <code>2..4</code>,
 <code>v="X"</code> then <code>w="QQ"</code>, <code>put(put(s,v),w)</code> is <code>"abQQf"</code> but <code>put(s,w)</code> is <code>"abQQef"</code> (confirmed by
@@ -5319,7 +5319,7 @@ is neither stated nor tested, and the <code>put_get</code> test re-implements th
 oracle rather than composing a read-back through <code>get</code>, so it cannot catch a <code>get</code>/<code>put</code> mismatch.</p>
 </li>
 <li>
-<p><strong>CI never compiles the CLI with any non-default reader feature</strong> — <code>.github/workflows/ci.yml</code>
+<p><strong>CI never compiles the CLI with any non-default reader feature.</strong> <code>.github/workflows/ci.yml</code>
 (the <code>build</code>, <code>test</code>, and <code>lint</code> jobs). The build uses default (<code>text</code>) features;
 <code>cargo test --workspace</code> and <code>cargo clippy --workspace --all-targets</code> build the <code>host-reference</code>
 crate with default features too. Each reader crate is exercised as a workspace <em>member</em>, but the
@@ -5329,14 +5329,14 @@ CI is green, but <code>cargo build --features office</code> breaks for a consume
 per-feature) compile job closes it.</p>
 </li>
 <li>
-<p><strong>A reStructuredText section title drops all inline markup</strong> — <code>crates/rst/src/lib.rs:108</code>.
+<p><strong>A reStructuredText section title drops all inline markup.</strong> <code>crates/rst/src/lib.rs:108</code>.
 <code>inline_text</code> collects only <code>TextOrInlineElement::String</code> children, so a title with emphasis,
 strong, or literal markup renders with those portions silently omitted: <code>Install </code>pip<code> </code> yields
 <code>Install </code>, and a title that is entirely markup (<code>*Important*</code>) yields an empty or <code>(untitled)</code>
 entry. Wrong outline in the attested skeleton.</p>
 </li>
 <li>
-<p><strong>The SPICE net heuristic counts comments and value tokens as nets</strong> —
+<p><strong>The SPICE net heuristic counts comments and value tokens as nets.</strong>
 <code>crates/netlist/src/lib.rs:73</code>. Every token between the first and the last on a line is treated as
 a net, so <code>R1 in out 1k ; load resistor</code> yields nets <code>{in, out, 1k, ;, load}</code> (five) rather than
 <code>{in, out}</code>, and <code>V1 in 0 DC 5</code> yields <code>{in, 0, DC}</code>. The wrong (but stable) net set is baked into
@@ -5344,7 +5344,7 @@ the conformance golden.</p>
 </li>
 <li>
 <p><strong>The canonical serialized form has no delimiter escaping, so document content can inject a
-section break</strong> — <code>crates/core/src/lib.rs:199</code> together with the data reader's <code>field</code>/<code>shape</code>
+section break.</strong> <code>crates/core/src/lib.rs:199</code> together with the data reader's <code>field</code>/<code>shape</code>
 (<code>crates/data/src/lib.rs</code>). <code>serialize_tier0</code> emits the markdown body verbatim between the literal
 lines <code>== markdown ==</code>, <code>== source-map ==</code>, and <code>== tokens ==</code>. The data reader interpolates JSON
 object keys (and CSV headers) into the body unescaped, and a JSON key may contain a real newline.
@@ -5357,20 +5357,20 @@ form needs an escape or a length-prefixed framing.</p>
 <p>Beyond the ranked fifteen, all real, cut only by the output cap:</p>
 <ul>
 <li>
-<p><strong>The HTML <code>view</code> reports the wrong source-map origin</strong> — <code>crates/html/src/lib.rs:99</code>. <code>view</code>
+<p><strong>The HTML <code>view</code> reports the wrong source-map origin.</strong> <code>crates/html/src/lib.rs:99</code>. <code>view</code>
 returns a slice of the <em>converted</em> markdown (<code>md[start..end]</code>) but reports <code>origin: 0..bytes.len()</code>,
 the raw-HTML byte length. The span neither reflects the returned window nor points at the true
-origin of the returned text, breaking the bidirectional source map. (The <code>data</code> <code>view</code> is correct
-because its text is the source bytes; the HTML conversion makes the offsets incomparable.)</p>
+origin of the returned text, so it breaks the bidirectional source map. (The <code>data</code> <code>view</code> is
+correct because its text is the source bytes; the HTML conversion makes the offsets incomparable.)</p>
 </li>
 <li>
-<p><strong>The PDF title is decoded as UTF-8 when PDF strings are commonly UTF-16BE</strong> —
+<p><strong>The PDF title is decoded as UTF-8 when PDF strings are commonly UTF-16BE.</strong>
 <code>crates/pdf/src/lib.rs:76</code>. <code>pdf_title</code> runs <code>from_utf8_lossy</code> over the Info <code>/Title</code> bytes; a
 Word- or Acrobat-exported title carried as UTF-16BE (BOM <code>0xFEFF</code>) decodes to mojibake. Wrong, but
 deterministic, skeleton output.</p>
 </li>
 <li>
-<p><strong>The Parquet conformance golden is pinned to the <code>parquet-rs</code> patch version</strong> —
+<p><strong>The Parquet conformance golden is pinned to the <code>parquet-rs</code> patch version.</strong>
 <code>crates/columnar/tests/conformance.rs</code> and its golden. The test generates the Parquet buffer in
 memory; the bytes embed <code>created_by = "parquet-rs version X.Y.Z"</code>, so the golden's content id
 (<code>e9b68265a677</code>) and <code>raw_tokens</code> (721) are a function of the dependency version, not the source.
@@ -5380,49 +5380,49 @@ source change. The Arrow golden is immune (Arrow IPC embeds no version string), 
 asymmetry concrete. <code>--locked</code> CI does not flake; a maintainer bumping the lock would.</p>
 </li>
 <li>
-<p><strong>The audio reader fabricates a duration from a hostile chunk size</strong> — <code>crates/av/src/lib.rs:92</code>.
+<p><strong>The audio reader fabricates a duration from a hostile chunk size.</strong> <code>crates/av/src/lib.rs:92</code>.
 <code>audio_shape</code> trusts the declared data-chunk count; a WAV with a bogus <code>data</code> size (<code>0xFFFFFFFF</code>)
 yields an "attested" duration that is a lie derived from the header, where the contract wants a
 refusal.</p>
 </li>
 <li>
-<p><strong>The audio-visual reader can panic on a malformed MP4 box</strong> — <code>crates/av/src/lib.rs:103</code>. An MP4
+<p><strong>The audio-visual reader can panic on a malformed MP4 box.</strong> <code>crates/av/src/lib.rs:103</code>. An MP4
 whose 32-bit box size is smaller than the 8-byte header, or larger than the file, can drive an
 under/overflow in <code>mp4</code> 0.14's box parsing; the panic propagates out of <code>skeleton</code> (no
 <code>catch_unwind</code>) instead of refusing. A concrete instance of finding 2.</p>
 </li>
 <li>
-<p><strong>The office and EPUB readers have no resource bound</strong> — <code>crates/office/src/lib.rs:53</code> and
+<p><strong>The office and EPUB readers have no resource bound.</strong> <code>crates/office/src/lib.rs:53</code> and
 <code>crates/epub/src/lib.rs:55</code>. Raw bytes go straight to <code>undoc</code> / <code>rbook</code>, whose zip layer
 decompresses parts without a cap, so a small deflate-bomb archive expands to multiple gigabytes and
 OOMs or hangs rather than refusing. Concrete instances of finding 2.</p>
 </li>
 <li>
-<p><strong>A degenerate overlay <code>TextQuote</code> resolves to an empty span rather than <code>None</code></strong> —
+<p><strong>A degenerate overlay <code>TextQuote</code> resolves to an empty span rather than <code>None</code>.</strong>
 <code>crates/overlay/src/lib.rs:50</code>. An empty <code>exact</code> makes <code>str::find("")</code> return <code>Some(0)</code>, so a
 meaningless selector resolves to <code>0..0</code> and <code>write_back</code> builds an empty-span insertion at byte 0
 instead of refusing.</p>
 </li>
 <li>
-<p><strong>A dotless path routes by its whole filename</strong> — <code>crates/cli/src/main.rs:124</code>. <code>hint</code> is
+<p><strong>A dotless path routes by its whole filename.</strong> <code>crates/cli/src/main.rs:124</code>. <code>hint</code> is
 <code>path.rsplit('.').next()</code>, so a file literally named <code>net</code> (or <code>org</code>, <code>obj</code>, <code>step</code>, <code>env</code>) has
 hint <code>net</code> and is parsed as a SPICE netlist. Unusual input, real misroute.</p>
 </li>
 <li>
-<p><strong>The <code>view</code> of most metadata readers ignores its selector</strong> — <code>crates/rtf/src/lib.rs:50</code>, and
+<p><strong>The <code>view</code> of most metadata readers ignores its selector.</strong> <code>crates/rtf/src/lib.rs:50</code>, and
 similarly <code>av</code>, <code>columnar</code>, <code>eda</code>, <code>geometry</code>, <code>image</code>, <code>office</code>, <code>epub</code>, <code>mail</code>, <code>openscad</code>,
-<code>pdf</code>. A windowed or token-budgeted request silently returns the whole document, blowing any token
+<code>pdf</code>. A windowed or token-budgeted request silently returns the whole document and blows any token
 budget the caller relied on. For the tiny engineering tallies this is harmless; for the RTF
 de-styled text it is a real deviation from the trait's documented windowed slice.</p>
 </li>
 <li>
-<p><strong>An obligation is discharged by the wrong test</strong> — <code>host-reference.obligations:35</code>.
+<p><strong>An obligation is discharged by the wrong test.</strong> <code>host-reference.obligations:35</code>.
 <code>rule-failure.Window.1</code> is the hostile-input branch of the Window rule (<code>not source.hostile</code>), but
 it is mapped to <code>window_refuses_an_unsupported_selector</code>, which exercises selector refusal, a
 different concern. With no <code>hostile</code> field on <code>Source</code>, the failure path is discharged in name only.</p>
 </li>
 <li>
-<p><strong>No <code>cargo fmt --check</code> runs in CI</strong> — <code>.github/workflows/ci.yml</code> (the <code>lint</code> job). The job gates
+<p><strong>No <code>cargo fmt --check</code> runs in CI.</strong> <code>.github/workflows/ci.yml</code> (the <code>lint</code> job). The job gates
 clippy with <code>-D warnings</code> and <code>cargo-deny</code>, but never checks formatting, so source-format drift can
 land on a repo whose premise is reproducible artifacts. Low severity (style, not correctness).</p>
 </li>
@@ -5448,8 +5448,8 @@ non-convergent or order-divergent merge would still pass.</li>
 cost named is duplication or a metric that does not mean what it claims.</p>
 <ul>
 <li>
-<p><strong>The golden-test harness is copy-pasted across roughly twenty-three <code>conformance.rs</code> files</strong>
-(<code>crates/*/tests/conformance.rs</code>), varying only by the normaliser type name. A shared
+<p><strong>The golden-test scaffolding is copy-pasted across roughly twenty-three <code>conformance.rs</code> files</strong>
+(<code>crates/*/tests/conformance.rs</code>) and differs only by the normaliser type name. A shared
 <code>testkit::check_fixture::&lt;N: Normalizer&gt;</code> in a dev-dependency crate would own the bless protocol,
 the golden filename, and the drift message once instead of in twenty-three places.</p>
 </li>
@@ -5465,7 +5465,7 @@ the text readers repeat an identical <code>CharOffset</code> <code>view</code> b
 constructor and a <code>core::char_offset_view</code> helper would collapse both.</p>
 </li>
 <li>
-<p><strong><code>raw_tokens</code> is computed three incompatible ways</strong> — <code>count_tokens(text)</code> (text readers),
+<p><strong><code>raw_tokens</code> is computed three incompatible ways:</strong> <code>count_tokens(text)</code> (text readers),
 <code>count_tokens(&amp;from_utf8_lossy(bytes))</code> (<code>pdf</code>, <code>geometry</code>, <code>columnar</code>, <code>eda</code>, <code>epub</code>, <code>mail</code>,
 <code>office</code>, <code>openscad</code>), and bare <code>bytes.len()</code> (<code>image</code>, <code>av</code>, <code>ocr</code>). The headline savings ratio the
 <code>Tier0</code> design exists to report is therefore measured on different bases across modalities and is
@@ -5497,22 +5497,22 @@ re-examine. All confirmed at the reviewed revision.</p>
 reader sorts object keys regardless. <code>ply-rs-bw</code> is backed by <code>indexmap</code> (file order), EXIF fields
 are sorted, MP4 tracks are sorted by id, config keys are sorted. No float is formatted into any
 golden (every numeric output is an integer count or the exif crate's exact rational display). No
-time, randomness, environment, or threading reaches output — with the sole exception of the two
+time, randomness, environment, or threading reaches output, with the sole exception of the two
 out-of-process helpers (findings 9 and 10).</li>
-<li><strong>The conformance harness is sound.</strong> Every normaliser crate ships a <code>tests/conformance.rs</code> on one
+<li><strong>The conformance fixtures are sound.</strong> Every normaliser crate ships a <code>tests/conformance.rs</code> on one
 correct pattern: load or generate the input, <code>serialize_tier0(skeleton)</code>, and <code>assert_eq!</code> against a
 committed golden. The golden is rewritten only under <code>HOST_REFERENCE_BLESS=1</code>, which returns
 immediately, so a normal run never writes the file it then reads. All golden files are tracked and
 non-empty; <code>cargo test --workspace --locked</code> runs the assertions; no <code>#[ignore]</code>, no <code>assert!(true)</code>,
-no self-comparison, no early return. The OCR test golden encodes a stub helper's fixed output, which
-is correctly scoped to this crate's plumbing rather than the engine (the engine lives out of process,
-finding 9).</li>
+no self-comparison, no early return. The OCR test golden encodes a stub helper's fixed output
+(finding 9), which is correctly scoped to this crate rather than the engine that lives out of
+process.</li>
 <li><strong>The removed-behaviour audit is clean.</strong> The only deletions in the diff are the version bump, the
 expanded members list, the regenerated <code>Cargo.lock</code>, and the old CLI placeholder stub (a blanket
 refusal) replaced by real registry dispatch. Every error path from the stub is re-established
 (missing path, unknown command, unknown kind all exit 2 with a clean error); <code>deny.toml</code> and
 <code>.gitignore</code> are new files, not edits.</li>
-<li><strong>Member, feature, and registry coverage is consistent.</strong> Every crate directory is in the workspace
+<li><strong>Workspace coverage is consistent.</strong> Every crate directory is in the workspace
 <code>members</code>; every reader has a matching CLI feature and a <code>registry()</code> push; <code>overlay</code> is correctly
 not a CLI reader.</li>
 <li><strong>The licence lane is complete.</strong> Every otherwise-unallowed SPDX token in the tree appears only as an
@@ -5531,8 +5531,9 @@ from a declared count, <code>ply-rs-bw</code> caps preallocation, and the G-code
 <p>Everything above is recorded for a future remediation plan and is not actioned in this milestone. The
 must-fix cluster, when that plan is cut, is findings 1 through 4: bound the selector at its source, and
 make the readers return <code>Error::Refused</code> on a resource bound or a hostile structure instead of
-panicking, hanging, or silently zeroing — the call/0031 contract the component asserts but does not yet
-keep. The determinism discipline and the conformance harness are sound foundations to build that on.</p>
+panicking, hanging, or silently zeroing. That is the call/0031 contract the component asserts but does
+not yet keep. The determinism discipline and the conformance fixtures are sound foundations to build
+that on.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
