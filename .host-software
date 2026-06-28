@@ -39,7 +39,7 @@
 	# the spec-and-release task once the CLI is functional, the same shape the other artifact
 	# components carry.
 	url       = https://github.com/connollydavid/host-reference.git
-	pin       = 577deb8c44263efe3371d43b2b8a5511d48b081e
+	pin       = e11411dfb9b4e455dc4fade5603000cb5df925f8
 	worktrees =
 [software "host-reference-ocr"]
 	# the out-of-process OCR helper (call/0034). host-reference's permissive `ocr` plugin runs this
