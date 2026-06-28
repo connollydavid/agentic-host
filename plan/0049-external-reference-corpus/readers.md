@@ -80,7 +80,7 @@ The deterministic parses stay in the attested layer; the machine-learning output
 | 3MF | `threemf` 0.8.0 | 0BSD | pure-Rust only on the deflate path, so the C zip codecs stay off |
 | AMF | `quick-xml` 0.40.1 with `zip` | MIT | a generic XML read, with deflate for the compressed variant; no dedicated crate |
 | G-code | `gcode` 0.7.0 | MIT OR Apache-2.0 | a tokenizer that does not interpret machine state |
-| OpenSCAD | `openscad-rs` 0.1.0, run out-of-process | GPL-3.0, flagged | a separate GPL helper binary behind an arms-length boundary, per `call/0033`; the plugin is opt-in |
+| OpenSCAD | `openscad-rs` 0.1, out-of-process | GPL-3.0, flagged | delivered (call/0034): the GPL parser lives in the separate `host-reference-openscad` repo, and the permissive `openscad` plugin runs it at arm's length and tallies the statement kinds; opt-in |
 | glTF, GLB | `gltf` 1.4.1 | MIT OR Apache-2.0 | both the JSON and the binary container |
 | PLY | `ply-rs-bw` 4.0.0 | MIT | the maintained fork; the original carries a security advisory |
 
@@ -105,10 +105,12 @@ host, so it sits in the attested layer with a byte-for-byte golden, the same con
 readers carry. The transcript of audio-visual media stays non-deterministic provider output and rides
 the `call/0030` overlay adapter in `#overlay`; the audio-visual reader here declares `ocr: false`.
 
-Four geometry kinds wait. STEP joins the deferred set under the maturity rule, since `ruststep` is the
-only pure-Rust reader and it is immature. 3MF and AMF are zip-and-XML containers whose fixture
-overhead is not yet earned by a corpus need. OpenSCAD is the GPL out-of-process helper, an opt-in
-plugin and its own task as described below.
+OpenSCAD is delivered too, as the second out-of-process plugin (`call/0033`, `call/0034`), the same
+shape as OCR: the GPL-3.0 `openscad-rs` parser lives in its own repo, `host-reference-openscad`, and
+the permissive `openscad` plugin runs that helper at arm's length and tallies the statement kinds it
+prints. Three geometry kinds still wait. STEP joins the deferred set under the maturity rule, since
+`ruststep` is the only pure-Rust reader and it is immature. 3MF and AMF are zip-and-XML containers
+whose fixture overhead is not yet earned by a corpus need.
 
 ## Licence watch-list
 
@@ -133,18 +135,19 @@ plugin and its own task as described below.
 ## The OpenSCAD out-of-process boundary
 
 OpenSCAD is the one kind that takes a GPL reader. `openscad-rs` is a real tested `.scad` parser and
-the strongest reader for the kind, so the build uses it through the out-of-process rule of
-`call/0033`. A separate helper binary depends on `openscad-rs` and carries the
-GPL licence the crate requires. It reads a `.scad` file into a structure summary and prints it as
-JSON. The host-reference OpenSCAD plugin stays permissive: it runs the helper at arm's length over
-the command line and reads the JSON back, so the two are aggregated rather than linked. The plugin is
-feature-gated and opt-in, and it depends on the helper binary being installed, which is the cost the
-`call/0033` consequence names. The `cargo-deny` lane treats this one helper as the expressly-flagged
-GPL exception rather than a violation. OCR (`call/0034`) reached the out-of-process rule first, for a
-CC-BY-SA content licence rather than GPL, and already proved the plugin API drives an out-of-process
-helper: the OpenSCAD plugin will implement the same `Normalizer` interface as every in-process reader,
-the same way the OCR plugin does, so the interface is general enough to drive an out-of-process helper
-with no special case.
+the strongest reader for the kind, so the build uses it through the out-of-process rule of `call/0033`.
+The GPL-3.0 parser lives in its own repo, `host-reference-openscad`, whose helper binary depends on
+`openscad-rs` and is therefore GPL too. It reads a `.scad` file and prints the kind of each top-level
+statement, one per line. The host-reference OpenSCAD plugin stays permissive: it runs the helper at
+arm's length over the command line and tallies those kinds into the structure skeleton, so the two are
+aggregated rather than linked. The plugin is feature-gated and opt-in, and it depends on the helper
+binary being installed, which is the cost the `call/0033` consequence names. The helper repo's own
+`cargo-deny` lane treats `openscad-rs` and the helper binary as the expressly-flagged GPL exceptions
+rather than a violation, and the host-reference workspace carries no `openscad-rs` at all. OCR
+(`call/0034`) reached the out-of-process rule first, for a CC-BY-SA content licence rather than GPL;
+OpenSCAD is the second, for GPL. Both plugins implement the same `Normalizer` interface as every
+in-process reader, so the interface is general enough to drive an out-of-process helper with no
+special case.
 
 ## Pure-Rust feature discipline
 
