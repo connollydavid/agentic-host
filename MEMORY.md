@@ -1529,3 +1529,16 @@ crate added the permissive BSD-3-Clause and CC0-1.0). And a no-fix informational
 (RUSTSEC-2024-0436, `paste` unmaintained via parquet) takes a documented per-id ignore, so the lane
 still catches real vulnerabilities. Each reader is a feature-gated crate (call/0033): the light ones
 join the text-cheap default, the heavier ones (calendar, columnar) stay opt-in.
+
+### 2026-06-28 — in-test zip fixtures must use Stored, not Deflated
+
+A binary fixture generated in the conformance test (the office OOXML package, the EPUB zip) whose
+content id, the sha of the bytes, feeds the committed golden must build its zip entries with
+`CompressionMethod::Stored`, not `Deflated`, plus a fixed mtime. Deflate output varies with zip
+feature unification across the workspace, so the office docx golden passed under
+`cargo test -p host-reference-office` in isolation yet failed under a full `cargo test` as the bytes
+drifted by a few bytes (different content id, different raw token count). Stored entries are
+deflate-independent, so the content id is stable in any build configuration. This applies to every
+future zip-backed fixture (3MF, more office formats). Two process notes: verify in the full workspace,
+not just the single crate; and the broken commit landed because the shell command did not gate the
+git step on the test result, so gate commits on a green test.
