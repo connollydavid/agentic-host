@@ -339,3 +339,15 @@
     evidence = v0.1.1@629c959abfb1e48472c1b17283976364ef0c339225a325ac2699d92b44acb166 — first reproducible release via the tool-carried sequence; the canonical default-feature binary re-derives byte-identically in the pinned muslrust toolchain from the vendor-v1 deps-bundle
     tool = host-lifecycle@0.31.2
     recorded = 2026-06-28
+
+[receipt "release" "host-reference-ocr"]
+    disposition = done
+    evidence = v0.1.1@b60cd4f842f85f17e88c8afc4094c5f6a865931000f2f9671066ab2c14378d9b — reproducible release; the helper binary (ocrs/rten + embedded CC-BY-SA models) re-derives byte-identically in the pinned muslrust toolchain from the vendor-v1 deps-bundle
+    tool = host-lifecycle@0.31.2
+    recorded = 2026-06-28
+
+[receipt "release" "host-reference-openscad"]
+    disposition = done
+    evidence = v0.1.1@93f489f1d90164500fcfd0b6ead10cb4b242143e374e385760ea066352e8dabd — reproducible release; the GPL helper binary (linking openscad-rs) re-derives byte-identically in the pinned muslrust toolchain from the vendor-v1 deps-bundle
+    tool = host-lifecycle@0.31.2
+    recorded = 2026-06-28
