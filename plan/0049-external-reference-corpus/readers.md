@@ -123,9 +123,10 @@ plugin and its own task as described below.
   passed over for the in-house tokenizer on maturity grounds rather than licence.
 - Content copyleft is confined behind the boundary. The ocrs models are CC-BY-SA-4.0, the first
   content-copyleft dependency. They are not a cargo dependency, so `cargo-deny` does not see them;
-  they are vendored data. The `call/0034` out-of-process boundary keeps them in the
-  `host-reference-ocr-helper` binary, attributed in its `NOTICE.md`, so the permissive plugin and its
-  dependents are an aggregation with the models rather than a derivative.
+  they are vendored data. The `call/0034` out-of-process boundary keeps them in the separate
+  `host-reference-ocr` repo (the helper binary embeds them), attributed in its `NOTICE.md` and stated
+  upfront in its `README.md`, so the `host-reference` repo carries none of it and the permissive plugin
+  and its dependents are an aggregation with the models rather than a derivative.
 - A `cargo-deny` lane denies AGPL and surfaces GPL, so the line holds as readers are added. The ocrs
   and rten code is permissive (MIT or Apache-2.0) and clears the lane.
 
