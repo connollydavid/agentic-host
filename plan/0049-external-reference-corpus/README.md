@@ -228,6 +228,10 @@ lopdf and pdf-extract), and so has recognition-and-engineering: the attested det
 the recognition split, image and audio-visual container metadata alongside the EDA and
 engineering-geometry parsers. OCR is delivered too, as the first out-of-process plugin (`call/0034`):
 a helper binary carries the ocrs engine and its CC-BY-SA-4.0 models, the permissive plugin runs it at
-arm's length, and the recognised text re-derives deterministically into the attested layer.
-Audio-visual transcription stays in the overlay node by the `call/0030` split. The ready frontier is
-now the overlay.
+arm's length, and the recognised text re-derives deterministically into the attested layer. OpenSCAD
+followed as the second out-of-process plugin, the GPL `openscad-rs` parser in its own repo, and STEP,
+3MF, and AMF completed the engineering geometry, so only IGES stays deferred. The overlay has landed
+too: the mutable Loro layer, anchored to the immutable layer by W3C Web Annotation selectors, with the
+write-back path and the per-kind round-trip lens law proptested. Audio-visual transcription rides that
+overlay's provider-agnostic adapter by the `call/0030` split. The ready frontier is now the spec and
+the release, the last node: the `.allium` spec and its lanes, the wired CI, and the reproducible build.
