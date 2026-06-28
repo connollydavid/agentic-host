@@ -361,6 +361,20 @@ build with its deps-bundle, and release through <code>host-lifecycle</code>.</p>
 <li>depends: #overlay</li>
 <li>verify: host-lifecycle software --verify-build .</li>
 </ul>
+<h3 id="harden-untrusted-input"><a class="header" href="#harden-untrusted-input">Harden untrusted input and remediate the review</a></h3>
+<p>Fold the <code>plan/0050</code> review findings back into this milestone rather than deferring them to a separate
+plan (the operator's call: a review finding is a requirement, not a descope). The must-fix cluster is
+the <code>call/0031</code> refusal contract, which the obligations manifest asserts but no reader keeps: bound the
+<code>view</code> selector at its source so an oversized length returns <code>Error::Parse</code> instead of overflowing into
+a panic (finding 1), and make readers return <code>Error::Refused</code> on a resource bound or a hostile
+structure instead of panicking, hanging, or silently zeroing (findings 2 through 4 and the office,
+EPUB, and audio-visual instances). The determinism holes in the two out-of-process helpers, the overlay
+re-anchoring, the lens-law proptests, and the CI feature-compile gap follow. <code>plan/0051</code> is reserved
+for the other review cluster.</p>
+<ul>
+<li>depends: #spec-and-release</li>
+<li>verify: cd software/host-reference/main &amp;&amp; cargo test</li>
+</ul>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
 <p>The design is settled and the build is under way. The scaffold and the embed are done, and so is
 the text-cheap-kinds task: its normalisers and conformance fixtures have landed behind the
@@ -387,7 +401,12 @@ established. host-reference is released as v0.1.1 through the tool-carried seque
 default-feature binary re-derives byte-identically in the pinned muslrust toolchain from the vendored
 deps-bundle, proven by <code>software --verify-build</code>. Releasing the first workspace component took a
 host-lifecycle fix (v0.31.2): it reads and bumps the version in <code>[workspace.package]</code> and syncs every
-member's lock entry. The milestone is complete: every node in the task graph carries a receipt.</p>
+member's lock entry. Every node through the release carries a receipt.</p>
+<p>The milestone then re-opened to absorb the <code>plan/0050</code> review. A maximum-recall audit of the released
+host-reference found the determinism discipline and the conformance harness sound, but the <code>call/0031</code>
+explicit-refusal contract asserted yet kept by no reader, and an unbounded <code>view</code> selector overflowing
+into a panic. Rather than defer that to a separate plan, the harden-untrusted-input node folds the
+remediation back in; <code>plan/0051</code> is reserved for the other review cluster.</p>
 
                     </main>
 
