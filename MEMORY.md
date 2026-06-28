@@ -1553,3 +1553,30 @@ It surfaced when a later `git status` still showed deny.toml modified. Separatel
 (/mnt/c, a WSL-mounted Windows drive) reached 100% full and git could not write the commit object
 ("unable to write loose object file", exit 128, not a test failure); `cargo clean` in the worktree
 reclaimed 11.4 GiB and unblocked it, and a full host-reference build leaves target/ around 12 GiB.
+
+### 2026-06-28 — the recognition split puts OCR and transcription in #overlay, not the reader wave
+
+plan/0049's #recognition-and-engineering wave landed the ATTESTED, deterministic readers of the
+recognition split (call/0030): image format, dimensions, and EXIF; audio-visual container metadata
+under a new AudioVisual modality; the EDA tallies (KiCad, Gerber, Eagle); and the engineering-geometry
+parsers (STL, glTF, DXF, OBJ, PLY, G-code). The machine-learning half (OCR text over an image, the
+transcript of audio-visual media) is non-deterministic inference and cannot carry a byte-for-byte
+conformance golden, so it rides the provider-agnostic overlay adapter and lands in the SEPARATE
+downstream #overlay node. A goal phrased "image+OCR" therefore spans two task-graph nodes: the image
+reader here, the OCR adapter in #overlay. The attested image and av readers declare `ocr: false`,
+their honest capability. Do not force OCR into the deterministic-reader plugin pattern; "act within
+scope of previous plugins" means the deterministic readers.
+
+### 2026-06-28 — static committed binary fixtures give a build-config-independent golden
+
+The geometry, eda, image, and av readers take inputs that are committed as STATIC fixture files (a
+real PNG, a JPEG with EXIF, a WAV, an H.264 MP4, an STL, a Gerber, and the rest), generated once with
+PIL, ffmpeg, and python's `wave` module. Because the content id is the sha of the committed bytes and
+the reader only DECODES the fixed file with no re-encoding, the golden is independent of build
+configuration. This sidesteps the in-test-generated-zip determinism trap (the earlier office
+Deflated-versus-Stored bug) entirely, since there is no test-time generation to vary under feature
+unification. Prefer a static committed fixture over in-test generation whenever the input is binary.
+Two as-built pin notes: KiCad reads through the generic `lexpr` S-expression form tally because
+`kiutils_kicad` reads from a path, not the bytes a `Source` carries; audio-visual reads through
+`symphonia` (audio) and the `mp4` crate (video) rather than the pre-build research's `mp4parse` and
+`lofty`, which were not needed.
