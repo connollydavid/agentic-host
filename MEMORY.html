@@ -1820,6 +1820,18 @@ not the binary name (<code>host-reference-ocr-helper</code>) — the binary is n
 it to the binary name drifts <code>software --check</code> ("not a recorded worktree"). And both helpers are
 single-crate, so they release straight through host-lifecycle with no workspace gap. <code>ocrs</code>/<code>rten</code> do
 build on musl. <code>software --verify-build</code> is green across all six artifact components.</p>
+<h3 id="2026-06-28--host-reference-review-the-call0031-refusal-contract-is-unrealised-plan0050"><a class="header" href="#2026-06-28--host-reference-review-the-call0031-refusal-contract-is-unrealised-plan0050">2026-06-28 — host-reference review: the call/0031 refusal contract is unrealised (plan/0050)</a></h3>
+<p>A maximum-effort review of host-reference v0.1.1 (pull request #1, <code>review/0049</code>) found the determinism
+discipline and the conformance harness sound, but the explicit-refusal half of call/0031 asserted in the
+obligations manifest and realised in NO reader: <code>Error::Refused</code> is constructed nowhere in <code>crates/**</code>,
+so a malformed or oversized untrusted document panics (a <code>pdf-extract</code> panic site, a malformed-MP4 box),
+hangs (an office/EPUB deflate-bomb has no resource bound), or returns a silent partial (a truncated
+<code>.ics</code> yields <code>Ok("0 components")</code>). The obligations gate did not catch it because it checks only that
+test NAMES resolve, not that the waiver body is real. Separately, an unbounded <code>view</code> selector overflows
+<code>s + *len</code> into a panic from ordinary CLI input (<code>offset:1:&lt;usize::MAX&gt;</code>), and CI never compiles the CLI
+with any non-default reader feature, so the cfg-gated registry arms for seventeen readers are unbuilt.
+The full ranked findings, the reuse/altitude notes, and the checked-and-cleared negatives are in
+<code>plan/0050-host-reference-review/README.md</code>; nothing is fixed yet (remediation is a future plan).</p>
 
                     </main>
 
