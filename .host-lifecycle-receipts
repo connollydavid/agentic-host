@@ -333,3 +333,9 @@
     evidence = v0.31.2@d3ffd0374dbd8c7205458871fdb699f30fc81072fcb3a7fed168ca20e98f9c95 — bumps every workspace member's lock version on a workspace release, so the pinned --locked rebuild matches
     tool = host-lifecycle@0.31.1
     recorded = 2026-06-28
+
+[receipt "release" "host-reference"]
+    disposition = done
+    evidence = v0.1.1@629c959abfb1e48472c1b17283976364ef0c339225a325ac2699d92b44acb166 — first reproducible release via the tool-carried sequence; the canonical default-feature binary re-derives byte-identically in the pinned muslrust toolchain from the vendor-v1 deps-bundle
+    tool = host-lifecycle@0.31.2
+    recorded = 2026-06-28
