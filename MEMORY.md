@@ -1638,3 +1638,21 @@ ModuleInstantiation), the same trick the DXF reader uses. The helper repo's `car
 `openscad-rs` and the helper binary as GPL-3.0 exceptions, because the root crate's own licence is
 checked too, and `ISC` was needed for `is_ci` (transitive via `miette`). The plugin's conformance uses
 a stub helper; the real parser is conformance-tested in the helper repo.
+
+### 2026-06-28 — STEP, 3MF, and AMF delivered in-process; geometry complete bar IGES
+
+The three deferred geometry kinds joined the in-process `geometry` crate (not out-of-process; their
+readers are permissive). 3MF through `threemf` 0.8 (`read` returns `Vec<Model>`, each
+`model.resources.object[].mesh` with `vertices.vertex` and `triangles.triangle`); its licence is 0BSD,
+added to the deny allow-list. AMF through `roxmltree` over the uncompressed XML (counts of object,
+mesh, vertex, triangle); a compressed AMF zip is refused with a clear message rather than handled, a
+deliberate scope cut. STEP through `ruststep` 0.4: the schema-agnostic parser is
+`ruststep::parser::exchange::exchange_file` (a nom parser returning `IResult`, so destructure
+`let (_, exchange) = ...`), NOT a `parse` function; `exchange.data` is `Vec<DataSection>`, each section
+has `entities: Vec<EntityInstance>`, and `EntityInstance::Simple { record, .. }` carries `record.name`
+(the entity keyword) for the type tally. ruststep pulls the unmaintained `proc-macro-error`
+(RUSTSEC-2024-0370) through `ruststep-derive`; accepted in deny on the same footing as `paste`, which
+is what cleared STEP past the maturity-rule deferral readers.md had reserved for it. The 3MF fixture is
+a static zip generated once with Python (`zipfile`, Stored); AMF and STEP fixtures are hand-authored
+text. Engineering geometry is now complete except IGES, which stays deferred because every working
+reader is C++.
