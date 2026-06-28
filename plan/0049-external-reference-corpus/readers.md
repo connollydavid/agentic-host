@@ -42,9 +42,7 @@ A few kinds have no pure-Rust library, so they take a scoped in-house parser, li
 
 | Kind | Reader | Licence | Notes |
 |---|---|---|---|
-| XLSX, legacy XLS | `calamine` 0.35.0 | MIT | the `picture` feature pulls embedded images |
-| DOCX | in-house over `zip` and `quick-xml` | n/a | `docx-rust` 0.1.11 (MIT) is a typed alternative with a partial model |
-| PPTX | in-house over `zip`, `quick-xml`, `image` | n/a | the walk reads the slide text and pulls `ppt/media` for the images |
+| DOCX, PPTX, XLSX | `undoc` 0.5.2 | MIT | one pure-Rust crate reading text, structure, embedded images, and metadata; `calamine` stays an option for an XLSX tabular schema |
 | EML | `mail-parser` 0.11.4 | Apache-2.0 OR MIT | the parser crate rather than the AGPL Stalwart server |
 | MSG | `msg_parser` 0.3.6 with `cfb` 0.14.0 | MIT | `msg_parser` covers the common fields, `cfb` reaches the low-level streams |
 | Born-digital PDF | `pdf-extract` 0.12.0 over `lopdf` 0.42.0 | MIT | keep the default `flate2` backend for the pure-Rust path |
