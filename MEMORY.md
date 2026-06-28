@@ -1621,3 +1621,20 @@ and emits fixed text, so the plugin's plumbing and formatting are tested permiss
 engine is conformance-tested in the helper repo via `env!("CARGO_BIN_EXE_host-reference-ocr-helper")`.
 Third, a public repo's visibility is the operator's decision, not the agent's: the auto-mode classifier
 blocks a unilateral `gh repo create --public`, and rightly, so ask before publishing.
+
+### 2026-06-28 — OpenSCAD is the second out-of-process plugin (GPL, the call/0033 original case)
+
+Wired the OpenSCAD helper the same way as OCR. The GPL-3.0 `openscad-rs` parser lives in its own public
+repo, `connollydavid/host-reference-openscad`, embedded as a source-only component; its helper binary
+is GPL too because it links `openscad-rs`. The permissive `host-reference-openscad` plugin (no
+`openscad-rs` dependency) writes the `.scad` to a temp file, runs the helper at arm's length, and
+tallies the statement kinds it prints (one per line) into the structure skeleton. The `host-reference`
+lockfile carries no `openscad-rs`. This is the GPL case `call/0033` originally wrote the out-of-process
+rule for; OCR (CC-BY-SA, `call/0034`) reached it first, OpenSCAD is the second, and both drive the
+helper through the same `Normalizer` interface. Practical notes: `openscad-rs` is edition 2024 and
+builds on the 1.95 toolchain; `parse(source)` returns `SourceFile { statements: Vec<Statement> }`, and
+the helper tallies by the Debug-first-token of each `Statement` (ModuleDefinition, Assignment,
+ModuleInstantiation), the same trick the DXF reader uses. The helper repo's `cargo-deny` must name BOTH
+`openscad-rs` and the helper binary as GPL-3.0 exceptions, because the root crate's own licence is
+checked too, and `ISC` was needed for `is_ci` (transitive via `miette`). The plugin's conformance uses
+a stub helper; the real parser is conformance-tested in the helper repo.
