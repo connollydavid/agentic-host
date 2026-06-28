@@ -233,5 +233,12 @@ followed as the second out-of-process plugin, the GPL `openscad-rs` parser in it
 3MF, and AMF completed the engineering geometry, so only IGES stays deferred. The overlay has landed
 too: the mutable Loro layer, anchored to the immutable layer by W3C Web Annotation selectors, with the
 write-back path and the per-kind round-trip lens law proptested. Audio-visual transcription rides that
-overlay's provider-agnostic adapter by the `call/0030` split. The ready frontier is now the spec and
-the release, the last node: the `.allium` spec and its lanes, the wired CI, and the reproducible build.
+overlay's provider-agnostic adapter by the `call/0030` split. The spec and the release, the last node,
+have landed: `host-reference.allium` distils the Normalizer contract (`allium check` and `analyse`
+clean), the `.obligations` manifest dispositions every obligation, the CI workflow runs the build and
+the conformance, lens-law, clippy, cargo-deny, and allium lanes, and the reproducible build is
+established. host-reference is released as v0.1.1 through the tool-carried sequence: the canonical
+default-feature binary re-derives byte-identically in the pinned muslrust toolchain from the vendored
+deps-bundle, proven by `software --verify-build`. Releasing the first workspace component took a
+host-lifecycle fix (v0.31.2) to read and bump the version from `[workspace.package]` and to sync every
+member's lock entry. The milestone is complete: every node in the task graph carries a receipt.
