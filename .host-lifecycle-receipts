@@ -327,3 +327,9 @@
     evidence = v0.31.1@d052e7b38039482461dbee3555507535eafeb6a68cf17f30329478d9c16967d2 — adds the [workspace.package] version fallback so a workspace component (host-reference) releases through the tool-carried sequence
     tool = host-lifecycle@0.31.0
     recorded = 2026-06-28
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.31.2@d3ffd0374dbd8c7205458871fdb699f30fc81072fcb3a7fed168ca20e98f9c95 — bumps every workspace member's lock version on a workspace release, so the pinned --locked rebuild matches
+    tool = host-lifecycle@0.31.1
+    recorded = 2026-06-28
