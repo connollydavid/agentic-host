@@ -259,7 +259,7 @@ host-lifecycle fix (v0.31.2): it reads and bumps the version in `[workspace.pack
 member's lock entry. Every node through the release carries a receipt.
 
 The milestone then re-opened to absorb the `plan/0050` review. A maximum-recall audit of the released
-host-reference found the determinism discipline and the conformance harness sound, but the `call/0031`
+host-reference found the determinism discipline and the conformance fixtures sound, but the `call/0031`
 explicit-refusal contract asserted yet kept by no reader, and an unbounded `view` selector overflowing
 into a panic. Rather than defer that to a separate plan, the harden-untrusted-input node folds the
 remediation back in; `plan/0051` is reserved for the other review cluster.
