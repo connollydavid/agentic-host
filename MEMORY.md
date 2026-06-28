@@ -1656,3 +1656,23 @@ is what cleared STEP past the maturity-rule deferral readers.md had reserved for
 a static zip generated once with Python (`zipfile`, Stored); AMF and STEP fixtures are hand-authored
 text. Engineering geometry is now complete except IGES, which stays deferred because every working
 reader is C++.
+
+### 2026-06-28 — the overlay node: Loro mutable layer, Web Annotation selectors, per-kind lens law
+
+The `#overlay` node landed (plan/0049). `host-reference-overlay` is a Loro CRDT document (loro 1.13,
+the `call/0030`-settled CRDT) holding annotations anchored to the immutable layer by W3C Web Annotation
+selectors: `TextPosition { start, end }` and `TextQuote { prefix, exact, suffix }`. TextQuote
+re-locates by content, so an annotation survives a re-derivation that shifts offsets (tested).
+`export`/`import` persist a snapshot; `merge` folds in a concurrent replica (CRDT union). For a
+deterministic merge test, give each replica a distinct peer through `Overlay::with_peer(id)`
+(`doc.set_peer_id`), since two `LoroDoc::new()` replicas could otherwise share op ids and dedupe to
+one. The write-back path (`write_back`) resolves a selector to a span and drives the normaliser's
+`put`; the default `put` refuses, the `call/0030` fail-safe. The per-kind round-trip lens law is
+proptested (proptest 1.11) in the property-based lane: GetPut (a no-op edit changes nothing) and PutGet
+(the edit is exactly the splice) hold for the write-back kinds, prose and data, both the UTF-8
+text-splice lens that floors indices to char boundaries. loro API notes:
+`doc.get_list(key).push(string)`; `list.get(i)` returns `Option<ValueOrContainer>` and `.into_value()`
+returns a `Result`, not an `Option`; `doc.export(ExportMode::Snapshot)`; `doc.import(&bytes)`. deny
+gained BSL-1.0 (a loro dependency) and accepted RUSTSEC-2023-0089 (atomic-polyfill unmaintained, deep
+under loro through postcard and heapless), on the same footing as paste and proc-macro-error. Only
+`plan/0049#spec-and-release` (the `.allium` spec, the wired CI, and the reproducible build) remains.
