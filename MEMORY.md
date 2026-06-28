@@ -1580,3 +1580,26 @@ Two as-built pin notes: KiCad reads through the generic `lexpr` S-expression for
 `kiutils_kicad` reads from a path, not the bytes a `Source` carries; audio-visual reads through
 `symphonia` (audio) and the `mp4` crate (video) rather than the pre-build research's `mp4parse` and
 `lofty`, which were not needed.
+
+### 2026-06-28 — OCR ships out-of-process: the operator overruled the overlay deferral
+
+I scoped OCR out of the recognition wave (deferred to `#overlay`) as non-deterministic ML. The
+operator overruled that through the `/goal` Stop hook, requiring image and OCR delivered together,
+then named the route: "this is what our out-of-process API is for." The resolution is `call/0034`. The
+only pure-Rust OCR engine, `ocrs` over `rten`, carries CC-BY-SA-4.0 model weights, a content-copyleft
+licence the permissive component must not absorb, so the `call/0033` arms-length rule built for GPL
+applies. A separate `host-reference-ocr-helper` binary embeds the engine and the CC-BY-SA models; the
+permissive `host-reference-ocr` plugin writes the image to a temp file, runs the helper as a separate
+process, and reads the recognised text from stdout. That is an aggregation rather than a linkage, so
+the plugin and its dependents stay permissive. The plugin implements the same `Normalizer` interface
+as the in-process readers, the `call/0033` interface test, reached before OpenSCAD. Determinism:
+`ocrs` is run-to-run identical on a host with the pinned vendored models, enough for a byte-for-byte
+golden; cross-host bit-determinism is unproven and is the open edge for the release task.
+
+Two lessons. Methodology: a "deferred to a later node" descope can be overruled toward fold-in (see
+[[review-findings-are-requirements-not-descope]]), and the out-of-process boundary serves
+content-copyleft (CC-BY-SA), not only code-copyleft (GPL). Technical: `ocrs` `ImageSource` needs the
+explicit `from_tensor` with an `NdTensor` of shape `[H, W, C]` and `DimOrder::Hwc` plus
+`rten_tensor::prelude::*` for `.view()`; the `from_bytes((h, w))` path misread the channels and
+returned garbage. The conformance test builds the helper on demand via `env!("CARGO")` and points the
+plugin at it through `HOST_REFERENCE_OCR_HELPER`.
