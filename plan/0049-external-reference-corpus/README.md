@@ -226,5 +226,8 @@ per-kind pins live in `readers.md`; the library-less kinds stay deferred. Office
 fixed-layout have landed (DOCX, PPTX, XLSX over undoc; EML over mail-parser; born-digital PDF over
 lopdf and pdf-extract), and so has recognition-and-engineering: the attested deterministic readers of
 the recognition split, image and audio-visual container metadata alongside the EDA and
-engineering-geometry parsers. The machine-learning half of recognition, OCR and transcription, is
-deferred to the overlay node by the `call/0030` split. The ready frontier is now the overlay.
+engineering-geometry parsers. OCR is delivered too, as the first out-of-process plugin (`call/0034`):
+a helper binary carries the ocrs engine and its CC-BY-SA-4.0 models, the permissive plugin runs it at
+arm's length, and the recognised text re-derives deterministically into the attested layer.
+Audio-visual transcription stays in the overlay node by the `call/0030` split. The ready frontier is
+now the overlay.

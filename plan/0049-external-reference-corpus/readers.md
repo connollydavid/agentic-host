@@ -54,7 +54,7 @@ The deterministic parses stay in the attested layer; the machine-learning output
 | Task | Reader | Licence | Layer | Notes |
 |---|---|---|---|---|
 | Image decode and metadata | `image` 0.25 with `kamadak-exif` 0.6 | MIT OR Apache-2.0, and BSD-2-Clause | attested | format, dimensions, EXIF |
-| OCR | `ocrs` over `rten` | MIT OR Apache-2.0 | overlay | carries ML weights, and inference is not bit-deterministic; lands in #overlay |
+| OCR | `ocrs` over `rten`, out-of-process | MIT OR Apache-2.0 code, CC-BY-SA-4.0 models | attested | delivered as the first out-of-process plugin (call/0034): a helper binary carries the engine and the CC-BY-SA models, the permissive plugin runs it at arm's length; run-to-run deterministic on a host |
 | Audio metadata | `symphonia` 0.5 | MPL-2.0 | attested | codec, sample rate, channels, duration; symphonia alone carried these, so `lofty` was not needed |
 | Video metadata | `mp4` 0.14 | MIT | attested | per-track type, dimensions, duration; Matroska deferred until a fixture and a need arise |
 | Transcription | `candle` with Whisper | MIT OR Apache-2.0 | overlay | Whisper weights are MIT, and inference is not bit-deterministic; lands in #overlay |
@@ -96,10 +96,14 @@ on its own lifecycle pass.
 - Electronic design (`eda` feature): KiCad form tally, Eagle element tally, Gerber command count.
 - Engineering geometry (`geometry` feature): STL, glTF, DXF, OBJ, PLY, and G-code.
 
-The machine-learning half of recognition stays out of this wave by design. OCR over an image and the
-transcript of audio-visual media are non-deterministic inference, so they ride the provider-agnostic
-overlay adapter of `call/0030` and land in `#overlay`, the next node. The image and audio-visual
-readers here declare `ocr: false`, the attested reader's honest capability.
+OCR is delivered too, as the first out-of-process plugin (`call/0034`). The only pure-Rust OCR engine,
+`ocrs` over `rten`, carries CC-BY-SA-4.0 model weights, so the `call/0033` arms-length rule built for
+GPL applies: the `host-reference-ocr-helper` binary carries the engine and the embedded models, and
+the permissive `ocr` plugin runs it as a separate process and reads the recognised text back. The
+recognised text of a fixed engine over fixed bytes is a deterministic parse, run-to-run identical on a
+host, so it sits in the attested layer with a byte-for-byte golden, the same contract the in-process
+readers carry. The transcript of audio-visual media stays non-deterministic provider output and rides
+the `call/0030` overlay adapter in `#overlay`; the audio-visual reader here declares `ocr: false`.
 
 Four geometry kinds wait. STEP joins the deferred set under the maturity rule, since `ruststep` is the
 only pure-Rust reader and it is immature. 3MF and AMF are zip-and-XML containers whose fixture
@@ -117,7 +121,13 @@ plugin and its own task as described below.
 - Weak copyleft is allowed and noted. The `symphonia` and `mp4parse` media readers are MPL-2.0, a
   file-level copyleft that binds only their own files. The dormant `tex-parser` is LGPL, and it is
   passed over for the in-house tokenizer on maturity grounds rather than licence.
-- A `cargo-deny` lane denies AGPL and surfaces GPL, so the line holds as readers are added.
+- Content copyleft is confined behind the boundary. The ocrs models are CC-BY-SA-4.0, the first
+  content-copyleft dependency. They are not a cargo dependency, so `cargo-deny` does not see them;
+  they are vendored data. The `call/0034` out-of-process boundary keeps them in the
+  `host-reference-ocr-helper` binary, attributed in its `NOTICE.md`, so the permissive plugin and its
+  dependents are an aggregation with the models rather than a derivative.
+- A `cargo-deny` lane denies AGPL and surfaces GPL, so the line holds as readers are added. The ocrs
+  and rten code is permissive (MIT or Apache-2.0) and clears the lane.
 
 ## The OpenSCAD out-of-process boundary
 
@@ -129,10 +139,11 @@ JSON. The host-reference OpenSCAD plugin stays permissive: it runs the helper at
 the command line and reads the JSON back, so the two are aggregated rather than linked. The plugin is
 feature-gated and opt-in, and it depends on the helper binary being installed, which is the cost the
 `call/0033` consequence names. The `cargo-deny` lane treats this one helper as the expressly-flagged
-GPL exception rather than a violation. This is the first use of the out-of-process rule, and a useful
-test of the plugin API: the OpenSCAD plugin implements the same `Normalizer` interface as every
-in-process reader, so the interface proves general enough to drive an out-of-process helper with no
-special case.
+GPL exception rather than a violation. OCR (`call/0034`) reached the out-of-process rule first, for a
+CC-BY-SA content licence rather than GPL, and already proved the plugin API drives an out-of-process
+helper: the OpenSCAD plugin will implement the same `Normalizer` interface as every in-process reader,
+the same way the OCR plugin does, so the interface is general enough to drive an out-of-process helper
+with no special case.
 
 ## Pure-Rust feature discipline
 
