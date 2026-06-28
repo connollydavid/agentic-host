@@ -8646,6 +8646,26 @@ Two as-built pin notes: KiCad reads through the generic <code>lexpr</code> S-exp
 <code>kiutils_kicad</code> reads from a path, not the bytes a <code>Source</code> carries; audio-visual reads through
 <code>symphonia</code> (audio) and the <code>mp4</code> crate (video) rather than the pre-build research's <code>mp4parse</code> and
 <code>lofty</code>, which were not needed.</p>
+<h3 id="2026-06-28--ocr-ships-out-of-process-the-operator-overruled-the-overlay-deferral"><a class="header" href="#2026-06-28--ocr-ships-out-of-process-the-operator-overruled-the-overlay-deferral">2026-06-28 — OCR ships out-of-process: the operator overruled the overlay deferral</a></h3>
+<p>I scoped OCR out of the recognition wave (deferred to <code>#overlay</code>) as non-deterministic ML. The
+operator overruled that through the <code>/goal</code> Stop hook, requiring image and OCR delivered together,
+then named the route: "this is what our out-of-process API is for." The resolution is <code>call/0034</code>. The
+only pure-Rust OCR engine, <code>ocrs</code> over <code>rten</code>, carries CC-BY-SA-4.0 model weights, a content-copyleft
+licence the permissive component must not absorb, so the <code>call/0033</code> arms-length rule built for GPL
+applies. A separate <code>host-reference-ocr-helper</code> binary embeds the engine and the CC-BY-SA models; the
+permissive <code>host-reference-ocr</code> plugin writes the image to a temp file, runs the helper as a separate
+process, and reads the recognised text from stdout. That is an aggregation rather than a linkage, so
+the plugin and its dependents stay permissive. The plugin implements the same <code>Normalizer</code> interface
+as the in-process readers, the <code>call/0033</code> interface test, reached before OpenSCAD. Determinism:
+<code>ocrs</code> is run-to-run identical on a host with the pinned vendored models, enough for a byte-for-byte
+golden; cross-host bit-determinism is unproven and is the open edge for the release task.</p>
+<p>Two lessons. Methodology: a "deferred to a later node" descope can be overruled toward fold-in (see
+[[review-findings-are-requirements-not-descope]]), and the out-of-process boundary serves
+content-copyleft (CC-BY-SA), not only code-copyleft (GPL). Technical: <code>ocrs</code> <code>ImageSource</code> needs the
+explicit <code>from_tensor</code> with an <code>NdTensor</code> of shape <code>[H, W, C]</code> and <code>DimOrder::Hwc</code> plus
+<code>rten_tensor::prelude::*</code> for <code>.view()</code>; the <code>from_bytes((h, w))</code> path misread the channels and
+returned garbage. The conformance test builds the helper on demand via <code>env!("CARGO")</code> and points the
+plugin at it through <code>HOST_REFERENCE_OCR_HELPER</code>.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
