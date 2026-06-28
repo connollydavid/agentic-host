@@ -1704,3 +1704,17 @@ lessons on the reproducible build:
 
 host-reference is released v0.1.1 through the tool-carried sequence, verified reproducible. The
 plan/0049 milestone is complete: every task-graph node carries a receipt.
+
+### 2026-06-28 — closed the helper reproducible-build gap (ocr + openscad released v0.1.1)
+
+A receipt audit found the two out-of-process helpers released SOURCE-ONLY: their release receipts had
+deferred the reproducible build to spec-and-release, which only covered host-reference. Closed it the
+same way for each: add `.cargo/config.toml` (build-id=none on Linux) and gitignore the vendor
+artifacts; `cargo vendor` then publish a `vendor-v1` deps-bundle (ocr 6.2M/70 crates, openscad
+12M/45 crates); a `/src` muslrust build for the digest; record toolchain/build/deploy/artifact/
+deps-bundle in `.host-software`; and a tool-carried v0.1.1 release that re-derives byte-identically.
+Two gotchas. The `deploy` field is the deployed WORKTREE LINE (the component name, `host-reference-ocr`),
+not the binary name (`host-reference-ocr-helper`) — the binary is named in the artifact path; setting
+it to the binary name drifts `software --check` ("not a recorded worktree"). And both helpers are
+single-crate, so they release straight through host-lifecycle with no workspace gap. `ocrs`/`rten` do
+build on musl. `software --verify-build` is green across all six artifact components.
