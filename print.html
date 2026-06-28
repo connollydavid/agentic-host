@@ -8676,6 +8676,22 @@ explicit <code>from_tensor</code> with an <code>NdTensor</code> of shape <code>[
 <code>rten_tensor::prelude::*</code> for <code>.view()</code>; the <code>from_bytes((h, w))</code> path misread the channels and
 returned garbage. The conformance test builds the helper on demand via <code>env!("CARGO")</code> and points the
 plugin at it through <code>HOST_REFERENCE_OCR_HELPER</code>.</p>
+<h3 id="2026-06-28--the-ocr-helper-became-its-own-repo-host-reference-ocr-for-full-cc-by-sa-confinement"><a class="header" href="#2026-06-28--the-ocr-helper-became-its-own-repo-host-reference-ocr-for-full-cc-by-sa-confinement">2026-06-28 — the OCR helper became its own repo (host-reference-ocr) for full CC-BY-SA confinement</a></h3>
+<p>Extending the entry above: the only pure-Rust OCR engine carries CC-BY-SA-4.0 model weights, so the
+operator directed the helper into its own public repo, <code>connollydavid/host-reference-ocr</code>, with the
+licence metadata and citations stated upfront. The CC-BY-SA models now leave the <code>host-reference</code> repo
+entirely. <code>host-reference</code> keeps only the permissive <code>ocr</code> plugin; the engine and models are a separate
+embedded software component (<code>call/0034</code>). Three lessons. First, a new software component triggers the
+full embed flow, and <code>software --check</code> HAZARDs until it is complete: the component must be a
+<code>.host-software</code> stanza materialized as a bare store with worktree, <code>STRUCTURE.md</code>'s <code>{#components}</code>
+home must name it, and the <code>embed</code> and <code>release</code> lifecycle receipts must be recorded with
+<code>host-lifecycle receipt --record &lt;phase&gt; --component &lt;name&gt;</code>; missing any of these re-opens the verify
+recheck. Second, the plugin's conformance test no longer builds the helper (correcting the prior
+entry): it points <code>HOST_REFERENCE_OCR_HELPER</code> at a runtime stub script that asserts a real image path
+and emits fixed text, so the plugin's plumbing and formatting are tested permissively, while the real
+engine is conformance-tested in the helper repo via <code>env!("CARGO_BIN_EXE_host-reference-ocr-helper")</code>.
+Third, a public repo's visibility is the operator's decision, not the agent's: the auto-mode classifier
+blocks a unilateral <code>gh repo create --public</code>, and rightly, so ask before publishing.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
