@@ -240,5 +240,5 @@ the conformance, lens-law, clippy, cargo-deny, and allium lanes, and the reprodu
 established. host-reference is released as v0.1.1 through the tool-carried sequence: the canonical
 default-feature binary re-derives byte-identically in the pinned muslrust toolchain from the vendored
 deps-bundle, proven by `software --verify-build`. Releasing the first workspace component took a
-host-lifecycle fix (v0.31.2) to read and bump the version from `[workspace.package]` and to sync every
+host-lifecycle fix (v0.31.2): it reads and bumps the version in `[workspace.package]` and syncs every
 member's lock entry. The milestone is complete: every node in the task graph carries a receipt.
