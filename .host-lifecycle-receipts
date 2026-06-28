@@ -321,3 +321,9 @@
     evidence = source release of host-reference-openscad at 829c3d7: cargo test green (a byte-for-byte conformance golden over a small .scad, deterministic), clippy and cargo-deny clean (openscad-rs and the helper binary are the flagged GPL-3.0 exceptions, nothing else GPL, AGPL banned). Code and binary are GPL-3.0-or-later, stated upfront in README.md and LICENSE with openscad-rs and OpenSCAD cited. Reproducible-build provenance deferred to the spec-and-release task.
     tool = host-lifecycle@0.31.0
     recorded = 2026-06-28
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.31.1@d052e7b38039482461dbee3555507535eafeb6a68cf17f30329478d9c16967d2 — adds the [workspace.package] version fallback so a workspace component (host-reference) releases through the tool-carried sequence
+    tool = host-lifecycle@0.31.0
+    recorded = 2026-06-28
