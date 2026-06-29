@@ -20,8 +20,7 @@ recorded artifact" even when no build was rebuilt (no container runtime present)
 discharge gap appeared independently in the host-reference review (plan/0050), which makes it
 methodology-level, not a host-lifecycle bug.
 
-That cross-cutting doctrine, "a verification lane that cannot perform its check must not report
-clean", is remediated in **plan/0052 (no-hollow-green)** under its own cast-reviewed design. The
+**plan/0052 (no-hollow-green)** owns that cross-cutting doctrine and its cast-reviewed design. The
 findings that belong to it (findings 1, 3, 4, 5, 10, and 17 below) are recorded here for the audit
 trail and dispositioned *remediated in plan/0052*. Everything else is component-local and fixed in
 this milestone.
@@ -33,9 +32,9 @@ this milestone.
   `host-lifecycle.obligations` manifest.
 - Method: nine reviewers, one per functional surface (subprocess handling, path safety,
   reproducibility, receipts, manifest parsing, doc gates, fail-safe discipline, reuse, test
-  adequacy), each reading the real code. Every raised finding was handed to an adversarial verifier
-  instructed to refute it against the source, defaulting to refuted where it could not be
-  substantiated. A synthesis pass deduped and ranked the survivors.
+  adequacy), each over the real code. An adversarial verifier then tried to refute every raised
+  finding against the source; a finding it could not substantiate defaulted to refuted. A synthesis
+  pass deduped and ranked the survivors.
 - Result: 44 findings raised, 17 refuted by verification, 27 surviving, deduped to 24 ranked. Zero
   critical, zero high, 6 medium, 18 low. The verification pass corrected several severities and
   rejected several reviewer exploits as self-defeating or factually wrong.
@@ -49,13 +48,13 @@ this milestone.
 - **Determinism (call/0018, call/0030).** Discharge is byte-identical re-derivation in a pinned
   toolchain. The artifact-hash comparison, the deps-bundle drift check, and toolchain-pin
   enforcement must be sound.
-- **Receipts (call/0042).** The task graph is gated by receipts, latest-receipt-wins, staleness
-  detected when an input changes, and a milestone is not complete before its task receipts land.
+- **Receipts (call/0042).** The task graph is gated by receipts, latest-receipt-wins, and staleness
+  detected on an input change; a milestone reads complete only once its task receipts land.
 - **Host-root escape (DetectOffPin).** No worktree or path may escape the host root, and a tracked
   symlink into an un-materialized worktree is rejected.
-- **Subprocess hygiene.** It spawns git, curl, tar, sh, a container runtime, sha256sum, host-prove,
-  and allium. Unchecked exit status, missing-tool fail-open, argument injection, and
-  download-without-integrity are in scope.
+- **Subprocess hygiene.** Its external tools include git, curl, tar, sh, a container runtime,
+  sha256sum, host-prove, allium. Unchecked exit status, a missing-tool fail-open, argument injection,
+  and download-without-integrity are in scope.
 
 ## Findings remediated in plan/0052
 
@@ -83,7 +82,7 @@ references the review cited; their remediation, doctrine, and the cast review li
     (`src/main.rs:4439`) fires on artifact plus no-toolchain, but never on the rule's second
     disjunct (artifact plus no build recipe), which is caught only in the heavy `--verify-build`
     lane. (confirmed, latent)
-17. **The plan/0048 re-deriver-runnability gate has no automated test for its HAZARD branch.**
+17. **The plan/0048 re-deriver-runnability gate lacks an automated test for its HAZARD branch.**
     `tier_rederiver_problems` (`src/main.rs:4607`) HAZARDs when a declared deep rung cannot run, but
     the only test asserts the green path; the HAZARD branch, added because a missing host-prove
     install hid for two weeks, has no coverage. (confirmed, low)
@@ -121,10 +120,10 @@ The eighteen component-local findings, in the review's rank order.
    failure nor the refreshed count, so a run where every verify passed but every write failed exits
    0 having persisted nothing. The manual-record path treats the same error as fatal. Fix: treat the
    write error as a failure so the exit code reflects the unpersisted state. (confirmed)
-9. **`migrate-receipts` writes three files individually-atomic but not atomic as a set.**
+9. **`migrate-receipts` writes three files with per-file atomicity only; the set of three has none.**
    `migrate_receipts` (`src/main.rs:6789`) writes the stamp (which strips the applied lines) before
-   the receipts file (which should receive them), so an I/O fault between the two leaves the applied
-   set deleted from one and never written to the other, recoverable only through git. Fix: write the
+   the receipts file (which should receive them), so an I/O fault between the two strips the applied
+   set out of the stamp while the receipts file never receives it, recoverable only through git. Fix: write the
    data-receiving file before the data-shedding file, or stage all three and rename in dependency
    order. (confirmed, low)
 11. **`milestone_complete` reads raw markdown while `parse_tasks` masks fenced code.** Within the
@@ -135,8 +134,8 @@ The eighteen component-local findings, in the review's rank order.
     by every plan-doc check. (confirmed, latent)
 12. **The reconcile concept and link-integrity gate has no fence masking.** `scan_concept_anchors`
     and `concept_links_on` (`src/main.rs:1583`) scan raw lines with only a per-line backtick guard,
-    so a heading or link inside a fenced example is treated as a live concept home or link, yielding
-    a false duplicate-home HAZARD or a dead-anchor link that passes. The sibling task gate already
+    so a heading or link inside a fenced example is treated as a live concept home or link; the result
+    is a false duplicate-home HAZARD or a dead-anchor link that passes. The sibling task gate already
     tracks fence state, so the two markdown gates disagree on identical input. Fix: thread the
     fence-masked view through the concept and reconcile scans. (confirmed, latent)
 13. **Two divergent readers decide whether a deep rung is declared.** The tier gate uses a raw
@@ -201,7 +200,7 @@ The eighteen component-local findings, in the review's rank order.
     (`src/main.rs:864`). `remap` is an operator-run self-targeting migration that refuses on a dirty
     tree and acts only on the operator's own dictionary, so there is no untrusted-input vector; this
     is the lowest-ranked finding (verdict uncertain, reachable false). Fix: take the type from the
-    DirEntry without following, and skip symlinks, mirroring `tracked_markdown`. (uncertain)
+    DirEntry without following, and skip symlinks as the sibling `tracked_markdown` does. (uncertain)
 
 ## What was checked and cleared
 

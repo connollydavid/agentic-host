@@ -73,8 +73,8 @@ the design's weak-agent claim is falsifiable and is to be falsified before the d
   and as an opt-in heavy check neutralise the rule and require the verdict to flip to FAIL, with the
   neutralisation applied by the tool, never authored by the weak agent.
 - **#dogfood-redisposition.** Re-disposition host-lifecycle's own manifest so the strengthened check
-  turns its hollow green honest (the plan/0051 findings 3, 4, 5, 10, 17), proving the check bites on
-  the dogfood.
+  turns its hollow green honest (the plan/0051 findings 3, 4, 5, 10, 17); this proves the check bites
+  on the dogfood.
 - **#probe.** Drive the real qwen3.5-4b against the strengthened gate: can it author passing
   dispositions unaided, and on a red does it author an exercising test or route to mass-waive. This
   gates the doctrine and the release.

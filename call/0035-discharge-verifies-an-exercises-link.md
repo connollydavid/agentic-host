@@ -20,8 +20,8 @@ named test exercised the rule it discharges. Seven hazarded-verdict obligations 
 manifest were dispositioned to `host_root_escape_is_detected`, a pure helper test that never called the
 gate, and the ladder stayed green. Separately, `software --verify-build` printed "every non-exempt build
 reproduces its recorded artifact" and exited 0 even when no container runtime was present, attesting a
-guarantee it never checked. The same two findings are one shape: a lane that does not perform its check
-must not report clean.
+guarantee it never checked. The same two findings share one shape: a lane may report clean only after
+it performs its check.
 
 The deep rungs (`kani`, `apalache`, `tlaps`) already discharge correctly through `--rederive`, which
 re-runs the verifier via host-prove and requires a PASS, and which returns `UNPROVEN` when the
@@ -45,10 +45,10 @@ The obligation-discharge check and the reproducible-build lane are strengthened 
   foreign attest-host or a cited repro-exempt, an honest neutral skip), and UNVERIFIABLE (an in-scope
   build the lane could not run). It prints its clean line only when a build was actually verified and
   none was UNVERIFIABLE, and exits non-zero on an UNVERIFIABLE, with the remedy inline.
-- The deeper "the test truly drives the rule" claim is left as an opt-in check; the always-on lane is a
-  static link, the test's PASS is established by the project's own suite, and an automatic
-  rule-neutralisation flip is deliberately not built because there is no mechanical map from an
-  obligation to the code lines that realise it.
+- The deeper "the test truly drives the rule" claim is left as an opt-in check. The always-on lane
+  confirms the static link. A test's PASS is established by the project's own suite. An automatic
+  rule-neutralisation flip is deliberately omitted, because no mechanical map links an obligation with
+  the code lines that realise it.
 
 ## Consequences
 
