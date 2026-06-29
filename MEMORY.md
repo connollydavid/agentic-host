@@ -1732,3 +1732,39 @@ test NAMES resolve, not that the waiver body is real. Separately, an unbounded `
 with any non-default reader feature, so the cfg-gated registry arms for seventeen readers are unbuilt.
 The full ranked findings, the reuse/altitude notes, and the checked-and-cleared negatives are in
 `plan/0050-host-reference-review/README.md`; nothing is fixed yet (remediation is a future plan).
+
+### 2026-06-29 — host-lifecycle review run in-house; the work split into plan/0051 (component) and plan/0052 (doctrine)
+
+The first review in the campaign for software other than host-reference. It was driven INSIDE our own
+tooling as a multi-agent pass (nine reviewers over the functional surfaces, an adversarial verifier per
+finding defaulting to refuted, then synthesis), a deliberate test against the external lane that
+produced plan/0050: 44 raised, 17 refuted, 27 surviving, deduped to 24 (zero critical, zero high, 6
+medium, 18 low). The adversarial layer earned its keep: it culled 39 percent of raised findings and
+corrected several severities and self-defeating exploits. Verdict: the in-house pattern is effective
+for our own components and grounds findings in our own contracts (the obligations file, call/0018,
+call/0030) that the external pass would have to rediscover. The operator then split the work ENTIRELY
+into two plans, with the standing lesson "do not bundle a doctrine with a maintenance backlog": plan/0051
+records all 24 findings and fixes the 18 component-local bugs (findings 6 and 15 engineered, not applied
+verbatim), and plan/0052 carries the cross-cutting doctrine. The campaign stays open: host-lint,
+host-prove, and host-grammar are still pending.
+
+### 2026-06-29 — no-hollow-green: the discharge gap is methodology-level (plan/0052, cast-reviewed)
+
+The obligation-discharge check is a presence-lint: `host-lifecycle obligations` confirms that a `test:`
+disposition names a real test (a substring check) but never that the named test exercises the rule.
+Seven hazarded-verdict obligations in host-lifecycle's own manifest point at a pure-helper test
+(`host_root_escape_is_detected`) that never drives the gate, and the same shape was the plan/0050
+host-reference finding. Two independent components make it methodology-level, hence the doctrine: a
+verification lane that cannot perform its check must not report clean (the `software --verify-build` lie
+is the same shape, attesting "every build reproduces" with no container runtime present). All five cast
+personas reviewed both realisations and converged: reuse the rung lane (the `--rederive` host-prove
+PASS path already discharges correctly, so this finishes an uneven application, not a new mechanism); an
+auditable static LINK rather than "proven behaviour" (the residue the machine cannot prove is labelled
+attested, never written as machine-proved, or hollow green recurs one level up, per Orin); three states
+not two (verified, legitimately-not-checked-here, could-not-check; only the third never renders clean);
+shut the `waived:` and `structural` escapes in the SAME change or the weak agent routes around by
+relabelling (Fen: `waived:` must cite a `call/` decision through the existing `cited_decision_exists`,
+which today gates repro-exempt but not waived); and ship warn-then-retire with the reject line
+self-referencing its UPGRADING entry, because the strengthened binary propagates by `cargo install`
+decoupled from the ledger (Bly). The real qwen3.5-4b probe gates the design before the doctrine ships
+(Fen is the acceptance test, not a lens).
