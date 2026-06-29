@@ -195,8 +195,8 @@ named test exercised the rule it discharges. Seven hazarded-verdict obligations 
 manifest were dispositioned to <code>host_root_escape_is_detected</code>, a pure helper test that never called the
 gate, and the ladder stayed green. Separately, <code>software --verify-build</code> printed "every non-exempt build
 reproduces its recorded artifact" and exited 0 even when no container runtime was present, attesting a
-guarantee it never checked. The same two findings are one shape: a lane that does not perform its check
-must not report clean.</p>
+guarantee it never checked. The same two findings share one shape: a lane may report clean only after
+it performs its check.</p>
 <p>The deep rungs (<code>kani</code>, <code>apalache</code>, <code>tlaps</code>) already discharge correctly through <code>--rederive</code>, which
 re-runs the verifier via host-prove and requires a PASS, and which returns <code>UNPROVEN</code> when the
 re-deriver cannot run. So the fix finishes an uneven application of a pattern the codebase already
@@ -217,10 +217,10 @@ rather than reddening a green ladder on a tool bump (the cast's propagation rule
 foreign attest-host or a cited repro-exempt, an honest neutral skip), and UNVERIFIABLE (an in-scope
 build the lane could not run). It prints its clean line only when a build was actually verified and
 none was UNVERIFIABLE, and exits non-zero on an UNVERIFIABLE, with the remedy inline.</li>
-<li>The deeper "the test truly drives the rule" claim is left as an opt-in check; the always-on lane is a
-static link, the test's PASS is established by the project's own suite, and an automatic
-rule-neutralisation flip is deliberately not built because there is no mechanical map from an
-obligation to the code lines that realise it.</li>
+<li>The deeper "the test truly drives the rule" claim is left as an opt-in check. The always-on lane
+confirms the static link. A test's PASS is established by the project's own suite. An automatic
+rule-neutralisation flip is deliberately omitted, because no mechanical map links an obligation with
+the code lines that realise it.</li>
 </ul>
 <h2 id="consequences"><a class="header" href="#consequences">Consequences</a></h2>
 <ul>
