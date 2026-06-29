@@ -375,6 +375,19 @@ for the other review cluster.</p>
 <li>depends: #spec-and-release</li>
 <li>verify: cd software/host-reference/main &amp;&amp; cargo test</li>
 </ul>
+<h3 id="consolidate-reuse"><a class="header" href="#consolidate-reuse">Consolidate the reuse findings</a></h3>
+<p>Fold in the review's reuse and altitude observations and the view-ignores-selector deviation (the
+residuals deferred from the harden-untrusted-input pass, on the operator's call to fold both in). Move
+the duplicated reader boilerplate into shared <code>core</code> helpers: one <code>raw_tokens</code> policy for a comparable
+saving ratio, a <code>Tier0::whole</code> constructor, a <code>char_offset_view</code> body, a fence-aware
+<code>markdown_heading_outline</code> for prose and HTML, a default <code>Normalizer::view</code> that returns the skeleton
+(so the metadata readers drop their boilerplate view), and a declared <code>extensions()</code> with a default
+hint-matching <code>detect</code>. Share the conformance bless-or-compare protocol through a <code>host-reference -testkit</code> dev-dependency crate. Behaviour-preserving (only the image, av, and OCR raw-token counts move,
+the documented basis change); released as a follow-on host-reference version.</p>
+<ul>
+<li>depends: #harden-untrusted-input</li>
+<li>verify: cd software/host-reference/main &amp;&amp; cargo test</li>
+</ul>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
 <p>The design is settled and the build is under way. The scaffold and the embed are done, and so is
 the text-cheap-kinds task: its normalisers and conformance fixtures have landed behind the
@@ -418,8 +431,15 @@ the reStructuredText markup, the SPICE net arity, the canonical-form escaping, a
 CI compiles the CLI with every reader feature and gates <code>cargo fmt --check</code>; and the out-of-process
 plugins stage input at a random temporary path and record the helper version into the attestation. It
 shipped as host-reference v0.1.2 with the two helpers at v0.2.0, each re-deriving byte-identically in
-the pinned toolchain, with the release receipts and the node receipt recorded. The broader review
-campaign stays open: <code>plan/0051</code> is held for the pending review of other software.</p>
+the pinned toolchain, with the release receipts and the node receipt recorded.</p>
+<p>The consolidate-reuse node then folded in the review's reuse and altitude observations and the
+view-ignores-selector deviation (the residuals the operator chose to fold in rather than leave). The
+duplicated reader boilerplate moved into shared <code>core</code> helpers (one <code>raw_tokens</code> policy, <code>Tier0::whole</code>,
+<code>char_offset_view</code>, a fence-aware <code>markdown_heading_outline</code>, a default <code>view</code>, and a declared
+<code>extensions()</code>), and a <code>host-reference-testkit</code> crate now owns the conformance protocol the readers
+copy-pasted. It is behaviour-preserving apart from the documented <code>raw_tokens</code> basis change, and shipped
+as host-reference v0.1.3 (the helpers unchanged at v0.2.0), re-deriving byte-identically. The broader
+review campaign stays open: <code>plan/0051</code> is held for the pending review of other software.</p>
 
                     </main>
 
