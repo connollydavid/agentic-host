@@ -351,3 +351,21 @@
     evidence = v0.1.1@93f489f1d90164500fcfd0b6ead10cb4b242143e374e385760ea066352e8dabd — reproducible release; the GPL helper binary (linking openscad-rs) re-derives byte-identically in the pinned muslrust toolchain from the vendor-v1 deps-bundle
     tool = host-lifecycle@0.31.2
     recorded = 2026-06-28
+
+[receipt "release" "host-reference-openscad"]
+    disposition = done
+    evidence = v0.2.0@d33a0b8f417ab4f707ffde8b47320fa6f1b5946c42bad29f6378f57d79b890ab
+    tool = host-lifecycle@0.31.2
+    recorded = 2026-06-29
+
+[receipt "release" "host-reference-ocr"]
+    disposition = done
+    evidence = v0.2.0@81899f9ae732a245166e59647644bb4e225b86e7ddda0e3b03a75dec0e84e3f2
+    tool = host-lifecycle@0.31.2
+    recorded = 2026-06-29
+
+[receipt "release" "host-reference"]
+    disposition = done
+    evidence = v0.1.2@53c05dda4f5c6ba3704a1b60e3b0e9a2d73afa84932d495bf03a8e001e612716
+    tool = host-lifecycle@0.31.2
+    recorded = 2026-06-29
