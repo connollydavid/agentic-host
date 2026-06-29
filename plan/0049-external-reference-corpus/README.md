@@ -263,3 +263,17 @@ host-reference found the determinism discipline and the conformance fixtures sou
 explicit-refusal contract asserted yet kept by no reader, and an unbounded `view` selector overflowing
 into a panic. Rather than defer that to a separate plan, the harden-untrusted-input node folds the
 remediation back in; `plan/0051` is reserved for the other review cluster.
+
+The harden-untrusted-input node has landed. Every `plan/0050` finding is remediated: the `call/0031`
+refusal contract is realised across the readers and is now test-backed rather than falsely waived
+(`core::char_offset_window` saturates the selector window, `guard_panic` contains the pdf-extract and
+mp4 panics, the calendar and the archive readers refuse malformed and bomb input, and a `GuardedReader`
+contract test plus per-reader hostile-input tests discharge the obligation); the overlay refuses an
+ambiguous or empty anchor and its lens-law proptests exercise the real read and write sides; the
+correctness findings (the image and OCR collision, the case-sensitive hint, the fenced-code outline,
+the reStructuredText markup, the SPICE net arity, the canonical-form escaping, and the rest) are fixed;
+CI compiles the CLI with every reader feature and gates `cargo fmt --check`; and the out-of-process
+plugins stage input at a random temporary path and record the helper version into the attestation. It
+shipped as host-reference v0.1.2 with the two helpers at v0.2.0, each re-deriving byte-identically in
+the pinned toolchain, with the release receipts and the node receipt recorded. The broader review
+campaign stays open: `plan/0051` is held for the pending review of other software.
