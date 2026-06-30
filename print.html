@@ -10294,6 +10294,25 @@ installing apalache/kani/tlaps) + cut call/0036 (the plugin/auto-install MADR) +
 <li>release/re-pin/reinstall. host-prove has ZERO deps (no consumer re-vendoring; it is a PATH tool for the
 plan/0048 runnability gate). After plan/0054, only host-lint's review remains in the campaign.</li>
 </ul>
+<p>2026-06-30 — plan/0054 (host-prove review) COMPLETE. Shipped host-prove v0.3.0 (commit c05782c, artifact
+9a9bbbd3, re-derives byte-identically). The DOCTRINE GATE (operator chose doctrine-grade) earned its keep:
+the real qwen3.5-4b (Fen) probe PASSED (routed all 3 weak-agent scenarios right — BLOCKED→install,
+[bound=unspecified]→not-trustworthy/supply-bound, FAILED→report; decision-table routing held at the 4B
+though it over-thinks and truncates), and the CAST REVIEW (Mara/Bly/Orin on the final design) found 3 real
+OVER-CLAIMS that I then fixed: (1) a kani PASS stamped <code>pinned</code> like the hash-verified tools though kani is
+version-only (sha=n/a) with an unverified <code>cargo kani setup</code> backend → now stamps <code>version-pinned, backend unverified</code> in the verdict + doctor + tools.lock; (2) the apalache/tlaps pin marker was an install-time
+stamp of the ASSET sha, not a per-run check → now records the EXTRACTED binary's own sha and resolve
+re-hashes it every run (content bind, not TOFU stamp); (3) the end-to-end guarantee needs the CONSUMER
+(host-lifecycle obligations --prove) to REJECT an unsuffixed/--stdin PASS (a follow-on for host-lifecycle,
+recorded in plan/0054). LESSON: cast review of the FINAL design (not just the contested bit) catches
+over-claims a focused consult misses; the gate is worth running even after the design is "decided".
+CI-PARSE LESSON (already in plan/0054): a step name with a colon-space <code>(strict: ...)</code> is invalid workflow
+YAML — host-prove CI failed to PARSE (0s) from the soundness commit f4736e9 until 8607932; a green LOCAL
+gate is NOT a green CI (python yaml + gh run list before trusting). Residual follow-ons (low): the
+consumer-suffix requirement (host-lifecycle), the unpinned cargo-kani backend (inherent, now named
+honestly), and an apalache-fixture refresh from 0.58.0 (parser keys on version-stable strings; install-smoke
+provisions the real 0.58.0). software --check clean at the new pin; receipt recorded; PATH binary v0.3.0.
+CAMPAIGN: only host-lint's review remains (it got dep-bump re-releases in plan/0053 but no review).</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
