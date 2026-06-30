@@ -417,3 +417,15 @@
     evidence = v0.35.0@d0cd4aededaf091277ddb5381302457591a3db53e7a405a868b7fe6f94974928
     tool = host-lifecycle@0.34.0
     recorded = 2026-06-30
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.12.1@53e0445cda0a8527ec63ab9d31ab22fc2dea0cd61d32c900cc48b0bf461eecf8
+    tool = host-lifecycle@0.35.0
+    recorded = 2026-06-30
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.35.1@af9f0a82d5d79b6e14c5eeb1b5c5c4f949bd873652ef94a17c5e428d64d2ca62
+    tool = host-lifecycle@0.35.0
+    recorded = 2026-06-30
