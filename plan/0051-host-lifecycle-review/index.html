@@ -379,11 +379,27 @@ inventing one. Determinism in the gate output, the receipt parse and latest-wins
 manifest validation for url and pin presence are sound. The path-safety and manifest findings are
 bounded by <code>.host-software</code> being trusted, gitignored, operator-authored config.</p>
 <h2 id="disposition"><a class="header" href="#disposition">Disposition</a></h2>
-<p>The eighteen component findings are remediated in this milestone and released as a host-lifecycle
-version, with findings 6 and 15 engineered rather than applied as the reviewers suggested. The
-six no-hollow-green findings (1, 3, 4, 5, 10, 17) are remediated in plan/0052 under its cast-reviewed
-doctrine. The review campaign stays open: the reviews of host-lint, host-prove, and host-grammar are
-still pending, each to be cut under its own milestone.</p>
+<p>The eighteen component findings are remediated in this milestone and shipped as host-lifecycle
+v0.33.0. Findings 6 and 15 are engineered rather than applied as the reviewers suggested. Finding 6
+distinguishes a deleted tracked <code>deps-bundle.lock</code> (a HAZARD: the pin cross-check is bypassed) from a
+lock git never tracked (an onboarding note), so onboarding does not turn the check red. Finding 15
+asserts the canonical wording of the software-root and spec-home homes (<code>software/</code>; co-location)
+rather than lifting the old inline predicate, whose <code>plan/</code>-and-<code>spec</code> form would have misfired on the
+real spec-home text "co-located ... never under <code>plan/</code>". Finding 20 is resolved by recording the
+entrance tool-presence leniency as deliberate: that check performs a real test, so it is not hollow
+green, and a word-boundary rule would still miss a token in a bare URL and could flag a legitimate
+phrasing. The six no-hollow-green findings (1, 3, 4, 5, 10, 17) are remediated in plan/0052 under its
+cast-reviewed doctrine. The review campaign stays open: the reviews of host-lint, host-prove, and
+host-grammar are still pending, each to be cut under its own milestone.</p>
+<h2 id="status"><a class="header" href="#status">Status</a></h2>
+<p>Complete. Shipped as host-lifecycle <strong>v0.33.0</strong> (commit <code>08ba98b</code>, artifact
+<code>cffe14ba10c8ada02ad1d3e5c3c003d9d0c392ae5001225cf025c4ce5cdc9fab</code>), re-deriving byte-identically in
+the recorded <code>clux/muslrust</code> toolchain. The change is classed <code>removes-flag</code> because several gates
+now reject inputs they previously accepted (a duplicate <code>[software]</code> stanza, a free-text task skip
+reason, a deleted tracked lock, a second <code>[verification]</code> stanza). The release receipt is recorded,
+<code>software --check</code> is clean at the new pin, and the suite (118 tests, clippy, allium check and
+analyse, obligations discharge) is green. This milestone records no new <code>call/</code> decision; the only
+cross-cutting decision is plan/0052's <code>call/0035</code>.</p>
 
                     </main>
 
