@@ -183,7 +183,7 @@ in MEMORY.
 ## Status
 
 The whole in-house layer is complete, tested, and committed in the host-lint worktree (not yet
-released or pushed): nine commits on top of the v0.11.0 pin. Every finding above is fixed or
+released or pushed): fourteen commits on top of the v0.11.0 pin. Every finding above is fixed or
 dispositioned.
 
 - Detector and lexicon: the blocking-tier recut (N1, N2, N3, N4, N5, N6), the lexicon anti-laundering
@@ -208,11 +208,20 @@ dispositioned.
   has zero corpus hits and adding it is left to the operator, not widened here); N8 (the co-author
   exemption is intentionally lenient per its attribution rationale); N9 (the bare-decimal warn is
   recall-biased by design; a strict escalation of it is the intended cost of a declarable lexicon).
+- Self-consistency dogfood (operator-caught, beyond the review findings): host-lint's own internals
+  named constructs by ordinal position, the exact tell it detects and the methodology forbids. The
+  conformance gates, the lexicon guards, the warn-rule labels, and the severity tiers are renamed
+  after their content; the bare review finding-code citations are dropped from the shipping artifact
+  (the milestone is cited by its content-slugged name, the review record keeps its finding labels).
+  Separately, the name-format conformance gate read the skill name from the directory holding
+  SKILL.md, which is the worktree line `main` in the materialized layout, so it failed when run in the
+  worktree; it now reads the parent directory's name, so the gate passes in the worktree as well as on
+  an installed skill and a repo-named CI checkout.
 
 Verification: 85 unit/property tests, clippy clean, 123 integration cases, the strict-discharge gate
 clean across all 51 obligations with the kani rungs re-derived, and `allium check` clean. The
-`lint-skill.sh` conformance gate passes seven of eight; the eighth (G3, name-equals-dirname) fails
-only because the materialized worktree is named `main`, and passes on a repo-named CI checkout.
+`lint-skill.sh` conformance gate now passes in full, in the materialized worktree as well as on a
+repo-named checkout.
 
 Remaining: the doctrine gate (a cast review and a real qwen3.5-4b probe), the release and re-pin, and
 the host-lifecycle propagation. These are paused here for operator authorization (the outward and
