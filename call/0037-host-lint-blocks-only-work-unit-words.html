@@ -183,9 +183,12 @@ through <code>host-template</code>, so its false-flag behaviour is felt in every
 Decides which tell-nouns block at the Flag tier and which warn at the advisory tier, and what counts
 as a blocking numeral after one.</li>
 <li>Relates: <code>plan/0055</code> (the host-lint review that raised the false-flag findings); <code>plan/0053</code> (the
-host-grammar precision recut, where <code>is_numeral</code> gained canonical-Roman validation); <code>call/0019</code> (the
-LEXICON and the <code>host-lint:ignore</code> fence, the escape hatches a blocking term needs); <code>plan/0052</code> and
-<code>[[no-hollow-green-doctrine]]</code> (a recall-biased Warn is sanctioned, a false Flag is not).</li>
+host-grammar precision recut, where <code>is_numeral</code> gained canonical-Roman validation); <code>call/0006</code> (the
+sanctioned-vocabulary allow-list, where the LEXICON legitimizes vocabulary but does not silence a
+tell) and <code>call/0019</code> (literal citations go in a <code>host-lint:ignore</code> fence, not the LEXICON, and never
+<code>--no-verify</code>). Those two are the decided disposition for a tell-shaped domain term, and the LEXICON
+guards here enforce their "not an escape" principle. <code>plan/0052</code> and <code>[[no-hollow-green-doctrine]]</code>
+(a recall-biased Warn is sanctioned, a false Flag is not).</li>
 </ul>
 <h2 id="context-and-problem-statement"><a class="header" href="#context-and-problem-statement">Context and Problem Statement</a></h2>
 <p>host-lint has three tiers: a blocking Flag (exit 1) for a confirmed tell, an advisory recall-biased
@@ -221,14 +224,27 @@ false-flag exposure.</li>
 <code>section</code>, <code>chapter</code>, <code>epoch</code>, <code>batch</code>, <code>era</code>, <code>period</code>. Their ordinal use is overwhelmingly domain
 vocabulary; they warn, and under <code># host-lint: strict</code> an undeclared occurrence still escalates to a
 Flag, and the gather lane still surfaces a recurring shape for triage.</li>
-<li><strong>A blocking numeral is unambiguous:</strong> an arabic integer or single decimal, a short checklist range,
-or a multi-letter Roman numeral written uppercase in the source, and only when it sits immediately
-after the noun. A single-letter Roman never blocks (it collides with the pronoun and with language
-and identifier letters), and a numeral two words away is not a positional reference.</li>
+<li><strong>A blocking numeral is unambiguous:</strong> an arabic integer or single decimal, a short <em>ascending</em>
+checklist range, or a Roman numeral written uppercase whose value is a plausible ordinal (<code>&lt;= XXXIX</code>),
+and only when it sits immediately after the noun. The Roman bound (revised in the doctrine-gate cast
+review) is what catches a roman-numbered phase tell, so a phase named with an ordinal roman still
+blocks and cannot smuggle past the gate, while it excludes the ordinary uppercase abbreviations that
+are also canonical Roman (<code>DC</code>, <code>CM</code>, <code>MM</code>, <code>MD</code>, <code>DIV</code>, <code>XL</code>): they all carry C/D/M or exceed an
+ordinal, so a flag noun followed by one of them would otherwise false-flag in its home domain (a
+signal-processing or sizing context). A single-letter Roman, a lowercase roman-word, a date or
+descending range, and a numeral two words away never block.</li>
 <li><strong><code>steps</code> stays blocking</strong> by operator decision, to keep the host#16 checklist-position detection,
 accepting the tutorial-<code>steps</code> false flags it carries.</li>
-<li><strong>The disposition is grounded in the corpus measurement, not assertion.</strong> A future change to the
-noun set restates the measurement.</li>
+<li><strong>The disposition is grounded in measurement, not assertion.</strong> The demotions are grounded in ~35,500
+real <code>.rs</code> files; the doctrine-gate cast review then exposed the register the <code>.rs</code> corpus could not
+see, so it was measured directly: <code>phase &lt;UPPERCASE&gt;</code> (the roman-acronym false-flag class) occurs
+<strong>zero</strong> times in those files (vs 84 lowercase), and <code>box</code>/<code>boxes</code>/<code>steps</code> + numeral occurs once in
+markdown, which confirms the retained terms carry low exposure in the doc register too. A future
+change to the noun set or the numeral rule restates the measurement.</li>
+<li><strong>The LEXICON is not the escape for a tell</strong> (<code>call/0006</code>, <code>call/0019</code>). It registers genuine
+vocabulary (a version string, a standard, a cited tracker ref) and refuses any phrase that is itself a
+tell or carries a position noun or a bare review code (<code>F1</code>); a domain term that is itself a tell goes
+in a <code>host-lint:ignore</code> fence (in a doc) or is reworded (in a commit subject), never allow-listed.</li>
 </ul>
 <h2 id="consequences"><a class="header" href="#consequences">Consequences</a></h2>
 <ul>
