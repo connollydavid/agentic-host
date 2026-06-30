@@ -300,13 +300,18 @@ re-run for real through host-prove with a fresh digest ledger, and the detection
 genuinely exercise the mapped function are honestly discharged. No naming-lane panics were found.</p>
 <h2 id="operator-decisions"><a class="header" href="#operator-decisions">Operator decisions</a></h2>
 <ol>
-<li><strong>The verb and measurement terms move to the advisory Warn tier.</strong> <code>pass</code>, <code>round</code>, <code>step</code>,
-<code>level</code>, and <code>part</code> collide with ordinary English even at immediate adjacency, so they no longer
-block; they warn. The unambiguous ordinal nouns (<code>phase</code>, <code>stage</code>, <code>sprint</code>,
-<code>iteration</code>, <code>cycle</code>, and the rest) stay blocking. The clear-bug part of class A (the Roman
-acceptance, the 2-word window, the missing year and status guards) is fixed regardless of tier.
-This changes the detection contract, so it is recorded in a <code>call/</code> decision and reflected in
-VOCABULARY.md, the rule source.</li>
+<li><strong>The blocking tier holds only the high-centrality work-unit words; the disposition is grounded in
+corpus data, not assertion.</strong> The operator's first ruling demoted the verb and measurement terms
+(<code>pass</code>, <code>round</code>, <code>step</code>, <code>level</code>, <code>part</code>). The operator then asked to ground the rest in data
+rather than assert a noun is collision-prone. Measuring the <code>&lt;noun&gt; &lt;numeral&gt;</code> shape across roughly
+35,500 real <code>.rs</code> files (a proxy for adopter code) showed six more nouns I had kept blocking are
+overwhelmingly domain usage with zero in-project tells: <code>section</code> (the single largest source),
+<code>chapter</code>, <code>epoch</code>, <code>batch</code>, <code>era</code>, <code>period</code>. The operator ruled to demote all six. The blocking
+tier now holds the work-unit words (<code>phase</code>, <code>stage</code>, <code>sprint</code>, <code>iteration</code>, <code>cycle</code>, <code>increment</code>,
+<code>wave</code>) plus the near-zero-exposure synonyms and the host#16 checklist terms (<code>steps</code> stays blocking
+by operator decision). The clear-bug part of class A (the Roman acceptance, the two-word window, the
+year and status guards) is fixed regardless of tier. The contract change is recorded in <code>call/0037</code>
+and reflected in VOCABULARY.md, the rule source.</li>
 <li><strong>One milestone.</strong> plan/0055 carries both the component fixes and the no-hollow-green dogfood
 (class C), released together, rather than the plan/0051-plus-0052 split host-lifecycle used.</li>
 <li><strong>Doctrine-grade.</strong> The remediation is gated by a cast review and a real qwen3.5-4b probe before
@@ -332,23 +337,22 @@ pin before remediation. The lesson: run probing reviewers under worktree isolati
 in MEMORY.</p>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
 <p>In remediation. The component-code layer is fixed, tested, and committed in the host-lint worktree
-(not yet released or pushed): four commits on top of the v0.11.0 pin close both criticals and every
+(not yet released or pushed): five commits on top of the v0.11.0 pin close both criticals and every
 fail-open. Landed: the blocking-tier recut (N1, N2, N3, N4, N5, N6) and the lexicon anti-laundering
-guard (L1); the CLI fail-opens (C1, C2, C3, C4); the prose lane and ignore-fence engine (P1, P2, P3,
-P4, P5, P6); the hook's staged-blob scan and fail-closed exit handling (V4, V5); and the citation-gate
-number correlation (L2). Each fix carries a test, and the whole suite plus clippy is green; the headline
-false-flags and the laundering entry were reproduced as fixed against the built binary.</p>
-<p>Remaining: the rule-source and coverage docs (V1, V2, V3, V8, V9), the no-hollow-green dogfood in
-host-lint's own ladder (S1, S2, S3, S4, S5, S6, V6), the reproducible-build CI (V7), the low-severity
-items recorded as accepted or deferred (C5, N7, N8, N9), a <code>call/</code> decision for the verb demotion, then
-the doctrine gate (cast review and a real qwen3.5-4b probe), the release, and the host-lifecycle
-propagation.</p>
+guard (L1); the corpus-grounded demotion of the domain-heavy nouns; the CLI fail-opens (C1, C2, C3,
+C4); the prose lane and ignore-fence engine (P1, P2, P3, P4, P5, P6); the hook's staged-blob scan and
+fail-closed exit handling (V4, V5); and the citation-gate number correlation (L2). The verb-demotion
+contract change is recorded in <code>call/0037</code>. Each fix carries a test, and the whole suite (82) plus
+clippy is green; the headline false-flags and the laundering entry were reproduced as fixed against
+the built binary.</p>
+<p>Remaining: VOCABULARY.md rewritten to the new contract and a doc-to-code sync check (V1, V2, V3), the
+integration coverage (V8, V9), the no-hollow-green dogfood in host-lint's own ladder (S1, S2, S3, S4,
+S5, S6, V6), the reproducible-build CI (V7), the low-severity items recorded as accepted or deferred
+(C5, N7, N8, N9), then the doctrine gate (cast review and a real qwen3.5-4b probe), the release, and
+the host-lifecycle propagation.</p>
 <p>A note on the Roman-numeral recut (N1, S1): the blocking lane now takes an arabic or decimal numeral, a
 short range, or a multi-letter uppercase Roman only. A single-letter Roman never blocks, which removes
-the false <code>RomanNumeralLength</code> invariant's subject (S1) rather than patching it. The collision-prone
-nouns beyond the operator's demotion set (<code>epoch</code>, <code>era</code>, <code>period</code> read in machine-learning or
-historical prose) stay blocking for now; whether they join the advisory tier is recorded as an open
-question for the operator, not decided here.</p>
+the false <code>RomanNumeralLength</code> invariant's subject (S1) rather than patching it.</p>
 
                     </main>
 
