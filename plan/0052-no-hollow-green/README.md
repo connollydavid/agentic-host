@@ -84,6 +84,11 @@ the design's weak-agent claim is falsifiable and is to be falsified before the d
 
 ## Status
 
-In design. The tool changes land in host-lifecycle and the doctrine lands in host-template; both are
-gated on the qwen probe. The plan/0051 component remediation proceeds independently and is not gated
-on this milestone.
+Complete. The tool shipped as host-lifecycle **v0.32.0** (`call/0035`), re-deriving byte-identically:
+the obligation-discharge `exercises=` link escalated under `--strict-discharge`, the structural and
+waived escape checks, and the three-state verify-build. The cast review and the real qwen3.5-4b probe
+both passed; the 4B authored the correct link and rejected the link-gaming dodge on semantic grounds.
+The doctrine landed in host-template at `46a1fd2` with UPGRADING entry `46a1fd2`, recorded applied in
+agentic-host through its verify grep. host-lifecycle's own manifest is re-dispositioned, and
+`obligations --strict-discharge` over it is clean where it was hollow. The plan/0051 component
+remediation proceeds independently.
