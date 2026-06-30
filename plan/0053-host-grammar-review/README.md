@@ -198,5 +198,26 @@ structural spec-shape dispositions are honestly discharged.
 
 ## Status
 
-In progress: remediation under way per the operator decision. This section records the release,
-re-pin, propagation, and whole-suite-green result on completion.
+Complete. host-grammar shipped as **v0.4.0** (commit `9470b81`), a pin-only component with no
+artifact. The change is a minor bump because the detection output moves: `is_numeral` now validates
+canonical Roman numerals, the prose engine is tuned toward precision, and the markdown density score
+covers the body alone. The local gate is green (25 unit tests, 25 property tests, clippy under `-D
+warnings`, the three `allium` lanes, and the obligations discharge); a new clippy CI lane plus the
+corrected obligation mappings guard against regression.
+
+Two findings carry a recorded judgment rather than the literal fix. The fmt CI lane of finding 6 is
+deliberately not added: host-grammar's detection tables are hand-formatted compactly, so a `cargo fmt
+--check` gate would force a sweeping reformat out of proportion to this review. The plan/0052
+`exercises=` strict-discharge links are not added either: host-grammar's property tests are black-box
+over the public API by design, so a white-box containment link does not fit, and the substantive
+no-hollow-green fix is already in place (every obligation maps to a test that genuinely exercises its
+rule, which the discharge check confirms).
+
+Propagation (operator ruling: propagate now): both consumers adopted the new host-grammar this
+session. host-lint shipped as **v0.11.0** (commit `cefc9376`, artifact `136cd7ce`) with its deps-bundle
+re-vendored to `vendor-v4`, and its one affected property test moved to the corrected canonical-Roman
+contract. host-lifecycle shipped as **v0.34.0** (commit `d4ce47e`, artifact `7f9c2833`) with its
+deps-bundle re-vendored to `vendor-v5`; it bumped both its host-grammar and its host-lint dependency so
+the tree unifies on a single host-grammar v0.4.0 and its prose lane runs the fixed engine. Both
+re-derive byte identically, the release receipts are recorded, and `software --check` is clean at the
+new pins. This milestone records no new `call/` decision.
