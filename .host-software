@@ -23,12 +23,12 @@
 	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v5/vendor.tar.gz ad43fcdf3136e55ceb986ad7600bff1be7c2f3e09561e1bf6081049eccbc21d3
 [software "host-prove"]
 	url       = https://github.com/connollydavid/host-prove.git
-	pin       = 3d1bba79e817f43cdc64ed0e7438e7fdeeae7378
+	pin       = c05782c0f7f170f3b517bffdea66ae524dd0b0fa
 	worktrees =
 	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-prove
-	artifact  = target/x86_64-unknown-linux-musl/release/host-prove a322e0f31e08321502230405ddde50f19a4ac1276fd2bfb5cb83b70280772380
+	artifact  = target/x86_64-unknown-linux-musl/release/host-prove 9a9bbbd36edc072cfe5518a408211fabf8c78cff63ed3cb89d25129b8ff9f03f
 [software "host-grammar"]
 	url       = https://github.com/connollydavid/host-grammar
 	pin       = 9470b81c9c851b0fedc872203437ea0de60b7f62
