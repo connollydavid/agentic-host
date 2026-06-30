@@ -404,14 +404,23 @@ Installation is a separate, explicit, network-touching verb, and the run path is
 closed, so a sandbox cannot be surprised and an air-gapped host degrades to BLOCKED rather than a
 silent or surprising failure.</p>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
-<p>In progress. The soundness fixes (the false-passes and the bound integrity) and the discharge dogfood
-(<code>NonPassHasNoBound</code> asserts bound-absence, <code>exercises=</code> links, <code>--strict-discharge</code> in CI) are landed
-at host-prove <code>f4736e9</code>: 19 unit tests, 9 fixtures, clippy, and strict discharge of 27 obligations all
-green. The cast consultation is complete and the install design is decided and
-recorded above. The remaining work (the fail-closed resolver and the <code>host-prove install</code> and
-<code>host-prove doctor</code> verbs, retiring <code>install/*.sh</code>, re-capturing the apalache fixtures from the pinned
-version, the kani skill-guide fix, <code>call/0036</code>, the broader cast review and the qwen3.5-4b probe, and
-the release) is the next step.</p>
+<p>In progress, and CI-green at host-prove <code>8607932</code>. Landed: the soundness false-pass fixes and the
+discharge dogfood (<code>NonPassHasNoBound</code> asserts bound-absence, <code>exercises=</code> links, <code>--strict-discharge</code>);
+the cast consultation and <code>call/0036</code>; and the fail-closed install design (the pure-local pin-bound
+resolver, the <code>host-prove install</code> and <code>host-prove doctor</code> verbs with version-stamped SHA-verified
+installs, the distinct BLOCKED verdict, and the PASS provenance suffix). The shell installers are
+retired for the verb, and a CI <code>install-smoke</code> lane machine-verifies the install path on a clean runner
+(it installs the pinned apalache and confirms <code>doctor</code> reports it pin-bound). 24 unit tests, 9 fixtures,
+clippy, the strict discharge of 27 obligations, and all three CI jobs (verdict-parser, install-smoke,
+allium) are green.</p>
+<p>A correction is recorded for the audit trail: the soundness commit <code>f4736e9</code> carried a step name whose
+colon-space was invalid workflow YAML, so the remote CI failed to parse from that commit until the fix
+at <code>8607932</code>, even though the local gate was green throughout. Verifying the local gate is not
+verifying CI; a <code>python yaml</code> parse check now precedes relying on the workflow.</p>
+<p>Remaining: the kani skill-guide fix (the bound is mandatory for a trustworthy PASS, and a
+<code>[bound=unspecified]</code> PASS must be flagged), re-capturing the apalache fixtures from the pinned 0.58.0,
+the broader cast review and the real qwen3.5-4b probe (the doctrine-grade gate), and the release with
+its re-pin and PATH reinstall.</p>
 
                     </main>
 
