@@ -178,7 +178,7 @@ in MEMORY.
 ## Status
 
 In remediation. The component-code layer is fixed, tested, and committed in the host-lint worktree
-(not yet released or pushed): five commits on top of the v0.11.0 pin close both criticals and every
+(not yet released or pushed): four commits on top of the v0.11.0 pin close both criticals and every
 fail-open. Landed: the blocking-tier recut (N1, N2, N3, N4, N5, N6) and the lexicon anti-laundering
 guard (L1); the CLI fail-opens (C1, C2, C3, C4); the prose lane and ignore-fence engine (P1, P2, P3,
 P4, P5, P6); the hook's staged-blob scan and fail-closed exit handling (V4, V5); and the citation-gate
