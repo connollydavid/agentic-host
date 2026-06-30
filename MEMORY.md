@@ -1768,3 +1768,27 @@ which today gates repro-exempt but not waived); and ship warn-then-retire with t
 self-referencing its UPGRADING entry, because the strengthened binary propagates by `cargo install`
 decoupled from the ledger (Bly). The real qwen3.5-4b probe gates the design before the doctrine ships
 (Fen is the acceptance test, not a lens).
+
+plan/0051 component remediation is COMPLETE (2026-06-30): all 18 component-local host-lifecycle
+findings fixed and shipped as host-lifecycle v0.33.0 (commit 08ba98b, artifact cffe14ba, re-derives
+byte-identically; release receipt recorded, software --check clean, 118 tests + clippy + allium +
+obligations green). Findings 6 and 15 were engineered, not applied verbatim, and finding 20 was
+resolved by RECORDING INTENT rather than tightening:
+- #6 (deps-bundle lock no-op): distinguish a deleted TRACKED lock (HAZARD: pin cross-check bypassed,
+  `git ls-files --error-unmatch` detects it) from a lock git never tracked (an onboarding note). The
+  reviewer's "absence == corruption, HAZARD always" was wrong — it would red legitimately-onboarding
+  components that declare a bundle with no lock yet.
+- #15 (software-root/spec-home content bite): assert the CANONICAL wording (the software-root home
+  names `software/`; the spec-home home affirms co-location via "co-locat") — NOT the old inline
+  `where-root`/`spec-path` predicate, whose `plan/`-and-`spec` form false-positives on the real
+  spec-home text "co-located ... never under `plan/`".
+- #20 (entrance tool-presence is a whole-document substring): RECORDED INTENT (deliberate leniency).
+  It is not hollow green (it performs a real presence check), and a word-boundary-in-masked-prose rule
+  would still miss a token in a bare URL while risking false flags on legitimate phrasings. The real
+  entrance bite is the phase backtick tokens and the byte-exact stamp block.
+Change-class was `removes-flag` (= the tool's own "changed output (breaking)"), because several gates
+now reject inputs they previously accepted (duplicate `[software]` stanza, free-text task skip reason,
+deleted tracked lock, second `[verification]` stanza). Tooling gotcha: clippy 1.95.0's
+`manual_is_multiple_of` fires on `% 2 == 0` in a small standalone fn but did NOT on the identical
+inline idiom — use `count().is_multiple_of(2)`. Review campaign STILL OPEN: host-lint, host-prove,
+host-grammar reviews remain, each under its own future milestone.
