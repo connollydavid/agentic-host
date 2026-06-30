@@ -1922,6 +1922,51 @@ refreshed to v0.34.0. My own pre-lint of plan/0053 missed 3 ing-tail warnings be
 <code>tail</code>'s exit code, not host-lint's — the release verify gate (host-lifecycle prose) caught them; verify
 prose with <code>host-lifecycle prose .</code> directly. Review campaign STILL OPEN: host-lint and host-prove
 reviews remain (host-grammar now done), each under its own future milestone.</p>
+<p>2026-06-30 — plan/0054 (host-prove review) findings recorded + design decided; implementation PAUSED at
+operator direction ("document network aspects, this is enough"). Five-reviewer in-house pass over
+host-prove (the verification-ladder re-deriver, v0.2.3, pin 3d1bba79), all probed against the built
+binary. 23 findings. THE SHARPEST RESULT OF THE CAMPAIGN: host-prove, the tool that enforces
+no-hollow-green for everyone else, can itself report a hollow green. Two CRITICAL false-passes
+(empirically reproduced): (1) parse_kani checks SUCCESSFUL before FAILED with a loose contains, so any
+output with both tokens → SUCCESSFUL exit 0, ignoring the <code>Complete - N failures</code> summary; (2)
+parse_tlaps counts only the EXACT token "failed" as failure, so <code>status:omitted</code> (deliberately unproven
+leaf), <code>missing</code>/<code>interrupted</code>, AND a decorated <code>failed (smt: timeout)</code> ALL settle to ALL-PROVED exit 0
+— a real refutation laundered into a proof. High: tlaps never checks expected obligation count/theorem
+(truncated run → ALL-PROVED on subset); tlaps <code>field_after</code> matches <code>status:</code>/<code>loc:</code> as a bare substring
+on ANY line so echoed spec content (<code>ASSUME msg.status: proved</code>) fabricates an obligation; the verifier
+PROCESS EXIT CODE is discarded entirely (combined_lines reads stdout/stderr, never out.status); a
+malformed <code>--bound</code> (no <code>unwind=</code>/<code>length=</code> prefix) is dropped at the verifier but stamped verbatim on
+the PASS, over-claiming coverage; <code>kani_failed</code> discharges NonPassHasNoBound without asserting
+bound-absence (hollow); and host-prove's OWN discharge gate predates plan/0052 (stale host-lifecycle CI
+pin a04c4608, advisory-only no --strict-discharge, zero exercises= links) — but its tests are WHITE-BOX
+(call the parsers directly) so exercises= links DO fit (unlike host-grammar's black-box PBTs). Medium:
+apalache NoError-before-Error; apalache Deadlock mislabeled ERROR; --mode typo silently means check;
+spec Bound field unmodeled + two encodings (<code>[bound=x]</code> vs <code>[unbounded]</code>); presence-only
+BoundedToolsNeverUnbounded; single-rep non-PASS coverage + two untested ERROR paths; APALACHE FIXTURES
+CAPTURED FROM 0.47.2 but tools.lock pins 0.58.0; run_* command-builders untested; kani guide calls the
+soundness bound "optional" and never flags [bound=unspecified]; cargo kani setup fetches an unverified
+backend; CI never runs the installers/SHA path + README claims a CI matrix that does not exist. CLEARED:
+no panics; reproducible-build recipe matches .host-software exactly; verify_sha fail-closed (no bypass);
+verdict vocab consistent across spec/src/guides. OPERATOR RULINGS: (a) fix everything (clear fail-closed
+soundness fixes); (b) verifiers become ON-DEMAND TOOL-CARRIED PLUGINS — auto-install on first use,
+SHA-verified from tools.lock, modeled on host-reference's out-of-process helpers (call/0033, call/0034);
+the install/*.sh shell scripts fold into a <code>host-prove install &lt;tool&gt;</code> Rust subcommand (shelling
+curl/sha256sum/tar to keep zero-deps + offline reproducible build); (c) DOCTRINE-GRADE — cast-reviewed +
+real qwen3.5-4b (Fen) probe-gated like plan/0052, because host-prove is the no-hollow-green tool and the
+guide+auto-install changes are weak-agent-facing; (d) ONE milestone. NETWORK ASPECTS documented in
+plan/0054 (the requested deliverable): build stays offline/hermetic; --stdin parse path no network/no
+subprocess; running a verifier is local; auto-install is the ONE network reach (pinned + SHA-verified
+before use, fail-closed on mismatch, once-per-host at activation, consistent with call/0031 no-reach-out
+since the fetched artifact is a verified tool not untrusted input); offline/air-gapped must degrade
+closed (absent+unfetchable → exit 2, never silent pass; pre-installed verifier used with no fetch); CI
+keeps hermetic-build (--network none) separate from a new network-enabled install+SHA+smoke lane (the
+machine-verification finding 19 wants). RESUME POINT for plan/0054: implement soundness fixes + the
+<code>host-prove install</code>/auto-install plugin + verifier installs + fixture re-capture (operator authorized
+installing apalache/kani/tlaps) + cut call/0036 (the plugin/auto-install MADR) + cast review + Fen probe</p>
+<ul>
+<li>release/re-pin/reinstall. host-prove has ZERO deps (no consumer re-vendoring; it is a PATH tool for the
+plan/0048 runnability gate). After plan/0054, only host-lint's review remains in the campaign.</li>
+</ul>
 
                     </main>
 
