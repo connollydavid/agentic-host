@@ -17,7 +17,7 @@ jobs:
   verify-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           submodules: true # host-template carries the lifecycle.manifest the receipt gate reads
       - name: Install host-lifecycle (released pinned; ships the manifest + receipt gate)
@@ -46,7 +46,7 @@ jobs:
     # resolves and none is tracked (worktree-absence coherence, call/0005).
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           submodules: true # allium + specula + host-template arrive by submodule
       - name: Seed host-lifecycle by its recorded pin (the materializer cannot materialize itself)
