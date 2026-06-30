@@ -229,11 +229,22 @@ silent or surprising failure.
 
 ## Status
 
-In progress. The soundness fixes (the false-passes and the bound integrity) and the discharge dogfood
-(`NonPassHasNoBound` asserts bound-absence, `exercises=` links, `--strict-discharge` in CI) are landed
-at host-prove `f4736e9`: 19 unit tests, 9 fixtures, clippy, and strict discharge of 27 obligations all
-green. The cast consultation is complete and the install design is decided and
-recorded above. The remaining work (the fail-closed resolver and the `host-prove install` and
-`host-prove doctor` verbs, retiring `install/*.sh`, re-capturing the apalache fixtures from the pinned
-version, the kani skill-guide fix, `call/0036`, the broader cast review and the qwen3.5-4b probe, and
-the release) is the next step.
+In progress, and CI-green at host-prove `8607932`. Landed: the soundness false-pass fixes and the
+discharge dogfood (`NonPassHasNoBound` asserts bound-absence, `exercises=` links, `--strict-discharge`);
+the cast consultation and `call/0036`; and the fail-closed install design (the pure-local pin-bound
+resolver, the `host-prove install` and `host-prove doctor` verbs with version-stamped SHA-verified
+installs, the distinct BLOCKED verdict, and the PASS provenance suffix). The shell installers are
+retired for the verb, and a CI `install-smoke` lane machine-verifies the install path on a clean runner
+(it installs the pinned apalache and confirms `doctor` reports it pin-bound). 24 unit tests, 9 fixtures,
+clippy, the strict discharge of 27 obligations, and all three CI jobs (verdict-parser, install-smoke,
+allium) are green.
+
+A correction is recorded for the audit trail: the soundness commit `f4736e9` carried a step name whose
+colon-space was invalid workflow YAML, so the remote CI failed to parse from that commit until the fix
+at `8607932`, even though the local gate was green throughout. Verifying the local gate is not
+verifying CI; a `python yaml` parse check now precedes relying on the workflow.
+
+Remaining: the kani skill-guide fix (the bound is mandatory for a trustworthy PASS, and a
+`[bound=unspecified]` PASS must be flagged), re-capturing the apalache fixtures from the pinned 0.58.0,
+the broader cast review and the real qwen3.5-4b probe (the doctrine-grade gate), and the release with
+its re-pin and PATH reinstall.
