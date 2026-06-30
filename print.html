@@ -10473,6 +10473,42 @@ consumer-suffix requirement (host-lifecycle), the unpinned cargo-kani backend (i
 honestly), and an apalache-fixture refresh from 0.58.0 (parser keys on version-stable strings; install-smoke
 provisions the real 0.58.0). software --check clean at the new pin; receipt recorded; PATH binary v0.3.0.
 CAMPAIGN: only host-lint's review remains (it got dep-bump re-releases in plan/0053 but no review).</p>
+<p>2026-06-30 — plan/0055 (host-lint review) CUT, in remediation. Six independent reviewers over host-lint
+v0.11.0 (pin cefc9376), 40 findings deduped to 33, every one confirmed against the built binary. TWO
+CRITICALS: (1) is_numeral accepts canonical Roman numerals, so the blocking tier flags the pronoun "I"
+(=Roman 1) and the letters C/D/V/X after any flag-noun — "in this pass I fixed the bug" and "port the pass
+to C" both EXIT 1 (I reproduced both). The production commit hook blocks ordinary English. (2) LEXICON
+laundering: a bare flag-noun entry like <code>phase</code> (or a sub-flag multiword like <code>phase foo</code>) passes the G2
+no-laundering guard, then masks the noun out of every real <code>phase 2</code> line — silencing a whole flag class
+repo-wide and defeating strict. G2 only tests whether the phrase is ITSELF a complete Flag, never whether
+masking it would CLEAR one. 11 HIGH: verb terms (pass/round/step/level/part) flag at a 2-word window so
+ordinary English blocks; year/status markdown headings (## 2024, ## 404) and a date-as-range (wave 2024-01)
+block; a relative GIT_DIR collapses repo_root() to "" so the LEXICON drops and strict downgrades to advisory
+AND --all/--docs scan nothing exit 0 (fail-open gate); pre-commit lints the WORKING TREE not the staged
+blob; an unclosed host-lint:ignore fence swallows the rest of the file; the no-hollow-green dogfood (host-lint
+authored the grammar consumer that enforces plan/0052 yet has hollow discharges of its own: a FALSE
+RomanNumeralLength invariant on a <code>structural</code> disposition that can't catch it, the verdict-lifecycle block
+discharged by line-level tests not the main.rs exit-code aggregation, the release CI job ungated on
+allium/kani, and the un-adopted exercises=/--strict-discharge strengthening); CI build diverges from the
+.host-software reproducible recipe with no hash check (Cargo.toml's --verify-build claim is FALSE). OPERATOR
+RULINGS: demote the verb/measurement terms (pass/round/step/level/part) to advisory WARN (they collide with
+English even at immediate adjacency — "pass 2 arguments" == "pass 2 of the migration"); keep the unambiguous
+ordinal nouns (phase/stage/sprint/iteration/cycle) blocking; ONE milestone (fixes + no-hollow-green dogfood
+together); DOCTRINE-GRADE (cast + real qwen3.5-4b Fen probe before release). The verb demotion changes the
+detection contract, so it gets a call/ decision and a VOCABULARY.md update. PROPAGATION: host-lint is a lib
+dep of host-lifecycle's in-process prose lane, so a host-lint release obliges a re-vendor + re-release of
+host-lifecycle (as in plan/0053).</p>
+<p>2026-06-30 — PROCESS LESSON (reviewer worktree contamination). I ran the six host-lint reviewers WITHOUT
+worktree isolation, in the shared software/host-lint/main worktree. At least one reviewer ran <code>git commit</code> to
+probe the GIT_DIR/repo_root behaviour, leaving the worktree 2 unpushed commits AHEAD of the pin (HEAD bfe30f6
+vs pin cefc9376) with stray tracked junk (h.txt "hi3", sub/g.txt). The audited SOURCE was untouched
+(git hash-object src/lib.rs == cc31f540, matching the pin's .obligations.digests), so the findings stand, but
+software --check would be red and the worktree must be reset to the pin before remediation. LESSON: spawn
+probing/mutating reviewers with isolation:"worktree" (or instruct them strictly read-only, no commits). A
+plain <code>git reset --hard</code> to the pin was auto-denied as irreversible local destruction during an
+unauthorised-as-remediation review; surface the contamination and reset only under explicit remediation
+authorization. This was logged as finding V10 by a reviewer but it is MY process artifact, not a host-lint
+defect.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
