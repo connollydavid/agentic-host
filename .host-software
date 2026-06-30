@@ -4,23 +4,23 @@
 # The pin replaces a submodule gitlink as the reproducibility anchor.
 [software "host-lint"]
 	url       = https://github.com/connollydavid/host-lint.git
-	pin       = ce683be96ba8d519e4e1b0c50ad5ee18459aaaa8
+	pin       = cefc9376ca20b6f0b8d11960f54661b43c1b0220
 	worktrees =
 	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lint
-	artifact  = target/x86_64-unknown-linux-musl/release/host-lint a9ef0865304a773f9afd948012e7218ce562385f0de5506e60cdfc70111806c8
-	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v1/vendor.tar.gz f11417633fcc05a5b94761963c1a3fdce01777d9a68a32320268f22af3dbfbdf
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lint 136cd7ce29ca8f1e1c7b6b1b15893c601dcd4b0a51b03b4c6e891d231924f664
+	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v4/vendor.tar.gz 6a463a09d45f057486f8f285d5a86b86999c9be16a714dc51f8b2a8d5e3491f2
 	hooks     = pre-commit
 [software "host-lifecycle"]
 	url       = https://github.com/connollydavid/host-lifecycle.git
-	pin       = 08ba98b548d709bdfc1bbaf65b41d2ca1d8c2111
+	pin       = d4ce47e142a25568b549e0d6995936fdbb8f137b
 	worktrees =
 	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lifecycle
-	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle cffe14ba10c8ada02ad1d3e5c3c003d9d0c392ae5001225cf025c4ce5cdc9fab
-	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v3/vendor.tar.gz 817a71d9f4fcefb05a695d3e6fe6e77a12ab94eb8c673304a757109a6ee999e0
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle 7f9c28332d3872fef8f4c299e996434781acf5886d2f5316908289d130b39c2a
+	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v5/vendor.tar.gz ad43fcdf3136e55ceb986ad7600bff1be7c2f3e09561e1bf6081049eccbc21d3
 [software "host-prove"]
 	url       = https://github.com/connollydavid/host-prove.git
 	pin       = 3d1bba79e817f43cdc64ed0e7438e7fdeeae7378
@@ -31,7 +31,7 @@
 	artifact  = target/x86_64-unknown-linux-musl/release/host-prove a322e0f31e08321502230405ddde50f19a4ac1276fd2bfb5cb83b70280772380
 [software "host-grammar"]
 	url       = https://github.com/connollydavid/host-grammar
-	pin       = 9d51468ab1f0a7e253cd2ee7d149d7325e65f47b
+	pin       = 9470b81c9c851b0fedc872203437ea0de60b7f62
 	worktrees =
 [software "host-reference"]
 	# greenfield component (plan/0049, call/0030). Reproducible build established in the
