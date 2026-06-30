@@ -182,22 +182,38 @@ in MEMORY.
 
 ## Status
 
-In remediation. The component-code layer is fixed, tested, and committed in the host-lint worktree
-(not yet released or pushed): five commits on top of the v0.11.0 pin close both criticals and every
-fail-open. Landed: the blocking-tier recut (N1, N2, N3, N4, N5, N6) and the lexicon anti-laundering
-guard (L1); the corpus-grounded demotion of the domain-heavy nouns; the CLI fail-opens (C1, C2, C3,
-C4); the prose lane and ignore-fence engine (P1, P2, P3, P4, P5, P6); the hook's staged-blob scan and
-fail-closed exit handling (V4, V5); and the citation-gate number correlation (L2). The verb-demotion
-contract change is recorded in `call/0037`. Each fix carries a test, and the whole suite (82) plus
-clippy is green; the headline false-flags and the laundering entry were reproduced as fixed against
-the built binary.
+The whole in-house layer is complete, tested, and committed in the host-lint worktree (not yet
+released or pushed): nine commits on top of the v0.11.0 pin. Every finding above is fixed or
+dispositioned.
 
-Remaining: VOCABULARY.md rewritten to the new contract and a doc-to-code sync check (V1, V2, V3), the
-integration coverage (V8, V9), the no-hollow-green dogfood in host-lint's own ladder (S1, S2, S3, S4,
-S5, S6, V6), the reproducible-build CI (V7), the low-severity items recorded as accepted or deferred
-(C5, N7, N8, N9), then the doctrine gate (cast review and a real qwen3.5-4b probe), the release, and
-the host-lifecycle propagation.
+- Detector and lexicon: the blocking-tier recut (N1, N2, N3, N4, N5, N6), the lexicon anti-laundering
+  guard (L1), the corpus-grounded demotion of the domain-heavy nouns, and the citation-gate number
+  correlation (L2). The verb-and-domain-noun demotion contract is recorded in `call/0037`.
+- Fail-opens and prose lane: the CLI fail-opens (C1, C2, C3, C4), the prose lane and ignore-fence
+  engine (P1, P2, P3, P4, P5, P6), and the hook's staged-blob scan with fail-closed exit handling
+  (V4, V5).
+- Rule source and coverage: VOCABULARY.md rewritten to the two-tier contract with a doc-to-code sync
+  test (V1, V2, V3); the integration suite asserts exact exit codes and covers the ignore fence and
+  the hook end to end (V8, V9).
+- No-hollow-green dogfood in host-lint's own ladder: the false `RomanNumeralLength` invariant removed
+  (S1), the verdict aggregation given a `verdict_code` helper and a real test (S2), `exercises=` links
+  on every test disposition with `--strict-discharge` in CI (S3), the review-code flag rule modelled
+  and the Kani harnesses re-attributed (S4), an auditable scope note for the unmodelled engine (S5),
+  an entity-creation test that asserts the Match shape (S6), and the release CI gated on allium and
+  kani (V6). The reproducible-build CI builds the published linux asset by the pinned recipe and the
+  false Cargo.toml claim is corrected (V7).
+- Low-severity, recorded rather than changed: C5 (an explicit file argument is followed by design,
+  unlike the `--all`/`--docs` tree walk; the hook no longer scans by path, so it is unaffected); N7
+  (`tier` measured domain-heavy at 91 corpus hits, so it stays out of the blocking set; `milestone`
+  has zero corpus hits and adding it is left to the operator, not widened here); N8 (the co-author
+  exemption is intentionally lenient per its attribution rationale); N9 (the bare-decimal warn is
+  recall-biased by design; a strict escalation of it is the intended cost of a declarable lexicon).
 
-A note on the Roman-numeral recut (N1, S1): the blocking lane now takes an arabic or decimal numeral, a
-short range, or a multi-letter uppercase Roman only. A single-letter Roman never blocks, which removes
-the false `RomanNumeralLength` invariant's subject (S1) rather than patching it.
+Verification: 85 unit/property tests, clippy clean, 123 integration cases, the strict-discharge gate
+clean across all 51 obligations with the kani rungs re-derived, and `allium check` clean. The
+`lint-skill.sh` conformance gate passes seven of eight; the eighth (G3, name-equals-dirname) fails
+only because the materialized worktree is named `main`, and passes on a repo-named CI checkout.
+
+Remaining: the doctrine gate (a cast review and a real qwen3.5-4b probe), the release and re-pin, and
+the host-lifecycle propagation. These are paused here for operator authorization (the outward and
+gated steps).
