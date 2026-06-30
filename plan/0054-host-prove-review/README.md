@@ -244,7 +244,44 @@ colon-space was invalid workflow YAML, so the remote CI failed to parse from tha
 at `8607932`, even though the local gate was green throughout. Verifying the local gate is not
 verifying CI; a `python yaml` parse check now precedes relying on the workflow.
 
-Remaining: the kani skill-guide fix (the bound is mandatory for a trustworthy PASS, and a
-`[bound=unspecified]` PASS must be flagged), re-capturing the apalache fixtures from the pinned 0.58.0,
-the broader cast review and the real qwen3.5-4b probe (the doctrine-grade gate), and the release with
-its re-pin and PATH reinstall.
+The kani skill-guide fix landed (the bound is mandatory for a trustworthy PASS, and a
+`[bound=unspecified]` PASS must be flagged), with all three guides covering the BLOCKED verdict.
+
+## The doctrine gate
+
+Cast-reviewed across the personas and gated on a real qwen3.5-4b (Fen) probe, as plan/0052 was.
+
+- **Fen probe (passed).** The real `qwen3.5-4b` was driven on the changed weak-agent surface (the
+  decision-table routing). It routed all three scenarios correctly: a BLOCKED verdict to `run:
+  host-prove install <tool>`; a `SUCCESSFUL … [bound=unspecified]` PASS to *not trustworthy as-is,
+  supply the bound or flag it* (it did not take the SUCCESSFUL word at face value); and a FAILED to
+  report the counterexample without weakening the assertion. Decision-table routing held at the 4B.
+- **Cast review (passed after fixes).** Mara, Bly, and Orin each confirmed the fail-closed, pin-bound
+  design satisfies their non-negotiable for apalache and tlaps, and converged on three over-claims:
+  (1) a kani PASS stamped `pinned` like the hash-verified tools though kani is version-only bound with
+  an unverified `cargo kani setup` backend; (2) the apalache/tlaps pin marker was an install-time stamp
+  of the asset sha, not a per-run check of the executed binary; (3) the end-to-end guarantee needs the
+  consumer to reject an unsuffixed or `--stdin` PASS. Fixes: kani's verdict and `doctor` now say
+  `version-pinned, backend unverified` and never claim it is `pinned`; the marker now records the
+  extracted binary's own sha and `resolve` re-hashes it every run (a content bind, not a stamp); and
+  `tools.lock` names the unpinned backend precisely. The third is a consumer-side requirement recorded
+  below.
+
+## Residual notes
+
+- **Consumer must require the pinned suffix.** A live PASS carries `[<tool>=<version> …]`; a `--stdin`
+  or hand-fed PASS does not. The end-to-end no-hollow-green guarantee depends on the consumer
+  (`host-lifecycle obligations --prove`) accepting only a suffixed, pin-bound PASS, never a bare
+  `SUCCESSFUL`/`PROVEN` line. This is a host-lifecycle obligation-check requirement, a follow-on.
+- **kani backend.** `cargo kani setup` fetches the verdict-producing backend unpinned; this is
+  inherent to kani's distribution, confined to the explicit install verb (an air-gapped host fails the
+  install rather than fetching unverified), and now named honestly in the verdict, `doctor`, and
+  `tools.lock`. Not a release blocker.
+- **Apalache fixtures.** The static fixtures were captured from 0.47.2; the parser keys on
+  version-stable outcome strings, and the CI `install-smoke` lane now provisions the pinned 0.58.0. A
+  fixture refresh (or a real-tool end-to-end smoke) is a low-risk follow-on.
+
+## Remaining
+
+The release (version bump, reproducible build, `.host-software` re-pin, PATH reinstall, receipt) and the
+final whole-suite-green verification.
