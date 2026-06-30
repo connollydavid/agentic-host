@@ -181,10 +181,59 @@ context, recorded here before it is built so its terms are explicit.
    residual on the kani plugin. The reachable hosts are the github release CDN and crates.io, and the
    underlying `curl` honours a standard proxy environment.
 
+## Cast consultation, and the revised install design (supersedes the auto-install plan above)
+
+The operator flagged three worries about auto-install-on-demand (silent failures, updates, sandbox
+restrictions) and asked the cast to weigh in. All five personas were consulted. The result reversed
+the auto-install-on-demand default and surfaced the true defect.
+
+- **Unanimous (all five): per-run pin-binding is the real fix.** Every run must bind the verifier to
+  the embedded `tools.lock` pin by version and hash before executing it; an absent, wrong-version, or
+  unverifiable verifier yields exit 2 and no verdict, never folded into a pass or a fail. A verdict
+  comes from the exact pinned tool or it does not come. The first sketch reused whatever was installed
+  or on PATH with no version check, the silent-staleness defect the operator sensed: after a pin bump a
+  host keeps using the old verifier and still reports a clean pass.
+- **Majority (Mara, Orin, Fen, Wren): fail closed by default, install as a separate explicit verb.**
+  Fen reframed the weak-agent case: its rule is one tool-driven command at a time with the tool naming
+  the next move, not collapsing an install side effect into a run, so a fail-closed verdict that prints
+  `run: host-prove install <tool>` is the tool carrying the process. Wren required a hard split: the
+  run path is pure-local and structurally cannot install, so a sandbox or air-gapped host is never
+  surprised, and `host-prove install` is the only verb that touches the network or filesystem. Orin
+  required the resolver to bind to the embedded pin (a version-stamped install dir keyed to the pin, so
+  a bump moves the lookup path and the old version is never glanced at) and that re-install always be
+  an explicit operator act, because the host may be air-gapped and the operator must learn the pin
+  moved. Mara required that no verdict ever issue from a tool not verified against the pin, with a cheap
+  check (`host-prove doctor`).
+
+**The decided design (operator-confirmed, to be recorded in `call/0036`):**
+
+1. **Per-run pin-binding.** The run path resolves the verifier only from a version-stamped install
+   keyed to the embedded pin, with an install-time SHA marker that must match the embedded pin; absent,
+   mismatched, or unverifiable resolves to a distinct **BLOCKED** verdict at exit 2 that names
+   `host-prove install <tool>`. No pass or fail issues from an unbound verifier. A PATH binary of
+   unverifiable provenance counts as not-pinned.
+2. **Hard split, fail closed.** The run and parse path is pure-local (it works under `--network none`
+   and air-gapped) and never installs. `host-prove install <tool>` is the sole verb that fetches,
+   SHA-verifies, and installs, into a version-stamped directory; a CI provisioning lane runs it.
+3. **Update-safe.** The version-stamped directory is keyed to the embedded pinned version, so a pin
+   bump cannot be silently ignored: the next run resolves to a path that does not exist and reports
+   BLOCKED, so the operator runs install and learns the pin moved.
+4. **Provenance and doctor.** A PASS verdict carries the resolved tool version and its pin-bound
+   marker, so a glance or a cold read confirms the pinned tool produced it; `host-prove doctor` prints
+   each declared verifier's installed version and pin status without running a proof.
+
+This updates the network-aspects section above: auto-install is not a run-path side effect.
+Installation is a separate, explicit, network-touching verb, and the run path is pure-local and fail
+closed, so a sandbox cannot be surprised and an air-gapped host degrades to BLOCKED rather than a
+silent or surprising failure.
+
 ## Status
 
-The findings are recorded and the design is decided; the network terms above are part of that record. The remaining
-work (the soundness fixes, the `host-prove install` subcommand and the auto-install path, the verifier
-installs and the fixture re-capture, the `call/` decision, the cast review, the qwen3.5-4b probe, and
-the release) is the next step, paused here at the operator's direction once the network aspects were
-documented.
+In progress. The soundness fixes (the false-passes and the bound integrity) and the discharge dogfood
+(`NonPassHasNoBound` asserts bound-absence, `exercises=` links, `--strict-discharge` in CI) are landed
+at host-prove `f4736e9`: 19 unit tests, 9 fixtures, clippy, and strict discharge of 27 obligations all
+green. The cast consultation is complete and the install design is decided and
+recorded above. The remaining work (the fail-closed resolver and the `host-prove install` and
+`host-prove doctor` verbs, retiring `install/*.sh`, re-capturing the apalache fixtures from the pinned
+version, the kani skill-guide fix, `call/0036`, the broader cast review and the qwen3.5-4b probe, and
+the release) is the next step.
