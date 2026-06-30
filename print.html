@@ -9866,6 +9866,39 @@ deleted tracked lock, second <code>[verification]</code> stanza). Tooling gotcha
 inline idiom — use <code>count().is_multiple_of(2)</code>. Review campaign STILL OPEN: host-lint, host-prove,
 host-grammar reviews remain, each under its own future milestone.</li>
 </ul>
+<p>2026-06-30 — plan/0053 (host-grammar review) complete. Reviewed the shared grammar in-house with six
+parallel reviewers over the real surfaces (naming/generator-checker symmetry, lexical+per-sentence
+tells, run equations+parallel merge, markdown path, scoring+allium fidelity, obligation-discharge+CI);
+34 raised, deduped to 31, every one confirmed by an empirical probe; no panics and the chunked scan is
+correct. Operator ruling: FIX EVERYTHING TOWARD PRECISION and PROPAGATE NOW. Shipped host-grammar
+v0.4.0 (9470b81); is_numeral now validates canonical Roman numerals by round-trip (rejects "lid"/"mid"
+and non-canonical "IIII"; the <code>1..=3999</code> bound is load-bearing because to_roman emits "MMMM" for 4000,
+so a comment teaches the bound — Fen/qwen3.5-4b "sort of knows" 3999 but waffles 3999/4000/4999 and
+derails on format constraints, so the explicit commented bound is the weak-agent-safe choice);
+tricolon is exactly three items; dead em-dash pivot and comparative "than" dropped; countdown needs
+"not"; anaphora yields to listicle on ordinal runs (matches the spec's mutually-exclusive Run); markdown
+density scores the BODY only so heading diction stays advisory; blockquote+image-alt excluded; loose
+list-item paragraphs separated; ing-tail/false-range/density-formula/listicle-superlinear/countdown+
+listicle-negative obligations got real PBTs replacing hollow waivers (the "covered by tells.rs"
+justification was FALSE — zero coverage). Two findings carry recorded judgment NOT the literal fix:
+(a) fmt CI lane skipped — host-grammar's detection tables are hand-formatted, a <code>cargo fmt --check</code>
+gate would force a sweeping reformat against surgical-changes; (b) plan/0052 <code>exercises=</code> strict-
+discharge links skipped — host-grammar's PBTs are black-box over the public API by design, so a
+white-box containment link does not fit (the substantive no-hollow-green fix is in place: every
+obligation maps to a test that genuinely exercises its rule). PROPAGATION GOTCHA: host-lifecycle
+depends on BOTH host-grammar (direct) AND host-lint (which re-exposes host-grammar via the in-process
+prose lane); bumping only host-grammar left a SECOND host-grammar v0.3.0 in the tree via the old
+host-lint rev — the first release build compiled both. Fixed by also bumping host-lint to the new rev
+so the tree unifies on one host-grammar. Reproducible re-release needs a re-vendored deps-bundle
+(uploading the vendor tarball as a GitHub release asset is auto-DENIED as outward-facing until the
+operator authorizes; the user picked "authorize me to upload"). Shipped host-lint v0.11.0 (cefc9376,
+artifact 136cd7ce, deps-bundle vendor-v4; its roman-numeral PBT generator <code>[IVXLCDM]{1,4}</code> was too
+loose and now lists canonical romans) and host-lifecycle v0.34.0 (d4ce47e, artifact 7f9c2833, deps-
+bundle vendor-v5, unified tree). software --check clean at the new pins, receipts recorded, PATH binary
+refreshed to v0.34.0. My own pre-lint of plan/0053 missed 3 ing-tail warnings because I captured
+<code>tail</code>'s exit code, not host-lint's — the release verify gate (host-lifecycle prose) caught them; verify
+prose with <code>host-lifecycle prose .</code> directly. Review campaign STILL OPEN: host-lint and host-prove
+reviews remain (host-grammar now done), each under its own future milestone.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
