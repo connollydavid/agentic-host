@@ -293,8 +293,8 @@ repository's commits and documents) and are tuned toward fewer false positives.<
 <ol start="14">
 <li><strong><code>is_numeral</code> accepts plain English words as Roman numerals.</strong> The Roman arm is a bare
 charset-and-length gate, so <code>is_numeral</code> returns true for <code>lid</code>, <code>mid</code>, <code>mild</code>, and for
-non-canonical forms such as <code>IIII</code> and <code>VV</code>, contradicting its own doc comment. Fix: validate a
-canonical Roman numeral (a value round-trip) so only real numerals qualify. (confirmed)</li>
+non-canonical forms such as <code>IIII</code> and <code>VV</code>; the result contradicts its own doc comment. Fix:
+validate a canonical Roman numeral (a value round-trip) so only real numerals qualify. (confirmed)</li>
 <li><strong><code>format_number</code> can emit a number <code>is_valid_name</code> rejects.</strong> The pad width is a minimum, so a
 register at or past ten thousand formats to more than four digits while the checker enforces
 exactly four, a silent generator-checker divergence. Fix: accept the natural overflow form (four
@@ -324,7 +324,7 @@ headings are excluded. Fix: score the density over body blocks only so heading d
 advisory and does not escalate the gate, and correct the doc comment. (confirmed)</li>
 <li><strong>Loose multi-paragraph list items fuse word boundaries.</strong> A list item with two paragraphs
 concatenates their text with no separator, so the last word of one paragraph and the first of the
-next merge into one token, destroying or fabricating word-boundaried tells. Fix: insert a
+next merge into one token; a word-boundaried tell is then destroyed or fabricated. Fix: insert a
 separator when a paragraph continues a list item. (confirmed)</li>
 <li><strong>Blockquote content is scanned as the author's own prose.</strong> A quoted block (commonly an external
 citation, the very text that is trope-dense) is run through every tell as if authored. Fix:
