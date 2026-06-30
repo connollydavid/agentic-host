@@ -7,9 +7,12 @@
   Decides which tell-nouns block at the Flag tier and which warn at the advisory tier, and what counts
   as a blocking numeral after one.
 - Relates: `plan/0055` (the host-lint review that raised the false-flag findings); `plan/0053` (the
-  host-grammar precision recut, where `is_numeral` gained canonical-Roman validation); `call/0019` (the
-  LEXICON and the `host-lint:ignore` fence, the escape hatches a blocking term needs); `plan/0052` and
-  `[[no-hollow-green-doctrine]]` (a recall-biased Warn is sanctioned, a false Flag is not).
+  host-grammar precision recut, where `is_numeral` gained canonical-Roman validation); `call/0006` (the
+  sanctioned-vocabulary allow-list, where the LEXICON legitimizes vocabulary but does not silence a
+  tell) and `call/0019` (literal citations go in a `host-lint:ignore` fence, not the LEXICON, and never
+  `--no-verify`). Those two are the decided disposition for a tell-shaped domain term, and the LEXICON
+  guards here enforce their "not an escape" principle. `plan/0052` and `[[no-hollow-green-doctrine]]`
+  (a recall-biased Warn is sanctioned, a false Flag is not).
 
 ## Context and Problem Statement
 
@@ -50,14 +53,27 @@ yields a false flag with no escape short of a `host-lint:ignore` fence or a rewo
   `section`, `chapter`, `epoch`, `batch`, `era`, `period`. Their ordinal use is overwhelmingly domain
   vocabulary; they warn, and under `# host-lint: strict` an undeclared occurrence still escalates to a
   Flag, and the gather lane still surfaces a recurring shape for triage.
-- **A blocking numeral is unambiguous:** an arabic integer or single decimal, a short checklist range,
-  or a multi-letter Roman numeral written uppercase in the source, and only when it sits immediately
-  after the noun. A single-letter Roman never blocks (it collides with the pronoun and with language
-  and identifier letters), and a numeral two words away is not a positional reference.
+- **A blocking numeral is unambiguous:** an arabic integer or single decimal, a short *ascending*
+  checklist range, or a Roman numeral written uppercase whose value is a plausible ordinal (`<= XXXIX`),
+  and only when it sits immediately after the noun. The Roman bound (revised in the doctrine-gate cast
+  review) is what catches a roman-numbered phase tell, so a phase named with an ordinal roman still
+  blocks and cannot smuggle past the gate, while it excludes the ordinary uppercase abbreviations that
+  are also canonical Roman (`DC`, `CM`, `MM`, `MD`, `DIV`, `XL`): they all carry C/D/M or exceed an
+  ordinal, so a flag noun followed by one of them would otherwise false-flag in its home domain (a
+  signal-processing or sizing context). A single-letter Roman, a lowercase roman-word, a date or
+  descending range, and a numeral two words away never block.
 - **`steps` stays blocking** by operator decision, to keep the host#16 checklist-position detection,
   accepting the tutorial-`steps` false flags it carries.
-- **The disposition is grounded in the corpus measurement, not assertion.** A future change to the
-  noun set restates the measurement.
+- **The disposition is grounded in measurement, not assertion.** The demotions are grounded in ~35,500
+  real `.rs` files; the doctrine-gate cast review then exposed the register the `.rs` corpus could not
+  see, so it was measured directly: `phase <UPPERCASE>` (the roman-acronym false-flag class) occurs
+  **zero** times in those files (vs 84 lowercase), and `box`/`boxes`/`steps` + numeral occurs once in
+  markdown, which confirms the retained terms carry low exposure in the doc register too. A future
+  change to the noun set or the numeral rule restates the measurement.
+- **The LEXICON is not the escape for a tell** (`call/0006`, `call/0019`). It registers genuine
+  vocabulary (a version string, a standard, a cited tracker ref) and refuses any phrase that is itself a
+  tell or carries a position noun or a bare review code (`F1`); a domain term that is itself a tell goes
+  in a `host-lint:ignore` fence (in a doc) or is reworded (in a commit subject), never allow-listed.
 
 ## Consequences
 

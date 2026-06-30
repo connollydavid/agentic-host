@@ -180,11 +180,10 @@ source was untouched (the digest matches the pin), so the findings stand. The wo
 pin before remediation. The lesson: run probing reviewers under worktree isolation. This is recorded
 in MEMORY.
 
-## Status
+## In-house remediation
 
-The whole in-house layer is complete, tested, and committed in the host-lint worktree (not yet
-released or pushed): fourteen commits on top of the v0.11.0 pin. Every finding above is fixed or
-dispositioned.
+The whole in-house layer is complete, tested, and committed in the host-lint worktree on top of the
+v0.11.0 pin. Every finding above is fixed or dispositioned.
 
 - Detector and lexicon: the blocking-tier recut (N1, N2, N3, N4, N5, N6), the lexicon anti-laundering
   guard (L1), the corpus-grounded demotion of the domain-heavy nouns, and the citation-gate number
@@ -218,11 +217,44 @@ dispositioned.
   worktree; it now reads the parent directory's name, so the gate passes in the worktree as well as on
   an installed skill and a repo-named CI checkout.
 
-Verification: 85 unit/property tests, clippy clean, 123 integration cases, the strict-discharge gate
-clean across all 51 obligations with the kani rungs re-derived, and `allium check` clean. The
-`lint-skill.sh` conformance gate now passes in full, in the materialized worktree as well as on a
-repo-named checkout.
+## Doctrine gate
 
-Remaining: the doctrine gate (a cast review and a real qwen3.5-4b probe), the release and re-pin, and
-the host-lifecycle propagation. These are paused here for operator authorization (the outward and
-gated steps).
+Gated like plan/0052 and plan/0054: a cast review across four lenses (Mara, Orin, Wren, Bly) and a
+real qwen3.5-4b (Fen) probe. It earned its keep: it caught defects the in-house pass had missed,
+one of which my own fix had introduced.
+
+- **Fen probe (the real 4B): passed.** Three weak-agent-facing scenarios, routed correctly across three
+  trials with sound reasoning and no miss: an advisory warn lets the commit proceed; a blocking flag is
+  reworded, not bypassed; a refused lexicon entry is renamed, not hand-edited. The two-tier contract and
+  the refusal UX hold at the 4B bar.
+- **Cast review findings, all fixed (commit `5d6eb6a`):** a HIGH fail-open the V4 staged-blob fix had
+  reopened (a non-ASCII filename is C-quoted, so `git show` failed and, without `pipefail`, fed empty
+  input to the linter, committing a tell in `café.md` clean; fixed with NUL-delimited listing,
+  `pipefail`, `.exe`, and a fail-closed read of an undecodable scannable blob); the Roman-acronym
+  false-flag class (an uppercase abbreviation like `DC`, `XL`, or `MM` standing after a flag noun,
+  fixed by bounding a blocking Roman to ordinal value `<= XXXIX`); a review-code laundering hole (a
+  bare review code such as `F1` registered in the lexicon launders the review-code flag, fixed by
+  refusing a standalone review code); a date/degenerate range (`12-07`, `1-1`, fixed by requiring an
+  ascending range); and the `## 404` status-code header (fixed by skipping a 3+-digit bare integer).
+- **Operator review during the gate** raised three sharp questions, each resolved with evidence.
+  (1) Does the recut let Roman smuggle a phase tell? My first answer (drop Roman) did; reversed to
+  the value bound, so an ordinal-roman phase up to `XXXIX` still blocks and cannot smuggle while the
+  abbreviations do not false-flag. (2) Is the evidence enough? The `.rs` corpus grounds the demotions
+  but is register-limited, so the gap was measured directly: `phase <UPPERCASE>` occurs zero times in
+  35.5k `.rs` files, and `box`/`boxes`/`steps` + numeral occurs once in markdown, so the roman-acronym
+  false-flag and the retained doc-register terms both carry low real exposure. (3) Does the LEXICON
+  support a domain term like this? No, by design (`call/0006`, `call/0019`): the LEXICON registers
+  genuine vocabulary and refuses a tell, an irreducible domain tell goes in a `host-lint:ignore` fence
+  or is reworded; the no-laundering guard is what makes the LEXICON "not an escape".
+
+## Status
+
+In-house complete and the doctrine gate passed; releasing. The worktree carries the remediation on top
+of the v0.11.0 pin (the recut and lexicon guard, the fail-opens and prose lane, the rule-source rewrite
+and coverage, the no-hollow-green dogfood, the ordinal-naming self-consistency fix, and the cast-gate
+fixes). Verification: 85 unit/property tests, clippy clean, 128 integration cases, the strict-discharge
+gate clean across all 51 obligations with the kani rungs re-derived, `allium check` clean, and
+`lint-skill.sh` passing in full (in the materialized worktree and on a repo-named checkout).
+
+Remaining: the release and re-pin, and the host-lifecycle propagation (host-lint is a library
+dependency of its in-process prose lane).
