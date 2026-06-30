@@ -214,8 +214,26 @@ bounded by `.host-software` being trusted, gitignored, operator-authored config.
 
 ## Disposition
 
-The eighteen component findings are remediated in this milestone and released as a host-lifecycle
-version, with findings 6 and 15 engineered rather than applied as the reviewers suggested. The
-six no-hollow-green findings (1, 3, 4, 5, 10, 17) are remediated in plan/0052 under its cast-reviewed
-doctrine. The review campaign stays open: the reviews of host-lint, host-prove, and host-grammar are
-still pending, each to be cut under its own milestone.
+The eighteen component findings are remediated in this milestone and shipped as host-lifecycle
+v0.33.0. Findings 6 and 15 are engineered rather than applied as the reviewers suggested. Finding 6
+distinguishes a deleted tracked `deps-bundle.lock` (a HAZARD: the pin cross-check is bypassed) from a
+lock git never tracked (an onboarding note), so onboarding does not turn the check red. Finding 15
+asserts the canonical wording of the software-root and spec-home homes (`software/`; co-location)
+rather than lifting the old inline predicate, whose `plan/`-and-`spec` form would have misfired on the
+real spec-home text "co-located ... never under `plan/`". Finding 20 is resolved by recording the
+entrance tool-presence leniency as deliberate: that check performs a real test, so it is not hollow
+green, and a word-boundary rule would still miss a token in a bare URL and could flag a legitimate
+phrasing. The six no-hollow-green findings (1, 3, 4, 5, 10, 17) are remediated in plan/0052 under its
+cast-reviewed doctrine. The review campaign stays open: the reviews of host-lint, host-prove, and
+host-grammar are still pending, each to be cut under its own milestone.
+
+## Status
+
+Complete. Shipped as host-lifecycle **v0.33.0** (commit `08ba98b`, artifact
+`cffe14ba10c8ada02ad1d3e5c3c003d9d0c392ae5001225cf025c4ce5cdc9fab`), re-deriving byte-identically in
+the recorded `clux/muslrust` toolchain. The change is classed `removes-flag` because several gates
+now reject inputs they previously accepted (a duplicate `[software]` stanza, a free-text task skip
+reason, a deleted tracked lock, a second `[verification]` stanza). The release receipt is recorded,
+`software --check` is clean at the new pin, and the suite (118 tests, clippy, allium check and
+analyse, obligations discharge) is green. This milestone records no new `call/` decision; the only
+cross-cutting decision is plan/0052's `call/0035`.
