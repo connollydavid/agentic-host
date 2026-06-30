@@ -10696,6 +10696,16 @@ byte-identically with software --check clean. Re-vendor mechanics (plan/0032): c
 host-lint repo, recorded in both .host-software and the producer's deps-bundle.lock (software --check
 asserts they are equal). host-lint was the last component; every host-* component is now reviewed,
 remediated, and released.</p>
+<p>2026-06-30 — CI-only patch releases after the campaign close: host-lint v0.12.1 (commit 78804cd,
+artifact 53e0445c) and host-lifecycle v0.35.1 (commit 486add7, artifact af9f0a82), each carrying only
+the actions/checkout@v4-&gt;v5 bump in its ci.yml (clears the GitHub Node-20 runtime deprecation) plus the
+version bump. Change-class neither (a workflow file is not compiled, so no flag/output change); the
+artifact hash still moves because the embedded CARGO_PKG_VERSION string changes. No code, no behavioral
+change, no re-vendor (host-lint stays vendor-v4, host-lifecycle stays vendor-v6 and keeps pinning
+host-lint v0.12.0 since nothing about the detector changed). Done as real patch releases rather than an
+off-tag pin so the .host-software pins stay equal to release tags (dual-release-authority). This is why
+the pins are v0.12.1/v0.35.1 while plan/0055 records the campaign deliverable as v0.12.0/v0.35.0. Whole
+suite green incl. checkout@v5 on all three repos.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
