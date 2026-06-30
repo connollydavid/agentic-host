@@ -1929,3 +1929,23 @@ plain `git reset --hard` to the pin was auto-denied as irreversible local destru
 unauthorised-as-remediation review; surface the contamination and reset only under explicit remediation
 authorization. This was logged as finding V10 by a reviewer but it is MY process artifact, not a host-lint
 defect.
+
+2026-06-30 — plan/0055 host-lint review COMPLETE and the software review campaign CLOSED. The recut
+shipped as host-lint v0.12.0 (commit 78bd526, artifact ecbf2c1d, deps-bundle unchanged at vendor-v4
+since host-lint's own deps did not change). The verb/measurement nouns (pass, round, step, level, part,
+section, chapter, epoch, batch, era, period) demoted from the blocking Flag tier to advisory Warn,
+grounded in ~35.5k real .rs files plus a direct doc-register measurement; the blocking tier keeps only
+the high-centrality work-unit words plus the host#16 checklist terms. A blocking Roman is now bounded to
+ordinal value <= XXXIX (catches Phase IV/VIII/XII, excludes the DC/CM/MM/XL acronyms), the fix to the
+smuggle hole I briefly opened by dropping Roman entirely. Recorded in call/0037. Propagated to
+host-lifecycle v0.35.0 (commit f925317, artifact d0cd4aed) by bumping its host-lint git rev to 78bd526
+and re-vendoring its deps-bundle to vendor-v6 (the prior vendor-v5 vendored the old host-lint rev, so an
+offline build would have failed). The new host-lint adds zero new flags or warns to host-lifecycle's own
+docs (measured: 0 flags / 100 warns identical under both binaries). Whole suite green: both software
+release CIs pass at their tags and the agentic-host reproducible-build job re-derives both artifacts
+byte-identically with software --check clean. Re-vendor mechanics (plan/0032): cargo vendor --locked
+--sync <host-lifecycle>/Cargo.toml run from the host-lint manifest, tar --sort=name --mtime=@0 --owner=0
+--group=0 --numeric-owner then gzip -n (byte-reproducible), uploaded as a vendor-vN release asset on the
+host-lint repo, recorded in both .host-software and the producer's deps-bundle.lock (software --check
+asserts they are equal). host-lint was the last component; every host-* component is now reviewed,
+remediated, and released.
