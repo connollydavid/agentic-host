@@ -281,7 +281,14 @@ Cast-reviewed across the personas and gated on a real qwen3.5-4b (Fen) probe, as
   version-stable outcome strings, and the CI `install-smoke` lane now provisions the pinned 0.58.0. A
   fixture refresh (or a real-tool end-to-end smoke) is a low-risk follow-on.
 
-## Remaining
+## Released
 
-The release (version bump, reproducible build, `.host-software` re-pin, PATH reinstall, receipt) and the
-final whole-suite-green verification.
+Complete. Shipped as host-prove **v0.3.0** (commit `c05782c`, artifact
+`9a9bbbd36edc072cfe5518a408211fabf8c78cff63ed3cb89d25129b8ff9f03f`), re-deriving byte-identically in the
+recorded `clux/muslrust` toolchain. The change is classed `removes-flag` because the verdict vocabulary
+and run behaviour change: a run is now fail-closed and pin-bound, an absent or wrong-version verifier is
+`BLOCKED` rather than run, and the verdict lines carry provenance and the corrected tlaps form. The
+release receipt is recorded, `.host-software` is re-pinned, the PATH binary is reinstalled (the
+plan/0048 runnability gate's re-deriver is live), and `software --check` is clean at the new pin.
+host-prove has zero dependencies, so no consumer propagation is owed. This milestone adds one decision,
+`call/0036`. The review campaign now leaves only the host-lint review.
