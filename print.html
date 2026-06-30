@@ -6333,10 +6333,43 @@ allium) are green.</p>
 colon-space was invalid workflow YAML, so the remote CI failed to parse from that commit until the fix
 at <code>8607932</code>, even though the local gate was green throughout. Verifying the local gate is not
 verifying CI; a <code>python yaml</code> parse check now precedes relying on the workflow.</p>
-<p>Remaining: the kani skill-guide fix (the bound is mandatory for a trustworthy PASS, and a
-<code>[bound=unspecified]</code> PASS must be flagged), re-capturing the apalache fixtures from the pinned 0.58.0,
-the broader cast review and the real qwen3.5-4b probe (the doctrine-grade gate), and the release with
-its re-pin and PATH reinstall.</p>
+<p>The kani skill-guide fix landed (the bound is mandatory for a trustworthy PASS, and a
+<code>[bound=unspecified]</code> PASS must be flagged), with all three guides covering the BLOCKED verdict.</p>
+<h2 id="the-doctrine-gate"><a class="header" href="#the-doctrine-gate">The doctrine gate</a></h2>
+<p>Cast-reviewed across the personas and gated on a real qwen3.5-4b (Fen) probe, as plan/0052 was.</p>
+<ul>
+<li><strong>Fen probe (passed).</strong> The real <code>qwen3.5-4b</code> was driven on the changed weak-agent surface (the
+decision-table routing). It routed all three scenarios correctly: a BLOCKED verdict to <code>run: host-prove install &lt;tool&gt;</code>; a <code>SUCCESSFUL … [bound=unspecified]</code> PASS to <em>not trustworthy as-is,
+supply the bound or flag it</em> (it did not take the SUCCESSFUL word at face value); and a FAILED to
+report the counterexample without weakening the assertion. Decision-table routing held at the 4B.</li>
+<li><strong>Cast review (passed after fixes).</strong> Mara, Bly, and Orin each confirmed the fail-closed, pin-bound
+design satisfies their non-negotiable for apalache and tlaps, and converged on three over-claims:
+(1) a kani PASS stamped <code>pinned</code> like the hash-verified tools though kani is version-only bound with
+an unverified <code>cargo kani setup</code> backend; (2) the apalache/tlaps pin marker was an install-time stamp
+of the asset sha, not a per-run check of the executed binary; (3) the end-to-end guarantee needs the
+consumer to reject an unsuffixed or <code>--stdin</code> PASS. Fixes: kani's verdict and <code>doctor</code> now say
+<code>version-pinned, backend unverified</code> and never claim it is <code>pinned</code>; the marker now records the
+extracted binary's own sha and <code>resolve</code> re-hashes it every run (a content bind, not a stamp); and
+<code>tools.lock</code> names the unpinned backend precisely. The third is a consumer-side requirement recorded
+below.</li>
+</ul>
+<h2 id="residual-notes"><a class="header" href="#residual-notes">Residual notes</a></h2>
+<ul>
+<li><strong>Consumer must require the pinned suffix.</strong> A live PASS carries <code>[&lt;tool&gt;=&lt;version&gt; …]</code>; a <code>--stdin</code>
+or hand-fed PASS does not. The end-to-end no-hollow-green guarantee depends on the consumer
+(<code>host-lifecycle obligations --prove</code>) accepting only a suffixed, pin-bound PASS, never a bare
+<code>SUCCESSFUL</code>/<code>PROVEN</code> line. This is a host-lifecycle obligation-check requirement, a follow-on.</li>
+<li><strong>kani backend.</strong> <code>cargo kani setup</code> fetches the verdict-producing backend unpinned; this is
+inherent to kani's distribution, confined to the explicit install verb (an air-gapped host fails the
+install rather than fetching unverified), and now named honestly in the verdict, <code>doctor</code>, and
+<code>tools.lock</code>. Not a release blocker.</li>
+<li><strong>Apalache fixtures.</strong> The static fixtures were captured from 0.47.2; the parser keys on
+version-stable outcome strings, and the CI <code>install-smoke</code> lane now provisions the pinned 0.58.0. A
+fixture refresh (or a real-tool end-to-end smoke) is a low-risk follow-on.</li>
+</ul>
+<h2 id="remaining"><a class="header" href="#remaining">Remaining</a></h2>
+<p>The release (version bump, reproducible build, <code>.host-software</code> re-pin, PATH reinstall, receipt) and the
+final whole-suite-green verification.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
