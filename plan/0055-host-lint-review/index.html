@@ -331,8 +331,24 @@ source was untouched (the digest matches the pin), so the findings stand. The wo
 pin before remediation. The lesson: run probing reviewers under worktree isolation. This is recorded
 in MEMORY.</p>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
-<p>In design. Findings recorded and the three operator decisions taken. Remediation, the doctrine gate,
-the release, and the propagation follow.</p>
+<p>In remediation. The component-code layer is fixed, tested, and committed in the host-lint worktree
+(not yet released or pushed): five commits on top of the v0.11.0 pin close both criticals and every
+fail-open. Landed: the blocking-tier recut (N1, N2, N3, N4, N5, N6) and the lexicon anti-laundering
+guard (L1); the CLI fail-opens (C1, C2, C3, C4); the prose lane and ignore-fence engine (P1, P2, P3,
+P4, P5, P6); the hook's staged-blob scan and fail-closed exit handling (V4, V5); and the citation-gate
+number correlation (L2). Each fix carries a test, and the whole suite plus clippy is green; the headline
+false-flags and the laundering entry were reproduced as fixed against the built binary.</p>
+<p>Remaining: the rule-source and coverage docs (V1, V2, V3, V8, V9), the no-hollow-green dogfood in
+host-lint's own ladder (S1, S2, S3, S4, S5, S6, V6), the reproducible-build CI (V7), the low-severity
+items recorded as accepted or deferred (C5, N7, N8, N9), a <code>call/</code> decision for the verb demotion, then
+the doctrine gate (cast review and a real qwen3.5-4b probe), the release, and the host-lifecycle
+propagation.</p>
+<p>A note on the Roman-numeral recut (N1, S1): the blocking lane now takes an arabic or decimal numeral, a
+short range, or a multi-letter uppercase Roman only. A single-letter Roman never blocks, which removes
+the false <code>RomanNumeralLength</code> invariant's subject (S1) rather than patching it. The collision-prone
+nouns beyond the operator's demotion set (<code>epoch</code>, <code>era</code>, <code>period</code> read in machine-learning or
+historical prose) stay blocking for now; whether they join the advisory tier is recorded as an open
+question for the operator, not decided here.</p>
 
                     </main>
 
