@@ -124,8 +124,8 @@ repository's commits and documents) and are tuned toward fewer false positives.
 
 14. **`is_numeral` accepts plain English words as Roman numerals.** The Roman arm is a bare
     charset-and-length gate, so `is_numeral` returns true for `lid`, `mid`, `mild`, and for
-    non-canonical forms such as `IIII` and `VV`, contradicting its own doc comment. Fix: validate a
-    canonical Roman numeral (a value round-trip) so only real numerals qualify. (confirmed)
+    non-canonical forms such as `IIII` and `VV`; the result contradicts its own doc comment. Fix:
+    validate a canonical Roman numeral (a value round-trip) so only real numerals qualify. (confirmed)
 15. **`format_number` can emit a number `is_valid_name` rejects.** The pad width is a minimum, so a
     register at or past ten thousand formats to more than four digits while the checker enforces
     exactly four, a silent generator-checker divergence. Fix: accept the natural overflow form (four
@@ -157,7 +157,7 @@ repository's commits and documents) and are tuned toward fewer false positives.
     advisory and does not escalate the gate, and correct the doc comment. (confirmed)
 22. **Loose multi-paragraph list items fuse word boundaries.** A list item with two paragraphs
     concatenates their text with no separator, so the last word of one paragraph and the first of the
-    next merge into one token, destroying or fabricating word-boundaried tells. Fix: insert a
+    next merge into one token; a word-boundaried tell is then destroyed or fabricated. Fix: insert a
     separator when a paragraph continues a list item. (confirmed)
 23. **Blockquote content is scanned as the author's own prose.** A quoted block (commonly an external
     citation, the very text that is trope-dense) is run through every tell as if authored. Fix:
