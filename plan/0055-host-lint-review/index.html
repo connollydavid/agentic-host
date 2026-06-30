@@ -401,14 +401,21 @@ genuine vocabulary and refuses a tell, an irreducible domain tell goes in a <cod
 or is reworded; the no-laundering guard is what makes the LEXICON "not an escape".</li>
 </ul>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
-<p>In-house complete and the doctrine gate passed; releasing. The worktree carries the remediation on top
-of the v0.11.0 pin (the recut and lexicon guard, the fail-opens and prose lane, the rule-source rewrite
-and coverage, the no-hollow-green dogfood, the ordinal-naming self-consistency fix, and the cast-gate
-fixes). Verification: 85 unit/property tests, clippy clean, 128 integration cases, the strict-discharge
-gate clean across all 51 obligations with the kani rungs re-derived, <code>allium check</code> clean, and
-<code>lint-skill.sh</code> passing in full (in the materialized worktree and on a repo-named checkout).</p>
-<p>Remaining: the release and re-pin, and the host-lifecycle propagation (host-lint is a library
-dependency of its in-process prose lane).</p>
+<p>Complete. The recut shipped as host-lint <strong>v0.12.0</strong> (commit <code>78bd526</code>, artifact <code>ecbf2c1d</code>),
+re-pinned in <code>.host-software</code>, with the agentic-host hook binary reinstalled to the canonical static
+build. host-lifecycle adopted it as <strong>v0.35.0</strong> (commit <code>f925317</code>, artifact <code>d0cd4aed</code>), its deps-bundle
+re-vendored to <code>vendor-v6</code>, so the in-process prose lane runs the recut detector. The worktree carried
+the remediation on top of the v0.11.0 pin (the recut and lexicon guard, the fail-opens and prose lane,
+the rule-source rewrite and coverage, the no-hollow-green dogfood, the ordinal-naming self-consistency
+fix, and the cast-gate fixes). Verification: 85 unit and property tests, clippy clean, 128 integration
+cases, the strict-discharge gate clean across all 51 obligations with the kani rungs re-derived,
+<code>allium check</code> clean, and <code>lint-skill.sh</code> passing in full (in the materialized worktree and on a
+repo-named checkout).</p>
+<p>The whole suite is green: the host-lint and host-lifecycle release CI both pass at their tags, and the
+agentic-host reproducible-build job re-derives both artifacts byte-identically inside the recorded
+toolchain container with <code>software --check</code> clean and no HAZARD. This closes the software review
+campaign: every host-* component has been reviewed, remediated, and released, and host-lint was the
+last.</p>
 
                     </main>
 
