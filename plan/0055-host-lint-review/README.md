@@ -249,12 +249,19 @@ one of which my own fix had introduced.
 
 ## Status
 
-In-house complete and the doctrine gate passed; releasing. The worktree carries the remediation on top
-of the v0.11.0 pin (the recut and lexicon guard, the fail-opens and prose lane, the rule-source rewrite
-and coverage, the no-hollow-green dogfood, the ordinal-naming self-consistency fix, and the cast-gate
-fixes). Verification: 85 unit/property tests, clippy clean, 128 integration cases, the strict-discharge
-gate clean across all 51 obligations with the kani rungs re-derived, `allium check` clean, and
-`lint-skill.sh` passing in full (in the materialized worktree and on a repo-named checkout).
+Complete. The recut shipped as host-lint **v0.12.0** (commit `78bd526`, artifact `ecbf2c1d`),
+re-pinned in `.host-software`, with the agentic-host hook binary reinstalled to the canonical static
+build. host-lifecycle adopted it as **v0.35.0** (commit `f925317`, artifact `d0cd4aed`), its deps-bundle
+re-vendored to `vendor-v6`, so the in-process prose lane runs the recut detector. The worktree carried
+the remediation on top of the v0.11.0 pin (the recut and lexicon guard, the fail-opens and prose lane,
+the rule-source rewrite and coverage, the no-hollow-green dogfood, the ordinal-naming self-consistency
+fix, and the cast-gate fixes). Verification: 85 unit and property tests, clippy clean, 128 integration
+cases, the strict-discharge gate clean across all 51 obligations with the kani rungs re-derived,
+`allium check` clean, and `lint-skill.sh` passing in full (in the materialized worktree and on a
+repo-named checkout).
 
-Remaining: the release and re-pin, and the host-lifecycle propagation (host-lint is a library
-dependency of its in-process prose lane).
+The whole suite is green: the host-lint and host-lifecycle release CI both pass at their tags, and the
+agentic-host reproducible-build job re-derives both artifacts byte-identically inside the recorded
+toolchain container with `software --check` clean and no HAZARD. This closes the software review
+campaign: every host-* component has been reviewed, remediated, and released, and host-lint was the
+last.
