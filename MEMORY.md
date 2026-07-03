@@ -1960,3 +1960,19 @@ host-lint v0.12.0 since nothing about the detector changed). Done as real patch 
 off-tag pin so the .host-software pins stay equal to release tags (dual-release-authority). This is why
 the pins are v0.12.1/v0.35.1 while plan/0055 records the campaign deliverable as v0.12.0/v0.35.0. Whole
 suite green incl. checkout@v5 on all three repos.
+
+2026-07-04 — Filed host-lifecycle issue #6: the .host-software parser reads value lines raw, so ordinary
+ASCII quotes in a value leak literally. parse_software takes `(key.trim(), val.trim())` (main.rs:3825)
+with no quote handling and no path normalization; only the `[software "<name>"]` header is
+quote-stripped. So a value authored as `worktrees = "main"` (or `branch = "main"`) keeps the quote
+characters, and --materialize runs `git worktree add` for a branch literally named `"main"` at
+software/<name>/"main"/, which fails or yields a quote-bearing path. Nothing in host-lifecycle emits
+quoted values; the leak is at authoring time, most likely an aggressively quantized agent applying the
+re-pin/embed stanza the release step prints at main.rs:7890 (models habitually quote string values,
+turning bare main into "main"). This is standard ASCII quoting, not smart/curly quotes, and not a
+filesystem normalization effect (git stores content bytes verbatim; APFS/HFS+ normalize filenames only).
+Direction (write-up only, no code): make the parser aware of realistic paths and normalization — strip a
+surrounding ASCII quote pair on value lines (git-config semantics) or reject a quote-bracketed value with
+a loud line-numbered error, normalize worktree/branch/path values before git worktree add, cover every
+value field plus the `[software "<name>"]` header path, and add a `worktrees = "main"` regression fixture
+as a weak-model probe.
