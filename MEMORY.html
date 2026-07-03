@@ -2066,6 +2066,26 @@ surrounding ASCII quote pair on value lines (git-config semantics) or reject a q
 a loud line-numbered error, normalize worktree/branch/path values before git worktree add, cover every
 value field plus the <code>[software "&lt;name&gt;"]</code> header path, and add a <code>worktrees = "main"</code> regression fixture
 as a weak-model probe.</p>
+<p>2026-07-04 — Cross-project read-only audit of the quote-leak class (host-lifecycle#6) across every host-*
+component and the host scripts. The reported worktrees leak is one symptom of a SINGLE systemic defect in
+host-lifecycle: parse_software (main.rs:3825) reads EVERY value field raw (url, pin, branch, artifact,
+toolchain, deploy, hooks, deps-bundle, worktree store=), so a quoted value leaks into git
+clone/worktree/rev-parse refs, curl, the container image arg, filesystem paths, and recorded-hash
+compares — a quoted artifact/deps sha makes a genuinely reproducing build report DRIFT. Two more readers
+of the same file share the shape: parse_project_facts (main.rs:1400, MED — <code>document</code> leaks past the
+absolute/.. guard into the entrance-document path) and parse_rung/obligations (5340/5606, LOW). The
+correct model already lives in the repo: stamp_value_after_eq (main.rs:437) strips a "..." wrapper and
+stops at #; the single fix is to apply that normalization to those three raw readers plus a
+worktrees/pin/artifact regression fixture. The class recurs FAIL-SAFE in host-lint (parse_lexicon_line +
+mask_allowed, lib.rs:568/507, a validate-unquotes-but-mask-reads-raw asymmetry; and load_ignore
+main.rs:370 — a quoted LEXICON/.host-lintignore entry silently no-ops, always over-flags, never launders
+a real tell) and LATENT in host-prove (pin() tools.lock reader main.rs:48, but the file is
+include_str!-embedded, maintainer-authored, quote-free, and fails closed). host-grammar (validators
+reject contaminated input, no fs/shell/git sink), the host-reference trio (paths from argv/fixed joins),
+and the host scripts (hooks use <code>git -z</code> + <code>while IFS= read -r -d ''</code> to defeat core.quotePath, on
+purpose) are CLEAN. Findings posted to host-lifecycle#6; host-lint and host-prove warrant their own
+tickets. Lesson: a raw value-read defect is rarely a single field — audit the whole parser and every
+consumer of the same file, and look for the correct-normalizer that already exists to copy.</p>
 
                     </main>
 
