@@ -80,7 +80,7 @@
 	# host-* tools: it is the entrance, not a component (plan/0039). Declared in the
 	# `[entrance]` stanza below (plan/0043).
 	url       = https://github.com/connollydavid/host.git
-	pin       = 699d423033bb3f04234f7e6c7edb562a9f8f75f6
+	pin       = a2dcfc43a08f5e2e506a1c53360988796a367756
 	worktrees =
 
 # The single-file entrance (plan/0043): the `host` member's README, held complete against
