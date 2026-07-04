@@ -1,16 +1,24 @@
 # Releasing a tool updates the template's pins of that tool
 
-- Status: accepted
+- Status: superseded by the spine
 - Date: 2026-07-04
 - Scope: the release process for any `host-*` tool that `host-template` carries. The template
   pins each such tool in more than one place, and a release is complete only when every one of
   those pins equals the released commit. Surfaced as connollydavid/host-lifecycle#9 and folded
-  into `plan/0056`. This binds how a release propagates, next to the existing propagate rule,
-  and is not a spine change.
+  into `plan/0056`. This binds how a release propagates, next to the existing propagate rule.
 - Relates: `plan/0056` (the robustness superset that surfaced it); `call/0021` and `plan/0032`
   (re-vendor and propagate to consumers on a tool release); `call/0010` (software as a bare
   store pinned in `.host-software`); the dual-release-authority rule (the producer tag is the
   release, and `.host-software` pins it).
+
+## Supersession
+
+The anti-ouroboros validate gate (`host-template/CLAUDE.md`) retires an `accepted` `call/`
+decision whose `Scope:` names `host-template`: such a rule is spine-resident, owned by the
+methodology. This record is kept for its history, and the rule stays enforced by `software
+--check`'s template-pin gate. Whether to author the rule into the template spine text, or treat
+it as agentic-host-specific (this host develops the `host-*` tools; a generic adopter does not),
+is under cast discussion.
 
 ## Context and Problem Statement
 
