@@ -10960,6 +10960,43 @@ lint), so a pointer bump needs <code>--no-verify</code>; a leftover-staged submo
 swept into one --no-verify commit (80c4b57) whose message undersells it (also re-pins .host-software) — left
 as-is rather than force-push main. Real linted files (.host-software, receipts) were confirmed clean by hand
 before the bypass.</p>
+<p>Following host / cast ruling B (2026-07-04): running host's own Verify procedure (<code>Read and follow host</code>) surfaced ONE defect, an accepted <code>call/0038</code> scoped to <code>host-template</code>, flagged by the
+anti-ouroboros validate gate (an accepted host-template-scoped decision is spine methodology that
+belongs superseded). Root cause: call/0038 was authored ad-hoc earlier this session. Superseded it in
+place (ede2e1e). The substantive scope question (is rule #9 "a release reconciles every carried-template
+pin" general spine methodology, or agentic-host-specific since only this repo both develops a host-* tool
+AND vendors host-template with pins?) went to the cast: 5-0 agentic-host-specific, but the OPERATOR
+OVERRULED to author it into the spine (path B), to close the real textual gap (call/0021's propagate rule
+explicitly excludes the template). Authored as the release-side complement of reference-don't-vendor in
+host-template CLAUDE.md (doctrine commit 1682d62) + an UPGRADING ledger entry (4f74926) keyed to the
+doctrine commit, requires host-lifecycle v0.36.0, verify greps the new spine phrase. FEN-SAFETY WAS THE
+GATE (operator: "be careful with Fen"): the finalist phrasing front-loads a two-fact default-skip, not a
+role self-classification, validated against the real qwen3.5-4b: generic-adopter 14/14 SKIP (through a
+vendors-the-template trap), dev-host 10/10 APPLY. Truncation lesson (again): the dense prompt made the 4B
+over-think and hit the token cap, producing an unreliable verdict; an answer-robust prompt + 16k budget
+cleared it, and a truncated open-elicitation reply is never scored. Propagated: <code>host-lifecycle upgrade --record 1682d62</code> (applied set now 4, stamp not hand-edited), host-template pointer e8a9ae1-&gt;4f74926,
+call/0038 reconciled to point at the authored spine rule. The rule stays gate-enforced by <code>software --check</code>'s template-pin gate (the backstop); no new call/ opened (a host-template-scoped call/ would
+re-trip the gate).</p>
+<p>Completeness pass after the final review (2026-07-04, planned + approved): the review of the spine
+change flagged two loose ends; a read-only two-agent audit scoped them, then both were fixed. (1)
+WORDING: the carried-template-pin closing sentence duplicated "the producer of a tool embeds it",
+which is ALSO the reference-don't-vendor ledger entry's verify-grep target (UPGRADING.md:161);
+tightened to keep that phrase only at its one home (CLAUDE.md:431) while preserving "re-pins the
+carried template" (the 1682d62 verify). GOTCHA: the first re-wrap SPLIT "re-pins the carried template"
+across a line break (grep -c fell to 0), which would have broken the 1682d62 verify; the grep-invariant
+check caught it, re-wrapped contiguous. (2) LEDGER GAP: the .git-&gt;.bare bare-store migration (plan/0056
+#8, call/0039) shipped in v0.36.0 with NO UPGRADING entry AND left host-template STRUCTURE.md:42
+describing the old software/<name>/.git layout. Refreshed STRUCTURE.md to .bare + a .git gitdir-link
+file (commit 7127dc4) and added the ledger stanza keyed to it (requires v0.36.0, verify greps
+"gitdir-link"). The audit confirmed this is the ONLY adopter-facing gap in the v0.32.0-&gt;v0.36.0 span
+(CLAUDE.md/STRUCTURE.md byte-identical across it; every other change tool-internal / other-component /
+dev-host-only). GOTCHA (again): single-file host-lint --docs passed but the whole-repo host-lifecycle
+prose lane (what host-template CI runs, a zero-warning gate) flagged "superseding" as an ing-tail;
+reworded to "This layout supersedes". Considered-and-declined: no ledger stanza for the v0.33.0/#6
+inert HAZARDs (they need no proactive action; the ledger documents actions, not gates). STILL OPEN
+(separate repo, flagged not fixed): the host entrance README (software/host/main/README.md:108) also
+describes the old <name>.git/ layout; that fix routes through the host repo's own flow. Propagated:
+host-template HEAD f0eebff, agentic-host submodule e8a9ae1-&gt;f0eebff, applied set now 5.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
@@ -12057,9 +12094,12 @@ release, and <code>.host-software</code> pins it).</li>
 <h2 id="supersession"><a class="header" href="#supersession">Supersession</a></h2>
 <p>The anti-ouroboros validate gate (<code>host-template/CLAUDE.md</code>) retires an <code>accepted</code> <code>call/</code>
 decision whose <code>Scope:</code> names <code>host-template</code>: such a rule is spine-resident, owned by the
-methodology. This record is kept for its history, and the rule stays enforced by <code>software --check</code>'s template-pin gate. Whether to author the rule into the template spine text, or treat
-it as agentic-host-specific (this host develops the <code>host-*</code> tools; a generic adopter does not),
-is under cast discussion.</p>
+methodology. The cast deliberated whether to author the rule into the spine or keep it
+agentic-host-specific, and the operator ruled to author it. The rule now lives in the
+host-template spine as the release-side complement of the reference-don't-vendor rule, that a
+release reconciles every carried-template pin, phrased so a generic adopter reads the first
+clause and skips it, and validated Fen-safe by probing the real weak agent before it was
+authored. This record is kept for its history, and the rule stays enforced by <code>software --check</code>'s template-pin gate.</p>
 <h2 id="context-and-problem-statement-39"><a class="header" href="#context-and-problem-statement-39">Context and Problem Statement</a></h2>
 <p><code>host-template</code> is the scaffold for new agentic projects and the source of the methodology
 spine. It carries the <code>host-*</code> tools it depends on and pins each in more than one place:</p>
