@@ -1,6 +1,7 @@
 # Software-under-test recipe (call/0010). Each [software "<name>"] stanza is
-# materialized locally as a bare store (<name>.git/) plus the canonical worktree
-# <name>/ at `pin` and any parallel worktrees <name>.<line>/ — all gitignored.
+# materialized locally under software/<name>/ as a bare object store `.bare/` with a
+# `.git` gitdir-link file beside it (call/0039), plus the canonical worktree at
+# software/<name>/<branch>/ and any parallel branch worktrees, all gitignored.
 # The pin replaces a submodule gitlink as the reproducibility anchor.
 [software "host-lint"]
 	url       = https://github.com/connollydavid/host-lint.git
@@ -14,12 +15,12 @@
 	hooks     = pre-commit
 [software "host-lifecycle"]
 	url       = https://github.com/connollydavid/host-lifecycle.git
-	pin       = 486add7227d1cf86f16ea4462a08d4efe0fca159
+	pin       = 7e63d99e3a3a8afd9837288cb1b80654e1de55bf
 	worktrees =
 	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lifecycle
-	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle af9f0a82d5d79b6e14c5eeb1b5c5c4f949bd873652ef94a17c5e428d64d2ca62
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle 0327b926175d019f306be4c9ae475f41a0bdf19091c016e2116e54d95bcdff79
 	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v6/vendor.tar.gz 10ca357a71a8774f213022f9ce7aebdab4ca612ad59562a64536d1286bdce2fc
 [software "host-prove"]
 	url       = https://github.com/connollydavid/host-prove.git
