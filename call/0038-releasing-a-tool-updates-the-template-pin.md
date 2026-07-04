@@ -15,10 +15,13 @@
 
 The anti-ouroboros validate gate (`host-template/CLAUDE.md`) retires an `accepted` `call/`
 decision whose `Scope:` names `host-template`: such a rule is spine-resident, owned by the
-methodology. This record is kept for its history, and the rule stays enforced by `software
---check`'s template-pin gate. Whether to author the rule into the template spine text, or treat
-it as agentic-host-specific (this host develops the `host-*` tools; a generic adopter does not),
-is under cast discussion.
+methodology. The cast deliberated whether to author the rule into the spine or keep it
+agentic-host-specific, and the operator ruled to author it. The rule now lives in the
+host-template spine as the release-side complement of the reference-don't-vendor rule, that a
+release reconciles every carried-template pin, phrased so a generic adopter reads the first
+clause and skips it, and validated Fen-safe by probing the real weak agent before it was
+authored. This record is kept for its history, and the rule stays enforced by `software
+--check`'s template-pin gate.
 
 ## Context and Problem Statement
 
