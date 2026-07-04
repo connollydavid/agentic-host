@@ -2086,3 +2086,24 @@ lint), so a pointer bump needs `--no-verify`; a leftover-staged submodule from a
 swept into one --no-verify commit (80c4b57) whose message undersells it (also re-pins .host-software) — left
 as-is rather than force-push main. Real linted files (.host-software, receipts) were confirmed clean by hand
 before the bypass.
+
+Following host / cast ruling B (2026-07-04): running host's own Verify procedure (`Read and follow
+host`) surfaced ONE defect, an accepted `call/0038` scoped to `host-template`, flagged by the
+anti-ouroboros validate gate (an accepted host-template-scoped decision is spine methodology that
+belongs superseded). Root cause: call/0038 was authored ad-hoc earlier this session. Superseded it in
+place (ede2e1e). The substantive scope question (is rule #9 "a release reconciles every carried-template
+pin" general spine methodology, or agentic-host-specific since only this repo both develops a host-* tool
+AND vendors host-template with pins?) went to the cast: 5-0 agentic-host-specific, but the OPERATOR
+OVERRULED to author it into the spine (path B), to close the real textual gap (call/0021's propagate rule
+explicitly excludes the template). Authored as the release-side complement of reference-don't-vendor in
+host-template CLAUDE.md (doctrine commit 1682d62) + an UPGRADING ledger entry (4f74926) keyed to the
+doctrine commit, requires host-lifecycle v0.36.0, verify greps the new spine phrase. FEN-SAFETY WAS THE
+GATE (operator: "be careful with Fen"): the finalist phrasing front-loads a two-fact default-skip, not a
+role self-classification, validated against the real qwen3.5-4b: generic-adopter 14/14 SKIP (through a
+vendors-the-template trap), dev-host 10/10 APPLY. Truncation lesson (again): the dense prompt made the 4B
+over-think and hit the token cap, producing an unreliable verdict; an answer-robust prompt + 16k budget
+cleared it, and a truncated open-elicitation reply is never scored. Propagated: `host-lifecycle upgrade
+--record 1682d62` (applied set now 4, stamp not hand-edited), host-template pointer e8a9ae1->4f74926,
+call/0038 reconciled to point at the authored spine rule. The rule stays gate-enforced by `software
+--check`'s template-pin gate (the backstop); no new call/ opened (a host-template-scoped call/ would
+re-trip the gate).
