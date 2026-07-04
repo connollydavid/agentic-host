@@ -148,3 +148,46 @@ pin.
   `.host-software` value, run `remap` on an empty dictionary, read the materialized layout, and
   run a release), and confirms each is legible and fail-safe where the un-hardened forms fumble
   it.
+
+## Implemented, with review refinements
+
+All four defects are implemented in `software/host-lifecycle/main/src/main.rs`, with 130 unit
+tests green (stable across repeated parallel runs) and clippy clean. An adversarial review (six
+dimensions, each finding verified by an independent refutation pass) raised fifteen confirmed
+findings; the substantive ones changed the shipped design:
+
+- `#8` migration is carried by `--materialize` itself, as a self-heal, not a manual teardown. An
+  existing plan/0029-layout component (a bare repo named `.git`) is renamed to `.bare` in place at
+  the top of the materialize loop, and `git worktree repair` re-points the existing worktrees'
+  gitdir links. The recorded pin reproduces either way, so the migration needs no network and
+  preserves local state. The original plan's teardown-then-materialize is no longer required; the
+  `MISSING software/<name>/.bare (run --materialize)` message is the accurate remedy. The stray
+  case (both `.git` and `.bare` present) fails closed with a clear message rather than an EISDIR
+  fault. The empirical `git` behaviour (rename breaks the worktree links, `worktree repair`
+  restores them) is verified, and a regression test builds the old layout and asserts the migrated
+  end state.
+- `#6` exempts the free-form `build` command from the fail-closed unquote. A `build` value is
+  passed verbatim to a shell where interior quotes are meaningful (`CFLAGS="-O2" make`), so it uses
+  the tolerant `unq_cmd` (strip a clean wrapper, else pass through) rather than the strict `unq`
+  that fails closed on a bare ref, path, hash, or URL. Every other value field stays strict.
+- `#9` hardens the gate: the prose-CI reader is three-state (`Rev` / `InstallNoRev` / `NoInstall`)
+  so a host-lifecycle install with no parseable `--rev` fails closed rather than passing silently,
+  and the pin compare is a case-insensitive hex-prefix match (floored at seven) so an abbreviated
+  `--rev` designating the same commit is treated as equal. The release-time template-pin-bump
+  instruction is a pure, unit-tested helper that names each step as a concrete command.
+- The `collect_files` skip-set `.bare` entry the plan specified is not added: the walker already
+  skips the whole `software/` subtree, so it never reaches the store. This is a deliberate
+  deviation, recorded here rather than left as a silent omission.
+- The `parse_software` reject path ends in `process::exit(2)`; its decision logic is the pure
+  `unquote_recipe_token` returning `None`, which is unit-tested for every malformed case. The exit
+  glue is left untested, consistent with the file's other `process::exit(2)` value-error sites.
+
+Test coverage added for the review's no-hollow findings: the migration and self-heal paths, the
+`--check` gitdir-link gate firing, the twin `parse_project_facts` quote-strip, a present-but-blank
+`.host-remap`, the three-state prose reader, the prefix SHA compare, and the release instruction.
+
+Not yet done (the outward rollout, operator-run): cut the host-lifecycle release, re-pin
+`.host-software` and reconcile its header to the `.bare` layout (`call/0039`), migrate the
+materialized components by re-running `--materialize`, and bump the template pin (`call/0038`).
+Shipping the `#9` gate turns the existing template-pin drift into a live HAZARD, so the template
+bump is part of the same release; this red window is deliberate and self-resolves on the bump.
