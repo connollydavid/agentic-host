@@ -175,6 +175,13 @@ findings; the substantive ones changed the shipped design:
   case-insensitive hex-prefix match (floored at seven) so an abbreviated `--rev` for the same commit
   counts as equal. The release-time template-pin-bump instruction is a pure, unit-tested helper that
   names each step as a concrete command.
+- `#9` scope was too narrow, a serious gap found by auditing every pin: host-template pins
+  host-lifecycle in `prose.yml` AND the `tools/host-lifecycle` submodule (built by
+  `reproducible-build.yml` and `site.yml`), and host-lint in the `tools/host-lint` submodule. The
+  submodules were the most stale (host-lifecycle at v0.15.1, host-lint at v0.2.0, versus prose.yml's
+  v0.30.1). The gate now reads every pin site (`template_submodule_pin` via `git rev-parse
+  HEAD:<subpath>`) and HAZARDs each that does not match the recorded `.host-software` pin of that
+  tool. `call/0038` is rewritten to record the full pin surface.
 - The `collect_files` skip-set `.bare` entry the plan specified is not added: the walker already
   skips the whole `software/` subtree, so it never reaches the store. This is a deliberate
   deviation, recorded here rather than left as a silent omission.
@@ -188,6 +195,10 @@ Test coverage added for the review's no-hollow findings: the migration and self-
 
 Not yet done (the outward rollout, operator-run): cut the host-lifecycle release, re-pin
 `.host-software` and reconcile its header to the `.bare` layout (`call/0039`), migrate the
-materialized components by re-running `--materialize`, and bump the template pin (`call/0038`).
-Shipping the `#9` gate turns the existing template-pin drift into a live HAZARD, so the template
-bump is part of the same release; this red window is deliberate and self-resolves on the bump.
+materialized components by re-running `--materialize`, and **fully upgrade host-template** so every
+pin site is current (`call/0038`): the `prose.yml` `--rev` and the `tools/host-lifecycle` submodule
+to the released host-lifecycle commit, and the `tools/host-lint` submodule to the recorded host-lint
+commit, then bump the agentic-host submodule pointer to that host-template commit. Shipping the `#9`
+gate turns the existing template drift into three live HAZARDs (one per stale pin), so the full
+template upgrade is part of the same release; this red window is deliberate and self-resolves once
+every pin matches.
