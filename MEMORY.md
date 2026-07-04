@@ -2036,3 +2036,24 @@ layout, call/0039), #9 (template-pin-on-release, call/0038). The change sites, t
 are in plan/0056/implementation.md; recommended order #7,#6,#8,#9 shipped as one host-lifecycle release
 then re-vendor + propagate + bump the template pin. To resume: implement per implementation.md in the
 software/host-lifecycle/main worktree; gh account must be connollydavid for pushes to agentic-host.
+
+2026-07-04 — plan/0056 CODE COMPLETE (corrects the prior COMPACT HANDOFF's "NO code written"). All four
+defects (#6/#7/#8/#9) are implemented in software/host-lifecycle/main/src/main.rs (uncommitted in the
+worktree, released outward later), 130 tests green and stable across parallel runs, clippy clean. An
+adversarial review (six dimensions, each finding refuted or confirmed by an independent pass) raised 15
+confirmed findings that changed the shipped design from the plan: (a) #8 migrates the old plan/0029
+`.git`-directory bare store IN PLACE via --materialize (rename to `.bare` + `git worktree repair` to
+re-point the worktrees), NOT teardown — empirically verified that a bare-dir rename breaks the worktree
+gitdir links and `worktree repair` restores them; the stray case (both `.git` and `.bare`) fails closed,
+not EISDIR. (b) #6 exempts the free-form `build` shell command from the fail-closed unquote (interior
+quotes like `CFLAGS="-O2" make` are meaningful); every other value field stays strict-exit-2. (c) #9's
+prose reader is three-state (fail closed on a host-lifecycle install with no parseable --rev) and the pin
+compare is a hex-prefix match. Also fixed a latent test flake I introduced: two tests shared the
+`hl-migrate-{pid}` tempdir base and raced (renamed mine to hl-miglayout). Declined the reviewer's
+parse_software->Result refactor (the pure unquote_recipe_token None is tested; the exit-2 glue matches
+the file's other untested value-error exits). STILL PENDING (outward, operator-confirmed): cut the
+host-lifecycle release (change-class likely adds-flag — new HAZARDs), re-pin .host-software AND reconcile
+its stale header to the `.bare` layout (call/0039, the tracked header still says `<name>.git/`), migrate
+the 8 materialized components by re-running --materialize, and bump the template pin (call/0038).
+Shipping #9's gate turns the existing template drift into a live `software --check` HAZARD until the
+template bump lands in the same release — a deliberate, self-resolving red window.
