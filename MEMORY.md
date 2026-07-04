@@ -2025,3 +2025,14 @@ releases behind, because the release propagate set (call/0021) omitted the templ
 per-defect implementation plan (change sites, tests, verify for #6/#7/#8/#9) is in
 plan/0056-recipe-and-materialisation-hardening/implementation.md. Also corrected PLAN.md's project header
 from "host-lint" to the whole host-* family (it had gone stale as the repo took on every component).
+
+2026-07-04 — Recorded call/0039 (supersedes plan/0029's bare-store placement): a component's bare object
+store is software/<name>/.bare with a `.git` file (`gitdir: ./.bare`) and worktrees at
+software/<name>/<branch>/. This keeps plan/0029's one-dir-per-component clustering AND stops a bare repo
+named `.git` from fighting git tooling (the #8 fix). COMPACT HANDOFF: plan/0056
+(recipe-and-materialisation-hardening) is fully DESIGNED and ticketed but NO code is written yet: #6
+(value-quote normalize on the stamp_value_after_eq model), #7 (remap empty fail-safe no-op), #8 (.bare
+layout, call/0039), #9 (template-pin-on-release, call/0038). The change sites, tests, and verify steps
+are in plan/0056/implementation.md; recommended order #7,#6,#8,#9 shipped as one host-lifecycle release
+then re-vendor + propagate + bump the template pin. To resume: implement per implementation.md in the
+software/host-lifecycle/main worktree; gh account must be connollydavid for pushes to agentic-host.
