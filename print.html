@@ -404,16 +404,20 @@ specified and the build landing one content kind at a time. The direction and th
 questions are in its README; the adversarially reviewed weak-agent probe set is in its
 <code>gather-data.md</code>. The settled decisions follow in <code>call/0030</code> and its siblings once the
 recorded run and the cast review return.</p>
-<p>plan/0056 (recipe-and-materialisation-hardening) is newly cut. It gathers a superset of
-host-lifecycle defects with one root — the tool trusting input, state, and layout a heavily-quantized
-operator mis-authors or that fights git tooling: the systemic <code>.host-software</code> value-quote leak
-(<a href="https://github.com/connollydavid/host-lifecycle/issues/6">connollydavid/host-lifecycle#6</a>), <code>remap</code>
-bailing on an empty <code>.host-remap</code> instead of a fail-safe no-op
-(<a href="https://github.com/connollydavid/host-lifecycle/issues/7">#7</a>), and the bare store named <code>.git</code>
-inside the component dir, which git tooling misreads
-(<a href="https://github.com/connollydavid/host-lifecycle/issues/8">#8</a>, adopting the idiomatic <code>.bare</code> plus
-<code>.git</code>-file layout and superseding plan/0029's bare-store placement). Directions decided; the cast's
-Fen is the acceptance test. The three tickets, decided directions, and open questions are in its README.</p>
+<p>plan/0056 (recipe-and-materialisation-hardening) is cut and implemented. It gathers a superset of
+host-lifecycle defects with one root: the tool trusts input, state, and on-disk layout that a
+heavily-quantized operator mis-authors, or that fights git tooling. The superset covers the systemic
+<code>.host-software</code> value-quote leak
+(<a href="https://github.com/connollydavid/host-lifecycle/issues/6">connollydavid/host-lifecycle#6</a>), a <code>remap</code>
+that quits on an empty <code>.host-remap</code> where a fail-safe no-op belongs
+(<a href="https://github.com/connollydavid/host-lifecycle/issues/7">#7</a>), the bare store named <code>.git</code>
+inside the component dir that git tooling misreads
+(<a href="https://github.com/connollydavid/host-lifecycle/issues/8">#8</a>, now the idiomatic <code>.bare</code> plus
+<code>.git</code>-file layout that supersedes plan/0029's bare-store placement), and a template that pins an
+outdated host-lifecycle no release bumps
+(<a href="https://github.com/connollydavid/host-lifecycle/issues/9">#9</a>). The cast's
+Fen is the acceptance test. The tickets, decided directions, and open questions are in its README, and
+the implemented state is in its implementation.md.</p>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
 <ul>
 <li><input disabled="" type="checkbox" checked=""/>
@@ -6647,7 +6651,7 @@ empty dictionary rather than a fail-safe no-op
 bare repo <code>.git</code> inside the component dir, which git tooling misreads as a working tree
 (<a href="https://github.com/connollydavid/host-lifecycle/issues/8">#8</a>), and the template pinning an outdated
 host-lifecycle that no release bumps (<a href="https://github.com/connollydavid/host-lifecycle/issues/9">#9</a>).
-Four defects, one root: the tool is not yet robust to the weak-agent author, the degenerate state, and
+Four defects, one root: the tool does not yet withstand the weak-agent author, the degenerate state, or
 the release drift the methodology explicitly serves.</p>
 <h2 id="the-superset"><a class="header" href="#the-superset">The superset</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>#</th><th>Defect</th><th>Decided direction</th><th>Class</th></tr></thead><tbody>
