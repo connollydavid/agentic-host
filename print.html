@@ -10886,6 +10886,14 @@ documenting it; the sibling <code>&lt;name&gt;.git</code> (matches the stale .ho
 was the runner-up. NOT YET IMPLEMENTED — the code + release-and-propagate campaign is the milestone's
 work; the remap fix is fully designed (cast-converged) and ready to drop in. Ops: gh account must be
 connollydavid to push agentic-host (slartibardfast gets 403 but CAN open issues); switch as needed.</p>
+<p>2026-07-04 — Added connollydavid/host-lifecycle#9 to the plan/0056 superset and recorded durable
+decision call/0038: releasing any host-* tool MUST bump host-template's pin of that tool (today the
+prose.yml <code>cargo install --git host-lifecycle --rev</code> line) and a release gate must fail on a stale pin.
+Trigger: the template pins host-lifecycle v0.30.1 (rev 46d481cd) while the host gates on v0.35.1, several
+releases behind, because the release propagate set (call/0021) omitted the template. The detailed
+per-defect implementation plan (change sites, tests, verify for #6/#7/#8/#9) is in
+plan/0056-recipe-and-materialisation-hardening/implementation.md. Also corrected PLAN.md's project header
+from "host-lint" to the whole host-* family (it had gone stale as the repo took on every component).</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
