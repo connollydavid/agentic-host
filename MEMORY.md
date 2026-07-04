@@ -2057,3 +2057,18 @@ its stale header to the `.bare` layout (call/0039, the tracked header still says
 the 8 materialized components by re-running --materialize, and bump the template pin (call/0038).
 Shipping #9's gate turns the existing template drift into a live `software --check` HAZARD until the
 template bump lands in the same release — a deliberate, self-resolving red window.
+
+2026-07-04 — SERIOUS GAP found by auditing ALL pins (the operator pressed "check all pins"): host-template
+pins host-lifecycle in THREE places, not one, and my #9 gate + call/0038 only ever checked prose.yml. The
+two blind spots — the `tools/host-lifecycle` and `tools/host-lint` SUBMODULE gitlinks — were the most
+stale: tools/host-lifecycle at v0.15.1, tools/host-lint at v0.2.0, prose.yml at v0.30.1, against a dev
+host on host-lifecycle v0.35.1 / host-lint v0.12.1. So host-template shipped new adopters ~20-release-old
+tools. The dev host's own `.host-software` pins are all current; the rot was entirely in host-template.
+Fix: extended `template_pin_problems` to read every pin site (`template_submodule_pin` = `git rev-parse
+HEAD:tools/<name>`, compared to the recorded `.host-software` pin of that tool); verified it fires on all
+three real drifts. Rewrote call/0038 (broadened scope to the full pin surface; also cleared an agentic-tell
+in its prose — "the invariant is stated positively" / "the burden lands on the tool and not on the
+operator" — ironic in this repo). LESSON: when a pin invariant exists, enumerate EVERY pin site
+(prose-CI installs AND submodule gitlinks AND git-dep revs), not the first one found; a gate that checks
+one of several pins gives false assurance. The v0.36.0 rollout must fully upgrade host-template (all three
+pins) and bump agentic-host's host-template submodule pointer, else the new gate stays red.
