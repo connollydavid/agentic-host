@@ -1997,3 +1997,22 @@ and the host scripts (hooks use `git -z` + `while IFS= read -r -d ''` to defeat 
 purpose) are CLEAN. Findings posted to host-lifecycle#6; host-lint and host-prove warrant their own
 tickets. Lesson: a raw value-read defect is rarely a single field — audit the whole parser and every
 consumer of the same file, and look for the correct-normalizer that already exists to copy.
+
+2026-07-04 — Cut plan/0056 (recipe-and-materialisation-hardening): a host-lifecycle robustness superset
+gathering connollydavid/host-lifecycle#6 (recipe value-quote leaks), #7 (remap bails on an empty/absent
+.host-remap; should be a fail-safe no-op), and #8 (bare store named `.git` inside software/<name>/ fights
+git tooling). One root: host-lifecycle must be legible and fail-safe to a heavily-quantized operator
+(Fen) and must not fight git tooling; Fen is the acceptance test. Decided directions: #6 normalize value
+lines on the existing stamp_value_after_eq model (main.rs:437, which unquotes a "..." wrapper and stops
+at #); #7 `--apply` no-op exit 0, `--check` still scans with zero rules and exits on the tells (never
+hollow — a tell in a scanned doc like cast/README.md must still flag), informational status lines not an
+error, keep malformed-dictionary exit 2 (main.rs:744/749); #8 adopt the `.bare` + `.git`-file
+per-component layout (software/<name>/ holds .bare/ + a `.git` file `gitdir: ./.bare` + <branch>/
+worktrees), which keeps plan/0029's one-dir-per-component clustering AND stops fighting tooling (git
+resolves software/<name>/ via the .git file), superseding plan/0029's bare-store placement (store_dir
+main.rs:4051; a call/ decision is owed). Layout ruling: the operator said "follow git best practices,
+don't fight tooling", which excluded BOTH the current `.git`-named-bare-inside form AND merely
+documenting it; the sibling `<name>.git` (matches the stale .host-software header + main.rs:1201 docs)
+was the runner-up. NOT YET IMPLEMENTED — the code + release-and-propagate campaign is the milestone's
+work; the remap fix is fully designed (cast-converged) and ready to drop in. Ops: gh account must be
+connollydavid to push agentic-host (slartibardfast gets 403 but CAN open issues); switch as needed.
