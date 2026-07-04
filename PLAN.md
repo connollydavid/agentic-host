@@ -1,8 +1,8 @@
 # PLAN.md
 
-## Project: host-lint
+## Project: agentic-host
 
-A project under agentic evolution. This plan tracks the evolution of the `host-lint` software (a bare store with worktrees; see `call/0010` and `.host-software`).
+A project under agentic evolution. This plan tracks the evolution of the `host-*` components (each a bare store with worktrees; see `call/0010` and `.host-software`), and the methodology that develops them.
 
 ## Open work
 

@@ -12,12 +12,14 @@ A cross-project read-only audit for a single quote-leak class (opened as
 [connollydavid/host-lifecycle#6](https://github.com/connollydavid/host-lifecycle/issues/6)) found the
 reported `worktrees = "main"` leak was one symptom of a systemic raw-value read across the whole
 `.host-software` parser, and the same class recurring fail-safe in host-lint and latent in host-prove.
-Probing that result, the operator surfaced two more defects of the same family: `remap` bailing on an
+Probing that result, the operator surfaced three more defects of the same family: `remap` bailing on an
 empty dictionary rather than a fail-safe no-op
 ([#7](https://github.com/connollydavid/host-lifecycle/issues/7)), and the bare-store layout naming a
 bare repo `.git` inside the component dir, which git tooling misreads as a working tree
-([#8](https://github.com/connollydavid/host-lifecycle/issues/8)). Three defects, one root: the tool is
-not yet robust to the weak-agent author and the degenerate state the methodology explicitly serves.
+([#8](https://github.com/connollydavid/host-lifecycle/issues/8)), and the template pinning an outdated
+host-lifecycle that no release bumps ([#9](https://github.com/connollydavid/host-lifecycle/issues/9)).
+Four defects, one root: the tool is not yet robust to the weak-agent author, the degenerate state, and
+the release drift the methodology explicitly serves.
 
 ## The superset
 
@@ -26,6 +28,10 @@ not yet robust to the weak-agent author and the degenerate state the methodology
 | [#6](https://github.com/connollydavid/host-lifecycle/issues/6) | `.host-software` value lines read raw; ordinary ASCII quotes leak into refs, paths, hashes, URLs | Normalize value lines on the existing `stamp_value_after_eq` model (unquote a `"…"` wrapper, reject a stray quote); cover every value field and both parsers; regression fixture | recipe parsing |
 | [#7](https://github.com/connollydavid/host-lifecycle/issues/7) | `remap` exits 2 on an empty or absent `.host-remap` | Fail-safe no-op: `--apply` no-op exit 0; `--check` still scans with zero rules and exits on the tells; informational status lines, not error; keep malformed-dictionary errors; anti-hollow test | control-flow fail-safe |
 | [#8](https://github.com/connollydavid/host-lifecycle/issues/8) | Bare store named `.git` inside `software/<name>/` fights git tooling; docs describe a third layout | Adopt `.bare` + `.git`-file per component; reconcile the stale docs; re-materialize; supersede plan/0029's bare-store placement | on-disk layout + doc reconcile |
+| [#9](https://github.com/connollydavid/host-lifecycle/issues/9) | Template pins an outdated host-lifecycle that no release bumps | A tool release bumps the template's pin, and a gate fails on a stale pin (durable policy `call/0038`) | release process |
+
+The detailed per-defect implementation plan is in [implementation.md](implementation.md); the durable
+policy for #9 is recorded in `call/0038`.
 
 ## The cast's throughline
 
