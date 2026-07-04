@@ -64,9 +64,9 @@ Changes:
   `deps-bundle` (both tokens), and the `worktree` line `store=` token.
 - Apply at `parse_project_facts` (`main.rs:1400`) for `document`, `member`, `drivers`.
 - Apply at `parse_rung` and the obligation manifest (`main.rs:5340`, `5606`) for the `spec=`,
-  harness, and `bound=` tokens.
-- A stray or unbalanced quote in a value is a loud line error (exit 2), matching the
-  malformed-line discipline already in `parse_software`.
+  `bound=`, and name tokens.
+- A stray or unbalanced quote in a value is a loud line error (exit 2), the same
+  malformed-line discipline `parse_software` already uses.
 
 Tests:
 
@@ -171,10 +171,10 @@ findings; the substantive ones changed the shipped design:
   the tolerant `unq_cmd` (strip a clean wrapper, else pass through) rather than the strict `unq`
   that fails closed on a bare ref, path, hash, or URL. Every other value field stays strict.
 - `#9` hardens the gate: the prose-CI reader is three-state (`Rev` / `InstallNoRev` / `NoInstall`)
-  so a host-lifecycle install with no parseable `--rev` fails closed rather than passing silently,
-  and the pin compare is a case-insensitive hex-prefix match (floored at seven) so an abbreviated
-  `--rev` designating the same commit is treated as equal. The release-time template-pin-bump
-  instruction is a pure, unit-tested helper that names each step as a concrete command.
+  so a host-lifecycle install whose `--rev` cannot be parsed still HAZARDs, and the pin compare is a
+  case-insensitive hex-prefix match (floored at seven) so an abbreviated `--rev` for the same commit
+  counts as equal. The release-time template-pin-bump instruction is a pure, unit-tested helper that
+  names each step as a concrete command.
 - The `collect_files` skip-set `.bare` entry the plan specified is not added: the walker already
   skips the whole `software/` subtree, so it never reaches the store. This is a deliberate
   deviation, recorded here rather than left as a silent omission.

@@ -18,7 +18,7 @@ empty dictionary rather than a fail-safe no-op
 bare repo `.git` inside the component dir, which git tooling misreads as a working tree
 ([#8](https://github.com/connollydavid/host-lifecycle/issues/8)), and the template pinning an outdated
 host-lifecycle that no release bumps ([#9](https://github.com/connollydavid/host-lifecycle/issues/9)).
-Four defects, one root: the tool is not yet robust to the weak-agent author, the degenerate state, and
+Four defects, one root: the tool does not yet withstand the weak-agent author, the degenerate state, or
 the release drift the methodology explicitly serves.
 
 ## The superset

@@ -34,16 +34,20 @@ questions are in its README; the adversarially reviewed weak-agent probe set is 
 `gather-data.md`. The settled decisions follow in `call/0030` and its siblings once the
 recorded run and the cast review return.
 
-plan/0056 (recipe-and-materialisation-hardening) is newly cut. It gathers a superset of
-host-lifecycle defects with one root — the tool trusting input, state, and layout a heavily-quantized
-operator mis-authors or that fights git tooling: the systemic `.host-software` value-quote leak
-([connollydavid/host-lifecycle#6](https://github.com/connollydavid/host-lifecycle/issues/6)), `remap`
-bailing on an empty `.host-remap` instead of a fail-safe no-op
-([#7](https://github.com/connollydavid/host-lifecycle/issues/7)), and the bare store named `.git`
-inside the component dir, which git tooling misreads
-([#8](https://github.com/connollydavid/host-lifecycle/issues/8), adopting the idiomatic `.bare` plus
-`.git`-file layout and superseding plan/0029's bare-store placement). Directions decided; the cast's
-Fen is the acceptance test. The three tickets, decided directions, and open questions are in its README.
+plan/0056 (recipe-and-materialisation-hardening) is cut and implemented. It gathers a superset of
+host-lifecycle defects with one root: the tool trusts input, state, and on-disk layout that a
+heavily-quantized operator mis-authors, or that fights git tooling. The superset covers the systemic
+`.host-software` value-quote leak
+([connollydavid/host-lifecycle#6](https://github.com/connollydavid/host-lifecycle/issues/6)), a `remap`
+that quits on an empty `.host-remap` where a fail-safe no-op belongs
+([#7](https://github.com/connollydavid/host-lifecycle/issues/7)), the bare store named `.git`
+inside the component dir that git tooling misreads
+([#8](https://github.com/connollydavid/host-lifecycle/issues/8), now the idiomatic `.bare` plus
+`.git`-file layout that supersedes plan/0029's bare-store placement), and a template that pins an
+outdated host-lifecycle no release bumps
+([#9](https://github.com/connollydavid/host-lifecycle/issues/9)). The cast's
+Fen is the acceptance test. The tickets, decided directions, and open questions are in its README, and
+the implemented state is in its implementation.md.
 
 ## Status
 
