@@ -54,7 +54,7 @@ Because these touch tool behaviour the spine relies on, the milestone is gated o
 ## Supersedes and owes
 
 - #8 supersedes plan/0029's bare-store placement (`software/<name>/.git` becomes
-  `software/<name>/.bare` plus a `.git` file). A `call/` decision records the change and its migration.
+  `software/<name>/.bare` plus a `.git` file). `call/0039` records the change, its migration, and the rationale.
 - #8 also surfaces a reconcile gap: the reconcile pass does not cover the recipe's on-disk layout, so
   the plan/0029 doc drift stood undetected. Whether reconcile should is an open question, out of scope
   here.

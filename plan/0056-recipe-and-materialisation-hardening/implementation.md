@@ -105,8 +105,8 @@ Migration of already-materialized components: re-materialize from `url` and `pin
 then a materialize), which the recorded pin reproduces deterministically. The milestone
 documents the one-time operator action.
 
-Decision owed: a `call/` decision records superseding `plan/0029`'s bare-store placement: the
-layout, the migration, and the rationale that a bare repo named `.git` fights git tooling.
+Decision: `call/0039` records superseding `plan/0029`'s bare-store placement: the layout, the
+migration, and the rationale that a bare repo named `.git` fights git tooling.
 
 Verify: `cargo test`; an end-to-end re-materialize with a clean `--check`; a `git status` inside
 `software/<name>/` that no longer errors on a bare repo, and an IDE that no longer flags the
