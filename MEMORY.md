@@ -2107,3 +2107,24 @@ cleared it, and a truncated open-elicitation reply is never scored. Propagated: 
 call/0038 reconciled to point at the authored spine rule. The rule stays gate-enforced by `software
 --check`'s template-pin gate (the backstop); no new call/ opened (a host-template-scoped call/ would
 re-trip the gate).
+
+Completeness pass after the final review (2026-07-04, planned + approved): the review of the spine
+change flagged two loose ends; a read-only two-agent audit scoped them, then both were fixed. (1)
+WORDING: the carried-template-pin closing sentence duplicated "the producer of a tool embeds it",
+which is ALSO the reference-don't-vendor ledger entry's verify-grep target (UPGRADING.md:161);
+tightened to keep that phrase only at its one home (CLAUDE.md:431) while preserving "re-pins the
+carried template" (the 1682d62 verify). GOTCHA: the first re-wrap SPLIT "re-pins the carried template"
+across a line break (grep -c fell to 0), which would have broken the 1682d62 verify; the grep-invariant
+check caught it, re-wrapped contiguous. (2) LEDGER GAP: the .git->.bare bare-store migration (plan/0056
+#8, call/0039) shipped in v0.36.0 with NO UPGRADING entry AND left host-template STRUCTURE.md:42
+describing the old software/<name>/.git layout. Refreshed STRUCTURE.md to .bare + a .git gitdir-link
+file (commit 7127dc4) and added the ledger stanza keyed to it (requires v0.36.0, verify greps
+"gitdir-link"). The audit confirmed this is the ONLY adopter-facing gap in the v0.32.0->v0.36.0 span
+(CLAUDE.md/STRUCTURE.md byte-identical across it; every other change tool-internal / other-component /
+dev-host-only). GOTCHA (again): single-file host-lint --docs passed but the whole-repo host-lifecycle
+prose lane (what host-template CI runs, a zero-warning gate) flagged "superseding" as an ing-tail;
+reworded to "This layout supersedes". Considered-and-declined: no ledger stanza for the v0.33.0/#6
+inert HAZARDs (they need no proactive action; the ledger documents actions, not gates). STILL OPEN
+(separate repo, flagged not fixed): the host entrance README (software/host/main/README.md:108) also
+describes the old <name>.git/ layout; that fix routes through the host repo's own flow. Propagated:
+host-template HEAD f0eebff, agentic-host submodule e8a9ae1->f0eebff, applied set now 5.
