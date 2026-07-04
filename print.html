@@ -10997,6 +10997,16 @@ inert HAZARDs (they need no proactive action; the ledger documents actions, not 
 (separate repo, flagged not fixed): the host entrance README (software/host/main/README.md:108) also
 describes the old <name>.git/ layout; that fix routes through the host repo's own flow. Propagated:
 host-template HEAD f0eebff, agentic-host submodule e8a9ae1-&gt;f0eebff, applied set now 5.</p>
+<p>Site CI publish-path fix (2026-07-04): checking CI after the spine push (not just the gates) found
+host-template's Site workflow RED (ENOENT on ./book) — and it had been red since e8a9ae1, so not
+from this change. Root cause: host-template's site.yml still published ./book while host-lifecycle
+book emits mdBook/out (the v0.30.2 layout). The migration note ALREADY covered it (the v0.30.2
+UPGRADING entry says "point the publish step at mdBook/out in place of book"); host-template simply
+never applied its OWN ledger action to its OWN workflow. Fixed site.yml publish_dir book-&gt;mdBook/out
+plus the stale comment (commit 5707980), matching the working agentic-host mdbook.yml; bumped the
+submodule pointer to 5707980. No new ledger entry (covered by v0.30.2). Lessons: (1) the template
+must practice the migrations it preaches — check the meta-repo's own CI is green after a push, not
+only the local gates; (2) "complete means whole-suite green" includes the canonical template's CI.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
