@@ -34,6 +34,17 @@ questions are in its README; the adversarially reviewed weak-agent probe set is 
 `gather-data.md`. The settled decisions follow in `call/0030` and its siblings once the
 recorded run and the cast review return.
 
+plan/0056 (recipe-and-materialisation-hardening) is newly cut. It gathers a superset of
+host-lifecycle defects with one root — the tool trusting input, state, and layout a heavily-quantized
+operator mis-authors or that fights git tooling: the systemic `.host-software` value-quote leak
+([connollydavid/host-lifecycle#6](https://github.com/connollydavid/host-lifecycle/issues/6)), `remap`
+bailing on an empty `.host-remap` instead of a fail-safe no-op
+([#7](https://github.com/connollydavid/host-lifecycle/issues/7)), and the bare store named `.git`
+inside the component dir, which git tooling misreads
+([#8](https://github.com/connollydavid/host-lifecycle/issues/8), adopting the idiomatic `.bare` plus
+`.git`-file layout and superseding plan/0029's bare-store placement). Directions decided; the cast's
+Fen is the acceptance test. The three tickets, decided directions, and open questions are in its README.
+
 ## Status
 
 - [x] Bootstrap: initial setup and bootstrapping
