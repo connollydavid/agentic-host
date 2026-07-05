@@ -31,12 +31,24 @@ reusing the scan's fence detection rather than a second implementation.
 
 `load_allow` (src/main.rs:787) reads `.host-lint-allow`; host-lint (and the hooks) read `LEXICON`.
 `remap --check` uses `load_allow`, so a token declared in `LEXICON` is unknown to remap and one in
-`.host-lint-allow` is unknown to host-lint. Fix: one canonical allowlist read by every lane. Open
-sub-decision (the format reconciliation): `LEXICON` holds contextual phrases masked before detection,
-while `.host-lint-allow` holds plain lowercased tokens. Candidate: `remap --check` reads `LEXICON`
-(the tool-owned, spine-documented surface) through the same masking host-lint uses, and `.host-lint-allow`
-is retired or read as a legacy alias by both. Decide the canonical surface and the migration for an
-existing `.host-lint-allow` before coding.
+`.host-lint-allow` is unknown to host-lint.
+
+Operator ruling: full unification on `LEXICON`. This needs **no host-lint change**: `host_lint::load_lexicon`
+is already `pub` and returns `Lexicon { phrases_lc, .. }` (the lowercased masking phrases the `--all` and
+`--docs` lanes use), and its doc names "an embedder" as a caller. So `remap --check` calls
+`host_lint::load_lexicon(root).phrases_lc` and passes it to `scan_text_with_allow` in place of
+`load_allow(.host-lint-allow)`, honouring the same declared phrases host-lint does. `.host-lint-allow` is
+retired (read as a legacy alias, merged into the phrase list, with a deprecation note) so an existing
+adopter file keeps working while `LEXICON` becomes canonical. Host-lifecycle-only.
+
+## Coupling correction
+
+An earlier draft assumed #13 needed a new host-lint LEXICON-scan API, coupling M2 to the host-lint
+release. That was wrong: `load_lexicon` is already public, so **M2 (#12, #13, #14) is host-lifecycle-only**
+and **M3 (#18, the hook script in host-lint's `main.rs`) is host-lint-only** — the two milestones are
+independent, as originally cut. #12 replicates a small `host-lint:ignore` fence tracker in `apply_text`
+(the scan already skips the fence via host-lint; apply must too) rather than taking a host-lint helper,
+keeping M2 self-contained.
 
 ## #14 — `software --materialize` clones full history every time
 
