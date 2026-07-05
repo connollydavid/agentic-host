@@ -11116,6 +11116,36 @@ plus the stale comment (commit 5707980), matching the working agentic-host mdboo
 submodule pointer to 5707980. No new ledger entry (covered by v0.30.2). Lessons: (1) the template
 must practice the migrations it preaches — check the meta-repo's own CI is green after a push, not
 only the local gates; (2) "complete means whole-suite green" includes the canonical template's CI.</p>
+<p>deps-bundle onboarding graduation gap, connollydavid/host-lifecycle#10 + plan/0057 (2026-07-05):
+"Read and follow host" left agentic-host up to date (baseline de8a517, 5 applied out of order, 0
+pending), but software --check carried three standing (onboarding) notes: host-reference,
+host-reference-ocr, host-reference-openscad declare a deps-bundle and commit no producer
+deps-bundle.lock. The operator asked whether to commit those locks; consulting the cast reframed it
+as a UNIVERSAL bug. The defect is NOT the green onboarding note (plan/0051 finding 6 decided that
+correctly; a tracked-then-deleted lock is already a HAZARD). It is (1) host-lifecycle ships no
+tool-carried graduation of a bundled component to attested, and (2) the owed lock UNDER-reports at
+the verdict layer: software --check exits 0/green while a graduation is owed and the pin-versus-lock
+drift guard sits dormant, possibly forever. Code confirms it (main.rs ~4884-4911: never-tracked lock
+returns 0 provenance problems; HAZARD only for tracked-then-deleted at ~4907; no subcommand authors
+a producer deps-bundle.lock). All four archetypal seats returned universal-bug. Orin: lifecycle-
+contract gap, embed names the entry but nothing names the exit; the graduation must be standalone and
+late-reachable, not a version-keyed migration step; the tool lands first and the three components are
+its first customer. Bly: exit-0 under-reports, surface onboarding as a distinct enumerable OWED third
+state with a receipt (no-hollow-green three-state model). Mara (final say): universal, worth a small
+milestone, but NOT migration-specific -- a steady-state gap that merely surfaces during migration, so
+build the general ramp; release --change-class neither would mint no-op version bumps for a
+byte-identical re-derivation. Wren: the done predicate exists (the ok branch) but nothing asserts a
+bundled component must reach it, so graduation must be idempotent and self-re-listing across a
+truncated window. Fen is the acceptance test (drive the real qwen3.5-4b once a candidate software
+--graduate exists; not simulated by a stronger model). Operator ruling: a steady-state graduation
+ramp. Open design tension for the milestone: committing the lock advances the producer HEAD, but
+.host-software pins a RELEASED commit (dual-release-authority), so a no-version-bump graduation
+conflicts with it -- the milestone must decide which authority the graduation commit answers to.
+Resolution of the original commit-the-locks question: do NOT hand-commit; the three host-reference*
+components graduate through the new tool once it ships, not by three manual release cascades. Filed
+issue #10 and cut plan/0057 (agentic-host commit 30c9a29, pushed); host-lifecycle not yet changed.
+Process note: consulted the cast via four parallel persona subagents (Orin/Bly/Mara/Wren) reading
+the real code, not a single pass; Fen held as the acceptance test rather than role-played.</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
