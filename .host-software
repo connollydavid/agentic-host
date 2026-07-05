@@ -40,12 +40,12 @@
 	# pinned muslrust toolchain from the vendored deps-bundle, and re-derives byte-identically
 	# (`software --verify-build`). The heavy readers are opt-in and out of the canonical artifact.
 	url       = https://github.com/connollydavid/host-reference.git
-	pin       = 0d46b5139fd17ad42fc27a5fd7a135bf3161d03d
+	pin       = 24e6339d6dd951348ea81332cd4407dbd12a0909
 	worktrees =
 	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl -p host-reference
 	deploy    = host-reference
-	artifact  = target/x86_64-unknown-linux-musl/release/host-reference 89853d3978186768cd69a24ea3ae2606f734bc9d2355de693036724ae53b1211
+	artifact  = target/x86_64-unknown-linux-musl/release/host-reference d655c92478b3c50e433a00be2ff261dabd3598863a5f6e6cef15e5ab6e57f2ee
 	deps-bundle = https://github.com/connollydavid/host-reference/releases/download/vendor-v1/vendor.tar.gz e5ea77309c964f9c75ac9e70385cf94a27900464047a2757e45f525632f65628
 [software "host-reference-ocr"]
 	# the out-of-process OCR helper (call/0034). host-reference's permissive `ocr` plugin runs this
