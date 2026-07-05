@@ -49,6 +49,19 @@ outdated host-lifecycle no release bumps
 Fen is the acceptance test. The tickets, decided directions, and open questions are in its README, and
 the implemented state is in its implementation.md.
 
+plan/0057 (deps-bundle-graduation) is newly cut and in design. It continues the plan/0056
+recipe-and-materialisation-hardening lineage: a bundled component that records a `deps-bundle` pin with
+no committed producer `deps-bundle.lock` sits in a green `(onboarding)` state that host-lifecycle
+gives no tool-carried way out of, so the pin-versus-lock drift guard stays dormant behind a passing
+check ([connollydavid/host-lifecycle#10](https://github.com/connollydavid/host-lifecycle/issues/10)).
+The operator ruled a steady-state graduation ramp rather than a migration bolt-on: a standalone,
+receipted `software --graduate` action that surfaces onboarding as a distinct enumerable owed state,
+stays idempotent and self-re-listing, and fails loud on a pin-lock mismatch. The cast returned a unanimous
+universal-bug verdict, and Fen is the acceptance test. agentic-host's three `host-reference*` onboarding
+components are the ramp's first customer, graduated through the tool once it ships instead of by a
+hand-rolled release cascade. The direction, the must-nots, and the open dual-release-authority question
+are in its README.
+
 ## Status
 
 - [x] Bootstrap: initial setup and bootstrapping
