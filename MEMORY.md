@@ -2170,3 +2170,21 @@ components graduate through the new tool once it ships, not by three manual rele
 issue #10 and cut plan/0057 (agentic-host commit 30c9a29, pushed); host-lifecycle not yet changed.
 Process note: consulted the cast via four parallel persona subagents (Orin/Bly/Mara/Wren) reading
 the real code, not a single pass; Fen held as the acceptance test rather than role-played.
+
+plan/0057 implementation + Fen acceptance (2026-07-05): implemented `software --lock <name>` (the
+release-grade graduation verb) and the owed advisory summary in `software --check`. Owed stays
+**exit 0** (a counted, enumerated line that names the next action), NOT exit-3: an exit-3-on-owed
+would deadlock the graduation, because `--lock` drives a release whose verify gate re-runs
+`software --check` (there is a `HOST_LIFECYCLE_IN_CHECK` re-entrancy guard on exactly that path), so
+a non-zero owed exit would block graduating one component while the others are still legitimately
+owed. Spec: an `Owed` entity + `DetectOwedGraduation` rule + `OwedNeverHazards` invariant (owed is
+advisory, never a Finding); 5 new obligations dispositioned (41 total), 132 tests, clippy + allium
+clean. **Fen acceptance PASSED on the real qwen3.5-4b via rope** (pal could not see local paths):
+Condition A (the new output names `software --lock`) picked the tool command A 3/3; Condition B (the
+old output — green check, benign onboarding notes, no named action) picked "nothing needs doing" 2/2,
+the exact under-report trap the milestone fixes. So the design both works and is necessary at the 4B
+bar. Cascade scope is smaller than first feared: releasing host-lifecycle is source-only (no new Cargo
+deps, so vendor-v6 is reused, no re-vendor), and host-lifecycle is a tool with no library consumers to
+propagate. Remaining outward work: release host-lifecycle (adds-flag) then graduate the three
+host-reference components via `--lock` (each a `neither` producer release), across four repos. The
+local code changes are UNCOMMITTED in the host-lifecycle worktree (they become the release commit).
