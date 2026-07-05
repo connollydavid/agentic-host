@@ -30,3 +30,23 @@ All three repos' CI green on a fresh push, host-reference's release job publishi
 agentic-host's whole-suite verify still green. A host-reference CI-only change carries no binary
 change, so it re-pins by the artifact-preserving pin-advance reserved for a pure CI fix (no version
 bump); a helper that gains a workflow does the same.
+
+## As-built (complete)
+
+host-reference's toolchain now declares the rustfmt and clippy components, which turned `lint` and
+`features` green and un-masked three advisories cargo-deny had never reached under the earlier fmt
+failure:
+
+- **quick-xml RUSTSEC-2026-0194 and 0195** (real DoS advisories) are accepted as a scoped, tracked
+  ignore in `deny.toml`. They reach the workspace only through the opt-in office and geometry readers
+  (`undoc`, `threemf`), never the deployed default-features binary, and the upgrade is blocked upstream
+  (`threemf` 0.8.0 is unpatched; bumping `undoc` drags in a still-vulnerable 0.40.1; forcing 0.41
+  breaks the API). Tracked in
+  [connollydavid/host-reference#3](https://github.com/connollydavid/host-reference/issues/3) until
+  upstream lands quick-xml >= 0.41.0 (operator ruling: scoped ignore over a breaking dependency surgery).
+- **ttf-parser RUSTSEC-2026-0192** (unmaintained only, no vulnerability, under the opt-in pdf reader) is
+  accepted on the same footing as the existing unmaintained advisories.
+
+ocr and openscad each gained a test, lint, and build workflow plus a pinned toolchain; openscad's new
+fmt lane fixed one pre-existing formatting diff. All three re-pinned artifact-preserving (openscad's fmt
+re-derives byte-identically, verified). The three repos' CI and `software --check` are green.
