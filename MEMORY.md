@@ -2243,3 +2243,45 @@ upstream so the branch push silently no-op'd (only the tag pushed), leaving orig
 pin stayed reachable via the tag; verify the "To <remote> a..b" line, and push with explicit `git push
 origin main`. (2) A green lint step can MASK a later step: fixing the fmt/clippy failure un-masked the
 cargo-deny advisory failure that had never run before.
+
+CURRENT STATE (compaction point, 2026-07-05): agentic-host main 53a184d, tree clean, all pushed,
+software --check exit 0, whole suite CI green. This session shipped plan/0057 (deps-bundle graduation
+ramp: host-lifecycle v0.37.0 = bf0eacd, software --lock + owed advisory; the three host-reference
+components graduated; #10 closed) and plan/0058 (reference-family CI: host-reference CI fixed and green
+at 88d3a26, quick-xml DoS advisories scoped-and-tracked in host-reference#3, ocr at 1435a80 and openscad
+at 0fd8e8c gained CI; all re-pinned artifact-preserving). Component pins now: host-lifecycle bf0eacd,
+host-reference 88d3a26, host-reference-ocr 1435a80, host-reference-openscad 0fd8e8c, host-template
+submodule 4c6176f, host a2dcfc4; host-lint/host-prove/host-grammar unchanged.
+
+NEXT (two independent milestones, cut + audited, NOT yet built; open-bug fix plan from the operator):
+
+- plan/0059 (M2, host-lifecycle-only, remap/allowlist): see its implementation.md for the audit of
+  record with exact code paths. #11 is verified-resolved and closed (fail-safe load_remap shipped in
+  v0.36.0). #12: remap --apply (apply_text, src/main.rs:850) does not skip host-lint:ignore fenced
+  blocks the way the scan does, corrupting boxed records; fix = a small host-lint:ignore fence tracker
+  in apply_text that emits fenced lines untouched (regular code blocks stay substituted). #13: unify
+  the split allowlist on LEXICON; load_allow (src/main.rs:787) reads .host-lint-allow while host-lint
+  reads LEXICON; fix = remap --check calls host_lint::load_lexicon(root).phrases_lc (already pub, no
+  host-lint change) and passes it to scan_text_with_allow, reading .host-lint-allow as a legacy alias.
+  #14: software --materialize does a full-history bare clone; add a --filter=blob:none partial-clone
+  option. Then spec + tests + one host-lifecycle release + re-vendor.
+
+- plan/0060 (M3, host-lint-only, pre-commit hook #18): the hook script lives in host-lint's main.rs
+  (act_on_rc/failing closed/--stdin-as). Under set -o pipefail, a staged submodule gitlink makes
+  `git show ":<submodule>"` exit 128, which propagates as fail-closed and blocks every gitlink commit.
+  Fix = skip mode-160000 gitlinks in the staged-path loop (or treat git-show 128 on a gitlink as clean).
+  Then a host-lint release + re-vendor + propagate. Until this ships, commit a gitlink-only pointer
+  bump with `git commit --no-verify` (a gitlink has no text to lint).
+
+Decisions locked: M2 and M3 are independent (an earlier "coupled through host-lint" analysis was wrong,
+load_lexicon is already public); full #13 unification on LEXICON. Remaining open issues:
+host-lifecycle #12/#13/#14 (M2) and #4 (task-group, a separate deferred feature); host-lint #18 (M3);
+host-reference #3 (quick-xml upgrade, upstream-blocked on threemf/undoc).
+
+GOTCHAS for the next session: (1) verify a doc's prose with `host-lifecycle prose .` (the authoritative
+gate the verify recheck runs), NOT `host-lint --docs | grep <path>` — a too-specific grep pattern gave
+a false clean TWICE this session, once reddening the verify recheck. (2) A piped `git push | tail` hides
+a failed push behind tail's exit; verify the "To <remote> a..b" line, and note a materialized worktree
+main may lack an upstream (host-reference did). (3) A green earlier CI step masks a later one (fixing
+fmt/clippy un-masked cargo-deny). (4) The host-lint pre-commit hook bug (#18) is still live: use
+--no-verify for gitlink-only commits until M3 ships.
