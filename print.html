@@ -6856,6 +6856,24 @@ scaled to a single-crate helper.</li>
 agentic-host's whole-suite verify still green. A host-reference CI-only change carries no binary
 change, so it re-pins by the artifact-preserving pin-advance reserved for a pure CI fix (no version
 bump); a helper that gains a workflow does the same.</p>
+<h2 id="as-built-complete"><a class="header" href="#as-built-complete">As-built (complete)</a></h2>
+<p>host-reference's toolchain now declares the rustfmt and clippy components, which turned <code>lint</code> and
+<code>features</code> green and un-masked three advisories cargo-deny had never reached under the earlier fmt
+failure:</p>
+<ul>
+<li><strong>quick-xml RUSTSEC-2026-0194 and 0195</strong> (real DoS advisories) are accepted as a scoped, tracked
+ignore in <code>deny.toml</code>. They reach the workspace only through the opt-in office and geometry readers
+(<code>undoc</code>, <code>threemf</code>), never the deployed default-features binary, and the upgrade is blocked upstream
+(<code>threemf</code> 0.8.0 is unpatched; bumping <code>undoc</code> drags in a still-vulnerable 0.40.1; forcing 0.41
+breaks the API). Tracked in
+<a href="https://github.com/connollydavid/host-reference/issues/3">connollydavid/host-reference#3</a> until
+upstream lands quick-xml &gt;= 0.41.0 (operator ruling: scoped ignore over a breaking dependency surgery).</li>
+<li><strong>ttf-parser RUSTSEC-2026-0192</strong> (unmaintained only, no vulnerability, under the opt-in pdf reader) is
+accepted on the same footing as the existing unmaintained advisories.</li>
+</ul>
+<p>ocr and openscad each gained a test, lint, and build workflow plus a pinned toolchain; openscad's new
+fmt lane fixed one pre-existing formatting diff. All three re-pinned artifact-preserving (openscad's fmt
+re-derives byte-identically, verified). The three repos' CI and <code>software --check</code> are green.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0059-remap-and-allowlist-hardening-the-migration-tooling-withstands-the-process-it-prescribes"><a class="header" href="#plan0059-remap-and-allowlist-hardening-the-migration-tooling-withstands-the-process-it-prescribes">plan/0059 remap-and-allowlist-hardening: the migration tooling withstands the process it prescribes</a></h1>
 <p>This milestone continues the plan/0056 recipe-and-materialisation-hardening lineage. Where plan/0056
 hardened the recipe parser and the bare-store layout, this one hardens the migration tooling: <code>remap</code>
