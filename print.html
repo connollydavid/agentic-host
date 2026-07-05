@@ -418,18 +418,21 @@ outdated host-lifecycle no release bumps
 (<a href="https://github.com/connollydavid/host-lifecycle/issues/9">#9</a>). The cast's
 Fen is the acceptance test. The tickets, decided directions, and open questions are in its README, and
 the implemented state is in its implementation.md.</p>
-<p>plan/0057 (deps-bundle-graduation) is newly cut and in design. It continues the plan/0056
+<p>plan/0057 (deps-bundle-graduation) is shipped. It continued the plan/0056
 recipe-and-materialisation-hardening lineage: a bundled component that records a <code>deps-bundle</code> pin with
-no committed producer <code>deps-bundle.lock</code> sits in a green <code>(onboarding)</code> state that host-lifecycle
-gives no tool-carried way out of, so the pin-versus-lock drift guard stays dormant behind a passing
-check (<a href="https://github.com/connollydavid/host-lifecycle/issues/10">connollydavid/host-lifecycle#10</a>).
-The operator ruled a steady-state graduation ramp rather than a migration bolt-on: a standalone,
-receipted <code>software --graduate</code> action that surfaces onboarding as a distinct enumerable owed state,
-stays idempotent and self-re-listing, and fails loud on a pin-lock mismatch. The cast returned a unanimous
-universal-bug verdict, and Fen is the acceptance test. agentic-host's three <code>host-reference*</code> onboarding
-components are the ramp's first customer, graduated through the tool once it ships instead of by a
-hand-rolled release cascade. The direction, the must-nots, and the open dual-release-authority question
-are in its README.</p>
+no committed producer <code>deps-bundle.lock</code> sat in a green <code>(onboarding)</code> state that host-lifecycle gave no
+tool-carried way out of, so the pin-versus-lock drift guard stayed dormant behind a passing check
+(<a href="https://github.com/connollydavid/host-lifecycle/issues/10">connollydavid/host-lifecycle#10</a>). The
+operator ruled a steady-state graduation ramp rather than a migration bolt-on, named the verb <code>software --lock</code>, and set its authority release-grade (dual-release-authority unchanged). host-lifecycle v0.37.0
+ships <code>software --lock &lt;name&gt;</code> plus an owed advisory summary in <code>software --check</code> that counts,
+enumerates, and names the next action at exit 0 (an exit-3 owed verdict would deadlock the release gate
+the verb re-runs, since a graduation is a release whose gate re-checks). Its three <code>host-reference*</code>
+onboarding components graduated through the verb as its first customers (v0.1.4, v0.2.1, v0.2.1);
+<code>software --check</code> is exit 0 with zero owed, every bundle-declaring component's drift guard armed, and
+agentic-host's reproducible build reproduces all three. Fen (the real qwen3.5-4b) passed the acceptance
+probe on the built binary. host-reference also carries a pre-existing, orthogonal CI red (its CI
+toolchain lacks the rustfmt/clippy components), unrelated to the graduation and left for a separate fix.
+The design and the as-built notes are in its README and implementation.md.</p>
 <h2 id="status"><a class="header" href="#status">Status</a></h2>
 <ul>
 <li><input disabled="" type="checkbox" checked=""/>
@@ -6754,9 +6757,9 @@ not in a downstream cleanup. The operator's universality call stands (cast unani
 <p>The exit is a standing lifecycle operation reachable at any time, not a step wired onto the migration
 or upgrade flow. The fix must:</p>
 <ul>
-<li><strong>Ship a standalone, tool-carried, receipted graduation</strong> (a <code>software --graduate &lt;name&gt;</code> /
-<code>--attest</code> action): write the <code>deps-bundle.lock</code> from the recorded pin, drive the producer commit and
-the re-pin, and record a receipt. One command a weak agent can run, never a manual git dance.</li>
+<li><strong>Ship a standalone, tool-carried, receipted graduation</strong> (the <code>software --lock &lt;name&gt;</code> verb the
+operator later ruled): write the <code>deps-bundle.lock</code> from the recorded pin, drive the producer commit
+and the re-pin, and record a receipt. One command a weak agent can run, never a manual git dance.</li>
 <li><strong>Be reachable late and independently</strong>: order-free, with no unrelated migration or full release
 cascade replayed to reach it. Onboarding is entered at arbitrary times, so its exit is a standing
 operation.</li>
