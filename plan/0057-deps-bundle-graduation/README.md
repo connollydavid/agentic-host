@@ -48,9 +48,9 @@ not in a downstream cleanup. The operator's universality call stands (cast unani
 The exit is a standing lifecycle operation reachable at any time, not a step wired onto the migration
 or upgrade flow. The fix must:
 
-- **Ship a standalone, tool-carried, receipted graduation** (a `software --graduate <name>` /
-  `--attest` action): write the `deps-bundle.lock` from the recorded pin, drive the producer commit and
-  the re-pin, and record a receipt. One command a weak agent can run, never a manual git dance.
+- **Ship a standalone, tool-carried, receipted graduation** (the `software --lock <name>` verb the
+  operator later ruled): write the `deps-bundle.lock` from the recorded pin, drive the producer commit
+  and the re-pin, and record a receipt. One command a weak agent can run, never a manual git dance.
 - **Be reachable late and independently**: order-free, with no unrelated migration or full release
   cascade replayed to reach it. Onboarding is entered at arbitrary times, so its exit is a standing
   operation.
