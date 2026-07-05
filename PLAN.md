@@ -66,6 +66,21 @@ probe on the built binary. host-reference also carries a pre-existing, orthogona
 toolchain lacks the rustfmt/clippy components), unrelated to the graduation and left for a separate fix.
 The design and the as-built notes are in its README and implementation.md.
 
+An open-bug fix plan follows plan/0057, cut as three focused milestones from a survey of every repo's
+open issues and CI (operator ruling: three milestones, bugs plus the coverage gaps, executed straight
+through). plan/0058 (host-reference-family-ci) is first, since host-reference is the suite's only red:
+its CI toolchain lacks the rustfmt and clippy components
+([host-reference#2](https://github.com/connollydavid/host-reference/issues/2)), and its two helpers
+carry no CI at all. plan/0059 (remap-and-allowlist-hardening) continues the plan/0056 lineage,
+gathering four host-lifecycle defects the pgs-release adopter surfaced: `remap --check` errors on the
+retired `.host-remap` ([#11](https://github.com/connollydavid/host-lifecycle/issues/11)), `remap
+--apply` corrupts boxed records ([#12](https://github.com/connollydavid/host-lifecycle/issues/12)), the
+allowlist is split ([#13](https://github.com/connollydavid/host-lifecycle/issues/13)), and
+`--materialize` clones full history every time
+([#14](https://github.com/connollydavid/host-lifecycle/issues/14)). plan/0060
+(host-lint-pre-commit-hook) fixes the hook failing closed on a staged submodule pointer
+([host-lint#18](https://github.com/connollydavid/host-lint/issues/18)). Each ships independently.
+
 ## Status
 
 - [x] Bootstrap: initial setup and bootstrapping
