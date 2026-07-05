@@ -2225,3 +2225,21 @@ fixed under plan/0057 (out of scope, surgical); flag for a separate host-referen
 `components: rustfmt, clippy` to the toolchain step). host-reference-ocr and host-reference-openscad
 carry no CI workflow at all (also pre-existing); their reproducibility is anchored by agentic-host's
 `software --verify-build`, not a per-repo CI.
+
+plan/0058 SHIPPED (2026-07-05): the host-reference-family CI is complete and green. host-reference's
+rust-toolchain.toml now declares components = [rustfmt, clippy], which fixed lint/features and
+un-masked a latent cargo-deny failure: quick-xml DoS advisories RUSTSEC-2026-0194/0195, real vulns but
+reachable ONLY through the opt-in office (undoc) and geometry (threemf) readers, never the deployed
+default-features binary. The clean bump is blocked upstream (threemf 0.8.0 is latest and still on the
+vulnerable 0.39.4; bumping undoc drags in a still-vulnerable 0.40.1; forcing 0.41 breaks the API), so
+the operator ruled a scoped, justified, tracked ignore in deny.toml over breaking dependency surgery,
+tracked in connollydavid/host-reference#3; ttf-parser RUSTSEC-2026-0192 (unmaintained only) accepted on
+the existing footing. ocr and openscad gained a scaled test/lint/build CI + pinned toolchain; openscad's
+new fmt lane fixed one pre-existing diff (re-derives byte-identically, verified). All three re-pinned
+by artifact-preserving pin-advance (config-only + fmt, no version bump, no re-vendor); all three repo
+CIs, agentic-host Site + Reproducible build, and software --check green. TWO process lessons: (1) a bare
+`git push | tail` masks a failed push behind tail's exit — the host-reference worktree main had NO
+upstream so the branch push silently no-op'd (only the tag pushed), leaving origin/main stale while the
+pin stayed reachable via the tag; verify the "To <remote> a..b" line, and push with explicit `git push
+origin main`. (2) A green lint step can MASK a later step: fixing the fmt/clippy failure un-masked the
+cargo-deny advisory failure that had never run before.
