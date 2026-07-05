@@ -453,3 +453,9 @@
     evidence = v0.2.1@05e3c01266911832da582ba8ade1040c33756bc8880c3bee6844bb435cbc5258
     tool = host-lifecycle@0.37.0
     recorded = 2026-07-05
+
+[receipt "release" "host-reference-openscad"]
+    disposition = done
+    evidence = v0.2.1@053d8beefebbe1f934594895bd1c4bbbc700686ca3d571a912b58d0182045ff2
+    tool = host-lifecycle@0.37.0
+    recorded = 2026-07-05

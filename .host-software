@@ -68,12 +68,12 @@
 	# byte-identically in the pinned muslrust toolchain from the vendored deps-bundle. The binary is
 	# GPL-3.0 (it links openscad-rs); cargo-deny flags that in the helper repo, not here.
 	url       = https://github.com/connollydavid/host-reference-openscad.git
-	pin       = e8852545f2f1c96854d2efee7f1c932457909d7d
+	pin       = 18fc32baac758b05660cfff49818c9b273deb979
 	worktrees =
 	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-reference-openscad
-	artifact  = target/x86_64-unknown-linux-musl/release/host-reference-openscad-helper d33a0b8f417ab4f707ffde8b47320fa6f1b5946c42bad29f6378f57d79b890ab
+	artifact  = target/x86_64-unknown-linux-musl/release/host-reference-openscad-helper 053d8beefebbe1f934594895bd1c4bbbc700686ca3d571a912b58d0182045ff2
 	deps-bundle = https://github.com/connollydavid/host-reference-openscad/releases/download/vendor-v1/vendor.tar.gz 96e11b3c2892573e356a10db3e42eb73f6043e76cfb22c06849727ba89d432d9
 [software "host"]
 	# the single-file entrance (the methodology's entry point), set apart from the
