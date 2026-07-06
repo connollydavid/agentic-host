@@ -7430,8 +7430,8 @@ risk. Shipped as host-reference v0.1.5.</p>
 <ul>
 <li>quick-xml (RUSTSEC-2026-0194 quadratic start-tag parsing, RUSTSEC-2026-0195 unbounded namespace
 allocation) reached three opt-in readers. The premise had gone stale: undoc 0.5.3 and rbook 0.7.10
-now require quick-xml at the 0.41 line, so a lockfile-only bump cleared the office and epub paths. The
-geometry reader moved from threemf to threemf2 0.4, which drops quick-xml entirely (it reads with
+now require quick-xml at version 0.41, so a lockfile-only bump cleared the office and epub paths. The
+geometry reader now uses threemf2 in place of threemf, which drops quick-xml entirely (it reads with
 instant-xml), a ten-line port whose 3mf golden reproduces byte for byte.</li>
 <li>crossbeam-epoch (RUSTSEC-2026-0204, an invalid pointer dereference in the pointer formatter), freshly
 published and reaching the opt-in pdf reader through rayon, is fixed by a bump to 0.9.20.</li>
@@ -9259,8 +9259,8 @@ vendored third-party dependencies, not software developed here, governed by this
 <li>proc-macro-error is a two-crate rename of proc-macro-error2 and its attribute crate, with the one
 codegen path edited, because a re-export cannot satisfy the attribute macro's hardcoded crate path.</li>
 </ul>
-<p>ttf-parser has no drop-in successor (skrifa is a different API, and lopdf requires ttf-parser at the
-0.25 line), so we ADOPT it as a maintained lane. Our fork declares maintenance in a MAINTENANCE.md,
+<p>ttf-parser has no drop-in successor (skrifa is a different API, and lopdf requires ttf-parser at version
+0.25), so we ADOPT it as a maintained lane. Our fork declares maintenance in a MAINTENANCE.md,
 and the unmaintained label is resolved by our maintaining it rather than by a frozen dodge. The lane's
 standing obligation is the untrusted-input contract of the glyph and metrics reads the pdf reader
 drives; a fuzzing pass is its first real maintenance task. ttf-parser forbids unsafe code, so its
