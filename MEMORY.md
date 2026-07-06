@@ -2285,3 +2285,41 @@ a failed push behind tail's exit; verify the "To <remote> a..b" line, and note a
 main may lack an upstream (host-reference did). (3) A green earlier CI step masks a later one (fixing
 fmt/clippy un-masked cargo-deny). (4) The host-lint pre-commit hook bug (#18) is still live: use
 --no-verify for gitlink-only commits until M3 ships.
+
+## 2026-07-06 — adopt-from-arbitrary-folder design (plan/0061) + plan-index coverage gap (plan/0062)
+
+Feature (plan/0061, design recorded, not built): adoption from an arbitrary folder must create the host
+in a fresh `agentic-<name>` folder ELSEWHERE, elicit the project name (never derive it from the source
+folder name; a `pdf-notes` folder does not imply a `pdf` project, and naming is Mara's intent), seed a
+one-line purpose into the new host, and REQUEST that the operator switch to it (no agent can relocate the
+operator's session in any harness, so the switch is a request she performs). The source folder is touched
+by NOTHING, even the home directory (operator: assume it may be `~` or a large aggregate dir). Carve-out:
+a folder already named `agentic-<name>` and empty adopts in place. A software repo still refuses (embed
+as the Where room). Cast-consulted across all five personas; the real qwen3.5-4b routed all three
+decisions 6/6 each on the corrected scenario (ask-for-name, request-switch, carve-out-adopt-here). A
+probe-parser bug first gave a false read (it parsed a stray letter from inside the `<think>` block); fixed
+by parsing only after `</think>` plus a `FINAL: X` marker (scratchpad fen_probe_v2.py).
+
+Cross-harness Q&A finding (the operator's flagged major, skill-related concern): the protocol-native
+mechanism is MCP ELICITATION (`elicitation/create`, June 2025 MCP spec; Form mode with a JSON schema,
+plus a later URL mode for sensitive input). The tool declares the fields it needs and the CLIENT (Claude
+Code, opencode, codex) renders the prompt natively, which is exactly the cast's "tool declares, host
+renders" convergence but as a published standard. Layered design (no hollow green): MCP elicitation where
+the client supports it, a stdout contract (`exit 10`, "ask the operator, re-run with --name") as the
+universal backstop (the path Fen validated). LESSON: carry the Q&A in the TOOL (protocol plus stdout), not
+in per-harness skill markdown (skills are per-harness and would not travel). Source:
+modelcontextprotocol.io/specification/draft/client/elicitation.
+
+Plan-index coverage gap: plan/0056 through plan/0060 had directories and READMEs but NO rows in PLAN.md's
+index (the audited-plan rule is asserted in CLAUDE.md and gated by nothing, the same self-blindness class
+as plan/0036 and plan/0038). Backfilled the five rows (plus the 0061/0062 rows) in ec1cd51. plan/0062
+(design recorded) cuts the fix: a coverage check (in validate or reconcile, with a spine-vs-software scope
+question) that derives the owed set from repo state each run and HAZARDs any plan/ dir with no PLAN.md
+row. It is a coverage invariant, NOT a receipt (no action is attested, only the directory-to-index
+correspondence).
+
+Prose gotcha: the ai-diction density gate flags the word "harness"; even ONE occurrence in a short doc
+tripped it once other ai-diction tokens were present. Reword (name Claude Code/opencode/codex concretely)
+rather than declaring it in the LEXICON (the plan/0038 precedent reworded harness density). The reworded
+PLAN.md row also un-flagged two pre-existing `kani:<harness>` lines, confirming the flag is per-file
+density, not per-line.
