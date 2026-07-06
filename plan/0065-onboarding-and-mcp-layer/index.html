@@ -363,16 +363,39 @@ all-or-nothing install; no executable named <code>host</code> lands on the path.
 <li>The human run defaults are private visibility, name-only prompting, an <code>agentic-&lt;name&gt;</code> target that
 refuses an existing folder, and local-first remote-last with no rollback of good local work.</li>
 </ul>
-<h2 id="open-questions"><a class="header" href="#open-questions">Open questions</a></h2>
+<h2 id="decisions-ruled-2026-07-07-operator"><a class="header" href="#decisions-ruled-2026-07-07-operator">Decisions ruled (2026-07-07, operator)</a></h2>
+<p>The four questions the design left open are ruled, so the build proceeds against fixed contracts.</p>
 <ul>
-<li>The binary-installer surface in detail (path setup, per-platform placement, self-update mechanics, and
-the exact trust anchor). A survey of the established installer family is owed before it is built.</li>
-<li>Whether placing the spawned MCP tools is mandatory for an adopter or every capability has a non-MCP
-fallback. The answer decides whether a second ledger entry is owed.</li>
-<li>The seed's shape, carried from <code>plan/0061</code>: whether the seeded purpose is a <code>plan/</code> entry or a memory
-line, and what a declined purpose leaves. The name is required; the seed is optional.</li>
-<li>The exact exit-code set and machine-readable handoff format, to be pinned with the verb before build.</li>
+<li><strong>Trust anchor: Sigstore keyless (cosign).</strong> The install manifest and script are signed keylessly
+through cosign (an OIDC identity recorded in the Rekor transparency log), and the installer runs
+<code>cosign verify-blob</code> against the Fulcio and Rekor roots before anything lands on the path. The verifying
+identity and the Rekor log reference travel into the local install receipt, so a later read re-verifies
+without trusting a moving remote. The heavier, network-bound option, chosen for keyless operation and
+public transparency over a held key.</li>
+<li><strong>MCP is optional, backstop-covered.</strong> The spawned MCP tools are the enhanced path, never mandatory: the
+per-invocation verb backstop covers every client without elicitation (opencode, every headless run) and
+every plain shell call. No second UPGRADING ledger entry is owed, so the only migration is the <code>adopt</code>
+rename.</li>
+<li><strong>Seed shape: a MEMORY.md purpose line.</strong> The seeded one-line purpose is written as a MEMORY.md project
+line, the cross-session handoff a cold continuing session reads first. A declined purpose leaves the
+default MEMORY untouched. The name is required; the seed is optional.</li>
+<li><strong>Exit codes and handoff: line-based <code>key: value</code>.</strong> Success prints a final stdout block of <code>key: value</code>
+lines (<code>host-path</code>, <code>remote</code>, <code>next</code>); the codes are <code>0</code> success, <code>2</code> usage error, <code>3</code> name-required
+with no controlling terminal (a machine-parseable stderr line names the missing field), <code>4</code>
+target-exists or refuse, <code>5</code> remote-failed-after-local-commit (the local project is intact and the
+manual remote command is printed). The line-based shape is chosen over JSON for weak-agent legibility.</li>
 </ul>
+<p>These rulings are grounded, not asserted, in <code>gather-data.md</code>: a Fen acceptance run on the qwen3.5-4b
+(twelve of twelve, position-bias controlled, genuinely reasoned) shows the exit-code and shell-verb-vs-MCP
+contracts are legible to a weak agent, and a survey of nine established installers grounds the cosign
+trust anchor in a shipping majority pattern (verify a signed <code>checksums.txt</code> keyless bundle, then check
+each hash). The survey refined the install-mode implementation: cosign is bootstrapped by
+<code>gh attestation verify</code> as the primary with a pinned-SHA256 cosign binary as the fallback, never by cosign
+itself, and the receipt stores the verified identity, issuer, and Rekor pointer for offline re-verification.</p>
+<h2 id="open-questions"><a class="header" href="#open-questions">Open questions</a></h2>
+<p>The operator-gated questions are ruled above. What remains is installer implementation detail, pinned
+during the build rather than owed to the operator: the per-platform path setup and binary placement, the
+self-update mechanics, and the survey of the established installer family that grounds them.</p>
 <h2 id="verification"><a class="header" href="#verification">Verification</a></h2>
 <p>Each software piece ships through its own lifecycle release with the whole-suite verify gate green; the
 entrance ships through its own release authority. The Fen probe runs on the one-command run, the
