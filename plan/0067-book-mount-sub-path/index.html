@@ -181,7 +181,7 @@ overwrite it. The fix makes the book's mount point a declared, machine-readable 
 hand-authored workflow exception, so a product-site-at-root adopter needs configuration, not a durable
 workaround the next template upgrade silently drops.</p>
 <h2 id="the-tool-side-shipped-in-host-lifecycle-v0380"><a class="header" href="#the-tool-side-shipped-in-host-lifecycle-v0380">The tool side (shipped in host-lifecycle v0.38.0)</a></h2>
-<p>The mount point is an optional flat <code>book-mount</code> key in the <code>.host</code> stamp, defaulting to <code>/</code>. It is read
+<p>The mount point is an optional flat <code>book-mount</code> key in the <code>.host</code> stamp, with <code>/</code> as the default. It is read
 through the existing stamp reader, so it needs no new parser and survives a baseline re-stamp.
 <code>host-lifecycle book</code> emits mdBook's <code>[output.html] site-url</code> from it, and only for a non-default mount,
 so <code>book.toml</code> stays byte-identical for every project that publishes at the root; a sub-path mount then
