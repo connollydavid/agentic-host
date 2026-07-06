@@ -10,8 +10,8 @@ Two denial-of-service advisories are genuine and are fixed by moving to the patc
 
 - quick-xml (RUSTSEC-2026-0194 quadratic start-tag parsing, RUSTSEC-2026-0195 unbounded namespace
   allocation) reached three opt-in readers. The premise had gone stale: undoc 0.5.3 and rbook 0.7.10
-  now require quick-xml at the 0.41 line, so a lockfile-only bump cleared the office and epub paths. The
-  geometry reader moved from threemf to threemf2 0.4, which drops quick-xml entirely (it reads with
+  now require quick-xml at version 0.41, so a lockfile-only bump cleared the office and epub paths. The
+  geometry reader now uses threemf2 in place of threemf, which drops quick-xml entirely (it reads with
   instant-xml), a ten-line port whose 3mf golden reproduces byte for byte.
 - crossbeam-epoch (RUSTSEC-2026-0204, an invalid pointer dereference in the pointer formatter), freshly
   published and reaching the opt-in pdf reader through rayon, is fixed by a bump to 0.9.20.

@@ -26,8 +26,8 @@ Three crates have a maintained successor, so the fork routes to real maintained 
 - proc-macro-error is a two-crate rename of proc-macro-error2 and its attribute crate, with the one
   codegen path edited, because a re-export cannot satisfy the attribute macro's hardcoded crate path.
 
-ttf-parser has no drop-in successor (skrifa is a different API, and lopdf requires ttf-parser at the
-0.25 line), so we ADOPT it as a maintained lane. Our fork declares maintenance in a MAINTENANCE.md,
+ttf-parser has no drop-in successor (skrifa is a different API, and lopdf requires ttf-parser at version
+0.25), so we ADOPT it as a maintained lane. Our fork declares maintenance in a MAINTENANCE.md,
 and the unmaintained label is resolved by our maintaining it rather than by a frozen dodge. The lane's
 standing obligation is the untrusted-input contract of the glyph and metrics reads the pdf reader
 drives; a fuzzing pass is its first real maintenance task. ttf-parser forbids unsafe code, so its
