@@ -214,15 +214,42 @@ own lifecycle release does not apply literally to it.
 - The human run defaults are private visibility, name-only prompting, an `agentic-<name>` target that
   refuses an existing folder, and local-first remote-last with no rollback of good local work.
 
+## Decisions ruled (2026-07-07, operator)
+
+The four questions the design left open are ruled, so the build proceeds against fixed contracts.
+
+- **Trust anchor: Sigstore keyless (cosign).** The install manifest and script are signed keylessly
+  through cosign (an OIDC identity recorded in the Rekor transparency log), and the installer runs
+  `cosign verify-blob` against the Fulcio and Rekor roots before anything lands on the path. The verifying
+  identity and the Rekor log reference travel into the local install receipt, so a later read re-verifies
+  without trusting a moving remote. The heavier, network-bound option, chosen for keyless operation and
+  public transparency over a held key.
+- **MCP is optional, backstop-covered.** The spawned MCP tools are the enhanced path, never mandatory: the
+  per-invocation verb backstop covers every client without elicitation (opencode, every headless run) and
+  every plain shell call. No second UPGRADING ledger entry is owed, so the only migration is the `adopt`
+  rename.
+- **Seed shape: a MEMORY.md purpose line.** The seeded one-line purpose is written as a MEMORY.md project
+  line, the cross-session handoff a cold continuing session reads first. A declined purpose leaves the
+  default MEMORY untouched. The name is required; the seed is optional.
+- **Exit codes and handoff: line-based `key: value`.** Success prints a final stdout block of `key: value`
+  lines (`host-path`, `remote`, `next`); the codes are `0` success, `2` usage error, `3` name-required
+  with no controlling terminal (a machine-parseable stderr line names the missing field), `4`
+  target-exists or refuse, `5` remote-failed-after-local-commit (the local project is intact and the
+  manual remote command is printed). The line-based shape is chosen over JSON for weak-agent legibility.
+
+These rulings are grounded, not asserted, in `gather-data.md`: a Fen acceptance run on the qwen3.5-4b
+(twelve of twelve, position-bias controlled, genuinely reasoned) shows the exit-code and shell-verb-vs-MCP
+contracts are legible to a weak agent, and a survey of nine established installers grounds the cosign
+trust anchor in a shipping majority pattern (verify a signed `checksums.txt` keyless bundle, then check
+each hash). The survey refined the install-mode implementation: cosign is bootstrapped by
+`gh attestation verify` as the primary with a pinned-SHA256 cosign binary as the fallback, never by cosign
+itself, and the receipt stores the verified identity, issuer, and Rekor pointer for offline re-verification.
+
 ## Open questions
 
-- The binary-installer surface in detail (path setup, per-platform placement, self-update mechanics, and
-  the exact trust anchor). A survey of the established installer family is owed before it is built.
-- Whether placing the spawned MCP tools is mandatory for an adopter or every capability has a non-MCP
-  fallback. The answer decides whether a second ledger entry is owed.
-- The seed's shape, carried from `plan/0061`: whether the seeded purpose is a `plan/` entry or a memory
-  line, and what a declined purpose leaves. The name is required; the seed is optional.
-- The exact exit-code set and machine-readable handoff format, to be pinned with the verb before build.
+The operator-gated questions are ruled above. What remains is installer implementation detail, pinned
+during the build rather than owed to the operator: the per-platform path setup and binary placement, the
+self-update mechanics, and the survey of the established installer family that grounds them.
 
 ## Verification
 
