@@ -8,7 +8,7 @@ workaround the next template upgrade silently drops.
 
 ## The tool side (shipped in host-lifecycle v0.38.0)
 
-The mount point is an optional flat `book-mount` key in the `.host` stamp, defaulting to `/`. It is read
+The mount point is an optional flat `book-mount` key in the `.host` stamp, with `/` as the default. It is read
 through the existing stamp reader, so it needs no new parser and survives a baseline re-stamp.
 `host-lifecycle book` emits mdBook's `[output.html] site-url` from it, and only for a non-default mount,
 so `book.toml` stays byte-identical for every project that publishes at the root; a sub-path mount then
