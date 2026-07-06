@@ -2382,3 +2382,29 @@ the four unmaintained crates were NOT made full-ladder .host-software lanes — 
 forks governed by call/0040, and only ttf-parser carries a real maintenance obligation. REMAINING: M4
 (template roll — band + book-mount + plan-0062 spine ledger entries) then Track 2 (plan/0065: host-adopt,
 host-init, stdio MCP surface, provenance-verified install).
+
+2026-07-07 — M4 PRE-ROLL TEMPLATE ROLL COMPLETE. Two spine sides authored in host-template and adopted
+here through the ledger. (1) Task band (plan/0066): a `### ` heading under `## Build sequence` marked with
+a lone `- band` bullet is a content-named divider, not a task node; it pushes no receipt/edge and does
+not reset the linear default, so `depends` chaining runs across it. Doctrine in host-template CLAUDE.md
+task-graph section (commit 67d63e9), tool side `parse_tasks` already in host-lifecycle v0.38.0. (2)
+Book-mount sub-path (plan/0067): optional `.host` `book-mount` key (default `/`); `host-lifecycle book`
+emits mdBook `site-url` only for a non-default mount (root book.toml byte-identical), `book --print-mount`
+feeds the Site workflow; the mount-aware reference site.yml + the publish recheck now points at
+`book --print-mount .` instead of the hardcoded mdbook.yml filename (host-template commit 962630c). Two
+UPGRADING entries keyed to those doctrine commits (both `requires host-lifecycle v0.38.0`, both
+independent), ledger commit 5cf9bbf. Adopted via `host-lifecycle upgrade --record 67d63e9`, `--record
+962630c`, `--advance` (baseline de8a517 -> 962630c, .host/.host-receipts tool-written not hand-edited).
+Applied locally: agentic-host's own mdbook.yml made mount-aware + its host-lifecycle installer bumped to
+776e1b1; agentic-host publishes at root so output is byte-identical. Plan tool-pins piece was already done
+by call/0038 per-release propagation. `software --check` green. Precedent followed: a spine roll is
+recorded in the plan row + host-template commit + UPGRADING, NOT a new agentic-host call/ (anti-ouroboros).
+
+2026-07-07 — GOTCHA: refresh the PATH host-lifecycle after every host-lifecycle release. `software
+--check` runs each phase `recheck` via the bare `host-lifecycle` on PATH (~/.local/bin), NOT the release
+binary. After releasing v0.38.0 the PATH copy stayed stale, so the new publish recheck `host-lifecycle
+book --print-mount .` errored `not a directory: --print-mount` (the old binary read the flag as a dir arg)
+and HAZARDed the publish phase. Fix: `cp software/host-lifecycle/main/target/x86_64-unknown-linux-musl/release/host-lifecycle
+~/.local/bin/host-lifecycle` (the canonical static-musl binary runs on the dev host; hash 37590cb). A
+release that adds a recheck-referenced subcommand/flag MUST reinstall host-lifecycle on PATH before the
+verify sweep, or the recheck runs against the old binary.
