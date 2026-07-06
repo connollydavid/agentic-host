@@ -189,14 +189,17 @@ resolves the book's absolute links (the 404 and print pages) correctly. A <code>
 prints the normalized mount for the reference Site workflow to consume, so the workflow reads the value
 from the tool rather than shell-parsing the stamp (the internalise-tool-orchestration doctrine). A unit
 test covers both the default (no <code>site-url</code>) and a declared sub-path.</p>
-<h2 id="the-spine-side-pending-ships-with-the-template-roll"><a class="header" href="#the-spine-side-pending-ships-with-the-template-roll">The spine side (pending, ships with the template roll)</a></h2>
+<h2 id="the-spine-side-shipped-in-the-template-roll"><a class="header" href="#the-spine-side-shipped-in-the-template-roll">The spine side (shipped in the template roll)</a></h2>
 <p>The reference Site workflow the template ships is made mount-aware: it publishes the book under the
 declared sub-path with the surrounding site kept, and asserts the layout after the build. The publish
 recheck in <code>lifecycle.manifest</code> points at the tool's mount-aware mode rather than testing a hardcoded
 workflow filename, which also fixes a latent brittleness where the recheck named <code>mdbook.yml</code> while the
 template ships <code>site.yml</code>. The <code>book-mount</code> key, its default, and the sub-path boundary are documented in
 the spine, and an UPGRADING.md ledger entry keyed to that doctrine commit carries it to adopters, with a
-<code>requires</code> on the host-lifecycle release above. This half lands in the template roll.</p>
+<code>requires</code> on the host-lifecycle release above. This half shipped as host-template <code>962630c</code> (the
+mount-aware Site workflow, the <code>book --print-mount</code> publish recheck, and the <code>book-mount</code> doctrine, with
+the UPGRADING ledger entry keyed to it), and agentic-host adopted it through the ledger; its own
+doc-site workflow is now mount-aware, though it still publishes at the root.</p>
 <h2 id="verification"><a class="header" href="#verification">Verification</a></h2>
 <p>Tool side: the unit test asserts a default mount emits no <code>site-url</code> and a declared sub-path emits it,
 and <code>book --print-mount</code> returns the declared value; shipped reproducibly in host-lifecycle v0.38.0.
