@@ -11614,6 +11614,41 @@ tripped it once other ai-diction tokens were present. Reword (name Claude Code/o
 rather than declaring it in the LEXICON (the plan/0038 precedent reworded harness density). The reworded
 PLAN.md row also un-flagged two pre-existing <code>kani:&lt;harness&gt;</code> lines, confirming the flag is per-file
 density, not per-line.</p>
+<h2 id="2026-07-06-cont--pre-template-roll-batch-shipped--resumption-state"><a class="header" href="#2026-07-06-cont--pre-template-roll-batch-shipped--resumption-state">2026-07-06 (cont.) — pre-template-roll batch: SHIPPED + RESUMPTION STATE</a></h2>
+<p>Operator directive: address ALL open host-* bugs + features + all dependency security/deprecations
+BEFORE the one template pin roll (Phase 5). Phased, per-milestone releases, idiomatic upstream-first;
+"template pin once at end" reconciled below. Parallel code where independent, ordered releases.</p>
+<p>SHIPPED and green: <strong>host-lint v0.13.0</strong> (672049e, artifact 4ccbdbf9) closing #18/#19 (gitlink hook
+skips mode-160000, plan/0060) and #20 (--prose no-args + --all now audit tracked docs; one shared
+audit_tracked_docs, plan/0064). Change class <strong>adds-flag</strong>, proven by before/after evidence (new --all
+is a strict superset, +1 prose finding; --docs byte-identical). Propagated per call/0038: host-template
+601d257, agentic-host 6b3b902, software --check rc0 green.</p>
+<p>CODE-COMPLETE but UNCOMMITTED in the host-lifecycle worktree (ships with the next host-lifecycle
+release): #15 tree-walk hang (walk_files_safe: one shared symlink-safe depth-bounded walker replacing
+read_obligations_text/find_specs/read_dir_recursive, plan/0063); plan/0059 #12 (apply_text host-lint:ignore
+fence tracker), #13 (remap_allow unifies on host_lint::load_lexicon + legacy .host-lint-allow), #14
+(software --materialize --partial = --filter=blob:none). 136 tests, clippy clean.</p>
+<p>SCAFFOLDED: fork repos slartibardfast/{paste,ttf-parser,atomic-polyfill,proc-macro-error} created.
+gh has BOTH accounts (connollydavid active, slartibardfast inactive); <code>gh auth switch -u slartibardfast</code>
+to push forks (global state, so serial not parallel). proc-macro-error upstream is on GitLab
+(CreepySkeleton) — mirror its source, the others are GitHub forks with source.</p>
+<p>KEY DECISIONS: call/0038 tool-pin bump is PER-RELEASE (software --check FATALLY HAZARDs a stale
+host-template tools/<tool> pin); only the spine-revision roll (#2) batches to the end, and these are
+bug-fixes so it is likely nil. Zero-unmaintained policy: fork the 4 as full-ladder software lanes +
+sunset when upstream resumes (a git-source [patch] CLEARS the cargo-deny advisory — spike-proven: a
+git-source paste is <code>advisories ok</code>). quick-xml vulns (host-reference #3): bump undoc (already on 0.41)</p>
+<ul>
+<li>swap threemf-&gt;threemf2 (uses roxmltree/instant-xml, no quick-xml). host-reference is the ONLY
+advisory-dirty component; the other 6 are clean.</li>
+</ul>
+<p>REMAINING: Phase 2 — plan/0062 (reconcile plan-index-coverage arm, software-local per the scope
+settlement, no spine change), host-lifecycle #4 (task-group), host #17 (book sub-path, it is the book
+generator not the host repo), then the host-lifecycle release + call/0038 propagation. Phase 3 (long
+pole) — 4 fork lanes (distill spec + embed + tag-only release + [patch] host-reference) + undoc/threemf2</p>
+<ul>
+<li>host-reference release green (#3 closed). Phase 4 — host #17. Phase 5 — template roll (spine likely
+nil). host-reference #3 is the only thing that WAS upstream-blocked; threemf2 unblocks it.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
