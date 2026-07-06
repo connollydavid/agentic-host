@@ -24,7 +24,7 @@ re-pinned in `.host-software`, receipt recorded, and the host-template `tools/ho
 (call/0038). The whole-suite `software --check` is green. VOCABULARY.md carries the new shape, and the
 lib source stays flag-free so a real tell in it is still caught.
 
-## The construct half (pending, ships with the host-lifecycle release)
+## The construct half (shipped)
 
 The band is a content-named grouping over the anchored tasks, with execution order still carried by the
 `depends` edges rather than by the band's name or position. The authoring surface is settled on data:
@@ -35,10 +35,11 @@ visible divider in the book), and on referenceability (the band carries its own 
 implementation note the Fen scoring surfaced: the parser must attribute a band marker only to its own
 immediately-preceding heading, with no look-ahead, or it mis-reads a task as a band.
 
-The construct is doctrine that ships in the template task-graph section (a spine change owing a ledger
-entry) plus a `parse_tasks` recognition in host-lifecycle (tool-local). It ships with the host-lifecycle
-release that also carries the coded remap and materialise fixes, plan/0062, and the book-mount tool
-side, and re-vendors the host-lint above.
+The construct is doctrine, now shipped: a band paragraph in the template task-graph section
+(host-template `67d63e9`) plus a `parse_tasks` recognition in host-lifecycle v0.38.0 (tool-local,
+released with the coded remap and materialise fixes, plan/0062, and the book-mount tool side, and
+re-vendoring the host-lint above). The UPGRADING ledger entry keyed to `67d63e9` (requiring v0.38.0)
+carries it to adopters, and agentic-host adopted it through the ledger (baseline advanced to `962630c`).
 
 ## Verification
 
