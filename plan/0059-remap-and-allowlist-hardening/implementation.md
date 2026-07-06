@@ -53,3 +53,16 @@ The spec (`host-lifecycle.allium`) and obligations are updated for any new behav
 regression test per bug (issue 12 asserts the fence is preserved, issue 13 the single-source property).
 Ships as one host-lifecycle release, re-vendored and propagated to consumers, with the whole-suite verify
 gate green and the Fen probe passing on the tool-carried behaviours.
+
+## As-built
+
+All three landed in host-lifecycle's source, each with a regression test. `apply_text` gained a
+self-contained `host-lint:ignore` fence tracker that replicates host-lint's `fence_info` (a regular code
+fence stays substituted, matching the scan side, so a tell cannot be laundered by inline-quoting).
+`remap_allow` unifies host-lint's LEXICON as the canonical vocabulary with the legacy `.host-lint-allow`
+merged in as a deprecated alias, noted when present. `software --materialize` gained an opt-in
+`--partial` flag that clones with `--filter=blob:none`, so the pin still round-trips while the
+whole-history blob download defers to worktree checkout. The full inline suite passes and clippy is
+clean. No allium or obligations change is owed: the manifest records that the remap and materialize git
+mechanics are out of the spec's scope, so the regression tests carry the specification. The code ships
+with the host-lifecycle release for this batch.
