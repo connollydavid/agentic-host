@@ -12001,6 +12001,26 @@ pole) — 4 fork lanes (distill spec + embed + tag-only release + [patch] host-r
 <li>host-reference release green (#3 closed). Phase 4 — host #17. Phase 5 — template roll (spine likely
 nil). host-reference #3 is the only thing that WAS upstream-blocked; threemf2 unblocks it.</li>
 </ul>
+<p>2026-07-07 — PRE-ROLL Track-1 releases M1/M2/M3 SHIPPED (correcting the plan above with actual outcomes).
+M1 host-lifecycle v0.38.0 (776e1b1, artifact 37590cb, vendor-v7): #15 tree-walk hang, plan/0059 #12/#13/#14,
+the task-graph "band" construct (a band pushes no task and does not reset prev-in-plan), the book sub-path
+mount schema (stamp_book_mount, site-url emitted only when mount != "/", <code>book --print-mount</code>), plan/0062
+reconcile plan-index-coverage arm. host-lint rev pinned 6105008. Propagated per call/0038.
+M2 host-lint v0.14.0 (6105008, artifact 55ff256f, vendor-v4): the #4 gap-2 detection — spelled-ordinal
+group-name tells (CHECKLIST_TERMS box/boxes/steps guard, SPELLED_ORDINALS one..twenty + first..twentieth,
+is_spelled_ordinal). VOCABULARY §1 synced. Propagated into host-lifecycle vendor-v7.
+M3 host-reference v0.1.5 (6510e9f, artifact cbe8f316, vendor-v2): all six advisories retired, deny.toml
+ignore list EMPTY. Two real DoS fixed by upgrade (quick-xml via undoc 0.5.3/rbook 0.7.10 + the threemf2
+geometry port; crossbeam-epoch 0.9.20). Four unmaintained retired by maintained slartibardfast forks via
+[patch.crates-io] (paste-&gt;pastey, atomic-polyfill-&gt;portable-atomic, proc-macro-error = a 2-crate rename of
+proc-macro-error2+attr with the one codegen path edited because a re-export cannot satisfy the attr macro's
+hardcoded crate path, ttf-parser ADOPTED as a maintained lane + MAINTENANCE.md). change-class neither (all
+opt-in, default text binary unchanged). host-reference is NOT a tool so NO host-template pin bump. Audited
+in plan/0068 + call/0040; host-reference#3 closed; <code>software --check</code> green. Correction to the plan above:
+the four unmaintained crates were NOT made full-ladder .host-software lanes — they are third-party [patch]
+forks governed by call/0040, and only ttf-parser carries a real maintenance obligation. REMAINING: M4
+(template roll — band + book-mount + plan-0062 spine ledger entries) then Track 2 (plan/0065: host-adopt,
+host-init, stdio MCP surface, provenance-verified install).</p>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
 </blockquote>
