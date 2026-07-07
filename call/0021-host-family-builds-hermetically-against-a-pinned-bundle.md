@@ -36,7 +36,10 @@ vendored-dependency bundle.**
 - **host-lint owns the bundle.** Its dependency set is the superset, so it publishes the versioned
   hash-pinned `vendor-vN` release; host-lint and host-lifecycle record `deps-bundle = <url> <sha256>`
   and build under `--network none` after a verified download. Hosting the bundle on agentic-host
-  would invert the host-to-software direction.
+  would invert the host-to-software direction. (**Superseded in part by call/0043:** the shared-superset
+  ownership is retired once host-lifecycle's dependencies diverge from host-lint's, so each artifact
+  component self-owns its bundle on its own releases repo. The staged, hash-verified, no-egress build
+  mechanism this decision records is unchanged.)
 - **host-prove has no third-party dependencies**, so it builds `--offline` against an empty source
   set with no bundle (hermetic by emptiness, not by `--network none`).
 - The methodology MUST is in the template, not here. This decision records only the host-* family
