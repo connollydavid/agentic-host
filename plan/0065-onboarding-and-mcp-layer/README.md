@@ -14,7 +14,7 @@ adversarial review whose twelve confirmed findings are all fixed (`code-review.m
 a self-owned bundle (call/0043, since tokio diverged host-lifecycle from host-lint's shared superset). The
 spine doctrine (the onboarding narrative, the source-read-only and refuse-existing invariants, the adopt
 phase running `scaffold`) shipped in host-template with an adopt-to-scaffold UPGRADING ledger entry, adopted
-here through the ledger. **Remaining: the `host` install mode (the provenance-verified cosign installer and
+here through the ledger. **Remaining: the `host` install mode (the reproducible-build-anchored installer and
 its receipt) and its spine install contract, plus the Fen acceptance run on the built oneshot and
 agent-driven-resolve paths.**
 
@@ -231,12 +231,16 @@ own lifecycle release does not apply literally to it.
 
 The four questions the design left open are ruled, so the build proceeds against fixed contracts.
 
-- **Trust anchor: Sigstore keyless (cosign).** The install manifest and script are signed keylessly
-  through cosign (an OIDC identity recorded in the Rekor transparency log), and the installer runs
-  `cosign verify-blob` against the Fulcio and Rekor roots before anything lands on the path. The verifying
-  identity and the Rekor log reference travel into the local install receipt, so a later read re-verifies
-  without trusting a moving remote. The heavier, network-bound option, chosen for keyless operation and
-  public transparency over a held key.
+- **Trust anchor: the reproducible build (revised 2026-07-07; the earlier cosign-bootstrapped-by-`gh
+  attestation verify` lever was removed as the wrong layer).** Every host-* binary is reproducibly built
+  from pinned source plus a recorded toolchain, so `software --verify_build` re-derives its recorded hash
+  anywhere; the installer treats that hash as the root. The manifest single-sources each binary's canonical
+  hash from the public release receipts, and the installer verifies every download against it before
+  anything lands on the path. An adopter can rebuild any binary against the pinned source and toolchain
+  to confirm the hash independently.
+  This is the project's own trust mechanism: no external signer, no bootstrap problem, offline by
+  construction. Sigstore keyless (cosign) is an optional identity layer for release attribution, not the
+  load-bearing root.
 - **MCP is optional, backstop-covered.** The spawned MCP tools are the enhanced path, never mandatory: the
   per-invocation verb backstop covers every client without elicitation (opencode, every headless run) and
   every plain shell call. No second UPGRADING ledger entry is owed, so the only migration is the `adopt`
@@ -252,11 +256,9 @@ The four questions the design left open are ruled, so the build proceeds against
 
 These rulings are grounded, not asserted, in `gather-data.md`: a Fen acceptance run on the qwen3.5-4b
 (twelve of twelve, position-bias controlled, genuinely reasoned) shows the exit-code and shell-verb-vs-MCP
-contracts are legible to a weak agent, and a survey of nine established installers grounds the cosign
-trust anchor in a shipping majority pattern (verify a signed `checksums.txt` keyless bundle, then check
-each hash). The survey refined the install-mode implementation: cosign is bootstrapped by
-`gh attestation verify` as the primary with a pinned-SHA256 cosign binary as the fallback, never by cosign
-itself, and the receipt stores the verified identity, issuer, and Rekor pointer for offline re-verification.
+contracts are legible to a weak agent, and a survey of nine established installers grounds the hash-check pattern (a published checksums list,
+then verify each download against it) as a shipping majority, which the reproducible-build root
+generalizes: an adopter can always rebuild rather than trust an external signer.
 
 ## Open questions
 
