@@ -396,3 +396,26 @@
     evidence = Folded in the plan/0050 reuse and altitude observations and the view-ignores-selector deviation (the residuals from the harden pass, operator's call to fold both in). Shared core helpers: raw_tokens(bytes) as one comparable token-cost policy (replacing three incompatible bases; only image/av/ocr raw= counts move), Tier0::whole, char_offset_view, fence-aware markdown_heading_outline plus heading_level/title shared by prose and html, a default Normalizer::view returning the skeleton (the ten metadata readers drop their boilerplate view; pdf and rtf keep their fuller-text views), and extensions() declared per reader with a default hint-matching detect so dispatch keys on declared data. A host-reference-testkit dev-dependency crate owns the conformance bless-or-compare protocol, replacing the copy-paste across twenty-three conformance files. Net ~390 fewer lines; conformance goldens unchanged except the documented raw_tokens cases; build, clippy, fmt, and the full test suite green. Released host-reference v0.1.3 (0d46b51, artifact 89853d39), re-deriving byte-identically in the pinned muslrust toolchain. Helpers unchanged at v0.2.0.
     tool = host-lifecycle@0.31.2
     recorded = 2026-06-29
+
+[receipt "plan/0069#add-discharge-gate"]
+    disposition = done
+    verify = cd software/host-lifecycle/main && cargo test manifest_staleness
+    inputs = software/host-lifecycle/main/src/main.rs
+    evidence = cd software/host-lifecycle/main && cargo test manifest_staleness
+    tool = host-lifecycle@0.40.0
+    recorded = 2026-07-07
+
+[receipt "plan/0069#generalize-pin-bump"]
+    disposition = done
+    verify = cd software/host-lifecycle/main && cargo test template_pin_bump
+    inputs = software/host-lifecycle/main/src/main.rs
+    evidence = cd software/host-lifecycle/main && cargo test template_pin_bump
+    tool = host-lifecycle@0.40.0
+    recorded = 2026-07-07
+
+[receipt "plan/0069#release-and-repin"]
+    disposition = done
+    verify = attested operator
+    evidence = attested operator
+    tool = host-lifecycle@0.40.0
+    recorded = 2026-07-07

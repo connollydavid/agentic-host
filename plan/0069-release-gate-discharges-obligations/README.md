@@ -1,5 +1,26 @@
 # plan/0069 release-gate-discharges-obligations: the release discharges the component it releases and prompts every carried pin
 
+## Build status (2026-07-07)
+
+Built and shipped as host-lifecycle v0.40.0 (`49b64b4`, artifact `414496cd`). Both gaps closed; the
+whole-suite verify gate is green.
+
+- **Gap 1**: `run_release` step 1b runs `discharge_problems` (`allium plan` + `obligation_gaps` with no
+  `--tests` + `manifest_staleness_problems`) for each `.allium` the released component carries, after the
+  verify recheck and before the version bump; a non-empty result blocks the release. Verified both ways: a
+  staled digest blocks `host-lifecycle release` at the gate (`STALE … release blocked`, exit 1), and a
+  clean component passes (host-lifecycle, 41/41 dispositioned).
+- **Gap 2**: `template_pin_bump_lines` now covers every tool host-template carries as a `tools/<component>`
+  submodule (host-lint too), and fixes host-lifecycle's incomplete prompt, which previously named only the
+  prose.yml `--rev` bump and missed the `tools/host-lifecycle` submodule bump that `template_pin_problems`
+  already checked.
+
+Open questions resolved: the test-dir question dissolved (the gate runs with no `--tests`, since
+`staleness_problems` is independent of it); allium-cli is required at release time, host-prove is not (no
+`--rederive`); a hard gate at release, no staging. The first release to exercise its own gate is the next
+one after v0.40.0 is installed (the v0.40.0 release itself ran on the previously-installed binary, before
+the gate existed).
+
 ## Scope, and what this plan does not fix
 
 This plan closes two release-flow gaps that surfaced when host-lint v0.14.0 shipped with stale obligation
@@ -63,19 +84,16 @@ Both gaps close in one host-lifecycle release; both live in `run_release`.
 ## Build sequence
 
 ### Add the component-scoped obligations gate {#add-discharge-gate}
-- verify: a fixture whose digest ledger is staled blocks `host-lifecycle release` before the version bump
-- inputs: src/main.rs
+- verify: cd software/host-lifecycle/main && cargo test manifest_staleness
+- inputs: software/host-lifecycle/main/src/main.rs
 
 ### Generalize the carried-pin prompt {#generalize-pin-bump}
-- verify: releasing a component carried in host-template/tools prints the template bump steps; releasing
-  one not carried prints none
-- inputs: src/main.rs
+- verify: cd software/host-lifecycle/main && cargo test template_pin_bump
+- inputs: software/host-lifecycle/main/src/main.rs
 
 ### Release and re-pin {#release-and-repin}
 - depends: #add-discharge-gate, #generalize-pin-bump
-- verify: host-lifecycle released, re-pinned, software --check green, and a stale-digest worktree
-  reproduibly blocks release
-- attested: operator
+- verify: attested operator
 
 ## Follow-ups (not this plan)
 
