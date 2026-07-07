@@ -7,7 +7,7 @@ Shipped across two host-lifecycle releases; both gaps closed; the whole-suite ve
 - v0.40.0 (`49b64b4`, artifact `414496cd`): Gap 1 + the first Gap 2 cut.
 - v0.40.1 (`9092416`, artifact `09707ff2`): Gap 2 widened to the derived intersection (below). v0.40.1 was
   the first release to exercise Gap 1's own gate: `host-lifecycle release` ran "discharging
-  host-lifecycle.allium …" and passed, dogfooding the discharge step.
+  host-lifecycle.allium …" and passed, so the gate now covers the tool that ships it.
 
 - **Gap 1**: `run_release` step 1b runs `discharge_problems` (`allium plan` + `obligation_gaps` with no
   `--tests` + `manifest_staleness_problems`) for each `.allium` the released component carries, after the
