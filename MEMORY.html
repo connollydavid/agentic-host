@@ -2460,6 +2460,30 @@ binary. After releasing v0.38.0 the PATH copy stayed stale, so the new publish r
 and HAZARDed the publish phase. Fix: <code>cp software/host-lifecycle/main/target/x86_64-unknown-linux-musl/release/host-lifecycle ~/.local/bin/host-lifecycle</code> (the canonical static-musl binary runs on the dev host; hash 37590cb). A
 release that adds a recheck-referenced subcommand/flag MUST reinstall host-lifecycle on PATH before the
 verify sweep, or the recheck runs against the old binary.</p>
+<p>2026-07-07 — TRACK 2 (plan/0065 onboarding + MCP) BUILD IN PROGRESS on host-lifecycle main (UNRELEASED).
+Decisions ruled + data-grounded first: gather-data.md carries a Fen acceptance run (12/12, position-bias
+controlled, genuinely reasoned) on the new weak-agent contracts and a nine-installer survey; the four
+operator rulings are Sigstore-keyless-cosign trust anchor, optional/backstop-covered MCP (no 2nd ledger
+entry), a MEMORY.md purpose-line seed, and a line-based key:value exit-code/handoff contract (0 ok, 2
+usage, 3 name-required, 4 target-exists, 5 remote-failed). Five host-lifecycle increments built + tested
+(155 green, clippy clean) + pushed: (1) init verb + name backstop + exit codes (aee4cdf); (2) adopt split
+into scaffold primitive + three-route onboarding + deprecate-then-retire shim, carefully flagged as a
+migration via call/0041 (c548084); (3) host-init/host-adopt shims by arg0 dispatch (dd78273); (4) mcp
+stdio surface — hand-rolled JSON-RPC on tokio+serde_json (NOT rmcp SDK), call/0042, turn-based single-pipe
+so the elicitation response is the next line, no correlation map (d3dd358); (5) the oneshot git-init+commit</p>
+<ul>
+<li>optional gh remote with the exit-5 path (bffb658). tokio+serde_json ENTERED a previously-2-dep binary, so
+the release re-vendors a materially larger bundle (call/0021 recipe). REMAINING: adversarial review (running)
+-&gt; release+re-vendor+propagate -&gt; spine doctrine (host-template onboarding narrative + lifecycle.manifest
+adopt-&gt;scaffold phase migration + adopt-rename UPGRADING entry) -&gt; host install mode (cosign installer +
+receipt) -&gt; Fen acceptance on built paths -&gt; verify gate green.</li>
+</ul>
+<p>2026-07-07 — GH INCIDENT + LESSON: while smoke-testing the new <code>init --github</code>, I set PATH=/usr/bin:/bin
+intending gh to be absent, but gh lives in /usr/bin, so <code>gh repo create --push</code> RAN LIVE and created a real
+repo (connollydavid/agentic-ghtest); the token lacked delete_repo scope so I could not clean up (operator
+deleted it manually). Lesson: NEVER live-exercise an outward-creating flag (<code>--github</code>, <code>gh repo create</code>,
+any push/create) as a smoke test; the code is verified correct without it (unit-test the local half, review
+the outward half). An outward action in a test is still an outward action.</p>
 
                     </main>
 
