@@ -1,9 +1,22 @@
 # plan/0065 onboarding-and-mcp-layer: one engine, two human shims, a spawned MCP surface, one dual-mode entrance
 
-This milestone records the design of how a human and an agent start and connect an agentic project.
-It is design-stage, not built, and it is deferred as its own initiative behind the open-bug and
-dependency-security work so a large new surface never blocks the ready fixes. It absorbs the earlier
-adopt-elsewhere design (`plan/0061`) as the `host-adopt` shim described below.
+This milestone records how a human and an agent start and connect an agentic project. It absorbs the
+earlier adopt-elsewhere design (`plan/0061`) as the `host-adopt` shim described below.
+
+## Build status (2026-07-07)
+
+The onboarding and MCP surface is **built and shipped** as host-lifecycle v0.39.0: the `init` and `adopt`
+verbs, the renamed `scaffold` primitive, the `host-init` and `host-adopt` shims, the spawned `mcp` stdio
+server with elicitation, and the oneshot git-and-optional-GitHub finalize. The decisions were grounded in
+data first (`gather-data.md`: a Fen acceptance run and an installer survey), the migration was flagged
+(call/0041 adopt-to-scaffold, call/0042 the MCP-on-tokio decision), and the surface passed a five-dimension
+adversarial review whose twelve confirmed findings are all fixed (`code-review.md`). The release re-vendored
+a self-owned bundle (call/0043, since tokio diverged host-lifecycle from host-lint's shared superset). The
+spine doctrine (the onboarding narrative, the source-read-only and refuse-existing invariants, the adopt
+phase running `scaffold`) shipped in host-template with an adopt-to-scaffold UPGRADING ledger entry, adopted
+here through the ledger. **Remaining: the `host` install mode (the provenance-verified cosign installer and
+its receipt) and its spine install contract, plus the Fen acceptance run on the built oneshot and
+agent-driven-resolve paths.**
 
 This design was reviewed by the cast and a Fable 5 advisor, and their required changes are folded in
 here. The real `qwen3.5-4b` routed the three-route decision twenty of twenty across five scenarios,
