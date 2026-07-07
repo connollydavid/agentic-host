@@ -19,10 +19,12 @@ carry both without overloading on argument shape.
 
 Split the verb. The primitive is renamed `host-lifecycle scaffold <dir> <revision>`, its behaviour
 unchanged. The `adopt` verb becomes the three-route onboarding, invoked by a human through the `host-adopt`
-shim. The bare `adopt <dir> <revision>` form gets a deprecate-then-retire shim: it prints a deprecation
-line naming `scaffold` and forwards, and it retires a release later, the same shape as the
-front-door-to-entrance rename (call/0027). The adopt skill and the lifecycle manifest's adopt phase migrate
-their command to `scaffold`, and a UPGRADING ledger entry carries the migration to adopters.
+shim. The bare `adopt <dir> <revision>` two-positional form is **refused with guidance naming `scaffold`**,
+not silently forwarded. (A first design forwarded it to `scaffold`; the pre-release review found that a
+mistaken `adopt <source> <name>` is indistinguishable from the old form, and forwarding it would write the
+rooms and stamp into the source and break the source-read-only invariant. A hard error with guidance is the
+safe migration.) The adopt skill and the lifecycle manifest's adopt phase migrate their command to
+`scaffold`, and a UPGRADING ledger entry carries the migration to adopters.
 
 The migration map, the one place the old name lives:
 
