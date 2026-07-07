@@ -529,7 +529,7 @@ Skill Hardening: hook fix, bare-numeral rule, release install path (see SKILL-HA
 <tr><td><a href="plan/0066-task-band-and-ordinal-detection/README.html">plan/0066-task-band-and-ordinal-detection</a></td><td><strong>complete: detection in host-lint v0.14.0, band construct in host-lifecycle v0.38.0</strong>: host-lifecycle#4 in two halves. Detection: host-lint now blocks a phase-synonym noun followed by a spelled ordinal (the shape plan/0049 used to evade the gate), the gather lane surfaces a novel such noun, and the disposition is corpus-grounded to the phase-synonym nouns only (the checklist and domain-heavy warn nouns are excluded, per the legitimate spelled use in cast/applying-personas.md); released reproducibly, re-pinned, receipt recorded, <code>tools/host-lint</code> bumped (call/0038), software --check green. Construct (shipped): a content-named band over the anchored tasks with order carried by the <code>depends</code> edges; the heading-marked form was chosen on backward-compatibility, rendering, and referenceability after the real <code>qwen3.5-4b</code> authored and read both candidate forms correctly. The band doctrine landed in host-template <code>67d63e9</code> with its UPGRADING entry, host-lifecycle v0.38.0 carries the <code>parse_tasks</code> recognition, and agentic-host adopted it through the ledger (baseline <code>962630c</code>).</td></tr>
 <tr><td><a href="plan/0067-book-mount-sub-path/README.html">plan/0067-book-mount-sub-path</a></td><td><strong>complete: tool side in host-lifecycle v0.38.0, spine side in the template roll (host-template <code>962630c</code>)</strong>: host#17. A product-site-at-root adopter serves the generated book under a sub-path via a declared <code>book-mount</code> key in <code>.host</code> (default <code>/</code>), read through the existing stamp reader. host-lifecycle <code>book</code> emits mdBook <code>site-url</code> only for a non-default mount (book.toml byte-identical otherwise), and <code>book --print-mount</code> gives the reference Site workflow the value from the tool rather than a shell parse. Shipped in the roll (host-template <code>962630c</code>): the mount-aware Site workflow (publish under the sub-path, keep the surrounding site, assert the layout), the publish recheck pointed at the tool's mode (which also fixes the hardcoded mdbook.yml-vs-site.yml brittleness), the schema documentation, and the UPGRADING ledger entry; agentic-host adopted it through the ledger.</td></tr>
 <tr><td><a href="plan/0068-host-reference-security/README.html">plan/0068-host-reference-security</a></td><td><strong>complete, released as host-reference v0.1.5</strong>: resolves every advisory in host-reference's dependency tree with zero accepted risk. The real DoS advisories are fixed by upgrade: quick-xml (RUSTSEC-2026-0194/0195) via undoc/rbook bumps (office, epub) and a threemf2 migration (geometry, the 3mf golden reproduces), and crossbeam-epoch (RUSTSEC-2026-0204) via a 0.9.20 bump (pdf). The four unmaintained-crate advisories are retired via <code>[patch.crates-io]</code> to maintained slartibardfast forks (paste to pastey, atomic-polyfill to portable-atomic, proc-macro-error a two-crate proc-macro-error2 rename, ttf-parser adopted as a maintained lane), per call/0040. cargo-deny clean with an empty ignore list; the patched crates reach only opt-in readers so the default binary reproduces (change class neither); re-vendored vendor-v2, re-pinned, software --check green. Closes host-reference#3. (The threemf2 port shipped unformatted and v0.1.5 CI was red on <code>cargo fmt --check</code>; re-released as v0.1.6 with the fmt fix.)</td></tr>
-<tr><td><a href="plan/0069-release-gate-discharges-obligations/README.html">plan/0069-release-gate-discharges-obligations</a></td><td><strong>cut, in design (revised after self-review)</strong>: the release flow discharges the component it releases and prompts every carried template pin. Surfaced when host-lint v0.14.0 shipped with stale <code>DetectReviewCodeAsName</code> digests (the recurring born-red-tag class, plan/0045 and plan/0048). Gap 1: the release gate runs the manifest <code>recheck</code> (validate + prose + reconcile) but not the obligations check against the released component's ledger, so a stale digest or undispositioned obligation is invisible until component CI runs after the tag. Gap 2: <code>template_pin_bump_lines</code> prompts the host-template carried-pin bump only for host-lifecycle, not host-lint or any other carried component; the call/0038 HAZARD catches it after the fact. Direction: <code>run_release</code> runs <code>obligations &lt;spec&gt;</code> (no <code>--tests</code>, no <code>--rederive</code>) for each <code>.allium</code> the released component carries, blocking on MISSING/STALE dispositions or STALE digests (the offline staleness check runs independent of <code>--tests</code>, so the test-dir is not needed, which dissolves the original open question); and generalizing the carried-pin prompt to every component the template's <code>.gitmodules</code> pins. Open questions (allium-cli dependency, hard gate vs staged) in the README. Scope-bounded: the sibling v0.1.5 fmt incident is a named follow-up (the cheap local pre-flight lanes), and tag-CI remains the final gate for lanes a local pre-flight cannot reproduce.</td></tr>
+<tr><td><a href="plan/0069-release-gate-discharges-obligations/README.html">plan/0069-release-gate-discharges-obligations</a></td><td><strong>complete, shipped as host-lifecycle v0.40.0 (2026-07-07; <code>49b64b4</code>, artifact <code>414496cd</code>)</strong>: the release flow discharges the component it releases and prompts every carried template pin. Surfaced when host-lint v0.14.0 shipped with stale <code>DetectReviewCodeAsName</code> digests (the recurring born-red-tag class, plan/0045 and plan/0048). Gap 1: the release gate runs the manifest <code>recheck</code> (validate + prose + reconcile) but not the obligations check against the released component's ledger, so a stale digest or undispositioned obligation is invisible until component CI runs after the tag. Gap 2: <code>template_pin_bump_lines</code> prompts the host-template carried-pin bump only for host-lifecycle, not host-lint or any other carried component; the call/0038 HAZARD catches it after the fact. Direction: <code>run_release</code> runs <code>obligations &lt;spec&gt;</code> (no <code>--tests</code>, no <code>--rederive</code>) for each <code>.allium</code> the released component carries, blocking on MISSING/STALE dispositions or STALE digests (the offline staleness check runs independent of <code>--tests</code>, so the test-dir is not needed, which dissolves the original open question); and generalizing the carried-pin prompt to every component the template's <code>.gitmodules</code> pins. Open questions (allium-cli dependency, hard gate vs staged) in the README. Scope-bounded: the sibling v0.1.5 fmt incident is a named follow-up (the cheap local pre-flight lanes), and tag-CI remains the final gate for lanes a local pre-flight cannot reproduce.</td></tr>
 </tbody></table>
 </div>
 <p>The earlier content-named docs above (BOOTSTRAP, CI-PIPELINE, …) predate the <code>plan/</code> room; folding them in is a possible later cleanup, not required.</p>
@@ -7494,6 +7494,25 @@ golden reproduces under threemf2. <code>cargo build --all-features</code> compil
 forks. The default binary re-derives its recorded hash offline against vendor-v2. Closes
 connollydavid/host-reference#3.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0069-release-gate-discharges-obligations-the-release-discharges-the-component-it-releases-and-prompts-every-carried-pin"><a class="header" href="#plan0069-release-gate-discharges-obligations-the-release-discharges-the-component-it-releases-and-prompts-every-carried-pin">plan/0069 release-gate-discharges-obligations: the release discharges the component it releases and prompts every carried pin</a></h1>
+<h2 id="build-status-2026-07-07-1"><a class="header" href="#build-status-2026-07-07-1">Build status (2026-07-07)</a></h2>
+<p>Built and shipped as host-lifecycle v0.40.0 (<code>49b64b4</code>, artifact <code>414496cd</code>). Both gaps closed; the
+whole-suite verify gate is green.</p>
+<ul>
+<li><strong>Gap 1</strong>: <code>run_release</code> step 1b runs <code>discharge_problems</code> (<code>allium plan</code> + <code>obligation_gaps</code> with no
+<code>--tests</code> + <code>manifest_staleness_problems</code>) for each <code>.allium</code> the released component carries, after the
+verify recheck and before the version bump; a non-empty result blocks the release. Verified both ways: a
+staled digest blocks <code>host-lifecycle release</code> at the gate (<code>STALE … release blocked</code>, exit 1), and a
+clean component passes (host-lifecycle, 41/41 dispositioned).</li>
+<li><strong>Gap 2</strong>: <code>template_pin_bump_lines</code> now covers every tool host-template carries as a <code>tools/&lt;component&gt;</code>
+submodule (host-lint too), and fixes host-lifecycle's incomplete prompt, which previously named only the
+prose.yml <code>--rev</code> bump and missed the <code>tools/host-lifecycle</code> submodule bump that <code>template_pin_problems</code>
+already checked.</li>
+</ul>
+<p>Open questions resolved: the test-dir question dissolved (the gate runs with no <code>--tests</code>, since
+<code>staleness_problems</code> is independent of it); allium-cli is required at release time, host-prove is not (no
+<code>--rederive</code>); a hard gate at release, no staging. The first release to exercise its own gate is the next
+one after v0.40.0 is installed (the v0.40.0 release itself ran on the previously-installed binary, before
+the gate existed).</p>
 <h2 id="scope-and-what-this-plan-does-not-fix"><a class="header" href="#scope-and-what-this-plan-does-not-fix">Scope, and what this plan does not fix</a></h2>
 <p>This plan closes two release-flow gaps that surfaced when host-lint v0.14.0 shipped with stale obligation
 digests: the release gate does not discharge the component it releases, and the release tool prompts the
@@ -7547,21 +7566,18 @@ release, no staging. Operator confirm.</li>
 <h2 id="build-sequence-11"><a class="header" href="#build-sequence-11">Build sequence</a></h2>
 <h3 id="add-discharge-gate"><a class="header" href="#add-discharge-gate">Add the component-scoped obligations gate</a></h3>
 <ul>
-<li>verify: a fixture whose digest ledger is staled blocks <code>host-lifecycle release</code> before the version bump</li>
-<li>inputs: src/main.rs</li>
+<li>verify: cd software/host-lifecycle/main &amp;&amp; cargo test manifest_staleness</li>
+<li>inputs: software/host-lifecycle/main/src/main.rs</li>
 </ul>
 <h3 id="generalize-pin-bump"><a class="header" href="#generalize-pin-bump">Generalize the carried-pin prompt</a></h3>
 <ul>
-<li>verify: releasing a component carried in host-template/tools prints the template bump steps; releasing
-one not carried prints none</li>
-<li>inputs: src/main.rs</li>
+<li>verify: cd software/host-lifecycle/main &amp;&amp; cargo test template_pin_bump</li>
+<li>inputs: software/host-lifecycle/main/src/main.rs</li>
 </ul>
 <h3 id="release-and-repin"><a class="header" href="#release-and-repin">Release and re-pin</a></h3>
 <ul>
 <li>depends: #add-discharge-gate, #generalize-pin-bump</li>
-<li>verify: host-lifecycle released, re-pinned, software --check green, and a stale-digest worktree
-reproduibly blocks release</li>
-<li>attested: operator</li>
+<li>verify: attested operator</li>
 </ul>
 <h2 id="follow-ups-not-this-plan"><a class="header" href="#follow-ups-not-this-plan">Follow-ups (not this plan)</a></h2>
 <ul>

@@ -175,6 +175,25 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="plan0069-release-gate-discharges-obligations-the-release-discharges-the-component-it-releases-and-prompts-every-carried-pin"><a class="header" href="#plan0069-release-gate-discharges-obligations-the-release-discharges-the-component-it-releases-and-prompts-every-carried-pin">plan/0069 release-gate-discharges-obligations: the release discharges the component it releases and prompts every carried pin</a></h1>
+<h2 id="build-status-2026-07-07"><a class="header" href="#build-status-2026-07-07">Build status (2026-07-07)</a></h2>
+<p>Built and shipped as host-lifecycle v0.40.0 (<code>49b64b4</code>, artifact <code>414496cd</code>). Both gaps closed; the
+whole-suite verify gate is green.</p>
+<ul>
+<li><strong>Gap 1</strong>: <code>run_release</code> step 1b runs <code>discharge_problems</code> (<code>allium plan</code> + <code>obligation_gaps</code> with no
+<code>--tests</code> + <code>manifest_staleness_problems</code>) for each <code>.allium</code> the released component carries, after the
+verify recheck and before the version bump; a non-empty result blocks the release. Verified both ways: a
+staled digest blocks <code>host-lifecycle release</code> at the gate (<code>STALE … release blocked</code>, exit 1), and a
+clean component passes (host-lifecycle, 41/41 dispositioned).</li>
+<li><strong>Gap 2</strong>: <code>template_pin_bump_lines</code> now covers every tool host-template carries as a <code>tools/&lt;component&gt;</code>
+submodule (host-lint too), and fixes host-lifecycle's incomplete prompt, which previously named only the
+prose.yml <code>--rev</code> bump and missed the <code>tools/host-lifecycle</code> submodule bump that <code>template_pin_problems</code>
+already checked.</li>
+</ul>
+<p>Open questions resolved: the test-dir question dissolved (the gate runs with no <code>--tests</code>, since
+<code>staleness_problems</code> is independent of it); allium-cli is required at release time, host-prove is not (no
+<code>--rederive</code>); a hard gate at release, no staging. The first release to exercise its own gate is the next
+one after v0.40.0 is installed (the v0.40.0 release itself ran on the previously-installed binary, before
+the gate existed).</p>
 <h2 id="scope-and-what-this-plan-does-not-fix"><a class="header" href="#scope-and-what-this-plan-does-not-fix">Scope, and what this plan does not fix</a></h2>
 <p>This plan closes two release-flow gaps that surfaced when host-lint v0.14.0 shipped with stale obligation
 digests: the release gate does not discharge the component it releases, and the release tool prompts the
@@ -228,21 +247,18 @@ release, no staging. Operator confirm.</li>
 <h2 id="build-sequence"><a class="header" href="#build-sequence">Build sequence</a></h2>
 <h3 id="add-discharge-gate"><a class="header" href="#add-discharge-gate">Add the component-scoped obligations gate</a></h3>
 <ul>
-<li>verify: a fixture whose digest ledger is staled blocks <code>host-lifecycle release</code> before the version bump</li>
-<li>inputs: src/main.rs</li>
+<li>verify: cd software/host-lifecycle/main &amp;&amp; cargo test manifest_staleness</li>
+<li>inputs: software/host-lifecycle/main/src/main.rs</li>
 </ul>
 <h3 id="generalize-pin-bump"><a class="header" href="#generalize-pin-bump">Generalize the carried-pin prompt</a></h3>
 <ul>
-<li>verify: releasing a component carried in host-template/tools prints the template bump steps; releasing
-one not carried prints none</li>
-<li>inputs: src/main.rs</li>
+<li>verify: cd software/host-lifecycle/main &amp;&amp; cargo test template_pin_bump</li>
+<li>inputs: software/host-lifecycle/main/src/main.rs</li>
 </ul>
 <h3 id="release-and-repin"><a class="header" href="#release-and-repin">Release and re-pin</a></h3>
 <ul>
 <li>depends: #add-discharge-gate, #generalize-pin-bump</li>
-<li>verify: host-lifecycle released, re-pinned, software --check green, and a stale-digest worktree
-reproduibly blocks release</li>
-<li>attested: operator</li>
+<li>verify: attested operator</li>
 </ul>
 <h2 id="follow-ups-not-this-plan"><a class="header" href="#follow-ups-not-this-plan">Follow-ups (not this plan)</a></h2>
 <ul>
