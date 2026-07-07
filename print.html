@@ -9318,10 +9318,12 @@ carry both without overloading on argument shape.</p>
 <h2 id="decision-22"><a class="header" href="#decision-22">Decision</a></h2>
 <p>Split the verb. The primitive is renamed <code>host-lifecycle scaffold &lt;dir&gt; &lt;revision&gt;</code>, its behaviour
 unchanged. The <code>adopt</code> verb becomes the three-route onboarding, invoked by a human through the <code>host-adopt</code>
-shim. The bare <code>adopt &lt;dir&gt; &lt;revision&gt;</code> form gets a deprecate-then-retire shim: it prints a deprecation
-line naming <code>scaffold</code> and forwards, and it retires a release later, the same shape as the
-front-door-to-entrance rename (call/0027). The adopt skill and the lifecycle manifest's adopt phase migrate
-their command to <code>scaffold</code>, and a UPGRADING ledger entry carries the migration to adopters.</p>
+shim. The bare <code>adopt &lt;dir&gt; &lt;revision&gt;</code> two-positional form is <strong>refused with guidance naming <code>scaffold</code></strong>,
+not silently forwarded. (A first design forwarded it to <code>scaffold</code>; the pre-release review found that a
+mistaken <code>adopt &lt;source&gt; &lt;name&gt;</code> is indistinguishable from the old form, and forwarding it would write the
+rooms and stamp into the source and break the source-read-only invariant. A hard error with guidance is the
+safe migration.) The adopt skill and the lifecycle manifest's adopt phase migrate their command to
+<code>scaffold</code>, and a UPGRADING ledger entry carries the migration to adopters.</p>
 <p>The migration map, the one place the old name lives:</p>
 <ul>
 <li><code>host-lifecycle adopt &lt;dir&gt; &lt;revision&gt;</code> becomes <code>host-lifecycle scaffold &lt;dir&gt; &lt;revision&gt;</code> (the primitive).</li>
