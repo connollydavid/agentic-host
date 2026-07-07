@@ -176,24 +176,37 @@
                     <main>
                         <h1 id="plan0069-release-gate-discharges-obligations-the-release-discharges-the-component-it-releases-and-prompts-every-carried-pin"><a class="header" href="#plan0069-release-gate-discharges-obligations-the-release-discharges-the-component-it-releases-and-prompts-every-carried-pin">plan/0069 release-gate-discharges-obligations: the release discharges the component it releases and prompts every carried pin</a></h1>
 <h2 id="build-status-2026-07-07"><a class="header" href="#build-status-2026-07-07">Build status (2026-07-07)</a></h2>
-<p>Built and shipped as host-lifecycle v0.40.0 (<code>49b64b4</code>, artifact <code>414496cd</code>). Both gaps closed; the
-whole-suite verify gate is green.</p>
+<p>Shipped across two host-lifecycle releases; both gaps closed; the whole-suite verify gate is green.</p>
 <ul>
-<li><strong>Gap 1</strong>: <code>run_release</code> step 1b runs <code>discharge_problems</code> (<code>allium plan</code> + <code>obligation_gaps</code> with no
+<li>
+<p>v0.40.0 (<code>49b64b4</code>, artifact <code>414496cd</code>): Gap 1 + the first Gap 2 cut.</p>
+</li>
+<li>
+<p>v0.40.1 (<code>9092416</code>, artifact <code>09707ff2</code>): Gap 2 widened to the derived intersection (below). v0.40.1 was
+the first release to exercise Gap 1's own gate: <code>host-lifecycle release</code> ran "discharging
+host-lifecycle.allium …" and passed, dogfooding the discharge step.</p>
+</li>
+<li>
+<p><strong>Gap 1</strong>: <code>run_release</code> step 1b runs <code>discharge_problems</code> (<code>allium plan</code> + <code>obligation_gaps</code> with no
 <code>--tests</code> + <code>manifest_staleness_problems</code>) for each <code>.allium</code> the released component carries, after the
 verify recheck and before the version bump; a non-empty result blocks the release. Verified both ways: a
 staled digest blocks <code>host-lifecycle release</code> at the gate (<code>STALE … release blocked</code>, exit 1), and a
-clean component passes (host-lifecycle, 41/41 dispositioned).</li>
-<li><strong>Gap 2</strong>: <code>template_pin_bump_lines</code> now covers every tool host-template carries as a <code>tools/&lt;component&gt;</code>
-submodule (host-lint too), and fixes host-lifecycle's incomplete prompt, which previously named only the
-prose.yml <code>--rev</code> bump and missed the <code>tools/host-lifecycle</code> submodule bump that <code>template_pin_problems</code>
-already checked.</li>
+clean component passes (host-lifecycle, 41/41 dispositioned).</p>
+</li>
+<li>
+<p><strong>Gap 2</strong>: the carried-template-pin set is <strong>derived</strong>: <code>carried_template_tools</code> = <code>.host-software</code> ∩
+<code>host-template/.gitmodules tools/</code> names, and both <code>template_pin_problems</code> (detection) and
+<code>template_pin_bump_lines</code> (prompt) consume it, so they cannot skew. A new family tool that lands in both
+lanes is detected and prompted with no code change (the Fen bar: a fixture <code>host-foo</code> in both lanes is
+carried). host-lifecycle carries a second surface (the prose-CI <code>--rev</code> install), kept as a labelled
+special case (it is the prose-gate tool, a methodology fact, and a mechanical <code>--rev</code>, not prose).
+External referenced tools (allium, specula) are excluded by the intersection.</p>
+</li>
 </ul>
 <p>Open questions resolved: the test-dir question dissolved (the gate runs with no <code>--tests</code>, since
 <code>staleness_problems</code> is independent of it); allium-cli is required at release time, host-prove is not (no
-<code>--rederive</code>); a hard gate at release, no staging. The first release to exercise its own gate is the next
-one after v0.40.0 is installed (the v0.40.0 release itself ran on the previously-installed binary, before
-the gate existed).</p>
+<code>--rederive</code>); a hard gate at release, no staging. The carried set is derived, not hardcoded, so the
+detection and prompt serve any producer (not only agentic-host's two tools).</p>
 <h2 id="scope-and-what-this-plan-does-not-fix"><a class="header" href="#scope-and-what-this-plan-does-not-fix">Scope, and what this plan does not fix</a></h2>
 <p>This plan closes two release-flow gaps that surfaced when host-lint v0.14.0 shipped with stale obligation
 digests: the release gate does not discharge the component it releases, and the release tool prompts the
@@ -267,6 +280,14 @@ lanes (fmt, clippy, test, allium, kani, deny) do not run locally before tagging.
 the cheapest and would have caught host-reference v0.1.5; a follow-up could add the cheap local lanes
 (fmt, and clippy where CI runs it) to the release container step. The heavier lanes and the
 multi-platform matrix stay in tag-CI by necessity.</li>
+<li><strong>Prose surfaces (skills) when a standard lands.</strong> The pin gate is deliberately mechanical: skills and
+other authored prose that <em>reference</em> a tool version are not pin surfaces, because there is no standard
+machine-readable form for such a reference. The Agent Skills open format (agentskills.io) and the Skills
+Over MCP Working Group (SEP-2640, a Resources-based Skills Extension; a <code>skills.json</code> registry with
+dependency metadata is in progress) are moving toward machine-readable skill metadata. Track SEP-2640 /
+skills.json: when a skill's tool-version reference becomes a declared, machine-readable field, the pin
+gate can promote it (the derived-carried-set mechanism already routes by surface kind, so the addition is
+a new kind, not a rework).</li>
 </ul>
 <h2 id="verification"><a class="header" href="#verification">Verification</a></h2>
 <p>A constructed stale-digest worktree blocks <code>host-lifecycle release &lt;component&gt;</code> with the same STALE line the
