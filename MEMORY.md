@@ -2432,3 +2432,20 @@ repo (connollydavid/agentic-ghtest); the token lacked delete_repo scope so I cou
 deleted it manually). Lesson: NEVER live-exercise an outward-creating flag (`--github`, `gh repo create`,
 any push/create) as a smoke test; the code is verified correct without it (unit-test the local half, review
 the outward half). An outward action in a test is still an outward action.
+
+2026-07-07 — host-lifecycle v0.39.0 RELEASED (76767f4, artifact aecb258c) carrying the plan/0065
+onboarding + MCP surface, the adopt->scaffold migration (call/0041), the MCP-on-tokio decision
+(call/0042), and the 12 pre-release adversarial-review fixes (plan/0065 code-review.md). Change-class
+adds-flag. SELF-OWNED VENDOR BUNDLE (call/0043): tokio+serde_json diverged host-lifecycle from host-lint's
+shared superset, so host-lifecycle now publishes its OWN vendor-v1 on its own releases repo
+(e6a03ed6...); the reproducible musl container build re-derives aecb258c against it. .host-software
+re-pinned (pin+artifact+deps-bundle) + deps-bundle.lock synced (the producer lock is edited by hand for a
+re-vendor; `software --lock` refuses to overwrite a disagreeing lock). call/0038 propagated: host-template
+560e325 (tools/host-lifecycle pin + prose.yml rev). Receipt recorded, software --check green, PATH binary
+refreshed. Re-vendor recipe for a self-owned bundle: `cargo vendor --versioned-dirs vendor` from the
+component's own manifest -> capture the config as vendor-config.toml -> normalized tar (--sort=name
+--mtime=@0 --owner=0 --group=0 --numeric-owner ... | gzip -n) of vendor/ + vendor-config.toml -> sha256 ->
+gh release create vendor-vN on the COMPONENT's own repo -> update .host-software deps-bundle + the worktree
+deps-bundle.lock -> release. REMAINING for plan/0065: spine doctrine (host-template onboarding narrative +
+lifecycle.manifest adopt->scaffold phase migration + adopt-rename UPGRADING entry requiring v0.39.0), the
+host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.
