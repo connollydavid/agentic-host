@@ -2,24 +2,30 @@
 
 ## Build status (2026-07-07)
 
-Built and shipped as host-lifecycle v0.40.0 (`49b64b4`, artifact `414496cd`). Both gaps closed; the
-whole-suite verify gate is green.
+Shipped across two host-lifecycle releases; both gaps closed; the whole-suite verify gate is green.
+
+- v0.40.0 (`49b64b4`, artifact `414496cd`): Gap 1 + the first Gap 2 cut.
+- v0.40.1 (`9092416`, artifact `09707ff2`): Gap 2 widened to the derived intersection (below). v0.40.1 was
+  the first release to exercise Gap 1's own gate: `host-lifecycle release` ran "discharging
+  host-lifecycle.allium …" and passed, dogfooding the discharge step.
 
 - **Gap 1**: `run_release` step 1b runs `discharge_problems` (`allium plan` + `obligation_gaps` with no
   `--tests` + `manifest_staleness_problems`) for each `.allium` the released component carries, after the
   verify recheck and before the version bump; a non-empty result blocks the release. Verified both ways: a
   staled digest blocks `host-lifecycle release` at the gate (`STALE … release blocked`, exit 1), and a
   clean component passes (host-lifecycle, 41/41 dispositioned).
-- **Gap 2**: `template_pin_bump_lines` now covers every tool host-template carries as a `tools/<component>`
-  submodule (host-lint too), and fixes host-lifecycle's incomplete prompt, which previously named only the
-  prose.yml `--rev` bump and missed the `tools/host-lifecycle` submodule bump that `template_pin_problems`
-  already checked.
+- **Gap 2**: the carried-template-pin set is **derived**: `carried_template_tools` = `.host-software` ∩
+  `host-template/.gitmodules tools/` names, and both `template_pin_problems` (detection) and
+  `template_pin_bump_lines` (prompt) consume it, so they cannot skew. A new family tool that lands in both
+  lanes is detected and prompted with no code change (the Fen bar: a fixture `host-foo` in both lanes is
+  carried). host-lifecycle carries a second surface (the prose-CI `--rev` install), kept as a labelled
+  special case (it is the prose-gate tool, a methodology fact, and a mechanical `--rev`, not prose).
+  External referenced tools (allium, specula) are excluded by the intersection.
 
 Open questions resolved: the test-dir question dissolved (the gate runs with no `--tests`, since
 `staleness_problems` is independent of it); allium-cli is required at release time, host-prove is not (no
-`--rederive`); a hard gate at release, no staging. The first release to exercise its own gate is the next
-one after v0.40.0 is installed (the v0.40.0 release itself ran on the previously-installed binary, before
-the gate existed).
+`--rederive`); a hard gate at release, no staging. The carried set is derived, not hardcoded, so the
+detection and prompt serve any producer (not only agentic-host's two tools).
 
 ## Scope, and what this plan does not fix
 
@@ -102,6 +108,14 @@ Both gaps close in one host-lifecycle release; both live in `run_release`.
   the cheapest and would have caught host-reference v0.1.5; a follow-up could add the cheap local lanes
   (fmt, and clippy where CI runs it) to the release container step. The heavier lanes and the
   multi-platform matrix stay in tag-CI by necessity.
+- **Prose surfaces (skills) when a standard lands.** The pin gate is deliberately mechanical: skills and
+  other authored prose that *reference* a tool version are not pin surfaces, because there is no standard
+  machine-readable form for such a reference. The Agent Skills open format (agentskills.io) and the Skills
+  Over MCP Working Group (SEP-2640, a Resources-based Skills Extension; a `skills.json` registry with
+  dependency metadata is in progress) are moving toward machine-readable skill metadata. Track SEP-2640 /
+  skills.json: when a skill's tool-version reference becomes a declared, machine-readable field, the pin
+  gate can promote it (the derived-carried-set mechanism already routes by surface kind, so the addition is
+  a new kind, not a rework).
 
 ## Verification
 
