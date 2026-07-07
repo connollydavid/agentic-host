@@ -78,6 +78,32 @@ as the fallback, never by cosign itself. Offline re-verification from the receip
 - host-lint already ships the canonical static-musl binary and `.host-software` already records the
   canonical hashes, so the musl-first build and the pinned-hash cosign bootstrap fit the existing anchors.
 
+## The MCP surface: hand-rolled on tokio, grounded against the SDK and the spec
+
+The spawned MCP server is built on tokio (operator directive: async is required for the server-initiated
+elicitation request). The implementation choice, the official rmcp SDK against a hand-rolled protocol, was
+grounded in the SDK's manifest and the `2025-06-18` spec (call/0042 records the decision).
+
+- **rmcp 2.1.0** is the official Rust SDK, Apache-2.0, tokio-native, and it does support a server sending
+  `elicitation/create` (`create_elicitation`, the typed `elicit<T>`, the `elicit_safe!` guard, and client
+  capability negotiation). A stdio-only server needs the `server`, `macros`, `transport-io`, and
+  `elicitation` features, which exclude the HTTP and TLS stacks but still pull schemars, tokio-util, url,
+  pastey, and a support set, on the order of dozens of transitive crates, from a crate that shipped a major
+  version bump on a one-to-two-week cadence.
+- **The wire surface is small and static.** stdio transport is newline-delimited JSON, one compact object
+  per line, no content-length framing. The methods are `initialize` (echo the protocol version, advertise
+  a `tools` capability), the `notifications/initialized` follow-up, `tools/list`, `tools/call` (a `content`
+  array result, tool errors in-band as `isError`), and one server-initiated `elicitation/create` (a flat
+  object schema of primitives; the client answers accept with content, or decline, or cancel). The client
+  must declare the `elicitation` capability in `initialize`, and the server elicits only when it did.
+- **The one fiddly part** is correlating the server-initiated elicitation response by JSON-RPC id while a
+  `tools/call` is in flight on the same pipe, a bounded problem that is the piece to test hardest.
+
+Decision (call/0042): hand-roll the protocol on tokio and serde_json. The surface is two fixed tools plus
+one elicitation Form, so the SDK's macro ergonomics buy little, while its vendored, hash-pinned, musl
+reproducible-build tax (dozens of crates to pin and re-derive on every fast-moving bump) is the dominant
+cost in this repository. The hand-roll adds only tokio to the vendored set; serde_json is already present.
+
 ## Sources
 
 - rustup-init.sh and self_update.rs (rust-lang/rustup); cargo-binstall SIGNING.md (cargo-bins).
