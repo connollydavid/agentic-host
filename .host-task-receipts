@@ -458,3 +458,19 @@
     evidence = cargo test declared_units + parse_unit_directive_reads pass; end-to-end: # host-lint: unit GFLOPS clears 312.4 GFLOPS, control still warns
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-08
+
+[receipt "plan/0070#update-vocabulary"]
+    disposition = done
+    verify = cd software/host-lint/main && cargo test vocabulary
+    inputs = software/host-lint/main/VOCABULARY.md
+    evidence = cargo test vocabulary passes; VOCABULARY.md documents the data-position skips and the host-lint unit directive
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-08
+
+[receipt "plan/0070#spec-and-obligations"]
+    disposition = done
+    verify = cd software/host-lint/main && host-lifecycle obligations host-lint.allium --tests tests
+    inputs = software/host-lint/main/host-lint.allium, software/host-lint/main/host-lint.obligations
+    evidence = host-lifecycle obligations: all 51 dispositioned, rungs re-derived (kani re-proved, digests recorded at 97c9e43c)
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-08
