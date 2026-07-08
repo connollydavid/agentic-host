@@ -419,3 +419,10 @@
     evidence = attested operator
     tool = host-lifecycle@0.40.0
     recorded = 2026-07-07
+
+[receipt "plan/0070#gather-data"]
+    disposition = done
+    verify = the classification table in gather-data.md is 32 of 32 at two temperatures
+    evidence = Fen classification probe in plan/0070-benchmark-data-numerals/gather-data.md: 32 of 32 correct at two temperatures (0 authored-order, 0.3 shuffled)
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-08
