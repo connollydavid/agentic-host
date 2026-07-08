@@ -450,3 +450,11 @@
     evidence = cargo test compound_units passes; check_warn skips numerals followed by a slashed unit
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-08
+
+[receipt "plan/0070#lexicon-domain-units"]
+    disposition = done
+    verify = cd software/host-lint/main && cargo test declared_units
+    inputs = software/host-lint/main/src/lib.rs, software/host-lint/main/src/main.rs
+    evidence = cargo test declared_units + parse_unit_directive_reads pass; end-to-end: # host-lint: unit GFLOPS clears 312.4 GFLOPS, control still warns
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-08
