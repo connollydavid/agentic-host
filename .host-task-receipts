@@ -426,3 +426,27 @@
     evidence = Fen classification probe in plan/0070-benchmark-data-numerals/gather-data.md: 32 of 32 correct at two temperatures (0 authored-order, 0.3 shuffled)
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-08
+
+[receipt "plan/0070#skip-table-cells"]
+    disposition = done
+    verify = cd software/host-lint/main && cargo test table_cell
+    inputs = software/host-lint/main/src/lib.rs
+    evidence = cargo test table_cell passes; check_warn skips pipe-flanked numerals
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-08
+
+[receipt "plan/0070#prose-quantity-operators"]
+    disposition = done
+    verify = cd software/host-lint/main && cargo test quantity_operators
+    inputs = software/host-lint/main/src/lib.rs
+    evidence = cargo test quantity_operators passes; check_warn skips operator/multiplier-marked numerals
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-08
+
+[receipt "plan/0070#compound-units"]
+    disposition = done
+    verify = cd software/host-lint/main && cargo test compound_units
+    inputs = software/host-lint/main/src/lib.rs
+    evidence = cargo test compound_units passes; check_warn skips numerals followed by a slashed unit
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-08
