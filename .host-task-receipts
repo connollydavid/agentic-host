@@ -474,3 +474,10 @@
     evidence = host-lifecycle obligations: all 51 dispositioned, rungs re-derived (kani re-proved, digests recorded at 97c9e43c)
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-08
+
+[receipt "plan/0070#release-and-repin"]
+    disposition = done
+    verify = attested operator
+    evidence = host-lint v0.14.2 released (241a870, artifact 63937195), re-pinned, host-template bumped, receipt recorded
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-08
