@@ -134,9 +134,36 @@ Grounded in the rustup and deno precedent.
 
 **Decision for install.sh:** bash with `set -euo pipefail`. The harness
 allowlist, menu logic, and string manipulation are cleaner in bash. We require
-`bash` explicitly in the shebang (`#!/usr/bin/env bash`); macOS ships bash 3.2
-(which is sufficient for our constructs). The opencode and bun precedent
-justifies this.
+`bash` explicitly in the shebang (`#!/usr/bin/env bash`). The opencode and bun
+precedent justifies this.
+
+**Critical constraint: macOS bash 3.2 compatibility.** macOS ships bash 3.2.57
+at `/bin/bash` — the last GPLv2 release. Apple froze it when bash 4.0 switched
+to GPLv3, and has never updated it. Every macOS user has bash 3.2 and only 3.2
+unless they installed a newer one via Homebrew. Confirmed via Apple TN2065:
+`/bin/sh` on macOS is bash in POSIX mode. Since Catalina (10.15, 2019), zsh is
+the default interactive shell, but `/bin/bash` is present on every macOS
+release including current Tahoe (26) and Golden Gate (27 beta).
+
+This pins install.sh to **bash 3.2-safe constructs only**:
+
+| Safe in 3.2 (use these) | bash 4+ only (avoid these) | Replacement |
+|---|---|---|
+| `set -euo pipefail` | `mapfile` / `readarray` (4.0) | `while read -r line; do ...` |
+| `[[ ]]` test | `declare -A` assoc arrays (4.0) | parallel arrays + `case` dispatch |
+| `read -rp` | `${var^^}` / `${var,,}` (4.0) | `tr '[:lower:]' '[:upper:]'` |
+| `${var//pattern/replacement}` | `\|&` pipe shorthand (4.0) | `2>&1 \|` |
+| `local` variables | `coproc` (4.0) | named pipes or `&` + `wait` |
+| `case` / `select` | `${var:i:n}` substring (4.2) | `cut -c` or `expr substr` |
+| arrays `arr=(a b c)` `${arr[@]}` | `${!name@}` indirect (4.3) | `eval` or `case` |
+| `printf '%s'` | `declare -g` (4.2) | avoid global declaration in functions |
+| `< /dev/tty` redirect | | |
+| `trap` / `exit` / `return` | | |
+
+The constructs we need (the state machine, harness allowlist, name validation,
+menu, SHA256 verification, manifest parsing) are all expressible in 3.2-safe
+bash: `case` dispatch, indexed arrays, `while read` loops, `[[ ]]` tests, and
+string operators. No associative arrays or `mapfile` required.
 
 ### Downloader
 
@@ -214,6 +241,7 @@ Every conditional in the README traces to a gather-data row:
 | Receipt: per-project XDG | Receipt (unique to us; justified by idempotency) |
 | TTY: `< /dev/tty` for interactive reads | TTY handling (rustup, deno precedent) |
 | Dialect: bash, `set -euo pipefail` | Shell dialect (opencode, bun precedent) |
+| bash 3.2-safe constructs only | macOS ships 3.2.57 (last GPLv2; never updated) |
 | Downloader: curl, no wget fallback | Downloader (curl ubiquitous on 6 targets) |
 | Fat script, not two-stage | Two-stage vs fat (opencode/deno/bun precedent) |
 | Harness allowlist: 6 binaries, ordered | Harness landscape table |
