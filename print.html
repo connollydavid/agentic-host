@@ -7869,7 +7869,9 @@ the third-party <code>detect-coding-agent</code> crate reading native vars, whic
 <li>Zero harnesses detected: scaffold anyway, print "install opencode or claude, then <code>cd &lt;name&gt;</code>." The project is ready regardless.</li>
 <li>One harness detected: auto-select, no menu.</li>
 <li>Multiple detected: numbered menu via <code>read -rp ... &lt; /dev/tty</code> (curl owns stdin). The
-numbering follows the star order above, which is deterministic across machines.</li>
+numbering follows the order above (deterministic across machines). The menu lists only
+names and numbers — no star counts, no popularity labels. The ordering is the star
+ordering, but the numbers are not shown to the user.</li>
 <li><code>exec &lt;harness&gt;</code> in the project dir replaces the script process; the harness reads the
 scaffolded CLAUDE.md as its entrance and continues the bringup Q&amp;A. Because <code>curl | bash</code>
 runs bash as a child of the user's shell, <code>exec</code> replaces that child, not the parent shell.
@@ -7945,8 +7947,8 @@ invalid menu selection (re-prompt)</li>
 <li>No-harness message: does the print-and-exit read as actionable to a weak agent?</li>
 <li>Manifest authentication pattern: which of the surveyed installer patterns reads as
 trustworthy to a cold read?</li>
-<li>Star-ordered menu: does a weak agent read a numbered star-ordered menu without position
-bias?</li>
+<li>Ordered menu: does a weak agent read a numbered ordered menu (names only, no star
+counts) without position bias?</li>
 </ul>
 <p><strong>Installer survey</strong> (gather-data.md) grounds the mechanical patterns:</p>
 <ul>
