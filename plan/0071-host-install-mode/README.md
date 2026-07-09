@@ -181,7 +181,9 @@ the third-party `detect-coding-agent` crate reading native vars, which is for de
   <name>`." The project is ready regardless.
 - One harness detected: auto-select, no menu.
 - Multiple detected: numbered menu via `read -rp ... < /dev/tty` (curl owns stdin). The
-  numbering follows the star order above, which is deterministic across machines.
+  numbering follows the order above (deterministic across machines). The menu lists only
+  names and numbers — no star counts, no popularity labels. The ordering is the star
+  ordering, but the numbers are not shown to the user.
 - `exec <harness>` in the project dir replaces the script process; the harness reads the
   scaffolded CLAUDE.md as its entrance and continues the bringup Q&A. Because `curl | bash`
   runs bash as a child of the user's shell, `exec` replaces that child, not the parent shell.
@@ -259,8 +261,8 @@ Invariants:
 - No-harness message: does the print-and-exit read as actionable to a weak agent?
 - Manifest authentication pattern: which of the surveyed installer patterns reads as
   trustworthy to a cold read?
-- Star-ordered menu: does a weak agent read a numbered star-ordered menu without position
-  bias?
+- Ordered menu: does a weak agent read a numbered ordered menu (names only, no star
+  counts) without position bias?
 
 **Installer survey** (gather-data.md) grounds the mechanical patterns:
 - The hash-check-and-verify pattern (opencode, rustup, homebrew, deno, bun, Claude Code,
