@@ -16,7 +16,7 @@ platform/shell detection, the harness handoff, and the `install.sh` surface. Thi
 all of it.
 
 The design decisions below are grounded in two evidence sources: a neutral Fen classification
-probe (the UX conditionals) and a documented landscape survey (the binary names, the star
+probe (the UX conditionals) and a documented survey of binary names (the star
 ordering, the platform matrix, the installer patterns).
 
 ## The one-liner
@@ -71,8 +71,8 @@ plan/0065 lines 121-132 and 234-243 locked the contract:
   hash-check would pass. The trust-anchor material travels into the local install receipt so a
   later verification does not depend on refetching a moving remote.
 
-**Manifest authentication — settled.** HTTPS to GitHub is the transport-layer trust root,
-identical to every curl|bash installer in the ecosystem (rustup, homebrew, bun, deno, Claude
+**Manifest authentication: settled.** HTTPS to GitHub is the transport-layer trust root,
+identical to every curl|bash installer used by rustup, homebrew, bun, deno, Claude
 Code, Codex CLI all trust HTTPS for first-run). The manifest is served from the same repo over
 the same TLS as `install.sh` itself, so the trust boundary for the manifest is the same
 boundary the user already crossed to run the script. The reproducible build is the independent
@@ -89,9 +89,9 @@ locally (not in the project's `.host` stamp, which describes a project, not the 
 binaries) and is re-verifiable offline. A partial install records the missing binaries as
 absent or pending and never leaves a silently-missing tool untraceable.
 
-**Receipt location — settled.** `$XDG_DATA_HOME/agentic-<name>/install-receipt` (defaulting to
+**Receipt location: settled.** `$XDG_DATA_HOME/agentic-<name>/install-receipt` (defaulting to
 `~/.local/share/agentic-<name>/install-receipt` when `XDG_DATA_HOME` is unset). Each project
-gets its own machine-side receipt — multiple projects on the same machine can be on different
+gets its own machine-side receipt; multiple projects on the same machine can be on different
 template revisions with different binary versions. XDG-conformant, namespaced by the project
 name (not a generic `host/` dir), and distinct from the per-project `.host-receipts` that
 plan/0037 established for applied-set receipts.
@@ -110,9 +110,9 @@ Three OS families, two architectures, and the user's login shell for PATH config
 asset names):
 
 ```
-darwin          macOS           → host-lifecycle-darwin-{amd64,arm64}
-linux           Linux           → host-lifecycle-linux-{amd64,arm64}
-windows         MINGW/MSYS/CYGWIN → host-lifecycle-windows-{amd64,arm64}.exe
+darwin          macOS           -> host-lifecycle-darwin-{amd64,arm64}
+linux           Linux           -> host-lifecycle-linux-{amd64,arm64}
+windows         MINGW/MSYS/CYGWIN -> host-lifecycle-windows-{amd64,arm64}.exe
 ```
 
 `uname -s` distinguishes the three; `uname -m` maps `x86_64` to amd64 and `aarch64` to arm64.
@@ -135,10 +135,10 @@ allowlist needs no platform-specific logic.
 Before any work, the script checks its own prerequisites and exits with an actionable message
 if any is missing:
 
-- `git` — host-lifecycle clones the template during scaffold
-- SHA256 verifier — `sha256sum` (Linux/Git Bash), `shasum -a 256` (macOS), or `certutil`
+- `git`: host-lifecycle clones the template during scaffold
+- SHA256 verifier: `sha256sum` (Linux/Git Bash), `shasum -a 256` (macOS), or `certutil`
   (native Windows). Detected before the verify step, not at it.
-- `curl` — inherently present (`curl | bash`), but checked if re-run from a local file.
+- `curl`: inherently present (`curl | bash`), but checked if re-run from a local file.
 
 `cargo` and `rustup` are NOT prerequisites of the install script (it downloads pre-built
 binaries), but the harness-driven bringup inside the scaffolded project will eventually need
@@ -160,13 +160,13 @@ harnesscli unified meta-tool):
 | 2 | `claude` | Claude Code | 137k | confirmed |
 | 3 | `codex` | Codex CLI | 96.5k | confirmed |
 | 4 | `qwen` | Qwen Code | 25.9k | confirmed |
-| 5 | `cursor-agent` | Cursor Agent | unquantified | confirmed binary; `agent` fallback too generic for a strict allowlist — skip |
+| 5 | `cursor-agent` | Cursor Agent | unquantified | confirmed binary; `agent` fallback too generic for a strict allowlist, skip |
 | 6 | `pi` | Pi Agent | unquantified | confirmed binary |
 
 Dropped from consideration:
-- `cheetahclaws` — PyPI package name confirmed, but the console-script entry point is
+- `cheetahclaws`: PyPI package name confirmed, but the console-script entry point is
   unconfirmed. Re-evaluate when the binary invocation is documented.
-- `zcode` — no official CLI binary; only a third-party wrapper (zCode-CLI-X). The official
+- `zcode`: no official CLI binary; only a third-party wrapper (zCode-CLI-X). The official
   distribution is a GUI installer.
 
 No `HARNESS` environment variable: research confirmed no cross-vendor standard exists (each
@@ -182,7 +182,7 @@ the third-party `detect-coding-agent` crate reading native vars, which is for de
 - One harness detected: auto-select, no menu.
 - Multiple detected: numbered menu via `read -rp ... < /dev/tty` (curl owns stdin). The
   numbering follows the order above (deterministic across machines). The menu lists only
-  names and numbers — no star counts, no popularity labels. The ordering is the star
+  names and numbers, no star counts, no popularity labels. The ordering is the star
   ordering, but the numbers are not shown to the user.
 - `exec <harness>` in the project dir replaces the script process; the harness reads the
   scaffolded CLAUDE.md as its entrance and continues the bringup Q&A. Because `curl | bash`
@@ -219,22 +219,22 @@ scaffold, harness detect, launch), so it earns a spec, not just tests.
 The spec lives in the `host` repo (specs-live-with-software, plan/0012) and models the
 surface `InstallRun` with states and transitions:
 
-- `Prerequisites` → `Detecting` (all met) | `MissingPrereq` (any absent, exit 1)
-- `Detecting` → `FetchingManifest` (platform identified) | `UnsupportedPlatform` (exit 1)
-- `FetchingManifest` → `VerifyingManifest` (fetched) | `FetchFailed` (exit 5)
-- `VerifyingManifest` → `Downloading` (trust root verified) | `ManifestUntrusted` (exit 1)
-- `Downloading` → `VerifyingBinary` (per-binary) | `DownloadFailed` (exit 5)
-- `VerifyingBinary` → `Downloading` (hash matches, next binary) | `HashMismatch` (exit 1,
+- `Prerequisites` -> `Detecting` (all met) | `MissingPrereq` (any absent, exit 1)
+- `Detecting` -> `FetchingManifest` (platform identified) | `UnsupportedPlatform` (exit 1)
+- `FetchingManifest` -> `VerifyingManifest` (fetched) | `FetchFailed` (exit 5)
+- `VerifyingManifest` -> `Downloading` (trust root verified) | `ManifestUntrusted` (exit 1)
+- `Downloading` -> `VerifyingBinary` (per-binary) | `DownloadFailed` (exit 5)
+- `VerifyingBinary` -> `Downloading` (hash matches, next binary) | `HashMismatch` (exit 1,
   all-or-nothing) | `AllVerified` (last binary matches)
-- `AllVerified` → `WritingReceipt` → `InstallDone`
-- `InstallDone` → `NamePrompt` (create phase begins)
-- `NamePrompt` → `Scaffolding` (name resolved) | `NameRequired` (no TTY, exit 3) | `NameReserved` (`agentic-host`, exit 4)
-- `Scaffolding` → `HarnessDetect` (project created) | `TargetExists` (exit 4)
-- `HarnessDetect` → `Launching` (resolved) | `NoHarness` (print message, exit 0)
-- `Launching` → `Done` (`exec harness`)
+- `AllVerified` -> `WritingReceipt` -> `InstallDone`
+- `InstallDone` -> `NamePrompt` (create phase begins)
+- `NamePrompt` -> `Scaffolding` (name resolved) | `NameRequired` (no TTY, exit 3) | `NameReserved` (`agentic-host`, exit 4)
+- `Scaffolding` -> `HarnessDetect` (project created) | `TargetExists` (exit 4)
+- `HarnessDetect` -> `Launching` (resolved) | `NoHarness` (print message, exit 0)
+- `Launching` -> `Done` (`exec harness`)
 
 Invariants:
-- No binary lands on PATH before its hash is verified.
+- Each binary's hash is verified before the binary lands on PATH.
 - No project is scaffolded before the full toolset is installed and verified.
 - The receipt is written before the create phase begins.
 - The name is never empty when it reaches `Scaffolding`.
@@ -243,17 +243,17 @@ Invariants:
 ## Verification
 
 **Integration tests** exercise every branch:
-- Prerequisites: missing `git` → exit 1 with actionable message
+- Prerequisites: missing `git` -> exit 1 with actionable message
 - Platform: darwin/linux/windows detection from mocked `uname`
-- Manifest: trust-root failure → exit 1 before any download
-- Binary: hash mismatch → exit 1, nothing on PATH, receipt records the failure
-- Binary: all match → receipt written, all binaries on PATH
+- Manifest: trust-root failure -> exit 1 before any download
+- Binary: hash mismatch -> exit 1, nothing on PATH, receipt records the failure
+- Binary: all match -> receipt written, all binaries on PATH
 - Name: from arg, from TTY prompt, from neither (exit 3)
 - Name: path-traversal rejected, shell-metacharacter rejected, empty rejected
 - Name: `agentic-host` refused (reserved), actionable message, exit 4
 - Harness: zero detected (print + exit 0), one detected (auto-select), multiple (menu),
   invalid menu selection (re-prompt)
-- Scaffold: existing target → exit 4
+- Scaffold: existing target -> exit 4
 - Shell config: correct file written for zsh/bash/fish/profile
 
 **Fen probe** (gather-data.md) validates the UX conditionals:
@@ -266,67 +266,67 @@ Invariants:
 
 **Installer survey** (gather-data.md) grounds the mechanical patterns:
 - The hash-check-and-verify pattern (opencode, rustup, homebrew, deno, bun, Claude Code,
-  Codex CLI) — what do the shipping majority do?
-- The manifest format — TOML (host-lifecycle's idiom) vs JSON vs plain text
-- The trust-root mechanism — reproducible build hash vs external signer vs GitHub-digest-only
-- The receipt location — `~/.host-receipts` vs XDG vs home-dir dotfile
+  Codex CLI): what do the shipping majority do?
+- The manifest format: TOML (host-lifecycle's idiom) vs JSON vs plain text
+- The trust-root mechanism: reproducible build hash vs external signer vs GitHub-digest-only
+- The receipt location: `~/.host-receipts` vs XDG vs home-dir dotfile
 
 ## Build sequence
 
 The tasks are anchored receipted nodes (plan/0042), built as a forward graph:
 
-### gather-data
+### gather-data {#gather-data}
 Grounds every conditional in data: the Fen probe (UX), the installer survey (mechanical
-patterns), and the binary-name/harness landscape confirmation.
+patterns), and the binary-name/harness survey confirmation.
 - verify by: every conditional in this README traces to a gather-data.md row
 - depends: none
 
-### write-install-sh
+### write-install-sh {#write-install-sh}
 The tight bash script, zero third-party deps. Implements the full state machine: prerequisites,
 platform/shell detection, manifest fetch, trust verify, per-binary download and hash-check,
 all-or-nothing, receipt, name resolution, scaffold, harness detect, launch.
 - verify by: `bash -n install.sh` (syntax), `shellcheck install.sh` (lint; requires adding a
   shellcheck job to the host repo's CI, which currently has only a prose gate per plan/0038),
   integration tests pass
-- depends: gather-data
+- depends: #gather-data
 
-### write-manifest
+### write-manifest {#write-manifest}
 The install manifest keyed to the template revision, single-sourced from public release
 receipts. Generated or declared; its format settled by the installer survey.
 - verify by: manifest hashes match the public release asset digests for every host-* binary
-- depends: gather-data
+- depends: #gather-data
 
-### write-allium-spec
+### write-allium-spec {#write-allium-spec}
 The `InstallRun` surface with states, transitions, and invariants as specified above.
 - verify by: `allium check` + `allium analyse` exit 0, zero findings
-- depends: gather-data
+- depends: #gather-data
 
-### write-obligations
+### write-obligations {#write-obligations}
 Every `allium plan` obligation dispositioned in a `<spec>.obligations` manifest, discharged by
 the integration tests.
 - verify by: `host-lifecycle obligations <spec> --tests tests --strict-discharge` clean
-- depends: write-allium-spec
+- depends: #write-allium-spec
 
-### write-tests
+### write-tests {#write-tests}
 Integration tests covering every branch listed in Verification above. The test harness mocks
 `uname`, `command -v`, `/dev/tty`, and the network (manifest fetch, binary download) so tests
 run offline and deterministic.
 - verify by: full test suite green, every spec obligation exercised
-- depends: write-install-sh, write-allium-spec
+- depends: #write-install-sh, #write-allium-spec
 
-### host-repo-release
+### host-repo-release {#host-repo-release}
 Ship `install.sh`, the manifest, the spec, and the tests in the `host` repo. The entrance
 ships through its own release authority (plan/0065:192-194).
 - verify by: `host-lifecycle entrance --check` green, `software --check` clean, CI green
-- depends: write-install-sh, write-manifest, write-obligations, write-tests
+- depends: #write-install-sh, #write-manifest, #write-obligations, #write-tests
 
-### re-pin-and-receipt
+### re-pin-and-receipt {#re-pin-and-receipt}
 Re-pin `host` in agentic-host's `.host-software`, record the release receipt.
 - verify by: `software --check .` clean at the new pin
-- depends: host-repo-release
+- depends: #host-repo-release
 
-### fen-acceptance
+### fen-acceptance {#fen-acceptance}
 The real `qwen3.5-4b` runs the one-liner end-to-end (or as close as the sandbox allows) and
 the harness-detection menu, confirming the UX conditionals hold at the weak-agent bar.
 - verify by: Fen routes the install flow and the harness selection correctly
-- depends: host-repo-release
+- depends: #host-repo-release

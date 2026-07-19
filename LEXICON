@@ -1,0 +1,9 @@
+# Project vocabulary that the ai-diction trope over-fires on (call/0019, plan/0044).
+# Each phrase is masked before detection, word-boundaried, case-insensitive. A bare
+# numeral is never an entry; a tracker-ref entry carries its URL.
+#
+# `harness`: genuine domain noun here. plan/0071's install mode and plan/0065's
+# onboarding layer detect and launch the operator's agent harness (opencode,
+# claude, codex, qwen, cursor-agent, pi), and Kani proof harnesses are the
+# verification-ladder unit (plan/0023). Not the slop verb "harness the power of".
+harness

@@ -167,64 +167,64 @@ for this host. Tasks with no stated dependency follow the previous task; stated
 dependencies override. Each pack task names the #23 findings it absorbs in the issue
 text; the verify lines here are the receipts' checks.
 
-### core-fail-closed-file-args
+### core-fail-closed-file-args {#core-fail-closed-file-args}
 
 An explicit file argument that is not a scannable file exits 2 with a diagnostic naming
 the path, in line with the tool's fail-closed pattern everywhere else.
 
-- depends: none (root)
+- depends: none
 - verify by: regression test; `host-lint no-such-file.md` exits 2 and names the path
 
-### core-fix-release
+### core-fix-release {#core-fix-release}
 
 The live-defect fix ships as its own patch release ahead of the pack, so #23 does not
 wait on the pack build: `host-lifecycle release host-lint --change-class neither`, re-pin
 `.host-software`, record the release receipt, close #23 with the release named.
 
-- depends: core-fail-closed-file-args
+- depends: #core-fail-closed-file-args
 - verify by: `host-lifecycle software --check .` clean at the new pin; #23 closed
 
-### pack-dispatch
+### pack-dispatch {#pack-dispatch}
 
 The reserved `pack` verb: resolution beside the binary then on PATH, arg and exit-code
 passthrough, `packs` listing, strict version handshake with refusal on skew, exit 2 with
 an install hint when the pack is absent.
 
-- depends: core-fail-closed-file-args
+- depends: #core-fail-closed-file-args
 - verify by: stub-pack integration tests covering passthrough of each exit code, the
   collision case (a file named `ffmpeg` in cwd: `pack ffmpeg` dispatches, bare `ffmpeg`
   scans the file), skew refusal, and the missing-pack hint
 
-### engine-surface
+### engine-surface {#engine-surface}
 
 The reporting surface (`output_text`, `output_json`, `fix_hint`) moves from `main.rs`
 into the `host_lint` lib; the stable embedding surface is documented.
 
-- depends: none (root)
+- depends: none
 - verify by: `cargo build` and `cargo test` green with `main.rs` consuming only the lib
   surface; host-lifecycle's embedding compiles unchanged
 
-### workspace-split
+### workspace-split {#workspace-split}
 
 The repository becomes a cargo workspace: the existing crate unchanged plus the
 `host-lint-ffmpeg` bin crate; release assets per platform; `deps-bundle.lock`
 regenerated.
 
-- depends: engine-surface
+- depends: #engine-surface
 - verify by: `cargo build --workspace --release` offline from the vendored bundle; both
   binaries produced on all release targets in CI
 
-### fixture-licensing
+### fixture-licensing {#fixture-licensing}
 
 The licensing policy decided before any fixture lands: synthesized fixtures by default; a
 real upstream excerpt only where synthesis cannot reproduce the case, isolated with
 explicit provenance and licensing notes.
 
-- depends: none (root)
+- depends: none
 - verify by: the fixtures directory ships its provenance README; a CI check requires it
   wherever real excerpts sit
 
-### rule-registry
+### rule-registry {#rule-registry}
 
 The encoded corpus, widened per #23 and re-grounded per the public-signals review: the
 baseline re-pins to a genuine upstream master SHA with a corpus-freshness check at encode
@@ -236,12 +236,12 @@ content hash), and fate.texi; every rule-bearing chapter sits in the completenes
 a measured-rate field per mechanical rule (empty until calibration); per-section source
 digests. `rules`, `rules --json`, and `rules --verify-source <tree>`.
 
-- depends: workspace-split
+- depends: #workspace-split
 - verify by: the completeness test fails when any rule-bearing chapter entry lacks a
   registry mapping; a doctored section raises drift while an edit elsewhere does not; the
   freshness check fails on a pin older than the newest developer.texi commit
 
-### msg-lane
+### msg-lane {#msg-lane}
 
 The message checks corrected against measured ground truth: the widened area grammar,
 the `Revert`/`fixup!`/`squash!` exemptions, the enumerated exact-string vague list,
@@ -250,11 +250,11 @@ why-and-what, never install walkthroughs; grounded in the January 2026 review re
 and ticket-ref accepting Forgejo issue references alongside legacy Trac shapes and CVE
 ids now that the primary tracker moved.
 
-- depends: rule-registry
+- depends: #rule-registry
 - verify by: the measured ground-truth subjects from #23 join the fixtures as a must-pass
   corpus; synthetic violations fire each rule exactly once; proptest over the grammar
 
-### diff-lane
+### diff-lane {#diff-lane}
 
 The added-line checks with scope drawn precisely: the full Makefile-class and golden-output
 whitespace exemptions, library-trees-only naming scope, the lexical VLA rule retired in
@@ -263,31 +263,31 @@ narrow-variable-scope advisory heuristic (a loop counter declared immediately be
 for loop that uses it), and the self-describing AVOption constant heuristic (name equals
 value, the reviewer-named tell).
 
-- depends: rule-registry, fixture-licensing
+- depends: #rule-registry, #fixture-licensing
 - verify by: per-rule positive and negative fixtures, with a `*.mak` tab, a `tests/ref`
   golden file, and an fftools identifier all passing; patcheck parity cases
 
-### cosmetic-separation
+### cosmetic-separation {#cosmetic-separation}
 
 The mixed cosmetic/functional classifier, fully specified: `diff -w -b` per git-howto,
 blank-line handling defined, the brace allowance and the 2026-03-25 whitespace-only
 relaxation encoded as fixtures.
 
-- depends: diff-lane
+- depends: #diff-lane
 - verify by: six fixture commits (mixed flags; pure re-indent, pure functional, brace
   allowance, whitespace-only relaxation, and blank-line-only all pass)
 
-### corpus-calibration
+### corpus-calibration {#corpus-calibration}
 
 The tier freeze: every mechanical rule runs over several thousand recent accepted
 upstream commits; a rule flagging above the agreed rate is demoted or refined; the
 registry's measured-rate fields are populated. Tiers freeze here and nowhere earlier.
 
-- depends: msg-lane, diff-lane
+- depends: #msg-lane, #diff-lane
 - verify by: the calibration report is committed beside the registry; a gate test asserts
   no flag-tier mechanical rule exceeds the agreed rate on the calibration corpus
 
-### series-lane
+### series-lane {#series-lane}
 
 The per-commit walk and series-order checks, corrected and widened: the generated-header
 allowlist and dual-root include resolution, provider-before-consumer extended to Makefile
@@ -302,14 +302,14 @@ fate-suite path is never repurposed, sample minimality attested), and the securi
 three-way routing classifier (exploitable to ffmpeg-security, non-exploitable UB or leak
 to a Forgejo PR, everything else the normal path).
 
-- depends: cosmetic-separation, corpus-calibration
+- depends: #cosmetic-separation, #corpus-calibration
 - verify by: the synthetic-repo suite extends per rule; a series including
   `config_components.h` passes; a Makefile object reference ahead of its source flags; a
   filter registration with no Changelog, doc, or MAINTAINERS hunk fires each obligation;
   an avpriv move without a minor bump flags; a crash-fix commit with a new fate sample
   and no samples-request note fires both the routing note and the sample check
 
-### build-receipts
+### build-receipts {#build-receipts}
 
 The expensive lane with home and legs settled: per-commit compile, `--enable-shared`,
 `-Wvla`, standalone-compile, `--disable-x86asm` when assembly is added, an out-of-tree
@@ -319,11 +319,11 @@ with the export form, carrying base and head SHAs, toolchain identity, config di
 the legs run; missing receipt notes, stale receipt warns (exit 3), an unrun leg renders
 unrun, never passed.
 
-- depends: series-lane
+- depends: #series-lane
 - verify by: toy-repo run producing a receipt with legs recorded; a rewritten head reads
   stale (warn); a missing leg renders unrun; the export form round-trips
 
-### mail-lane
+### mail-lane {#mail-lane}
 
 The format-patch directory checks, widened by the mailing-list-faq and MAINTAINERS
 sources: parseability, subject-prefix coherence, cover-letter warn, the per-message
@@ -337,14 +337,14 @@ DMARC pre-send warn (a From: domain publishing reject or quarantine bounces off
 ffmpeg-devel), and patchwork post-send verification (the series appears, prior versions
 marked superseded). Attested: the subscription precondition and interleaved-reply style.
 
-- depends: msg-lane
+- depends: #msg-lane
 - verify by: fixtures generated by `git format-patch`, with a broken numbering case, a
   missing cover letter case, an oversize-mail case, an HTML-only case, a wrong-list case,
   a hijacked-thread case, and a missing-CC case among them; the MAINTAINERS parser passes
   the live-syntax fixture set (three CC forms, the non-CC parenthesized address, the
   section-scoped duplicate globs)
 
-### forge-lane
+### forge-lane {#forge-lane}
 
 The code.ffmpeg.org path checks, empirically grounded in the live repo settings and
 observed landings and re-checkable via the anonymous API: the PR title satisfies the
@@ -355,12 +355,12 @@ check (the description never enters git history), and force-push resubmit discip
 and series lanes already apply per commit since landings are rebase or fast-forward with
 verbatim messages; this lane adds only the forge-specific surface.
 
-- depends: msg-lane
+- depends: #msg-lane
 - verify by: fixture PR metadata cases (a bare-branch-name title flags, an area-prefixed
   title passes, a WIP title notes, a versioned title flags); the empirical-grounding note
   names the API endpoints a re-check reads
 
-### checklist-reporter
+### checklist-reporter {#checklist-reporter}
 
 `checklist` renders the full registry over a series: mechanical results from the lanes,
 expensive results from receipts, the widened attested set listed with citations, measured
@@ -370,33 +370,33 @@ primary quotes and enumerating the reviewer-named tells), the post-land fate.ffm
 monitoring leg, and the security-path attested items (named human reviewer, finder
 credit, reproducible-with-existing-applications).
 
-- depends: series-lane, build-receipts
+- depends: #series-lane, #build-receipts
 - verify by: golden-output test; a grep asserts no attested item ever renders as checked
   and no unrun leg renders as passed
 
-### project-pack-config
+### project-pack-config {#project-pack-config}
 
 The config layer with worktree-first resolution: TOML schema (upstream ref, mode, branch
 grammar, tag grammar, frozen derivation from history tags), the loader, a documented
 example, and the branch and tag checks.
 
-- depends: rule-registry
+- depends: #rule-registry
 - verify by: precedence tests including a two-worktree clone holding different modes;
   branch, tag, and frozen-branch checks against a synthetic repo with history tags
 
-### hook-installer
+### hook-installer {#hook-installer}
 
 `install-hooks` lands hooks per worktree with config in the worktree's private gitdir;
 the installed commit-msg hook runs the core `--stdin` scan and the pack msg lane with
 aggregated verdicts; core and pack versions stamped together, a skewed pair refused;
 nothing tracked or untracked lands in the target tree.
 
-- depends: msg-lane, diff-lane, project-pack-config
+- depends: #msg-lane, #diff-lane, #project-pack-config
 - verify by: a two-worktree install with differing modes; a phase-tell commit message in
   the target clone is blocked by the chained core scan; a staged tab is blocked; the skew
   case refuses; `git status` in the target shows nothing new
 
-### upstream-drift-lane
+### upstream-drift-lane {#upstream-drift-lane}
 
 The network-having CI lane, watching every acknowledged source: developer.html and
 git-howto as designed, plus security.html (keyed to FFmpeg/web commits, since the page
@@ -405,22 +405,22 @@ fate.texi. Normalize, compare each rule-bearing section against the digest the c
 acknowledges, fail on unacknowledged drift; drift audits use a recursive tree diff, never
 a flat listing or a capped compare API. Acknowledging drift is a deliberate corpus edit.
 
-- depends: rule-registry
+- depends: #rule-registry
 - verify by: a doctored snapshot of each source fails the lane; acknowledging its digest
   passes it; the offline gates never depend on this lane
 
-### spec-obligations
+### spec-obligations {#spec-obligations}
 
 The pack's spec discipline at the repo bar: `ffmpeg-pack.allium` modelling the verdict
 lifecycle and rule tiers, the `.obligations` manifest with `exercises=` links, Kani
 harnesses for the byte-level predicates, proptest over open input spaces.
 
-- depends: series-lane, checklist-reporter
+- depends: #series-lane, #checklist-reporter
 - verify by: `allium check` + `analyse` + `plan` clean; `host-lifecycle obligations
   ffmpeg-pack.allium --tests tests --prove src --strict-discharge` clean; `cargo kani`
   green
 
-### docs-and-release
+### docs-and-release {#docs-and-release}
 
 RULES.md (the corpus in human form, each rule with its citation, measured rate, and
 documented false-positive modes, plus the AI-policy note: no adopted upstream policy, the
@@ -430,10 +430,10 @@ and SKILL.md coverage, the id-sync drift-guard test, then the release: `host-lif
 release host-lint --change-class adds-flag`, annotated tag, release assets for core and
 pack. Close #22.
 
-- depends: everything above
+- depends: #spec-obligations
 - verify by: `host-lint --docs` clean; id-sync green; tag and assets present; #22 closed
 
-### re-pin-and-receipt
+### re-pin-and-receipt {#re-pin-and-receipt}
 
 Re-pin host-lint in agentic-host's `.host-software` at the pack release, record the
 release receipt, and record the named follow-up: the host-adoption milestone in
@@ -443,6 +443,6 @@ path, a DMARC-safe sending address for the mailing-list path, `install-hooks` in
 FFmpeg worktrees, the pgs9 acceptance run, and the frozen pgs8-wip known-findings
 reproduction).
 
-- depends: docs-and-release
+- depends: #docs-and-release
 - verify by: `host-lifecycle software --check .` clean at the new pin; the follow-up named
   in PLAN.md's follow-up table

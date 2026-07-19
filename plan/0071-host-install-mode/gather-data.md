@@ -1,4 +1,4 @@
-# gather-data: installer survey and harness landscape
+# gather-data: installer survey and harness names
 
 Grounds every mechanical conditional in plan/0071's README in how the shipping
 majority actually do it. Each row traces a conditional in the README to its
@@ -16,14 +16,14 @@ All four use `uname -s` (OS) and `uname -m` (CPU). The patterns:
 
 | Installer | Detection | Edge cases handled |
 |---|---|---|
-| rustup | `uname -s` + `uname -m` | Rosetta (x86_64→arm64 via `sysctl`), ELF bitness (32-bit userland on 64-bit kernel), LoongArch UAPI, Android, illumos |
+| rustup | `uname -s` + `uname -m` | Rosetta (x86_64 to arm64 via `sysctl`), ELF bitness (32-bit userland on 64-bit kernel), LoongArch UAPI, Android, illumos |
 | opencode | `uname -s` + `uname -m` | Rosetta, musl/Alpine, AVX2 baseline |
 | deno | `uname -sm` combined | none beyond the combined check |
 | bun | `uname -ms` combined | Rosetta, musl/Alpine, AVX2 baseline |
 
 **Decision for install.sh:** `uname -s` + `uname -m` with Rosetta detection on
 Darwin (the minimum all four agree on). No ELF bitness, no AVX2 baseline, no
-LoongArch — our targets are darwin/linux/windows on amd64/arm64 only, matching
+LoongArch; our targets are darwin/linux/windows on amd64/arm64 only, which matches
 the 6 release assets host-lifecycle publishes.
 
 ### Hash verification
@@ -71,7 +71,7 @@ cipher suites (with graceful fallback for older curl/wget).
 **Decision for install.sh:** HTTPS to GitHub (`raw.githubusercontent.com` for
 the script, `api.github.com` for the manifest/digests, `github.com` for release
 assets). Enforce `curl --proto '=https' --tlsv1.2`. No GPG, no cosign (settled
-in plan/0065:234 — wrong layer for a reproducible-build project).
+in plan/0065:234, the wrong layer for a reproducible-build project).
 
 ### Shell configuration
 
@@ -138,7 +138,7 @@ allowlist, menu logic, and string manipulation are cleaner in bash. We require
 precedent justifies this.
 
 **Critical constraint: macOS bash 3.2 compatibility.** macOS ships bash 3.2.57
-at `/bin/bash` — the last GPLv2 release. Apple froze it when bash 4.0 switched
+at `/bin/bash`, the last GPLv2 release. Apple froze it when bash 4.0 switched
 to GPLv3, and has never updated it. Every macOS user has bash 3.2 and only 3.2
 unless they installed a newer one via Homebrew. Confirmed via Apple TN2065:
 `/bin/sh` on macOS is bash in POSIX mode. Since Catalina (10.15, 2019), zsh is
@@ -171,7 +171,7 @@ All four prefer curl, with wget as a fallback. rustup additionally detects the
 broken snap-curl and handles it.
 
 **Decision for install.sh:** Prefer `curl`, fail with a clear message if neither
-curl nor wget is available (but do not implement wget fallback — curl is
+curl nor wget is available (but do not implement wget fallback; curl is
 ubiquitous on the platforms we target, and the complexity is not justified for 6
 platforms).
 
@@ -184,10 +184,10 @@ everything (download, extract, configure PATH, print success message).
 
 **Decision for install.sh:** Fat script. We install multiple binaries (not one
 self-installing binary like rustup), and the scaffold step runs `host-lifecycle
-init` after the binaries are on PATH. The fat approach matches opencode, deno,
+init` after the binaries are on PATH. The fat approach matches opencode plus deno and
 and bun.
 
-## Harness landscape confirmation
+## Harness-name survey
 
 The allowlist (6 harnesses, star-ordered) was confirmed during planning and
 re-verified here:
@@ -203,7 +203,7 @@ re-verified here:
 
 Dropped: `zcode` (no CLI binary), `cheetahclaws` (entry point unconfirmed).
 
-The ordering is the star ordering. The menu shows names and numbers only — no
+The ordering is the star ordering. The menu shows names and numbers only, no
 star counts, no popularity labels. This keeps the menu clean and avoids implying
 a recommendation beyond ordering.
 
@@ -223,7 +223,7 @@ available to probe against. The probe validates:
 4. **Manifest trust**: does the trust message read as trustworthy to a cold
    read?
 
-Deferred from gather-data to fen-acceptance because probing requires the actual
+Deferred until fen-acceptance, because probing requires the actual
 script output, not a mock.
 
 ## Conditional traceability
@@ -244,6 +244,6 @@ Every conditional in the README traces to a gather-data row:
 | bash 3.2-safe constructs only | macOS ships 3.2.57 (last GPLv2; never updated) |
 | Downloader: curl, no wget fallback | Downloader (curl ubiquitous on 6 targets) |
 | Fat script, not two-stage | Two-stage vs fat (opencode/deno/bun precedent) |
-| Harness allowlist: 6 binaries, ordered | Harness landscape table |
-| No `HARNESS` env var | Harness landscape (no standard exists) |
-| Menu: names and numbers only | Harness landscape (ordering without star counts) |
+| Harness allowlist: 6 binaries, ordered | Harness-name survey table |
+| No `HARNESS` env var | Harness-name survey (no standard exists) |
+| Menu: names and numbers only | Harness-name survey (ordering without star counts) |
