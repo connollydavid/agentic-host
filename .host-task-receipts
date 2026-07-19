@@ -551,3 +551,10 @@
     evidence = cd software/host-lifecycle/main && cargo test --release (204/204); clippy clean. 4 new memory tool integration tests over stdio JSON-RPC + init/adopt backward-compat test. mcp.rs @ 646a743 (pushed).
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-19
+
+[receipt "plan/0073#wire-opencode-plugin"]
+    disposition = done
+    verify = `opencode` lists `memory_list` in the tool registry; a
+    evidence = opencode config (~/.config/opencode/opencode.jsonc) has the host-lifecycle local stdio MCP entry. Driven over stdio JSON-RPC: tools/list returns 6 tools (init, adopt, memory_list, memory_read, memory_write, memory_consolidate); memory_list on an empty store returns '(no memory entries)' isError=false. PATH binary refreshed to the 646a743 build.
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-19
