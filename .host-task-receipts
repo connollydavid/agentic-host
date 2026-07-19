@@ -530,3 +530,10 @@
     evidence = weed check + tend reconciliation recorded in plan/0073-host-lifecycle-dream/weed-and-tend.md. Tended spec (host-lifecycle-dream.allium @ ffef50f pushed): 40 obligations, allium check + analyse rc=0. Manifest trimmed to match: --tests src non-strict rc=0 with zero STALE entries. 3 detectors (StaleStateOverLore, WorkaroundVsPlan, AppendOnlyViolation) recorded for #implement-remaining; MemoryWrite/Suggestion/LinkRef surface recorded for #extend-mcp.
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-19
+
+[receipt "plan/0073#write-tests"]
+    disposition = done
+    verify = `cargo test --release` green (modulo the `#[ignore]` set); Kani
+    evidence = cd software/host-lifecycle/main && cargo test --release (193/193); cargo clippy --all-targets -- -D warnings clean; host-lifecycle obligations host-lifecycle-dream.allium --tests src --strict-discharge: all 40 discharged; cargo kani --harness route_for_repo_always_appends VERIFICATION SUCCESSFUL. dream.rs @ 2a6fd0a (pushed).
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-19
