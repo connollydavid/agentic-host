@@ -495,3 +495,10 @@
     evidence = every conditional in plan/0073/README.md traces to plan/0073/gather-data.md (six-harness memory-store survey + Fen probe)
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-19
+
+[receipt "plan/0073#write-spec"]
+    disposition = done
+    verify = `allium check` + `allium analyse` exit 0, zero findings
+    evidence = allium check + analyse exit 0, zero errors/warnings on software/host-lifecycle/main/host-lifecycle-dream.allium @ 04c8c3f3a775 (7 info-level 'field unused', same bar as host-lifecycle.allium); findings from spec-review-fable.md addressed (F1-F7, M1-M5, MCP gaps, single-rule if/else encoding)
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-19

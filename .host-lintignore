@@ -18,6 +18,7 @@ MEMORY.md
 # Dated review artifacts — the immutable record (spine: path-exclude dated reviews).
 plan/*/design-review.md
 plan/*/design-review-*.md
+plan/*/spec-review-*.md
 plan/*/handover.md
 plan/*/signals-digest.md
 plan/*/review-findings.json
