@@ -537,3 +537,10 @@
     evidence = cd software/host-lifecycle/main && cargo test --release (193/193); cargo clippy --all-targets -- -D warnings clean; host-lifecycle obligations host-lifecycle-dream.allium --tests src --strict-discharge: all 40 discharged; cargo kani --harness route_for_repo_always_appends VERIFICATION SUCCESSFUL. dream.rs @ 2a6fd0a (pushed).
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-19
+
+[receipt "plan/0073#implement-remaining"]
+    disposition = done
+    verify = `cargo test --release` green (no `#[ignore]` remaining); the
+    evidence = cd software/host-lifecycle/main && cargo test --release (200/200); clippy clean; strict-discharge all 40 discharged zero waived; Kani SUCCESSFUL. Three deferred detectors (StaleStateOverLore, WorkaroundVsPlan, AppendOnlyViolation) implemented + tested. dream.rs @ c193916 (pushed).
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-19
