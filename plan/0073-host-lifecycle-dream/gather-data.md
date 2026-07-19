@@ -194,3 +194,56 @@ bash /tmp/plan0073-probe.sh
 ```
 
 Latency: ~1 s per call at temp 0.2; ~1.5 s at temp 0.6. Total run ~10 s.
+
+## Non-overlap confirmation: dream vs upgrade (2026-07-19)
+
+The operator raised the discipline concern: dream must not proxy for upgrade.
+The two tools have non-overlapping surfaces (dream = memory; upgrade =
+template revisions + applied set). Confirmation from two angles.
+
+### Modeling (formal disjointness)
+
+Cross-reference lint of the dream spec
+(`software/host-lifecycle/main/host-lifecycle-dream.allium`) for upgrade
+-surface tokens:
+
+```sh
+grep -nE "upgrade|applied|baseline|ledger|host-receipts|host-lifecycle-receipts|host-task-receipts" \
+  software/host-lifecycle/main/host-lifecycle-dream.allium
+```
+
+Two hits, both in the explicit non-overlap comment (lines 31, 33): the
+comment that documents the discipline. None in entities or rules. Every
+entity in the spec is memory-domain (`MemoryStore`,
+`MemoryEntry`, `LinkRef`, `Finding`, `Suggestion`, `Dream`, `MemoryWrite`);
+no applied-set, baseline, or receipt-ledger entities appear. Formal
+disjointness confirmed by inspection.
+
+### Ergonomic (weak-agent routing probe)
+
+A second Fen probe
+(`/tmp/plan0073-routing-probe.sh`, same model and channel as the
+detector-class probe) over six scenarios: three memory-staleness (the
+correct tool is dream) and three spine-revision (the correct tool is
+upgrade). Two temperatures, option order rotated.
+
+| Scenario group | temp 0.2 | temp 0.6 |
+|---|---|---|
+| Memory -> dream (3 scenarios) | 3/3 routed correctly | 3/3 routed correctly |
+| Spine -> upgrade (3 scenarios) | 3/3 routed correctly (prose-form) | 2/3 routed correctly |
+
+11 of 12 routed correctly. The one "fail" is `spine-tool-bump` (a new
+ledger entry requires host-lifecycle v0.41.0 but the project pins v0.40.1):
+genuinely ambiguous, because the memory entry about the version is stale
+and the project needs an upgrade. The model picked the memory reading at
+temp 0.6. The scenario conflates the two surfaces itself; the design does
+not. The temp 0.2 spine rows did not always emit the demanded `ANSWER: X` line;
+the prose answer routed correctly in every case.
+
+### Verdict
+
+Non-overlap holds: confirmed formally (spec disjointness) and at the
+weak-agent bar (routing). The cast-consult and adversarial-review tasks
+already in the build sequence will sharpen the spine docs and the
+SKILL.md trigger conditions; the spec's `Route` enum simplifies to
+`{edit, append}` (no `madar`), since dream never proposes a MADR action.
