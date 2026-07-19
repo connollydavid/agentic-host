@@ -8732,27 +8732,72 @@ link resolver, the project-encoding helper.</p>
 the index stays in sync after every write</li>
 <li>depends: #write-obligations</li>
 </ul>
+<h3 id="implement-dream"><a class="header" href="#implement-dream">implement-dream</a></h3>
+<p>The <code>dream</code> subcommand and the detector set, built on the storage layer plus
+the repo <code>MEMORY.md</code> reader. <code>--fix</code> is the conservative structural-only set
+on the editable store, refusing the repo store. dream and the MCP
+<code>memory_consolidate</code> tool share the detector engine. The initial pass
+implements the structural detectors precisely (superseded-but-unlinked,
+dangling-link, room-touching) and stubs the semantic ones
+(stale-state-over-lore, workaround-vs-plan, append-only-violation) with
+documented TODOs; the deferred detectors land at #implement-remaining.</p>
+<ul>
+<li>verify: <code>cargo test</code> green; <code>dream &lt;fixture&gt;</code> emits the expected findings;
+<code>--fix</code> refuses a repo-store fixture</li>
+<li>depends: #implement-store</li>
+</ul>
+<h3 id="weed-and-tend"><a class="header" href="#weed-and-tend">weed-and-tend</a></h3>
+<p>Run the <code>weed</code> skill in check mode to enumerate every spec↔code divergence
+(plan/0015: weed catches hand-authored spec drift the implementation passes
+clean on; the host-lint spec bug <code>DetectInternalCodeAsName</code> flag-vs-warn is
+the precedent). Then run the <code>tend</code> skill to reconcile each divergence into
+one of three buckets: (a) spec over-promises (e.g. the MemoryWrite surface
+not needed for dream-only): trim the spec; (b) code under-delivers (e.g.
+the deferred detectors): record for #implement-remaining; (c) they agree:
+no change. The tended spec is the new baseline; the manifest is rewritten
+to match what the post-tend spec + the current Rust surface can discharge.</p>
+<ul>
+<li>verify: the weed check report and the tend reconciliation table are
+recorded in <code>weed-and-tend.md</code>; the tended spec parses + analyses clean;
+the trimmed manifest's <code>--tests src</code> check passes non-strict with zero
+STALE entries</li>
+<li>depends: #implement-dream</li>
+</ul>
+<h3 id="write-tests"><a class="header" href="#write-tests">write-tests</a></h3>
+<p>The test suite against the tended spec. Every <code>test:</code> obligation in the
+trimmed manifest has a real test fn (no forward refs). Tests for
+not-yet-implemented behaviour are marked <code>#[ignore]</code> until #implement-remaining
+lands them; the ignored set is recorded. The <code>--fix</code> safety property has a
+Kani harness (the load-bearing pure-function invariants: <code>route_for</code>
+monotonicity and the <code>--fix</code> refusal).</p>
+<ul>
+<li>verify: <code>cargo test --release</code> green (modulo the <code>#[ignore]</code> set); Kani
+proofs pass; <code>host-lifecycle obligations &lt;spec&gt; --tests src --strict-discharge</code>
+clean for the dischargeable subset</li>
+<li>depends: #weed-and-tend</li>
+</ul>
+<h3 id="implement-remaining"><a class="header" href="#implement-remaining">implement-remaining</a></h3>
+<p>Apply the bucket-(b) divergences from #weed-and-tend: the deferred detectors
+(stale-state-over-lore, workaround-vs-plan, append-only-violation), the
+<code>MemoryWrite</code> Rust surface (op/origin/accepted/completed) if tend kept it in
+the spec, and any other code-change the reconciliation surfaced. Each
+unignored test from #write-tests goes green.</p>
+<ul>
+<li>verify: <code>cargo test --release</code> green (no <code>#[ignore]</code> remaining); the
+previously-deferred Kani proofs pass</li>
+<li>depends: #write-tests</li>
+</ul>
 <h3 id="extend-mcp"><a class="header" href="#extend-mcp">extend-mcp</a></h3>
 <p>Add <code>memory_list</code>, <code>memory_read</code>, <code>memory_write</code>, <code>memory_consolidate</code> tools
 to the existing <code>host-lifecycle mcp</code> server (shipped v0.39.0 per plan/0065).
 Same stdio JSON-RPC pattern; the <code>tool_defs</code> registry grows, the dispatch arm
 gains the memory tools, the existing <code>init</code>/<code>adopt</code> tools stay byte-identical.
-Built on the storage layer.</p>
+Built on the implementation that #implement-remaining just landed.</p>
 <ul>
 <li>verify: <code>cargo test</code> green; an integration test drives the server over
 stdio and exercises each memory tool; the <code>init</code>/<code>adopt</code> tools still pass
 their existing tests unchanged</li>
-<li>depends: #implement-store</li>
-</ul>
-<h3 id="implement-dream"><a class="header" href="#implement-dream">implement-dream</a></h3>
-<p>The <code>dream</code> subcommand and the detector set, built on the storage layer plus
-the repo <code>MEMORY.md</code> reader. <code>--fix</code> is the conservative structural-only set
-on the editable store, refusing the repo store. <code>dream</code> and the MCP
-<code>memory_consolidate</code> tool share the detector engine.</p>
-<ul>
-<li>verify: <code>cargo test</code> green; <code>dream &lt;fixture&gt;</code> emits the expected findings;
-<code>--fix</code> refuses a repo-store fixture</li>
-<li>depends: #implement-store</li>
+<li>depends: #implement-remaining</li>
 </ul>
 <h3 id="wire-opencode-plugin"><a class="header" href="#wire-opencode-plugin">wire-opencode-plugin</a></h3>
 <p>The opencode configuration entry for the <code>host-lifecycle mcp</code> stdio server is
@@ -8764,14 +8809,16 @@ session.</p>
 <code>memory_list</code> call returns the index from inside a session</li>
 <li>depends: #extend-mcp</li>
 </ul>
-<h3 id="write-tests"><a class="header" href="#write-tests">write-tests</a></h3>
-<p>Integration tests covering every detector, every routing path, every new MCP
-tool, and the append-only-violation guard. The <code>--fix</code> safety property is a
-Kani harness. The plan/0065 <code>init</code>/<code>adopt</code> MCP tests stay green unchanged.</p>
+<h3 id="write-tests-final"><a class="header" href="#write-tests-final">write-tests-final</a></h3>
+<p>The MCP-touching integration tests: each <code>memory_*</code> tool driven over stdio
+JSON-RPC, the round-trip <code>memory_write</code> -&gt; <code>memory_list</code> -&gt; <code>memory_read</code>,
+and the <code>memory_consolidate</code> -&gt; <code>dream</code> engine share. This is the final
+strict-discharge gate: every <code>test:</code> obligation in the manifest, including
+the MCP-flavoured ones, points at a real test fn that exercises the cited
+entrypoint.</p>
 <ul>
-<li>verify: full test suite green; Kani proof of the <code>--fix</code> no-repo-store
-invariant; the plan/0065 tests pass without modification</li>
-<li>depends: #implement-dream, #wire-opencode-plugin</li>
+<li>verify: <code>cargo test --release</code> green; <code>host-lifecycle obligations &lt;spec&gt; --tests src --strict-discharge</code> fully clean; Kani proofs green</li>
+<li>depends: #wire-opencode-plugin</li>
 </ul>
 <h3 id="cast-consult"><a class="header" href="#cast-consult">cast-consult</a></h3>
 <p>Cast consultation across Mara, Wren, Bly, Orin, Fen on the detector naming,
@@ -8779,7 +8826,7 @@ the <code>--fix</code> boundary, the MCP tool surface, and the report format. Re
 in design-review.md.</p>
 <ul>
 <li>verify: each cast persona's concern addressed or recorded as a follow-up</li>
-<li>depends: #write-tests</li>
+<li>depends: #write-tests-final</li>
 </ul>
 <h3 id="adversarial-review"><a class="header" href="#adversarial-review">adversarial-review</a></h3>
 <p>A multi-lens adversarial review with one lens on the duplication risk vs.
