@@ -125,10 +125,14 @@ The gather-data and cast pass rule on these:
   six harnesses. Claude Code is `~/.claude/memory/*.md` + `MEMORY.md` index; the
   other five need to be confirmed from each harness's docs. A harness with no
   memory store is a clean skip (no findings, no error).
-- **The per-user store format.** Is the `description:` + free-form body format
-  Claude Code's convention or ours? The spine must name a format; the question
-  is whether we adopt Claude Code's verbatim or define our own and document the
-  mapping per harness.
+- **The per-user store format.** The spine names the host-* per-user store
+  format (one markdown file per memory, `description:` line + free-form body,
+  index file with one-line summaries, `[[slug]]` cross-entry links). This is the
+  methodology's own format; the per-harness layer reads each vendor's actual
+  layout and maps to it. The convergence with Claude's and Qwen's formats is
+  empirical (their layouts happen to look similar), not load-bearing for the
+  doctrine. The survey confirms there is something concrete to audit; it does
+  not determine the format.
 - **The detection ordering.** Some detectors are cheap and structural
   (dangling-link, index-vs-file); some are semantic
   (workaround-vs-plan, supersession). The semantic detectors need a
@@ -187,7 +191,7 @@ The tasks are anchored receipted nodes (plan/0042), built as a forward graph:
 Grounds every conditional in data: the six-harness memory-store survey (paths,
 formats, presence/absence), and the Fen probe on detector phrasing and routing
 legibility.
-- verify by: every conditional in this README traces to a gather-data.md row
+- verify: every conditional in this README traces to a gather-data.md row
 - depends: none
 
 ### write-spec {#write-spec}

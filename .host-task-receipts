@@ -488,3 +488,10 @@
     evidence = host-lint#21 commented and closed (completed)
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-08
+
+[receipt "plan/0073#gather-data"]
+    disposition = done
+    verify = every conditional in this README traces to a gather-data.md row
+    evidence = every conditional in plan/0073/README.md traces to plan/0073/gather-data.md (six-harness memory-store survey + Fen probe)
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-19
