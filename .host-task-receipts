@@ -502,3 +502,10 @@
     evidence = allium check + analyse exit 0, zero errors/warnings on software/host-lifecycle/main/host-lifecycle-dream.allium @ 04c8c3f3a775 (7 info-level 'field unused', same bar as host-lifecycle.allium); findings from spec-review-fable.md addressed (F1-F7, M1-M5, MCP gaps, single-rule if/else encoding)
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-19
+
+[receipt "plan/0073#write-obligations"]
+    disposition = done
+    verify = `host-lifecycle obligations <spec> --tests tests --strict-discharge`
+    evidence = every allium plan obligation (62) dispositioned in software/host-lifecycle/main/host-lifecycle-dream.obligations @ f2fb7fe; --tests non-strict check rc=0; --strict-discharge deferred to #write-tests (forward-ref test names + exercises= entrypoints land then)
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-19
