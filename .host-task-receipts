@@ -509,3 +509,10 @@
     evidence = every allium plan obligation (62) dispositioned in software/host-lifecycle/main/host-lifecycle-dream.obligations @ f2fb7fe; --tests non-strict check rc=0; --strict-discharge deferred to #write-tests (forward-ref test names + exercises= entrypoints land then)
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-19
+
+[receipt "plan/0073#implement-store"]
+    disposition = done
+    verify = `cargo test` green; a round-trip write-then-read returns the entry;
+    evidence = cd software/host-lifecycle/main && cargo test --release memory:: (9/9 pass); cargo test --release (167/167); cargo clippy --all-targets -- -D warnings clean. Storage layer at software/host-lifecycle/main/src/memory.rs @ a565c62 (pushed).
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-19
