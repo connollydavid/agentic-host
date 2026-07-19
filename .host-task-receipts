@@ -544,3 +544,10 @@
     evidence = cd software/host-lifecycle/main && cargo test --release (200/200); clippy clean; strict-discharge all 40 discharged zero waived; Kani SUCCESSFUL. Three deferred detectors (StaleStateOverLore, WorkaroundVsPlan, AppendOnlyViolation) implemented + tested. dream.rs @ c193916 (pushed).
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-19
+
+[receipt "plan/0073#extend-mcp"]
+    disposition = done
+    verify = `cargo test` green; an integration test drives the server over
+    evidence = cd software/host-lifecycle/main && cargo test --release (204/204); clippy clean. 4 new memory tool integration tests over stdio JSON-RPC + init/adopt backward-compat test. mcp.rs @ 646a743 (pushed).
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-19
