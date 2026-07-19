@@ -523,3 +523,10 @@
     evidence = cd software/host-lifecycle/main && cargo test --release dream:: (15/15); cargo test --release (182/182); cargo clippy --all-targets -- -D warnings clean. Smoke: 'host-lifecycle dream /tmp/dream-it' on a call/0017 fixture emits one room-touching finding route=append exit 1; --fix refuses repo exit 2. dream.rs @ dd0efaf (pushed).
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-19
+
+[receipt "plan/0073#weed-and-tend"]
+    disposition = done
+    verify = the weed check report and the tend reconciliation table are
+    evidence = weed check + tend reconciliation recorded in plan/0073-host-lifecycle-dream/weed-and-tend.md. Tended spec (host-lifecycle-dream.allium @ ffef50f pushed): 40 obligations, allium check + analyse rc=0. Manifest trimmed to match: --tests src non-strict rc=0 with zero STALE entries. 3 detectors (StaleStateOverLore, WorkaroundVsPlan, AppendOnlyViolation) recorded for #implement-remaining; MemoryWrite/Suggestion/LinkRef surface recorded for #extend-mcp.
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-19
