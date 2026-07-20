@@ -7,7 +7,7 @@
 	url       = https://github.com/connollydavid/host-lint.git
 	pin       = 241a870b52325bb261724c567ba175622895bf8d
 	worktrees =
-	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
+	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lint
 	artifact  = target/x86_64-unknown-linux-musl/release/host-lint 639371955344f9b35ee9649a994af741e3a9b7ff2a34f54ccb2ca50f2aaae72e
@@ -17,7 +17,7 @@
 	url       = https://github.com/connollydavid/host-lifecycle.git
 	pin       = 909241661cd63eff38463a4c479e108048a21901
 	worktrees =
-	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
+	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lifecycle
 	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle 09707ff213a7e28aa01eda132049d1d0155c95a186ae657e7b4aee0e7e0b0df3
@@ -26,7 +26,7 @@
 	url       = https://github.com/connollydavid/host-prove.git
 	pin       = c05782c0f7f170f3b517bffdea66ae524dd0b0fa
 	worktrees =
-	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
+	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-prove
 	artifact  = target/x86_64-unknown-linux-musl/release/host-prove 9a9bbbd36edc072cfe5518a408211fabf8c78cff63ed3cb89d25129b8ff9f03f
@@ -42,7 +42,7 @@
 	url       = https://github.com/connollydavid/host-reference.git
 	pin       = f78703a80a6813586f598312e60bfcb8086061d6
 	worktrees =
-	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
+	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl -p host-reference
 	deploy    = host-reference
 	artifact  = target/x86_64-unknown-linux-musl/release/host-reference f9a2cf946e5a64c83e167c47cf934f5678adfa13a52183c5e8d4599d14e3ee10
@@ -56,7 +56,7 @@
 	url       = https://github.com/connollydavid/host-reference-ocr.git
 	pin       = 1435a80f6da8dfeacb80ffbc7cdfc1cb00f754c0
 	worktrees =
-	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
+	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-reference-ocr
 	artifact  = target/x86_64-unknown-linux-musl/release/host-reference-ocr-helper 05e3c01266911832da582ba8ade1040c33756bc8880c3bee6844bb435cbc5258
@@ -70,7 +70,7 @@
 	url       = https://github.com/connollydavid/host-reference-openscad.git
 	pin       = 0fd8e8c54987ae1f75cdef9e174f7bb7b39844ed
 	worktrees =
-	toolchain = clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
+	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-reference-openscad
 	artifact  = target/x86_64-unknown-linux-musl/release/host-reference-openscad-helper 053d8beefebbe1f934594895bd1c4bbbc700686ca3d571a912b58d0182045ff2
