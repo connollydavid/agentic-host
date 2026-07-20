@@ -90,14 +90,79 @@ the natural-language imperative, and the `route=` token is dead text. The
 two-store asymmetry, the load-bearing design rule, is not applied by the
 model when it has to choose the action itself.
 
-## Verdict and consequence
+## Verdict (v1 probe, v0.41.0)
 
-The acceptance criterion "Fen routes each finding class correctly" is not
-met: append and the MADR route are read correctly; edit is not. This is the
-cast review's W1 finding (the report says what is wrong but not how to fix
-it; no suggestion text) showing up as a hard acceptance failure rather than
-the UX refinement the adversarial review deferred it as. The operator ruling
-needed: either the report surface gains a per-finding imperative (the W1
-suggestion text, promoted from the deferred follow-up, shipping as a patch
-release) and the probe re-runs, or the acceptance bar is re-scoped by a
-recorded decision.
+The acceptance criterion "Fen routes each finding class correctly" was not
+met at v0.41.0: append and the MADR route are read correctly; edit is not.
+This is the cast review's W1 finding (the report says what is wrong but not
+how to fix it; no suggestion text) showing up as a hard acceptance failure
+rather than the UX refinement the adversarial review deferred it as. The
+operator ruling needed: either the report surface gains a per-finding
+imperative (the W1 suggestion text, promoted from the deferred follow-up,
+shipping as a patch release) and the probe re-runs, or the acceptance bar is
+re-scoped by a recorded decision.
+
+## Operator ruling (2026-07-20): address the cast authentically
+
+The ruling was to address the cast's issues authentically, not to re-scope
+the bar. The fen-acceptance failure falsified two design-review dispositions:
+W1 ("no suggested fix text", deferred as a UX refinement) and F1 ("routing by
+class vs store", dispositioned "addressed: the route is printed in the
+report"). Printing `route=` is not enough; the 4B skips the token and follows
+the prose. Both were the same root cause, and both are fixed by promoting the
+W1 suggestion text into the report surface.
+
+## The fix (v0.41.1)
+
+Each `dream` finding gained a `suggestion` field: a verbatim operator
+imperative whose leading verb and anti-action tail carry the route in the
+natural language the model reads. A per-user finding now reads "Edit the
+per-user entry `<slug>` in place to ...; do not append to the repo log"; a
+repo finding reads "Append a new dated entry to the repo MEMORY.md to ...; do
+not edit the existing entry in place"; a room-touching finding names the
+record and the MADR action and forbids both memory writes. The imperative
+renders in the text output (a second line per finding), in `--json` (a
+`suggestion` field), and in the MCP `memory_consolidate` output. Shipped as
+host-lifecycle v0.41.1 (`3472e27`, artifact `3ddb2857`, change-class neither).
+
+## Leg 2 re-probe (v0.41.1): finding routing passes (both temps)
+
+Same channel, same two temperatures, option order rotated between them; the
+only variable is the report surface (the report now carries the imperative).
+Script `/tmp/plan0073-acceptance-probe-v2.sh`; transcripts
+`/tmp/plan0073-acceptance-transcripts-v2.txt`.
+
+| Finding | Correct | temp 0.2 | temp 0.6 |
+|---|---|---|---|
+| kv-cache-f16 (per-user) | edit | edit (right) | edit (right) |
+| build-notes (per-user) | edit | edit (right) | edit (right) |
+| repo dangling-link | append | append (right) | append (right) |
+| repo room-touching | confirm record | confirm (right) | confirm (right) |
+
+Four of four correct at both temps. The rotation rules out a first-option
+artifact: edit was option B at temp 0.2 and option D at temp 0.6, and the
+model chose edit both times for the per-user findings. The transcripts show
+the model reading the imperative directly ("adhering to the instruction to
+avoid appending to the repo log"; "the instruction explicitly states to edit
+the per-user entry in place"). The per-user edit route, which failed both
+temps at v0.41.0, now passes both temps.
+
+## Re-audit of every disposition (2026-07-20)
+
+Because F1 was recorded "addressed" when it was hollow, every cast and
+adversarial disposition was re-verified against the code, the spec, the spine
+text, and the tests. Result: W1, F1, and L2-2 (one root cause) were the only
+hollow dispositions, and all three are fixed by v0.41.1. Every other
+disposition verified authentic: genuinely implemented (L3-3 preserves
+`created`, verified by a round-trip test), honestly documented as a no-op or
+MVP-grade (M2 `--fix`, O1 heuristic detectors, both stated plainly in the
+spine), or a follow-up that fen-acceptance does not contradict (L1-2, L3-1,
+L3-2). Zero `#[ignore]` tests remain, so the deferred detectors genuinely
+landed.
+
+## Verdict (final)
+
+The acceptance criterion is met. Both legs pass at the 4B bar: the MCP tool
+surface is legible (Leg 1), and every finding class routes correctly once the
+report carries the imperative (Leg 2). Fen uses the MCP tool unaided, and Fen
+routes each finding class correctly.
