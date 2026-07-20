@@ -572,3 +572,10 @@
     evidence = Five-persona consultation recorded in plan/0073-host-lifecycle-dream/design-review.md. 11 findings across Mara/Wren/Bly/Orin/Fen. 3 addressed (MCP schema clear, route printed, detectors readable at 4B), 5 deferred to #write-spine-doctrine (cadence, --fix reserved, cross-machine, MVP-grade, boundary), 1 deferred to #adversarial-review (spec scope), 1 named follow-up (suggestion text on Finding), 1 recorded (envhash catches path-sensitivity). No blocking findings.
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-20
+
+[receipt "plan/0073#adversarial-review"]
+    disposition = done
+    verify = every blocking finding fixed or recorded; the re-cut executed
+    evidence = Three-lens adversarial review + cast completeness audit recorded in plan/0073-host-lifecycle-dream/design-review.md. Lens 1 (envhash duplication): confirmed complementary, not duplicative. Lens 2 (spec scope): ruled — spec stays dream-only for MVP; MCP surface code-tested. Lens 3 (MCP shape): two minor follow-ups (op three-value, consolidate scoping). Cast completeness: O3 resolved (spec stays dream-only), W1 deferred to follow-up plan, M2 ruled (--fix reserved in spine). Zero blocking findings. Two major findings ruled, three minor deferred.
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-20

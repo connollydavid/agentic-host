@@ -144,3 +144,131 @@ F2 addressed: the detectors read at the 4B bar.
 Five findings deferred to #write-spine-doctrine, one to #adversarial-review,
 one named follow-up (suggestion text), and three addressed. No blocking
 findings for the current implementation.
+
+## Adversarial review (2026-07-19)
+
+Three named lenses plus a cast-completeness audit. Each lens examines a
+load-bearing design decision the cast consultation surfaced or skirted.
+Findings classified: **blocking** (must fix before release), **major**
+(should fix or explicitly defer), **minor** (note and move on).
+
+### Lens 1: Duplication risk vs. plan/0074's envhash
+
+**Focus:** do dream's per-user store audit and plan/0074's envhash overlap
+on the move-detection signal? Bly's finding B1 raised the path-sensitivity
+concern.
+
+**Analysis:** envhash fingerprints the local environment (repo abspath,
+worktree paths, hook binary hash, image digest, submodule init state). Its
+job is coherence: "is my tree still what I hashed?" dream audits memory
+content for staleness: "is my recall stale?" The overlap point is the CWD:
+if the project moves, dream's per-user store path changes and dream
+silently reads an empty store (B1).
+
+**Finding L1-1 (minor): dream must NOT try to detect moves.** Move detection
+is envhash's job (plan/0074). dream should run over whatever store is
+present and report what it finds. If the store is empty because the project
+moved, that's envhash's signal to surface, not dream's. The two tools are
+complementary, not duplicative: envhash says "your environment moved";
+dream says "your memory is stale." Confirming the non-overlap.
+
+**Finding L1-2 (minor, deferred): the per-user store encoding uses CWD.** A
+project-name key (from `.host` stamp) would survive a move. This is a deeper
+change; for MVP, the CWD encoding is the bar. Named follow-up for a future
+revision.
+
+### Lens 2: The spec scope question (auto-detect reversal + O3)
+
+**Focus:** the weed+tend decision trimmed the spec to dream-only, removing
+MemoryWrite/Suggestion/LinkRef entities. Orin's finding O3 deferred the
+ruling to this review. Is the trim correct?
+
+**Analysis:** the MCP surface IS tested (4 integration tests over stdio
+JSON-RPC). The MemoryWrite safety property ("memory_write never writes to
+the repo store") is enforced by code (no code path exists) and tested
+(memory_write doesn't accept a store parameter). But it's not asserted in
+the spec.
+
+**Finding L2-1 (major, ruled): accept the code-level enforcement for plan/0073
+MVP.** The spec stays dream-only. Rationale: the dream feature's load-bearing
+semantics (detector set, routing, verdict lifecycle, invariants) are fully
+modeled. The MCP surface is a transport layer over the dream engine; it's
+tested behaviourally. A formal spec for the MCP surface would add modelling
+weight without changing runtime behaviour. If the methodology later needs the
+formal contract (e.g. a second consumer of memory_write, or a Kani proof of
+the repo-refusal invariant), a follow-up milestone restores the entity.
+
+**Finding L2-2 (major): the Finding entity lacks a suggestion field.** Wren's
+finding W1 noted the dream report says WHAT is wrong but not HOW to fix it.
+The code's Finding has `explanation` (prose) but no `suggestion` (verbatim
+fix text). For MVP this is acceptable (the operator reads the explanation and
+constructs the fix), but it limits the `--fix` surface's future. The
+adversarial review rules: **defer to a named follow-up plan** (not
+plan/0073). The suggestion text is a UX refinement, not a correctness gap.
+
+### Lens 3: MCP surface shape
+
+**Focus:** are the four memory tools the right shape? Does memory_write's
+safety property hold? Are there gaps?
+
+**Finding L3-1 (minor): the `op` schema conflates create and update.** The
+MCP schema exposes `op: write | delete`; the original spec had
+`MemoryWriteOp = create | update | delete`. The code's `write` is an
+idempotent create-or-update (MemoryStore::write checks if the slug exists and
+preserves `created` on update). This is simpler and matches the operator's
+mental model. Acceptable for MVP; the three-value form is a follow-up if
+the distinction becomes load-bearing (e.g. refusing to update a Fact entry
+without confirmation).
+
+**Finding L3-2 (minor): no scoping on memory_consolidate.** The tool audits
+both stores unconditionally. For MVP this is correct (dream's job is to catch
+staleness everywhere). A `--scope per-user|repo|both` flag is a future
+refinement if the operator needs to isolate.
+
+**Finding L3-3 (addressed): memory_write preserves `created` on updates,
+sets `last_edited` to today.** Correct behaviour; verified by the integration
+test `memory_write_then_list_then_read_round_trips`.
+
+### Lens 4: Cast consultation completeness audit
+
+**Focus:** ensure every cast finding has a clear owner, timeline, and
+disposition. No finding left vague or dangling.
+
+| Cast finding | Owner | Status |
+|---|---|---|
+| M1 (cadence) | #write-spine-doctrine | clear |
+| M2 (--fix no-op) | follow-up or spine | **ruled here**: document as reserved in spine; first safe class at follow-up |
+| W1 (no suggestion text) | named follow-up plan | **ruled here**: deferred to a follow-up plan, not plan/0073 |
+| W2 (MCP schema clear) | addressed | closed |
+| B1 (path-sensitivity) | envhash (plan/0074) | clear complement |
+| B2 (no cross-machine) | #write-spine-doctrine | clear |
+| O1 (MVP-grade detectors) | #write-spine-doctrine | clear |
+| O2 (boundary in spine) | #write-spine-doctrine | clear |
+| O3 (spec scope) | **ruled here** (L2-1) | closed: spec stays dream-only |
+| F1 (routing by class) | addressed | closed |
+| F2 (detectors readable) | addressed | closed |
+
+**Finding C1: O3 resolved.** The spec stays dream-only for plan/0073; the MCP
+surface is code-tested, not spec-modelled. A follow-up milestone restores the
+spec entity if the methodology needs the formal contract.
+
+**Finding C2: W1 deferred to a follow-up plan.** The suggestion text is a UX
+refinement, not a correctness gap for MVP.
+
+**Finding C3: M2 ruled.** `--fix` is documented as "reserved" in the spine;
+the first safe class (dangling-link repair) lands at a follow-up with
+cast-review sign-off.
+
+### Verdict
+
+No blocking findings. Two major findings ruled:
+- L2-1: spec stays dream-only (MVP; MCP surface is code-tested)
+- L2-2: suggestion text deferred to a follow-up plan
+
+Three minor findings noted and deferred:
+- L1-2: per-user store encoding by project-name (follow-up)
+- L3-1: three-value MemoryWriteOp (follow-up)
+- L3-2: memory_consolidate scoping (follow-up)
+
+The plan/0073 implementation proceeds to #write-spine-doctrine with the
+ruled dispositions folded into the spine text.
