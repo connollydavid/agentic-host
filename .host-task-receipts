@@ -579,3 +579,10 @@
     evidence = Three-lens adversarial review + cast completeness audit recorded in plan/0073-host-lifecycle-dream/design-review.md. Lens 1 (envhash duplication): confirmed complementary, not duplicative. Lens 2 (spec scope): ruled — spec stays dream-only for MVP; MCP surface code-tested. Lens 3 (MCP shape): two minor follow-ups (op three-value, consolidate scoping). Cast completeness: O3 resolved (spec stays dream-only), W1 deferred to follow-up plan, M2 ruled (--fix reserved in spine). Zero blocking findings. Two major findings ruled, three minor deferred.
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-20
+
+[receipt "plan/0073#write-spine-doctrine"]
+    disposition = done
+    verify = `host-lifecycle upgrade` lists the entry on a pre-revision host;
+    evidence = Spine doctrine landed in host-template 32994e4 (CLAUDE.md: the two-tier memory store and the dream audit — per-user store convention, append-only asymmetry, dream routing with --fix reserved, cadence, boundary, scope). UPGRADING ledger entry keyed to 32994e4 requiring host-lifecycle v0.41.0 (template 8f4af6e, pushed). Host pointer bumped (99249bb4); host CLAUDE.md section 6 synced (45bfa15f). Verify: 'host-lifecycle upgrade .' listed 32994e4 pending on the pre-revision baseline ff04a94; 'upgrade --record 32994e4' ran the entry's verify post-condition and cleared it (d40d2717). software --check clean modulo the pre-release DRIFT.
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-20
