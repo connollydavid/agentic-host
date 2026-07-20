@@ -586,3 +586,10 @@
     evidence = Spine doctrine landed in host-template 32994e4 (CLAUDE.md: the two-tier memory store and the dream audit — per-user store convention, append-only asymmetry, dream routing with --fix reserved, cadence, boundary, scope). UPGRADING ledger entry keyed to 32994e4 requiring host-lifecycle v0.41.0 (template 8f4af6e, pushed). Host pointer bumped (99249bb4); host CLAUDE.md section 6 synced (45bfa15f). Verify: 'host-lifecycle upgrade .' listed 32994e4 pending on the pre-revision baseline ff04a94; 'upgrade --record 32994e4' ran the entry's verify post-condition and cleared it (d40d2717). software --check clean modulo the pre-release DRIFT.
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-20
+
+[receipt "plan/0073#release-and-re-pin"]
+    disposition = done
+    verify = `host-lifecycle software --check .` clean at the new pin; #16
+    evidence = host-lifecycle v0.41.0 released (db2c886, tag v0.41.0 pushed; canonical musl artifact eb830993 re-derived in the recorded docker.io/clux/muslrust toolchain via podman). .host-software re-pinned (ca0ac373); carried-template pins bumped (prose.yml --rev + tools/host-lifecycle submodule, template e867dfa, host pointer c7daad02); release receipt recorded (0540674e). software --check clean: all components at their pinned SHA, artifact verified. #16 already CLOSED (2026-07-19); resolution comment posted. Release gotcha hit and fixed: podman refuses docker-short image names — the recorded toolchain is now fully qualified (a6f3ba37), and the failed first run's version bump was reverted before re-running (MEMORY gotcha b).
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-20
