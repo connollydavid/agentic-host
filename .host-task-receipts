@@ -558,3 +558,10 @@
     evidence = opencode config (~/.config/opencode/opencode.jsonc) has the host-lifecycle local stdio MCP entry. Driven over stdio JSON-RPC: tools/list returns 6 tools (init, adopt, memory_list, memory_read, memory_write, memory_consolidate); memory_list on an empty store returns '(no memory entries)' isError=false. PATH binary refreshed to the 646a743 build.
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-19
+
+[receipt "plan/0073#write-tests-final"]
+    disposition = done
+    verify = `cargo test --release` green; `host-lifecycle obligations <spec>
+    evidence = Full verification sweep: cargo test 204/204; clippy clean; strict-discharge all 40 discharged; allium check + analyse rc=0; Kani route_for_repo_always_appends SUCCESSFUL. The MCP integration tests (4 from #extend-mcp) are included in the 204. The spec stays dream-only per #weed-and-tend; the MCP surface is tested via integration tests. Cast/adversarial-review will rule on whether the spec grows to include the MemoryWrite surface.
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-20
