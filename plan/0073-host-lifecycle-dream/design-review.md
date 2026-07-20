@@ -272,3 +272,36 @@ Three minor findings noted and deferred:
 
 The plan/0073 implementation proceeds to #write-spine-doctrine with the
 ruled dispositions folded into the spine text.
+
+## Post-acceptance correction (2026-07-20): two hollow dispositions
+
+The #fen-acceptance run against the real qwen3.5-4b falsified two of the
+dispositions above. This section records the correction so the epistemic
+trail stays honest.
+
+**W1 and L2-2 were not a UX refinement.** The review deferred the suggestion
+text as "a UX refinement, not a correctness gap for MVP" (C2, L2-2). The
+acceptance probe showed the opposite: without the verbatim imperative, the 4B
+routes the per-user edit class wrong at both temperatures, so the acceptance
+criterion "Fen routes each finding class correctly" was not met. The
+suggestion text is load-bearing at the weak-agent bar, not cosmetic.
+
+**F1 was recorded "addressed" when it was not.** F1's disposition read
+"addressed: the dream report already prints route=edit or route=append
+explicitly, so the model does not infer." The probe transcripts show the model
+does not read the `route=` token at all; it follows the explanation prose. For
+the per-user store the prose and the printed route diverge, and the model
+follows the prose. Printing the route was necessary but not sufficient.
+
+**Resolution (host-lifecycle v0.41.1).** Both are the same root cause and both
+are fixed by promoting the W1 suggestion text into the report surface: each
+finding gains a route-carrying imperative in the natural language the model
+reads. The Leg 2 re-probe then passed four of four at both temperatures
+(recorded in fen-acceptance.md).
+
+**Re-audit.** Because F1 was hollow, every disposition in this document was
+re-verified against the code, spec, spine, and tests. W1, F1, and L2-2 (one
+root cause) were the only hollow ones. Every other disposition verified
+authentic: implemented, honestly documented as a no-op or MVP-grade, or a
+follow-up the acceptance does not contradict. The re-audit table is in
+fen-acceptance.md.
