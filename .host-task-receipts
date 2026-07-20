@@ -593,3 +593,10 @@
     evidence = host-lifecycle v0.41.0 released (db2c886, tag v0.41.0 pushed; canonical musl artifact eb830993 re-derived in the recorded docker.io/clux/muslrust toolchain via podman). .host-software re-pinned (ca0ac373); carried-template pins bumped (prose.yml --rev + tools/host-lifecycle submodule, template e867dfa, host pointer c7daad02); release receipt recorded (0540674e). software --check clean: all components at their pinned SHA, artifact verified. #16 already CLOSED (2026-07-19); resolution comment posted. Release gotcha hit and fixed: podman refuses docker-short image names — the recorded toolchain is now fully qualified (a6f3ba37), and the failed first run's version bump was reverted before re-running (MEMORY gotcha b).
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-20
+
+[receipt "plan/0073#fen-acceptance"]
+    disposition = done
+    verify = Fen routes each finding class correctly; Fen uses the MCP tool
+    evidence = attested operator: v0.41.1 re-probe routes 4/4 both temps (edit/append/confirm); MCP surface legible both temps; transcripts /tmp/plan0073-acceptance-transcripts-v2.txt
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-20
