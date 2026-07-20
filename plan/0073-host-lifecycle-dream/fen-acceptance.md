@@ -37,7 +37,7 @@ Same as gather-data: `~/.local/bin/fen-probe` (Unsloth direct,
 the option order rotated between them, so a first-option artifact is
 detectable.
 
-## Check 1: MCP tool surface passes (both temps)
+## MCP tool surface passes (both temps)
 
 Unaided, given only the four tool schemas:
 
@@ -50,7 +50,7 @@ Unaided, given only the four tool schemas:
 Correct tool, correct arguments, no example shown. The MCP surface is
 legible at the 4B bar.
 
-## Check 2: finding routing fails (per-user store, both temps)
+## Finding routing fails (per-user store, both temps)
 
 The probe presented the four real findings plus four operator actions
 (append to the repo log / edit the per-user entry in place / confirm the
@@ -125,7 +125,7 @@ renders in the text output (a second line per finding), in `--json` (a
 `suggestion` field), and in the MCP `memory_consolidate` output. Shipped as
 host-lifecycle v0.41.1 (`3472e27`, artifact `3ddb2857`, change-class neither).
 
-## Check 2 re-probe (v0.41.1): finding routing passes (both temps)
+## Finding routing re-probe (v0.41.1): passes (both temps)
 
 Same channel, same two temperatures, option order rotated between them; the
 only variable is the report surface (the report now carries the imperative).
@@ -163,6 +163,7 @@ landed.
 ## Verdict (final)
 
 The acceptance criterion is met. Both legs pass at the 4B bar: the MCP tool
-surface is legible (Check 1), and every finding class routes correctly once the
-report carries the imperative (Check 2). Fen uses the MCP tool unaided, and Fen
+surface is legible (the MCP-surface check), and every finding class routes
+correctly once the report carries the imperative (the routing check). Fen uses
+the MCP tool unaided, and Fen
 routes each finding class correctly.
