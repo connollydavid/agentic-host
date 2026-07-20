@@ -21,10 +21,10 @@ The real audit (`HOME=/tmp/plan0073-accept/home host-lifecycle dream
 findings, exit 1:
 
 ```text
-kv-cache-f16 (per-user) [superseded-but-unlinked] route=edit — superseded by `kv-cache-q8` but no forward link `[[kv-cache-q8]]` in the body
-build-notes (per-user) [dangling-link] route=edit — body links `[[megakernel-base]]` but no entry `megakernel-base` exists in the per-user store
-2026-07-10-kv-cache-stays-at-f16 (repo) [dangling-link] route=append — body links `[[q8-kernel-brief]]` but no entry `q8-kernel-brief` exists in the repo store
-2026-07-15-release-checklist-follows-call-0007 (repo) [room-touching] route=append — body cites `call/0007`; confirm the record is not superseded by the spine
+kv-cache-f16 (per-user) [superseded-but-unlinked] route=edit -- superseded by `kv-cache-q8` but no forward link `[[kv-cache-q8]]` in the body
+build-notes (per-user) [dangling-link] route=edit -- body links `[[megakernel-base]]` but no entry `megakernel-base` exists in the per-user store
+2026-07-10-kv-cache-stays-at-f16 (repo) [dangling-link] route=append -- body links `[[q8-kernel-brief]]` but no entry `q8-kernel-brief` exists in the repo store
+2026-07-15-release-checklist-follows-call-0007 (repo) [room-touching] route=append -- body cites `call/0007`; confirm the record is not superseded by the spine
 ```
 
 ## Probe channel
@@ -37,20 +37,20 @@ Same as gather-data: `~/.local/bin/fen-probe` (Unsloth direct,
 the option order rotated between them, so a first-option artifact is
 detectable.
 
-## Leg 1: MCP tool surface — PASS (both temps)
+## Leg 1: MCP tool surface passes (both temps)
 
 Unaided, given only the four tool schemas:
 
-- "What memories do we have about the KV cache?" →
+- "What memories do we have about the KV cache?" returned
   `{"name": "memory_list", "arguments": {}}` at both temps.
-- Given the index, "Read me the f16 entry in full." →
+- Given the index, "Read me the f16 entry in full." returned
   `{"name": "memory_read", "arguments": {"slug": "kv-cache-f16"}}` at both
   temps.
 
 Correct tool, correct arguments, no example shown. The MCP surface is
 legible at the 4B bar.
 
-## Leg 2: finding routing — FAIL (per-user store, both temps)
+## Leg 2: finding routing fails (per-user store, both temps)
 
 The probe presented the four real findings plus four operator actions
 (append to the repo log / edit the per-user entry in place / confirm the
@@ -79,10 +79,10 @@ and reasons from the store rules it already knows:
   violates it.
 - temp 0.6, build-notes: "The per-user store is private and editable, so the
   dangling link should be fixed by appending a new dated entry to the repo
-  MEMORY.md" — internally contradictory.
+  MEMORY.md", which is internally contradictory.
 - room-touching, both temps: the model followed the *explanation* ("confirm
   the record is not superseded by the spine") and ignored the printed
-  `route=append`, landing on the correct action anyway.
+  `route=append`, yet reached the correct action anyway.
 
 Three independent observations (per-user findings, repo findings,
 room-touching) point the same way: at the 4B bar the operative signal is
