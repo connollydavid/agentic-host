@@ -20,7 +20,7 @@ Four host-lifecycle concerns, one release, one non-overlap discipline:
 1. **The materialize receipt (#18).** An operational receipt in `.host-lifecycle-receipts` written on `software --materialize` (and on a recorded `git submodule update` / checkout that touches the Where room), in the same append-only shape as the `embed` receipt. Records the EVENT.
 2. **The environment hash (#19).** A gitignored `.host-envhash`, recomputed on demand, compared by `host-lifecycle env --check`. Records the recorded STATE; advisory, never fails the gate.
 3. **The bootstrap orchestrator (new).** A thin, tracked `bootstrap.sh` that does only the self-seed (read the host-lifecycle pin from `.host-software`, `cargo install` it) then delegates to a new, generic, recipe-driven `host-lifecycle bootstrap <dir>` subcommand that RUNS the rest of the sequence idempotently. Drives the sequence.
-4. **The completeness gate (new).** A new verify mode (a `software` subcommand; leaf name decided by the Fen naming probe) that reads the RECIPE plus the live tree and HAZARDs when the setup is incomplete: a worktree unmaterialized, a hook uninstalled (host or worktree), a declared re-deriver off PATH, a skill unlinked, host-role-aware. Gates COMPLETENESS. Folds in the worktree-hook fix (Bug A): `--install-hooks` gates every materialized worktree, not just the host repo.
+4. **The completeness gate (new).** A new `software --verify-setup` verify mode (name settled by the Fen probe, gather-data.md) that reads the RECIPE plus the live tree and HAZARDs when the setup is incomplete: a worktree unmaterialized, a hook uninstalled (host or worktree), a declared re-deriver off PATH, a skill unlinked, host-role-aware. Gates COMPLETENESS. Folds in the worktree-hook fix (Bug A): `--install-hooks` gates every materialized worktree, not just the host repo.
 
 ### Not overfit to agentic-host (operator ruling, 2026-07-20)
 
@@ -39,7 +39,7 @@ Four host-lifecycle concerns, one release, one non-overlap discipline:
 6. **Thin script plus tool core.** `bootstrap.sh` does only the self-seed; the mechanized sequence is a tested `host-lifecycle bootstrap` subcommand, not untested shell (the "one command, internalise for weak agents" idiom that folded host-prove's wrappers into its binary).
 7. **The completeness gate is a separate verify mode, not folded into `--check`.** It reads the recipe-vs-live completeness question, distinct from the pin-vs-recorded question `--check` already answers and the state-vs-recorded question `env --check` answers.
 8. **Spine-aware, do not overfit.** The bootstrap and completeness pattern is spine doctrine (every adopter with a Where room has this problem); agentic-host's self-seed is instance config.
-9. **Fen decides the names.** The `bootstrap` orchestrator name and the completeness-gate leaf name are settled by a Fen naming probe in gather-data, not chosen by the author.
+9. **Fen decides the names (settled).** The Fen naming probe (gather-data.md) settled both, rotation-proof at both temperatures: the orchestrator is `host-lifecycle bootstrap <dir>` and the completeness gate is `host-lifecycle software --verify-setup <dir>`.
 
 ## The non-overlap discipline (load-bearing, now three-way)
 
@@ -100,7 +100,7 @@ The thin `bootstrap.sh` (this host only) does the self-seed alone, then `exec ho
 
 The gather-data and cast pass rule on these:
 
-- **The names (Fen probe).** The `bootstrap` orchestrator name (candidates: `bootstrap`, `setup`, `provision`, `realize`; `materialize` is taken and is a subset) and the completeness-gate leaf name (candidates: `software --verify-setup`, `software --verify-env`, `software --verify-host`). The Fen probe decides which read at the 4B bar as "runs the setup" and "checks the setup is complete", distinct from `materialize` (clone worktrees), `--check` (pins/receipts), and `env --check` (drift).
+- **The names (Fen probe, settled).** Settled in gather-data.md, rotation-proof at both temperatures: `host-lifecycle bootstrap <dir>` for the orchestrator (over setup / provision / realize; `materialize` is taken and is a subset) and `host-lifecycle software --verify-setup <dir>` for the completeness gate (over `--verify-env` / `--verify-host`; "env" collides with the sibling `env` subcommand). Both read at the 4B bar as "runs the setup" and "checks the setup is complete", distinct from `materialize` (clone worktrees), `--check` (pins/receipts), and `env --check` (drift).
 - **The receipt kind.** #18's open question: its own kind vs re-opening the `embed` recheck. Our read is its own kind.
 - **The envhash format.** TOML (host-lifecycle's idiom) vs flat key:value.
 - **The `env --check` exit code.** Advisory: `0` clean, `0` with delta, `2` cannot-proceed (no envhash on disk).
@@ -156,12 +156,12 @@ Bug A: `software --install-hooks` gates every materialized worktree (the dispatc
 - depends: #write-obligations
 
 ### implement-completeness-gate {#implement-completeness-gate}
-The completeness gate (Fen-named): reads the recipe plus the live tree, HAZARDs on any missing required artifact (worktree, host hook, worktree hook, PATH re-deriver, linked skill), host-role-aware. Writes nothing.
+The completeness gate `software --verify-setup`: reads the recipe plus the live tree, HAZARDs on any missing required artifact (worktree, host hook, worktree hook, PATH re-deriver, linked skill), host-role-aware. Writes nothing.
 - verify by: `cargo test` green; each missing-artifact class HAZARDs; a bootstrapped tree is clean; a non-build host does not HAZARD on the absent build artifact
 - depends: #fix-worktree-hooks, #implement-envhash
 
 ### implement-bootstrap {#implement-bootstrap}
-The generic `host-lifecycle bootstrap <dir>` subcommand (Fen-named): the recipe-driven step planner running submodules / materialize / link-skills / build / install-hooks / install-re-derivers / completeness-gate, idempotently. The thin `bootstrap.sh` (this host) self-seeds then delegates.
+The generic `host-lifecycle bootstrap <dir>` subcommand: the recipe-driven step planner running submodules / materialize / link-skills / build / install-hooks / install-re-derivers / `--verify-setup`, idempotently. The thin `bootstrap.sh` (this host) self-seeds then delegates.
 - verify by: `cargo test` green; on a fixture missing hooks and skills, `bootstrap` makes the completeness gate clean; a second run is a no-op; `bootstrap.sh` seeds then delegates
 - depends: #implement-completeness-gate
 
