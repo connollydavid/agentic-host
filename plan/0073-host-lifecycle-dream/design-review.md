@@ -296,7 +296,7 @@ follows the prose. Printing the route was necessary but not sufficient.
 **Resolution (host-lifecycle v0.41.1).** Both are the same root cause and both
 are fixed by promoting the W1 suggestion text into the report surface: each
 finding gains a route-carrying imperative in the natural language the model
-reads. The Leg 2 re-probe then passed four of four at both temperatures
+reads. The Check 2 re-probe then passed four of four at both temperatures
 (recorded in fen-acceptance.md).
 
 **Re-audit.** Because F1 was hollow, every disposition in this document was
