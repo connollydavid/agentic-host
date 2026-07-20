@@ -565,3 +565,10 @@
     evidence = Full verification sweep: cargo test 204/204; clippy clean; strict-discharge all 40 discharged; allium check + analyse rc=0; Kani route_for_repo_always_appends SUCCESSFUL. The MCP integration tests (4 from #extend-mcp) are included in the 204. The spec stays dream-only per #weed-and-tend; the MCP surface is tested via integration tests. Cast/adversarial-review will rule on whether the spec grows to include the MemoryWrite surface.
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-20
+
+[receipt "plan/0073#cast-consult"]
+    disposition = done
+    verify = each cast persona's concern addressed or recorded as a follow-up
+    evidence = Five-persona consultation recorded in plan/0073-host-lifecycle-dream/design-review.md. 11 findings across Mara/Wren/Bly/Orin/Fen. 3 addressed (MCP schema clear, route printed, detectors readable at 4B), 5 deferred to #write-spine-doctrine (cadence, --fix reserved, cross-machine, MVP-grade, boundary), 1 deferred to #adversarial-review (spec scope), 1 named follow-up (suggestion text on Finding), 1 recorded (envhash catches path-sensitivity). No blocking findings.
+    tool = host-lifecycle@0.40.1
+    recorded = 2026-07-20
