@@ -65,10 +65,10 @@ the completeness gate.
 
 Its own kind. Grounded in the existing writer: `.host-lifecycle-receipts`
 stanzas are keyed `[receipt "<phase>" "<component>"]` (see `receipt_stanza`,
-src/main.rs), so the materialize receipt is a new phase value —
-`[receipt "materialize" "<component>"]` — not a re-opening of the `embed`
+src/main.rs), so the materialize receipt is a new phase value,
+`[receipt "materialize" "<component>"]`, not a re-opening of the `embed`
 recheck. Event-level fields only (disposition, evidence, pin-by-reference,
-image reference, tool, recorded), matching the append-only shape the `embed`
+image reference, tool, recorded), in the same append-only shape the `embed`
 receipt already uses.
 
 ### The envhash file format (operator decision, 2026-07-21)
@@ -83,8 +83,8 @@ key:value, which would diverge from the idiom for no gain.
 ### The `env --check` exit code
 
 Advisory, three outcomes: `0` clean (envhash present, no delta), `0` with delta
-(envhash present, dimensions moved — prints the route, never fails), `2`
-cannot-proceed (no `.host-envhash` on disk — a prompt to materialize, not a
+(envhash present, dimensions moved, prints the route, never fails), `2`
+cannot-proceed (no `.host-envhash` on disk, a prompt to materialize, not a
 gate failure). Never exit 1; `env --check` is a sanity aid, never a gate (#19's
 framing, and Fen's weak-agent trap: it must not read as a gate).
 
@@ -96,7 +96,7 @@ not HAZARD on an absent build artifact (it was never required to build it).
 
 ### Does `--check` run the completeness gate? (operator decision, 2026-07-21)
 
-**No — `--verify-setup` stays a distinct invocation.** Consistent with operator
+**No. `--verify-setup` stays a distinct invocation.** Consistent with operator
 ruling #7 (a separate verify mode) and with `env --check` being separate:
 `--check` answers pin-vs-recorded, `env --check` answers drift-from-recorded,
 `--verify-setup` answers complete-vs-recipe. `bootstrap` runs `--verify-setup`
@@ -108,7 +108,7 @@ the pin gate.
 
 Shells to `docker` / `podman inspect` for the locally pulled image digest. With
 no container runtime on PATH, the envhash records `runtime = none` for the image
-dimension and stays silent on it — `env --check` never reports a moved image
+dimension and stays silent on it: `env --check` never reports a moved image
 digest it cannot read, and the completeness gate does not HAZARD on it.
 
 ### The spine-change split
@@ -125,7 +125,7 @@ and advisory.
   the bootstrap orchestrator and completeness gate (with Bug A folded in). Title
   linted clean (`host-lint --stdin`, exit 0).
 - **Reopened [#18](https://github.com/connollydavid/host-lifecycle/issues/18).**
-  It was CLOSED/COMPLETED at the plan-cut timestamp (2026-07-19T15:40) but
-  `implement-receipt` is an unbuilt node and no receipt code exists — closed for
-  work that had not happened. `release-and-re-pin` closes it when the writer
-  ships.
+  It was CLOSED/COMPLETED at the plan-cut timestamp (2026-07-19T15:40), yet
+  `implement-receipt` is an unbuilt node with no receipt code, so the closure
+  recorded work that had not happened. `release-and-re-pin` closes it when the
+  writer ships.
