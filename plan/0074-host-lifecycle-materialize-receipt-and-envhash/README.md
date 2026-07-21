@@ -1,6 +1,6 @@
 # plan/0074 formal materialization: provenance, coherence, bootstrap, and completeness for the Where room
 
-Closes [connollydavid/host-lifecycle#18](https://github.com/connollydavid/host-lifecycle/issues/18) and [connollydavid/host-lifecycle#19](https://github.com/connollydavid/host-lifecycle/issues/19), plus a new issue for the formal bootstrap and completeness gate (to be filed at #gather-data). Paired by operator ruling (2026-07-19), then broadened by operator ruling (2026-07-20): the receipt, the envhash, the bootstrap orchestrator, and the completeness gate all share the same materialize / install-hooks call sites and the same Where-room state, so building them together under one explicit non-overlap discipline avoids the duplication that separate plans would risk.
+Closes [connollydavid/host-lifecycle#18](https://github.com/connollydavid/host-lifecycle/issues/18) and [connollydavid/host-lifecycle#19](https://github.com/connollydavid/host-lifecycle/issues/19), plus [connollydavid/host-lifecycle#20](https://github.com/connollydavid/host-lifecycle/issues/20) for the formal bootstrap and completeness gate (filed at #gather-data). Paired by operator ruling (2026-07-19), then broadened by operator ruling (2026-07-20): the receipt, the envhash, the bootstrap orchestrator, and the completeness gate all share the same materialize / install-hooks call sites and the same Where-room state, so building them together under one explicit non-overlap discipline avoids the duplication that separate plans would risk.
 
 ## Why
 
@@ -119,14 +119,14 @@ The gather-data and cast pass rule on these:
 - **Fen probe** (gather-data.md): the naming probe (above); the `env --check` delta reads as a route (which dimension moved); the completeness-gate HAZARD reads as "install the missing thing", not "your tree drifted"; the receipt, envhash, and completeness gate read as three different concerns, not three names for one.
 - **Cast consultation** (cast/*.md): Bly (overstates-completeness; the envhash is NOT an audit and the completeness gate is NOT provenance), Orin (fails-unsafe; a missing envhash is a prompt, the completeness gate is the actual gate, the bootstrap must be idempotent), Fen (weak-agent-trap; `env --check` must not read as a gate, and the completeness gate must not read as drift).
 - **Adversarial design review** (design-review.md): five independent lenses, with the duplication risk as a named lens (a reviewer whose sole job is to find overlap among receipt, envhash, and completeness gate) and the overfit risk as a named lens (a reviewer whose job is to find any agentic-host specific baked into the generic bootstrap or gate).
-- `host-lifecycle software --check .` clean at the new pin; the host-lifecycle release receipt recorded; #18, #19, and the new issue closed.
+- `host-lifecycle software --check .` clean at the new pin; the host-lifecycle release receipt recorded; #18, #19, and #20 closed.
 
 ## Build sequence
 
 The tasks are anchored receipted nodes (plan/0042), built as a forward graph:
 
 ### gather-data {#gather-data}
-Grounds the conditionals: the Fen naming probe (bootstrap name, completeness-gate name), the receipt-kind question (#18), the envhash file format, the env-check and completeness-gate exit codes, whether `--check` runs the completeness gate, and the image-digest probe. Files the new issue for the bootstrap plus completeness gate.
+Grounds the conditionals: the Fen naming probe (bootstrap name, completeness-gate name), the receipt-kind question (#18), the envhash file format, the env-check and completeness-gate exit codes, whether `--check` runs the completeness gate, and the image-digest probe. Files the new issue (#20) for the bootstrap plus completeness gate.
 - verify by: every conditional in this README traces to a gather-data.md row; the Fen naming probe transcript is recorded
 - depends: none
 
@@ -191,7 +191,7 @@ The host-template CLAUDE.md gains the materialize-receipt doctrine (a fourth rec
 - depends: #adversarial-review
 
 ### release-and-re-pin {#release-and-re-pin}
-`host-lifecycle release host-lifecycle --change-class adds-flag`, re-pin `.host-software`, record the release receipt, close #18, #19, and the new issue.
+`host-lifecycle release host-lifecycle --change-class adds-flag`, re-pin `.host-software`, record the release receipt, close #18, #19, and #20.
 - verify by: `host-lifecycle software --check .` clean at the new pin; the issues closed
 - depends: #write-spine-doctrine
 
