@@ -127,75 +127,75 @@ The tasks are anchored receipted nodes (plan/0042), built as a forward graph:
 
 ### gather-data {#gather-data}
 Grounds the conditionals: the Fen naming probe (bootstrap name, completeness-gate name), the receipt-kind question (#18), the envhash file format, the env-check and completeness-gate exit codes, whether `--check` runs the completeness gate, and the image-digest probe. Files the new issue (#20) for the bootstrap plus completeness gate.
-- verify by: every conditional in this README traces to a gather-data.md row; the Fen naming probe transcript is recorded
+- verify: every conditional in this README traces to a gather-data.md row; the Fen naming probe transcript is recorded
 - depends: none
 
 ### write-spec {#write-spec}
 The `MaterializeRun`, `EnvHash`, `BootstrapRun`, and `Completeness` Allium surface, the no-overlap invariant, the append-only receipt rule, the envhash-is-not-a-receipt rule, the completeness-gate-is-not-drift rule, and the worktree-hook coverage invariant. Lives in the host-lifecycle repo.
-- verify by: `allium check` + `allium analyse` exit 0, zero findings
+- verify: `allium check` + `allium analyse` exit 0, zero findings
 - depends: #gather-data
 
 ### write-obligations {#write-obligations}
 Every `allium plan` obligation dispositioned in a `<spec>.obligations` manifest. The schema-disjointness and worktree-hook-coverage obligations are Kani harnesses.
-- verify by: `host-lifecycle obligations <spec> --tests tests --strict-discharge` clean
+- verify: `host-lifecycle obligations <spec> --tests tests --strict-discharge` clean
 - depends: #write-spec
 
 ### implement-receipt {#implement-receipt}
 The materialize receipt writer: a new entry in `.host-lifecycle-receipts` on `software --materialize`, event-level fields only.
-- verify by: `cargo test` green; a materialize run appends exactly one receipt with no state-level data
+- verify: `cargo test` green; a materialize run appends exactly one receipt with no state-level data
 - depends: #write-obligations
 
 ### implement-envhash {#implement-envhash}
 The envhash writer and the `env --check` reader: `.host-envhash` (gitignored), written by `--materialize` / `--install-hooks` / `--verify_build` / image pull, read by `env --check`. Per-input sub-hash; advisory exit codes.
-- verify by: `cargo test` green; each state-changing op refreshes the envhash; `env --check` prints the delta and exits 0
+- verify: `cargo test` green; each state-changing op refreshes the envhash; `env --check` prints the delta and exits 0
 - depends: #write-obligations
 
 ### fix-worktree-hooks {#fix-worktree-hooks}
 Bug A: `software --install-hooks` gates every materialized worktree (the dispatch script plus the binary into each worktree's hooks dir), not just the host repo, gating on each worktree at its pin, host-role-aware.
-- verify by: `cargo test` green; after `--install-hooks`, a tell-laden commit in a worktree is blocked; a fresh fixture's worktrees are all gated
+- verify: `cargo test` green; after `--install-hooks`, a tell-laden commit in a worktree is blocked; a fresh fixture's worktrees are all gated
 - depends: #write-obligations
 
 ### implement-completeness-gate {#implement-completeness-gate}
 The completeness gate `software --verify-setup`: reads the recipe plus the live tree, HAZARDs on any missing required artifact (worktree, host hook, worktree hook, PATH re-deriver, linked skill), host-role-aware. Writes nothing.
-- verify by: `cargo test` green; each missing-artifact class HAZARDs; a bootstrapped tree is clean; a non-build host does not HAZARD on the absent build artifact
+- verify: `cargo test` green; each missing-artifact class HAZARDs; a bootstrapped tree is clean; a non-build host does not HAZARD on the absent build artifact
 - depends: #fix-worktree-hooks, #implement-envhash
 
 ### implement-bootstrap {#implement-bootstrap}
 The generic `host-lifecycle bootstrap <dir>` subcommand: the recipe-driven step planner running submodules / materialize / link-skills / build / install-hooks / install-re-derivers / `--verify-setup`, idempotently. The thin `bootstrap.sh` (this host) self-seeds then delegates.
-- verify by: `cargo test` green; on a fixture missing hooks and skills, `bootstrap` makes the completeness gate clean; a second run is a no-op; `bootstrap.sh` seeds then delegates
+- verify: `cargo test` green; on a fixture missing hooks and skills, `bootstrap` makes the completeness gate clean; a second run is a no-op; `bootstrap.sh` seeds then delegates
 - depends: #implement-completeness-gate
 
 ### wire-shared-call-sites {#wire-shared-call-sites}
 Wire `software --materialize` to write both files in one call; `--install-hooks` / `--verify_build` / image-pull to write `.host-envhash` only. Assert the call-site-level non-overlap: one call site, orthogonal writers, no shared data field; the completeness gate and bootstrap write no data files.
-- verify by: a `software --materialize` run produces both artifacts; `--install-hooks` produces only the envhash; a test asserts the wiring writes each file exactly when the design says to
+- verify: a `software --materialize` run produces both artifacts; `--install-hooks` produces only the envhash; a test asserts the wiring writes each file exactly when the design says to
 - depends: #implement-receipt, #implement-bootstrap
 
 ### write-tests {#write-tests}
 Integration tests covering every call site, every envhash dimension, every env-check delta path, every completeness-gate HAZARD class, the bootstrap idempotence, and the schema-disjointness and worktree-hook-coverage properties.
-- verify by: full test suite green; Kani proofs of schema disjointness and worktree-hook coverage
+- verify: full test suite green; Kani proofs of schema disjointness and worktree-hook coverage
 - depends: #wire-shared-call-sites
 
 ### cast-consult {#cast-consult}
 Cast consultation across Mara, Wren, Bly, Orin, Fen on the three-way non-overlap discipline, the bootstrap idempotence, and the overfit boundary. Recorded in design-review.md.
-- verify by: each cast persona's concern addressed or recorded as a follow-up
+- verify: each cast persona's concern addressed or recorded as a follow-up
 - depends: #write-tests
 
 ### adversarial-review {#adversarial-review}
 A multi-lens adversarial review with one lens dedicated to overlap among receipt / envhash / completeness gate, and one lens dedicated to any agentic-host specific baked into the generic bootstrap or gate. Findings recorded in design-review.md; the re-cut staged there.
-- verify by: every blocking finding fixed or recorded; the re-cut executed
+- verify: every blocking finding fixed or recorded; the re-cut executed
 - depends: #cast-consult
 
 ### write-spine-doctrine {#write-spine-doctrine}
 The host-template CLAUDE.md gains the materialize-receipt doctrine (a fourth receipt kind), the bootstrap doctrine (a fresh clone runs `host-lifecycle bootstrap <dir>`, or a thin self-seed wrapper that delegates to it), and the completeness-gate doctrine (setup completeness is gated, not assumed). No spine doctrine for the envhash (tooling-only, local). An UPGRADING entry keys the new revision.
-- verify by: `host-lifecycle upgrade` lists the entry on a pre-revision host; `upgrade --record` clears it
+- verify: `host-lifecycle upgrade` lists the entry on a pre-revision host; `upgrade --record` clears it
 - depends: #adversarial-review
 
 ### release-and-re-pin {#release-and-re-pin}
 `host-lifecycle release host-lifecycle --change-class adds-flag`, re-pin `.host-software`, record the release receipt, close #18, #19, and #20.
-- verify by: `host-lifecycle software --check .` clean at the new pin; the issues closed
+- verify: `host-lifecycle software --check .` clean at the new pin; the issues closed
 - depends: #write-spine-doctrine
 
 ### fen-acceptance {#fen-acceptance}
 The real `qwen3.5-4b` runs `env --check` on a moved repo and a rebuilt hook binary (the delta reads as a route), runs the completeness gate on a half-bootstrapped tree (the HAZARD reads as "install the missing thing"), and distinguishes the receipt, the envhash, and the completeness gate given a one-line description of each. Separately, it drives `bootstrap` on a fresh fixture and confirms the tree goes clean.
-- verify by: Fen routes each delta correctly, reads each HAZARD as an install action, distinguishes the three artifacts, and bootstraps a fixture clean
+- verify: Fen routes each delta correctly, reads each HAZARD as an install action, distinguishes the three artifacts, and bootstraps a fixture clean
 - depends: #release-and-re-pin

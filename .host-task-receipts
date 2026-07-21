@@ -600,3 +600,10 @@
     evidence = attested operator: v0.41.1 re-probe routes 4/4 both temps (edit/append/confirm); MCP surface legible both temps; transcripts /tmp/plan0073-acceptance-transcripts-v2.txt
     tool = host-lifecycle@0.40.1
     recorded = 2026-07-20
+
+[receipt "plan/0074#gather-data"]
+    disposition = done
+    verify = every conditional in this README traces to a gather-data.md row; the Fen naming probe transcript is recorded
+    evidence = every conditional in plan/0074/README.md traces to gather-data.md (Fen naming probe + settled conditionals); filed #20, reopened #18
+    tool = host-lifecycle@0.41.1
+    recorded = 2026-07-21
