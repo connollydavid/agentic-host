@@ -285,91 +285,91 @@
 <h3 id="gather-data"><a class="header" href="#gather-data">gather-data</a></h3>
 <p>Grounds the conditionals: the Fen naming probe (bootstrap name, completeness-gate name), the receipt-kind question (#18), the envhash file format, the env-check and completeness-gate exit codes, whether <code>--check</code> runs the completeness gate, and the image-digest probe. Files the new issue (#20) for the bootstrap plus completeness gate.</p>
 <ul>
-<li>verify by: every conditional in this README traces to a gather-data.md row; the Fen naming probe transcript is recorded</li>
+<li>verify: every conditional in this README traces to a gather-data.md row; the Fen naming probe transcript is recorded</li>
 <li>depends: none</li>
 </ul>
 <h3 id="write-spec"><a class="header" href="#write-spec">write-spec</a></h3>
 <p>The <code>MaterializeRun</code>, <code>EnvHash</code>, <code>BootstrapRun</code>, and <code>Completeness</code> Allium surface, the no-overlap invariant, the append-only receipt rule, the envhash-is-not-a-receipt rule, the completeness-gate-is-not-drift rule, and the worktree-hook coverage invariant. Lives in the host-lifecycle repo.</p>
 <ul>
-<li>verify by: <code>allium check</code> + <code>allium analyse</code> exit 0, zero findings</li>
+<li>verify: <code>allium check</code> + <code>allium analyse</code> exit 0, zero findings</li>
 <li>depends: #gather-data</li>
 </ul>
 <h3 id="write-obligations"><a class="header" href="#write-obligations">write-obligations</a></h3>
 <p>Every <code>allium plan</code> obligation dispositioned in a <code>&lt;spec&gt;.obligations</code> manifest. The schema-disjointness and worktree-hook-coverage obligations are Kani harnesses.</p>
 <ul>
-<li>verify by: <code>host-lifecycle obligations &lt;spec&gt; --tests tests --strict-discharge</code> clean</li>
+<li>verify: <code>host-lifecycle obligations &lt;spec&gt; --tests tests --strict-discharge</code> clean</li>
 <li>depends: #write-spec</li>
 </ul>
 <h3 id="implement-receipt"><a class="header" href="#implement-receipt">implement-receipt</a></h3>
 <p>The materialize receipt writer: a new entry in <code>.host-lifecycle-receipts</code> on <code>software --materialize</code>, event-level fields only.</p>
 <ul>
-<li>verify by: <code>cargo test</code> green; a materialize run appends exactly one receipt with no state-level data</li>
+<li>verify: <code>cargo test</code> green; a materialize run appends exactly one receipt with no state-level data</li>
 <li>depends: #write-obligations</li>
 </ul>
 <h3 id="implement-envhash"><a class="header" href="#implement-envhash">implement-envhash</a></h3>
 <p>The envhash writer and the <code>env --check</code> reader: <code>.host-envhash</code> (gitignored), written by <code>--materialize</code> / <code>--install-hooks</code> / <code>--verify_build</code> / image pull, read by <code>env --check</code>. Per-input sub-hash; advisory exit codes.</p>
 <ul>
-<li>verify by: <code>cargo test</code> green; each state-changing op refreshes the envhash; <code>env --check</code> prints the delta and exits 0</li>
+<li>verify: <code>cargo test</code> green; each state-changing op refreshes the envhash; <code>env --check</code> prints the delta and exits 0</li>
 <li>depends: #write-obligations</li>
 </ul>
 <h3 id="fix-worktree-hooks"><a class="header" href="#fix-worktree-hooks">fix-worktree-hooks</a></h3>
 <p>Bug A: <code>software --install-hooks</code> gates every materialized worktree (the dispatch script plus the binary into each worktree's hooks dir), not just the host repo, gating on each worktree at its pin, host-role-aware.</p>
 <ul>
-<li>verify by: <code>cargo test</code> green; after <code>--install-hooks</code>, a tell-laden commit in a worktree is blocked; a fresh fixture's worktrees are all gated</li>
+<li>verify: <code>cargo test</code> green; after <code>--install-hooks</code>, a tell-laden commit in a worktree is blocked; a fresh fixture's worktrees are all gated</li>
 <li>depends: #write-obligations</li>
 </ul>
 <h3 id="implement-completeness-gate"><a class="header" href="#implement-completeness-gate">implement-completeness-gate</a></h3>
 <p>The completeness gate <code>software --verify-setup</code>: reads the recipe plus the live tree, HAZARDs on any missing required artifact (worktree, host hook, worktree hook, PATH re-deriver, linked skill), host-role-aware. Writes nothing.</p>
 <ul>
-<li>verify by: <code>cargo test</code> green; each missing-artifact class HAZARDs; a bootstrapped tree is clean; a non-build host does not HAZARD on the absent build artifact</li>
+<li>verify: <code>cargo test</code> green; each missing-artifact class HAZARDs; a bootstrapped tree is clean; a non-build host does not HAZARD on the absent build artifact</li>
 <li>depends: #fix-worktree-hooks, #implement-envhash</li>
 </ul>
 <h3 id="implement-bootstrap"><a class="header" href="#implement-bootstrap">implement-bootstrap</a></h3>
 <p>The generic <code>host-lifecycle bootstrap &lt;dir&gt;</code> subcommand: the recipe-driven step planner running submodules / materialize / link-skills / build / install-hooks / install-re-derivers / <code>--verify-setup</code>, idempotently. The thin <code>bootstrap.sh</code> (this host) self-seeds then delegates.</p>
 <ul>
-<li>verify by: <code>cargo test</code> green; on a fixture missing hooks and skills, <code>bootstrap</code> makes the completeness gate clean; a second run is a no-op; <code>bootstrap.sh</code> seeds then delegates</li>
+<li>verify: <code>cargo test</code> green; on a fixture missing hooks and skills, <code>bootstrap</code> makes the completeness gate clean; a second run is a no-op; <code>bootstrap.sh</code> seeds then delegates</li>
 <li>depends: #implement-completeness-gate</li>
 </ul>
 <h3 id="wire-shared-call-sites"><a class="header" href="#wire-shared-call-sites">wire-shared-call-sites</a></h3>
 <p>Wire <code>software --materialize</code> to write both files in one call; <code>--install-hooks</code> / <code>--verify_build</code> / image-pull to write <code>.host-envhash</code> only. Assert the call-site-level non-overlap: one call site, orthogonal writers, no shared data field; the completeness gate and bootstrap write no data files.</p>
 <ul>
-<li>verify by: a <code>software --materialize</code> run produces both artifacts; <code>--install-hooks</code> produces only the envhash; a test asserts the wiring writes each file exactly when the design says to</li>
+<li>verify: a <code>software --materialize</code> run produces both artifacts; <code>--install-hooks</code> produces only the envhash; a test asserts the wiring writes each file exactly when the design says to</li>
 <li>depends: #implement-receipt, #implement-bootstrap</li>
 </ul>
 <h3 id="write-tests"><a class="header" href="#write-tests">write-tests</a></h3>
 <p>Integration tests covering every call site, every envhash dimension, every env-check delta path, every completeness-gate HAZARD class, the bootstrap idempotence, and the schema-disjointness and worktree-hook-coverage properties.</p>
 <ul>
-<li>verify by: full test suite green; Kani proofs of schema disjointness and worktree-hook coverage</li>
+<li>verify: full test suite green; Kani proofs of schema disjointness and worktree-hook coverage</li>
 <li>depends: #wire-shared-call-sites</li>
 </ul>
 <h3 id="cast-consult"><a class="header" href="#cast-consult">cast-consult</a></h3>
 <p>Cast consultation across Mara, Wren, Bly, Orin, Fen on the three-way non-overlap discipline, the bootstrap idempotence, and the overfit boundary. Recorded in design-review.md.</p>
 <ul>
-<li>verify by: each cast persona's concern addressed or recorded as a follow-up</li>
+<li>verify: each cast persona's concern addressed or recorded as a follow-up</li>
 <li>depends: #write-tests</li>
 </ul>
 <h3 id="adversarial-review"><a class="header" href="#adversarial-review">adversarial-review</a></h3>
 <p>A multi-lens adversarial review with one lens dedicated to overlap among receipt / envhash / completeness gate, and one lens dedicated to any agentic-host specific baked into the generic bootstrap or gate. Findings recorded in design-review.md; the re-cut staged there.</p>
 <ul>
-<li>verify by: every blocking finding fixed or recorded; the re-cut executed</li>
+<li>verify: every blocking finding fixed or recorded; the re-cut executed</li>
 <li>depends: #cast-consult</li>
 </ul>
 <h3 id="write-spine-doctrine"><a class="header" href="#write-spine-doctrine">write-spine-doctrine</a></h3>
 <p>The host-template CLAUDE.md gains the materialize-receipt doctrine (a fourth receipt kind), the bootstrap doctrine (a fresh clone runs <code>host-lifecycle bootstrap &lt;dir&gt;</code>, or a thin self-seed wrapper that delegates to it), and the completeness-gate doctrine (setup completeness is gated, not assumed). No spine doctrine for the envhash (tooling-only, local). An UPGRADING entry keys the new revision.</p>
 <ul>
-<li>verify by: <code>host-lifecycle upgrade</code> lists the entry on a pre-revision host; <code>upgrade --record</code> clears it</li>
+<li>verify: <code>host-lifecycle upgrade</code> lists the entry on a pre-revision host; <code>upgrade --record</code> clears it</li>
 <li>depends: #adversarial-review</li>
 </ul>
 <h3 id="release-and-re-pin"><a class="header" href="#release-and-re-pin">release-and-re-pin</a></h3>
 <p><code>host-lifecycle release host-lifecycle --change-class adds-flag</code>, re-pin <code>.host-software</code>, record the release receipt, close #18, #19, and #20.</p>
 <ul>
-<li>verify by: <code>host-lifecycle software --check .</code> clean at the new pin; the issues closed</li>
+<li>verify: <code>host-lifecycle software --check .</code> clean at the new pin; the issues closed</li>
 <li>depends: #write-spine-doctrine</li>
 </ul>
 <h3 id="fen-acceptance"><a class="header" href="#fen-acceptance">fen-acceptance</a></h3>
 <p>The real <code>qwen3.5-4b</code> runs <code>env --check</code> on a moved repo and a rebuilt hook binary (the delta reads as a route), runs the completeness gate on a half-bootstrapped tree (the HAZARD reads as "install the missing thing"), and distinguishes the receipt, the envhash, and the completeness gate given a one-line description of each. Separately, it drives <code>bootstrap</code> on a fresh fixture and confirms the tree goes clean.</p>
 <ul>
-<li>verify by: Fen routes each delta correctly, reads each HAZARD as an install action, distinguishes the three artifacts, and bootstraps a fixture clean</li>
+<li>verify: Fen routes each delta correctly, reads each HAZARD as an install action, distinguishes the three artifacts, and bootstraps a fixture clean</li>
 <li>depends: #release-and-re-pin</li>
 </ul>
 
