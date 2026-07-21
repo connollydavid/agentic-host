@@ -8867,7 +8867,7 @@ unaided</li>
 <li>depends: #release-and-re-pin</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0074-formal-materialization-provenance-coherence-bootstrap-and-completeness-for-the-where-room"><a class="header" href="#plan0074-formal-materialization-provenance-coherence-bootstrap-and-completeness-for-the-where-room">plan/0074 formal materialization: provenance, coherence, bootstrap, and completeness for the Where room</a></h1>
-<p>Closes <a href="https://github.com/connollydavid/host-lifecycle/issues/18">connollydavid/host-lifecycle#18</a> and <a href="https://github.com/connollydavid/host-lifecycle/issues/19">connollydavid/host-lifecycle#19</a>, plus a new issue for the formal bootstrap and completeness gate (to be filed at #gather-data). Paired by operator ruling (2026-07-19), then broadened by operator ruling (2026-07-20): the receipt, the envhash, the bootstrap orchestrator, and the completeness gate all share the same materialize / install-hooks call sites and the same Where-room state, so building them together under one explicit non-overlap discipline avoids the duplication that separate plans would risk.</p>
+<p>Closes <a href="https://github.com/connollydavid/host-lifecycle/issues/18">connollydavid/host-lifecycle#18</a> and <a href="https://github.com/connollydavid/host-lifecycle/issues/19">connollydavid/host-lifecycle#19</a>, plus <a href="https://github.com/connollydavid/host-lifecycle/issues/20">connollydavid/host-lifecycle#20</a> for the formal bootstrap and completeness gate (filed at #gather-data). Paired by operator ruling (2026-07-19), then broadened by operator ruling (2026-07-20): the receipt, the envhash, the bootstrap orchestrator, and the completeness gate all share the same materialize / install-hooks call sites and the same Where-room state, so building them together under one explicit non-overlap discipline avoids the duplication that separate plans would risk.</p>
 <h2 id="why-11"><a class="header" href="#why-11">Why</a></h2>
 <p>The fresh-clone materialization of an agentic project is currently unmechanized prose. The spine (host-template CLAUDE.md) and this host's CLAUDE.md describe a sequence of manual steps an agent hand-executes in order: seed the materializer, init submodules, <code>software --materialize</code>, link skills, build the gating binary, <code>--install-hooks</code>, install the PATH re-derivers, then <code>software --check</code>. Prose is not a gate. Steps get skipped silently, and nothing catches it.</p>
 <p>The evidence is this repository. During the 2026-07-20 session the host-repo commit hooks were found absent: <code>--install-hooks</code> had never been run in the clone, and <code>software --check</code> stayed green the whole time, because it verifies pins and receipts but is blind to whether the local environment was actually set up. Four gaps, one root (materialization is realized but neither driven nor verified as a whole):</p>
@@ -8970,12 +8970,12 @@ unaided</li>
 <li><strong>Fen probe</strong> (gather-data.md): the naming probe (above); the <code>env --check</code> delta reads as a route (which dimension moved); the completeness-gate HAZARD reads as "install the missing thing", not "your tree drifted"; the receipt, envhash, and completeness gate read as three different concerns, not three names for one.</li>
 <li><strong>Cast consultation</strong> (cast/*.md): Bly (overstates-completeness; the envhash is NOT an audit and the completeness gate is NOT provenance), Orin (fails-unsafe; a missing envhash is a prompt, the completeness gate is the actual gate, the bootstrap must be idempotent), Fen (weak-agent-trap; <code>env --check</code> must not read as a gate, and the completeness gate must not read as drift).</li>
 <li><strong>Adversarial design review</strong> (design-review.md): five independent lenses, with the duplication risk as a named lens (a reviewer whose sole job is to find overlap among receipt, envhash, and completeness gate) and the overfit risk as a named lens (a reviewer whose job is to find any agentic-host specific baked into the generic bootstrap or gate).</li>
-<li><code>host-lifecycle software --check .</code> clean at the new pin; the host-lifecycle release receipt recorded; #18, #19, and the new issue closed.</li>
+<li><code>host-lifecycle software --check .</code> clean at the new pin; the host-lifecycle release receipt recorded; #18, #19, and #20 closed.</li>
 </ul>
 <h2 id="build-sequence-16"><a class="header" href="#build-sequence-16">Build sequence</a></h2>
 <p>The tasks are anchored receipted nodes (plan/0042), built as a forward graph:</p>
 <h3 id="gather-data"><a class="header" href="#gather-data">gather-data</a></h3>
-<p>Grounds the conditionals: the Fen naming probe (bootstrap name, completeness-gate name), the receipt-kind question (#18), the envhash file format, the env-check and completeness-gate exit codes, whether <code>--check</code> runs the completeness gate, and the image-digest probe. Files the new issue for the bootstrap plus completeness gate.</p>
+<p>Grounds the conditionals: the Fen naming probe (bootstrap name, completeness-gate name), the receipt-kind question (#18), the envhash file format, the env-check and completeness-gate exit codes, whether <code>--check</code> runs the completeness gate, and the image-digest probe. Files the new issue (#20) for the bootstrap plus completeness gate.</p>
 <ul>
 <li>verify by: every conditional in this README traces to a gather-data.md row; the Fen naming probe transcript is recorded</li>
 <li>depends: none</li>
@@ -9053,7 +9053,7 @@ unaided</li>
 <li>depends: #adversarial-review</li>
 </ul>
 <h3 id="release-and-re-pin"><a class="header" href="#release-and-re-pin">release-and-re-pin</a></h3>
-<p><code>host-lifecycle release host-lifecycle --change-class adds-flag</code>, re-pin <code>.host-software</code>, record the release receipt, close #18, #19, and the new issue.</p>
+<p><code>host-lifecycle release host-lifecycle --change-class adds-flag</code>, re-pin <code>.host-software</code>, record the release receipt, close #18, #19, and #20.</p>
 <ul>
 <li>verify by: <code>host-lifecycle software --check .</code> clean at the new pin; the issues closed</li>
 <li>depends: #write-spine-doctrine</li>
