@@ -607,3 +607,73 @@
     evidence = every conditional in plan/0074/README.md traces to gather-data.md (Fen naming probe + settled conditionals); filed #20, reopened #18
     tool = host-lifecycle@0.41.1
     recorded = 2026-07-21
+
+[receipt "plan/0076#gather-data"]
+    disposition = done
+    verify = gather-data.md carries the mechanism, both ballot rounds, both weak-agent matrices with their parameters, and the seven binding conditions.
+    evidence = gather-data.md: two-round convening, both weak-agent matrices, seven binding conditions; call/0045
+    tool = host-lifecycle@0.41.2
+    recorded = 2026-07-22
+
+[receipt "plan/0076#write-spec"]
+    disposition = done
+    verify = the dream Allium spec models detector applicability, union resolution, the marker state machine (absent, stamped, retired, contradiction), the three absence states, the two finding kinds, and the exit split; the spec lanes pass under `software --check`.
+    evidence = host-lifecycle-dream.allium extended (commit 0821803): allium check and analyse clean; marker state machine, three absence states, confidence taxonomy, advisory verdict
+    tool = host-lifecycle@0.41.2
+    recorded = 2026-07-22
+
+[receipt "plan/0076#write-obligations"]
+    disposition = done
+    verify = every new spec obligation carries a disposition and the obligations digests re-derive clean.
+    evidence = host-lifecycle-dream.obligations extended (commit 0821803): obligations --tests src rc 0; forward refs land at write-tests
+    tool = host-lifecycle@0.41.2
+    recorded = 2026-07-22
+
+[receipt "plan/0076#implement-model"]
+    disposition = done
+    verify = applicability declarations with cited format facts enforce in detect(); links resolve against the union; the three absence states produce their state-correct verdicts and remedies; the held per-user-only guard commit is reworked into this shape; cargo test green.
+    evidence = commit 8f0? see worktree HEAD; 210 tests green; union+table+states in detect engine
+    tool = host-lifecycle@0.41.2
+    recorded = 2026-07-22
+
+[receipt "plan/0076#implement-model"]
+    disposition = done
+    verify = applicability declarations with cited format facts enforce in detect(); links resolve against the union; the three absence states produce their state-correct verdicts and remedies; the held per-user-only guard commit is reworked into this shape; cargo test green.
+    evidence = worktree commit 9affd86: union+table+states in the detect engine; 210 tests green
+    tool = host-lifecycle@0.41.2
+    recorded = 2026-07-22
+
+[receipt "plan/0076#implement-marker"]
+    disposition = done
+    verify = dream stamps the marker only on an observed store on the running machine; the stamp is operator-attributable; retirement is an appended correction; a store observed after retirement yields a contradiction finding, never a silent re-stamp; tests cover stamp, retire, and contradiction.
+    evidence = worktree commit HEAD after 9affd86: stamp/retire/contradiction implemented and tested; 213 tests green
+    tool = host-lifecycle@0.41.2
+    recorded = 2026-07-22
+
+[receipt "plan/0076#implement-taxonomy"]
+    disposition = done
+    verify = findings carry confirmed or review-prompt per-finding in explanation and suggestion text; room-touching leads with "leave a review note"; output groups confirmed first behind a count line; exits are clean zero, advisory-only three, confirmed one; coverage lines are generated from the applicability declarations and store facts, in text and JSON, with per-state counts and marker provenance.
+    evidence = worktree commit 9c38f7b: grouped output, coverage lines, JSON object, 0/3/1 exits verified live
+    tool = host-lifecycle@0.41.2
+    recorded = 2026-07-22
+
+[receipt "plan/0076#write-tests"]
+    disposition = done
+    verify = cargo test covers the three absence states, marker lifecycle transitions, both finding kinds, the exit split, per-state counts, and the remedy strings' append-only anti-action tails; all green.
+    evidence = worktree commit HEAD: 235 tests green; obligations --strict-discharge all 72 dispositioned
+    tool = host-lifecycle@0.41.2
+    recorded = 2026-07-22
+
+[receipt "plan/0076#file-cross-check-issue"]
+    disposition = done
+    verify = the room-touching spine cross-check issue is filed on host-lifecycle with a linted title, and its URL is recorded in this file.
+    evidence = https://github.com/connollydavid/host-lifecycle/issues/23 filed, title lint rc 0, URL recorded in README
+    tool = host-lifecycle@0.41.2
+    recorded = 2026-07-22
+
+[receipt "plan/0076#migration-ledger"]
+    disposition = done
+    verify = the revision-keyed UPGRADING entry states the mechanism, the expected day-one confirmed wall, the initialization fork, and the prohibition on link drops that merely clear the wall; the spine memory doctrine names the marker; book and entrance checks stay green.
+    evidence = ledger 514aaa2 in host-template (03fadd4 pushed), spine copy folded, applied-set recorded via verify; validate/prose/entrance/book green
+    tool = host-lifecycle@0.41.2
+    recorded = 2026-07-22
