@@ -677,3 +677,31 @@
     evidence = ledger 514aaa2 in host-template (03fadd4 pushed), spine copy folded, applied-set recorded via verify; validate/prose/entrance/book green
     tool = host-lifecycle@0.41.2
     recorded = 2026-07-22
+
+[receipt "plan/0076#fen-acceptance"]
+    disposition = done
+    verify = the real qwen3.5-4b, at its card parameters, reads the built dream output for each absence state and names the state-correct safe action, rotation-stable; the transcript is recorded in this plan.
+    evidence = fen-acceptance.md: six of six, both repeats stable per state, card params, real gateway model
+    tool = host-lifecycle@0.41.2
+    recorded = 2026-07-22
+
+[receipt "plan/0076#cast-acceptance"]
+    disposition = done
+    verify = an adversarial review of the built diff against the seven binding conditions records zero blocking findings.
+    evidence = three-lens adversarial review vs the seven conditions: initial verdicts BLOCKING (3+2+2 findings), all fixed at worktree 133e223 + records 971cf08e/9e60ee7, re-verdicts CLEAN from all three lenses; non-blocking notes taken or recorded
+    tool = host-lifecycle@0.41.2
+    recorded = 2026-07-22
+
+[receipt "plan/0076#fen-acceptance"]
+    disposition = done
+    verify = the real qwen3.5-4b, at its card parameters, reads the built dream output for each absence state and names the state-correct safe action, rotation-stable; the transcript is recorded in this plan.
+    evidence = fen-acceptance.md: six of six on the original strings AND six of six on the cast-acceptance-fixed strings; anti-stamp tail explicitly honored
+    tool = host-lifecycle@0.41.2
+    recorded = 2026-07-22
+
+[receipt "plan/0076#release-and-re-pin"]
+    disposition = done
+    verify = `host-lifecycle release host-lifecycle --change-class adds-flag` cascades clean (worktree pushed, tag, `.host-software` re-pin, template pin bump, release receipt, hooks reinstalled); `software --check .` is clean at the new pin; host-lifecycle#22 closes with the outcome comment.
+    evidence = v0.42.0 tag fd7c632, artifact 78e6be41; cascade complete: worktree pushed, .host-software re-pinned (b2b54c4f), template prose.yml + tools pin (04c549d), release receipt, binary + hooks reinstalled; software --check clean; hl#22 closed
+    tool = host-lifecycle@0.42.0
+    recorded = 2026-07-22
