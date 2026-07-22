@@ -2578,3 +2578,30 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.
 
 ### ai-diction-traps-in-my-writing
 - Retired forward marker: the diction rules live in VOCABULARY.md and the prose lane, which gate mechanically. Retired by the correction above.
+
+### 2026-07-23 — retirement closure: the remaining unresolved anchors (plan/0076 triage, second pass)
+- The dangling-link detector reports one unresolved reference per entry, so the first correction exposed a second tier of forward markers, and its own prose bracketed the word links, which parses as a reference. This closure carries an anchor for every remaining unresolved name; the audit reaches zero confirmed dangles with the tier still undeclared.
+
+### agentic-naming-ontology
+- Retired forward marker: the naming rules live in the milestone-naming spine rule and VOCABULARY.md. Retired by the closure above.
+
+### complete-means-whole-suite-green
+- Retired forward marker: the concept is the no-hollow-green doctrine, recorded in its milestone. Retired by the closure above.
+
+### links
+- Anchor for a notation slip: the first retirement correction bracketed the word links in prose and the parser read it as a reference. This section resolves it; it names no concept. Retired by the closure above.
+
+### no-forge-word
+- Retired forward marker: the diction rules live in VOCABULARY.md and gate mechanically in the prose lane. Retired by the closure above.
+
+### prose-clean-on-front-door-trigger
+- Retired forward marker: the prose gate on the entrance document is wired in the prose and entrance lanes. Retired by the closure above.
+
+### qwen-4b-weak-agent-eval
+- Retired forward marker: the weak-agent evaluation practice lives in cast/fen.md and the plan run-logs that drive the real model. Retired by the closure above.
+
+### reconcile-moves-to-concept-uri
+- Retired forward marker: the concept-as-URI evolution is recorded in its milestone and call records. Retired by the closure above.
+
+### weak-agent-probe-no-false-premise
+- Retired forward marker: the probe-design rule (no false premises in weak-agent probes) is carried by the run-log protocol sections that apply it. Retired by the closure above.
