@@ -2557,3 +2557,24 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.
 - Released as v0.42.0 (fd7c632, canonical artifact 78e6be41) via the tool-carried cascade; `software --check .` clean at the new pin; hl#22 closed with the outcome recorded; the room-touching cross-check is owed as host-lifecycle#23.
 - Two operational gotchas for future sessions: `cargo test --release` does not rebuild the plain bin, so a stale `target/release/<tool>` can replay already-fixed panics (the #21 crash line resurfaced from a pre-v0.41.2 artifact and cost a diagnosis round); and the Bash tool's cwd can reset between calls, which briefly put the v0.42.0 tag on agentic-host instead of the worktree (deleted remotely within seconds; always tag via `git -C <worktree>`).
 - Self-audit at the new pin: 10 confirmed tier-unused dangles (the known forward markers) plus 66 room-touching review prompts, exit 1; the triage fork (initialize-and-seed vs retire-by-correction) is plan/0076#triage-own-links, an operator ruling.
+
+### 2026-07-23 — forward markers retired: six per-user concept notes were never created (plan/0076 triage)
+- Past entries carried forward `[[links]]` to per-user concept notes that no session ever wrote; under the v0.42.0 store model they surfaced as ten confirmed tier-unused dangles. The operator ruled retirement by appended correction over initializing the tier: the six anchor sections below carry the exact slugs so every citing link resolves in-repo, the per-user tier stays undeclared, and the confirmed teeth stay armed for any future stray link.
+
+### use-the-wired-skills
+- Retired forward marker: the intended per-user concept note was never created. The citing entries' guidance (use the wired verification-lane skills rather than ad-hoc tooling) stands on its own in those entries. Retired by the correction above.
+
+### specs-colocate-with-software
+- Retired forward marker: the concept (specs live in the software repos beside the code they bind, per the spine MUST) is fully recorded in the citing entries and STRUCTURE.md. Retired by the correction above.
+
+### review-findings-are-requirements-not-descope
+- Retired forward marker: the concept lives in the per-user auto-memory note "authentic fixes over re-scoping" and in the citing entry itself. Retired by the correction above.
+
+### qwen-pal-model-infra
+- Retired forward marker: the local model channel is recorded where it is used (plan run-logs name the endpoint and probe scripts; credentials stay out of band). Retired by the correction above.
+
+### internalise-tool-orchestration-for-weak-agents
+- Retired forward marker: the principle (the tool carries the process; a weak agent gets one safe action) is spine doctrine and cast/fen.md content, not a private note. Retired by the correction above.
+
+### ai-diction-traps-in-my-writing
+- Retired forward marker: the diction rules live in VOCABULARY.md and the prose lane, which gate mechanically. Retired by the correction above.
