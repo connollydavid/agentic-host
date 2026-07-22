@@ -2605,3 +2605,6 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.
 
 ### weak-agent-probe-no-false-premise
 - Retired forward marker: the probe-design rule (no false premises in weak-agent probes) is carried by the run-log protocol sections that apply it. Retired by the closure above.
+
+### 2026-07-23 — host-template's prose gate had been red since the v0.41.0-era pins; a LEXICON entry cleared it
+- The template CI's Prose workflow was failing on four warn-tier ai-diction hits on the word harness (the onboarding doctrine's agent-harness uses and the memory scope's vendor-harness sentence), predating plan/0076; the development host had cleared the same rule with a documented LEXICON entry, but the template carried no LEXICON at all, and nothing surfaced the standing red because template pushes happen from the host repo. Fixed by mirroring the entry (tool-carried lexicon add plus the rationale comment) in template commit b8ad21e; Prose green on the next run. Lesson: after any template push, check the template's own workflow runs; a red there is invisible from the host repo's gates.
