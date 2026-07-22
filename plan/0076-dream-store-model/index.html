@@ -185,62 +185,62 @@
 </ul>
 <h3 id="write-spec"><a class="header" href="#write-spec">Extend the dream spec</a></h3>
 <ul>
-<li>depends: gather-data</li>
+<li>depends: #gather-data</li>
 <li>verify: the dream Allium spec models detector applicability, union resolution, the marker state machine (absent, stamped, retired, contradiction), the three absence states, the two finding kinds, and the exit split; the spec lanes pass under <code>software --check</code>.</li>
 </ul>
 <h3 id="write-obligations"><a class="header" href="#write-obligations">Write the obligations</a></h3>
 <ul>
-<li>depends: write-spec</li>
+<li>depends: #write-spec</li>
 <li>verify: every new spec obligation carries a disposition and the obligations digests re-derive clean.</li>
 </ul>
 <h3 id="implement-model"><a class="header" href="#implement-model">Implement the detector model</a></h3>
 <ul>
-<li>depends: write-spec</li>
+<li>depends: #write-spec</li>
 <li>verify: applicability declarations with cited format facts enforce in detect(); links resolve against the union; the three absence states produce their state-correct verdicts and remedies; the held per-user-only guard commit is reworked into this shape; cargo test green.</li>
 </ul>
 <h3 id="implement-marker"><a class="header" href="#implement-marker">Implement the marker lifecycle</a></h3>
 <ul>
-<li>depends: implement-model</li>
+<li>depends: #implement-model</li>
 <li>verify: dream stamps the marker only on an observed store on the running machine; the stamp is operator-attributable; retirement is an appended correction; a store observed after retirement yields a contradiction finding, never a silent re-stamp; tests cover stamp, retire, and contradiction.</li>
 </ul>
 <h3 id="implement-taxonomy"><a class="header" href="#implement-taxonomy">Implement the taxonomy and legibility</a></h3>
 <ul>
-<li>depends: implement-model</li>
+<li>depends: #implement-model</li>
 <li>verify: findings carry confirmed or review-prompt per-finding in explanation and suggestion text; room-touching leads with "leave a review note"; output groups confirmed first behind a count line; exits are clean zero, advisory-only three, confirmed one; coverage lines are generated from the applicability declarations and store facts, in text and JSON, with per-state counts and marker provenance.</li>
 </ul>
 <h3 id="write-tests"><a class="header" href="#write-tests">Write the test matrix</a></h3>
 <ul>
-<li>depends: implement-marker, implement-taxonomy</li>
+<li>depends: #implement-marker, #implement-taxonomy</li>
 <li>verify: cargo test covers the three absence states, marker lifecycle transitions, both finding kinds, the exit split, per-state counts, and the remedy strings' append-only anti-action tails; all green.</li>
 </ul>
 <h3 id="file-cross-check-issue"><a class="header" href="#file-cross-check-issue">File the cross-check follow-up</a></h3>
 <ul>
-<li>depends: gather-data</li>
+<li>depends: #gather-data</li>
 <li>verify: the room-touching spine cross-check issue is filed on host-lifecycle with a linted title, and its URL is recorded in this file.</li>
 </ul>
 <h3 id="migration-ledger"><a class="header" href="#migration-ledger">Write the migration ledger entry</a></h3>
 <ul>
-<li>depends: implement-marker, implement-taxonomy</li>
+<li>depends: #implement-marker, #implement-taxonomy</li>
 <li>verify: the revision-keyed UPGRADING entry states the mechanism, the expected day-one confirmed wall, the initialization fork, and the prohibition on link drops that merely clear the wall; the spine memory doctrine names the marker; book and entrance checks stay green.</li>
 </ul>
 <h3 id="cast-acceptance"><a class="header" href="#cast-acceptance">Cast acceptance of the built diff</a></h3>
 <ul>
-<li>depends: write-tests, migration-ledger</li>
+<li>depends: #write-tests, #migration-ledger</li>
 <li>verify: an adversarial review of the built diff against the seven binding conditions records zero blocking findings.</li>
 </ul>
 <h3 id="fen-acceptance"><a class="header" href="#fen-acceptance">Weak-agent acceptance on the built output</a></h3>
 <ul>
-<li>depends: write-tests</li>
+<li>depends: #write-tests</li>
 <li>verify: the real qwen3.5-4b, at its card parameters, reads the built dream output for each absence state and names the state-correct safe action, rotation-stable; the transcript is recorded in this plan.</li>
 </ul>
 <h3 id="release-and-re-pin"><a class="header" href="#release-and-re-pin">Release and re-pin</a></h3>
 <ul>
-<li>depends: cast-acceptance, fen-acceptance</li>
+<li>depends: #cast-acceptance, #fen-acceptance</li>
 <li>verify: <code>host-lifecycle release host-lifecycle --change-class adds-flag</code> cascades clean (worktree pushed, tag, <code>.host-software</code> re-pin, template pin bump, release receipt, hooks reinstalled); <code>software --check .</code> is clean at the new pin; host-lifecycle#22 closes with the outcome comment.</li>
 </ul>
 <h3 id="triage-own-links"><a class="header" href="#triage-own-links">Triage the ten forward-marker links</a></h3>
 <ul>
-<li>depends: release-and-re-pin</li>
+<li>depends: #release-and-re-pin</li>
 <li>verify: the operator has either initialized the store (links re-tiered advisory with seeding owed) or retired the markers by appended corrections; <code>dream .</code> reports the chosen terminal state and the queue annotation in PLAN.md records it.</li>
 </ul>
 
