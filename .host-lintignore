@@ -23,3 +23,9 @@ plan/*/weed-and-tend.md
 plan/*/handover.md
 plan/*/signals-digest.md
 plan/*/review-findings.json
+
+# Tool-written receipt records (phase, release, task): append-only claims whose
+# evidence lines quote genuine versions and measurements; the record layer is
+# excluded, never reworded (the entrance's record rule).
+.host-receipts
+.host-task-receipts
