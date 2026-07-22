@@ -38,6 +38,7 @@ The dream audit had no model of the store it audits: every detector ran on every
 ### File the cross-check follow-up {#file-cross-check-issue}
 - depends: #gather-data
 - verify: the room-touching spine cross-check issue is filed on host-lifecycle with a linted title, and its URL is recorded in this file.
+- Filed: [host-lifecycle#23](https://github.com/connollydavid/host-lifecycle/issues/23) (title linted clean, 2026-07-22).
 
 ### Write the migration ledger entry {#migration-ledger}
 - depends: #implement-marker, #implement-taxonomy
