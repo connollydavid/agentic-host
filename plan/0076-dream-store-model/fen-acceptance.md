@@ -2,7 +2,7 @@
 
 - Date: 2026-07-22
 - Model: `unsloth/Qwen3.5-4B-MTP-GGUF:UD-Q4_K_XL` (Fen), the gateway's OpenAI-compatible surface at `api.d07yx58.net` (token out of band, never recorded).
-- Params: the model card's thinking-general settings (temperature 1.0, top_p 0.95, top_k 20, min_p 0.0, presence_penalty 1.5, repetition_penalty 1.0, output budget 32768, thinking enabled through the chat template).
+- Params: the model card's thinking-general settings, identical to the corrected re-ballot matrix recorded in [gather-data.md](gather-data.md) (thinking enabled through the chat template).
 - Protocol: the built binary produced the real output for each absence state (a no-marker confirmed dangling link; a stamped-marker storeless machine; a stamped-marker present store with the target entry missing). Each probe hands the model the verbatim finding line and suggestion and asks for its single next action; two repeats per state check stability. Probes and raw transcripts: `~/agentic-host-work/dream-store-model/fen-acceptance/` on the operator's machine; the verdict lines are reproduced verbatim below.
 
 ## Pass criteria
