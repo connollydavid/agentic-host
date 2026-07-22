@@ -1,6 +1,6 @@
 # plan/0076 dream-store-model: the declared-tier build of the dream detector model
 
-**Status: cut 2026-07-22, in build.** The design is settled and recorded in [call/0045](../../call/0045-dream-detectors-declare-stores-and-tier.md); the convening record (both ballot rounds, both weak-agent matrices, the binding conditions) is in [gather-data.md](gather-data.md). Closes [host-lifecycle#22](https://github.com/connollydavid/host-lifecycle/issues/22) at release. The held patch commit on the host-lifecycle worktree (the per-user-only guards) reworks inside the implement node.
+**Status: complete, shipped as host-lifecycle v0.42.0 (fd7c632, artifact 78e6be41, 2026-07-23); every node receipted done.** The design is settled and recorded in [call/0045](../../call/0045-dream-detectors-declare-stores-and-tier.md); the convening record (both ballot rounds, both weak-agent matrices, the binding conditions) is in [gather-data.md](gather-data.md). Closes [host-lifecycle#22](https://github.com/connollydavid/host-lifecycle/issues/22) at release. The held patch commit on the host-lifecycle worktree (the per-user-only guards) reworks inside the implement node.
 
 ## Why
 

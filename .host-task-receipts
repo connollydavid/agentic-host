@@ -705,3 +705,10 @@
     evidence = v0.42.0 tag fd7c632, artifact 78e6be41; cascade complete: worktree pushed, .host-software re-pinned (b2b54c4f), template prose.yml + tools pin (04c549d), release receipt, binary + hooks reinstalled; software --check clean; hl#22 closed
     tool = host-lifecycle@0.42.0
     recorded = 2026-07-22
+
+[receipt "plan/0076#triage-own-links"]
+    disposition = done
+    verify = the operator has either initialized the store (links re-tiered advisory with seeding owed) or retired the markers by appended corrections; `dream .` reports the chosen terminal state and the queue annotation in PLAN.md records it.
+    evidence = operator ruled retire-by-correction; two appended MEMORY.md corrections (9729ecaf, 170b4b43) anchor all fourteen retired names; dream . reads 0 confirmed, 67 review prompts, exit 3; queue annotation records the terminal state
+    tool = host-lifecycle@0.42.0
+    recorded = 2026-07-22
