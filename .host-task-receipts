@@ -782,3 +782,10 @@
     evidence = four probe classes on real fixtures at the model card's thinking params, recorded in plan/0074/fen-acceptance.md; the drift probe failed first (both repeats read the delta as nothing-to-do), the OUTPUT was fixed (d3848f2: each dimension carries its meaning and remedy) and re-probed clean; final: 4 of 4, both drift repeats act on the hook-binary line and leave the repo-path line alone, the gate hazard reads as an install in both repeats, the bootstrap output reads as finished, and the three-way distinction is correct in both rotations
     tool = host-lifecycle@0.42.0
     recorded = 2026-07-23
+
+[receipt "plan/0074#cast-consult"]
+    disposition = done
+    verify = each cast persona's concern addressed or recorded as a follow-up
+    evidence = four personas read the built diff with file-and-line evidence (Fen's lens realized as the real-model acceptance, not simulated); recorded in plan/0074/design-review.md with dispositions; eight blocking-class findings, three of them converging from more than one chair, plus one operator decision on the materialize receipt's tracked-file accretion
+    tool = host-lifecycle@0.42.0
+    recorded = 2026-07-23
