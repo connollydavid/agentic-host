@@ -2720,6 +2720,15 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.</
 <li>
 <p><strong>The new completeness gate found three real gaps in this repo on its first live run:</strong> <code>software/host-reference-ocr/main</code>, <code>software/host-reference-openscad/main</code> and <code>software/host/main</code> have never had commit hooks installed, so commits there are ungated today. That is Bug A's live evidence. Clearing it needs <code>software --install-hooks .</code> with a host-lint that carries the #25 fix, so it waits for the held host-lint release rather than overwriting the interim local binaries.</p>
 </li>
+<li>
+<p><strong>plan/0074 shipped as host-lifecycle v0.43.0 (2026-07-23), and the two review rounds were worth more than the build.</strong> The cast (four chairs) found eight blocking findings; the adversarial round (five lenses) then found six more, several proven by mutation: two invariants survived deleting the exact code they named, and four bootstrap obligations were discharged by a test whose own comment described the opposite behaviour. The systemic cause: test NAMES were fitted to obligation ids while their bodies tested something else, and <code>--strict-discharge</code>'s check is a substring match on the body, which cannot tell. <strong>Lesson:</strong> when dispositioning an obligation to a test, mutate the rule's code and re-run — a discharge that survives the mutation is decoration. The structural fix underneath everything: the completeness gate enumerates its requirement set from the RECIPE and uses the tree only to answer present-or-absent; deriving requirements from directory listings meant emptying a directory or deleting a declared worktree removed the question instead of answering it "no".</p>
+</li>
+<li>
+<p><strong>Two things learned about the verification tooling itself (2026-07-23).</strong> Kani chokes on string equality: asserting <code>token == "worktree_paths" || …</code> inside a harness took over forty minutes of cbmc time for a property that is trivial over enums, so the partition proof states the enum property and an exhaustive unit test carries the twelve-fact token comparison. And <code>obligations --tests</code> is now repeatable (v0.43.0), because a crate holds unit tests beside the code and process-level tests in <code>tests/</code>, and one directory forced the manifest to choose which half to see.</p>
+</li>
+<li>
+<p><strong>The gate reports this machine's deliberate deviation, correctly.</strong> <code>software --verify-setup .</code> hazards on "installed gate matches the built one" for every worktree, because the interim host-lint carrying the #25 fix differs from what the pinned worktree builds. That is the honest reading of a held release: re-pin host-lint and re-install the hooks when plan/0072 ships, and the hazard clears.</p>
+</li>
 </ul>
 
                     </main>
