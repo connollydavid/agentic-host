@@ -747,3 +747,10 @@
     evidence = src/setup.rs + software --verify-setup (48a806c): six requirement classes (worktree, host hook, worktree hook, build artifact, re-deriver, skill link), role-aware on the artifact, writes nothing; cargo test 260 passed, clippy clean; run live against agentic-host it exits 1 naming three ungated worktrees (host-reference-ocr, host-reference-openscad, host) and marks the container-attested artifacts n-a
     tool = host-lifecycle@0.42.0
     recorded = 2026-07-23
+
+[receipt "plan/0074#implement-bootstrap"]
+    disposition = done
+    verify = `cargo test` green; on a fixture missing hooks and skills, `bootstrap` makes the completeness gate clean; a second run is a no-op; `bootstrap.sh` seeds then delegates
+    evidence = src/bootstrap.rs + host-lifecycle bootstrap <dir> (ccd6191) drives seven recipe-derived steps, each read against the live tree immediately before it runs, ending in the completeness gate whose exit code it returns; bootstrap.sh self-seeds host-lifecycle at the .host-software pin then delegates; cargo test 264 passed, clippy clean; fixture probe: two HAZARDs go complete in one run, the second run performs only the idempotent hook copy
+    tool = host-lifecycle@0.42.0
+    recorded = 2026-07-23
