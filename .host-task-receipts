@@ -719,3 +719,10 @@
     evidence = host-lifecycle-materialize.allium (0046303): allium check + analyse + plan exit 0 with zero findings at both the CI-pinned 3.4.2 and 3.5.0; only two info-level unused-identity-field diagnostics remain; CI runs the three lanes on the new spec
     tool = host-lifecycle@0.42.0
     recorded = 2026-07-22
+
+[receipt "plan/0074#implement-receipt"]
+    disposition = done
+    verify = `cargo test` green; a materialize run appends exactly one receipt with no state-level data
+    evidence = software_materialize appends one [receipt "materialize" "<component>"] stanza per component it realized (7f2bf9d); cargo test 243 passed, clippy -D warnings clean; the roundtrip test asserts one receipt per realizing run, none on an idempotent re-run, and no state-level field (no digest, hook hash, abspath or submodule state) in the stanza
+    tool = host-lifecycle@0.42.0
+    recorded = 2026-07-23
