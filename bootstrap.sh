@@ -21,6 +21,16 @@ if [ -z "$REV" ]; then
 fi
 
 echo "seed     host-lifecycle @ $REV (the recorded pin)"
-cargo install --git https://github.com/connollydavid/host-lifecycle --rev "$REV" --root "$HOME/.local"
+# --force, because `cargo install` exits 0 having installed NOTHING when a package
+# of the same version is already tracked at this root. The one thing this wrapper
+# exists to guarantee is that the materializer is the recorded revision, so it
+# reinstalls rather than trusting whatever is already there.
+cargo install --force --git https://github.com/connollydavid/host-lifecycle --rev "$REV" --root "$HOME/.local"
 
-exec "$HOME/.local/bin/host-lifecycle" bootstrap "$DIR"
+BIN="$HOME/.local/bin/host-lifecycle"
+if [ ! -x "$BIN" ]; then
+    echo "bootstrap: the seed did not produce $BIN" >&2
+    exit 1
+fi
+
+exec "$BIN" bootstrap "$DIR"
