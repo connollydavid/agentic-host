@@ -726,3 +726,10 @@
     evidence = software_materialize appends one [receipt "materialize" "<component>"] stanza per component it realized (7f2bf9d); cargo test 243 passed, clippy -D warnings clean; the roundtrip test asserts one receipt per realizing run, none on an idempotent re-run, and no state-level field (no digest, hook hash, abspath or submodule state) in the stanza
     tool = host-lifecycle@0.42.0
     recorded = 2026-07-23
+
+[receipt "plan/0074#implement-envhash"]
+    disposition = done
+    verify = `cargo test` green; each state-changing op refreshes the envhash; `env --check` prints the delta and exits 0
+    evidence = src/envhash.rs (a70f72e): five per-dimension stanzas written by materialize, install-hooks and verify-build; env --check diffs dimension by dimension, exits 0 clean, 0 with a delta and 2 with nothing recorded; an unreadable dimension is never reported moved; cargo test 252 passed, clippy -D warnings clean; the materialize and install-hooks tests assert the refresh and that neither file carries the other's facts
+    tool = host-lifecycle@0.42.0
+    recorded = 2026-07-23
