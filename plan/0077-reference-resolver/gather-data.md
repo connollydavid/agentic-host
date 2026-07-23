@@ -42,7 +42,7 @@ Counted over this repository's authored markdown, outside fenced code:
 | Distinct `plan/NNNN` and `call/NNNN` references | 122 | every one resolves by hand; none resolves by tool |
 | Unresolvable register references | 0 | this tree has no dead register pointer today |
 
-Two facts follow. The register half has no wall here at all, so its check can gate from day one. The issue-number half has a wall of 374, of which 222 sit in files that are never rewritten.
+Two facts follow. Nothing in the register half is broken here, so its check can gate from the day it lands. The issue-number half carries 374 references, and 222 of them sit in files that are never rewritten.
 
 ## The settled conditionals
 
@@ -64,4 +64,4 @@ A `plan/` or `call/` reference in a software repository belongs to its governing
 
 ### What the sweep reads
 
-Authored markdown, by the same walk the prose gate uses, minus the exclusion list. Fenced code is skipped, because a fenced `#3` is an example rather than a reference — the same rule the tell gate applies to its own fixtures.
+Authored markdown, by the same walk the prose gate uses, minus the exclusion list. Fenced code is skipped, because a fenced `#3` is an example rather than a reference, which is the rule the tell gate already applies to its own fixtures.
