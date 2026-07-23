@@ -789,3 +789,10 @@
     evidence = four personas read the built diff with file-and-line evidence (Fen's lens realized as the real-model acceptance, not simulated); recorded in plan/0074/design-review.md with dispositions; eight blocking-class findings, three of them converging from more than one chair, plus one operator decision on the materialize receipt's tracked-file accretion
     tool = host-lifecycle@0.42.0
     recorded = 2026-07-23
+
+[receipt "plan/0074#write-spine-doctrine"]
+    disposition = done
+    verify = `host-lifecycle upgrade` lists the entry on a pre-revision host; `upgrade --record` clears it
+    evidence = host-template/CLAUDE.md e4ed590 states the bootstrap, completeness-gate and ungated-materialize-receipt doctrine, each with what it does NOT mean (no ambient build, role-aware and presence-not-correctness verdict, a ledger the pin gate never re-verifies); UPGRADING entry fc49890 keys revision e4ed590, requires host-lifecycle v0.43.0, depends 7127dc4, names the day-one worktree-hook wall and its one-command remedy, verify grep; the host's own CLAUDE.md gained the entrypoint and the four-command split (dbff2d69); stamp moved to fc49890
+    tool = host-lifecycle@0.42.0
+    recorded = 2026-07-23
