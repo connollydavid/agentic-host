@@ -8995,6 +8995,7 @@ unaided</li>
 <li>verify: <code>host-lifecycle obligations &lt;spec&gt; --tests tests --strict-discharge</code> clean</li>
 <li>depends: #write-spec</li>
 </ul>
+<p>The manifest landed with the spec (<code>host-lifecycle-materialize.obligations</code>, 5a1121c: 38 structural, 68 behavioural forward refs). Its receipt waits for #write-tests: the obligations gate reads a named test that does not yet exist as ABSENT, so a manifest of forward refs cannot discharge — at any strictness — until the tests it names are written. The node's deliverable exists; its verify becomes satisfiable at the end of the build.</p>
 <h3 id="implement-receipt"><a class="header" href="#implement-receipt">implement-receipt</a></h3>
 <p>The materialize receipt writer: a new entry in <code>.host-lifecycle-receipts</code> on <code>software --materialize</code>, event-level fields only.</p>
 <ul>
