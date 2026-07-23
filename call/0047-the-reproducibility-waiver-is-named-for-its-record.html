@@ -187,7 +187,7 @@
 <h2 id="decision"><a class="header" href="#decision">Decision</a></h2>
 <ol>
 <li><strong>The key is <code>repro-waiver = call/NNNN</code>.</strong> Settled by the rotation-proof weak-agent probe the recent names used: <code>repro-waiver</code> was chosen from position A and again from position D against <code>repro-exempt</code>, <code>repro-exemption</code> and <code>build-waiver</code>. A second probe read both the old and the new spelling correctly, so legibility did not decide it; the naming rule did, and the probe establishes that nothing is lost.</li>
-<li><strong>Both spellings parse, and the retired one reports itself.</strong> An adopter's recipe keeps working across the rename and hears once per read that the key moved. This is the deprecate-then-retire discipline (plan/0039), not a silent swap, and a test pins both spellings to the same waiver.</li>
+<li><strong>Both spellings parse, and the retired one reports itself.</strong> An adopter's recipe keeps working across the rename and hears once per read that the key moved: the deprecate-then-retire discipline (plan/0039) rather than a silent swap. A test pins both spellings to the same waiver.</li>
 <li><strong>The doctrine names both cases the key carries</strong>, so the second one is not inferable only from a decision record: the build that does not reproduce yet, and the component that cannot vendor offline.</li>
 <li><strong>The retired spelling is removed at a later revision</strong>, on its own ledger entry, once adopters have had a release to migrate. Nothing in this decision retires it today.</li>
 </ol>
@@ -195,7 +195,7 @@
 <ul>
 <li>host-lifecycle parses <code>repro-waiver</code>, keeps reading <code>repro-exempt</code> with a warning, and every line an operator reads names the surviving key. The change ships with plan/0077's release.</li>
 <li>The spine's reproducible-builds section and its ledger entry move to the new spelling, with an upgrade entry whose verify condition reads the adopter's own recipe rather than the template's text.</li>
-<li>This repository carries no waiver on any component, so its own migration is the doctrine and the parser, with nothing to rewrite in <code>.host-software</code>.</li>
+<li>No component here carries a waiver. This repository migrates by taking the doctrine and the parser; its <code>.host-software</code> needs no edit.</li>
 <li>The naming reading stays scoped as <a href="0046-retire-the-unimplemented-hermeticity-escape.html">call/0046</a> left it: it binds this family of keys, and sweeping the wider recipe surface is not decided here.</li>
 </ul>
 
