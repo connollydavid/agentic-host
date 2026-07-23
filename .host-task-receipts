@@ -824,3 +824,17 @@
     evidence = host-lifecycle-refs.allium (09dc746): reference kinds, three resolution outcomes, three emissions with anchors preserved, the sweep's weight split and verdict lifecycle, nine invariants including the record-layer and fenced-code exclusions; allium check + analyse exit 0 with zero findings (two info-level unused identity fields, the sibling idiom), 60 obligations; CI runs the three lanes on it
     tool = host-lifecycle@0.43.0
     recorded = 2026-07-23
+
+[receipt "plan/0077#implement-resolve"]
+    disposition = done
+    verify = `cargo test` green; a reference resolves to its path, its markdown link and its GitHub URL, with the anchor preserved and the origin remote read for the URL
+    evidence = src/refs.rs (179798f): resolve emits path, markdown link or forge URL with the anchor preserved, reports unresolved-here rather than guessing, and refuses to invent a repository for an issue with no remote; verified live against this tree (plan/0074 to its README, plan/0074#write-spec to its heading, call/0045 to a blob URL, #17 to an issue URL); cargo test 285 green, clippy clean
+    tool = host-lifecycle@0.43.0
+    recorded = 2026-07-23
+
+[receipt "plan/0077#implement-check"]
+    disposition = done
+    verify = `cargo test` green; a bare issue number outside a link is reported, a resolving register reference is not, an unresolvable one is reported as unresolved, and every record-layer path is excluded
+    evidence = refs --check sweeps the authored docs through .host-lintignore, gates on dead register pointers and advises on bare issue numbers counted per file; run live it reads 0 dead and 182 bare across 28 files in the host (matching the measured wall minus the excluded records) and clean in the software worktree, because only the room's owner can hold a dead pointer; quoting (fence or inline code) is shown rather than referred
+    tool = host-lifecycle@0.43.0
+    recorded = 2026-07-23
