@@ -740,3 +740,10 @@
     evidence = install_hooks now covers hook_targets(): the host repo plus every materialized worktree's hooks dir, deduplicated by resolved path (48add2c); cargo test 252 passed, clippy clean; the hooks test asserts the worktree carries pre-commit, commit-msg and the binary; live fixture probe: a tell-laden commit inside the worktree is blocked (rc 1) after --install-hooks
     tool = host-lifecycle@0.42.0
     recorded = 2026-07-23
+
+[receipt "plan/0074#implement-completeness-gate"]
+    disposition = done
+    verify = `cargo test` green; each missing-artifact class HAZARDs; a bootstrapped tree is clean; a non-build host does not HAZARD on the absent build artifact
+    evidence = src/setup.rs + software --verify-setup (48a806c): six requirement classes (worktree, host hook, worktree hook, build artifact, re-deriver, skill link), role-aware on the artifact, writes nothing; cargo test 260 passed, clippy clean; run live against agentic-host it exits 1 naming three ungated worktrees (host-reference-ocr, host-reference-openscad, host) and marks the container-attested artifacts n-a
+    tool = host-lifecycle@0.42.0
+    recorded = 2026-07-23
