@@ -712,3 +712,10 @@
     evidence = operator ruled retire-by-correction; two appended MEMORY.md corrections (9729ecaf, 170b4b43) anchor all fourteen retired names; dream . reads 0 confirmed, 67 review prompts, exit 3; queue annotation records the terminal state
     tool = host-lifecycle@0.42.0
     recorded = 2026-07-22
+
+[receipt "plan/0074#write-spec"]
+    disposition = done
+    verify = `allium check` + `allium analyse` exit 0, zero findings
+    evidence = host-lifecycle-materialize.allium (0046303): allium check + analyse + plan exit 0 with zero findings at both the CI-pinned 3.4.2 and 3.5.0; only two info-level unused-identity-field diagnostics remain; CI runs the three lanes on the new spec
+    tool = host-lifecycle@0.42.0
+    recorded = 2026-07-22
