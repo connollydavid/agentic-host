@@ -796,3 +796,10 @@
     evidence = host-template/CLAUDE.md e4ed590 states the bootstrap, completeness-gate and ungated-materialize-receipt doctrine, each with what it does NOT mean (no ambient build, role-aware and presence-not-correctness verdict, a ledger the pin gate never re-verifies); UPGRADING entry fc49890 keys revision e4ed590, requires host-lifecycle v0.43.0, depends 7127dc4, names the day-one worktree-hook wall and its one-command remedy, verify grep; the host's own CLAUDE.md gained the entrypoint and the four-command split (dbff2d69); stamp moved to fc49890
     tool = host-lifecycle@0.42.0
     recorded = 2026-07-23
+
+[receipt "plan/0074#adversarial-review"]
+    disposition = done
+    verify = every blocking finding fixed or recorded; the re-cut executed
+    evidence = five lenses (duplication, overfit, fail-open, discharge-integrity, plus the real-model acceptance as the weak-agent lens) recorded in plan/0074/design-review.md; every blocking finding fixed in d8585e3, including the structural change the fail-open lens named (the gate enumerates from the recipe, the tree only answers present-or-absent) and the five mutation-proven hollow discharges repointed at tests that bite; the two accepted duplications (worktree presence, re-deriver runnability) are recorded with their rationale rather than churned; cargo test 279 green, obligations --strict-discharge clean at 104
+    tool = host-lifecycle@0.42.0
+    recorded = 2026-07-23
