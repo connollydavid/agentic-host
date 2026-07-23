@@ -733,3 +733,10 @@
     evidence = src/envhash.rs (a70f72e): five per-dimension stanzas written by materialize, install-hooks and verify-build; env --check diffs dimension by dimension, exits 0 clean, 0 with a delta and 2 with nothing recorded; an unreadable dimension is never reported moved; cargo test 252 passed, clippy -D warnings clean; the materialize and install-hooks tests assert the refresh and that neither file carries the other's facts
     tool = host-lifecycle@0.42.0
     recorded = 2026-07-23
+
+[receipt "plan/0074#fix-worktree-hooks"]
+    disposition = done
+    verify = `cargo test` green; after `--install-hooks`, a tell-laden commit in a worktree is blocked; a fresh fixture's worktrees are all gated
+    evidence = install_hooks now covers hook_targets(): the host repo plus every materialized worktree's hooks dir, deduplicated by resolved path (48add2c); cargo test 252 passed, clippy clean; the hooks test asserts the worktree carries pre-commit, commit-msg and the binary; live fixture probe: a tell-laden commit inside the worktree is blocked (rc 1) after --install-hooks
+    tool = host-lifecycle@0.42.0
+    recorded = 2026-07-23
