@@ -775,3 +775,10 @@
     evidence = host-lifecycle-materialize.obligations complete at 8f0839e: 38 structural, 64 test-discharged, 2 kani-discharged; obligations host-lifecycle-materialize.allium --tests src --tests tests --strict-discharge exits 0 with all 104 dispositioned
     tool = host-lifecycle@0.42.0
     recorded = 2026-07-23
+
+[receipt "plan/0074#fen-acceptance"]
+    disposition = done
+    verify = Fen routes each delta correctly, reads each HAZARD as an install action, distinguishes the three artifacts, and bootstraps a fixture clean
+    evidence = four probe classes on real fixtures at the model card's thinking params, recorded in plan/0074/fen-acceptance.md; the drift probe failed first (both repeats read the delta as nothing-to-do), the OUTPUT was fixed (d3848f2: each dimension carries its meaning and remedy) and re-probed clean; final: 4 of 4, both drift repeats act on the hook-binary line and leave the repo-path line alone, the gate hazard reads as an install in both repeats, the bootstrap output reads as finished, and the three-way distinction is correct in both rotations
+    tool = host-lifecycle@0.42.0
+    recorded = 2026-07-23
