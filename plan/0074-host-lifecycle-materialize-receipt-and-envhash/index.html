@@ -365,14 +365,15 @@
 <p><code>host-lifecycle release host-lifecycle --change-class adds-flag</code>, re-pin <code>.host-software</code>, record the release receipt, close #18, #19, and #20.</p>
 <ul>
 <li>verify: <code>host-lifecycle software --check .</code> clean at the new pin; the issues closed</li>
-<li>depends: #write-spine-doctrine</li>
+<li>depends: #write-spine-doctrine, #fen-acceptance</li>
 </ul>
 <h3 id="fen-acceptance"><a class="header" href="#fen-acceptance">fen-acceptance</a></h3>
 <p>The real <code>qwen3.5-4b</code> runs <code>env --check</code> on a moved repo and a rebuilt hook binary (the delta reads as a route), runs the completeness gate on a half-bootstrapped tree (the HAZARD reads as "install the missing thing"), and distinguishes the receipt, the envhash, and the completeness gate given a one-line description of each. Separately, it drives <code>bootstrap</code> on a fresh fixture and confirms the tree goes clean.</p>
 <ul>
 <li>verify: Fen routes each delta correctly, reads each HAZARD as an install action, distinguishes the three artifacts, and bootstraps a fixture clean</li>
-<li>depends: #release-and-re-pin</li>
+<li>depends: #write-tests</li>
 </ul>
+<p>Re-cut 2026-07-23 (operator ruling): this node depended on #release-and-re-pin, which put the weak-agent acceptance downstream of the tag. The probes need a BUILT binary, not a released one, and plan/0076 had already shown why the distinction matters: its Fen pass ran twice, the second time only because the cast-acceptance fixes had reworded the very remedy strings the probe reads. An acceptance that cannot change what ships is a postscript, so both acceptances now gate the release instead of following it.</p>
 
                     </main>
 
