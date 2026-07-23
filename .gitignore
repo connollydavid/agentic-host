@@ -16,3 +16,6 @@
 
 # personal Claude Code overrides (not tracked)
 .claude/settings.local.json
+
+# The local environment fingerprint: this machine's state, never shared.
+.host-envhash
