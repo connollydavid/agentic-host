@@ -195,9 +195,11 @@ The host-template CLAUDE.md gains the materialize-receipt doctrine (a fourth rec
 ### release-and-re-pin {#release-and-re-pin}
 `host-lifecycle release host-lifecycle --change-class adds-flag`, re-pin `.host-software`, record the release receipt, close #18, #19, and #20.
 - verify: `host-lifecycle software --check .` clean at the new pin; the issues closed
-- depends: #write-spine-doctrine
+- depends: #write-spine-doctrine, #fen-acceptance
 
 ### fen-acceptance {#fen-acceptance}
 The real `qwen3.5-4b` runs `env --check` on a moved repo and a rebuilt hook binary (the delta reads as a route), runs the completeness gate on a half-bootstrapped tree (the HAZARD reads as "install the missing thing"), and distinguishes the receipt, the envhash, and the completeness gate given a one-line description of each. Separately, it drives `bootstrap` on a fresh fixture and confirms the tree goes clean.
 - verify: Fen routes each delta correctly, reads each HAZARD as an install action, distinguishes the three artifacts, and bootstraps a fixture clean
-- depends: #release-and-re-pin
+- depends: #write-tests
+
+Re-cut 2026-07-23 (operator ruling): this node depended on #release-and-re-pin, which put the weak-agent acceptance downstream of the tag. The probes need a BUILT binary, not a released one, and plan/0076 had already shown why the distinction matters: its Fen pass ran twice, the second time only because the cast-acceptance fixes had reworded the very remedy strings the probe reads. An acceptance that cannot change what ships is a postscript, so both acceptances now gate the release instead of following it.
