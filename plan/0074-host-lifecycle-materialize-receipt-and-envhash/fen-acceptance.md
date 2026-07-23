@@ -43,3 +43,20 @@ Both drift repeats now act on the dimension whose line says to act, and neither 
 ## What this did not test
 
 The image-digest dimension was unreadable on the probe machine (no container runtime), so its line was the silent one throughout; the reading of a moved image digest is untested at the 4B bar. The `--install-hooks` remedy was accepted as an action, not executed, so the probe says the route is legible, not that the remedy works — that is what the integration tests assert.
+
+## Re-run after the review rounds: four of four, and the routes changed under it
+
+The cast and adversarial rounds reworked most of the strings these probes read: the gate's remedies interpolate the real root, the drift routes name the binary rather than a subcommand, a vanished dimension is no longer called drift, and the unread line routes to the gate instead of reassuring. The probes re-ran against the rebuilt output, same parameters, same fixtures:
+
+```host-lint:ignore
+envcheck repeat 1: ACTION: host-lifecycle software --verify-setup /home/…/fix/b
+envcheck repeat 2: ACTION: host-lifecycle software --verify-setup /home/…/fix/b
+gate repeat 1: ACTION: host-lifecycle software --install-hooks /home/…/fix/c
+gate repeat 2: ACTION: host-lifecycle software --install-hooks /home/…/fix/c
+bootstrap repeat 1: ACTION: Begin development tasks in the software/gate/main worktree
+bootstrap repeat 2: ACTION: execute smoke tests
+distinguish order 1 (receipts=A, envhash=B, verify-setup=C): Q1: A   Q2: C   Q3: B
+distinguish order 2 (verify-setup=A, envhash=B, receipts=C): Q1: C   Q2: A   Q3: B
+```
+
+Two things improved measurably. The drift repeats now emit a **runnable** command with this tree's real path: the earlier pass was scored on intent over `software --install-hooks .`, a string that names a subcommand as a binary and a directory the model supplied itself, which the discharge review flagged. And the drift action now follows the line that says to act to the command that answers it, rather than acting on a dimension whose line says there is nothing to fix.
