@@ -810,3 +810,10 @@
     evidence = host-lifecycle v0.43.0 released (tag 4f27c7a, canonical artifact 82cbb3b2 rebuilt in the recorded toolchain); .host-software re-pinned, template prose.yml rev and tools submodule bumped (e7d1a6d), stamp moved, release receipt recorded, ledger entry e4ed590 applied, hooks installed into the host repo and all nine hook dirs; software --check clean at the new pin; issues #18, #19 and #20 closed
     tool = host-lifecycle@0.43.0
     recorded = 2026-07-23
+
+[receipt "plan/0077#gather-data"]
+    disposition = done
+    verify = every open question above has a row in gather-data.md, the naming probe transcript is recorded, and the wall is measured per file
+    evidence = gather-data.md records both rotation-proof naming probes (resolve, refs --check, each chosen from opposite list positions), the measured wall (374 bare issue refs in 31 files, 222 of them in never-rewritten records; 122 register refs, all resolving, none unresolvable), and the settled conditionals: the dream exit split, .host-lintignore as the one exclusion list, the three emission forms with anchors preserved, and the cross-host case reported unresolved rather than guessed
+    tool = host-lifecycle@0.43.0
+    recorded = 2026-07-23
