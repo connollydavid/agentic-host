@@ -15,9 +15,12 @@ Two concepts now share it, and neither is visible in the name: a migrated build 
 ## Decision
 
 1. **The key is `repro-waiver = call/NNNN`.** Settled by the rotation-proof weak-agent probe the recent names used: `repro-waiver` was chosen from position A and again from position D against `repro-exempt`, `repro-exemption` and `build-waiver`. A second probe read both the old and the new spelling correctly, so legibility did not decide it; the naming rule did, and the probe establishes that nothing is lost.
+
+   The migration verb's own name did **not** settle this way, and the difference is recorded rather than smoothed over: four rotations produced two position artefacts (position A twice, then position C twice), which is a preference for a slot rather than for a word. The probe was declared spoiled and `migrate-recipe` was settled on the family it joins, `migrate-receipts`. A spoiled probe is data about the protocol, exactly as plan/0076's spoiled ballot was.
 2. **Both spellings parse, and the retired one reports itself.** An adopter's recipe keeps working across the rename and hears once per read that the key moved: the deprecate-then-retire discipline (plan/0039) rather than a silent swap. A test pins both spellings to the same waiver.
-3. **The doctrine names both cases the key carries**, so the second one is not inferable only from a decision record: the build that does not reproduce yet, and the component that cannot vendor offline.
-4. **The retired spelling is removed at a later revision**, on its own ledger entry, once adopters have had a release to migrate. Nothing in this decision retires it today.
+3. **The migration is carried by the tool.** `host-lifecycle migrate-recipe <dir>` renames the retired key, drops the one no release ever read, leaves every other line untouched, and is idempotent. Both ledger entries call it rather than instructing a hand edit, because a hand edit is where a weak agent renames the wrong line and a busy operator renames none of them. The retired keys sit in one table, so the next rename is a row rather than a verb.
+4. **The doctrine names both cases the key carries**, so the second one is not inferable only from a decision record: the build that does not reproduce yet, and the component that cannot vendor offline.
+5. **The retired spelling is removed at a later revision**, on its own ledger entry, once adopters have had a release to migrate. Nothing in this decision retires it today.
 
 ## Consequences
 
