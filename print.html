@@ -14186,6 +14186,9 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.</
 <li>
 <p><strong>The gate reports this machine's deliberate deviation, correctly.</strong> <code>software --verify-setup .</code> hazards on "installed gate matches the built one" for every worktree, because the interim host-lint carrying the #25 fix differs from what the pinned worktree builds. That is the honest reading of a held release: re-pin host-lint and re-install the hooks when plan/0072 ships, and the hazard clears.</p>
 </li>
+<li>
+<p><strong>CI sweep after the v0.43.0 cascade (2026-07-23): all seven repos green, and two lessons about which gate catches what.</strong> host-template's Prose went red on the new doctrine (two decoration warns in CLAUDE.md and the ledger entry), and agentic-host's Reproducible build went red on a single PLAN.md warn — because <code>software --check</code> re-runs the manifest's <code>verify</code> recheck, which includes the prose sweep, so a warn in an audited doc re-opens the verify phase and hazards the whole check. <strong>Lesson:</strong> run <code>host-lifecycle prose .</code> after editing PLAN.md or any milestone doc, not only after editing code; the doc warn does not fail its own commit, it fails the next <code>software --check</code> in CI.</p>
+</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
