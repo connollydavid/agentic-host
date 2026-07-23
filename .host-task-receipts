@@ -817,3 +817,10 @@
     evidence = gather-data.md records both rotation-proof naming probes (resolve, refs --check, each chosen from opposite list positions), the measured wall (374 bare issue refs in 31 files, 222 of them in never-rewritten records; 122 register refs, all resolving, none unresolvable), and the settled conditionals: the dream exit split, .host-lintignore as the one exclusion list, the three emission forms with anchors preserved, and the cross-host case reported unresolved rather than guessed
     tool = host-lifecycle@0.43.0
     recorded = 2026-07-23
+
+[receipt "plan/0077#write-spec"]
+    disposition = done
+    verify = the Allium spec models the reference kinds, the resolution outcomes (resolved, unresolved-here, unresolved-anywhere), the emission forms, and the check verdict; `allium check` and `analyse` exit 0 with zero findings
+    evidence = host-lifecycle-refs.allium (09dc746): reference kinds, three resolution outcomes, three emissions with anchors preserved, the sweep's weight split and verdict lifecycle, nine invariants including the record-layer and fenced-code exclusions; allium check + analyse exit 0 with zero findings (two info-level unused identity fields, the sibling idiom), 60 obligations; CI runs the three lanes on it
+    tool = host-lifecycle@0.43.0
+    recorded = 2026-07-23
