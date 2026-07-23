@@ -852,3 +852,17 @@
     evidence = 289 tests green (278 unit + 11 integration), clippy -D warnings clean; the sweep's clean/advisory/dead exits, the record-layer exclusion and the resolve failures run the built binary; clippy also caught a test nested inside another where Rust could not name it and the strict gate had passed it on name presence alone
     tool = host-lifecycle@0.43.0
     recorded = 2026-07-23
+
+[receipt "plan/0077#fen-acceptance"]
+    disposition = done
+    verify = the real qwen3.5-4b reads the check's output and names the state-correct next action, and reads a resolved reference as a link rather than as text; rotation-stable, transcript recorded
+    evidence = recorded in plan/0077/fen-acceptance.md: the dead-pointer and resolved-reference states pass stably, and the advisory state failed across three output revisions (placeholder pasted, line truncated, flag invented twice); the mitigation is refs --fix, which exists to refuse with the reason and a concrete command naming a real reference, and both refusal repeats then run that exact command
+    tool = host-lifecycle@0.43.0
+    recorded = 2026-07-23
+
+[receipt "plan/0077#cast-consult"]
+    disposition = done
+    verify = each persona's concern is addressed or recorded, in design-review.md
+    evidence = four personas read the built diff and ran it; eight blocking findings, several reproduced or mutation-proved (a clean verdict over zero documents, a clean line claiming coverage of skipped register refs, issue links pointing at the wrong tracker, the record layer swept in a fresh scaffold, untracked docs invisible, the forge URL constructions untested); all fixed in 7a1de2f and 06fa455, with the room-name and nesting findings carried to the adversarial node
+    tool = host-lifecycle@0.43.0
+    recorded = 2026-07-23
