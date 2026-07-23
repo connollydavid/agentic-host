@@ -761,3 +761,17 @@
     evidence = one materialize call writes both artifacts and the new test holds their field-name sets disjoint (cc4a803); the same test runs the completeness gate and reads the bootstrap sequence afterwards and asserts both files are byte-identical; install-hooks and verify-build write the fingerprint only; write_envhash now records its own .gitignore line; cargo test 266 passed, clippy clean
     tool = host-lifecycle@0.42.0
     recorded = 2026-07-23
+
+[receipt "plan/0074#write-tests"]
+    disposition = done
+    verify = full test suite green; Kani proofs of schema disjointness and worktree-hook coverage
+    evidence = cargo test 276 green (270 unit + 6 exit-path integration, 8f0839e); cargo kani verifies the_two_artifacts_share_no_fact (18 checks, 0 failed); obligations --tests src --tests tests --strict-discharge clean across all 104; the six process-ending outcomes run the built binary from tests/exit_paths.rs; worktree-hook coverage stays test-discharged and the manifest records why
+    tool = host-lifecycle@0.42.0
+    recorded = 2026-07-23
+
+[receipt "plan/0074#write-obligations"]
+    disposition = done
+    verify = `host-lifecycle obligations <spec> --tests tests --strict-discharge` clean
+    evidence = host-lifecycle-materialize.obligations complete at 8f0839e: 38 structural, 64 test-discharged, 2 kani-discharged; obligations host-lifecycle-materialize.allium --tests src --tests tests --strict-discharge exits 0 with all 104 dispositioned
+    tool = host-lifecycle@0.42.0
+    recorded = 2026-07-23
