@@ -838,3 +838,17 @@
     evidence = refs --check sweeps the authored docs through .host-lintignore, gates on dead register pointers and advises on bare issue numbers counted per file; run live it reads 0 dead and 182 bare across 28 files in the host (matching the measured wall minus the excluded records) and clean in the software worktree, because only the room's owner can hold a dead pointer; quoting (fence or inline code) is shown rather than referred
     tool = host-lifecycle@0.43.0
     recorded = 2026-07-23
+
+[receipt "plan/0077#write-obligations"]
+    disposition = done
+    verify = every `allium plan` obligation carries a disposition, and each names a test that exercises the rule rather than a helper beside it
+    evidence = host-lifecycle-refs.obligations: all 61 dispositioned, strict-discharge clean; the gate caught a named test that did not exist and four dispositions whose tests never touched the symbol they claimed, each repointed at a test running the rule's own surface
+    tool = host-lifecycle@0.43.0
+    recorded = 2026-07-23
+
+[receipt "plan/0077#write-tests"]
+    disposition = done
+    verify = the suite covers each reference kind, each emission form, each resolution outcome, the exclusions and the exit split; mutating the rule under each behavioural obligation fails its named test
+    evidence = 289 tests green (278 unit + 11 integration), clippy -D warnings clean; the sweep's clean/advisory/dead exits, the record-layer exclusion and the resolve failures run the built binary; clippy also caught a test nested inside another where Rust could not name it and the strict gate had passed it on name presence alone
+    tool = host-lifecycle@0.43.0
+    recorded = 2026-07-23
