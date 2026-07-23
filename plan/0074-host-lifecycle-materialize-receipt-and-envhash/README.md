@@ -140,7 +140,7 @@ Every `allium plan` obligation dispositioned in a `<spec>.obligations` manifest.
 - verify: `host-lifecycle obligations <spec> --tests tests --strict-discharge` clean
 - depends: #write-spec
 
-The manifest landed with the spec (`host-lifecycle-materialize.obligations`, 5a1121c: 38 structural, 68 behavioural forward refs). Its receipt waits for #write-tests: the obligations gate reads a named test that does not yet exist as ABSENT, so a manifest of forward refs cannot discharge — at any strictness — until the tests it names are written. The node's deliverable exists; its verify becomes satisfiable at the end of the build.
+The manifest landed with the spec (`host-lifecycle-materialize.obligations`, 5a1121c: 38 structural, 68 behavioural forward refs). Its receipt waits for #write-tests: the obligations gate reads a named test that does not yet exist as ABSENT, so a manifest of forward refs cannot discharge (at any strictness) until the tests it names are written. The node's deliverable exists; its verify becomes satisfiable at the end of the build.
 
 ### implement-receipt {#implement-receipt}
 The materialize receipt writer: a new entry in `.host-lifecycle-receipts` on `software --materialize`, event-level fields only.

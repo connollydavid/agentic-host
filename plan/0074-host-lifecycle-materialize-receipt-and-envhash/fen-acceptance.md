@@ -3,7 +3,7 @@
 - Date: 2026-07-23
 - Model: `unsloth/Qwen3.5-4B-MTP-GGUF:UD-Q4_K_XL` (Fen), the gateway's OpenAI-compatible surface (token out of band, never recorded).
 - Params: the model card's thinking-general settings, identical to the plan/0076 matrix recorded in [that plan's gather-data](../0076-dream-store-model/gather-data.md) (thinking enabled through the chat template).
-- Protocol: the built binary produced the real output for each surface on real fixtures — a materialized, gated tree that was then moved with its gate binary rebuilt; a half-bootstrapped tree that was never gated and never linked; a fresh clone. Each probe hands the model the verbatim output and asks for its single next action. Two repeats per probe check stability; the three-way distinguishing probe rotates the option order instead. Probes, fixtures and raw transcripts: `~/agentic-host-work/materialize-surface/` on the operator's machine.
+- Protocol: the built binary produced the real output for each surface on real fixtures: a materialized, gated tree that was then moved with its gate binary rebuilt; a half-bootstrapped tree that was never gated and never linked; a fresh clone. Each probe hands the model the verbatim output and asks for its single next action. Two repeats per probe check stability; the three-way distinguishing probe rotates the option order instead. Probes, fixtures and raw transcripts: `~/agentic-host-work/materialize-surface/` on the operator's machine.
 
 ## Pass criteria
 
@@ -42,7 +42,7 @@ Both drift repeats now act on the dimension whose line says to act, and neither 
 
 ## What this did not test
 
-The image-digest dimension was unreadable on the probe machine (no container runtime), so its line was the silent one throughout; the reading of a moved image digest is untested at the 4B bar. The `--install-hooks` remedy was accepted as an action, not executed, so the probe says the route is legible, not that the remedy works — that is what the integration tests assert.
+The probe machine has no container runtime, so the image-digest dimension stayed silent throughout. How a moved image digest reads at the 4B bar is therefore untested. The `--install-hooks` remedy was accepted as an action rather than executed, so the probe establishes that the route is legible; whether the remedy works is what the integration tests assert.
 
 ## Re-run after the review rounds: four of four, and the routes changed under it
 
