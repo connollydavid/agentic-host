@@ -754,3 +754,10 @@
     evidence = src/bootstrap.rs + host-lifecycle bootstrap <dir> (ccd6191) drives seven recipe-derived steps, each read against the live tree immediately before it runs, ending in the completeness gate whose exit code it returns; bootstrap.sh self-seeds host-lifecycle at the .host-software pin then delegates; cargo test 264 passed, clippy clean; fixture probe: two HAZARDs go complete in one run, the second run performs only the idempotent hook copy
     tool = host-lifecycle@0.42.0
     recorded = 2026-07-23
+
+[receipt "plan/0074#wire-shared-call-sites"]
+    disposition = done
+    verify = a `software --materialize` run produces both artifacts; `--install-hooks` produces only the envhash; a test asserts the wiring writes each file exactly when the design says to
+    evidence = one materialize call writes both artifacts and the new test holds their field-name sets disjoint (cc4a803); the same test runs the completeness gate and reads the bootstrap sequence afterwards and asserts both files are byte-identical; install-hooks and verify-build write the fingerprint only; write_envhash now records its own .gitignore line; cargo test 266 passed, clippy clean
+    tool = host-lifecycle@0.42.0
+    recorded = 2026-07-23
