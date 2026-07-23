@@ -14,7 +14,7 @@ The operator's reading of the name, on being shown it: an adjective is wrong for
 
 ## Decision
 
-1. **The escape is retired from the spine before it is implemented.** The property MUST stands unchanged: a component distributing release binaries must be able to reproduce them offline from pinned inputs. So does the enforceable gate invariant, where a component recording a `deps-bundle` builds under no network and its staged bundle hash matches the recorded one. What goes is the sentence promising a key the tool does not read.
+1. **The escape is retired from the spine before it is implemented.** The property MUST stands unchanged: a component distributing release binaries must be able to reproduce them offline from pinned inputs. The enforceable gate invariant is also unchanged. A component recording a `deps-bundle` builds under no network. Its staged bundle hash matches the recorded one. What goes is the sentence promising a key the tool does not read.
 2. **The case that cannot vendor offline is recorded with the existing `repro-exempt`,** which cites its decision. Hermeticity is a facet of reproducibility rather than a second property, and two exemption keys for one property is a drift generator: the day they disagree, nobody knows which one the gate honours.
 3. **If a distinct escape is ever needed, it is named as a noun for what is recorded** and settled by the rotation-proof weak-agent probe the recent names used, not by parallel construction in a review sentence. This is a rule for the next name in this family, not a sweep of the existing surface: `repro-exempt` is parsed, shipped and cited by a ledger entry, and it stays until retiring it is worth an upgrade entry of its own.
 
