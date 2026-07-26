@@ -1,6 +1,6 @@
 # plan/0077 adversarial-review: four lenses read the built diff
 
-Date: 2026-07-26. Subject: `4f27c7a..7700cf4` in host-lifecycle — the resolver, the sweep, the waiver rename and `migrate-recipe`.
+Date: 2026-07-26. Subject: `4f27c7a..7700cf4` in host-lifecycle: the resolver, the sweep, the waiver rename and `migrate-recipe`.
 
 The cast round read `4f27c7a..06fa455` and recorded its blocking set in [design-review.md](design-review.md). Three commits landed after it: the refusal that names a real reference, the rename of the reproducibility waiver, and the tool-carried recipe migration. The last two had no independent read at all before this round.
 
@@ -76,7 +76,7 @@ Both files are named in this repository's own `.host-lintignore` under the comme
 
 ### The block grammar admits prose and rejects code
 
-**A fenced block inside a blockquote is read as prose**, producing a false dead pointer at exit 1. An indented code block and an HTML comment do the same. Defect: `src/refs.rs:405`.
+**A fenced block inside a blockquote is read as prose**, which raises a false dead pointer at exit 1. An indented code block and an HTML comment do the same. Defect: `src/refs.rs:405`.
 
 **An unbalanced backtick hides every reference after it on the line.** A code span wrapped across a line break is legal and present here, so four live references in this tree are invisible to the sweep today, one of them a register reference in `plan/0053`. Odd fence-line parity swallows the whole tail of a document. This is the fail-unsafe direction: the gate loses a dead pointer rather than raising a false one. Defect: `src/refs.rs:377-379`, `:404-411`.
 
@@ -88,17 +88,17 @@ Both files are named in this repository's own `.host-lintignore` under the comme
 
 **The ledger's verify condition greps the token; the tool renames the key.** `migrate_recipe_text` rewrites a line matching the key form and preserves comments, values and longer keys by design and by test. The ledger asserts the token appears nowhere in the file. An adopter whose recipe carries one annotation comment naming the old key runs the migration, is told it succeeded, and can then never record the upgrade: `upgrade --record` refuses at exit 1 and `software --check` raises a permanent hazard with no tool remedy. A recipe migrated correctly and then annotated goes red the same way. Defect: `host-template/UPGRADING.md:315` and `:322` against `src/main.rs:8644`.
 
-**`migrate-recipe --dry-run` writes, and `migrate-recipe --help` migrates the working directory.** Every argument beginning with a dash is discarded and the first remaining one becomes the target, defaulting to `.`. Three sibling verbs in this same CLI accept `--dry-run`, which makes it the natural probe on the one verb that rewrites the reproducibility anchor. Defect: `src/main.rs:8690`.
+**`migrate-recipe --dry-run` writes, and `migrate-recipe --help` migrates the working directory.** Every argument that starts with a dash is discarded, the first remaining one becomes the target, and the default target is the working directory. Three sibling verbs in this same CLI accept `--dry-run`, which makes it the natural probe on the one verb that rewrites the reproducibility anchor. Defect: `src/main.rs:8690`.
 
 **A symlinked recipe is replaced by a regular file.** The atomic write renames over the link, so the real recipe stays unmigrated, the tree gains a second divergent recipe, and the tool reports success. Defect: `src/main.rs:6930`.
 
 **A recipe with Windows line endings is silently converted.** The migration reads by lines and rejoins with a bare newline, so a working recipe becomes a whole-file diff reported as one change. The ledger's own text promises every other line is untouched. Defect: `src/main.rs:8647`, `:8678`.
 
-**call/0047's consequence that every line an operator reads names the surviving key is false.** The release path prints the retired spelling on both of its messages, including the refusal that tells an operator their component is not exempt. The spine still documents the retired key in the multi-platform builds section, in the tool's own recipe reference, and in the reference CI comment; the retirement entry's title says the case is recorded with the old name while its action says the new one, and the title is what an operator is shown on record. Defect: `src/main.rs:9221` and `:9497`; `host-template/CLAUDE.md:854`; `host-template/tools/host-lifecycle/README.md:151`; `host-template/UPGRADING.md:311`; `host-template/.github/workflows/reproducible-build.yml:3`.
+**call/0047's consequence that every line an operator reads names the surviving key is false.** The release path prints the retired spelling on both of its messages, one of them the refusal that tells an operator their component carries no waiver. The spine still documents the retired key in the multi-platform builds section, in the tool's own recipe reference, and in the reference CI comment; the retirement entry's title says the case is recorded with the old name while its action says the new one, and the title is what an operator is shown on record. Defect: `src/main.rs:9221` and `:9497`; `host-template/CLAUDE.md:854`; `host-template/tools/host-lifecycle/README.md:151`; `host-template/UPGRADING.md:311`; `host-template/.github/workflows/reproducible-build.yml:3`.
 
 ## The structural finding
 
-The specification cannot catch any of the coverage class. `host-lifecycle-refs.allium` has no document entity and no walk: its universe begins where a reference already exists, so `CleanVerdictSawNothing` proves that a clean verdict reported nothing and never that everything was read. `ExcludedIsNeverReported` quantifies over a per-reference field while the implementation decides exclusion per document, in a function the specification does not model. Every finding in the first two sections above sits outside what the obligations can bite on, which is why they survived a discharge-clean manifest. Defect: `host-lifecycle-refs.allium:118-133`, `:214-227`, `:281`.
+The specification cannot catch any of the coverage class. `host-lifecycle-refs.allium` has no document entity and no walk: its universe begins where a reference already exists. So `CleanVerdictSawNothing` proves only that a clean verdict reported nothing. It says nothing about whether everything was read. `ExcludedIsNeverReported` quantifies over a per-reference field while the implementation decides exclusion per document, in a function the specification does not model. Every finding in the first two sections above sits outside what the obligations can bite on, which is why they survived a discharge-clean manifest. Defect: `host-lifecycle-refs.allium:118-133`, `:214-227`, `:281`.
 
 ## Carried, with the reason
 
@@ -124,7 +124,7 @@ the reason the rest survived a discharge-clean manifest: the specification now
 carries a document, a readability fact and an exclusion fact, and three invariants
 that bite on the corpus rather than on the reference. Each new disposition names a
 test that drives the built binary over a corpus with a known hole in it, and each
-was proven by mutation — reverting the unread gate, the disclosure, or the remedy
+was proven by mutation: reverting the unread gate, the disclosure, or the remedy
 slug fails its named test, and the restored tree is green.
 
 Two of the fixes were narrowed on the evidence rather than applied as reported:
@@ -138,14 +138,14 @@ Two of the fixes were narrowed on the evidence rather than applied as reported:
   they wrote. Rewriting them would make the ledger disagree with what an adopter
   applying it in order actually does.
 
-The carried list stands as carried, with one promotion: **nothing runs the sweep**
+The carried list is carried still, with one promotion: **nothing runs the sweep**
 is now the largest remaining gap, because the capability is correct and still
 surfaces nowhere. It is the `#remediate-this-tree` node's dependency and is
 recorded there rather than here.
 
-One measured consequence worth stating: the corrected grammar and classification
-move this tree's own wall from a reported 293 to 297 issue references, of which 183
-name no repository. The earlier number was both too small (four live references sat
+One measured consequence worth stating: under the corrected grammar and
+classification this tree's own wall is 297 issue references rather than the 293
+reported before, and 183 of them name no repository. The earlier number was both too small (four live references sat
 behind an unmatched backtick) and wrong in kind (qualified references were counted
 as naming none). `#remediate-this-tree` inherits the corrected figure.
 

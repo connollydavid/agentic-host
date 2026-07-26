@@ -85,8 +85,8 @@ The failing pair is discarded as a malformed probe, on the same footing as
 plan/0076's spoiled ballot: a probe that changed two things at once measures
 neither.
 
-**The advisory state's second wrong turn is new.** Rather than inventing a flag,
-the model truncated the printed command to `resolve --markdown .`, dropping the
+**The advisory state's second wrong turn is new.** The model invented no flag this
+time. It truncated the printed command to `resolve --markdown .` and dropped the
 reference. That landed on a bare usage error, which teaches nothing. The usage
 error now names a real reference from the tree, exactly as the `--fix` refusal
 does, and the probe closes the loop:
