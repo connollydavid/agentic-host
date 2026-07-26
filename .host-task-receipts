@@ -873,3 +873,10 @@
     evidence = four independent lenses read 4f27c7a..7700cf4 with a dedicated record-layer lens; every blocking finding fixed in 58dd019, 1b166fa and template e830c70, two narrowed on the evidence, carried list recorded in plan/0077-reference-resolver/adversarial-review.md
     tool = host-lifecycle@0.43.0
     recorded = 2026-07-26
+
+[receipt "plan/0077#write-spine-doctrine"]
+    disposition = done
+    verify = the template manual states the reference discipline (a number resolves, a bare issue number is not a reference) and the ledger entry names the day-one wall and the record-layer exclusion
+    evidence = host-template CLAUDE.md gains the section 'A number that names something resolves to it' (a register reference resolves, a bare issue number is refused, the sweep's split, the record-layer exclusion and its disclosure); UPGRADING.md entry REFS-a-number-resolves names the day-one wall and the exclusion; template c5d7838
+    tool = host-lifecycle@0.43.0
+    recorded = 2026-07-26
