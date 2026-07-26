@@ -887,3 +887,10 @@
     evidence = re-run 2026-07-26 against the fixed binary's real output: dead, resolve and refusal states pass on both repeats; the advisory state fails as before, and its new truncation wrong turn is answered by a usage error naming a real reference (both repeats run it); a first re-run scoring resolve as failing is discarded as a malformed probe: plan/0077-reference-resolver/fen-acceptance.md
     tool = host-lifecycle@0.43.0
     recorded = 2026-07-26
+
+[receipt "plan/0077#release-and-re-pin"]
+    disposition = done
+    verify = the release cascades clean, `software --check .` is clean at the new pin, and host-lifecycle#17 closes with its outcome
+    evidence = host-lifecycle v0.44.0 released: verify gate green, build reproduces in the recorded toolchain (6a0f7d4e), tag v0.44.0 at a49472a6, .host-software re-pinned to pin+artifact, template prose.yml --rev and tools/host-lifecycle submodule bumped (template cfc07a2), .host stamped, release receipt recorded, binary reinstalled; software --check . clean at the new pin; host-lifecycle#17 closed with its outcome
+    tool = host-lifecycle@0.44.0
+    recorded = 2026-07-26
