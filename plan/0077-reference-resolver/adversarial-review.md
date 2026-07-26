@@ -98,7 +98,7 @@ Both files are named in this repository's own `.host-lintignore` under the comme
 
 ## The structural finding
 
-The specification cannot catch any of the coverage class. `host-lifecycle-refs.allium` has no document entity and no walk: its universe begins where a reference already exists. So `CleanVerdictSawNothing` proves only that a clean verdict reported nothing. It says nothing about whether everything was read. `ExcludedIsNeverReported` quantifies over a per-reference field while the implementation decides exclusion per document, in a function the specification does not model. Every finding in the first two sections above sits outside what the obligations can bite on, which is why they survived a discharge-clean manifest. Defect: `host-lifecycle-refs.allium:118-133`, `:214-227`, `:281`.
+Every finding in the coverage class sits outside what the specification can catch. The reason is structural: `host-lifecycle-refs.allium` models a reference and stops there, so its universe begins where a reference already exists, with the walk and the corpus outside it. `CleanVerdictSawNothing` therefore proves one thing only, that a clean verdict reported nothing, and it stays silent on whether everything was read. `ExcludedIsNeverReported` quantifies over a per-reference field while the implementation decides exclusion per document, in a function the specification does not model. Every finding in the first two sections above sits outside what the obligations can bite on, which is why they survived a discharge-clean manifest. Defect: `host-lifecycle-refs.allium:118-133`, `:214-227`, `:281`.
 
 ## Carried, with the reason
 
