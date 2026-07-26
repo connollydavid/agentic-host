@@ -112,6 +112,43 @@ The specification cannot catch any of the coverage class. `host-lifecycle-refs.a
 - **The migration widens file permissions**, overrides a read-only recipe, and destroys a sibling file named for its temporary, all inherited from the shared atomic write.
 - **A recipe carrying both spellings** lets the retired line win by order and migrates into a silent duplicate key.
 
+## Disposition
+
+The operator ruled one pass over the whole set, specification included, on the
+reasoning that fixing instances of a class that has recurred three times leaves
+the fourth to be found by somebody else.
+
+**Every blocking finding above is fixed**, in `58dd019` and `1b166fa` (host-lifecycle)
+and `e830c70` (host-template). The structural finding is fixed first, because it is
+the reason the rest survived a discharge-clean manifest: the specification now
+carries a document, a readability fact and an exclusion fact, and three invariants
+that bite on the corpus rather than on the reference. Each new disposition names a
+test that drives the built binary over a corpus with a known hole in it, and each
+was proven by mutation — reverting the unread gate, the disclosure, or the remedy
+slug fails its named test, and the restored tree is green.
+
+Two of the fixes were narrowed on the evidence rather than applied as reported:
+
+- **Shorthand hex colours of three and four digits stay in the corpus.** Excluding
+  them would drop `#123` written as issue 123, which this tree is far likelier to
+  contain than a bare colour outside code, and the block grammar now removes the
+  places a colour actually appears. The six-digit rule stands.
+- **The earlier ledger entries keep the retired spelling.** They are history, they
+  run before the rename entry in ledger order, and the migration cleans up what
+  they wrote. Rewriting them would make the ledger disagree with what an adopter
+  applying it in order actually does.
+
+The carried list stands as carried, with one promotion: **nothing runs the sweep**
+is now the largest remaining gap, because the capability is correct and still
+surfaces nowhere. It is the `#remediate-this-tree` node's dependency and is
+recorded there rather than here.
+
+One measured consequence worth stating: the corrected grammar and classification
+move this tree's own wall from a reported 293 to 297 issue references, of which 183
+name no repository. The earlier number was both too small (four live references sat
+behind an unmatched backtick) and wrong in kind (qualified references were counted
+as naming none). `#remediate-this-tree` inherits the corrected figure.
+
 ## What the review attacked and could not break
 
 The acceptance rests on this as much as on the findings.
