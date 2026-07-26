@@ -866,3 +866,10 @@
     evidence = four personas read the built diff and ran it; eight blocking findings, several reproduced or mutation-proved (a clean verdict over zero documents, a clean line claiming coverage of skipped register refs, issue links pointing at the wrong tracker, the record layer swept in a fresh scaffold, untracked docs invisible, the forge URL constructions untested); all fixed in 7a1de2f and 06fa455, with the room-name and nesting findings carried to the adversarial node
     tool = host-lifecycle@0.43.0
     recorded = 2026-07-23
+
+[receipt "plan/0077#adversarial-review"]
+    disposition = done
+    verify = an independent multi-lens read of the built diff records every blocking finding fixed or carried, with a dedicated lens for the record-layer exclusion (a checker that pressures an append-only log is the failure that matters here)
+    evidence = four independent lenses read 4f27c7a..7700cf4 with a dedicated record-layer lens; every blocking finding fixed in 58dd019, 1b166fa and template e830c70, two narrowed on the evidence, carried list recorded in plan/0077-reference-resolver/adversarial-review.md
+    tool = host-lifecycle@0.43.0
+    recorded = 2026-07-26
