@@ -894,3 +894,10 @@
     evidence = host-lifecycle v0.44.0 released: verify gate green, build reproduces in the recorded toolchain (6a0f7d4e), tag v0.44.0 at a49472a6, .host-software re-pinned to pin+artifact, template prose.yml --rev and tools/host-lifecycle submodule bumped (template cfc07a2), .host stamped, release receipt recorded, binary reinstalled; software --check . clean at the new pin; host-lifecycle#17 closed with its outcome
     tool = host-lifecycle@0.44.0
     recorded = 2026-07-26
+
+[receipt "plan/0077#remediate-this-tree"]
+    disposition = done
+    verify = the live documents this check reports are remediated or their exclusion is recorded; `MEMORY.md` is untouched, and PLAN.md's parked row records the outcome
+    evidence = PLAN.md remediated: 60 references linked with the resolver itself, and it drops off the sweep's report except for three left bare on purpose (the plan/0025 rows' #40/#41/#50 are review-finding codes, and one 'resolves issue #1' names no tracker). The remaining 247 across 48 files are remediated on touch per the spine's rule; nothing new is excluded, because an exclusion would also stop the gating dead-pointer check there, and MEMORY.md is untouched. Outcome recorded in PLAN.md's parked row. Remediating found a classification defect (a finding-code pair read as owner/repo), fixed and shipped as v0.44.1.
+    tool = host-lifecycle@0.44.1
+    recorded = 2026-07-26
