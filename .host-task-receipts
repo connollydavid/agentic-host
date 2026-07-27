@@ -978,3 +978,17 @@
     evidence = host-lifecycle 134ee10; fixture host with a done verify receipt re-opens under software --check when the gate finds a recorded dead pointer; first test to execute a manifest recheck string; mutation-proved
     tool = host-lifecycle@0.45.1
     recorded = 2026-07-27
+
+[receipt "plan/0078#cost"]
+    disposition = done
+    verify = the chain is measured before and after on the same tree and the same mount; if either bound is exceeded the disposition is recorded here rather than noted in passing, because a node that measures and shrugs is not a gate
+    evidence = host-lifecycle 218a5d2; budget fixed and pushed before measuring; breached at 9419ms/3.3x, cause was per-reference room listing, rooms read once, now 2134ms/1.5x with an identical verdict
+    tool = host-lifecycle@0.45.1
+    recorded = 2026-07-27
+
+[receipt "plan/0078#fen-acceptance"]
+    disposition = done
+    verify = two repeats per state on real output; the count-only gate is compared against a gate printing no quantity, and the comparison decides which ships; a spoiled probe is recorded as protocol data
+    evidence = real qwen3.5-4b, two repeats per state; count-vs-no-quantity compared and neither captures the agent, so the count ships; dead state 2/2 correct; recorded in fen-acceptance.md
+    tool = host-lifecycle@0.45.1
+    recorded = 2026-07-27
