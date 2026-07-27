@@ -57,10 +57,12 @@ None of the four uses a manifest. They download from URL patterns:
 - bun: GitHub `releases/latest/download/bun-${target}.zip`
 
 **Decision for install.sh:** We need a manifest because we coordinate binaries
-across multiple repos (host-lint, host-lifecycle, host-prove). The manifest
-format: plain text, one line per binary (`name <url> <sha256>`), generated from
-the host-lifecycle release receipts. This is simpler than TOML/JSON and parseable
-in pure bash (no `jq`/`toml` dependency).
+across multiple repos. The format is plain text, one line per binary **per
+platform**, because each platform variant has its own URL and its own digest:
+`binary <name> <version> <platform> <url> <sha256>`, above a `template-revision`
+line. That is twelve lines for the install set settled in the release-asset
+survey below. Plain text is simpler than TOML or JSON and parses in pure bash
+with `while read`, so `install.sh` needs neither `jq` nor a TOML reader.
 
 ### Trust root
 
@@ -184,8 +186,7 @@ everything (download, extract, configure PATH, print success message).
 
 **Decision for install.sh:** Fat script. We install multiple binaries (not one
 self-installing binary like rustup), and the scaffold step runs `host-lifecycle
-init` after the binaries are on PATH. The fat approach matches opencode plus deno and
-and bun.
+init` after the binaries are on PATH. The fat approach matches opencode, deno and bun.
 
 ## Release-asset survey
 
