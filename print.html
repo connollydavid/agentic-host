@@ -9304,7 +9304,8 @@ unaided</li>
 </ul>
 <h3 id="cost"><a class="header" href="#cost">The recheck stays cheap</a></h3>
 <ul>
-<li>verify: the budget is stated before the measurement; the chain is measured before and after; if the budget is exceeded the disposition is recorded rather than noted</li>
+<li>budget, fixed before the measurement: the gate clause costs no more than the slowest clause already in the chain, and the whole recheck does not more than double. The manifest's own header says a recheck must be cheap, and this runs on every <code>software --check</code>, in the verify skill, and at the first step of every release</li>
+<li>verify: the chain is measured before and after on the same tree and the same mount; if either bound is exceeded the disposition is recorded here rather than noted in passing, because a node that measures and shrugs is not a gate</li>
 <li>depends: #composition-test</li>
 </ul>
 <h3 id="fen-acceptance"><a class="header" href="#fen-acceptance">The weak agent stays on task</a></h3>
