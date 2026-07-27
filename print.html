@@ -7985,7 +7985,7 @@ Codex CLI): what do the shipping majority do?</li>
 <p>Grounds every conditional in data: the Fen probe (UX), the installer survey (mechanical
 patterns), and the binary-name/harness survey confirmation.</p>
 <ul>
-<li>verify by: every conditional in this README traces to a gather-data.md row</li>
+<li>verify: every conditional in this README traces to a gather-data.md row</li>
 <li>depends: none</li>
 </ul>
 <h3 id="write-install-sh"><a class="header" href="#write-install-sh">write-install-sh</a></h3>
@@ -7993,7 +7993,7 @@ patterns), and the binary-name/harness survey confirmation.</p>
 platform/shell detection, manifest fetch, trust verify, per-binary download and hash-check,
 all-or-nothing, receipt, name resolution, scaffold, harness detect, launch.</p>
 <ul>
-<li>verify by: <code>bash -n install.sh</code> (syntax), <code>shellcheck install.sh</code> (lint; requires adding a
+<li>verify: <code>bash -n install.sh</code> (syntax), <code>shellcheck install.sh</code> (lint; requires adding a
 shellcheck job to the host repo's CI, which currently has only a prose gate per plan/0038),
 integration tests pass</li>
 <li>depends: #gather-data</li>
@@ -8002,21 +8002,21 @@ integration tests pass</li>
 <p>The install manifest keyed to the template revision, single-sourced from public release
 receipts. Generated or declared; its format settled by the installer survey.</p>
 <ul>
-<li>verify by: manifest hashes match the public release asset digests for every binary in the
+<li>verify: manifest hashes match the public release asset digests for every binary in the
 install set</li>
 <li>depends: #gather-data</li>
 </ul>
 <h3 id="write-allium-spec"><a class="header" href="#write-allium-spec">write-allium-spec</a></h3>
 <p>The <code>InstallRun</code> surface with states, transitions, and invariants as specified above.</p>
 <ul>
-<li>verify by: <code>allium check</code> + <code>allium analyse</code> exit 0, zero findings</li>
+<li>verify: <code>allium check</code> + <code>allium analyse</code> exit 0, zero findings</li>
 <li>depends: #gather-data</li>
 </ul>
 <h3 id="write-obligations"><a class="header" href="#write-obligations">write-obligations</a></h3>
 <p>Every <code>allium plan</code> obligation dispositioned in a <code>&lt;spec&gt;.obligations</code> manifest, discharged by
 the integration tests.</p>
 <ul>
-<li>verify by: <code>host-lifecycle obligations &lt;spec&gt; --tests tests --strict-discharge</code> clean</li>
+<li>verify: <code>host-lifecycle obligations &lt;spec&gt; --tests tests --strict-discharge</code> clean</li>
 <li>depends: #write-allium-spec</li>
 </ul>
 <h3 id="write-tests"><a class="header" href="#write-tests">write-tests</a></h3>
@@ -8024,27 +8024,27 @@ the integration tests.</p>
 <code>uname</code>, <code>command -v</code>, <code>/dev/tty</code>, and the network (manifest fetch, binary download) so tests
 run offline and deterministic.</p>
 <ul>
-<li>verify by: full test suite green, every spec obligation exercised</li>
+<li>verify: full test suite green, every spec obligation exercised</li>
 <li>depends: #write-install-sh, #write-allium-spec</li>
 </ul>
 <h3 id="host-repo-release"><a class="header" href="#host-repo-release">host-repo-release</a></h3>
 <p>Ship <code>install.sh</code>, the manifest, the spec, and the tests in the <code>host</code> repo. The entrance
 ships through its own release authority (plan/0065:192-194).</p>
 <ul>
-<li>verify by: <code>host-lifecycle entrance --check</code> green, <code>software --check</code> clean, CI green</li>
+<li>verify: <code>host-lifecycle entrance --check</code> green, <code>software --check</code> clean, CI green</li>
 <li>depends: #write-install-sh, #write-manifest, #write-obligations, #write-tests</li>
 </ul>
 <h3 id="re-pin-and-receipt"><a class="header" href="#re-pin-and-receipt">re-pin-and-receipt</a></h3>
 <p>Re-pin <code>host</code> in agentic-host's <code>.host-software</code>, record the release receipt.</p>
 <ul>
-<li>verify by: <code>software --check .</code> clean at the new pin</li>
+<li>verify: <code>software --check .</code> clean at the new pin</li>
 <li>depends: #host-repo-release</li>
 </ul>
 <h3 id="fen-acceptance"><a class="header" href="#fen-acceptance">fen-acceptance</a></h3>
 <p>The real <code>qwen3.5-4b</code> runs the one-liner end-to-end (or as close as the sandbox allows) and
 the harness-detection menu, confirming the UX conditionals hold at the weak-agent bar.</p>
 <ul>
-<li>verify by: Fen routes the install flow and the harness selection correctly</li>
+<li>verify: Fen routes the install flow and the harness selection correctly</li>
 <li>depends: #host-repo-release</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0072-ffmpeg-commit-rule-pack-pack-dispatch-in-the-core-and-the-first-external-pack"><a class="header" href="#plan0072-ffmpeg-commit-rule-pack-pack-dispatch-in-the-core-and-the-first-external-pack">plan/0072 ffmpeg-commit-rule-pack: pack dispatch in the core and the first external pack</a></h1>
