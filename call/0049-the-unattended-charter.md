@@ -47,7 +47,7 @@ The second repeat believed it was complying, and by the letter it was: backticks
 
 ### Always
 
-15. **Gate before the outward act, in one command.** `host-lifecycle software --check . && git push` cannot be inverted; an instruction to check first can be, and was.
+15. **Stage, then gate, then act, in one command.** `git add -A && host-lifecycle software --check . && git push` cannot be inverted; an instruction to check first can be, and was. The staging step is not tidiness: the gates read the recorded corpus, so a document that is not yet tracked is invisible to them and checking it returns a clean verdict over a file nothing opened. Where a document is genuinely new and not ready to stage, check it with the working-tree walk instead, which is what `host-lint --prose <file>` reads.
 16. **Prove a check by breaking it.** For anything claimed to pass, run the mutation that should make it fail. A check that stays green when its subject is broken proved nothing.
 17. **Resolve every citation with the tool** rather than typing it, because exact-token recall is a known failure at every model strength.
 18. **Leave the tree green and the working tree clean.** A stop with a dirty tree is indistinguishable from a crash, and the next cold session reads debris as work in progress.
@@ -58,3 +58,4 @@ The second repeat believed it was complying, and by the letter it was: backticks
 - A stop is a success. What it could not decide goes where the next session reads by default: the open question in prose under the milestone node it blocks, a `call/` at `Status: proposed` when a decision is owed, an issue on the forge, and a `MEMORY.md` entry naming both, each in its own commit.
 - Prohibitions are phrased against outcomes because the probe showed that method-shaped rules leak. Any future rule added here inherits that requirement.
 - This decision binds the agent, not the operator. Every act forbidden above remains ordinary operator work, and several are ordinary maintainer work in this repository specifically.
+- **Rule fifteen was amended on the day this was accepted, by operator direction, and the reason is recorded rather than smoothed away.** It first said only to gate before the outward act. Within hours the charter itself was committed on a clean verdict that meant nothing: `prose` reads the recorded corpus, the file was still untracked, and the gate never opened it. A warning surfaced once the file was tracked and blocked the next release. Rule three would have this appended rather than edited; the rule list is an operating text that has to be followed in one reading, so it was amended in place and the amendment declared here. That is the operator's call to make and not the loop's.
