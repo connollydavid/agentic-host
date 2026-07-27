@@ -950,3 +950,10 @@
     evidence = host-lifecycle 8378b7c; requires compared numerically at --record, mutation-proved; other tools and unreadable floors yield none
     tool = host-lifecycle@0.44.2
     recorded = 2026-07-27
+
+[receipt "plan/0078#engine-bump"]
+    disposition = done
+    verify = the vendored bundle is cut and published, the embedded revision moves to the released one, and one tree yields one verdict from both surfaces where two verdicts were demonstrated
+    evidence = host-lint v0.16.0 (bb16c466) embedded and pinned; vendor-v3 published; host-lifecycle v0.45.1 (dcfa7901); both surfaces agree on one tree and the prose verdict names the engine
+    tool = host-lifecycle@0.45.1
+    recorded = 2026-07-27
