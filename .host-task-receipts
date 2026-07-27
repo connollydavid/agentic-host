@@ -992,3 +992,10 @@
     evidence = real qwen3.5-4b, two repeats per state; count-vs-no-quantity compared and neither captures the agent, so the count ships; dead state 2/2 correct; recorded in fen-acceptance.md
     tool = host-lifecycle@0.45.1
     recorded = 2026-07-27
+
+[receipt "plan/0078#release-the-gate"]
+    disposition = done
+    verify = released by the tool-carried sequence, re-pinned, and the binary on the path is the released one
+    evidence = host-lifecycle v0.46.0 (8b68284a, artifact 18dea88d); refs --gate on PATH and capability refs-gate answers present; DRIFT cleared
+    tool = host-lifecycle@0.46.0
+    recorded = 2026-07-27
