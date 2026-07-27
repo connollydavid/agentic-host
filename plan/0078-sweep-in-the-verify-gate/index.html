@@ -213,7 +213,7 @@
 </ul>
 <h3 id="recheck-runs-everywhere"><a class="header" href="#recheck-runs-everywhere">The recheck runs, or says it could not</a></h3>
 <ul>
-<li>verify: the recheck executes on a non-POSIX shell without turning the manifest's existing conditions into confident failures; a shell that cannot be spawned reports that it could not run, distinctly from a condition that did not hold</li>
+<li>verify: the recheck chooses its shell per platform rather than assuming one, and a shell that cannot be spawned reports that it could not run, distinctly from a condition that did not hold</li>
 <li>depends: none</li>
 </ul>
 <h3 id="capability-probe"><a class="header" href="#capability-probe">A capability answers for itself</a></h3>
@@ -263,9 +263,9 @@
 <li>depends: #cost, #fen-acceptance</li>
 </ul>
 <p><strong>Landing three: the revision adopters receive.</strong></p>
-<h3 id="template-wiring"><a class="header" href="#template-wiring">The manifest calls the mode</a></h3>
+<h3 id="template-wiring"><a class="header" href="#template-wiring">The manifest calls the mode, in a vocabulary every platform runs</a></h3>
 <ul>
-<li>verify: the recheck line is one verb per clause with no exit arithmetic; a comment above the stanza states why a reference advisory passes while a prose warning gates</li>
+<li>verify: the recheck line is one verb per clause with no exit arithmetic; a comment above the stanza states why a reference advisory passes while a prose warning gates; and the four <code>test -f</code> conditions become portable, since a shell branch alone leaves them failing wherever <code>test</code> is not a builtin. <code>host-lifecycle version .</code> is an exact stand-in for the two <code>.host</code> conditions (exit 1 with no readable stamp, 0 with one); the two <code>.host-software</code> conditions need one, and inventing a verb for them is a decision this node owns</li>
 <li>depends: #release-the-gate</li>
 </ul>
 <h3 id="spine-bullets"><a class="header" href="#spine-bullets">The spine says where it runs</a></h3>
