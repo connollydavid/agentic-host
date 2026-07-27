@@ -929,3 +929,10 @@
     evidence = host-lifecycle 80fb748; example is an owner/repo#N the tree carries, mutation-proved; replaces the test that asserted the guess
     tool = host-lifecycle@0.44.2
     recorded = 2026-07-27
+
+[receipt "plan/0078#recheck-runs-everywhere"]
+    disposition = done
+    verify = the recheck chooses its shell per platform rather than assuming one, and a shell that cannot be spawned reports that it could not run, distinctly from a condition that did not hold
+    evidence = host-lifecycle f3c342e; per-platform shell in run_recheck, spawn failure named distinctly in both run_recheck and run_verify; manifest vocabulary moved to #template-wiring
+    tool = host-lifecycle@0.44.2
+    recorded = 2026-07-27
