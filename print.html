@@ -14531,6 +14531,12 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.</
 <li>
 <p>2026-07-27 — <strong><code>lint-skill.sh</code> reports a missing parser as bad content.</strong> Its frontmatter gate pipes the block to <code>python3 -c "import yaml..."</code> and, on a machine with no PyYAML, fails with "frontmatter does not parse as YAML" while the frontmatter is valid. Failing closed is right; blaming the file is not. The same shape as the gate messages the plan/0078 convening spent two rounds on: a check that cannot run must say so, never accuse the thing it could not read.</p>
 </li>
+<li>
+<p>2026-07-27 — <strong>Linting an authored document with <code>host-lint &lt;file&gt;</code> gives a false clean.</strong> That invocation runs the naming lane (titles, comments, commit messages); the gate that judges authored markdown is the prose lane, <code>host-lint --docs</code> and <code>host-lifecycle prose .</code>, and the two carry different rules. A <code>call/</code> record was checked with the naming lane, returned exit 0, and was pushed carrying a tricolon warning the prose lane catches. It looked at first like the embedded-versus-pinned engine divergence and it was not; it was one engine, two lanes. <strong>Before committing an authored doc, run <code>host-lifecycle prose .</code>, never the bare binary on the file.</strong></p>
+</li>
+<li>
+<p>2026-07-27 — <strong>An anchored task node must sit under a literal <code>## Build sequence</code> heading.</strong> <code>tasks --check</code> rejects an anchored <code>### </code> heading anywhere else with "a task anchor must be a task", so grouping nodes under their own <code>## </code> sections (landings, stages, any organizing heading) produces one HAZARD per node. Group with a bold paragraph marker between node runs instead; the anchors and <code>depends</code> edges parse unchanged.</p>
+</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
