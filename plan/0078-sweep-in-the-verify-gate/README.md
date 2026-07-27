@@ -75,6 +75,7 @@ Prerequisite, ahead of landing one: the owed ledger entry for the host-lint v0.1
 ### The recheck stays cheap {#cost}
 - budget, fixed before the measurement: the gate clause costs no more than the slowest clause already in the chain, and the whole recheck does not more than double. The manifest's own header says a recheck must be cheap, and this runs on every `software --check`, in the verify skill, and at the first step of every release
 - verify: the chain is measured before and after on the same tree and the same mount; if either bound is exceeded the disposition is recorded here rather than noted in passing, because a node that measures and shrugs is not a gate
+- measured, release build, this tree, a `/mnt/c` mount (read the figures as ratios, not absolutes): the budget was **breached on the first measurement**. the gate cost 9419 ms where the slowest existing clause cost 2285 ms, and the whole chain grew past triple, against a ceiling of double. The cause was algorithmic rather than inherent: resolving a register reference listed its room directory, and this tree carries upward of two thousand register references, so the run listed the same two directories two thousand times. The rooms are now read once per run and the verdict is byte-identical. The gate costs 2134 ms where the slowest existing clause costs 2438 ms, and the chain grows by half. Both bounds hold
 - depends: #composition-test
 
 ### The weak agent stays on task {#fen-acceptance}
