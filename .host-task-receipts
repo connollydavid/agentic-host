@@ -999,3 +999,10 @@
     evidence = host-lifecycle v0.46.0 (8b68284a, artifact 18dea88d); refs --gate on PATH and capability refs-gate answers present; DRIFT cleared
     tool = host-lifecycle@0.46.0
     recorded = 2026-07-27
+
+[receipt "plan/0078#template-wiring"]
+    disposition = done
+    verify = the recheck line is one verb per clause with no exit arithmetic; a comment above the stanza states why a reference advisory passes while a prose warning gates; the clause this milestone adds runs on every platform, because it is a `host-lifecycle` invocation rather than a shell builtin
+    evidence = host-template 67813ce; recheck gains 'host-lifecycle refs --gate .' with the asymmetry comment; proved live on this tree (dead pointer re-opens verify, restored goes ok); the four test -f conditions scoped out with evidence
+    tool = host-lifecycle@0.46.0
+    recorded = 2026-07-27
