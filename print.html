@@ -14537,6 +14537,15 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.</
 <li>
 <p>2026-07-27 — <strong>An anchored task node must sit under a literal <code>## Build sequence</code> heading.</strong> <code>tasks --check</code> rejects an anchored <code>### </code> heading anywhere else with "a task anchor must be a task", so grouping nodes under their own <code>## </code> sections (landings, stages, any organizing heading) produces one HAZARD per node. Group with a bold paragraph marker between node runs instead; the anchors and <code>depends</code> edges parse unchanged.</p>
 </li>
+<li>
+<p>2026-07-27 — <strong><code>--rederive</code> takes a directory, so <code>--rederive --record-digests</code> swallows the flag and reports success over work it did not do.</strong> Running <code>host-lifecycle obligations &lt;spec&gt; --tests tests --prove src --rederive --record-digests</code> binds <code>--record-digests</code> as <code>--rederive</code>'s value: the flag is never set, the Kani harnesses run and print <code>proved</code>, the run ends <code>rungs re-derived</code> at <strong>exit 0</strong>, and no digest is written, so the next <code>--strict-discharge</code> still refuses. The correct form is <code>--rederive . --record-digests</code>, where the argument is the <strong>root</strong> the <code>inputs=</code> paths are relative to; <code>--rederive src</code> fails loudly with <code>DIGEST cannot hash src/src/lib.rs</code>, which is the good failure. Two lessons: a green exit is not evidence the flag you passed was read, and after <code>--record-digests</code> check that the digest file's contents actually changed rather than trusting the summary line.</p>
+</li>
+<li>
+<p>2026-07-27 — <strong>Changing a file named in an obligation's <code>inputs=</code> makes its proof obligations STALE, and the remedy is to re-derive rather than re-stamp.</strong> Editing host-lint's <code>src/lib.rs</code> staled both Kani obligations on <code>DetectReviewCodeAsName</code>, and the allium lane refused with exit 1 while every test passed. Re-deriving re-ran both harnesses against the edited library and proved them SUCCESSFUL, which is the point: the digest ledger exists so a proof cannot silently outlive the code it was proved over. Budget for a proof re-run whenever a change touches a declared proof input.</p>
+</li>
+<li>
+<p>2026-07-27 — <strong>host-lint's CI has no clippy lane</strong> (build, conformance, allium, kani, test), unlike host-lifecycle's, which runs <code>cargo clippy --all-targets -- -D warnings</code>. Two clippy errors had accumulated in its test code as a result. Clippy also needs installing per pinned toolchain: <code>rustup component add --toolchain 1.95.0-x86_64-unknown-linux-gnu clippy</code>, and <code>cargo clippy --version</code> outside the worktree reports the default toolchain's, not the pinned one.</p>
+</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
