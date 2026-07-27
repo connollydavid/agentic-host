@@ -971,3 +971,10 @@
     evidence = host-lifecycle 49be3a9; corpus modelled as two surfaces after allium analyse caught the missing producer; gate exits 0 or 1 only, census disclosed as a count; both mutation-proved
     tool = host-lifecycle@0.45.1
     recorded = 2026-07-27
+
+[receipt "plan/0078#composition-test"]
+    disposition = done
+    verify = a fixture host with a `done` verify receipt and a dead pointer re-opens the receipt under `software --check` and exits non-zero; this is the first test that executes a manifest recheck string
+    evidence = host-lifecycle 134ee10; fixture host with a done verify receipt re-opens under software --check when the gate finds a recorded dead pointer; first test to execute a manifest recheck string; mutation-proved
+    tool = host-lifecycle@0.45.1
+    recorded = 2026-07-27
