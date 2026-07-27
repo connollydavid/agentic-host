@@ -957,3 +957,17 @@
     evidence = host-lint v0.16.0 (bb16c466) embedded and pinned; vendor-v3 published; host-lifecycle v0.45.1 (dcfa7901); both surfaces agree on one tree and the prose verdict names the engine
     tool = host-lifecycle@0.45.1
     recorded = 2026-07-27
+
+[receipt "plan/0078#spec-the-two-corpora"]
+    disposition = done
+    verify = the spec models both walks, the corpus each judges, and the gate's exit partition, so an obligation can bite on a verdict claiming more than its walk read; `allium check` and `analyse` exit 0
+    evidence = host-lifecycle 49be3a9; corpus modelled as two surfaces after allium analyse caught the missing producer; gate exits 0 or 1 only, census disclosed as a count; both mutation-proved
+    tool = host-lifecycle@0.45.1
+    recorded = 2026-07-27
+
+[receipt "plan/0078#gate-mode"]
+    disposition = done
+    verify = exit 0 with no blocking finding, advisory included; exit 1 on a dead pointer, an unreadable document, or a corpus the walk could not produce, each with a line naming its own cause; the advisory is counted and never enumerated; the coverage line names which corpus it read; the empty-corpus case is specified rather than inherited
+    evidence = host-lifecycle 49be3a9; corpus modelled as two surfaces after allium analyse caught the missing producer; gate exits 0 or 1 only, census disclosed as a count; both mutation-proved
+    tool = host-lifecycle@0.45.1
+    recorded = 2026-07-27
