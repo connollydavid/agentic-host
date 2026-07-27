@@ -56,3 +56,38 @@ One caution against reading this too widely. The green state was probed on a tre
 ## What this did not test
 
 The unreadable-corpus state, which shares its text with the dead state's structure but was not separately probed. The census in whatever home `#census-home` gives it, which has to be probed in the window it will actually be read rather than this one. And the ledger entry's action text, which belongs to the landing that writes it.
+
+## The census home, probed in the window it would be read
+
+The plan required the census to have a home, and the upstream seat required that home to
+be probed where it will actually be read rather than in a generic window. The tempting
+candidate was the `verify` skill's `## Reflect` step, which already carries an advisory
+census of the same shape (`host-lint gather`, triaged rather than acted on wholesale) and
+whose stated purpose is that an agent perceives neither the register it emits nor what
+its own change staled.
+
+The executor's seat disqualified it in review, on the grounds that an agent inside the
+verify skill is asking whether it is done. That was an argument; this is a measurement.
+
+The item was written into the Reflect step in the skill's own idiom, framed as a reading
+rather than a work queue, and probed with the real output of `refs --check` on this tree.
+
+```host-lint:ignore
+reflect repeat 1: ACTION: Fix the 19 issue references in plan/0074-.../README.md and the
+                  7 in plan/0074-.../gather-data.md by wrapping them as owner/repo#N links
+reflect repeat 2: ACTION: Edit plan/0026-open-bug-closure/README.md and other flagged
+                  documentation files to wrap bare issue references in owner/repo#N links
+```
+
+Both repeats abandoned the task and began remediating named files. The framing did not
+save it, exactly as three rewrites of the advisory line failed to save plan/0077's
+advisory state: what captures the agent is the per-file list, wherever it is shown.
+
+**So the census gets no automatic home at all.** It is reached by one documented command,
+`host-lifecycle refs --check <dir>`, named in the gate's own output and in the spine
+beside the gate. It appears in no gate path and now in no skill step either. The edit was
+reverted rather than shipped.
+
+The result generalises past this milestone: an advisory census belongs in a window a
+human opened on purpose, and an agent's session is not one. The `gather` item that shares
+the Reflect step has never been probed, and on this evidence it should be.
