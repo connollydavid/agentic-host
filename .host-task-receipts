@@ -943,3 +943,10 @@
     evidence = host-lifecycle 5f8e24b; capability <name> reads no tree, absent unless declared, no shell operators; engine-version display moved to #engine-bump where the constant arrives
     tool = host-lifecycle@0.44.2
     recorded = 2026-07-27
+
+[receipt "plan/0078#floor-enforced-or-owed"]
+    disposition = done
+    verify = either a tool below an entry's floor is refused at record time with the floor named, or an issue records the deferral and the ledger says the floor is advisory
+    evidence = host-lifecycle 8378b7c; requires compared numerically at --record, mutation-proved; other tools and unreadable floors yield none
+    tool = host-lifecycle@0.44.2
+    recorded = 2026-07-27
