@@ -901,3 +901,24 @@
     evidence = PLAN.md remediated: 60 references linked with the resolver itself, and it drops off the sweep's report except for three left bare on purpose (the plan/0025 rows' #40/#41/#50 are review-finding codes, and one 'resolves issue #1' names no tracker). The remaining 247 across 48 files are remediated on touch per the spine's rule; nothing new is excluded, because an exclusion would also stop the gating dead-pointer check there, and MEMORY.md is untouched. Outcome recorded in PLAN.md's parked row. Remediating found a classification defect (a finding-code pair read as owner/repo), fixed and shipped as v0.44.1.
     tool = host-lifecycle@0.44.1
     recorded = 2026-07-26
+
+[receipt "plan/0078#walk-reports-what-it-could-not-read"]
+    disposition = done
+    verify = a tracked document made unreadable turns `prose` non-zero with a line naming the document, rather than reporting clean; the same holds for host-lifecycle's own walk; a walk that fails outright never becomes an empty document set
+    evidence = host-lint a1de24e + host-lifecycle a03e6cf; unreadable doc named, not dropped; both mutation-proved
+    tool = host-lifecycle@0.44.2
+    recorded = 2026-07-27
+
+[receipt "plan/0078#corpus-selector"]
+    disposition = done
+    verify = the document walk takes a corpus selector; an untracked file carrying a tell is reported by the hook and ignored by the gate path; the walk exists once, so no second walk drifts from it
+    evidence = host-lint a1de24e; Corpus::Record vs WorkingTree, mutation-proved
+    tool = host-lifecycle@0.44.2
+    recorded = 2026-07-27
+
+[receipt "plan/0078#argument-is-honoured"]
+    disposition = done
+    verify = `--all <dir>` and `--docs <dir>` audit the named directory rather than the tree resolved from the working directory, or exit as a usage error; a fixture under a different root proves which tree was read
+    evidence = host-lint a1de24e; --docs <dir> audits the named tree, else usage error; mutation-proved
+    tool = host-lifecycle@0.44.2
+    recorded = 2026-07-27
