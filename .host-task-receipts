@@ -1006,3 +1006,10 @@
     evidence = host-template 67813ce; recheck gains 'host-lifecycle refs --gate .' with the asymmetry comment; proved live on this tree (dead pointer re-opens verify, restored goes ok); the four test -f conditions scoped out with evidence
     tool = host-lifecycle@0.46.0
     recorded = 2026-07-27
+
+[receipt "plan/0078#spine-bullets"]
+    disposition = done
+    verify = the existing reference section names the gate, the corpus it judges, and the asymmetry with its reason; an adopter who reads only the spine learns that something gates and what
+    evidence = host-template d8275e6; the section names the gate, the record corpus, and the do-not-repair-the-asymmetry rule; blocked until 79c0b71 made the template pass its own gate (connollydavid/host#19)
+    tool = host-lifecycle@0.46.0
+    recorded = 2026-07-27
