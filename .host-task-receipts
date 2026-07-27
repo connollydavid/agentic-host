@@ -936,3 +936,10 @@
     evidence = host-lifecycle f3c342e; per-platform shell in run_recheck, spawn failure named distinctly in both run_recheck and run_verify; manifest vocabulary moved to #template-wiring
     tool = host-lifecycle@0.44.2
     recorded = 2026-07-27
+
+[receipt "plan/0078#capability-probe"]
+    disposition = done
+    verify = one command with no shell operators reports whether the running binary carries a named capability, reads no tree, refuses an unknown name, and draws from the same constant the feature is gated on; the engine version appears wherever the naming and prose surfaces speak
+    evidence = host-lifecycle 5f8e24b; capability <name> reads no tree, absent unless declared, no shell operators; engine-version display moved to #engine-bump where the constant arrives
+    tool = host-lifecycle@0.44.2
+    recorded = 2026-07-27
