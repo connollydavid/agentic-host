@@ -187,6 +187,51 @@ self-installing binary like rustup), and the scaffold step runs `host-lifecycle
 init` after the binaries are on PATH. The fat approach matches opencode plus deno and
 and bun.
 
+## Release-asset survey
+
+The README's install phase says "download each host-* binary", and its invariant says no
+project is scaffolded before "the full toolset is installed and verified". Neither names the
+set. `.host-software` carries six `deploy` lines, and reading the toolset as those six makes
+the invariant unsatisfiable on most platforms. Surveyed 2026-07-28 against the live releases:
+
+| Component | Latest | Assets | Platform coverage |
+|---|---|---|---|
+| host-lifecycle | v0.47.0 | 6 | complete: darwin, linux and windows on amd64 and arm64 |
+| host-lint | v0.16.1 | 12 | complete, plus six `host-lint-ffmpeg-*` pack assets |
+| host-reference | v0.1.6 | 5 | windows-arm64 absent |
+| host-prove | v0.3.0 | 1 | `host-prove-linux-x86_64-musl` alone, under a different naming scheme |
+| host-reference-ocr | vendor-v1 | 1 | `vendor.tar.gz`; no binary published |
+| host-reference-openscad | vendor-v1 | 1 | `vendor.tar.gz`; no binary published |
+
+Every asset in all six carries a `digest` field on the releases API (`sha256:...`), so the
+manifest's single source holds wherever a binary is published at all. The gap is coverage,
+not provenance.
+
+**Decision for install.sh: the install set is `host-lifecycle` and `host-lint`.** These are
+the two with a complete platform matrix, so all-or-nothing is satisfiable on every target the
+script claims. They are also the two the entrance already asks for: `software/host/main`'s
+README names exactly this pair under *What you need*, and the bootstrap gate reports host-lint
+by name as the artifact whose absence blocks a clone. Nothing new has to be released for the
+install to work, which is the reason to prefer this reading over any other.
+
+What this excludes, and why it is not a deferral to fix later:
+
+- `host-prove` cannot enter a cross-platform install set today. It publishes a linux musl
+  binary alone, so an all-or-nothing install including it would fail on every mac and every
+  windows machine. Adding it means publishing five more assets from its release workflow.
+- `host-reference` is one asset short (windows-arm64). It is a near miss rather than a
+  structural gap, and it is document tooling that a fresh agentic project does not need to
+  scaffold.
+- `host-reference-ocr` and `host-reference-openscad` publish a vendor bundle and no binary,
+  so there is nothing for a manifest to point at.
+- `host-lint`'s six `host-lint-ffmpeg-*` assets are the pack, not the core binary. The
+  manifest names assets, never "every asset of the release", so the pack is out by
+  construction and plan/0072 decides whether it is ever installed by default.
+
+This also fixes the `host-prove` naming assumption. The manifest records each asset's URL
+rather than deriving it from a platform template, so a component whose names do not follow
+`<name>-<os>-<arch>` costs nothing at parse time; only the platform gap keeps it out.
+
 ## Harness-name survey
 
 The allowlist (6 harnesses, star-ordered) was confirmed during planning and
@@ -247,3 +292,7 @@ Every conditional in the README traces to a gather-data row:
 | Harness allowlist: 6 binaries, ordered | Harness-name survey table |
 | No `HARNESS` env var | Harness-name survey (no standard exists) |
 | Menu: names and numbers only | Harness-name survey (ordering without star counts) |
+| Install set: `host-lifecycle` and `host-lint` | Release-asset survey (the two with a complete matrix) |
+| All-or-nothing over the install set | Release-asset survey (unsatisfiable over all six deploy lines) |
+| Manifest records a URL per asset, not a template | Release-asset survey (host-prove's naming diverges) |
+| Digests read from the releases API | Release-asset survey (every asset carries `digest`) |

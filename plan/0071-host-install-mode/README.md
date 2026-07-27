@@ -15,9 +15,11 @@ was the install mode itself: the manifest, the verified binary download, the rec
 platform/shell detection, the harness handoff, and the `install.sh` surface. This plan delivers
 all of it.
 
-The design decisions below are grounded in two evidence sources: a neutral Fen classification
-probe (the UX conditionals) and a documented survey of binary names (the star
-ordering, the platform matrix, the installer patterns).
+The mechanical decisions below are grounded in a documented survey recorded in
+[gather-data.md](gather-data.md): the installer patterns, the harness names and star ordering,
+and the release assets each component actually publishes. The UX conditionals are **not** yet
+grounded. Probing them needs the real script output rather than a mock, so the Fen probe runs
+at the `#fen-acceptance` node and this README's UX choices stand as proposals until it does.
 
 ## The one-liner
 
@@ -40,17 +42,31 @@ plan/0065 line 170: "Install and create are two failure domains, so the one-comm
 not fold them into one atomic step." The script honours this as two phases with a clean seam:
 
 1. **Install phase**: detect platform, fetch the install manifest, verify its authenticity
-   against the trust root, download each host-* binary, verify each against its recorded hash,
-   install all-or-nothing to the path, write the local receipt. A partial install records the
-   missing binaries and exits non-zero; nothing lands silently.
+   against the trust root, download each binary in the install set, verify each against its
+   recorded hash, install all-or-nothing to the path, write the local receipt. A partial
+   install records the missing binaries and exits non-zero; nothing lands silently.
 
 2. **Create phase**: prompt for the project name (or accept `$1`), run `host-lifecycle init
    <name>` to scaffold, detect the operator's installed agent harnesses, present a menu (or
    auto-select if one), and `exec` the chosen harness inside the project directory so the
    bringup Q&A continues interactively.
 
-A first-run does both phases in sequence, but the install verifies the full toolset landed
+A first-run does both phases in sequence, but the install verifies the whole install set landed
 before create begins. "A bootstrap never runs against a partial toolchain" (plan/0065:173).
+
+## The install set
+
+**`host-lifecycle` and `host-lint`, and nothing else.** `host-lifecycle` does the mechanical
+work of scaffolding and `host-lint` is the artifact whose absence the bootstrap gate reports by
+name, which is why `software/host/main`'s README already asks an adopter for exactly this pair.
+
+The set is not the six `deploy` lines in `.host-software`, and the survey is what settles that:
+those two are the only components publishing a complete platform matrix. `host-prove` publishes
+a single linux musl binary, and the two reference helpers publish a vendor bundle and no binary
+at all, so an all-or-nothing install over the six would fail on every mac and every windows
+machine. Holding the set at two means the install works on every target it claims without any
+component having to cut a release first. Widening it later is a manifest change and a release
+in the widened component, not a change to this script.
 
 ## The manifest and the trust root
 
@@ -235,7 +251,7 @@ surface `InstallRun` with states and transitions:
 
 Invariants:
 - Each binary's hash is verified before the binary lands on PATH.
-- No project is scaffolded before the full toolset is installed and verified.
+- No project is scaffolded before the whole install set is installed and verified.
 - The receipt is written before the create phase begins.
 - The name is never empty when it reaches `Scaffolding`.
 - The name is never `agentic-host` (reserved).
@@ -293,7 +309,8 @@ all-or-nothing, receipt, name resolution, scaffold, harness detect, launch.
 ### write-manifest {#write-manifest}
 The install manifest keyed to the template revision, single-sourced from public release
 receipts. Generated or declared; its format settled by the installer survey.
-- verify by: manifest hashes match the public release asset digests for every host-* binary
+- verify by: manifest hashes match the public release asset digests for every binary in the
+  install set
 - depends: #gather-data
 
 ### write-allium-spec {#write-allium-spec}
