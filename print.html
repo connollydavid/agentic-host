@@ -7739,9 +7739,11 @@ as v0.39.0 and locked the install-mode contract in its README (lines 109-280). W
 was the install mode itself: the manifest, the verified binary download, the receipt, the
 platform/shell detection, the harness handoff, and the <code>install.sh</code> surface. This plan delivers
 all of it.</p>
-<p>The design decisions below are grounded in two evidence sources: a neutral Fen classification
-probe (the UX conditionals) and a documented survey of binary names (the star
-ordering, the platform matrix, the installer patterns).</p>
+<p>The mechanical decisions below are grounded in a documented survey recorded in
+<a href="plan/0071-host-install-mode/gather-data.html">gather-data.md</a>: the installer patterns, the harness names and star ordering,
+and the release assets each component actually publishes. The UX conditionals are <strong>not</strong> yet
+grounded. Probing them needs the real script output rather than a mock, so the Fen probe runs
+at the <code>#fen-acceptance</code> node and this README's UX choices stand as proposals until it does.</p>
 <h2 id="the-one-liner"><a class="header" href="#the-one-liner">The one-liner</a></h2>
 <pre><code>curl -fsSL https://raw.githubusercontent.com/connollydavid/host/main/install.sh | bash
 </code></pre>
@@ -7756,9 +7758,9 @@ not fold them into one atomic step." The script honours this as two phases with 
 <ol>
 <li>
 <p><strong>Install phase</strong>: detect platform, fetch the install manifest, verify its authenticity
-against the trust root, download each host-* binary, verify each against its recorded hash,
-install all-or-nothing to the path, write the local receipt. A partial install records the
-missing binaries and exits non-zero; nothing lands silently.</p>
+against the trust root, download each binary in the install set, verify each against its
+recorded hash, install all-or-nothing to the path, write the local receipt. A partial
+install records the missing binaries and exits non-zero; nothing lands silently.</p>
 </li>
 <li>
 <p><strong>Create phase</strong>: prompt for the project name (or accept <code>$1</code>), run <code>host-lifecycle init &lt;name&gt;</code> to scaffold, detect the operator's installed agent harnesses, present a menu (or
@@ -7766,8 +7768,19 @@ auto-select if one), and <code>exec</code> the chosen harness inside the project
 bringup Q&amp;A continues interactively.</p>
 </li>
 </ol>
-<p>A first-run does both phases in sequence, but the install verifies the full toolset landed
+<p>A first-run does both phases in sequence, but the install verifies the whole install set landed
 before create begins. "A bootstrap never runs against a partial toolchain" (plan/0065:173).</p>
+<h2 id="the-install-set"><a class="header" href="#the-install-set">The install set</a></h2>
+<p><strong><code>host-lifecycle</code> and <code>host-lint</code>, and nothing else.</strong> <code>host-lifecycle</code> does the mechanical
+work of scaffolding and <code>host-lint</code> is the artifact whose absence the bootstrap gate reports by
+name, which is why <code>software/host/main</code>'s README already asks an adopter for exactly this pair.</p>
+<p>The set is not the six <code>deploy</code> lines in <code>.host-software</code>, and the survey is what settles that:
+those two are the only components publishing a complete platform matrix. <code>host-prove</code> publishes
+a single linux musl binary, and the two reference helpers publish a vendor bundle and no binary
+at all, so an all-or-nothing install over the six would fail on every mac and every windows
+machine. Holding the set at two means the install works on every target it claims without any
+component having to cut a release first. Widening it later is a manifest change and a release
+in the widened component, not a change to this script.</p>
 <h2 id="the-manifest-and-the-trust-root"><a class="header" href="#the-manifest-and-the-trust-root">The manifest and the trust root</a></h2>
 <p>plan/0065 lines 121-132 and 234-243 locked the contract:</p>
 <ul>
@@ -7928,7 +7941,7 @@ all-or-nothing) | <code>AllVerified</code> (last binary matches)</li>
 <p>Invariants:</p>
 <ul>
 <li>Each binary's hash is verified before the binary lands on PATH.</li>
-<li>No project is scaffolded before the full toolset is installed and verified.</li>
+<li>No project is scaffolded before the whole install set is installed and verified.</li>
 <li>The receipt is written before the create phase begins.</li>
 <li>The name is never empty when it reaches <code>Scaffolding</code>.</li>
 <li>The name is never <code>agentic-host</code> (reserved).</li>
@@ -7989,7 +8002,8 @@ integration tests pass</li>
 <p>The install manifest keyed to the template revision, single-sourced from public release
 receipts. Generated or declared; its format settled by the installer survey.</p>
 <ul>
-<li>verify by: manifest hashes match the public release asset digests for every host-* binary</li>
+<li>verify by: manifest hashes match the public release asset digests for every binary in the
+install set</li>
 <li>depends: #gather-data</li>
 </ul>
 <h3 id="write-allium-spec"><a class="header" href="#write-allium-spec">write-allium-spec</a></h3>
