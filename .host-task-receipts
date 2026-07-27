@@ -1034,3 +1034,10 @@
     evidence = host CLAUDE.md carries the discipline (was zero by grep); REFS-a-number-resolves and GATE-refs-in-verify both recorded via verify, 0 pending; the gate is green here over 168 tracked docs
     tool = host-lifecycle@0.46.0
     recorded = 2026-07-27
+
+[receipt "plan/0078#record-the-outcome"]
+    disposition = done
+    verify = the PLAN.md row and the MEMORY.md entry are written and pushed, each in its own commit
+    evidence = PLAN.md row 4ea5b016 and the MEMORY entries, each in its own commit and pushed
+    tool = host-lifecycle@0.46.0
+    recorded = 2026-07-27
