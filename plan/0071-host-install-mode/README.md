@@ -294,14 +294,14 @@ The tasks are anchored receipted nodes (plan/0042), built as a forward graph:
 ### gather-data {#gather-data}
 Grounds every conditional in data: the Fen probe (UX), the installer survey (mechanical
 patterns), and the binary-name/harness survey confirmation.
-- verify by: every conditional in this README traces to a gather-data.md row
+- verify: every conditional in this README traces to a gather-data.md row
 - depends: none
 
 ### write-install-sh {#write-install-sh}
 The tight bash script, zero third-party deps. Implements the full state machine: prerequisites,
 platform/shell detection, manifest fetch, trust verify, per-binary download and hash-check,
 all-or-nothing, receipt, name resolution, scaffold, harness detect, launch.
-- verify by: `bash -n install.sh` (syntax), `shellcheck install.sh` (lint; requires adding a
+- verify: `bash -n install.sh` (syntax), `shellcheck install.sh` (lint; requires adding a
   shellcheck job to the host repo's CI, which currently has only a prose gate per plan/0038),
   integration tests pass
 - depends: #gather-data
@@ -309,41 +309,41 @@ all-or-nothing, receipt, name resolution, scaffold, harness detect, launch.
 ### write-manifest {#write-manifest}
 The install manifest keyed to the template revision, single-sourced from public release
 receipts. Generated or declared; its format settled by the installer survey.
-- verify by: manifest hashes match the public release asset digests for every binary in the
+- verify: manifest hashes match the public release asset digests for every binary in the
   install set
 - depends: #gather-data
 
 ### write-allium-spec {#write-allium-spec}
 The `InstallRun` surface with states, transitions, and invariants as specified above.
-- verify by: `allium check` + `allium analyse` exit 0, zero findings
+- verify: `allium check` + `allium analyse` exit 0, zero findings
 - depends: #gather-data
 
 ### write-obligations {#write-obligations}
 Every `allium plan` obligation dispositioned in a `<spec>.obligations` manifest, discharged by
 the integration tests.
-- verify by: `host-lifecycle obligations <spec> --tests tests --strict-discharge` clean
+- verify: `host-lifecycle obligations <spec> --tests tests --strict-discharge` clean
 - depends: #write-allium-spec
 
 ### write-tests {#write-tests}
 Integration tests covering every branch listed in Verification above. The test harness mocks
 `uname`, `command -v`, `/dev/tty`, and the network (manifest fetch, binary download) so tests
 run offline and deterministic.
-- verify by: full test suite green, every spec obligation exercised
+- verify: full test suite green, every spec obligation exercised
 - depends: #write-install-sh, #write-allium-spec
 
 ### host-repo-release {#host-repo-release}
 Ship `install.sh`, the manifest, the spec, and the tests in the `host` repo. The entrance
 ships through its own release authority (plan/0065:192-194).
-- verify by: `host-lifecycle entrance --check` green, `software --check` clean, CI green
+- verify: `host-lifecycle entrance --check` green, `software --check` clean, CI green
 - depends: #write-install-sh, #write-manifest, #write-obligations, #write-tests
 
 ### re-pin-and-receipt {#re-pin-and-receipt}
 Re-pin `host` in agentic-host's `.host-software`, record the release receipt.
-- verify by: `software --check .` clean at the new pin
+- verify: `software --check .` clean at the new pin
 - depends: #host-repo-release
 
 ### fen-acceptance {#fen-acceptance}
 The real `qwen3.5-4b` runs the one-liner end-to-end (or as close as the sandbox allows) and
 the harness-detection menu, confirming the UX conditionals hold at the weak-agent bar.
-- verify by: Fen routes the install flow and the harness selection correctly
+- verify: Fen routes the install flow and the harness selection correctly
 - depends: #host-repo-release
