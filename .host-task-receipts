@@ -1020,3 +1020,10 @@
     evidence = host-template 32e655f; verify is capability refs-gate, proved falsifiable against a v0.45.1 binary built from its tag (rc 1) while a red tree still records; action opens with the ordering and discloses the cross-project limitation
     tool = host-lifecycle@0.46.0
     recorded = 2026-07-27
+
+[receipt "plan/0078#census-home"]
+    disposition = done
+    verify = the enumeration is reachable by one documented command and appears in no gate path; the chosen home is probed in the window it will actually be read
+    evidence = probed in the Reflect window and rejected 2/2; the skill edit was reverted, not shipped; the census is reached only by refs --check, named in the gate output and the spine, and appears in no gate path or skill step
+    tool = host-lifecycle@0.46.0
+    recorded = 2026-07-27
