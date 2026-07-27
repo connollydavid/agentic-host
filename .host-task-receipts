@@ -1041,3 +1041,10 @@
     evidence = PLAN.md row 4ea5b016 and the MEMORY entries, each in its own commit and pushed
     tool = host-lifecycle@0.46.0
     recorded = 2026-07-27
+
+[receipt "plan/0071#gather-data"]
+    disposition = done
+    verify = every conditional in this README traces to a gather-data.md row
+    evidence = release-asset survey added to gather-data.md (70418a8f): six components inventoried live, digest coverage confirmed on every asset, install set settled at host-lifecycle and host-lint; traceability table extended by four rows; README grounding claim corrected to defer the UX conditionals to the fen-acceptance node
+    tool = host-lifecycle@0.47.0
+    recorded = 2026-07-27
