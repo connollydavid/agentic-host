@@ -73,7 +73,8 @@ Prerequisite, ahead of landing one: the owed ledger entry for the host-lint v0.1
 - depends: #gate-mode
 
 ### The recheck stays cheap {#cost}
-- verify: the budget is stated before the measurement; the chain is measured before and after; if the budget is exceeded the disposition is recorded rather than noted
+- budget, fixed before the measurement: the gate clause costs no more than the slowest clause already in the chain, and the whole recheck does not more than double. The manifest's own header says a recheck must be cheap, and this runs on every `software --check`, in the verify skill, and at the first step of every release
+- verify: the chain is measured before and after on the same tree and the same mount; if either bound is exceeded the disposition is recorded here rather than noted in passing, because a node that measures and shrugs is not a gate
 - depends: #composition-test
 
 ### The weak agent stays on task {#fen-acceptance}
