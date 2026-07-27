@@ -1027,3 +1027,10 @@
     evidence = probed in the Reflect window and rejected 2/2; the skill edit was reverted, not shipped; the census is reached only by refs --check, named in the gate output and the spine, and appears in no gate path or skill step
     tool = host-lifecycle@0.46.0
     recorded = 2026-07-27
+
+[receipt "plan/0078#walk-it-here"]
+    disposition = done
+    verify = this repository's own operating manual carries the reference discipline, the pending entry is recorded honestly rather than on a condition its own precondition satisfies, and the new entry is applied here
+    evidence = host CLAUDE.md carries the discipline (was zero by grep); REFS-a-number-resolves and GATE-refs-in-verify both recorded via verify, 0 pending; the gate is green here over 168 tracked docs
+    tool = host-lifecycle@0.46.0
+    recorded = 2026-07-27
