@@ -1048,3 +1048,10 @@
     evidence = release-asset survey added to gather-data.md (70418a8f): six components inventoried live, digest coverage confirmed on every asset, install set settled at host-lifecycle and host-lint; traceability table extended by four rows; README grounding claim corrected to defer the UX conditionals to the fen-acceptance node
     tool = host-lifecycle@0.47.0
     recorded = 2026-07-27
+
+[receipt "plan/0071#write-manifest"]
+    disposition = done
+    verify = manifest hashes match the public release asset digests for every binary in the
+    evidence = install-manifest and make-install-manifest.sh committed in the host repo at 936f2af: 12 lines, one per binary per platform, digests read from the releases API digest field; the recorded linux-amd64 digest verified equal to the sha256 of the bytes the release serves; the all-or-nothing guard proven by mutation (adding host-prove fails naming host-prove-darwin-amd64 and leaves the manifest untouched); host-lint ffmpeg pack assets excluded by exact-name matching, 0 pack lines present
+    tool = host-lifecycle@0.47.0
+    recorded = 2026-07-27
