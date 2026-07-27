@@ -1013,3 +1013,10 @@
     evidence = host-template d8275e6; the section names the gate, the record corpus, and the do-not-repair-the-asymmetry rule; blocked until 79c0b71 made the template pass its own gate (connollydavid/host#19)
     tool = host-lifecycle@0.46.0
     recorded = 2026-07-27
+
+[receipt "plan/0078#ledger-entry"]
+    disposition = done
+    verify = the condition is the capability probe, and a tree that SHOULD fail it does, meaning an environment whose binary predates the floor rather than a tree carrying a dead pointer, which must record as applied; the action text opens with the two facts a cold reader needs first
+    evidence = host-template 32e655f; verify is capability refs-gate, proved falsifiable against a v0.45.1 binary built from its tag (rc 1) while a red tree still records; action opens with the ordering and discloses the cross-project limitation
+    tool = host-lifecycle@0.46.0
+    recorded = 2026-07-27
