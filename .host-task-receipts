@@ -922,3 +922,10 @@
     evidence = host-lint a1de24e; --docs <dir> audits the named tree, else usage error; mutation-proved
     tool = host-lifecycle@0.44.2
     recorded = 2026-07-27
+
+[receipt "plan/0078#remedy-names-a-real-reference"]
+    disposition = done
+    verify = no emission attaches a guessed repository to a bare issue number, and none prints a placeholder shape either; a test asserts the remedy names a reference that exists in the tree, and mutating it fails that test
+    evidence = host-lifecycle 80fb748; example is an owner/repo#N the tree carries, mutation-proved; replaces the test that asserted the guess
+    tool = host-lifecycle@0.44.2
+    recorded = 2026-07-27
