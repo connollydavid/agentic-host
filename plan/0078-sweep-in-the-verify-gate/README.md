@@ -88,8 +88,9 @@ Prerequisite, ahead of landing one: the owed ledger entry for the host-lint v0.1
 
 **Landing three: the revision adopters receive.**
 
-### The manifest calls the mode, in a vocabulary every platform runs {#template-wiring}
-- verify: the recheck line is one verb per clause with no exit arithmetic; a comment above the stanza states why a reference advisory passes while a prose warning gates; and the four `test -f` conditions become portable, since a shell branch alone leaves them failing wherever `test` is not a builtin. `host-lifecycle version .` is an exact stand-in for the two `.host` conditions (exit 1 with no readable stamp, 0 with one); the two `.host-software` conditions need one, and inventing a verb for them is a decision this node owns
+### The manifest calls the mode {#template-wiring}
+- verify: the recheck line is one verb per clause with no exit arithmetic; a comment above the stanza states why a reference advisory passes while a prose warning gates; the clause this milestone adds runs on every platform, because it is a `host-lifecycle` invocation rather than a shell builtin
+- scoped, with the evidence: the manifest's four pre-existing `test -f` conditions stay POSIX-only and are **not** fixed here. They belong to the `adopt`, `embed` and `release` phases, which this milestone does not touch, and no portable stand-in exists for half of them: `host-lifecycle version .` covers the two `.host` conditions exactly, and for `.host-software` neither `reconcile` (exit 0 with and without a recipe), `version` (reads the stamp, not the recipe) nor `env --check` (exit 2 either way, conflated with an unrecorded fingerprint) can tell the two trees apart. Closing it needs a new read-only surface and therefore its own release, which is owed work rather than a clause of this one
 - depends: #release-the-gate
 
 ### The spine says where it runs {#spine-bullets}
