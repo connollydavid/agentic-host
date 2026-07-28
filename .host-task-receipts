@@ -1188,3 +1188,10 @@
     evidence = src/cosmetic.rs in host-lint. diff -w -b normalisation per git-howto, with a second pass stripping braces only (stripping whitespace twice would defeat the golden-output exemption, whose lines arrive raw because their whitespace is the data). Six fixtures pass: pure re-indent, pure functional, cosmetic-hunk-beside-functional (reported), brace allowance, whitespace-only, blank-line-only; plus golden-output-is-functional and a test asserting same-hunk reformatting is deliberately silent. Calibration rewrote the design twice and is recorded in CALIBRATION.md: counting braces and blank lines as cosmetic reported 213/300 accepted commits as mixed (0.290), pair-cancellation reported 108/300 (0.640), and judging per hunk rather than per diff reports 6/300 (0.980). FLAG=0 on accepted history. 45 pack unit tests, 178 integration, clippy exit 0
     tool = host-lifecycle@0.47.1
     recorded = 2026-07-28
+
+[receipt "plan/0072#project-pack-config"]
+    disposition = done
+    verify = precedence tests including a two-worktree clone holding different modes;
+    evidence = src/config.rs plus host-lint-ffmpeg.toml.example in host-lint. Worktree-first precedence proven by a two-worktree fixture holding different modes, plus a CLI assertion that the worktree file wins over the repository common dir. Three modes with frozen never blocking (a gate demanding a fixed history be rewritten asks for what the mode forbids), default advise so adoption cannot break a build on day one. Frozen derived from history tags rather than declared, with a synthetic repo proving an untagged branch is not frozen, a matching tag freezes it, and a tag outside the grammar does not. Branch and tag grammar checks reachable via a branch subcommand, exercised against a synthetic repo. Unknown keys and misspelled modes are errors naming file and line. TOML reader written out to keep the crate dependency-free. 53 pack unit tests, 184 integration, clippy exit 0. The advise default changed three existing assertions from rc=1 to rc=3, which is recorded in the commit rather than smoothed away
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
