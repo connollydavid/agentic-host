@@ -1055,3 +1055,10 @@
     evidence = install-manifest and make-install-manifest.sh committed in the host repo at 936f2af: 12 lines, one per binary per platform, digests read from the releases API digest field; the recorded linux-amd64 digest verified equal to the sha256 of the bytes the release serves; the all-or-nothing guard proven by mutation (adding host-prove fails naming host-prove-darwin-amd64 and leaves the manifest untouched); host-lint ffmpeg pack assets excluded by exact-name matching, 0 pack lines present
     tool = host-lifecycle@0.47.0
     recorded = 2026-07-27
+
+[receipt "plan/0071#write-allium-spec"]
+    disposition = done
+    verify = `allium check` + `allium analyse` exit 0, zero findings
+    evidence = host-install.allium committed at 86ff4fa in the host repo: allium check exit 0 with 0 diagnostics, allium analyse exit 0 with 0 findings, allium plan generates 80 obligations of which 10 are invariant obligations. Six analyse conflicts were real and fixed by latching machine, name and target facts onto the run so the event rules branch disjointly; the InstallSet fact closes a hole where an install completing over zero downloads would have set install_complete. Recorded limit: analyse does not prove invariants against rules (mutating the digest check out of PlaceVerifiedBinary leaves check and analyse clean), so the invariants are discharged at write-obligations and write-tests
+    tool = host-lifecycle@0.47.0
+    recorded = 2026-07-28
