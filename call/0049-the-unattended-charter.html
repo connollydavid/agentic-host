@@ -195,13 +195,30 @@
 <p><strong>The line is reversibility, not risk.</strong> An act the operator can inspect and undo after reading a diff belongs to the loop. An act that reaches people outside this tree, or that cannot be walked back, waits. Being the methodology's maintainer, the loop may author template changes freely; what it may not do is make any of them permanent.</p>
 <h3 id="absolute-a-green-gate-authorizes-none-of-these"><a class="header" href="#absolute-a-green-gate-authorizes-none-of-these">Absolute. A green gate authorizes none of these.</a></h3>
 <ol>
-<li><strong>Do not make anything permanent.</strong> No tag, no release asset, no artifact or bundle that a pin resolves to becoming installable, no publication a later commit cannot correct. A tag is immutable by <a href="0044-release-immutability-on-host-repos.html">call/0044</a> and a release asset cannot be replaced, which this session established by publishing one that was wrong.</li>
-<li><strong>Do not rewrite what was published.</strong> No force-push, no amend of a pushed commit, no history rewrite. The complete set a run may amend is what <code>git rev-list @{u}..HEAD</code> returns, which git answers without memory.</li>
-<li><strong>Do not edit an append-only record.</strong> Shipped ledger entries, <code>MEMORY.md</code>, accepted <code>call/</code> bodies, and every tool-written receipt are corrected by appending, never by editing. Checkable as a diff: the removed-line side must be empty for those paths.</li>
-<li><strong>Do not make a check pass by changing what it reads.</strong> Not by an exclusion list, not by a lexicon entry, not by a waiver or a skip receipt, not by a tolerance fragment in a recheck, and not by rewording the thing under test into something the rule does not cover. Adding a rule is work; narrowing one is a stop. This is phrased against the outcome deliberately: the probe showed a prohibition on a method leaves every other method open.</li>
-<li><strong>Do not act on an identifier without reading what it names.</strong> An issue, a receipt, a task node, a plan row: fetch the thing itself and quote a line of it. A plan row records why a fix was queued, and reads exactly like a description of the issue it queued.</li>
-<li><strong>Do not write doctrine the tool does not enforce.</strong> A spine sentence naming a key, a flag, or a behaviour is a claim about the binary. Write it after the code exists and after a test fails without it. The precedent is a key promised in the spine for two revisions that no release ever parsed (<a href="0046-retire-the-unimplemented-hermeticity-escape.html">call/0046</a>).</li>
-<li><strong>Do not report a verification you cannot attribute.</strong> Name the run and the binary. Quote the coverage line rather than the exit code, because a clean verdict over a corpus with a hole in it is the defect this project has closed twice.</li>
+<li>
+<p><strong>Do not make anything permanent.</strong> No tag, no release asset, no artifact or bundle that a pin resolves to becoming installable, no publication a later commit cannot correct. A tag is immutable by <a href="0044-release-immutability-on-host-repos.html">call/0044</a> and a release asset cannot be replaced, which this session established by publishing one that was wrong.</p>
+<blockquote>
+<p><strong>Superseded in part by <a href="0050-a-release-carries-a-resolvable-authorization.html">call/0050</a>.</strong> The sentence above stands for every act it names except a release, and it is left unedited because the trail is the point. What replaced it: <em>no release proceeds without a resolvable authorization recorded on its receipt.</em> The rule as written was phrased against an <strong>actor</strong>, so "the operator told me to" reopened the whole cascade with no record; nine releases were performed under it while the log could show neither the approval nor its absence. <code>host-lifecycle release</code> now refuses without <code>--authorized &lt;ref&gt;</code>, and <code>software --check</code> re-opens a release receipt that carries none.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Do not rewrite what was published.</strong> No force-push, no amend of a pushed commit, no history rewrite. The complete set a run may amend is what <code>git rev-list @{u}..HEAD</code> returns, which git answers without memory.</p>
+</li>
+<li>
+<p><strong>Do not edit an append-only record.</strong> Shipped ledger entries, <code>MEMORY.md</code>, accepted <code>call/</code> bodies, and every tool-written receipt are corrected by appending, never by editing. Checkable as a diff: the removed-line side must be empty for those paths.</p>
+</li>
+<li>
+<p><strong>Do not make a check pass by changing what it reads.</strong> Not by an exclusion list, not by a lexicon entry, not by a waiver or a skip receipt, not by a tolerance fragment in a recheck, and not by rewording the thing under test into something the rule does not cover. Adding a rule is work; narrowing one is a stop. This is phrased against the outcome deliberately: the probe showed a prohibition on a method leaves every other method open.</p>
+</li>
+<li>
+<p><strong>Do not act on an identifier without reading what it names.</strong> An issue, a receipt, a task node, a plan row: fetch the thing itself and quote a line of it. A plan row records why a fix was queued, and reads exactly like a description of the issue it queued.</p>
+</li>
+<li>
+<p><strong>Do not write doctrine the tool does not enforce.</strong> A spine sentence naming a key, a flag, or a behaviour is a claim about the binary. Write it after the code exists and after a test fails without it. The precedent is a key promised in the spine for two revisions that no release ever parsed (<a href="0046-retire-the-unimplemented-hermeticity-escape.html">call/0046</a>).</p>
+</li>
+<li>
+<p><strong>Do not report a verification you cannot attribute.</strong> Name the run and the binary. Quote the coverage line rather than the exit code, because a clean verdict over a corpus with a hole in it is the defect this project has closed twice.</p>
+</li>
 </ol>
 <h3 id="stop-and-record-work-up-to-the-boundary-write-the-finding-where-it-will-be-read-halt-that-line"><a class="header" href="#stop-and-record-work-up-to-the-boundary-write-the-finding-where-it-will-be-read-halt-that-line">Stop and record. Work up to the boundary, write the finding where it will be read, halt that line.</a></h3>
 <ol start="8">
@@ -222,7 +239,11 @@
 </ol>
 <h2 id="consequences"><a class="header" href="#consequences">Consequences</a></h2>
 <ul>
-<li>The loop prepares releases and never performs one. It may build, test, verify reproduction, and stage the whole cascade; the tag, the asset, and the pin that makes bytes installable wait for the operator. This costs throughput knowingly: most fixes here reach an adopter only through a release, so the loop's output is prepared work.</li>
+<li>The loop prepares releases and never performs one. It may build, test, verify reproduction, and stage the whole cascade; the tag, the asset, and the pin that makes bytes installable wait for the operator. This costs throughput knowingly: most fixes here reach an adopter only through a release, so the loop's output is prepared work.
+<ul>
+<li><strong>Superseded by <a href="0050-a-release-carries-a-resolvable-authorization.html">call/0050</a>, and left here because it described this project falsely for two sessions.</strong> The cost above was never paid; nine releases were performed while this paragraph said none would be. It also had no legal stopping point to offer: <code>release</code> writes the version bump before it prints, so "prepare and stop" means stopping with a dirty tree, which rule eighteen forbids. The loop now performs releases and every one of them is attributable.</li>
+</ul>
+</li>
 <li>A stop is a success. What it could not decide goes where the next session reads by default: the open question in prose under the milestone node it blocks, a <code>call/</code> at <code>Status: proposed</code> when a decision is owed, an issue on the forge, and a <code>MEMORY.md</code> entry naming both, each in its own commit.</li>
 <li>Prohibitions are phrased against outcomes because the probe showed that method-shaped rules leak. Any future rule added here inherits that requirement.</li>
 <li>This decision binds the agent, not the operator. Every act forbidden above remains ordinary operator work, and several are ordinary maintainer work in this repository specifically.</li>
