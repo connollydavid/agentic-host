@@ -1181,3 +1181,10 @@
     evidence = CALIBRATION.md committed beside the registry: corpus is the 300 most recent non-merge FFmpeg master commits (c6309b5c 2026-07-27 back to 5d6f409c 2026-07-05), 20,615 added lines, plus 500 unique accepted subjects. Every tier measured and 3 rules now carry a measured_rate; the rest carry none and a test refuses a rate on any rule whose lane is not built, and on any attested rule. The calibration changed three design decisions rather than confirming them: the area rule cannot block (495/500), Reapply is an unnamed exemption, and the ascii rule had to be inverted. A gate test asserts the general invariant that any rule measured below 1.0 cannot be mechanical. Recorded honestly: a 1.000 on a heuristic rule means the corpus did not exercise it, and naming-namespace-prefix at zero hits cannot be distinguished from a rule too narrow to fire in three weeks of history. NOT calibrated: the series, mail and build lanes, which do not exist yet
     tool = host-lifecycle@0.47.1
     recorded = 2026-07-28
+
+[receipt "plan/0072#cosmetic-separation"]
+    disposition = done
+    verify = six fixture commits (mixed flags; pure re-indent, pure functional, brace
+    evidence = src/cosmetic.rs in host-lint. diff -w -b normalisation per git-howto, with a second pass stripping braces only (stripping whitespace twice would defeat the golden-output exemption, whose lines arrive raw because their whitespace is the data). Six fixtures pass: pure re-indent, pure functional, cosmetic-hunk-beside-functional (reported), brace allowance, whitespace-only, blank-line-only; plus golden-output-is-functional and a test asserting same-hunk reformatting is deliberately silent. Calibration rewrote the design twice and is recorded in CALIBRATION.md: counting braces and blank lines as cosmetic reported 213/300 accepted commits as mixed (0.290), pair-cancellation reported 108/300 (0.640), and judging per hunk rather than per diff reports 6/300 (0.980). FLAG=0 on accepted history. 45 pack unit tests, 178 integration, clippy exit 0
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
