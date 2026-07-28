@@ -1104,3 +1104,10 @@
     evidence = test-integration.sh gains five assertions in host-lint (pushed): a missing path, a directory, a good file beside a bad one, the good file alone, and the --all walk over a tracked-but-deleted file which must keep skipping silently. 159/159 green. The fix itself was already in src/main.rs and untested; reverting it reddens six assertions while the --all case stays green, which is what shows it has not leaked into the walk. Live check: the released v0.16.1 build exits 2 and names the path
     tool = host-lifecycle@0.47.1
     recorded = 2026-07-28
+
+[receipt "plan/0071#fen-acceptance"]
+    disposition = done
+    verify = Fen routes the install flow and the harness selection correctly
+    evidence = fen-acceptance.md records two rounds against the real qwen3.5-4b, states captured from real runs of the built script. Round one: the no-terminal harness deferral held 2/2; naming a harness without a source leaked 1/2 (the model answered pip install opencode, which does not exist); the missing-name remedy failed 2/2 because the example was a pipeline fragment. Both messages now name the means rather than only the outcome, and round two holds 2/2 on both with only the message text changed. Recorded untested: the numbered menu branch needs a controlling terminal the probe harness has none of, so position bias stays unmeasured
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
