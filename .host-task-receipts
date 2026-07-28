@@ -1139,3 +1139,10 @@
     evidence = host-lint-ffmpeg/fixtures/README.md states the policy (synthesize by default; a real upstream excerpt only under fixtures/upstream/ beside a PROVENANCE.md naming each file source commit, path and license) and CI now enforces it in a fixture-licensing job. Four branches exercised locally: absent upstream dir passes, missing PROVENANCE.md fails, a file with no provenance entry fails, a fully recorded excerpt passes
     tool = host-lifecycle@0.47.1
     recorded = 2026-07-28
+
+[receipt "plan/0072#core-fix-release"]
+    disposition = done
+    verify = `host-lifecycle software --check .` clean at the new pin; #23 closed
+    evidence = host-lint v0.16.2 released (4021af50, artifact 2b03672a), re-pinned in .host-software, template pointer bumped, release receipt recorded; software --check clean at the new pin with all components at their pinned SHA. DEVIATION, stated rather than smoothed: this node verify also says "#23 closed" and I have not closed it. host-lint#23 is an adversarial review of the pack design whose FIRST finding was this fail-closed defect; its uncalibrated blockers and corpus gaps map to nodes still open in this milestone. Closing it on the strength of one finding is the exact error recorded in MEMORY for 2026-07-27, when it was closed on a plan row paraphrase and had to be reopened. It closes at #docs-and-release
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
