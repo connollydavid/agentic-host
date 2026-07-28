@@ -1083,3 +1083,17 @@
     evidence = host-install.obligations at 8270c2d: all 80 obligations dispositioned, host-lifecycle obligations --tests tests --strict-discharge clean. Required extending host-lifecycle (v0.47.1, 8c18a38, artifact b03f4d79): resolve_test matched only Rust fn definitions, leaving a shell-tested component no honest disposition, since waived would waive tests that run and structural on a behavioural kind is the relabel dodge the checker already refuses. Every exercises= token verified mechanically to appear in its test body, which caught four wrong tokens and one name that did not exist
     tool = host-lifecycle@0.47.1
     recorded = 2026-07-28
+
+[receipt "plan/0071#host-repo-release"]
+    disposition = done
+    verify = `host-lifecycle entrance --check` green, `software --check` clean, CI green
+    evidence = host repo main at 4744a23b7bbbd122ea31f19f75ef63c501ee4cf1 carries install.sh, install-manifest, make-install-manifest.sh, host-install.allium, host-install.obligations and tests/; entrance --check clean; CI run 30317794991 green on all four jobs (allium check/analyse/plan plus strict-discharge, shellcheck, the suite on ubuntu, and the suite on macos-latest under /bin/bash where bash 3.2 actually lives). The entrance ships from its own main, which is what the curl one-liner fetches, so the push is the release
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
+
+[receipt "plan/0071#re-pin-and-receipt"]
+    disposition = done
+    verify = `software --check .` clean at the new pin
+    evidence = host re-pinned to 4744a23b in .host-software; software --check clean at the new pin with all components at their pinned SHA [host-lifecycle 0.47.1]. host-lifecycle v0.47.1 release receipt recorded separately for the shell-discharge fix this milestone required
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
