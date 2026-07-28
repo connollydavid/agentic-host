@@ -1062,3 +1062,24 @@
     evidence = host-install.allium committed at 86ff4fa in the host repo: allium check exit 0 with 0 diagnostics, allium analyse exit 0 with 0 findings, allium plan generates 80 obligations of which 10 are invariant obligations. Six analyse conflicts were real and fixed by latching machine, name and target facts onto the run so the event rules branch disjointly; the InstallSet fact closes a hole where an install completing over zero downloads would have set install_complete. Recorded limit: analyse does not prove invariants against rules (mutating the digest check out of PlaceVerifiedBinary leaves check and analyse clean), so the invariants are discharged at write-obligations and write-tests
     tool = host-lifecycle@0.47.0
     recorded = 2026-07-28
+
+[receipt "plan/0071#write-install-sh"]
+    disposition = done
+    verify = `bash -n install.sh` (syntax), `shellcheck install.sh` (lint; requires adding a
+    evidence = install.sh committed at 8270c2d in the host repo: bash -n clean, shellcheck 0.11.0 clean on all three scripts (verified live against a deliberately broken script, 8 findings), 41 assertions pass. Three defects found by the suite and fixed: the /dev/tty readable-but-unopenable guard that replaced exit 3 with a bare 1 in any detached run, the awk-versus-grep disagreement over leading whitespace in the manifest, and a cleanup trap that could discard the caller exit code
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
+
+[receipt "plan/0071#write-tests"]
+    disposition = done
+    verify = full test suite green, every spec obligation exercised
+    evidence = tests/install-test.sh at 8270c2d: 18 named cases, 41 assertions, mocking uname, curl, git, host-lifecycle and the harness binaries while running sha256 for real over real bytes; sandbox PATH is closed so an absent tool is genuinely absent, which a leaking PATH had made the missing-git case silently vacuous. Proven by mutation: removing the digest comparison reddens 4 assertions, the reserved-name check 1, and the all-or-nothing filter reddens the whitespace regression. CI runs the suite on macos-latest under /bin/bash, where bash 3.2 actually lives
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
+
+[receipt "plan/0071#write-obligations"]
+    disposition = done
+    verify = `host-lifecycle obligations <spec> --tests tests --strict-discharge` clean
+    evidence = host-install.obligations at 8270c2d: all 80 obligations dispositioned, host-lifecycle obligations --tests tests --strict-discharge clean. Required extending host-lifecycle (v0.47.1, 8c18a38, artifact b03f4d79): resolve_test matched only Rust fn definitions, leaving a shell-tested component no honest disposition, since waived would waive tests that run and structural on a behavioural kind is the relabel dodge the checker already refuses. Every exercises= token verified mechanically to appear in its test body, which caught four wrong tokens and one name that did not exist
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
