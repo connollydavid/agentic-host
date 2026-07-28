@@ -1167,3 +1167,17 @@
     evidence = an upstream-drift CI job fetches the four pinned sources at FFmpeg master with curl and hands the tree to rules --verify-source, so the pack keeps no HTTP client and the offline gates never depend on the lane (continue-on-error). host-lint-ffmpeg/test-drift.sh carries 8 assertions run in the same job against the freshly fetched tree: each of doc/mailing-list-faq.texi, doc/fate.texi and MAINTAINERS doctored in turn fails, a doctored rule-bearing section of developer.texi fails, restoring the acknowledged digest passes, and drift in the non-rule-bearing Vim section is reported without gating. shellcheck clean. NOT done: security.html from FFmpeg/web is not yet a pinned source, so the lane watches four of the five the node names
     tool = host-lifecycle@0.47.1
     recorded = 2026-07-28
+
+[receipt "plan/0072#diff-lane"]
+    disposition = done
+    verify = per-rule positive and negative fixtures, with a `*.mak` tab, a `tests/ref`
+    evidence = src/diff.rs in host-lint, measured over 20,615 added lines across 300 accepted FFmpeg commits before encoding. The measurement inverted the ascii rule: the design lists ascii-comments, and comments are exactly where upstream uses non-ascii (3 arrows in a C comment, 4 em-dashes in C and .mak comments, a name in a copyright line, a German word in golden data), so a comment-scoped rule would have flagged 10 of 11 accepted lines; the rule is scoped to code where the corpus holds zero. Two exemptions moved from designed to grounded: all 5 trailing-whitespace occurrences are tests/ref golden output and the single tab is Makefile-class. Per-rule positive and negative fixtures including a .mak tab, a tests/ref golden file and an fftools identifier all passing; the diff parser attributes lines to the right file and refuses to guess a path with no header. Must-pass: FLAG=0 across all 300 accepted commits. 36 pack unit tests, 178 integration, clippy exit 0. NOT done: the patcheck parity cases and the api-misuse subset the node also names, and the -Wvla build leg replacing the retired lexical VLA rule
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
+
+[receipt "plan/0072#corpus-calibration"]
+    disposition = done
+    verify = the calibration report is committed beside the registry; a gate test asserts
+    evidence = CALIBRATION.md committed beside the registry: corpus is the 300 most recent non-merge FFmpeg master commits (c6309b5c 2026-07-27 back to 5d6f409c 2026-07-05), 20,615 added lines, plus 500 unique accepted subjects. Every tier measured and 3 rules now carry a measured_rate; the rest carry none and a test refuses a rate on any rule whose lane is not built, and on any attested rule. The calibration changed three design decisions rather than confirming them: the area rule cannot block (495/500), Reapply is an unnamed exemption, and the ascii rule had to be inverted. A gate test asserts the general invariant that any rule measured below 1.0 cannot be mechanical. Recorded honestly: a 1.000 on a heuristic rule means the corpus did not exercise it, and naming-namespace-prefix at zero hits cannot be distinguished from a rule too narrow to fire in three weeks of history. NOT calibrated: the series, mail and build lanes, which do not exist yet
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
