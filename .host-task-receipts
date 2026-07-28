@@ -1097,3 +1097,10 @@
     evidence = host re-pinned to 4744a23b in .host-software; software --check clean at the new pin with all components at their pinned SHA [host-lifecycle 0.47.1]. host-lifecycle v0.47.1 release receipt recorded separately for the shell-discharge fix this milestone required
     tool = host-lifecycle@0.47.1
     recorded = 2026-07-28
+
+[receipt "plan/0072#core-fail-closed-file-args"]
+    disposition = done
+    verify = regression test; `host-lint no-such-file.md` exits 2 and names the path
+    evidence = test-integration.sh gains five assertions in host-lint (pushed): a missing path, a directory, a good file beside a bad one, the good file alone, and the --all walk over a tracked-but-deleted file which must keep skipping silently. 159/159 green. The fix itself was already in src/main.rs and untested; reverting it reddens six assertions while the --all case stays green, which is what shows it has not leaked into the walk. Live check: the released v0.16.1 build exits 2 and names the path
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
