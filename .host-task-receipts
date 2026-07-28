@@ -1160,3 +1160,10 @@
     evidence = src/msg.rs in host-lint, grounded in 500 accepted FFmpeg master subjects fetched and shipped under fixtures/upstream with a PROVENANCE entry. The measurement corrected the design twice: Reapply "..." is an exemption shape appearing in accepted history that the plan did not name, and the area rule measured 489/500 bare and 495/500 with exemptions, so it is heuristic rather than blocking. The must-pass test asserts NO mechanical rule fires on any accepted subject; a second test asserts the measured rate holds above 0.98 and that the rule can still fire at all. Non-ascii measured at zero in 500, so ascii-clean is mechanical. Vague subjects are the exact strings developer.texi names. Sign-off and tracker are project modes rather than upstream rules. Verdict split matches the core: 1 blocks, 3 advises, 0 clean, 2 error, covered by 5 CLI assertions. 24 pack unit tests, 173 integration, clippy exit 0. Recorded limit: `note:` is indistinguishable from an area prefix without a tree to resolve areas against. NOT done: proptest over the grammar, which the node also asks for
     tool = host-lifecycle@0.47.1
     recorded = 2026-07-28
+
+[receipt "plan/0072#upstream-drift-lane"]
+    disposition = done
+    verify = a doctored snapshot of each source fails the lane; acknowledging its digest
+    evidence = an upstream-drift CI job fetches the four pinned sources at FFmpeg master with curl and hands the tree to rules --verify-source, so the pack keeps no HTTP client and the offline gates never depend on the lane (continue-on-error). host-lint-ffmpeg/test-drift.sh carries 8 assertions run in the same job against the freshly fetched tree: each of doc/mailing-list-faq.texi, doc/fate.texi and MAINTAINERS doctored in turn fails, a doctored rule-bearing section of developer.texi fails, restoring the acknowledged digest passes, and drift in the non-rule-bearing Vim section is reported without gating. shellcheck clean. NOT done: security.html from FFmpeg/web is not yet a pinned source, so the lane watches four of the five the node names
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
