@@ -1111,3 +1111,31 @@
     evidence = fen-acceptance.md records two rounds against the real qwen3.5-4b, states captured from real runs of the built script. Round one: the no-terminal harness deferral held 2/2; naming a harness without a source leaked 1/2 (the model answered pip install opencode, which does not exist); the missing-name remedy failed 2/2 because the example was a pipeline fragment. Both messages now name the means rather than only the outcome, and round two holds 2/2 on both with only the message text changed. Recorded untested: the numbered menu branch needs a controlling terminal the probe harness has none of, so position bias stays unmeasured
     tool = host-lifecycle@0.47.1
     recorded = 2026-07-28
+
+[receipt "plan/0072#pack-dispatch"]
+    disposition = done
+    verify = stub-pack integration tests covering passthrough of each exit code, the
+    evidence = the reserved verb is implemented in src/main.rs (resolution beside the binary then PATH, arg and exit-code passthrough, HOST_LINT_VERSION handshake, exit 2 with an install hint) and covered by test-integration.sh: args passthrough, engine export, every exit code 0/1/2/3 (extended from a 1-and-3 sample), missing-pack hint, no-name usage error, the file-collision pair where `pack ffmpeg` dispatches and bare `ffmpeg` stays a path, the packs listing, and the ffmpeg skeleton skew refusal. 161/161 green
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
+
+[receipt "plan/0072#engine-surface"]
+    disposition = done
+    verify = `cargo build` and `cargo test` green with `main.rs` consuming only the lib
+    evidence = src/lib.rs exports 42 public items and src/main.rs imports 17 of them (Corpus, Match, run_docs, scan_text_with_allow_strict, scan_prose_text, verdict_code, output_text/json and the rest), keeping only CLI plumbing of its own. Proven externally rather than by inspection alone: host-lifecycle consumes the same library as its prose engine through a Cargo git rev, and host-lint-ffmpeg links it for the version handshake. cargo build --workspace --release and cargo test --workspace --release green, 96 unit tests
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
+
+[receipt "plan/0072#workspace-split"]
+    disposition = done
+    verify = `cargo build --workspace --release` offline from the vendored bundle; both
+    evidence = Cargo.toml carries [workspace] members = ["host-lint-ffmpeg"] with default-members listing both, so a bare cargo build produces the pack binary too (a root-package workspace would build only the root). One lockfile, lockstep versions. cargo build --workspace --release green
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
+
+[receipt "plan/0072#fixture-licensing"]
+    disposition = done
+    verify = the fixtures directory ships its provenance README; a CI check requires it
+    evidence = host-lint-ffmpeg/fixtures/README.md states the policy (synthesize by default; a real upstream excerpt only under fixtures/upstream/ beside a PROVENANCE.md naming each file source commit, path and license) and CI now enforces it in a fixture-licensing job. Four branches exercised locally: absent upstream dir passes, missing PROVENANCE.md fails, a file with no provenance entry fails, a fully recorded excerpt passes
+    tool = host-lifecycle@0.47.1
+    recorded = 2026-07-28
