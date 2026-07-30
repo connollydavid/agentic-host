@@ -5,23 +5,23 @@
 # The pin replaces a submodule gitlink as the reproducibility anchor.
 [software "host-lint"]
 	url       = https://github.com/connollydavid/host-lint.git
-	pin       = cc3ec6a341b9c13c3a05365bb6e24c938a6d89e3
+	pin       = e1176a40ef778b0f017cd53065136a48d5132566
 	worktrees =
 	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lint
-	artifact  = target/x86_64-unknown-linux-musl/release/host-lint 3e9f048b00291d6a5504541f5a4a3d2fbf6e55293c023ce715e945bb35510056
-	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v4/vendor.tar.gz 6a463a09d45f057486f8f285d5a86b86999c9be16a714dc51f8b2a8d5e3491f2
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lint 5940afbbef928d29812096da7ea5d95d941ebe96fac3c06eada21d8ac3f842a6
+	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v8/vendor.tar.gz d61637d22ca0a104fcc70500a09b86e2e6fea34388ab56d41fa1a75da0144dcb
 	hooks     = pre-commit
 [software "host-lifecycle"]
 	url       = https://github.com/connollydavid/host-lifecycle.git
-	pin       = afa8c9406ad187ec52a6bbb57b1fc5650a8c1a53
+	pin       = b7e1cde2fec1819674460d54d448be7b152b6721
 	worktrees =
 	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lifecycle
-	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle ff3df018f672195709002c0e0ecf16e4bf7565652426c40ee8194847af43804a
-	deps-bundle = https://github.com/connollydavid/host-lifecycle/releases/download/vendor-v3/vendor.tar.gz f78512e16793016801b650a32ee9172c84ff1793f60d1d2ac89f18aa9990bb7f
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle 5dfaa214fbcc58f95662c7dc657dd5ab137054e48767c4a3e509558ecdadf394
+	deps-bundle = https://github.com/connollydavid/host-lifecycle/releases/download/vendor-v5/vendor.tar.gz 55ff38ecf9579b58ac5fd15116a76f8acd4a122aa4d713ee167215d8b9e85b0c
 [software "host-prove"]
 	url       = https://github.com/connollydavid/host-prove.git
 	pin       = c05782c0f7f170f3b517bffdea66ae524dd0b0fa
