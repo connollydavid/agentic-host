@@ -32,7 +32,7 @@
 	artifact  = target/x86_64-unknown-linux-musl/release/host-prove 9a9bbbd36edc072cfe5518a408211fabf8c78cff63ed3cb89d25129b8ff9f03f
 [software "host-grammar"]
 	url       = https://github.com/connollydavid/host-grammar
-	pin       = 9470b81c9c851b0fedc872203437ea0de60b7f62
+	pin       = 7f73dfa9c332d6d4f623dfe59caa7437491287a2
 	worktrees =
 [software "host-reference"]
 	# greenfield component (plan/0049, call/0030). Reproducible build established in the
