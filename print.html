@@ -11672,10 +11672,10 @@ v0.1.6 re-releases (the new-version discipline this decision makes mandatory).</
 <p>The census of drifted sites is deliberately not reproduced here. An advisory census is a reading rather than a work queue, and a count staled by the next workflow added would answer enumeration with a longer enumeration, which is the diagnosis this record makes of itself.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="call0053-the-spine-copy-is-re-derived-not-asserted"><a class="header" href="#call0053-the-spine-copy-is-re-derived-not-asserted">call/0053: the spine copy is re-derived, not asserted</a></h1>
 <ul>
-<li>Status: proposed</li>
+<li>Status: accepted</li>
 <li>Scope: the methodology spine and how it reaches this repository and every adopter; what the spine mechanically is, how a project's copy is produced, and what re-verifies it on every gate run</li>
 <li>Date: 2026-08-02</li>
-<li>Ratified: not yet. Authored by the agent on an operator directive to settle the spine mechanically and to hold it against future drift. <a href="call/0052-a-pin-is-reconciled-wherever-it-is-recorded.html">call/0052</a> records why an agent-authored decision enters at <code>proposed</code>: the tool treats <code>accepted</code> as a credential.</li>
+<li>Ratified: 2026-08-02 by the operator, who ruled on all three prerequisites this record had left open: guard the spine at the <strong>commit hook</strong> rather than only in CI, rewrite the spine to address the adopter who holds it, and perform the migration in full. Those rulings are folded into the text below rather than left as commentary. Entered at <code>proposed</code> per <a href="call/0052-a-pin-is-reconciled-wherever-it-is-recorded.html">call/0052</a>, because the tool treats <code>accepted</code> as a credential and an agent does not issue itself one.</li>
 <li>Refines: <a href="call/0004-template-is-versioned-source.html">call/0004</a>, whose copy-at-version outcome stands unchanged. This decision supplies the enforcement call/0004 never had.</li>
 </ul>
 <h2 id="context-and-problem-13"><a class="header" href="#context-and-problem-13">Context and problem</a></h2>
@@ -11793,6 +11793,17 @@ already <code>rc=0</code> on the naming and prose lanes and <code>rc=0</code> on
 repository's own manual is <code>rc=3</code>, on a paragraph the render deletes as
 subsumed doctrine.</p>
 </li>
+<li>
+<p><strong>The spine is guarded where it is authored, by commit hook.</strong> The template
+repository carries the same <code>pre-commit</code> and <code>commit-msg</code> hooks every other
+repository under this methodology carries, so spine text that would redden an
+adopter cannot be committed upstream in the first place. On 2026-08-02 its
+hooks directory was empty: the one repository whose every line ships verbatim
+to every adopter was the one repository with no gate on its own commits, and
+<code>--install-hooks</code> reaches the host and its materialized worktrees but not a
+submodule. A lane in CI is the second line, not the first, because CI reports
+after the text is already recorded.</p>
+</li>
 </ol>
 <h2 id="consequences-36"><a class="header" href="#consequences-36">Consequences</a></h2>
 <p><strong>This repository pays first and most.</strong> It absorbs 1001 verbatim lines; its 137
@@ -11812,11 +11823,10 @@ that trips a lint rule reddens every adopter's gate on text they cannot edit,
 and a <code>LEXICON</code> entry is unsound for inherited text by
 <a href="call/0051-a-lexicon-entry-reports-a-grammar-defect.html">call/0051</a>. So the spine must
 hold clean under the rules it ships with no declaration anywhere. Today nothing
-guarantees that: the template's CI runs one lane, <code>host-lifecycle prose .</code>, and
-this repository excludes <code>host-template/</code> from its naming audit as "audited
-upstream, not host content." The naming lane over the spine is guarded nowhere.
-It must be in the template's CI before the template ships text under this
-promise.</p>
+guarantees that: the template's hooks directory is empty, its CI runs one lane
+(<code>host-lifecycle prose .</code>), and this repository excludes <code>host-template/</code> from
+its naming audit as "audited upstream, not host content." Clause 12 closes it at
+the commit, and the naming lane joins the template's CI behind that.</p>
 <p><strong>The spine is currently written for the wrong reader.</strong> It opens "You are
 working in a <em>template</em>. A real project replaces the example personas with its
 own", which is false in every rendered adopter file. The render is therefore not
