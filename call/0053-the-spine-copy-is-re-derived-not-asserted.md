@@ -1,9 +1,9 @@
 # call/0053: the spine copy is re-derived, not asserted
 
-- Status: proposed
+- Status: accepted
 - Scope: the methodology spine and how it reaches this repository and every adopter; what the spine mechanically is, how a project's copy is produced, and what re-verifies it on every gate run
 - Date: 2026-08-02
-- Ratified: not yet. Authored by the agent on an operator directive to settle the spine mechanically and to hold it against future drift. [call/0052](0052-a-pin-is-reconciled-wherever-it-is-recorded.md) records why an agent-authored decision enters at `proposed`: the tool treats `accepted` as a credential.
+- Ratified: 2026-08-02 by the operator, who ruled on all three prerequisites this record had left open: guard the spine at the **commit hook** rather than only in CI, rewrite the spine to address the adopter who holds it, and perform the migration in full. Those rulings are folded into the text below rather than left as commentary. Entered at `proposed` per [call/0052](0052-a-pin-is-reconciled-wherever-it-is-recorded.md), because the tool treats `accepted` as a credential and an agent does not issue itself one.
 - Refines: [call/0004](0004-template-is-versioned-source.md), whose copy-at-version outcome stands unchanged. This decision supplies the enforcement call/0004 never had.
 
 ## Context and problem
@@ -122,6 +122,16 @@ fail the same way.
     repository's own manual is `rc=3`, on a paragraph the render deletes as
     subsumed doctrine.
 
+12. **The spine is guarded where it is authored, by commit hook.** The template
+    repository carries the same `pre-commit` and `commit-msg` hooks every other
+    repository under this methodology carries, so spine text that would redden an
+    adopter cannot be committed upstream in the first place. On 2026-08-02 its
+    hooks directory was empty: the one repository whose every line ships verbatim
+    to every adopter was the one repository with no gate on its own commits, and
+    `--install-hooks` reaches the host and its materialized worktrees but not a
+    submodule. A lane in CI is the second line, not the first, because CI reports
+    after the text is already recorded.
+
 ## Consequences
 
 **This repository pays first and most.** It absorbs 1001 verbatim lines; its 137
@@ -144,11 +154,10 @@ that trips a lint rule reddens every adopter's gate on text they cannot edit,
 and a `LEXICON` entry is unsound for inherited text by
 [call/0051](0051-a-lexicon-entry-reports-a-grammar-defect.md). So the spine must
 hold clean under the rules it ships with no declaration anywhere. Today nothing
-guarantees that: the template's CI runs one lane, `host-lifecycle prose .`, and
-this repository excludes `host-template/` from its naming audit as "audited
-upstream, not host content." The naming lane over the spine is guarded nowhere.
-It must be in the template's CI before the template ships text under this
-promise.
+guarantees that: the template's hooks directory is empty, its CI runs one lane
+(`host-lifecycle prose .`), and this repository excludes `host-template/` from
+its naming audit as "audited upstream, not host content." Clause 12 closes it at
+the commit, and the naming lane joins the template's CI behind that.
 
 **The spine is currently written for the wrong reader.** It opens "You are
 working in a *template*. A real project replaces the example personas with its
