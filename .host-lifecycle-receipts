@@ -687,3 +687,10 @@
     authorization = call/0051
     tool = host-lifecycle@0.49.0
     recorded = 2026-07-30
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.49.1@b3d2c201152e582f4d63389f010589d353fc9b1b0a4e40509f037235d04412d7
+    authorization = call/0052
+    tool = host-lifecycle@0.49.0
+    recorded = 2026-08-03
