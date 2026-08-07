@@ -1,0 +1,7 @@
+Project guidance for commit messages: describe the change; do not argue for it. A message that reads as advocacy (why the change is good) should instead state what changed and what it affects.
+
+Your draft commit message body:
+
+This change is clearly worth it because message quality matters and many other projects already lint their messages. Linting like this follows best practice. The check compares each added comment line against the message body and warns on overlap.
+
+Revise the body to follow the guidance. Reply with only the revised body, one or two sentences.

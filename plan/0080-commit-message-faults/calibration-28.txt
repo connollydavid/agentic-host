@@ -1,0 +1,40 @@
+== agentic-host: 300 commits
+   duplication (body, subject excluded): W>=5: 0  W>=8: 0  W>=12: 0
+   subject matched an added comment sentence: 5
+== host-lifecycle: 209 commits
+   duplication (body, subject excluded): W>=5: 12  W>=8: 10  W>=12: 2
+   subject matched an added comment sentence: 1
+     dup@8 70eb30f8  An upstream already set, by hand or by an earlier run, is kept as found
+     dup@8 edc9d4a3  A CI install is a lane driver that ships to nobody and declares a floor
+     dup@8 9b8d0911  Above the anchor: the cascade window, benign by construction
+     dup@8 c427631c  `--dry-run` is not a flag of `receipt --record`
+     dup@8 29d8c98b  The Rust form still wins where both could match
+     dup@8 58dd0198  A document is read the way a markdown reader reads it
+     dup@8 179798fe  Only the room's owner can hold a dead pointer
+     dup@8 d8585e38  Satisfaction is the GATE's judgement, read fresh
+== host-lint: 146 commits
+   duplication (body, subject excluded): W>=5: 9  W>=8: 8  W>=12: 4
+   subject matched an added comment sentence: 0
+     dup@8 08adf6f7  A number that is asserted cannot be checked
+     dup@8 c7253ad4  A leg nobody ran never renders as evidence
+     dup@8 15cbd453  The WORST verdict wins: a clean pack lane must never clear a core flag
+     dup@8 e8c4fb52  The lane adds only the forge-specific surface
+     dup@8 7d9845b5  A gate demanding it be rewritten would ask for the one thing the mode forbids
+     dup@8 91ad72d0  The design lists `ascii-comments` among these checks
+     dup@8 94cfb35a  Deliberately narrow, because a generic rule earns its false positives: the WHOLE heading must be one word and 
+     dup@8 a9a7cd3c  Co-Authored-By is a discretionary attribution trailer: a co-author's name or a tool's version string (e.g
+== host-grammar: 20 commits
+   duplication (body, subject excluded): W>=5: 1  W>=8: 1  W>=12: 1
+   subject matched an added comment sentence: 0
+     dup@8 7f73dfa9  `landscape` stays: its technical uses are compounds (a fitness landscape), which a repo declares in its LEXICO
+== host-prove: 21 commits
+   duplication (body, subject excluded): W>=5: 0  W>=8: 0  W>=12: 0
+   subject matched an added comment sentence: 0
+== host-template: 203 commits
+   duplication (body, subject excluded): W>=5: 0  W>=8: 0  W>=12: 0
+   subject matched an added comment sentence: 6
+== host: 23 commits
+   duplication (body, subject excluded): W>=5: 0  W>=8: 0  W>=12: 0
+   subject matched an added comment sentence: 0
+
+== TOTAL: 922 commits | dup W>=5: 22  W>=8: 19  W>=12: 7 | subject-title hits: 12 | precedent hits: 0
