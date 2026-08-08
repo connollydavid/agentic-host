@@ -25,6 +25,8 @@ plan/*/weed-and-tend.md
 plan/*/handover.md
 plan/*/signals-digest.md
 plan/*/review-findings.json
+plan/*/fen-results.md
+plan/*/fen-results-spoiled-truncated.md
 
 # Tool-written receipt records (phase, release, task): append-only claims whose
 # evidence lines quote genuine versions and measurements; the record layer is
