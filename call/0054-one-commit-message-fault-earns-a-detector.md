@@ -50,3 +50,9 @@ The real qwen3.5-4b probes were owed as the acceptance gate. Every channel staye
 ## Consequences
 
 host-lint releases once for the whole milestone, change class `changes-output`, because a heading verdict that blocked yesterday is advisory today. This record is the release's authorization. The advisory tier grows by two forms, both inside the known split where the commit hook treats a warn as advisory while the release gate counts it as a regression; that split is recorded as an open operator decision, not resolved here.
+
+## Discharge of the owed probes (2026-08-08)
+
+The real qwen3.5-4b probes ran once a channel existed: the gateway behind TLS at api.d07yx58.net, served model confirmed in the response body, thinking on at the card's thinking-general sampling per the plan/0076 corrected protocol, by operator direction, because suppressing a small model's reasoning channel tests a weaker agent than the one the design serves. The release was not contingent on this run; what discharges is the obligation this record left owed. Transcripts and the reconciliation live with [plan/0080](../plan/0080-commit-message-faults/README.md).
+
+Measured against the simulation: first preferences agree on three of five questions; Q2 diverges stably toward documentation-file coverage, and with that ballot standing in the convening the settled option still carries 4 to 1; Q1 yields no signal, both orders ranking by presentation position. Neither behavioral prediction reproduced in either draw: the bare warning produced the safe direction, and the revised body carries no precedent residue. Every settled decision stands, and the floor requirements remain as guards, two draws not being grounds to retire a tail risk. This measured record is the weight future convenings give a simulated Fen ballot.
