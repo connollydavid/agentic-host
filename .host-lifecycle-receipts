@@ -715,3 +715,10 @@
     authorization = call/0054
     tool = host-lifecycle@0.49.3
     recorded = 2026-08-07
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.18.1@fd65cad2f21d2f0ce1ec4b44ba6da7d37895a8bdc7a1d78aa0fe4a73459fc239
+    authorization = call/0054
+    tool = host-lifecycle@0.49.3
+    recorded = 2026-08-08
