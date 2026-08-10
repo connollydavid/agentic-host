@@ -148,10 +148,10 @@ flags.
 Implement [call/0055](../../call/0055-upstream-artefacts-are-referenced-not-embedded.md) before
 the lane that depends on it: resolve `.github/pull_request_template.md` from a given
 `openwrt/packages` checkout or from the published raw file, cache it briefly under a gitignored
-path, and record the last-seen digest so a moved template reports as drift. Verify by: a resolved
-template yields its headings, a second run inside the lifetime does not refetch, an expired or
-absent cache with no reachable source returns unresolved rather than a stale hit, and no code path
-reads the fence inside `openwrt-pr-style.md`.
+path, and record the last-seen digest so a moved template reports as drift. Verify by four
+readings. A resolved template yields its headings. A second run inside the cache lifetime skips
+the fetch. An expired cache with no reachable source returns unresolved, never a stale hit. No
+code path reads the fence inside `openwrt-pr-style.md`.
 
 ### pr-lane {#pr-lane}
 

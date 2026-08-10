@@ -8,7 +8,7 @@
 
 Three observations arrived together, and they are one problem.
 
-**The declaration already exists and is never enforced.** `host-template/UPGRADING.md` carries a
+**The declaration already exists; nothing enforces it.** `host-template/UPGRADING.md` carries a
 `requires = host-lifecycle vX.Y.Z` field on its ledger entries, and states repeatedly that an
 adopter should bump the pinned tool before moving the pointer. The `RENAME-repro-waiver` entry was
 applied with the lane running v0.35.1, which parses only `repro-exempt`, so it read an exempt
@@ -20,10 +20,10 @@ actually in the lane is not a floor; it is a comment.
 `tools/host-lifecycle` submodule; `prose.yml` runs `cargo install --git … --rev <inline>`. Three
 mechanisms means three places a version can be stated, so skew is available by construction.
 [call/0038](0038-releasing-a-tool-updates-the-template-pin.md) and the `software --check` gate do catch the
-resulting drift for the template itself, and did so in this session. They do not catch it for an
-**adopter**: a project instantiated from the template has no `.host-software` stanza covering
-`tools/`, so its wired-once tool pointer is gated by nothing at all. The protection stops exactly
-where the population is largest.
+resulting drift for the template itself, and did so in this session. An **adopter** is left
+uncovered: a project instantiated from the template has no `.host-software` stanza over `tools/`,
+so nothing gates its wired-once tool pointer. The protection stops exactly where the population is
+largest.
 
 **Skills currently declare nothing.** A sweep of `.claude/skills/` finds no version string, no rev,
 no requires clause. So this is a choice about what to build rather than a migration away from
@@ -68,9 +68,9 @@ verify it without a `.host-software` stanza naming the tool. That is the gap thi
 to close, and it is why the rule is written for skills and workflows generally rather than for this
 repository's Where room.
 
-This does not retire call/0038 or the `software --check` tool-pin HAZARDs. Those answer a different
-question, whether the *recorded* pins agree, and they keep answering it. The floor answers whether
-the binary *in hand* can do the job. A clean pin check still says nothing about the binary a lane
+This does not retire call/0038 or the `software --check` tool-pin HAZARDs. Those answer whether the
+*recorded* pins agree, and they keep answering it. The floor answers whether the binary *in hand*
+can do the job. A clean pin check still says nothing about the binary a lane
 actually loaded, which is the distinction the four Where-room commands already draw and which this
 decision extends to the tools themselves.
 

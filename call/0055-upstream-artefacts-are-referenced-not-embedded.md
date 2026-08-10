@@ -45,8 +45,8 @@ Pin-and-vendor is right for the first and wrong for the second.
 Upstream artefacts are **referenced and resolved at check time**, never embedded.
 
 1. The pack carries no copy of `.github/pull_request_template.md`. It records the artefact's
-   canonical location and resolves it per run, preferring a local `openwrt/packages` checkout when
-   one is given and falling back to the published raw file.
+   canonical location and resolves it per run. A local `openwrt/packages` checkout answers when
+   one is given; otherwise the published raw file does.
 2. A **temporary cache is permitted** and is expected, so a sweep does not refetch per invocation.
    It is bounded by a short lifetime, it is gitignored and never tracked, and it is a cache in the
    strict sense: it may only hold what was fetched from the canonical location, and its presence

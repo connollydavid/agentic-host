@@ -82,8 +82,8 @@ push.
 
 ### close-resolved {#close-resolved}
 
-Re-run each issue's own repro under the current toolchain and close the two that pass, quoting
-the transcript in the closing comment. Held to the end of the session by the ruling above: the
+Re-run each issue's own repro under the current toolchain and close the two that pass. Quote the
+transcript in the closing comment. Held to the end of the session by the ruling above: the
 verification may run at any point, the close may not. Verify by: `host-lifecycle --version` and
 the `.host-software` stanza answer `host-lifecycle#24`; `host-lifecycle prose host-template` at
 exit 0 answers `host-lint#27`; both issues are closed with the output pasted, not paraphrased,
