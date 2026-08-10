@@ -1,5 +1,10 @@
 # plan/0081 openwrt-style-pack: the OpenWrt package style rules as a second external pack
 
+> **Status: DRAFT.** The `vendor-manuals` task is done: the four manuals are vendored and
+> digest-pinned, and the crate is a workspace member whose corpus tests pass. The lane checkers
+> (`meta`, `comment`, `msg`, `pr`) and the docs-and-calibration task are not. This line is parked
+> while the suite-zero run (plan/0082) completes; it is not part of that run's close.
+
 This milestone delivers `host-lint-openwrt`, the second external pack in the host-lint
 workspace, built to the shape [plan/0072](../0072-ffmpeg-commit-rule-pack/README.md)
 established for `host-lint-ffmpeg`. Where the FFmpeg pack encodes one upstream project's
@@ -110,10 +115,12 @@ tree and 87.8% among 2025-2026 additions, and the rule follows the newer figure.
 
 ### vendor-manuals {#vendor-manuals}
 
-Create the crate, add it to `members` and `default-members`, and vendor the three manuals
-under `fixtures/manuals/` with `PROVENANCE.md`. Verify by: `cargo build` from the workspace
-root produces `host-lint-openwrt`, and a test asserts each vendored manual matches its
-recorded digest.
+**DONE (2026-08-10).** Created the crate, vendored the four manuals under
+`fixtures/manuals/` with `PROVENANCE.md`, and added it to `members` (being a member but not
+a default member, so the canonical artifact hash is unchanged until a lane lands). The
+digest-pinning test hashes every manual and passes, as does the distinct-files and
+exemplar-fences test. Verify by: `cargo test -p host-lint-openwrt` passes, and a manual
+edited without its digest re-recorded reddens.
 
 ### rule-registry {#rule-registry}
 
