@@ -178,8 +178,8 @@
 <p>This milestone delivers <code>host-lint-openwrt</code>, the second external pack in the host-lint
 workspace, built to the shape <a href="../0072-ffmpeg-commit-rule-pack/README.html">plan/0072</a>
 established for <code>host-lint-ffmpeg</code>. Where the FFmpeg pack encodes one upstream project's
-commit and patch rules, this one encodes the three style manuals that govern a package
-contributed to <code>openwrt/packages</code>, and it checks all three of them.</p>
+commit and patch rules, this one encodes the four style manuals that govern a package
+contributed to <code>openwrt/packages</code>, and it checks all four of them.</p>
 <p>The rules are not upstream policy. <code>.github/llm-review-rules.md:100</code> states that the
 description block is free-form prose with no enforced convention, so there is no document
 to cite in review. The three manuals are <strong>measured practice</strong>: each rule rests on a
@@ -195,7 +195,7 @@ and the vendored bundle, listed in <code>default-members</code> so a bare <code>
 <li>The three vendored style manuals, pinned by whole-file digest, as the pack's sources.</li>
 <li>A rule registry carrying the same <code>Source</code> / <code>Section</code> / <code>Rule</code> / <code>Tier</code> structs the
 FFmpeg pack uses, with completeness-as-a-test over the vendored manuals.</li>
-<li>Three lanes, one per manual, each with its own checker and its own fixtures.</li>
+<li>Four lanes, one per manual, each with its own checker and its own fixtures.</li>
 <li><code>RULES.md</code> generated from the registry, and <code>CALIBRATION.md</code> recording where each
 measured rate comes from.</li>
 </ul>
@@ -207,14 +207,25 @@ takes pull requests. Cloning a lane nothing reads would put dead code behind a t
 <li>Any check that needs a build. The OpenWrt manuals state no build-time rule, so there is
 no <code>build</code> lane and no attested tier drawn from one.</li>
 </ul>
-<h2 id="the-three-lanes"><a class="header" href="#the-three-lanes">The three lanes</a></h2>
+<h2 id="the-four-lanes"><a class="header" href="#the-four-lanes">The four lanes</a></h2>
 <p>Each lane is one manual, and the manual's own Checklist section is the lane's rule list.</p>
 <div class="table-wrapper"><table><thead><tr><th>Lane</th><th>Reads</th><th>Manual</th></tr></thead><tbody>
 <tr><td><code>meta</code></td><td><code>TITLE:=</code> and <code>define Package/&lt;name&gt;/description</code> in a package Makefile</td><td>Writing TITLE and description for an OpenWrt package</td></tr>
 <tr><td><code>comment</code></td><td>comments in the files OpenWrt writes, never a patch body</td><td>Writing comments in an OpenWrt package</td></tr>
 <tr><td><code>msg</code></td><td>one commit message</td><td>Writing a commit for an OpenWrt package</td></tr>
+<tr><td><code>pr</code></td><td>the body of a pull request, handed in</td><td>Writing a pull request for openwrt/packages</td></tr>
 </tbody></table>
 </div>
+<p>The <code>pr</code> lane differs from the other three in where its subject lives. A Makefile, a comment and
+a commit message are all in the clone; a pull request body is on GitHub and nothing in a clone
+records it. That lane therefore reads an argument or standard input and can never run as a
+repository sweep, which is a shape the pack has to carry deliberately rather than discover when
+someone points it at a directory and gets silence.</p>
+<p>It is also the one lane with a real upstream artefact behind it.
+<code>.github/pull_request_template.md</code> is a file the project ships and GitHub prefills, so the rules
+keyed to its headings cite something rather than measure it. The rules about <em>filling</em> those
+headings stay measured, and that is where the finding is: a template body keeps the testing lines
+about 95% of the time and gives them a value only about two thirds of the time.</p>
 <p>The <code>comment</code> lane carries a provenance guard the other two do not need. A package
 directory mixes OpenWrt's own files with upstream's source, and every line a patch adds is
 upstream's in upstream's style. The lane must read a patch header before it treats a patch
@@ -227,9 +238,12 @@ three manuals that damages something outside the repository.</p>
 <p>The manuals are Claude artifacts, not files in a tree the pack can fetch, so the pack
 vendors them under <code>fixtures/manuals/</code> and pins the vendored copies by digest. A
 <code>PROVENANCE.md</code> beside them records, for each: the artifact identifier, the date read, and
-the upstream state the figures were measured against. Two manuals were measured at
-<code>1d40ad929a</code> on <code>master</code> dated 2026-06-07; the commit manual was measured against the full
-history read on 2026-08-10, 27197 non-merge commits.</p>
+the upstream state the figures were measured against. The four rest on three different bases,
+which the provenance file keeps apart because their shares are not interchangeable: the
+description and comment manuals were measured at <code>1d40ad929a</code> on <code>master</code> dated 2026-06-07;
+the commit manual against the full history, 27197 non-merge commits; and the pull request
+manual against 5039 merged pull requests read from the GitHub API, with a targeted sample of
+683 behind its new-package figures.</p>
 <p>The commit manual's Exemplars are fenced <code>host-lint:ignore</code>. Vendor them intact: they quote
 real commit subjects, and the prose audit would otherwise fire on the quoted text.</p>
 <h2 id="tiers"><a class="header" href="#tiers">Tiers</a></h2>
@@ -272,6 +286,14 @@ upstream comment is skipped, and a locally-written patch is read.</p>
 under 72 columns, bare package name rather than a path; body present and wrapped; sign-off
 present and matching the author. Verify by: the four Exemplars pass and each "Do not" case
 flags.</p>
+<h3 id="pr-lane"><a class="header" href="#pr-lane">pr-lane</a></h3>
+<p>Check a pull request body handed in on standard input or as a file argument: template headings
+kept, maintainer a GitHub handle, description one or two lines, version and target and device
+each named rather than left blank behind a kept label, the CONTRIBUTING box ticked, and the
+patch section either deleted or ticked truthfully. Refuse a directory argument rather than
+sweeping, because the subject is not in the clone. Verify by: the quoted exemplar passes clean,
+a body with kept-but-empty testing labels flags, and a directory argument exits with the refusal
+rather than silence.</p>
 <h3 id="docs-and-calibration"><a class="header" href="#docs-and-calibration">docs-and-calibration</a></h3>
 <p>Generate <code>RULES.md</code> from the registry with a <code>make-rules-doc.sh</code>, and write <code>CALIBRATION.md</code>
 recording each measured rate and the table it came from. Verify by: a drift test regenerates
