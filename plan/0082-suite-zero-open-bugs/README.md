@@ -35,7 +35,7 @@ fixing `host-lint#26` and none was on the census when it was taken.
   `WAVE` and `WARN_ORDINAL_TERMS` holds `ERA`, `EPOCH`, `BATCH`. Proptest drew `ERA`. The property
   asserted that real vocabulary is silent; the tool was right and the test was wrong. A failure
   that only appears on the draw is a failure that ships.
-- **A worktree hook could not find its ignore list.** `software --materialize` writes the
+- **A worktree hook lost its ignore list.** `software --materialize` writes the
   `gitdir` link relatively, so a bare store stays portable. `repo_root()` took that target's parent
   and resolved it against the process working directory. That path lands outside the tree, so
   `.host-lintignore` and the LEXICON went missing without a word. Only git sets `GIT_DIR`, so the fault
