@@ -9717,8 +9717,8 @@ asserted that real vocabulary is silent; the tool was right and the test was wro
 that only appears on the draw is a failure that ships.</li>
 <li><strong>A worktree hook could not find its ignore list.</strong> <code>software --materialize</code> writes the
 <code>gitdir</code> link relatively, so a bare store stays portable. <code>repo_root()</code> took that target's parent
-and resolved it against the process working directory, landing outside the tree, so
-<code>.host-lintignore</code> and the LEXICON were silently absent. Only git sets <code>GIT_DIR</code>, so the fault
+and resolved it against the process working directory. That path lands outside the tree, so
+<code>.host-lintignore</code> and the LEXICON went missing without a word. Only git sets <code>GIT_DIR</code>, so the fault
 was reachable only from inside a hook, and only after the worktree hooks were installed at all.
 The fix for <code>host-lint#25</code> had assumed an absolute gitdir.</li>
 <li><strong>A failed release poisons the next attempt.</strong> Staging the deps-bundle appends the vendor source
