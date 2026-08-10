@@ -3,8 +3,8 @@
 This milestone delivers `host-lint-openwrt`, the second external pack in the host-lint
 workspace, built to the shape [plan/0072](../0072-ffmpeg-commit-rule-pack/README.md)
 established for `host-lint-ffmpeg`. Where the FFmpeg pack encodes one upstream project's
-commit and patch rules, this one encodes the three style manuals that govern a package
-contributed to `openwrt/packages`, and it checks all three of them.
+commit and patch rules, this one encodes the four style manuals that govern a package
+contributed to `openwrt/packages`, and it checks all four of them.
 
 The rules are not upstream policy. `.github/llm-review-rules.md:100` states that the
 description block is free-form prose with no enforced convention, so there is no document
@@ -23,7 +23,7 @@ Delivered by this milestone, all in the host-lint repository except the final re
 - The three vendored style manuals, pinned by whole-file digest, as the pack's sources.
 - A rule registry carrying the same `Source` / `Section` / `Rule` / `Tier` structs the
   FFmpeg pack uses, with completeness-as-a-test over the vendored manuals.
-- Three lanes, one per manual, each with its own checker and its own fixtures.
+- Four lanes, one per manual, each with its own checker and its own fixtures.
 - `RULES.md` generated from the registry, and `CALIBRATION.md` recording where each
   measured rate comes from.
 
@@ -35,7 +35,7 @@ Not delivered here, and deliberately:
 - Any check that needs a build. The OpenWrt manuals state no build-time rule, so there is
   no `build` lane and no attested tier drawn from one.
 
-## The three lanes
+## The four lanes
 
 Each lane is one manual, and the manual's own Checklist section is the lane's rule list.
 
@@ -44,6 +44,19 @@ Each lane is one manual, and the manual's own Checklist section is the lane's ru
 | `meta` | `TITLE:=` and `define Package/<name>/description` in a package Makefile | Writing TITLE and description for an OpenWrt package |
 | `comment` | comments in the files OpenWrt writes, never a patch body | Writing comments in an OpenWrt package |
 | `msg` | one commit message | Writing a commit for an OpenWrt package |
+| `pr` | the body of a pull request, handed in | Writing a pull request for openwrt/packages |
+
+The `pr` lane differs from the other three in where its subject lives. A Makefile, a comment and
+a commit message are all in the clone; a pull request body is on GitHub and nothing in a clone
+records it. That lane therefore reads an argument or standard input and can never run as a
+repository sweep, which is a shape the pack has to carry deliberately rather than discover when
+someone points it at a directory and gets silence.
+
+It is also the one lane with a real upstream artefact behind it.
+`.github/pull_request_template.md` is a file the project ships and GitHub prefills, so the rules
+keyed to its headings cite something rather than measure it. The rules about *filling* those
+headings stay measured, and that is where the finding is: a template body keeps the testing lines
+about 95% of the time and gives them a value only about two thirds of the time.
 
 The `comment` lane carries a provenance guard the other two do not need. A package
 directory mixes OpenWrt's own files with upstream's source, and every line a patch adds is
@@ -59,9 +72,12 @@ three manuals that damages something outside the repository.
 The manuals are Claude artifacts, not files in a tree the pack can fetch, so the pack
 vendors them under `fixtures/manuals/` and pins the vendored copies by digest. A
 `PROVENANCE.md` beside them records, for each: the artifact identifier, the date read, and
-the upstream state the figures were measured against. Two manuals were measured at
-`1d40ad929a` on `master` dated 2026-06-07; the commit manual was measured against the full
-history read on 2026-08-10, 27197 non-merge commits.
+the upstream state the figures were measured against. The four rest on three different bases,
+which the provenance file keeps apart because their shares are not interchangeable: the
+description and comment manuals were measured at `1d40ad929a` on `master` dated 2026-06-07;
+the commit manual against the full history, 27197 non-merge commits; and the pull request
+manual against 5039 merged pull requests read from the GitHub API, with a targeted sample of
+683 behind its new-package figures.
 
 The commit manual's Exemplars are fenced `host-lint:ignore`. Vendor them intact: they quote
 real commit subjects, and the prose audit would otherwise fire on the quoted text.
@@ -118,6 +134,16 @@ Check subject shape `<package>: <what you did>`, lowercase after the colon, no f
 under 72 columns, bare package name rather than a path; body present and wrapped; sign-off
 present and matching the author. Verify by: the four Exemplars pass and each "Do not" case
 flags.
+
+### pr-lane {#pr-lane}
+
+Check a pull request body handed in on standard input or as a file argument: template headings
+kept, maintainer a GitHub handle, description one or two lines, version and target and device
+each named rather than left blank behind a kept label, the CONTRIBUTING box ticked, and the
+patch section either deleted or ticked truthfully. Refuse a directory argument rather than
+sweeping, because the subject is not in the clone. Verify by: the quoted exemplar passes clean,
+a body with kept-but-empty testing labels flags, and a directory argument exits with the refusal
+rather than silence.
 
 ### docs-and-calibration {#docs-and-calibration}
 
