@@ -54,9 +54,17 @@ someone points it at a directory and gets silence.
 
 It is also the one lane with a real upstream artefact behind it.
 `.github/pull_request_template.md` is a file the project ships and GitHub prefills, so the rules
-keyed to its headings cite something rather than measure it. The rules about *filling* those
-headings stay measured, and that is where the finding is: a template body keeps the testing lines
-about 95% of the time and gives them a value only about two thirds of the time.
+keyed to its headings cite something rather than measure it. That artefact is **referenced and
+resolved at check time, never embedded**, by [call/0055](../../call/0055-upstream-artefacts-are-referenced-not-embedded.md):
+a vendored copy would be wrong the moment upstream edited it, and wrong silently. A short-lived
+gitignored cache is permitted so a sweep does not refetch, but it may only hold what the canonical
+location returned and may never change a verdict. When the template cannot be resolved, the rules
+keyed to it do not run and say so; they never fall back to the copy quoted inside
+`openwrt-pr-style.md`, which is illustration and not the artefact.
+
+The rules about *filling* those headings stay measured and stay offline, and that is where the
+finding is: a template body keeps the testing lines about 95% of the time and gives them a value
+only about two thirds of the time.
 
 The `comment` lane carries a provenance guard the other two do not need. A package
 directory mixes OpenWrt's own files with upstream's source, and every line a patch adds is
@@ -135,15 +143,28 @@ under 72 columns, bare package name rather than a path; body present and wrapped
 present and matching the author. Verify by: the four Exemplars pass and each "Do not" case
 flags.
 
+### pr-template-resolver {#pr-template-resolver}
+
+Implement [call/0055](../../call/0055-upstream-artefacts-are-referenced-not-embedded.md) before
+the lane that depends on it: resolve `.github/pull_request_template.md` from a given
+`openwrt/packages` checkout or from the published raw file, cache it briefly under a gitignored
+path, and record the last-seen digest so a moved template reports as drift. Verify by: a resolved
+template yields its headings, a second run inside the lifetime does not refetch, an expired or
+absent cache with no reachable source returns unresolved rather than a stale hit, and no code path
+reads the fence inside `openwrt-pr-style.md`.
+
 ### pr-lane {#pr-lane}
 
 Check a pull request body handed in on standard input or as a file argument: template headings
 kept, maintainer a GitHub handle, description one or two lines, version and target and device
 each named rather than left blank behind a kept label, the CONTRIBUTING box ticked, and the
 patch section either deleted or ticked truthfully. Refuse a directory argument rather than
-sweeping, because the subject is not in the clone. Verify by: the quoted exemplar passes clean,
-a body with kept-but-empty testing labels flags, and a directory argument exits with the refusal
-rather than silence.
+sweeping, because the subject is not in the clone. Split the rules by what they need: the
+heading-matching rules consume the resolver and do not run without it, while the filling rules
+are measured and stay offline. Verify by: the quoted exemplar passes clean, a body with
+kept-but-empty testing labels flags, a directory argument exits with the refusal rather than
+silence, and an unresolved template leaves the heading rules unrun and named in the output while
+the filling rules still report.
 
 ### docs-and-calibration {#docs-and-calibration}
 
