@@ -175,6 +175,12 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="plan0081-openwrt-style-pack-the-openwrt-package-style-rules-as-a-second-external-pack"><a class="header" href="#plan0081-openwrt-style-pack-the-openwrt-package-style-rules-as-a-second-external-pack">plan/0081 openwrt-style-pack: the OpenWrt package style rules as a second external pack</a></h1>
+<blockquote>
+<p><strong>Status: DRAFT.</strong> The <code>vendor-manuals</code> task is done: the four manuals are vendored and
+digest-pinned, and the crate is a workspace member whose corpus tests pass. The lane checkers
+(<code>meta</code>, <code>comment</code>, <code>msg</code>, <code>pr</code>) and the docs-and-calibration task are not. This line is parked
+while the suite-zero run (plan/0082) completes; it is not part of that run's close.</p>
+</blockquote>
 <p>This milestone delivers <code>host-lint-openwrt</code>, the second external pack in the host-lint
 workspace, built to the shape <a href="../0072-ffmpeg-commit-rule-pack/README.html">plan/0072</a>
 established for <code>host-lint-ffmpeg</code>. Where the FFmpeg pack encodes one upstream project's
@@ -269,10 +275,12 @@ column is the honest one where a convention has moved: two-space indent is 52.5%
 tree and 87.8% among 2025-2026 additions, and the rule follows the newer figure.</p>
 <h2 id="build-sequence"><a class="header" href="#build-sequence">Build sequence</a></h2>
 <h3 id="vendor-manuals"><a class="header" href="#vendor-manuals">vendor-manuals</a></h3>
-<p>Create the crate, add it to <code>members</code> and <code>default-members</code>, and vendor the three manuals
-under <code>fixtures/manuals/</code> with <code>PROVENANCE.md</code>. Verify by: <code>cargo build</code> from the workspace
-root produces <code>host-lint-openwrt</code>, and a test asserts each vendored manual matches its
-recorded digest.</p>
+<p><strong>DONE (2026-08-10).</strong> Created the crate, vendored the four manuals under
+<code>fixtures/manuals/</code> with <code>PROVENANCE.md</code>, and added it to <code>members</code> (being a member but not
+a default member, so the canonical artifact hash is unchanged until a lane lands). The
+digest-pinning test hashes every manual and passes, as does the distinct-files and
+exemplar-fences test. Verify by: <code>cargo test -p host-lint-openwrt</code> passes, and a manual
+edited without its digest re-recorded reddens.</p>
 <h3 id="rule-registry"><a class="header" href="#rule-registry">rule-registry</a></h3>
 <p>Encode the corpus: <code>Source</code> per manual, <code>Section</code> per manual heading, <code>Rule</code> per checklist
 line, each naming its section and carrying its tier, lane and measured rate. Carry the
