@@ -9703,9 +9703,32 @@ by reading the fix direction and assuming it landed.</p>
 <tr><td><a href="https://github.com/connollydavid/host/issues/18">connollydavid/host#18</a></td><td>design handover, not a defect</td><td>defer to plan/0075</td></tr>
 </tbody></table>
 </div>
-<p>One further defect has no issue and will not get one: the LEXICON remedy leak, recorded in the
-sequence below. The operator directed that these findings fold into the work rather than the
-tracker, so it is carried here.</p>
+<p>Four further defects have no issue and will not get one. The operator directed that these findings
+fold into the work rather than the tracker, so they are carried here. Three were found while
+fixing <code>host-lint#26</code> and none was on the census when it was taken.</p>
+<ul>
+<li><strong>The LEXICON remedy publishes.</strong> The identifier tier's sanctioned fix mints a cross-reference on
+an upstream thread. Settled by <a href="plan/0082-suite-zero-open-bugs/../../call/0057-a-remedy-must-know-whether-its-artefact-publishes.html">call/0057</a>.</li>
+<li><strong>A released version shipped a red test suite.</strong> <code>allcaps_designator_before_decimal_does_not_warn</code>
+fails at the v0.18.1 pin with no local change, confirmed by stashing. The generator draws
+<code>[A-Z]{2,5}</code> but assumes out only <code>WARN_NOUNS</code>, while <code>FLAG_TERMS</code> holds <code>BOX</code>, <code>LEG</code>, <code>LAP</code>,
+<code>WAVE</code> and <code>WARN_ORDINAL_TERMS</code> holds <code>ERA</code>, <code>EPOCH</code>, <code>BATCH</code>. Proptest drew <code>ERA</code>. The property
+asserted that real vocabulary is silent; the tool was right and the test was wrong. A failure
+that only appears on the draw is a failure that ships.</li>
+<li><strong>A worktree hook could not find its ignore list.</strong> <code>software --materialize</code> writes the
+<code>gitdir</code> link relatively, so a bare store stays portable. <code>repo_root()</code> took that target's parent
+and resolved it against the process working directory, landing outside the tree, so
+<code>.host-lintignore</code> and the LEXICON were silently absent. Only git sets <code>GIT_DIR</code>, so the fault
+was reachable only from inside a hook, and only after the worktree hooks were installed at all.
+The fix for <code>host-lint#25</code> had assumed an absolute gitdir.</li>
+<li><strong>A failed release poisons the next attempt.</strong> Staging the deps-bundle appends the vendor source
+block to the tracked <code>.cargo/config.toml</code> and never removes it, so a second run duplicates
+<code>[source.crates-io]</code> and cargo refuses the manifest. The first release attempt here timed out
+mid-build and the second failed on the residue rather than on anything it did.</li>
+</ul>
+<p>The last of these is a <code>host-lifecycle</code> defect rather than a <code>host-lint</code> one, and it is recorded
+without a remedy task: this milestone works around it by restoring the file, and the fix belongs to
+whoever next opens the release path.</p>
 <h3 id="the-two-that-are-already-fixed"><a class="header" href="#the-two-that-are-already-fixed">The two that are already fixed</a></h3>
 <p><code>host-lifecycle#24</code> asked for two things: a queryable version, and the generator recorded as a
 proven component symmetrically with the checker. Both are present. <code>host-lifecycle --version</code>
@@ -9811,7 +9834,7 @@ every open issue is one of the two deferred, and <code>host-lifecycle software -
 <h2 id="host-grammar"><a class="header" href="#host-grammar">host-grammar</a></h2>
 <ul>
 <li>url: https://github.com/connollydavid/host-grammar</li>
-<li>pin: <code>7f73dfa9c332d6d4f623dfe59caa7437491287a2</code></li>
+<li>pin: <code>e5ac04cbf8b220786e6e06e65de08e28426e9dab</code></li>
 <li>worktrees: none (single canonical line)</li>
 </ul>
 <h2 id="host-reference"><a class="header" href="#host-reference">host-reference</a></h2>
@@ -12510,7 +12533,7 @@ remedy text is selected by surface, not by tier alone. This is a floor, matching
 <a href="call/0054-one-commit-message-fault-earns-a-detector.html">call/0054</a>,
 <a href="call/0055-upstream-artefacts-are-referenced-not-embedded.html">call/0055</a> and
 <a href="call/0056-a-tool-dependency-is-a-floor-checked-in-the-lane.html">call/0056</a>: the tool states what it
-could not do rather than doing the harmful thing quietly.</li>
+could not do. Quiet harm is the failure every one of those floors exists to prevent.</li>
 <li><strong>The guard is unchanged.</strong> A bare numeral naming no repository still fails. Nothing here
 loosens what counts as a citation; it moves where the citation is recorded.</li>
 </ol>
