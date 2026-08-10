@@ -206,7 +206,7 @@ fails at the v0.18.1 pin with no local change, confirmed by stashing. The genera
 <code>WAVE</code> and <code>WARN_ORDINAL_TERMS</code> holds <code>ERA</code>, <code>EPOCH</code>, <code>BATCH</code>. Proptest drew <code>ERA</code>. The property
 asserted that real vocabulary is silent; the tool was right and the test was wrong. A failure
 that only appears on the draw is a failure that ships.</li>
-<li><strong>A worktree hook could not find its ignore list.</strong> <code>software --materialize</code> writes the
+<li><strong>A worktree hook lost its ignore list.</strong> <code>software --materialize</code> writes the
 <code>gitdir</code> link relatively, so a bare store stays portable. <code>repo_root()</code> took that target's parent
 and resolved it against the process working directory. That path lands outside the tree, so
 <code>.host-lintignore</code> and the LEXICON went missing without a word. Only git sets <code>GIT_DIR</code>, so the fault
