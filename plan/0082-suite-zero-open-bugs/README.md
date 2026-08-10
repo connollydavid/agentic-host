@@ -37,8 +37,8 @@ fixing `host-lint#26` and none was on the census when it was taken.
   that only appears on the draw is a failure that ships.
 - **A worktree hook could not find its ignore list.** `software --materialize` writes the
   `gitdir` link relatively, so a bare store stays portable. `repo_root()` took that target's parent
-  and resolved it against the process working directory, landing outside the tree, so
-  `.host-lintignore` and the LEXICON were silently absent. Only git sets `GIT_DIR`, so the fault
+  and resolved it against the process working directory. That path lands outside the tree, so
+  `.host-lintignore` and the LEXICON went missing without a word. Only git sets `GIT_DIR`, so the fault
   was reachable only from inside a hook, and only after the worktree hooks were installed at all.
   The fix for `host-lint#25` had assumed an absolute gitdir.
 - **A failed release poisons the next attempt.** Staging the deps-bundle appends the vendor source
