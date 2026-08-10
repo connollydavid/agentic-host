@@ -182,7 +182,7 @@
 </ul>
 <h2 id="context-and-problem"><a class="header" href="#context-and-problem">Context and problem</a></h2>
 <p>Three observations arrived together, and they are one problem.</p>
-<p><strong>The declaration already exists and is never enforced.</strong> <code>host-template/UPGRADING.md</code> carries a
+<p><strong>The declaration already exists; nothing enforces it.</strong> <code>host-template/UPGRADING.md</code> carries a
 <code>requires = host-lifecycle vX.Y.Z</code> field on its ledger entries, and states repeatedly that an
 adopter should bump the pinned tool before moving the pointer. The <code>RENAME-repro-waiver</code> entry was
 applied with the lane running v0.35.1, which parses only <code>repro-exempt</code>, so it read an exempt
@@ -193,10 +193,10 @@ actually in the lane is not a floor; it is a comment.</p>
 <code>tools/host-lifecycle</code> submodule; <code>prose.yml</code> runs <code>cargo install --git … --rev &lt;inline&gt;</code>. Three
 mechanisms means three places a version can be stated, so skew is available by construction.
 <a href="0038-releasing-a-tool-updates-the-template-pin.html">call/0038</a> and the <code>software --check</code> gate do catch the
-resulting drift for the template itself, and did so in this session. They do not catch it for an
-<strong>adopter</strong>: a project instantiated from the template has no <code>.host-software</code> stanza covering
-<code>tools/</code>, so its wired-once tool pointer is gated by nothing at all. The protection stops exactly
-where the population is largest.</p>
+resulting drift for the template itself, and did so in this session. An <strong>adopter</strong> is left
+uncovered: a project instantiated from the template has no <code>.host-software</code> stanza over <code>tools/</code>,
+so nothing gates its wired-once tool pointer. The protection stops exactly where the population is
+largest.</p>
 <p><strong>Skills currently declare nothing.</strong> A sweep of <code>.claude/skills/</code> finds no version string, no rev,
 no requires clause. So this is a choice about what to build rather than a migration away from
 something, and the cheap wrong answer is available: let each skill pin what it was written against.
@@ -235,9 +235,9 @@ the host's recipe, a project instantiated from the template carries its own requ
 verify it without a <code>.host-software</code> stanza naming the tool. That is the gap this decision exists
 to close, and it is why the rule is written for skills and workflows generally rather than for this
 repository's Where room.</p>
-<p>This does not retire call/0038 or the <code>software --check</code> tool-pin HAZARDs. Those answer a different
-question, whether the <em>recorded</em> pins agree, and they keep answering it. The floor answers whether
-the binary <em>in hand</em> can do the job. A clean pin check still says nothing about the binary a lane
+<p>This does not retire call/0038 or the <code>software --check</code> tool-pin HAZARDs. Those answer whether the
+<em>recorded</em> pins agree, and they keep answering it. The floor answers whether the binary <em>in hand</em>
+can do the job. A clean pin check still says nothing about the binary a lane
 actually loaded, which is the distinction the four Where-room commands already draw and which this
 decision extends to the tools themselves.</p>
 <p>The <code>requires</code> field in <code>UPGRADING.md</code> is not new syntax to invent; it is an existing declaration

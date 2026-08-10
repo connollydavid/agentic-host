@@ -239,8 +239,8 @@ it is the smallest task, but it <em>executes</em> last, after <code>sweep-and-co
 push.</p>
 <h2 id="build-sequence"><a class="header" href="#build-sequence">Build sequence</a></h2>
 <h3 id="close-resolved"><a class="header" href="#close-resolved">close-resolved</a></h3>
-<p>Re-run each issue's own repro under the current toolchain and close the two that pass, quoting
-the transcript in the closing comment. Held to the end of the session by the ruling above: the
+<p>Re-run each issue's own repro under the current toolchain and close the two that pass. Quote the
+transcript in the closing comment. Held to the end of the session by the ruling above: the
 verification may run at any point, the close may not. Verify by: <code>host-lifecycle --version</code> and
 the <code>.host-software</code> stanza answer <code>host-lifecycle#24</code>; <code>host-lifecycle prose host-template</code> at
 exit 0 answers <code>host-lint#27</code>; both issues are closed with the output pasted, not paraphrased,

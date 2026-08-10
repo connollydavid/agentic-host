@@ -213,8 +213,8 @@ is a wrong answer with a long shelf life.</li>
 <p>Upstream artefacts are <strong>referenced and resolved at check time</strong>, never embedded.</p>
 <ol>
 <li>The pack carries no copy of <code>.github/pull_request_template.md</code>. It records the artefact's
-canonical location and resolves it per run, preferring a local <code>openwrt/packages</code> checkout when
-one is given and falling back to the published raw file.</li>
+canonical location and resolves it per run. A local <code>openwrt/packages</code> checkout answers when
+one is given; otherwise the published raw file does.</li>
 <li>A <strong>temporary cache is permitted</strong> and is expected, so a sweep does not refetch per invocation.
 It is bounded by a short lifetime, it is gitignored and never tracked, and it is a cache in the
 strict sense: it may only hold what was fetched from the canonical location, and its presence
