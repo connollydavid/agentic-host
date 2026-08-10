@@ -55,7 +55,7 @@ this project already trusts. The URL belongs there. It never belonged in the com
    [call/0054](0054-one-commit-message-fault-earns-a-detector.md),
    [call/0055](0055-upstream-artefacts-are-referenced-not-embedded.md) and
    [call/0056](0056-a-tool-dependency-is-a-floor-checked-in-the-lane.md): the tool states what it
-   could not do rather than doing the harmful thing quietly.
+   could not do. Quiet harm is the failure every one of those floors exists to prevent.
 4. **The guard is unchanged.** A bare numeral naming no repository still fails. Nothing here
    loosens what counts as a citation; it moves where the citation is recorded.
 

@@ -23,9 +23,32 @@ by reading the fix direction and assuming it landed.
 | [connollydavid/host-lifecycle#23](https://github.com/connollydavid/host-lifecycle/issues/23) | owed work, not a defect | defer with a recorded reason |
 | [connollydavid/host#18](https://github.com/connollydavid/host/issues/18) | design handover, not a defect | defer to plan/0075 |
 
-One further defect has no issue and will not get one: the LEXICON remedy leak, recorded in the
-sequence below. The operator directed that these findings fold into the work rather than the
-tracker, so it is carried here.
+Four further defects have no issue and will not get one. The operator directed that these findings
+fold into the work rather than the tracker, so they are carried here. Three were found while
+fixing `host-lint#26` and none was on the census when it was taken.
+
+- **The LEXICON remedy publishes.** The identifier tier's sanctioned fix mints a cross-reference on
+  an upstream thread. Settled by [call/0057](../../call/0057-a-remedy-must-know-whether-its-artefact-publishes.md).
+- **A released version shipped a red test suite.** `allcaps_designator_before_decimal_does_not_warn`
+  fails at the v0.18.1 pin with no local change, confirmed by stashing. The generator draws
+  `[A-Z]{2,5}` but assumes out only `WARN_NOUNS`, while `FLAG_TERMS` holds `BOX`, `LEG`, `LAP`,
+  `WAVE` and `WARN_ORDINAL_TERMS` holds `ERA`, `EPOCH`, `BATCH`. Proptest drew `ERA`. The property
+  asserted that real vocabulary is silent; the tool was right and the test was wrong. A failure
+  that only appears on the draw is a failure that ships.
+- **A worktree hook could not find its ignore list.** `software --materialize` writes the
+  `gitdir` link relatively, so a bare store stays portable. `repo_root()` took that target's parent
+  and resolved it against the process working directory, landing outside the tree, so
+  `.host-lintignore` and the LEXICON were silently absent. Only git sets `GIT_DIR`, so the fault
+  was reachable only from inside a hook, and only after the worktree hooks were installed at all.
+  The fix for `host-lint#25` had assumed an absolute gitdir.
+- **A failed release poisons the next attempt.** Staging the deps-bundle appends the vendor source
+  block to the tracked `.cargo/config.toml` and never removes it, so a second run duplicates
+  `[source.crates-io]` and cargo refuses the manifest. The first release attempt here timed out
+  mid-build and the second failed on the residue rather than on anything it did.
+
+The last of these is a `host-lifecycle` defect rather than a `host-lint` one, and it is recorded
+without a remedy task: this milestone works around it by restoring the file, and the fix belongs to
+whoever next opens the release path.
 
 ### The two that are already fixed
 

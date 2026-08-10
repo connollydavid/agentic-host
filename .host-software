@@ -11,7 +11,7 @@
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lint
 	artifact  = target/x86_64-unknown-linux-musl/release/host-lint fd65cad2f21d2f0ce1ec4b44ba6da7d37895a8bdc7a1d78aa0fe4a73459fc239
-	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v8/vendor.tar.gz d61637d22ca0a104fcc70500a09b86e2e6fea34388ab56d41fa1a75da0144dcb
+	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v9/vendor.tar.gz 97d327e6eea41dfb79c68c01eaf0f0191936522e752f2ba37e4f43fc5eecee5c
 	hooks     = pre-commit
 [software "host-lifecycle"]
 	url       = https://github.com/connollydavid/host-lifecycle.git
@@ -32,7 +32,7 @@
 	artifact  = target/x86_64-unknown-linux-musl/release/host-prove 9a9bbbd36edc072cfe5518a408211fabf8c78cff63ed3cb89d25129b8ff9f03f
 [software "host-grammar"]
 	url       = https://github.com/connollydavid/host-grammar
-	pin       = 7f73dfa9c332d6d4f623dfe59caa7437491287a2
+	pin       = e5ac04cbf8b220786e6e06e65de08e28426e9dab
 	worktrees =
 [software "host-reference"]
 	# greenfield component (plan/0049, call/0030). Reproducible build established in the
