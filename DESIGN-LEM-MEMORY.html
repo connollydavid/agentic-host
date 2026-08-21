@@ -329,6 +329,15 @@ becomes a rendered artifact there, guarded where it is authored; the
 knapped variant belongs in the render, not in a hand pass over the merged
 manual. This design's knap scope is the territory map, the memory
 surfaces, and the skills.</li>
+<li><strong>The component is named <code>host-memory</code></strong> (2026-08-21). Named for the
+content it serves — the memory tier the methodology already names in
+MEMORY.md, the two-tier store, and dream — rather than the mechanism it
+uses; vector lookup is today's how, and mechanism names age.</li>
+<li><strong>calx-knap enters as a tools/ submodule, used as-is, read-only</strong>
+(2026-08-21). calx-knap is never maintained in this repo: a change it
+needs goes upstream, never into the submodule. Host-side integration —
+link-skills.sh, the spec copy, the register block, the gate build — is
+host work and stays host work.</li>
 </ol>
 <h2 id="cast-consultation-2026-08-21"><a class="header" href="#cast-consultation-2026-08-21">Cast consultation (2026-08-21)</a></h2>
 <p><strong>Bly</strong> (adopter, cold read): the map and index are mechanical record, so
@@ -372,10 +381,6 @@ embedder boundary, the indexer, the semantic and episodic passes — starts
 unblocked.</p>
 <h2 id="open-questions"><a class="header" href="#open-questions">Open questions</a></h2>
 <ul>
-<li>The component's name: <code>host-vector</code> and <code>host-retrieval</code> are both on the
-table; the operator names.</li>
-<li>calx-knap's vendoring shape: a submodule under tools/ after the
-allium/specula precedent is the proposal; the operator rules.</li>
 <li>Map generation: grown lexicon or index clustering; the map's deployed path
 and its audience split (session load versus site page).</li>
 <li>The embedder's home: which arm's-length boundary carries the weights, and

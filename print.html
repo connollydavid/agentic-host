@@ -9834,13 +9834,13 @@ every open issue is one of the two deferred, and <code>host-lifecycle software -
 <li>depends: none</li>
 </ul>
 <h3 id="vendor-calx-knap"><a class="header" href="#vendor-calx-knap">Vendor calx-knap</a></h3>
-<p>calx-knap enters as a submodule under tools/, external by source after the allium/specula precedent; link-skills.sh gains the shape for its two skill directories; the spec copies to the repo root per the plugin's install contract; the register instruction block lands in CLAUDE.md with this repo's bindings; the calx-knap-gate binary builds in the recorded toolchain.</p>
+<p>calx-knap enters as a submodule under tools/, external by source after the allium/specula precedent, used as-is and read-only: it is never maintained in this repo, and a change it needs goes upstream, never into the submodule. link-skills.sh gains the shape for its two skill directories; the spec copies to the repo root per the plugin's install contract; the register instruction block lands in CLAUDE.md with this repo's bindings; the calx-knap-gate binary builds in the recorded toolchain.</p>
 <ul>
 <li>verify: both skills link; <code>calx-knap.md</code> reads at the root; the gate binary honours the exit contract on the shipped example</li>
 <li>depends: none</li>
 </ul>
 <h3 id="component-scaffold"><a class="header" href="#component-scaffold">Component scaffold</a></h3>
-<p>The new host-* component lands under the <code>.host-software</code> recipe: bare store, worktree, deps-bundle pin, hermetic musl artifact in the recorded toolchain. LanceDB's dependency tree is audited against the deps-bundle doctrine before any release. The component's name awaits the operator's ruling; the working names are <code>host-vector</code> and <code>host-retrieval</code>.</p>
+<p>The new component, named <code>host-memory</code> by operator ruling of 2026-08-21, lands under the <code>.host-software</code> recipe: bare store, worktree, deps-bundle pin, hermetic musl artifact in the recorded toolchain. The name names the content it serves, not the mechanism. LanceDB's dependency tree is audited against the deps-bundle doctrine before any release.</p>
 <ul>
 <li>verify: <code>software --check</code> reads the stanza clean; the artifact re-derives under <code>software --verify-build</code></li>
 <li>depends: vendor-calx-knap</li>
@@ -9888,7 +9888,7 @@ every open issue is one of the two deferred, and <code>host-lifecycle software -
 <li>depends: vendor-calx-knap, scope-prose-lane</li>
 </ul>
 <h2 id="open-questions-5"><a class="header" href="#open-questions-5">Open questions</a></h2>
-<p>The component's name; the map's generation (grown lexicon or index clustering) and its deployed path; distinct collections versus a metadata filter; dream's integration, with index freshness as an audited finding and the per-user tier as a third namespace candidate; the tokenizer lens, since the pinned tiktoken reference over-counts CJK and the embedder and the canary are Qwen-lineage.</p>
+<p>The map's generation (grown lexicon or index clustering) and its deployed path; distinct collections versus a metadata filter; dream's integration, with index freshness as an audited finding and the per-user tier as a third namespace candidate; the tokenizer lens, since the pinned tiktoken reference over-counts CJK and the embedder and the canary are Qwen-lineage.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
@@ -13106,6 +13106,15 @@ becomes a rendered artifact there, guarded where it is authored; the
 knapped variant belongs in the render, not in a hand pass over the merged
 manual. This design's knap scope is the territory map, the memory
 surfaces, and the skills.</li>
+<li><strong>The component is named <code>host-memory</code></strong> (2026-08-21). Named for the
+content it serves — the memory tier the methodology already names in
+MEMORY.md, the two-tier store, and dream — rather than the mechanism it
+uses; vector lookup is today's how, and mechanism names age.</li>
+<li><strong>calx-knap enters as a tools/ submodule, used as-is, read-only</strong>
+(2026-08-21). calx-knap is never maintained in this repo: a change it
+needs goes upstream, never into the submodule. Host-side integration —
+link-skills.sh, the spec copy, the register block, the gate build — is
+host work and stays host work.</li>
 </ol>
 <h2 id="cast-consultation-2026-08-21"><a class="header" href="#cast-consultation-2026-08-21">Cast consultation (2026-08-21)</a></h2>
 <p><strong>Bly</strong> (adopter, cold read): the map and index are mechanical record, so
@@ -13149,10 +13158,6 @@ embedder boundary, the indexer, the semantic and episodic passes — starts
 unblocked.</p>
 <h2 id="open-questions-6"><a class="header" href="#open-questions-6">Open questions</a></h2>
 <ul>
-<li>The component's name: <code>host-vector</code> and <code>host-retrieval</code> are both on the
-table; the operator names.</li>
-<li>calx-knap's vendoring shape: a submodule under tools/ after the
-allium/specula precedent is the proposal; the operator rules.</li>
 <li>Map generation: grown lexicon or index clustering; the map's deployed path
 and its audience split (session load versus site page).</li>
 <li>The embedder's home: which arm's-length boundary carries the weights, and
