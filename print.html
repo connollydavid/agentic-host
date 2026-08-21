@@ -292,16 +292,16 @@ model we can drive, not a thought experiment.</em></p>
 <p><strong>Realized as a real model, not a hypothetical.</strong> Fen <em>is</em> <code>qwen3.5-4b</code>: a
 four-billion-parameter model quantized to <strong>Q8_0</strong>, served locally (rope on a 3060
 Ti, CUDA, ~128K context) and reachable through the <code>pal</code> MCP via <code>mcp__pal__chat</code>
-with <code>model: qwen3.5-4b</code> (aliases <code>local</code> / <code>coder</code> / <code>rope-text</code>). Upstream it is
+with <code>model: qwen3.5-4b</code> (aliases <code>local</code> / <code>coder</code> / <code>rope-text</code>). Upstream Fen is
 described as a "code-gen/unit-test worker": competent at narrow generation, shaky
 at long, exact, multi-step orchestration. That makes every claim that the
 methodology "serves Fen" <strong>falsifiable</strong>: drive the real model and watch, rather
-than role-play it with a stronger one (which flatters the design).</p>
+than role-play lem with a stronger one (which flatters the design).</p>
 <p><strong>Modality: textual, low-fidelity at action.</strong> Reasons adequately within a single
-step but fumbles execution: it drops or garbles tool calls, mis-sequences a
+step but fumbles execution: Fen drops or garbles tool calls, mis-sequences a
 procedure, or hand-edits a config file and gets a field subtly wrong. A 4B at Q8_0 is
-lossy in precisely the way that bites long exact instruction-following. It is not
-a bad agent; it is most agents some of the time, and a small local worker all of
+lossy in precisely the way that bites long exact instruction-following. Fen is not
+a bad agent; lem is most agents some of the time, and a small local worker all of
 the time. A process that only works when many precise tool calls land in order is,
 for Fen, a process that does not work. <strong>The tools must carry the process.</strong></p>
 <ul>
@@ -317,10 +317,10 @@ next move. So state-changing steps must be <strong>single commands, tool-driven,
 fail-safe</strong>: a recorded-applied entry written by <code>host-lifecycle</code>, not by Fen's
 shaky hand on <code>.host</code>; a fumble that re-lists work, never one that buries it.</li>
 </ul>
-<p><strong>How we use it.</strong> Because Fen is callable, it is the milestone's <strong>acceptance
+<p><strong>How we use Fen.</strong> Because Fen is callable, lem is the milestone's <strong>acceptance
 test</strong>, not a lens: a design claiming tool-carried, fumble-proof upgrades is
-validated by handing the real <code>qwen3.5-4b</code> the upgrade loop and confirming it can
-complete it, and, as a baseline, that it fumbles the prose / hand-edit version.
+validated by handing the real <code>qwen3.5-4b</code> the upgrade loop and confirming lem can
+complete it, and, as a baseline, that lem fumbles the prose / hand-edit version.
 This is the standing correction to designing from the author's seat: simulating
 the weak agent with a strong one proves nothing; driving the real 4B does.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="mara-the-human-operator"><a class="header" href="#mara-the-human-operator">Mara, the Human Operator</a></h1>
