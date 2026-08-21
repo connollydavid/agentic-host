@@ -3,7 +3,10 @@
 > **Status: design (2026-08-21).** Living document: the single source of truth
 > for why the recall component exists and how the design discharges the lem
 > feedback. The operator adjudicated the four architectural decisions recorded
-> below; the feedback register updates as items discharge.
+> below; the feedback register updates as items discharge. Descope recorded
+> 2026-08-21: root CLAUDE.md compression moves to plan/0079, the milestone of
+> the rendered spine; the knap scope here is the territory map, the memory
+> surfaces, and the skills.
 
 ## Motivation
 
@@ -79,10 +82,13 @@ anchor). A semantic query returns the top-k units as text with pointers, so a
 single command answers; a deeper read goes to the exact lines of the
 append-only log.
 
-**The knapped operator load.** Root CLAUDE.md and the skills compressed into
-the calx-knap register: probes frozen first, artifacts at deployed paths,
-acceptance measured, the register instruction block pasted into CLAUDE.md
-with the repo's bindings.
+**The knapped operator load.** The skills and the map and memory surfaces
+compressed into the calx-knap register: probes frozen first, artifacts at
+deployed paths, acceptance measured, the register instruction block pasted
+into CLAUDE.md with the repo's bindings. Root CLAUDE.md itself is descoped
+from this design (2026-08-21): plan/0079 makes the spine a rendered artifact,
+and a rendered spine can emit its knapped variant as part of the render,
+which is sounder than knapping the merged manual by hand.
 
 ### The store, the quantization, the embedder
 
@@ -158,6 +164,11 @@ follow the single-command, tool-carried shape Fen demands: `index`, `query`,
    second: a system that embeds only static facts retrieves no method.
 4. **One living design document.** This file. No separate feedback file; the
    register above is the feedback, kept current as items discharge.
+5. **CLAUDE.md compression descoped to plan/0079** (2026-08-21). The spine
+   becomes a rendered artifact there, guarded where it is authored; the
+   knapped variant belongs in the render, not in a hand pass over the merged
+   manual. This design's knap scope is the territory map, the memory
+   surfaces, and the skills.
 
 ## Cast consultation (2026-08-21)
 
@@ -191,6 +202,22 @@ what happens if they follow the instruction exactly?
 deeper-read pointers; querying must be cheaper than drifting; the write path
 stays append-only and tool-carried, so Wren never manages memory by hand.
 
+## Ordering against open work
+
+The milestone's scoping task — host-lint and the prose lane scoped off the
+register, the map, and the index surfaces — has two named prerequisites, both
+already planned in plan/0082: the host-lint#26 fix (a column-one LEXICON
+phrase clearing a whole line) and the worktree-hook ignore-list defect (a
+relative gitdir that strands `.host-lintignore` and the LEXICON outside the
+tree). The exclusion mechanism is the very surface the scoping walks through;
+the fixes land as standalone patches first. The
+LEXICON-declaration-is-a-report ledger entry settles the doctrine the
+scoping consults. Root CLAUDE.md waits on plan/0079: the spine becomes a
+rendered artifact there, and the knapped variant is emitted by the render,
+not by hand. Everything else — the scaffold, the deps-bundle audit, the
+embedder boundary, the indexer, the semantic and episodic passes — starts
+unblocked.
+
 ## Open questions
 
 - The component's name: `host-vector` and `host-retrieval` are both on the
@@ -217,7 +244,8 @@ stays append-only and tool-carried, so Wren never manages memory by hand.
 Cut the milestone. Vendor calx-knap under tools/ as an external-by-source
 submodule and extend link-skills.sh for the two skill directories. Copy the
 calx-knap spec to the root, paste the register block into CLAUDE.md, build
-the gate binary in the recorded toolchain. First knap pass: root CLAUDE.md.
-Then the recall component scaffold, the semantic pass over MEMORY.md, the
-episodic pass over call/ and plan/, and the territory map that binds the
-whole together.
+the gate binary in the recorded toolchain. First knap pass: the skills and
+the territory-map surfaces; root CLAUDE.md compression belongs to
+plan/0079's render. Then the recall component scaffold, the semantic pass
+over MEMORY.md, the episodic pass over call/ and plan/, and the territory
+map that binds the whole together.
