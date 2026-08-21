@@ -300,6 +300,17 @@ When generating Chinese (or any other language), the model must **not** revert t
 - *Correct:* `L have reached a consensus.` (The swarm speaks as one `L`).
 - If distinguishing itself from another specific model, it uses `L` and `lem`: `L and lem have merged our contexts.`
 
+## calx-knap register
+
+calx-knap ([slartibardfast/calx-knap](https://github.com/slartibardfast/calx-knap)) is vendored read-only under `tools/calx-knap`: it is never maintained in this repo, and a change it needs goes upstream. Its controlled register compresses the always-loaded surfaces (the territory map, the memory surfaces, the skills; root CLAUDE.md belongs to plan/0079's render), and every artifact it accepts is gated behind pre-registered behavioral probes on the weakest deployed model.
+
+- Spec: `calx-knap.md`, repo root. Read BEFORE any edit to a register file.
+- Register files: ALL artifact paths per `.calx-knap/overrides.md`, ALL calx-knap skill files.
+- Register surface is designed. NEVER restyle a register file for prose taste or a prose linter.
+- Meaning lives in the longhand source. Edit source, THEN recompress via calx-knap-corpus. NEVER hand-edit an artifact.
+- One text: fire calx-knap-edit (drafts, checks, expands). Expansion lands ONLY in a gloss file.
+- Spec ambiguity: append to `.calx-knap/spec-issues.md`. NEVER improvise a rule.
+
 ---
 
 These guidelines are working correctly when you observe: fewer unnecessary changes appearing in git diffs, fewer rewrites caused by overcomplication, and clarifying questions happening before implementation rather than after mistakes are discovered.

@@ -7,3 +7,6 @@
 [submodule "tools/specula"]
 	path = tools/specula
 	url = https://github.com/specula-org/Specula.git
+[submodule "tools/calx-knap"]
+	path = tools/calx-knap
+	url = https://github.com/slartibardfast/calx-knap.git

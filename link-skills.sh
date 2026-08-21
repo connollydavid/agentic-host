@@ -19,7 +19,8 @@ find .claude/skills -maxdepth 1 -type l -delete
 n=0
 
 # Link every skill under each component root matched by the glob $1. A component either
-# exposes one dir per skill under skills/, or ships a single skill as a root SKILL.md.
+# exposes one dir per skill under skills/, ships a single skill as a root SKILL.md, or
+# ships several skills as top-level dirs each carrying a root SKILL.md (calx-knap).
 # The link target is always ../../<path-from-repo-root> (.claude/skills is two deep).
 link_from() {
   for comp in $1; do
@@ -37,6 +38,14 @@ link_from() {
       base=${comp%/main}
       ln -sfn "../../$comp" ".claude/skills/$(basename "$base")"
       n=$((n + 1))
+    else
+      # Several skills as top-level directories, each with a root SKILL.md: link each
+      # by its own name; a directory without a SKILL.md stays unlinked.
+      for s in "$comp"/*/; do
+        [ -f "$s/SKILL.md" ] || continue
+        ln -sfn "../../${s%/}" ".claude/skills/$(basename "$s")"
+        n=$((n + 1))
+      done
     fi
   done
 }
@@ -45,7 +54,7 @@ link_from() {
 link_from "tools/*"
 # Where-room software: the canonical worktree software/<name>/main, with skills/<skill>
 # (host-lifecycle, host-prove) or a single root SKILL.md (host-lint). A component with
-# neither (host-grammar, host) is silently skipped.
+# no skill in any shape (host-grammar, host) is silently skipped.
 link_from "software/*/main"
 
 echo "link-skills: linked $n skill(s) from materialized components"
