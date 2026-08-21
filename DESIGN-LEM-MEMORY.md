@@ -169,6 +169,15 @@ follow the single-command, tool-carried shape Fen demands: `index`, `query`,
    knapped variant belongs in the render, not in a hand pass over the merged
    manual. This design's knap scope is the territory map, the memory
    surfaces, and the skills.
+6. **The component is named `host-memory`** (2026-08-21). Named for the
+   content it serves — the memory tier the methodology already names in
+   MEMORY.md, the two-tier store, and dream — rather than the mechanism it
+   uses; vector lookup is today's how, and mechanism names age.
+7. **calx-knap enters as a tools/ submodule, used as-is, read-only**
+   (2026-08-21). calx-knap is never maintained in this repo: a change it
+   needs goes upstream, never into the submodule. Host-side integration —
+   link-skills.sh, the spec copy, the register block, the gate build — is
+   host work and stays host work.
 
 ## Cast consultation (2026-08-21)
 
@@ -220,10 +229,6 @@ unblocked.
 
 ## Open questions
 
-- The component's name: `host-vector` and `host-retrieval` are both on the
-  table; the operator names.
-- calx-knap's vendoring shape: a submodule under tools/ after the
-  allium/specula precedent is the proposal; the operator rules.
 - Map generation: grown lexicon or index clustering; the map's deployed path
   and its audience split (session load versus site page).
 - The embedder's home: which arm's-length boundary carries the weights, and

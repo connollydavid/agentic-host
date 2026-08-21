@@ -19,14 +19,14 @@ The scoping task walks through host-lint's exclusion mechanism, and two defects 
 
 ### Vendor calx-knap {#vendor-calx-knap}
 
-calx-knap enters as a submodule under tools/, external by source after the allium/specula precedent; link-skills.sh gains the shape for its two skill directories; the spec copies to the repo root per the plugin's install contract; the register instruction block lands in CLAUDE.md with this repo's bindings; the calx-knap-gate binary builds in the recorded toolchain.
+calx-knap enters as a submodule under tools/, external by source after the allium/specula precedent, used as-is and read-only: it is never maintained in this repo, and a change it needs goes upstream, never into the submodule. link-skills.sh gains the shape for its two skill directories; the spec copies to the repo root per the plugin's install contract; the register instruction block lands in CLAUDE.md with this repo's bindings; the calx-knap-gate binary builds in the recorded toolchain.
 
 - verify: both skills link; `calx-knap.md` reads at the root; the gate binary honours the exit contract on the shipped example
 - depends: none
 
 ### Component scaffold {#component-scaffold}
 
-The new host-* component lands under the `.host-software` recipe: bare store, worktree, deps-bundle pin, hermetic musl artifact in the recorded toolchain. LanceDB's dependency tree is audited against the deps-bundle doctrine before any release. The component's name awaits the operator's ruling; the working names are `host-vector` and `host-retrieval`.
+The new component, named `host-memory` by operator ruling of 2026-08-21, lands under the `.host-software` recipe: bare store, worktree, deps-bundle pin, hermetic musl artifact in the recorded toolchain. The name names the content it serves, not the mechanism. LanceDB's dependency tree is audited against the deps-bundle doctrine before any release.
 
 - verify: `software --check` reads the stanza clean; the artifact re-derives under `software --verify-build`
 - depends: vendor-calx-knap
@@ -82,4 +82,4 @@ The on-demand loaded skills compress into the register, one document at a time, 
 
 ## Open questions
 
-The component's name; the map's generation (grown lexicon or index clustering) and its deployed path; distinct collections versus a metadata filter; dream's integration, with index freshness as an audited finding and the per-user tier as a third namespace candidate; the tokenizer lens, since the pinned tiktoken reference over-counts CJK and the embedder and the canary are Qwen-lineage.
+The map's generation (grown lexicon or index clustering) and its deployed path; distinct collections versus a metadata filter; dream's integration, with index freshness as an audited finding and the per-user tier as a third namespace candidate; the tokenizer lens, since the pinned tiktoken reference over-counts CJK and the embedder and the canary are Qwen-lineage.
