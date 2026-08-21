@@ -18,3 +18,4 @@ applied = RENAME-repro-waiver recorded=2026-07-23 via=verify
 applied = REFS-a-number-resolves recorded=2026-07-27 via=verify
 applied = GATE-refs-in-verify recorded=2026-07-27 via=verify
 applied = PIN-two-surfaces-two-claims recorded=2026-08-03 via=verify
+applied = LEM-pronoun-system recorded=2026-08-21 via=verify
