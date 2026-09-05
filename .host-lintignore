@@ -33,3 +33,4 @@ plan/*/fen-results-spoiled-truncated.md
 # excluded, never reworded (the entrance's record rule).
 .host-receipts
 .host-task-receipts
+.zcode/
