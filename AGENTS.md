@@ -1,4 +1,4 @@
-# CLAUDE.md
+# AGENTS.md
 
 Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
 
@@ -33,7 +33,7 @@ LEXICON declarations: **A declaration is a report, not a settlement.** Declaring
 
 Agentic-host model: this repository is `agentic-host`, an agentic project built on the methodology authored in `host-template`. Its rooms are personas in `cast/`, decisions in `call/` (MADR), milestones in `plan/<NNNN-slug>/` indexed by `PLAN.md`, and the software under development as bare stores with worktrees (the *Where* room). Verification runs across the ladder's lanes (the [verifiers](STRUCTURE.md#verifiers)); our own tooling is the `host-*` [components](STRUCTURE.md#components).
 
-Copy-at-version: the methodology spine (the four principles below, plus audited plans and append-only memory) is a copy held at the template revision recorded in `.host`; the template is the canonical, versioned source. To change the spine, change the template and apply the revision-keyed upgrade ledger (`host-template/UPGRADING.md`); do not fork the spine here in isolation. The nested `host-template/CLAUDE.md` is that source, not live governance for this repo (the exemption above).
+Copy-at-version: the methodology spine (the four principles below, plus audited plans and append-only memory) is a copy held at the template revision recorded in `.host`; the template is the canonical, versioned source. To change the spine, change the template and apply the revision-keyed upgrade ledger (`host-template/UPGRADING.md`); do not fork the spine here in isolation. The nested `host-template/AGENTS.md` is that source, not live governance for this repo (the exemption above).
 
 ## 1. Think Before Coding
 
@@ -295,7 +295,7 @@ corpus.
 
 ## calx-knap register
 
-calx-knap ([slartibardfast/calx-knap](https://github.com/slartibardfast/calx-knap)) is vendored read-only under `tools/calx-knap`: it is never maintained in this repo, and a change it needs goes upstream. Its controlled register compresses the always-loaded surfaces (the territory map, the memory surfaces, the skills; root CLAUDE.md belongs to plan/0079's render), and every artifact it accepts is gated behind pre-registered behavioral probes on the weakest deployed model.
+calx-knap ([slartibardfast/calx-knap](https://github.com/slartibardfast/calx-knap)) is vendored read-only under `tools/calx-knap`: it is never maintained in this repo, and a change it needs goes upstream. Its controlled register compresses the always-loaded surfaces (the territory map, the memory surfaces, the skills; the root manual belongs to plan/0079's render), and every artifact it accepts is gated behind pre-registered behavioral probes on the weakest deployed model.
 
 - Spec: `calx-knap.md`, repo root. Read BEFORE any edit to a register file.
 - Register files: ALL artifact paths per `.calx-knap/overrides.md`, ALL calx-knap skill files.
