@@ -10,7 +10,7 @@ Its rooms:
 | When | `plan/` | milestone index and folders (see `PLAN.md`) |
 | Where | `software/<name>/main/` | the `host-*` [components](#components) under development in the [software-root](#software-root): bare stores with worktrees (`.host-software`) |
 | Why | `call/` | decisions about the software (MADR); **instance-only; binds no adopter**. Settled methodology decisions stay as immutable history, marked `Status: superseded by the spine` |
-| How | `CLAUDE.md` + tooling | this repo's manual and the `host-*` tools |
+| How | `AGENTS.md` + tooling | the operating manual and the `host-*` tools |
 
 **Adopter boundary.** The normative methodology lives in `host-template/` (the
 versioned source you copy-at-version), not in this repo's top-level rooms. This

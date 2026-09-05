@@ -2,3 +2,4 @@ template = "https://github.com/connollydavid/host-template"
 adopted  = "2026-06-14"
 name     = "agentic-host"
 baseline = "ff04a94"
+active-corpus = .host-corpus

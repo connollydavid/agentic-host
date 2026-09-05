@@ -1,0 +1,23 @@
+# Cut plan/0085-active-default-surfaces
+
+On approval I will create `plan/0085-active-default-surfaces/README.md`, add the PLAN.md milestone row, gate (`host-lifecycle prose .` + refs), and commit and push each in its own commit. No implementation begins under this approval; the plan's build sequence gates that.
+
+## The plan's substance
+
+**Trigger:** operator-directed, three asks over one partition, with the definition settled by iteration this session. The partition is the calx-knap doctrine's **always-loaded surfaces**: the manual, STRUCTURE.md, linked skills, and the territory/memory surfaces as they come to exist. Three changes:
+
+1. **Zero host-lint warnings, held strict** — within the declared corpus a warning counts as a flag; outside it, today's tiers stand unchanged. This is the whole of the "ASCII-only" ask as the operator defined it: em-dashes, arrows, and the decoration family are warning-tier tropes today, so the strict reading flags them where it matters and no separate byte rule is built.
+2. **A counted non-ASCII census, disclosed not gated** — the declared corpus's non-ASCII bytes are counted beside the verdict, so the exempt populations (Chinese script, awaiting the deferred full zh translation; IPA in the pronunciation lines) stay measured and a new category is visible on arrival. Nothing gates on non-ASCII as a category; "exempt" therefore means the census carries it, not that a rule spares it.
+3. **The manual becomes `AGENTS.md`** — `CLAUDE.md` becomes a one-line text pointer (never a symlink: this filesystem drops link bits, and a text pointer renders on the forge and survives Windows checkouts).
+
+**The lem correction (operator ruling):** the manual carries partial zh translations of the pronoun system — Chinese columns in the tables, zh and Cantonese example sentences, a zh pronunciation line. Those are **removed** from the always-loaded copies (template and host) as a content edit; the full zh translation is **deferred** and recorded in PLAN.md's follow-up table. The IPA pronunciation lines stay. The manual after the removal teaches the system in English with the pronunciation intact and no zh partials.
+
+**Measured grounding:** the manuals sit at zero prose warns today, so the strict half holds ground with a gate rather than retakes it; the non-ASCII census population is 31 lines in the host manual and 35 in the template's, dominated by the zh partials being removed plus the exempt IPA; the rename touches 20 enumerated host-lifecycle source references plus memory.rs, dream.rs, and the entrance.
+
+**Key decisions:** the corpus is **declared, never discovered** — the file set is declared in the recipe (exact home a gather-data question) and the gate derives the population from the declaration, per the plan/0074 recipe-not-listings lesson; one declaration serves every checker, avoiding the `.host-lintignore` two-list failure shape. The rename is template-first via `git mv` (history intact), this host migrates in full, sequenced before plan/0079 renders the renamed file set. Records (plan/, call/, MEMORY.md) keep their own bytes, never rewritten.
+
+**Build sequence (anchored nodes):** `#gather-data` (per-file warn census and non-ASCII census with the exempt populations stated; the full CLAUDE.md surface list with migration shapes; the declaration home and grammar; which lem lines are zh partials versus doctrine; pointer text Fen-probed) → `#write-spec` → `#write-obligations` (day-one state as tests: the declaration reddens on any warn in the corpus; the census discloses zh and IPA without flagging them) → `#implement-gate` → `#implement-rename` → `#migrate-this-host` → `#cast-consult` → `#adversarial-review` (dedicated lenses: the declaration becoming a second ignore list; the census growing into a gate by drift; the doctrine fragmenting between the manual and the future zh translation) → `#fen-acceptance` (the real qwen3.5-4b follows the pointer, applies the pronoun system from the zh-free manual, reads the strict verdict without remediating records; unreachable channel recorded owed, never simulated) → `#write-spine-doctrine` (ledger entries: the rename with adopter migration steps; the declared-corpus invariants and census; superseding the lem entry's sync instruction) → `#release-and-re-pin`.
+
+**Out of scope, recorded:** the full zh translation (deferred, recorded in the follow-up table); gating on non-ASCII as a category (declined by definition this session); rewriting records; the `.host-lintignore` two-list separation; the strict tier beyond the declared corpus; plan/0079's render itself.
+
+Permissions the execution needs: writes under plan/ and PLAN.md, the prose and refs gates, git commits and pushes on the host repo.

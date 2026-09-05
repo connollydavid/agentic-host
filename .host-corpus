@@ -1,0 +1,6 @@
+# The declared always-loaded corpus (plan/0085): these files are held to the
+# strict tier, a warning is a flag, and their non-ASCII bytes are counted in the
+# census. The territory and memory surfaces join when plan/0083 builds them.
+AGENTS.md
+CLAUDE.md
+STRUCTURE.md
