@@ -63,7 +63,7 @@ A census note, measured on the record: [plan/0082](../0082-suite-zero-open-bugs/
 - depends: #write-obligations
 
 ### The test matrix {#write-tests}
-- verify: the suite covers the issue's four forms plus local-link, relative-target, wrong-file, and origin-absent; mutating the rule reddens its named tests; clippy clean at the pinned toolchain; `./test-integration.sh` green
+- verify: the suite covers the issue's four forms plus local-link, relative-target, wrong-file, and origin-absent; mutating the rule reddens its named tests; clippy clean at the pinned toolchain; the exit-paths integration suite green (host-lifecycle's integration lane, not host-lint's script)
 - depends: #implement
 
 ### Cast consultation {#cast-consult}
