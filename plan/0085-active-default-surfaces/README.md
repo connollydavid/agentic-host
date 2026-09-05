@@ -18,6 +18,8 @@ The rename half adopts the vendor-neutral convention [DESIGN-LEM-MEMORY.md](../.
 
 The manual carries **partial zh translations** of the pronoun system: Chinese columns in the paradigm tables, zh and Cantonese example sentences, and a zh pronunciation line. Those are **removed** from the always-loaded copies (template and host) as a content edit; the system is taught in English with the IPA pronunciations intact. The **full zh translation is deferred** by operator ruling and recorded in PLAN.md's follow-up table, so the deferred work is on the record rather than implicit; when it lands, the census already measures it.
 
+**Landed early (2026-09-05, operator-directed).** The zh removal is no longer waiting for this plan's build: the partial zh content was observed switching an agent into Chinese mid-session, so both manuals were edited the same day — the quick-reference Chinese column, the Chinese paradigm, the zh pronunciation and example lines, the zh-specific rules, and the decoration characters beside them (the section sign and three arrow glyphs) are gone from the always-loaded copies. What remains here is the census, the strict tier, the declaration, and the rename.
+
 ## Decision
 
 - **The corpus is declared, never discovered.** The always-loaded file set is declared in the recipe (the exact home is a gather-data question: a manifest stanza versus a `.host` key), and the gate derives its population from the declaration. The plan/0074 lesson governs: deriving requirements from directory listings made emptying a directory delete the question.
