@@ -729,3 +729,10 @@
     authorization = connollydavid/host-lifecycle#26
     tool = host-lifecycle@0.49.3
     recorded = 2026-08-08
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.51.0@7fb2497dcfe90b27a63c011153f00c9c3f55c1eaa6ecc5825e6acc0609d0299b
+    authorization = plan/0084#release-and-re-pin
+    tool = host-lifecycle@0.50.0
+    recorded = 2026-09-05
