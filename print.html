@@ -12788,10 +12788,21 @@ the project-specific parts of its `CLAUDE.md` =&gt; the project-specific parts o
 <p>The mappings are deliberately precise strings rather than a bare <code>CLAUDE.md =&gt; AGENTS.md</code>: a bare token substitution would corrupt the records that describe the rename itself (plan/0084, plan/0085, the 2026-09-05 MEMORY entries), which must continue to say what happened. The two intentional <code>CLAUDE.md</code> mentions that remain in the manuals are the pointer's own name in live prose.</p>
 <h2 id="consequences-40"><a class="header" href="#consequences-40">Consequences</a></h2>
 <ul>
-<li>The dictionary's comment syntax (<code># </code> prefixes a comment) cannot express a mapping whose old string starts with a markdown H1, so both title lines were hand-edited beside the apply. Recorded as a host-lifecycle tool note: an escaped or quoted form for mapping lines beginning with <code>#</code> would make H1 renames expressible.</li>
-<li>The specula and allium submodules' <code>claude</code>-named scripts and agent docs are upstream vendor vocabulary (the Claude Code adapter), not this methodology's manual name, and are untouched.</li>
-<li>The records that cite <code>CLAUDE.md</code> before this call are history and stand as written; citations in forward documents follow the renamed file.</li>
-<li>The ledger's old <code>verify</code> greps are handled by the evaluator's pointer-following (shipped in v0.52.1), not by this map.</li>
+<li>
+<p>The dictionary's comment syntax (<code># </code> prefixes a comment) cannot express a mapping whose old string starts with a markdown H1, so both title lines were hand-edited beside the apply. Recorded as a host-lifecycle tool note: an escaped or quoted form for mapping lines beginning with <code>#</code> would make H1 renames expressible.</p>
+</li>
+<li>
+<p>The specula and allium submodules' <code>claude</code>-named scripts and agent docs are upstream vendor vocabulary (the Claude Code adapter), not this methodology's manual name, and are untouched.</p>
+</li>
+<li>
+<p>The records that cite <code>CLAUDE.md</code> before this call are history and stand as written; citations in forward documents follow the renamed file.</p>
+</li>
+<li>
+<p>The ledger's old <code>verify</code> greps are handled by the evaluator's pointer-following (shipped in v0.52.1), not by this map.</p>
+</li>
+<li>
+<p>Addendum (2026-09-05, same day): the template README's own room table carried the same stale How row and was fixed by the same substitution after the dictionary retired; the census over both manuals and the front-door documents now holds only the pointer's own name.</p>
+</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="agentsmd"><a class="header" href="#agentsmd">AGENTS.md</a></h1>
 <p>Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.</p>
