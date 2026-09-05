@@ -57,4 +57,4 @@ temperature 1.0, top_p 0.95, top_k 20, min_p 0.0,
 presence_penalty 1.5, repetition_penalty 1.0, max_tokens 32768
 ```
 
-The two recorded lessons are binding on the kit this plan builds: check a new kit against the last corrected protocol before running it (the plan/0080 kit had regressed against a correction that lived in a script comment), and record protocol corrections beside the prompts the next kit is built from. plan/0080 preserves the no-think runner and its truncated run beside the corrected one; they are the labeled counterexample.
+The two recorded lessons are binding on the kit this plan builds: check a new kit against the last corrected protocol before running it (the plan/0080 kit had regressed against a correction that lived in a script comment), and record protocol corrections beside the prompts the next kit is built from. The labeled counterexample lives in plan/0080: its no-think runner truncated every cell at the token cap, and the spoiled run is preserved there beside the corrected one.
