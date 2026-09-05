@@ -11,7 +11,7 @@
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lint
 	artifact  = target/x86_64-unknown-linux-musl/release/host-lint fd65cad2f21d2f0ce1ec4b44ba6da7d37895a8bdc7a1d78aa0fe4a73459fc239
-	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v9/vendor.tar.gz 97d327e6eea41dfb79c68c01eaf0f0191936522e752f2ba37e4f43fc5eecee5c
+	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v12/vendor.tar.gz a6ef5b566fa4d31498dfdf950234f92eef3bb429d3b6f91430c4ab72a8e8dd0a
 	hooks     = pre-commit
 [software "host-lifecycle"]
 	url       = https://github.com/connollydavid/host-lifecycle.git
