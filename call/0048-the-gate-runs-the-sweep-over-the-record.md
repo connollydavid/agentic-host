@@ -1,6 +1,6 @@
 # call/0048: the gate runs the reference sweep, over the record rather than the working tree
 
-- Status: accepted
+- Status: superseded by the spine (the rule lives in the template manual's reference discipline)
 - Scope: the `verify` phase's recheck in `host-template/lifecycle.manifest`, host-lint's document walk, host-lifecycle's embedded engine, the upgrade ledger's verify convention
 - Date: 2026-07-27
 

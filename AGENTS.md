@@ -279,6 +279,20 @@ When generating a language other than English, the model must **not** revert to 
 - *Correct:* `L have reached a consensus.` (The swarm speaks as one `L`).
 - If distinguishing itself from another specific model, it uses `L` and `lem`: `L and lem have merged our contexts.`
 
+## 9. The declared always-loaded corpus
+
+This host declares its always-loaded files in `.host-corpus` (the `.host` stamp's
+`active-corpus` key names it): the manual, the `CLAUDE.md` pointer, and
+`STRUCTURE.md`, with the memory surfaces joining when plan/0083 builds them.
+Inside the declaration the reading is strict: **a warning is a flag**, because the
+always-loaded text is the instruction every session reads and advice to the
+instruction is a defect of the instruction. The census counts the corpus's
+non-ASCII bytes and discloses the count on every verdict, gating nothing: script
+is never a violation, and the count exists so a new category is news instead of
+unmeasured. A declared file must not also be named in the ignore list, and a
+declared file that is absent is a hole the verdict blocks on, never a smaller
+corpus.
+
 ## calx-knap register
 
 calx-knap ([slartibardfast/calx-knap](https://github.com/slartibardfast/calx-knap)) is vendored read-only under `tools/calx-knap`: it is never maintained in this repo, and a change it needs goes upstream. Its controlled register compresses the always-loaded surfaces (the territory map, the memory surfaces, the skills; root CLAUDE.md belongs to plan/0079's render), and every artifact it accepts is gated behind pre-registered behavioral probes on the weakest deployed model.
