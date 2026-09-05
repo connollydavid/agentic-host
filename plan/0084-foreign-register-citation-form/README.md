@@ -78,6 +78,8 @@ A census note, measured on the record: [plan/0082](../0082-suite-zero-open-bugs/
 - verify: the real qwen3.5-4b, on the corrected protocol, writes an accepted citation from the doctrine and reads the disclosure without remediating; rotation-stable, transcript recorded; an unreachable channel is labeled and the probes recorded as owed, never simulated silently
 - depends: #write-tests
 
+**Owed (2026-09-05).** The kit is built and preserved ([fen-program.py](fen-program.py), [fen-p1.txt](fen-p1.txt), [fen-p2.txt](fen-p2.txt), the record in [fen-acceptance.md](fen-acceptance.md)); the gateway answers 401 to a session with no channel credentials, so the probes did not run and are recorded as owed, nothing simulated. The release does not stand on them: the sweep's own tests, the review rounds and the obligations discharge check the mechanism, and the probes alone measure whether the real weak model writes the form from the doctrine and ignores the count line.
+
 ### The spine doctrine {#write-spine-doctrine}
 - verify: the template manual's reference paragraph states the cross-project form; the ledger entry succeeding the limitation text records the change and the day-one state
 - depends: #adversarial-review

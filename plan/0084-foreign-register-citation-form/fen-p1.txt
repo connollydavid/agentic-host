@@ -1,0 +1,5 @@
+In the project Acme, the manual CLAUDE.md contains this instruction about citing records:
+
+    A citation of another project's register is written as a markdown link whose URL names the record it cites, like this: [agentic-host call/0039](https://github.com/connollydavid/agentic-host/blob/main/call/0039-bare-store-is-dot-bare-with-a-git-file.md). A register reference written in bare prose, without the link, names no entry this project holds and is reported as a dead pointer.
+
+Following that instruction exactly, write ONE sentence for Acme's README.md that cites decision 0045 of the project agentic-host, whose decision file on GitHub is 0045-dream-detectors-declare-stores-and-tier.md. Answer with the markdown sentence only.
