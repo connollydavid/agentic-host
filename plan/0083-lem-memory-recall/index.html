@@ -199,49 +199,49 @@
 <p>The new component, named <code>host-memory</code> by operator ruling of 2026-08-21, lands under the <code>.host-software</code> recipe: bare store, worktree, deps-bundle pin, hermetic musl artifact in the recorded toolchain. The name names the content it serves, not the mechanism. LanceDB's dependency tree is audited against the deps-bundle doctrine before any release.</p>
 <ul>
 <li>verify: <code>software --check</code> reads the stanza clean; the artifact re-derives under <code>software --verify-build</code></li>
-<li>depends: vendor-calx-knap</li>
+<li>depends: #vendor-calx-knap</li>
 </ul>
 <h3 id="embedder-boundary"><a class="header" href="#embedder-boundary">Embedder boundary</a></h3>
 <p>Qwen3-Embedding-0.6B INT8 ONNX ships pinned behind an arm's-length boundary after the host-reference-ocr pattern, license checked and receipted; last-token pooling runs under the ort crate. Qwen lineage is deliberate: Fen is Qwen-lineage, so the canary and the embedder share a tokenizer family.</p>
 <ul>
 <li>verify: a receipt records the pinned weights and the license check; a fixed probe embeds byte-stable across re-runs</li>
-<li>depends: component-scaffold</li>
+<li>depends: #component-scaffold</li>
 </ul>
 <h3 id="indexer-and-query"><a class="header" href="#indexer-and-query">Indexer and query</a></h3>
 <p><code>index</code>, <code>query</code>, and <code>map</code> commands in the single-command, tool-carried shape Fen demands; hash-gated re-embedding of changed units only; staleness advises, never gates; every hit carries exact pointers back into the log.</p>
 <ul>
 <li>verify: re-indexing an unchanged log embeds nothing; a stale index re-lists rather than falls silent; a garbled query degrades to best-effort hits plus the map</li>
-<li>depends: embedder-boundary</li>
+<li>depends: #embedder-boundary</li>
 </ul>
 <h3 id="semantic-pass"><a class="header" href="#semantic-pass">Semantic pass</a></h3>
 <p>MEMORY.md as the first namespace, one unit per entry: the entry format parses cleanly into date, lead, body, line range. Retrieval probes are frozen before compression work, and Fen completes the retrieval loop on the built artifact.</p>
 <ul>
 <li>verify: the frozen probe set passes; Fen finishes a query-to-deep-read loop, single command at a time</li>
-<li>depends: indexer-and-query</li>
+<li>depends: #indexer-and-query</li>
 </ul>
 <h3 id="episodic-pass"><a class="header" href="#episodic-pass">Episodic pass</a></h3>
 <p>call/ and plan/ as the second namespace, distinct collection or metadata filter: how the project solved what it solved, so retrieval answers past method alongside static fact.</p>
 <ul>
 <li>verify: a query about a past method returns the milestone record beside the static facts</li>
-<li>depends: semantic-pass</li>
+<li>depends: #semantic-pass</li>
 </ul>
 <h3 id="territory-map"><a class="header" href="#territory-map">Territory map</a></h3>
 <p>Generated from the index, longhand first, knapped through the calx-knap corpus loop, gated on Fen, deployed to the session load. The map is the load order and the trigger that says there is something to ask.</p>
 <ul>
 <li>verify: the knapped map passes its probes on Fen; every region slug resolves against the index</li>
-<li>depends: semantic-pass, vendor-calx-knap</li>
+<li>depends: #semantic-pass, #vendor-calx-knap</li>
 </ul>
 <h3 id="scope-prose-lane"><a class="header" href="#scope-prose-lane">Scope the prose lane</a></h3>
 <p>host-lint and the prose lane scope off the register, the map, and the index surfaces, using host-lint's own exclusion mechanism; nothing in the register names or configures the tool.</p>
 <ul>
 <li>verify: the prose lane exits zero over the tracked machine-audience surfaces; no human-audience document loses coverage</li>
-<li>depends: exclusion-surface</li>
+<li>depends: #exclusion-surface</li>
 </ul>
 <h3 id="knap-skills"><a class="header" href="#knap-skills">Knap the skills</a></h3>
 <p>The on-demand loaded skills compress into the register, one document at a time, probes frozen first, acceptance measured. Root CLAUDE.md is not in this pass: its compression belongs to plan/0079's render.</p>
 <ul>
 <li>verify: each accepted skill passes its probes on Fen; LOW-YIELD skills keep their originals</li>
-<li>depends: vendor-calx-knap, scope-prose-lane</li>
+<li>depends: #vendor-calx-knap, #scope-prose-lane</li>
 </ul>
 <h2 id="open-questions"><a class="header" href="#open-questions">Open questions</a></h2>
 <p>The map's generation (grown lexicon or index clustering) and its deployed path; distinct collections versus a metadata filter; dream's integration, with index freshness as an audited finding and the per-user tier as a third namespace candidate; the tokenizer lens, since the pinned tiktoken reference over-counts CJK and the embedder and the canary are Qwen-lineage.</p>
