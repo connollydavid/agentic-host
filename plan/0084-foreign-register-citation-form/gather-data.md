@@ -50,6 +50,11 @@ Origin-absent repositories: the design reads foreign by default. An absolute URL
 
 ## The protocol
 
-The weak-agent acceptance runs on the real qwen3.5-4b through the gateway behind TLS at `api.d07yx58.net`, under the plan/0076 corrected protocol exactly as plan/0080's thinking kit records it: thinking enabled through the chat template (`enable_thinking: true`), the model card's thinking-general parameters (temperature 1.0, top_p 0.95, top_k 20, min_p 0.0, presence_penalty 1.5, repetition_penalty 1.0, max_tokens 32768), the answer read after the closing `</think>`, two draws per probe, results appended after every cell so a mid-run failure preserves the completed ones.
+The weak-agent acceptance runs on the real qwen3.5-4b through the gateway behind TLS at `api.d07yx58.net`, under the plan/0076 corrected protocol exactly as plan/0080's thinking kit records it: thinking enabled through the chat template (`enable_thinking: true`), the model card's thinking-general parameters, the answer read after the closing `</think>`, two draws per probe, results appended after every cell so a mid-run failure preserves the completed ones. The parameters, as the kit carries them:
 
-The two recorded lessons are binding on the kit this plan builds: check a new kit against the last corrected protocol before running it (the plan/0080 kit had regressed against a correction that lived in a script comment), and record protocol corrections beside the prompts the next kit is built from. The no-think runner and its truncated run stay preserved in plan/0080 as the labeled counterexample.
+```
+temperature 1.0, top_p 0.95, top_k 20, min_p 0.0,
+presence_penalty 1.5, repetition_penalty 1.0, max_tokens 32768
+```
+
+The two recorded lessons are binding on the kit this plan builds: check a new kit against the last corrected protocol before running it (the plan/0080 kit had regressed against a correction that lived in a script comment), and record protocol corrections beside the prompts the next kit is built from. plan/0080 preserves the no-think runner and its truncated run beside the corrected one; they are the labeled counterexample.
