@@ -29,56 +29,56 @@ calx-knap enters as a submodule under tools/, external by source after the alliu
 The new component, named `host-memory` by operator ruling of 2026-08-21, lands under the `.host-software` recipe: bare store, worktree, deps-bundle pin, hermetic musl artifact in the recorded toolchain. The name names the content it serves, not the mechanism. LanceDB's dependency tree is audited against the deps-bundle doctrine before any release.
 
 - verify: `software --check` reads the stanza clean; the artifact re-derives under `software --verify-build`
-- depends: vendor-calx-knap
+- depends: #vendor-calx-knap
 
 ### Embedder boundary {#embedder-boundary}
 
 Qwen3-Embedding-0.6B INT8 ONNX ships pinned behind an arm's-length boundary after the host-reference-ocr pattern, license checked and receipted; last-token pooling runs under the ort crate. Qwen lineage is deliberate: Fen is Qwen-lineage, so the canary and the embedder share a tokenizer family.
 
 - verify: a receipt records the pinned weights and the license check; a fixed probe embeds byte-stable across re-runs
-- depends: component-scaffold
+- depends: #component-scaffold
 
 ### Indexer and query {#indexer-and-query}
 
 `index`, `query`, and `map` commands in the single-command, tool-carried shape Fen demands; hash-gated re-embedding of changed units only; staleness advises, never gates; every hit carries exact pointers back into the log.
 
 - verify: re-indexing an unchanged log embeds nothing; a stale index re-lists rather than falls silent; a garbled query degrades to best-effort hits plus the map
-- depends: embedder-boundary
+- depends: #embedder-boundary
 
 ### Semantic pass {#semantic-pass}
 
 MEMORY.md as the first namespace, one unit per entry: the entry format parses cleanly into date, lead, body, line range. Retrieval probes are frozen before compression work, and Fen completes the retrieval loop on the built artifact.
 
 - verify: the frozen probe set passes; Fen finishes a query-to-deep-read loop, single command at a time
-- depends: indexer-and-query
+- depends: #indexer-and-query
 
 ### Episodic pass {#episodic-pass}
 
 call/ and plan/ as the second namespace, distinct collection or metadata filter: how the project solved what it solved, so retrieval answers past method alongside static fact.
 
 - verify: a query about a past method returns the milestone record beside the static facts
-- depends: semantic-pass
+- depends: #semantic-pass
 
 ### Territory map {#territory-map}
 
 Generated from the index, longhand first, knapped through the calx-knap corpus loop, gated on Fen, deployed to the session load. The map is the load order and the trigger that says there is something to ask.
 
 - verify: the knapped map passes its probes on Fen; every region slug resolves against the index
-- depends: semantic-pass, vendor-calx-knap
+- depends: #semantic-pass, #vendor-calx-knap
 
 ### Scope the prose lane {#scope-prose-lane}
 
 host-lint and the prose lane scope off the register, the map, and the index surfaces, using host-lint's own exclusion mechanism; nothing in the register names or configures the tool.
 
 - verify: the prose lane exits zero over the tracked machine-audience surfaces; no human-audience document loses coverage
-- depends: exclusion-surface
+- depends: #exclusion-surface
 
 ### Knap the skills {#knap-skills}
 
 The on-demand loaded skills compress into the register, one document at a time, probes frozen first, acceptance measured. Root CLAUDE.md is not in this pass: its compression belongs to plan/0079's render.
 
 - verify: each accepted skill passes its probes on Fen; LOW-YIELD skills keep their originals
-- depends: vendor-calx-knap, scope-prose-lane
+- depends: #vendor-calx-knap, #scope-prose-lane
 
 ## Open questions
 
