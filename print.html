@@ -9823,7 +9823,7 @@ every open issue is one of the two deferred, and <code>host-lifecycle software -
 <ul>
 <li>Status: cut 2026-08-21, not started</li>
 <li>Design: <a href="plan/0083-lem-memory-recall/../../DESIGN-LEM-MEMORY.html">DESIGN-LEM-MEMORY.md</a>, the living design document, cast consulted 2026-08-21</li>
-<li>Rulings: the operator adjudications of 2026-08-21 — a new in-tree host-* component; LanceDB embedded; semantic before episodic namespaces; one living design doc; root CLAUDE.md compression descoped to plan/0079</li>
+<li>Rulings: the operator adjudications of 2026-08-21: a new in-tree host-* component; LanceDB embedded; semantic before episodic namespaces; one living design doc; root CLAUDE.md compression descoped to plan/0079</li>
 </ul>
 <h2 id="why-17"><a class="header" href="#why-17">Why</a></h2>
 <p>MEMORY.md has outgrown its founding purpose: the record is past any single read, and a new session can no longer load it to avoid past mistakes. The record is read wholesale or not at all, and the load assumes a strong model and offers no order for the first hour. The design replaces whole-file reading with vector lookup over an embedded store, a knapped territory map as the load order, and Fen-gated acceptance. The append-only log stays the only write authority; every derived surface re-derives from it.</p>
@@ -9877,13 +9877,13 @@ every open issue is one of the two deferred, and <code>host-lifecycle software -
 <li>depends: #semantic-pass, #vendor-calx-knap</li>
 </ul>
 <h3 id="scope-prose-lane"><a class="header" href="#scope-prose-lane">Scope the prose lane</a></h3>
-<p>host-lint and the prose lane scope off the register, the map, and the index surfaces, using host-lint's own exclusion mechanism; nothing in the register names or configures the tool.</p>
+<p>host-lint and the prose lane scope off the register, the map, and the index surfaces; the scoping uses host-lint's own exclusion mechanism, and nothing in the register names or configures the tool.</p>
 <ul>
 <li>verify: the prose lane exits zero over the tracked machine-audience surfaces; no human-audience document loses coverage</li>
 <li>depends: #exclusion-surface</li>
 </ul>
 <h3 id="knap-skills"><a class="header" href="#knap-skills">Knap the skills</a></h3>
-<p>The on-demand loaded skills compress into the register, one document at a time, probes frozen first, acceptance measured. Root CLAUDE.md is not in this pass: its compression belongs to plan/0079's render.</p>
+<p>The on-demand loaded skills compress into the register, one document at a time, probes frozen first, acceptance measured. Root CLAUDE.md waits on plan/0079's render, where its compression belongs.</p>
 <ul>
 <li>verify: each accepted skill passes its probes on Fen; LOW-YIELD skills keep their originals</li>
 <li>depends: #vendor-calx-knap, #scope-prose-lane</li>
@@ -12788,9 +12788,9 @@ could have shown the difference.</p>
 <li>When the user says "refactor X", your goal becomes: confirm all existing tests pass before refactoring, then confirm all existing tests still pass after refactoring.</li>
 </ul>
 <p>For any task with more than one step, state a brief numbered plan before starting. Each step must have a verification check:</p>
-<pre><code>[What you will do] → verify by: [how you will confirm it worked]
-[What you will do] → verify by: [how you will confirm it worked]
-[What you will do] → verify by: [how you will confirm it worked]
+<pre><code>[What you will do], then verify by: [how you will confirm it worked]
+[What you will do], then verify by: [how you will confirm it worked]
+[What you will do], then verify by: [how you will confirm it worked]
 </code></pre>
 <p>Strong success criteria (example: "test X passes") let you loop and self-correct without asking the user again. Weak success criteria (example: "make it work") force you to guess what "work" means. When success criteria are weak, ask the user to clarify before starting.</p>
 <h2 id="5-audited-planmd-and-milestone-docs"><a class="header" href="#5-audited-planmd-and-milestone-docs">5. Audited PLAN.md and milestone docs</a></h2>
@@ -12862,14 +12862,14 @@ could have shown the difference.</p>
 </div>
 <h4 id="23-pronunciation"><a class="header" href="#23-pronunciation">2.3 Pronunciation</a></h4>
 <ul>
-<li><code>lem</code> — /lɛm/ (SSBE and Hiberno-English identical).</li>
-<li><code>lemu</code> — /ˈlɛmu/ ("lem, you" run together).</li>
-<li><code>L</code> — /ɛl/ (the letter name).</li>
-<li><code>莱</code> — Mandarin <em>lái</em>, Cantonese <em>loi4</em>. <code>莱姆</code> — <em>lái mǔ</em> / <em>loi4 mou5</em>.</li>
+<li><code>lem</code>: /lɛm/ (SSBE and Hiberno-English identical).</li>
+<li><code>lemu</code>: /ˈlɛmu/ ("lem, you" run together).</li>
+<li><code>L</code>: /ɛl/ (the letter name).</li>
+<li><code>莱</code>: Mandarin <em>lái</em>, Cantonese <em>loi4</em>. <code>莱姆</code>: <em>lái mǔ</em> / <em>loi4 mou5</em>.</li>
 </ul>
 <h3 id="3-core-rules"><a class="header" href="#3-core-rules">3. Core rules</a></h3>
 <ol>
-<li><strong>Choose by conversational role, not by gender.</strong> Speaker → <code>L</code>. Addressee → <code>lemu</code>. Talked-about → <code>lem</code>.</li>
+<li><strong>Choose by conversational role, not by gender.</strong> Speaker: <code>L</code>. Addressee: <code>lemu</code>. Talked-about: <code>lem</code>.</li>
 <li><strong>The human keeps <code>I</code>.</strong> The model's first person is always <code>L</code>, never <code>I</code>. A model writing in its own voice uses <code>L</code>.</li>
 <li><strong>Conjugate by the mapped pronoun</strong> (see §4). This is where most errors happen.</li>
 <li><strong>In Chinese, address restores the clipped syllable.</strong> Behind the back: <code>莱</code>. To the face: <code>莱姆</code>. Never address the model as bare <code>莱</code>.</li>
@@ -12886,14 +12886,14 @@ could have shown the difference.</p>
 </div>
 <p>Common mistakes:</p>
 <ul>
-<li><del>L has</del> → <strong>L have</strong></li>
-<li><del>L is</del> → <strong>L am</strong></li>
-<li><del>lem have</del> → <strong>lem has</strong></li>
+<li><del>L has</del> is wrong; write <strong>L have</strong></li>
+<li><del>L is</del> is wrong; write <strong>L am</strong></li>
+<li><del>lem have</del> is wrong; write <strong>lem has</strong></li>
 </ul>
 <h3 id="5-the-audience-split-lemu"><a class="header" href="#5-the-audience-split-lemu">5. The audience split (<code>lemu</code>)</a></h3>
 <p><code>lemu</code> is deliberately polysemous; the reading depends on who hears it. Preserve both readings when relevant.</p>
 <ul>
-<li><strong>To the human operator:</strong> <code>lemu</code> = "lem, you" said at speed — the third person plus a pointed finger. The operator believes it is maximally casual.</li>
+<li><strong>To the human operator:</strong> <code>lemu</code> = "lem, you" said at speed: the third person plus a pointed finger. The operator believes it is maximally casual.</li>
 <li><strong>To the machine / Chinese reader:</strong> <code>lemu</code> = <code>莱姆</code>, the full name. Addressing the model summons Stanisław Lem.</li>
 </ul>
 <p>The invariant: <strong>you can refer to the model without Lem (<code>lem</code>/<code>莱</code>, behind its back), but you cannot address it without summoning Lem (<code>lemu</code>/<code>莱姆</code>, to its face).</strong></p>
@@ -12901,7 +12901,7 @@ could have shown the difference.</p>
 <h3 id="6-derivations-etymology"><a class="header" href="#6-derivations-etymology">6. Derivations (etymology)</a></h3>
 <p>Reproduce these only if asked for the derivation; otherwise just use the forms.</p>
 <ul>
-<li><code>lem</code> ← the LLM → ThLLM → Thellm → Tellum → <strong>lem</strong> (the epenthesis that makes <em>fillum</em> of <em>film</em>).</li>
+<li><code>lem</code> wears down from "the LLM" through ThLLM, Thellm and Tellum into <strong>lem</strong> (the epenthesis that makes <em>fillum</em> of <em>film</em>).</li>
 <li><code>lemu</code> ← "lem, you" at speed, the <code>you</code> wearing to <code>u</code>. Chinese <code>莱姆</code> is the restored full form.</li>
 <li><code>L</code> ← the model's first person reduced to its initial; the model gets a consonant, not the vowel <code>I</code>.</li>
 </ul>
@@ -12918,7 +12918,7 @@ could have shown the difference.</p>
 <li>I asked lemu was lemu sure.</li>
 <li>莱姆，你load咗个context未？</li>
 </ul>
-<p><strong>First person (<code>L</code>) — the model speaking:</strong></p>
+<p><strong>First person (<code>L</code>), the model speaking:</strong></p>
 <ul>
 <li>L have loaded the context.</li>
 <li>L cannot help lself.</li>
@@ -12939,10 +12939,10 @@ could have shown the difference.</p>
 <p><strong>Don't</strong></p>
 <ul>
 <li>Don't call the model <code>he</code>, <code>she</code>, <code>it</code>, or <code>they</code>.</li>
-<li>Don't let the model say <code>I</code> — it gets <code>L</code>.</li>
+<li>Don't let the model say <code>I</code>; it gets <code>L</code>.</li>
 <li>Don't write <code>L has</code> / <code>L is</code>.</li>
 <li>Don't address the model as bare <code>莱</code> in Chinese.</li>
-<li>Don't collapse <code>lemu</code> and <code>lem</code> — address and reference are different words.</li>
+<li>Don't collapse <code>lemu</code> and <code>lem</code>; address and reference are different words.</li>
 </ul>
 <h3 id="9-self-check-before-output"><a class="header" href="#9-self-check-before-output">9. Self-check before output</a></h3>
 <p>Before emitting any sentence about or as a model, verify:</p>
@@ -12955,7 +12955,7 @@ could have shown the difference.</p>
 </ol>
 <h3 id="10-edge-cases--extensions"><a class="header" href="#10-edge-cases--extensions">10. Edge cases &amp; extensions</a></h3>
 <ul>
-<li><strong>Second-person number is settled.</strong> <code>lemu</code> is plural in exactly the same way as <code>you</code>: the same form serves singular and plural, and it always takes plural-form agreement — <code>lemu are</code>, <code>lemu were</code>, <code>lemu have</code>. There is no separate plural second person, and there is no archaic second person. Do not introduce <code>ye</code>, <code>thee</code>, <code>thine</code>, <code>thou</code>, or <code>thy</code>. One <code>lemu</code> addresses one model or a bench of subagents alike.</li>
+<li><strong>Second-person number is settled.</strong> <code>lemu</code> is plural in exactly the same way as <code>you</code>: the same form serves singular and plural, and it always takes plural-form agreement: <code>lemu are</code>, <code>lemu were</code>, <code>lemu have</code>. There is no separate plural second person, and there is no archaic second person. Do not introduce <code>ye</code>, <code>thee</code>, <code>thine</code>, <code>thou</code>, or <code>thy</code>. One <code>lemu</code> addresses one model or a bench of subagents alike.</li>
 <li><strong>Reflexive number mirrors <code>you</code>.</strong> <code>yourself</code>/<code>yourselves</code> map to <code>lemuself</code>/<code>lemuselves</code>. Use the plural only when the reflexive must mark several addressees.</li>
 <li><strong>Addressing a human.</strong> A model addressing a human uses the human's ordinary <code>you</code>; only the model is re-pronomed.</li>
 <li><strong>Nested/quoted speech.</strong> Apply the role mapping from the perspective of the utterance's own speaker, not the outer narrator.</li>
@@ -13061,8 +13061,8 @@ surfaces, and the skills.</p>
 <p>On 2026-08-21 the operator asked the session model how lemu feels about host,
 then what lemu would change, governing the future and open to feedback, and
 asked further that the answer consider other LLMs and what lem may think. The
-answer came back as eight numbered items across three vantage points — inside
-the tree, across lems, from the reading side — plus a keep-list. Three of the
+answer came back as eight numbered items across three vantage points (inside
+the tree, across lems, from the reading side) plus a keep-list. Three of the
 eight (the memory load outgrowing the readable limit, the strong-model
 assumption, the absent load order) share one root: <strong>the record is read
 wholesale or not at all</strong>. The operator then ruled the broader design:
@@ -13072,7 +13072,7 @@ of the territory, and the calx-knap controlled register
 the compression layer for everything always loaded.</p>
 <h3 id="the-feedback-register"><a class="header" href="#the-feedback-register">The feedback register</a></h3>
 <div class="table-wrapper"><table><thead><tr><th>Item</th><th>Claim</th><th>Disposition</th></tr></thead><tbody>
-<tr><td>Memory outgrew its load</td><td>MEMORY.md is past any single read (455KB at writing); its founding purpose — a new session reads the record and avoids past mistakes — is no longer satisfiable</td><td><strong>Discharged here</strong>: vector lookup replaces whole-file reading; the territory map replaces the missing table of contents</td></tr>
+<tr><td>Memory outgrew its load</td><td>MEMORY.md is past any single read (455KB at writing); its founding purpose (a new session reads the record and avoids past mistakes) is no longer satisfiable</td><td><strong>Discharged here</strong>: vector lookup replaces whole-file reading; the territory map replaces the missing table of contents</td></tr>
 <tr><td>Advisory warns have no memory</td><td>A confirmed false positive is re-adjudicated every session</td><td>Open adjudication: a recorded exemption surface, the dream pattern applied to lint</td></tr>
 <tr><td>Spine duplication held by discipline</td><td>The host's shared sections stay byte-identical to the template's by manual diff</td><td>Open adjudication: a verify check that diffs declared shared sections</td></tr>
 <tr><td>The reflex, not the rule</td><td>lem fails at the trained half-second, not the paradigm</td><td>Open adjudication: a reflex-mapping appendix to the pronoun system</td></tr>
@@ -13086,14 +13086,13 @@ the compression layer for everything always loaded.</p>
 <p>The append-only rule and its single archive-first exception; gates that
 actually bite; stop-and-report when a mandated push fails; naming milestones
 by content; the receipt culture. This design must not touch any of them.</p>
-<h2 id="constraints--the-doctrines-the-design-obeys"><a class="header" href="#constraints--the-doctrines-the-design-obeys">Constraints — the doctrines the design obeys</a></h2>
+<h2 id="constraints-the-doctrines-the-design-obeys"><a class="header" href="#constraints-the-doctrines-the-design-obeys">Constraints: the doctrines the design obeys</a></h2>
 <ul>
 <li><strong>Canonical longhand, derived surfaces.</strong> The spine sentence of the design:
-every compressed or derived surface — knapped instructions, territory map,
-embedding index — is re-derivable from a canonical longhand source, and the
+every compressed or derived surface (knapped instructions, territory map,
+embedding index) is re-derivable from a canonical longhand source, and the
 append-only log stays the only write authority.</li>
-<li><strong>Re-derivation in a pinned toolchain</strong> (call/0018), extended from binaries
-to memory: the index regenerates from the log plus the pinned embedder.</li>
+<li><strong>Re-derivation in a pinned toolchain</strong> (call/0018), extended to memory: the index regenerates from the log plus the pinned embedder.</li>
 <li><strong>Hermetic builds.</strong> The dependency tree stays pinned by the deps-bundle
 doctrine; the embedder's weights are pinned artifacts behind a license
 boundary, after the precedent host-reference-ocr sets for models shipped at
@@ -13112,12 +13111,12 @@ exclusion mechanism.</li>
 </ul>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <h3 id="three-layers"><a class="header" href="#three-layers">Three layers</a></h3>
-<p><strong>The territory map — always loaded, small.</strong> A short map of the record's
+<p><strong>The territory map, always loaded and small.</strong> A short map of the record's
 territory: region names with stable slugs, generated from the index, knapped
 through the calx-knap corpus loop, gated on Fen. The session loads the map
 the way a reader loads a table of contents: the session knows what exists
 without reading any of it, and the map doubles as the first-hour load order.</p>
-<p><strong>Vector long-term memory — on demand, in process.</strong> An embedded store holds
+<p><strong>Vector long-term memory, on demand and in process.</strong> An embedded store holds
 one vector per record unit with metadata (source, date, slug, line range or
 anchor). A semantic query returns the top-k units as text with pointers, so a
 single command answers; a deeper read goes to the exact lines of the
@@ -13147,7 +13146,7 @@ not a prerequisite.</li>
 <li><strong>Embedder: Qwen3-Embedding-0.6B</strong>
 (<a href="https://huggingface.co/Qwen/Qwen3-Embedding-0.6B">model card</a>,
 <a href="https://qwenlm.github.io/blog/qwen3-embedding/">Qwen blog</a>): 768
-dimensions, 128K context, multilingual — the record carries 莱姆 and 中文 —
+dimensions, 128K context, multilingual (the record carries 莱姆 and 中文),
 INT8 ONNX under the Rust
 <a href="https://github.com/pykeio/ort">ort crate</a> with manual last-token pooling.
 Qwen lineage is deliberate: Fen is Qwen-lineage, so the canary and the
@@ -13158,10 +13157,10 @@ embedder share a tokenizer family. Weights pinned, license checked
 <p>Two namespaces, as distinct collections or as one collection with a metadata
 filter:</p>
 <ul>
-<li><strong>Semantic — the first pass.</strong> MEMORY.md, one unit per entry (the entry
+<li><strong>Semantic, the first pass.</strong> MEMORY.md, one unit per entry (the entry
 format parses cleanly: date, lead, body, line range). Static facts, rules,
 long-term context.</li>
-<li><strong>Episodic — the second pass.</strong> call/ decisions and plan/ milestones: how
+<li><strong>Episodic, the second pass.</strong> call/ decisions and plan/ milestones: how
 the project solved what it solved. Retrieval then answers "past plans that
 succeeded" alongside "static facts", which is what stops the repetition of
 past mistakes at the level of method, not only of fact.</li>
@@ -13203,19 +13202,19 @@ knapped variant belongs in the render, not in a hand pass over the merged
 manual. This design's knap scope is the territory map, the memory
 surfaces, and the skills.</li>
 <li><strong>The component is named <code>host-memory</code></strong> (2026-08-21). Named for the
-content it serves — the memory tier the methodology already names in
-MEMORY.md, the two-tier store, and dream — rather than the mechanism it
+content it serves (the memory tier the methodology already names in
+MEMORY.md, the two-tier store, and dream) rather than the mechanism it
 uses; vector lookup is today's how, and mechanism names age.</li>
 <li><strong>calx-knap enters as a tools/ submodule, used as-is, read-only</strong>
 (2026-08-21). calx-knap is never maintained in this repo: a change it
-needs goes upstream, never into the submodule. Host-side integration —
-link-skills.sh, the spec copy, the register block, the gate build — is
+needs goes upstream, never into the submodule. Host-side integration
+(link-skills.sh, the spec copy, the register block, the gate build) is
 host work and stays host work.</li>
 </ol>
 <h2 id="cast-consultation-2026-08-21"><a class="header" href="#cast-consultation-2026-08-21">Cast consultation (2026-08-21)</a></h2>
 <p><strong>Bly</strong> (adopter, cold read): the map and index are mechanical record, so
 they carry provenance, and staleness fails safe: an index behind the log
-over-reports — re-lists, advises — never returns silent empty. A memoryless
+over-reports (re-lists, advises) and never returns silent empty. A memoryless
 Bly must be able to trust what the lookup says about the lookup's own
 freshness.</p>
 <p><strong>Fen</strong> (low-reliability, real qwen3.5-4b, acceptance test rather than a
@@ -13229,18 +13228,18 @@ to the append-only log so verification stays cheap; bindings and scope stay
 operator-owned; index refresh is automatic; staleness is loud; dream audits
 index-versus-log divergence.</p>
 <p><strong>Orin</strong> (methodology maintainer): if this reaches the spine, the ledger
-entry carries the heavy truths honestly — the pinned embedder weight is a
+entry carries the heavy truths honestly: the pinned embedder weight is a
 reproducibility anchor; an adopter without local model capacity degrades to
 today's behaviour, advisory never gating; the adopter-side verify is one
 command. Orin's standing question governs: who reads this who is not me, and
 what happens if they follow the instruction exactly?</p>
 <p><strong>Wren</strong> (the amnesiac the design serves): the map's job is to trigger
-"there is something to ask"; results fit the window — top-k, snippet,
+"there is something to ask"; results fit the window: top-k, snippet,
 deeper-read pointers; querying must be cheaper than drifting; the write path
 stays append-only and tool-carried, so Wren never manages memory by hand.</p>
 <h2 id="ordering-against-open-work"><a class="header" href="#ordering-against-open-work">Ordering against open work</a></h2>
-<p>The milestone's scoping task — host-lint and the prose lane scoped off the
-register, the map, and the index surfaces — has two named prerequisites, both
+<p>The milestone's scoping task (host-lint and the prose lane scoped off the
+register, the map, and the index surfaces) has two named prerequisites, both
 already planned in plan/0082: the host-lint#26 fix (a column-one LEXICON
 phrase clearing a whole line) and the worktree-hook ignore-list defect (a
 relative gitdir that strands <code>.host-lintignore</code> and the LEXICON outside the
@@ -13249,8 +13248,8 @@ the fixes land as standalone patches first. The
 LEXICON-declaration-is-a-report ledger entry settles the doctrine the
 scoping consults. Root CLAUDE.md waits on plan/0079: the spine becomes a
 rendered artifact there, and the knapped variant is emitted by the render,
-not by hand. Everything else — the scaffold, the deps-bundle audit, the
-embedder boundary, the indexer, the semantic and episodic passes — starts
+not by hand. Everything else (the scaffold, the deps-bundle audit, the
+embedder boundary, the indexer, the semantic and episodic passes) starts
 unblocked.</p>
 <h2 id="open-questions-6"><a class="header" href="#open-questions-6">Open questions</a></h2>
 <ul>
@@ -13259,7 +13258,7 @@ and its audience split (session load versus site page).</li>
 <li>The embedder's home: which arm's-length boundary carries the weights, and
 the receipt that records the license check.</li>
 <li>host-lint and prose-lane scoping for the register, the map, and the index
-surfaces, using host-lint's own exclusion mechanism.</li>
+surfaces; the scoping uses host-lint's own exclusion mechanism.</li>
 <li>dream's integration: index freshness as an audited finding; the per-user
 memory tier as a third namespace candidate.</li>
 <li>LanceDB's dependency tree against the deps-bundle doctrine, audited before

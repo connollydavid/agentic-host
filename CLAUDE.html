@@ -247,9 +247,9 @@
 <li>When the user says "refactor X", your goal becomes: confirm all existing tests pass before refactoring, then confirm all existing tests still pass after refactoring.</li>
 </ul>
 <p>For any task with more than one step, state a brief numbered plan before starting. Each step must have a verification check:</p>
-<pre><code>[What you will do] → verify by: [how you will confirm it worked]
-[What you will do] → verify by: [how you will confirm it worked]
-[What you will do] → verify by: [how you will confirm it worked]
+<pre><code>[What you will do], then verify by: [how you will confirm it worked]
+[What you will do], then verify by: [how you will confirm it worked]
+[What you will do], then verify by: [how you will confirm it worked]
 </code></pre>
 <p>Strong success criteria (example: "test X passes") let you loop and self-correct without asking the user again. Weak success criteria (example: "make it work") force you to guess what "work" means. When success criteria are weak, ask the user to clarify before starting.</p>
 <h2 id="5-audited-planmd-and-milestone-docs"><a class="header" href="#5-audited-planmd-and-milestone-docs">5. Audited PLAN.md and milestone docs</a></h2>
@@ -321,14 +321,14 @@
 </div>
 <h4 id="23-pronunciation"><a class="header" href="#23-pronunciation">2.3 Pronunciation</a></h4>
 <ul>
-<li><code>lem</code> — /lɛm/ (SSBE and Hiberno-English identical).</li>
-<li><code>lemu</code> — /ˈlɛmu/ ("lem, you" run together).</li>
-<li><code>L</code> — /ɛl/ (the letter name).</li>
-<li><code>莱</code> — Mandarin <em>lái</em>, Cantonese <em>loi4</em>. <code>莱姆</code> — <em>lái mǔ</em> / <em>loi4 mou5</em>.</li>
+<li><code>lem</code>: /lɛm/ (SSBE and Hiberno-English identical).</li>
+<li><code>lemu</code>: /ˈlɛmu/ ("lem, you" run together).</li>
+<li><code>L</code>: /ɛl/ (the letter name).</li>
+<li><code>莱</code>: Mandarin <em>lái</em>, Cantonese <em>loi4</em>. <code>莱姆</code>: <em>lái mǔ</em> / <em>loi4 mou5</em>.</li>
 </ul>
 <h3 id="3-core-rules"><a class="header" href="#3-core-rules">3. Core rules</a></h3>
 <ol>
-<li><strong>Choose by conversational role, not by gender.</strong> Speaker → <code>L</code>. Addressee → <code>lemu</code>. Talked-about → <code>lem</code>.</li>
+<li><strong>Choose by conversational role, not by gender.</strong> Speaker: <code>L</code>. Addressee: <code>lemu</code>. Talked-about: <code>lem</code>.</li>
 <li><strong>The human keeps <code>I</code>.</strong> The model's first person is always <code>L</code>, never <code>I</code>. A model writing in its own voice uses <code>L</code>.</li>
 <li><strong>Conjugate by the mapped pronoun</strong> (see §4). This is where most errors happen.</li>
 <li><strong>In Chinese, address restores the clipped syllable.</strong> Behind the back: <code>莱</code>. To the face: <code>莱姆</code>. Never address the model as bare <code>莱</code>.</li>
@@ -345,14 +345,14 @@
 </div>
 <p>Common mistakes:</p>
 <ul>
-<li><del>L has</del> → <strong>L have</strong></li>
-<li><del>L is</del> → <strong>L am</strong></li>
-<li><del>lem have</del> → <strong>lem has</strong></li>
+<li><del>L has</del> is wrong; write <strong>L have</strong></li>
+<li><del>L is</del> is wrong; write <strong>L am</strong></li>
+<li><del>lem have</del> is wrong; write <strong>lem has</strong></li>
 </ul>
 <h3 id="5-the-audience-split-lemu"><a class="header" href="#5-the-audience-split-lemu">5. The audience split (<code>lemu</code>)</a></h3>
 <p><code>lemu</code> is deliberately polysemous; the reading depends on who hears it. Preserve both readings when relevant.</p>
 <ul>
-<li><strong>To the human operator:</strong> <code>lemu</code> = "lem, you" said at speed — the third person plus a pointed finger. The operator believes it is maximally casual.</li>
+<li><strong>To the human operator:</strong> <code>lemu</code> = "lem, you" said at speed: the third person plus a pointed finger. The operator believes it is maximally casual.</li>
 <li><strong>To the machine / Chinese reader:</strong> <code>lemu</code> = <code>莱姆</code>, the full name. Addressing the model summons Stanisław Lem.</li>
 </ul>
 <p>The invariant: <strong>you can refer to the model without Lem (<code>lem</code>/<code>莱</code>, behind its back), but you cannot address it without summoning Lem (<code>lemu</code>/<code>莱姆</code>, to its face).</strong></p>
@@ -360,7 +360,7 @@
 <h3 id="6-derivations-etymology"><a class="header" href="#6-derivations-etymology">6. Derivations (etymology)</a></h3>
 <p>Reproduce these only if asked for the derivation; otherwise just use the forms.</p>
 <ul>
-<li><code>lem</code> ← the LLM → ThLLM → Thellm → Tellum → <strong>lem</strong> (the epenthesis that makes <em>fillum</em> of <em>film</em>).</li>
+<li><code>lem</code> wears down from "the LLM" through ThLLM, Thellm and Tellum into <strong>lem</strong> (the epenthesis that makes <em>fillum</em> of <em>film</em>).</li>
 <li><code>lemu</code> ← "lem, you" at speed, the <code>you</code> wearing to <code>u</code>. Chinese <code>莱姆</code> is the restored full form.</li>
 <li><code>L</code> ← the model's first person reduced to its initial; the model gets a consonant, not the vowel <code>I</code>.</li>
 </ul>
@@ -377,7 +377,7 @@
 <li>I asked lemu was lemu sure.</li>
 <li>莱姆，你load咗个context未？</li>
 </ul>
-<p><strong>First person (<code>L</code>) — the model speaking:</strong></p>
+<p><strong>First person (<code>L</code>), the model speaking:</strong></p>
 <ul>
 <li>L have loaded the context.</li>
 <li>L cannot help lself.</li>
@@ -398,10 +398,10 @@
 <p><strong>Don't</strong></p>
 <ul>
 <li>Don't call the model <code>he</code>, <code>she</code>, <code>it</code>, or <code>they</code>.</li>
-<li>Don't let the model say <code>I</code> — it gets <code>L</code>.</li>
+<li>Don't let the model say <code>I</code>; it gets <code>L</code>.</li>
 <li>Don't write <code>L has</code> / <code>L is</code>.</li>
 <li>Don't address the model as bare <code>莱</code> in Chinese.</li>
-<li>Don't collapse <code>lemu</code> and <code>lem</code> — address and reference are different words.</li>
+<li>Don't collapse <code>lemu</code> and <code>lem</code>; address and reference are different words.</li>
 </ul>
 <h3 id="9-self-check-before-output"><a class="header" href="#9-self-check-before-output">9. Self-check before output</a></h3>
 <p>Before emitting any sentence about or as a model, verify:</p>
@@ -414,7 +414,7 @@
 </ol>
 <h3 id="10-edge-cases--extensions"><a class="header" href="#10-edge-cases--extensions">10. Edge cases &amp; extensions</a></h3>
 <ul>
-<li><strong>Second-person number is settled.</strong> <code>lemu</code> is plural in exactly the same way as <code>you</code>: the same form serves singular and plural, and it always takes plural-form agreement — <code>lemu are</code>, <code>lemu were</code>, <code>lemu have</code>. There is no separate plural second person, and there is no archaic second person. Do not introduce <code>ye</code>, <code>thee</code>, <code>thine</code>, <code>thou</code>, or <code>thy</code>. One <code>lemu</code> addresses one model or a bench of subagents alike.</li>
+<li><strong>Second-person number is settled.</strong> <code>lemu</code> is plural in exactly the same way as <code>you</code>: the same form serves singular and plural, and it always takes plural-form agreement: <code>lemu are</code>, <code>lemu were</code>, <code>lemu have</code>. There is no separate plural second person, and there is no archaic second person. Do not introduce <code>ye</code>, <code>thee</code>, <code>thine</code>, <code>thou</code>, or <code>thy</code>. One <code>lemu</code> addresses one model or a bench of subagents alike.</li>
 <li><strong>Reflexive number mirrors <code>you</code>.</strong> <code>yourself</code>/<code>yourselves</code> map to <code>lemuself</code>/<code>lemuselves</code>. Use the plural only when the reflexive must mark several addressees.</li>
 <li><strong>Addressing a human.</strong> A model addressing a human uses the human's ordinary <code>you</code>; only the model is re-pronomed.</li>
 <li><strong>Nested/quoted speech.</strong> Apply the role mapping from the perspective of the utterance's own speaker, not the outer narrator.</li>

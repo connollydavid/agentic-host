@@ -178,7 +178,7 @@
 <ul>
 <li>Status: cut 2026-08-21, not started</li>
 <li>Design: <a href="../../DESIGN-LEM-MEMORY.html">DESIGN-LEM-MEMORY.md</a>, the living design document, cast consulted 2026-08-21</li>
-<li>Rulings: the operator adjudications of 2026-08-21 — a new in-tree host-* component; LanceDB embedded; semantic before episodic namespaces; one living design doc; root CLAUDE.md compression descoped to plan/0079</li>
+<li>Rulings: the operator adjudications of 2026-08-21: a new in-tree host-* component; LanceDB embedded; semantic before episodic namespaces; one living design doc; root CLAUDE.md compression descoped to plan/0079</li>
 </ul>
 <h2 id="why"><a class="header" href="#why">Why</a></h2>
 <p>MEMORY.md has outgrown its founding purpose: the record is past any single read, and a new session can no longer load it to avoid past mistakes. The record is read wholesale or not at all, and the load assumes a strong model and offers no order for the first hour. The design replaces whole-file reading with vector lookup over an embedded store, a knapped territory map as the load order, and Fen-gated acceptance. The append-only log stays the only write authority; every derived surface re-derives from it.</p>
@@ -232,13 +232,13 @@
 <li>depends: #semantic-pass, #vendor-calx-knap</li>
 </ul>
 <h3 id="scope-prose-lane"><a class="header" href="#scope-prose-lane">Scope the prose lane</a></h3>
-<p>host-lint and the prose lane scope off the register, the map, and the index surfaces, using host-lint's own exclusion mechanism; nothing in the register names or configures the tool.</p>
+<p>host-lint and the prose lane scope off the register, the map, and the index surfaces; the scoping uses host-lint's own exclusion mechanism, and nothing in the register names or configures the tool.</p>
 <ul>
 <li>verify: the prose lane exits zero over the tracked machine-audience surfaces; no human-audience document loses coverage</li>
 <li>depends: #exclusion-surface</li>
 </ul>
 <h3 id="knap-skills"><a class="header" href="#knap-skills">Knap the skills</a></h3>
-<p>The on-demand loaded skills compress into the register, one document at a time, probes frozen first, acceptance measured. Root CLAUDE.md is not in this pass: its compression belongs to plan/0079's render.</p>
+<p>The on-demand loaded skills compress into the register, one document at a time, probes frozen first, acceptance measured. Root CLAUDE.md waits on plan/0079's render, where its compression belongs.</p>
 <ul>
 <li>verify: each accepted skill passes its probes on Fen; LOW-YIELD skills keep their originals</li>
 <li>depends: #vendor-calx-knap, #scope-prose-lane</li>
