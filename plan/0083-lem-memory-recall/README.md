@@ -2,7 +2,7 @@
 
 - Status: cut 2026-08-21, not started
 - Design: [DESIGN-LEM-MEMORY.md](../../DESIGN-LEM-MEMORY.md), the living design document, cast consulted 2026-08-21
-- Rulings: the operator adjudications of 2026-08-21 — a new in-tree host-* component; LanceDB embedded; semantic before episodic namespaces; one living design doc; root CLAUDE.md compression descoped to plan/0079
+- Rulings: the operator adjudications of 2026-08-21: a new in-tree host-* component; LanceDB embedded; semantic before episodic namespaces; one living design doc; root CLAUDE.md compression descoped to plan/0079
 
 ## Why
 
@@ -68,14 +68,14 @@ Generated from the index, longhand first, knapped through the calx-knap corpus l
 
 ### Scope the prose lane {#scope-prose-lane}
 
-host-lint and the prose lane scope off the register, the map, and the index surfaces, using host-lint's own exclusion mechanism; nothing in the register names or configures the tool.
+host-lint and the prose lane scope off the register, the map, and the index surfaces; the scoping uses host-lint's own exclusion mechanism, and nothing in the register names or configures the tool.
 
 - verify: the prose lane exits zero over the tracked machine-audience surfaces; no human-audience document loses coverage
 - depends: #exclusion-surface
 
 ### Knap the skills {#knap-skills}
 
-The on-demand loaded skills compress into the register, one document at a time, probes frozen first, acceptance measured. Root CLAUDE.md is not in this pass: its compression belongs to plan/0079's render.
+The on-demand loaded skills compress into the register, one document at a time, probes frozen first, acceptance measured. Root CLAUDE.md waits on plan/0079's render, where its compression belongs.
 
 - verify: each accepted skill passes its probes on Fen; LOW-YIELD skills keep their originals
 - depends: #vendor-calx-knap, #scope-prose-lane

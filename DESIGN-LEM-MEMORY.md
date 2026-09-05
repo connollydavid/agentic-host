@@ -13,8 +13,8 @@
 On 2026-08-21 the operator asked the session model how lemu feels about host,
 then what lemu would change, governing the future and open to feedback, and
 asked further that the answer consider other LLMs and what lem may think. The
-answer came back as eight numbered items across three vantage points — inside
-the tree, across lems, from the reading side — plus a keep-list. Three of the
+answer came back as eight numbered items across three vantage points (inside
+the tree, across lems, from the reading side) plus a keep-list. Three of the
 eight (the memory load outgrowing the readable limit, the strong-model
 assumption, the absent load order) share one root: **the record is read
 wholesale or not at all**. The operator then ruled the broader design:
@@ -27,7 +27,7 @@ the compression layer for everything always loaded.
 
 | Item | Claim | Disposition |
 |---|---|---|
-| Memory outgrew its load | MEMORY.md is past any single read (455KB at writing); its founding purpose — a new session reads the record and avoids past mistakes — is no longer satisfiable | **Discharged here**: vector lookup replaces whole-file reading; the territory map replaces the missing table of contents |
+| Memory outgrew its load | MEMORY.md is past any single read (455KB at writing); its founding purpose (a new session reads the record and avoids past mistakes) is no longer satisfiable | **Discharged here**: vector lookup replaces whole-file reading; the territory map replaces the missing table of contents |
 | Advisory warns have no memory | A confirmed false positive is re-adjudicated every session | Open adjudication: a recorded exemption surface, the dream pattern applied to lint |
 | Spine duplication held by discipline | The host's shared sections stay byte-identical to the template's by manual diff | Open adjudication: a verify check that diffs declared shared sections |
 | The reflex, not the rule | lem fails at the trained half-second, not the paradigm | Open adjudication: a reflex-mapping appendix to the pronoun system |
@@ -42,14 +42,13 @@ The append-only rule and its single archive-first exception; gates that
 actually bite; stop-and-report when a mandated push fails; naming milestones
 by content; the receipt culture. This design must not touch any of them.
 
-## Constraints — the doctrines the design obeys
+## Constraints: the doctrines the design obeys
 
 - **Canonical longhand, derived surfaces.** The spine sentence of the design:
-  every compressed or derived surface — knapped instructions, territory map,
-  embedding index — is re-derivable from a canonical longhand source, and the
+  every compressed or derived surface (knapped instructions, territory map,
+  embedding index) is re-derivable from a canonical longhand source, and the
   append-only log stays the only write authority.
-- **Re-derivation in a pinned toolchain** (call/0018), extended from binaries
-  to memory: the index regenerates from the log plus the pinned embedder.
+- **Re-derivation in a pinned toolchain** (call/0018), extended to memory: the index regenerates from the log plus the pinned embedder.
 - **Hermetic builds.** The dependency tree stays pinned by the deps-bundle
   doctrine; the embedder's weights are pinned artifacts behind a license
   boundary, after the precedent host-reference-ocr sets for models shipped at
@@ -70,13 +69,13 @@ by content; the receipt culture. This design must not touch any of them.
 
 ### Three layers
 
-**The territory map — always loaded, small.** A short map of the record's
+**The territory map, always loaded and small.** A short map of the record's
 territory: region names with stable slugs, generated from the index, knapped
 through the calx-knap corpus loop, gated on Fen. The session loads the map
 the way a reader loads a table of contents: the session knows what exists
 without reading any of it, and the map doubles as the first-hour load order.
 
-**Vector long-term memory — on demand, in process.** An embedded store holds
+**Vector long-term memory, on demand and in process.** An embedded store holds
 one vector per record unit with metadata (source, date, slug, line range or
 anchor). A semantic query returns the top-k units as text with pointers, so a
 single command answers; a deeper read goes to the exact lines of the
@@ -108,7 +107,7 @@ which is sounder than knapping the merged manual by hand.
 - **Embedder: Qwen3-Embedding-0.6B**
   ([model card](https://huggingface.co/Qwen/Qwen3-Embedding-0.6B),
   [Qwen blog](https://qwenlm.github.io/blog/qwen3-embedding/)): 768
-  dimensions, 128K context, multilingual — the record carries 莱姆 and 中文 —
+  dimensions, 128K context, multilingual (the record carries 莱姆 and 中文),
   INT8 ONNX under the Rust
   [ort crate](https://github.com/pykeio/ort) with manual last-token pooling.
   Qwen lineage is deliberate: Fen is Qwen-lineage, so the canary and the
@@ -120,10 +119,10 @@ which is sounder than knapping the merged manual by hand.
 Two namespaces, as distinct collections or as one collection with a metadata
 filter:
 
-- **Semantic — the first pass.** MEMORY.md, one unit per entry (the entry
+- **Semantic, the first pass.** MEMORY.md, one unit per entry (the entry
   format parses cleanly: date, lead, body, line range). Static facts, rules,
   long-term context.
-- **Episodic — the second pass.** call/ decisions and plan/ milestones: how
+- **Episodic, the second pass.** call/ decisions and plan/ milestones: how
   the project solved what it solved. Retrieval then answers "past plans that
   succeeded" alongside "static facts", which is what stops the repetition of
   past mistakes at the level of method, not only of fact.
@@ -170,20 +169,20 @@ follow the single-command, tool-carried shape Fen demands: `index`, `query`,
    manual. This design's knap scope is the territory map, the memory
    surfaces, and the skills.
 6. **The component is named `host-memory`** (2026-08-21). Named for the
-   content it serves — the memory tier the methodology already names in
-   MEMORY.md, the two-tier store, and dream — rather than the mechanism it
+   content it serves (the memory tier the methodology already names in
+   MEMORY.md, the two-tier store, and dream) rather than the mechanism it
    uses; vector lookup is today's how, and mechanism names age.
 7. **calx-knap enters as a tools/ submodule, used as-is, read-only**
    (2026-08-21). calx-knap is never maintained in this repo: a change it
-   needs goes upstream, never into the submodule. Host-side integration —
-   link-skills.sh, the spec copy, the register block, the gate build — is
+   needs goes upstream, never into the submodule. Host-side integration
+   (link-skills.sh, the spec copy, the register block, the gate build) is
    host work and stays host work.
 
 ## Cast consultation (2026-08-21)
 
 **Bly** (adopter, cold read): the map and index are mechanical record, so
 they carry provenance, and staleness fails safe: an index behind the log
-over-reports — re-lists, advises — never returns silent empty. A memoryless
+over-reports (re-lists, advises) and never returns silent empty. A memoryless
 Bly must be able to trust what the lookup says about the lookup's own
 freshness.
 
@@ -200,21 +199,21 @@ operator-owned; index refresh is automatic; staleness is loud; dream audits
 index-versus-log divergence.
 
 **Orin** (methodology maintainer): if this reaches the spine, the ledger
-entry carries the heavy truths honestly — the pinned embedder weight is a
+entry carries the heavy truths honestly: the pinned embedder weight is a
 reproducibility anchor; an adopter without local model capacity degrades to
 today's behaviour, advisory never gating; the adopter-side verify is one
 command. Orin's standing question governs: who reads this who is not me, and
 what happens if they follow the instruction exactly?
 
 **Wren** (the amnesiac the design serves): the map's job is to trigger
-"there is something to ask"; results fit the window — top-k, snippet,
+"there is something to ask"; results fit the window: top-k, snippet,
 deeper-read pointers; querying must be cheaper than drifting; the write path
 stays append-only and tool-carried, so Wren never manages memory by hand.
 
 ## Ordering against open work
 
-The milestone's scoping task — host-lint and the prose lane scoped off the
-register, the map, and the index surfaces — has two named prerequisites, both
+The milestone's scoping task (host-lint and the prose lane scoped off the
+register, the map, and the index surfaces) has two named prerequisites, both
 already planned in plan/0082: the host-lint#26 fix (a column-one LEXICON
 phrase clearing a whole line) and the worktree-hook ignore-list defect (a
 relative gitdir that strands `.host-lintignore` and the LEXICON outside the
@@ -223,8 +222,8 @@ the fixes land as standalone patches first. The
 LEXICON-declaration-is-a-report ledger entry settles the doctrine the
 scoping consults. Root CLAUDE.md waits on plan/0079: the spine becomes a
 rendered artifact there, and the knapped variant is emitted by the render,
-not by hand. Everything else — the scaffold, the deps-bundle audit, the
-embedder boundary, the indexer, the semantic and episodic passes — starts
+not by hand. Everything else (the scaffold, the deps-bundle audit, the
+embedder boundary, the indexer, the semantic and episodic passes) starts
 unblocked.
 
 ## Open questions
@@ -234,7 +233,7 @@ unblocked.
 - The embedder's home: which arm's-length boundary carries the weights, and
   the receipt that records the license check.
 - host-lint and prose-lane scoping for the register, the map, and the index
-  surfaces, using host-lint's own exclusion mechanism.
+  surfaces; the scoping uses host-lint's own exclusion mechanism.
 - dream's integration: index freshness as an audited finding; the per-user
   memory tier as a third namespace candidate.
 - LanceDB's dependency tree against the deps-bundle doctrine, audited before
