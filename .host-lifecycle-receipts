@@ -743,3 +743,10 @@
     authorization = plan/0085#release-and-re-pin
     tool = host-lifecycle@0.50.0
     recorded = 2026-09-05
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.52.1@57fa82382e927f11065355baec78783357d93f3e0efd99c1286fea6d906de7a0
+    authorization = plan/0085#release-and-re-pin
+    tool = host-lifecycle@0.50.0
+    recorded = 2026-09-05
