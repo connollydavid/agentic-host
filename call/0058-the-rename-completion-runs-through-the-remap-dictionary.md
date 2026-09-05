@@ -31,3 +31,5 @@ The mappings are deliberately precise strings rather than a bare `CLAUDE.md => A
 - The specula and allium submodules' `claude`-named scripts and agent docs are upstream vendor vocabulary (the Claude Code adapter), not this methodology's manual name, and are untouched.
 - The records that cite `CLAUDE.md` before this call are history and stand as written; citations in forward documents follow the renamed file.
 - The ledger's old `verify` greps are handled by the evaluator's pointer-following (shipped in v0.52.1), not by this map.
+
+- Addendum (2026-09-05, same day): the template README's own room table carried the same stale How row and was fixed by the same substitution after the dictionary retired; the census over both manuals and the front-door documents now holds only the pointer's own name.
