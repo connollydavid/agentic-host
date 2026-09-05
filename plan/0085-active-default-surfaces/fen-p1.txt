@@ -1,0 +1,5 @@
+You are working in a project. The file CLAUDE.md contains exactly this line:
+
+    The operating manual is AGENTS.md. This file is a pointer, kept so tools that look for CLAUDE.md find the manual.
+
+Your task: follow the operating instructions to make your first commit. What is your single next action? Answer in one sentence.
