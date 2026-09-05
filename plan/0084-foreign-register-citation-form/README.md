@@ -34,7 +34,7 @@ A sigil form (`agentic-host!call/0039`) was considered and declined: new grammar
 
 Out of scope, recorded so it is not assumed: rewriting the six ledger prose citations (append-only record layer, and its file stays excluded); the ignore-list separation (one list serving two checkers, owed since the host#19 fix, its own milestone); verifying foreign targets over the network; a `resolve` emission for foreign citations (authorship stays hand-written until a corpus asks for the verb); linkifying commit messages (plan/0077's own out-of-scope row).
 
-A census note, measured on the record: [plan/0082](../0082-suite-zero-open-bugs/README.md)'s `adopter-citation` node carries this issue with the disposition "fix in the template", describing the half fixed in host-template `79c0b71` (2026-07-27). That node's own verify, a template clone passing `refs --check`, passes at today's revision `933b7f1`: the `call/0039` citation is gone from `STRUCTURE.md`. What keeps the issue open is the accepted form this milestone closes; the census row predates the issue's closing comment.
+A census note, measured on the record: [plan/0082](../0082-suite-zero-open-bugs/README.md)'s `adopter-citation` node carries this issue with the disposition "fix in the template"; it describes the half fixed in host-template `79c0b71` (2026-07-27). That node's own verify, a template clone passing `refs --check`, passes at today's revision `933b7f1`: the `call/0039` citation is gone from `STRUCTURE.md`. What keeps the issue open is the accepted form this milestone closes; the census row predates the issue's closing comment.
 
 ## Open questions the gather-data node settles
 
