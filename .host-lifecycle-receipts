@@ -757,3 +757,10 @@
     authorization = plan/0082#lexicon-line-masking
     tool = host-lifecycle@0.52.1
     recorded = 2026-09-06
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.19.0@359b0367365efc9678eae096e0cc093538e08796f197aa93367a809f0d7db561
+    authorization = plan/0082#lexicon-line-masking
+    tool = host-lifecycle@0.53.0
+    recorded = 2026-09-06
