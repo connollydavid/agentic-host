@@ -750,3 +750,10 @@
     authorization = plan/0085#release-and-re-pin
     tool = host-lifecycle@0.50.0
     recorded = 2026-09-05
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.53.0@216055a45b0cbd1780a017a6dfe7abb20d2c45fa390f648c4426a4e9f152ca03
+    authorization = plan/0082#lexicon-line-masking
+    tool = host-lifecycle@0.52.1
+    recorded = 2026-09-06
