@@ -1,0 +1,10 @@
+# repro transcript for connollydavid/host-lint#26 (2026-09-06)
+# binary: host-lint v0.19.0, canonical sha256 359b0367365efc9678eae096e0cc093538e08796f197aa93367a809f0d7db561 (worktree at ff0516a, the released commit)
+# LEXICON: apache tapestry
+# doc.md: the declared phrase at column one on line 3, a standalone tell on that same line,
+# and the indented shape on line 8 (a phrase at column one, then a bullet carrying a tell)
+$ host-lint --prose doc.md
+doc.md:3:25: warning: tapestry (grandiose-noun — tropes.fyi: Tapestry and Landscape)
+doc.md:8:3: warning: tapestry (grandiose-noun — tropes.fyi: Tapestry and Landscape)
+doc.md:3:34: warning: landscape (grandiose-noun — tropes.fyi: Tapestry and Landscape)
+exit=3
