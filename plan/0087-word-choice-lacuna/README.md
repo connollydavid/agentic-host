@@ -17,6 +17,8 @@ The cast convenes **fully**, on the call/0050 and plan/0080 pattern: a written b
 ## Build sequence
 
 ### The settled conditionals {#gather-data}
+
+**Landed 2026-09-06.** All nodes complete: the measurement, the convening, the SKILL.md section, the doctrine addendum, and both closures (the tracker state now: host-lint#27 and host-lifecycle#24 closed with pasted transcripts).
 - verify: the six `house-diction` terms measured over the swept corpora (occurrence counts and classification each, the call/0051 method); #27's repro re-run as a transcript (`host-lifecycle prose host-template` at exit 0, quoted); #24's verification as a transcript (`--version` and the stanza); the trio's corpus reading taken; the SKILL.md gap documented as the delta to close
 - depends: none
 
