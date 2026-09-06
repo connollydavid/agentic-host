@@ -5,13 +5,13 @@
 # The pin replaces a submodule gitlink as the reproducibility anchor.
 [software "host-lint"]
 	url       = https://github.com/connollydavid/host-lint.git
-	pin       = 966259fb2001d0a4f6bdf3ae608ddd1c36c309d0
+	pin       = ff0516ad210323d1d23c2bfbaf2d7c49f1e3a1b1
 	worktrees =
 	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lint
-	artifact  = target/x86_64-unknown-linux-musl/release/host-lint fd65cad2f21d2f0ce1ec4b44ba6da7d37895a8bdc7a1d78aa0fe4a73459fc239
-	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v12/vendor.tar.gz a6ef5b566fa4d31498dfdf950234f92eef3bb429d3b6f91430c4ab72a8e8dd0a
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lint 359b0367365efc9678eae096e0cc093538e08796f197aa93367a809f0d7db561
+	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v10/vendor.tar.gz ea0dfa88f0c401b1d2c58a43a689a611c3fa4083af2e7716303938208bbc36fa
 	hooks     = pre-commit
 [software "host-lifecycle"]
 	url       = https://github.com/connollydavid/host-lifecycle.git
@@ -21,7 +21,7 @@
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lifecycle
 	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle 57fa82382e927f11065355baec78783357d93f3e0efd99c1286fea6d906de7a0
-	deps-bundle = https://github.com/connollydavid/host-lifecycle/releases/download/vendor-v6/vendor.tar.gz 114e4a47a74717ef9a4a5b43af395643baa200f83e332cb8bb534af7ddcb6739
+	deps-bundle = https://github.com/connollydavid/host-lifecycle/releases/download/vendor-v7/vendor.tar.gz 5bfd743465336c1606789e5cf6006f4dbf3a9504f3faee86552702531916c1fd
 [software "host-prove"]
 	url       = https://github.com/connollydavid/host-prove.git
 	pin       = c05782c0f7f170f3b517bffdea66ae524dd0b0fa
