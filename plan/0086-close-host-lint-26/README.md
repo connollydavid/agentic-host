@@ -6,7 +6,7 @@ Operator-directed (2026-09-06). The defect is already fixed and shipped; what ne
 
 [connollydavid/host-lint#26](https://github.com/connollydavid/host-lint/issues/26) reported that `mask_allowed` blanks a declared LEXICON phrase with spaces, so a phrase at column one left four or more leading spaces, the markdown extractor read them as an indented code block, and every tell on the line was dropped silently. The fix landed through the plan/0082 `lexicon-line-masking` work: the grammar decides markdown block structure before the mask (`e5ac04cb`, "decide markdown block structure before the mask, not after"), released in host-lint v0.19.0 (`ff0516a`, canonical `359b0367`, this host's pinned binary).
 
-The issue is still open because the node's verification step never ran — the session that shipped the fix ended first. Measured 2026-09-06 against the pinned binary, both shapes of the defect are fixed:
+The issue is still open because the node's verification step never ran: the session that shipped the fix ended first. Measured 2026-09-06 against the pinned binary, both shapes of the defect are fixed:
 
 - a declared phrase at column one masks **itself alone**; the standalone tells on the same line warn at their own columns;
 - the indented shape (a column-one phrase, then a bullet carrying a tell) leaves the bullet's tell standing.

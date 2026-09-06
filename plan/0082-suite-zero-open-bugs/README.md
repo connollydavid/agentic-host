@@ -19,7 +19,7 @@ by reading the fix direction and assuming it landed.
 | [connollydavid/host-lifecycle#24](https://github.com/connollydavid/host-lifecycle/issues/24) | resolved | verify and close |
 | [connollydavid/host-lint#27](https://github.com/connollydavid/host-lint/issues/27) | resolved | verify and close |
 | [connollydavid/host#19](https://github.com/connollydavid/host/issues/19) | live defect | fix in the template |
-| [connollydavid/host-lint#26](https://github.com/connollydavid/host-lint/issues/26) | live defect | fix in host-lint |
+| [connollydavid/host-lint#26](https://github.com/connollydavid/host-lint/issues/26) | live defect | **Done 2026-09-06** (plan/0086): the grammar decides block structure before the mask, shipped in host-lint v0.19.0, verified against the pinned binary and closed with the transcript |
 | [connollydavid/host-lifecycle#23](https://github.com/connollydavid/host-lifecycle/issues/23) | owed work, not a defect | defer with a recorded reason |
 | [connollydavid/host#18](https://github.com/connollydavid/host/issues/18) | design handover, not a defect | defer to plan/0075 |
 
@@ -122,7 +122,7 @@ passes `host-lifecycle refs --check` with zero dead pointers.
 
 ### lexicon-line-masking {#lexicon-line-masking}
 
-Fix `connollydavid/host-lint#26`. `mask_allowed` blanks a declared phrase with spaces, and on
+Fix `connollydavid/host-lint#26`. **Landed 2026-09-05 and verified closed 2026-09-06 (plan/0086)**: the grammar decides block structure before the mask (`e5ac04cb`), shipped in v0.19.0 with two regression tests citing the issue; the repro transcript is plan/0086's. `mask_allowed` blanks a declared phrase with spaces, and on
 the markdown path a phrase declared at column one leaves four or more leading spaces, which
 `scan_prose_markdown` reads as an indented code block and skips the whole line. Every tell on
 that line clears silently. Mask with a filler that is neither alphanumeric nor whitespace so the
