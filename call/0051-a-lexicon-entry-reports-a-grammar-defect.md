@@ -73,3 +73,10 @@ Moving that fixture surfaced a defect in the masker, filed as [connollydavid/hos
 The remaining sixteen terms are left detecting as they are. `showcase`, raised in the same session, occurs zero times in this corpus, so there is no collision to measure and narrowing it on a reading of the word would repeat the uncalibrated move that produced this defect. Its real defect is the attribution, which the reconciliation above covers rather than this decision.
 
 The trigger for narrowing is a measured collision. The trigger for reconciliation is a term that cannot be traced to the source it cites. They are different questions and the second is now open.
+
+## Addendum (2026-09-06, plan/0087): the deferred question answered
+
+```host-lint:ignore
+
+The reconciliation left open "whether each of the six house-diction terms earns its place — needs the same corpus measurement". Measured 2026-09-06 ([plan/0087](../plan/0087-word-choice-lacuna/gather-data.md), this decision's method): every occurrence of `realm`, `underscore`, `showcase`, `intricate`, and `multifaceted` in the swept corpora is a meta-mention of the terms themselves; `nuanced`'s three genuine uses sit in an excluded record (the weak model's raw transcript). Zero over-firing evidence; the rule is inert on this corpus. The terms stay detecting, the measurement being their evidence base; narrowing on a zero-collision measurement would repeat the uncalibrated move this decision refused for `showcase`. The held-out trio's corpus reading also landed: no grandiose-sense use observed, the invitation re-read at the next word-choice milestone. The adopter corpus remains where a collision would surface, through the LEXICON report path this decision established.
+```
