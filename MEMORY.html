@@ -2972,6 +2972,9 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.</
 <li>
 <p>2026-09-06 — <strong>The grammar cascade completed, and it completed as a collision: the parallel session had released host-lint v0.19.0 on origin a fortnight earlier without re-pinning, so my own release attempt diverged from a shipped tag.</strong> Fetch before any release, always; the worktree was two fetches stale. The completed state: host-lint re-pinned at <code>ff0516a</code> (canonical <code>359b0367</code>, reproduced byte-for-byte by the recipe's own recorded build line, which is the only honest incantation: <code>--target</code>, <code>--locked</code>, <code>--offline</code>, <code>RUSTUP_TOOLCHAIN=stable</code>, <code>--network none</code>), host-lifecycle v0.53.0 carrying both embeds at their anchors, and <code>software --check</code> at zero HAZARDs. Three lessons with teeth: a vendored bundle whose config lacks the per-git-source stanzas fails offline with a fetch error (v11 burned for it; the full printed config is the deliverable); a <code>sh -c</code> release chain that fails its first <code>cd</code> keeps executing in the wrong repository — absolute paths or nothing; and a tag's failing CI can be a time-based lane (upstream drift) rather than a source defect, which is a different repair than a red build.</p>
 </li>
+<li>
+<p>2026-09-06 — <strong>host-lint#26 verified fixed on the pinned binary and closed with the transcript (plan/0086).</strong> The masking defect (a column-one LEXICON phrase blanking to an indented code block, silently clearing the line) was fixed by deciding block structure before the mask (<code>e5ac04cb</code>), shipped in v0.19.0 with two regression tests citing the issue; both defect shapes re-tested fixed before closure, per the close-resolved pattern: re-run the repro, quote it, close only after the final push.</p>
+</li>
 </ul>
 
                     </main>

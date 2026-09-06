@@ -189,7 +189,7 @@ by reading the fix direction and assuming it landed.</p>
 <tr><td><a href="https://github.com/connollydavid/host-lifecycle/issues/24">connollydavid/host-lifecycle#24</a></td><td>resolved</td><td>verify and close</td></tr>
 <tr><td><a href="https://github.com/connollydavid/host-lint/issues/27">connollydavid/host-lint#27</a></td><td>resolved</td><td>verify and close</td></tr>
 <tr><td><a href="https://github.com/connollydavid/host/issues/19">connollydavid/host#19</a></td><td>live defect</td><td>fix in the template</td></tr>
-<tr><td><a href="https://github.com/connollydavid/host-lint/issues/26">connollydavid/host-lint#26</a></td><td>live defect</td><td>fix in host-lint</td></tr>
+<tr><td><a href="https://github.com/connollydavid/host-lint/issues/26">connollydavid/host-lint#26</a></td><td>live defect</td><td><strong>Done 2026-09-06</strong> (plan/0086): the grammar decides block structure before the mask, shipped in host-lint v0.19.0, verified against the pinned binary and closed with the transcript</td></tr>
 <tr><td><a href="https://github.com/connollydavid/host-lifecycle/issues/23">connollydavid/host-lifecycle#23</a></td><td>owed work, not a defect</td><td>defer with a recorded reason</td></tr>
 <tr><td><a href="https://github.com/connollydavid/host/issues/18">connollydavid/host#18</a></td><td>design handover, not a defect</td><td>defer to plan/0075</td></tr>
 </tbody></table>
@@ -275,7 +275,7 @@ its first sweep with nothing the adopter did wrong to point at. The citation has
 register reference in the copied file. Verify by: a clone of the template at the fixed revision
 passes <code>host-lifecycle refs --check</code> with zero dead pointers.</p>
 <h3 id="lexicon-line-masking"><a class="header" href="#lexicon-line-masking">lexicon-line-masking</a></h3>
-<p>Fix <code>connollydavid/host-lint#26</code>. <code>mask_allowed</code> blanks a declared phrase with spaces, and on
+<p>Fix <code>connollydavid/host-lint#26</code>. <strong>Landed 2026-09-05 and verified closed 2026-09-06 (plan/0086)</strong>: the grammar decides block structure before the mask (<code>e5ac04cb</code>), shipped in v0.19.0 with two regression tests citing the issue; the repro transcript is plan/0086's. <code>mask_allowed</code> blanks a declared phrase with spaces, and on
 the markdown path a phrase declared at column one leaves four or more leading spaces, which
 <code>scan_prose_markdown</code> reads as an indented code block and skips the whole line. Every tell on
 that line clears silently. Mask with a filler that is neither alphanumeric nor whitespace so the
