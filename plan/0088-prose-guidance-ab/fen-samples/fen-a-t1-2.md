@@ -1,0 +1,3 @@
+# Sample fen-a-t1-2
+
+This update adds a new reconciliation mode to your command line tool. When a template shifts versions during an upgrade, this feature automatically reconciles your existing manifest files against the new version rather than blindly overwriting local configurations. It identifies conflicting sections and proposes merges to preserve your intricate custom edits without data loss. You review these diffs before applying them, ensuring no critical settings are lost during project migrations. This capability streamlines upgrading templates while maintaining full control over how structural changes integrate with your current manifest files safely.

@@ -1,0 +1,3 @@
+# Sample fen-a-t1-1
+
+We now introduce a safe reconciliation feature for our CLI manifest tool. When templates migrate locations, the engine compares project files against updated schemas. Instead of overwriting existing data, it proposes a merge strategy that respects current configurations. This process highlights conflicts and suggests integration steps without destructive changes. Users review proposed modifications before applying updates to preserve integrity. No extra features were added; strictly template migration logic with merge proposals now powers your workflow. The goal is safer deployments where manifest consistency remains intact despite version movements, ensuring zero data loss during required evolution of your project's structure.

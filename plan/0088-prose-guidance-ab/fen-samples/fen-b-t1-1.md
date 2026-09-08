@@ -1,0 +1,3 @@
+# Sample fen-b-t1-1
+
+Our tool now detects when a project manifest conflicts with an updated template that has moved within the repository. Instead of blindly replacing your local files with the new structure, the software identifies differing sections. It presents merge requests to ensure safety during updates. You review these proposals manually before accepting them. This prevents accidental loss of custom configurations while maintaining compatibility with the latest schema requirements. The process remains fast and straightforward for experienced administrators managing complex project dependencies. We prioritize data integrity over automatic overwrites in this new update. Users can confirm changes without risking existing data loss immediately.

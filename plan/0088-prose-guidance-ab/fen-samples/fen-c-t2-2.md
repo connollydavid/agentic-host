@@ -1,0 +1,3 @@
+# Sample fen-c-t2-2
+
+The validation engine parses each manifest, comparing folder contents against a dictionary mapping required semantic names to exclude generic numeric identifiers. It enforces a strict gate, halting any rename attempt that does not match the registry or introduce potential conflicts. Only when the check confirms validity does the operation proceed to update directory structures. Every proposed change logs its source and destination path for complete auditability. This protocol ensures data integrity during the transition, allowing safe migration from sequential numbering to descriptive names without overwriting unrelated assets or losing structural context within the repository tree.

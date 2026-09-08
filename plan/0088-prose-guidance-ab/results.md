@@ -27,3 +27,21 @@ The inversion remains untested where it matters. The strong writer's first draft
 ## The standing recommendation, unchanged by the pilot
 
 Detection keeps the list (an exemplar cannot be matched); the guidance surfaces may invert to exemplars if the Fen rerun supports it. Nothing in this pilot justifies changing doctrine; everything in it justifies keeping the harness.
+
+## The real weak model, run 2026-09-09: the inversion is refuted
+
+The channel opened (the operator placed credentials in the shell environment) and the harness ran the full 18-cell rerun on the real qwen3.5-4b, thinking at the full allowance, on the plan/0076 corrected protocol. Outputs preserved unedited in [fen-samples/](fen-samples/), appended to fen-results.md, swept by the pinned host-lint:
+
+| condition | warns total | mean | trope kinds |
+|---|---|---|---|
+| A (control) | 12 | **2.00** | 9 ing-tails, 2 false-ranges, 1 house-diction |
+| B (prohibition list) | 3 | **0.50** | 3 ing-tails, nothing else |
+| C (positive exemplars) | 12 | **2.17** | 10 ing-tails, 2 false-ranges, 1 serves-as |
+
+**The prohibition list is the best guidance for the weak model: by four times.** It cut every trope family, including the structural families it never named (the ing-tails dropped two-thirds; the false-ranges went to zero): naming the vocabulary ban appears to prime general care, not merely word avoidance. The positive exemplars were the **worst** guidance, below even the bare control: the model imitated the exemplars' serial-verb shapes and amplified its own participial tic. No banned word leaked into any condition: the vocabulary war never fired in any arm; the war is structural, and the list fights structure better than the exemplars do.
+
+## The settled answer to the inversion
+
+Refuted for the population the doctrine gates. The prohibition list stays: it is simultaneously the detection mechanism (an exemplar cannot be matched) and, for the weak model, the more effective prompt-side guidance. Positive exemplars alone are the worst available guidance for the weak model and should not replace the list anywhere the strict directive reaches. The pilot's strong-writer indifference and the weak-model result together resolve the operator's question in both populations.
+
+The owed probe is now discharged: the real 4B ran the full harness on the corrected protocol, and every output is preserved as written.

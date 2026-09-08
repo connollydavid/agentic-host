@@ -1,0 +1,3 @@
+# Sample fen-c-t1-1
+
+The tool reconciles project manifests against a moved template, proposing merges instead of overwriting content automatically. It reads every manifest file, compares each entry against the new template revision, and highlights specific structural changes requiring attention. Nothing is overwritten without an explicit confirmation command from the user to ensure safety. Every proposal clearly names the files it touched, providing visibility into drifted configurations while maintaining local integrity. This ensures safe integration for developers upgrading their project structure without losing critical data during template version transitions or migration conflicts effectively.

@@ -1,0 +1,3 @@
+# Sample fen-c-t1-3
+
+The tool scans every manifest and compares each against the template's current revision, detecting drift. It generates specific merge proposals for any changed file without directly touching disk, proposing merges instead of overwriting data. No changes are applied until an explicit confirmation is provided by the user during the full run. Each proposal names the exact files it touches to ensure complete file-level transparency for users. This approach maintains safety during updates while properly aligning your project structure with the template's current state accurately.

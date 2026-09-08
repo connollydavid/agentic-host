@@ -1,0 +1,3 @@
+# Sample fen-c-t1-2
+
+The tool scans all manifests, comparing each against the moved template revision, and proposes a merge per drifted file. No changes are applied without an explicit confirmation command. Every proposal lists the specific files it intended to touch before writing new code. This safety mechanism ensures your project structure aligns with the new baseline before proceeding. It highlights exactly what needs fixing prior to executing updates into the directory structure. This approach prevents accidental loss of data while reconciling your project against drifts. Users retain control over every modification step in the reconciliation process, ensuring no file is modified blindly during the merge attempt.

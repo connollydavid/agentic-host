@@ -1,0 +1,3 @@
+# Sample fen-c-t2-1
+
+The migration tool scans every directory and replaces numeric prefixes with names derived directly from folder contents. A dictionary-driven checker reads all manifests, compares each identifier against a strict schema template, and proposes a merge per drifted file. Nothing changes without an explicit confirmation flag triggered by the automated workflow runner to ensure safety. Every proposed modification logs the original path alongside its new semantic counterpart for full auditability. This gating mechanism guarantees that all updates align with versioning logic while preserving historical traceability within the source control system until completion is verified, and every rename names the files it touched.
