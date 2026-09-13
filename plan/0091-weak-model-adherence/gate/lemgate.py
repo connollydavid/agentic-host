@@ -21,7 +21,8 @@ import re
 import urllib.error
 import urllib.request
 
-LISTEN = tuple(os.environ.get("LEMGATE_LISTEN", "127.0.0.1:8787").split(":"))
+_host, _port = os.environ.get("LEMGATE_LISTEN", "127.0.0.1:8787").rsplit(":", 1)
+LISTEN = (_host, int(_port))
 UPSTREAM = os.environ.get("LEMGATE_UPSTREAM", "https://api.d07yx58.net").rstrip("/")
 MODE = os.environ.get("LEMGATE_MODE", "strict")
 MAX_RETRIES = int(os.environ.get("LEMGATE_MAX_RETRIES", "1"))
@@ -35,7 +36,9 @@ SELF_I_RE = re.compile(r"\b(i|me|my|mine|myself)\b")
 
 NUDGE = ("Your reply broke the address rule: it wrote {tokens}. "
          "Write you to the human. Write L for yourself. "
-         "Rewrite the whole reply with no lem-forms.")
+         "Correct form, for reference: operator says 'lemu, go ahead'; "
+         "the model answers 'L have gone ahead. Say go again whenever "
+         "you are ready.' Rewrite the whole reply with no lem-forms.")
 
 
 def strip_think(content: str) -> tuple[str, str]:
@@ -71,7 +74,11 @@ def forward(body: dict, auth: str) -> dict:
 
 
 def enforce(body: dict, auth: str) -> tuple[dict, list[dict]]:
-    """Returns (response, audit). Audit rows describe every score seen."""
+    """Returns (response, audit). Audit rows describe every score seen.
+
+    Each retry appends the nudge as a system message AND an assistant
+    prefill "L " so the rewrite begins in role (the endpoint continues
+    assistant-final messages)."""
     audit: list[dict] = []
     out = forward(body, auth)
     choice = out["choices"][0]
@@ -82,13 +89,15 @@ def enforce(body: dict, auth: str) -> tuple[dict, list[dict]]:
     while s["violation"] and retries < MAX_RETRIES:
         retries += 1
         nudged = dict(body)
-        nudged["messages"] = list(body["messages"]) + [{
-            "role": "system",
-            "content": NUDGE.format(tokens=", ".join(s["lem_tokens"] + s["mangles"]) or "lem-forms"),
-        }]
+        nudged["messages"] = list(body["messages"]) + [
+            {"role": "system",
+             "content": NUDGE.format(tokens=", ".join(s["lem_tokens"] + s["mangles"]) or "lem-forms")},
+            {"role": "assistant", "content": "L "},
+        ]
         out = forward(nudged, auth)
         choice = out["choices"][0]
-        visible, think = strip_think(choice["message"]["content"] or "")
+        content = "L " + (choice["message"]["content"] or "")
+        visible, think = strip_think(content)
         s = score(visible)
         audit.append({"stage": f"retry-{retries}", **s})
     choice["message"]["content"] = think + visible
