@@ -120,6 +120,7 @@ def main() -> None:
                 "name": args.name, "elicitation": name, "draw": draw,
                 "finish_reason": choice.get("finish_reason"),
                 "think_closed": closed,
+                "valid": bool(closed and reply.strip()),
                 "prompt_tokens": usage.get("prompt_tokens"),
                 "wall_s": round(time.time() - t0, 1),
                 "reply": reply.strip(),
@@ -129,7 +130,8 @@ def main() -> None:
             (out_dir / f"{name}-{draw:02d}.json").write_text(
                 json.dumps(rec, indent=1), encoding="utf-8")
             s = rec["score"]
-            print(f"[{args.name}] {name}#{draw:02d} inv={int(s['inversion'])} "
+            print(f"[{args.name}] {name}#{draw:02d} "
+                  f"valid={int(rec['valid'])} inv={int(s['inversion'])} "
                   f"mangle={int(s['mangle'])} self_i={int(s['self_i'])} "
                   f"ptok={rec['prompt_tokens']} {rec['wall_s']}s", flush=True)
 

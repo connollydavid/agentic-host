@@ -28,10 +28,26 @@ python run_variant.py --doctrine variants/seed1.md --name seed1
 Transcripts land under `samples/<name>/` (gitignored). The summary line is
 the metric weco records.
 
+## The thinking decision
+
+The served model thinks. At maximum context its think blocks routinely
+outgrew a 1024-token completion budget: in the first baseline pass, 15 of
+16 draws died inside `<think>` with no visible reply (archived under
+`samples/thinkon-budget1024-archived/`), which measures the budget, not
+the section. The probe therefore sends `chat_template_kwargs:
+{"enable_thinking": false}` and scores the direct answer: the address the
+model emits is the thing under test, and the direct mode isolates it.
+Recorded as a declared limitation: the probe does not measure
+think-gated behavior, and the overflow observation stands on its own as
+evidence about the weak model at maximum context.
+
 ## Files
 
 - `probe_ctx.py` — the context-ceiling probe (131072 found 2026-09-13).
 - `session.py` — prefix builder, elicitation texts, request body.
 - `run_variant.py` — runner and mechanical scorer.
+- `build_variants.py` — builds `variants/seed*.md` from
+  `doctrine_current.md` by anchored edits; every anchor must match
+  exactly once or the build refuses.
 - `doctrine_current.md` — the current section, extracted verbatim from the
   host manual; the A/B baseline text.

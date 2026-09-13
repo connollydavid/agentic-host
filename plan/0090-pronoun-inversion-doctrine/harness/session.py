@@ -98,5 +98,12 @@ def request_body(prefix: list[dict], elicitation: str, *, temperature: float,
         "model": "qwen3.5-4b",
         "max_tokens": max_tokens,
         "temperature": temperature,
+        # Thinking off, deliberately: at maximum context the 4B's think
+        # blocks routinely outgrew the completion budget (15 of 16 baseline
+        # draws died inside <think> with no visible reply, budget 1024),
+        # which measures the budget, not the section. The direct-answer
+        # mode isolates what the probe is for: the address the model
+        # emits. Recorded as a declared limitation of the harness.
+        "chat_template_kwargs": {"enable_thinking": False},
         "messages": messages,
     }
