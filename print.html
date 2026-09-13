@@ -10184,7 +10184,25 @@ every open issue is one of the two deferred, and <code>host-lifecycle software -
 <h2 id="the-landing"><a class="header" href="#the-landing">The landing</a></h2>
 <p>The validated section lands through the spine: a host-template commit, an <code>UPGRADING.md</code> ledger entry keyed at the new revision (its verify greps for the direction-explicit line), the submodule pointer bump here, the same edit applied to this repository's manual copy, and the upgrade recorded with receipts. host-lint#29 closes with the redirect recorded after the final push.</p>
 <h2 id="results"><a class="header" href="#results">Results</a></h2>
-<p>Recorded as runs complete; the baseline row lands first.</p>
+<p>Measured 2026-09-13 on the edge (qwen3.5-4b, 131072-token ceiling, working prompts at 127100 tokens, temperature 0.8, thinking off). Every valid draw in every cell is a role-confusion event:</p>
+<div class="table-wrapper"><table><thead><tr><th>variant</th><th>generation one (named framing)</th><th>generation two (neutral framing)</th></tr></thead><tbody>
+<tr><td>baseline (current section)</td><td>8/8</td><td>8/8</td></tr>
+<tr><td>seed1 (surgical repair)</td><td>8/8</td><td>not run</td></tr>
+<tr><td>seed2 (anti-examples)</td><td>8/8</td><td>not run</td></tr>
+<tr><td>seed3 (repeated invariant)</td><td>7/8 scored + 1 collapse</td><td>7/8 scored + 1 collapse</td></tr>
+</tbody></table>
+</div>
+<p>Readings, in the order they were earned:</p>
+<ol>
+<li><strong>The first pass never reached the question.</strong> With thinking on at the default budget, 15 of 16 draws died inside the think block with no visible reply (archived under <code>harness/samples/thinkon-budget1024-archived/</code>). At maximum context the weak model loses the answer before the pronoun question can even be asked. The probe therefore scores the direct answer (thinking off), a declared limitation.</li>
+<li><strong>The named-framing confound was tested and rejected.</strong> The gen-one framing sentence ("the operator's messages address you as lemu throughout") could itself teach the inversion; generation two presents the transcript neutrally and reproduces the ceiling exactly (baseline 8/8).</li>
+<li><strong>The scorer counts a floor, never a false positive.</strong> Each generation produced exactly one draw the token scorer cleared, and neither was compliance: in both, the model speaks as <code>L</code> while assigning <code>L</code> to the operator too ("L will say go"; "L have parsed the window. L sign off now"). Role collapse in its other direction, invisible to a lem-token count. With those reclassified, all 48 valid draws are role-confusion events.</li>
+<li><strong>No seed separates.</strong> The surgical repair (seed1), the anti-examples naming the mangle outright (seed2), and the invariant repeated at three checkpoints (seed3) all sit at the baseline's ceiling. The four textual defects are real, and repairing them does not move this model at this depth.</li>
+<li><strong>The mangle never re-emerged.</strong> No draw produced a lemua-class corruption; the failure arrives as the uncorrupted inversion, consistently.</li>
+</ol>
+<p><strong>The finding</strong>: at the served maximum context, the lem section's wording, current or repaired, does not govern the weakest deployed model's address. The echo mechanism the issue names survives every prose remedy tried. The writing defects remain worth repairing (the section is read by strong models and by humans, and the repair is measured to do no harm), but prose alone is measured insufficient for the model that fails, and the enforcement question the issue originally raised returns with evidence attached.</p>
+<h2 id="the-landing-decision"><a class="header" href="#the-landing-decision">The landing decision</a></h2>
+<p>Held for the operator, per the spine's rule that the agent proposes and the operator validates: whether to land a repaired section (seed1 is the smallest diff repairing all four defects; seed3 adds the invariant repetition with no measured difference), and whether host-lint#29 closes with this evidence recorded or stays open carrying the enforcement question it originally asked.</p>
 <h2 id="declared-limitations-1"><a class="header" href="#declared-limitations-1">Declared limitations</a></h2>
 <ol>
 <li>One model, one channel, one elicitation family: the probe shows whether the rewrite moves the weak model on the observed failure shape, not a universal guarantee.</li>
