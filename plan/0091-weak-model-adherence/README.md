@@ -31,6 +31,8 @@ The same exemplars that work as the document (0.0625) fail as a bolt-on (0.8125)
 
 **At maximum context** (126k tokens, full echo): the exemplar section holds. 1/16 (0.0625) before the checklist wording changed, 3/16 (0.1875) after restoring the direction line; single-digit counts, within noise of each other. The rules-first section sits at 0.875-1.0 at the same depth.
 
+**The complete corpus** (operator direction: every role carried by examples, subagent address included): the section now holds six exchanges, adding the human writing `I`, third-person `lem`, the human addressing a bench (`lemu`, one form for one or many), the model addressing a bench, and a speaking subagent (`L`); the reflexives join the form line. Measured 2k: 0.1250; max context: 0.1250 (2/16 plus self_i at both radii, the same single-digit band). Landed as template `988d705`; the certification restarted on this text.
+
 **In flight.** Gate-on-exemplar residual, n = 100 at max context, temperature 0.6, k = 2 retries (`gate/residual.jsonl`). Then certification: n = 600 through the full stack; zero defects in 600 supports the < 0.005 claim at 95 percent.
 
 ## Standing constraint
