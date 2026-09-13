@@ -10,3 +10,9 @@
 [submodule "tools/calx-knap"]
 	path = tools/calx-knap
 	url = https://github.com/slartibardfast/calx-knap.git
+[submodule "tools/weco-cli"]
+	path = tools/weco-cli
+	url = https://github.com/connollydavid/weco-cli
+[submodule "tools/weco-skill"]
+	path = tools/weco-skill
+	url = https://github.com/connollydavid/weco-skill
