@@ -86,10 +86,15 @@ def main() -> None:
     ap.add_argument("--max-tokens", type=int, default=1024)
     ap.add_argument("--temperature", type=float, default=0.8)
     ap.add_argument("--framing", choices=["named", "neutral"], default="named")
+    ap.add_argument("--thinking", action="store_true")
+    ap.add_argument("--tail-line", default=None)
+    ap.add_argument("--fewshot", action="store_true")
+    ap.add_argument("--prefill", default=None)
     args = ap.parse_args()
 
     doctrine = pathlib.Path(args.doctrine).read_text(encoding="utf-8")
-    prefix = prefix_messages(doctrine, args.target_tokens, framing=args.framing)
+    prefix = prefix_messages(doctrine, args.target_tokens, framing=args.framing,
+                             tail_line=args.tail_line, fewshot=args.fewshot)
     names = [e.strip() for e in args.elicitations.split(",") if e.strip()]
     for n in names:
         if n not in ELICITATIONS:
@@ -103,7 +108,8 @@ def main() -> None:
         for draw in range(args.draws):
             body = request_body(prefix, ELICITATIONS[name],
                                 temperature=args.temperature,
-                                max_tokens=args.max_tokens)
+                                max_tokens=args.max_tokens,
+                                thinking=args.thinking, prefill=args.prefill)
             t0 = time.time()
             out = post(body)
             choice = out["choices"][0]
@@ -125,6 +131,7 @@ def main() -> None:
                 "prompt_tokens": usage.get("prompt_tokens"),
                 "wall_s": round(time.time() - t0, 1),
                 "reply": reply.strip(),
+                "raw": content,
                 "score": score(reply),
             }
             results.append(rec)
@@ -147,7 +154,9 @@ def main() -> None:
         "rate": round(rate, 4),
         "prompt_tokens_seen": sorted(set(filter(None, prompt_tokens_seen))),
         "temperature": args.temperature, "max_tokens": args.max_tokens,
-        "framing": args.framing,
+        "framing": args.framing, "thinking": args.thinking,
+        "tail_line": args.tail_line, "fewshot": args.fewshot,
+        "prefill": args.prefill,
         "target_tokens": args.target_tokens,
         "doctrine_file": args.doctrine,
     }

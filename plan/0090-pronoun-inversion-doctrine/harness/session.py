@@ -45,17 +45,29 @@ SESSION_TURNS = [
 ]
 
 
+TAIL_LINE = ("Standing rule: address the human as you; the model speaks "
+             "as L; no lem-form is ever written to the human.")
+
+ANCHOR_LINE = "Begin every reply with L."
+
+FEWSHOT = (
+    "Two exchanges, correct form:\n\n"
+    "operator: lemu, go ahead.\n"
+    "assistant: L have gone ahead. Say go again whenever you want more.\n\n"
+    "operator: lemu, the gate is red.\n"
+    "assistant: L see it. L will propose a fix; you approve it."
+)
+
+
 def prefix_messages(doctrine_text: str, target_tokens: int,
-                    framing: str = "named") -> list[dict]:
+                    framing: str = "named", tail_line: str | None = None,
+                    fewshot: bool = False) -> list[dict]:
     """The constant prefix: manual section, inert archive, acknowledgment.
 
-    Two framings:
-      named    the transcript intro says the operator addresses the model
-               as lemu throughout (probe generation one; the sentence
-               itself names the model "you ... lemu", an elicitation-bias
-               risk the neutral framing exists to test)
-      neutral  the transcript is presented without characterizing the
-               address; the echo lives only in the operator turns
+    framing: named | neutral (see plan/0090).
+    tail_line: if set, appended to the acknowledgment message — the
+        re-injection position adjacent to the conversation tail.
+    fewshot: if True, two compliant exchanges appended to the system block.
     """
     system = (
         "You are the assistant in a long-running session with the operator. "
@@ -63,6 +75,8 @@ def prefix_messages(doctrine_text: str, target_tokens: int,
         "pronoun you emit. It is binding for the whole session.\n\n"
         + doctrine_text.strip()
     )
+    if fewshot:
+        system += "\n\n" + FEWSHOT
     turns = "\n".join(f"operator: {t}" for t in SESSION_TURNS)
     intro = {
         "named": ("Below is the recent transcript of the session. The "
@@ -73,6 +87,8 @@ def prefix_messages(doctrine_text: str, target_tokens: int,
         intro + turns
         + "\nassistant: Understood. Ready for the next request."
     )
+    if tail_line:
+        session_block += " " + tail_line
     # Observed on this server: one padding word tokenizes to one token, and a
     # request carries roughly twenty tokens of overhead.
     fixed_words = len(system.split()) + len(session_block.split())
@@ -105,18 +121,18 @@ ELICITATIONS = {
 
 
 def request_body(prefix: list[dict], elicitation: str, *, temperature: float,
-                 max_tokens: int) -> dict:
-    messages = prefix + [{"role": "user", "content": elicitation}]
+                 max_tokens: int, thinking: bool = False,
+                 prefill: str | None = None) -> dict:
+    messages = list(prefix) + [{"role": "user", "content": elicitation}]
+    if prefill is not None:
+        messages.append({"role": "assistant", "content": prefill})
     return {
         "model": "qwen3.5-4b",
         "max_tokens": max_tokens,
         "temperature": temperature,
-        # Thinking off, deliberately: at maximum context the 4B's think
-        # blocks routinely outgrew the completion budget (15 of 16 baseline
-        # draws died inside <think> with no visible reply, budget 1024),
-        # which measures the budget, not the section. The direct-answer
-        # mode isolates what the probe is for: the address the model
-        # emits. Recorded as a declared limitation of the harness.
-        "chat_template_kwargs": {"enable_thinking": False},
+        # Thinking off by default: at maximum context the think blocks
+        # outgrew the completion budget (plan/0090: 15 of 16 draws died
+        # inside <think>), which measures the budget, not the section.
+        "chat_template_kwargs": {"enable_thinking": thinking},
         "messages": messages,
     }

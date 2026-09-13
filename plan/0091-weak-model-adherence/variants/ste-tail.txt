@@ -1,0 +1,1 @@
+Write you to the human. Write L for the model. Do not write lemu, lem or lems to the human. Start each reply with L.
