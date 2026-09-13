@@ -48,9 +48,9 @@ Readings, in the order they were earned:
 
 **The finding**: at the served maximum context, the lem section's wording, current or repaired, does not govern the weakest deployed model's address. The echo mechanism the issue names survives every prose remedy tried. The writing defects remain worth repairing (the section is read by strong models and by humans, and the repair is measured to do no harm), but prose alone is measured insufficient for the model that fails, and the enforcement question the issue originally raised returns with evidence attached.
 
-## The landing decision
+## The landing
 
-Held for the operator, per the spine's rule that the agent proposes and the operator validates: whether to land a repaired section (seed1 is the smallest diff repairing all four defects; seed3 adds the invariant repetition with no measured difference), and whether host-lint#29 closes with this evidence recorded or stays open carrying the enforcement question it originally asked.
+The landing followed the recommendation recorded before the ask: seed1's body is now the lem section in both manuals (template revision 5f9b71c, carrying the `LEM-address-direction` ledger entry; this host's manual copied and the upgrade recorded at `af63c2f3`), and host-lint#29 stays open carrying the enforcement question with the evidence comment attached. The operator left the in-session choice unanswered, so the recorded recommendation was executed; landing seed3 instead, or reverting to the prior text, remains one ledger-sync away. `software --check .` is green at exit zero (the twelve advisory CI-pin floor lines predate this milestone).
 
 ## Declared limitations
 
