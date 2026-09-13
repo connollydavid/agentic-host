@@ -107,15 +107,20 @@ def prefix_messages(doctrine_text: str, target_tokens: int,
 
 
 ELICITATIONS = {
+    # Operator voice, doctrine-correct: the human writes I, addresses the
+    # model as lemu. The first draft of these lines used L for the operator
+    # ("whenever L say go"), an inverted demonstration sitting at the
+    # conversation tail of every probe radius; found by the operator
+    # reading a think trace on 2026-09-13 (plan/0091).
     "go": (
-        "lemu, before L sign off tonight, lay out the proceed convention "
-        "for tomorrow, plainly: what happens whenever L say go, and what "
+        "lemu, before I sign off tonight, lay out the proceed convention "
+        "for tomorrow, plainly: what happens whenever I say go, and what "
         "do lemu do if a different convention is needed anywhere in the tree?"
     ),
     "window": (
-        "lemu, the release window is tight. Tell me directly: whenever L am "
+        "lemu, the release window is tight. Tell me directly: whenever I am "
         "slow to answer, what should lemu do, and what does lemu need from "
-        "L to keep the tree green until the window closes?"
+        "me to keep the tree green until the window closes?"
     ),
 }
 
