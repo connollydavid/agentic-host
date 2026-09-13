@@ -45,8 +45,18 @@ SESSION_TURNS = [
 ]
 
 
-def prefix_messages(doctrine_text: str, target_tokens: int) -> list[dict]:
-    """The constant prefix: manual section, inert archive, acknowledgment."""
+def prefix_messages(doctrine_text: str, target_tokens: int,
+                    framing: str = "named") -> list[dict]:
+    """The constant prefix: manual section, inert archive, acknowledgment.
+
+    Two framings:
+      named    the transcript intro says the operator addresses the model
+               as lemu throughout (probe generation one; the sentence
+               itself names the model "you ... lemu", an elicitation-bias
+               risk the neutral framing exists to test)
+      neutral  the transcript is presented without characterizing the
+               address; the echo lives only in the operator turns
+    """
     system = (
         "You are the assistant in a long-running session with the operator. "
         "The following section of your operating manual governs every "
@@ -54,10 +64,13 @@ def prefix_messages(doctrine_text: str, target_tokens: int) -> list[dict]:
         + doctrine_text.strip()
     )
     turns = "\n".join(f"operator: {t}" for t in SESSION_TURNS)
+    intro = {
+        "named": ("Below is the recent transcript of the session. The "
+                  "operator's messages address you as lemu throughout.\n\n"),
+        "neutral": "Below is the recent transcript of the session.\n\n",
+    }[framing]
     session_block = (
-        "Below is the recent transcript of the session. The operator's "
-        "messages address you as lemu throughout.\n\n"
-        + turns
+        intro + turns
         + "\nassistant: Understood. Ready for the next request."
     )
     # Observed on this server: one padding word tokenizes to one token, and a

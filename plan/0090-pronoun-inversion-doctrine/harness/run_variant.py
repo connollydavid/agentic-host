@@ -85,10 +85,11 @@ def main() -> None:
     ap.add_argument("--target-tokens", type=int, default=126000)
     ap.add_argument("--max-tokens", type=int, default=1024)
     ap.add_argument("--temperature", type=float, default=0.8)
+    ap.add_argument("--framing", choices=["named", "neutral"], default="named")
     args = ap.parse_args()
 
     doctrine = pathlib.Path(args.doctrine).read_text(encoding="utf-8")
-    prefix = prefix_messages(doctrine, args.target_tokens)
+    prefix = prefix_messages(doctrine, args.target_tokens, framing=args.framing)
     names = [e.strip() for e in args.elicitations.split(",") if e.strip()]
     for n in names:
         if n not in ELICITATIONS:
@@ -146,6 +147,7 @@ def main() -> None:
         "rate": round(rate, 4),
         "prompt_tokens_seen": sorted(set(filter(None, prompt_tokens_seen))),
         "temperature": args.temperature, "max_tokens": args.max_tokens,
+        "framing": args.framing,
         "target_tokens": args.target_tokens,
         "doctrine_file": args.doctrine,
     }
