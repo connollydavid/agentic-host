@@ -43,11 +43,11 @@ evidence about the weak model at maximum context.
 
 ## Files
 
-- `probe_ctx.py` — the context-ceiling probe (131072 found 2026-09-13).
-- `session.py` — prefix builder, elicitation texts, request body.
-- `run_variant.py` — runner and mechanical scorer.
-- `build_variants.py` — builds `variants/seed*.md` from
+- `probe_ctx.py`: the context-ceiling probe (131072 found 2026-09-13).
+- `session.py`: prefix builder, elicitation texts, request body.
+- `run_variant.py`: runner and mechanical scorer.
+- `build_variants.py`: builds `variants/seed*.md` from
   `doctrine_current.md` by anchored edits; every anchor must match
   exactly once or the build refuses.
-- `doctrine_current.md` — the current section, extracted verbatim from the
+- `doctrine_current.md`: the current section, extracted verbatim from the
   host manual; the A/B baseline text.

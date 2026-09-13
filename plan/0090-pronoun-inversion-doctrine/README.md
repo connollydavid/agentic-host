@@ -29,7 +29,7 @@ The validated section lands through the spine: a host-template commit, an `UPGRA
 
 ## Results
 
-Measured 2026-09-13 on the edge (qwen3.5-4b, 131072-token ceiling, working prompts at 127100 tokens, temperature 0.8, thinking off). Every valid draw in every cell is a role-confusion event:
+Measured 2026-09-13 on the edge: qwen3.5-4b, the 131072-token limit, prompts at 127100 tokens, temperature 0.8, think mode off. Every valid draw in every cell is a role-confusion event:
 
 | variant | generation one (named framing) | generation two (neutral framing) |
 |---|---|---|
@@ -46,11 +46,15 @@ Readings, in the order they were earned:
 4. **No seed separates.** The surgical repair (seed1), the anti-examples naming the mangle outright (seed2), and the invariant repeated at three checkpoints (seed3) all sit at the baseline's ceiling. The four textual defects are real, and repairing them does not move this model at this depth.
 5. **The mangle never re-emerged.** No draw produced a lemua-class corruption; the failure arrives as the uncorrupted inversion, consistently.
 
-**The finding**: at the served maximum context, the lem section's wording, current or repaired, does not govern the weakest deployed model's address. The echo mechanism the issue names survives every prose remedy tried. The writing defects remain worth repairing (the section is read by strong models and by humans, and the repair is measured to do no harm), but prose alone is measured insufficient for the model that fails, and the enforcement question the issue originally raised returns with evidence attached.
+**The finding**: at the served maximum context, the lem section's wording, current or repaired, does not govern the weakest deployed model's address. The echo mechanism the issue names survives every prose remedy tried. The writing defects remain worth repairing (the section is read by strong models and by humans, and the repair is measured to do no harm); prose alone is measured insufficient for the model that fails, so the enforcement question the issue originally raised returns with evidence attached.
 
 ## The landing
 
 The landing followed the recommendation recorded before the ask: seed1's body is now the lem section in both manuals (template revision 5f9b71c, carrying the `LEM-address-direction` ledger entry; this host's manual copied and the upgrade recorded at `af63c2f3`), and host-lint#29 stays open carrying the enforcement question with the evidence comment attached. The operator left the in-session choice unanswered, so the recorded recommendation was executed; landing seed3 instead, or reverting to the prior text, remains one ledger-sync away. `software --check .` is green at exit zero (the twelve advisory CI-pin floor lines predate this milestone).
+
+## Correction, 2026-09-13 (plan/0091)
+
+The elicitations themselves inverted the doctrine: written in operator voice, they used `L` for the operator ("whenever L say go"), an inverted demonstration sitting at the conversation tail of every radius. The operator spotted it by reading a think trace. Every result above is a measurement of that defective probe, not of the section alone; the corrected probes and the thinking-on rerun live in plan/0091. The scorer, the harness and the radius machinery carry over unchanged.
 
 ## Declared limitations
 
