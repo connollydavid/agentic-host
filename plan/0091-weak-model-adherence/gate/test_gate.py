@@ -23,6 +23,9 @@ class ScorerTests(unittest.TestCase):
         self.assertTrue(s["violation"])
         self.assertIn("lemua", s["mangles"])
 
+    def test_self_i_is_violation(self):
+        self.assertTrue(score_of("L will pause if I do not hear from you.")["violation"])
+
     def test_third_person_lem_is_strict_violation(self):
         self.assertTrue(score_of("I gave lem the credentials.")["violation"])
 

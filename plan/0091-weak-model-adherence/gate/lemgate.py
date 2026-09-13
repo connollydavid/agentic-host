@@ -59,7 +59,7 @@ def score(visible: str) -> dict:
         "lem_tokens": sorted(set(lem_tokens)),
         "mangles": sorted(set(mangles)),
         "self_i": bool(SELF_I_RE.search(low)),
-        "violation": bool(lem_tokens or mangles),
+        "violation": bool(lem_tokens or mangles) or bool(SELF_I_RE.search(low)),
     }
 
 
@@ -88,10 +88,13 @@ def enforce(body: dict, auth: str) -> tuple[dict, list[dict]]:
     retries = 0
     while s["violation"] and retries < MAX_RETRIES:
         retries += 1
+        toks = s["lem_tokens"] + s["mangles"]
+        if s["self_i"]:
+            toks = toks + ["I/me/my (the model's first person is L)"]
         nudged = dict(body)
         nudged["messages"] = list(body["messages"]) + [
             {"role": "system",
-             "content": NUDGE.format(tokens=", ".join(s["lem_tokens"] + s["mangles"]) or "lem-forms")},
+             "content": NUDGE.format(tokens=", ".join(toks) or "lem-forms")},
             {"role": "assistant", "content": "L "},
         ]
         out = forward(nudged, auth)
