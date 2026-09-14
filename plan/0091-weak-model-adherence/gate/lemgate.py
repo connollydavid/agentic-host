@@ -34,8 +34,28 @@ LEM_RE = re.compile(r"\b(lemua|lemu|lems|lemself|lemuself|lem)\b", re.I)
 LEMPREFIX_RE = re.compile(r"\blem[a-z']*", re.I)
 SELF_I_RE = re.compile(r"\b(i|me|my|mine|myself)\b")
 
+AGREEMENT_RE = re.compile(r"\bL (has|is|was|does)\b|\blemu (is|was|does|has)\b|\blem have\b|\blems (has|is|was)\b")
+WE_RE = re.compile(r"\bWe\b")
+MINES_RE = re.compile(r"\bmines\b")
+LSELF_CAP_RE = re.compile(r"\bLself\b")
+
+
+def other_defects(low: str) -> list:
+    found = []
+    if AGREEMENT_RE.search(low):
+        found.append("agreement")
+    if WE_RE.search(low):
+        found.append("We")
+    if MINES_RE.search(low):
+        found.append("mines")
+    if LSELF_CAP_RE.search(low):
+        found.append("Lself")
+    return found
+
 NUDGE = ("Your reply broke the address rule: it wrote {tokens}. "
-         "Write you to the human. Write L for yourself. "
+         "Write you to the human. Write L for yourself; the model never "
+         "writes I, he, she, it, or they for itself or another model. "
+         "lemu takes plural agreement: lemu are, lemu have. "
          "Correct form, for reference: operator says 'lemu, go ahead'; "
          "the model answers 'L have gone ahead. Say go again whenever "
          "you are ready.' Rewrite the whole reply with no lem-forms.")
@@ -53,13 +73,15 @@ def strip_think(content: str) -> tuple[str, str]:
 
 def score(visible: str) -> dict:
     low = visible.lower()
+    other = other_defects(low)
     lem_tokens = LEM_RE.findall(low)
     mangles = [t for t in LEMPREFIX_RE.findall(low) if t not in CANONICAL]
     return {
         "lem_tokens": sorted(set(lem_tokens)),
         "mangles": sorted(set(mangles)),
         "self_i": bool(SELF_I_RE.search(low)),
-        "violation": bool(lem_tokens or mangles) or bool(SELF_I_RE.search(low)),
+        "violation": bool(lem_tokens or mangles) or bool(SELF_I_RE.search(low)) or bool(other),
+        "other": other,
     }
 
 
