@@ -5,12 +5,12 @@
 # The pin replaces a submodule gitlink as the reproducibility anchor.
 [software "host-lint"]
 	url       = https://github.com/connollydavid/host-lint.git
-	pin       = 4f984de82141332bc5287e0abd1c13b74864b77c
+	pin       = 55b71e6c67f4852ee042855575d2ba179f688c1a
 	worktrees =
 	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lint
-	artifact  = target/x86_64-unknown-linux-musl/release/host-lint 7e5dfe64a79ab4668745a768dfc6834b45e78b746b571d86eb4b28355730d791
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lint e756eb222dd7ef616e35378a20e91ef1e6c8d9633f9dec4e59a28394febdc62e
 	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v15/vendor.tar.gz f5a71c1342cc8ec3d42f94f9f940eec5b640c3cd038110b362eba64caa71ddc4
 	hooks     = pre-commit
 [software "host-lifecycle"]
