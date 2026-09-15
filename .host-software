@@ -5,12 +5,12 @@
 # The pin replaces a submodule gitlink as the reproducibility anchor.
 [software "host-lint"]
 	url       = https://github.com/connollydavid/host-lint.git
-	pin       = 55b71e6c67f4852ee042855575d2ba179f688c1a
+	pin       = 0eeabc20fdae1c283d0d9d284178be6488bb431d
 	worktrees =
 	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lint
-	artifact  = target/x86_64-unknown-linux-musl/release/host-lint e756eb222dd7ef616e35378a20e91ef1e6c8d9633f9dec4e59a28394febdc62e
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lint 386b254c44d6b51ff409d783d835fa78710dd68c5087594bb079b9e8e7ca75e2
 	deps-bundle = https://github.com/connollydavid/host-lint/releases/download/vendor-v15/vendor.tar.gz f5a71c1342cc8ec3d42f94f9f940eec5b640c3cd038110b362eba64caa71ddc4
 	hooks     = pre-commit
 [software "host-lifecycle"]
@@ -20,8 +20,8 @@
 	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lifecycle
-	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle f485ae70bf024652f56a166299e94efd5125f2d916ee59112556a8ab61121647
-	deps-bundle = https://github.com/connollydavid/host-lifecycle/releases/download/vendor-v9/vendor.tar.gz b4e766109d8c517124e0c3d2ffb4b65836aeab95346f204512b5707f16a66e74
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle 6ecf88b6b24766b4bcffc2ac76c4fb6f2152d539d0448b149229b8574c07ad09
+	deps-bundle = https://github.com/connollydavid/host-lifecycle/releases/download/vendor-v10/vendor.tar.gz 7bccb6a1847d01892d7b578f50a3f5e4fd5825eac6e16483ab8b019eb6b0d92e
 [software "host-prove"]
 	url       = https://github.com/connollydavid/host-prove.git
 	pin       = c05782c0f7f170f3b517bffdea66ae524dd0b0fa
