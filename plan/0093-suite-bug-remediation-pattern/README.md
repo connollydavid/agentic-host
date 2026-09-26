@@ -94,4 +94,61 @@ plan's web-borne correction of it is withdrawn.
 
 ## Results
 
-Recorded as the queue drains.
+Recorded 2026-09-26, one session. Two releases (v0.54.3, v0.54.4) landed through the
+full cascade (verified musl build, tags, re-pin, template `--rev` and submodule pins,
+receipts); this host's PATH copy refreshed per the 2026-09-05 lesson.
+
+- **host-lifecycle#29 closed** (dd54db5, v0.54.3): the mode-gate's grep anchors the
+  `./` on line start or one non-path character, so a parent-relative invocation
+  (`python3 ../scripts/x.py`) and a redundant-member path (`a/./x`) stop reading as
+  in-place calls. Regression test
+  `entry_point_mode_gate_never_reads_a_parent_relative_path_as_in_place`.
+- **host-lifecycle#28 closed** (c41e436, v0.54.3): `skill_sources_checked` keys
+  offers by skill name with the embedded copy winning, and the bootstrap linker
+  consumes the same list, so link and gate agree by construction. Regression test
+  `a_tool_both_submodule_and_embed_offers_its_skills_once`.
+- **connollydavid/host#23 closed** (9828c18, v0.54.4): `run_verify` resolves a bare
+  `host-lifecycle` token to the running binary, the manifest recheck's rule.
+  Measured green under the issue's own stripped-PATH shape; the only remaining
+  HAZARDs under it are true ones (the declared rungs' re-deriver genuinely absent
+  from that PATH).
+- **connollydavid/host#22 closed** (9828c18, v0.54.4, plus host-template 21693d8
+  and 88c7319): the record path now applies the rename translation the claim
+  recheck applies, which was the defect one site deeper than the proposed remedy;
+  `REFS-a-number-resolves`' verify is reworded to `host-template/AGENTS.md`, while
+  `LEM-pronoun-system`'s keeps `CLAUDE.md` by design, an adopter meeting that entry
+  before the rename entry and the translation covering the renamed tree. Both
+  adopter shapes measured recording on v0.54.4 against the tip ledger.
+
+**connollydavid/host#24 triaged R4.** Filed the same day from a bench worker's
+seat: five placements where the check exists at a boundary the worker never stands
+at (a shared index under fan-out, `#[cfg(kani)]` code no lane compiles, a
+comment-only diff that is not byte-neutral, a hand-typed module inventory, and
+lanes a worker cannot run, the naming sweep among them). The issue is the design
+record and the build is not gated here. Recommended next cut, cheapest contract
+first: `software --verify-setup` requiring the commit gate it documents installing;
+the naming sweep joining the host's CI lane set; then the cfg-declaration rule, the
+`software --artifact-delta` proposal, and the derived inventory; the shared-index
+rule is a manual clause before it is a gate.
+
+**plan/0082's carried findings, status-checked.** call/0057 settled
+LEXICON-publishes. The v0.18.1 red-suite finding: the named property is unchanged
+since introduction, the current pin's suite is held green by the v0.22.0 release
+gate, and the draw-dependence stays a watch-item. The worktree ignore-list loss:
+fixed at host-lint `e4e03f3` and held live by today's worktree commits gating
+correctly. The release-poisoning residue: not reproduced across today's two
+releases, both of which staged deps-bundles with `.cargo/config.toml` clean after;
+still carried without an issue by operator direction.
+
+**R4 deferrals restated.** connollydavid/host#21 (receipt-CI coupling design) is
+the next cut; host-lifecycle#23 (room-touching cross-check) waits on it;
+connollydavid/host#18 waits on plan/0075; connollydavid/host#24 joins them as the
+freshest design record.
+
+**Process lessons with teeth.** A cross-tracker census is a local-tool job: the web
+fetch layer attributed issues to the wrong repositories and aged them wrongly, and
+only `gh` settled it, so plan/0093's cut-time census was superseded by step 0
+before any queue work. And a submodule checkout can sit detached, where a plain
+`git push` refuses and a piped `-q` push hid the refusal: the template's four
+commits rode an orphaned head until `rev-parse origin/main` caught it, and the
+cascade's push step now ends with that read-back.
