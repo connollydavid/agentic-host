@@ -181,7 +181,7 @@ work" on the named next cut). The design record starts from
 measurements are the problem statement: an adopter's reproducibility lane failed
 on 64 of 67 runs over two and a half days while every local gate stayed green, a
 component with no spec carried no CI obligation at all, and three hashes
-described one component with only two agreeing — a release input no receipt
+described one component with only two agreeing; a release input no receipt
 could vouch for. This session supplied three live instances in the forge itself:
 v0.54.3 and v0.54.4 shipped with red CI, and the red sat outside every receipt.</p>
 <h2 id="scope"><a class="header" href="#scope">Scope</a></h2>
@@ -197,16 +197,16 @@ receipt phase <code>ci</code>, one per repository and lane:
 call/0050. The writer runs where network exists: the forge's own CI records its
 conclusion after the lanes, and <code>host-lifecycle ci --record</code> records it locally
 on demand. The reader is offline and always runs inside <code>software --check</code>: it
-judges the receipts, never the network — every lane declared at the pinned
+judges the receipts, never the network; every lane declared at the pinned
 revision must carry a receipt whose revision matches the pin and whose
 conclusion is success. This is upstream-drift's own split applied to outcomes:
 the fetch happens in the workflow, the judgment happens offline, and no offline
 gate depends on a credential.</p>
 <p><strong>D2. Absence fails; discovery is mechanical.</strong> Lanes are discovered from the
-tree (<code>.github/workflows/</code> at the component and the host — name-presence), and
+tree (<code>.github/workflows/</code> at the component and the host; name-presence), and
 the receipt provides the discharge. A discovered lane with no receipt at the pin
 is a HAZARD (<code>declared, never discharged</code>), so a repository with no runs reads
-red instead of vacuously clean, and a hand-typed lane list is never needed. The
+red the honest verdict, and a hand-typed lane list is never needed. The
 pairing is the spine's own rule in two parts: name-presence is not discharge.</p>
 <p><strong>D3. The per-turn duty is a spine clause, at its own layer.</strong> The manual gains:
 before a turn reports done, the default branch's most recent runs are read, and
@@ -222,24 +222,23 @@ URL no receipt held; this closes that.</p>
 <p><strong>D5. The two documentation gaps.</strong> The <code>[software]</code> <code>toolchain</code> key is
 documented as a digest-pinned container image (a target triple is the natural
 misreading, and the cost is a lane that never runs). A component with no spec of
-any kind states its lane absence explicitly in the recipe, and <code>software --check</code> prints the named line — an absence is stated, never implied by a rule
-that lists only spec-driven lanes.</p>
+any kind states the absence explicitly in the recipe, and <code>software --check</code> prints the named line; the absence is written down, and the rule leaves silence for nobody.</p>
 <h2 id="the-cast-consult"><a class="header" href="#the-cast-consult">The cast consult</a></h2>
 <ul>
 <li><strong>Bly, the cold auditor</strong>: the receipt must be checkable with no network and
 no history; the run URL is printed for the one-command read-back, and absence
-HAZARDs so silence never reads clean. Bly's fear — a hand-typed lane list
-going stale — is answered by D2's tree discovery.</li>
+HAZARDs so silence never reads clean. Bly's fear; a hand-typed lane list
+going stale; is answered by D2's tree discovery.</li>
 <li><strong>Orin, the methodology maintainer</strong>: the duty is written once in the manual
 and the receipt shape is versioned with the template; adopters receive it
 through a ledger entry keyed to the template commit. D5's gaps are his to
 close in the same landing.</li>
 <li><strong>Fen, the weak executor</strong>: recording must be one command whose output names
-the next move, and the offline judge needs no credentials — a token-dependent
+the next move, and the offline judge needs no credentials; a token-dependent
 gate would exclude Fen's local runner. D1's split is what makes that hold.</li>
 <li><strong>Mara, the human operator</strong>: trust but verify cheaply; the per-turn read is
 one command and every HAZARD carries the run URL, so triage is one click.</li>
-<li><strong>Wren, the executor</strong>: the loop needs a terminal state — every declared lane
+<li><strong>Wren, the executor</strong>: the loop needs a terminal state; every declared lane
 green at the pin is checkable, not aspirational.</li>
 </ul>
 <h2 id="the-adversarial-pass"><a class="header" href="#the-adversarial-pass">The adversarial pass</a></h2>
@@ -252,7 +251,7 @@ forge is the truth.</li>
 by D1's split: the offline judge reads receipts only, so the verdict is
 deterministic on every machine; the network refresher is a separate, disclosed
 surface.</li>
-<li><em>"A fresh clone goes red."</em> It does, until CI runs on the pin — which is the
+<li><em>"A fresh clone goes red."</em> It does, until CI runs on the pin; which is the
 design working: absence is the finding. The remedy line names the command that
 records the run outcome once the run exists.</li>
 </ul>

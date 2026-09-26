@@ -178,7 +178,7 @@
 <p>The build milestone plan/0095 recommended (the design survives review; the
 operator ruled go). Host-lifecycle gains the <code>ci</code> surface, the judge joins
 <code>software --check</code>, the template carries the per-turn duty and the two
-documentation gaps, and the forge adopts its own receipts — the gate that
+documentation gaps, and the forge adopts its own receipts; the gate that
 certifies the design is the design working.</p>
 <h2 id="scope"><a class="header" href="#scope">Scope</a></h2>
 <ol>
@@ -192,7 +192,7 @@ to the component's pin or the host HEAD, and <code>--all</code> records every
 discovered lane in one invocation for the per-turn duty.</li>
 <li><strong><code>software --check</code> integration.</strong> A <code>ci</code> section after the component
 walk: discovered lanes are named, receipts are judged, and a component with
-no workflows prints the named absence line — a component with no spec-driven
+no workflows prints the named absence line; a component with no spec-driven
 lane states its absence instead of being implied away.</li>
 <li><strong>Run-anchored evidence.</strong> <code>software --verify-build</code> cites the <code>ci</code> receipt's
 run beside the digest when one exists at the built revision.</li>
@@ -200,7 +200,7 @@ run beside the digest when one exists at the built revision.</li>
 <code>[software]</code> <code>toolchain</code> key documentation names a digest-pinned container
 image; the ledger entry carries the duty with its verify.</li>
 <li><strong>The forge adopts.</strong> The ledger entry is recorded through the tool, and the
-forge records its own lanes' receipts at the released pins — the receipts
+forge records its own lanes' receipts at the released pins; the receipts
 this plan creates are the first ones the judge consumes.</li>
 </ol>
 <h2 id="results"><a class="header" href="#results">Results</a></h2>
