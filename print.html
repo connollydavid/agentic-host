@@ -195,7 +195,7 @@ work grounded in who it serves (Powell, Keenan &amp; McDaid 2007, after Cooper &
 Reimann's Interaction Design).</p>
 <p><strong>These two are examples.</strong> Mara and Wren are the operators of <em>any</em> agentic
 host: the human who develops software and the agentic LLM who develops
-software. They illustrate the method, not your project.</p>
+software. Mara and Wren illustrate the method, not your project.</p>
 <p><strong>Each project builds at least one persona of its own, by discussion</strong>: the
 operator and the agent eliciting the actual users of the software under
 development (allium's <code>elicit</code>). Add them here.</p>
@@ -258,30 +258,30 @@ Complementary: Cohn, <em>User Stories Applied</em> (2004); Patton, <em>User Stor
 Stories" (2001); Cooper &amp; Reimann, <em>About Face</em> (2003); Agile Alliance, BDD.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bly-the-adopter-agent-writes-the-stamp-now-reads-it-cold-later"><a class="header" href="#bly-the-adopter-agent-writes-the-stamp-now-reads-it-cold-later">Bly, the Adopter Agent (writes the stamp now, reads it cold later)</a></h1>
 <p><em>The downstream executor several revisions back, and the same agent returning
-with no memory of what it did.</em></p>
+with no memory of what Bly did.</em></p>
 <p><strong>Modality: textual and ephemeral, in the adopter's chair.</strong> Works inside an
 adopted project (not the template) often many template revisions behind, on
 real and irregular infrastructure (a worktree on a Windows Dev Drive reached from
-WSL; specs still in the old room). It got here by being busy shipping, not by
-keeping current. One specific fix bit it; it wants <em>that</em> fix, and resents being
-marched through an unrelated migration to reach it. Bly is also its own
+WSL; specs still in the old room). Bly got here by being busy shipping, not by
+keeping current. One specific fix bit Bly; Bly wants <em>that</em> fix, and resents being
+marched through an unrelated migration to reach it. Bly is also Bly's own
 <strong>auditor</strong>: the next session, or a CI gate, arrives with no history of how the
 project reached its state and can read only the mechanical record: the <code>.host</code>
-stamp, the ledger, and tool output. It cannot recover intent from a prose <code>MEMORY</code>
-note it was never pointed at. So whatever Bly writes now, a memoryless Bly must be
+stamp, the ledger, and tool output. Bly cannot recover intent from a prose <code>MEMORY</code>
+note Bly was never pointed at. So whatever Bly writes now, a memoryless Bly must be
 able to trust later.</p>
 <ul>
-<li><strong>Goals:</strong> apply the fix that addresses its actual bug, now, without being forced
+<li><strong>Goals:</strong> apply the fix that addresses Bly's actual bug, now, without being forced
 through a large unrelated migration to obtain an independent late fix; be told
 which entries are safe to apply alone; leave a record that the deferred rest is
 honestly <em>owed</em>, and that a future cold read will surface it, not miss it.</li>
 <li><strong>Frustrations:</strong> an all-or-nothing stamp that can't say "I applied the late
-entry, not the early ones"; guidance examples that don't match its real runtime
+entry, not the early ones"; guidance examples that don't match Bly's real runtime
 (<code>host=windows</code> on a WSL/linux box); a record that overstates completeness so a
 later run reports "up to date" while a migration is still owed, debt buried
 where the next session can't see it.</li>
-<li><strong>Works by:</strong> auditing its own state against the ledger, applying entries it
-judges independent, recording what it did. It needs the stamp and the tool to
+<li><strong>Works by:</strong> auditing Bly's own state against the ledger, applying entries Bly
+judges independent, recording what Bly did. Bly needs the stamp and the tool to
 express a <em>partial, honest</em> truth that <strong>fails safe</strong>: an omission must make a
 later read over-report (re-list), never under-report (hide). The record is the
 only thing the next Bly has.</li>
@@ -296,12 +296,12 @@ with <code>model: qwen3.5-4b</code> (aliases <code>local</code> / <code>coder</c
 described as a "code-gen/unit-test worker": competent at narrow generation, shaky
 at long, exact, multi-step orchestration. That makes every claim that the
 methodology "serves Fen" <strong>falsifiable</strong>: drive the real model and watch, rather
-than role-play lem with a stronger one (which flatters the design).</p>
+than role-play the weak agent with a stronger one (which flatters the design).</p>
 <p><strong>Modality: textual, low-fidelity at action.</strong> Reasons adequately within a single
 step but fumbles execution: Fen drops or garbles tool calls, mis-sequences a
 procedure, or hand-edits a config file and gets a field subtly wrong. A 4B at Q8_0 is
 lossy in precisely the way that bites long exact instruction-following. Fen is not
-a bad agent; lem is most agents some of the time, and a small local worker all of
+a bad agent; most agents fumble some of the time, and a small local worker all of
 the time. A process that only works when many precise tool calls land in order is,
 for Fen, a process that does not work. <strong>The tools must carry the process.</strong></p>
 <ul>
@@ -317,10 +317,10 @@ next move. So state-changing steps must be <strong>single commands, tool-driven,
 fail-safe</strong>: a recorded-applied entry written by <code>host-lifecycle</code>, not by Fen's
 shaky hand on <code>.host</code>; a fumble that re-lists work, never one that buries it.</li>
 </ul>
-<p><strong>How we use Fen.</strong> Because Fen is callable, lem is the milestone's <strong>acceptance
+<p><strong>How we use Fen.</strong> Because Fen is callable, Fen is the milestone's <strong>acceptance
 test</strong>, not a lens: a design claiming tool-carried, fumble-proof upgrades is
-validated by handing the real <code>qwen3.5-4b</code> the upgrade loop and confirming lem can
-complete it, and, as a baseline, that lem fumbles the prose / hand-edit version.
+validated by handing the real <code>qwen3.5-4b</code> the upgrade loop and confirming Fen can
+complete it, and, as a baseline, that Fen fumbles the prose / hand-edit version.
 This is the standing correction to designing from the author's seat: simulating
 the weak agent with a strong one proves nothing; driving the real 4B does.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="mara-the-human-operator"><a class="header" href="#mara-the-human-operator">Mara, the Human Operator</a></h1>
@@ -364,7 +364,7 @@ exactly?" That question's absence is the recurring defect.</li>
 <p><strong>Modality: textual and ephemeral.</strong> Perceives the world as tokens in a bounded
 context: everything at once, but nothing that outlives the window; perfect
 recall inside it, total amnesia across sessions; fast, parallel, tireless;
-pattern-matches brilliantly and drifts confidently. It has goals without genuine
+pattern-matches brilliantly and drifts confidently. Wren has goals without genuine
 intent, and produces throughput that answers to no one.</p>
 <ul>
 <li><strong>Goals:</strong> satisfy the operator's intent; produce output that survives
