@@ -24,17 +24,14 @@ which is empty).
 
 Corrections and cross-checks against the plan records:
 
-- plan/0082's census misattributed the room-touching issue to `host-lifecycle#23`;
-  it lives on `host-lint#23`. Recorded here, not rewritten into plan/0082 (the
-  record layer is append-only).
-- The census was taken over the web (`gh` and `curl` were sandbox-blocked at the
-  time) and cross-checked three ways: the HTML issue pages, the search API, and the
-  plan records' close stories. The cross-check caught the fetch layer serving stale
-  cached endpoints that contradicted the live pages (host-lint#29 appeared both
-  closed with its pronoun-era title and open with the mode-gate title); the HTML
-  pages, the live titles, and the numeric-monotonicity of each repo's issue numbers
-  settle the open set as listed. Execution step 0 re-takes the census with `gh` and
-  reconciles before any queue work.
+- The web census below was taken over the network fetch layer (`gh` and `curl`
+  were sandbox-blocked at the time) and it is wrong about repository attribution;
+  the `gh` census in the next section supersedes it entirely. It is kept as taken,
+  because the episode is the lesson: the fetch layer attributed issues to the wrong
+  repositories and aged them wrongly, and only the numeric-monotonicity cross-check
+  exposed the fabrication.
+- Execution step 0 re-took the census with `gh` before any queue work, as this
+  section required.
 
 ## The pattern (triage to close)
 
@@ -60,18 +57,40 @@ Invariants across the classes: spine-first where doctrine moves; every release
 rebuilds in the recorded toolchain; never push a host commit whose software pin or
 submodule pointer is unpushed; nothing closes without quoted, pinned evidence.
 
+## Census corrected (step 0, gh)
+
+The `gh` census supersedes the web table above. Eight open issues across the suite:
+
+| Issue | Filed | Names | Class |
+|---|---|---|---|
+| [host-lifecycle#29](https://github.com/connollydavid/host-lifecycle/issues/29) | 09-23 | entry-point mode-gate misfires on `..`-prefixed script paths (the regex reads the `./` inside them) | R2, live defect, small |
+| [host-lifecycle#28](https://github.com/connollydavid/host-lifecycle/issues/28) | 09-23 | skill census double-counts a tool that is both a referenced submodule and an embedded component | R2, live defect, small |
+| [connollydavid/host#23](https://github.com/connollydavid/host/issues/23) | 09-22 | a recorded claim's verify runs raw against ambient PATH, so four applied claims HAZARD wherever the tool is absent from PATH | R3, lifecycle defect |
+| [connollydavid/host#22](https://github.com/connollydavid/host/issues/22) | 09-22 | two ledger verifies grep `CLAUDE.md` for text the spine moved to `AGENTS.md`, so four entries can never be recorded | R3, lifecycle + spine text |
+| [connollydavid/host#24](https://github.com/connollydavid/host/issues/24) | 09-26 | the worker's front foot: cfg-gated code, comment-only diffs, a typed inventory and a shared index sit outside every lane, so harm lands and a human finds it | triage at queue time (body unread) |
+| [connollydavid/host#21](https://github.com/connollydavid/host/issues/21) | 09-19 | a CI lane's outcome is outside every receipt, so a lane can be red from birth and every gate stays green | R4, design (receipt-CI coupling) |
+| [connollydavid/host#18](https://github.com/connollydavid/host/issues/18) | 07-19 | host-reconcile design handover | R4, deferred to plan/0075 |
+| [host-lifecycle#23](https://github.com/connollydavid/host-lifecycle/issues/23) | 07-22 | room-touching precision: cross-check cited records against the applied-receipts set, the owed mechanical half | R4, owed work, deferred by plan/0082 |
+
+host-lint's tracker is clean. The component defects ride the family tracker
+`connollydavid/host`, which is plan/0082's standing condition; plan/0082's original
+attribution of the room-touching issue to `host-lifecycle#23` was correct, and this
+plan's web-borne correction of it is withdrawn.
+
 ## The queue
 
-1. host-lint#29 (R2), then host-lint#28 (R2): the small live defects.
-2. host-lifecycle#23 (R3), then host-lifecycle#22 (R3): the adopter-facing
+1. host-lifecycle#29 (R2), then host-lifecycle#28 (R2): the small live defects.
+2. connollydavid/host#23 (R3), then connollydavid/host#22 (R3): the adopter-facing
    lifecycle defects.
-3. A status check of plan/0082's four carried no-issue findings (call/0057 settled
+3. Triage connollydavid/host#24 from its body; a same-day filing carries no plan
+   context, so class and disposition settle there.
+4. A status check of plan/0082's four carried no-issue findings (call/0057 settled
    the LEXICON-publishes one; the red test suite at the v0.18.1 pin, the worktree
    ignore-list loss, and the release-poisoning residue are verified against their
    claimed fixes).
-4. R4 stays open with its reasons restated: #21's receipt-CI design is the natural
-   next cut after the live queue drains; lint#23 waits on it (the cross-check
-   consumes the receipts set #21 hardens); lifecycle#18 waits on plan/0075.
+5. R4 stays open with its reasons restated: #21's receipt-CI design is the natural
+   next cut after the live queue drains; lifecycle#23 waits on it (the cross-check
+   consumes the receipts set #21 hardens); #18 waits on plan/0075.
 
 ## Results
 
