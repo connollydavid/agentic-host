@@ -764,3 +764,52 @@
     authorization = plan/0082#lexicon-line-masking
     tool = host-lifecycle@0.53.0
     recorded = 2026-09-06
+
+[receipt "release" "host-grammar"]
+    disposition = done
+    evidence = v0.7.0
+    authorization = plan/0087
+    tool = host-lifecycle@0.53.0
+    recorded = 2026-09-14
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.20.0@7e5dfe64a79ab4668745a768dfc6834b45e78b746b571d86eb4b28355730d791
+    authorization = plan/0087
+    tool = host-lifecycle@0.53.0
+    recorded = 2026-09-14
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.54.0@1392f8d78e1f6fda0cff390102f699098e19325573fdbd9400879c3b7efbe81c
+    authorization = plan/0082
+    tool = host-lifecycle@0.54.0
+    recorded = 2026-09-14
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.21.0@e756eb222dd7ef616e35378a20e91ef1e6c8d9633f9dec4e59a28394febdc62e
+    authorization = plan/0089
+    tool = host-lifecycle@0.54.0
+    recorded = 2026-09-14
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.54.1@f485ae70bf024652f56a166299e94efd5125f2d916ee59112556a8ab61121647
+    authorization = plan/0089
+    tool = host-lifecycle@0.54.1
+    recorded = 2026-09-15
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.22.0@386b254c44d6b51ff409d783d835fa78710dd68c5087594bb079b9e8e7ca75e2
+    authorization = plan/0089
+    tool = host-lifecycle@0.54.1
+    recorded = 2026-09-15
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.54.2@6ecf88b6b24766b4bcffc2ac76c4fb6f2152d539d0448b149229b8574c07ad09
+    authorization = plan/0089
+    tool = host-lifecycle@0.54.2
+    recorded = 2026-09-15
