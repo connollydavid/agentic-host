@@ -126,7 +126,7 @@ own prose models. A `named` slot in `ask` would be a convenience, not a gap.
 ## Addendum 2 (2026-09-26): cast/ enters the contract's scope by construction, and the release poison is fixed at its source
 
 Operator-directed ("cast/ is in scope and must be re-written"): the persona room's
-model references now name their personas — Bly, Wren, and Fen are named wherever
+model references now name their personas: Bly, Wren, and Fen are named wherever
 the room speaks of them, and the paradigm tokens live only in the doctrine section
 and the records that discuss the contract itself. The rule the consultation proved
 applied in reverse: outside the doctrine section a model is named, so a neuter
