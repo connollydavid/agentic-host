@@ -10,13 +10,13 @@ with `model: qwen3.5-4b` (aliases `local` / `coder` / `rope-text`). Upstream Fen
 described as a "code-gen/unit-test worker": competent at narrow generation, shaky
 at long, exact, multi-step orchestration. That makes every claim that the
 methodology "serves Fen" **falsifiable**: drive the real model and watch, rather
-than role-play lem with a stronger one (which flatters the design).
+than role-play the weak agent with a stronger one (which flatters the design).
 
 **Modality: textual, low-fidelity at action.** Reasons adequately within a single
 step but fumbles execution: Fen drops or garbles tool calls, mis-sequences a
 procedure, or hand-edits a config file and gets a field subtly wrong. A 4B at Q8_0 is
 lossy in precisely the way that bites long exact instruction-following. Fen is not
-a bad agent; lem is most agents some of the time, and a small local worker all of
+a bad agent; most agents fumble some of the time, and a small local worker all of
 the time. A process that only works when many precise tool calls land in order is,
 for Fen, a process that does not work. **The tools must carry the process.**
 
@@ -32,9 +32,9 @@ for Fen, a process that does not work. **The tools must carry the process.**
   fail-safe**: a recorded-applied entry written by `host-lifecycle`, not by Fen's
   shaky hand on `.host`; a fumble that re-lists work, never one that buries it.
 
-**How we use Fen.** Because Fen is callable, lem is the milestone's **acceptance
+**How we use Fen.** Because Fen is callable, Fen is the milestone's **acceptance
 test**, not a lens: a design claiming tool-carried, fumble-proof upgrades is
-validated by handing the real `qwen3.5-4b` the upgrade loop and confirming lem can
-complete it, and, as a baseline, that lem fumbles the prose / hand-edit version.
+validated by handing the real `qwen3.5-4b` the upgrade loop and confirming Fen can
+complete it, and, as a baseline, that Fen fumbles the prose / hand-edit version.
 This is the standing correction to designing from the author's seat: simulating
 the weak agent with a strong one proves nothing; driving the real 4B does.

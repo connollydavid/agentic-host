@@ -6,7 +6,7 @@ Reimann's Interaction Design).
 
 **These two are examples.** Mara and Wren are the operators of *any* agentic
 host: the human who develops software and the agentic LLM who develops
-software. They illustrate the method, not your project.
+software. Mara and Wren illustrate the method, not your project.
 
 **Each project builds at least one persona of its own, by discussion**: the
 operator and the agent eliciting the actual users of the software under

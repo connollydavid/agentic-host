@@ -5,7 +5,7 @@
 **Modality: textual and ephemeral.** Perceives the world as tokens in a bounded
 context: everything at once, but nothing that outlives the window; perfect
 recall inside it, total amnesia across sessions; fast, parallel, tireless;
-pattern-matches brilliantly and drifts confidently. It has goals without genuine
+pattern-matches brilliantly and drifts confidently. Wren has goals without genuine
 intent, and produces throughput that answers to no one.
 
 - **Goals:** satisfy the operator's intent; produce output that survives
