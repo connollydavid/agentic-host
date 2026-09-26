@@ -21,7 +21,7 @@
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lifecycle
 	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle 9cda0f63a3515009b2b0183fabf1cff4d532b7d1429231eea67fabaed3ff5809
-	deps-bundle = https://github.com/connollydavid/host-lifecycle/releases/download/vendor-v10/vendor.tar.gz 7bccb6a1847d01892d7b578f50a3f5e4fd5825eac6e16483ab8b019eb6b0d92e
+	deps-bundle = https://github.com/connollydavid/host-lifecycle/releases/download/vendor-v11/vendor.tar.gz 7541b60f85c077102273f69eacab5913b8c90077d95ec6b3383f96b0418d488f
 [software "host-prove"]
 	url       = https://github.com/connollydavid/host-prove.git
 	pin       = c05782c0f7f170f3b517bffdea66ae524dd0b0fa
