@@ -1,15 +1,15 @@
 # plan/0094 ci-lanes-red: every red lane in the family surveyed, triaged, closed
 
-Operator-directed ("we have CI failures all over too"), continuing plan/0093's
-sweep to the lanes. The survey (2026-09-26, `gh run list` across the nine repos)
+Operator-directed ("we have CI failures all over too"); the sweep continues
+plan/0093's work at the lanes. The survey (2026-09-26, `gh run list` across the nine repos)
 found three red sources and cleared the rest:
 
 | Repo | Runs | Cause | Class |
 |---|---|---|---|
 | host-lifecycle | v0.54.3, v0.54.4, main red (v0.54.2 green) | the Clippy lane (`-D warnings`) denies `manual_strip` on the plan/0093 anchor-strip code, which local `cargo test` cannot see | R2, fixed in v0.54.5 |
 | host-lint | v0.20.0, v0.21.0, v0.22.0 red (red since 09-14) | the test job exits 127: `test-integration.sh` cd's into a temp dir and then invokes `$BINARY`, which CI passes relative (`./host-lint-linux-amd64`), so the not-found trips `set -e` before a verdict prints; locally green under an absolute path, which is why 219/219 passed at the landing | R2, fixed this plan |
-| host-grammar | Allium lane red on v0.7.0 (09-14) | `cargo install allium-cli --version 3.4.2` without `--locked` re-resolves dependencies and broke when allium-parser v3.5.3 shipped a changed signature — the defect /host's bcbf449 fixed for its own installs | R2, one line |
-| host-lint upstream-drift job | failure, tolerated | `continue-on-error: true` by design (host-lint#22): a network lane comparing FFmpeg ground truth against upstream HEAD must never redden the build; its drift is the pack's watch-item, not a gate | by design, stands |
+| host-grammar | Allium lane red on v0.7.0 (09-14) | `cargo install allium-cli --version 3.4.2` without `--locked` re-resolves dependencies and broke when allium-parser v3.5.3 shipped a changed signature, the defect /host's bcbf449 fixed for its own installs | R2, one line |
+| host-lint upstream-drift job | failure, tolerated | `continue-on-error: true` by design (host-lint#22): a network lane comparing FFmpeg ground truth against upstream HEAD must never redden the build; drift is the pack's watch-item, reported and stays outside the gate | by design, stands |
 | connollydavid/host, host-prove, host-grammar Test/Specula/host-prove lanes | green | one historical Install failure on /host, fixed at tip by the lockfile commit | nothing owed |
 
 ## Fixes
@@ -62,13 +62,13 @@ Recorded 2026-09-26, same session as the cut.
   release attempt failed in the container on a residue of the interrupted
   predecessor: the kill stopped before the staging guard could restore, and the
   bind-mounted worktree carried the half-state into the build. The guard's
-  backstop covers panics, not kills — a hardening note for the release path.
+  backstop covers panics, not kills, a hardening note for the release path.
 - **host-lint v0.22.1** (a0d22055, artifact
   d2c25034c12aed234dec7799de408d9a9c5c919fe54f862a5574e25aa59a56d2): the
   integration script absolutizes the binary once at the top, so every
   `( cd "$dir" && "$BINARY" ... )` section survives the cd, and the lem
   section-exclusion fixture declares coverage through the `LEXICON`, the
-  contract's actual mechanism — the fixture's inline marker was a markdown
+  contract's actual mechanism, and the fixture's inline marker was a markdown
   heading the scanner rightly ignores. Measured 218/218 under the relative
   invocation, the shape CI runs. The section-exclusion test had been unreachable
   in CI since v0.20.0 because the 127 aborted the script before it, which is how
@@ -83,10 +83,10 @@ Recorded 2026-09-26, same session as the cut.
   library change: lanes and fixtures only. `software --verify-build --item
   host-lint` re-proved the v0.22.0 record (386b254c reproduces in the recorded
   toolchain) after a local build had overwritten the canonical binary in the
-  worktree — the recorded hash is the container's, and the gating artifact is
+  worktree, so the recorded hash is the container's, and the gating artifact is
   built in its recorded toolchain, never ambiently.
 
-**Dispositions.** upstream-drift stands as designed (`continue-on-error`, a
+**Dispositions.** upstream-drift is tolerated by design (`continue-on-error`, a
 network lane whose drift is the pack's watch-item). The /host Install red and
 host-prove's historical red are fixed at tip; nothing owed. The R4 set is
 unchanged: /host#21 (receipt-CI coupling, now carrying three live instances from
@@ -113,8 +113,8 @@ bench); discuss `lem`, `lem's`, `lemself`. Two findings and one boundary, live:
   resolution, which lives in the wire gate's nudge (spoken after a defect, per
   the priming rule), not in the lane's detector. Recorded as the known boundary,
   not a new defect.
-- **The cast files' own voice stands as written.** `bly.md` and `wren.md` use
-  `it` for their model personas — persona-construction prose written before the
+- **The cast files' own voice is left as written.** `bly.md` and `wren.md` use
+  `it` for their model personas, persona-construction prose written before the
   doctrine, outside the declared corpus and outside any lem-declared scope. The
   record-layer principle holds: if `cast/` ever joins a declared lem scope, those
   files flag, and that is the contract working.
