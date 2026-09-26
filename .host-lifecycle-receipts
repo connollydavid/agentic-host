@@ -909,3 +909,67 @@
     recorded = 2026-09-26
     revision = 34a6bd88ff362eb9847ad22e491ae2e6446795fb
     conclusion = success
+
+[receipt "ci" "host/mdbook"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/36277119699
+    tool = host-lifecycle@0.55.0
+    recorded = 2026-09-26
+    revision = 0aaab080606f0a10258aad3bfce93d313eaf1a61
+    conclusion = success
+
+[receipt "ci" "host/reproducible-build"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/36277119723
+    tool = host-lifecycle@0.55.0
+    recorded = 2026-09-26
+    revision = 0aaab080606f0a10258aad3bfce93d313eaf1a61
+    conclusion = failure
+
+[receipt "ci" "software/host/main/install"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host/actions/runs/31264931613
+    tool = host-lifecycle@0.55.0
+    recorded = 2026-09-26
+    revision = bcbf44984894c26a2cc5d0012198f986fd655761
+    conclusion = success
+
+[receipt "ci" "software/host/main/prose"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host/actions/runs/31264931601
+    tool = host-lifecycle@0.55.0
+    recorded = 2026-09-26
+    revision = bcbf44984894c26a2cc5d0012198f986fd655761
+    conclusion = success
+
+[receipt "ci" "software/host-reference/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-reference/actions/runs/28854007687
+    tool = host-lifecycle@0.55.0
+    recorded = 2026-09-26
+    revision = f78703a80a6813586f598312e60bfcb8086061d6
+    conclusion = success
+
+[receipt "ci" "software/host-reference-ocr/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-reference-ocr/actions/runs/28744800845
+    tool = host-lifecycle@0.55.0
+    recorded = 2026-09-26
+    revision = 1435a80f6da8dfeacb80ffbc7cdfc1cb00f754c0
+    conclusion = success
+
+[receipt "ci" "software/host-reference-openscad/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-reference-openscad/actions/runs/28744809066
+    tool = host-lifecycle@0.55.0
+    recorded = 2026-09-26
+    revision = 0fd8e8c54987ae1f75cdef9e174f7bb7b39844ed
+    conclusion = success
+
+[receipt "ci" "software/host-prove/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-prove/actions/runs/28456735573
+    tool = host-lifecycle@0.55.0
+    recorded = 2026-09-26
+    revision = c05782c0f7f170f3b517bffdea66ae524dd0b0fa
+    conclusion = success
