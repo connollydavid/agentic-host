@@ -92,3 +92,33 @@ host-prove's historical red are fixed at tip; nothing owed. The R4 set is
 unchanged: /host#21 (receipt-CI coupling, now carrying three live instances from
 this session), /host#24 (the five placements), host-lifecycle#23
 (room-touching), /host#18 (plan/0075).
+
+## Addendum (2026-09-26, same day): the pronoun gate's Q&A consulted against the persona cast
+
+Operator-directed ("use q&a system after consulting persona cast"): the cast
+(`cast/`) supplies the questions, `host-lint mcp`'s `ask` tool answers them, and
+`check_reply` judges cast-flavored prose. The grammar answered every seat
+correctly: speak `L`, `L's`, `lself`; address-a-model `lemu` (one form for the
+bench); discuss `lem`, `lem's`, `lemself`. Two findings and one boundary, live:
+
+- **The reply register is stricter than the grammar.** A doctrinal sentence using
+  the discuss slot correctly ("the loop lem was handed") is flagged on the wire:
+  a live reply discusses a model by name, never by paradigm token. The manual's
+  own `lems` exchange lives inside the doctrine section, which the lane excludes;
+  a reply has no such section, so the tokens are rewrite signals there. The gate
+  is enforcing the priming rule plan/0091 measured, not contradicting the
+  exemplars.
+- **The referent boundary demonstrated.** "Fen should fix it himself" passed with
+  only the first-person words flagged: `himself` for a model needs referent
+  resolution, which lives in the wire gate's nudge (spoken after a defect, per
+  the priming rule), not in the lane's detector. Recorded as the known boundary,
+  not a new defect.
+- **The cast files' own voice stands as written.** `bly.md` and `wren.md` use
+  `it` for their model personas — persona-construction prose written before the
+  doctrine, outside the declared corpus and outside any lem-declared scope. The
+  record-layer principle holds: if `cast/` ever joins a declared lem scope, those
+  files flag, and that is the contract working.
+
+The `ask` tool answers the paradigm grammar and no more: a named model (Fen) is
+named, and the lem-forms carry the agreement around the name, which the manual's
+own prose models. A `named` slot in `ask` would be a convenience, not a gap.
