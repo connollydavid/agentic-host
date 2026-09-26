@@ -261,7 +261,61 @@ next cut after the live queue drains; lifecycle#23 waits on it (the cross-check
 consumes the receipts set #21 hardens); #18 waits on plan/0075.</li>
 </ol>
 <h2 id="results"><a class="header" href="#results">Results</a></h2>
-<p>Recorded as the queue drains.</p>
+<p>Recorded 2026-09-26, one session. Two releases (v0.54.3, v0.54.4) landed through the
+full cascade (verified musl build, tags, re-pin, template <code>--rev</code> and submodule pins,
+receipts); this host's PATH copy refreshed per the 2026-09-05 lesson.</p>
+<ul>
+<li><strong>host-lifecycle#29 closed</strong> (dd54db5, v0.54.3): the mode-gate's grep anchors the
+<code>./</code> on line start or one non-path character, so a parent-relative invocation
+(<code>python3 ../scripts/x.py</code>) and a redundant-member path (<code>a/./x</code>) stop reading as
+in-place calls. Regression test
+<code>entry_point_mode_gate_never_reads_a_parent_relative_path_as_in_place</code>.</li>
+<li><strong>host-lifecycle#28 closed</strong> (c41e436, v0.54.3): <code>skill_sources_checked</code> keys
+offers by skill name with the embedded copy winning, and the bootstrap linker
+consumes the same list, so link and gate agree by construction. Regression test
+<code>a_tool_both_submodule_and_embed_offers_its_skills_once</code>.</li>
+<li><strong>connollydavid/host#23 closed</strong> (9828c18, v0.54.4): <code>run_verify</code> resolves a bare
+<code>host-lifecycle</code> token to the running binary, the manifest recheck's rule.
+Measured green under the issue's own stripped-PATH shape; the only remaining
+HAZARDs under it are true ones (the declared rungs' re-deriver genuinely absent
+from that PATH).</li>
+<li><strong>connollydavid/host#22 closed</strong> (9828c18, v0.54.4, plus host-template 21693d8
+and 88c7319): the record path now applies the rename translation the claim
+recheck applies, which was the defect one site deeper than the proposed remedy;
+<code>REFS-a-number-resolves</code>' verify is reworded to <code>host-template/AGENTS.md</code>, while
+<code>LEM-pronoun-system</code>'s keeps <code>CLAUDE.md</code> by design, an adopter meeting that entry
+before the rename entry and the translation covering the renamed tree. Both
+adopter shapes measured recording on v0.54.4 against the tip ledger.</li>
+</ul>
+<p><strong>connollydavid/host#24 triaged R4.</strong> Filed the same day from a bench worker's
+seat: five placements where the check exists at a boundary the worker never stands
+at (a shared index under fan-out, <code>#[cfg(kani)]</code> code no lane compiles, a
+comment-only diff that is not byte-neutral, a hand-typed module inventory, and
+lanes a worker cannot run, the naming sweep among them). The issue is the design
+record and the build is not gated here. Recommended next cut, cheapest contract
+first: <code>software --verify-setup</code> requiring the commit gate it documents installing;
+the naming sweep joining the host's CI lane set; then the cfg-declaration rule, the
+<code>software --artifact-delta</code> proposal, and the derived inventory; the shared-index
+rule is a manual clause before it is a gate.</p>
+<p><strong>plan/0082's carried findings, status-checked.</strong> call/0057 settled
+LEXICON-publishes. The v0.18.1 red-suite finding: the named property is unchanged
+since introduction, the current pin's suite is held green by the v0.22.0 release
+gate, and the draw-dependence stays a watch-item. The worktree ignore-list loss:
+fixed at host-lint <code>e4e03f3</code> and held live by today's worktree commits gating
+correctly. The release-poisoning residue: not reproduced across today's two
+releases, both of which staged deps-bundles with <code>.cargo/config.toml</code> clean after;
+still carried without an issue by operator direction.</p>
+<p><strong>R4 deferrals restated.</strong> connollydavid/host#21 (receipt-CI coupling design) is
+the next cut; host-lifecycle#23 (room-touching cross-check) waits on it;
+connollydavid/host#18 waits on plan/0075; connollydavid/host#24 joins them as the
+freshest design record.</p>
+<p><strong>Process lessons with teeth.</strong> A cross-tracker census is a local-tool job: the web
+fetch layer attributed issues to the wrong repositories and aged them wrongly, and
+only <code>gh</code> settled it, so plan/0093's cut-time census was superseded by step 0
+before any queue work. And a submodule checkout can sit detached, where a plain
+<code>git push</code> refuses and a piped <code>-q</code> push hid the refusal: the template's four
+commits rode an orphaned head until <code>rev-parse origin/main</code> caught it, and the
+cascade's push step now ends with that read-back.</p>
 
                     </main>
 
