@@ -5,7 +5,7 @@
 # The pin replaces a submodule gitlink as the reproducibility anchor.
 [software "host-lint"]
 	url       = https://github.com/connollydavid/host-lint.git
-	pin       = a0d220558359fa27fd85f82d24dcb6e756ec7599
+	pin       = 0eeabc20fdae1c283d0d9d284178be6488bb431d
 	worktrees =
 	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
@@ -32,7 +32,7 @@
 	artifact  = target/x86_64-unknown-linux-musl/release/host-prove 9a9bbbd36edc072cfe5518a408211fabf8c78cff63ed3cb89d25129b8ff9f03f
 [software "host-grammar"]
 	url       = https://github.com/connollydavid/host-grammar
-	pin       = 6cd41c37f06a62652d9fb767cae675225cea5d01
+	pin       = b9cace10c07b1e6316f835d21b131be9d5a07c01
 	worktrees =
 [software "host-reference"]
 	# greenfield component (plan/0049, call/0030). Reproducible build established in the
