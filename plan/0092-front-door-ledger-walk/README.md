@@ -1,5 +1,7 @@
 # plan/0092 front-door ledger walk: the forge follows its own front door
 
+**Complete 2026-09-26.** The standing protocol is call/0059.
+
 Operator-directed: read and follow `https://github.com/connollydavid/host`, with the
 caution that this forge is the methodology's developer, not an adopter. The door
 applied here classifies case (c), the `.host` stamp at `baseline = ff04a94`, and
@@ -64,4 +66,27 @@ nothing owed:
 
 ## Verify
 
-Recorded at closure.
+- `validate plan/` and `validate call/`: ok.
+- `refs --gate .`: every register reference resolves (215 docs read, 272 issue
+  refs carried as legibility debt, 47 record-layer docs excluded and disclosed).
+- `software --check .`: green at the close, every worktree at its pin, every
+  applied ledger entry's post-condition re-verified.
+- `host-lint --all` / `--prose`: no flag; warnings advisory, per the preview.
+- The hook tell test: a flag-tier message (blocking noun plus numeral) is blocked
+  (exit 1, no commit created); warn-tier messages commit by design, which the
+  first probe confirmed by passing clean: the slop words are the grammar's gray
+  zone, not flags.
+- The site builds: `book .` wrote 192 pages, `book --check` renders every room,
+  `mdbook build` exits 0.
+
+**The one live find beyond the records: the verify receipt had stood red since
+2026-09-14.** The recheck is strict-zero on authored-doc prose warns, and
+plan/0089's landing left five decoration dashes in its README, so
+`software --check` re-opened the receipt on every sweep after. The walk tripped
+the same bar with four warns of its own (two decoration in call/0059, a
+negative-parallelism and an ing-tail in call/0059 and the index row); all nine
+were reworded plain and the receipt closed green. The 2026-09-14/15
+release-cascade receipts (host-grammar v0.7.0, host-lint v0.20.0 through v0.22.0,
+host-lifecycle v0.54.0 through v0.54.2) were found uncommitted and are recorded
+with this walk. Closing lesson: the gate sweep is part of every landing, run
+before the last push, not a closing-time formality.
