@@ -122,3 +122,27 @@ bench); discuss `lem`, `lem's`, `lemself`. Two findings and one boundary, live:
 The `ask` tool answers the paradigm grammar and no more: a named model (Fen) is
 named, and the lem-forms carry the agreement around the name, which the manual's
 own prose models. A `named` slot in `ask` would be a convenience, not a gap.
+
+## Addendum 2 (2026-09-26): cast/ enters the contract's scope by construction, and the release poison is fixed at its source
+
+Operator-directed ("cast/ is in scope and must be re-written"): the persona room's
+model references now name their personas — Bly, Wren, and Fen are named wherever
+the room speaks of them, and the paradigm tokens live only in the doctrine section
+and the records that discuss the contract itself. The rule the consultation proved
+applied in reverse: outside the doctrine section a model is named, so a neuter
+pronoun ("it" for Bly and Wren) and a correct-but-misplaced paradigm token
+("role-play lem") both gave way to the name. Measured: every file in `cast/` scans
+clean under a declared `LEXICON` scope. Unresolved populations keep ordinary
+English (Orin's quoted "they follow it"), and the human personas keep theirs.
+
+The release-path defect plan/0082 carried ("a failed release poisons the next
+attempt; the fix belongs to whoever next opens the release path") is fixed at its
+source in **host-lifecycle v0.54.6** (127a9d8e, artifact
+9cda0f63a3515009b2b0183fabf1cff4d532b7d1429231eea67fabaed3ff5809): the vendor
+merge is idempotent by section, so a killed release's leftover merge is replaced
+rather than duplicated, and re-staging repairs the residue instead of duplicating
+the block cargo refuses. Regression test
+`merge_vendor_config_is_idempotent_across_a_killed_release`; suite 311 plus 40.
+The strict authored-prose bar caught this plan's own README during the release
+gate, the second instance of that lesson in one day, and the text was reworded
+plain before the release ran.
