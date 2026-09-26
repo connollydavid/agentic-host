@@ -10502,14 +10502,14 @@ before any queue work. And a submodule checkout can sit detached, where a plain
 commits rode an orphaned head until <code>rev-parse origin/main</code> caught it, and the
 cascade's push step now ends with that read-back.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0094-ci-lanes-red-every-red-lane-in-the-family-surveyed-triaged-closed"><a class="header" href="#plan0094-ci-lanes-red-every-red-lane-in-the-family-surveyed-triaged-closed">plan/0094 ci-lanes-red: every red lane in the family surveyed, triaged, closed</a></h1>
-<p>Operator-directed ("we have CI failures all over too"), continuing plan/0093's
-sweep to the lanes. The survey (2026-09-26, <code>gh run list</code> across the nine repos)
+<p>Operator-directed ("we have CI failures all over too"); the sweep continues
+plan/0093's work at the lanes. The survey (2026-09-26, <code>gh run list</code> across the nine repos)
 found three red sources and cleared the rest:</p>
 <div class="table-wrapper"><table><thead><tr><th>Repo</th><th>Runs</th><th>Cause</th><th>Class</th></tr></thead><tbody>
 <tr><td>host-lifecycle</td><td>v0.54.3, v0.54.4, main red (v0.54.2 green)</td><td>the Clippy lane (<code>-D warnings</code>) denies <code>manual_strip</code> on the plan/0093 anchor-strip code, which local <code>cargo test</code> cannot see</td><td>R2, fixed in v0.54.5</td></tr>
 <tr><td>host-lint</td><td>v0.20.0, v0.21.0, v0.22.0 red (red since 09-14)</td><td>the test job exits 127: <code>test-integration.sh</code> cd's into a temp dir and then invokes <code>$BINARY</code>, which CI passes relative (<code>./host-lint-linux-amd64</code>), so the not-found trips <code>set -e</code> before a verdict prints; locally green under an absolute path, which is why 219/219 passed at the landing</td><td>R2, fixed this plan</td></tr>
-<tr><td>host-grammar</td><td>Allium lane red on v0.7.0 (09-14)</td><td><code>cargo install allium-cli --version 3.4.2</code> without <code>--locked</code> re-resolves dependencies and broke when allium-parser v3.5.3 shipped a changed signature — the defect /host's bcbf449 fixed for its own installs</td><td>R2, one line</td></tr>
-<tr><td>host-lint upstream-drift job</td><td>failure, tolerated</td><td><code>continue-on-error: true</code> by design (host-lint#22): a network lane comparing FFmpeg ground truth against upstream HEAD must never redden the build; its drift is the pack's watch-item, not a gate</td><td>by design, stands</td></tr>
+<tr><td>host-grammar</td><td>Allium lane red on v0.7.0 (09-14)</td><td><code>cargo install allium-cli --version 3.4.2</code> without <code>--locked</code> re-resolves dependencies and broke when allium-parser v3.5.3 shipped a changed signature, the defect /host's bcbf449 fixed for its own installs</td><td>R2, one line</td></tr>
+<tr><td>host-lint upstream-drift job</td><td>failure, tolerated</td><td><code>continue-on-error: true</code> by design (host-lint#22): a network lane comparing FFmpeg ground truth against upstream HEAD must never redden the build; drift is the pack's watch-item, reported and stays outside the gate</td><td>by design, stands</td></tr>
 <tr><td>connollydavid/host, host-prove, host-grammar Test/Specula/host-prove lanes</td><td>green</td><td>one historical Install failure on /host, fixed at tip by the lockfile commit</td><td>nothing owed</td></tr>
 </tbody></table>
 </div>
@@ -10557,13 +10557,13 @@ strip goes through <code>strip_prefix</code>; CI green on the tag and main. The 
 release attempt failed in the container on a residue of the interrupted
 predecessor: the kill stopped before the staging guard could restore, and the
 bind-mounted worktree carried the half-state into the build. The guard's
-backstop covers panics, not kills — a hardening note for the release path.</li>
+backstop covers panics, not kills, a hardening note for the release path.</li>
 <li><strong>host-lint v0.22.1</strong> (a0d22055, artifact
 d2c25034c12aed234dec7799de408d9a9c5c919fe54f862a5574e25aa59a56d2): the
 integration script absolutizes the binary once at the top, so every
 <code>( cd "$dir" &amp;&amp; "$BINARY" ... )</code> section survives the cd, and the lem
 section-exclusion fixture declares coverage through the <code>LEXICON</code>, the
-contract's actual mechanism — the fixture's inline marker was a markdown
+contract's actual mechanism, and the fixture's inline marker was a markdown
 heading the scanner rightly ignores. Measured 218/218 under the relative
 invocation, the shape CI runs. The section-exclusion test had been unreachable
 in CI since v0.20.0 because the 127 aborted the script before it, which is how
@@ -10577,10 +10577,10 @@ into the vendored bundles is the next embed-equality cascade (re-cut bundles,
 consumer revs, releases), the plan/0082 pattern. Neither new release carries a
 library change: lanes and fixtures only. <code>software --verify-build --item host-lint</code> re-proved the v0.22.0 record (386b254c reproduces in the recorded
 toolchain) after a local build had overwritten the canonical binary in the
-worktree — the recorded hash is the container's, and the gating artifact is
+worktree, so the recorded hash is the container's, and the gating artifact is
 built in its recorded toolchain, never ambiently.</li>
 </ul>
-<p><strong>Dispositions.</strong> upstream-drift stands as designed (<code>continue-on-error</code>, a
+<p><strong>Dispositions.</strong> upstream-drift is tolerated by design (<code>continue-on-error</code>, a
 network lane whose drift is the pack's watch-item). The /host Install red and
 host-prove's historical red are fixed at tip; nothing owed. The R4 set is
 unchanged: /host#21 (receipt-CI coupling, now carrying three live instances from
@@ -10605,8 +10605,8 @@ only the first-person words flagged: <code>himself</code> for a model needs refe
 resolution, which lives in the wire gate's nudge (spoken after a defect, per
 the priming rule), not in the lane's detector. Recorded as the known boundary,
 not a new defect.</li>
-<li><strong>The cast files' own voice stands as written.</strong> <code>bly.md</code> and <code>wren.md</code> use
-<code>it</code> for their model personas — persona-construction prose written before the
+<li><strong>The cast files' own voice is left as written.</strong> <code>bly.md</code> and <code>wren.md</code> use
+<code>it</code> for their model personas, persona-construction prose written before the
 doctrine, outside the declared corpus and outside any lem-declared scope. The
 record-layer principle holds: if <code>cast/</code> ever joins a declared lem scope, those
 files flag, and that is the contract working.</li>
