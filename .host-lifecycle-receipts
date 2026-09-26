@@ -834,3 +834,10 @@
     authorization = plan/0093
     tool = host-lifecycle@0.54.4
     recorded = 2026-09-26
+
+[receipt "release" "host-grammar"]
+    disposition = done
+    evidence = v0.7.1
+    authorization = plan/0094
+    tool = host-lifecycle@0.54.5
+    recorded = 2026-09-26
