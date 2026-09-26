@@ -820,3 +820,10 @@
     authorization = plan/0093
     tool = host-lifecycle@0.53.0
     recorded = 2026-09-26
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.54.4@65d1abd38de1441779358f898ca3c92340a05d0ce458d8d6b285050deab28efa
+    authorization = plan/0093
+    tool = host-lifecycle@0.54.3
+    recorded = 2026-09-26
