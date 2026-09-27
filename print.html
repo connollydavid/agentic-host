@@ -10935,6 +10935,23 @@ explicit paths; <code>git add -A</code> under a live bench is the finding.</li>
 </ol>
 <h2 id="results-9"><a class="header" href="#results-9">Results</a></h2>
 <p>Recorded as the phases land.</p>
+<h2 id="results-10"><a class="header" href="#results-10">Results</a></h2>
+<p><strong>Phase A (the shared-index clause, 2026-09-27):</strong> the template manual carries
+the fan-out staging rule (bb0e0e1) — while a bench works in one tree, workers
+stage explicit paths and never <code>-A</code>; a commit whose message names fewer paths
+than it touches is a finding to read. The forge adopted the pointer in the same
+hour.</p>
+<p><strong>The cfg-declaration rule</strong> (the code placement): the scan lives in the check
+flow (<code>cfg_kani_problems</code>) — a component whose Rust sources carry
+<code>#[cfg(kani)]</code> with no <code>kani:</code> disposition in its obligations manifests is a
+HAZARD naming the two-way remedy. Regression test covers both directions
+(gated code with no declared rung hazards; declaring the rung in the
+obligations manifest clears it). Committed, release pending.</p>
+<p><strong>Phase B (the sweep lane, pending the host-lint pin decision):</strong> the
+naming-sweep workflow example needs the template to record which host-lint rev
+it pins — the same derived-pin pattern as prose.yml, which is Orin's seat.</p>
+<p><strong>Pending:</strong> <code>--artifact-delta</code> and the derived inventory (the two remaining
+medium builds), recorded for the next cut.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
