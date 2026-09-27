@@ -176,23 +176,23 @@
                     <main>
                         <h1 id="plan0098-must-clear-next-turn-the-lanes-outcomes-enforce-at-the-turn-boundary"><a class="header" href="#plan0098-must-clear-next-turn-the-lanes-outcomes-enforce-at-the-turn-boundary">plan/0098 must-clear-next-turn: the lanes' outcomes enforce at the turn boundary</a></h1>
 <p>Operator-directed ("do we have an effective must-clear-CI-failures-on-next-turn?
-I am getting too many emails from agentic-* host folders" — ruling: go). The
+I am getting too many emails from agentic-* host folders"; ruling: go). The
 honest answer at the ask: <strong>no</strong>. The per-turn duty was prose; the judge ran only
 when remembered; the witness lane disclosed without obligating; and GitHub's
-notification emails did the only tripwire work — email does not drive an agent
+notification emails did the only tripwire work; email does not drive an agent
 loop. This plan wires the judge to the turn boundary.</p>
 <h2 id="the-design-as-built"><a class="header" href="#the-design-as-built">The design, as built</a></h2>
 <p>Two ZCode hooks in this workspace's <code>.zcode/config.json</code> (machine-local, like the
 MCP registration; the adopter pattern is the same config in each host), both
 calling the shipped judge:</p>
 <ul>
-<li><strong>SessionStart</strong> — <code>host-lifecycle ci .</code> runs read-only and its findings ride
+<li><strong>SessionStart</strong>; <code>host-lifecycle ci .</code> runs read-only and its findings ride
 the session context as <code>additionalContext</code>: the turn's first fact is the
 lanes' state, with run URLs. A red lane cannot be discovered late.</li>
-<li><strong>Stop</strong> — <code>host-lifecycle ci . --gate</code> gates the turn's end: every discovered
+<li><strong>Stop</strong>; <code>host-lifecycle ci . --gate</code> gates the turn's end: every discovered
 lane must carry a receipt at the judged revision. Absence and staleness block
 the stop (the model is pulled back to record or fix); a <strong>receipted failure
-passes the gate</strong> — the receipt is the blocker record, the fix rides the next
+passes the gate</strong>; the receipt is the blocker record, the fix rides the next
 turn, and the session-start context carries it until then. The witness
 pattern holds: the judge discloses; it never reddens a build.</li>
 </ul>
