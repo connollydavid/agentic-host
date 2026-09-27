@@ -42,7 +42,7 @@ Recorded as the queue drains.
 - **connollydavid/host#21 closed**: the design (plan/0095), the build
   (plan/0096, v0.55.0-v0.55.5), and the forge's own thirteen-lane receipts. One
   design amendment recorded: the judge witnesses from its verb and a
-  continue-on-error CI lane — inside the check it gated the lane that produces
+  continue-on-error CI lane; inside the check it gated the lane that produces
   its own evidence, and a receipts-lag failure re-reddened every later run
   forever, measured before the amendment landed.
 - **The adoption cascade is the standing node**: the forge adopts lint v0.22.4
@@ -50,5 +50,8 @@ Recorded as the queue drains.
   re-cut, the releases), the practiced motion; until then the recipe holds the
   consumed rev and the gate stays green on the pairing.
 
-The queue continues: host-lifecycle#23's cross-check build, then /host#24's
-placements, cheapest first.
+The queue continues: host-lifecycle#23's cross-check **built and shipped in
+v0.56.0** (the dream audit's room-touching detector resolves each cited record's
+Status line: superseded confirms at exit-1 weight, current is silence, the
+unresolvable stays a review prompt; 313 plus 40 green, closed with the
+transcript), then /host#24's placements, cheapest first.
