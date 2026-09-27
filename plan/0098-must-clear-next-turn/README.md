@@ -39,3 +39,17 @@ when it concludes.
 ## Results
 
 Recorded at closure.
+
+## Addendum: the harness-portable adoption (opencode and the skill-based adopters)
+
+The hooks are one harness's adapter. The portable surfaces are the judge (a
+plain command, every harness can run it) and the skill the agents load: the
+`ci` skill ships with host-lifecycle v0.58.0 (65d87a05) — judge at session
+start, record receipts citing run URLs, gate before reporting done — and links
+into the cross-tool agents path (`.agents/skills/`), which ZCode, Claude Code,
+and opencode all read. The forge links it there; the hooks remain this
+workspace's ZCode adapter, and the other harnesses' adapters are thin: the same
+two commands bound to their session-start and turn-end events. The
+`additionalContext`/block JSON shapes are ZCode's; a harness without hook
+support still gets the full enforcement through the skill, because the duty is
+a command plus a reading habit, not a config file.
