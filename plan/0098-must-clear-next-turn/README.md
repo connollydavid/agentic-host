@@ -1,10 +1,10 @@
 # plan/0098 must-clear-next-turn: the lanes' outcomes enforce at the turn boundary
 
 Operator-directed ("do we have an effective must-clear-CI-failures-on-next-turn?
-I am getting too many emails from agentic-* host folders" — ruling: go). The
+I am getting too many emails from agentic-* host folders"; ruling: go). The
 honest answer at the ask: **no**. The per-turn duty was prose; the judge ran only
 when remembered; the witness lane disclosed without obligating; and GitHub's
-notification emails did the only tripwire work — email does not drive an agent
+notification emails did the only tripwire work; email does not drive an agent
 loop. This plan wires the judge to the turn boundary.
 
 ## The design, as built
@@ -13,13 +13,13 @@ Two ZCode hooks in this workspace's `.zcode/config.json` (machine-local, like th
 MCP registration; the adopter pattern is the same config in each host), both
 calling the shipped judge:
 
-- **SessionStart** — `host-lifecycle ci .` runs read-only and its findings ride
+- **SessionStart**; `host-lifecycle ci .` runs read-only and its findings ride
   the session context as `additionalContext`: the turn's first fact is the
   lanes' state, with run URLs. A red lane cannot be discovered late.
-- **Stop** — `host-lifecycle ci . --gate` gates the turn's end: every discovered
+- **Stop**; `host-lifecycle ci . --gate` gates the turn's end: every discovered
   lane must carry a receipt at the judged revision. Absence and staleness block
   the stop (the model is pulled back to record or fix); a **receipted failure
-  passes the gate** — the receipt is the blocker record, the fix rides the next
+  passes the gate**; the receipt is the blocker record, the fix rides the next
   turn, and the session-start context carries it until then. The witness
   pattern holds: the judge discloses; it never reddens a build.
 
