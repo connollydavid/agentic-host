@@ -32,3 +32,25 @@ one lifecycle release carries every code placement.
 ## Results
 
 Recorded as the phases land.
+
+## Results
+
+**Phase A (the shared-index clause, 2026-09-27):** the template manual carries
+the fan-out staging rule (bb0e0e1) — while a bench works in one tree, workers
+stage explicit paths and never `-A`; a commit whose message names fewer paths
+than it touches is a finding to read. The forge adopted the pointer in the same
+hour.
+
+**The cfg-declaration rule** (the code placement): the scan lives in the check
+flow (`cfg_kani_problems`) — a component whose Rust sources carry
+`#[cfg(kani)]` with no `kani:` disposition in its obligations manifests is a
+HAZARD naming the two-way remedy. Regression test covers both directions
+(gated code with no declared rung hazards; declaring the rung in the
+obligations manifest clears it). Committed, release pending.
+
+**Phase B (the sweep lane, pending the host-lint pin decision):** the
+naming-sweep workflow example needs the template to record which host-lint rev
+it pins — the same derived-pin pattern as prose.yml, which is Orin's seat.
+
+**Pending:** `--artifact-delta` and the derived inventory (the two remaining
+medium builds), recorded for the next cut.
