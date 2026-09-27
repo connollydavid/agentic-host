@@ -31,3 +31,24 @@ vendor bundle re-cuts).
 ## Results
 
 Recorded as the queue drains.
+
+## Results (first drain, 2026-09-27)
+
+- **host-lint#30 closed** in v0.22.4 (70ea0a99, artifact
+  eaf1dec975ea53565464d654610ca028bf20903f83de06c275168313e4677fec): the
+  first-person pronouns `me`/`my`/`mine`/`myself` match case-sensitively
+  lowercase, `i` stays case-insensitive; regression cases in the integration
+  suite, 220/220.
+- **connollydavid/host#21 closed**: the design (plan/0095), the build
+  (plan/0096, v0.55.0-v0.55.5), and the forge's own thirteen-lane receipts. One
+  design amendment recorded: the judge witnesses from its verb and a
+  continue-on-error CI lane — inside the check it gated the lane that produces
+  its own evidence, and a receipts-lag failure re-reddened every later run
+  forever, measured before the amendment landed.
+- **The adoption cascade is the standing node**: the forge adopts lint v0.22.4
+  through the next embed-equality cascade (the lifecycle embed rev, the vendor
+  re-cut, the releases), the practiced motion; until then the recipe holds the
+  consumed rev and the gate stays green on the pairing.
+
+The queue continues: host-lifecycle#23's cross-check build, then /host#24's
+placements, cheapest first.
