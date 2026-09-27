@@ -20,7 +20,7 @@
 	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lifecycle
-	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle 47680924d65e1e1791ca2af3458bba3e435873083df185f80a5561d3a1c99173
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle 0eaa8970c4e5cb2c2b68d61a53898e965a0e9febaf4485f448b07f655a34c31c
 	deps-bundle = https://github.com/connollydavid/host-lifecycle/releases/download/vendor-v12/vendor.tar.gz 20b71c22fc3c8ae65f1cff686fcf4acd0c49f4dd91bdf958af13fd55c8d0b671
 [software "host-prove"]
 	url       = https://github.com/connollydavid/host-prove.git
