@@ -26,12 +26,10 @@ jobs:
           fetch-depth: 0
       - name: Install host-lifecycle at its .host-software pin (the reproducibility anchor)
         run: |
-          gh release download --repo connollydavid/host-lifecycle v0.55.5 -p 'host-lifecycle' -O host-lifecycle
-          chmod +x host-lifecycle
-        env:
-          GH_TOKEN: ${{ github.token }}
+          REV=$(awk '/\[software "host-lifecycle"\]/{f=1} f && /pin/{print $3; exit}' .host-software)
+          cargo install --locked --git https://github.com/connollydavid/host-lifecycle --rev "$REV"
       - name: Judge the lanes' receipts
-        run: ./host-lifecycle ci .
+        run: host-lifecycle ci .
 
   verify-build:
     runs-on: ubuntu-latest
