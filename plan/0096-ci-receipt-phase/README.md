@@ -81,3 +81,9 @@ plan wrote them down.
 The superseded lint receipt (a revision field holding a URL, from a shifted
 shell parse) stays in the append-only file as history; the corrected receipt,
 recorded after the rerun concludes, supersedes it by last-wins.
+
+**The record-pair lesson.** During the same-day release chain the lifecycle
+artifact hash line silently reverted to an older release's hash while the pin
+advanced — a pin and its artifact are one record and must move in one commit;
+`software --check` (and CI's drift clause) caught the mismatch the same hour,
+which is the record pair doing exactly its job.
