@@ -1025,3 +1025,11 @@
     authorization = plan/0096
     tool = host-lifecycle@0.55.2
     recorded = 2026-09-27
+
+[receipt "ci" "software/host-lifecycle/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-lifecycle/actions/runs/36318775995
+    tool = host-lifecycle@0.55.3
+    recorded = 2026-09-27
+    revision = 75f563d48276ed18af033daac1a2af8a343024ba
+    conclusion = success
