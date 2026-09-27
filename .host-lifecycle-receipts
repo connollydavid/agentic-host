@@ -973,3 +973,11 @@
     recorded = 2026-09-26
     revision = c05782c0f7f170f3b517bffdea66ae524dd0b0fa
     conclusion = success
+
+[receipt "ci" "software/host-lint/main/ci"]
+    disposition = done
+    evidence = 
+    tool = host-lifecycle@0.55.0
+    recorded = 2026-09-27
+    revision = https://github.com/connollydavid/host-lint/actions/runs/36276252309
+    conclusion = 54f267f24a4e56e33e8f56ed260b40b2629a5d03
