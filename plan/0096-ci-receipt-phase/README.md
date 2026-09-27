@@ -70,7 +70,7 @@ plan wrote them down.
   intermediate. The consumer follows the FINAL release: the vendor bundle re-cut
   per adoption (vendor-v19 for lint, vendor-v12 for lifecycle), the consumer rev
   bumped, the release rebuilt offline against the new bundle. The producer's own
-  `deps-bundle.lock` moves in the same commit — its drift against `.host-software`
+  `deps-bundle.lock` moves in the same commit; its drift against `.host-software`
   is the HAZARD plan/0082 carried, and the lock-carrier releases (v0.22.3,
   v0.55.1) are the honest way it travels.
 - **The receipts-commit lag is structural.** The commit that writes the receipts
