@@ -44,8 +44,8 @@ Recorded at closure.
 
 The hooks are one harness's adapter. The portable surfaces are the judge (a
 plain command, every harness can run it) and the skill the agents load: the
-`ci` skill ships with host-lifecycle v0.58.0 (65d87a05) — judge at session
-start, record receipts citing run URLs, gate before reporting done — and links
+`ci` skill ships with host-lifecycle v0.58.0 (65d87a05); judge at session
+start, record receipts citing run URLs, gate before reporting done; and links
 into the cross-tool agents path (`.agents/skills/`), which ZCode, Claude Code,
 and opencode all read. The forge links it there; the hooks remain this
 workspace's ZCode adapter, and the other harnesses' adapters are thin: the same
