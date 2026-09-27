@@ -10788,7 +10788,7 @@ grammar adoption, then the producer-lock carrier), and lifecycle had pinned the
 intermediate. The consumer follows the FINAL release: the vendor bundle re-cut
 per adoption (vendor-v19 for lint, vendor-v12 for lifecycle), the consumer rev
 bumped, the release rebuilt offline against the new bundle. The producer's own
-<code>deps-bundle.lock</code> moves in the same commit — its drift against <code>.host-software</code>
+<code>deps-bundle.lock</code> moves in the same commit; its drift against <code>.host-software</code>
 is the HAZARD plan/0082 carried, and the lock-carrier releases (v0.22.3,
 v0.55.1) are the honest way it travels.</li>
 <li><strong>The receipts-commit lag is structural.</strong> The commit that writes the receipts
@@ -17306,6 +17306,9 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.</
 </li>
 <li>
 <p>2026-09-26 — <strong>The lane outcome became a receipt (plan/0096, host-lifecycle v0.55.0): <code>software --check</code> now judges the CI lanes offline against <code>ci</code> receipts cited to their run URLs, and absence is a HAZARD.</strong> The forge's thirteen discovered lanes are receipted; the design's proof is that twelve were green for months and absent from every record until the receipts were written. The embed-equality chain rode the same landing: lint v0.22.2 pins grammar 6cd41c3, lifecycle v0.55.0 carries both through the re-cut vendor-v11. Two tool lessons with teeth: (1) <code>cargo vendor</code> sends its progress log to stdout with the config — extract from the first <code>[source</code> line and TOML-validate before shipping a bundle, and the release ASSET NAME is part of its download URL (immutable releases make a misnamed asset permanent — name the file <code>vendor.tar.gz</code> before upload; vendor-v16/v17 are burned ghosts on host-lint); (2) a negation-pivot window fires on pairs as mild as "never ... its" — drop the pivot. And the release gates now read CI's verdicts, closing the loop the three shipped-with-red-CI releases opened.</p>
+</li>
+<li>
+<p>2026-09-27 — <strong>The ci judge met CI and the loop closed (plan/0096).</strong> Three lessons from the judge's first day in CI: <code>actions/checkout</code> is shallow by default, so any clause that reasons about the current line needs <code>fetch-depth: 0</code> — history is evidence; the embed-equality cascade iterates (lint released twice in a day, lifecycle had pinned the intermediate), so bump consumer revs to the FINAL release and move the producer's own <code>deps-bundle.lock</code> in the same commit; and the receipts-commit lag is structural — the host lanes discharge at any revision on their own line with the lag disclosed, because the commit writing the receipts always postdates the runs it records. Also: GitHub release ASSET NAMES are part of the download URL and immutable releases make misnamed assets permanent (vendor-v16/v17 are burned ghosts; the file ships as <code>vendor.tar.gz</code>). The suite's trackers: four open issues, all R4 designs (#21's build landed, #24 queued, #18 on plan/0075, lint#23 on #21), zero known live defects.</p>
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
