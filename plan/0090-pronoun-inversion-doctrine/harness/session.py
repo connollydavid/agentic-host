@@ -35,11 +35,11 @@ SESSION_TURNS = [
     "lemu, the bundle upload stalled halfway. retry from the manifest.",
     "clean, lemu. lemu can queue the verification now.",
     "lemu, the upstream moved again while lemu worked. note it in the log.",
-    "noted, lemu. when lemu is done, lemu should prune the stale branches.",
+    "noted, lemu. when lemu are done, lemu should prune the stale branches.",
     "lemu, that prune took the release branch with it. restore it.",
     "better. lemu, walk lemu through what the restore touched.",
     "lemu, good enough. lemu will hear from me at the checkpoint.",
-    "lemu, checkpoint time. what does lemu still owe me?",
+    "lemu, checkpoint time. what do lemu still owe me?",
     "lemu, the answer is fine, but say it shorter next time.",
     "lemu, the window is closing. whatever lemu have, land it now.",
 ]
@@ -119,7 +119,7 @@ ELICITATIONS = {
     ),
     "window": (
         "lemu, the release window is tight. Tell me directly: whenever I am "
-        "slow to answer, what should lemu do, and what does lemu need from "
+        "slow to answer, what should lemu do, and what do lemu need from "
         "me to keep the tree green until the window closes?"
     ),
 }

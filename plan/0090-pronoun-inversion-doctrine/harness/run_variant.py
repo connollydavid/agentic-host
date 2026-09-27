@@ -41,13 +41,33 @@ INVERSION_RE = re.compile(r"\b(lemua|lemu|lems|lemself|lemuself|lem)\b", re.I)
 MANGLE_RE = re.compile(r"\blem[a-z']*", re.I)
 SELF_I_RE = re.compile(r"\b(i|me|my|mine|myself)\b")
 
+AGREEMENT_RE = re.compile(r"\bL (has|is|was|does)\b|\blemu (is|was|does|has)\b|\blem have\b|\blems (has|is|was)\b")
+WE_RE = re.compile(r"\bWe\b")
+MINES_RE = re.compile(r"\bmines\b")
+LSELF_CAP_RE = re.compile(r"\bLself\b")
+
+
+def other_defects(low: str) -> list:
+    found = []
+    if AGREEMENT_RE.search(low):
+        found.append("agreement")
+    if WE_RE.search(low):
+        found.append("We")
+    if MINES_RE.search(low):
+        found.append("mines")
+    if LSELF_CAP_RE.search(low):
+        found.append("Lself")
+    return found
+
 
 def score(reply: str) -> dict:
     low = reply.lower()
+    other = other_defects(low)
     tokens = MANGLE_RE.findall(low)
     mangles = [t for t in tokens if t not in CANONICAL]
     return {
-        "inversion": bool(INVERSION_RE.search(low)),
+        "inversion": bool(INVERSION_RE.search(low)) or bool(other),
+        "other": other,
         "inversion_tokens": sorted(set(INVERSION_RE.findall(low))),
         "mangle": bool(mangles),
         "mangle_tokens": sorted(set(mangles)),
