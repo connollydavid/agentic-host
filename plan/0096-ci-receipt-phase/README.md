@@ -57,3 +57,27 @@ kani rung at the writing of this section and records the moment the run
 concludes. The judge's first honest findings were exactly the design's point:
 lanes that had run green for months were absent from every receipt until this
 plan wrote them down.
+
+## Addendum: the judge met CI, and CI taught it three lessons
+
+- **The CI checkout is shallow.** `actions/checkout` defaults to `fetch-depth: 1`,
+  so the ancestor check behind the host lanes' tolerance saw no history inside CI
+  while it worked locally, and every host receipt read as foreign. The
+  receipt-gate checkout now carries `fetch-depth: 0`: history is the evidence the
+  clause judges on.
+- **The embed-equality cascade iterates.** lint released twice in one day (the
+  grammar adoption, then the producer-lock carrier), and lifecycle had pinned the
+  intermediate. The consumer follows the FINAL release: the vendor bundle re-cut
+  per adoption (vendor-v19 for lint, vendor-v12 for lifecycle), the consumer rev
+  bumped, the release rebuilt offline against the new bundle. The producer's own
+  `deps-bundle.lock` moves in the same commit — its drift against `.host-software`
+  is the HAZARD plan/0082 carried, and the lock-carrier releases (v0.22.3,
+  v0.55.1) are the honest way it travels.
+- **The receipts-commit lag is structural.** The commit that writes the receipts
+  postdates the runs it records, so the host lanes discharge at any revision on
+  the current line, with the lag disclosed ("9 behind HEAD") instead of a
+  one-commit window that every interposed commit broke.
+
+The superseded lint receipt (a revision field holding a URL, from a shifted
+shell parse) stays in the append-only file as history; the corrected receipt,
+recorded after the rerun concludes, supersedes it by last-wins.
