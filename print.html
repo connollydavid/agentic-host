@@ -10776,6 +10776,29 @@ kani rung at the writing of this section and records the moment the run
 concludes. The judge's first honest findings were exactly the design's point:
 lanes that had run green for months were absent from every receipt until this
 plan wrote them down.</p>
+<h2 id="addendum-the-judge-met-ci-and-ci-taught-it-three-lessons"><a class="header" href="#addendum-the-judge-met-ci-and-ci-taught-it-three-lessons">Addendum: the judge met CI, and CI taught it three lessons</a></h2>
+<ul>
+<li><strong>The CI checkout is shallow.</strong> <code>actions/checkout</code> defaults to <code>fetch-depth: 1</code>,
+so the ancestor check behind the host lanes' tolerance saw no history inside CI
+while it worked locally, and every host receipt read as foreign. The
+receipt-gate checkout now carries <code>fetch-depth: 0</code>: history is the evidence the
+clause judges on.</li>
+<li><strong>The embed-equality cascade iterates.</strong> lint released twice in one day (the
+grammar adoption, then the producer-lock carrier), and lifecycle had pinned the
+intermediate. The consumer follows the FINAL release: the vendor bundle re-cut
+per adoption (vendor-v19 for lint, vendor-v12 for lifecycle), the consumer rev
+bumped, the release rebuilt offline against the new bundle. The producer's own
+<code>deps-bundle.lock</code> moves in the same commit — its drift against <code>.host-software</code>
+is the HAZARD plan/0082 carried, and the lock-carrier releases (v0.22.3,
+v0.55.1) are the honest way it travels.</li>
+<li><strong>The receipts-commit lag is structural.</strong> The commit that writes the receipts
+postdates the runs it records, so the host lanes discharge at any revision on
+the current line, with the lag disclosed ("9 behind HEAD") instead of a
+one-commit window that every interposed commit broke.</li>
+</ul>
+<p>The superseded lint receipt (a revision field holding a URL, from a shifted
+shell parse) stays in the append-only file as history; the corrected receipt,
+recorded after the rerun concludes, supersedes it by last-wins.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
