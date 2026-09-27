@@ -1033,3 +1033,10 @@
     recorded = 2026-09-27
     revision = 75f563d48276ed18af033daac1a2af8a343024ba
     conclusion = success
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.55.4@bf39fa2d6634a640f97a7f08d06d6161744c29cd5c8dd86988698836b70fc7d5
+    authorization = plan/0096
+    tool = host-lifecycle@0.55.3
+    recorded = 2026-09-27
