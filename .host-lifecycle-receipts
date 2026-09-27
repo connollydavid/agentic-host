@@ -981,3 +981,10 @@
     recorded = 2026-09-27
     revision = https://github.com/connollydavid/host-lint/actions/runs/36276252309
     conclusion = 54f267f24a4e56e33e8f56ed260b40b2629a5d03
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.22.3@5db81a509aaf5b9fcf6e2a6e1e2d37007a6c622245c78321a9c0d9ed90dd8504
+    authorization = plan/0096
+    tool = host-lifecycle@0.55.0
+    recorded = 2026-09-27
