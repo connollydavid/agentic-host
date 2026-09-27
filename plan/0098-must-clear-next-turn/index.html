@@ -211,8 +211,8 @@ when it concludes.</p>
 <h2 id="addendum-the-harness-portable-adoption-opencode-and-the-skill-based-adopters"><a class="header" href="#addendum-the-harness-portable-adoption-opencode-and-the-skill-based-adopters">Addendum: the harness-portable adoption (opencode and the skill-based adopters)</a></h2>
 <p>The hooks are one harness's adapter. The portable surfaces are the judge (a
 plain command, every harness can run it) and the skill the agents load: the
-<code>ci</code> skill ships with host-lifecycle v0.58.0 (65d87a05) — judge at session
-start, record receipts citing run URLs, gate before reporting done — and links
+<code>ci</code> skill ships with host-lifecycle v0.58.0 (65d87a05); judge at session
+start, record receipts citing run URLs, gate before reporting done; and links
 into the cross-tool agents path (<code>.agents/skills/</code>), which ZCode, Claude Code,
 and opencode all read. The forge links it there; the hooks remain this
 workspace's ZCode adapter, and the other harnesses' adapters are thin: the same
