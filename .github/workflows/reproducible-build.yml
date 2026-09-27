@@ -19,6 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
+          fetch-depth: 0 # the ci clause judges lanes on the current line: history is the evidence
           submodules: true # host-template carries the lifecycle.manifest the receipt gate reads
       - name: Install host-lifecycle at its .host-software pin (the reproducibility anchor)
         # The pin recorded in .host-software is the canonical source for this rev; a
