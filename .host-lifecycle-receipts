@@ -1077,3 +1077,24 @@
     recorded = 2026-09-27
     revision = a44a2abf3b3788f3d28456eaf634c57fee116418
     conclusion = success
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.55.7@PENDING
+    authorization = plan/0097
+    tool = host-lifecycle@0.55.6
+    recorded = 2026-09-27
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.55.7@0d8fca5ec737c7859123956aac2034ee2691b04e7fe6ee5c861e4694afc3b6ed
+    authorization = plan/0097
+    tool = host-lifecycle@0.55.6
+    recorded = 2026-09-27
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.56.0@3dc9da8db6ba778f3320539f7feb5372e31c6afac48388f6cc64b7433a0947c1
+    authorization = plan/0097
+    tool = host-lifecycle@0.55.6
+    recorded = 2026-09-27
