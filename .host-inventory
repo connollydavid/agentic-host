@@ -1,0 +1,32 @@
+# The derived-inventory exclusion ledger (host#24, plan/0099): one `<path>
+# <reason>` per line, the reason required. A source file of a materialized
+# component that appears in no task's `inputs` line needs either a task input
+# (for work going forward) or an exclusion with a reason (for the standing
+# stock). The stock recorded here is the pre-discipline house: the forge's
+# plans through plan/0070 declared task inputs twice, then stopped, so the
+# receipted work behind these files named no inputs. Files go away from this
+# ledger the day a task cites them.
+
+# host-lifecycle: the pre-convention core, plus the recent surfaces whose
+# plans declared no task inputs.
+software/host-lifecycle/main/src/bootstrap.rs predates the plan/0069 inputs convention; its regression suite runs at every release
+software/host-lifecycle/main/src/refs.rs predates the plan/0069 inputs convention; its regression suite runs at every release
+software/host-lifecycle/main/src/envhash.rs receipted under plan/0096-era work whose task graph declared no inputs
+software/host-lifecycle/main/src/dream.rs receipted under plan/0083, whose task graph declared no inputs
+software/host-lifecycle/main/src/memory.rs receipted under plan/0083, whose task graph declared no inputs
+software/host-lifecycle/main/src/mcp.rs receipted under plan/0089, whose task graph declared no inputs
+software/host-lifecycle/main/src/setup.rs receipted under plan/0098, whose task graph declared no inputs
+
+# host-lint: the MCP and room-touching surfaces landed under plans that
+# declared no task inputs.
+software/host-lint/main/src/main.rs receipted under plan/0089 and later passes whose task graphs declared no inputs
+
+# host-grammar: repo-only source consumed as a git dependency; host-lint's
+# suite exercises both files on every release.
+software/host-grammar/main/src/lib.rs repo-only source consumed by git dependency; exercised by host-lint's suite
+software/host-grammar/main/src/tells.rs repo-only source consumed by git dependency; exercised by host-lint's suite
+
+# The single-file components, all predating the convention.
+software/host-prove/main/src/main.rs predates the plan/0069 inputs convention
+software/host-reference-ocr/main/src/main.rs predates the plan/0069 inputs convention
+software/host-reference-openscad/main/src/main.rs predates the plan/0069 inputs convention
