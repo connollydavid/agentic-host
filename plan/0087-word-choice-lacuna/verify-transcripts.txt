@@ -1,0 +1,12 @@
+# host-lint#27 verification (2026-09-06): the cited double-fire does not reproduce
+$ host-lifecycle prose host-template
+prose: clean (authored markdown carries no flagging or warning tropes) [host-lint 0.19.0]
+exit=0
+
+# host-lifecycle#24 verification (2026-09-06)
+$ host-lifecycle --version
+host-lifecycle 0.53.0
+$ grep -A6 .host-software host-lifecycle stanza: toolchain, artifact, deps-bundle all recorded
+	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
+$ host-lifecycle software --check .
+check-exit=0
