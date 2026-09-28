@@ -107,3 +107,15 @@ conclude green; the three remaining harnesses were still proving, and their
 receipt records the in-progress state at the pin until the run concludes.
 Every worktree sits at its pin, the hooks are reinstalled against the new
 canonical hash, and the three gates read green with the one disclosed note.
+
+**The sharded lane's verdict (2026-09-28, final):** the run concluded with the
+three harnesses each cancelled at the 6-hour ceiling standalone
+(scan_line_never_panics, hits_are_word_bounded,
+form_and_mangle_hits_are_classified_by_the_table), so the sharding's finding is
+precise: these three proofs have never concluded anywhere in CI, and the four
+others (plus the obligations re-derivation) pass in minutes. The receipt
+records the failure at the pin d4cd801 and the gate passes with the disclosed
+note. The owed work is proof engineering per harness, filed as host-lint#32:
+bound the input spaces, split a harness that carries several obligations, or
+carry an explicit bounded mode, then re-measure to a conclusion inside the
+ceiling.
