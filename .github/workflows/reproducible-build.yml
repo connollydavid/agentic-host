@@ -86,18 +86,34 @@ jobs:
         run: host-lifecycle software --materialize .
       - name: Wire the skill links from submodules and worktrees
         run: ./link-skills.sh
-      - name: Every generated skill link resolves
+      - name: Every skill the linker links is present (a recount, never a hardcoded count)
+        # The linker decides what SHOULD be linked from the live tree, so the
+        # gate recounts independently with the same shape rules and names any
+        # missed link. A hardcoded total (the eleven) went stale the day the
+        # ci skill landed and reddened cold-clone from outside any record.
         run: |
           bad=0
           for l in .claude/skills/*; do
             [ -e "$l" ] || { echo "DANGLING: $l -> $(readlink "$l")"; bad=1; }
           done
-          [ "$bad" = 0 ] || { echo "dangling skill link(s) present"; exit 1; }
-      - name: The eleven software-component skill links are present
-        run: |
+          for comp in software/*/main; do
+            if [ -d "$comp/skills" ]; then
+              for s in "$comp"/skills/*/; do
+                [ -e ".claude/skills/$(basename "$s")" ] || { echo "UNLINKED: $s"; bad=1; }
+              done
+            elif [ -f "$comp/SKILL.md" ]; then
+              base=$(basename "${comp%/main}")
+              [ -e ".claude/skills/$base" ] || { echo "UNLINKED: $comp"; bad=1; }
+            else
+              for s in "$comp"/*/; do
+                [ -f "$s/SKILL.md" ] || continue
+                [ -e ".claude/skills/$(basename "$s")" ] || { echo "UNLINKED: $s"; bad=1; }
+              done
+            fi
+          done
+          [ "$bad" = 0 ] || { echo "skill-link gate failed"; exit 1; }
           n=$(ls -l .claude/skills/ | grep -c '../../software/')
           echo "software-component skill links: $n"
-          [ "$n" = 11 ] || { echo "expected 11 software-component links, got $n"; exit 1; }
       - name: No skill link is tracked
         run: |
           tracked=$(git ls-files .claude/skills)
