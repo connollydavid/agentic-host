@@ -3029,6 +3029,9 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.</
 <li>
 <p>2026-09-28 — <strong>The ffmpeg upstream drift is real and rule-bearing; the re-encode waits on a corpus decision (host-lint#31).</strong> The upstream-drift lane's failure on lint v0.22.4 reproduced locally: doc/developer.texi's Code behaviour section changed because upstream REWROTE the Robustness subheading (error handling now implementation-defined, concealment expectations added), and the corpus's <code>robustness</code> rule encodes the old policy. Acknowledging drift bumps UPSTREAM_COMMIT corpus-wide, so even the routine MAINTAINERS churn is entangled with the rule decision. Scoped, filed, and left to the corpus authority per the deliberate-corpus-edit rule; the lane itself is continue-on-error by design (host-lint#22), so it never reddens a build.</p>
 </li>
+<li>
+<p>2026-09-28 — <strong>The lint kani lane never concluded in CI; the receipt that waited was hollow.</strong> Six consecutive lint release runs died CANCELLED at exactly the 6-hour GitHub ceiling with <code>cargo kani</code> (all six harnesses, one job) unfinished; the rung receipts recorded against those runs claimed a discharge the runs never delivered. The proofs DO conclude per-harness (host-prove's release-time re-derivation passes), so the aggregate job was the defect: the kani lane now shards one harness per job (lint fc580ad) with the obligations re-derivation in its own job (it sat after the proof step and so never once ran in CI). Lesson: a receipt cites a run URL, and the run's own conclusion is part of the evidence — a cancelled run discharges nothing.</p>
+</li>
 </ul>
 
                     </main>
