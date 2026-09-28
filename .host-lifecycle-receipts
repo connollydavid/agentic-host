@@ -1289,3 +1289,11 @@
     recorded = 2026-09-28
     revision = f0fcd22f24ec20b85d4c20418e49a44ac1bb632a
     conclusion = in_progress
+
+[receipt "ci" "software/host-lint/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-lint/actions/runs/36424678016
+    tool = host-lifecycle@0.60.4
+    recorded = 2026-09-28
+    revision = f0fcd22f24ec20b85d4c20418e49a44ac1bb632a
+    conclusion = failure
