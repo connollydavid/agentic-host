@@ -10975,6 +10975,25 @@ harnesses were invisible to every gate exactly as the placement described; the
 rungs are now declared in the manifests. The record pair (pin e09c6b2d's tree,
 artifact af1c5858) is container-proven; the template's tools submodule settles
 at v0.60.2. The artifact-delta verb shipped in the same landing.</p>
+<p><strong>The stop-gate round-trip (2026-09-28, later):</strong> the landings above were
+exercised end to end the same night, and two defects surfaced by running the
+gates rather than by reading them. The cold-clone lane's skill-link assertion
+hardcoded a count (eleven) that the ci skill's landing had already made
+twelve, reddening the host's reproducible-build lane from outside any record;
+the gate now recounts the linker's shapes and names any missed link (the fixed
+run concludes green, and its receipt discharges at the fix). The ci record
+verb resolved the default revision from the first path segment, so a
+component's pin never resolved unless <code>--revision</code> was passed (host-lifecycle
+v0.60.4, c140ea2; the label is everything before the lane). Separately, the
+lint kani lane was discovered to have NEVER concluded in CI: six consecutive
+runs cancelled at exactly GitHub's 6-hour ceiling, <code>cargo kani</code> proving all
+six harnesses in one job; the lane now shards one harness per job (lint
+fc580ad) with the obligations re-derivation in its own job, which had sat
+after the proof step and so had never once run in CI (it now passes there).
+Four of six harnesses conclude green within minutes; the remaining three were
+still proving at this record's writing. The v0.22.4 kani receipt records the
+honest failure at the pin (the blocker record); the shard on lint main is the
+fix, and the next lint release carries it.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
