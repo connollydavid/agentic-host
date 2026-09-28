@@ -17520,6 +17520,9 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.</
 <li>
 <p>2026-09-28 — <strong>The lint kani lane never concluded in CI; the receipt that waited was hollow.</strong> Six consecutive lint release runs died CANCELLED at exactly the 6-hour GitHub ceiling with <code>cargo kani</code> (all six harnesses, one job) unfinished; the rung receipts recorded against those runs claimed a discharge the runs never delivered. The proofs DO conclude per-harness (host-prove's release-time re-derivation passes), so the aggregate job was the defect: the kani lane now shards one harness per job (lint fc580ad) with the obligations re-derivation in its own job (it sat after the proof step and so never once ran in CI). Lesson: a receipt cites a run URL, and the run's own conclusion is part of the evidence — a cancelled run discharges nothing.</p>
 </li>
+<li>
+<p>2026-09-28 — <strong>A receipt's revision must be copied from the record, never composed.</strong> Recording the lint kani receipt, the full SHA was typed from a short-hash memory and matched only a 7-char prefix of the real pin, so the judge's <code>pin == rev</code> equality silently missed and the gate stayed red while both sides displayed <code>70ea0a9</code>. Same session, second instance: piping <code>host-lifecycle prose</code> through <code>tail</code> masked its exit code (the pipe's exit is tail's), shipping an unverified doc once and masking a real exit-3 another time. Discipline: long identifiers come from the file that owns them (<code>.host-software</code>, the release output), and a gate's verdict is read through its exit code, never a pipe.</p>
+</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
