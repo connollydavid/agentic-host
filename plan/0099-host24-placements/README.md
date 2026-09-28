@@ -95,3 +95,15 @@ Four of six harnesses conclude green within minutes; the remaining three were
 still proving at this record's writing. The v0.22.4 kani receipt records the
 honest failure at the pin (the blocker record); the shard on lint main is the
 fix, and the next lint release carries it.
+
+**The cascade settles (2026-09-28, latest):** the fix shipped as lint v0.22.5
+(d4cd801, artifact 641ef6a23d4d1a44cabb8ef920a6d524358353cb8aa295a0d68506429777f5e3),
+the embed-equality chain followed it (call/0052): lifecycle's embedded engine
+moved to v0.22.5, the deps bundle graduated by hand to vendor-v14 (the
+onboarding `--lock` verb neither builds nor uploads a bundle), and lifecycle
+v0.60.5 (4ad90ae) landed carrying both. The sharded kani lane's first CI
+verdict on the released rev: four harnesses and the obligations re-derivation
+conclude green; the three remaining harnesses were still proving, and their
+receipt records the in-progress state at the pin until the run concludes.
+Every worktree sits at its pin, the hooks are reinstalled against the new
+canonical hash, and the three gates read green with the one disclosed note.
