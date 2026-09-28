@@ -35,22 +35,23 @@ Recorded as the phases land.
 
 ## Results
 
-**Phase A (the shared-index clause, 2026-09-27):** the template manual carries
+**The shared-index clause (2026-09-27):** the template manual carries
 the fan-out staging rule (bb0e0e1); while a bench works in one tree, workers
 stage explicit paths and never `-A`; a commit whose message names fewer paths
 than it touches is a finding to read. The forge adopted the pointer in the same
 hour.
 
-**The cfg-declaration rule** (the code placement): the scan lives in the check
-flow (`cfg_kani_problems`); a component whose Rust sources carry
-`#[cfg(kani)]` with no `kani:` disposition in its obligations manifests is a
-HAZARD naming the two-way remedy. Regression test covers both directions
-(gated code with no declared rung hazards; declaring the rung in the
-obligations manifest clears it). Committed, release pending.
-
-**Phase B (the sweep lane, pending the host-lint pin decision):** the
+**The sweep lane (pending the host-lint pin decision):** the
 naming-sweep workflow example needs the template to record which host-lint rev
 it pins; the same derived-pin pattern as prose.yml, which is Orin's seat.
 
-**Pending:** `--artifact-delta` and the derived inventory (the two remaining
-medium builds), recorded for the next cut.
+**The cfg-declaration rule landed in v0.60.2** (3071ed29, artifact
+61ead199b5b52d06464247303c591f149925cc71f7645c50b87d96075c6014d6): the check
+sweep walks each materialized component's Rust sources; `#[cfg(kani)]` code with
+no `kani:` disposition in the component's obligations manifests is a HAZARD
+naming the two-way remedy. Regression test covers both directions. The rule's
+first sweep flagged the forge's own house; the lifecycle's and lint's kani
+harnesses were invisible to every gate exactly as the placement described; the
+rungs are now declared in the manifests. The record pair (pin e09c6b2d's tree,
+artifact af1c5858) is container-proven; the template's tools submodule settles
+at v0.60.2. The artifact-delta verb shipped in the same landing.
