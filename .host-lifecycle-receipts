@@ -1190,10 +1190,17 @@
     revision = 5aefd5a5644047beaf1eb468146df012e7a8e13f
     conclusion = success
 
+
 [receipt "ci" "software/host-lint/main/ci"]
     disposition = done
     evidence = https://github.com/connollydavid/host-lint/actions/runs/36327798438
     tool = host-lifecycle@0.60.2
     recorded = 2026-09-28
-    revision = 70ea0a9938554b47a4ddca62f9d197c1e35a0ebf
     conclusion = failure
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.60.4@71b97408cf1aa8a778364924a211db62605b9aed883483b8040e10e7ecadc205
+    authorization = plan/0099
+    tool = host-lifecycle@0.60.2
+    recorded = 2026-09-28
