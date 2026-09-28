@@ -1266,3 +1266,10 @@
     authorization = connollydavid/host-lint#31
     tool = host-lifecycle@0.60.4
     recorded = 2026-09-28
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.60.6@e4d5434376788e7a2b46f2b06b8521adec86236ca15c84312a43f5835531ac61
+    authorization = plan/0099
+    tool = host-lifecycle@0.60.4
+    recorded = 2026-09-28
