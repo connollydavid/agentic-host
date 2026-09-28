@@ -119,3 +119,10 @@ note. The owed work is proof engineering per harness, filed as host-lint#32:
 bound the input spaces, split a harness that carries several obligations, or
 carry an explicit bounded mode, then re-measure to a conclusion inside the
 ceiling.
+
+**The v0.22.6 verdict (2026-09-28, final):** the same three harnesses hit the
+ceiling on the released tag run (36424678016), the four fast ones and the
+obligations re-derivation pass, and the failure receipt stands recorded at the
+pin f0fcd22 with the gate green on the disclosed note. The proof-engineering
+work owes nothing further to the lane layer: the finding is stable across two
+runs, sharded, on two revisions (host-lint#32).
