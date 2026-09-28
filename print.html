@@ -10936,22 +10936,24 @@ explicit paths; <code>git add -A</code> under a live bench is the finding.</li>
 <h2 id="results-9"><a class="header" href="#results-9">Results</a></h2>
 <p>Recorded as the phases land.</p>
 <h2 id="results-10"><a class="header" href="#results-10">Results</a></h2>
-<p><strong>Phase A (the shared-index clause, 2026-09-27):</strong> the template manual carries
+<p><strong>The shared-index clause (2026-09-27):</strong> the template manual carries
 the fan-out staging rule (bb0e0e1); while a bench works in one tree, workers
 stage explicit paths and never <code>-A</code>; a commit whose message names fewer paths
 than it touches is a finding to read. The forge adopted the pointer in the same
 hour.</p>
-<p><strong>The cfg-declaration rule</strong> (the code placement): the scan lives in the check
-flow (<code>cfg_kani_problems</code>); a component whose Rust sources carry
-<code>#[cfg(kani)]</code> with no <code>kani:</code> disposition in its obligations manifests is a
-HAZARD naming the two-way remedy. Regression test covers both directions
-(gated code with no declared rung hazards; declaring the rung in the
-obligations manifest clears it). Committed, release pending.</p>
-<p><strong>Phase B (the sweep lane, pending the host-lint pin decision):</strong> the
+<p><strong>The sweep lane (pending the host-lint pin decision):</strong> the
 naming-sweep workflow example needs the template to record which host-lint rev
 it pins; the same derived-pin pattern as prose.yml, which is Orin's seat.</p>
-<p><strong>Pending:</strong> <code>--artifact-delta</code> and the derived inventory (the two remaining
-medium builds), recorded for the next cut.</p>
+<p><strong>The cfg-declaration rule landed in v0.60.2</strong> (3071ed29, artifact
+61ead199b5b52d06464247303c591f149925cc71f7645c50b87d96075c6014d6): the check
+sweep walks each materialized component's Rust sources; <code>#[cfg(kani)]</code> code with
+no <code>kani:</code> disposition in the component's obligations manifests is a HAZARD
+naming the two-way remedy. Regression test covers both directions. The rule's
+first sweep flagged the forge's own house; the lifecycle's and lint's kani
+harnesses were invisible to every gate exactly as the placement described; the
+rungs are now declared in the manifests. The record pair (pin e09c6b2d's tree,
+artifact af1c5858) is container-proven; the template's tools submodule settles
+at v0.60.2. The artifact-delta verb shipped in the same landing.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
@@ -17465,6 +17467,9 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.</
 </li>
 <li>
 <p>2026-09-27 — <strong>The lanes' outcomes enforce at the turn boundary (plan/0098).</strong> The per-turn duty was prose; prose does not govern. Two ZCode hooks in the workspace config now wire the shipped judge to the session: SessionStart rides <code>host-lifecycle ci .</code>'s findings into context, and Stop runs <code>ci . --gate</code> — absence and staleness block the stop, while a receipted failure passes (the receipt is the blocker record; the fix rides the next turn). The judge-in-<code>--check</code> self-gating loop (a recorded failure re-reddening every later run forever) is why the judge witnesses from its verb instead. Machine-local config: <code>.zcode/</code> is gitignored, so the hooks (like the MCP registration) adopt per host by writing the same config — the template pattern is the documented next step. And the release-cascade discipline now stands at: regex-anchor the pin replaces against the file's ACTUAL current values (the silent no-op lesson), and capture the canonical hash from the release output BEFORE the outward chains — a PENDING placeholder in <code>.host-software</code> blocks nothing but proves nothing.</p>
+</li>
+<li>
+<p>2026-09-27 — <strong>The /host#24 placements began landing (plan/0099): the cfg-declaration rule shipped in host-lifecycle v0.60.0, and the record-pair lesson got its teeth.</strong> The check sweep now walks each component's Rust sources: <code>#[cfg(kani)]</code> code with no <code>kani:</code> disposition in the obligations manifests is a HAZARD naming the two-way remedy (declare the rung, or remove the code). The rule's first sweep flagged its own house — the lifecycle's and lint's kani harnesses were invisible to every gate exactly as the placement described; the rungs are now declared in the manifests. The turn-boundary enforcement lives: the SessionStart hook rides the judge's findings into context, the Stop gate blocks on absence/staleness (a receipted failure rides the next turn), and the ci skill links into the cross-tool agents path. Cascade discipline hardened after the drift: pin replaces regex-anchor against the file's ACTUAL current values, the canonical hash is captured from the release output BEFORE the outward chains (a PENDING placeholder proves nothing), and the template's submodule checkout verifies by reading the HEAD back. Remaining: artifact-delta, the derived inventory, the sweep lane (pending the template's host-lint pin decision), /host#18 on plan/0075.</p>
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
