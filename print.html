@@ -17523,6 +17523,9 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.</
 <li>
 <p>2026-09-28 — <strong>A receipt's revision must be copied from the record, never composed.</strong> Recording the lint kani receipt, the full SHA was typed from a short-hash memory and matched only a 7-char prefix of the real pin, so the judge's <code>pin == rev</code> equality silently missed and the gate stayed red while both sides displayed <code>70ea0a9</code>. Same session, second instance: piping <code>host-lifecycle prose</code> through <code>tail</code> masked its exit code (the pipe's exit is tail's), shipping an unverified doc once and masking a real exit-3 another time. Discipline: long identifiers come from the file that owns them (<code>.host-software</code>, the release output), and a gate's verdict is read through its exit code, never a pipe.</p>
 </li>
+<li>
+<p>2026-09-28 — <strong>A moved embed needs a hand-built bundle; <code>software --lock</code> is onboarding-only.</strong> Bumping lifecycle's embedded host-lint rev blocked the release: the container builds offline against the recorded bundle, which predates the new rev, and <code>--lock</code> only writes a lock from an already-recorded pin (a no-op when one exists, --force included). The real flow: <code>cargo vendor vendor &gt; vendor-config.toml</code> in the worktree (TOML-validate the snippet), tar <code>vendor/ + vendor-config.toml</code> at the root, <code>gh release create vendor-v&lt;N&gt;</code> with the asset NAMED vendor.tar.gz, then move the deps-bundle line in <code>.host-software</code> and the worktree's <code>deps-bundle.lock</code> together, commit, and release. Done as vendor-v14 for the lint v0.22.5 embed (lifecycle v0.60.5, 4ad90ae).</p>
+</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
 <p><strong>Superseded.</strong> Retained as immutable history, not current guidance.</p>
