@@ -3038,6 +3038,9 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.</
 <li>
 <p>2026-09-28 — <strong>A moved embed needs a hand-built bundle; <code>software --lock</code> is onboarding-only.</strong> Bumping lifecycle's embedded host-lint rev blocked the release: the container builds offline against the recorded bundle, which predates the new rev, and <code>--lock</code> only writes a lock from an already-recorded pin (a no-op when one exists, --force included). The real flow: <code>cargo vendor vendor &gt; vendor-config.toml</code> in the worktree (TOML-validate the snippet), tar <code>vendor/ + vendor-config.toml</code> at the root, <code>gh release create vendor-v&lt;N&gt;</code> with the asset NAMED vendor.tar.gz, then move the deps-bundle line in <code>.host-software</code> and the worktree's <code>deps-bundle.lock</code> together, commit, and release. Done as vendor-v14 for the lint v0.22.5 embed (lifecycle v0.60.5, 4ad90ae).</p>
 </li>
+<li>
+<p>2026-09-28 — <strong>The kani stragglers answered: three proofs have never concluded anywhere.</strong> With the lane sharded, each of scan_line_never_panics, hits_are_word_bounded, and form_and_mangle_hits_are_classified_by_the_table ran standalone and was cancelled at the 6-hour GitHub ceiling, while the other three harnesses pass in under a minute and the obligations re-derivation is green — contention ruled out, the finding named per harness (host-lint#32). The receipt records the failure at the pin and the gate passes with the note; the fix is proof engineering (bounds, splits, or bounded mode) owed per harness, and the declared rungs keep discharging through kani-rungs meanwhile.</p>
+</li>
 </ul>
 
                     </main>
