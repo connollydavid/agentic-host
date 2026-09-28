@@ -1173,3 +1173,19 @@
     authorization = plan/0099
     tool = host-lifecycle@0.60.2
     recorded = 2026-09-28
+
+[receipt "ci" "software/host-lifecycle/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-lifecycle/actions/runs/36365747486
+    tool = host-lifecycle@0.60.2
+    recorded = 2026-09-28
+    revision = 90d435ed73e8f5498b24f6340d0aba1a106d3296
+    conclusion = success
+
+[receipt "ci" "host/reproducible-build"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/36367303533
+    tool = host-lifecycle@0.60.2
+    recorded = 2026-09-28
+    revision = 5aefd5a5644047beaf1eb468146df012e7a8e13f
+    conclusion = success
