@@ -11016,6 +11016,12 @@ note. The owed work is proof engineering per harness, filed as host-lint#32:
 bound the input spaces, split a harness that carries several obligations, or
 carry an explicit bounded mode, then re-measure to a conclusion inside the
 ceiling.</p>
+<p><strong>The v0.22.6 verdict (2026-09-28, final):</strong> the same three harnesses hit the
+ceiling on the released tag run (36424678016), the four fast ones and the
+obligations re-derivation pass, and the failure receipt stands recorded at the
+pin f0fcd22 with the gate green on the disclosed note. The proof-engineering
+work owes nothing further to the lane layer: the finding is stable across two
+runs, sharded, on two revisions (host-lint#32).</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
@@ -17553,6 +17559,9 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.</
 </li>
 <li>
 <p>2026-09-28 — <strong>The ffmpeg corpus re-pinned with the operator's option: the attestation guidance carries the policy.</strong> The robustness rule's summary now reads "Input handling survives malformed and hostile data; error reporting is implementation-defined, with concealment where practical", with a provenance comment naming the rewrite and the decision (host-lint#31, closed). Re-pin recipe that worked: fetch the four sources at the new master SHA, replicate split_sections in Python (headings at @chapter/@section/@subsection after trim_end; body from heading-line start to next mark), re-encode only the changed digests (Code behaviour + MAINTAINERS whole-file; verify-source then says every section matches), regenerate RULES.md, run test-drift.sh against the fresh tree. Cascade cost of any lint release confirmed again: embed bump + a hand-built vendor-vN + lifecycle patch release (now v0.60.6 on vendor-v15). Also noted: lint's CI runs no clippy lane, and one pre-existing boolean simplification in the lem classifier (src/lib.rs, the agreement check) is clippy-dirty but ungated — left untouched, flagged here.</p>
+</li>
+<li>
+<p>2026-09-28 — <strong>The ceiling finding is stable across two runs and two revisions.</strong> The v0.22.6 tag run reproduced the sharded verdict exactly (three harnesses cancelled at 6h standalone; four pass in minutes; the discharge green), so host-lint#32's proof-engineering scope rests on evidence from two independent runs — the receipt records the failure at the pin and the gate carries the note until a harness is bounded, split, or given bounded mode.</p>
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
