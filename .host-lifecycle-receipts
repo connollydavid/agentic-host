@@ -1259,3 +1259,10 @@
     recorded = 2026-09-28
     revision = d4cd801309ab616dc315c0ac1f0db4c58097d201
     conclusion = failure
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.22.6@117b9b9dc8ea902d8ef7404c3925dd61c4e61601427e86ef8bc15887af31b706
+    authorization = connollydavid/host-lint#31
+    tool = host-lifecycle@0.60.4
+    recorded = 2026-09-28
