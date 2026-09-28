@@ -204,16 +204,37 @@ the sweep as a standard lane, the manual names the placement.</li>
 explicit paths; <code>git add -A</code> under a live bench is the finding.</li>
 </ol>
 <h2 id="results"><a class="header" href="#results">Results</a></h2>
-<p>Recorded as the phases land.</p>
-<h2 id="results-1"><a class="header" href="#results-1">Results</a></h2>
 <p><strong>The shared-index clause (2026-09-27):</strong> the template manual carries
 the fan-out staging rule (bb0e0e1); while a bench works in one tree, workers
 stage explicit paths and never <code>-A</code>; a commit whose message names fewer paths
 than it touches is a finding to read. The forge adopted the pointer in the same
 hour.</p>
-<p><strong>The sweep lane (pending the host-lint pin decision):</strong> the
-naming-sweep workflow example needs the template to record which host-lint rev
-it pins; the same derived-pin pattern as prose.yml, which is Orin's seat.</p>
+<p><strong>The sweep lane landed (2026-09-28, template 1202877, ledger 13b14e6):</strong> the
+reference <code>.github/workflows/check.yml</code> runs <code>host-lifecycle software --check .</code>
+on every push, so the naming sweep's recheck, the cfg scan, and the derived
+inventory block at the push boundary. The lane no-ops on a tree with no
+<code>.host-software</code> and builds the tool from the <code>tools/host-lifecycle</code> submodule
+the template ships, so no separate host-lint pin decision exists to make: the
+check needs only the lifecycle the template already carries, and the UPGRADING
+entry (requires v0.60.3) moves existing adopters. The host itself already ran
+the sweep at a CI boundary (the verify-build lane's <code>software --check</code> step),
+so the gap the brief measured was the adopter's, and the reference lane closes
+it. The landing also paid the lanes' duty the placement preaches: the
+template's Prose lane had gone red on two em-dash decorations the previous
+landing carried into STRUCTURE.md; reworded, and Prose, Site, and the new Check
+lane all conclude green on the ledger commit.</p>
+<p><strong>The derived inventory landed in v0.60.3</strong> (component abc415e, pin 90d435e,
+artifact 157477c9ca53b5781b35c46ac17b0f0b38330bd4fd1fef04c27cb3e7325e8fef):
+<code>software --check</code> derives the module inventory instead of reading a typed one.
+Every Rust source under a materialized component's <code>src/</code> must appear in some
+task's <code>- inputs:</code> line (the plan room's task graphs; a directory input covers
+everything under it) or carry a reasoned exclusion in the tracked
+<code>.host-inventory</code>; a file in neither fails by absence, and an exclusion without
+a reason is its own HAZARD rather than a cover. The first sweep flagged
+thirteen files across six components, the typed-inventory harm of the placement
+alive in the forge's own house; the stock is recorded with per-file reasons and
+new work cites its inputs. Regression tests cover coverage by task input,
+coverage by directory input, the reasoned exclusion, and the reasonless one.</p>
 <p><strong>The cfg-declaration rule landed in v0.60.2</strong> (3071ed29, artifact
 61ead199b5b52d06464247303c591f149925cc71f7645c50b87d96075c6014d6): the check
 sweep walks each materialized component's Rust sources; <code>#[cfg(kani)]</code> code with
