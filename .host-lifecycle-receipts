@@ -1345,3 +1345,27 @@
     evidence = 2 item(s) realized for host at pin bcbf44984894 (reference)
     tool = host-lifecycle@0.60.6
     recorded = 2026-10-17
+
+[receipt "ci" "host/check"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/39069275617
+    tool = host-lifecycle@0.60.6
+    recorded = 2026-10-17
+    revision = d398039732683036d90200ee459a70c131571794
+    conclusion = success
+
+[receipt "ci" "host/mdbook"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/39069275537
+    tool = host-lifecycle@0.60.6
+    recorded = 2026-10-17
+    revision = d398039732683036d90200ee459a70c131571794
+    conclusion = success
+
+[receipt "ci" "host/reproducible-build"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/39069275576
+    tool = host-lifecycle@0.60.6
+    recorded = 2026-10-17
+    revision = d398039732683036d90200ee459a70c131571794
+    conclusion = success
