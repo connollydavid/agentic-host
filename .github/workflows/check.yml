@@ -1,0 +1,52 @@
+# Reference workflow: run `host-lifecycle software --check` on every push and
+# pull request. The naming sweep's recheck lives inside this gate (the remap
+# dictionary judged against the tracked documents), so a tell-shaped token
+# written into a `call/` decision or a results record blocks in CI at the same
+# boundary the prose lane guards, instead of surfacing when a human next
+# invokes the gate (host#24). The gate reads recorded state — pins, receipts,
+# the materialized sources — and its cfg and inventory scans walk what the pins
+# materialize, so the lane also catches gated code no lane compiles and source
+# files no task declares.
+#
+# Tool-sourcing follows this host's shape (agentic-host-local): the template
+# builds from a `tools/host-lifecycle` submodule, but here the tool is itself a
+# `.host-software` component, so the lane installs it at its recorded pin — the
+# same derivation the reproducible-build lane uses — and installs host-prove
+# too, because this host declares kani:/apalache:/tlaps: rungs and the check
+# hazards a declared rung whose re-deriver does not run.
+#
+# Every step is gated on a `.host-software` existing: the bare template no-ops
+# (success) on itself and runs fully once a project records a component.
+
+name: Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # the ci clause judges lanes on the current line: history is the evidence
+      - name: Install host-lifecycle at its .host-software pin
+        if: hashFiles('.host-software') != ''
+        run: |
+          REV=$(awk '/\[software "host-lifecycle"\]/{f=1} f && /pin/{print $3; exit}' .host-software)
+          echo "host-lifecycle pin: $REV"
+          cargo install --git https://github.com/connollydavid/host-lifecycle --rev "$REV"
+      - name: Install host-prove at its .host-software pin (the shared re-deriver the rungs gate probes)
+        if: hashFiles('.host-software') != ''
+        run: |
+          REV=$(awk '/\[software "host-prove"\]/{f=1} f && /pin/{print $3; exit}' .host-software)
+          echo "host-prove pin: $REV"
+          cargo install --git https://github.com/connollydavid/host-prove --rev "$REV"
+      - name: Materialize the software (the scans walk the materialized sources)
+        if: hashFiles('.host-software') != ''
+        run: host-lifecycle software --materialize .
+      - name: Recorded-state gate (pins, receipts, the naming sweep's recheck)
+        if: hashFiles('.host-software') != ''
+        run: host-lifecycle software --check .
