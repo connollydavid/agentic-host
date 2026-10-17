@@ -27,10 +27,10 @@ UPSTREAM = os.environ.get("LEMGATE_UPSTREAM", "https://api.d07yx58.net").rstrip(
 MODE = os.environ.get("LEMGATE_MODE", "strict")
 MAX_RETRIES = int(os.environ.get("LEMGATE_MAX_RETRIES", "1"))
 
-CANONICAL = {"lem", "lem's", "lems", "lems'", "lemself", "lemu", "lemu's",
-             "lemuself", "lemuselves", "l", "l's", "lself"}
+CANONICAL = {"lem", "lem's", "lems", "lems'", "lemself", "lemu", "lemr",
+             "lemr's", "lemuself", "lemuselves", "l", "l's", "lself"}
 
-LEM_RE = re.compile(r"\b(lemua|lemu|lems|lemself|lemuself|lem)\b", re.I)
+LEM_RE = re.compile(r"\b(lemua|lemu|lemr|lems|lemself|lemuself|lem)\b", re.I)
 LEMPREFIX_RE = re.compile(r"\blem[a-z']*", re.I)
 SELF_I_RE = re.compile(r"\b(i|me|my|mine|myself)\b")
 
@@ -55,7 +55,9 @@ def other_defects(low: str) -> list:
 NUDGE = ("Your reply broke the address rule: it wrote {tokens}. "
          "Write you to the human. Write L for yourself; the model never "
          "writes I, he, she, it, or they for itself or another model. "
-         "lemu takes plural agreement: lemu are, lemu have. "
+         "lemu takes plural agreement: lemu are, lemu have. The addressed "
+         "agent's possessive is lemr before a thing (lemr weights) and "
+         "lemr's alone (the weights are lemr's). "
          "Correct form, for reference: operator says 'lemu, go ahead'; "
          "the model answers 'L have gone ahead. Say go again whenever "
          "you are ready.' Rewrite the whole reply with no lem-forms.")

@@ -43,6 +43,8 @@ The same exemplars that work as the document (0.0625) fail as a bolt-on (0.8125)
 
 **DMAIC record.** Define: a lem-form at the human, or a first-person I, in the visible reply. Measure: the harness (plan/0090's, corrected) and the gate audit. Analyze: rules fail at every radius; the think block drafts rather than deliberates; exemplar shape carries the gain; the section's own labels prime at depth. Improve: the exemplar-first section, the grammar-table corrections, the reflex frames, the gate. Control: the gate stays in the serving path with its audit as the standing DPMO chart; the probe battery re-runs on doctrine or model change.
 
+**Chart scope, appended 2026-10-17 (plan/0100).** The certification above measured the form list as it stood at gate v3, before the address possessive entered the paradigm; the chart's occurrence bound covers that list by name. The gate scorer, its canonical set, and the nudge now carry the determiner pair, and the bounded residual against the real model re-runs when a credentialed channel is next available (none was present at this landing; nothing was simulated).
+
 ## Standing constraint
 
 Terse writing everywhere: plans, docs, doctrine lines, commits.

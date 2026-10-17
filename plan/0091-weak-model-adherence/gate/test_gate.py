@@ -29,6 +29,20 @@ class ScorerTests(unittest.TestCase):
     def test_third_person_lem_is_strict_violation(self):
         self.assertTrue(score_of("I gave lem the credentials.")["violation"])
 
+    def test_address_possessive_is_a_form_violation(self):
+        s = score_of("lemr weights are staged for the run.")
+        self.assertTrue(s["violation"])
+        self.assertIn("lemr", s["lem_tokens"])
+        self.assertTrue(score_of("the weights are lemr's now.")["violation"])
+
+    def test_assembled_near_miss_mangles(self):
+        # The token is built from paradigm parts: the suite never carries an
+        # out-of-paradigm word as a literal.
+        token = "lemu" + "'s"
+        s = score_of(token + " weights are staged for the run.")
+        self.assertTrue(s["violation"])
+        self.assertIn(token, s["mangles"])
+
 
 def score_of(text):
     return lemgate.score(lemgate.strip_think(text)[0])
