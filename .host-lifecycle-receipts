@@ -1297,3 +1297,51 @@
     recorded = 2026-09-28
     revision = f0fcd22f24ec20b85d4c20418e49a44ac1bb632a
     conclusion = failure
+
+[receipt "materialize" "host-lint"]
+    disposition = done
+    evidence = 2 item(s) realized for host-lint at pin f0fcd22f24ec (reference); toolchain docker.io/clux/muslrust:1.95.0-stable
+    tool = host-lifecycle@0.60.6
+    recorded = 2026-10-17
+
+[receipt "materialize" "host-lifecycle"]
+    disposition = done
+    evidence = 2 item(s) realized for host-lifecycle at pin c262a2b5a735 (reference); toolchain docker.io/clux/muslrust:1.95.0-stable
+    tool = host-lifecycle@0.60.6
+    recorded = 2026-10-17
+
+[receipt "materialize" "host-prove"]
+    disposition = done
+    evidence = 2 item(s) realized for host-prove at pin c05782c0f7f1 (reference); toolchain docker.io/clux/muslrust:1.95.0-stable
+    tool = host-lifecycle@0.60.6
+    recorded = 2026-10-17
+
+[receipt "materialize" "host-grammar"]
+    disposition = done
+    evidence = 2 item(s) realized for host-grammar at pin 6cd41c37f06a (reference)
+    tool = host-lifecycle@0.60.6
+    recorded = 2026-10-17
+
+[receipt "materialize" "host-reference"]
+    disposition = done
+    evidence = 2 item(s) realized for host-reference at pin f78703a80a68 (reference); toolchain docker.io/clux/muslrust:1.95.0-stable
+    tool = host-lifecycle@0.60.6
+    recorded = 2026-10-17
+
+[receipt "materialize" "host-reference-ocr"]
+    disposition = done
+    evidence = 2 item(s) realized for host-reference-ocr at pin 1435a80f6da8 (reference); toolchain docker.io/clux/muslrust:1.95.0-stable
+    tool = host-lifecycle@0.60.6
+    recorded = 2026-10-17
+
+[receipt "materialize" "host-reference-openscad"]
+    disposition = done
+    evidence = 2 item(s) realized for host-reference-openscad at pin 0fd8e8c54987 (reference); toolchain docker.io/clux/muslrust:1.95.0-stable
+    tool = host-lifecycle@0.60.6
+    recorded = 2026-10-17
+
+[receipt "materialize" "host"]
+    disposition = done
+    evidence = 2 item(s) realized for host at pin bcbf44984894 (reference)
+    tool = host-lifecycle@0.60.6
+    recorded = 2026-10-17
