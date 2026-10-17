@@ -1407,3 +1407,35 @@
     authorization = plan/0100
     tool = host-lifecycle@0.60.6
     recorded = 2026-10-17
+
+[receipt "ci" "software/host-lifecycle/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-lifecycle/actions/runs/39078025245
+    tool = host-lifecycle@0.60.7
+    recorded = 2026-10-17
+    revision = 727be0df74e0f4998c37b221e36780c6103be536
+    conclusion = success
+
+[receipt "ci" "host/check"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/39078463580
+    tool = host-lifecycle@0.60.7
+    recorded = 2026-10-17
+    revision = a87fd86496b389359f28d26546cb8d5031f3600c
+    conclusion = success
+
+[receipt "ci" "host/mdbook"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/39078463573
+    tool = host-lifecycle@0.60.7
+    recorded = 2026-10-17
+    revision = a87fd86496b389359f28d26546cb8d5031f3600c
+    conclusion = success
+
+[receipt "ci" "host/reproducible-build"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/39078463579
+    tool = host-lifecycle@0.60.7
+    recorded = 2026-10-17
+    revision = a87fd86496b389359f28d26546cb8d5031f3600c
+    conclusion = success
