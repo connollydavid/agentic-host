@@ -69,3 +69,39 @@ reconciles against. Nothing outside those three walls is struck.
 
 **Cut 2026-10-17.** The design rulings above are the record of the cutting
 session; the tasks land in order.
+
+**The spine (2026-10-17, template `7b0c641` content and `1685175` stanza,
+host `8f90ccc4` pointer and manual, `8057d209` recorded):** the section, the
+possession line, the address paragraph, and the two exchanges landed in both
+manuals byte-identical; the upgrade recorded through its verify, zero pending.
+The bench materials are record-layer evidence (the verbatim prompt never
+reworded), carried under `bench/` and excluded by the literal-directory form in
+`.host-lintignore` after the starred variant proved not to match
+(`16da554e`).
+
+**The classifier (2026-10-17, host-lint `c9dd8aa`, released as v0.23.0
+`90a0d71`, artifact `f4b2a7fa`):** the closed list carries the determiner and
+its independent form; the oracle answers the two genitive uses by case; the
+MCP table gains the determiner column and `ask` the case; VOCABULARY.md states
+the pair as listed forms. The operator's contamination ruling holds in the
+instruments: the near-miss coverage assembles its token from paradigm parts in
+both suites, so no out-of-paradigm word sits anywhere as a literal. Suites:
+234 unit and property tests, 221/221 integration, two kani rungs re-derived
+and their digests recorded (`99647f2`).
+
+**The instrument (2026-10-17, host `0cd5d0ae`):** the wire gate's canonical
+set, form regex, and nudge speak the pair; its unit suite passes nine of nine.
+The standing chart carries an appended scope line: the n=600 certification
+covers the list it measured by name, and the bounded residual re-runs when a
+credentialed channel exists (none was present; nothing was simulated).
+
+**The cascade (2026-10-17/18):** vendor-v16 published carrying the v0.23.0
+embed; host-lifecycle v0.60.7 (`727be0d`, artifact `7b45df79`) re-embeds the
+engine at equality; the template carries both pins (`bf4f308`, `40b1913`) and
+its prose lane's rev; both release receipts cite plan/0100. Two cascade
+findings recorded: the front door's allium install line needs `--locked` (the
+plain install resolves a drifting parser and fails to build), and the stale
+obligation remedy's `--rederive` takes the source directory
+(`--record-digests` refuses to run without it).
+
+**Landed 2026-10-18, complete.**
