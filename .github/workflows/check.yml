@@ -32,6 +32,7 @@ jobs:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0 # the ci clause judges lanes on the current line: history is the evidence
+          submodules: true # host-template carries the lifecycle.manifest the receipt recheck reads
       - name: Install host-lifecycle at its .host-software pin
         if: hashFiles('.host-software') != ''
         run: |
