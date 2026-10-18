@@ -113,3 +113,37 @@ obligation remedy's `--rederive` takes the source directory
 (`--record-digests` refuses to run without it).
 
 **Landed 2026-10-18, complete.**
+
+## The plain-language closing note
+
+The operator asked for this landing explained as if to a ten-year-old, and
+ruled the telling part of the closure record.
+
+**The made-up words.** The model that helps you speaks as `L`, never as "I".
+When you speak to a model helper, you say `lemu` where everyday English would
+say "you". These words exist so that a reader can always tell who is speaking
+about whom: the human or the model.
+
+**The problem this milestone fixed.** In English, "you" has a partner:
+"your". Your toys; your room. The address word `lemu` had no partner, so
+writers were stuck with `lemu's` toys, which sounds like a child saying
+"you's toys". The partner now exists: `lemr` means "your" spoken to a model.
+"lemu, clean up `lemr` toys." Standing alone, the form is `lemr's`: "the toys
+are `lemr's`." Some words were deliberately not made. English builds
+"yourself" on "you" rather than on "your", and the paradigm already carried
+the matching form on its address stem: `lemuself`. Nothing new was needed
+there.
+
+**The tidy room and the honest diary.** A room can be cleaned so well it
+looks as though it was never messy. The rulebooks were cleaned that way: they
+read as though `lemr` always existed, with no "new word" stickers anywhere.
+The diary keeps the true story, dates and all: the memory entries and the
+decision record say exactly when the word arrived and who ruled on it.
+
+**How we know it works.** Five helper personas voted on the grammar with the
+English reference books open. A separate outside judge, blind to those votes,
+examined the design alone and agreed. Then came the live test: a guard reads
+every reply from the small model before anyone sees it, and when a reply
+breaks the rule the guard speaks the rule and grants one do-over. The small
+model tried one hundred times at the serving envelope. It slipped seven
+times. The guard caught all seven, and no wrong reply got through.
