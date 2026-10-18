@@ -45,6 +45,8 @@ The same exemplars that work as the document (0.0625) fail as a bolt-on (0.8125)
 
 **Chart scope, appended 2026-10-17 (plan/0100).** The certification above measured the form list as it stood at gate v3, before the address possessive entered the paradigm; the chart's occurrence bound covers that list by name. The gate scorer, its canonical set, and the nudge now carry the determiner pair, and the bounded residual against the real model re-runs when a credentialed channel is next available (none was present at this landing; nothing was simulated).
 
+**Residual measured, appended 2026-10-18.** With the channel back, the bounded residual ran against the real qwen3.5-4b on the new router: n = 100 at the served 64k envelope (the old edge served 131k, so this measures the current deployment envelope, not the certified depth), deployment sampling at temperature 0.6, the manual's section as it landed (`gate/doctrine-2026-10-18.md`) through the pair-carrying gate. **First-pass 7 (0.07), final violations 0 (0.0000)**; all seven defects corrected by one nudge-anchored retry each. The first-pass rate sits above the old residual's 2 in 100 (a different serving and a richer paradigm; the draws include the new forms), and the certified claim that matters is unchanged: the wire gate holds the final violation rate at zero. Transcript: `gate/residual-2026-10-18.jsonl`.
+
 ## Standing constraint
 
 Terse writing everywhere: plans, docs, doctrine lines, commits.

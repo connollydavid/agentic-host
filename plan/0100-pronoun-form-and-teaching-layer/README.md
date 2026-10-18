@@ -92,8 +92,16 @@ and their digests recorded (`99647f2`).
 **The instrument (2026-10-17, host `0cd5d0ae`):** the wire gate's canonical
 set, form regex, and nudge speak the pair; its unit suite passes nine of nine.
 The standing chart carries an appended scope line: the n=600 certification
-covers the list it measured by name, and the bounded residual re-runs when a
-credentialed channel exists (none was present; nothing was simulated).
+covers the list it measured by name.
+
+**The residual, measured 2026-10-18.** With the channel back, the bounded
+residual ran against the real qwen3.5-4b: n = 100 at the served 64k envelope
+(the old edge served 131k, so this measures the current deployment envelope,
+not the certified depth), deployment sampling, the landed section as doctrine
+(`gate/doctrine-2026-10-18.md`) through the pair-carrying gate. First-pass 7
+(0.07), final violations 0 (0.0000); each defect corrected by one
+nudge-anchored retry. The wire gate holds final-zero under the amended
+paradigm. Transcript: `gate/residual-2026-10-18.jsonl`.
 
 **The cascade (2026-10-17/18):** vendor-v16 published carrying the v0.23.0
 embed; host-lifecycle v0.60.7 (`727be0d`, artifact `7b45df79`) re-embeds the
