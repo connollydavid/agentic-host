@@ -39,3 +39,7 @@ plan/0088-prose-guidance-ab/fen-samples/
 # Bench evidence (plan/0100): the verbatim prompt and transcript an external
 # judge received; rewording either would corrupt the record of what it ruled on.
 plan/0100-pronoun-form-and-teaching-layer/bench/
+
+# Bench evidence (plan/0101): the verbatim transcript the external judge
+# produced; same rule, rewording corrupts the record of what it ruled on.
+plan/0101-goal-and-loop-subsystem/bench/

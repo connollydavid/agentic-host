@@ -1,0 +1,191 @@
+Reading additional input from stdin...
+OpenAI Codex v0.163.0
+--------
+workdir: /tmp/opencode
+model: gpt-6-luna
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: none
+reasoning summaries: none
+session id: 01a15062-84bb-7bf3-ab7b-fa7842a38658
+--------
+user
+You are consulted as a neutral judge on the design of a goal and loop subsystem for a family of developer-tooling CLIs (host-lifecycle) that govern agentic software projects. Rule on the design. You have no stake in any prior decision; there is no expected answer, and a judge that only confirms is useless.
+
+THE SYSTEM TODAY (facts):
+- Projects are git repos of rooms: plan/NNNN-slug milestones (README plus anchored task headings), call/ decisions, an append-only MEMORY.md, a tracked .host stamp, and a receipts file recording lifecycle actions. A CLI provides verbs: next (allocates the next number, fails closed), tasks --check/--record (receipts per anchored task, dependency edges, a ready-frontier display), software --check (a verify gate over pins and artifacts), ci (offline judge of CI lanes against recorded receipts), dream (memory audit), resolve/refs (reference checking). Gates exit non-zero with HAZARD lines naming the fix command.
+- The agent loop (orient, claim task, work, bank receipt, gate) and any goal layer exist only as prose discipline in a manual. In a live session an operator typed /goal complete plan/0007 into a harness (OpenCode) where no such command existed; it arrived as literal prose and the agent improvised a receipt-less channel. The structural vacuum, not the typo, was filed as the bug.
+- The deployed population includes a weak model (a 4B) as a real executor; prior measurement shows it invents fix-flags and answers with plans instead of actions when shown multi-item reports, and reliably follows short labeled lines carrying one exact command.
+- Harness facts: OpenCode v2 supports markdown command files whose templates inject shell output into the prompt, and a plugin API with tool hooks, custom tools, and an experimental compaction hook that can inject context into every context compaction. Claude Code has analogous hooks and skills.
+
+THE DESIGN UNDER REVIEW (v2):
+Goal layer (inside the CLI): a goal IS a plan/NNNN milestone. ONE active goal per worktree, pointed at by a gitignored .host-goal sidecar (absent means no goal; older tools neither read nor erase it, so nothing is silently lost). Verbs: goal set (operator; the agent-side path is goal propose, which emits a ready-to-run command for the operator, agents never set); goal show (the orientation emission); goal park / unpark (reversible block with recorded reason); goal abandon (writes a tracked OWED line, never silently clears); goal repair (re-points a pointer whose plan moved); goal complete. The goal show emission is a deterministic pure function of TRACKED files only: CI verdicts come from recorded receipts with run URLs, never live network; labeled short lines in fixed order (PURPOSE, GOAL, POSITION, NEEDS YOU, CI, FRONTIER, NEXT, ESCAPE); the last line is the exact suggested command alone; the tool SUGGESTS the next move (choosing among the frontier is the human's; owed ledger actions outrank suggestions); it refuses loudly and emits nothing when state is unreadable. goal complete assembles verify plus CI judge plus task receipts plus records; a refusal is a full no-op (nothing banked, nothing cleared), hazards are ordered with only the FIRST fix command printed and the rest counted (2 more hazards follow); the refusal shares goal show's line shape; success writes ONE atomic closure receipt (including a semantic-acceptance line the human acknowledges) and prints the next move or no-active-goal.
+Loop layer (the harness seam, emitted by the generator): a /host command injecting goal show output (no plugin needed); a plugin compaction hook re-injecting the goal show block at every compaction, so the goal survives context resets by construction; GENERATED custom tools that shell to the CLI (validation lives in the CLI, invented flags die at its parser); a session-idle hook that only RENDERS the CLI's own refusal state and never decides one (documented as latency reduction; the gate remains goal complete); the seam is installed by bootstrap, checked by verify-setup, version-checks the CLI and prints the install command when older (degraded mode: manual goal show, sanctioned as such). The loop keeps NO state of its own; everything is re-derived from tracked files; the durable record stays legible without the verbs (stamp, plan/, receipts).
+Sequencing: CLI verbs first; the emission spec is validated against the real 4B BEFORE freezing; then generated seam artifacts; then Claude parity executed rather than asserted; spine prose written against the CLI contract with per-harness appendices; the upgrade-ledger entry carries a revision floor, applies-alone status, the degraded mode, and an executable verification.
+State-of-the-art references to weigh: Manus 2025 lessons (KV-cache-stable prefixes, filesystem as ultimate context, recitation of the plan into recency by rewriting it, keep failed attempts visible, avoid few-shot ruts); Anthropic 2024 (simple composable patterns, evaluator-optimizer with environmental ground truth, mistake-proofed tool interfaces, agents as tools plus environmental feedback in a loop).
+
+QUESTIONS:
+1. Goal model: goal-as-milestone, one active goal per worktree, ephemeral sidecar pointer, durable standing in the milestone and receipts. Sound? What breaks?
+2. Loop protocol: re-derivation from tracked files, receipts-only determinism, suggest-don't-sanction, compaction-time goal injection. Sound? What breaks?
+3. Against the state of the art you know: what is MISSING that a 2026 loop and goal subsystem should have? Name specific gaps.
+4. Name every defect you can find, especially any instruction that fails unsafe when other followed literally.
+5. The original failure was an ungoverned command improvised into a receipt-less channel. Does this design close that class, or does it rebuild it with more steps somewhere?
+
+Rule independently. If the design is wrong, say so plainly.
+warning: Codex could not find bubblewrap on PATH. Install bubblewrap with your OS package manager. See the sandbox prerequisites: https://developers.openai.com/codex/concepts/sandboxing#prerequisites. Codex will use the bundled bubblewrap in the meantime.
+codex
+I’ll assess the proposal against its stated constraints, then check the cited design lessons against primary sources and look for failure paths where literal compliance creates unsafe behavior.
+web search: 
+web search: Manus 2025 context engineering KV cache stable prefix filesystem plan recitation failed attempts ...
+web search: 
+web search: site:manus.im/blog context engineering Manus KV cache plan recitation failed attempts ...
+codex
+## Ruling
+
+**The design addresses the filed failure in the right place: it gives goals and completion a real CLI contract instead of relying on prose. But I would not freeze or ship it as written.** Several key guarantees depend on details the proposal does not specify: what state the CLI checks, what exactly a suggested command authorizes, how concurrent or stale operations behave, and how the loop handles untrusted or changing repository content.
+
+The strongest parts are the CLI as the authority, a single active goal per worktree, a refusal that banks nothing, and a seam that derives its view from the CLI rather than maintaining a second state machine. Those are sound directions. The weak points are where a claim such as “deterministic,” “atomic,” or “exact command” stands in for a defined contract.
+
+## 1. Goal model
+
+A goal-as-milestone is a sensible fit **if a milestone is a suitably sized unit of work** and the system defines what happens when it is too broad, too narrow, or changes while active. Making a plan the durable goal record avoids inventing a second goal document. One active goal per worktree also gives the weak executor a simple answer to “what am I doing?”
+
+The sidecar is reasonable as a convenience pointer: older tools ignoring it is safer than silently deleting it. But it is not durable state in the same sense as the tracked plan or receipts. It can be missing, stale, copied, or left behind when the worktree or branch changes. Define how `show`, `repair`, and `set` behave in those cases, and how the pointer is tied to repository identity and the selected milestone. `goal repair` is especially underspecified: a moved plan could mean a rename, a copied file, or two plausible matches.
+
+There is also a scope mismatch to resolve. If one milestone can contain unrelated streams of work, one active goal may be too coarse. If milestones are always narrow, say so and make that an enforced convention or check. The design also needs a policy for changing or superseding a plan after it has been set as the goal.
+
+“Abandon writes a tracked OWED line” preserves evidence of abandonment, but the proposal does not define how an owed item is discharged, who can discharge it, or how it stops outranking suggestions. Without that, an append-only ledger can become a permanent blocker or prompt the agent to perform a stale action. Specify the owed item’s identity, resolution receipt, and precedence rules.
+
+## 2. Loop protocol
+
+Re-deriving state from the CLI is the right boundary. It prevents the harness from becoming a competing source of truth. The fixed, labeled output is also well matched to the reported 4B behavior, and the Manus lesson about using the filesystem as durable context and reciting the plan supports this direction. But recitation is useful only if it keeps the current plan accurate and does not crowd out the immediate action.
+
+The phrase **“tracked files only” is the most serious contract ambiguity**. Git’s tracked files can be modified in the working tree without being committed. If `goal show` reads those live contents, its output is not a function of committed state alone. If it reads only committed contents, it can omit changes the agent is actively making. Either can be valid, but the design must say which, and how it reports the index, working-tree, and untracked states. It must also bind recorded CI and task receipts to the revision and artifacts they describe. A receipt URL alone does not prove that a verdict applies to the current tree.
+
+“Receipts-only determinism” is a valuable offline property, but it does not make the result trustworthy by itself. Receipts may be stale, malformed, duplicated, or refer to a different commit. Define validation, freshness, provenance, and conflict rules. In particular, define whether a later code change invalidates prior task or CI evidence.
+
+“Suggest, don’t sanction” is a good human-control principle, but it is not a safety boundary. **An exact command on the last line can be treated as an instruction to execute**, especially by the executor you describe. The command needs an explicit, machine-readable classification: safe to run automatically, requires operator action, or informational. The parser should reject unknown command shapes; the harness should not infer authorization from “suggested.” If the operator’s choice among frontier tasks is meaningful, the displayed suggestion should not obscure that choice.
+
+The compaction hook helps with context loss, but it introduces operational questions: what happens if it fails, returns stale output, or injects repository text that contains hostile instructions? Re-injection is not protection from prompt injection. Treat plans, memory, receipts, and command output as untrusted data; delimit and label them, and keep executable commands out of fields that the model may mistake for policy. Manus’s stable-prefix and append-only lessons also create a tradeoff here: repeatedly injecting a changing goal block may invalidate a cached prompt prefix, depending on where the harness places it. That is a cost and latency issue, not a reason to omit the goal.
+
+Anthropic’s guidance supports simple, composable patterns, well-designed tool interfaces, and environmental feedback. It also emphasizes evaluation and iteration; the proposal’s sequencing should therefore make the real 4B evaluation a release gate, not just a one-time prompt check. ([Anthropic, “Building effective agents”](https://www.anthropic.com/engineering/building-effective-agents)) Manus’s published context lessons support stable prefixes, filesystem-backed context, and plan recitation, but do not establish that a compaction hook will run reliably or that repeated injection is free. ([Manus, “Context Engineering for AI Agents”](https://www.manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus))
+
+## 3. Gaps for a 2026 subsystem
+
+These are specific gaps I would expect the design to settle:
+
+- **A tested behavior contract:** evaluation across the actual weak executor, representative stronger models, and harnesses. Include literal `/goal complete` input, multi-hazard refusals, stale receipts, dirty trees, malformed state, interruption, and recovery. Measure whether the model performs the command, invents flags, or answers with a plan.
+- **Revision-bound evidence:** receipts should identify the commit/tree and relevant artifacts they attest to. Specify invalidation when those inputs change.
+- **Concurrency and crash semantics:** locking or equivalent behavior for two CLI calls racing to set, complete, abandon, or update receipts; atomicity and recovery for both sidecar and tracked writes.
+- **Trust boundaries:** quote and delimit repository-derived text; constrain command generation and execution; decide how hooks handle hostile content and failed CLI calls.
+- **Explicit execution policy:** distinguish display from authorization, and specify which tools may run automatically, what requires operator action, and how the weak model is prevented from broadening a command.
+- **Progress and recovery rules:** define retry limits, interruption recovery, stale-goal handling, and what the loop does after repeated refusal or a missing harness hook. Otherwise “next” may become an unbounded retry loop or the model may improvise around the gate.
+- **Observable traces:** make it possible to reconstruct which goal-show output, revision, tool calls, and receipts led to a completion decision. This matters when a human must diagnose a bad closure.
+
+These do not require a more elaborate agent framework. They are contracts and evaluations around the proposed CLI-first design.
+
+## 4. Defects and unsafe literal readings
+
+The following are defects in the design description, or areas where a literal implementation could fail unsafely:
+
+1. **“The last line is the exact suggested command alone.”** A consumer may execute it automatically or treat it as approval. Define a separate execution classification and require an explicit authorization path.
+2. **“Tracked files only.”** This does not specify committed versus working-tree contents. A command could report a valid goal against one view while gates or the agent act on another.
+3. **“CI verdicts come from recorded receipts.”** Without revision binding and freshness rules, old green CI can be presented as current.
+4. **“One atomic closure receipt.”** Atomic writing does not by itself make the checks and closure one transaction. The tree can change after verification and before the receipt is written. Specify locking or revalidation, and record the exact revision and evidence set.
+5. **“A refusal is a full no-op.”** Good, but define this across every side effect, including generated artifacts, timestamps, partial receipts, and harness output. Otherwise a failed completion could still change state.
+6. **“The human acknowledges semantic acceptance.”** The design does not say how that acknowledgement is captured or distinguished from the agent emitting text. It must be an actual operator-controlled event, not an inferred model response.
+7. **“Park / unpark” and “abandon.”** Actor identity and authorization are undefined. If an agent can invoke these tools, a mistaken or prompted call can change the control state or create owed work.
+8. **“goal propose emits a ready-to-run command.”** “Ready to run” is not a validation or approval policy. The proposed command can go stale between emission and execution; validate again at execution.
+9. **“Hazards are ordered with only the FIRST fix command printed.”** Ordering must be deterministic, and the first fix must not hide that later hazards include blockers that make the first fix unsafe or futile. The short format can stay, but the ordering rule must be defined.
+10. **“The idle hook only renders CLI refusal state.”** Rendering a refusal is safe only if it cannot suppress, transform, or misrepresent it, and if it fails closed when the CLI is unavailable. “Does not decide” is not the same as “cannot bypass.”
+11. **“Version-checks the CLI and prints the install command when older.”** A printed install command is still executable guidance. Specify source verification and whether the harness may run it automatically.
+12. **“Generated custom tools … invented flags die at its parser.”** Parser rejection prevents one class of invalid call, but not a valid, unintended command. The CLI still needs authorization and input validation.
+13. **“Everything is re-derived from tracked files.”** The sidecar, harness version, CLI version, git index, working tree, and external CI are also relevant. The system must state how each participates in decisions.
+14. **No stated rules for path identity, symlinks, copied worktrees, or plan renames.** Those can make a pointer select the wrong milestone or make repair ambiguous.
+15. **No stated bounds on goal size or lifetime.** A long-running goal can accumulate stale tasks and stale evidence; a broad goal can make the frontier too large for the executor.
+16. **No stated downgrade or missing-hook behavior beyond manual `show`.** The operator needs to know which protections are absent in degraded mode, and completion must still have one clear authoritative route.
+17. **No stated treatment of prompt injection in project text or tool output.** A fixed output format does not neutralize malicious content embedded in a purpose line, task, memory entry, or receipt.
+
+## 5. Does it close the original failure?
+
+**It closes the specific structural hole if implemented as described:** `/goal complete` cannot silently become a legitimate receipt-less completion path when the command is a real CLI command, the CLI owns validation, and refusal leaves no record banked. That is a substantial improvement over prose-only discipline.
+
+But the proposal can recreate the same class of failure at the seam. If a harness turns a displayed suggestion into an executable action, if a model can use a valid tool in an unauthorized way, or if degraded mode makes operators treat an unverified output as equivalent to the CLI gate, then the receipt-less channel has merely moved. The fix is not more prose: define which component may authorize execution, make the CLI revalidate at the point of action, and test that invariant through both harnesses and degraded mode.
+
+**Decision:** approve the CLI-first direction; do not freeze the contract yet. Nail down state identity, evidence freshness, command authorization, transactional completion, and literal 4B behavior first. That is where the design’s current guarantees are weakest.
+tokens used
+32,824
+## Ruling
+
+**The design addresses the filed failure in the right place: it gives goals and completion a real CLI contract instead of relying on prose. But I would not freeze or ship it as written.** Several key guarantees depend on details the proposal does not specify: what state the CLI checks, what exactly a suggested command authorizes, how concurrent or stale operations behave, and how the loop handles untrusted or changing repository content.
+
+The strongest parts are the CLI as the authority, a single active goal per worktree, a refusal that banks nothing, and a seam that derives its view from the CLI rather than maintaining a second state machine. Those are sound directions. The weak points are where a claim such as “deterministic,” “atomic,” or “exact command” stands in for a defined contract.
+
+## 1. Goal model
+
+A goal-as-milestone is a sensible fit **if a milestone is a suitably sized unit of work** and the system defines what happens when it is too broad, too narrow, or changes while active. Making a plan the durable goal record avoids inventing a second goal document. One active goal per worktree also gives the weak executor a simple answer to “what am I doing?”
+
+The sidecar is reasonable as a convenience pointer: older tools ignoring it is safer than silently deleting it. But it is not durable state in the same sense as the tracked plan or receipts. It can be missing, stale, copied, or left behind when the worktree or branch changes. Define how `show`, `repair`, and `set` behave in those cases, and how the pointer is tied to repository identity and the selected milestone. `goal repair` is especially underspecified: a moved plan could mean a rename, a copied file, or two plausible matches.
+
+There is also a scope mismatch to resolve. If one milestone can contain unrelated streams of work, one active goal may be too coarse. If milestones are always narrow, say so and make that an enforced convention or check. The design also needs a policy for changing or superseding a plan after it has been set as the goal.
+
+“Abandon writes a tracked OWED line” preserves evidence of abandonment, but the proposal does not define how an owed item is discharged, who can discharge it, or how it stops outranking suggestions. Without that, an append-only ledger can become a permanent blocker or prompt the agent to perform a stale action. Specify the owed item’s identity, resolution receipt, and precedence rules.
+
+## 2. Loop protocol
+
+Re-deriving state from the CLI is the right boundary. It prevents the harness from becoming a competing source of truth. The fixed, labeled output is also well matched to the reported 4B behavior, and the Manus lesson about using the filesystem as durable context and reciting the plan supports this direction. But recitation is useful only if it keeps the current plan accurate and does not crowd out the immediate action.
+
+The phrase **“tracked files only” is the most serious contract ambiguity**. Git’s tracked files can be modified in the working tree without being committed. If `goal show` reads those live contents, its output is not a function of committed state alone. If it reads only committed contents, it can omit changes the agent is actively making. Either can be valid, but the design must say which, and how it reports the index, working-tree, and untracked states. It must also bind recorded CI and task receipts to the revision and artifacts they describe. A receipt URL alone does not prove that a verdict applies to the current tree.
+
+“Receipts-only determinism” is a valuable offline property, but it does not make the result trustworthy by itself. Receipts may be stale, malformed, duplicated, or refer to a different commit. Define validation, freshness, provenance, and conflict rules. In particular, define whether a later code change invalidates prior task or CI evidence.
+
+“Suggest, don’t sanction” is a good human-control principle, but it is not a safety boundary. **An exact command on the last line can be treated as an instruction to execute**, especially by the executor you describe. The command needs an explicit, machine-readable classification: safe to run automatically, requires operator action, or informational. The parser should reject unknown command shapes; the harness should not infer authorization from “suggested.” If the operator’s choice among frontier tasks is meaningful, the displayed suggestion should not obscure that choice.
+
+The compaction hook helps with context loss, but it introduces operational questions: what happens if it fails, returns stale output, or injects repository text that contains hostile instructions? Re-injection is not protection from prompt injection. Treat plans, memory, receipts, and command output as untrusted data; delimit and label them, and keep executable commands out of fields that the model may mistake for policy. Manus’s stable-prefix and append-only lessons also create a tradeoff here: repeatedly injecting a changing goal block may invalidate a cached prompt prefix, depending on where the harness places it. That is a cost and latency issue, not a reason to omit the goal.
+
+Anthropic’s guidance supports simple, composable patterns, well-designed tool interfaces, and environmental feedback. It also emphasizes evaluation and iteration; the proposal’s sequencing should therefore make the real 4B evaluation a release gate, not just a one-time prompt check. ([Anthropic, “Building effective agents”](https://www.anthropic.com/engineering/building-effective-agents)) Manus’s published context lessons support stable prefixes, filesystem-backed context, and plan recitation, but do not establish that a compaction hook will run reliably or that repeated injection is free. ([Manus, “Context Engineering for AI Agents”](https://www.manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus))
+
+## 3. Gaps for a 2026 subsystem
+
+These are specific gaps I would expect the design to settle:
+
+- **A tested behavior contract:** evaluation across the actual weak executor, representative stronger models, and harnesses. Include literal `/goal complete` input, multi-hazard refusals, stale receipts, dirty trees, malformed state, interruption, and recovery. Measure whether the model performs the command, invents flags, or answers with a plan.
+- **Revision-bound evidence:** receipts should identify the commit/tree and relevant artifacts they attest to. Specify invalidation when those inputs change.
+- **Concurrency and crash semantics:** locking or equivalent behavior for two CLI calls racing to set, complete, abandon, or update receipts; atomicity and recovery for both sidecar and tracked writes.
+- **Trust boundaries:** quote and delimit repository-derived text; constrain command generation and execution; decide how hooks handle hostile content and failed CLI calls.
+- **Explicit execution policy:** distinguish display from authorization, and specify which tools may run automatically, what requires operator action, and how the weak model is prevented from broadening a command.
+- **Progress and recovery rules:** define retry limits, interruption recovery, stale-goal handling, and what the loop does after repeated refusal or a missing harness hook. Otherwise “next” may become an unbounded retry loop or the model may improvise around the gate.
+- **Observable traces:** make it possible to reconstruct which goal-show output, revision, tool calls, and receipts led to a completion decision. This matters when a human must diagnose a bad closure.
+
+These do not require a more elaborate agent framework. They are contracts and evaluations around the proposed CLI-first design.
+
+## 4. Defects and unsafe literal readings
+
+The following are defects in the design description, or areas where a literal implementation could fail unsafely:
+
+1. **“The last line is the exact suggested command alone.”** A consumer may execute it automatically or treat it as approval. Define a separate execution classification and require an explicit authorization path.
+2. **“Tracked files only.”** This does not specify committed versus working-tree contents. A command could report a valid goal against one view while gates or the agent act on another.
+3. **“CI verdicts come from recorded receipts.”** Without revision binding and freshness rules, old green CI can be presented as current.
+4. **“One atomic closure receipt.”** Atomic writing does not by itself make the checks and closure one transaction. The tree can change after verification and before the receipt is written. Specify locking or revalidation, and record the exact revision and evidence set.
+5. **“A refusal is a full no-op.”** Good, but define this across every side effect, including generated artifacts, timestamps, partial receipts, and harness output. Otherwise a failed completion could still change state.
+6. **“The human acknowledges semantic acceptance.”** The design does not say how that acknowledgement is captured or distinguished from the agent emitting text. It must be an actual operator-controlled event, not an inferred model response.
+7. **“Park / unpark” and “abandon.”** Actor identity and authorization are undefined. If an agent can invoke these tools, a mistaken or prompted call can change the control state or create owed work.
+8. **“goal propose emits a ready-to-run command.”** “Ready to run” is not a validation or approval policy. The proposed command can go stale between emission and execution; validate again at execution.
+9. **“Hazards are ordered with only the FIRST fix command printed.”** Ordering must be deterministic, and the first fix must not hide that later hazards include blockers that make the first fix unsafe or futile. The short format can stay, but the ordering rule must be defined.
+10. **“The idle hook only renders CLI refusal state.”** Rendering a refusal is safe only if it cannot suppress, transform, or misrepresent it, and if it fails closed when the CLI is unavailable. “Does not decide” is not the same as “cannot bypass.”
+11. **“Version-checks the CLI and prints the install command when older.”** A printed install command is still executable guidance. Specify source verification and whether the harness may run it automatically.
+12. **“Generated custom tools … invented flags die at its parser.”** Parser rejection prevents one class of invalid call, but not a valid, unintended command. The CLI still needs authorization and input validation.
+13. **“Everything is re-derived from tracked files.”** The sidecar, harness version, CLI version, git index, working tree, and external CI are also relevant. The system must state how each participates in decisions.
+14. **No stated rules for path identity, symlinks, copied worktrees, or plan renames.** Those can make a pointer select the wrong milestone or make repair ambiguous.
+15. **No stated bounds on goal size or lifetime.** A long-running goal can accumulate stale tasks and stale evidence; a broad goal can make the frontier too large for the executor.
+16. **No stated downgrade or missing-hook behavior beyond manual `show`.** The operator needs to know which protections are absent in degraded mode, and completion must still have one clear authoritative route.
+17. **No stated treatment of prompt injection in project text or tool output.** A fixed output format does not neutralize malicious content embedded in a purpose line, task, memory entry, or receipt.
+
+## 5. Does it close the original failure?
+
+**It closes the specific structural hole if implemented as described:** `/goal complete` cannot silently become a legitimate receipt-less completion path when the command is a real CLI command, the CLI owns validation, and refusal leaves no record banked. That is a substantial improvement over prose-only discipline.
+
+But the proposal can recreate the same class of failure at the seam. If a harness turns a displayed suggestion into an executable action, if a model can use a valid tool in an unauthorized way, or if degraded mode makes operators treat an unverified output as equivalent to the CLI gate, then the receipt-less channel has merely moved. The fix is not more prose: define which component may authorize execution, make the CLI revalidate at the point of action, and test that invariant through both harnesses and degraded mode.
+
+**Decision:** approve the CLI-first direction; do not freeze the contract yet. Nail down state identity, evidence freshness, command authorization, transactional completion, and literal 4B behavior first. That is where the design’s current guarantees are weakest.
