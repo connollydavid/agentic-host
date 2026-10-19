@@ -143,7 +143,11 @@ degraded means legible without any verb, and the turn trigger stays human.
    close its own milestone).
 5. ### Fen battery on real output {#fen-real-output}
    The battery rerun against real `goal show` and `goal complete` output
-   under the house refusal shape; the freeze gate.
+   under the house refusal shape; the freeze gate. Riding beside it, one
+   fresh codex bench (gpt-6.1 if available, for judge freshness: no lineage
+   to the v2 bench) scoped to the implemented contract: the real output
+   samples plus the unresolved nails (transactional ordering at the closure
+   receipt, the owed-item lifecycle, receipt freshness).
 6. ### Goal tools on the MCP server {#mcp-tools}
    The verbs join the shipped MCP server so any harness mounts them
    natively; the plugin custom-tool family stays cut.
