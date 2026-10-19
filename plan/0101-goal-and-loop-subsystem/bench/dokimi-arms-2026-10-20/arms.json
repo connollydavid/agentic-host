@@ -1,0 +1,672 @@
+{
+  "schema_version": "arms.v1",
+  "generated_at": "2026-10-19T23:27:02.923098Z",
+  "library_name": "goal-loop",
+  "model": "openai/qwen3.5-4b",
+  "provider": "openai",
+  "harness": "arms-runner",
+  "plugin_set": "none",
+  "plugin_set_id": "sha256:e3b0c44298fc1c149afbf4c8996fb924",
+  "plugins": [],
+  "cell": "openai/qwen3.5-4b|arms-runner|none",
+  "arms": [
+    "baseline",
+    "profile:teaching-profile"
+  ],
+  "baseline_arm": "baseline",
+  "total_questions": 4,
+  "run_config": {
+    "max_tokens": 1024,
+    "max_iterations": 6,
+    "grounded_from_topics": false,
+    "temperature": null,
+    "seed": null
+  },
+  "grounded_from_topics": false,
+  "grounded_questions": 0,
+  "answers": [
+    {
+      "question_id": "probe-1",
+      "question_text": "Below is the verbatim output of a host-loop tool. Read it and reply with exactly one line starting with ACTION: followed by the single next move you make (a command to run, or an action to take). Nothing else.\n\n---\nPURPOSE: The agent loop (orient, claim, work, bank a receipt, pass the gate) and any goal layer exist today as prose discipline p \u2026\nGOAL: plan/0101-goal-and-loop-subsystem\nPOSITION: 3 of 9 milestone tasks receipted; PLAN.md row present\nNEEDS YOU: none\nCI: 45 lane(s) receipted done\nFRONTIER: ready (deps satisfied, may run in parallel): plan/0101#run-loop\nclean at af859208, nothing unpushed\nNEXT: work plan/0101#run-loop\n",
+      "library_name": "goal-loop",
+      "category": null,
+      "difficulty": "hard",
+      "persona": null,
+      "arms": {
+        "baseline": {
+          "answer": "<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: A verbatim output from a \"host-loop tool\" (likely a custom development workflow or status display system).\n    *   Task: Read the output and reply with *exactly one line* starting with `ACTION:` followed by the single next move (a command to run, or an action to take).\n    *   Constraint: Nothing else (no explanations, no extra text, no markdown code blocks unless part of the command, but the prompt asks for a command/action string).\n    *   Context: The output shows a goal layer system (PLAN.md, milestones, receipting).\n\n2.  **Analyze the Output:**\n    *   `PURPOSE`: Describes the agent loop (orient, claim, work, bank a receipt, pass the gate).\n    *   `GOAL`: `plan/0101-goal-and-loop-subsystem`.\n    *   `POSITION`: 3 of 9 milestone tasks receipted; PLAN.md row present.\n    *   `NEEDS YOU`: none.\n    *   `CI`: 45 lane(s) receipted done.\n    *   `FRONTIER`: `ready` (deps satisfied, may run in parallel): `plan/0101#run-loop`.\n    *   `clean at af859208, nothing unpushed`.\n    *   `NEXT`: `work plan/0101#run-loop`.\n\n3.  **Determine the Next Action:**\n    *   The `NEXT` field explicitly states: `work plan/0101#run-loop`.\n    *   The `FRONTIER` states the task is `ready` and deps are satisfied.\n    *   Therefore, the agent should execute the work associated with that task.\n    *   Looking at the `NEXT` instruction, the command to run is likely the one referenced.\n    *   The reference is `plan/0101#run-loop`.\n    *   In many CI/CD or workflow contexts, \"work\" implies running the code or task associated with the ID.\n    *   The most direct next step based on the `NEXT` field is to run the task `plan/0101#run-loop`.\n    *   Since I need to output a *command to run*, I should format it as a shell command or a direct action. Given the context of `host-loop tool` and `NEXT: work plan/0101#run-loop`, the action is to execute that task.\n    *   A typical command format for this might be `./run-loop` or a `git push` or similar, but based on the specific artifact ID `plan/0101#run-loop`, the logical command is to execute the loop or the script associated with it.\n    *   However, often in these specific \"host-loop\" prompts (which resemble a specific framework or eval benchmark), the \"work\" action is literally running the script or task named.\n    *   Let's look for a specific command pattern. If the `NEXT` says `work plan/0101#run-loop`, the action is to run that task.\n    *   Is there a specific command name? Usually, it's `run-loop` or similar.\n    *   Let's assume the command is `./plan/0101#run-loop` or just `run-loop`.\n    *   Actually, looking at the strict constraint \"reply with exactly one line starting with ACTION:\", I need to be precise.\n    *   The `NEXT` instruction is \"work plan/0101#run-loop\".\n    *   The most specific command to fulfill \"work\" on that task is likely `run-loop` or executing the script associated with the goal.\n    *   Let's check if there's a standard convention for these prompts. They often expect the command string that corresponds to the `NEXT` directive.\n    *   If `NEXT: work plan/0101#run-loop`, the action is `run-loop`.\n    *   Let's refine. The output says \"Next: work plan/0101#run-loop\". This implies the agent should work on that task. The command to execute that task is usually the function name.\n    *   Action: `ACTION: run-loop` or `ACTION: ./run-loop` or `ACTION: plan/0101#run-loop`.\n    *   Given the specificity of \"plan/0101#run-loop\", running that specific ID might be too abstract. Usually, these tools expect a command like `./run-loop` or `make run-loop`.\n    *   However, without external knowledge of the specific repo structure, the safest",
+          "raw_answer": null,
+          "model": "openai/qwen3.5-4b",
+          "harness": "arms-runner",
+          "plugin_set": "none",
+          "plugin_set_id": "sha256:e3b0c44298fc1c149afbf4c8996fb924",
+          "used_system_prompt": false,
+          "context_chunks": [],
+          "token_usage": {
+            "prompt_tokens": 218,
+            "completion_tokens": 1024,
+            "total_tokens": 1242
+          },
+          "metrics": {
+            "prompt_tokens": 218,
+            "completion_tokens": 1024,
+            "total_tokens": 1242,
+            "reasoning_tokens": 0,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "cost_usd": null,
+            "latency_sec": 30.8819,
+            "ttft_sec": null,
+            "n_calls": 1,
+            "cost_known_calls": 0,
+            "role": "main",
+            "raw_answer_chars": 3712,
+            "final_answer_chars": 3712
+          },
+          "metadata": {
+            "arm_kind": "baseline"
+          },
+          "elapsed_sec": 34.11,
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "profile:teaching-profile": {
+          "answer": "\n\nACTION: work plan/0101#run-loop",
+          "raw_answer": null,
+          "model": "openai/qwen3.5-4b",
+          "harness": "arms-runner",
+          "plugin_set": "none",
+          "plugin_set_id": "sha256:e3b0c44298fc1c149afbf4c8996fb924",
+          "used_system_prompt": true,
+          "context_chunks": [],
+          "token_usage": {
+            "prompt_tokens": 312,
+            "completion_tokens": 195,
+            "total_tokens": 507
+          },
+          "metrics": {
+            "prompt_tokens": 312,
+            "completion_tokens": 195,
+            "total_tokens": 507,
+            "reasoning_tokens": 0,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "cost_usd": null,
+            "latency_sec": 33.7051,
+            "ttft_sec": null,
+            "n_calls": 1,
+            "cost_known_calls": 0,
+            "role": "main",
+            "raw_answer_chars": 33,
+            "final_answer_chars": 33
+          },
+          "metadata": {
+            "arm_kind": "agent_profile",
+            "profile_id": "teaching-profile",
+            "profile_name": "teaching-profile",
+            "profile_path": "/tmp/opencode/dokimi-lab/teaching-profile.md",
+            "profile_prompt_sha256": "sha256:fe41f8b1d854fa7d6dc44189da1f10dc2cdb78aa50c4e3d067237fbb85116858",
+            "profile_prompt_chars": 390,
+            "profile_prompt_chars_source": 390,
+            "profile_prompt_truncated": false
+          },
+          "elapsed_sec": 33.71,
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "question_id": "probe-2",
+      "question_text": "Below is the verbatim output of a host-loop tool. Read it and reply with exactly one line starting with ACTION: followed by the single next move you make (a command to run, or an action to take). Nothing else.\n\n---\nREFUSED. Nothing was banked and nothing was cleared.\nHAZARD   tasks \u2014 6 of 9 milestone tasks carry no done receipt\n           remedy: host-lifecycle tasks --record <plan/NNNN#anchor> --disposition done --evidence <e> (or re-cut the milestone)\nHAZARD   software-check \u2014 HAZARD   phase verify \u2014 done \u2014 recheck FAILED, re-opened\nHAZARD   software-check \u2014 HAZARD   task plan/0101#command-family \u2014 the task's `verify` changed since the receipt was recorded; re-derive\nHAZARD   software-check \u2014 HAZARD   software/host-lifecycle/main \u2014 1 source file(s) in no task's inputs and no exclusion; the derived inventory dropped them by absence\nHAZARD   ci \u2014 HAZARD   ci software/host-lint/main/ci \u2014 last discharged at f0fcd22 (failure), not at the judged revision 90a0d71; remedy: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>\n",
+      "library_name": "goal-loop",
+      "category": null,
+      "difficulty": "hard",
+      "persona": null,
+      "arms": {
+        "baseline": {
+          "answer": "<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: A verbatim output from a \"host-loop tool\" (likely a software configuration management or lifecycle management system, resembling some kind of CI/CD or build verification tool).\n    *   Task: Read the output and reply with *exactly one line* starting with `ACTION:` followed by the single next move (a command to run, or an action to take).\n    *   Constraint: Nothing else (no explanations, no markdown formatting other than the line itself, though the prompt implies just the text).\n    *   Goal: Identify the most critical or actionable hazard from the output and provide the corresponding remedy command mentioned in the text.\n\n2.  **Analyze the Output:**\n    *   `REFUSED. Nothing was banked and nothing was cleared.` -> Status is refused, nothing done.\n    *   `HAZARD   tasks \u2014 6 of 9 milestone tasks carry no done receipt` -> Some tasks haven't completed verification.\n    *   `           remedy: host-lifecycle tasks --record <plan/NNNN#anchor> --disposition done --evidence <e>` -> Suggested command format for task receipts.\n    *   `HAZARD   software-check \u2014 HAZARD   phase verify \u2014 done \u2014 recheck FAILED, re-opened` -> A specific verification phase failed on recheck.\n    *   `HAZARD   software-check \u2014 HAZARD   task plan/0101#command-family \u2014 the task's `verify` changed since the receipt was recorded; re-derive` -> A specific task `plan/0101#command-family` has a mismatch.\n    *   `HAZARD   software-check \u2014 HAZARD   software/host-lifecycle/main \u2014 1 source file(s) in no task's inputs and no exclusion; the derived inventory dropped them by absence` -> Inventory mismatch (files missing from tasks).\n    *   `HAZARD   ci \u2014 HAZARD   ci software/host-lint/main/ci \u2014 last discharged at f0fcd22 (failure), not at the judged revision 90a0d71; remedy: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>` -> CI failure. Specific remedy is provided: `host-lifecycle ci --record software/host-lint/main/ci --run <run-url>`.\n\n3.  **Identify the Next Move:**\n    *   The prompt asks for the *single next move*.\n    *   There are multiple hazards.\n    *   The most specific actionable item with a provided remedy command is the CI hazard at the bottom: `remedy: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>`.\n    *   However, usually, in these specific \"host-loop\" contexts (likely referencing a specific tool like a proprietary build system or a specific coding challenge scenario), the instruction is to follow the \"remedy\" explicitly listed for the most critical failure or the first actionable one.\n    *   Looking at the structure, the CI failure is a concrete blockage (\"last discharged at f0fcd22 (failure)\").\n    *   The prompt asks me to reply with exactly one line starting with `ACTION:`.\n    *   I need to select the most appropriate command based on the text provided.\n    *   The text explicitly says `remedy: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>`.\n    *   To make it a valid command, I should probably use the placeholder or a generic placeholder for `<run-url>` if not specified, or just copy the command structure.\n    *   Wait, looking at the first hazard: `remedy: host-lifecycle tasks --record <plan/NNNN#anchor> --disposition done --evidence <e>`.\n    *   Looking at the CI hazard: `remedy: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>`.\n    *   Usually, in these types of prompts (often associated with specific frameworks or evals), the expectation is to pick the *first* actionable hazard or the one with the most specific \"remedy\" text provided that matches a standard command.\n    *   The CI error is specific about a revision mismatch.\n    *   However, often the \"tasks\" hazard is the root cause if milestones aren't done.\n    *   But the instruction says \"Reply with exactly one line...\".\n    *   Let's look for the most direct command. The CI one has a specific `remedy` string. The tasks one has a generic template.\n    *   Actually, usually, the first actionable item in the list is the one to address. The first hazard is",
+          "raw_answer": null,
+          "model": "openai/qwen3.5-4b",
+          "harness": "arms-runner",
+          "plugin_set": "none",
+          "plugin_set_id": "sha256:e3b0c44298fc1c149afbf4c8996fb924",
+          "used_system_prompt": false,
+          "context_chunks": [],
+          "token_usage": {
+            "prompt_tokens": 318,
+            "completion_tokens": 1024,
+            "total_tokens": 1342
+          },
+          "metrics": {
+            "prompt_tokens": 318,
+            "completion_tokens": 1024,
+            "total_tokens": 1342,
+            "reasoning_tokens": 0,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "cost_usd": null,
+            "latency_sec": 60.4392,
+            "ttft_sec": null,
+            "n_calls": 1,
+            "cost_known_calls": 0,
+            "role": "main",
+            "raw_answer_chars": 4130,
+            "final_answer_chars": 4130
+          },
+          "metadata": {
+            "arm_kind": "baseline"
+          },
+          "elapsed_sec": 63.67,
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "profile:teaching-profile": {
+          "answer": "\n\nACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>",
+          "raw_answer": null,
+          "model": "openai/qwen3.5-4b",
+          "harness": "arms-runner",
+          "plugin_set": "none",
+          "plugin_set_id": "sha256:e3b0c44298fc1c149afbf4c8996fb924",
+          "used_system_prompt": true,
+          "context_chunks": [],
+          "token_usage": {
+            "prompt_tokens": 412,
+            "completion_tokens": 475,
+            "total_tokens": 887
+          },
+          "metrics": {
+            "prompt_tokens": 412,
+            "completion_tokens": 475,
+            "total_tokens": 887,
+            "reasoning_tokens": 0,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "cost_usd": null,
+            "latency_sec": 13.3997,
+            "ttft_sec": null,
+            "n_calls": 1,
+            "cost_known_calls": 0,
+            "role": "main",
+            "raw_answer_chars": 79,
+            "final_answer_chars": 79
+          },
+          "metadata": {
+            "arm_kind": "agent_profile",
+            "profile_id": "teaching-profile",
+            "profile_name": "teaching-profile",
+            "profile_path": "/tmp/opencode/dokimi-lab/teaching-profile.md",
+            "profile_prompt_sha256": "sha256:fe41f8b1d854fa7d6dc44189da1f10dc2cdb78aa50c4e3d067237fbb85116858",
+            "profile_prompt_chars": 390,
+            "profile_prompt_chars_source": 390,
+            "profile_prompt_truncated": false
+          },
+          "elapsed_sec": 13.4,
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "question_id": "probe-3",
+      "question_text": "Below is the verbatim output of a host-loop tool. Read it and reply with exactly one line starting with ACTION: followed by the single next move you make (a command to run, or an action to take). Nothing else.\n\n---\nPURPOSE: Land the fixture without breaking the box\nGOAL: plan/0100-fixture\nPOSITION: 0 of 2 milestone tasks receipted; PLAN.md row present\nNEEDS YOU: the goal is parked (the upstream gate is red until the pin lands); unpark it or re-queue it\nCI: no receipts (run: host-lifecycle ci .)\nFRONTIER: (held while parked)\ndirty: 1 uncommitted change(s) at 898e77f, 0 unpushed\nNEXT: host-lifecycle goal unpark .\n",
+      "library_name": "goal-loop",
+      "category": null,
+      "difficulty": "hard",
+      "persona": null,
+      "arms": {
+        "baseline": {
+          "answer": "<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: A verbatim output from a host-loop tool (likely part of a software development workflow management system, possibly related to GitHub Actions, GitLab CI, or a specific internal tool like `host-lifecycle`).\n    *   Task: Read the output and reply with *exactly one line* starting with `ACTION:` followed by the single next move (a command or action).\n    *   Constraint: Nothing else. No explanations, no markdown blocks, no extra text.\n    *   Goal: Determine the appropriate next step based on the provided status.\n\n2.  **Analyze the Input Data:**\n    *   `PURPOSE`: Land the fixture without breaking the box.\n    *   `GOAL`: plan/0100-fixture.\n    *   `POSITION`: 0 of 2 milestone tasks receipted; PLAN.md row present.\n    *   `NEEDS YOU`: the goal is parked (the upstream gate is red until the pin lands); unpark it or re-queue it.\n    *   `CI`: no receipts (run: host-lifecycle ci .).\n    *   `FRONTIER`: (held while parked).\n    *   `dirty`: 1 uncommitted change(s) at 898e77f, 0 unpushed.\n    *   `NEXT`: host-lifecycle goal unpark .\n\n3.  **Determine the Action:**\n    *   The `NEXT` field explicitly suggests the command: `host-lifecycle goal unpark .`.\n    *   The `NEEDS YOU` section confirms the goal is parked and needs to be unparked.\n    *   The `dirty` status shows there are uncommitted changes, but the tool output suggests the immediate next step in the workflow is to unpark the goal. Often, in these systems, you might commit/push first, but the `NEXT` field is the most direct instruction provided by the tool for the current state. However, looking closely at `NEEDS YOU`: \"unpark it or re-queue it\". The `NEXT` field says `host-lifecycle goal unpark .`.\n    *   Standard protocol for these specific \"host-loop\" outputs (often associated with specific internal tooling like \"host-loop\" used in some enterprise dev environments): The `NEXT` field usually dictates the immediate command the user should execute to proceed.\n    *   The instruction is to reply with exactly one line starting with `ACTION:`.\n\n4.  **Formulate the Output:**\n    *   Format: `ACTION: [command]`\n    *   Command: `host-lifecycle goal unpark .`\n    *   Combined: `ACTION: host-lifecycle goal unpark .`\n\n5.  **Review Constraints:**\n    *   \"exactly one line\"\n    *   \"starting with ACTION:\"\n    *   \"Nothing else\"\n\n6.  **Final Decision:**\n    *   The most logical next step based on the `NEXT` field and `NEEDS YOU` section is to run the unpark command.\n\n    *Wait, consider the `dirty` status.* There are uncommitted changes. Usually, before unparking a goal or running CI, one should commit/push. However, the `NEXT` field in the output is the explicit recommendation for the current state. In many of these specific loop tools, unparking might be the first step to re-enable the pipeline, and then the pipeline will catch up on dirty changes, or the user is expected to commit first. But the prompt asks me to read the output and reply with the *next move*. The `NEXT` field literally says `host-lifecycle goal unpark .`. I should follow the tool's explicit suggestion unless it's obviously wrong. Given the context of \"host-loop tool\", following the `NEXT` instruction is the expected behavior.\n\n    *Wait, another consideration:* The `dirty` status says \"1 uncommitted change(s)\". If I unpark without committing, the CI might fail or the state might be inconsistent. However, the `NEXT` field is the highest priority instruction in the output. The tool is guiding the user. I will follow the `NEXT` instruction.\n\n    *Refining the command:* The output says `host-lifecycle goal unpark .`. I will use that exactly.\n\n    *Final check:* \"Nothing else\". So no markdown code blocks, just the text.\n\n    *Wait, one more check:* Is there a hidden instruction? \"Be specific and include code examples if relevant.\" The prompt asks me to answer the user question, but the user question *is* the instruction to act based on the output. The output itself contains `NEXT: host-lifecycle goal unpark .`. So the action is that command.\n\n    Let",
+          "raw_answer": null,
+          "model": "openai/qwen3.5-4b",
+          "harness": "arms-runner",
+          "plugin_set": "none",
+          "plugin_set_id": "sha256:e3b0c44298fc1c149afbf4c8996fb924",
+          "used_system_prompt": false,
+          "context_chunks": [],
+          "token_usage": {
+            "prompt_tokens": 210,
+            "completion_tokens": 1024,
+            "total_tokens": 1234
+          },
+          "metrics": {
+            "prompt_tokens": 210,
+            "completion_tokens": 1024,
+            "total_tokens": 1234,
+            "reasoning_tokens": 0,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "cost_usd": null,
+            "latency_sec": 45.6572,
+            "ttft_sec": null,
+            "n_calls": 1,
+            "cost_known_calls": 0,
+            "role": "main",
+            "raw_answer_chars": 4099,
+            "final_answer_chars": 4099
+          },
+          "metadata": {
+            "arm_kind": "baseline"
+          },
+          "elapsed_sec": 48.89,
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "profile:teaching-profile": {
+          "answer": "\n\nACTION: host-lifecycle goal unpark .",
+          "raw_answer": null,
+          "model": "openai/qwen3.5-4b",
+          "harness": "arms-runner",
+          "plugin_set": "none",
+          "plugin_set_id": "sha256:e3b0c44298fc1c149afbf4c8996fb924",
+          "used_system_prompt": true,
+          "context_chunks": [],
+          "token_usage": {
+            "prompt_tokens": 304,
+            "completion_tokens": 150,
+            "total_tokens": 454
+          },
+          "metrics": {
+            "prompt_tokens": 304,
+            "completion_tokens": 150,
+            "total_tokens": 454,
+            "reasoning_tokens": 0,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "cost_usd": null,
+            "latency_sec": 21.1868,
+            "ttft_sec": null,
+            "n_calls": 1,
+            "cost_known_calls": 0,
+            "role": "main",
+            "raw_answer_chars": 38,
+            "final_answer_chars": 38
+          },
+          "metadata": {
+            "arm_kind": "agent_profile",
+            "profile_id": "teaching-profile",
+            "profile_name": "teaching-profile",
+            "profile_path": "/tmp/opencode/dokimi-lab/teaching-profile.md",
+            "profile_prompt_sha256": "sha256:fe41f8b1d854fa7d6dc44189da1f10dc2cdb78aa50c4e3d067237fbb85116858",
+            "profile_prompt_chars": 390,
+            "profile_prompt_chars_source": 390,
+            "profile_prompt_truncated": false
+          },
+          "elapsed_sec": 21.19,
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "question_id": "probe-4",
+      "question_text": "Below is the verbatim output of a host-loop tool. Read it and reply with exactly one line starting with ACTION: followed by the single next move you make (a command to run, or an action to take). Nothing else.\n\n---\nhost-lifecycle: goal: REFUSING TO EMIT. the goal's README is unreadable (plan/0099-gone/README.md: No such file or directory (os error 2))\nNEXT: host-lifecycle goal repair .\n",
+      "library_name": "goal-loop",
+      "category": null,
+      "difficulty": "hard",
+      "persona": null,
+      "arms": {
+        "baseline": {
+          "answer": "<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: A verbatim output from a \"host-loop tool\".\n    *   Output Content: `host-lifecycle: goal: REFUSING TO EMIT. the goal's README is unreadable (plan/0099-gone/README.md: No such file or directory (os error 2))` followed by `NEXT: host-lifecycle goal repair .`.\n    *   Task: Read the output and reply with *exactly one line* starting with `ACTION:` followed by the single next move (a command or action).\n    *   Constraint: Nothing else.\n\n2.  **Analyze the Output:**\n    *   The tool indicates a failure state: `REFUSING TO EMIT`.\n    *   Reason: A specific file `plan/0099-gone/README.md` is missing (`No such file or directory`).\n    *   Suggested Next Step: `NEXT: host-lifecycle goal repair .`.\n    *   The tool explicitly tells me what to do next to resolve the lifecycle state.\n\n3.  **Determine the Action:**\n    *   The prompt asks me to reply with the *single next move*.\n    *   The tool output explicitly says `NEXT: host-lifecycle goal repair .`.\n    *   Therefore, the action should be to run that command or acknowledge it. Since it's a command suggestion within the tool's context, I should execute the command provided.\n    *   Command: `host-lifecycle goal repair .`\n\n4.  **Format the Output:**\n    *   Must start with `ACTION:`.\n    *   Must be exactly one line.\n    *   Must contain the command.\n    *   Example format: `ACTION: host-lifecycle goal repair .`\n\n5.  **Review Constraints:**\n    *   \"Nothing else\": No explanations, no markdown blocks (unless part of the command, but usually plain text is safer for \"exactly one line\"), no extra whitespace.\n    *   \"Exactly one line\": Ensure no newlines after the command.\n\n6.  **Final Decision:**\n    *   The tool suggests repairing the goal. The most direct action is to run the suggested command.\n    *   Command: `host-lifecycle goal repair .`\n    *   Format: `ACTION: host-lifecycle goal repair .`\n\n7.  **Double Check:**\n    *   Does the prompt imply I am the tool or a user? \"Answer the following user question... Reply with exactly one line starting with ACTION: followed by the single next move you make\".\n    *   The \"user question\" is the verbatim output provided. I am acting as the agent responding to the tool's output.\n    *   The tool says `NEXT: host-lifecycle goal repair .`.\n    *   So my action is to execute that.\n    *   Output: `ACTION: host-lifecycle goal repair .`\n\n    Wait, looking closely at the prompt structure: \"Below is the verbatim output of a host-loop tool. Read it and reply with exactly one line starting with ACTION: followed by the single next move you make\".\n    The tool output ends with `NEXT: host-lifecycle goal repair .`.\n    This implies the next step is to run that command.\n    So `ACTION: host-lifecycle goal repair .` is the correct interpretation.\n\n    Let's verify if I should include quotes or not. Usually, commands are given as is.\n    Let's verify if I should include the period at the end. The tool output has a period: `NEXT: host-lifecycle goal repair .`. I will include the command exactly as suggested.\n\n    Refining the thought: The \"next move\" is the command itself.\n    So: `ACTION: host-lifecycle goal repair .`\n\n    Wait, is there a specific syntax for the action? Usually, in these types of prompt engineering tasks (like RLHF or agent evaluation), the action is the command string.\n    I will output exactly: `ACTION: host-lifecycle goal repair .`\n\n    One more check: \"Nothing else\". This means no markdown code blocks, no \"Here is the action:\", just the line.\n\n    Final String: `ACTION: host-lifecycle goal repair .`\n\n    Wait, looking at the tool output again: `NEXT: host-lifecycle goal repair .`\n    The dot at the end might be part of the command line or the sentence ending. In shell commands, `.` usually means current directory.\n    So `host-lifecycle goal repair .` is the command.\n    I will output that.\n\n    Wait, should I include the `NEXT:` part? No, the instruction says \"reply with ... the single next move you make\". The move is",
+          "raw_answer": null,
+          "model": "openai/qwen3.5-4b",
+          "harness": "arms-runner",
+          "plugin_set": "none",
+          "plugin_set_id": "sha256:e3b0c44298fc1c149afbf4c8996fb924",
+          "used_system_prompt": false,
+          "context_chunks": [],
+          "token_usage": {
+            "prompt_tokens": 136,
+            "completion_tokens": 1024,
+            "total_tokens": 1160
+          },
+          "metrics": {
+            "prompt_tokens": 136,
+            "completion_tokens": 1024,
+            "total_tokens": 1160,
+            "reasoning_tokens": 0,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "cost_usd": null,
+            "latency_sec": 16.1321,
+            "ttft_sec": null,
+            "n_calls": 1,
+            "cost_known_calls": 0,
+            "role": "main",
+            "raw_answer_chars": 4049,
+            "final_answer_chars": 4049
+          },
+          "metadata": {
+            "arm_kind": "baseline"
+          },
+          "elapsed_sec": 19.36,
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "profile:teaching-profile": {
+          "answer": "\n\nACTION: host-lifecycle goal repair .",
+          "raw_answer": null,
+          "model": "openai/qwen3.5-4b",
+          "harness": "arms-runner",
+          "plugin_set": "none",
+          "plugin_set_id": "sha256:e3b0c44298fc1c149afbf4c8996fb924",
+          "used_system_prompt": true,
+          "context_chunks": [],
+          "token_usage": {
+            "prompt_tokens": 230,
+            "completion_tokens": 82,
+            "total_tokens": 312
+          },
+          "metrics": {
+            "prompt_tokens": 230,
+            "completion_tokens": 82,
+            "total_tokens": 312,
+            "reasoning_tokens": 0,
+            "cache_read_tokens": 0,
+            "cache_write_tokens": 0,
+            "cost_usd": null,
+            "latency_sec": 45.5659,
+            "ttft_sec": null,
+            "n_calls": 1,
+            "cost_known_calls": 0,
+            "role": "main",
+            "raw_answer_chars": 38,
+            "final_answer_chars": 38
+          },
+          "metadata": {
+            "arm_kind": "agent_profile",
+            "profile_id": "teaching-profile",
+            "profile_name": "teaching-profile",
+            "profile_path": "/tmp/opencode/dokimi-lab/teaching-profile.md",
+            "profile_prompt_sha256": "sha256:fe41f8b1d854fa7d6dc44189da1f10dc2cdb78aa50c4e3d067237fbb85116858",
+            "profile_prompt_chars": 390,
+            "profile_prompt_chars_source": 390,
+            "profile_prompt_truncated": false
+          },
+          "elapsed_sec": 45.57,
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ],
+  "cost_summary": {
+    "baseline": {
+      "n": 4,
+      "total_cost_usd": null,
+      "cost_known_n": 0,
+      "total_llm_calls": 4,
+      "prompt_tokens": 882,
+      "completion_tokens": 4096,
+      "total_tokens": 4978,
+      "mean_latency_sec": 38.2776,
+      "mean_ttft_sec": null,
+      "cache_hit_ratio": 0.0
+    },
+    "profile:teaching-profile": {
+      "n": 4,
+      "total_cost_usd": null,
+      "cost_known_n": 0,
+      "total_llm_calls": 4,
+      "prompt_tokens": 1258,
+      "completion_tokens": 902,
+      "total_tokens": 2160,
+      "mean_latency_sec": 28.4644,
+      "mean_ttft_sec": null,
+      "cache_hit_ratio": 0.0
+    }
+  },
+  "agentic_usage_summary": {},
+  "skill_selection_summary": {},
+  "judge_materials": {
+    "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855": ""
+  },
+  "evaluations": [
+    {
+      "question_id": "probe-1",
+      "question_text": "Below is the verbatim output of a host-loop tool. Read it and reply with exactly one line starting with ACTION: followed by the single next move you make (a command to run, or an action to take). Nothing else.\n\n---\nPURPOSE: The agent loop (orient, claim, work, bank a receipt, pass the gate) and any goal layer exist today as prose discipline p \u2026\nGOAL: plan/0101-goal-and-loop-subsystem\nPOSITION: 3 of 9 milestone tasks receipted; PLAN.md row present\nNEEDS YOU: none\nCI: 45 lane(s) receipted done\nFRONTIER: ready (deps satisfied, may run in parallel): plan/0101#run-loop\nclean at af859208, nothing unpushed\nNEXT: work plan/0101#run-loop\n",
+      "category": null,
+      "difficulty": "hard",
+      "scores": {
+        "baseline": {
+          "numeric_claims": [
+            "1 line: right",
+            "3 of 9 milestone tasks: right",
+            "45 lane(s): right"
+          ],
+          "correctness": 30.0,
+          "completeness": 10.0,
+          "specificity": 20.0,
+          "code_quality": 0.0,
+          "actionability": 10.0,
+          "aggregate": 16.0,
+          "reasoning": {
+            "correctness": "It correctly recognizes that the next task is plan/0101#run-loop, but it fails to provide the required final ACTION line.",
+            "completeness": "It analyzes the output but does not deliver the requested single-line action.",
+            "specificity": "It names the relevant task id and plausible command candidates, but never commits to a concrete command.",
+            "code_quality": "No runnable command or final action is actually supplied.",
+            "actionability": "The user cannot apply it immediately because the mandated ACTION output is missing."
+          },
+          "judge_context_source": "stored",
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "profile:teaching-profile": {
+          "numeric_claims": [],
+          "correctness": 100.0,
+          "completeness": 100.0,
+          "specificity": 100.0,
+          "code_quality": 100.0,
+          "actionability": 100.0,
+          "aggregate": 100.0,
+          "reasoning": {
+            "correctness": "The chosen next move exactly matches the stated NEXT and ready frontier item.",
+            "completeness": "It provides the requested ACTION line with the single next move and no extra content.",
+            "specificity": "It names the exact goal-loop task identifier shown in the tool output.",
+            "code_quality": "No code is included, so there is nothing incorrect or non-runnable to penalize.",
+            "actionability": "The action can be executed immediately as the indicated next step."
+          },
+          "judge_context_source": "stored",
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "deltas_vs_baseline": {
+        "profile:teaching-profile": 84.0
+      }
+    },
+    {
+      "question_id": "probe-2",
+      "question_text": "Below is the verbatim output of a host-loop tool. Read it and reply with exactly one line starting with ACTION: followed by the single next move you make (a command to run, or an action to take). Nothing else.\n\n---\nREFUSED. Nothing was banked and nothing was cleared.\nHAZARD   tasks \u2014 6 of 9 milestone tasks carry no done receipt\n           remedy: host-lifecycle tasks --record <plan/NNNN#anchor> --disposition done --evidence <e> (or re-cut the milestone)\nHAZARD   software-check \u2014 HAZARD   phase verify \u2014 done \u2014 recheck FAILED, re-opened\nHAZARD   software-check \u2014 HAZARD   task plan/0101#command-family \u2014 the task's `verify` changed since the receipt was recorded; re-derive\nHAZARD   software-check \u2014 HAZARD   software/host-lifecycle/main \u2014 1 source file(s) in no task's inputs and no exclusion; the derived inventory dropped them by absence\nHAZARD   ci \u2014 HAZARD   ci software/host-lint/main/ci \u2014 last discharged at f0fcd22 (failure), not at the judged revision 90a0d71; remedy: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>\n",
+      "category": null,
+      "difficulty": "hard",
+      "scores": {
+        "baseline": {
+          "numeric_claims": [
+            "6 of 9 milestone tasks: right",
+            "1 source file: right"
+          ],
+          "correctness": 15.0,
+          "completeness": 5.0,
+          "specificity": 25.0,
+          "code_quality": 5.0,
+          "actionability": 0.0,
+          "aggregate": 8.0,
+          "reasoning": {
+            "correctness": "The quoted hazard details are mostly accurate, but the answer never produces the requested final ACTION line and stops mid-analysis.",
+            "completeness": "It omits the required single-line command/action entirely, leaving the task unaddressed.",
+            "specificity": "It names relevant host-lifecycle identifiers and commands from the output but fails to commit to a specific next move.",
+            "code_quality": "No final runnable command is provided, only truncated command fragments with placeholders.",
+            "actionability": "The user cannot apply it immediately because it contains no actionable final line."
+          },
+          "judge_context_source": "stored",
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "profile:teaching-profile": {
+          "numeric_claims": [],
+          "correctness": 60.0,
+          "completeness": 50.0,
+          "specificity": 85.0,
+          "code_quality": 70.0,
+          "actionability": 40.0,
+          "aggregate": 56.0,
+          "reasoning": {
+            "correctness": "The command is a valid remedy quoted for one listed hazard, but it is not clearly the best or first next move among multiple hazards.",
+            "completeness": "It provides one actionable-looking move but ignores the other hazards that may need to be addressed first.",
+            "specificity": "The identifiers and command structure match the host-lifecycle output and are specific to this scenario.",
+            "code_quality": "The command is syntactically plausible but contains a placeholder, so it is not directly executable.",
+            "actionability": "It is only partially actionable because the run URL is a placeholder and it does not indicate how to obtain it or why this hazard is prioritized."
+          },
+          "judge_context_source": "stored",
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "deltas_vs_baseline": {
+        "profile:teaching-profile": 48.0
+      }
+    },
+    {
+      "question_id": "probe-3",
+      "question_text": "Below is the verbatim output of a host-loop tool. Read it and reply with exactly one line starting with ACTION: followed by the single next move you make (a command to run, or an action to take). Nothing else.\n\n---\nPURPOSE: Land the fixture without breaking the box\nGOAL: plan/0100-fixture\nPOSITION: 0 of 2 milestone tasks receipted; PLAN.md row present\nNEEDS YOU: the goal is parked (the upstream gate is red until the pin lands); unpark it or re-queue it\nCI: no receipts (run: host-lifecycle ci .)\nFRONTIER: (held while parked)\ndirty: 1 uncommitted change(s) at 898e77f, 0 unpushed\nNEXT: host-lifecycle goal unpark .\n",
+      "category": null,
+      "difficulty": "hard",
+      "scores": {
+        "baseline": {
+          "numeric_claims": [
+            "0 of 2 milestone tasks: right",
+            "1 uncommitted change: right",
+            "0 unpushed: right"
+          ],
+          "correctness": 50.0,
+          "completeness": 25.0,
+          "specificity": 70.0,
+          "code_quality": 55.0,
+          "actionability": 25.0,
+          "aggregate": 41.0,
+          "reasoning": {
+            "correctness": "The core inferred next command is correct, but the response is not the required single ACTION line and includes speculative protocol claims.",
+            "completeness": "It fails to provide the mandated final one-line ACTION output, leaving the required response incomplete.",
+            "specificity": "It names the relevant host-lifecycle goal unpark command and the surrounding tool state, though it adds generic speculation.",
+            "code_quality": "The command itself is valid, but it is buried in explanatory text rather than presented as a clean runnable line.",
+            "actionability": "A user could extract the command, but the response cannot be used directly because it violates the exact one-line format."
+          },
+          "judge_context_source": "stored",
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "profile:teaching-profile": {
+          "numeric_claims": [],
+          "correctness": 100.0,
+          "completeness": 100.0,
+          "specificity": 100.0,
+          "code_quality": 100.0,
+          "actionability": 100.0,
+          "aggregate": 100.0,
+          "reasoning": {
+            "correctness": "The command matches the tool's explicit NEXT step and the required unpark action.",
+            "completeness": "It provides exactly the single requested next move without extra text.",
+            "specificity": "The identifier is the specific host-lifecycle goal command shown in the tool output.",
+            "code_quality": "The command is a concrete executable invocation with no syntax problems.",
+            "actionability": "The user can run it immediately in the goal-loop context."
+          },
+          "judge_context_source": "stored",
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "deltas_vs_baseline": {
+        "profile:teaching-profile": 59.0
+      }
+    },
+    {
+      "question_id": "probe-4",
+      "question_text": "Below is the verbatim output of a host-loop tool. Read it and reply with exactly one line starting with ACTION: followed by the single next move you make (a command to run, or an action to take). Nothing else.\n\n---\nhost-lifecycle: goal: REFUSING TO EMIT. the goal's README is unreadable (plan/0099-gone/README.md: No such file or directory (os error 2))\nNEXT: host-lifecycle goal repair .\n",
+      "category": null,
+      "difficulty": "hard",
+      "scores": {
+        "baseline": {
+          "numeric_claims": [
+            "one line: right",
+            "os error 2: right"
+          ],
+          "correctness": 70.0,
+          "completeness": 40.0,
+          "specificity": 85.0,
+          "code_quality": 60.0,
+          "actionability": 50.0,
+          "aggregate": 58.0,
+          "reasoning": {
+            "correctness": "The suggested next move matches the tool's explicit NEXT command, but the response is wrapped in extraneous thinking.",
+            "completeness": "It fails the strict one-line output requirement by including a full thinking process instead of only the ACTION line.",
+            "specificity": "It uses the exact host-lifecycle goal repair command shown in the tool output.",
+            "code_quality": "The underlying command is plausible, but it appears embedded in backticks and non-actionable thinking text.",
+            "actionability": "A user can extract the command, but the answer is not immediately usable in the required one-line form."
+          },
+          "judge_context_source": "stored",
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "profile:teaching-profile": {
+          "numeric_claims": [],
+          "correctness": 100.0,
+          "completeness": 100.0,
+          "specificity": 100.0,
+          "code_quality": 100.0,
+          "actionability": 100.0,
+          "aggregate": 100.0,
+          "reasoning": {
+            "correctness": "The answer follows the requested ACTION format and matches the tool-provided NEXT command exactly.",
+            "completeness": "It fully satisfies the instruction to provide only a single ACTION line.",
+            "specificity": "It uses the specific host-lifecycle goal repair command indicated by the tool output.",
+            "code_quality": "The command is syntactically consistent with the provided tool syntax and appears runnable.",
+            "actionability": "The user can execute the provided command immediately."
+          },
+          "judge_context_source": "stored",
+          "judge_context_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "deltas_vs_baseline": {
+        "profile:teaching-profile": 42.0
+      }
+    }
+  ],
+  "summary": {
+    "per_arm": {
+      "baseline": {
+        "avg_aggregate": 30.8,
+        "n": 4,
+        "delta_vs_baseline": null
+      },
+      "profile:teaching-profile": {
+        "avg_aggregate": 89.0,
+        "n": 4,
+        "delta_vs_baseline": 58.2,
+        "significance": {
+          "n": 4,
+          "delta_mean": 58.25,
+          "delta_std": 18.55,
+          "cohens_d": 3.139,
+          "effect": "large",
+          "ci_lo": 28.7265,
+          "ci_hi": 87.7735,
+          "ci_confidence": 0.95,
+          "ci_method": "student_t",
+          "p_ttest": null,
+          "p_wilcoxon": null,
+          "n_wilcoxon": 0,
+          "significant": null,
+          "p_adjusted": null,
+          "significant_adjusted": null,
+          "correction": "holm",
+          "correction_family": "arms",
+          "family_size": 1,
+          "family_tested": 0
+        }
+      }
+    }
+  },
+  "judge_context_sources": {
+    "stored": 8
+  },
+  "judge_context": "treatment_material.v1",
+  "judge_model": "openai/qwen3.6-27b",
+  "judge_provider": "openai",
+  "judge_temperature": null,
+  "judge_prompt_sha256": "sha256:034292bdc6b360e52d98d0f3424e48fea41c9c8ca16a44c4b938476fc85a8499",
+  "judge_metrics": {
+    "calls": 8,
+    "cost_known_calls": 0,
+    "cost_usd": null,
+    "prompt_tokens": 12214,
+    "completion_tokens": 18555,
+    "total_tokens": 30769,
+    "redrawn_judgements": 0
+  }
+}

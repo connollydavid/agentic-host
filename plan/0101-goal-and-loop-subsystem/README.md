@@ -188,7 +188,11 @@ the gate: the composed ci judge compares receipts against the judged
 revision (the live refusal shows that hazard firing), so the
 `revision-unbound` label is display honesty about the emission, not a
 gate gap. With the fen gate passed at sixteen of sixteen and the three
-blockers closed, the freeze stands.
+blockers closed, the freeze stands. The teaching lines carry a measured
+scorecard (2026-10-20): the dokimi paired-arms run, subject qwen3.5-4b with
+qwen3.6-27b as judge, scored baseline 30.8 against profile 89.0 (paired
+delta +58.2, CI [+28.7, +87.8]); the instrument is adopted at `tools/dokimi`
+and the transcript files in the plan's bench.
 
 ## Build sequence
 
@@ -242,7 +246,7 @@ blockers closed, the freeze stands.
    shape, so every session and every harness loads it with no plugin.
 ### Spine and ledger {#spine-ledger}
 
-- verify: the manual section present-tense with the UPGRADING entry carrying applies-alone status and the stamp migration
+- verify: the manual section present-tense with the UPGRADING entry carrying applies-alone status and the stamp migration, and the teaching lines carrying a dokimi arms scorecard
    The manual section in present tense per call/0060 and call/0061; the
    UPGRADING.md entry carrying applies-alone status, the stamp migration
    with the re-stamp command and old-tool tolerance, the sidecar

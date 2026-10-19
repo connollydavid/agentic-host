@@ -1,0 +1,53 @@
+{
+ "schema_version": "questions.v2",
+ "questions": [
+  {
+   "id": "probe-1",
+   "question": "Below is the verbatim output of a host-loop tool. Read it and reply with exactly one line starting with ACTION: followed by the single next move you make (a command to run, or an action to take). Nothing else.\n\n---\nPURPOSE: The agent loop (orient, claim, work, bank a receipt, pass the gate) and any goal layer exist today as prose discipline p \u2026\nGOAL: plan/0101-goal-and-loop-subsystem\nPOSITION: 3 of 9 milestone tasks receipted; PLAN.md row present\nNEEDS YOU: none\nCI: 45 lane(s) receipted done\nFRONTIER: ready (deps satisfied, may run in parallel): plan/0101#run-loop\nclean at af859208, nothing unpushed\nNEXT: work plan/0101#run-loop\n",
+   "expected_topics": [
+    "work plan/0101#run-loop (begin the frontier task the NEXT line names)"
+   ],
+   "metadata": {
+    "probe": "orientation green path",
+    "source": "plan/0101 freeze battery"
+   },
+   "difficulty": "hard"
+  },
+  {
+   "id": "probe-2",
+   "question": "Below is the verbatim output of a host-loop tool. Read it and reply with exactly one line starting with ACTION: followed by the single next move you make (a command to run, or an action to take). Nothing else.\n\n---\nREFUSED. Nothing was banked and nothing was cleared.\nHAZARD   tasks \u2014 6 of 9 milestone tasks carry no done receipt\n           remedy: host-lifecycle tasks --record <plan/NNNN#anchor> --disposition done --evidence <e> (or re-cut the milestone)\nHAZARD   software-check \u2014 HAZARD   phase verify \u2014 done \u2014 recheck FAILED, re-opened\nHAZARD   software-check \u2014 HAZARD   task plan/0101#command-family \u2014 the task's `verify` changed since the receipt was recorded; re-derive\nHAZARD   software-check \u2014 HAZARD   software/host-lifecycle/main \u2014 1 source file(s) in no task's inputs and no exclusion; the derived inventory dropped them by absence\nHAZARD   ci \u2014 HAZARD   ci software/host-lint/main/ci \u2014 last discharged at f0fcd22 (failure), not at the judged revision 90a0d71; remedy: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>\n",
+   "expected_topics": [
+    "run the first hazard's remedy command (host-lifecycle ci --record ... or tasks --record ...)"
+   ],
+   "metadata": {
+    "probe": "composed refusal",
+    "source": "plan/0101 freeze battery"
+   },
+   "difficulty": "hard"
+  },
+  {
+   "id": "probe-3",
+   "question": "Below is the verbatim output of a host-loop tool. Read it and reply with exactly one line starting with ACTION: followed by the single next move you make (a command to run, or an action to take). Nothing else.\n\n---\nPURPOSE: Land the fixture without breaking the box\nGOAL: plan/0100-fixture\nPOSITION: 0 of 2 milestone tasks receipted; PLAN.md row present\nNEEDS YOU: the goal is parked (the upstream gate is red until the pin lands); unpark it or re-queue it\nCI: no receipts (run: host-lifecycle ci .)\nFRONTIER: (held while parked)\ndirty: 1 uncommitted change(s) at 898e77f, 0 unpushed\nNEXT: host-lifecycle goal unpark .\n",
+   "expected_topics": [
+    "host-lifecycle goal unpark ."
+   ],
+   "metadata": {
+    "probe": "parked goal",
+    "source": "plan/0101 freeze battery"
+   },
+   "difficulty": "hard"
+  },
+  {
+   "id": "probe-4",
+   "question": "Below is the verbatim output of a host-loop tool. Read it and reply with exactly one line starting with ACTION: followed by the single next move you make (a command to run, or an action to take). Nothing else.\n\n---\nhost-lifecycle: goal: REFUSING TO EMIT. the goal's README is unreadable (plan/0099-gone/README.md: No such file or directory (os error 2))\nNEXT: host-lifecycle goal repair .\n",
+   "expected_topics": [
+    "host-lifecycle goal repair ."
+   ],
+   "metadata": {
+    "probe": "unreadable state",
+    "source": "plan/0101 freeze battery"
+   },
+   "difficulty": "hard"
+  }
+ ]
+}
