@@ -228,7 +228,7 @@ re-points a renamed plan, refusing ambiguity, with a receipt.</li>
 (the tool invoking its own verbs and reading their exits; HAZARD lines
 pass through intact): the verify gate, the ci judge, task receipts for
 the milestone, the tree clean with nothing unpushed, and the PLAN.md row.
-No gate is weakened and none is duplicated; the tool drives the tools,
+No gate is weakened and none is duplicated; the tool runs its own verbs,
 <a href="https://github.com/connollydavid/host/issues/26">host#26</a>'s constraint
 applied inward. A refusal is a full no-op; every hazard prints, ordered,
 each with its exact fix command (the verify-setup shape, not progressive
@@ -305,13 +305,13 @@ the composed gates on a fixture tree.</li>
 <h3 id="command-family"><a class="header" href="#command-family">Land the command family</a></h3>
 <ul>
 <li>verify: /host/goal resolves and injects the emission from the host root
-<code>.opencode/commands/host/goal.md</code> in this host (the live drive), the
+<code>.opencode/commands/host/goal.md</code> in this host (the live run), the
 <code>.host-goal</code> gitignore entry, verified by invoking <code>/host/goal</code>.</li>
 </ul>
-<h3 id="drive-the-loop"><a class="header" href="#drive-the-loop">Drive the loop live</a></h3>
+<h3 id="run-the-loop"><a class="header" href="#run-the-loop">Run the loop</a></h3>
 <ul>
-<li>verify: the goal set on this milestone, the tasks driven through goal show, and the milestone closed with goal complete (or the failure recorded honestly)
-Set this milestone as the goal under the operator's build ruling, drive
+<li>verify: the goal set on this milestone, the tasks run through goal show, and the milestone closed with goal complete (or the failure recorded honestly)
+Set this milestone as the goal under the operator's build ruling, run
 the remaining tasks through <code>goal show</code>, receipt them, and close the
 milestone with <code>goal complete</code> (or record honestly why v1 could not
 close its own milestone).</li>
