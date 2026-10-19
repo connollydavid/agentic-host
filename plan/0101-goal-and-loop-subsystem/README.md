@@ -140,9 +140,9 @@ degraded means legible without any verb, and the turn trigger stays human.
 ### Land the command family {#command-family}
 
 - verify: /host/goal resolves and injects the emission from the host root
-   `.opencode/commands/host/goal.md` in this host (the dogfood), the
+   `.opencode/commands/host/goal.md` in this host (the live drive), the
    `.host-goal` gitignore entry, verified by invoking `/host/goal`.
-### Dogfood the loop {#dogfood-loop}
+### Drive the loop live {#drive-the-loop}
 
 - verify: the goal set on this milestone, the tasks driven through goal show, and the milestone closed with goal complete (or the failure recorded honestly)
    Set this milestone as the goal under the operator's build ruling, drive
