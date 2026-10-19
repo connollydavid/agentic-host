@@ -11159,7 +11159,7 @@ breaks the rule the guard speaks the rule and grants one do-over. The small
 model tried one hundred times at the serving envelope. It slipped seven
 times. The guard caught all seven, and no wrong reply got through.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0101-the-goal-and-loop-subsystem"><a class="header" href="#plan0101-the-goal-and-loop-subsystem">plan/0101: the goal and loop subsystem</a></h1>
-<p><strong>Status: cut and in build</strong> (operator ruling 2026-10-18: build it, after a
+<p><strong>Status: cut and in build</strong> (operator ruling 2026-10-18: build it, after a — active goal since 2026-10-19
 reflection pause because it is core functionality; second ruling the same
 day: the design must be an idiomatic extension of the host methodology, not
 a port of foreign implementations). The modality itself is
@@ -11273,49 +11273,39 @@ worse on cross-session learning beyond MEMORY, swarm goals, frontier
 ranking, and telemetry; different in that git history is the ledger,
 degraded means legible without any verb, and the turn trigger stays human.</p>
 <h2 id="build-sequence-28"><a class="header" href="#build-sequence-28">Build sequence</a></h2>
-<ol>
-<li>
 <h3 id="design-record"><a class="header" href="#design-record">Land the design record</a></h3>
-This README, the bench records, and the call/0061 modality.</li>
-<li>
+<p>This README, the bench records, and the call/0061 modality.</p>
 <h3 id="goal-module"><a class="header" href="#goal-module">Implement the goal module</a></h3>
-<code>src/goal.rs</code>: the volatility split, the verbs, the emission in house
+<p><code>src/goal.rs</code>: the volatility split, the verbs, the emission in house
 shapes, the subprocess-composed closure gate; dispatch in <code>main()</code>;
 tests for sidecar round-trips, emission determinism, refusal no-op, and
-the composed gates on a fixture tree.</li>
-<li>
+the composed gates on a fixture tree.</p>
 <h3 id="command-family"><a class="header" href="#command-family">Land the command family</a></h3>
-<code>.opencode/commands/host/goal.md</code> in this host (the dogfood), the
-<code>.host-goal</code> gitignore entry, verified by invoking <code>/host/goal</code>.</li>
-<li>
+<p><code>.opencode/commands/host/goal.md</code> in this host (the dogfood), the
+<code>.host-goal</code> gitignore entry, verified by invoking <code>/host/goal</code>.</p>
 <h3 id="dogfood-loop"><a class="header" href="#dogfood-loop">Dogfood the loop</a></h3>
-Set this milestone as the goal under the operator's build ruling, drive
+<p>Set this milestone as the goal under the operator's build ruling, drive
 the remaining tasks through <code>goal show</code>, receipt them, and close the
 milestone with <code>goal complete</code> (or record honestly why v1 could not
-close its own milestone).</li>
-<li>
+close its own milestone).</p>
 <h3 id="fen-real-output"><a class="header" href="#fen-real-output">Fen battery on real output</a></h3>
-The battery rerun against real <code>goal show</code> and <code>goal complete</code> output
+<p>The battery rerun against real <code>goal show</code> and <code>goal complete</code> output
 under the house refusal shape; the freeze gate. Riding beside it, one
 fresh codex bench (gpt-6.1 if available, for judge freshness: no lineage
 to the v2 bench) scoped to the implemented contract: the real output
 samples plus the unresolved nails (transactional ordering at the closure
-receipt, the owed-item lifecycle, receipt freshness).</li>
-<li>
+receipt, the owed-item lifecycle, receipt freshness).</p>
 <h3 id="mcp-tools"><a class="header" href="#mcp-tools">Goal tools on the MCP server</a></h3>
-The verbs join the shipped MCP server so any harness mounts them
-natively; the plugin custom-tool family stays cut.</li>
-<li>
+<p>The verbs join the shipped MCP server so any harness mounts them
+natively; the plugin custom-tool family stays cut.</p>
 <h3 id="corpus-surface"><a class="header" href="#corpus-surface">The corpus surface</a></h3>
-The goal declaration readable as an always-loaded surface, the plan/0083
-shape, so every session and every harness loads it with no plugin.</li>
-<li>
+<p>The goal declaration readable as an always-loaded surface, the plan/0083
+shape, so every session and every harness loads it with no plugin.</p>
 <h3 id="spine-ledger"><a class="header" href="#spine-ledger">Spine and ledger</a></h3>
-The manual section in present tense per call/0060 and call/0061; the
+<p>The manual section in present tense per call/0060 and call/0061; the
 UPGRADING.md entry carrying applies-alone status, the stamp migration
 with the re-stamp command and old-tool tolerance, the sidecar
-re-derivation, and the degraded mode stated as legible-without-verbs.</li>
-</ol>
+re-derivation, and the degraded mode stated as legible-without-verbs.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
