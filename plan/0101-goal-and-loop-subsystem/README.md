@@ -57,7 +57,9 @@ tracked record is singular; the sidecar is the per-worktree claim on it.
   re-points a renamed plan, refusing ambiguity, with a receipt.
 - `goal complete <plan/NNNN>` composes the existing gates as subprocesses
   (the tool invoking its own verbs and reading their exits; HAZARD lines
-  pass through intact): the verify gate, the ci judge, task receipts for
+  pass through intact): the full verify sweep, equal to what the verify
+  skill runs (the software gate, the ci judge, `book --check`, the refs
+  gate, and obligations per discovered spec), then task receipts for
   the milestone, the tree clean with nothing unpushed, and the PLAN.md row.
   No gate is weakened and none is duplicated; the tool runs its own verbs,
   [host#26](https://github.com/connollydavid/host/issues/26)'s constraint
@@ -66,13 +68,19 @@ tracked record is singular; the sidecar is the per-worktree claim on it.
   disclosure); success writes one atomic `[receipt "goal"]` stanza, updates
   the Status line, and prints the next move or the no-goal state.
 
-**The seam defers until the core is housegrown.** When it lands: goal tools
-join the shipped MCP server (harnesses mount MCP natively), the goal
-declaration becomes readable as a corpus surface (the plan/0083 shape, the
-house's always-loaded mechanism, which is the recitation answer), and the
-only harness-specific artifact is the nested `/host/goal` command family.
-Plugin custom tools are cut (a duplicate tool surface), the compaction hook
-is cut (the corpus is the recitation), and the kick stays unruled: the seam
+**The seam is a generated door family, folded in early (the operator's
+ruling).** The `seam` verb owns the front doors as one source inside the
+binary and emits the per-harness renderings: flat, hyphenated `/host-<verb>`
+doors (`/host-goal`, `/host-tasks`, `/host-ci`) for OpenCode and Claude
+alike, each injecting its verb's emission and closing with the re-orient
+link; `seam --check` guards the files against hand edits with the
+regenerate remedy. The universal-form ruling behind it: the spine states
+the token once, and each harness's sigil is chrome. Goal tools join the
+shipped MCP server (harnesses mount MCP natively), the goal declaration
+becomes readable as a corpus surface (the plan/0083 shape, the house's
+always-loaded mechanism, which is the recitation answer). Plugin custom
+tools stay cut (a duplicate tool surface), the compaction hook stays cut
+(the corpus is the recitation), and the kick stays unruled: the seam
 renders and never actuates.
 
 ## Rulings
@@ -139,9 +147,13 @@ degraded means legible without any verb, and the turn trigger stays human.
    the composed gates on a fixture tree.
 ### Land the command family {#command-family}
 
-- verify: /host/goal resolves and injects the emission from the host root
-   `.opencode/commands/host/goal.md` in this host (the live run), the
-   `.host-goal` gitignore entry, verified by invoking `/host/goal`.
+- verify: the door resolves and injects the emission from the host root
+   `.opencode/commands/host-goal.md` in this host, the `.host-goal`
+   gitignore entry, verified end to end through the binary in-session.
+   Originally receipted under the nested `/host/goal` form; superseded by
+   the universal-form ruling and the generated family: the doors are now
+   `seam`-written, flat `/host-<verb>`, one source in the binary, two
+   harness renderings, guarded by `seam --check`.
 ### Run loop {#run-loop}
 
 - verify: the goal set on this milestone, the tasks run through goal show, and the milestone closed with goal complete (or the failure recorded honestly)
@@ -154,10 +166,12 @@ degraded means legible without any verb, and the turn trigger stays human.
 - verify: the battery transcripts on real output filed and passing under the house refusal shape
    The battery rerun against real `goal show` and `goal complete` output
    under the house refusal shape; the freeze gate. Riding beside it, one
-   fresh codex bench (gpt-6.1 if available, for judge freshness: no lineage
-   to the v2 bench) scoped to the implemented contract: the real output
-   samples plus the unresolved nails (transactional ordering at the closure
-   receipt, the owed-item lifecycle, receipt freshness).
+   fresh codex bench on gpt-6-luna, the account-served judge (gpt-6.1 is
+   not served to this codex account), with the limitation stated in its
+   transcript: sessions are stateless, so per-question blindness holds, but
+   the judge-model lineage matches the earlier bench. Scope: the real
+   output samples plus the unresolved nails (transactional ordering at the
+   closure receipt, the owed-item lifecycle, receipt freshness).
 ### Goal tools on the MCP server {#mcp-tools}
 
 - verify: the verbs answer through the shipped MCP server
@@ -175,3 +189,17 @@ degraded means legible without any verb, and the turn trigger stays human.
    UPGRADING.md entry carrying applies-alone status, the stamp migration
    with the re-stamp command and old-tool tolerance, the sidecar
    re-derivation, and the degraded mode stated as legible-without-verbs.
+### Release and re-pin {#release-and-re-pin}
+
+- verify: the verify gate green at the tag, the artifact hash re-derived in the recorded toolchain, and the re-pin receipted
+   Release host-lifecycle carrying the goal and seam verbs through the
+   tool-carried sequence. The doors go live off PATH and `/host-goal`
+   stops depending on a debug binary; the composed closure gate can then
+   close this milestone without the pin hazard.
+
+Deferred elsewhere, named so the queue does not lose them: a
+milestone-cutting primitive (number allocation plus README scaffold)
+belongs to [host#27](https://github.com/connollydavid/host/issues/27)'s
+minting work, and Mara's semantic-acceptance line (a `goal accept`
+operator verb writing the ack onto the closure receipt) awaits the
+operator's fold ruling.
