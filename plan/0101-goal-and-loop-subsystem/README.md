@@ -174,9 +174,21 @@ follow close them.
   door family is data the adopter owns: a third harness is an edit, not a
   fork.
 
-What remains before freeze is the fen rerun on real output under the house
-refusal shape, with the codex bench beside it: the one gate the consult
-left standing.
+The freeze bench (transcript:
+[bench/codex-freeze-bench-2026-10-19.txt](bench/codex-freeze-bench-2026-10-19.txt))
+ruled the outputs coherent and named three blockers, all now closed. The
+crash window is steel: a complete or abandon receipt whose Status
+transition never landed reads as an unresolved closure and repair finishes
+the write (component `bf0e7a3`). The owed lifecycle takes the bench's
+minimal rule: the row names its owner, discharge is evidence recorded on
+the row, and owed work never outranks the active goal unless that goal
+depends on it (the design text's outranking claim is corrected here; the
+v1 code never implemented it). And revision binding was never absent from
+the gate: the composed ci judge compares receipts against the judged
+revision (the live refusal shows that hazard firing), so the
+`revision-unbound` label is display honesty about the emission, not a
+gate gap. With the fen gate passed at sixteen of sixteen and the three
+blockers closed, the freeze stands.
 
 ## Build sequence
 

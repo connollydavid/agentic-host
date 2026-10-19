@@ -1,0 +1,128 @@
+Reading additional input from stdin...
+OpenAI Codex v0.163.0
+--------
+workdir: /tmp/opencode
+model: gpt-6-luna
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: none
+reasoning summaries: none
+session id: 01a15538-9b7c-78a2-b7ef-ecde249750b8
+--------
+user
+You are consulted as a neutral judge on a freeze bench for a goal and loop subsystem, riding beside a weak-model gate that already passed (16 of 16 strict, zero invented commands across sixty-four draws). You have no stake; there is no expected answer; a judge that only confirms is useless.
+
+The bench scope: the four REAL tool outputs below, plus the three unresolved contract nails (transactional ordering at the closure receipt, the owed-item lifecycle, receipt freshness), plus the MCP surface policy stated at the end.
+
+CONTRACT CLOSURE ALREADY RULED (the design's answers, judge them): authority order is receipt stanza over Status line over sidecar, reconciled downward by goal repair (no journal, because re-derivation recovers every partial state); the no-op is defined over check-mode gates (the sweep writes nothing; a refusal forbids every write; the only writes the verb ever makes are the closure's own receipt and Status line after all gates pass); the closure names its own commit (the success output names the two changed files and the commit-and-push that follows); a present-but-divergent sidecar is a hazard with the repair remedy, while an absent sidecar is no claim; the sweep runs no network (the unpushed count reads the local remote-tracking ref, with revision-unbound as the standing disclosure class); every hazard prints with its remedy in the verify-setup shape; the last line is never placeholder-shaped.
+
+REAL OUTPUT P1 (goal show, the live host):
+PURPOSE: The agent loop (orient, claim, work, bank a receipt, pass the gate) and any goal layer exist today as prose discipline p …
+GOAL: plan/0101-goal-and-loop-subsystem
+POSITION: 3 of 9 milestone tasks receipted; PLAN.md row present
+NEEDS YOU: none
+CI: 45 lane(s) receipted done
+FRONTIER: ready (deps satisfied, may run in parallel): plan/0101#run-loop
+clean at af859208, nothing unpushed
+NEXT: work plan/0101#run-loop
+
+REAL OUTPUT P2 (goal complete refusal, the live host):
+REFUSED. Nothing was banked and nothing was cleared.
+HAZARD   tasks — 6 of 9 milestone tasks carry no done receipt
+           remedy: host-lifecycle tasks --record <plan/NNNN#anchor> --disposition done --evidence <e> (or re-cut the milestone)
+HAZARD   software-check — HAZARD   phase verify — done — recheck FAILED, re-opened
+HAZARD   software-check — HAZARD   task plan/0101#command-family — the task's `verify` changed since the receipt was recorded; re-derive
+HAZARD   software-check — HAZARD   software/host-lifecycle/main — 1 source file(s) in no task's inputs and no exclusion; the derived inventory dropped them by absence
+HAZARD   ci — HAZARD   ci software/host-lint/main/ci — last discharged at f0fcd22 (failure), not at the judged revision 90a0d71; remedy: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>
+
+REAL OUTPUT P3 (parked goal, fixture host):
+PURPOSE: Land the fixture without breaking the box
+GOAL: plan/0100-fixture
+POSITION: 0 of 2 milestone tasks receipted; PLAN.md row present
+NEEDS YOU: the goal is parked (the upstream gate is red until the pin lands); unpark it or re-queue it
+CI: no receipts (run: host-lifecycle ci .)
+FRONTIER: (held while parked)
+dirty: 1 uncommitted change(s) at 898e77f, 0 unpushed
+NEXT: host-lifecycle goal unpark .
+
+REAL OUTPUT P4 (unreadable state, fixture host; exit code 2):
+host-lifecycle: goal: REFUSING TO EMIT. the goal's README is unreadable (plan/0099-gone/README.md: No such file or directory (os error 2))
+NEXT: host-lifecycle goal repair .
+
+MCP SURFACE POLICY (being built now): the shipped MCP server gains exactly two goal tools, the read and the agent path: goal_show (the orientation emission verbatim) and goal_propose (prints the set command, writes nothing). The control verbs (set, park, unpark, abandon, complete) stay CLI-only: their authority is the audited commit, and the agent-side path to them is propose plus the operator's hand. Judge this policy: too thin, too thick, or right?
+
+QUESTIONS:
+1. Transactional ordering at the closure receipt: the gates pass, then the receipt appends, then the Status line rewrites, then the sidecar clears. A crash between any two leaves a partial state. Given the authority order and repair-by-re-derivation, is any partial state unsafe (under-reporting or false-green)? Name one if it exists.
+2. The owed lifecycle: an abandon writes an OWED row in PLAN.md's follow-up table. Nothing re-opens or ages it. Is that a real defect at this scale, and what is the minimal honest rule (who discharges, how does it stop outranking)?
+3. Receipt freshness: CI receipts carry a run URL and a recorded date but no revision binding; the judge compares against the judged revision independently. Is the disclosure sufficient, or does some action require revision-bound evidence the design has not named?
+4. The MCP policy above: rule.
+5. Freeze verdict on the whole: freeze or name the minimal blockers.
+
+Rule independently. If it is right, say so plainly.
+warning: Codex could not find bubblewrap on PATH. Install bubblewrap with your OS package manager. See the sandbox prerequisites: https://developers.openai.com/codex/concepts/sandboxing#prerequisites. Codex will use the bundled bubblewrap in the meantime.
+codex
+## 1. Closure ordering
+
+A crash after the receipt append but before the Status rewrite is unsafe: the receipt can claim completion while Status still describes an open goal. Under the stated authority order, the receipt wins, so a reader can see a false-green closure.
+
+Repair-by-re-derivation may eventually reconcile that state, but it does not make the interval safe. The closure needs an atomic commit boundary, or readers must treat an incomplete receipt/Status pair as unresolved until repair.
+
+## 2. Owed lifecycle
+
+This is a real contract gap. An OWED row that nobody can discharge can remain outstanding forever and keep outranking later work.
+
+Minimal rule: the owner named by the follow-up discharges it by recording evidence and closing the row; until then it remains visible as owed, but it does not block or outrank the active goal unless that goal explicitly depends on it. If there is no identifiable owner, say so in the row and require an operator to assign one.
+
+## 3. Receipt freshness
+
+“Revision-unbound” is an honest disclosure, but not sufficient for every action. The judged-revision comparison identifies stale CI evidence; it does not establish that a receipt applies to the current source.
+
+Any gate that certifies the current tree—especially closure—needs evidence bound to the judged revision, or a fresh run whose result is checked against that revision. Unbound receipts can remain informational, but should not satisfy that gate.
+
+## 4. MCP policy
+
+Right. `goal_show` gives orientation and `goal_propose` gives an agent a safe, reviewable path to request a change. Keeping audited control verbs CLI-only preserves the human’s commit authority without making the MCP surface useless.
+
+## 5. Freeze verdict
+
+**Do not freeze yet.** The minimal blockers are:
+
+- Define a safe closure commit boundary or incomplete-pair handling for crashes.
+- Define who discharges an owed row and whether it can block or outrank work.
+- Require revision-bound evidence for gates that claim the current tree is verified.
+
+The four outputs otherwise look coherent with the stated contract: refusal is explicit and remedial, parked state is surfaced, and unreadable state refuses to emit rather than inventing status.
+tokens used
+3,878
+## 1. Closure ordering
+
+A crash after the receipt append but before the Status rewrite is unsafe: the receipt can claim completion while Status still describes an open goal. Under the stated authority order, the receipt wins, so a reader can see a false-green closure.
+
+Repair-by-re-derivation may eventually reconcile that state, but it does not make the interval safe. The closure needs an atomic commit boundary, or readers must treat an incomplete receipt/Status pair as unresolved until repair.
+
+## 2. Owed lifecycle
+
+This is a real contract gap. An OWED row that nobody can discharge can remain outstanding forever and keep outranking later work.
+
+Minimal rule: the owner named by the follow-up discharges it by recording evidence and closing the row; until then it remains visible as owed, but it does not block or outrank the active goal unless that goal explicitly depends on it. If there is no identifiable owner, say so in the row and require an operator to assign one.
+
+## 3. Receipt freshness
+
+“Revision-unbound” is an honest disclosure, but not sufficient for every action. The judged-revision comparison identifies stale CI evidence; it does not establish that a receipt applies to the current source.
+
+Any gate that certifies the current tree—especially closure—needs evidence bound to the judged revision, or a fresh run whose result is checked against that revision. Unbound receipts can remain informational, but should not satisfy that gate.
+
+## 4. MCP policy
+
+Right. `goal_show` gives orientation and `goal_propose` gives an agent a safe, reviewable path to request a change. Keeping audited control verbs CLI-only preserves the human’s commit authority without making the MCP surface useless.
+
+## 5. Freeze verdict
+
+**Do not freeze yet.** The minimal blockers are:
+
+- Define a safe closure commit boundary or incomplete-pair handling for crashes.
+- Define who discharges an owed row and whether it can block or outrank work.
+- Require revision-bound evidence for gates that claim the current tree is verified.
+
+The four outputs otherwise look coherent with the stated contract: refusal is explicit and remedial, parked state is surfaced, and unreadable state refuses to emit rather than inventing status.

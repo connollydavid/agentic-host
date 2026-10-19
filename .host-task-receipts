@@ -1286,3 +1286,10 @@
     evidence = sixty-four draws across four runs on real binary output: final 16 of 16 strict with zero invented commands; two emission defects found and fixed (ok-line wrap, unlabeled refusal); the teaching-layer condition recorded; component c9cdea1
     tool = host-lifecycle@0.60.7
     recorded = 2026-10-19
+
+[receipt "plan/0101#mcp-tools"]
+    disposition = done
+    verify = the verbs answer through the shipped MCP server
+    evidence = goal_show and goal_propose on the shipped MCP server, driven through the CLI subprocess path like init/adopt; the control verbs stay CLI-only with the audited commit as authority; the freeze bench ruled the policy right; component bf0e7a3
+    tool = host-lifecycle@0.60.7
+    recorded = 2026-10-19
