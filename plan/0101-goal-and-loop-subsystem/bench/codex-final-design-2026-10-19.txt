@@ -1,0 +1,99 @@
+Reading additional input from stdin...
+OpenAI Codex v0.163.0
+--------
+workdir: /tmp/opencode
+model: gpt-6-luna
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: none
+reasoning summaries: none
+session id: 01a1547d-00c2-7b13-b10e-2357e85d799d
+--------
+user
+You are consulted as a neutral judge on a FINAL design review before freeze: a goal and loop subsystem for developer-tooling CLIs governing agentic software projects. You have no stake; there is no expected answer; a judge that only confirms is useless.
+
+THE FINAL DESIGN:
+- A goal IS a plan/NNNN milestone. State splits by volatility: durable facts live in tracked tool-authored surfaces (goal receipt stanzas with a target field in the operational ledger; the milestone Status line carrying a goal suffix; on abandon, an OWED row in PLAN.md's follow-up table); machine state lives in a gitignored .host-goal sidecar holding this worktree's claim, re-derivable by a repair verb from the tracked record. One active goal per repo. Verbs: set (the audited commit of the declaration is the authority; an agent-side propose prints the command and writes nothing), show, park/unpark (re-queuing over existing queue surfaces), abandon (OWED row plus receipt), repair, complete.
+- The orientation emission (goal show): labeled lines in fixed order (PURPOSE, GOAL, POSITION, NEEDS YOU, CI, FRONTIER, TREE, NEXT); reuses existing output shapes (NEEDS YOU is a hazard line traced to a tracked row; FRONTIER is the task graph's frontier line verbatim); the exact bare command, or 'work <task-key>' when work is next, alone on the last line; no inline execution-class markers; deterministic pure function of the working tree with no clock; CI verdicts from recorded receipts only (recorded dates, revision-binding disclosed as absent); loud refusal emitting nothing on unreadable state.
+- Closure (goal complete): composes the FULL verify sweep as subprocesses of the same binary (software --check, an offline CI judge, book --check, a refs gate, obligations per discovered spec file), plus task receipts complete for the milestone, the PLAN.md row present, and a clean tree with nothing unpushed. A refusal is a full no-op; every hazard prints with its exact remedy command; success writes one atomic receipt, updates the Status line, clears the sidecar, prints the next move.
+- The seam: a seam verb owns the front-door family as data inside the binary and generates flat hyphenated command files (/host-goal, /host-tasks, /host-ci) for two harnesses (OpenCode and Claude), each injecting its verb's fixed emission with doctrine lines and a re-orient link back to /host-goal; a --check flag guards the files against hand edits with a regenerate remedy. Write verbs and argument-taking verbs have no doors (templates cannot dispatch arguments into injections); they live on the CLI and, next, a shipped MCP server. The always-loaded corpus, not a compaction hook, is the planned recitation surface. No auto-kick: the seam renders, never actuates; the turn trigger stays human.
+- Naming rules standing: an anchor equals its title's slug, never divergent; ASD-STE100 approved verbs where a verb appears; terse keys; one form per surface; the spine states tokens and each harness's sigil is chrome.
+- Validation state: 365 unit and integration tests green; a weak 4B model passed 8 of 8 probes on mock emissions (a rerun on real output is the freeze gate); an earlier blind external bench approved the CLI-first direction with 17 defects, all folded or tasked.
+
+QUESTIONS:
+1. Name every defect or unsafe literal reading you can find in this final form.
+2. Is anything still missing for a 2026 goal and loop subsystem?
+3. Freeze-ready or not? If not, name the minimal set that must change first.
+
+Rule independently. If the design is right, say so plainly.
+warning: Codex could not find bubblewrap on PATH. Install bubblewrap with your OS package manager. See the sandbox prerequisites: https://developers.openai.com/codex/concepts/sandboxing#prerequisites. Codex will use the bundled bubblewrap in the meantime.
+codex
+## 1. Defects and unsafe literal readings
+
+- **Completion has a clean-tree contradiction.** The conditions require a clean tree, then success writes a receipt and updates the tracked Status line. Those writes make the tree dirty unless they are committed as part of completion. The design does not say who creates that commit, what it contains, or whether it is itself verified.
+- **“One atomic receipt” does not make the whole transition atomic.** The receipt, Status line, and ignored sidecar live in separate files. A crash between writes can leave tracked and machine state disagreeing. Define a recoverable transaction or journal and the authoritative recovery rules.
+- **“Full no-op” is underspecified.** Running the verify sweep may create reports, caches, lockfiles, or other changes, and may have external effects. A refusal after those checks would not be a no-op. Define no-op precisely, including which writes are forbidden and how subprocess side effects are handled.
+- **The goal’s identity and lifecycle are incomplete.** A milestone is the goal, but there is no stated rule for renaming, retargeting, replacing, or removing that milestone, nor for resolving a goal suffix that disagrees with the receipt or Status line. “Repair” needs explicit conflict rules; it must not silently guess.
+- **The authority of `set` is ambiguous.** If the audited commit is authoritative, specify whether `set` creates that commit or merely records a goal in an existing commit, and how the command behaves with staged changes, hooks, signing, or a failed commit. A printed proposal is safe; it is not itself a durable declaration.
+- **“One active goal per repo” is ambiguous across worktrees and clones.** A gitignored sidecar is per worktree, while the tracked goal record is shared by branches and commits. Two worktrees can claim different goals or both act on the same one. Define the coordination boundary and behavior when records diverge.
+- **Park/unpark can corrupt queue intent.** “Re-queuing over existing queue surfaces” does not say how position, dependencies, duplicates, or concurrent edits are handled. Specify idempotency and conflict behavior.
+- **CI evidence has weak freshness guarantees.** Recorded verdicts without revision binding can describe another tree. Disclosing that absence helps readers, but does not make the verdict safe to treat as current. Define staleness and what actions require revision-bound evidence.
+- **“Clean tree and nothing unpushed” is not operationally defined.** Specify which Git state is checked, which upstream counts, and what happens with detached HEADs, missing remotes, shallow clones, multiple remotes, or uncommitted submodules. The unpushed check may require network access, which conflicts with an otherwise local/offline sweep unless separated explicitly.
+- **The verify sweep’s coverage is not closed.** “Obligations per discovered spec file” leaves unclear how specs are discovered, whether the set is complete, and what happens when discovery fails or finds none. Also define the exact offline CI judge and refs gate inputs and failure semantics.
+- **The seam can drift or mislead.** Generated doors are guarded by `--check`, but the design does not say when that check runs, whether missing files fail, or whether both harnesses are checked. A stale or absent door could present outdated instructions. The always-loaded corpus is a plan, not a guaranteed control surface.
+- **The final command line may not be unambiguous.** “Exact bare command” and `work <task-key>` need a grammar and escaping rules for task keys. Otherwise a key containing whitespace or shell syntax can be misread or copied unsafely. The command should be displayed as literal text, never implied to be executable shell.
+- **The hazard contract needs a closed set of states.** “Every hazard prints with its exact remedy command” needs defined behavior when there are multiple hazards, a remedy is unavailable, or remedies conflict. Refusal should identify the failed checks without partially changing state.
+- **There is no explicit concurrency model.** Simultaneous `set`, `park`, `repair`, or `complete` calls can race over tracked files and the sidecar. Define locking or compare-and-swap behavior and ensure stale operations fail safely.
+- **The “same binary” requirement can hide version skew.** A subprocess may invoke a different installed binary or configuration than its parent. Pin how the executable and environment are selected, and fail closed if the expected version is unavailable.
+- **The validation claim does not establish freeze readiness.** The weak-model probes used mock emissions, and the required rerun on real output is still outstanding. Also, 365 green tests say little without knowing whether they cover the failure cases above.
+
+## 2. What is missing for a 2026 subsystem?
+
+The design needs explicit recovery and concurrency semantics, a precise multi-worktree/repo boundary, and a written contract for stale evidence and offline behavior. It also needs an operational policy for the planned MCP surface: authentication/authorization, idempotency, versioning, and how it shares the CLI’s state and locking rules. That does not need to block the CLI freeze if MCP is clearly out of scope, but it must not inherit ambiguous semantics later.
+
+## 3. Freeze-ready?
+
+**Not yet.** The minimal blockers are:
+
+1. Resolve the clean-tree versus tracked-write contradiction and define a crash-safe completion transaction.
+2. Define state authority and conflict/recovery rules, including concurrent operations and multiple worktrees.
+3. Specify the completion sweep’s exact inputs, side effects, offline/network behavior, and no-op guarantee.
+4. Run the stated weak-model rerun against real emissions and make it a passing freeze gate.
+
+The overall shape is coherent: tracked records for durable intent, a derived ignored sidecar, a deterministic orientation view, and a seam that renders rather than triggers work. Those choices are sound. The transition and recovery contracts are not yet precise enough to freeze safely.
+tokens used
+4,717
+## 1. Defects and unsafe literal readings
+
+- **Completion has a clean-tree contradiction.** The conditions require a clean tree, then success writes a receipt and updates the tracked Status line. Those writes make the tree dirty unless they are committed as part of completion. The design does not say who creates that commit, what it contains, or whether it is itself verified.
+- **“One atomic receipt” does not make the whole transition atomic.** The receipt, Status line, and ignored sidecar live in separate files. A crash between writes can leave tracked and machine state disagreeing. Define a recoverable transaction or journal and the authoritative recovery rules.
+- **“Full no-op” is underspecified.** Running the verify sweep may create reports, caches, lockfiles, or other changes, and may have external effects. A refusal after those checks would not be a no-op. Define no-op precisely, including which writes are forbidden and how subprocess side effects are handled.
+- **The goal’s identity and lifecycle are incomplete.** A milestone is the goal, but there is no stated rule for renaming, retargeting, replacing, or removing that milestone, nor for resolving a goal suffix that disagrees with the receipt or Status line. “Repair” needs explicit conflict rules; it must not silently guess.
+- **The authority of `set` is ambiguous.** If the audited commit is authoritative, specify whether `set` creates that commit or merely records a goal in an existing commit, and how the command behaves with staged changes, hooks, signing, or a failed commit. A printed proposal is safe; it is not itself a durable declaration.
+- **“One active goal per repo” is ambiguous across worktrees and clones.** A gitignored sidecar is per worktree, while the tracked goal record is shared by branches and commits. Two worktrees can claim different goals or both act on the same one. Define the coordination boundary and behavior when records diverge.
+- **Park/unpark can corrupt queue intent.** “Re-queuing over existing queue surfaces” does not say how position, dependencies, duplicates, or concurrent edits are handled. Specify idempotency and conflict behavior.
+- **CI evidence has weak freshness guarantees.** Recorded verdicts without revision binding can describe another tree. Disclosing that absence helps readers, but does not make the verdict safe to treat as current. Define staleness and what actions require revision-bound evidence.
+- **“Clean tree and nothing unpushed” is not operationally defined.** Specify which Git state is checked, which upstream counts, and what happens with detached HEADs, missing remotes, shallow clones, multiple remotes, or uncommitted submodules. The unpushed check may require network access, which conflicts with an otherwise local/offline sweep unless separated explicitly.
+- **The verify sweep’s coverage is not closed.** “Obligations per discovered spec file” leaves unclear how specs are discovered, whether the set is complete, and what happens when discovery fails or finds none. Also define the exact offline CI judge and refs gate inputs and failure semantics.
+- **The seam can drift or mislead.** Generated doors are guarded by `--check`, but the design does not say when that check runs, whether missing files fail, or whether both harnesses are checked. A stale or absent door could present outdated instructions. The always-loaded corpus is a plan, not a guaranteed control surface.
+- **The final command line may not be unambiguous.** “Exact bare command” and `work <task-key>` need a grammar and escaping rules for task keys. Otherwise a key containing whitespace or shell syntax can be misread or copied unsafely. The command should be displayed as literal text, never implied to be executable shell.
+- **The hazard contract needs a closed set of states.** “Every hazard prints with its exact remedy command” needs defined behavior when there are multiple hazards, a remedy is unavailable, or remedies conflict. Refusal should identify the failed checks without partially changing state.
+- **There is no explicit concurrency model.** Simultaneous `set`, `park`, `repair`, or `complete` calls can race over tracked files and the sidecar. Define locking or compare-and-swap behavior and ensure stale operations fail safely.
+- **The “same binary” requirement can hide version skew.** A subprocess may invoke a different installed binary or configuration than its parent. Pin how the executable and environment are selected, and fail closed if the expected version is unavailable.
+- **The validation claim does not establish freeze readiness.** The weak-model probes used mock emissions, and the required rerun on real output is still outstanding. Also, 365 green tests say little without knowing whether they cover the failure cases above.
+
+## 2. What is missing for a 2026 subsystem?
+
+The design needs explicit recovery and concurrency semantics, a precise multi-worktree/repo boundary, and a written contract for stale evidence and offline behavior. It also needs an operational policy for the planned MCP surface: authentication/authorization, idempotency, versioning, and how it shares the CLI’s state and locking rules. That does not need to block the CLI freeze if MCP is clearly out of scope, but it must not inherit ambiguous semantics later.
+
+## 3. Freeze-ready?
+
+**Not yet.** The minimal blockers are:
+
+1. Resolve the clean-tree versus tracked-write contradiction and define a crash-safe completion transaction.
+2. Define state authority and conflict/recovery rules, including concurrent operations and multiple worktrees.
+3. Specify the completion sweep’s exact inputs, side effects, offline/network behavior, and no-op guarantee.
+4. Run the stated weak-model rerun against real emissions and make it a passing freeze gate.
+
+The overall shape is coherent: tracked records for durable intent, a derived ignored sidecar, a deterministic orientation view, and a seam that renders rather than triggers work. Those choices are sound. The transition and recovery contracts are not yet precise enough to freeze safely.

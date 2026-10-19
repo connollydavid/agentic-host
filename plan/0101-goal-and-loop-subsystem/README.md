@@ -132,6 +132,52 @@ worse on cross-session learning beyond MEMORY, swarm goals, frontier
 ranking, and telemetry; different in that git history is the ledger,
 degraded means legible without any verb, and the turn trigger stays human.
 
+## Contract closure (the final consult, 2026-10-19)
+
+The final-design consult ran the cast and a blind external bench over the
+settled form. The cast: Mara signed off (the real-output rerun tracked, not
+blocking); Wren signed off short of a watched item (a window cut that keeps
+NEXT but drops PURPOSE loses the why; watched at the fen rerun, not
+pre-fixed); Fen signed off conditional on the rerun passing with a resolved
+key on the last line; Bly refused until two holes were answered; Orin signed
+off with two wording amendments. The bench (transcript:
+[bench/codex-final-design-2026-10-19.txt](bench/codex-final-design-2026-10-19.txt))
+ruled the shape sound, freeze not yet, four blockers. The rulings that
+follow close them.
+
+- **Authority order, stated once**: receipt stanzas over the Status line
+  over the sidecar. A crash between writes reconciles downward by
+  `goal repair`; no journal is owed because the authority order makes every
+  partial state recoverable by re-derivation.
+- **The no-op defined**: the sweep's composed gates are check-mode verbs
+  that write nothing; a refusal forbids every write, including the
+  sidecar. The only writes the verb ever makes are the closure's own
+  receipt and Status line, after all gates pass.
+- **The closure names its own commit**: complete demands a clean tree and
+  then dirties it with exactly two files; the success output names both and
+  the commit-and-push that follows (landed in the component, `cd440d8`).
+- **A divergent sidecar is a hazard**: absent is no claim (fine); a claim
+  on another goal while the closure names this one refuses with the repair
+  remedy (landed, `cd440d8`). Park's tracked trace stands as built: the
+  receipt stanza and the Status transition, never sidecar-only.
+- **The offline boundary**: the sweep runs no network; the unpushed count
+  reads the local remote-tracking ref, which can itself be stale, and the
+  emission's `revision-unbound` label is the standing disclosure of that
+  class.
+- **The last line is never placeholder-shaped**: every NEXT line carries a
+  resolved key or a runnable command as printed (Fen's ruling); the
+  emission asserts it.
+- **Spine wordings (Orin)**: the spine states the closed verb list the
+  binary enforces, with ASD-STE100 as provenance of the list, not the rule;
+  and it names the sidecar-authority boundary as the checkable form (no
+  verb reads the sidecar as authority) rather than the rationale word. The
+  door family is data the adopter owns: a third harness is an edit, not a
+  fork.
+
+What remains before freeze is the fen rerun on real output under the house
+refusal shape, with the codex bench beside it: the one gate the consult
+left standing.
+
 ## Build sequence
 
 ### Land the design record {#design-record}
