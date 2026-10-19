@@ -19,5 +19,6 @@
 
 # The local environment fingerprint: this machine's state, never shared.
 .host-envhash
+.host-goal
 .zcode/
 .agents/

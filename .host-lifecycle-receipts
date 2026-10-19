@@ -1439,3 +1439,9 @@
     recorded = 2026-10-17
     revision = a87fd86496b389359f28d26546cb8d5031f3600c
     conclusion = success
+
+[receipt "goal" "set"]
+    disposition = done
+    tool = host-lifecycle@0.60.7
+    recorded = 2026-10-19
+    target = plan/0101-goal-and-loop-subsystem

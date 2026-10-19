@@ -1258,3 +1258,24 @@
     evidence = host-lint re-pinned to 14e8ed678f7e with artifact a08d2360e41f in .host-software, template pointer bumped to the same commit, release receipt recorded, hooks reinstalled and hash-verified. software --check exit 0 with all components at their pinned SHA; software --verify-setup exit 0 with zero hazards. The follow-up work is named in the closing comments on host-lint#22 (security.html not pinned, no runner for the expensive legs, no Kani harnesses for the pack, patcheck parity and four series checks unbuilt) and in the PLAN.md row
     tool = host-lifecycle@0.47.1
     recorded = 2026-07-28
+
+[receipt "plan/0101#design-record"]
+    disposition = done
+    verify = this README and its bench records are committed, and the PLAN.md row names the milestone
+    evidence = landed b419c03f (README, bench, convening, fen-results) with the modality as call/0061 (8153473a) and the PLAN.md row (8a334e05); the freeze bench joined task five in 35bf7f39
+    tool = host-lifecycle@0.60.7
+    recorded = 2026-10-19
+
+[receipt "plan/0101#goal-module"]
+    disposition = done
+    verify = cargo test green and clippy clean in the lifecycle worktree, with the verbs failing closed on bad args
+    evidence = component 4ea99d2 (src/goal.rs, dispatch, the receipt target field) plus the purpose wrap-join fix 2b64600; cargo test 364 green, clippy clean
+    tool = host-lifecycle@0.60.7
+    recorded = 2026-10-19
+
+[receipt "plan/0101#command-family"]
+    disposition = done
+    verify = /host/goal resolves and injects the emission from the host root
+    evidence = .opencode/commands/host/goal.md (the nested /host/goal) landed with .host-goal gitignored; verified end to end through the binary in-session
+    tool = host-lifecycle@0.60.7
+    recorded = 2026-10-19
