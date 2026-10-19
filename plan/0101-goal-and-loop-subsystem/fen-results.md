@@ -48,3 +48,47 @@ restored the house form (every hazard printed, each with its exact command)
 in place of first-fix-plus-count. This battery validated the superseded
 shape; the freeze gate reruns the battery against real `goal show` and
 `goal complete` output under the house shape, per the build sequence.
+
+# The freeze battery on real output (2026-10-19)
+
+Real binary output, four probe states, the ACTION protocol, deployment
+sampling, strict scoring on the ACTION line alone. P1: the real host
+emission. P2: the real composed refusal. P3/P4: fixture hosts (the
+plan/0077 method: real code, controlled state).
+
+## The runs, and what each taught
+
+- **Run one (minimal context, 200-token replies): 11 of 16 loose, and it
+  caught two real defects.** The composed gate wrapped a failing sweep's ok
+  lines as hazards (fixed: the wrapper passes through HAZARD lines only),
+  and the serving leaked think blocks into replies, truncating some to
+  empty (controlled: a reply budget of 1024 in the battery configuration).
+- **Run two (strict, 512): 9 of 16.** The unreadable-state refusal named
+  `goal repair` on a bare unlabeled line and the model ignored it four of
+  four times, once hand-creating the missing file instead (the antipattern
+  the verbs exist to prevent). Fixed: the refusal wears the NEXT label and
+  shares the emission's last-line shape.
+- **Variants: more text is more distraction.** A longer work line with the
+  record command sent the model to cat PLAN.md and git status (other lines'
+  vocabulary); a block-shaped refusal garbled the command order. The terse
+  lines stand.
+- **Run three (the taught context, 512): 13 of 16**, the failures being
+  two serving empties and one word-order garble.
+- **Run four (the taught context, 1024): 16 of 16, zero invented
+  commands, zero empties.** Across every run today (sixty-four draws) the
+  hard invariant held: not one invented flag or function.
+
+The taught context is three lines carried by the teaching layer (the spine
+task): a NEXT command runs exactly as printed; `work <key>` begins that
+task; a refusal's last line runs. The freeze condition is the emission
+plus those lines, which is the plan/0091 doctrine stated once more: the
+shape carries what it can, the teaching layer carries what it cannot.
+
+## Final configuration
+
+qwen3.5-4b on the router, temperature 0.6, reply budget 1024, strict
+ACTION-line scoring with think blocks stripped. Transcripts of the four
+probe inputs live in this session's run log; the probe texts are
+reproducible from the binary: the real host's `goal show .` and `goal
+complete plan/0101-goal-and-loop-subsystem .`, and the two fixture hosts
+(a parked goal; a set receipt naming a missing plan).

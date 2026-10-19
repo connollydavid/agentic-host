@@ -1279,3 +1279,10 @@
     evidence = .opencode/commands/host/goal.md (the nested /host/goal) landed with .host-goal gitignored; verified end to end through the binary in-session
     tool = host-lifecycle@0.60.7
     recorded = 2026-10-19
+
+[receipt "plan/0101#fen-real-output"]
+    disposition = done
+    verify = the battery transcripts on real output filed and passing under the house refusal shape
+    evidence = sixty-four draws across four runs on real binary output: final 16 of 16 strict with zero invented commands; two emission defects found and fixed (ok-line wrap, unlabeled refusal); the teaching-layer condition recorded; component c9cdea1
+    tool = host-lifecycle@0.60.7
+    recorded = 2026-10-19
