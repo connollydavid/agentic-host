@@ -1,6 +1,6 @@
 # plan/0101: the goal and loop subsystem
 
-**Status: cut and in build** (operator ruling 2026-10-18: build it, after a
+**Status: cut and in build** (operator ruling 2026-10-18: build it, after a — active goal since 2026-10-19
 reflection pause because it is core functionality; second ruling the same
 day: the design must be an idiomatic extension of the host methodology, not
 a port of foreign implementations). The modality itself is
@@ -126,35 +126,35 @@ degraded means legible without any verb, and the turn trigger stays human.
 
 ## Build sequence
 
-1. ### Land the design record {#design-record}
+### Land the design record {#design-record}
    This README, the bench records, and the call/0061 modality.
-2. ### Implement the goal module {#goal-module}
+### Implement the goal module {#goal-module}
    `src/goal.rs`: the volatility split, the verbs, the emission in house
    shapes, the subprocess-composed closure gate; dispatch in `main()`;
    tests for sidecar round-trips, emission determinism, refusal no-op, and
    the composed gates on a fixture tree.
-3. ### Land the command family {#command-family}
+### Land the command family {#command-family}
    `.opencode/commands/host/goal.md` in this host (the dogfood), the
    `.host-goal` gitignore entry, verified by invoking `/host/goal`.
-4. ### Dogfood the loop {#dogfood-loop}
+### Dogfood the loop {#dogfood-loop}
    Set this milestone as the goal under the operator's build ruling, drive
    the remaining tasks through `goal show`, receipt them, and close the
    milestone with `goal complete` (or record honestly why v1 could not
    close its own milestone).
-5. ### Fen battery on real output {#fen-real-output}
+### Fen battery on real output {#fen-real-output}
    The battery rerun against real `goal show` and `goal complete` output
    under the house refusal shape; the freeze gate. Riding beside it, one
    fresh codex bench (gpt-6.1 if available, for judge freshness: no lineage
    to the v2 bench) scoped to the implemented contract: the real output
    samples plus the unresolved nails (transactional ordering at the closure
    receipt, the owed-item lifecycle, receipt freshness).
-6. ### Goal tools on the MCP server {#mcp-tools}
+### Goal tools on the MCP server {#mcp-tools}
    The verbs join the shipped MCP server so any harness mounts them
    natively; the plugin custom-tool family stays cut.
-7. ### The corpus surface {#corpus-surface}
+### The corpus surface {#corpus-surface}
    The goal declaration readable as an always-loaded surface, the plan/0083
    shape, so every session and every harness loads it with no plugin.
-8. ### Spine and ledger {#spine-ledger}
+### Spine and ledger {#spine-ledger}
    The manual section in present tense per call/0060 and call/0061; the
    UPGRADING.md entry carrying applies-alone status, the stamp migration
    with the re-stamp command and old-tool tolerance, the sidecar
