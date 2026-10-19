@@ -142,7 +142,7 @@ degraded means legible without any verb, and the turn trigger stays human.
 - verify: /host/goal resolves and injects the emission from the host root
    `.opencode/commands/host/goal.md` in this host (the live run), the
    `.host-goal` gitignore entry, verified by invoking `/host/goal`.
-### Run the loop {#run-the-loop}
+### Run loop {#run-loop}
 
 - verify: the goal set on this milestone, the tasks run through goal show, and the milestone closed with goal complete (or the failure recorded honestly)
    Set this milestone as the goal under the operator's build ruling, run
