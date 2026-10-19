@@ -127,21 +127,31 @@ degraded means legible without any verb, and the turn trigger stays human.
 ## Build sequence
 
 ### Land the design record {#design-record}
+
+- verify: this README and its bench records are committed, and the PLAN.md row names the milestone
    This README, the bench records, and the call/0061 modality.
 ### Implement the goal module {#goal-module}
+
+- verify: cargo test green and clippy clean in the lifecycle worktree, with the verbs failing closed on bad args
    `src/goal.rs`: the volatility split, the verbs, the emission in house
    shapes, the subprocess-composed closure gate; dispatch in `main()`;
    tests for sidecar round-trips, emission determinism, refusal no-op, and
    the composed gates on a fixture tree.
 ### Land the command family {#command-family}
+
+- verify: /host/goal resolves and injects the emission from the host root
    `.opencode/commands/host/goal.md` in this host (the dogfood), the
    `.host-goal` gitignore entry, verified by invoking `/host/goal`.
 ### Dogfood the loop {#dogfood-loop}
+
+- verify: the goal set on this milestone, the tasks driven through goal show, and the milestone closed with goal complete (or the failure recorded honestly)
    Set this milestone as the goal under the operator's build ruling, drive
    the remaining tasks through `goal show`, receipt them, and close the
    milestone with `goal complete` (or record honestly why v1 could not
    close its own milestone).
 ### Fen battery on real output {#fen-real-output}
+
+- verify: the battery transcripts on real output filed and passing under the house refusal shape
    The battery rerun against real `goal show` and `goal complete` output
    under the house refusal shape; the freeze gate. Riding beside it, one
    fresh codex bench (gpt-6.1 if available, for judge freshness: no lineage
@@ -149,12 +159,18 @@ degraded means legible without any verb, and the turn trigger stays human.
    samples plus the unresolved nails (transactional ordering at the closure
    receipt, the owed-item lifecycle, receipt freshness).
 ### Goal tools on the MCP server {#mcp-tools}
+
+- verify: the verbs answer through the shipped MCP server
    The verbs join the shipped MCP server so any harness mounts them
    natively; the plugin custom-tool family stays cut.
 ### The corpus surface {#corpus-surface}
+
+- verify: the goal declaration loads as an always-loaded surface with no plugin in the path
    The goal declaration readable as an always-loaded surface, the plan/0083
    shape, so every session and every harness loads it with no plugin.
 ### Spine and ledger {#spine-ledger}
+
+- verify: the manual section present-tense with the UPGRADING entry carrying applies-alone status and the stamp migration
    The manual section in present tense per call/0060 and call/0061; the
    UPGRADING.md entry carrying applies-alone status, the stamp migration
    with the re-stamp command and old-tool tolerance, the sidecar
