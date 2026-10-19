@@ -59,7 +59,7 @@ tracked record is singular; the sidecar is the per-worktree claim on it.
   (the tool invoking its own verbs and reading their exits; HAZARD lines
   pass through intact): the verify gate, the ci judge, task receipts for
   the milestone, the tree clean with nothing unpushed, and the PLAN.md row.
-  No gate is weakened and none is duplicated; the tool drives the tools,
+  No gate is weakened and none is duplicated; the tool runs its own verbs,
   [host#26](https://github.com/connollydavid/host/issues/26)'s constraint
   applied inward. A refusal is a full no-op; every hazard prints, ordered,
   each with its exact fix command (the verify-setup shape, not progressive
@@ -140,12 +140,12 @@ degraded means legible without any verb, and the turn trigger stays human.
 ### Land the command family {#command-family}
 
 - verify: /host/goal resolves and injects the emission from the host root
-   `.opencode/commands/host/goal.md` in this host (the live drive), the
+   `.opencode/commands/host/goal.md` in this host (the live run), the
    `.host-goal` gitignore entry, verified by invoking `/host/goal`.
-### Drive the loop live {#drive-the-loop}
+### Run the loop {#run-the-loop}
 
-- verify: the goal set on this milestone, the tasks driven through goal show, and the milestone closed with goal complete (or the failure recorded honestly)
-   Set this milestone as the goal under the operator's build ruling, drive
+- verify: the goal set on this milestone, the tasks run through goal show, and the milestone closed with goal complete (or the failure recorded honestly)
+   Set this milestone as the goal under the operator's build ruling, run
    the remaining tasks through `goal show`, receipt them, and close the
    milestone with `goal complete` (or record honestly why v1 could not
    close its own milestone).
