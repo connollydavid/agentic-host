@@ -68,19 +68,19 @@ tracked record is singular; the sidecar is the per-worktree claim on it.
   disclosure); success writes one atomic `[receipt "goal"]` stanza, updates
   the Status line, and prints the next move or the no-goal state.
 
-**The seam is a generated door family, folded in early (the operator's
-ruling).** The `seam` verb owns the front doors as one source inside the
+**The install is a generated door family, folded in early (the operator's
+ruling).** The `install` verb owns the front doors as one source inside the
 binary and emits the per-harness renderings: flat, hyphenated `/host-<verb>`
 doors (`/host-goal`, `/host-tasks`, `/host-ci`) for OpenCode and Claude
 alike, each injecting its verb's emission and closing with the re-orient
-link; `seam --check` guards the files against hand edits with the
+link; `install --check` guards the files against hand edits with the
 regenerate remedy. The universal-form ruling behind it: the spine states
 the token once, and each harness's sigil is chrome. Goal tools join the
 shipped MCP server (harnesses mount MCP natively), the goal declaration
 becomes readable as a corpus surface (the plan/0083 shape, the house's
 always-loaded mechanism, which is the recitation answer). Plugin custom
 tools stay cut (a duplicate tool surface), the compaction hook stays cut
-(the corpus is the recitation), and the kick stays unruled: the seam
+(the corpus is the recitation), and the kick stays unruled: the install
 renders and never actuates.
 
 ## Rulings
@@ -92,7 +92,7 @@ The chain ran in order, twice for the cast.
   sanctioned; Wren ruled the escape hatch, park, propose, and weak-model
   acceptance before freeze; Fen ruled the no-op refusal and ordered hazards;
   Bly ruled legibility without the verbs and the OWED discipline; Orin ruled
-  the seam renders and never decides, and caught the tracked-key collision
+  the install renders and never decides, and caught the tracked-key collision
   that first sent the pointer to a sidecar.
 - **Codex** (blind bench, gpt-6-luna, one-shot): approve the CLI-first
   direction, do not freeze the contract yet; seventeen defects clustered on
@@ -118,7 +118,7 @@ The chain ran in order, twice for the cast.
 Cited, with the lineage living in the record layer (call/0061) and never in
 the mechanism's self-description: Manus 2025 (recitation, filesystem
 context, stable prefixes), Anthropic 2024 (composable patterns, gates with
-environmental ground truth), OpenCode v2 docs (the seam surfaces), BDI
+environmental ground truth), OpenCode v2 docs (the install surfaces), BDI
 (Rao and Georgeff 1995, commitment moves), make and ninja (the task DAG
 with per-node receipts), ReAct (Yao et al. 2022) and Reflexion (Shinn et
 al. 2023) for the loop and failure retention, the todo ledgers of Claude
@@ -127,7 +127,7 @@ Code and OpenCode plan mode, and Copilot Workspace for gated decomposition.
 Where we stand: better on per-task receipts as audit, completion as a
 refusing gate that composes the existing gates, a deterministic emission
 with no clock, weak-model-first validation on the real 4B, one generated
-seam versioned by the ledger, and display never equaling authorization;
+install surface versioned by the ledger, and display never equaling authorization;
 worse on cross-session learning beyond MEMORY, swarm goals, frontier
 ranking, and telemetry; different in that git history is the ledger,
 degraded means legible without any verb, and the turn trigger stays human.
@@ -198,8 +198,8 @@ left standing.
    gitignore entry, verified end to end through the binary in-session.
    Originally receipted under the nested `/host/goal` form; superseded by
    the universal-form ruling and the generated family: the doors are now
-   `seam`-written, flat `/host-<verb>`, one source in the binary, two
-   harness renderings, guarded by `seam --check`.
+   `install`-written, flat `/host-<verb>`, one source in the binary, two
+   harness renderings, guarded by `install --check`.
 ### Run loop {#run-loop}
 
 - verify: the goal set on this milestone, the tasks run through goal show, and the milestone closed with goal complete (or the failure recorded honestly)
@@ -238,7 +238,7 @@ left standing.
 ### Release and re-pin {#release-and-re-pin}
 
 - verify: the verify gate green at the tag, the artifact hash re-derived in the recorded toolchain, and the re-pin receipted
-   Release host-lifecycle carrying the goal and seam verbs through the
+   Release host-lifecycle carrying the goal verbs and the install verb through the
    tool-carried sequence. The doors go live off PATH and `/host-goal`
    stops depending on a debug binary; the composed closure gate can then
    close this milestone without the pin hazard.
