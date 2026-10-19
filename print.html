@@ -11274,38 +11274,62 @@ ranking, and telemetry; different in that git history is the ledger,
 degraded means legible without any verb, and the turn trigger stays human.</p>
 <h2 id="build-sequence-28"><a class="header" href="#build-sequence-28">Build sequence</a></h2>
 <h3 id="design-record"><a class="header" href="#design-record">Land the design record</a></h3>
-<p>This README, the bench records, and the call/0061 modality.</p>
+<ul>
+<li>verify: this README and its bench records are committed, and the PLAN.md row names the milestone
+This README, the bench records, and the call/0061 modality.</li>
+</ul>
 <h3 id="goal-module"><a class="header" href="#goal-module">Implement the goal module</a></h3>
-<p><code>src/goal.rs</code>: the volatility split, the verbs, the emission in house
+<ul>
+<li>verify: cargo test green and clippy clean in the lifecycle worktree, with the verbs failing closed on bad args
+<code>src/goal.rs</code>: the volatility split, the verbs, the emission in house
 shapes, the subprocess-composed closure gate; dispatch in <code>main()</code>;
 tests for sidecar round-trips, emission determinism, refusal no-op, and
-the composed gates on a fixture tree.</p>
+the composed gates on a fixture tree.</li>
+</ul>
 <h3 id="command-family"><a class="header" href="#command-family">Land the command family</a></h3>
-<p><code>.opencode/commands/host/goal.md</code> in this host (the dogfood), the
-<code>.host-goal</code> gitignore entry, verified by invoking <code>/host/goal</code>.</p>
+<ul>
+<li>verify: /host/goal resolves and injects the emission from the host root
+<code>.opencode/commands/host/goal.md</code> in this host (the dogfood), the
+<code>.host-goal</code> gitignore entry, verified by invoking <code>/host/goal</code>.</li>
+</ul>
 <h3 id="dogfood-loop"><a class="header" href="#dogfood-loop">Dogfood the loop</a></h3>
-<p>Set this milestone as the goal under the operator's build ruling, drive
+<ul>
+<li>verify: the goal set on this milestone, the tasks driven through goal show, and the milestone closed with goal complete (or the failure recorded honestly)
+Set this milestone as the goal under the operator's build ruling, drive
 the remaining tasks through <code>goal show</code>, receipt them, and close the
 milestone with <code>goal complete</code> (or record honestly why v1 could not
-close its own milestone).</p>
+close its own milestone).</li>
+</ul>
 <h3 id="fen-real-output"><a class="header" href="#fen-real-output">Fen battery on real output</a></h3>
-<p>The battery rerun against real <code>goal show</code> and <code>goal complete</code> output
+<ul>
+<li>verify: the battery transcripts on real output filed and passing under the house refusal shape
+The battery rerun against real <code>goal show</code> and <code>goal complete</code> output
 under the house refusal shape; the freeze gate. Riding beside it, one
 fresh codex bench (gpt-6.1 if available, for judge freshness: no lineage
 to the v2 bench) scoped to the implemented contract: the real output
 samples plus the unresolved nails (transactional ordering at the closure
-receipt, the owed-item lifecycle, receipt freshness).</p>
+receipt, the owed-item lifecycle, receipt freshness).</li>
+</ul>
 <h3 id="mcp-tools"><a class="header" href="#mcp-tools">Goal tools on the MCP server</a></h3>
-<p>The verbs join the shipped MCP server so any harness mounts them
-natively; the plugin custom-tool family stays cut.</p>
+<ul>
+<li>verify: the verbs answer through the shipped MCP server
+The verbs join the shipped MCP server so any harness mounts them
+natively; the plugin custom-tool family stays cut.</li>
+</ul>
 <h3 id="corpus-surface"><a class="header" href="#corpus-surface">The corpus surface</a></h3>
-<p>The goal declaration readable as an always-loaded surface, the plan/0083
-shape, so every session and every harness loads it with no plugin.</p>
+<ul>
+<li>verify: the goal declaration loads as an always-loaded surface with no plugin in the path
+The goal declaration readable as an always-loaded surface, the plan/0083
+shape, so every session and every harness loads it with no plugin.</li>
+</ul>
 <h3 id="spine-ledger"><a class="header" href="#spine-ledger">Spine and ledger</a></h3>
-<p>The manual section in present tense per call/0060 and call/0061; the
+<ul>
+<li>verify: the manual section present-tense with the UPGRADING entry carrying applies-alone status and the stamp migration
+The manual section in present tense per call/0060 and call/0061; the
 UPGRADING.md entry carrying applies-alone status, the stamp migration
 with the re-stamp command and old-tool tolerance, the sidecar
-re-derivation, and the degraded mode stated as legible-without-verbs.</p>
+re-derivation, and the degraded mode stated as legible-without-verbs.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .
