@@ -1468,3 +1468,10 @@
     recorded = 2026-10-20
     revision = 98fe982255e188e3361dedb51a03660b90b6f5a5
     conclusion = success
+
+[receipt "goal" "park"]
+    disposition = done
+    reason = the composed gate holds on host-lint's kani lane (cancelled at its pin, host-lint thirty-two); resume when that lane greens
+    tool = host-lifecycle@0.61.0
+    recorded = 2026-10-20
+    target = plan/0101-goal-and-loop-subsystem

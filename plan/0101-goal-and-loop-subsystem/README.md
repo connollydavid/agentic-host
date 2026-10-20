@@ -1,6 +1,6 @@
 # plan/0101: the goal and loop subsystem
 
-**Status: cut and in build** (operator ruling 2026-10-18: build it, after a; active goal since 2026-10-19
+**Status: cut and in build** (operator ruling 2026-10-18: build it, after a; active goal since 2026-10-19 — parked (the composed gate holds on host-lint's kani lane (cancelled at its pin, host-lint thirty-two); resume when that lane greens) since 2026-10-20
 reflection pause because it is core functionality; second ruling the same
 day: the design must be an idiomatic extension of the host methodology, not
 a port of foreign implementations). The modality itself is
