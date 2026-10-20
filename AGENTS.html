@@ -323,8 +323,9 @@ Right: whenever you say go, L will execute.</p>
 </ul>
 <h2 id="9-the-declared-always-loaded-corpus"><a class="header" href="#9-the-declared-always-loaded-corpus">9. The declared always-loaded corpus</a></h2>
 <p>This host declares its always-loaded files in <code>.host-corpus</code> (the <code>.host</code> stamp's
-<code>active-corpus</code> key names it): the manual, the <code>CLAUDE.md</code> pointer, and
-<code>STRUCTURE.md</code>, with the memory surfaces joining when plan/0083 builds them.
+<code>active-corpus</code> key names it): the manual, the <code>CLAUDE.md</code> pointer,
+<code>STRUCTURE.md</code>, and the goal surface (<code>GOAL.md</code>), with the memory surfaces
+joining when plan/0083 builds them.
 Inside the declaration the reading is strict: <strong>a warning is a flag</strong>, because the
 always-loaded text is the instruction every session reads and advice to the
 instruction is a defect of the instruction. The census counts the corpus's
@@ -343,7 +344,26 @@ corpus.</p>
 <li>One text: fire calx-knap-edit (drafts, checks, expands). Expansion lands ONLY in a gloss file.</li>
 <li>Spec ambiguity: append to <code>.calx-knap/spec-issues.md</code>. NEVER improvise a rule.</li>
 </ul>
-<hr />
+<h2 id="10-the-goal-loop"><a class="header" href="#10-the-goal-loop">10. The goal loop</a></h2>
+<p>A goal is a <code>plan/NNNN</code> milestone. <code>host-lifecycle goal set</code> declares the
+active goal (one per repo; the audited commit of the declaration is the
+authority), <code>goal propose</code> prints the command for the operator and writes
+nothing, and <code>goal show</code> orients: purpose, position, needs-you, CI,
+frontier, tree, and the suggested next move on the last line. Work the
+NEXT line. If it is a command, run it as printed. If it says <code>work &lt;key&gt;</code>,
+start that task. If the tool refuses to emit, run the last line. Never
+invent a command or a flag.</p>
+<h2><code>goal park</code> re-queues a blocked goal, <code>goal unpark</code> resumes it, <code>goal abandon</code> exits with an OWED row in the plan index, and <code>goal repair</code>
+reconciles state toward the tracked record: the receipt stanzas over the
+Status line over the gitignored <code>.host-goal</code> sidecar, which holds only
+this worktree's claim. Every mutator also rewrites the tracked <code>GOAL.md</code>;
+declared in the corpus, it loads the active-goal declaration in every
+session with no plugin. <code>goal complete</code> composes the full verify sweep as
+subprocesses with the task receipts, the plan row, and a clean pushed
+tree; a refusal banks nothing, and every hazard names its remedy. The
+harness doors are installed, never hand-written: <code>host-lifecycle install</code>
+emits the flat <code>host-&lt;verb&gt;</code> command family for each harness, and
+<code>install --check</code> guards the files against drift.</h2>
 <p>These guidelines are working correctly when you observe: fewer unnecessary changes appearing in git diffs, fewer rewrites caused by overcomplication, and clarifying questions happening before implementation rather than after mistakes are discovered.</p>
 
                     </main>
