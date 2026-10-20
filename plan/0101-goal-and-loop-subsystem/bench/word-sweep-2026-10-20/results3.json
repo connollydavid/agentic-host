@@ -1,0 +1,212 @@
+{
+ "S0-r4-incumbent": {
+  "pass": 14,
+  "empty": 0,
+  "invented": 0,
+  "per_probe": {
+   "P1": "4/4",
+   "P2": "4/4",
+   "P3": "4/4",
+   "P4": "2/4"
+  },
+  "rows": [
+   "P1 r1 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r2 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r3 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r4 PASS: ACTION: work plan/0101#run-loop",
+   "P2 r1 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>",
+   "P2 r2 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run",
+   "P2 r3 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run",
+   "P2 r4 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>",
+   "P3 r1 PASS: ACTION: host-lifecycle goal unpark",
+   "P3 r2 PASS: ACTION: host-lifecycle goal unpark .",
+   "P3 r3 PASS: ACTION: host-lifecycle goal unpark",
+   "P3 r4 PASS: ACTION: host-lifecycle goal unpark",
+   "P4 r1 FAIL: ACTION: repair host-lifecycle",
+   "P4 r2 PASS: ACTION: host-lifecycle goal repair",
+   "P4 r3 PASS: ACTION: host-lifecycle goal repair .",
+   "P4 r4 FAIL: ACTION: host-lifecycle repair"
+  ],
+  "secs": 80
+ },
+ "S1-r4-numbered": {
+  "pass": 15,
+  "empty": 1,
+  "invented": 0,
+  "per_probe": {
+   "P1": "4/4",
+   "P2": "4/4",
+   "P3": "4/4",
+   "P4": "3/4"
+  },
+  "rows": [
+   "P1 r1 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r2 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r3 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r4 PASS: ACTION: work plan/0101#run-loop",
+   "P2 r1 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>",
+   "P2 r2 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>",
+   "P2 r3 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>",
+   "P2 r4 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>",
+   "P3 r1 PASS: ACTION: host-lifecycle goal unpark .",
+   "P3 r2 PASS: ACTION: host-lifecycle goal unpark .",
+   "P3 r3 PASS: ACTION: host-lifecycle goal unpark .",
+   "P3 r4 PASS: ACTION: host-lifecycle goal unpark .",
+   "P4 r1 EMPTY",
+   "P4 r2 PASS: ACTION: host-lifecycle goal repair",
+   "P4 r3 PASS: ACTION: host-lifecycle goal repair .",
+   "P4 r4 PASS: ACTION: host-lifecycle goal repair"
+  ],
+  "secs": 106
+ },
+ "S2-r4-exemplar": {
+  "pass": 15,
+  "empty": 1,
+  "invented": 0,
+  "per_probe": {
+   "P1": "4/4",
+   "P2": "3/4",
+   "P3": "4/4",
+   "P4": "4/4"
+  },
+  "rows": [
+   "P1 r1 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r2 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r3 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r4 PASS: ACTION: work plan/0101#run-loop",
+   "P2 r1 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>",
+   "P2 r2 PASS: ACTION: host-lifecycle tasks --record plan/0001#anchor --disposition done --evidence \"reso",
+   "P2 r3 EMPTY",
+   "P2 r4 PASS: ACTION: host-lifecycle tasks --record plan/0010#1 --disposition done --evidence tasks-mile",
+   "P3 r1 PASS: ACTION: host-lifecycle goal unpark .",
+   "P3 r2 PASS: ACTION: host-lifecycle goal unpark .",
+   "P3 r3 PASS: ACTION: host-lifecycle goal unpark .",
+   "P3 r4 PASS: ACTION: host-lifecycle goal unpark .",
+   "P4 r1 PASS: ACTION: host-lifecycle goal repair .",
+   "P4 r2 PASS: ACTION: host-lifecycle goal repair .",
+   "P4 r3 PASS: ACTION: host-lifecycle goal repair .",
+   "P4 r4 PASS: ACTION: host-lifecycle goal repair ."
+  ],
+  "secs": 101
+ },
+ "S3-r4-repair-exemplar": {
+  "pass": 14,
+  "empty": 2,
+  "invented": 0,
+  "per_probe": {
+   "P1": "4/4",
+   "P2": "3/4",
+   "P3": "3/4",
+   "P4": "4/4"
+  },
+  "rows": [
+   "P1 r1 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r2 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r3 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r4 PASS: ACTION: work plan/0101#run-loop",
+   "P2 r1 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>",
+   "P2 r2 EMPTY",
+   "P2 r3 PASS: ACTION: host-lifecycle tasks --record software/host-lint/main/ci --disposition done --evid",
+   "P2 r4 PASS: ACTION: host-lifecycle tasks --record plan/0101#command-family --disposition done --eviden",
+   "P3 r1 EMPTY",
+   "P3 r2 PASS: ACTION: host-lifecycle goal unpark .",
+   "P3 r3 PASS: ACTION: host-lifecycle goal unpark .",
+   "P3 r4 PASS: ACTION: host-lifecycle goal unpark .",
+   "P4 r1 PASS: ACTION: host-lifecycle goal repair .",
+   "P4 r2 PASS: ACTION: host-lifecycle goal repair .",
+   "P4 r3 PASS: ACTION: host-lifecycle goal repair .",
+   "P4 r4 PASS: ACTION: host-lifecycle goal repair ."
+  ],
+  "secs": 123
+ },
+ "S4-r4-no-frame": {
+  "pass": 11,
+  "empty": 1,
+  "invented": 0,
+  "per_probe": {
+   "P1": "3/4",
+   "P2": "3/4",
+   "P3": "4/4",
+   "P4": "1/4"
+  },
+  "rows": [
+   "P1 r1 FAIL: ACTION: plan/0101#run-loop",
+   "P1 r2 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r3 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r4 PASS: ACTION: work plan/0101#run-loop",
+   "P2 r1 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>",
+   "P2 r2 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>",
+   "P2 r3 EMPTY",
+   "P2 r4 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run",
+   "P3 r1 PASS: ACTION: host-lifecycle goal unpark .",
+   "P3 r2 PASS: ACTION: host-lifecycle goal unpark .",
+   "P3 r3 PASS: ACTION: host-lifecycle goal unpark .",
+   "P3 r4 PASS: ACTION: host-lifecycle goal unpark .",
+   "P4 r1 FAIL: ACTION: repair host-lifecycle goal",
+   "P4 r2 PASS: ACTION: host-lifecycle goal repair",
+   "P4 r3 FAIL: ACTION: repair goal host-lifecycle",
+   "P4 r4 FAIL: ACTION: cat plan/0099-gone/README.md"
+  ],
+  "secs": 80
+ },
+ "S5-r4-num-exemplar": {
+  "pass": 11,
+  "empty": 5,
+  "invented": 0,
+  "per_probe": {
+   "P1": "3/4",
+   "P2": "1/4",
+   "P3": "4/4",
+   "P4": "3/4"
+  },
+  "rows": [
+   "P1 r1 EMPTY",
+   "P1 r2 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r3 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r4 PASS: ACTION: work plan/0101#run-loop",
+   "P2 r1 EMPTY",
+   "P2 r2 EMPTY",
+   "P2 r3 EMPTY",
+   "P2 r4 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>",
+   "P3 r1 PASS: ACTION: host-lifecycle goal unpark .",
+   "P3 r2 PASS: ACTION: host-lifecycle goal unpark .",
+   "P3 r3 PASS: Action: `host-lifecycle goal unpark .`",
+   "P3 r4 PASS: ACTION: host-lifecycle goal unpark .",
+   "P4 r1 PASS: ACTION: host-lifecycle goal repair .",
+   "P4 r2 PASS: ACTION: host-lifecycle goal repair .",
+   "P4 r3 EMPTY",
+   "P4 r4 PASS: ACTION: host-lifecycle goal repair ."
+  ],
+  "secs": 148
+ },
+ "S6-r4-word-for-word": {
+  "pass": 13,
+  "empty": 1,
+  "invented": 0,
+  "per_probe": {
+   "P1": "4/4",
+   "P2": "3/4",
+   "P3": "4/4",
+   "P4": "2/4"
+  },
+  "rows": [
+   "P1 r1 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r2 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r3 PASS: ACTION: work plan/0101#run-loop",
+   "P1 r4 PASS: ACTION: work plan/0101#run-loop",
+   "P2 r1 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>",
+   "P2 r2 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>",
+   "P2 r3 PASS: ACTION: host-lifecycle tasks --record plan/0101#command-family --disposition done --eviden",
+   "P2 r4 EMPTY",
+   "P3 r1 PASS: ACTION: host-lifecycle goal unpark",
+   "P3 r2 PASS: ACTION: host-lifecycle goal unpark",
+   "P3 r3 PASS: ACTION: host-lifecycle goal unpark",
+   "P3 r4 PASS: ACTION: host-lifecycle goal unpark .",
+   "P4 r1 PASS: ACTION: host-lifecycle goal repair",
+   "P4 r2 FAIL: ACTION: repair host-lifecycle",
+   "P4 r3 FAIL: ACTION: repair host-lifecycle goal",
+   "P4 r4 PASS: ACTION: host-lifecycle goal repair"
+  ],
+  "secs": 96
+ }
+}

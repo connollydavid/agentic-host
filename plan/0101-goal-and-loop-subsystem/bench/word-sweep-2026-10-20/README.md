@@ -94,3 +94,29 @@ a revised protocol; transcript above, the synthesis:
   travel); per-state passes; empties and invented flags as separate zero
   lines; the round ledger attached, because no ledger means no checkable
   plateau claim.
+
+## Round three (same day): the exploratory plateau
+
+| arm | strict | empty | P1/P2/P3/P4 |
+|---|---|---|---|
+| S0 r4 incumbent | 14/16 | 0 | 4/4, 4/4, 4/4, 2/4 |
+| S1 +numbered | 15/16 | 1 | 4/4, 4/4, 4/4, 3/4 |
+| S2 +unpark exemplar | 15/16 | 1 | 4/4, 3/4, 4/4, 4/4 |
+| S3 +repair exemplar | 14/16 | 2 | 4/4, 3/4, 3/4, 4/4 |
+| S4 no-frame | 11/16 | 1 | 3/4, 3/4, 4/4, 1/4 |
+| S5 numbered+exemplar | 11/16 | 5 | 3/4, 1/4, 4/4, 3/4 |
+| S6 word-for-word | 13/16 | 1 | 4/4, 3/4, 4/4, 2/4 |
+
+No arm cleared plus two over the in-round incumbent: the exploratory
+plateau, per the pre-declared rule. Two readings join the table: levers do
+not stack (the numbered-plus-exemplar combo collapsed to 11 with five
+empties; each lever alone was the round's best), and the frame sentence
+that read droppable in round two cost three this round (frame removal read
+11 against the same incumbent's 14), so the frame stays and the droppable
+claim retires. Per protocol v2 nothing ships from this round; the
+confirmation battery runs with the mechanically locked candidate
+(S2, the incumbent plus the unpark exemplar, selected by the pre-declared
+rule: best score at or above the in-round incumbent, fewest empties, name
+order as the deterministic final tiebreak) against the untaught arm and the
+original V0, on four held-out states never used in any round, fully
+interleaved.
