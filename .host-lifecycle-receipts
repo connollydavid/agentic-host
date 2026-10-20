@@ -1453,3 +1453,10 @@
     recorded = 2026-10-20
     revision = 90a0d71e2ebfab1ce36589e6046156647e45b249
     conclusion = cancelled
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.61.0@14c1c6b761927650649a7777b9d63ae63300dbd67dc8cca24895b3cf75e9bb06
+    authorization = plan/0101#release-and-re-pin
+    tool = host-lifecycle@0.60.7
+    recorded = 2026-10-20
