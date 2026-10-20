@@ -260,6 +260,15 @@ and the transcript files in the plan's bench.
    stops depending on a debug binary; the composed closure gate can then
    close this milestone without the pin hazard.
 
+**The close (2026-10-20).** All nine tasks receipted. The composed closure
+gate refused on exactly one hazard, a lane this milestone does not own:
+host-lint's kani lane, cancelled at its pin (the six-hour runner ceiling,
+[host-lint#32](https://github.com/connollydavid/host-lint/issues/32)). Per
+this task's own verify, the goal parks with the reason rather than exiting:
+the close resumes with `goal unpark .` the day that lane greens at a pin.
+Everything else the gate composes passed: the full verify sweep, all nine
+task receipts, the plan row, and a clean pushed tree.
+
 Deferred elsewhere, named so the queue does not lose them: a
 milestone-cutting primitive (number allocation plus README scaffold)
 belongs to [host#27](https://github.com/connollydavid/host/issues/27)'s
