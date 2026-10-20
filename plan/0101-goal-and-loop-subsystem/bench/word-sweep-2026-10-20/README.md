@@ -147,3 +147,40 @@ remedy carried a template anchor, so both taught arms copied the template
 instead of binding the open task the hazard names (the remedy now resolves
 the first open anchor). The confirmation re-runs against the fixed
 emission with the same texts, probes, and pre-declared criteria.
+
+## The second confirmation: SHIP (2026-10-20)
+
+Same texts, same pre-declared criteria, same interleaving, against the
+emission fixed in `3e20cec`.
+
+| arm | pooled | held-out | empty | invented |
+|---|---|---|---|---|
+| A untaught | 17/32 | 7/16 | 15 | 0 |
+| B v0 original | 24/32 | 9/16 | 0 | 0 |
+| **C shipped** | **26/32** | **11/16** | 5 | **0** |
+
+All four criteria passed, and the candidate wins outright rather than
+tying: plus two pooled, plus two held-out, and it binds where V0 cannot
+(the open-anchor state reads 2/4 against 0/4). The completed reading: on
+the broken emission the texts tied; on the fixed emission the sweep's
+lever (the negative rule plus the exemplar in the plain register) was real
+all along, masked by emission defects. The untaught arm itself rose from
+10 to 17 on the fixed emission: the emission fixes were worth more than
+any word choice.
+
+**The shipped text** (verbatim, `teaching-lines.shipped.md`):
+
+> You run the host loop. The NEXT line of the tool output names your next
+> move. Run a command as printed. If it says work <key>, start that task.
+> If the tool stops, run the last line. Never invent a command or a flag.
+> Example: NEXT: host-lifecycle goal unpark . -> ACTION: host-lifecycle
+> goal unpark . Answer with one line: ACTION: <the move>.
+
+**Scope of validity** (ships with the claim): measured on qwen3.5-4b at
+the rope endpoint (ollama-backed), temperature 0.6, reply budget 1024,
+eight states (four selection, four held-out), the mechanical ACTION rubric
+with binding checks, criteria pre-declared before both confirmations,
+2026-10-20. Other models and other emissions are outside the measurement.
+
+The battery is closed. The round ledger is this directory; no claim in it
+depends on a number not filed here.

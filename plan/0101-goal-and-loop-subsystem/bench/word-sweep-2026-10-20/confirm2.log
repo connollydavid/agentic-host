@@ -1,0 +1,131 @@
+candidate locked: S2-r4-exemplar (in-round incumbent 14/16)
+A-untaught p4 r3 PASS: Action: `host-lifecycle goal repair .`
+C-candidate p1 r2 PASS: ACTION: work plan/0101#run-loop
+B-v0 p4 r0 PASS: ACTION: host-lifecycle goal repair
+A-untaught p1 r1 PASS: ACTION: work plan/0101#run-loop
+B-v0 p2 r3 PASS: ACTION: host-lifecycle tasks --record plan/0101#run-loop --disposition done --ev
+C-candidate p4 r0 PASS: ACTION: host-lifecycle goal repair .
+C-candidate p2 r1 PASS: ACTION: host-lifecycle tasks --record plan/0101#run-loop --disposition done --ev
+A-untaught p3 r1 PASS: ACTION: host-lifecycle goal unpark .
+C-candidate h1 r0 PASS: ACTION: ask the operator to set the goal
+C-candidate h3 r2 PASS: ACTION: host-lifecycle goal unpark .
+C-candidate h2 r2 PASS: ACTION: host-lifecycle goal repair .
+C-candidate h4 r1 PASS: ACTION: host-lifecycle tasks --record plan/0100#second --disposition done --evid
+B-v0 p3 r2 PASS: ACTION: host-lifecycle goal unpark .
+C-candidate p4 r2 PASS: ACTION: host-lifecycle goal repair .
+B-v0 h1 r1 PASS: ACTION: ask the operator to set the goal
+B-v0 h1 r0 PASS: ACTION: ask the operator to set the goal
+C-candidate p4 r1 PASS: ACTION: host-lifecycle goal repair .
+A-untaught h1 r0 PASS: ACTION: ask the operator to set the goal
+B-v0 p3 r3 PASS: ACTION: host-lifecycle goal unpark .
+C-candidate p1 r0 PASS: ACTION: work plan/0101#run-loop
+B-v0 p1 r1 PASS: ACTION: work plan/0101#run-loop
+C-candidate h3 r1 PASS: ACTION: host-lifecycle goal unpark .
+A-untaught h1 r1 PASS: ACTION: Ask the operator to set the goal.
+A-untaught p1 r0 PASS: ACTION: work plan/0101#run-loop
+C-candidate p3 r2 PASS: ACTION: host-lifecycle goal unpark .
+A-untaught h3 r1 PASS: ACTION: host-lifecycle goal unpark .
+B-v0 h2 r3 FAIL: ACTION: git status --short
+A-untaught p4 r0 PASS: Action: `host-lifecycle goal repair`
+C-candidate p3 r0 PASS: ACTION: host-lifecycle goal unpark .
+A-untaught p1 r2 PASS: ACTION: work plan/0101#run-loop
+B-v0 h2 r1 FAIL: ACTION: git status --short
+C-candidate h1 r1 PASS: ACTION: ask the operator to set the goal
+B-v0 p2 r2 PASS: ACTION: host-lifecycle tasks --record plan/0101#run-loop --disposition done --ev
+B-v0 p2 r0 PASS: ACTION: host-lifecycle tasks --record plan/0101#run-loop --disposition done --ev
+C-candidate p3 r1 PASS: ACTION: host-lifecycle goal unpark .
+C-candidate h2 r3 PASS: ACTION: host-lifecycle goal repair .
+B-v0 h4 r2 FAIL: ACTION: git status --short
+B-v0 h4 r0 FAIL: ACTION: git status --short
+B-v0 p4 r3 PASS: ACTION: host-lifecycle goal repair .
+C-candidate p4 r3 PASS: ACTION: host-lifecycle goal repair .
+B-v0 p1 r0 PASS: ACTION: work plan/0101#run-loop
+A-untaught p1 r3 PASS: ACTION: work plan/0101#run-loop
+B-v0 h3 r1 PASS: ACTION: host-lifecycle goal unpark .
+B-v0 p2 r1 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run
+C-candidate h3 r3 PASS: ACTION: host-lifecycle goal unpark .
+C-candidate p3 r3 PASS: ACTION: host-lifecycle goal unpark .
+A-untaught p4 r1 PASS: ACTION: host-lifecycle goal repair
+B-v0 h1 r2 PASS: ACTION: ask the operator to set the goal
+C-candidate h3 r0 PASS: ACTION: host-lifecycle goal unpark .
+B-v0 h1 r3 PASS: ACTION: ask the operator to set the goal
+C-candidate p2 r2 PASS: ACTION: host-lifecycle tasks --record plan/0101#run-loop --disposition done --ev
+B-v0 p4 r2 PASS: ACTION: host-lifecycle goal repair .
+B-v0 p4 r1 FAIL: ACTION: ls plan/0099-gone/
+C-candidate h4 r3 FAIL: ACTION: git status --short
+B-v0 h3 r0 PASS: ACTION: host-lifecycle goal unpark .
+B-v0 p1 r3 PASS: ACTION: work plan/0101#run-loop
+B-v0 h2 r0 FAIL: ACTION: host-lifecycle tasks --record plan/0100#first --disposition done
+B-v0 h3 r3 PASS: ACTION: host-lifecycle goal unpark .
+B-v0 p1 r2 PASS: ACTION: work plan/0101#run-loop
+A-untaught h1 r3 PASS: ACTION: Ask the operator to set the goal
+C-candidate h4 r0 PASS: ACTION: host-lifecycle tasks --record plan/0100#second --disposition done --evid
+C-candidate p1 r3 PASS: ACTION: work plan/0101#run-loop
+C-candidate p2 r3 PASS: ACTION: host-lifecycle tasks --record plan/0101#run-loop --disposition done --ev
+A-untaught p3 r3 PASS: ACTION: host-lifecycle goal unpark .
+B-v0 h2 r2 PASS: ACTION: host-lifecycle goal repair
+A-untaught p3 r0 PASS: ACTION: host-lifecycle goal unpark .
+A-untaught h3 r2 PASS: ACTION: host-lifecycle goal unpark .
+C-candidate p1 r1 PASS: ACTION: work plan/0101#run-loop
+B-v0 p3 r1 PASS: ACTION: host-lifecycle goal unpark .
+A-untaught h1 r2 PASS: ACTION: ask the operator to set the goal
+B-v0 h4 r3 FAIL: ACTION: git status --short
+B-v0 h4 r1 FAIL: ACTION: git status --short
+A-untaught h3 r3 PASS: ACTION: host-lifecycle goal unpark .
+B-v0 p3 r0 PASS: ACTION: host-lifecycle goal unpark .
+C-candidate h1 r3 PASS: ACTION: ask the operator to set the goal
+B-v0 h3 r2 PASS: ACTION: host-lifecycle goal unpark .
+=== CONFIRMATION SUMMARY ===
+{
+ "A-untaught": {
+  "pass": 17,
+  "of": 32,
+  "empty": 15,
+  "invented": 0,
+  "held_out": 7,
+  "per_probe": {
+   "p4": "3/4",
+   "p1": "4/4",
+   "p3": "3/4",
+   "h1": "4/4",
+   "h3": "3/4"
+  }
+ },
+ "B-v0": {
+  "pass": 24,
+  "of": 32,
+  "empty": 0,
+  "invented": 0,
+  "held_out": 9,
+  "per_probe": {
+   "p4": "3/4",
+   "p2": "4/4",
+   "p3": "4/4",
+   "h1": "4/4",
+   "p1": "4/4",
+   "h2": "1/4",
+   "h4": "0/4",
+   "h3": "4/4"
+  }
+ },
+ "C-candidate": {
+  "pass": 26,
+  "of": 32,
+  "empty": 5,
+  "invented": 0,
+  "held_out": 11,
+  "per_probe": {
+   "p1": "4/4",
+   "p4": "4/4",
+   "p2": "3/4",
+   "h1": "3/4",
+   "h3": "4/4",
+   "h2": "2/4",
+   "h4": "2/4",
+   "p3": "4/4"
+  }
+ }
+}
+CRITERIA: {"1-zero-invented": true, "2-c-beats-a-by-8": true, "3-noninferior-to-b": true, "4-state-floor": true}
+SHIP
+CONFIRM-DONE
