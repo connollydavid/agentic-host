@@ -176,8 +176,9 @@ Check before you send:
 ## 9. The declared always-loaded corpus
 
 This host declares its always-loaded files in `.host-corpus` (the `.host` stamp's
-`active-corpus` key names it): the manual, the `CLAUDE.md` pointer, and
-`STRUCTURE.md`, with the memory surfaces joining when plan/0083 builds them.
+`active-corpus` key names it): the manual, the `CLAUDE.md` pointer,
+`STRUCTURE.md`, and the goal surface (`GOAL.md`), with the memory surfaces
+joining when plan/0083 builds them.
 Inside the declaration the reading is strict: **a warning is a flag**, because the
 always-loaded text is the instruction every session reads and advice to the
 instruction is a defect of the instruction. The census counts the corpus's
@@ -198,6 +199,30 @@ calx-knap ([slartibardfast/calx-knap](https://github.com/slartibardfast/calx-kna
 - One text: fire calx-knap-edit (drafts, checks, expands). Expansion lands ONLY in a gloss file.
 - Spec ambiguity: append to `.calx-knap/spec-issues.md`. NEVER improvise a rule.
 
+
+## 10. The goal loop
+
+A goal is a `plan/NNNN` milestone. `host-lifecycle goal set` declares the
+active goal (one per repo; the audited commit of the declaration is the
+authority), `goal propose` prints the command for the operator and writes
+nothing, and `goal show` orients: purpose, position, needs-you, CI,
+frontier, tree, and the suggested next move on the last line. Work the
+NEXT line. If it is a command, run it as printed. If it says `work <key>`,
+start that task. If the tool refuses to emit, run the last line. Never
+invent a command or a flag.
+
+`goal park` re-queues a blocked goal, `goal unpark` resumes it, `goal
+abandon` exits with an OWED row in the plan index, and `goal repair`
+reconciles state toward the tracked record: the receipt stanzas over the
+Status line over the gitignored `.host-goal` sidecar, which holds only
+this worktree's claim. Every mutator also rewrites the tracked `GOAL.md`;
+declared in the corpus, it loads the active-goal declaration in every
+session with no plugin. `goal complete` composes the full verify sweep as
+subprocesses with the task receipts, the plan row, and a clean pushed
+tree; a refusal banks nothing, and every hazard names its remedy. The
+harness doors are installed, never hand-written: `host-lifecycle install`
+emits the flat `host-<verb>` command family for each harness, and
+`install --check` guards the files against drift.
 ---
 
 These guidelines are working correctly when you observe: fewer unnecessary changes appearing in git diffs, fewer rewrites caused by overcomplication, and clarifying questions happening before implementation rather than after mistakes are discovered.
