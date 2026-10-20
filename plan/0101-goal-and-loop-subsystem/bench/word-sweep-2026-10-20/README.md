@@ -62,3 +62,35 @@ NEEDS YOU rule helps P1 alone. Round three iterates around R4 (numbered,
 exemplar, repair-exemplar, no-frame, a word-for-word register micro-test),
 same criterion: advance needs +2 over the in-round incumbent, plateau is a
 round with no advance.
+
+## The check-in (cast and a blind bench, before round three reports)
+
+Paused the loop to consult. The six benches converged on three defects and
+a revised protocol; transcript above, the synthesis:
+
+- **The threshold sits inside the noise.** Plus two at sixteen draws is
+  about one sigma (the same text drifted three across rounds), so a
+  no-advance round cannot alone declare plateau. Sweeps are exploratory;
+  shipping decisions need a confirmation stage, never a sweep result.
+- **Selection on four fixed probes measures fit, not generalization.** Two
+  rounds of best-of-seven arms is a winner's curse: the incumbent's score
+  is inflated by the selection that chose it. Before any winner ships into
+  adopter manuals: a LOCKED candidate versus the LOCKED incumbent, on
+  held-out probe states never used for selection, fresh draws,
+  randomized/interleaved arm order (within-round drift can entangle with
+  fixed arm order), a pre-declared margin, a per-state floor (no state
+  below three of four), the zero-invented hard gate, and either a second
+  model or a scope statement naming the model, probes, scorer, and serving.
+- **The scorer is blind to well-formed wrong commands** (right verb, wrong
+  binding; a real flag bent to a wrong argument). The subject's worst
+  failure mode is fluent. The confirmation scorer adds a
+  binding-correctness check.
+- Two mechanistic readings recorded as doctrine: the subject matches
+  shape rather than parsing; the negative rule wins because it is one
+  crisp gate the model can apply mid-generation, while a positive ideal
+  offers nothing to check against. The exemplar dent is anchoring.
+- The final receipt (the operator's shape): the text verbatim; same-round
+  incumbent and candidate scores; the margin restated (absolutes do not
+  travel); per-state passes; empties and invented flags as separate zero
+  lines; the round ledger attached, because no ledger means no checkable
+  plateau claim.

@@ -1,0 +1,95 @@
+Reading additional input from stdin...
+OpenAI Codex v0.163.0
+--------
+workdir: /tmp/opencode
+model: gpt-6-luna
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: none
+reasoning summaries: none
+session id: 01a156e9-65ce-7ae2-9dee-ab26a52716d1
+--------
+user
+You are consulted as a neutral judge on the methodology of an iterative prompt-optimization program, paused for review before it resumes. You have no stake; there is no expected answer; a judge that only confirms is useless.
+
+THE PROGRAM: short teaching lines (a system prompt of about 60 words that tells an agent how to read a tool's output: run the NEXT line's command as printed, work <key> begins a task, a refusal's last line runs, reply with one ACTION line) are optimized against a real weak model (a 4B, temperature 0.6) by repeated A/B sweeps. The instrument: 4 FIXED probe states (real tool outputs: an orientation block, a multi-hazard refusal, a parked state, an unreadable-state refusal), 4 repeats each, 16 draws per variant, scored by a strict mechanical rubric (exact ACTION-line match against the sanctioned move; a hard invariant of zero invented flags). Two rounds have run; a third is in flight.
+
+FINDINGS SO FAR: (1) the if-then scaffolding is load-bearing: compressing it collapsed adherence to 8/16 with 7 empty replies, reordering it to 6/16 with 10 empties; (2) simplifying wording to a plain register with structure kept held full effect at 40 percent fewer words; (3) one added negative sentence, "Never invent a command or a flag," was the strongest lever: 15/16 with zero empties, hardening every probe at once; (4) one worked exemplar fixed one probe and dented another; (5) the opening frame sentence measured no effect; (6) serving drift is real: the IDENTICAL incumbent text scored 14 in round one and 11 in round two, so every round re-baselines the incumbent in-round and comparisons are within-round only.
+
+PROTOCOL (pre-declared before each round): advance requires +2 strict passes over the in-round incumbent at n=16; a round with no advance is the plateau; at plateau the incumbent ships as the final teaching text in a methodology manual that other projects adopt versioned.
+
+QUESTIONS:
+1. Selection over 4 fixed probes across many arms and rounds: how serious is the overfitting risk to the probe set, and what is the minimal honest control (held-out probes, fresh probes at plateau, a different model, larger n on the final only)?
+2. Is the stopping rule sound (advance +2 at n=16, plateau at no advance)? What multiple-comparisons discipline, if any, does this n and arm-count demand?
+3. The serving drift (same text, 14 then 11): does the in-round re-baseline fully control for it, or does it confound arm ordering within a round?
+4. What must be true before the winner ships into other projects' manuals?
+Rule independently. If the methodology is sound, say so plainly; if it is not, name the minimal fixes.
+warning: Codex could not find bubblewrap on PATH. Install bubblewrap with your OS package manager. See the sandbox prerequisites: https://developers.openai.com/codex/concepts/sandboxing#prerequisites. Codex will use the bundled bubblewrap in the meantime.
+codex
+**Ruling: the method is useful for finding promising edits, but the stated stopping rule does not yet justify shipping a winner as a general teaching text.** The large observed failures and gains are informative. They show that structure and wording matter for this model and these probes. They do not, by themselves, establish that the selected text will work on new outputs or in other projects.
+
+### 1. Overfitting to the probes
+
+The risk is **substantial** if the goal is to teach agents how to handle tool outputs generally. Four fixed states are a narrow target, and repeated A/B sweeps can select wording that happens to fit their quirks. Four repeats per state help measure variability on those states; they do not add new kinds of states.
+
+The minimal honest control is a **locked holdout set of representative probe states** that is not used to choose edits. Evaluate the selected candidate on it after selection. Fresh probes at plateau can serve this purpose only if they were not used to keep tweaking the candidate; otherwise they are another selection set. A different model is useful evidence about portability, but is not a substitute for held-out states. Increasing n on the same four probes improves precision for those probes, not coverage.
+
+If the intended claim is explicitly limited to these four states and this model, probe overfitting is less of a concern—but the manual should state that narrow scope.
+
+### 2. Stopping rule and multiple comparisons
+
+“Advance by +2 at n=16; stop at the first round with no advance” is a **predeclared operational rule**, but it is not a reliable general-purpose winner-selection rule on its own. With only 16 draws, a two-pass margin can be sensitive to a few stochastic outcomes. Across many arms and rounds, the best observed arm is also likely to look better partly by chance. A plateau can mean “no tested arm cleared this threshold,” not “the incumbent is optimal.”
+
+The number of arms matters: with many comparisons, chance of a spurious advance grows. The protocol should state the planned arm count and treat rounds as part of the same selection process. A simple minimal fix is to use the sweeps as **exploratory**, then test the locked candidate against the locked incumbent on fresh draws and held-out probes. Set the confirmation threshold in advance; if claiming a statistically supported improvement, account for the candidate selection and multiple comparisons rather than treating the winning sweep result as confirmatory. Larger n on the final comparison helps, but only if it is fresh and the candidate is already locked.
+
+### 3. Serving drift and arm order
+
+Re-baselining the incumbent in each round controls for a **shared shift between rounds**, provided all arms and the incumbent are evaluated under comparable serving conditions. It does **not** necessarily control for drift or other changes within a round.
+
+If arms run in a fixed order, changes over time—such as a serving update, load, or sampling change—can become entangled with arm identity. Randomize or interleave arm and incumbent draws, and record their order and serving version. Then the in-round incumbent is a more credible comparator. The 14-to-11 change is good evidence that cross-round raw scores should not be compared; it does not establish that within-round comparisons are free of confounding.
+
+### 4. Conditions for shipping
+
+Before adopting the text in other projects’ manuals, I would require:
+
+- A **locked candidate and incumbent**, evaluated on fresh draws and held-out probe states.
+- A pass on the hard invariant—zero invented flags—in that confirmation, with enough trials to make the residual risk meaningful for the intended use.
+- Evidence that the improvement is not confined to one model or serving setup, or a clear scope statement limiting the claim to the evaluated model and setup.
+- Versioned documentation of the exact text, probes, scoring rule, model/serving conditions, and results.
+
+The existing results justify continuing the optimization and treating the negative sentence as a strong candidate. The minimal change before a broad “winner ships at plateau” claim is **independent confirmation on locked holdout probes and fresh draws, with randomized or interleaved evaluations**. A larger final sample is helpful; by itself, it does not solve probe overfitting or selection bias.
+tokens used
+3,942
+**Ruling: the method is useful for finding promising edits, but the stated stopping rule does not yet justify shipping a winner as a general teaching text.** The large observed failures and gains are informative. They show that structure and wording matter for this model and these probes. They do not, by themselves, establish that the selected text will work on new outputs or in other projects.
+
+### 1. Overfitting to the probes
+
+The risk is **substantial** if the goal is to teach agents how to handle tool outputs generally. Four fixed states are a narrow target, and repeated A/B sweeps can select wording that happens to fit their quirks. Four repeats per state help measure variability on those states; they do not add new kinds of states.
+
+The minimal honest control is a **locked holdout set of representative probe states** that is not used to choose edits. Evaluate the selected candidate on it after selection. Fresh probes at plateau can serve this purpose only if they were not used to keep tweaking the candidate; otherwise they are another selection set. A different model is useful evidence about portability, but is not a substitute for held-out states. Increasing n on the same four probes improves precision for those probes, not coverage.
+
+If the intended claim is explicitly limited to these four states and this model, probe overfitting is less of a concern—but the manual should state that narrow scope.
+
+### 2. Stopping rule and multiple comparisons
+
+“Advance by +2 at n=16; stop at the first round with no advance” is a **predeclared operational rule**, but it is not a reliable general-purpose winner-selection rule on its own. With only 16 draws, a two-pass margin can be sensitive to a few stochastic outcomes. Across many arms and rounds, the best observed arm is also likely to look better partly by chance. A plateau can mean “no tested arm cleared this threshold,” not “the incumbent is optimal.”
+
+The number of arms matters: with many comparisons, chance of a spurious advance grows. The protocol should state the planned arm count and treat rounds as part of the same selection process. A simple minimal fix is to use the sweeps as **exploratory**, then test the locked candidate against the locked incumbent on fresh draws and held-out probes. Set the confirmation threshold in advance; if claiming a statistically supported improvement, account for the candidate selection and multiple comparisons rather than treating the winning sweep result as confirmatory. Larger n on the final comparison helps, but only if it is fresh and the candidate is already locked.
+
+### 3. Serving drift and arm order
+
+Re-baselining the incumbent in each round controls for a **shared shift between rounds**, provided all arms and the incumbent are evaluated under comparable serving conditions. It does **not** necessarily control for drift or other changes within a round.
+
+If arms run in a fixed order, changes over time—such as a serving update, load, or sampling change—can become entangled with arm identity. Randomize or interleave arm and incumbent draws, and record their order and serving version. Then the in-round incumbent is a more credible comparator. The 14-to-11 change is good evidence that cross-round raw scores should not be compared; it does not establish that within-round comparisons are free of confounding.
+
+### 4. Conditions for shipping
+
+Before adopting the text in other projects’ manuals, I would require:
+
+- A **locked candidate and incumbent**, evaluated on fresh draws and held-out probe states.
+- A pass on the hard invariant—zero invented flags—in that confirmation, with enough trials to make the residual risk meaningful for the intended use.
+- Evidence that the improvement is not confined to one model or serving setup, or a clear scope statement limiting the claim to the evaluated model and setup.
+- Versioned documentation of the exact text, probes, scoring rule, model/serving conditions, and results.
+
+The existing results justify continuing the optimization and treating the negative sentence as a strong candidate. The minimal change before a broad “winner ships at plateau” claim is **independent confirmation on locked holdout probes and fresh draws, with randomized or interleaved evaluations**. A larger final sample is helpful; by itself, it does not solve probe overfitting or selection bias.
