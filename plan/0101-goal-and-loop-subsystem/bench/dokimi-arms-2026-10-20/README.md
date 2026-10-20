@@ -62,3 +62,12 @@ The model this endpoint serves under the id `qwen3.6-27b` is **Qwen3.8-27B**.
 The artifacts retain the id as called (the runs used it verbatim); read
 every `qwen3.6-27b` below as Qwen3.8-27B, the mid tier of this endpoint's
 judge pool beside the frontier-tier glm-5.3.
+
+## The terse variant, staged not shipped
+
+The audit pass tightened every free text; the teaching profile is measured
+text (+58.2 under the stored judge) and is not edited blind. The terse
+variant is staged as `teaching-profile.terse.md` (same meaning, half the
+words). It ships only if it measures: a three-arm run (baseline, the current
+profile, the terse profile) before the spine freezes, judged by whichever
+judge passes the validity gate.
