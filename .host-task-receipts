@@ -1336,3 +1336,11 @@
     evidence = re-recorded with inputs declared (src/goal.rs); v0.61.0 ships it: 368 tests green, clippy clean, the verbs live on PATH
     tool = host-lifecycle@0.61.0
     recorded = 2026-10-20
+
+[receipt "plan/0102#diagnose"]
+    disposition = done
+    verify = the three heavy harnesses timed locally under a cap, the timings and the fix-class diagnosis recorded in bench/
+    inputs = software/host-lint/main/src/lib.rs
+    evidence = measured and recorded in bench/stage0-2026-10-20.md: the cap fired at thirty minutes with no verdict on the first harness, the second was killed at one minute (its FAILED line a kill artifact, the asserts being the push conditions restated), the third carries GitHub's six-hour cancellation; the fix class is decomposition with kani function contracts (the -Z lever confirmed present in the pinned 0.67)
+    tool = host-lifecycle@0.61.0
+    recorded = 2026-10-20
