@@ -1293,3 +1293,10 @@
     evidence = goal_show and goal_propose on the shipped MCP server, driven through the CLI subprocess path like init/adopt; the control verbs stay CLI-only with the audited commit as authority; the freeze bench ruled the policy right; component bf0e7a3
     tool = host-lifecycle@0.60.7
     recorded = 2026-10-19
+
+[receipt "plan/0101#command-family"]
+    disposition = done
+    verify = the door resolves and injects the emission from the host root
+    evidence = superseded form recorded: the doors are install-generated (flat host-verb family, two harnesses, install --check green), per the universal-form and fold-in rulings
+    tool = host-lifecycle@0.60.7
+    recorded = 2026-10-20

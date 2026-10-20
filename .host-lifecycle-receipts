@@ -1445,3 +1445,11 @@
     tool = host-lifecycle@0.60.7
     recorded = 2026-10-19
     target = plan/0101-goal-and-loop-subsystem
+
+[receipt "ci" "software/host-lint/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-lint/actions/runs/39077707855
+    tool = host-lifecycle@0.60.7
+    recorded = 2026-10-20
+    revision = 90a0d71e2ebfab1ce36589e6046156647e45b249
+    conclusion = cancelled
