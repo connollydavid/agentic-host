@@ -1,0 +1,8 @@
+== R0-v5-incumbent: 11/16 empty=2 invented=0 probes={'P1': '1/4', 'P2': '3/4', 'P3': '4/4', 'P4': '3/4'} (92s)
+== R1-v5-needs-you: 13/16 empty=1 invented=0 probes={'P1': '3/4', 'P2': '3/4', 'P3': '4/4', 'P4': '3/4'} (95s)
+== R2-v5-numbered: 14/16 empty=1 invented=0 probes={'P1': '4/4', 'P2': '3/4', 'P3': '4/4', 'P4': '3/4'} (106s)
+== R3-v5-exemplar: 14/16 empty=2 invented=0 probes={'P1': '4/4', 'P2': '2/4', 'P3': '4/4', 'P4': '4/4'} (93s)
+== R4-v5-never: 15/16 empty=0 invented=0 probes={'P1': '4/4', 'P2': '4/4', 'P3': '4/4', 'P4': '3/4'} (75s)
+== R5-v5-no-frame: 14/16 empty=0 invented=0 probes={'P1': '4/4', 'P2': '4/4', 'P3': '4/4', 'P4': '2/4'} (48s)
+== R6-v5-ex-needs: 14/16 empty=2 invented=0 probes={'P1': '3/4', 'P2': '3/4', 'P3': '4/4', 'P4': '4/4'} (99s)
+SWEEP2-DONE
