@@ -1328,3 +1328,11 @@
     evidence = the live drive ran end to end: the goal set under the operator ruling, every turn oriented through goal show, eight of nine sibling tasks receipted, the doors installed from the released binary, and the close attempted below; the composed gate's verdict on the close is the record this task rides
     tool = host-lifecycle@0.61.0
     recorded = 2026-10-20
+
+[receipt "plan/0101#goal-module"]
+    disposition = done
+    verify = cargo test green and clippy clean in the lifecycle worktree, with the verbs failing closed on bad args
+    inputs = software/host-lifecycle/main/src/goal.rs
+    evidence = re-recorded with inputs declared (src/goal.rs); v0.61.0 ships it: 368 tests green, clippy clean, the verbs live on PATH
+    tool = host-lifecycle@0.61.0
+    recorded = 2026-10-20
