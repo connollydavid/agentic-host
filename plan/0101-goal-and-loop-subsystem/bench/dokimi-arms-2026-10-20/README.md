@@ -55,3 +55,10 @@ per-model rule. All three ran.
   judge's name carries it. The serving on this endpoint is ollama-backed
   and real, and glm-5.3 answers take a thinking budget (442 completion
   tokens for a one-line reply): size judge calls generously.
+
+## Correction (operator, 2026-10-20)
+
+The model this endpoint serves under the id `qwen3.6-27b` is **Qwen3.8-27B**.
+The artifacts retain the id as called (the runs used it verbatim); read
+every `qwen3.6-27b` below as Qwen3.8-27B, the mid tier of this endpoint's
+judge pool beside the frontier-tier glm-5.3.
