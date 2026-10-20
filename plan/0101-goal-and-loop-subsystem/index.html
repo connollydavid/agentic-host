@@ -429,6 +429,14 @@ tool-carried sequence. The doors go live off PATH and <code>/host-goal</code>
 stops depending on a debug binary; the composed closure gate can then
 close this milestone without the pin hazard.</li>
 </ul>
+<p><strong>The close (2026-10-20).</strong> All nine tasks receipted. The composed closure
+gate refused on exactly one hazard, a lane this milestone does not own:
+host-lint's kani lane, cancelled at its pin (the six-hour runner ceiling,
+<a href="https://github.com/connollydavid/host-lint/issues/32">host-lint#32</a>). Per
+this task's own verify, the goal parks with the reason rather than exiting:
+the close resumes with <code>goal unpark .</code> the day that lane greens at a pin.
+Everything else the gate composes passed: the full verify sweep, all nine
+task receipts, the plan row, and a clean pushed tree.</p>
 <p>Deferred elsewhere, named so the queue does not lose them: a
 milestone-cutting primitive (number allocation plus README scaffold)
 belongs to <a href="https://github.com/connollydavid/host/issues/27">host#27</a>'s
