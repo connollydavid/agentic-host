@@ -1307,3 +1307,10 @@
     evidence = GOAL.md maintained by every mutator (component 4d68234), declared in .host-corpus, live in this host (525ebad0): the declaration loads in every session with no plugin, the standalone-minimal ruling; plan/0083's richer surfaces ride later
     tool = host-lifecycle@0.60.7
     recorded = 2026-10-20
+
+[receipt "plan/0101#spine-ledger"]
+    disposition = done
+    verify = the manual section present-tense with the UPGRADING entry carrying applies-alone status and the stamp migration, and the teaching lines carrying a dokimi arms scorecard
+    evidence = template section eb621b5 + stanza 7c6fc32 pushed to template main; host manual carries section ten and the corpus line; the recorded upgrade at eb621b5 with zero pending; the entry carries applies-alone (doc-only verify), the sidecar story, and the degraded mode
+    tool = host-lifecycle@0.60.7
+    recorded = 2026-10-20
