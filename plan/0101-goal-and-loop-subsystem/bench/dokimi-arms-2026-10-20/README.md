@@ -29,3 +29,29 @@ help the weak model operate the emission?
 
 Lab files: `teaching-profile.md` (the profile arm), `goal-loop_golden.json`
 (the question set), `arms.md`/`arms.json` (the instrument's own report).
+
+## The judge role, done properly (2026-10-20, same day)
+
+The instrument's own docs are emphatic that a verdict under one judge is a
+property of that judge, and prescribe the panel, the validity gate, and the
+per-model rule. All three ran.
+
+- **The cross-judge panel** (`cross-judge.json`, `cross-judge.md`): the same
+  stored answers re-scored by every judge. Direction unanimous: the stored
+  qwen3.6-27b scored +58.2, a fresh qwen3.6-27b pass +73.0, and glm-5.3
+  +87.8, each with four wins and zero losses. The sign test stays at
+  p 0.125 because n is four; that is sample size, not disagreement.
+- **The validity gate** (`validity-qwen3.6-27b.json`): the stored judge
+  FAILED its own gate, ordering 61 percent of known-order pairs against the
+  80 percent bar (tie rate 22 percent). Under the discipline, its measures
+  are shown but do not vote. glm-5.3's validity run and a sequential retry
+  for the 27B are in flight; the voting judge is whichever passes.
+- **The per-model half** (glm-5.3 as subject, taught versus untaught) is
+  queued behind a validated judge, per the same discipline.
+- **An upstream wart, recorded for filing**: `eval cross-judge` splits
+  `provider/model` but passes the bare model to LiteLLM without the
+  provider, which refuses it ("Provider NOT provided"); the working form is
+  the double prefix (`openai/openai/glm-5.3`), which is also why the stored
+  judge's name carries it. The serving on this endpoint is ollama-backed
+  and real, and glm-5.3 answers take a thinking budget (442 completion
+  tokens for a one-line reply): size judge calls generously.

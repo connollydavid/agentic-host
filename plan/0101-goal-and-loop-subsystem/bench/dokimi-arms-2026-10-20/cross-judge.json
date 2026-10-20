@@ -1,0 +1,82 @@
+{
+  "schema_version": "cross_judge.v0",
+  "summary": {
+    "baseline_arm": "baseline",
+    "measures": [
+      "openai/openai/qwen3.6-27b (stored)",
+      "openai/openai/qwen3.6-27b",
+      "openai/openai/glm-5.3"
+    ],
+    "arms": {
+      "profile:teaching-profile": {
+        "label": "NO DETECTABLE EFFECT",
+        "rows": [
+          {
+            "measure": "openai/openai/qwen3.6-27b (stored)",
+            "kind": "aggregate",
+            "gate": null,
+            "n": 4,
+            "delta": {
+              "mean": 58.25,
+              "lo": 28.7265,
+              "hi": 87.7735,
+              "n": 4,
+              "method": "student_t"
+            },
+            "wins": 4,
+            "losses": 0,
+            "ties": 0,
+            "p_sign": 0.125,
+            "significant": false,
+            "sign": 1,
+            "p_holm": 0.375,
+            "votes": true
+          },
+          {
+            "measure": "openai/openai/qwen3.6-27b",
+            "kind": "aggregate",
+            "gate": null,
+            "n": 4,
+            "delta": {
+              "mean": 73.0,
+              "lo": 41.1225,
+              "hi": 104.8775,
+              "n": 4,
+              "method": "student_t"
+            },
+            "wins": 4,
+            "losses": 0,
+            "ties": 0,
+            "p_sign": 0.125,
+            "significant": false,
+            "sign": 1,
+            "p_holm": 0.375,
+            "votes": true
+          },
+          {
+            "measure": "openai/openai/glm-5.3",
+            "kind": "aggregate",
+            "gate": null,
+            "n": 4,
+            "delta": {
+              "mean": 87.75,
+              "lo": 48.765,
+              "hi": 126.735,
+              "n": 4,
+              "method": "student_t"
+            },
+            "wins": 4,
+            "losses": 0,
+            "ties": 0,
+            "p_sign": 0.125,
+            "significant": false,
+            "sign": 1,
+            "p_holm": 0.375,
+            "votes": true
+          }
+        ]
+      }
+    }
+  },
+  "judge_temperature": null
+}
