@@ -71,3 +71,23 @@ variant is staged as `teaching-profile.terse.md` (same meaning, half the
 words). It ships only if it measures: a three-arm run (baseline, the current
 profile, the terse profile) before the spine freezes, judged by whichever
 judge passes the validity gate.
+
+## The judge tier verdict: no gated LLM judge on this endpoint (2026-10-20)
+
+The validity chain finished and both candidates failed
+(`validity-glm-5.3.json`, `validity-qwen3.6-27b-seq.json`). glm-5.3 scored
+31 percent accuracy with a 61 percent tie rate, and scored DAMAGED copies
+above originals on three variants (mismatched answer, padding, shuffled
+sentences: negative mean drops). The sequential 27B retry scored 61 percent
+with every tie decided, failing the same 80 percent bar. Under the
+instrument's discipline, no measure on this endpoint votes.
+
+What stands instead is the instrument the house already trusted for exactly
+this reason: the mechanical rubric scorer of the freeze battery (strict
+ACTION-line matching, zero-invented-commands invariant) is deterministic by
+construction and needs no calibration. dokimi's own gate just measured the
+house thesis on the judge tier: open-ended LLM judgment at the weak and mid
+tier is not reliable enough to score with, while a rubric-bound mechanical
+scorer is. dokimi stays adopted: its arms structure, paired design, and
+answer capture carry the experiments; the scoring layer is the house rubric.
+The word-effectiveness sweep runs on exactly that basis.
