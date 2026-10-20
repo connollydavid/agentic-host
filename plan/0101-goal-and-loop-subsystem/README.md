@@ -203,6 +203,7 @@ and the transcript files in the plan's bench.
 ### Implement the goal module {#goal-module}
 
 - verify: cargo test green and clippy clean in the lifecycle worktree, with the verbs failing closed on bad args
+- inputs: software/host-lifecycle/main/src/goal.rs
    `src/goal.rs`: the volatility split, the verbs, the emission in house
    shapes, the subprocess-composed closure gate; dispatch in `main()`;
    tests for sidecar round-trips, emission determinism, refusal no-op, and
