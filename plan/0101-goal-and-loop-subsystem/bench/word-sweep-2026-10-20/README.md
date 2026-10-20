@@ -120,3 +120,30 @@ rule: best score at or above the in-round incumbent, fewest empties, name
 order as the deterministic final tiebreak) against the untaught arm and the
 original V0, on four held-out states never used in any round, fully
 interleaved.
+
+## The first confirmation: NO-SHIP (and the stage earned its keep)
+
+Fully interleaved, 96 draws, three arms (untaught, the original V0, the
+locked sweep candidate S2) over the four selection states and four held-out
+states never used in any round.
+
+| arm | pooled | held-out | empty | invented |
+|---|---|---|---|---|
+| A untaught | 10/32 | 5/16 | 21 | 0 |
+| B v0 original | 21/32 | 6/16 | 1 | 0 |
+| C sweep candidate | 20/32 | 7/16 | 5 | 0 |
+
+Criteria 1 and 2 passed (zero invented; the taught arms beat untaught by
+10 and 11); criteria 3 and 4 failed: the texts tied inside noise on
+confirmation (the sweep's preference did not survive held-out, the
+winner's curse caught in the act), and two held-out states scored zero for
+every taught arm. **NO-SHIP printed mechanically; nothing shipped.**
+
+The zero states were emission defects, not text defects, and both are now
+fixed in the component (`3e20cec`): the no-goal state offered a placeholder
+command as NEXT, which the taught rule (run a command as printed) made
+every arm transcribe (the move is now ask-the-operator); and the tasks
+remedy carried a template anchor, so both taught arms copied the template
+instead of binding the open task the hazard names (the remedy now resolves
+the first open anchor). The confirmation re-runs against the fixed
+emission with the same texts, probes, and pre-declared criteria.

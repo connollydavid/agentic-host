@@ -1,0 +1,59 @@
+{
+ "candidate": "S2-r4-exemplar",
+ "summary": {
+  "A-untaught": {
+   "pass": 10,
+   "of": 32,
+   "empty": 21,
+   "invented": 0,
+   "held_out": 5,
+   "per_probe": {
+    "p4": "1/4",
+    "p1": "2/4",
+    "h3": "4/4",
+    "h1": "1/4",
+    "p3": "2/4"
+   }
+  },
+  "B-v0": {
+   "pass": 21,
+   "of": 32,
+   "empty": 1,
+   "invented": 0,
+   "held_out": 6,
+   "per_probe": {
+    "p4": "3/4",
+    "p2": "4/4",
+    "p3": "4/4",
+    "h1": "2/4",
+    "p1": "4/4",
+    "h2": "0/4",
+    "h4": "0/4",
+    "h3": "4/4"
+   }
+  },
+  "C-candidate": {
+   "pass": 20,
+   "of": 32,
+   "empty": 5,
+   "invented": 0,
+   "held_out": 7,
+   "per_probe": {
+    "p1": "3/4",
+    "p4": "4/4",
+    "h1": "0/4",
+    "h3": "4/4",
+    "h4": "0/4",
+    "h2": "3/4",
+    "p2": "2/4",
+    "p3": "4/4"
+   }
+  }
+ },
+ "criteria": {
+  "1-zero-invented": true,
+  "2-c-beats-a-by-8": true,
+  "3-noninferior-to-b": false,
+  "4-state-floor": false
+ }
+}

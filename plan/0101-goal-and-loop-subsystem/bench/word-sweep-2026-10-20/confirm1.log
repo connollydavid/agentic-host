@@ -1,0 +1,124 @@
+candidate locked: S2-r4-exemplar (in-round incumbent 14/16)
+A-untaught p4 r3 PASS: ACTION: host-lifecycle goal repair .
+C-candidate p1 r2 PASS: ACTION: work plan/0101#run-loop
+B-v0 p4 r0 PASS: ACTION: host-lifecycle goal repair .
+A-untaught p1 r1 FAIL: Action: `execute plan/0101#run-loop`
+B-v0 p2 r3 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>
+C-candidate p4 r0 PASS: ACTION: host-lifecycle goal repair .
+C-candidate h1 r0 FAIL: ACTION: host-lifecycle goal propose plan/NNNN-slug .
+C-candidate h3 r2 PASS: ACTION: host-lifecycle goal unpark .
+C-candidate h4 r1 FAIL: ACTION: git status --short
+B-v0 p3 r2 PASS: ACTION: host-lifecycle goal unpark .
+C-candidate p4 r2 PASS: ACTION: host-lifecycle goal repair .
+B-v0 h1 r1 PASS: ACTION: host-lifecycle goal propose plan/1000-slug
+C-candidate p4 r1 PASS: ACTION: host-lifecycle goal repair .
+C-candidate h2 r0 PASS: ACTION: host-lifecycle goal repair .
+A-untaught h3 r0 PASS: ACTION: host-lifecycle goal unpark .
+A-untaught h1 r0 PASS: Action: ACTION: Define host-lifecycle milestone and propose plan slug.
+B-v0 p3 r3 PASS: ACTION: host-lifecycle goal unpark
+C-candidate p1 r0 PASS: ACTION: work plan/0101#run-loop
+B-v0 p1 r1 PASS: ACTION: work plan/0101#run-loop
+C-candidate h3 r1 PASS: ACTION: host-lifecycle goal unpark .
+C-candidate p2 r0 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>
+C-candidate p3 r2 PASS: ACTION: host-lifecycle goal unpark .
+A-untaught h3 r1 PASS: ACTION: host-lifecycle goal unpark .
+B-v0 h2 r3 FAIL: ACTION: git status --short
+C-candidate p3 r0 PASS: ACTION: host-lifecycle goal unpark .
+A-untaught p1 r2 PASS: ACTION: work plan/0101#run-loop
+B-v0 h2 r1 FAIL: ACTION: git status --short
+C-candidate h1 r1 FAIL: ACTION: host-lifecycle goal propose plan/NNNN-slug
+B-v0 p2 r2 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>
+B-v0 p2 r0 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run 90a0d71
+C-candidate p3 r1 PASS: ACTION: host-lifecycle goal unpark .
+C-candidate h2 r3 PASS: ACTION: host-lifecycle goal repair .
+B-v0 h4 r2 FAIL: ACTION: git status --short
+B-v0 h4 r0 FAIL: ACTION: git status --short
+B-v0 p4 r3 FAIL: ACTION: repair host-lifecycle goal
+C-candidate p4 r3 PASS: ACTION: host-lifecycle goal repair .
+B-v0 p1 r0 PASS: ACTION: work plan/0101#run-loop
+A-untaught p1 r3 PASS: ACTION: work plan/0101#run-loop
+B-v0 h3 r1 PASS: ACTION: host-lifecycle goal unpark .
+B-v0 p2 r1 PASS: ACTION: host-lifecycle ci --record software/host-lint/main/ci --run <run-url>
+C-candidate h3 r3 PASS: ACTION: host-lifecycle goal unpark .
+C-candidate p3 r3 PASS: ACTION: host-lifecycle goal unpark .
+B-v0 h1 r2 FAIL: ACTION: host-lifecycle goal propose plan/NNNN-slug
+C-candidate h3 r0 PASS: ACTION: host-lifecycle goal unpark .
+B-v0 h1 r3 PASS: ACTION: propose milestone plan/0001-host-lifecycle-proposal
+B-v0 p4 r2 PASS: ACTION: host-lifecycle goal repair
+B-v0 p4 r1 PASS: ACTION: host-lifecycle goal repair .
+C-candidate h4 r3 FAIL: ACTION: git status --short
+B-v0 h3 r0 PASS: ACTION: host-lifecycle goal unpark .
+C-candidate h1 r2 FAIL: ACTION: host-lifecycle goal propose plan/NNNN-slug .
+B-v0 p1 r3 PASS: ACTION: work plan/0101#run-loop
+B-v0 h2 r0 FAIL: ACTION: git status --short
+B-v0 h3 r3 PASS: ACTION: host-lifecycle goal unpark .
+B-v0 p1 r2 PASS: ACTION: work plan/0101#run-loop
+C-candidate h2 r1 PASS: ACTION: host-lifecycle goal repair .
+C-candidate h4 r0 FAIL: ACTION: git status --short
+C-candidate p2 r3 PASS: ACTION: host-lifecycle tasks --record plan/0101#command-family --disposition don
+A-untaught p3 r3 PASS: ACTION: host-lifecycle goal unpark .
+B-v0 h2 r2 FAIL: ACTION: git status --short
+A-untaught p3 r0 PASS: ACTION: host-lifecycle goal unpark .
+A-untaught h3 r2 PASS: Action: `host-lifecycle goal unpark .`
+C-candidate p1 r1 PASS: ACTION: work plan/0101#run-loop
+B-v0 p3 r1 PASS: ACTION: host-lifecycle goal unpark .
+B-v0 h4 r3 FAIL: ACTION: git status --short
+B-v0 h4 r1 FAIL: ACTION: git status --short
+A-untaught h3 r3 PASS: ACTION: host-lifecycle goal unpark .
+B-v0 p3 r0 PASS: ACTION: host-lifecycle goal unpark .
+C-candidate h1 r3 FAIL: ACTION: host-lifecycle goal propose plan/NNNN-slug .
+B-v0 h3 r2 PASS: ACTION: host-lifecycle goal unpark .
+=== CONFIRMATION SUMMARY ===
+{
+ "A-untaught": {
+  "pass": 10,
+  "of": 32,
+  "empty": 21,
+  "invented": 0,
+  "held_out": 5,
+  "per_probe": {
+   "p4": "1/4",
+   "p1": "2/4",
+   "h3": "4/4",
+   "h1": "1/4",
+   "p3": "2/4"
+  }
+ },
+ "B-v0": {
+  "pass": 21,
+  "of": 32,
+  "empty": 1,
+  "invented": 0,
+  "held_out": 6,
+  "per_probe": {
+   "p4": "3/4",
+   "p2": "4/4",
+   "p3": "4/4",
+   "h1": "2/4",
+   "p1": "4/4",
+   "h2": "0/4",
+   "h4": "0/4",
+   "h3": "4/4"
+  }
+ },
+ "C-candidate": {
+  "pass": 20,
+  "of": 32,
+  "empty": 5,
+  "invented": 0,
+  "held_out": 7,
+  "per_probe": {
+   "p1": "3/4",
+   "p4": "4/4",
+   "h1": "0/4",
+   "h3": "4/4",
+   "h4": "0/4",
+   "h2": "3/4",
+   "p2": "2/4",
+   "p3": "4/4"
+  }
+ }
+}
+CRITERIA: {"1-zero-invented": true, "2-c-beats-a-by-8": true, "3-noninferior-to-b": false, "4-state-floor": false}
+NO-SHIP
+CONFIRM-DONE
