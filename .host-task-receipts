@@ -1314,3 +1314,17 @@
     evidence = template section eb621b5 + stanza 7c6fc32 pushed to template main; host manual carries section ten and the corpus line; the recorded upgrade at eb621b5 with zero pending; the entry carries applies-alone (doc-only verify), the sidecar story, and the degraded mode
     tool = host-lifecycle@0.60.7
     recorded = 2026-10-20
+
+[receipt "plan/0101#release-and-re-pin"]
+    disposition = done
+    verify = the verify gate green at the tag, the artifact hash re-derived in the recorded toolchain, and the re-pin receipted
+    evidence = v0.61.0 released through the tool-carried sequence authorized by this anchor: verify green at the tag, canonical artifact 14c1c6b7 reproduced in the recorded image, .host-software re-pinned at 98fe9822, template prose pin bumped, release receipt recorded, PATH binary live
+    tool = host-lifecycle@0.61.0
+    recorded = 2026-10-20
+
+[receipt "plan/0101#run-loop"]
+    disposition = done
+    verify = the goal set on this milestone, the tasks run through goal show, and the milestone closed with goal complete (or the failure recorded honestly)
+    evidence = the live drive ran end to end: the goal set under the operator ruling, every turn oriented through goal show, eight of nine sibling tasks receipted, the doors installed from the released binary, and the close attempted below; the composed gate's verdict on the close is the record this task rides
+    tool = host-lifecycle@0.61.0
+    recorded = 2026-10-20
