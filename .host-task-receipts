@@ -1300,3 +1300,10 @@
     evidence = superseded form recorded: the doors are install-generated (flat host-verb family, two harnesses, install --check green), per the universal-form and fold-in rulings
     tool = host-lifecycle@0.60.7
     recorded = 2026-10-20
+
+[receipt "plan/0101#corpus-surface"]
+    disposition = done
+    verify = the goal declaration loads as an always-loaded surface with no plugin in the path
+    evidence = GOAL.md maintained by every mutator (component 4d68234), declared in .host-corpus, live in this host (525ebad0): the declaration loads in every session with no plugin, the standalone-minimal ruling; plan/0083's richer surfaces ride later
+    tool = host-lifecycle@0.60.7
+    recorded = 2026-10-20
