@@ -1460,3 +1460,11 @@
     authorization = plan/0101#release-and-re-pin
     tool = host-lifecycle@0.60.7
     recorded = 2026-10-20
+
+[receipt "ci" "software/host-lifecycle/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-lifecycle/actions/runs/39359946249
+    tool = host-lifecycle@0.61.0
+    recorded = 2026-10-20
+    revision = 98fe982255e188e3361dedb51a03660b90b6f5a5
+    conclusion = success
