@@ -41,7 +41,7 @@ the weak agent with a strong one proves nothing; driving the real 4B does.
 
 **Fen never judges** (operator ruling, 2026-10-20). Fen is the most basic model
 possible, just enough to run the methodology by itself. That is the whole of the
-role: the bar the methodology must clear, executing it unaided. Evaluation
+role: the bar the methodology must clear. Evaluation
 belongs to the stronger tier, and only after that tier passes the measuring
 instrument's own validity gate; a weak judge that cannot rank good above broken
 is not made acceptable by having once been the subject.

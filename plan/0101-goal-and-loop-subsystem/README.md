@@ -1,6 +1,6 @@
 # plan/0101: the goal and loop subsystem
 
-**Status: cut and in build** (operator ruling 2026-10-18: build it, after a — active goal since 2026-10-19
+**Status: cut and in build** (operator ruling 2026-10-18: build it, after a; active goal since 2026-10-19
 reflection pause because it is core functionality; second ruling the same
 day: the design must be an idiomatic extension of the host methodology, not
 a port of foreign implementations). The modality itself is
@@ -158,7 +158,7 @@ follow close them.
   the commit-and-push that follows (landed in the component, `cd440d8`).
 - **A divergent sidecar is a hazard**: absent is no claim (fine); a claim
   on another goal while the closure names this one refuses with the repair
-  remedy (landed, `cd440d8`). Park's tracked trace stands as built: the
+  remedy (landed, `cd440d8`). Park's tracked trace is built as ruled: the
   receipt stanza and the Status transition, never sidecar-only.
 - **The offline boundary**: the sweep runs no network; the unpushed count
   reads the local remote-tracking ref, which can itself be stale, and the
@@ -220,9 +220,9 @@ and the transcript files in the plan's bench.
 
 - verify: the goal set on this milestone, the tasks run through goal show, and the milestone closed with goal complete (or the failure recorded honestly)
    Set this milestone as the goal under the operator's build ruling, run
-   the remaining tasks through `goal show`, receipt them, and close the
-   milestone with `goal complete` (or record honestly why v1 could not
-   close its own milestone).
+   the remaining tasks through `goal show` and receipt them. Close the
+   milestone with `goal complete`; if the composed gate refuses on a lane
+   this milestone does not own, park with the reason and record it.
 ### Fen battery on real output {#fen-real-output}
 
 - verify: the battery transcripts on real output filed and passing under the house refusal shape
