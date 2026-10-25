@@ -17,8 +17,8 @@ unparks and completes.
 One verification condition spans the whole matcher: the tokenizer loop (with
 quote state) times the per-word classification times a thirteen-entry canonical
 table of string equalities over symbolically-derived words, times the agreement
-lookahead — and the harness asserts re-run the same tables on the hit words,
-doubling the surface. The input domains are already tiny (8 to 12 symbolic
+lookahead: and the harness asserts re-run the same tables on the hit words,
+which doubles the surface. The input domains are already tiny (8 to 12 symbolic
 bytes); the bound is not the problem. The composition is. Two defects of
 coverage also stand: at `n <= 8` the proof never reaches `lemuselves` (ten
 bytes), the longest table entry, so the longest forms sit outside today's
@@ -36,8 +36,8 @@ The properties do not change; their decomposition does.
   Mangle hit starts with lem and is neither canonical nor whitelisted; a
   FirstPerson hit is a first-person word.
 - Prove word-boundedness against the word-run step alone.
-- Prove the line framing (quote state, index arithmetic, slicing) with the
-  classifier behind a kani function contract if 0.67 carries them cleanly;
+- Prove the line framing (quote state, index arithmetic, the slices) with the
+  classifier behind a kani function contract if the pinned kani carries them cleanly;
   otherwise with per-property splits at reduced length. Either way every
   harness carries `#[kani::unwind(K)]`.
 - The CI matrix grows one row per harness; each job must conclude with margin
