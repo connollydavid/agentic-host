@@ -1,6 +1,6 @@
 # call/0060: a teaching-layer change re-baselines in place, and the record keeps the trail
 
-- Status: accepted
+- Status: superseded by the spine
 - Scope: agentic-host, and the host-template spine it carries
 - Date: 2026-10-17
 - Relates: plan/0100, plan/0090, plan/0091, call/0059, the append-only rule in the root manual

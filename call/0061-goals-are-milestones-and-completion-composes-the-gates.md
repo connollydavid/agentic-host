@@ -1,6 +1,6 @@
 # call/0061: a goal is a milestone, and completion composes the gates
 
-- Status: accepted
+- Status: superseded by the spine
 - Scope: agentic-host, the host-template spine it carries, and host-lifecycle
 - Date: 2026-10-18
 - Relates: plan/0101, [host#26](https://github.com/connollydavid/host/issues/26), call/0060, plan/0042, plan/0041
