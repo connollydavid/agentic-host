@@ -271,10 +271,13 @@ classifier fills a fixed <code>[LemKind; 5]</code>). The matrix grew to one row 
 concrete length: scan_line n1 to n6, lem-word n3 to n10 (the longest table
 entry is ten bytes), exact-word n1 to n8, plus the word-run property.</li>
 </ol>
-<p>Local evidence at landing: <code>word_run_end_is_word_bounded</code> 18 s;
-<code>exact_word_..._n6</code> 9 m 19 s SUCCESSFUL; the lem-table and line-framing
-worst cases exceeded 20-minute local caps and are the tag run's to judge
-(the ceiling is six hours per row). The classifier's shape changes are
+<p>Local evidence: <code>word_run_end_is_word_bounded</code> 18 s, <code>exact_word_..._n6</code>
+9 m 19 s, <code>exact_word_..._n3</code> 16 m, <code>lem_word_..._n4</code> 26 m, and
+<code>lem_word_..._n10</code> 40 m, all SUCCESSFUL under one-hour caps, so the
+thirteen-entry table property that never concluded in six CI hours now
+concludes locally in under forty minutes. The line-framing rows
+(<code>scan_line_never_panics_n6</code> passed one hour locally) are the tag run's
+to judge; the ceiling is six hours per row. The classifier's shape changes are
 behavior-identical (234 conformance tests); the v0.23.1 release also adopts
 host-grammar v0.8.0 and the anchor-divergence work rides the next release.</p>
 
