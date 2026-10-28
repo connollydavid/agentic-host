@@ -1475,3 +1475,10 @@
     tool = host-lifecycle@0.61.0
     recorded = 2026-10-20
     target = plan/0101-goal-and-loop-subsystem
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.61.1@35ae6b39401af1b190971235a1522611ae8d2c857d8b7a0105a44dd336d12d25
+    authorization = plan/0103
+    tool = host-lifecycle@0.61.0
+    recorded = 2026-10-28
