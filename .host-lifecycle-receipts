@@ -1538,3 +1538,10 @@
     tool = host-lifecycle@0.61.7
     recorded = 2026-10-28
     revision = 498be98c8d224a452cfedf72261170b592e38e74
+
+[receipt "release" "host-lint"]
+    disposition = done
+    evidence = v0.23.1@8aed41a986f19f4ccb71a0bce73964a593b1b1b6537021b4d3390344582f6ecf
+    authorization = plan/0103
+    tool = host-lifecycle@0.61.0
+    recorded = 2026-10-28
