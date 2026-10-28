@@ -21,7 +21,7 @@ extraction, word-level proofs at n at most 10 (full table coverage including
 `lemuselves`), framing properties split per-property at reduced length, an
 explicit `#[kani::unwind(K)]` on every harness, one matrix row each.
 
-Operational note: `timeout 600 cargo kani … | tail` does not return at the cap —
+Operational note: `timeout 600 cargo kani ... | tail` does not return at the cap:
 the solver children survive the SIGTERM and hold the pipe, so `rc` read tail's
 and `elapsed` printed only after the children drained. Time the kani process
 directly next round.
