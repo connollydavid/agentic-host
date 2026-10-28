@@ -1,6 +1,6 @@
 # The kani lane concludes (host-lint#32)
 
-**Status: cut 2026-10-20, in build**
+**Status: landed 2026-10-28 as host-lint v0.23.1 (cb58793); the tag run over the 22-row matrix is the moment of truth**
 
 ## Why
 
@@ -88,3 +88,29 @@ ffmpeg corpus acknowledgment it names stays a follow-on, not this room's work.
 
 - verify: the PLAN.md row complete, a MEMORY.md entry, host-lint#32 closed with the fix comment, the tree pushed
 - depends: #close-0101
+
+## Landed (2026-10-28, plan/0103)
+
+The decomposition executed, with a diagnosis stage zero did not have: the
+verification condition was never the only cost. Three stacked findings came
+out of the timed runs (bench in plan/0103):
+
+1. **The panicking str slice.** `word[..3].eq_ignore_ascii_case("lem")` reaches
+   the panicking-slice machinery, and the solver grinds on a *fully concrete*
+   harness because of it. The prefix is now explicit ASCII byte comparisons;
+   the concrete control that hung for five minutes passes in seconds.
+2. **Bounds below the table.** A 13-entry table walk under `unwind(12)` fails
+   its unwinding assertion in seconds, which reads as a counterexample and is
+   not one. Every harness now carries `unwind(24)`.
+3. **One VC per concrete length.** A symbolic length across monomorphized
+   copies is one enormous VC; a symbolic-length `Vec` was also retired (the
+   classifier fills a fixed `[LemKind; 5]`). The matrix grew to one row per
+   concrete length: scan_line n1 to n6, lem-word n3 to n10 (the longest table
+   entry is ten bytes), exact-word n1 to n8, plus the word-run property.
+
+Local evidence at landing: `word_run_end_is_word_bounded` 18 s;
+`exact_word_..._n6` 9 m 19 s SUCCESSFUL; the lem-table and line-framing
+worst cases exceeded 20-minute local caps and are the tag run's to judge
+(the ceiling is six hours per row). The classifier's shape changes are
+behavior-identical (234 conformance tests); the v0.23.1 release also adopts
+host-grammar v0.8.0 and the anchor-divergence work rides the next release.
