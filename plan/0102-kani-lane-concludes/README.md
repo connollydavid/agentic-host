@@ -108,9 +108,12 @@ out of the timed runs (bench in plan/0103):
    concrete length: scan_line n1 to n6, lem-word n3 to n10 (the longest table
    entry is ten bytes), exact-word n1 to n8, plus the word-run property.
 
-Local evidence at landing: `word_run_end_is_word_bounded` 18 s;
-`exact_word_..._n6` 9 m 19 s SUCCESSFUL; the lem-table and line-framing
-worst cases exceeded 20-minute local caps and are the tag run's to judge
-(the ceiling is six hours per row). The classifier's shape changes are
+Local evidence: `word_run_end_is_word_bounded` 18 s, `exact_word_..._n6`
+9 m 19 s, `exact_word_..._n3` 16 m, `lem_word_..._n4` 26 m, and
+`lem_word_..._n10` 40 m, all SUCCESSFUL under one-hour caps, so the
+thirteen-entry table property that never concluded in six CI hours now
+concludes locally in under forty minutes. The line-framing rows
+(`scan_line_never_panics_n6` passed one hour locally) are the tag run's
+to judge; the ceiling is six hours per row. The classifier's shape changes are
 behavior-identical (234 conformance tests); the v0.23.1 release also adopts
 host-grammar v0.8.0 and the anchor-divergence work rides the next release.
