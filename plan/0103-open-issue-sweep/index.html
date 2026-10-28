@@ -189,35 +189,35 @@ upstreams) counts eleven open issues across three trackers, and nothing else:</p
 <p>Clean: agentic-host, host-template, host-grammar, host-prove, host-reference,
 host-reference-ocr, weco-cli, weco-skill, slartibardfast/calx-knap.</p>
 <p>Existing assignments stand, not re-cut: lint#32 is <a href="../0102-kani-lane-concludes/README.html">plan/0102</a>
-(cut, in build — landing it also unparks plan/0101's parked goal close); host#18 is
-<a href="../0075-host-reconcile/README.html">plan/0075</a> (design-only, standing order: last); host#26's
-/goal vacuum half is answered by <a href="../0101-goal-and-loop-subsystem/README.html">plan/0101</a>
-(v0.61.0). Two operator rulings taken at cut: lc#30 fixes by <strong>receipt digest + static
-scan</strong> (both directions); host#26 <strong>closes the /goal half and defers the plugin</strong> to its own
-future milestone.</p>
+(cut, in build, whose landing also unparks plan/0101's parked goal close); host#18 is
+<a href="../0075-host-reconcile/README.html">plan/0075</a> (design-only; the standing order places it
+last); the /goal vacuum half of host#26 is answered by
+<a href="../0101-goal-and-loop-subsystem/README.html">plan/0101</a> (v0.61.0). Two operator rulings
+taken at cut: lc#30 fixes by <strong>receipt digest + static scan</strong> (both directions); host#26
+<strong>closes the /goal half and defers the plugin</strong> to its own future milestone.</p>
 <p>A live instance of host#25 sits in this very tree: SUMMARY.md's plan index stops at
-plan/0092 — plans 0093–0102 render nowhere while <code>book --check</code> passes green.</p>
+plan/0092, so plans 0093 through 0102 render nowhere while <code>book --check</code> passes green.</p>
 <h2 id="the-queue-ascending-complexity-one-lifecycle-release-per-lifecycle-issue"><a class="header" href="#the-queue-ascending-complexity-one-lifecycle-release-per-lifecycle-issue">The queue (ascending complexity; one lifecycle release per lifecycle issue)</a></h2>
 <ol>
-<li><strong>host#28 (trivial)</strong> — <code>--locked</code> on the front-door README's allium install line.</li>
-<li><strong>lc#34 (small)</strong> — <code>resolve_ledger_id</code>: exact stanza id and prefix resolve before the
-ordinal parse; rejection only when both readings fail.</li>
-<li><strong>lc#32 (small-medium)</strong> — <code>hooks</code> scripts resolve across bases: component worktree,
+<li><strong>host#28 (trivial)</strong>: <code>--locked</code> on the front-door README's allium install line.</li>
+<li><strong>lc#34 (small)</strong>: <code>resolve_ledger_id</code> resolves the exact stanza id and prefix before
+the ordinal parse; rejection only when both readings fail.</li>
+<li><strong>lc#32 (small-medium)</strong>: <code>hooks</code> scripts resolve across bases: component worktree,
 host root, initialized submodules.</li>
-<li><strong>lc#31 (medium)</strong> — <code>regen = &lt;command&gt;</code> stanza key, run between the version bump and
+<li><strong>lc#31 (medium)</strong>: <code>regen = &lt;command&gt;</code> stanza key, run between the version bump and
 the release commit.</li>
-<li><strong>host#25 (medium)</strong> — <code>book --check</code> reconciles every tracked markdown document
+<li><strong>host#25 (medium)</strong>: <code>book --check</code> reconciles every tracked markdown document
 against SUMMARY.md; the generator emits milestone siblings.</li>
-<li><strong>lint#32 (medium-large)</strong> — plan/0102 executes: pure per-word classifier and word-run
-extraction, word-level proofs at n≤10, unwind bounds everywhere, v0.23.1.</li>
-<li><strong>lc#33 (medium-large)</strong> — <code>--inapplicable</code> recorded claim; the check reports a named
+<li><strong>lint#32 (medium-large)</strong>: plan/0102 executes: pure per-word classifier and word-run
+extraction, word-level proofs at n at most 10, unwind bounds everywhere, v0.23.1.</li>
+<li><strong>lc#33 (medium-large)</strong>: an <code>--inapplicable</code> recorded claim; the check reports a named
 disclosure, never a permanent HAZARD; the spine calls Actions a reference lane.</li>
-<li><strong>lc#30 (large)</strong> — release-asset receipt digest reconciled offline by <code>software --check</code>, plus the static workflow scan (no staged bundle / CARGO_HOME override).</li>
-<li><strong>host#27 (large)</strong> — <code>tasks --new</code> title validation, a measured STE-style subset in
+<li><strong>lc#30 (large)</strong>: a release-asset receipt digest, reconciled offline by <code>software --check</code>, plus the static workflow scan (no staged bundle, or a CARGO_HOME override).</li>
+<li><strong>host#27 (large)</strong>: <code>tasks --new</code> title validation, a measured STE-style subset in
 host-grammar, <code>mint_name</code>/<code>rule_comment</code> MCP tools in host-lint.</li>
-<li><strong>host#26 (ruled)</strong> — close the /goal half citing plan/0101; the OpenCode plugin is
+<li><strong>host#26 (ruled)</strong>: close the /goal half citing plan/0101; the OpenCode plugin is
 its own future milestone, recorded here as deferred, not cut.</li>
-<li><strong>host#18 (largest, last)</strong> — plan/0075 executes: the reviewed host-reconcile design,
+<li><strong>host#18 (largest, last)</strong>: plan/0075 executes: the reviewed host-reconcile design,
 go/no-go, build ungated.</li>
 </ol>
 <h2 id="constraints"><a class="header" href="#constraints">Constraints</a></h2>
