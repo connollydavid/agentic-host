@@ -52,6 +52,23 @@ plan/0092, so plans 0093 through 0102 render nowhere while `book --check` passes
 11. **host#18 (largest, last)**: plan/0075 executes: the reviewed host-reconcile design,
     go/no-go, build ungated.
 
+## Status (2026-10-28, end of the first working session)
+
+Done and closed: #28, lc#34 (v0.61.1), lc#32 (v0.61.2), lc#31 (v0.61.3 plus the
+9a0f7d0 ledger entry), host#25 (v0.61.4), lc#33 (v0.61.5 plus 7ef379e), and
+host#26 (closed citing plan/0101, the plugin deferred by ruling). Built and
+ruled: lc#30 (v0.61.6/v0.61.7: the publish receipt and the lane scan, which
+caught real divergence on first dogfood; the issue stays open on the residual
+byte-matching, the comment carries the evidence). Released and awaiting its
+verdict: lint#32 (v0.23.1, cb58793, the 22-row kani matrix; the tag run is the
+moment of truth). Halfway: host#27 (host-grammar v0.8.0 released with the slug
+derivation and the measured verb register; the lint divergence rule
+implemented and tested, its release riding the lane fix; the lifecycle mint
+and comment tools pending). Not started: host#18 (plan/0075, last by standing
+order). Found on the way and filed: host-lifecycle#35 (the release gate's
+clippy blind spot). The embed-equality and publish debts the gates now hazard
+are exactly the next two releases' cargo.
+
 ## Constraints
 
 One release cascade per lifecycle issue (six). An unpushed pin halts the sweep with a
