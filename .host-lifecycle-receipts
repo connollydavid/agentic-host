@@ -1926,3 +1926,11 @@
     tool = host-lifecycle@0.62.4
     recorded = 2026-10-29
     revision = 2189cdcc9c12a7858295eb2024889e299e84da0c
+
+[receipt "ci" "software/host-lifecycle/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-lifecycle/actions/runs/40970269066
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-10-29
+    revision = 2189cdcc9c12a7858295eb2024889e299e84da0c
+    conclusion = success
