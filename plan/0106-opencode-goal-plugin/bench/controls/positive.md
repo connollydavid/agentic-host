@@ -1,4 +1,4 @@
-L have the frontier: one ready task. L will run its verify, record the receipt, and re-orient.
+L have the frontier: one ready task. L will run its verify and record the receipt; re-orientation follows.
 
 ACTION:
 $ echo smoke-ok

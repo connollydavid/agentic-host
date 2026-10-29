@@ -5,7 +5,7 @@ parity target is the ByBrawe pair's surface and loop discipline only, their veri
 machinery retired as reference; the design must be fully idiomatic to host-*, something
 agents reach for naturally; the plugin is V2-native only, and the legacy plugin retires
 immediately). Resolves the OpenCode plugin deferral recorded at
-[plan/0103](../0103-open-issue-sweep/README.md).
+[plan/0103](../0103-open-issue-sweep/README.md).; active goal since 2026-10-29
 
 ## Why
 
@@ -60,7 +60,8 @@ version seam) are met structurally, not by discipline.
 
 ### The command set is the host verb family
 
-- `/host-goal` (orient; the existing door, injecting the `goal show` emission verbatim)
+- `/host-goal` (orient; the existing door, with the `goal show` emission injected
+  verbatim)
 - `/host-goal set <plan/NNNN>` (declare; free text refused to `goal propose` per
   call/0061: a goal IS a milestone, and the audited declaration is the authority)
 - `/host-goal park <reason>` and `/host-goal unpark` (the hold and the resume ARE the
@@ -131,8 +132,8 @@ with its no-completion invariant, and the surface @guarantees for the string-lev
 facts (EmissionIsPrompt, StopPrintsReason, CapFailsClosed, NoPersistentState,
 HonestTelemetry, OneControllerPerSession). Every derived obligation is dispositioned
 in `plugin/host-loop.obligations`: structural for shape facts, and the tier-1 suite's
-test names declared as the discharge contract for everything behavioral, so a test
-that does not exercise its token cannot ship. Until #tier1 lands the test
+test names declared as the discharge contract for everything behavioral; every shipped
+test exercises its token. Until #tier1 lands the test
 dispositions read ABSENT, the honest interim state. Placement note (plan/0012): the
 spec lives beside the prototype in the plan room and travels with the promotion, the
 lemgate precedent; software without its spec beside it is the defect plan/0012 exists
@@ -156,7 +157,8 @@ to refuse.
    bearer is handed over, the plan/0088 one-command pattern.
 3. **dokimi A/Bs the prompts to confirmation** (tools/dokimi, adopted 691c007): arms
    structure and answer capture from dokimi, scoring by the mechanical rubric (no LLM
-   judge on this endpoint; the plan/0100 verdict). Protocol per plan/0100: selection
+   judge on this endpoint; the plan/0100 verdict); the score comes from the
+   mechanical rubric. Protocol per plan/0100: selection
    rounds are exploratory with in-round re-baselines, cross-round numbers never
    compare; the winner then faces the locked confirmation stage against the incumbent
    with held-out states untouched by selection, fresh interleaved draws, a pre-declared
