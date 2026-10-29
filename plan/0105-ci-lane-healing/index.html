@@ -175,7 +175,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="plan0105-the-red-ci-lanes-heal"><a class="header" href="#plan0105-the-red-ci-lanes-heal">plan/0105: the red CI lanes heal</a></h1>
-<p><strong>Status: cut 2026-10-29, in build.</strong></p>
+<p><strong>Status: complete 2026-10-29. All three repos green on main and at their tags; both offline judges read zero findings. The releases landed as host-lint v0.24.0 plus the v0.24.1 patch and host-lifecycle v0.62.0 plus the v0.62.1 patch (the tool computes a minor from <code>adds-flag</code>); the results section carries the actuals.</strong></p>
 <h2 id="why"><a class="header" href="#why">Why</a></h2>
 <p>The operator: "let's replan around healing CI gates that fail in github. these make me sad because i get email about them." The live sweep on 2026-10-29 found three repos red on main, and every push to any of them emails another failure.</p>
 <h2 id="the-diagnosis"><a class="header" href="#the-diagnosis">The diagnosis</a></h2>
@@ -192,11 +192,21 @@
 <li>This record, pushed now. A few more red-run emails arrive during the healing window; the end state is green.</li>
 <li>The framing retest: the six harnesses run against the checked-slicing fix, in parallel, ninety minutes each. A row that concludes green stays in the matrix. A row that hangs comes out. The admission rule lands in the workflow comment and in plan/0102: a harness row enters the CI matrix only after one concluding local run.</li>
 <li>The template AGENTS.md reword, with its push held until step 7 so one push heals both template lanes.</li>
-<li><code>vendor-v20</code>, the new lint deps-bundle for the grammar move to <code>435960c</code> (the lint series stands at <code>vendor-v19</code>).</li>
-<li>host-lint v0.23.2: the anchor-divergence rule with its allium and obligations updates, grammar <code>435960c</code>, the checked-slicing fix, and the ci.yml edits. The matrix follows the retest, the kani job gains <code>timeout-minutes: 100</code>, and the publish lane stages and verifies the recorded bundle with the build-id flag. The v0.23.2 tag run green is the acceptance moment. A receipt records at the new pin.</li>
-<li>host-lifecycle v0.61.9: the lint embed moves to the v0.23.2 sha, and the book generator publishes <code>plan/PLAN.md</code> in the template shape, with a fixture test.</li>
+<li><code>vendor-v21</code>, the new lint deps-bundle for the grammar move to <code>435960c</code> (the lint series stands at <code>vendor-v19</code>; <code>vendor-v20</code> was born with a misnamed asset on an immutable release and was replaced the same hour).</li>
+<li>host-lint v0.24.x: the anchor-divergence rule with its allium and obligations updates, grammar <code>435960c</code>, the checked-slicing fix, and the ci.yml edits. The matrix follows the retest, the kani job gains <code>timeout-minutes: 100</code>, and the publish lane stages and verifies the recorded bundle. The green tag run is the acceptance moment.</li>
+<li>host-lifecycle v0.62.x: the lint embed moves to the lint release sha, and the book generator publishes <code>plan/PLAN.md</code> in the template shape, with a fixture test.</li>
 <li>One host-template push: the tools/host-lifecycle submodule at v0.61.9, the pin commits, and the reword. Prose and Site heal. Then the host pointer bump.</li>
-<li>The host heals: <code>.host-software</code> re-pins lint v0.23.2 and lifecycle v0.61.9 with fresh artifact hashes and bundle v20, and every receipt the judge names records at the healed revisions.</li>
+<li>The host heals: <code>.host-software</code> re-pins lint v0.24.1 (<code>db4a0d2</code>, artifact <code>65b0eee7</code>) and lifecycle v0.62.1 (<code>e6d43a3</code>, artifact <code>a57a1342</code>) with bundle v21 for lint and v19 for lifecycle, and every receipt the judge names records at the healed revisions.</li>
+</ol>
+<h2 id="the-results"><a class="header" href="#the-results">The results</a></h2>
+<ul>
+<li><strong>agentic-host</strong>: Check and Reproducible build green at the healed HEAD; both offline judges (<code>software --check</code>, <code>ci --gate</code>) read zero findings.</li>
+<li><strong>host-lint</strong>: v0.24.0 carried the rule set, the bounded matrix, and the deploy lane; its tag run failed on a duplicated ambient build step the lane edit left behind (a runner-side cargo build after the container left a root-owned <code>target/</code>), and v0.24.1 removed the duplicate. The v0.24.1 tag run concluded green in twenty-eight minutes on the twenty-row matrix, and the published asset hashes <code>65b0eee7</code>, byte-identical to the anchored artifact.</li>
+<li><strong>host-lifecycle</strong>: v0.62.0 carried the lint embed and the book landing (the template's <code>plan/PLAN.md</code> becomes the room's landing page, pinned by a fixture test); v0.62.1 followed the lint patch so the embed stays equal to the pin. The published assets hash equal to their anchors (<code>dedc814d</code> at v0.62.0, <code>a57a1342</code> at v0.62.1).</li>
+<li><strong>host-template</strong>: the single push carried both pins and the reword; Prose and Site green, with Check and Reproducible build green beside them.</li>
+<li><strong>The framing retest</strong>: all six harnesses capped at ninety minutes against the checked-slicing rework (<code>rc=124</code> each), so the rows came out under the admission rule; plan/0102 records the halt, and the framing route pick (the contract route, a heap-free LemHit, a TLA+ lateral lane, or the test downgrade) returns to the operator as the lacuna survey's deliverable.</li>
+</ul>
+<ol start="9">
 <li>Close: both local judges green, the GitHub sweep green across the eight repos, this README completed with the results, MEMORY entries, and plan/0103's queue resumes behind (the <a href="https://github.com/connollydavid/host/issues/27">host#27</a> lifecycle and MCP tail, plan/0104 host-voice, the receipt coupling from plan/0103, plan/0075 last).</li>
 </ol>
 <h2 id="rules-the-healing-installs"><a class="header" href="#rules-the-healing-installs">Rules the healing installs</a></h2>
