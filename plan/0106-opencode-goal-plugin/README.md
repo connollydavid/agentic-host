@@ -124,10 +124,14 @@ cap), and evidence-mapped completion (the composed gates are the stronger form).
    facts are in-memory. The discipline verdicts stand: the ship gate, the cap at 25
    with printed reasons, the version seam, the tool surface, no compaction hook.
 2. **Real Fen calls are the acceptance bar, not a lens** (operator ruling 2026-10-20):
-   qwen3.5-4b runs the probes through dokimi. The channel is credential-refused as of
-   2026-10-29 (probed twice): the rope gateway answers and rejects the request because
-   `ROPE_BEARER` resolves only in the operator's own sessions; the kit below runs the
-   moment the credential is handed over, the plan/0088 one-command pattern.
+   qwen3.5-4b runs the probes through dokimi. The operator handed the direct LAN
+   channel the same day (no API key; the endpoint, the capacity, and the gotchas the
+   kit respects are recorded in `bench/README.md`). Reachability from this host is
+   refused by the deliberate UFW scope: the rope box answers ICMP across the routed
+   path, but 8080 and 4001 are scoped to 192.168.21.0/24 while this host sits on
+   192.168.178.0/24, and the WAN edge returns 401 without the bearer; the kit is
+   endpoint-driven and runs unmodified from a host inside the scope or once the
+   bearer is handed over, the plan/0088 one-command pattern.
 3. **dokimi A/Bs the prompts to confirmation** (tools/dokimi, adopted 691c007): arms
    structure and answer capture from dokimi, scoring by the mechanical rubric (no LLM
    judge on this endpoint; the plan/0100 verdict). Protocol per plan/0100: selection
@@ -180,6 +184,10 @@ cap), and evidence-mapped completion (the composed gates are the stronger form).
 - verify: `bench/run-ab.py` and the state fixtures exist; a dry run scores one fixture
   without network
 - depends: #convene
+- Landed 2026-10-29: `bench/` (make-fixture.sh, rubric.py, run-ab.py, the controls,
+  the channel document); the dry run is green offline, the positive control 6/6 and
+  the negative 1/6 with the invented verb named. The fixture's real emission is
+  captured from the canonical binary; NEXT is the work-key form.
 
 ### The dokimi program {#ab-program}
 
