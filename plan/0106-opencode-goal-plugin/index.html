@@ -440,6 +440,18 @@ surfaces (built against the materialized pin's types, never from memory), assert
 the command set, the state authority, and the bounds per stop reason; and
 <code>host-lifecycle obligations plugin/host-loop.allium --tests plugin --strict-discharge</code> is green</li>
 <li>depends: #prototype, #materialize</li>
+<li>Landed 2026-10-29: <code>plugin/suite.test.ts</code>, twenty tests green, the fakes typed to
+the promise Context's real shapes (one API correction the fakes caught: the event
+subscription returns its AsyncIterable synchronously). The runner deviation is
+recorded: bun is absent on this machine, so the suite runs under node --test (node
+26 strips the types natively); the bun port is a promotion detail. The test
+definitions are object methods so the obligations scanner sees each <code>name() {</code> at
+line start; every stop reason has a test (armed, parked, no-goal, busy,
+complete, needs-you, cap, unknown-cap, three stalls, no-tool-call), the command
+set asserts the three doors and the verb mappings, and the free-text refusal got
+sharper because the suite demanded it: any non-family argument now reads the
+goal-propose refusal shape. The discharge check reads all 24 obligations
+dispositioned with zero findings under --strict-discharge.</li>
 </ul>
 <h3 id="tier2"><a class="header" href="#tier2">Tier 2 harness</a></h3>
 <ul>
