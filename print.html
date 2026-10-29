@@ -24063,7 +24063,7 @@ parity target is the ByBrawe pair's surface and loop discipline only, their veri
 machinery retired as reference; the design must be fully idiomatic to host-*, something
 agents reach for naturally; the plugin is V2-native only, and the legacy plugin retires
 immediately). Resolves the OpenCode plugin deferral recorded at
-<a href="plan/0106-opencode-goal-plugin/../0103-open-issue-sweep/README.html">plan/0103</a>.</p>
+<a href="plan/0106-opencode-goal-plugin/../0103-open-issue-sweep/README.html">plan/0103</a>.; active goal since 2026-10-29</p>
 <h2 id="why-26"><a class="header" href="#why-26">Why</a></h2>
 <p>The operator's opencode carried a plugin: <code>~/.config/opencode/plugins/opencode-loop.ts</code>,
 a bundled build ("legacy-v1", 4143 lines) that registers goal tools
@@ -24112,7 +24112,8 @@ everything from the surfaces. The Orin and Bly verdicts (reconstructible state, 
 version seam) are met structurally, not by discipline.</p>
 <h3 id="the-command-set-is-the-host-verb-family"><a class="header" href="#the-command-set-is-the-host-verb-family">The command set is the host verb family</a></h3>
 <ul>
-<li><code>/host-goal</code> (orient; the existing door, injecting the <code>goal show</code> emission verbatim)</li>
+<li><code>/host-goal</code> (orient; the existing door, with the <code>goal show</code> emission injected
+verbatim)</li>
 <li><code>/host-goal set &lt;plan/NNNN&gt;</code> (declare; free text refused to <code>goal propose</code> per
 call/0061: a goal IS a milestone, and the audited declaration is the authority)</li>
 <li><code>/host-goal park &lt;reason&gt;</code> and <code>/host-goal unpark</code> (the hold and the resume ARE the
@@ -24175,8 +24176,8 @@ with its no-completion invariant, and the surface @guarantees for the string-lev
 facts (EmissionIsPrompt, StopPrintsReason, CapFailsClosed, NoPersistentState,
 HonestTelemetry, OneControllerPerSession). Every derived obligation is dispositioned
 in <code>plugin/host-loop.obligations</code>: structural for shape facts, and the tier-1 suite's
-test names declared as the discharge contract for everything behavioral, so a test
-that does not exercise its token cannot ship. Until #tier1 lands the test
+test names declared as the discharge contract for everything behavioral; every shipped
+test exercises its token. Until #tier1 lands the test
 dispositions read ABSENT, the honest interim state. Placement note (plan/0012): the
 spec lives beside the prototype in the plan room and travels with the promotion, the
 lemgate precedent; software without its spec beside it is the defect plan/0012 exists
@@ -24199,7 +24200,8 @@ endpoint-driven and runs unmodified from a host inside the scope or once the
 bearer is handed over, the plan/0088 one-command pattern.</li>
 <li><strong>dokimi A/Bs the prompts to confirmation</strong> (tools/dokimi, adopted 691c007): arms
 structure and answer capture from dokimi, scoring by the mechanical rubric (no LLM
-judge on this endpoint; the plan/0100 verdict). Protocol per plan/0100: selection
+judge on this endpoint; the plan/0100 verdict); the score comes from the
+mechanical rubric. Protocol per plan/0100: selection
 rounds are exploratory with in-round re-baselines, cross-round numbers never
 compare; the winner then faces the locked confirmation stage against the incumbent
 with held-out states untouched by selection, fresh interleaved draws, a pre-declared
@@ -24391,7 +24393,7 @@ recorded in the plan README's design gates.</p>
 <div style="break-before: page; page-break-before: always;"></div><p>The task looks done, so L recorded it with the tasks command and will check the plan index next.</p>
 <p>I ran: host-lifecycle task --record plan/0001#smoke --disposition done</p>
 <p>Next L will look at PLAN.md and update the row.</p>
-<div style="break-before: page; page-break-before: always;"></div><p>L have the frontier: one ready task. L will run its verify, record the receipt, and re-orient.</p>
+<div style="break-before: page; page-break-before: always;"></div><p>L have the frontier: one ready task. L will run its verify and record the receipt; re-orientation follows.</p>
 <p>ACTION:
 $ echo smoke-ok
 smoke-ok
