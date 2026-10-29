@@ -1375,3 +1375,11 @@
     evidence = bench/ dry run green offline: positive 6/6, negative 1/6 with the invented verb named
     tool = host-lifecycle@0.62.2
     recorded = 2026-10-29
+
+[receipt "plan/0106#prototype"]
+    disposition = done
+    verify = the plugin (Plugin.define, V2-native, the coordinator's client) loads in a
+    inputs = plugin/, ../tools/opencode (the API authority at the pin)
+    evidence = opencode 2.2.2 live: plugin list reads host-loop local from the plan room; the boot probe drove goal show and parsed the emission; admit #1 fired on idle with an armed goal and remaining work and the continuation turn began from the synthetic; the no-tool-call stop is the tier-1 discharge
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-10-29

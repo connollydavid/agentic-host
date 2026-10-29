@@ -80,13 +80,13 @@ export default {
         name: "goal_show",
         description: "The host goal orientation: PURPOSE, POSITION, NEEDS YOU, CI, FRONTIER, NEXT. The emission is the instruction.",
         parameters: { type: "object", properties: {}, additionalProperties: false },
-        execute: async () => (await goalShow()).text,
+        execute: async () => ({ output: (await goalShow()).text }),
       })
       editor.add({
         name: "tasks_status",
         description: "The receipted task graph with the ready frontier.",
         parameters: { type: "object", properties: {}, additionalProperties: false },
-        execute: async () => (await tasksStatus()).text,
+        execute: async () => ({ output: (await tasksStatus()).text }),
       })
       editor.add({
         name: "tasks_record",
@@ -97,7 +97,7 @@ export default {
           required: ["key"],
           additionalProperties: false,
         },
-        execute: async (input: { key: string }) => (await tasksRecord(input.key)).text,
+        execute: async (input: { key: string }) => ({ output: (await tasksRecord(input.key)).text }),
       })
     })
 
@@ -225,6 +225,7 @@ export default {
       }
       usedTools.delete(sessionID)
       iterations.set(sessionID, count)
+      console.error(`[host-loop] admit #${count}: ${em.next}`)
       // EmissionIsPrompt: the continuation body is the emission verbatim plus the
       // doctrine; nothing is referenced but absent.
       await ctx.session.synthetic({ sessionID, text: `${show.text}\n\n${DOCTRINE}`, metadata: { source: "host-loop" } })
