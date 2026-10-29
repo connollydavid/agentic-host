@@ -1,6 +1,6 @@
 # The kani lane concludes (host-lint#32)
 
-**Status: landed 2026-10-28 as host-lint v0.23.1 (cb58793). The classification rows are proven (sixteen CI rows green, including lem_n10; local 18 s to 40 m). The six line-framing rows are the residual: they did not conclude inside local one-hour caps (n1 included), and CI repeatedly canceled them at 30 to 50 minutes with runner-shutdown signals, so no verdict exists. The halt rule triggers: the framing property needs either the contract route (classify behind a kani function contract, so the framing harness assumes it) or a heap-free LemHit, and a sibling session has its own contract-route fragment on this lane. Operator ruling requested.**
+**Status: landed 2026-10-28 as host-lint v0.23.1 (cb58793). The classification rows are proven: sixteen CI rows green, lem_n10 among them, 18 s to 40 m locally. The six line-framing rows are the residual: they did not conclude inside local one-hour caps (n1 included), and CI repeatedly canceled them at 30 to 50 minutes with runner-shutdown signals, so no verdict exists. The halt rule triggers: the framing property needs either the contract route (classify behind a kani function contract, so the framing harness assumes it) or a heap-free LemHit, and a sibling session has its own contract-route fragment on this lane. Operator ruling requested.**
 
 ## Why
 
