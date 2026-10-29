@@ -1,6 +1,6 @@
 # plan/0105: the red CI lanes heal
 
-**Status: cut 2026-10-29, in build.**
+**Status: complete 2026-10-29. All three repos green on main and at their tags; both offline judges read zero findings. The releases landed as host-lint v0.24.0 plus the v0.24.1 patch and host-lifecycle v0.62.0 plus the v0.62.1 patch (the tool computes a minor from `adds-flag`); the results section carries the actuals.**
 
 ## Why
 
@@ -23,11 +23,19 @@ The host tree sweeps clean under the v0.61.8 prose gate, verified at cut, so the
 1. This record, pushed now. A few more red-run emails arrive during the healing window; the end state is green.
 2. The framing retest: the six harnesses run against the checked-slicing fix, in parallel, ninety minutes each. A row that concludes green stays in the matrix. A row that hangs comes out. The admission rule lands in the workflow comment and in plan/0102: a harness row enters the CI matrix only after one concluding local run.
 3. The template AGENTS.md reword, with its push held until step 7 so one push heals both template lanes.
-4. `vendor-v20`, the new lint deps-bundle for the grammar move to `435960c` (the lint series stands at `vendor-v19`).
-5. host-lint v0.23.2: the anchor-divergence rule with its allium and obligations updates, grammar `435960c`, the checked-slicing fix, and the ci.yml edits. The matrix follows the retest, the kani job gains `timeout-minutes: 100`, and the publish lane stages and verifies the recorded bundle with the build-id flag. The v0.23.2 tag run green is the acceptance moment. A receipt records at the new pin.
-6. host-lifecycle v0.61.9: the lint embed moves to the v0.23.2 sha, and the book generator publishes `plan/PLAN.md` in the template shape, with a fixture test.
+4. `vendor-v21`, the new lint deps-bundle for the grammar move to `435960c` (the lint series stands at `vendor-v19`; `vendor-v20` was born with a misnamed asset on an immutable release and was replaced the same hour).
+5. host-lint v0.24.x: the anchor-divergence rule with its allium and obligations updates, grammar `435960c`, the checked-slicing fix, and the ci.yml edits. The matrix follows the retest, the kani job gains `timeout-minutes: 100`, and the publish lane stages and verifies the recorded bundle. The green tag run is the acceptance moment.
+6. host-lifecycle v0.62.x: the lint embed moves to the lint release sha, and the book generator publishes `plan/PLAN.md` in the template shape, with a fixture test.
 7. One host-template push: the tools/host-lifecycle submodule at v0.61.9, the pin commits, and the reword. Prose and Site heal. Then the host pointer bump.
-8. The host heals: `.host-software` re-pins lint v0.23.2 and lifecycle v0.61.9 with fresh artifact hashes and bundle v20, and every receipt the judge names records at the healed revisions.
+8. The host heals: `.host-software` re-pins lint v0.24.1 (`db4a0d2`, artifact `65b0eee7`) and lifecycle v0.62.1 (`e6d43a3`, artifact `a57a1342`) with bundle v21 for lint and v19 for lifecycle, and every receipt the judge names records at the healed revisions.
+
+## The results
+
+- **agentic-host**: Check and Reproducible build green at the healed HEAD; both offline judges (`software --check`, `ci --gate`) read zero findings.
+- **host-lint**: v0.24.0 carried the rule set, the bounded matrix, and the deploy lane; its tag run failed on a duplicated ambient build step the lane edit left behind (a runner-side cargo build after the container left a root-owned `target/`), and v0.24.1 removed the duplicate. The v0.24.1 tag run concluded green in twenty-eight minutes on the twenty-row matrix, and the published asset hashes `65b0eee7`, byte-identical to the anchored artifact.
+- **host-lifecycle**: v0.62.0 carried the lint embed and the book landing (the template's `plan/PLAN.md` becomes the room's landing page, pinned by a fixture test); v0.62.1 followed the lint patch so the embed stays equal to the pin. The published assets hash equal to their anchors (`dedc814d` at v0.62.0, `a57a1342` at v0.62.1).
+- **host-template**: the single push carried both pins and the reword; Prose and Site green, with Check and Reproducible build green beside them.
+- **The framing retest**: all six harnesses capped at ninety minutes against the checked-slicing rework (`rc=124` each), so the rows came out under the admission rule; plan/0102 records the halt, and the framing route pick (the contract route, a heap-free LemHit, a TLA+ lateral lane, or the test downgrade) returns to the operator as the lacuna survey's deliverable.
 9. Close: both local judges green, the GitHub sweep green across the eight repos, this README completed with the results, MEMORY entries, and plan/0103's queue resumes behind (the [host#27](https://github.com/connollydavid/host/issues/27) lifecycle and MCP tail, plan/0104 host-voice, the receipt coupling from plan/0103, plan/0075 last).
 
 ## Rules the healing installs
