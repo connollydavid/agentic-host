@@ -282,6 +282,18 @@ to refuse.
   `host-lifecycle obligations plugin/host-loop.allium --tests plugin
   --strict-discharge` is green
 - depends: #prototype, #materialize
+- Landed 2026-10-29: `plugin/suite.test.ts`, twenty tests green, the fakes typed to
+  the promise Context's real shapes (one API correction the fakes caught: the event
+  subscription returns its AsyncIterable synchronously). The runner deviation is
+  recorded: bun is absent on this machine, so the suite runs under node --test (node
+  26 strips the types natively); the bun port is a promotion detail. The test
+  definitions are object methods so the obligations scanner sees each `name() {` at
+  line start; every stop reason has a test (armed, parked, no-goal, busy,
+  complete, needs-you, cap, unknown-cap, three stalls, no-tool-call), the command
+  set asserts the three doors and the verb mappings, and the free-text refusal got
+  sharper because the suite demanded it: any non-family argument now reads the
+  goal-propose refusal shape. The discharge check reads all 24 obligations
+  dispositioned with zero findings under --strict-discharge.
 
 ### Tier 2 harness {#tier2}
 

@@ -7,23 +7,8 @@
 // in-memory iteration and progress counters below. The host verifier stack is the
 // sole verifier: the plugin adds no checks and claims no completion.
 
-const VERBS = new Set([
-  "validate", "next", "adopt", "init", "scaffold", "mcp", "version", "classify",
-  "remap", "software", "bootstrap", "env", "resolve", "refs", "upgrade", "book",
-  "obligations", "manifest", "receipt", "release", "prose", "reconcile", "entrance",
-  "migrate-receipts", "migrate-recipe", "tasks", "goal", "install", "dream",
-])
-
 // The version seam: the binary the verbs run through, overridable for fixtures.
 const HL = process.env.HOST_LIFECYCLE_BIN || "host-lifecycle"
-
-// The iteration cap; unknown values fail closed (never guessed).
-const CAP = (() => {
-  const raw = process.env.HOST_LOOP_MAX_ITERATIONS
-  if (raw === undefined) return 25
-  const n = Number.parseInt(raw, 10)
-  return Number.isFinite(n) && n > 0 ? n : undefined
-})()
 
 const DOCTRINE = [
   "Work the NEXT line.",
@@ -35,14 +20,34 @@ const DOCTRINE = [
   "Then re-orient with goal show.",
 ].join(" ")
 
-async function runVerb(root: string, args: string[]): Promise<{ ok: boolean; text: string }> {
-  const proc = Bun.spawn([HL, ...args], { cwd: root, stdout: "pipe", stderr: "pipe" })
-  const [stdout, stderr, code] = await Promise.all([
-    new Response(proc.stdout).text(),
-    new Response(proc.stderr).text(),
-    proc.exited,
-  ])
-  return { ok: code === 0, text: (stdout + (stderr ? `\n${stderr}` : "")).trim() }
+// The injected I/O surface: the verb runner and the iteration cap. The production
+// io spawns the binary (the runtime is Bun); the unit suite injects a fake runner
+// and an explicit cap, so one code path serves both.
+export interface LoopIo {
+  runVerb: (root: string, args: string[]) => Promise<{ ok: boolean; text: string }>
+  cap: number | undefined
+}
+
+function defaultIo(): LoopIo {
+  // The iteration cap; unknown values fail closed (never guessed).
+  let cap: number | undefined = 25
+  const raw = process.env.HOST_LOOP_MAX_ITERATIONS
+  if (raw !== undefined) {
+    const n = Number.parseInt(raw, 10)
+    cap = Number.isFinite(n) && n > 0 ? n : undefined
+  }
+  return {
+    cap,
+    runVerb: async (root, args) => {
+      const proc = Bun.spawn([HL, ...args], { cwd: root, stdout: "pipe", stderr: "pipe" })
+      const [stdout, stderr, code] = await Promise.all([
+        new Response(proc.stdout).text(),
+        new Response(proc.stderr).text(),
+        proc.exited,
+      ])
+      return { ok: code === 0, text: (stdout + (stderr ? `\n${stderr}` : "")).trim() }
+    },
+  }
 }
 
 function parseEmission(text: string) {
@@ -59,15 +64,16 @@ function parseEmission(text: string) {
   }
 }
 
-export default {
+export function makePlugin(io: LoopIo = defaultIo()) {
+  return {
   id: "host-loop",
   setup: async (ctx: any) => {
     const root = ctx.location?.directory ?? process.cwd()
 
     // The verbs, wrapped once: every surface reads through them.
-    const goalShow = () => runVerb(root, ["goal", "show", "."])
-    const tasksStatus = () => runVerb(root, ["tasks", "."])
-    const tasksRecord = (key: string) => runVerb(root, ["tasks", "--record", key, "--disposition", "done", "."])
+    const goalShow = () => io.runVerb(root, ["goal", "show", "."])
+    const tasksStatus = () => io.runVerb(root, ["tasks", "."])
+    const tasksRecord = (key: string) => io.runVerb(root, ["tasks", "--record", key, "--disposition", "done", "."])
     const orient = async (sessionID: string) => {
       const show = await goalShow()
       const body = show.ok ? `${show.text}\n\n${DOCTRINE}` : `${show.text}\n\nThe verb refused; run it in a terminal and read the remedy. Never invent a command or a flag.`
@@ -121,26 +127,26 @@ export default {
               })
               return
             }
-            await runVerb(root, ["goal", "set", target, "."])
+            await io.runVerb(root, ["goal", "set", target, "."])
             return orient(input.sessionID)
           }
           if (verb === "park") {
             const reason = rest.join(" ") || "operator hold"
-            await runVerb(root, ["goal", "park", "--reason", reason, "."])
+            await io.runVerb(root, ["goal", "park", "--reason", reason, "."])
             return orient(input.sessionID)
           }
           if (verb === "unpark") {
-            await runVerb(root, ["goal", "unpark", "."])
+            await io.runVerb(root, ["goal", "unpark", "."])
             return orient(input.sessionID)
           }
           if (verb === "complete") {
-            const out = await runVerb(root, ["goal", "complete", "."])
+            const out = await io.runVerb(root, ["goal", "complete", "."])
             await ctx.session.prompt({ sessionID: input.sessionID, text: out.text, delivery: "queue" })
             return
           }
           await ctx.session.prompt({
             sessionID: input.sessionID,
-            text: `Unknown /host-goal argument: ${arg}. The family is set, park, unpark, complete, show. Never invent a command or a flag.`,
+            text: `Refused: a goal IS a plan/NNNN milestone (call/0061). The family is set, park, unpark, complete, show; propose a goal instead:\n\nNEXT: ${HL} goal propose <plan/NNNN-slug> .`,
             delivery: "queue",
           })
           return
@@ -158,7 +164,7 @@ export default {
         name: "host-ci",
         description: "The CI lanes' receipted verdicts and their remedies.",
         execute: async (input: any) => {
-          const out = await runVerb(root, ["ci", "."])
+          const out = await io.runVerb(root, ["ci", "."])
           await ctx.session.prompt({ sessionID: input.sessionID, text: out.text, delivery: "queue" })
         },
       })
@@ -187,6 +193,10 @@ export default {
 
     await ctx.session.hook("experimental.idle", async (event: any) => {
       const sessionID = event.sessionID
+      // HoldWhenBusy: the coordinator ticks only at safe boundaries, and pending
+      // background work (a subagent or an image job) is not one; the reference
+      // goal plugin in the pin skips the same shape.
+      if (event.background?.some((w: any) => w.kind === "subagent" || w.kind === "image")) return
       const show = await goalShow()
       const em = parseEmission(show.text)
       // NoGoalSilent: no goal or a refusing verb silences the loop.
@@ -198,13 +208,13 @@ export default {
       // NEEDS YOU non-none means ask the operator and nothing else runs.
       if (em.needsYou && em.needsYou !== "none") return
       // CapFailsClosed: an unknown cap refuses to arm.
-      if (CAP === undefined) {
+      if (io.cap === undefined) {
         console.error("[host-loop] HOST_LOOP_MAX_ITERATIONS is not a positive integer; refusing to arm")
         return
       }
       const count = (iterations.get(sessionID) ?? 0) + 1
-      if (count > CAP) {
-        console.error(`[host-loop] stop: cap (${CAP}) reached for ${sessionID}`)
+      if (count > io.cap) {
+        console.error(`[host-loop] stop: cap (${io.cap}) reached for ${sessionID}`)
         return
       }
       // The no-progress guard, counted mechanically: the same position and frontier
@@ -242,4 +252,7 @@ export default {
       console.error(`[host-loop] boot: the verb refused (${boot.text.split("\n")[0]}); the loop stays silent until it is repaired`)
     }
   },
+  }
 }
+
+export default makePlugin()

@@ -1383,3 +1383,10 @@
     evidence = opencode 2.2.2 live: plugin list reads host-loop local from the plan room; the boot probe drove goal show and parsed the emission; admit #1 fired on idle with an armed goal and remaining work and the continuation turn began from the synthetic; the no-tool-call stop is the tier-1 discharge
     tool = host-lifecycle@0.62.4
     recorded = 2026-10-29
+
+[receipt "plan/0106#tier1"]
+    disposition = done
+    verify = the bun unit suite is green against typed fakes of the OpenCode 2 hook
+    evidence = node --test: 20/20 green against the promise-Context fakes from the v2.2.2 pin; the obligations check reads all 24 dispositioned with zero findings under --strict-discharge
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-10-29
