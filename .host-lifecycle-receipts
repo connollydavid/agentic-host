@@ -1810,3 +1810,19 @@
     recorded = 2026-10-29
     revision = db4a0d2026596ac21c3e089bf11d3738fb2d3b78
     conclusion = success
+
+[receipt "ci" "host/check"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/40891707893
+    tool = host-lifecycle@0.62.0
+    recorded = 2026-10-29
+    revision = d0efbaa2
+    conclusion = success
+
+[receipt "ci" "host/reproducible-build"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/40891707979
+    tool = host-lifecycle@0.62.0
+    recorded = 2026-10-29
+    revision = d0efbaa2
+    conclusion = success
