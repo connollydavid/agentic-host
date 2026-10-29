@@ -1832,3 +1832,10 @@
     tool = host-lifecycle@0.62.1
     recorded = 2026-10-29
     target = plan/0101-goal-and-loop-subsystem
+
+[receipt "goal" "complete"]
+    disposition = done
+    tool = host-lifecycle@0.62.1
+    recorded = 2026-10-29
+    conclusion = closed by the composed gates: plan-row, tasks, software --check, ci, tree
+    target = plan/0101-goal-and-loop-subsystem

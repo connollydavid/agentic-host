@@ -1,6 +1,6 @@
 # plan/0101: the goal and loop subsystem
 
-**Status: all nine tasks receipted, the close resumed** (active goal since 2026-10-19; parked 2026-10-20 on the kani lane; resumed 2026-10-29 when the lane greened) (operator ruling 2026-10-18: build it, after a reflection pause because it is core functionality; second ruling the same day: the design must be an idiomatic extension of the host methodology, not a port of foreign implementations). The modality itself is
+**Status: all nine tasks receipted, the close resumed** (active goal since 2026-10-19; parked 2026-10-20 on the kani lane; resumed 2026-10-29 when the lane greened) (operator ruling 2026-10-18: build it, after a reflection pause because it is core functionality; second ruling the same day: the design must be an idiomatic extension of the host methodology, not a port of foreign implementations). The modality itself is — complete 2026-10-29
 [call/0061](../../call/0061-goals-are-milestones-and-completion-composes-the-gates.md);
 this plan executes it.
 
