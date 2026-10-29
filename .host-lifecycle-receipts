@@ -1650,3 +1650,10 @@
     recorded = 2026-10-29
     revision = 2ebf3e977f8547c7e003adbebd2ff8fe58e858dd
     conclusion = failure
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.61.8@9dc17a36afc450c5209a246da70c6f343ab61e1d840d5fd067d4ca590e2237a8
+    authorization = plan/0103
+    tool = host-lifecycle@0.61.0
+    recorded = 2026-10-29
