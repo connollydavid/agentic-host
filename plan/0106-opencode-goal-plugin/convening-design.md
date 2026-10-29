@@ -76,3 +76,19 @@ credential is the first draw.
    assesses progress (Wren).
 8. Model-facing tools are `goal_show` and `tasks_status` (read) and `tasks_record`
    (write); every control verb stays CLI-only (plan/0101, ratified unanimously).
+
+## Addendum (2026-10-29, the re-cut rulings)
+
+The operator re-targeted the design three times in the cutting session, and the seats'
+discipline verdicts survive all three. First, the parity target is the ByBrawe pair's
+surface and loop discipline only: ByBrawe's completion pipeline, independent verifier
+session, and contract format retire as reference, because the host verifier stack is
+the sole verifier and the two do not combine. Second, the design must be fully
+idiomatic to host-*: the command set is the verb family, the tracked surfaces are the
+only state authority, and no new vocabulary ships. Third, the plugin is V2-native
+only, and the legacy bundle retires immediately. Superseded verdict detail: verdict 1's
+plugin-local hold and persisted runtime state are gone; the hold is `goal park`, the
+resume is `goal unpark`, and the only runtime facts are in-memory, which meets Orin's
+and Bly's reconstructibility structurally rather than by discipline. The Fen seat
+stands: the channel refused again on the second probe (the rope gateway answers and
+rejects without the bearer); the program runs the moment the credential lands.
