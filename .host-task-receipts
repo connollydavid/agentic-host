@@ -1344,3 +1344,34 @@
     evidence = measured and recorded in bench/stage0-2026-10-20.md: the cap fired at thirty minutes with no verdict on the first harness, the second was killed at one minute (its FAILED line a kill artifact, the asserts being the push conditions restated), the third carries GitHub's six-hour cancellation; the fix class is decomposition with kani function contracts (the -Z lever confirmed present in the pinned 0.67)
     tool = host-lifecycle@0.61.0
     recorded = 2026-10-20
+
+[receipt "plan/0106#discover"]
+    disposition = done
+    verify = the installed opencode version recorded here with the hook surfaces it
+    inputs = the operator's opencode config and plugins directory
+    evidence = plan/0106-opencode-goal-plugin/README.md discovery Landed block; opencode 1.18.21 with plugin API 1.17.12
+    tool = host-lifecycle@0.62.2
+    recorded = 2026-10-29
+
+[receipt "plan/0106#materialize"]
+    disposition = done
+    verify = the source pinned, the pin recorded, the plugin API package version named
+    inputs = tools/opencode
+    evidence = tools/opencode pinned 098aa7fd (v2.2.2); @opencode/plugin 2.2.2
+    tool = host-lifecycle@0.62.2
+    recorded = 2026-10-29
+
+[receipt "plan/0106#convene"]
+    disposition = done
+    verify = five seat ballots recorded with the adversarial constraint, binding verdicts
+    inputs = cast/
+    evidence = plan/0106-opencode-goal-plugin/convening-design.md with the re-cut addendum
+    tool = host-lifecycle@0.62.2
+    recorded = 2026-10-29
+
+[receipt "plan/0106#stage-kit"]
+    disposition = done
+    verify = `bench/run-ab.py` and the state fixtures exist; a dry run scores one fixture
+    evidence = bench/ dry run green offline: positive 6/6, negative 1/6 with the invented verb named
+    tool = host-lifecycle@0.62.2
+    recorded = 2026-10-29

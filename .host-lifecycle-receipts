@@ -1892,3 +1892,37 @@
     tool = host-lifecycle@0.62.1
     recorded = 2026-10-29
     revision = db4a0d2026596ac21c3e089bf11d3738fb2d3b78
+
+[receipt "goal" "set"]
+    disposition = done
+    tool = host-lifecycle@0.62.2
+    recorded = 2026-10-29
+    target = plan/0106-opencode-goal-plugin
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.62.3@bb2d3e7641313c782c7ee843225cb927706a44ac9a9e64b8cd47e07effa4a16d
+    authorization = connollydavid/host-lifecycle#37
+    tool = host-lifecycle@0.62.3
+    recorded = 2026-10-29
+
+[receipt "publish" "host-lifecycle"]
+    disposition = done
+    evidence = v0.62.3@bb2d3e7641313c782c7ee843225cb927706a44ac9a9e64b8cd47e07effa4a16d
+    tool = host-lifecycle@0.62.3
+    recorded = 2026-10-29
+    revision = b198e2598bab25fb978613809b52a939fe0a5012
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.62.4@c8a79d21d1a77104d2e24dd37d7ab7811395b3f5de682ca30c5c25db04750751
+    authorization = connollydavid/host-lifecycle#37
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-10-29
+
+[receipt "publish" "host-lifecycle"]
+    disposition = done
+    evidence = v0.62.4@c8a79d21d1a77104d2e24dd37d7ab7811395b3f5de682ca30c5c25db04750751
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-10-29
+    revision = 2189cdcc9c12a7858295eb2024889e299e84da0c
