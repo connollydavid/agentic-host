@@ -1,0 +1,10 @@
+{
+  "name": "host-loop",
+  "version": "0.1.0",
+  "description": "The opencode goal loop under host governance (plan/0106): the /host-goal family drives the host-lifecycle verbs, and the loop is the V2 autonomous coordinator's client.",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./server": "./index.ts"
+  }
+}
