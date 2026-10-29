@@ -15,12 +15,12 @@
 	hooks     = pre-commit
 [software "host-lifecycle"]
 	url       = https://github.com/connollydavid/host-lifecycle.git
-	pin       = dff9fa25ad6dc5283389d57543d41a015355cc2c
+	pin       = 006c926242af14e70f27befca2d092224e6ac68a
 	worktrees =
 	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
 	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 CARGO_ENCODED_RUSTFLAGS=-Clink-arg=-Wl,--build-id=none cargo build --release --locked --offline --target x86_64-unknown-linux-musl
 	deploy    = host-lifecycle
-	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle 9dc17a36afc450c5209a246da70c6f343ab61e1d840d5fd067d4ca590e2237a8
+	artifact  = target/x86_64-unknown-linux-musl/release/host-lifecycle dedc814d0d8b6b65b778f14316d85ea29498234368b94a23038ca2c097b019a7
 	deps-bundle = https://github.com/connollydavid/host-lifecycle/releases/download/vendor-v18/vendor.tar.gz c829b71741471d36910eb81cfc5a0b835527e1c228bfb972b58a7469ce89b75f
 [software "host-prove"]
 	url       = https://github.com/connollydavid/host-prove.git
