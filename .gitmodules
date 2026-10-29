@@ -19,3 +19,6 @@
 [submodule "tools/dokimi"]
 	path = tools/dokimi
 	url = https://github.com/intel/dokimi
+[submodule "tools/opencode"]
+	path = tools/opencode
+	url = https://github.com/anomalyco/opencode

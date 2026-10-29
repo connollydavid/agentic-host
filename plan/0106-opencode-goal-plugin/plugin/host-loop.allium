@@ -1,0 +1,113 @@
+-- allium: 3
+-- The host-loop plugin: the opencode goal loop under host governance (plan/0106).
+-- Three separations: the plugin renders and dispatches host verbs and decides nothing
+-- the verbs decide; the tracked surfaces are the only state authority; the host
+-- verifier stack is the sole verifier.
+-- The continuation owner: OpenCode 2's V2 lifecycle and its autonomous coordinator
+-- are the only owners of continuations; the plugin registers as the coordinator's
+-- client and never hand-rolls a competing loop.
+-- Scope: the plugin's behavior (admission, bounds, the tool surface, the stop
+-- reasons). Excludes: the verbs' internals (spec'd beside host-lifecycle), the
+-- OpenCode 2 host runtime (the tools/opencode pin at v2.2.2 is cited, not spec'd),
+-- and the A/B program's protocol (plan/0100's doctrine governs it).
+
+enum ToolKind {
+    -- The model-facing tool registry; there is no complete and there never will be.
+    show
+    status
+    record
+    complete
+}
+
+entity GoalSurface {
+    -- The tracked surfaces read through the verbs: GOAL.md and the receipt fold.
+    state: active | parked | complete | absent
+    transitions state {
+        active -> parked
+        active -> complete
+        parked -> active
+        absent -> active
+        complete -> active
+        terminal: complete
+    }
+}
+
+entity Session {
+    -- The plugin's per-session view; nothing here is persisted by the plugin.
+    idle: Boolean
+    loopArmed: Boolean
+    goal: GoalSurface
+}
+
+entity Tool {
+    -- The plugin's model-facing tool registry.
+    kind: ToolKind
+    provided: Boolean
+}
+
+given {
+    session: Session
+}
+
+surface HostLoop {
+    facing session: Session
+    provides:
+        TickArrives(session)
+        GoalChanges(session)
+    @guarantee OneControllerPerSession
+        -- The single plugin owns the loop beside the host's coordinator; no second
+        -- controller exists, and the plugin never competes with the V2 lifecycle's
+        -- own continuation ownership.
+    @guarantee EmissionIsPrompt
+        -- The continuation body is the goal show emission verbatim plus the door
+        -- doctrine; nothing is referenced but absent.
+    @guarantee StopPrintsReason
+        -- Every stop prints its reason: cap, no-progress, no-tool-call, refusal,
+        -- needs-you, parked, complete.
+    @guarantee CapFailsClosed
+        -- An unknown HOST_LOOP_MAX_ITERATIONS value refuses to arm; never guesses.
+    @guarantee NoPersistentState
+        -- The plugin writes no persistent state; only an in-memory iteration count.
+    @guarantee HonestTelemetry
+        -- The status shows what the verbs said; nothing is invented.
+}
+
+-- The admission rules: the coordinator's safe tick decides by the surface alone.
+rule ArmOnReadyGoal {
+    when: TickArrives(session)
+    requires: session.idle and session.goal.state = active
+    ensures: session.loopArmed = true
+}
+
+rule HoldWhenParked {
+    when: TickArrives(session)
+    requires: session.goal.state = parked
+    ensures: session.loopArmed = false
+}
+
+rule SilentWithoutGoal {
+    when: TickArrives(session)
+    requires: session.goal.state = absent
+    ensures: session.loopArmed = false
+}
+
+rule HoldWhenBusy {
+    when: TickArrives(session)
+    requires: not session.idle
+    ensures: session.loopArmed = false
+}
+
+-- A banked completion stops the loop; only the operator's CLI writes that surface.
+rule StopOnComplete {
+    when: GoalChanges(session)
+    requires: session.goal.state = complete
+    ensures: session.loopArmed = false
+}
+
+-- Resumption is the operator's hand: an unpark or a fresh user turn re-arms at the
+-- next safe tick. The transition graph carries it; no rule re-arms on its own.
+
+invariant NoCompletionTool {
+    for t in Tools where t.kind = complete:
+        not t.provided
+}

@@ -41,6 +41,11 @@ piece that does: the loop as a host surface.
    records which.
 4. **The legacy plugin retires immediately.** Learnings recorded below; the bytes stay
    on disk under a retired name until the swap.
+5. **The V2 lifecycle and its autonomous coordinator are the continuation owners**
+   (operator ruling, mid-cut): the plugin registers as the coordinator's client on
+   OpenCode 2's V2 lifecycle (native prompt admission, the durable inbox,
+   session-idle recovery); it never hand-rolls a competing loop, which is what makes
+   one controller per session structural rather than promised.
 
 ## The design: the loop as a host surface
 
@@ -116,6 +121,23 @@ From the community set, also retired as references: conservative continuation (a
 with no tool calls stops the loop; adopted), the budget concept (becomes the iteration
 cap), and evidence-mapped completion (the composed gates are the stronger form).
 
+## The spec and its obligations
+
+The plugin's behavior is spec'd in allium beside the prototype code
+(`plugin/host-loop.allium`, validated green by the allium CLI): the GoalSurface state
+machine, the admission rules over the coordinator's safe ticks (ArmOnReadyGoal,
+HoldWhenParked, SilentWithoutGoal, HoldWhenBusy, StopOnComplete), the tool registry
+with its no-completion invariant, and the surface @guarantees for the string-level
+facts (EmissionIsPrompt, StopPrintsReason, CapFailsClosed, NoPersistentState,
+HonestTelemetry, OneControllerPerSession). Every derived obligation is dispositioned
+in `plugin/host-loop.obligations`: structural for shape facts, and the tier-1 suite's
+test names declared as the discharge contract for everything behavioral, so a test
+that does not exercise its token cannot ship. Until #tier1 lands the test
+dispositions read ABSENT, the honest interim state. Placement note (plan/0012): the
+spec lives beside the prototype in the plan room and travels with the promotion, the
+lemgate precedent; software without its spec beside it is the defect plan/0012 exists
+to refuse.
+
 ## Design gates
 
 1. **The cast convened at the cut** (`convening-design.md`); an addendum records the
@@ -172,6 +194,16 @@ cap), and evidence-mapped completion (the composed gates are the stronger form).
   the plugin targets OpenCode 2, and the live tiers await a 2.x binary in a scratch
   install or the operator's upgrade.
 
+### Materialize the OpenCode 2 source {#materialize}
+
+- verify: the source pinned, the pin recorded, the plugin API package version named
+- inputs: tools/opencode
+- Landed 2026-10-29: `tools/opencode` is an external-by-source submodule pinned at
+  anomalyco/opencode `v2.2.2` (098aa7fd), the ref where the repo tag and the
+  `@opencode/plugin` package (2.2.2, "authoring interfaces and runtime loader support
+  for OpenCode V2 plugins") agree. The pin is the API authority for every harness
+  tier, and the tier-2 binary builds from it into the scratch install.
+
 ### Convene the cast {#convene}
 
 - verify: five seat ballots recorded with the adversarial constraint, binding verdicts
@@ -198,19 +230,22 @@ cap), and evidence-mapped completion (the composed gates are the stronger form).
 
 ### Plugin prototype {#prototype}
 
-- verify: the plugin (Plugin.define, V2-native) loads in a real OpenCode 2.x session
-  from the plan room; the /host-goal family drives the verbs through subprocesses; the
-  loop fires once on idle with an armed goal and stops on a no-tool-call turn; no
-  persistent plugin state exists
+- verify: the plugin (Plugin.define, V2-native, the coordinator's client) loads in a
+  real OpenCode 2.x session from the plan room; the /host-goal family drives the verbs
+  through subprocesses; the loop fires once on idle with an armed goal and stops on a
+  no-tool-call turn; no persistent plugin state exists
+- inputs: plugin/, ../tools/opencode (the API authority at the pin)
 - depends: #discover, #convene
 - note: runs the incumbent prompt; the confirmed prompt lands after #ab-program
 
 ### Tier 1 suite {#tier1}
 
 - verify: the bun unit suite is green against typed fakes of the OpenCode 2 hook
-  surfaces, asserting the command set, the state authority, and the bounds per stop
-  reason
-- depends: #prototype
+  surfaces (built against the materialized pin's types, never from memory), asserting
+  the command set, the state authority, and the bounds per stop reason; and
+  `host-lifecycle obligations plugin/host-loop.allium --tests plugin
+  --strict-discharge` is green
+- depends: #prototype, #materialize
 
 ### Tier 2 harness {#tier2}
 

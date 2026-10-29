@@ -1,0 +1,33 @@
+# host-loop obligations (plan/0106). Invoke with:
+#   host-lifecycle obligations host-loop.allium --tests plugin --strict-discharge
+# The test dispositions name the tier-1 suite's contract; until #tier1 lands they
+# read ABSENT by design, the honest interim state recorded in the plan README.
+
+entity-fields.GoalSurface              => structural
+entity-fields.Session                  => structural
+entity-fields.Tool                     => structural
+enum-comparable.ToolKind               => structural
+surface-actor.HostLoop                 => structural
+surface-provides.HostLoop              => structural
+transition-rejected.GoalSurface.state  => structural
+transition-terminal.GoalSurface.state  => structural
+
+transition-edge.GoalSurface.active.parked   => test:goal_surface_reaches_parked_and_back exercises=park and unpark
+transition-edge.GoalSurface.parked.active   => test:goal_surface_reaches_parked_and_back exercises=park and unpark
+transition-edge.GoalSurface.absent.active   => test:goal_surface_activates_from_absent exercises=goal set
+transition-edge.GoalSurface.active.complete => test:goal_surface_reaches_complete_and_back exercises=complete and re-set
+transition-edge.GoalSurface.complete.active => test:goal_surface_reaches_complete_and_back exercises=complete and re-set
+
+rule-success.ArmOnReadyGoal    => test:armed_goal_admits_one_continuation exercises=armed goal admits
+rule-success.HoldWhenParked    => test:parked_goal_holds_the_loop exercises=parked holds
+rule-success.SilentWithoutGoal => test:no_goal_is_silent exercises=silent without goal
+rule-success.HoldWhenBusy      => test:busy_tick_never_stacks_a_turn exercises=busy never stacks
+rule-success.StopOnComplete    => test:banked_completion_stops_the_loop exercises=stop on complete
+
+rule-failure.ArmOnReadyGoal.1    => test:a_parked_or_absent_goal_never_arms exercises=never arms
+rule-failure.HoldWhenParked.1    => test:an_active_goal_does_not_hold exercises=does not hold
+rule-failure.SilentWithoutGoal.1 => test:an_active_goal_is_not_silent exercises=is not silent
+rule-failure.HoldWhenBusy.1      => test:an_idle_tick_dispatches exercises=idle tick
+rule-failure.StopOnComplete.1    => test:an_incomplete_goal_keeps_the_loop exercises=keeps the loop
+
+invariant.NoCompletionTool      => test:the_registry_never_provides_complete exercises=never provides complete
