@@ -1787,3 +1787,26 @@
     authorization = plan/0105
     tool = host-lifecycle@0.60.4
     recorded = 2026-10-29
+
+[receipt "publish" "host-lifecycle"]
+    disposition = done
+    evidence = v0.62.1@a57a1342c227c8dfd5d3cf235cf636a077cf05265c47cdbdf8716bef447bd858
+    tool = host-lifecycle@0.62.0
+    recorded = 2026-10-29
+    revision = e6d43a32204d0759bbf88d9e85bd982d840e8b4f
+
+[receipt "ci" "software/host-lifecycle/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-lifecycle/actions/runs/40889467664
+    tool = host-lifecycle@0.62.0
+    recorded = 2026-10-29
+    revision = e6d43a32204d0759bbf88d9e85bd982d840e8b4f
+    conclusion = success
+
+[receipt "ci" "software/host-lint/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-lint/actions/runs/40886464894
+    tool = host-lifecycle@0.62.0
+    recorded = 2026-10-29
+    revision = db4a0d2026596ac21c3e089bf11d3738fb2d3b78
+    conclusion = success
