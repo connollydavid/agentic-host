@@ -1846,3 +1846,18 @@
     authorization = host-lifecycle#36
     tool = host-lifecycle@0.60.4
     recorded = 2026-10-29
+
+[receipt "publish" "host-lifecycle"]
+    disposition = done
+    evidence = v0.62.2@38470c1568ceb7371f091da76fcdaaac5c194a00e81454a042578d6a5110d0a6
+    tool = host-lifecycle@0.62.1
+    recorded = 2026-10-29
+    revision = a711bcb401edd9e7b73f3f4fa7c161befe4a58fc
+
+[receipt "ci" "software/host-lifecycle/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-lifecycle/actions/runs/40919044011
+    tool = host-lifecycle@0.62.1
+    recorded = 2026-10-29
+    revision = a711bcb401edd9e7b73f3f4fa7c161befe4a58fc
+    conclusion = success
