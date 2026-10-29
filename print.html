@@ -24281,6 +24281,28 @@ no-tool-call turn; no persistent plugin state exists</li>
 <li>inputs: plugin/, ../tools/opencode (the API authority at the pin)</li>
 <li>depends: #discover, #convene</li>
 <li>note: runs the incumbent prompt; the confirmed prompt lands after #ab-program</li>
+<li>Built 2026-10-29, the live proof partial: <code>plugin/index.ts</code> and
+<code>plugin/package.json</code> are the promise-form Plugin.define contract, zero
+dependencies (the default export needs no node_modules), carrying the three
+tools (goal_show, tasks_status, tasks_record), the /host-goal family (set takes
+a plan/NNNN-slug, free text refused to goal propose; park, unpark, complete
+drive their verbs and re-orient), and the loop as the coordinator's client: the
+<code>experimental.idle</code> hook admits at most one synthetic continuation per safe
+tick, admission decided by the emission alone, the cap default 25 failing
+closed on an unknown value, the three-stall mechanical guard, and the
+no-tool-call turn guard. The live load proof in a real opencode 2.2.2 session
+(the scratch binary over the fixture): <code>opencode plugin list</code> reads
+<code>host-loop  local  &lt;the plan-room path&gt;</code>, and the standalone server log
+carries the load line plus the boot probe "[host-loop] boot: seam ok;
+plan/0001-smoke; 0 of 1 milestone tasks receipted; PLAN.md row present" — the
+verb subprocess and the parser exercised at startup, model or no model. The
+command turn, the model-driven tool calls, and the idle continuation need a
+live model turn: every channel is exhausted tonight (tokenhub's package
+disabled on both models, rope bearerless and LAN-scoped, the direct Fen
+endpoint LAN-scoped), so the loop half of this node's verify stays unproven
+and the task stays unreceipted; <code>bench/verify-plugin.sh</code> is the one-command
+harness the moment a channel opens. The event subscription floats its
+iterator (the promise form); the promotion decides the Effect-form port.</li>
 </ul>
 <h3 id="tier1"><a class="header" href="#tier1">Tier 1 suite</a></h3>
 <ul>
