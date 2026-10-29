@@ -213,6 +213,11 @@ touches the daily install, or wait for the operator's upgrade; the build node
 records which.</li>
 <li><strong>The legacy plugin retires immediately.</strong> Learnings recorded below; the bytes stay
 on disk under a retired name until the swap.</li>
+<li><strong>The V2 lifecycle and its autonomous coordinator are the continuation owners</strong>
+(operator ruling, mid-cut): the plugin registers as the coordinator's client on
+OpenCode 2's V2 lifecycle (native prompt admission, the durable inbox,
+session-idle recovery); it never hand-rolls a competing loop, which is what makes
+one controller per session structural rather than promised.</li>
 </ol>
 <h2 id="the-design-the-loop-as-a-host-surface"><a class="header" href="#the-design-the-loop-as-a-host-surface">The design: the loop as a host surface</a></h2>
 <h3 id="one-state-authority-the-tracked-surfaces"><a class="header" href="#one-state-authority-the-tracked-surfaces">One state authority: the tracked surfaces</a></h3>
@@ -278,6 +283,21 @@ loop, with state the host ledgers never saw.</li>
 <p>From the community set, also retired as references: conservative continuation (a turn
 with no tool calls stops the loop; adopted), the budget concept (becomes the iteration
 cap), and evidence-mapped completion (the composed gates are the stronger form).</p>
+<h2 id="the-spec-and-its-obligations"><a class="header" href="#the-spec-and-its-obligations">The spec and its obligations</a></h2>
+<p>The plugin's behavior is spec'd in allium beside the prototype code
+(<code>plugin/host-loop.allium</code>, validated green by the allium CLI): the GoalSurface state
+machine, the admission rules over the coordinator's safe ticks (ArmOnReadyGoal,
+HoldWhenParked, SilentWithoutGoal, HoldWhenBusy, StopOnComplete), the tool registry
+with its no-completion invariant, and the surface @guarantees for the string-level
+facts (EmissionIsPrompt, StopPrintsReason, CapFailsClosed, NoPersistentState,
+HonestTelemetry, OneControllerPerSession). Every derived obligation is dispositioned
+in <code>plugin/host-loop.obligations</code>: structural for shape facts, and the tier-1 suite's
+test names declared as the discharge contract for everything behavioral, so a test
+that does not exercise its token cannot ship. Until #tier1 lands the test
+dispositions read ABSENT, the honest interim state. Placement note (plan/0012): the
+spec lives beside the prototype in the plan room and travels with the promotion, the
+lemgate precedent; software without its spec beside it is the defect plan/0012 exists
+to refuse.</p>
 <h2 id="design-gates"><a class="header" href="#design-gates">Design gates</a></h2>
 <ol>
 <li><strong>The cast convened at the cut</strong> (<code>convening-design.md</code>); an addendum records the
@@ -333,6 +353,16 @@ legacy-v1 source is not located on this machine. The V2-only ruling accepts the 
 the plugin targets OpenCode 2, and the live tiers await a 2.x binary in a scratch
 install or the operator's upgrade.</li>
 </ul>
+<h3 id="materialize"><a class="header" href="#materialize">Materialize the OpenCode 2 source</a></h3>
+<ul>
+<li>verify: the source pinned, the pin recorded, the plugin API package version named</li>
+<li>inputs: tools/opencode</li>
+<li>Landed 2026-10-29: <code>tools/opencode</code> is an external-by-source submodule pinned at
+anomalyco/opencode <code>v2.2.2</code> (098aa7fd), the ref where the repo tag and the
+<code>@opencode/plugin</code> package (2.2.2, "authoring interfaces and runtime loader support
+for OpenCode V2 plugins") agree. The pin is the API authority for every harness
+tier, and the tier-2 binary builds from it into the scratch install.</li>
+</ul>
 <h3 id="convene"><a class="header" href="#convene">Convene the cast</a></h3>
 <ul>
 <li>verify: five seat ballots recorded with the adversarial constraint, binding verdicts
@@ -359,19 +389,21 @@ stands with the refusals recorded; every round's table in <code>bench/</code></l
 </ul>
 <h3 id="prototype"><a class="header" href="#prototype">Plugin prototype</a></h3>
 <ul>
-<li>verify: the plugin (Plugin.define, V2-native) loads in a real OpenCode 2.x session
-from the plan room; the /host-goal family drives the verbs through subprocesses; the
-loop fires once on idle with an armed goal and stops on a no-tool-call turn; no
-persistent plugin state exists</li>
+<li>verify: the plugin (Plugin.define, V2-native, the coordinator's client) loads in a
+real OpenCode 2.x session from the plan room; the /host-goal family drives the verbs
+through subprocesses; the loop fires once on idle with an armed goal and stops on a
+no-tool-call turn; no persistent plugin state exists</li>
+<li>inputs: plugin/, ../tools/opencode (the API authority at the pin)</li>
 <li>depends: #discover, #convene</li>
 <li>note: runs the incumbent prompt; the confirmed prompt lands after #ab-program</li>
 </ul>
 <h3 id="tier1"><a class="header" href="#tier1">Tier 1 suite</a></h3>
 <ul>
 <li>verify: the bun unit suite is green against typed fakes of the OpenCode 2 hook
-surfaces, asserting the command set, the state authority, and the bounds per stop
-reason</li>
-<li>depends: #prototype</li>
+surfaces (built against the materialized pin's types, never from memory), asserting
+the command set, the state authority, and the bounds per stop reason; and
+<code>host-lifecycle obligations plugin/host-loop.allium --tests plugin --strict-discharge</code> is green</li>
+<li>depends: #prototype, #materialize</li>
 </ul>
 <h3 id="tier2"><a class="header" href="#tier2">Tier 2 harness</a></h3>
 <ul>
