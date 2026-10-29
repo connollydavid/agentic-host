@@ -1642,3 +1642,11 @@
     recorded = 2026-10-28
     revision = 4dea595eb7e03cc063aa15a748f1e0e1b9ad53bb
     conclusion = failure
+
+[receipt "ci" "software/host-grammar/main/allium"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-grammar/actions/runs/40748166868
+    tool = host-lifecycle@0.61.7
+    recorded = 2026-10-29
+    revision = 2ebf3e977f8547c7e003adbebd2ff8fe58e858dd
+    conclusion = failure
