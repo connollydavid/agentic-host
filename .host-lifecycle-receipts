@@ -1885,3 +1885,10 @@
     recorded = 2026-10-29
     revision = 20a2bcc3
     conclusion = success
+
+[receipt "publish" "host-lint"]
+    disposition = done
+    evidence = v0.24.1@65b0eee78b000e4d726279f0e6303053cf600c35acd87511beb9408f0499bbfd
+    tool = host-lifecycle@0.62.1
+    recorded = 2026-10-29
+    revision = db4a0d2026596ac21c3e089bf11d3738fb2d3b78
