@@ -156,9 +156,9 @@ to refuse.
    endpoint-driven and runs unmodified from a host inside the scope or once the
    bearer is handed over, the plan/0088 one-command pattern.
 3. **dokimi A/Bs the prompts to confirmation** (tools/dokimi, adopted 691c007): arms
-   structure and answer capture from dokimi, scoring by the mechanical rubric (no LLM
-   judge on this endpoint; the plan/0100 verdict); the score comes from the
-   mechanical rubric. Protocol per plan/0100: selection
+   structure and answer capture from dokimi (no LLM judge on this endpoint; the
+   plan/0100 verdict); the score comes from the mechanical rubric. Protocol per
+   plan/0100: selection
    rounds are exploratory with in-round re-baselines, cross-round numbers never
    compare; the winner then faces the locked confirmation stage against the incumbent
    with held-out states untouched by selection, fresh interleaved draws, a pre-declared
