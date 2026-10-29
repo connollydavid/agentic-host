@@ -23,11 +23,11 @@ The host tree sweeps clean under the v0.61.8 prose gate, verified at cut, so the
 1. This record, pushed now. A few more red-run emails arrive during the healing window; the end state is green.
 2. The framing retest: the six harnesses run against the checked-slicing fix, in parallel, ninety minutes each. A row that concludes green stays in the matrix. A row that hangs comes out. The admission rule lands in the workflow comment and in plan/0102: a harness row enters the CI matrix only after one concluding local run.
 3. The template AGENTS.md reword, with its push held until step 7 so one push heals both template lanes.
-4. `vendor-v18`, the new lint deps-bundle for the grammar move to `435960c`.
+4. `vendor-v20`, the new lint deps-bundle for the grammar move to `435960c` (the lint series stands at `vendor-v19`).
 5. host-lint v0.23.2: the anchor-divergence rule with its allium and obligations updates, grammar `435960c`, the checked-slicing fix, and the ci.yml edits. The matrix follows the retest, the kani job gains `timeout-minutes: 100`, and the publish lane stages and verifies the recorded bundle with the build-id flag. The v0.23.2 tag run green is the acceptance moment. A receipt records at the new pin.
 6. host-lifecycle v0.61.9: the lint embed moves to the v0.23.2 sha, and the book generator publishes `plan/PLAN.md` in the template shape, with a fixture test.
 7. One host-template push: the tools/host-lifecycle submodule at v0.61.9, the pin commits, and the reword. Prose and Site heal. Then the host pointer bump.
-8. The host heals: `.host-software` re-pins lint v0.23.2 and lifecycle v0.61.9 with fresh artifact hashes and bundle v18, and every receipt the judge names records at the healed revisions.
+8. The host heals: `.host-software` re-pins lint v0.23.2 and lifecycle v0.61.9 with fresh artifact hashes and bundle v20, and every receipt the judge names records at the healed revisions.
 9. Close: both local judges green, the GitHub sweep green across the eight repos, this README completed with the results, MEMORY entries, and plan/0103's queue resumes behind (the [host#27](https://github.com/connollydavid/host/issues/27) lifecycle and MCP tail, plan/0104 host-voice, the receipt coupling from plan/0103, plan/0075 last).
 
 ## Rules the healing installs
