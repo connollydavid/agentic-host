@@ -1686,3 +1686,51 @@
     authorization = plan/0105
     tool = host-lifecycle@0.60.4
     recorded = 2026-10-29
+
+[receipt "ci" "software/host-grammar/main/allium"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-grammar/actions/runs/40841525580
+    tool = host-lifecycle@0.62.0
+    recorded = 2026-10-29
+    revision = 435960cac32f6ecfd40d4da8b92ec49583414bf0
+    conclusion = success
+
+[receipt "ci" "software/host-grammar/main/host-prove"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-grammar/actions/runs/40841525637
+    tool = host-lifecycle@0.62.0
+    recorded = 2026-10-29
+    revision = 435960cac32f6ecfd40d4da8b92ec49583414bf0
+    conclusion = success
+
+[receipt "ci" "software/host-grammar/main/specula"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-grammar/actions/runs/40841525509
+    tool = host-lifecycle@0.62.0
+    recorded = 2026-10-29
+    revision = 435960cac32f6ecfd40d4da8b92ec49583414bf0
+    conclusion = success
+
+[receipt "ci" "software/host-grammar/main/test"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-grammar/actions/runs/40841525610
+    tool = host-lifecycle@0.62.0
+    recorded = 2026-10-29
+    revision = 435960cac32f6ecfd40d4da8b92ec49583414bf0
+    conclusion = success
+
+[receipt "ci" "software/host/main/install"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host/actions/runs/40678657871
+    tool = host-lifecycle@0.62.0
+    recorded = 2026-10-29
+    revision = 423d152fd5a2d9d9a1b6e7011282e8d99a1e30f5
+    conclusion = success
+
+[receipt "ci" "software/host/main/prose"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host/actions/runs/40678657942
+    tool = host-lifecycle@0.62.0
+    recorded = 2026-10-29
+    revision = 423d152fd5a2d9d9a1b6e7011282e8d99a1e30f5
+    conclusion = success
