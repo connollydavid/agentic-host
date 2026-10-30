@@ -56,9 +56,9 @@ the Fen endpoint; nothing here needs credentials for the dry run.
 
     bash make-fixture.sh
     python3 rubric.py --emission "$FIXTURE_DIR/emission.txt" --state ready-frontier \
-      --reply controls/positive.md   # expect 6
+      --reply controls/positive.txt   # expect 6
     python3 rubric.py --emission "$FIXTURE_DIR/emission.txt" --state ready-frontier \
-      --reply controls/negative.md   # expect <= 3
+      --reply controls/negative.txt   # expect <= 3
 
 No network, no credentials. The dokimi program (`#ab-program`) runs `run-ab.py` from
 a vantage that reaches the endpoint; the selection and confirmation protocol is

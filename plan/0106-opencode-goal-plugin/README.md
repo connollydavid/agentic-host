@@ -274,7 +274,8 @@ to refuse.
 - Live continuation proof, same day (the free gateway model, opencode/glm-5.3-flash-free,
   the channel the auth store already held): with a two-task fixture whose second task
   cannot pass (`verify: false`, the deliberate ready-but-failing state), the server log
-  reads "[host-loop] admit #1: work plan/0001#second" — the idle hook admitted a
+  reads "[host-loop] admit #1" naming the second task's work key — the idle hook
+  admitted a
   continuation with an armed goal and remaining work, and the model's continuation turn
   began from the synthetic. The model ran the failing verify, refused to false-record,
   and named the fixture's design in its own report; the loop's silence rules held at
