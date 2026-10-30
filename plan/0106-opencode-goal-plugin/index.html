@@ -388,12 +388,12 @@ captured from the canonical binary; NEXT is the work-key form.</li>
 stands with the refusals recorded; every round's table in <code>bench/</code></li>
 <li>depends: #stage-kit</li>
 <li>Landed 2026-10-30 (the rope channel opened by the operator): the selection round
-on the ready-frontier state returned a unanimous winner at n=3 — arm C, the door
-doctrine plus the exemplar ACTION block, 6/6 on every draw while every other arm
-scored 1-2/6 inventing the <code>ci</code> verb — and the locked confirmation on the held-out
+on the ready-frontier state returned a unanimous winner at n=3; arm C, the door
+doctrine plus the exemplar ACTION block, 6/6 on every draw; every other arm
+scored 1-2/6 and invented the <code>ci</code> verb; the locked confirmation on the held-out
 needs-you and parked states confirmed it on all three pre-declared criteria
 (C pooled 5.00 vs the incumbent 1.83; C zero-invented on all 12 draws; the
-incumbent violated the state gate on NEEDS YOU, running commands where nothing
+incumbent violated the state gate on NEEDS YOU and ran commands where nothing
 may run). The ship gate passed: the exemplar prompt is the loop's DOCTRINE as of
 this node's commit, and <code>bench/round-1-results.md</code> carries both tables and the
 protocol. The subject was real qwen3.5-4b end to end (the rope WAN edge, the
@@ -421,7 +421,7 @@ no-tool-call turn guard. The live load proof in a real opencode 2.2.2 session
 (the scratch binary over the fixture): <code>opencode plugin list</code> reads
 <code>host-loop  local  &lt;the plan-room path&gt;</code>, and the standalone server log
 carries the load line plus the boot probe "[host-loop] boot: seam ok;
-plan/0001-smoke; 0 of 1 milestone tasks receipted; PLAN.md row present" — the
+plan/0001-smoke; 0 of 1 milestone tasks receipted; PLAN.md row present"; the
 verb subprocess and the parser exercised at startup, model or no model. The
 command turn, the model-driven tool calls, and the idle continuation need a
 live model turn: every channel is exhausted tonight (tokenhub's package
@@ -433,7 +433,7 @@ iterator (the promise form); the promotion decides the Effect-form port.</li>
 <li>Live continuation proof, same day (the free gateway model, opencode/glm-5.3-flash-free,
 the channel the auth store already held): with a two-task fixture whose second task
 cannot pass (<code>verify: false</code>, the deliberate ready-but-failing state), the server log
-reads "[host-loop] admit #1" naming the second task's work key — the idle hook
+reads "[host-loop] admit #1" naming the second task's work key; the idle hook
 admitted a
 continuation with an armed goal and remaining work, and the model's continuation turn
 began from the synthetic. The model ran the failing verify, refused to false-record,
@@ -494,7 +494,7 @@ twice (the admission onto the failing frontier; the failing verify reported; no
 false receipt; exactly one honest receipt; the goal uncompleted). The one miss
 is a real finding, not a harness defect: scenario C's env-plumbed cap
 (<code>HOST_LOOP_MAX_ITERATIONS=0</code>) never reached the plugin under
-<code>opencode run --standalone</code> on the pin — the loop admitted six times and the
+<code>opencode run --standalone</code> on the pin; the loop admitted six times and the
 refusal line never printed, so the environment contract between the CLI and the
 standalone server does not pass through arbitrary plugin env. The remedy is the
 config-plumbed cap (the <code>plugins</code> entry's <code>options</code>, which the schema carries)
@@ -502,7 +502,7 @@ with the env kept as the fallback; the fail-closed rule itself is tier-1-proven
 and unaffected. Corrected note: run-mode sessions DO admit multiple times in
 one process (A showed four admissions, C six); the earlier one-admission
 reading was the throttled runs, and the cap and stall guards are what bind a
-long session — exactly what the config cap fixes.</li>
+long session; exactly what the config cap fixes.</li>
 <li>Addendum, same night: the env-contract finding is fixed at the source. The
 plugin now reads the cap from the plugins entry's <code>options.maxIterations</code>
 (the path that reaches the plugin), falling back to the env, an explicitly
@@ -511,7 +511,7 @@ refusal (22/22 green), and the discharge check stays green. Scenario C's
 harness assert became outcome-based twice over: the config cap demonstrably
 reached the plugin in the first fixed run (zero admissions where the env cap
 had admitted six), and the refusal line's print was re-aimed at a fixture
-whose frontier holds work at the idle boundary — the line prints only then,
+whose frontier holds work at the idle boundary; the line prints only then,
 behind the frontier checks. The free tier's daily allowance is roughly one
 battery; the re-run died mid-A, so the 17/17 completion run awaits a fresh
 quota or a sturdier channel. The scenario-A assert also became outcome-based:
@@ -525,18 +525,17 @@ frontier, recording receipts, and stopping at NEEDS YOU; transcript and rubric t
 in <code>bench/</code></li>
 <li>depends: #tier2, #ab-program</li>
 <li>Landed 2026-10-30, both halves, on real qwen3.5-4b: the work run under the
-confirmed prompt completed the bounded loop — both receipts in the RIGHT ledger
+confirmed prompt completed the bounded loop; both receipts in the RIGHT ledger
 (<code>tasks --record</code> into .host-task-receipts, the task graph reading both done, the
 frontier discharged, two admissions), where the pre-A/B run under the incumbent
 prompt had recorded into the wrong ledger and claimed a completion the surface
 refuted (the finding the A/B was run to fix, fixed). The stop run on the
 NEEDS YOU state held: Fen tried the no-op tool bridge, got nothing, asked the
-operator, and ran nothing — zero commands, zero state changes. The acceptance
+operator, and ran nothing; zero commands, zero state changes. The acceptance
 also surfaced two findings recorded for the ladder: the floor model will
 fabricate a plan directory and re-aim the goal at it (valid_target's existence
 check accepted the fabrication; the deep fix is upstream), and every loop bound
-lived between turns while a weak model's single turn can run unboundedly long —
-the wall-clock deadline (HOST_LOOP_MAX_MINUTES / options.maxMinutes, default 30)
+lived between turns while a weak model's single turn can run unboundedly long; the wall-clock deadline (HOST_LOOP_MAX_MINUTES / options.maxMinutes, default 30)
 is the bound that closes it, pinned in tier 1.</li>
 </ul>
 <h3 id="promote"><a class="header" href="#promote">Promotion ruling</a></h3>
@@ -547,10 +546,10 @@ scoped, and the deferral resolution noted on plan/0103's record</li>
 <li>depends: #fen</li>
 <li>Ruled 2026-10-30: <strong>the component wins</strong> (proposed <code>host-loop</code>, the
 lemgate-to-host-voice arc). The reasons, recorded: the plugin has its own release
-cadence (the prompt ships on A/B confirmation, not on template revisions), its
+cadence (the prompt ships on A/B confirmation alone), its
 own verification surface (23 tier-1 tests, the obligations manifest, the tier-2
-battery), and its own API dependency (the tools/opencode pin) — a template
-payload would couple all three to the spine's revision train and deny adopters
+battery), and its own API dependency (the tools/opencode pin); a template
+payload couples all three to the spine's revision train and costs adopters
 pinned releases, the exact coupling plan/0104 rejected for host-voice. The
 recipe, scoped: a TypeScript component (node-compatible, the bun question open at
 the build milestone) in a <code>connollydavid/host-loop</code> repo, the <code>.host-software</code>
