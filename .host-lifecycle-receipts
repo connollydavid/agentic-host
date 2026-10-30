@@ -1941,3 +1941,9 @@
     tool = host-lifecycle@0.62.4
     recorded = 2026-10-30
     target = plan/0106-opencode-goal-plugin
+
+[receipt "goal" "unpark"]
+    disposition = done
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-10-30
+    target = plan/0106-opencode-goal-plugin
