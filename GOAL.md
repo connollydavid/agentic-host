@@ -1,5 +1,3 @@
 # The active goal
 
-plan/0106-opencode-goal-plugin: The operator's opencode carried a plugin: ~/.
-
-Orient with: host-lifecycle goal show .
+No goal is set. Cut a milestone, then propose it.

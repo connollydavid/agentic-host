@@ -5,7 +5,7 @@ parity target is the ByBrawe pair's surface and loop discipline only, their veri
 machinery retired as reference; the design must be fully idiomatic to host-*, something
 agents reach for naturally; the plugin is V2-native only, and the legacy plugin retires
 immediately). Resolves the OpenCode plugin deferral recorded at
-[plan/0103](../0103-open-issue-sweep/README.md).; active goal since 2026-10-30
+[plan/0103](../0103-open-issue-sweep/README.md).; complete 2026-10-30
 
 ## Why
 

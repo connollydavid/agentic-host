@@ -1947,3 +1947,10 @@
     tool = host-lifecycle@0.62.4
     recorded = 2026-10-30
     target = plan/0106-opencode-goal-plugin
+
+[receipt "goal" "complete"]
+    disposition = done
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-10-30
+    conclusion = closed by the composed gates: plan-row, tasks, software --check, ci, tree
+    target = plan/0106-opencode-goal-plugin
