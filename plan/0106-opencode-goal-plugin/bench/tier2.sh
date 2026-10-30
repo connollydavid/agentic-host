@@ -89,7 +89,8 @@ echo "=== scenario A: the success path, the host-ledger effects ==="
 FIX="$(fixture "echo second-ok")"
 register_provider "${FIX}"
 run_session "${FIX}"
-has "${FIX}/run.log" "admit #" "the loop admitted at least one continuation"
+# The outcome asserts, not the turn shape: the model may discharge both tasks in
+# the command turn itself (no admission needed); the ledger effects are the claim.
 count_is "${FIX}/.host-task-receipts" "disposition = done" 2 "two done receipt stanzas landed"
 has "${FIX}/.host-task-receipts" 'plan/0001#smoke' "the smoke stanza is in the ledger"
 has "${FIX}/.host-task-receipts" 'plan/0001#second' "the second stanza is in the ledger"
@@ -110,13 +111,28 @@ has "${FIX}/GOAL.md" "plan/0001-smoke" "GOAL.md stands"
 report_disk "${FIX}"
 
 echo "=== scenario C: the cap fails closed, the printed reason ==="
-FIX="$(fixture "echo second-ok")"
+# The second task cannot pass, so the frontier holds work at the idle boundary
+# and the cap check is reached (the refusal line prints only then).
+FIX="$(fixture "false")"
 register_provider "${FIX}"
+# The config-plumbed cap (the plugins entry's options), the path that reaches the
+# plugin where the env does not (the tier-2 env-contract finding).
+python3 - "${FIX}" <<'PYEOF'
+import json, sys, pathlib
+fix = pathlib.Path(sys.argv[1])
+cfg = json.loads((fix / "opencode.json").read_text())
+url = cfg["plugins"][0]
+cfg["plugins"] = [{"package": url, "options": {"maxIterations": 0}}]
+(fix / "opencode.json").write_text(json.dumps(cfg, indent=2))
+PYEOF
 cd "${FIX}"
-XDG_CONFIG_HOME="${FIX}/xdg-config" XDG_DATA_HOME="${FIX}/xdg-data" \
-  HOST_LIFECYCLE_BIN="$HOST_LIFECYCLE_BIN" HOST_LOOP_MAX_ITERATIONS=0 \
+DATA=$(mktemp -d /tmp/tier2-data-XXXXXX)
+XDG_CONFIG_HOME="$DATA/config" XDG_DATA_HOME="$DATA/share" \
+  HOST_LIFECYCLE_BIN="$HOST_LIFECYCLE_BIN" \
   "${OPENCODE_BIN}" run --standalone --print-logs -m "${HOST_LOOP_MODEL}" "/host-goal" > run.log 2>&1
+rm -rf "$DATA"
 has "${FIX}/run.log" "HOST_LOOP_MAX_ITERATIONS is not a positive integer; refusing to arm" "the unknown cap prints its refusal"
+lacks "${FIX}/run.log" "admit #" "a refused cap admits nothing"
 report_disk "${FIX}"
 
 echo "=== scenario D: the ready-but-failing task, the integrity of the ledger ==="

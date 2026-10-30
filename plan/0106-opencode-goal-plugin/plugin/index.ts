@@ -50,6 +50,17 @@ function defaultIo(): LoopIo {
   }
 }
 
+// The options cap: the config entry's options.maxIterations overrides the env
+// (the tier-2 finding: the env var does not reach the plugin under `opencode run
+// --standalone` on the pin). An explicitly invalid value refuses; an absent one
+// falls back to the io's cap.
+function optionsCap(options: any): { has: boolean; cap: number | undefined } {
+  const raw = options?.maxIterations
+  if (raw === undefined) return { has: false, cap: undefined }
+  const n = typeof raw === "number" ? raw : Number.parseInt(String(raw), 10)
+  return { has: true, cap: Number.isFinite(n) && n > 0 ? n : undefined }
+}
+
 function parseEmission(text: string) {
   const field = (name: string) => {
     const line = text.split("\n").find((l) => l.startsWith(name))
@@ -69,6 +80,8 @@ export function makePlugin(io: LoopIo = defaultIo()) {
   id: "host-loop",
   setup: async (ctx: any) => {
     const root = ctx.location?.directory ?? process.cwd()
+    const opt = optionsCap(ctx.options)
+    const cap = opt.has ? opt.cap : io.cap
 
     // The verbs, wrapped once: every surface reads through them.
     const goalShow = () => io.runVerb(root, ["goal", "show", "."])
@@ -208,13 +221,13 @@ export function makePlugin(io: LoopIo = defaultIo()) {
       // NEEDS YOU non-none means ask the operator and nothing else runs.
       if (em.needsYou && em.needsYou !== "none") return
       // CapFailsClosed: an unknown cap refuses to arm.
-      if (io.cap === undefined) {
+      if (cap === undefined) {
         console.error("[host-loop] HOST_LOOP_MAX_ITERATIONS is not a positive integer; refusing to arm")
         return
       }
       const count = (iterations.get(sessionID) ?? 0) + 1
-      if (count > io.cap) {
-        console.error(`[host-loop] stop: cap (${io.cap}) reached for ${sessionID}`)
+      if (count > cap) {
+        console.error(`[host-loop] stop: cap (${cap}) reached for ${sessionID}`)
         return
       }
       // The no-progress guard, counted mechanically: the same position and frontier

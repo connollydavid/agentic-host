@@ -95,8 +95,9 @@ async function settle() {
   await new Promise<void>((r) => setImmediate(r))
 }
 
-async function bootWith(io: LoopIo) {
+async function bootWith(io: LoopIo, options?: any) {
   const f = fakeCtx()
+  if (options !== undefined) f.ctx.options = options
   await makePlugin(io).setup(f.ctx)
   return f
 }
@@ -335,6 +336,30 @@ const suite = {
       await withTools(f)
       await tick(f)
       assert.equal(f.synthetic.length, 0, "an unknown cap fails closed")
+    })()
+  },
+
+  the_options_cap_overrides_the_env_cap() {
+    // The config-plumbed cap governs: the plugins entry's options.maxIterations
+    // overrides the env-derived cap (the tier-2 env-contract finding's remedy).
+    return (async () => {
+      const f = await bootWith(fakeIo(ready, 25).io, { maxIterations: 1 })
+      for (let i = 0; i < 2; i++) {
+        await withTools(f)
+        await tick(f)
+      }
+      assert.equal(f.synthetic.length, 1, "the options cap stops the loop at one")
+    })()
+  },
+
+  an_invalid_options_cap_fails_closed() {
+    // CapFailsClosed through the options: an explicitly invalid options cap
+    // refuses to arm even when the env cap is valid.
+    return (async () => {
+      const f = await bootWith(fakeIo(ready, 25).io, { maxIterations: 0 })
+      await withTools(f)
+      await tick(f)
+      assert.equal(f.synthetic.length, 0, "an invalid options cap fails closed")
     })()
   },
 

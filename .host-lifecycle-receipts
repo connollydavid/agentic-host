@@ -1934,3 +1934,10 @@
     recorded = 2026-10-29
     revision = 2189cdcc9c12a7858295eb2024889e299e84da0c
     conclusion = success
+
+[receipt "goal" "park"]
+    disposition = done
+    reason = the remaining three tasks (ab-program, fen, promote) need a Fen channel: hand over ROPE_BEARER or widen the UFW scope to 192.168.178.0/24; every instrument is staged, the battery resumes in one command
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-10-30
+    target = plan/0106-opencode-goal-plugin

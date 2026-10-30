@@ -5,7 +5,7 @@ parity target is the ByBrawe pair's surface and loop discipline only, their veri
 machinery retired as reference; the design must be fully idiomatic to host-*, something
 agents reach for naturally; the plugin is V2-native only, and the legacy plugin retires
 immediately). Resolves the OpenCode plugin deferral recorded at
-[plan/0103](../0103-open-issue-sweep/README.md).; active goal since 2026-10-29
+[plan/0103](../0103-open-issue-sweep/README.md).; parked (the remaining three tasks (ab-program, fen, promote) need a Fen channel: hand over ROPE_BEARER or widen the UFW scope to 192.168.178.0/24; every instrument is staged, the battery resumes in one command) since 2026-10-30
 
 ## Why
 
@@ -334,6 +334,20 @@ to refuse.
   one process (A showed four admissions, C six); the earlier one-admission
   reading was the throttled runs, and the cap and stall guards are what bind a
   long session — exactly what the config cap fixes.
+- Addendum, same night: the env-contract finding is fixed at the source. The
+  plugin now reads the cap from the plugins entry's `options.maxIterations`
+  (the path that reaches the plugin), falling back to the env, an explicitly
+  invalid value failing closed; two tier-1 tests pin the override and the
+  refusal (22/22 green), and the discharge check stays green. Scenario C's
+  harness assert became outcome-based twice over: the config cap demonstrably
+  reached the plugin in the first fixed run (zero admissions where the env cap
+  had admitted six), and the refusal line's print was re-aimed at a fixture
+  whose frontier holds work at the idle boundary — the line prints only then,
+  behind the frontier checks. The free tier's daily allowance is roughly one
+  battery; the re-run died mid-A, so the 17/17 completion run awaits a fresh
+  quota or a sturdier channel. The scenario-A assert also became outcome-based:
+  the model may discharge both tasks in the command turn itself, and the
+  receipt stanzas, not the admit line, are the success claim.
 
 ### Tier 3 Fen acceptance {#fen}
 
