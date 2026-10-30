@@ -74,7 +74,7 @@ def main():
     for arm, n in schedule:
         build = ARMS[arm]
         raw = ask(build(emission))
-        path = out / f"{state}-{arm}-{n}.md"
+        path = out / f"{state}-{arm}-{n}.txt"
         path.write_text(raw, encoding="utf-8")
         checks, invented = score(emission, raw, state)
         total = sum(checks.values())
