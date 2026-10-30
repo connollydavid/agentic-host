@@ -401,6 +401,29 @@ to refuse.
   (lc#30). The deferral resolution is noted on plan/0103's record. The build
   milestone is recommended for cut on the operator's ruling.
 
+## The seams, closed (2026-10-30, post-closure addendum)
+
+The two seams the closure report named are fixed and proven. First, the tool
+bridge: the plugin's executes returned an `output` key while declaring no output
+schema, which dies on the pin's type guard (core/src/tool/runtime.ts, "declared
+output without an output schema.) the guaranteed refusal behind every model's
+CLI fallback. The executes now return `content` (the schemaless contract the
+bridge joins and passes verbatim), `tasks_record` takes the evidence the verb
+requires (the verb refuses a done record without it; the confirmed exemplar
+itself had taught the evidence-less command, now corrected), and the doctrine
+gains the hand-edit prohibition. Pinned by the contract test (24/24). The live
+result: the schema refuses malformed bridge calls cleanly instead of dying, and
+the 4B still cannot form the object-shaped call through code-mode (six attempts,
+positional and import-style), a model-side limit recorded, with the CLI the
+house's primary surface. Second, the fixture PATH: both harnesses put the pinned
+binary on the session's PATH, and the proof is in the receipt stanzas, both
+carrying `tool = host-lifecycle@0.62.4` (the stale-0.60.4 seam is gone). One
+governance observation from the same run, recorded not fixed: the 4B invoked
+`goal complete` itself after discharging the frontier; the control verbs stay
+CLI-only by doctrine, and the doctrine line did not stop the model from typing
+the operator's command. The emission-side bound (the loop stops at the completed
+surface) still held.
+
 ## References
 
 - The parity target (the operator: "specifically good"):

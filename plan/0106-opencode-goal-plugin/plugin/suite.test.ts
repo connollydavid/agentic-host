@@ -293,6 +293,31 @@ const suite = {
     })()
   },
 
+  tool_results_carry_content_not_output() {
+    // The v2.2.2 bridge contract (core/src/tool/runtime.ts): a schemaless tool's
+    // execute returning an `output` key dies ("declared output without an output
+    // schema"); `content` is the shape the bridge joins and passes verbatim.
+    // The record passthrough: the evidence reaches the verb (the verb refuses a
+    // done record without it, the defect that made the tool a guaranteed refusal).
+    return (async () => {
+      const { io, calls } = fakeIo(ready)
+      const f = await bootWith(io)
+      for (const tool of f.tools) {
+        const result = await tool.execute(
+          tool.name === "tasks_record" ? { key: "plan/0001#smoke", evidence: "smoke-ok" } : {},
+        )
+        assert.ok(typeof result === "object" && result !== null, "the result is an object")
+        assert.ok("content" in result, `${tool.name} returns content`)
+        assert.ok(!("output" in result), `${tool.name} never returns a bare output key`)
+        assert.equal(typeof result.content, "string", `${tool.name} content is the text`)
+      }
+      assert.ok(
+        calls.some((c) => c[0] === "tasks" && c[1] === "--record" && c[6] === "smoke-ok"),
+        "the evidence reaches the verb",
+      )
+    })()
+  },
+
   the_command_set_is_the_verb_family() {
     // The command set is the host verb family: three doors, and the /host-goal
     // handler maps set/park/unpark/complete to their verbs and refuses free text

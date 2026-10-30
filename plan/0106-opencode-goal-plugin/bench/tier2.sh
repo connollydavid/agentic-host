@@ -32,8 +32,13 @@ run_session() { # $1 fixture. The server's data dir lives OUTSIDE the fixture: t
   cd "$1"
   local data
   data=$(mktemp -d /tmp/tier2-data-XXXXXX)
+  # The pinned binary on the session's PATH: the model's own `host-lifecycle`
+  # calls run the recorded pin (the receipts' tool= line is the proof).
+  mkdir -p bin
+  ln -sf "${HOST_LIFECYCLE_BIN}" bin/host-lifecycle
   XDG_CONFIG_HOME="$data/config" XDG_DATA_HOME="$data/share" \
     HOST_LIFECYCLE_BIN="$HOST_LIFECYCLE_BIN" \
+    PATH="$1/bin:${PATH}" \
     "${OPENCODE_BIN}" run --standalone --print-logs -m "${HOST_LOOP_MODEL}" "/host-goal" > run.log 2>&1 &
   local pid=$!
   (

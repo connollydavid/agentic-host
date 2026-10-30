@@ -23,12 +23,13 @@ const DOCTRINE = [
   "If it says work a task, start that task.",
   "Never invent a command or a flag.",
   "NEEDS YOU non-none means ask the operator and nothing else runs.",
-  "Record each done task with the tasks verb.",
+  "Record each done task with the tasks verb, passing the verify output as evidence.",
+  "Never hand-edit a state file; the verbs write them.",
   "Then re-orient with goal show.",
   "A correct reply runs the NEXT line's work, records the receipt, and re-orients:",
   "ACTION:",
   "$ <the verify or work the NEXT line names>",
-  "$ host-lifecycle tasks --record <the task key> --disposition done .",
+  "$ host-lifecycle tasks --record <the task key> --disposition done --evidence <the verify output> .",
   "$ host-lifecycle goal show .",
 ].join("\n")
 
@@ -120,7 +121,8 @@ export function makePlugin(io: LoopIo = defaultIo()) {
     // The verbs, wrapped once: every surface reads through them.
     const goalShow = () => io.runVerb(root, ["goal", "show", "."])
     const tasksStatus = () => io.runVerb(root, ["tasks", "."])
-    const tasksRecord = (key: string) => io.runVerb(root, ["tasks", "--record", key, "--disposition", "done", "."])
+    const tasksRecord = (key: string, evidence: string) =>
+      io.runVerb(root, ["tasks", "--record", key, "--disposition", "done", "--evidence", evidence, "."])
     const orient = async (sessionID: string) => {
       const show = await goalShow()
       const body = show.ok ? `${show.text}\n\n${DOCTRINE}` : `${show.text}\n\nThe verb refused; run it in a terminal and read the remedy. Never invent a command or a flag.`
@@ -128,29 +130,36 @@ export function makePlugin(io: LoopIo = defaultIo()) {
     }
 
     // The model-facing tools (the doors' surface; there is no complete and never will be).
+    // The result shape is the v2.2.2 bridge's contract for schemaless tools
+    // (core/src/tool/runtime.ts: an `output` key without a declared output schema
+    // dies; `content` is joined and passed to the model verbatim).
     await ctx.tool.transform((editor: any) => {
       editor.add({
         name: "goal_show",
         description: "The host goal orientation: PURPOSE, POSITION, NEEDS YOU, CI, FRONTIER, NEXT. The emission is the instruction.",
         parameters: { type: "object", properties: {}, additionalProperties: false },
-        execute: async () => ({ output: (await goalShow()).text }),
+        execute: async () => ({ content: (await goalShow()).text }),
       })
       editor.add({
         name: "tasks_status",
         description: "The receipted task graph with the ready frontier.",
         parameters: { type: "object", properties: {}, additionalProperties: false },
-        execute: async () => ({ output: (await tasksStatus()).text }),
+        execute: async () => ({ content: (await tasksStatus()).text }),
       })
       editor.add({
         name: "tasks_record",
-        description: "Record a done task receipt by key (plan/NNNN#anchor). The receipt pulls the task's own verify and inputs.",
+        description: "Record a done task receipt: run the task's verify first, then pass its output as evidence. Key is plan/NNNN#anchor.",
         parameters: {
           type: "object",
-          properties: { key: { type: "string", description: "the task key, e.g. plan/0106#prototype" } },
-          required: ["key"],
+          properties: {
+            key: { type: "string", description: "the task key, e.g. plan/0106#prototype" },
+            evidence: { type: "string", description: "the verify command's output; the verb refuses a done record without it" },
+          },
+          required: ["key", "evidence"],
           additionalProperties: false,
         },
-        execute: async (input: { key: string }) => ({ output: (await tasksRecord(input.key)).text }),
+        execute: async (input: { key: string; evidence: string }) =>
+          ({ content: (await tasksRecord(input.key, input.evidence)).text }),
       })
     })
 

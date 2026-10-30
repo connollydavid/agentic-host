@@ -67,6 +67,12 @@ fi
 
 echo "fixture: ${FIX}"
 cd "${FIX}"
+# The pinned binary on the session's PATH: the model's own `host-lifecycle`
+# calls must run the recorded pin, never a stale PATH binary (the receipts'
+# tool= line is the proof).
+mkdir -p bin
+ln -sf "${HOST_LIFECYCLE_BIN}" bin/host-lifecycle
+export PATH="${FIX}/bin:${PATH}"
 # A second task, dependent on the first, so the frontier still holds work after the
 # first turn: the idle continuation must fire with an armed goal and remaining work.
 # SECOND_VERIFY overrides the verify command ("false" is the forcing shape; a passing
