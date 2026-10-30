@@ -64,11 +64,14 @@ cat >> plan/0001-smoke/README.md <<'EOF'
 - verify: false
 EOF
 git add -A && git commit -qm "fixture: the second task"
-mkdir -p xdg-config xdg-data
-export XDG_CONFIG_HOME="${FIX}/xdg-config"
-export XDG_DATA_HOME="${FIX}/xdg-data"
+DATA=$(mktemp -d /tmp/verify-data-XXXXXX)
+mkdir -p "$DATA/config" "$DATA/share"
+export XDG_CONFIG_HOME="$DATA/config"
+export XDG_DATA_HOME="$DATA/share"
+export VERIFY_DATA="$DATA"
 export HOST_LIFECYCLE_BIN
 "${OPENCODE_BIN}" run --standalone --print-logs -m "${HOST_LOOP_MODEL}" "/host-goal" 2>&1 | tee run.log
 echo "--- ledger after the run ---"
 tail -5 .host-task-receipts 2>/dev/null || echo "(no receipts recorded)"
 echo "FIXTURE_DIR=${FIX}"
+echo "VERIFY_DATA=${VERIFY_DATA}"

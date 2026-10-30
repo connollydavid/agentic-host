@@ -1,0 +1,12 @@
+PlatformError: PermissionDenied: FileSystem.makeDirectory (/xdg-data/opencode/log)
+    at fp (/$bunfs/root/chunk-s84n1m2d.js:2:798)
+    at <anonymous> (/$bunfs/root/chunk-acemmwkp.js:26:5967)
+    at runLoop (/$bunfs/root/chunk-acemmwkp.js:24:2584)
+    at evaluate (/$bunfs/root/chunk-acemmwkp.js:24:1716)
+    at runInAsyncScope (node:async_hooks:207:23)
+    at evaluate (/$bunfs/root/chunk-acemmwkp.js:24:1573)
+    at <anonymous> (/$bunfs/root/chunk-acemmwkp.js:24:6883)
+    at <anonymous> (/$bunfs/root/chunk-acemmwkp.js:26:6002)
+    at guarded (internal:shared:112:26) {
+  [cause]: Error: EACCES: permission denied, mkdir '/xdg-data'
+}
