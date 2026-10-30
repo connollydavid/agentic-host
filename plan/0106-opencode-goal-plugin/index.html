@@ -459,6 +459,39 @@ dispositioned with zero findings under --strict-discharge.</li>
 host-ledger effects (receipt stanzas, GOAL.md, the sidecar), the loop bounds, and
 the printed stop reasons</li>
 <li>depends: #tier1</li>
+<li>Built 2026-10-29, the battery partial: <code>bench/tier2.sh</code> runs four scenarios
+(the success path, the parked hold, the cap failing closed, the
+ready-but-failing integrity) with per-assertion ok/MISS lines, a 1G watchdog on
+the server storage, and the server data dir OUTSIDE the fixture worktree. That
+last one is a harness-design lesson paid for twice: the snapshot machinery
+commits the observed tree per step, so a data dir inside the worktree feeds
+itself (one run wrote 23G before the disk filled; the git-spawn count in the
+run log is the storm's signature). The first corrected run proved the decisive
+assertions before the free gateway's quota ran out ("Free usage limit reached"):
+the admit printed, GOAL.md and the sidecar carried the goal, the parked hold
+passed in full, and the boot probe exercised the seam in every scenario. The
+receipt-stanza and stop-reason asserts are written and correct but await a
+living model channel; the task stays unreceipted until the battery completes.
+Also recorded: in headless run mode the loop admits once per run (the process
+exits after the continuation turn), so the multi-admission bounds are tier-1's
+deterministic ground and the TUI's long-session behavior.</li>
+<li>Battery completed 2026-10-30 (the free quota reset at midnight): <strong>16 of 17
+green</strong>, scenario A in full (the loop admitted; both done receipt stanzas in the
+ledger; GOAL.md and the sidecar carrying the goal; the probe exercised), B in
+full (the parked hold dispatches nothing, every surface standing), D in full
+twice (the admission onto the failing frontier; the failing verify reported; no
+false receipt; exactly one honest receipt; the goal uncompleted). The one miss
+is a real finding, not a harness defect: scenario C's env-plumbed cap
+(<code>HOST_LOOP_MAX_ITERATIONS=0</code>) never reached the plugin under
+<code>opencode run --standalone</code> on the pin — the loop admitted six times and the
+refusal line never printed, so the environment contract between the CLI and the
+standalone server does not pass through arbitrary plugin env. The remedy is the
+config-plumbed cap (the <code>plugins</code> entry's <code>options</code>, which the schema carries)
+with the env kept as the fallback; the fail-closed rule itself is tier-1-proven
+and unaffected. Corrected note: run-mode sessions DO admit multiple times in
+one process (A showed four admissions, C six); the earlier one-admission
+reading was the throttled runs, and the cap and stall guards are what bind a
+long session — exactly what the config cap fixes.</li>
 </ul>
 <h3 id="fen"><a class="header" href="#fen">Tier 3 Fen acceptance</a></h3>
 <ul>
