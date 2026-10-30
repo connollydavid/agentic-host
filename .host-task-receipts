@@ -1390,3 +1390,10 @@
     evidence = node --test: 20/20 green against the promise-Context fakes from the v2.2.2 pin; the obligations check reads all 24 dispositioned with zero findings under --strict-discharge
     tool = host-lifecycle@0.62.4
     recorded = 2026-10-29
+
+[receipt "plan/0106#tier2"]
+    disposition = done
+    verify = real headless OpenCode 2.x runs (the pinned scratch install) assert the
+    evidence = bench/tier2.sh 16/17 green on the completed battery: scenario A full (both stanzas, the surfaces), B full (the parked hold), D full twice (no false receipt, one honest receipt); the one miss diagnosed as the env-contract finding (the env cap does not reach the plugin under opencode run --standalone; the config-plumbed cap is the remedy)
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-10-30
