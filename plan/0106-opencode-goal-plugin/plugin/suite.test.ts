@@ -395,6 +395,27 @@ const suite = {
       assert.equal(f.synthetic.length, 0, "a NEEDS YOU emission stops the loop")
     })()
   },
+
+  the_deadline_stops_a_long_loop() {
+    // The wall-clock bound: the clock stubs 31 minutes ahead before the first
+    // tick (the baseline), the first tick admits, and past 62 minutes the second
+    // tick refuses — the deadline binds however long the turns run.
+    return (async () => {
+      const f = await bootWith(fakeIo(ready, 25).io)
+      const realNow = Date.now
+      Date.now = () => realNow() + 31 * 60_000
+      try {
+        await withTools(f)
+        await tick(f)
+        Date.now = () => realNow() + 62 * 60_000
+        await withTools(f)
+        await tick(f)
+      } finally {
+        Date.now = realNow
+      }
+      assert.equal(f.synthetic.length, 1, "the deadline admits once, then stops the loop")
+    })()
+  },
 }
 
 for (const [name, fn] of Object.entries(suite)) test(name, fn)

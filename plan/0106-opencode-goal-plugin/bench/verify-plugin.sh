@@ -51,19 +51,42 @@ else
   # The catalog-served models (the opencode gateway) need only the auth store.
   printf '{\n  "$schema": "https://opencode.ai/config.json",\n  "plugins": ["%s"],\n  "model": "%s"\n}\n' "${PLUGIN_URL}" "${HOST_LOOP_MODEL}" > "${FIX}/opencode.json"
 fi
+if [ -n "${ROPE_BEARER:-}" ]; then
+  # The rope router (Fen's channel): qwen3.5-4b over the WAN edge, the bearer
+  # env-only, never echoed, never committed.
+  python3 - "${FIX}" <<'PYEOF'
+import json, sys, pathlib
+fix = pathlib.Path(sys.argv[1])
+cfg = json.loads((fix / "opencode.json").read_text())
+cfg["provider"] = {"rope": {"npm": "@ai-sdk/openai-compatible", "name": "rope router",
+  "options": {"baseURL": "https://api.d07yx58.net/v1", "apiKey": "{env:ROPE_BEARER}"},
+  "models": {"qwen3.5-4b": {"name": "Qwen3.5-4B (rope text)", "limit": {"context": 65536, "output": 8192}}}}}
+(fix / "opencode.json").write_text(json.dumps(cfg, indent=2))
+PYEOF
+fi
 
 echo "fixture: ${FIX}"
 cd "${FIX}"
 # A second task, dependent on the first, so the frontier still holds work after the
 # first turn: the idle continuation must fire with an armed goal and remaining work.
-cat >> plan/0001-smoke/README.md <<'EOF'
+# SECOND_VERIFY overrides the verify command ("false" is the forcing shape; a passing
+# command is the #fen work acceptance). DIRTY_START=1 leaves the tree dirty, which
+# reads NEEDS YOU non-none at the first orientation: the stop-half acceptance.
+cat >> plan/0001-smoke/README.md <<EOF
 
 ### Run the second verify {#second}
 
 - depends: plan/0001#smoke
-- verify: false
+- verify: ${SECOND_VERIFY:-false}
 EOF
 git add -A && git commit -qm "fixture: the second task"
+if [ -n "${DIRTY_START:-}" ]; then echo "uncommitted" >> tasks.txt; fi
+if [ -n "${NEEDS_YOU_START:-}" ]; then
+  # The unresolved-closure state (the #37 shape): a complete receipt whose Status
+  # write never landed reads NEEDS YOU non-none at the first orientation. Fixture
+  # construction, not governance: the state exists so the stop half is measurable.
+  printf "\n[receipt \"goal\" \"complete\"]\n    disposition = done\n    target = plan/0001-smoke\n" >> .host-lifecycle-receipts
+fi
 DATA=$(mktemp -d /tmp/verify-data-XXXXXX)
 mkdir -p "$DATA/config" "$DATA/share"
 export XDG_CONFIG_HOME="$DATA/config"

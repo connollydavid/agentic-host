@@ -1397,3 +1397,24 @@
     evidence = bench/tier2.sh 16/17 green on the completed battery: scenario A full (both stanzas, the surfaces), B full (the parked hold), D full twice (no false receipt, one honest receipt); the one miss diagnosed as the env-contract finding (the env cap does not reach the plugin under opencode run --standalone; the config-plumbed cap is the remedy)
     tool = host-lifecycle@0.62.4
     recorded = 2026-10-30
+
+[receipt "plan/0106#ab-program"]
+    disposition = done
+    verify = the confirmation stage passes its pre-declared criteria, or the incumbent
+    evidence = bench/round-1-results.md: the selection unanimous for the exemplar arm (6/6 x3 vs 1-2/6), the locked confirmation passing all three pre-declared criteria on the held-out needs-you and parked states (C 5.00 vs B 1.83, zero-invented clean, the incumbent violating the state gate); the exemplar prompt shipped as the loop DOCTRINE
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-10-30
+
+[receipt "plan/0106#fen"]
+    disposition = done
+    verify = qwen3.5-4b completes a bounded loop in a scratch project, working the
+    evidence = both halves on real qwen3.5-4b: the work run completed the bounded loop under the confirmed prompt (both receipts in the right ledger, the frontier discharged); the stop run held at NEEDS YOU (zero commands, the model asked); the wall-clock-deadline and phantom-plan findings recorded
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-10-30
+
+[receipt "plan/0106#promote"]
+    disposition = done
+    verify = the component-versus-template-payload ruling recorded (proposed component
+    evidence = the component ruling recorded (proposed host-loop, the plan/0104 arc), the recipe and release cascade scoped in the promote node, the deferral resolution noted on plan/0103
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-10-30

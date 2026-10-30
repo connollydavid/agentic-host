@@ -48,7 +48,10 @@ plan/0092, so plans 0093 through 0102 render nowhere while `book --check` passes
 9. **host#27 (large)**: `tasks --new` title validation, a measured STE-style subset in
    host-grammar, `mint_name`/`rule_comment` MCP tools in host-lint.
 10. **host#26 (ruled)**: close the /goal half citing plan/0101; the OpenCode plugin is
-    its own future milestone, recorded here as deferred, not cut.
+    its own future milestone, recorded here as deferred, not cut. (Resolution
+    2026-10-30: cut as [plan/0106](../0106-opencode-goal-plugin/README.md), built and
+    accepted on real qwen3.5-4b; the promotion ruling proposes the `host-loop`
+    component.)
 11. **host#18 (largest, last)**: plan/0075 executes: the reviewed host-reconcile design,
     go/no-go, build ungated.
 

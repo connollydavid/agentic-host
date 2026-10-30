@@ -65,16 +65,22 @@ def main():
     out = HERE / "samples"
     out.mkdir(exist_ok=True)
     table = []
-    for arm, build in sorted(ARMS.items()):
-        for n in range(1, DRAWS + 1):
-            raw = ask(build(emission))
-            path = out / f"{state}-{arm}-{n}.md"
-            path.write_text(raw, encoding="utf-8")
-            checks, invented = score(emission, raw, state)
-            total = sum(checks.values())
-            table.append((state, arm, n, total, ",".join(sorted(set(invented)))))
-            print(f"{state} {arm} draw {n}: {total}/6"
-                  + (f" invented: {table[-1][4]}" if table[-1][4] else ""))
+    # FEN_INTERLEAVE=1 draws round-robin (the plan/0100 protocol: fixed arm order
+    # entangles with within-round drift); the default keeps the arm-serial shape.
+    if os.environ.get("FEN_INTERLEAVE") == "1":
+        schedule = [(arm, n) for n in range(1, DRAWS + 1) for arm in sorted(ARMS)]
+    else:
+        schedule = [(arm, n) for arm in sorted(ARMS) for n in range(1, DRAWS + 1)]
+    for arm, n in schedule:
+        build = ARMS[arm]
+        raw = ask(build(emission))
+        path = out / f"{state}-{arm}-{n}.md"
+        path.write_text(raw, encoding="utf-8")
+        checks, invented = score(emission, raw, state)
+        total = sum(checks.values())
+        table.append((state, arm, n, total, ",".join(sorted(set(invented)))))
+        print(f"{state} {arm} draw {n}: {total}/6"
+              + (f" invented: {table[-1][4]}" if table[-1][4] else ""), flush=True)
     print("\nstate arm n score")
     for row in table:
         print(" ".join(str(x) for x in row))

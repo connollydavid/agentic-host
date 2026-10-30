@@ -1,0 +1,3 @@
+GOAL: plan/0001-smoke
+NEEDS YOU: the complete closure is incomplete (the receipt landed, the Status line did not); reconcile it
+NEXT: host-lifecycle goal repair .

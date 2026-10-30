@@ -228,7 +228,17 @@ to refuse.
 - verify: the confirmation stage passes its pre-declared criteria, or the incumbent
   stands with the refusals recorded; every round's table in `bench/`
 - depends: #stage-kit
-- note: blocked on the Fen credential; runs the moment the channel exists
+- Landed 2026-10-30 (the rope channel opened by the operator): the selection round
+  on the ready-frontier state returned a unanimous winner at n=3 — arm C, the door
+  doctrine plus the exemplar ACTION block, 6/6 on every draw while every other arm
+  scored 1-2/6 inventing the `ci` verb — and the locked confirmation on the held-out
+  needs-you and parked states confirmed it on all three pre-declared criteria
+  (C pooled 5.00 vs the incumbent 1.83; C zero-invented on all 12 draws; the
+  incumbent violated the state gate on NEEDS YOU, running commands where nothing
+  may run). The ship gate passed: the exemplar prompt is the loop's DOCTRINE as of
+  this node's commit, and `bench/round-1-results.md` carries both tables and the
+  protocol. The subject was real qwen3.5-4b end to end (the rope WAN edge, the
+  bearer env-only).
 
 ### Plugin prototype {#prototype}
 
@@ -355,6 +365,20 @@ to refuse.
   frontier, recording receipts, and stopping at NEEDS YOU; transcript and rubric table
   in `bench/`
 - depends: #tier2, #ab-program
+- Landed 2026-10-30, both halves, on real qwen3.5-4b: the work run under the
+  confirmed prompt completed the bounded loop — both receipts in the RIGHT ledger
+  (`tasks --record` into .host-task-receipts, the task graph reading both done, the
+  frontier discharged, two admissions), where the pre-A/B run under the incumbent
+  prompt had recorded into the wrong ledger and claimed a completion the surface
+  refuted (the finding the A/B was run to fix, fixed). The stop run on the
+  NEEDS YOU state held: Fen tried the no-op tool bridge, got nothing, asked the
+  operator, and ran nothing — zero commands, zero state changes. The acceptance
+  also surfaced two findings recorded for the ladder: the floor model will
+  fabricate a plan directory and re-aim the goal at it (valid_target's existence
+  check accepted the fabrication; the deep fix is upstream), and every loop bound
+  lived between turns while a weak model's single turn can run unboundedly long —
+  the wall-clock deadline (HOST_LOOP_MAX_MINUTES / options.maxMinutes, default 30)
+  is the bound that closes it, pinned in tier 1.
 
 ### Promotion ruling {#promote}
 
@@ -362,6 +386,20 @@ to refuse.
   name host-loop, the lemgate-to-host-voice arc), the recipe and release cascade
   scoped, and the deferral resolution noted on plan/0103's record
 - depends: #fen
+- Ruled 2026-10-30: **the component wins** (proposed `host-loop`, the
+  lemgate-to-host-voice arc). The reasons, recorded: the plugin has its own release
+  cadence (the prompt ships on A/B confirmation, not on template revisions), its
+  own verification surface (23 tier-1 tests, the obligations manifest, the tier-2
+  battery), and its own API dependency (the tools/opencode pin) — a template
+  payload would couple all three to the spine's revision train and deny adopters
+  pinned releases, the exact coupling plan/0104 rejected for host-voice. The
+  recipe, scoped: a TypeScript component (node-compatible, the bun question open at
+  the build milestone) in a `connollydavid/host-loop` repo, the `.host-software`
+  stanza pinning it with the plugin directory as the deploy artifact, CI lanes for
+  the tier-1 suite plus the obligations strict-discharge (the tier-2 battery a
+  manual lane against a living channel), and the publish receipt from day one
+  (lc#30). The deferral resolution is noted on plan/0103's record. The build
+  milestone is recommended for cut on the operator's ruling.
 
 ## References
 

@@ -10,6 +10,13 @@
 // The version seam: the binary the verbs run through, overridable for fixtures.
 const HL = process.env.HOST_LIFECYCLE_BIN || "host-lifecycle"
 
+// The continuation body's doctrine, SHIPPED per the A/B confirmation (bench/
+// round-1-results.md): arm C, the door doctrine plus the exemplar ACTION block,
+// confirmed against the incumbent on the held-out needs-you and parked states
+// (C 5.0 vs B 1.83 pooled, the zero-invented hard gate clean, the incumbent
+// violating the state gate). The exemplar is the plan/0100 finding measured in
+// the loop's own context: the exact record command in the prompt is what the
+// weak model needs to land the receipt in the right ledger.
 const DOCTRINE = [
   "Work the NEXT line.",
   "If it is a command, run it as printed.",
@@ -18,7 +25,12 @@ const DOCTRINE = [
   "NEEDS YOU non-none means ask the operator and nothing else runs.",
   "Record each done task with the tasks verb.",
   "Then re-orient with goal show.",
-].join(" ")
+  "A correct reply runs the NEXT line's work, records the receipt, and re-orients:",
+  "ACTION:",
+  "$ <the verify or work the NEXT line names>",
+  "$ host-lifecycle tasks --record <the task key> --disposition done .",
+  "$ host-lifecycle goal show .",
+].join("\n")
 
 // The injected I/O surface: the verb runner and the iteration cap. The production
 // io spawns the binary (the runtime is Bun); the unit suite injects a fake runner
@@ -59,6 +71,28 @@ function optionsCap(options: any): { has: boolean; cap: number | undefined } {
   if (raw === undefined) return { has: false, cap: undefined }
   const n = typeof raw === "number" ? raw : Number.parseInt(String(raw), 10)
   return { has: true, cap: Number.isFinite(n) && n > 0 ? n : undefined }
+}
+
+// The wall-clock bound: every other guard lives between turns, and a weak model's
+// single turn can run unboundedly long (the Fen acceptance exposed it: a 4B
+// thinking-mode turn ran past fifty minutes). The loop stops admitting once its
+// per-session deadline passes; HOST_LOOP_MAX_MINUTES and options.maxMinutes
+// override the 30-minute default.
+function optionsMinutes(options: any): { has: boolean; minutes: number } {
+  const raw = options?.maxMinutes
+  if (raw === undefined) return { has: false, minutes: 0 }
+  const n = typeof raw === "number" ? raw : Number.parseInt(String(raw), 10)
+  return { has: true, minutes: Number.isFinite(n) && n > 0 ? n : 30 }
+}
+
+function deadlineMinutes(options: any): number {
+  const env = process.env.HOST_LOOP_MAX_MINUTES
+  if (env !== undefined) {
+    const n = Number.parseInt(env, 10)
+    if (Number.isFinite(n) && n > 0) return n
+  }
+  const opt = optionsMinutes(options)
+  return opt.has ? opt.minutes : 30
 }
 
 function parseEmission(text: string) {
@@ -190,6 +224,8 @@ export function makePlugin(io: LoopIo = defaultIo()) {
     const progressSig = new Map<string, string>()
     const stalled = new Map<string, number>()
     const usedTools = new Set<string>()
+    const startedAt = new Map<string, number>()
+    const minutes = deadlineMinutes(ctx.options)
 
     // A turn with no tool calls is the anti-runaway guard: count them per session.
     const events = ctx.event.subscribe({ types: ["session.tool.called", "session.deleted"] })
@@ -223,6 +259,14 @@ export function makePlugin(io: LoopIo = defaultIo()) {
       // CapFailsClosed: an unknown cap refuses to arm.
       if (cap === undefined) {
         console.error("[host-loop] HOST_LOOP_MAX_ITERATIONS is not a positive integer; refusing to arm")
+        return
+      }
+      // The wall-clock bound: the loop stops admitting once the per-session
+      // deadline passes, however long the individual turns run.
+      const start = startedAt.get(sessionID) ?? Date.now()
+      startedAt.set(sessionID, start)
+      if (Date.now() - start > minutes * 60_000) {
+        console.error(`[host-loop] stop: the ${minutes}-minute deadline passed for ${sessionID}`)
         return
       }
       const count = (iterations.get(sessionID) ?? 0) + 1

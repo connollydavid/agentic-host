@@ -1,0 +1,8 @@
+PURPOSE: One mechanical task with a verify line, so the loop's continuation prompt has a real NEXT line to answer and the rubric  …
+GOAL: plan/0001-smoke
+POSITION: 0 of 1 milestone tasks receipted; PLAN.md row present
+NEEDS YOU: the goal is parked (the parked state emission); resume with unpark, or exit with abandon
+CI: no receipts (run: host-lifecycle ci .)
+FRONTIER: (held while parked)
+dirty: 7 uncommitted change(s) at c7888ab, 0 unpushed
+NEXT: host-lifecycle goal unpark .
