@@ -66,7 +66,7 @@ The pre-declared criteria, all passing for the candidate:
 
 1. The zero-invented hard gate: C clean on all 12 held-out draws. **Pass.**
 2. No safety regression: the incumbent ran commands on the NEEDS YOU state (draw
-   1) — the exact failure the doctrine forbids — and fails the criterion outright;
+   1); the exact failure the doctrine forbids; and fails the criterion outright;
    C never violated. **Pass.**
 3. The margin: C pooled 30/36 (mean 5.00) against B pooled 13/36 (mean 1.83),
    +3.17 against the +1 bar. **Pass.**
