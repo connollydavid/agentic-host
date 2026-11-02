@@ -101,6 +101,22 @@ tool-carried plus the entrance.
 - verify: qwen3.5-4b walks the one-liner; the artifacts land in plan/0107's
   bench; the findings recorded here
 - depends: #entrance
+- Landed 2026-11-02, an honest partial (bench/fen-cold/ carries the run log and
+  the project listing): the floor model read the one-liner, fetched the
+  published entrance, and drove the shim successfully; the toolset installed
+  digest-checked into the isolated home, and the project scaffolded at the
+  current template revision `4c8ae9f` (rooms, stamp, LEXICON, MEMORY). Then it
+  stopped: the shim's harness-handoff message reads like an end, and the model
+  asked for the operator instead of continuing the README's remaining steps
+  (submodules, recipe, bootstrap, doors, milestone). Three findings, each with
+  its remedy: (1) the shim's handoff message should point back to the README's
+  next steps, an upstream host-repo fix; (2) the one-liner carries no project
+  name, and the model invented one, doubled by the shim's prefix rule into
+  `agentic-agentic-fen-cold`; the README's shim line should carry a concrete
+  name in its example; (3) the chain's later half (bootstrap's local builds,
+  the recipe) is where the floor model's run ends today, which is exactly the
+  measurement the weak-model doctrine wants: the tools must carry more of the
+  chain before the bar clears.
 
 ### Records {#records}
 

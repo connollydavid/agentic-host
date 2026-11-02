@@ -1,0 +1,9 @@
+LEXICON
+MEMORY.md
+README.md
+call
+cast
+plan
+template = "https://github.com/connollydavid/host-template"
+revision = "4c8ae9fd9a796702a876dced425653f55d5feb5d"
+adopted  = "2026-11-02"
