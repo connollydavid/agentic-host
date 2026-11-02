@@ -1978,3 +1978,57 @@
     recorded = 2026-11-02
     revision = c6aa8108202d613e7de32aae288e566dec02a8cf
     conclusion = success
+
+[receipt "release" "host-lifecycle"]
+    disposition = done
+    evidence = v0.63.0@c5219d51d46dd972337f0133ffd5d26bb5910efbecc0a83546474d21b2832f25
+    authorization = plan/0108
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-11-02
+
+[receipt "ci" "software/host/main/install"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host/actions/runs/41521347644
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-11-02
+    revision = c6aa8108202d613e7de32aae288e566dec02a8cf
+    conclusion = success
+
+[receipt "ci" "software/host/main/prose"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host/actions/runs/41521347854
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-11-02
+    revision = c6aa8108202d613e7de32aae288e566dec02a8cf
+    conclusion = success
+
+[receipt "ci" "software/host-lifecycle/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-lifecycle/actions/runs/41519976560
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-11-02
+    revision = 9af1435678d2577be1be2c23cea929e7b14bb9e2
+    conclusion = success
+
+[receipt "publish" "host-lifecycle"]
+    disposition = done
+    evidence = v0.63.0@c5219d51d46dd972337f0133ffd5d26bb5910efbecc0a83546474d21b2832f25
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-11-02
+    revision = 9af1435678d2577be1be2c23cea929e7b14bb9e2
+
+[receipt "ci" "software/host/main/install"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host/actions/runs/41521347644
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-11-02
+    revision = c895c4ef01c1ddca4c233addca616a53f4cefa14
+    conclusion = success
+
+[receipt "ci" "software/host/main/prose"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host/actions/runs/41521347854
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-11-02
+    revision = c895c4ef01c1ddca4c233addca616a53f4cefa14
+    conclusion = success
