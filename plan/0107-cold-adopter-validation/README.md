@@ -62,19 +62,51 @@ are the product as much as the verdict.
 - verify: the acceptance criteria above, judged against the session's artifacts
   (the demo repo itself is the transcript)
 - depends: #entrance-kit
-- note: operator-run, manually; L records the findings after, from the artifacts
+- Landed 2026-11-02: one prompt, the one-liner verbatim, drove 144 messages and
+  152 tool calls, and every claim verified against the artifacts L read back.
+  The session installed the toolset through the shim, instantiated
+  `agentic-host-demo` at template `3ded6ef` beside host-demo, bootstrapped to a
+  green completeness gate, installed the doors in both harnesses (`install
+  --check` rc 0), cut `plan/0001-prove-the-loop`, recorded the task receipt
+  through the loop with the verify output as evidence (`tool =
+  host-lifecycle@0.62.4`, the pinned binary on the demo's own PATH), ran
+  `goal complete` through the composed gate, and absorbed the lem gate blocking
+  a slop-tell commit (rc 1) mid-run.
 
 ### Findings {#findings}
 
 - verify: every friction recorded, each with its remedy (a doc fix here, an
   upstream note there); the upstream debts carried on the tools' trackers
 - depends: #session
+- Landed 2026-11-02, three findings: (1) the kit's four-stanza recipe cannot
+  pass pin equality at template `3ded6ef` (the template ledger's submodule-pin
+  rule holds the template-distributed tools at their own pointers, and specula
+  at that revision carries no CI to satisfy a `.tla` lane); the cold session
+  diagnosed it and ruled the reference-host shape in `call/0000` (the Where
+  room carries the two gate-provider components; allium and specula referenced
+  via the template's tools), and the kit README is fixed to that shape;
+  (2) docker absent, the reproducible-build gate recorded as owed per the
+  README's docker-optional rule, the CI lanes discharged by running each
+  component's test job at its pin locally (235 plus 40 tests, cited in the
+  receipts); (3) the refs walk caught a cross-repo citation in the session's
+  own call/0000 and the session reworded it, the gates teaching the cold model
+  mid-run.
 
 ### Verdict {#verdict}
 
 - verify: the acceptance criteria judged and recorded here; the host-loop cut
   review takes this run's evidence; MEMORY carries the milestone's lesson
 - depends: #findings
+- Landed 2026-11-02: **all six criteria pass**. (a) rooms, the stamp at
+  template `3ded6ef`, the manifest; (b) the completeness gate green (exit 0);
+  (c) the doors green in both harnesses; (d) the first milestone cut, worked,
+  and closed by the composed gate with the receipt in the demo's ledger;
+  (e) one prompt, the published surface, no house memory; (f) three findings
+  recorded with remedies. The verdict rests on the artifacts, read back
+  directly: the stamp, the receipts, `install --check` rc 0, the task graph
+  discharged, `software --check` at zero hazards in the demo, and the demo's
+  own call/0000. The host-loop cut review takes this as its evidence: a cold
+  frontier-tier session ran the whole adopted surface unattended.
 
 ## The replan (the open-work queue, operator-directed)
 
