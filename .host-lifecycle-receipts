@@ -1954,3 +1954,27 @@
     recorded = 2026-10-30
     conclusion = closed by the composed gates: plan-row, tasks, software --check, ci, tree
     target = plan/0106-opencode-goal-plugin
+
+[receipt "ci" "software/host/main/prose"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host/actions/runs/41489447480
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-11-02
+    revision = 423d152fd5a2d9d9a1b6e7011282e8d99a1e30f5
+    conclusion = success
+
+[receipt "ci" "software/host/main/install"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host/actions/runs/41489447494
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-11-02
+    revision = c6aa8108202d613e7de32aae288e566dec02a8cf
+    conclusion = success
+
+[receipt "ci" "software/host/main/prose"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host/actions/runs/41489447480
+    tool = host-lifecycle@0.62.4
+    recorded = 2026-11-02
+    revision = c6aa8108202d613e7de32aae288e566dec02a8cf
+    conclusion = success

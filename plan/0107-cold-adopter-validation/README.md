@@ -22,7 +22,7 @@ hits is an upstream finding owed to the tools.
 
 The operator runs opencode manually (the frontier tier; a Fen-grade second
 session is the optional formal acceptance). The session starts at
-`~/Development/host-demo/README.md` — the front door this milestone prepares —
+the published front door
 and follows it alone: install the host-lifecycle pin, `init agentic-host-demo`
 at the current template revision, wire the template and the four tool
 submodules, write the `.host-software` recipe, `bootstrap` to the completeness
