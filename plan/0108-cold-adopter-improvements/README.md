@@ -53,7 +53,8 @@ tool-carried plus the entrance.
    The loop and doors stop at pending-accept by construction (NEEDS YOU
    non-none).
 2. **The valid_target fabrication guard** (goal.rs): `goal set` refuses a target
-   whose plan README lacks the task structure, naming what was missing.
+   whose plan README lacks the task structure, and the refusal names what was
+   missing.
 3. **The recipe teaching** (main.rs + the entrance): the init/scaffold checklist
    carries the two-component recipe and the pin-equality rule; the software
    --check pin-equality HAZARD names the rule and the remedy; the entrance
