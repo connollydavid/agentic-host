@@ -24861,7 +24861,8 @@ pending state; <code>goal show</code> reads <code>NEEDS YOU: the operator's sema
 The loop and doors stop at pending-accept by construction (NEEDS YOU
 non-none).</li>
 <li><strong>The valid_target fabrication guard</strong> (goal.rs): <code>goal set</code> refuses a target
-whose plan README lacks the task structure, naming what was missing.</li>
+whose plan README lacks the task structure, and the refusal names what was
+missing.</li>
 <li><strong>The recipe teaching</strong> (main.rs + the entrance): the init/scaffold checklist
 carries the two-component recipe and the pin-equality rule; the software
 --check pin-equality HAZARD names the rule and the remedy; the entrance
