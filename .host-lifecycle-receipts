@@ -2113,3 +2113,11 @@
     tool = host-lifecycle@0.63.0
     recorded = 2026-11-04
     revision = 840b3bf2220b7681730f62bb7489f433a4f5d7e4
+
+[receipt "ci" "software/host-loop/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-loop/actions/runs/41843192667
+    tool = host-lifecycle@0.63.0
+    recorded = 2026-11-04
+    revision = 840b3bf2220b7681730f62bb7489f433a4f5d7e4
+    conclusion = success
