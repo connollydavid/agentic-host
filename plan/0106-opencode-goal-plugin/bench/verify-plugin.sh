@@ -99,8 +99,16 @@ export XDG_CONFIG_HOME="$DATA/config"
 export XDG_DATA_HOME="$DATA/share"
 export VERIFY_DATA="$DATA"
 export HOST_LIFECYCLE_BIN
-"${OPENCODE_BIN}" run --standalone --print-logs -m "${HOST_LOOP_MODEL}" "/host-goal" 2>&1 | tee run.log
+# HOST_GOAL_CMD defaults to the bridge's set (the verb, then the native arm);
+# the stop-half scenarios override it with a bare orient.
+"${OPENCODE_BIN}" run --standalone --print-logs -m "${HOST_LOOP_MODEL}" "${HOST_GOAL_CMD:-/host-goal set plan/0001-smoke}" 2>&1 | tee run.log
 echo "--- ledger after the run ---"
 tail -5 .host-task-receipts 2>/dev/null || echo "(no receipts recorded)"
+echo "--- bridge checks (plan/0109) ---"
+if grep -q "\[host-loop\] admit" run.log; then echo "MISS our idle controller fired (it must not exist)"; else echo "ok  no idle controller of our own"; fi
+if grep -q "native goal command failed" run.log; then echo "MISS a native bridge call failed"; grep -m2 "native goal command failed" run.log; else echo "ok  the native bridge never failed"; fi
+if grep -q "\[host-loop\] boot: seam ok" run.log; then echo "ok  the boot probe fired"; else echo "MISS the boot probe"; fi
+if grep -q "\[host-loop\] belt:" run.log; then echo "note a belt fired:"; grep -m2 "\[host-loop\] belt:" run.log; fi
+if grep -q "Goal:" run.log; then echo "ok  the native goal notice appeared"; else echo "note no Goal: notice rendered in the headless transcript (the storage state, not the text, is the arm's proof)"; fi
 echo "FIXTURE_DIR=${FIX}"
 echo "VERIFY_DATA=${VERIFY_DATA}"

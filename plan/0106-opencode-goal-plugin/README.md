@@ -5,7 +5,13 @@ parity target is the ByBrawe pair's surface and loop discipline only, their veri
 machinery retired as reference; the design must be fully idiomatic to host-*, something
 agents reach for naturally; the plugin is V2-native only, and the legacy plugin retires
 immediately). Resolves the OpenCode plugin deferral recorded at
-[plan/0103](../0103-open-issue-sweep/README.md).; complete 2026-10-30
+[plan/0103](../0103-open-issue-sweep/README.md).; complete 2026-10-30;
+**superseded in part 2026-11-04 by [plan/0109](../0109-host-goal-realignment/README.md)**:
+opencode 2.2 shipped its own /goal coordinator, the operator retired every ByBrawe
+plugin, and the plugin's own idle-hook controller (the admission rules, the stall and
+no-tool-call guards, the synthetic continuations) was deleted in favor of the native
+loop. The bridge (the verb family onto the native lifecycle) and the belts carry
+forward in the same plugin directory under plan/0109's spec.
 
 ## Why
 
