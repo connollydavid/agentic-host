@@ -2121,3 +2121,27 @@
     recorded = 2026-11-04
     revision = 840b3bf2220b7681730f62bb7489f433a4f5d7e4
     conclusion = success
+
+[receipt "ci" "software/host/main/install"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host/actions/runs/41847870284
+    tool = host-lifecycle@0.63.0
+    recorded = 2026-11-04
+    revision = b634012dab4d54a9725c79c3babafc42813e1792
+    conclusion = success
+
+[receipt "ci" "software/host/main/prose"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host/actions/runs/41847870295
+    tool = host-lifecycle@0.63.0
+    recorded = 2026-11-04
+    revision = b634012dab4d54a9725c79c3babafc42813e1792
+    conclusion = success
+
+[receipt "ci" "software/host-loop/main/ci"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-loop/actions/runs/41849791714
+    tool = host-lifecycle@0.63.0
+    recorded = 2026-11-04
+    revision = dbce0729a4d87948f653924c086d2bac08b4dab1
+    conclusion = success

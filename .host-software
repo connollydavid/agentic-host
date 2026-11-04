@@ -40,7 +40,7 @@
 	# host-grammar precedent (no binary artifact; the plugin loads by file URL or
 	# the published package).
 	url       = https://github.com/connollydavid/host-loop.git
-	pin       = 840b3bf2220b7681730f62bb7489f433a4f5d7e4
+	pin       = dbce0729a4d87948f653924c086d2bac08b4dab1
 	worktrees =
 [software "host-reference"]
 	# greenfield component (plan/0049, call/0030). Reproducible build established in the
@@ -88,7 +88,7 @@
 	# host-* tools: it is the entrance, not a component (plan/0039). Declared in the
 	# `[entrance]` stanza below (plan/0043).
 	url       = https://github.com/connollydavid/host.git
-	pin       = c895c4ef01c1ddca4c233addca616a53f4cefa14
+	pin       = b634012dab4d54a9725c79c3babafc42813e1792
 	worktrees =
 
 # The single-file entrance (plan/0043): the `host` member's README, held complete against
