@@ -34,6 +34,14 @@
 	url       = https://github.com/connollydavid/host-grammar
 	pin       = 435960cac32f6ecfd40d4da8b92ec49583414bf0
 	worktrees =
+[software "host-loop"]
+	# the opencode goal-loop plugin (plan/0106, realigned plan/0109): the bridge
+	# onto opencode's native /goal and the four belts. A repo-only source on the
+	# host-grammar precedent (no binary artifact; the plugin loads by file URL or
+	# the published package).
+	url       = https://github.com/connollydavid/host-loop.git
+	pin       = a94afa44ba083f64e2213657db2fed9594d7af9d
+	worktrees =
 [software "host-reference"]
 	# greenfield component (plan/0049, call/0030). Reproducible build established in the
 	# spec-and-release task: the canonical CLI binary (default `text` features) builds offline in the

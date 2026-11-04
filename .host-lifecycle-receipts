@@ -2032,3 +2032,30 @@
     recorded = 2026-11-02
     revision = c895c4ef01c1ddca4c233addca616a53f4cefa14
     conclusion = success
+
+[receipt "materialize" "host-loop"]
+    disposition = done
+    evidence = 2 item(s) realized for host-loop at pin ac83d1cf46bb (reference)
+    tool = host-lifecycle@0.63.0
+    recorded = 2026-11-04
+
+[receipt "embed" "host-loop"]
+    disposition = done
+    evidence = the stanza at f09b395; software/host-loop/main materialized and at its pin (plan/0109)
+    tool = host-lifecycle@0.63.0
+    recorded = 2026-11-04
+
+[receipt "release" "host-loop"]
+    disposition = done
+    evidence = initial component cut @ a94afa4: the plugin, spec, suite, and CI lanes (both green, run 41824907722)
+    authorization = plan/0109
+    tool = host-lifecycle@0.63.0
+    recorded = 2026-11-04
+
+[receipt "ci" "software/host-loop/main/CI"]
+    disposition = done
+    evidence = https://github.com/connollydavid/host-loop/actions/runs/41824907722
+    tool = host-lifecycle@0.63.0
+    recorded = 2026-11-04
+    revision = a94afa44ba083f64e2213657db2fed9594d7af9d
+    conclusion = success

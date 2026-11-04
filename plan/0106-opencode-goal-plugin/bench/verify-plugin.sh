@@ -22,7 +22,7 @@ HERE="$(cd "$(dirname "$0")" && pwd)"
 # TOKENHUB_KEY is optional: set it only for the tencent models; the opencode
 # gateway models (the catalog plus the auth store) need no key at all.
 
-PLUGIN_URL="file:///mnt/c/Users/dconnolly/Development/agentic-host/plan/0106-opencode-goal-plugin/plugin"
+PLUGIN_URL="file:///mnt/c/Users/dconnolly/Development/agentic-host/software/host-loop/main"
 
 FIX="$("${HERE}/make-fixture.sh" | grep '^FIXTURE_DIR=' | cut -d= -f2)"
 if [ -n "${TOKENHUB_KEY:-}" ]; then

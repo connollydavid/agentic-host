@@ -11,7 +11,9 @@ opencode 2.2 shipped its own /goal coordinator, the operator retired every ByBra
 plugin, and the plugin's own idle-hook controller (the admission rules, the stall and
 no-tool-call guards, the synthetic continuations) was deleted in favor of the native
 loop. The bridge (the verb family onto the native lifecycle) and the belts carry
-forward in the same plugin directory under plan/0109's spec.
+forward in the component connollydavid/host-loop (cut 2026-11-04 under
+plan/0109, the promote ruling executed; this plan's plugin directory is
+deleted and the code lives in the Where room).
 
 ## Why
 

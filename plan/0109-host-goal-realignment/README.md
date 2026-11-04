@@ -48,7 +48,7 @@ belts keeping every mechanical stop ours.
 
 ### The pin {#pin}
 
-- verify: tools/opencode at v2.2.5, matching the daily binary
+- verify: tools/opencode at v2.2.5; the pin equals the daily binary
 - Landed 2026-11-04: 9bbb8ce (v2.2.5).
 
 ### The bridge and the belts {#bridge}
@@ -80,14 +80,14 @@ belts keeping every mechanical stop ours.
   accepted the claim on the visible (wrong) file contents and stopped the
   loop. Nothing false landed in the record (the task graph shows no receipt;
   our surface still reads active; the stray stanza is a pollution our own
-  gates flag, not a false closure) — a recoverable stop, exactly the designed
+  gates flag, not a false closure); a recoverable stop, exactly the designed
   worst case. The finding replicates the A/B's measurement in the realigned
   setting: the doctrine-with-exemplar is load-bearing for the 4B on EVERY
   turn, and the native continuation template (their text, the objective plus
   reviewer feedback) drops it after the kickoff. Remedies named, not built:
   a doctrine-reminder belt (a short synthetic reminder riding the changed
-  event — not an admission, but it blurs the no-plugin-messages line), or
-  accepting the drift for floor models while the frontier tier (whose cold
+  event; it blurs the no-plugin-messages line),
+  or drift-tolerance for floor models while the frontier tier (whose cold
   run held the surface) drives daily. The operator's call at the review.
 
 ### Records {#records}
@@ -97,10 +97,17 @@ belts keeping every mechanical stop ours.
 
 ### Daily wiring {#daily}
 
-- verify: the plugins entry in the operator config (file:// the plan-room
-  path), `opencode plugin list` reads host-loop, and one boot-probe line in a
+- verify: the plugins entry in the operator config pointing at the
+  materialized component worktree
+  (file:///mnt/c/Users/dconnolly/Development/agentic-host/software/host-loop/main),
+  `opencode plugin list` reads host-loop, and one boot-probe line in a
   real session under the daily 2.2.5
 - depends: #records
+- Superseded shape (the operator, 2026-11-04): the plugin never wires from a
+  plan room; plan/0106's plugin directory is deleted and the component
+  connollydavid/host-loop (ac83d1cf, the host-grammar precedent: a repo-only
+  source at a pin) is its home, materialized under software/host-loop/main
+  with its spec, suite, and CI lanes beside the code (plan/0012).
 
 ## Named risks
 
