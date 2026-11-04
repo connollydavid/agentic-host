@@ -2099,3 +2099,10 @@
     recorded = 2026-11-04
     revision = a94afa44ba083f64e2213657db2fed9594d7af9d
     conclusion = success
+
+[receipt "release" "host-loop"]
+    disposition = done
+    evidence = v0.1.0 @ 840b3bf (tag pushed): the npm cut, @opencode/schema declared, the structural shim the fallback
+    authorization = plan/0109
+    tool = host-lifecycle@0.63.0
+    recorded = 2026-11-04

@@ -40,7 +40,7 @@
 	# host-grammar precedent (no binary artifact; the plugin loads by file URL or
 	# the published package).
 	url       = https://github.com/connollydavid/host-loop.git
-	pin       = a94afa44ba083f64e2213657db2fed9594d7af9d
+	pin       = 840b3bf2220b7681730f62bb7489f433a4f5d7e4
 	worktrees =
 [software "host-reference"]
 	# greenfield component (plan/0049, call/0030). Reproducible build established in the
