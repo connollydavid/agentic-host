@@ -1,6 +1,9 @@
 # plan/0109: realign /host-goal onto opencode's native /goal
 
-**Status: cut 2026-11-04, in build** (operator-directed: "opencode 2.2 has its
+**Status: complete 2026-11-04** (every node landed and verified; the plugin is
+the host-loop component, wired into the daily harness; the reminder-belt
+remedy for the live finding stays an open review item, its own milestone if
+built) (operator-directed: "opencode 2.2 has its
 own /goal system we will uninstall all the plugins ByBraw versions, and realign
 /host-goal to opencode upstream"). The exploration record: the native system
 verified in the materialized pin (`tools/opencode`, goal.ts byte-identical
