@@ -2106,3 +2106,10 @@
     authorization = plan/0109
     tool = host-lifecycle@0.63.0
     recorded = 2026-11-04
+
+[receipt "publish" "host-loop"]
+    disposition = done
+    evidence = npm @connollydavid/host-loop@0.1.0 (tarball https://registry.npmjs.org/@connollydavid/host-loop/-/host-loop-0.1.0.tgz); the daily wiring loads it by package name
+    tool = host-lifecycle@0.63.0
+    recorded = 2026-11-04
+    revision = 840b3bf2220b7681730f62bb7489f433a4f5d7e4
