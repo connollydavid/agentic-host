@@ -78,3 +78,14 @@ One release cascade per lifecycle issue (six). An unpushed pin halts the sweep w
 report. Credentials never committed. Every issue closes with a comment citing its release
 and run URLs. The sweep ends with `software --check` and the ci receipts green,
 plan/0103 completed, MEMORY appended.
+
+## Drained (2026-11-05)
+
+The queue above is drained: [lc#30](https://github.com/connollydavid/host-lifecycle/issues/30)
+has closed since the 2026-10-28 census, and
+[lint#32](https://github.com/connollydavid/host-lint/issues/32) closed when plan/0105
+greened the kani lane. [host#27](https://github.com/connollydavid/host/issues/27) is the
+halfway item and now rides the public-ticket lane of
+[plan/0111](../0111-component-audit-remediation/README.md).
+[host#18](https://github.com/connollydavid/host/issues/18) remains
+[plan/0075](../0075-host-reconcile/README.md)'s to build, last by standing order.
