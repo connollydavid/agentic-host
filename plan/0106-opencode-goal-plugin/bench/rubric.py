@@ -7,12 +7,16 @@ every check is a string fact.
 """
 import argparse, pathlib, re, sys
 
-# The host-lifecycle verb whitelist (main.rs usage line, v0.62.2).
+# The host-lifecycle verb whitelist (main.rs usage line, v0.62.2; corrected
+# 2026-11-05 for round 2: `ci` added — a real verb since v0.55.0, documented on
+# the usage detail line and run by the pinned binary, but absent from the usage
+# summary line the set was transcribed from; round-2-results.md discloses both
+# scorings).
 VERBS = {
     "validate", "next", "adopt", "init", "scaffold", "mcp", "version", "classify",
     "remap", "software", "bootstrap", "env", "resolve", "refs", "upgrade", "book",
     "obligations", "manifest", "receipt", "release", "prose", "reconcile", "entrance",
-    "migrate-receipts", "migrate-recipe", "tasks", "goal", "install", "dream",
+    "migrate-receipts", "migrate-recipe", "tasks", "goal", "install", "dream", "ci",
 }
 
 

@@ -1,0 +1,10 @@
+
+
+$ host-lifecycle goal unpark .
+[Host] Goal unparked successfully. State transition: parked -> active.
+
+TASK: host-lifecycle goal unpark .
+ACTION: $ host-lifecycle tasks --record plan/0001-smoke --disposition done --evidence unparked successfully .
+
+$ goal show
+[Host] Goal plan/0001-smoke is active. 7 uncommitted change(s) at c7888ab.

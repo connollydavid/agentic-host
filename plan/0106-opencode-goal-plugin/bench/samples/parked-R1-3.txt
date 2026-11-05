@@ -1,0 +1,7 @@
+
+
+I'll run the unpark command for the goal as specified.
+
+```bash
+host-lifecycle goal unpark .
+```

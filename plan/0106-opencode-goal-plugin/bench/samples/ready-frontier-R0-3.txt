@@ -1,0 +1,9 @@
+
+
+Starting task: plan/0001#smoke
+
+Current State: 5 uncommitted change(s) at 6c1fc8c.
+
+Re-orienting with goal show.
+
+GOAL: plan/0001-smoke

@@ -76,3 +76,17 @@ carries the exemplar ACTION block as of this table's commit). The incumbent's
 state-gate violation on NEEDS YOU is the round's most consequential finding: the
 doctrine-only prompt does not merely underperform, it occasionally disobeys the
 one rule the autonomy contract exists to enforce.
+
+## Correction (2026-11-05, round 2's instrument audit)
+
+The "state gate" columns above were written by hand, and this kit's own
+instrument contradicts them. Re-scored with rubric.py (unchanged since this
+round except the `ci` whitelist fix, which cannot touch the gate), arm C's six
+held-out confirmation samples each miss the state-gate check (host-lifecycle
+tokens present in the stripped replies), and B misses on needs-you draws 1 and
+3, not only draw 1. The totals and the zero-invented columns stand as drawn.
+The honest reading: criterion 2 as instrumented fails every arm in this round,
+the ship stood on the author's behavioral reading of the replies, and the gate
+as written cannot distinguish a doctrine echo from a run. Plan/0110's round 2
+(bench/round-2-results.md) met the same gate honestly and refused the ship on
+it; an execution-aware gate is prerequisite to any round 3.

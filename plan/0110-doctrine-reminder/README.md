@@ -1,7 +1,11 @@
 # plan/0110: the doctrine reminder rides the context hook
 
-**Status: cut 2026-11-04, in build** (the operator's go on the Q&A round's
-recommendations; the open review item plan/0109 left). The finding it answers
+**Status: complete 2026-11-05, the ship gate failed** (the A/B ran to its
+pre-declared verdict on the real 4B; the reminder stays option-gated, no 0.2.0
+publishes, and the refusals plus the round record are in
+[bench/round-2-results.md](bench/round-2-results.md)). Cut 2026-11-04 on the
+operator's go (the Q&A round's recommendations; the open review item plan/0109
+left). The finding it answers
 is measured: under the native coordinator the 4B drifts off the doctrine after
 kickoff (their continuation template carries the objective but drops the
 exemplar block), which produced a wrong-ledger receipt and a
@@ -56,6 +60,13 @@ gate: on confirmation, the reminder becomes the default and host-loop ships
 - depends: #belt
 - note: hour-scale draws; the kit is the plan/0106 one extended with the
   reminder arm
+- Landed 2026-11-05: the selection (ready-frontier, three draws each,
+  interleaved) R0 3.00 against R1 5.33; the confirmation (held-out states)
+  needs-you 2.00 against 5.00, parked 3.00 against 4.00, R1 zero-invented on
+  all six held-out draws; the state gate fell on every confirmation draw for
+  both arms (parked draw 1 genuinely runs the unpark in its reply); the
+  tables, the instrument corrections, and the round-1 correction are in
+  [bench/round-2-results.md](bench/round-2-results.md)
 
 ### Ship or record {#ship}
 
@@ -63,8 +74,13 @@ gate: on confirmation, the reminder becomes the default and host-loop ships
   with the reminder default-on; otherwise the option stays and the refusals
   land here
 - depends: #ab
+- Landed 2026-11-05: the failure branch. The reminder stays option-gated (the
+  v0.1.0 default; options.reminder / HOST_LOOP_REMINDER), no 0.2.0 publishes,
+  and the refusals are recorded in
+  [bench/round-2-results.md](bench/round-2-results.md)
 
 ### Records {#records}
 
 - verify: the PLAN.md row, MEMORY, the gate
 - depends: #ship
+- Landed 2026-11-05: the row complete, MEMORY appended, the gates green

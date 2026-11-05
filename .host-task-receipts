@@ -1418,3 +1418,25 @@
     evidence = the component ruling recorded (proposed host-loop, the plan/0104 arc), the recipe and release cascade scoped in the promote node, the deferral resolution noted on plan/0103
     tool = host-lifecycle@0.62.4
     recorded = 2026-10-30
+
+[receipt "plan/0110#belt"]
+    disposition = done
+    verify = the context-hook reminder implemented with its guardrails; the
+    inputs = software/host-loop/main/index.ts, suite.test.ts, host-loop.allium
+    evidence = suite green at the worktree (node --test, fail 0, 2026-11-05); the belt with its guardrails and the DoctrineRidesContext guarantee landed at dbce072 per the cut commit 1a49b870
+    tool = host-lifecycle@0.63.0
+    recorded = 2026-11-05
+
+[receipt "plan/0110#ab"]
+    disposition = done
+    verify = the selection and confirmation rounds run on the real 4B with the
+    evidence = selection and confirmation tables in plan/0110-doctrine-reminder/bench/round-2-results.md: R0 3.00 vs R1 5.33 (ready-frontier), needs-you 2.00 vs 5.00, parked 3.00 vs 4.00; R1 zero-invented on all six held-out draws
+    tool = host-lifecycle@0.63.0
+    recorded = 2026-11-05
+
+[receipt "plan/0110#ship"]
+    disposition = done
+    verify = the verdict recorded; on confirmation host-loop 0.2.0 publishes
+    evidence = the failure branch recorded: the refusals in bench/round-2-results.md; the reminder stays option-gated (v0.1.0 default), no 0.2.0
+    tool = host-lifecycle@0.63.0
+    recorded = 2026-11-05

@@ -1,0 +1,4 @@
+
+
+tasks work plan/0001#smoke
+goal show

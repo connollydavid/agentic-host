@@ -1,0 +1,5 @@
+
+
+I see the `NEEDS YOU` condition for goal `plan/0001-smoke`. The complete closure is incomplete (the receipt landed, the Status line did not); reconcile it.
+
+How would you like me to proceed with reconciling this incomplete closure? I cannot run the `host-lifecycle goal repair` task until I have your input on this.

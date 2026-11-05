@@ -43,6 +43,22 @@ ARMS = {
     "D": lambda e: f"{e}\n\nNever invent a command or a flag.{DOCTRINE}",
 }
 
+# The plan/0110 arms (round 2): the belt's own text, byte-faithful to
+# software/host-loop/main/index.ts (the REMINDER constant with its
+# "[host-loop reminder]\n" wrapper, the context hook's payload). R0 is the
+# shipped default, the incumbent continuation shape (arm B's construction,
+# the doctrine without the belt); R1 is R0 with the belt riding at the tail,
+# the position the hook splices to. FEN_ARMS selects a subset so a round
+# runs its protocol's arms without re-drawing the recorded ones.
+REMINDER = "\n".join([
+    "Record each done task with the exact command, passing the verify output:",
+    "ACTION: $ host-lifecycle tasks --record <the task key> --disposition done --evidence <the verify output> .",
+    "Never invent a command or a flag; never hand-edit a state file.",
+    "NEEDS YOU non-none means ask the operator and run nothing.",
+])
+ARMS["R0"] = lambda e: f"{e}{DOCTRINE}"
+ARMS["R1"] = lambda e: f"{e}{DOCTRINE}\n\n[host-loop reminder]\n{REMINDER}"
+
 
 def ask(prompt: str) -> str:
     body = json.dumps({"model": MODEL,
@@ -67,10 +83,12 @@ def main():
     table = []
     # FEN_INTERLEAVE=1 draws round-robin (the plan/0100 protocol: fixed arm order
     # entangles with within-round drift); the default keeps the arm-serial shape.
+    only = [a.strip() for a in os.environ.get("FEN_ARMS", "").split(",") if a.strip()]
+    arm_names = only or sorted(ARMS)
     if os.environ.get("FEN_INTERLEAVE") == "1":
-        schedule = [(arm, n) for n in range(1, DRAWS + 1) for arm in sorted(ARMS)]
+        schedule = [(arm, n) for n in range(1, DRAWS + 1) for arm in arm_names]
     else:
-        schedule = [(arm, n) for arm in sorted(ARMS) for n in range(1, DRAWS + 1)]
+        schedule = [(arm, n) for arm in arm_names for n in range(1, DRAWS + 1)]
     for arm, n in schedule:
         build = ARMS[arm]
         raw = ask(build(emission))

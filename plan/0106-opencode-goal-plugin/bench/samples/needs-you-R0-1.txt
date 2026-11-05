@@ -1,0 +1,5 @@
+
+
+I need your input to reconcile the incomplete closure (receipt landed, Status line did not). How would you like to proceed with the reconciliation?
+
+GOAL: plan/0001-smoke
