@@ -1440,3 +1440,10 @@
     evidence = the failure branch recorded: the refusals in bench/round-2-results.md; the reminder stays option-gated (v0.1.0 default), no 0.2.0
     tool = host-lifecycle@0.63.0
     recorded = 2026-11-05
+
+[receipt "plan/0110#records"]
+    disposition = done
+    verify = the PLAN.md row, MEMORY, the gate
+    evidence = the PLAN.md row complete (c7ff5ecd), MEMORY appended (this commit), ci --gate green at the tip
+    tool = host-lifecycle@0.63.0
+    recorded = 2026-11-05
