@@ -8,7 +8,8 @@ the same with the reminder riding at the tail, byte-faithful to the REMINDER
 constant in software/host-loop/main/index.ts), an FEN_ARMS selector so the
 recorded arms stand untouched, and FEN_INTERLEAVE=1 round-robin per round-1's
 protocol. The fixture is fresh under the pinned 0.63.0 binary
-(fixture-ready-frontier-yKlfqF, NEXT: work plan/0001#smoke). The controls
+(fixture-ready-frontier-yKlfqF, whose NEXT line names the smoke task's work).
+The controls
 asserted before drawing: positive 6/6, negative 1/6.
 
 ## The instrument correction (disclosed before any table)
