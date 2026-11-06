@@ -1475,3 +1475,10 @@
     evidence = Q1 through Q4 in findings.md: clippy seven of seven clean, host-loop 22/22, lint-skill blocked only by the vantage PyYAML gap (D7), docs audits clean or advisory-warn with zero flags
     tool = host-lifecycle@0.64.0
     recorded = 2026-11-06
+
+[receipt "plan/0111#repro"]
+    disposition = done
+    verify = `software --verify-build .` reports VERIFIED for each of the
+    evidence = verify-build in the recorded container: six of six artifacts reproduce (0 deferred, 0 exempt), the host entrance skipping by design; the lane is green with no rows
+    tool = host-lifecycle@0.64.0
+    recorded = 2026-11-06

@@ -99,3 +99,12 @@ lock (the worktree untouched).
 
 The warn tier is advisory by the hook's doctrine; the counts bank as rows for
 a reword-as-touched or dedicated prose pass at #remediate's discretion.
+
+## The reproducibility lane (2026-11-06)
+
+`software --verify-build .` in the recorded muslrust container (podman,
+digest-pinned): **all six container-built components reproduce their recorded
+artifacts** (host-lint, host-lifecycle, host-prove, host-reference,
+host-reference-ocr, host-reference-openscad), zero deferred, zero exempt;
+the `host` entrance records no artifact and skips by design. The lane is
+green with no rows.
