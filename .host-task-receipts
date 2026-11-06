@@ -1489,3 +1489,10 @@
     evidence = every register row terminal: F1 F2 F5 fixed, D1-D5 waived on recorded reasons or path evidence, F3 F4 and the ten open tickets dispositioned to plan/0112; the verify sweep green (software --check 0 after the cut commit, ci --gate 0, obligations strict 12 of 12, refs --gate 0)
     tool = host-lifecycle@0.64.0
     recorded = 2026-11-06
+
+[receipt "plan/0111#records"]
+    disposition = done
+    verify = the PLAN.md row, MEMORY, the gate
+    evidence = the PLAN.md row complete and plan/0112 cut (3996f92f), MEMORY appended (the companion commit), the gates green (software --check 0, ci --gate 0, refs --gate 0, obligations strict 12 of 12)
+    tool = host-lifecycle@0.64.0
+    recorded = 2026-11-06
