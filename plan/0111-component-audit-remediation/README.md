@@ -1,6 +1,10 @@
 # plan/0111: the full-sweep component audit and the public-ticket sweep
 
-**Status: cut 2026-11-05, queued behind plan/0110's ship verdict** (operator
+**Status: complete 2026-11-06** (all five measurement lanes ran and receipted;
+remediation brought every register row terminal: fixed, waived with recorded
+reason or path evidence, or dispositioned to
+[plan/0112](../0112-suite-debt-queue/README.md); the findings register is the
+record). Cut 2026-11-05, queued behind plan/0110's ship verdict (operator
 direction: audit all software under development with this host and plan its
 complete remediation, with the publicly open GitHub tickets part of the
 sweep; the nine `.host-software` components sit in remediation scope, the
@@ -51,7 +55,7 @@ this clone, which may be an unmaterialized binding surface or a hole.
 
 ## Build sequence
 
-### The audit matrix {#matrix}
+### The audit matrix {#the-audit-matrix}
 
 - verify: every judge below runs over the host root and each component
   with its exit code recorded; `findings.md` holds a row for every
@@ -67,7 +71,7 @@ this clone, which may be an unmaterialized binding surface or a hole.
 - note: nothing banks green on a judge that did not run; a missing
   container or verifier is a row, not a skip
 
-### The public-ticket lane {#tickets}
+### The public-ticket lane {#the-public-ticket-lane}
 
 - verify: the re-census (`gh issue list -R <repo> --state open` over the
   connollydavid repos in this tree's orbit, plus our own open filings
@@ -76,7 +80,7 @@ this clone, which may be an unmaterialized binding surface or a hole.
   (remediated here, closed with evidence, assigned to an existing
   milestone, or upstream tracking); every closure comment cites its
   evidence; every `gh` create or edit title lints clean first
-- depends: #matrix
+- depends: #the-audit-matrix
 - note: #27's pending lifecycle mint and comment tools absorb from
   plan/0103; #29 rides the template front door (commit inside
   host-template first, then the pointer bump; nothing lands here but the
@@ -84,45 +88,54 @@ this clone, which may be an unmaterialized binding surface or a hole.
   host-lifecycle #37, #38, and #39 remediate as the sweep's own gates
   trip them
 
-### The reproducibility lane {#repro}
+### The reproducibility lane {#the-reproducibility-lane}
 
 - verify: `software --verify-build .` reports VERIFIED for each of the
   six container-built components, or the DEFERRED or repro-exempt
   verdict is a row in `findings.md`
-- depends: #matrix
+- depends: #the-audit-matrix
 
-### The dependency and security lane {#deps}
+### The dependency and security lane {#the-dependency-and-security-lane}
 
 - verify: each Rust component runs `cargo deny` or `cargo audit` clean
   (a component declaring no advisory scanner is itself a row whose
   remedy follows the change-class rules), host-loop runs `npm audit`
   clean, and every deps-bundle lock agrees with its pin
-- depends: #matrix
+- depends: #the-audit-matrix
 
-### The quality lane {#quality}
+### The quality lane {#the-quality-lane}
 
 - verify: `cargo clippy --all-targets -- -D warnings` clean inside each
   Rust worktree (the runner's clippy is not the box's, the v0.60.7
   lesson), `node --test` green for host-loop, host-lint clean over each
   component tree, and `lint-skill.sh` green for host-lint itself; each
   failure is a row
-- depends: #matrix
+- depends: #the-audit-matrix
 
-### Remediation and re-release {#remediate}
+### Remediation and re-release {#remediation-and-re-release}
 
 - verify: `software --check .` green at the new pins, `ci . --gate` exit
   0 with a receipt citing a run URL for every re-run lane,
   `obligations --strict-discharge` green per declared spec,
   `refs --gate .` green, and every `findings.md` row closed as fixed,
   waived with a receipt, or dispositioned to a named owner
-- depends: #matrix, #tickets, #repro, #deps, #quality
+- depends: #the-audit-matrix, #the-public-ticket-lane, #the-reproducibility-lane, #the-dependency-and-security-lane, #the-quality-lane
 - note: one release cascade per changed component; an unpushed pin halts
   the sweep with a report; credentials never committed
+- Landed 2026-11-06, on the operator's go, with no pin changed (no
+  component released: every code-bearing row dispositioned rather than
+  half-fixed): F1, F2, and F5 fixed; D1 through D5 waived on recorded
+  reasons or path evidence; F3 and F4 and the ten open tickets
+  dispositioned to plan/0112, the dream re-point mechanism's design gap
+  named; the verify sweep green as pre-declared (`software --check` 0,
+  `ci --gate` 0, obligations strict twelve of twelve, `refs --gate` 0)
 
 ### Records {#records}
 
 - verify: the PLAN.md row, MEMORY, the gate
-- depends: #remediate
+- depends: #remediation-and-re-release
+- Landed 2026-11-06: the row complete, MEMORY appended (the re-point
+  disclosure and the session entry), the gates green
 
 ## Named risks
 

@@ -1448,37 +1448,44 @@
     tool = host-lifecycle@0.63.0
     recorded = 2026-11-05
 
-[receipt "plan/0111#matrix"]
+[receipt "plan/0111#the-audit-matrix"]
     disposition = done
     verify = every judge below runs over the host root and each component
     evidence = the judge table in plan/0111-component-audit-remediation/findings.md: twelve judges run with exit codes recorded, nine rows banked (F1 through F9), twelve obligations specs strict-discharge green, zero judges blocked
     tool = host-lifecycle@0.64.0
     recorded = 2026-11-06
 
-[receipt "plan/0111#tickets"]
+[receipt "plan/0111#the-public-ticket-lane"]
     disposition = done
     verify = the re-census (`gh issue list -R <repo> --state open` over the
     evidence = the re-census and twelve-row disposition table in findings.md: eleven open across host and host-lifecycle plus opencode#61676 upstream, three delta rows since cut, closure evidence cited for lc#30 and lint#32
     tool = host-lifecycle@0.64.0
     recorded = 2026-11-06
 
-[receipt "plan/0111#deps"]
+[receipt "plan/0111#the-dependency-and-security-lane"]
     disposition = done
     verify = each Rust component runs `cargo deny` or `cargo audit` clean
     evidence = D1 through D7 in findings.md: cargo-deny over all seven Rust components (two configured trees carry real errors: host-reference 11, host-reference-ocr 1 vulnerability; the pulldown-cmark advisory pair in three trees), host-loop audited clean via a throwaway lock
     tool = host-lifecycle@0.64.0
     recorded = 2026-11-06
 
-[receipt "plan/0111#quality"]
+[receipt "plan/0111#the-quality-lane"]
     disposition = done
     verify = `cargo clippy --all-targets -- -D warnings` clean inside each
     evidence = Q1 through Q4 in findings.md: clippy seven of seven clean, host-loop 22/22, lint-skill blocked only by the vantage PyYAML gap (D7), docs audits clean or advisory-warn with zero flags
     tool = host-lifecycle@0.64.0
     recorded = 2026-11-06
 
-[receipt "plan/0111#repro"]
+[receipt "plan/0111#the-reproducibility-lane"]
     disposition = done
     verify = `software --verify-build .` reports VERIFIED for each of the
     evidence = verify-build in the recorded container: six of six artifacts reproduce (0 deferred, 0 exempt), the host entrance skipping by design; the lane is green with no rows
+    tool = host-lifecycle@0.64.0
+    recorded = 2026-11-06
+
+[receipt "plan/0111#remediation-and-re-release"]
+    disposition = done
+    verify = `software --check .` green at the new pins, `ci . --gate` exit
+    evidence = every register row terminal: F1 F2 F5 fixed, D1-D5 waived on recorded reasons or path evidence, F3 F4 and the ten open tickets dispositioned to plan/0112; the verify sweep green (software --check 0 after the cut commit, ci --gate 0, obligations strict 12 of 12, refs --gate 0)
     tool = host-lifecycle@0.64.0
     recorded = 2026-11-06
