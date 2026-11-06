@@ -26,8 +26,8 @@ recorded, one row per non-green, the pre-named openings dispositioned.
 | id | surface | finding | remedy |
 |---|---|---|---|
 | F1 | host record | `software --check` HAZARD: plan/0110's bench/round-2-results.md:11 carries `plan/0001#smoke`, which does not resolve to a task here (the fixture's plan lives in /tmp; the audit's own yesterday artifact tripped the task-reference scan) | reword the line to name the fixture without the resolvable-looking token; milestone-doc edit, own commit |
-| F2 | worktrees | `--verify-setup`: ten gates missing — the host-lint root gate plus every worktree's commit gate (`installed gate matches the built one`; host-loop's worktree gate wholly absent) | `host-lifecycle software --install-hooks .`, then re-run the gate |
-| F3 | memory | `dream`: 19 confirmed room-touching findings — June-era MEMORY entries citing call/0002 through call/0011 whose Status lines read superseded by the methodology spine | 19 appended re-points (dream's route=append), never in-place edits |
+| F2 | worktrees | `--verify-setup`: ten gates missing: the host-lint root gate plus every worktree's commit gate (`installed gate matches the built one`; host-loop's worktree gate wholly absent) | `host-lifecycle software --install-hooks .`, then re-run the gate |
+| F3 | memory | `dream`: 19 confirmed room-touching findings: June-era MEMORY entries citing call/0002 through call/0011 whose Status lines read superseded by the methodology spine | 19 appended re-points (dream's route=append), never in-place edits |
 | F4 | memory | `dream`: 34 review prompts (advisory) | read at remediation; each dispositioned or left with reason |
 | F5 | record | plan/0102's PLAN.md row still reads cut/in-build though its lane greened via plan/0105 and lint#32 closed | flip the row with the evidence |
 | F6 | memory layout | the pre-named opening: newest MEMORY entries sit above the title; dream raises no finding on it | dispositioned: not a gate finding; a future formatting pass, the operator's call |
