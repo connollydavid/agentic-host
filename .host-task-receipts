@@ -1461,3 +1461,17 @@
     evidence = the re-census and twelve-row disposition table in findings.md: eleven open across host and host-lifecycle plus opencode#61676 upstream, three delta rows since cut, closure evidence cited for lc#30 and lint#32
     tool = host-lifecycle@0.64.0
     recorded = 2026-11-06
+
+[receipt "plan/0111#deps"]
+    disposition = done
+    verify = each Rust component runs `cargo deny` or `cargo audit` clean
+    evidence = D1 through D7 in findings.md: cargo-deny over all seven Rust components (two configured trees carry real errors: host-reference 11, host-reference-ocr 1 vulnerability; the pulldown-cmark advisory pair in three trees), host-loop audited clean via a throwaway lock
+    tool = host-lifecycle@0.64.0
+    recorded = 2026-11-06
+
+[receipt "plan/0111#quality"]
+    disposition = done
+    verify = `cargo clippy --all-targets -- -D warnings` clean inside each
+    evidence = Q1 through Q4 in findings.md: clippy seven of seven clean, host-loop 22/22, lint-skill blocked only by the vantage PyYAML gap (D7), docs audits clean or advisory-warn with zero flags
+    tool = host-lifecycle@0.64.0
+    recorded = 2026-11-06

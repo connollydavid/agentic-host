@@ -71,3 +71,31 @@ COMPLETED 2026-10-29T16:58:47Z; the stanza's claims hold.
 Twelve rows, every open ticket in the re-census carrying exactly one
 disposition; each remediated-here row is fixed or verified-and-closed at
 #remediate, never before.
+
+## The dependency and security lane (2026-11-06)
+
+The scanner: cargo-deny v0.20.2 installed to the user cargo bin this session
+(the vantage carried none). host-loop audited through a throwaway generated
+lock (the worktree untouched).
+
+| id | component | finding | remedy |
+|---|---|---|---|
+| D1 | host-reference | `cargo deny check` (its own deny.toml): 11 errors, the unmaintained class leading (bitmaps, im, and siblings) | bump or waiver per the config's own rules at #remediate |
+| D2 | host-reference-ocr | `cargo deny check` (its own deny.toml): 1 vulnerability, advisory title "Invalid pointer dereference in fmt::Pointer impl for Atomic and Shared when the underlying pointer is invalid" | bump the crate at #remediate |
+| D3 | host-grammar (direct), host-lint and host-lifecycle (embedded) | the pulldown-cmark wikilink advisory pair (exponential event growth; quadratic parsing of nested image wikilinks), 2 errors in each tree | a grammar-side bump cascading through the embed-equality chain |
+| D4 | host-lint, host-lifecycle, host-prove, host-grammar | no deny.toml declared; the advisories pass above is informational, not the component's own gate | declare the scanner or record the waiver, per change-class rules |
+| D5 | host-loop | no committed package-lock.json; the throwaway-lock audit reads 0 vulnerabilities; the committed lock is a component design decision | decide at #remediate |
+| D6 | all bundled | deps-bundle lock-vs-pin coherence green (`software --check`; F1 the only hazard) | none |
+| D7 | vantage | PyYAML absent, so lint-skill.sh cannot run locally; CI at the pin is the lane's authority and is green and receipted | `pacman -S python-yaml` when a sudo moment exists; advisory |
+
+## The quality lane (2026-11-06)
+
+| id | check | verdict |
+|---|---|---|
+| Q1 | `cargo clippy --all-targets -- -D warnings`, all seven Rust worktrees | clean, seven of seven |
+| Q2 | host-loop `node --test` | 22/22 green (2026-11-05, and again at the belt evidence run) |
+| Q3 | host-lint `lint-skill.sh` | blocked locally by D7; CI at pin green |
+| Q4 | `host-lint --docs` per worktree | clean: host-loop, host, host-reference, host-reference-ocr, host-reference-openscad. Advisory trope warns: host-lifecycle 108, host-prove 80, host-grammar 2, host-lint 2. Zero flag-tier tells anywhere (an earlier grep counted "flagged" inside a warning line as a flag; the correction is recorded here) |
+
+The warn tier is advisory by the hook's doctrine; the counts bank as rows for
+a reword-as-touched or dedicated prose pass at #remediate's discretion.
