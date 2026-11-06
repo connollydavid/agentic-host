@@ -41,3 +41,33 @@ The host-lint root binary on PATH answered `--version` current with the pin;
 the WSL cargo-bin tooling matches 0.63.0; the bearer vantage for bench work
 resolved without exposure. The reproducibility, dependency, quality, and
 ticket lanes are separate tasks and have not yet run.
+
+## The public-ticket lane (2026-11-06, the gh re-census)
+
+Delta against the cut census: lc#41 and lc#42 opened since cut (new,
+unassigned), lc#43 filed by this audit. host-template, weco-cli, and
+weco-skill carry no issue tracker at all (issues disabled; the cut census's
+"clean" reads as tracker-absent, a disposition note rather than a finding).
+Upstream: zero of our filings on allium, Specula, calx-knap, and dokimi;
+opencode#61676 remains open. Closure evidence for the plan/0103 drain
+stanza: lc#30 CLOSED COMPLETED 2026-10-29T09:45:41Z, lint#32 CLOSED
+COMPLETED 2026-10-29T16:58:47Z; the stanza's claims hold.
+
+| ticket | disposition |
+|---|---|
+| host#18 | assigned: plan/0075, last by standing order |
+| host#27 | remediated here: the lifecycle mint and comment tools pending from plan/0103 (rides #remediate) |
+| host#29 | remediated here via the template front door (commit inside host-template, then the pointer bump; the outward act banks under the authority question parked with the operator) |
+| host#30 | remediated here: the book --check placement for nested evidence archives (F8 holds the flat case green) |
+| host#31 | remediated here: the install door's description de-hardcoded (fix or verify-and-close at #remediate) |
+| lc#37 | remediated here: the closure-pair check aligned to the v0.62.2 writer |
+| lc#38 | remediated here: the Status-convention split unified |
+| lc#39 | remediated here: the anchor-rename receipt path (design-sized; splits to its own milestone if the fix outgrows a lane) |
+| lc#41 | remediated here (delta since cut): the ci judge's sanctioned local-lane discharge form |
+| lc#42 | remediated here (delta since cut): the goal gate's plan-row path for template adopters |
+| lc#43 | remediated here: the usage summary's ci verb, filed by this audit |
+| opencode#61676 | upstream tracking, not ours to close |
+
+Twelve rows, every open ticket in the re-census carrying exactly one
+disposition; each remediated-here row is fixed or verified-and-closed at
+#remediate, never before.

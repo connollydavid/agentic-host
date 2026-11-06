@@ -1454,3 +1454,10 @@
     evidence = the judge table in plan/0111-component-audit-remediation/findings.md: twelve judges run with exit codes recorded, nine rows banked (F1 through F9), twelve obligations specs strict-discharge green, zero judges blocked
     tool = host-lifecycle@0.64.0
     recorded = 2026-11-06
+
+[receipt "plan/0111#tickets"]
+    disposition = done
+    verify = the re-census (`gh issue list -R <repo> --state open` over the
+    evidence = the re-census and twelve-row disposition table in findings.md: eleven open across host and host-lifecycle plus opencode#61676 upstream, three delta rows since cut, closure evidence cited for lc#30 and lint#32
+    tool = host-lifecycle@0.64.0
+    recorded = 2026-11-06
