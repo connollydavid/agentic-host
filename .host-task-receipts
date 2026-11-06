@@ -1447,3 +1447,10 @@
     evidence = the PLAN.md row complete (c7ff5ecd), MEMORY appended (this commit), ci --gate green at the tip
     tool = host-lifecycle@0.63.0
     recorded = 2026-11-05
+
+[receipt "plan/0111#matrix"]
+    disposition = done
+    verify = every judge below runs over the host root and each component
+    evidence = the judge table in plan/0111-component-audit-remediation/findings.md: twelve judges run with exit codes recorded, nine rows banked (F1 through F9), twelve obligations specs strict-discharge green, zero judges blocked
+    tool = host-lifecycle@0.64.0
+    recorded = 2026-11-06
