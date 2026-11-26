@@ -1496,3 +1496,10 @@
     evidence = the PLAN.md row complete and plan/0112 cut (3996f92f), MEMORY appended (the companion commit), the gates green (software --check 0, ci --gate 0, refs --gate 0, obligations strict 12 of 12)
     tool = host-lifecycle@0.64.0
     recorded = 2026-11-06
+
+[receipt "plan/0113#arm-snapshots"]
+    disposition = done
+    verify = every pin resolves and its commit date is recorded; every candidate
+    evidence = plan/0113-host-deep-research-ab/arms/README.md: weizhena@6ce38f60 (2026-08-23), hffmnnj@d9773015 (2026-11-13), kanatami@9f46968 (2026-07-06) and samber@50a33836 (2026-11-01) each resolve with an MIT LICENSE at the pin (sha256 1883a89d, b560f06c, 1126322e, a6735e38) and a verified root tree (476c2298, a6d0795b, e5a4948c, 9fca485f); 199-biotechnologies/claude-deep-research-skill@f2f2c0fa (2026-04-11) has no license path and is excluded; gptr-mcp@63884773 (2025-11-07) carries MIT as the licensed alternative.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-26
