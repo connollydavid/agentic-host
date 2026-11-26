@@ -203,7 +203,7 @@ planted skill and a planted manual in the home directory must not load.
 - verify: the pre-flight rejects a wrong digest and a wrong version; every arm
   loads under the pinned binary; the null arm's resolved configuration lists no
   skill, plugin or instruction
-- depends: arm-snapshots
+- depends: #arm-snapshots
 
 ### Pin the reference model {#model-pin}
 
@@ -213,7 +213,7 @@ reply recorded under another model id.
 
 - verify: the pre-flight voids a draw that carries one foreign-model reply, and
   passes a clean one
-- depends: harness-pin
+- depends: #harness-pin
 
 ### The run contract {#run-contract}
 
@@ -225,7 +225,7 @@ output shape to the contract, in the arm's own directory.
 
 - verify: every arm's dry run produces a contract-valid output and a receipt;
   an arm whose output cannot satisfy the contract records why in its exclusion
-- depends: harness-pin
+- depends: #harness-pin
 
 ### Freeze the task sets {#task-sets}
 
@@ -235,7 +235,7 @@ here.
 
 - verify: every task validates against its key's schema; the digests are
   recorded before the first draw; the held-out set is unread until confirmation
-- depends: run-contract
+- depends: #run-contract
 
 ### The mechanical rubric {#rubric}
 
@@ -244,7 +244,7 @@ planted wrong answer must miss its key, a clean draw must score full, and a
 draw on a foreign model must be refused.
 
 - verify: the controls pass and each one is recorded with its output
-- depends: task-sets
+- depends: #task-sets
 
 ### Cast review of the design {#cast-review}
 
@@ -256,7 +256,7 @@ executor.
 
 - verify: every finding is dispositioned in this README or in a follow-up
   record, and the review is recorded before the selection round
-- depends: rubric
+- depends: #rubric
 
 ### Selection round {#selection}
 
@@ -265,7 +265,7 @@ mechanically.
 
 - verify: every draw's receipt and score are recorded; the locked arm follows
   from the rule rather than from a judgment made after seeing the table
-- depends: cast-review
+- depends: #cast-review
 
 ### Confirmation {#confirmation}
 
@@ -275,7 +275,7 @@ the printed verdict.
 - verify: the verdict prints from the recorded criteria; a `NO-SHIP` records
   every criterion missed; a `SHIP` records margin, per-task floor and the
   phantom count
-- depends: selection
+- depends: #selection
 
 ### Fen acceptance {#fen-acceptance}
 
@@ -285,7 +285,7 @@ baseline.
 
 - verify: Fen completes the command and the output validates against the
   contract; the untaught baseline is recorded beside it
-- depends: confirmation
+- depends: #confirmation
 
 ### Component scaffold {#component-scaffold}
 
@@ -295,7 +295,7 @@ materialised as the arm's licensing requires, and the release gate green.
 
 - verify: `software --check` reads the stanza clean and the artifact re-derives
   under `software --verify-build`
-- depends: confirmation
+- depends: #confirmation
 
 ### Ship the confirmed arm {#ship}
 
@@ -305,7 +305,7 @@ approval.
 
 - verify: one command runs a task end to end on the reference model, and the
   recorded verdict matches the shipped arm
-- depends: component-scaffold, fen-acceptance
+- depends: #component-scaffold, #fen-acceptance
 
 ### weco refinement {#weco-refinement}
 
@@ -315,7 +315,7 @@ the held-out set before it ships.
 
 - verify: the baseline is measured before the loop; the refined variant passes
   confirmation, or the original stays
-- depends: ship
+- depends: #ship
 
 ## Open questions
 
