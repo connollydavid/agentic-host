@@ -2209,3 +2209,27 @@
     tool = host-lifecycle@0.64.1
     recorded = 2026-11-26
     target = plan/0113-host-deep-research-ab
+
+[receipt "ci" "host/check"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/45905168110
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-26
+    revision = e7c359739a63375b4e82844432410bdae4b9f5e4
+    conclusion = success
+
+[receipt "ci" "host/mdbook"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/45905168114
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-26
+    revision = e7c359739a63375b4e82844432410bdae4b9f5e4
+    conclusion = success
+
+[receipt "ci" "host/reproducible-build"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/45905168144
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-26
+    revision = e7c359739a63375b4e82844432410bdae4b9f5e4
+    conclusion = success
