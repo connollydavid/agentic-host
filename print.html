@@ -25540,7 +25540,7 @@ URLs. host#18 stays plan/0075's, last by standing order, outside this queue.</p>
 design the A/B for a deep-research integration). The wrapper is ruled
 <code>host-deep-research</code>, a house component that shims whichever arm the test
 selects. This milestone is the design and its build sequence, not a shipped
-component.</p>
+component.; active goal since 2026-11-26</p>
 <h2 id="rulings-1"><a class="header" href="#rulings-1">Rulings</a></h2>
 <p>The operator's rulings of 2026-11-26, and the facts the design rests on.</p>
 <ul>
@@ -29096,7 +29096,8 @@ Write README.md for host-lint</li>
 <h3 id="notes-2"><a class="header" href="#notes-2">Notes</a></h3>
 <p>Cargo conversion is required for proptest. Allium spec defines formal behavior. CI builds and tests the project, then publishes releases.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-active-goal"><a class="header" href="#the-active-goal">The active goal</a></h1>
-<p>No goal is set. Cut a milestone, then propose it.</p>
+<p>plan/0113-host-deep-research-ab: Research reaches the record as findings, not as sources.</p>
+<p>Orient with: host-lifecycle goal show .</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="skill-hardeningmd"><a class="header" href="#skill-hardeningmd">SKILL-HARDENING.md</a></h1>
 <h2 id="skill-hardening"><a class="header" href="#skill-hardening">Skill Hardening</a></h2>
 <h3 id="goals-3"><a class="header" href="#goals-3">Goals</a></h3>
@@ -32589,6 +32590,9 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.</
 </li>
 <li>
 <p>2026-11-26 — <strong>The vendored-spec over-fire is fixed and released as host-lifecycle v0.64.1.</strong> <code>SOURCE_WALK_SKIP</code> now carries <code>vendor</code> for <code>find_specs</code>, <code>read_obligations_text</code>, and <code>find_allium_specs</code>, and a regression test proves a vendored <code>.tla</code>/<code>.allium</code>/<code>.obligations</code> demands no lane while an own spec still hazards (<a href="https://github.com/connollydavid/host-lifecycle/issues/47">connollydavid/host-lifecycle#47</a>). Released at <code>e43bfd7</code> with canonical artifact <code>47e16040…</code>; the published linux-amd64 asset reproduces that hash, the template's submodule and <code>prose.yml --rev</code> advanced to the same commit (call/0038), and <code>software --check</code>, <code>ci --gate</code>, and <code>--verify-setup</code> are green.</p>
+</li>
+<li>
+<p>2026-11-26 — <strong>The Z.ai endpoint retired, its four MCP servers left both harnesses, and the deep-research A/B was cut as plan/0113.</strong> The operator reported the endpoint gone, so <code>~/.config/opencode/opencode.jsonc</code> lost its whole <code>mcp</code> block (the <code>opencode.jsonc.bak.1795729190</code> copy keeps the old keys, and two older backups still carry them) and <code>~/.claude.json</code> lost the four user-scope entries through <code>claude mcp remove -s user</code>, with the three specula servers kept. The installed <code>~/.agents/skills/research*</code> are the Z.ai edition and now have no backend; nothing in the tree depends on them. The A/B designs six arms against a null control, and its constants come from facts measured here: the v2 engine discovers skills and instructions under the home directory (<code>config/discovery.ts</code> reads <code>~/.agents</code> and <code>~/.claude</code>), so each draw needs a scratch <code>HOME</code>, not just scratch XDG roots; and the router holds no entry named <code>qwen3.8-flash-next</code>, so the engine's default spelling reaches strata only through the <code>qwen*</code> wildcard and the <code>*</code> catch-all, while the <code>qwen3.8-27b</code> family still routes to the old 27B id at 262144/32768. The reference model is therefore pinned by an exact named entry and its deployment id, and a draw on a foreign model is void.</p>
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><blockquote>
