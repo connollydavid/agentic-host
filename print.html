@@ -25720,7 +25720,7 @@ planted skill and a planted manual in the home directory must not load.</p>
 <li>verify: the pre-flight rejects a wrong digest and a wrong version; every arm
 loads under the pinned binary; the null arm's resolved configuration lists no
 skill, plugin or instruction</li>
-<li>depends: arm-snapshots</li>
+<li>depends: #arm-snapshots</li>
 </ul>
 <h3 id="model-pin"><a class="header" href="#model-pin">Pin the reference model</a></h3>
 <p>The exact named route for strata, its deployment record, and the pre-flight
@@ -25729,7 +25729,7 @@ reply recorded under another model id.</p>
 <ul>
 <li>verify: the pre-flight voids a draw that carries one foreign-model reply, and
 passes a clean one</li>
-<li>depends: harness-pin</li>
+<li>depends: #harness-pin</li>
 </ul>
 <h3 id="run-contract"><a class="header" href="#run-contract">The run contract</a></h3>
 <p>What <code>host-deep-research</code> runs: one task file in; one report and one source
@@ -25740,7 +25740,7 @@ output shape to the contract, in the arm's own directory.</p>
 <ul>
 <li>verify: every arm's dry run produces a contract-valid output and a receipt;
 an arm whose output cannot satisfy the contract records why in its exclusion</li>
-<li>depends: harness-pin</li>
+<li>depends: #harness-pin</li>
 </ul>
 <h3 id="task-sets"><a class="header" href="#task-sets">Freeze the task sets</a></h3>
 <p>The selection set and the held-out set, each with its key, its must-cover list
@@ -25749,7 +25749,7 @@ here.</p>
 <ul>
 <li>verify: every task validates against its key's schema; the digests are
 recorded before the first draw; the held-out set is unread until confirmation</li>
-<li>depends: run-contract</li>
+<li>depends: #run-contract</li>
 </ul>
 <h3 id="rubric"><a class="header" href="#rubric">The mechanical rubric</a></h3>
 <p>The checker, with controls: a planted phantom citation must void its draw, a
@@ -25757,7 +25757,7 @@ planted wrong answer must miss its key, a clean draw must score full, and a
 draw on a foreign model must be refused.</p>
 <ul>
 <li>verify: the controls pass and each one is recorded with its output</li>
-<li>depends: task-sets</li>
+<li>depends: #task-sets</li>
 </ul>
 <h3 id="cast-review"><a class="header" href="#cast-review">Cast review of the design</a></h3>
 <p>The design goes to the cast before any live draw. The seats that matter here:
@@ -25768,7 +25768,7 @@ executor.</p>
 <ul>
 <li>verify: every finding is dispositioned in this README or in a follow-up
 record, and the review is recorded before the selection round</li>
-<li>depends: rubric</li>
+<li>depends: #rubric</li>
 </ul>
 <h3 id="selection"><a class="header" href="#selection">Selection round</a></h3>
 <p>Interleaved draws over the selection set, and the lock rule applied
@@ -25776,7 +25776,7 @@ mechanically.</p>
 <ul>
 <li>verify: every draw's receipt and score are recorded; the locked arm follows
 from the rule rather than from a judgment made after seeing the table</li>
-<li>depends: cast-review</li>
+<li>depends: #cast-review</li>
 </ul>
 <h3 id="confirmation"><a class="header" href="#confirmation">Confirmation</a></h3>
 <p>The locked arm against <code>null</code> on the held-out set, fresh and interleaved, and
@@ -25785,7 +25785,7 @@ the printed verdict.</p>
 <li>verify: the verdict prints from the recorded criteria; a <code>NO-SHIP</code> records
 every criterion missed; a <code>SHIP</code> records margin, per-task floor and the
 phantom count</li>
-<li>depends: selection</li>
+<li>depends: #selection</li>
 </ul>
 <h3 id="fen-acceptance"><a class="header" href="#fen-acceptance">Fen acceptance</a></h3>
 <p>The real Fen runs one task through the component's single command and reaches
@@ -25794,7 +25794,7 @@ baseline.</p>
 <ul>
 <li>verify: Fen completes the command and the output validates against the
 contract; the untaught baseline is recorded beside it</li>
-<li>depends: confirmation</li>
+<li>depends: #confirmation</li>
 </ul>
 <h3 id="component-scaffold"><a class="header" href="#component-scaffold">Component scaffold</a></h3>
 <p><code>host-deep-research</code> under the <code>.host-software</code> recipe: bare store, worktree,
@@ -25803,7 +25803,7 @@ materialised as the arm's licensing requires, and the release gate green.</p>
 <ul>
 <li>verify: <code>software --check</code> reads the stanza clean and the artifact re-derives
 under <code>software --verify-build</code></li>
-<li>depends: confirmation</li>
+<li>depends: #confirmation</li>
 </ul>
 <h3 id="ship"><a class="header" href="#ship">Ship the confirmed arm</a></h3>
 <p>The shim carries the confirmed arm, or, on a <code>NO-SHIP</code>, the null arm's native
@@ -25812,7 +25812,7 @@ approval.</p>
 <ul>
 <li>verify: one command runs a task end to end on the reference model, and the
 recorded verdict matches the shipped arm</li>
-<li>depends: component-scaffold, fen-acceptance</li>
+<li>depends: #component-scaffold, #fen-acceptance</li>
 </ul>
 <h3 id="weco-refinement"><a class="header" href="#weco-refinement">weco refinement</a></h3>
 <p>Optional. The confirmed arm, or the shim's prompt surface, is optimised against
@@ -25821,7 +25821,7 @@ the held-out set before it ships.</p>
 <ul>
 <li>verify: the baseline is measured before the loop; the refined variant passes
 confirmation, or the original stays</li>
-<li>depends: ship</li>
+<li>depends: #ship</li>
 </ul>
 <h2 id="open-questions-6"><a class="header" href="#open-questions-6">Open questions</a></h2>
 <ul>
