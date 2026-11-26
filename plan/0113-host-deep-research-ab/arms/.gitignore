@@ -1,0 +1,5 @@
+# The third-party snapshots are materialized locally from the pins recorded in
+# README.md, never tracked: the pin is the reproducibility anchor (the
+# .host-software precedent), and a tracked tree would put another project's
+# license and prose into this repository's book and lint walks.
+/*/
