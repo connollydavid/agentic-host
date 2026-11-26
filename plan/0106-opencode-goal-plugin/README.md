@@ -13,7 +13,7 @@ no-tool-call guards, the synthetic continuations) was deleted in favor of the na
 loop. The bridge (the verb family onto the native lifecycle) and the belts carry
 forward in the component connollydavid/host-loop (cut 2026-11-04 under
 plan/0109, the promote ruling executed; this plan's plugin directory is
-deleted and the code lives in the Where room).
+deleted and the code lives in the Where room).; accepted 2026-11-26
 
 ## Why
 

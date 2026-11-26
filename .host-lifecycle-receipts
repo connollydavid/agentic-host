@@ -2151,3 +2151,9 @@
     evidence = 2 item(s) realized for host-loop at pin dbce0729a4d8 (reference)
     tool = host-lifecycle@0.63.0
     recorded = 2026-11-26
+
+[receipt "goal" "accept"]
+    disposition = done
+    tool = host-lifecycle@0.63.0
+    recorded = 2026-11-26
+    target = plan/0106-opencode-goal-plugin
