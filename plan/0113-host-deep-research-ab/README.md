@@ -4,7 +4,7 @@
 design the A/B for a deep-research integration). The wrapper is ruled
 `host-deep-research`, a house component that shims whichever arm the test
 selects. This milestone is the design and its build sequence, not a shipped
-component.
+component.; active goal since 2026-11-26
 
 ## Rulings
 
