@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  // The host-loop plugin owns the /host-* command family on OpenCode: its
+  // host-goal command bridges the host verbs onto the native coordinator and
+  // queues the re-orientation, which is the kick that starts the next
+  // position. The generated door files stay on disk for `host-lifecycle
+  // install --check` and for Claude, but the file-command plugin would shadow
+  // the bridge with its render-only template.
+  "plugins": ["@connollydavid/host-loop", "-opencode.config.command"]
+}
