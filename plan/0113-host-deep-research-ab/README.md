@@ -1,10 +1,13 @@
 # plan/0113: host-deep-research, the A/B that selects it
 
-**Status: cut 2026-11-26, not started** (operator direction: claim a plan and
+**Status: cut 2026-11-26, in build** (operator direction: claim a plan and
 design the A/B for a deep-research integration). The wrapper is ruled
 `host-deep-research`, a house component that shims whichever arm the test
 selects. This milestone is the design and its build sequence, not a shipped
-component.; active goal since 2026-11-26
+component. The arm snapshots are pinned with their licenses recorded
+([arms/README.md](arms/README.md)): the four roster arms qualify, and the
+optional verification pipeline is excluded for a missing license at its pin.;
+active goal since 2026-11-26
 
 ## Rulings
 
@@ -54,8 +57,8 @@ the tool.
 | `weizhena` | the staged skill: outline, then parallel item agents, then a generated report | `6ce38f6` |
 | `hffmnnj` | the OpenCode plugin: research tools, a notes library with a SQLite index, three subagents | `d977301` |
 | `kanatami` | the single-commit V1 skill with one worker agent per query | `9f46968` |
-| `samber` | the confidence-ladder skill, the licensed origin of the fourth candidate | to pin |
-| `verify` (optional) | the pipeline whose citation and claim checks run as scripts | to pin, license pending |
+| `samber` | the confidence-ladder skill, the licensed origin of the fourth candidate | `50a33836` |
+| `verify` (optional) | the pipeline whose citation and claim checks run as scripts | `f2f2c0f`, excluded: no license at the pin |
 
 `weizhena`, `samber` and `verify` keep no per-claim source record that a
 checker can read; that is a finding about the arm, not a defect the rubric
@@ -184,7 +187,7 @@ A shippable arm scores at least four, and clears the first and the sixth.
 
 ## Build sequence
 
-### Snapshot each arm and confirm its license {#arm-snapshots}
+### Arm snapshots {#arm-snapshots}
 
 Each arm is pinned at a recorded commit, one snapshot directory away from the
 run harness, with its license state recorded. An arm qualifies for a draw only
@@ -194,7 +197,7 @@ when a license file exists at its pinned commit.
   carries a license file at that commit, or its exclusion is recorded
 - depends: none
 
-### Pin the run harness {#harness-pin}
+### Harness pin {#harness-pin}
 
 One OpenCode release tag, its binary and digest in the scratch prefix, and the
 pre-flight that checks them. Each isolation check is proven by its own probe: a
@@ -205,7 +208,7 @@ planted skill and a planted manual in the home directory must not load.
   skill, plugin or instruction
 - depends: #arm-snapshots
 
-### Pin the reference model {#model-pin}
+### Model pin {#model-pin}
 
 The exact named route for strata, its deployment record, and the pre-flight
 that refuses a draw on a foreign model. The check is proven with a planted
@@ -215,7 +218,7 @@ reply recorded under another model id.
   passes a clean one
 - depends: #harness-pin
 
-### The run contract {#run-contract}
+### Run contract {#run-contract}
 
 What `host-deep-research` runs: one task file in; one report and one source
 ledger out, the ledger recording each source with its URL, its
@@ -227,7 +230,7 @@ output shape to the contract, in the arm's own directory.
   an arm whose output cannot satisfy the contract records why in its exclusion
 - depends: #harness-pin
 
-### Freeze the task sets {#task-sets}
+### Task sets {#task-sets}
 
 The selection set and the held-out set, each with its key, its must-cover list
 and its digest. Benchmark items are referenced by id. House tasks are written
@@ -237,7 +240,7 @@ here.
   recorded before the first draw; the held-out set is unread until confirmation
 - depends: #run-contract
 
-### The mechanical rubric {#rubric}
+### Rubric {#rubric}
 
 The checker, with controls: a planted phantom citation must void its draw, a
 planted wrong answer must miss its key, a clean draw must score full, and a
@@ -246,7 +249,7 @@ draw on a foreign model must be refused.
 - verify: the controls pass and each one is recorded with its output
 - depends: #task-sets
 
-### Cast review of the design {#cast-review}
+### Cast review {#cast-review}
 
 The design goes to the cast before any live draw. The seats that matter here:
 `Mara` on what the operator would trust, `Wren` on context and budget,
@@ -258,7 +261,7 @@ executor.
   record, and the review is recorded before the selection round
 - depends: #rubric
 
-### Selection round {#selection}
+### Selection {#selection}
 
 Interleaved draws over the selection set, and the lock rule applied
 mechanically.
@@ -297,7 +300,7 @@ materialised as the arm's licensing requires, and the release gate green.
   under `software --verify-build`
 - depends: #confirmation
 
-### Ship the confirmed arm {#ship}
+### Ship {#ship}
 
 The shim carries the confirmed arm, or, on a `NO-SHIP`, the null arm's native
 agent under the same contract. The default changes only with the operator's
