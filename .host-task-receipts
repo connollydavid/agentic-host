@@ -1622,3 +1622,10 @@
     evidence = smoke/smoke.json PASS: isolation probe 11 checks passed; null valid 9.615/16 (5021.9s, provider exa); hffmnnj valid 5.09/16 (928.8s, reused recorded draw); kanatami valid 9.818/16 (8231.4s, reused recorded draw); weizhena excluded 7204.8s and samber excluded 6514.2s with evidence. Every valid draw has a live receipt with the 200000/50000/60/10800 caps, a fetch log and a scored rubric; suspect exclusions and pseudo-tool-call transcripts fail the gate. Record: plan/0113-host-deep-research-ab/harness/smoke/smoke.json, smoke/README.md.
     tool = host-lifecycle@0.64.1
     recorded = 2026-11-27
+
+[receipt "plan/0113#cast-review-redo"]
+    disposition = done
+    verify = every finding is dispositioned in this README or in the review
+    evidence = design-review-redo.md: the five seats returned 30 findings (M5-M10, W6-W11, B5-B10, O5-O10, F5-F10); all are dispositioned. The blockers are the hard-wired confirmation, the unenforced caps, the re-run/attempt rule, the zero-valid lock and four-constant suite-fit, the self-referential kanatami fetch log, the samber parser miss, the declaration-only model/provider and the burned fresh set. The accepted fixes are folded into #selection-redo, #confirmation and #component-scaffold; the operator rulings (aggregate, caps, 30-vs-18, fresh key, optional sixth) gate the redo.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27

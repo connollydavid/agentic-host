@@ -86,17 +86,19 @@ corrections are tasks in this plan's build sequence, not a replacement plan.
 ## The re-run rule
 
 A draw that fails because the harness, an adapter, the search provider or the
-budget broke is a harness break, not an arm result. It is void, the breakage is
-recorded, the harness is fixed, and the draw is re-run under the same task and
-config; the first attempt stays in the record. An arm whose native output shape
+driver broke is a harness break, not an arm result. It is void, the breakage is
+recorded, the harness is fixed, and the draw is re-run once under the same task
+and config; the first attempt stays in the record with a `rerun.json` naming
+the break. A budget-exhausted draw is an arm result: void, recorded, never
+re-run, because re-running the same cap loops. An arm whose native output shape
 cannot satisfy the contract is an exclusion with evidence. A low score is never
 a re-run reason; this rule is fixed before the redo.
 
-An adapter that excludes a draw whose native output already carries a source
-record is a harness break: hffmnnj finding notes with a URL and quote, or
-kanatami worker results with a URL and `full_text`. The smoke fails it, the
-adapter is fixed, and the draw is re-run. That is the hffmnnj 969.1s case: the
-notes were there, the citation form was not.
+An adapter that excludes a draw whose native output already carries a fetched
+source record is a harness break: hffmnnj finding notes, kanatami worker
+results with a fetched page, or a samber/weizhena report carrying a URL, quote
+and locator. The report's own source list is not a fetched page. The smoke
+fails it, the adapter is fixed, and the draw is re-run.
 
 ## The A/B design
 
@@ -144,7 +146,11 @@ run's receipt.
   same prompt for the arm plus the tasks. The contract's caps are 200000 prompt
   tokens, 50000 completion tokens, 60 tool calls and 10800 wall seconds; the
   draw order is two-way, interleaved by task, and serial when the provider is
-  under load. The cost is recorded, never scored.
+  under load. The caps are enforced, and the values and the aggregate wall
+  clock are the operator ruling recorded in
+  [design-review-redo.md](design-review-redo.md); the smoke's kanatami draw
+  used 198518 prompt and 61492 completion tokens, so the 50000 completion cap
+  is under review. The cost is recorded, never scored.
 - **Arm isolation.** Each arm draws in its own scratch tree with its own library
   and its own config. No arm's skills, plugins or notes are shared with another.
 - **Roles.** The reference model is the only subject. Fen drives the component's
@@ -197,9 +203,11 @@ time, and the exit status and contract compliance of each draw.
 The judge is Opus 5.5 through the host's `claude` CLI (`claude-agent/opus`,
 resolved `claude-opus-5-5`). It scores completeness and creativity, 0-4 each,
 on the blind report and ledger; the judge score is 0-8. The pooled selection
-score is the mechanical score (0-16) plus the judge score (0-24). The validity
-gate passes on the clean and broken samples; with no passing judge, the judge
-contributes 0 and the mechanical score stands alone.
+score is the mechanical score (0-16) plus the judge score (0-24). The judge's
+model and route are checked against the pin, its validity gate must pass, and
+it retries on a transient failure; a failing judge contributes 0. With no
+passing judge, the mechanical score stands alone. The confirmation runs the
+same judge on the held-out draws and records both sub-scores.
 
 ### The protocol
 
@@ -209,14 +217,20 @@ contributes 0 and the mechanical score stands alone.
   not compare across rounds. The first attempt's round is recorded as
   harness-defective; the corrected round is the `#selection-redo` task.
 - **Lock.** The pooled selection score is mechanical (0-16) plus judge (0-8),
-  a 24-point maximum. Among arms within 1.5 points of the best, the lock goes
-  to the highest suite-fit score; a remaining tie goes to the judge score, then
-  to name order. The token count is recorded, never a tie-break.
+  a 24-point maximum. Among arms within 1.5 points of the best, only a
+  candidate with at least one valid draw and a pre-declared null-relative
+  clearance may lock; the tie-break is the six-row suite-fit evidence table,
+  then the judge score, then name order. The judge's model, route and validity
+  gate are checked. The token count is recorded, never a tie-break.
 - **Confirmation** pits the locked arm against `null`, on the fresh held-out
   tasks, with two fresh draws per held-out task per arm (2 × 2 × 5 = 20 draws)
-  and randomised order within each task block. The pre-declared criteria: a
-  margin of 1.0 point, a per-task floor of 8 of 16, zero phantom sources, no
-  foreign-model reply, and the judge's completeness and creativity recorded.
+  and randomised order within each task block. The locked arm is read from
+  `round-redo.json`, never `weizhena`; the fresh set is sealed with its own key;
+  `--key` is required and `--check` does not decrypt. A void is a gate, not a
+  measured zero. The pre-declared criteria: a margin of 1.0 point, a per-task
+  floor of 8 of 16, zero phantom sources, no foreign-model reply, every draw
+  valid or a recorded harness-break re-run, and the judge's completeness and
+  creativity recorded.
 - **Ship.** The component ships the confirmed arm when every criterion passes,
   and prints `SHIP`; otherwise it prints `NO-SHIP`, reports the criteria it
   missed, and the incumbent (null) stands. The operator may direct another
@@ -301,6 +315,10 @@ reply recorded under another model id.
   foreign. The pre-flight voids a foreign reply, an empty ledger, the `*`
   wildcard's deployment and a record without the `qwen*` entry. Record:
   [harness/model-pin/README.md](harness/model-pin/README.md).
+- Reopened 2026-11-27 by the cast review: the live driver writes the pin into
+  the receipt and never parses the reply's model or provider, so the
+  pre-flight is not called and a foreign reply passes. The reply ledger and
+  the pre-flight are [selection-redo](#selection-redo)'s first work.
 
 ### Run contract {#run-contract}
 
@@ -317,6 +335,11 @@ output shape to the contract, in the arm's own directory.
   five arm adapters; the dry runs pass for `null`, `hffmnnj` and `kanatami`,
   and `weizhena` and `samber` record their exclusions (no per-source quote and
   locator). Record: [harness/contract/README.md](harness/contract/README.md).
+- Reopened 2026-11-27 by the cast review: the receipt's model is the pin, not
+  the reply; the `replies.jsonl` ledger and the reply digest are missing; the
+  fetch-log fallback that wrote the report's own source list as snapshots is
+  removed; the samber parser missed inline citations. The corrections are
+  [selection-redo](#selection-redo)'s first work.
 
 ### Task sets {#task-sets}
 
@@ -334,6 +357,10 @@ here.
   was read at the failed confirmation, so that set is burned and
   `#fresh-held-out` seals a fresh one. Record:
   [harness/tasks/README.md](harness/tasks/README.md).
+- Also burned 2026-11-27: the first fresh set was read by `confirm.py --check`,
+  which decrypts before checking the lock. The confirmation seals a fresh-2
+  set with new tasks and a new key; `--check` will read only the sealed
+  digests.
 
 ### Rubric {#rubric}
 
@@ -348,6 +375,10 @@ draw on a foreign model must be refused.
   citation and a foreign model void; a wrong answer scores 12/16; an
   unsupported quote falls below the threshold. Record:
   [harness/rubric/README.md](harness/rubric/README.md).
+- Reopened 2026-11-27 by the cast review: the phantom gate is only as good as
+  the fetch log. The kanatami log was the report's own source list; the
+  report-to-fetch fallback is removed in
+  [selection-redo](#selection-redo), and the smoke is re-run.
 
 ### Cast review {#cast-review}
 
@@ -392,15 +423,21 @@ The arm locked by `round-redo.json` against `null` on the fresh held-out set,
 fresh and interleaved, with the judge's completeness and creativity, and the
 printed verdict.
 
-- verify: the verdict prints from the recorded criteria; a `NO-SHIP` records
-  every criterion missed; a `SHIP` records margin, per-task floor, the phantom
-  count and the judge's completeness and creativity; a harness-break draw is
-  re-run before the verdict, and a low score is never a re-run reason
+- verify: the locked arm is read from `round-redo.json` and used in the
+  margin, floor, print and `verdict.json`; a missing or invalid lock refuses;
+  the fresh-2 set is sealed with a new key; `--key` is required and `--check`
+  does not decrypt; the 20 draws are randomised; every draw is valid or has a
+  recorded harness-break re-run; the judge's per-draw completeness and
+  creativity are recorded; the verdict prints from the recorded criteria; a
+  `NO-SHIP` records every criterion missed; a `SHIP` records margin, floor,
+  phantom count and judge scores; a low score is never a re-run reason
 - depends: #selection-redo, #fresh-held-out, #judge
 - Wired 2026-11-27: `confirm.py` reads `held-out-fresh.json.enc`,
   `sets-fresh.json` and the fresh key, writes `draws-fresh/`, and takes the
-  locked arm from `round-redo.json` (null is the control). The old partial
-  draws stay under `draws/`. The verdict is not run yet.
+  locked arm from `round-redo.json`. The cast review re-opened this wiring:
+  the locked arm, the fresh-2 set, `--key`, the judge and the valid gate are
+  the confirmation's remaining work. The old partial draws stay under
+  `draws/`. The verdict is not run yet.
 
 ### Fen acceptance {#fen-acceptance}
 
@@ -421,8 +458,10 @@ component's run contract carries the OpenCode v2.4.2 archive and binary digests
 and the reference model pin; the recipe check reads them.
 
 - verify: `software --check` reads the stanza clean, the artifact re-derives
-  under `software --verify-build`, and the recorded harness and model pins match
-  the plan's
+  under `software --verify-build`, the recorded harness and model pins match
+  the plan's; the hffmnnj embedding and each arm's native search are pinned or
+  off with a license and digest; the third-party notice and the build include
+  them; the optional `gptr-mcp` is recorded in or out
 - depends: #confirmation
 
 ### Ship {#ship}
@@ -480,6 +519,13 @@ scored.
   10800s.
   `contract.CAPS` is the single source; `run.py` reads the wall cap and
   defaults to two-way. Record: [budget/README.md](harness/budget/README.md).
+- Reopened 2026-11-27 by the cast review: the caps are declared but not
+  enforced (the kanatami smoke records 61492 completion tokens against the
+  50000 cap), the budget README title still says 3600 seconds, and the
+  75-84 hour aggregate is not approved. The caps, aggregate and enforcement
+  are the operator ruling in
+  [design-review-redo.md](design-review-redo.md); the fix is in
+  [selection-redo](#selection-redo).
 
 ### Adapter layer {#adapter-layer}
 
@@ -501,6 +547,12 @@ exclusions are recorded.
   final report, corpus and run text into workers and the fetch log; a
   pseudo-tool-call transcript is a void. Record:
   [adapters/README.md](harness/adapters/README.md).
+- Reopened 2026-11-27 by the cast review: the kanatami fetch log was
+  synthesized from the report's own source list, so the citation support was
+  self-referential, and the samber parser missed inline markdown citations.
+  The smoke result is not an arm result. The actual-fetch capture and the
+  samber/weizhena parsers are in [selection-redo](#selection-redo); the smoke
+  is re-run there.
 
 ### Judge {#judge}
 
@@ -518,6 +570,10 @@ on the blind report and ledger; the dokimi validity gate must pass.
   prompt and reply digests, the cost and the scores. A failing judge writes
   `valid: false` and contributes 0; the mechanical rubric alone scores.
   Record: [judge/README.md](harness/judge/README.md).
+- Reopened 2026-11-27 by the cast review: the judge's model and route are not
+  checked, the validity gate is not read per draw, the judge scores void draws,
+  and the confirmation never runs it. The guard and the held-out judge are in
+  [selection-redo](#selection-redo) and [confirmation](#confirmation).
 
 ### Fresh held-out {#fresh-held-out}
 
@@ -535,6 +591,11 @@ and seal it with its own key.
   `sets-fresh.json` records both digests. The old `held-out.json.enc` and
   `sets.json` stay as the burned set's history. Record:
   [tasks/sets-fresh.json](tasks/sets-fresh.json).
+- Reopened 2026-11-27 by the cast review: this fresh set was read by
+  `confirm.py --check`, which decrypts before checking the lock, and its key
+  sits under `/tmp`. The set is burned. The confirmation seals a fresh-2 set
+  with new tasks and a new operator-held key; `--check` will read only the
+  sealed digests.
 
 ### Smoke test {#smoke-test}
 
@@ -554,6 +615,11 @@ exclusion or a void.
   draw), weizhena excluded 7204.8s and samber excluded 6514.2s with evidence.
   The suspect-exclusion and pseudo-tool-call gates pass. Record:
   [smoke/smoke.json](harness/smoke/smoke.json).
+- Reopened 2026-11-27 by the cast review: the kanatami fetch log is
+  self-referential, the samber parser missed inline citations, the isolation
+  probe can be skipped, and the `--only` run overwrites the all-arm record.
+  The smoke is re-run under the corrected machinery in
+  [selection-redo](#selection-redo); this record is history, not a pass.
 
 ### Cast review redo {#cast-review-redo}
 
@@ -562,23 +628,37 @@ The corrected design goes to the five seats before the redo selection.
 - verify: every finding is dispositioned in this README or in the review
   record; the review is recorded before the redo selection
 - depends: #smoke-test, #judge, #fresh-held-out
+- Landed 2026-11-27: the five-seat review in
+  [design-review-redo.md](design-review-redo.md); the findings continue the
+  first review's numbering (M5-M10, W6-W11, B5-B10, O5-O10, F5-F10) and every
+  one is accepted and dispositioned. The fixes are folded into
+  [selection-redo](#selection-redo), [confirmation](#confirmation) and
+  [component-scaffold](#component-scaffold); the operator rulings are in the
+  review. The redo does not start until those rulings are recorded and the
+  smoke is re-run.
 
 ### Selection redo {#selection-redo}
 
 The corrected round with the native adapters, the measured provider, the frozen
 budget, the judge and the lock rule.
 
-- verify: every draw's receipt, adapter, mechanical score and judge score are
-  recorded; the judge's validity gate passed; the lock uses the 24-point
-  pooled score, the 1.5-point band, the suite-fit and the judge score; the
-  cost is recorded, not scored; every harness-break void has a recorded re-run
-  under the same task and config, and no arm is voided for a harness break
-- depends: #cast-review-redo, #smoke-test, #judge
+- verify: the review's blockers are closed before a scored draw: the caps
+  enforced at the operator-ruled values; `replies.jsonl` and the model
+  pre-flight; the attempt and re-run rule; the six-row suite-fit; the actual
+  kanatami fetch capture; the samber and weizhena parsers; the two-way probe;
+  the smoke redo. Every draw's receipt, adapter, mechanical score and judge
+  score are recorded; every harness-break void has a recorded re-run;
+  budget exhaustion is an arm result, not a re-run; the judge's model, route
+  and validity gate passed; the lock uses the valid floor, the null-relative
+  gate, the 24-point pooled score, the 1.5-point band, the six-row suite-fit
+  and the judge score; the cost is recorded, not scored
+- depends: #cast-review-redo, #smoke-test, #judge, #budget, #adapter-layer
 - Wired 2026-11-27: `round.py` reads each draw's `judge.json`, pools the
   mechanical 0-16 with the judge 0-8, and applies the 1.5-point band, the
   suite-fit, the judge score and name order. The first round's `round.json`
   is historical; the corrected round writes `round-redo.json` with
-  `--draws draws-redo --out round-redo.json`. The round is not run yet.
+  `--draws draws-redo --out round-redo.json`. The cast review's fixes are this
+  task's first work, before any scored draw; the round is not run yet.
 
 ## Open questions
 
