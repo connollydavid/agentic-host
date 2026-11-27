@@ -1,0 +1,8 @@
+# The pinned binary and its release archive are local, recreated by install.sh.
+/.download/
+/.prefix/
+
+# Probe residue and Python bytecode.
+/.scratch/
+__pycache__/
+*.pyc
