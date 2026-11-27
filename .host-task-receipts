@@ -1524,3 +1524,10 @@
     evidence = harness/contract: one task file in; report.md, sources.json and receipt.json out, the receipt carrying harness v2.4.2/digest 523b1502, model qwen3.6-27b/deployment 159fb72c, search provider exa, budget caps/used and the task, harness-pin, model-pin, arm-config and null-prompt digests. dryrun.py reports 8 checks passed: null, hffmnnj and kanatami produce valid output and a receipt (1 source each), weizhena is excluded (field JSON and report carry no source URL/quote/locator), samber is excluded (claim records carry URL/access/confidence, no quote/locator), and the controls reject an empty quote, a foreign model receipt and an uncited ledger. Record: plan/0113-host-deep-research-ab/harness/contract/README.md.
     tool = host-lifecycle@0.64.1
     recorded = 2026-11-27
+
+[receipt "plan/0113#task-sets"]
+    disposition = done
+    verify = every task validates against its key's schema; the digests are
+    evidence = harness/tasks: selection.json carries 6 tasks (3 SimpleQA rows 0/2/1000, 3 house tasks) with per-task digests, set digest 128d135446134687ef6249d9aa902863920bd63c3bdf0130e885e9ed19ede36e; the held-out set carries 5 tasks (2 SimpleQA rows, 3 house tasks), validated before sealing at plaintext set digest 97c44bd2fef9ed2394104bf19e3f05bf43fc937f527db13b78604bd75d038888, and stored as held-out.json.enc (ciphertext a8efb99765315c888ac5ad3a0cc7d799afdf173d8bce07d115f453e607b1d42c, OpenSSL Salted__ header) with the plaintext deleted and the key outside the repo. SimpleQA is referenced by dataset sha256 feee3f7e7db3617e94e8fcf1977b756ec420ef8568f4e0fcbbe0e92e9d5fc032 and row (4326 rows, MIT), not embedded. schema.py validate and check output: ok selection 6 tasks (3 known-answer, 3 house); ok selection digest; ok held-out 5 tasks sealed; ok held-out plaintext digest recorded; ok frozen before the first draw. sets.json records both set digests.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
