@@ -274,6 +274,10 @@ draw's real receipt and fetch log.</p>
 <p>The <code>hffmnnj</code> note body's <code>locator:</code> label is a house convention over the arm's
 evidence contract; the run prompt asks the agent to keep it. A note without the
 label fails the adapter, and the draw is invalid, not excluded.</p>
+<p>A URL is normalized by stripping trailing punctuation and only unbalanced
+closing brackets; a balanced <code>(...)</code> is part of the URL. That keeps a
+wikisource citation such as <code>..._(amended,_2008)</code> in both the report and the
+ledger, so the report check compares the same string.</p>
 <h2 id="reproduce"><a class="header" href="#reproduce">Reproduce</a></h2>
 <pre><code class="language-sh">cd plan/0113-host-deep-research-ab/harness/contract
 python3 dryrun.py
