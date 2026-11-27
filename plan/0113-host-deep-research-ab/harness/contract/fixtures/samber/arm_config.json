@@ -1,6 +1,6 @@
 {
   "arm": "samber",
-  "model": "api.d07yx58.net/qwen3.6-27b",
+  "model": "api.d07yx58.net/qwen3.8-flash-next",
   "search_provider": "exa",
   "native_paths": ["skills/deep-research"]
 }

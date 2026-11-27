@@ -54,7 +54,7 @@ def record(deployment: str, backend: str, max_input: int, max_output: int) -> st
         {
             "data": [
                 {
-                    "model_name": "qwen3.6-27b",
+                    "model_name": "qwen*",
                     "litellm_params": {"model": backend},
                     "model_info": {
                         "id": deployment,
@@ -107,17 +107,21 @@ def main() -> int:
     write(SCRATCH / "empty.jsonl", "")
     write(
         SCRATCH / "drift-record.json",
-        record("2f8863340f6db4763ff3bf04b236dde977d79042b87385862a462a4d6564d2ff", "openai/qwen3.8-27b", 262144, 32768),
+        record("74f7315a44e446ca4413e24acc607c0912141b23a2d456975ed1b52407d7285d", "openai/qwen3.8-flash-next", 500000, 524288),
     )
-    write(SCRATCH / "missing-record.json", json.dumps({"data": []}) + "\n")
+    write(
+        SCRATCH / "missing-record.json",
+        json.dumps({"data": [{"model_name": "qwen3.6-27b", "litellm_params": {"model": "openai/qwen3.8-flash-next"}, "model_info": {"id": "159fb72c", "max_input_tokens": 500000, "max_output_tokens": 524288}}]})
+        + "\n",
+    )
 
     check_live()
     check_replies(SCRATCH / "clean.jsonl", True, "two pinned replies")
     check_replies(SCRATCH / "foreign-model.jsonl", False, "one foreign model id")
     check_replies(SCRATCH / "foreign-provider.jsonl", False, "one foreign provider")
     check_replies(SCRATCH / "empty.jsonl", False, "an empty ledger")
-    check_record(SCRATCH / "drift-record.json", "the cut's old deployment record")
-    check_record(SCRATCH / "missing-record.json", "a missing named entry")
+    check_record(SCRATCH / "drift-record.json", "a drifted wildcard deployment")
+    check_record(SCRATCH / "missing-record.json", "a missing wildcard entry")
 
     print(f"model-probe: {len(PASSES)} checks passed", flush=True)
     return 0

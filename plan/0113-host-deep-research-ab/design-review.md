@@ -66,6 +66,12 @@ to `api.d07yx58.net/qwen3.6-27b`; the arm's own files are never edited. The
 override is a house config, its digest is in the receipt, and the plan's Roles
 bullet and the contract README now say so.
 
+**Correction 2026-11-27, after the review:** the operator corrected the
+reference route to strata's `qwen3.8-flash-next`. The override target is that
+route, resolved through the router's `qwen*` entry with deployment
+`64e4a374…`; the legacy `qwen3.6-27b` name is foreign. The finding stands, the
+route changed.
+
 ### W2. The search provider was still open
 
 The dry-run receipt said `exa`, but the plan's open questions still asked which

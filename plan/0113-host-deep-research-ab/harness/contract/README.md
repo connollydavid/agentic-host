@@ -69,7 +69,7 @@ adapter in the roster dry run.
 ## The model and tool override
 
 The per-arm draw config overrides every agent's model to
-`api.d07yx58.net/qwen3.6-27b` and its tools to the arm's output needs. The arm's
+`api.d07yx58.net/qwen3.8-flash-next` and its tools to the arm's output needs. The arm's
 own files are never edited: the weizhena agent pins `openai/gpt-5.4` and
 `write: false`, and the kanatami worker pins `opencode-go/deepseek-v4-flash`;
 the scratch config supplies the reference route and the write permission the

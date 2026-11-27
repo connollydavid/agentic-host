@@ -10,7 +10,7 @@
 ## The gates
 
 - **Foreign model.** The receipt's model must equal the pinned
-  `api.d07yx58.net/qwen3.6-27b` record: provider, route, deployment id, backend
+  `api.d07yx58.net/qwen3.8-flash-next` record: provider, route, deployment id, backend
   and limits. A different model voids the draw. The reply-level check remains
   `model-preflight.py --replies`.
 - **Foreign harness.** The receipt's harness must equal the pinned OpenCode

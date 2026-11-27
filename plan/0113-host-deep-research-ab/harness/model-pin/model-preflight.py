@@ -8,9 +8,9 @@ deployment, backend and limits. `--record PATH` reads a saved record instead
 ledger, one JSON object per line with `provider` and `model`; one foreign
 reply voids the draw.
 
-The route name is the exact named entry `qwen3.6-27b`, not the engine's
-default spelling `qwen3.8-flash-next`, which reaches a wildcard entry with a
-different deployment id.
+The route name is strata's `qwen3.8-flash-next`; it resolves through the
+`qwen*` wildcard entry, whose deployment id is the pin. The legacy
+`qwen3.6-27b` name is foreign.
 """
 
 from __future__ import annotations
@@ -41,9 +41,10 @@ def fetch_record() -> dict:
 
 
 def check_route(record: dict) -> None:
-    entries = [entry for entry in record.get("data", []) if entry.get("model_name") == PIN["route"]]
+    entry_name = PIN.get("route_entry", PIN["route"])
+    entries = [entry for entry in record.get("data", []) if entry.get("model_name") == entry_name]
     if len(entries) != 1:
-        void(f"route: expected one named entry {PIN['route']!r}, found {len(entries)}")
+        void(f"route: expected one entry {entry_name!r} for {PIN['route']!r}, found {len(entries)}")
     entry = entries[0]
     info = entry.get("model_info") or {}
     params = entry.get("litellm_params") or {}
@@ -57,8 +58,9 @@ def check_route(record: dict) -> None:
         if got != pinned:
             void(f"route: {label} is {got!r}, pinned {pinned!r} for {PIN['route']!r}")
     print(
-        f"model-preflight: ok route={PIN['route']} deployment={PIN['deployment_id']} "
-        f"backend={PIN['backend']} limits={PIN['max_input_tokens']}/{PIN['max_output_tokens']}"
+        f"model-preflight: ok route={PIN['route']} via={entry_name} "
+        f"deployment={PIN['deployment_id']} backend={PIN['backend']} "
+        f"limits={PIN['max_input_tokens']}/{PIN['max_output_tokens']}"
     )
 
 

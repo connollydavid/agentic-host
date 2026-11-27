@@ -1,8 +1,10 @@
 {
   "provider": "api.d07yx58.net",
-  "route": "qwen3.6-27b",
+  "route": "qwen3.8-flash-next",
+  "route_entry": "qwen*",
+  "route_kind": "wildcard",
   "backend": "openai/qwen3.8-flash-next",
-  "deployment_id": "159fb72cfac7e532d0c04cd4b32d65eec500fcff4e1d724cc5eef434b5b24969",
+  "deployment_id": "64e4a3742445b5bf58b5e6b75f83b9a84b87cfe19b47692b7984419f71804bf6",
   "max_input_tokens": 500000,
   "max_output_tokens": 524288,
   "route_url": "https://api.d07yx58.net/v1/model/info",

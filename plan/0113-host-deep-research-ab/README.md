@@ -9,8 +9,9 @@ component. The arm snapshots are pinned with their licenses recorded
 optional verification pipeline is excluded for a missing license at its pin.
 The run harness is pinned at OpenCode v2.4.2, with its draw pre-flight and
 isolation probes recorded ([harness/README.md](harness/README.md)), and the
-reference route is pinned at the named `qwen3.6-27b` entry with its deployment
-id ([model-pin/README.md](harness/model-pin/README.md)). The run contract and
+reference route is strata's `qwen3.8-flash-next`, pinned through the router's
+`qwen*` entry with its deployment id
+([model-pin/README.md](harness/model-pin/README.md)). The run contract and
 its per-arm adapters are recorded
 ([contract/README.md](harness/contract/README.md)). The task sets are frozen,
 with the selection set public and the held-out set sealed
@@ -88,8 +89,10 @@ run's receipt.
   the project, so XDG isolation alone would load the retired research skills into
   the null arm. The work directory sits outside any tree that carries a manual.
 - **Reference model.** `Qwen3.8-Flash-Next` on strata, for every role. The
-  router's `/model/info` record is pinned by an exact named entry and its
-  deployment id, checked in pre-flight. A draw on a foreign model is void.
+  router has no exact named `qwen3.8-flash-next` entry; the name resolves
+  through the `qwen*` entry, and the pin is that entry's deployment id, checked
+  in pre-flight. A draw on a foreign model is void. The legacy `qwen3.6-27b`
+  name is foreign.
 - **Search.** One provider, from the harness's own web tools, recorded once.
   Every arm uses that provider. The provider is Exa, with
   `OPENCODE_ENABLE_EXA=1`; every receipt records `exa`.
@@ -243,10 +246,12 @@ reply recorded under another model id.
 - verify: the pre-flight voids a draw that carries one foreign-model reply, and
   passes a clean one
 - depends: #harness-pin
-- Landed 2026-11-27: the named `qwen3.6-27b` entry (deployment `159fb72c…`,
-  backend `openai/qwen3.8-flash-next`, 500000/524288) is the reference route;
-  the pre-flight voids a foreign reply, an empty ledger and the cut's old
-  deployment record. Record: [harness/model-pin/README.md](harness/model-pin/README.md).
+- Landed 2026-11-27: the reference route is strata's `qwen3.8-flash-next`
+  through the router's `qwen*` entry (deployment `64e4a374…`, backend
+  `openai/qwen3.8-flash-next`, 500000/524288); the legacy `qwen3.6-27b` name is
+  foreign. The pre-flight voids a foreign reply, an empty ledger, the `*`
+  wildcard's deployment and a record without the `qwen*` entry. Record:
+  [harness/model-pin/README.md](harness/model-pin/README.md).
 
 ### Run contract {#run-contract}
 
@@ -376,10 +381,10 @@ the held-out set before it ships.
 
 ## Open questions
 
-- **Settled 2026-11-27: the named `qwen3.6-27b` entry is the reference route**
-  (`159fb72c…`, backend `openai/qwen3.8-flash-next`). The name
-  `qwen3.8-flash-next` still resolves only through a family wildcard; a named
-  entry remains a change in `api-litellm`, outside this repository.
+- **Ruled 2026-11-27: the reference route is strata's `qwen3.8-flash-next`.**
+  The name resolves through the `qwen*` wildcard (deployment `64e4a374…`); an
+  exact named entry remains a change in `api-litellm`, outside this repository.
+  The legacy `qwen3.6-27b` name is not the route.
 - **Ruled 2026-11-27: the experiment considers only `v2.4.2`.** Every draw and
   check runs under the pinned `v2.4.2` binary; the house `tools/opencode` pin
   is outside this milestone's harness decision.
