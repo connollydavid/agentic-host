@@ -1,0 +1,5 @@
+{"url": "https://en.wikipedia.org/wiki/Lilian_Ngoyi", "status": 200, "snapshot": "snapshots/agent-0-lilian-ngoyi-wikipedia.txt"}
+{"url": "https://en.wikipedia.org/wiki/Dora_Tamana", "status": 200, "snapshot": "snapshots/agent-1-dora-tamana-wikipedia.txt"}
+{"url": "https://www.sahistory.org.za/people/lilian-masediba-ngoyi", "status": 200, "snapshot": "snapshots/agent-2-lilian-ngoyi-sahistory.txt"}
+{"url": "https://web.archive.org/web/20110902142904/http://womenshistorynetwork.org/blog/?tag=nicholas-grant", "status": 200, "snapshot": "snapshots/agent-3-lilian-ngoyi-womens-history-network.txt"}
+{"url": "https://www.sahistory.org.za/people/dora-tamana", "status": 200, "snapshot": "snapshots/main-4.txt"}

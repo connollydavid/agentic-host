@@ -1,0 +1,12 @@
+{
+  "key": "held-out/simpleqa-4000",
+  "kind": "known-answer",
+  "source": {
+    "benchmark": "simpleqa",
+    "dataset_url": "https://openaipublic.blob.core.windows.net/simple-evals/simple_qa_test_set.csv",
+    "dataset_sha256": "feee3f7e7db3617e94e8fcf1977b756ec420ef8568f4e0fcbbe0e92e9d5fc032",
+    "row": 4000
+  },
+  "must_cover": [],
+  "digest": "9f75c79679d67dc2c59ae91c3cf543cc41de44e2186d6f6d0d9621ce92efeea5"
+}

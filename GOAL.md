@@ -1,5 +1,5 @@
 # The active goal
 
-plan/0113-host-deep-research-ab: Research reaches the record as findings, not as sources.
+plan/0113-host-deep-research-ab is parked: the confirmation's live prompt and search-provider setup are under review; the 1800-second waves produced void draws.
 
-Orient with: host-lifecycle goal show .
+Resume with: host-lifecycle goal unpark .

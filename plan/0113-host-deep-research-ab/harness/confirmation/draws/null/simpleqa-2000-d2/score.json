@@ -1,0 +1,23 @@
+{
+  "arm": "null",
+  "task": "held-out/simpleqa-2000",
+  "exit_code": 124,
+  "timed_out": true,
+  "wall_seconds": 1800.0,
+  "prompt_tokens": 115152,
+  "completion_tokens": 1706,
+  "tool_calls": 11,
+  "agent_files": {
+    "report": true,
+    "sources": true,
+    "fetch_log": false
+  },
+  "contract_ok": true,
+  "contract_reason": "",
+  "rubric": {
+    "status": "void",
+    "reason": "phantom source: https://en.wikipedia.org/wiki/Lillian_Ngoyi"
+  },
+  "valid": false,
+  "score": 0
+}

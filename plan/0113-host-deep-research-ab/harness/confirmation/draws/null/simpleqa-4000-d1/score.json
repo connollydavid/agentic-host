@@ -1,0 +1,47 @@
+{
+  "arm": "null",
+  "task": "held-out/simpleqa-4000",
+  "exit_code": 130,
+  "timed_out": false,
+  "wall_seconds": 965.3,
+  "prompt_tokens": 37232,
+  "completion_tokens": 1837,
+  "tool_calls": 13,
+  "agent_files": {
+    "report": true,
+    "sources": true,
+    "fetch_log": false
+  },
+  "contract_ok": true,
+  "contract_reason": "",
+  "rubric": {
+    "status": "scored",
+    "task": "held-out/simpleqa-4000",
+    "kind": "known-answer",
+    "components": {
+      "citation_support": 0.0,
+      "known_answer": 4,
+      "must_cover": null,
+      "numerals": 3,
+      "prose": 0
+    },
+    "max": 16,
+    "score": 7.0,
+    "citation_pass": false,
+    "notes": {
+      "cited_sentences": 4,
+      "supported_sentences": 0,
+      "numerals": [
+        "1673",
+        "1663",
+        "10",
+        "18",
+        "1673"
+      ],
+      "unsupported_numerals": [],
+      "prose_matches": 4
+    }
+  },
+  "valid": true,
+  "score": 7.0
+}

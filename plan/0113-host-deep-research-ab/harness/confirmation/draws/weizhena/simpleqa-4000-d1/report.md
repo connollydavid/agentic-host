@@ -1,0 +1,2 @@
+No outline exists yet in the working directory, so I'll bootstrap the research pipeline per the installed skills: create the topic outline/fields, then run the research-deep workflow (parallel web-search agents), and finally produce the contract deliverables.
+The `~/.claude` path from the template doesn't exist; the installed validator is in the skill directory, so I'll point agents at that location. Launching all 3 item agents now:

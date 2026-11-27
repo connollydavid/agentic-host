@@ -1,0 +1,23 @@
+{
+  "arm": "weizhena",
+  "task": "held-out/simpleqa-4000",
+  "exit_code": 130,
+  "timed_out": false,
+  "wall_seconds": 965.4,
+  "prompt_tokens": 32776,
+  "completion_tokens": 3702,
+  "tool_calls": 13,
+  "agent_files": {
+    "report": false,
+    "sources": false,
+    "fetch_log": false
+  },
+  "contract_ok": false,
+  "contract_reason": "the draw wrote no sources.json",
+  "rubric": {
+    "status": "void",
+    "reason": "rubric error: [Errno 2] No such file or directory: '/opt/repo/agentic-host/plan/0113-host-deep-research-ab/harness/confirmation/draws/weizhena/simpleqa-4000-d2/sources.json'"
+  },
+  "valid": false,
+  "score": 0
+}

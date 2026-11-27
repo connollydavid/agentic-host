@@ -22,7 +22,7 @@ review is recorded with every finding dispositioned
 only contract-valid draw is the null's host-lint task, and the lock is
 `weizhena` by the tie-break
 ([selection/README.md](harness/selection/README.md)).; active goal since
-2026-11-26
+2026-11-26; parked (the confirmation's live prompt and search-provider setup are under review; the 1800-second waves produced void draws) since 2026-11-27
 
 ## Rulings
 

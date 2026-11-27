@@ -1,0 +1,584 @@
+[Jump to content](#bodyContent)
+
+Main menu
+
+move to sidebar hide
+
+Navigation
+
+- [Main page](/wiki/Main_Page "Visit the main page [z]")
+
+- [Contents](/wiki/Wikipedia:Contents "Guides to browsing Wikipedia")
+
+- [Current events](/wiki/Portal:Current_events "Articles related to current events")
+
+- [Random article](/wiki/Special:Random "Visit a randomly selected article [x]")
+
+- [About Wikipedia](/wiki/Wikipedia:About "Learn about Wikipedia and how it works")
+
+- [Contact us](//en.wikipedia.org/wiki/Wikipedia:Contact_us "How to contact Wikipedia")
+
+Contribute
+
+- [Help](/wiki/Help:Contents "Guidance on how to use and edit Wikipedia")
+
+- [Learn to edit](/wiki/Help:Introduction "Learn how to edit Wikipedia")
+
+- [Community portal](/wiki/Wikipedia:Community_portal "The hub for editors")
+
+- [Recent changes](/wiki/Special:RecentChanges "A list of recent changes to Wikipedia [r]")
+
+- [Upload file](/wiki/Wikipedia:File_upload_wizard "Add images or other media for use on Wikipedia")
+
+- [Special pages](/wiki/Special:SpecialPages "A list of all special pages [q]")
+
+[ ![Wikipedia](/static/images/mobile/copyright/wikipedia-wordmark-en-25.svg) ![The Free Encyclopedia](/static/images/mobile/copyright/wikipedia-tagline-en-25.svg)](/wiki/Main_Page)
+
+[ Search](/wiki/Special:Search "Search Wikipedia [f]")
+
+Search
+
+- [Donate](https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=en.wikipedia.org&uselang=en)
+
+- [Create account](/w/index.php?title=Special:CreateAccount&returnto=Reflecting+telescope "You are encouraged to create an account and log in; however, it is not mandatory")
+
+- [Log in](/w/index.php?title=Special:UserLogin&returnto=Reflecting+telescope "You're encouraged to log in; however, it's not mandatory. [o]")
+
+- [ Donate](https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=en.wikipedia.org&uselang=en)
+
+- [ Create account](/w/index.php?title=Special:CreateAccount&returnto=Reflecting+telescope "You are encouraged to create an account and log in; however, it is not mandatory")
+
+- [ Log in](/w/index.php?title=Special:UserLogin&returnto=Reflecting+telescope "You're encouraged to log in; however, it's not mandatory. [o]")
+
+## Contents
+
+move to sidebar hide
+
+- [](#)
+
+  (Top)
+
+- [](#History)
+
+  1 History
+
+- [](#Technical_considerations)
+
+  2 Technical considerations
+
+  Toggle Technical considerations subsection
+
+  - [](#Optical_errors)
+
+    2\.1 Optical errors
+
+- [](#Use_in_astronomical_research)
+
+  3 Use in astronomical research
+
+- [](#Reflecting_telescope_designs)
+
+  4 Reflecting telescope designs
+
+  Toggle Reflecting telescope designs subsection
+
+  - [](#Gregorian)
+
+    4\.1 Gregorian
+
+  - [](#Newtonian)
+
+    4\.2 Newtonian
+
+  - [](#The_Cassegrain_design_and_its_variations)
+
+    4\.3 The Cassegrain design and its variations
+
+    - [](#Ritchey–Chrétien)
+
+      4\.3.1 Ritchey–Chrétien
+
+    - [](#Three-mirror_anastigmat)
+
+      4\.3.2 Three-mirror anastigmat
+
+    - [](#Dall–Kirkham)
+
+      4\.3.3 Dall–Kirkham
+
+  - [](#Off-axis_designs)
+
+    4\.4 Off-axis designs
+
+    - [](#Herschelian)
+
+      4\.4.1 Herschelian
+
+    - [](#Schiefspiegler)
+
+      4\.4.2 Schiefspiegler
+
+    - [](#Stevick-Paul)
+
+      4\.4.3 Stevick-Paul
+
+    - [](#Yolo)
+
+      4\.4.4 Yolo
+
+  - [](#Liquid-mirror_telescopes)
+
+    4\.5 Liquid-mirror telescopes
+
+- [](#Focal_planes)
+
+  5 Focal planes
+
+  Toggle Focal planes subsection
+
+  - [](#Prime_focus)
+
+    5\.1 Prime focus
+
+  - [](#Cassegrain_focus)
+
+    5\.2 Cassegrain focus
+
+  - [](#Nasmyth_and_coudé_focus)
+
+    5\.3 Nasmyth and coudé focus
+
+    - [](#Nasmyth)
+
+      5\.3.1 Nasmyth
+
+    - [](#Coudé)
+
+      5\.3.2 Coudé
+
+  - [](#Fibre-fed_spectrographs)
+
+    5\.4 Fibre-fed spectrographs
+
+- [](#See_also)
+
+  6 See also
+
+- [](#References)
+
+  7 References
+
+- [](#External_links)
+
+  8 External links
+
+# Reflecting telescope
+
+- [العربية](https://ar.wikipedia.org/wiki/%D9%85%D9%82%D8%B1%D8%A7%D8%A8_%D8%B9%D8%A7%D9%83%D8%B3 "مقراب عاكس – Arabic")
+
+- [Asturianu](https://ast.wikipedia.org/wiki/Telescopiu_reflector "Telescopiu reflector – Asturian")
+
+- [Azərbaycanca](https://az.wikipedia.org/wiki/Reflektor_\(teleskop\) "Reflektor (teleskop) – Azerbaijani")
+
+- [Български](https://bg.wikipedia.org/wiki/%D0%A0%D0%B5%D1%84%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B5%D0%BD_%D1%82%D0%B5%D0%BB%D0%B5%D1%81%D0%BA%D0%BE%D0%BF "Рефлекторен телескоп – Bulgarian")
+
+- [বাংলা](https://bn.wikipedia.org/wiki/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%AB%E0%A6%B2%E0%A6%95_%E0%A6%A6%E0%A7%82%E0%A6%B0%E0%A6%AC%E0%A7%80%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%A3_%E0%A6%AF%E0%A6%A8%E0%A7%8D%E0%A6%A4%E0%A7%8D%E0%A6%B0 "প্রতিফলক দূরবীক্ষণ যন্ত্র – Bangla")
+
+- [Català](https://ca.wikipedia.org/wiki/Telescopi_reflector "Telescopi reflector – Catalan")
+
+- [Dansk](https://da.wikipedia.org/wiki/Spejlteleskop "Spejlteleskop – Danish")
+
+- [Deutsch](https://de.wikipedia.org/wiki/Spiegelteleskop "Spiegelteleskop – German")
+
+- [Ελληνικά](https://el.wikipedia.org/wiki/%CE%9A%CE%B1%CF%84%CE%BF%CF%80%CF%84%CF%81%CE%B9%CE%BA%CF%8C_%CF%84%CE%B7%CE%BB%CE%B5%CF%83%CE%BA%CF%8C%CF%80%CE%B9%CE%BF "Κατοπτρικό τηλεσκόπιο – Greek")
+
+- [Español](https://es.wikipedia.org/wiki/Telescopio_reflector "Telescopio reflector – Spanish")
+
+- [Euskara](https://eu.wikipedia.org/wiki/Islatze-teleskopio "Islatze-teleskopio – Basque")
+
+- [فارسی](https://fa.wikipedia.org/wiki/%D8%AA%D9%84%D8%B3%DA%A9%D9%88%D9%BE_%D8%A8%D8%A7%D8%B2%D8%AA%D8%A7%D8%A8%DB%8C "تلسکوپ بازتابی – Persian")
+
+- [Français](https://fr.wikipedia.org/wiki/T%C3%A9lescope_r%C3%A9flecteur "Télescope réflecteur – French")
+
+- [Galego](https://gl.wikipedia.org/wiki/Telescopio_reflector "Telescopio reflector – Galician")
+
+- [עברית](https://he.wikipedia.org/wiki/%D7%98%D7%9C%D7%A1%D7%A7%D7%95%D7%A4_%D7%9E%D7%97%D7%96%D7%99%D7%A8_%D7%90%D7%95%D7%A8 "טלסקופ מחזיר אור – Hebrew")
+
+- [हिन्दी](https://hi.wikipedia.org/wiki/%E0%A4%AA%E0%A4%B0%E0%A4%BE%E0%A4%B5%E0%A4%B0%E0%A5%8D%E0%A4%A4%E0%A5%80_%E0%A4%A6%E0%A5%82%E0%A4%B0%E0%A4%A6%E0%A4%B0%E0%A5%8D%E0%A4%B6%E0%A5%80 "परावर्ती दूरदर्शी – Hindi")
+
+- [Hrvatski](https://hr.wikipedia.org/wiki/Reflektorski_teleskop "Reflektorski teleskop – Croatian")
+
+- [Kreyòl ayisyen](https://ht.wikipedia.org/wiki/Telesk%C3%B2p_reflekt%C3%A8 "Teleskòp reflektè – Haitian Creole")
+
+- [Հայերեն](https://hy.wikipedia.org/wiki/%D5%8C%D5%A5%D6%86%D5%AC%D5%A5%D5%AF%D5%BF%D5%B8%D6%80 "Ռեֆլեկտոր – Armenian")
+
+- [Bahasa Indonesia](https://id.wikipedia.org/wiki/Teleskop_pemantul "Teleskop pemantul – Indonesian")
+
+- [Italiano](https://it.wikipedia.org/wiki/Telescopio_riflettore "Telescopio riflettore – Italian")
+
+- [日本語](https://ja.wikipedia.org/wiki/%E5%8F%8D%E5%B0%84%E6%9C%9B%E9%81%A0%E9%8F%A1 "反射望遠鏡 – Japanese")
+
+- [Қазақша](https://kk.wikipedia.org/wiki/%D0%A0%D0%B5%D1%84%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80_\(%D1%82%D0%B5%D0%BB%D0%B5%D1%81%D0%BA%D0%BE%D0%BF\) "Рефлектор (телескоп) – Kazakh")
+
+- [한국어](https://ko.wikipedia.org/wiki/%EB%B0%98%EC%82%AC_%EB%A7%9D%EC%9B%90%EA%B2%BD "반사 망원경 – Korean")
+
+- [Lietuvių](https://lt.wikipedia.org/wiki/Reflektorius "Reflektorius – Lithuanian")
+
+- [Latviešu](https://lv.wikipedia.org/wiki/Reflektors "Reflektors – Latvian")
+
+- [Македонски](https://mk.wikipedia.org/wiki/%D0%A0%D0%B5%D1%84%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D1%81%D0%BA%D0%B8_%D1%82%D0%B5%D0%BB%D0%B5%D1%81%D0%BA%D0%BE%D0%BF "Рефлекторски телескоп – Macedonian")
+
+- [Nederlands](https://nl.wikipedia.org/wiki/Spiegeltelescoop "Spiegeltelescoop – Dutch")
+
+- [Norsk nynorsk](https://nn.wikipedia.org/wiki/Reflektor_i_astronomi "Reflektor i astronomi – Norwegian Nynorsk")
+
+- [Norsk bokmål](https://no.wikipedia.org/wiki/Reflektorteleskop "Reflektorteleskop – Norwegian Bokmål")
+
+- [Polski](https://pl.wikipedia.org/wiki/Teleskop_zwierciadlany "Teleskop zwierciadlany – Polish")
+
+- [Português](https://pt.wikipedia.org/wiki/Telesc%C3%B3pio_refletor "Telescópio refletor – Portuguese")
+
+- [Русский](https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D1%84%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80_\(%D1%82%D0%B5%D0%BB%D0%B5%D1%81%D0%BA%D0%BE%D0%BF\) "Рефлектор (телескоп) – Russian")
+
+- [Slovenčina](https://sk.wikipedia.org/wiki/Reflektor_\(astron%C3%B3mia\) "Reflektor (astronómia) – Slovak")
+
+- [Српски / srpski](https://sr.wikipedia.org/wiki/%D0%A0%D0%B5%D1%84%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80_\(%D1%82%D0%B5%D0%BB%D0%B5%D1%81%D0%BA%D0%BE%D0%BF\) "Рефлектор (телескоп) – Serbian")
+
+- [தமிழ்](https://ta.wikipedia.org/wiki/%E0%AE%A4%E0%AF%86%E0%AE%B1%E0%AE%BF%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%81%E0%AE%B5%E0%AE%95%E0%AF%88%E0%AE%A4%E0%AF%8D_%E0%AE%A4%E0%AF%8A%E0%AE%B2%E0%AF%88%E0%AE%A8%E0%AF%8B%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AE%BF "தெறிப்புவகைத் தொலைநோக்கி – Tamil")
+
+- [ไทย](https://th.wikipedia.org/wiki/%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%82%E0%B8%97%E0%B8%A3%E0%B8%97%E0%B8%A3%E0%B8%A3%E0%B8%A8%E0%B8%99%E0%B9%8C%E0%B8%AA%E0%B8%B0%E0%B8%97%E0%B9%89%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%AA%E0%B8%87 "กล้องโทรทรรศน์สะท้อนแสง – Thai")
+
+- [Türkçe](https://tr.wikipedia.org/wiki/Yans%C4%B1tmal%C4%B1_teleskop "Yansıtmalı teleskop – Turkish")
+
+- [Українська](https://uk.wikipedia.org/wiki/%D0%A0%D0%B5%D1%84%D0%BB%D0%B5%D0%BA%D1%82%D0%BE%D1%80_\(%D1%82%D0%B5%D0%BB%D0%B5%D1%81%D0%BA%D0%BE%D0%BF\) "Рефлектор (телескоп) – Ukrainian")
+
+- [Tiếng Việt](https://vi.wikipedia.org/wiki/K%C3%ADnh_vi%E1%BB%85n_v%E1%BB%8Dng_ph%E1%BA%A3n_x%E1%BA%A1 "Kính viễn vọng phản xạ – Vietnamese")
+
+- [粵語](https://zh-yue.wikipedia.org/wiki/%E5%8F%8D%E5%B0%84%E6%9C%9B%E9%81%A0%E9%8F%A1 "反射望遠鏡 – Cantonese")
+
+- [中文](https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%B0%84%E6%9C%9B%E8%BF%9C%E9%95%9C "反射望远镜 – Chinese")
+
+[Edit links](https://www.wikidata.org/wiki/Special:EntityPage/Q35221#sitelinks-wikipedia "Edit interlanguage links")
+
+- [Article](/wiki/Reflecting_telescope "View the content page [c]")
+
+- [Talk](/wiki/Talk:Reflecting_telescope "Discuss improvements to the content page [t]")
+
+- [Read](/wiki/Reflecting_telescope)
+
+- [Edit](/w/index.php?title=Reflecting_telescope&action=edit "Edit the source code of this page [e]")
+
+- [View history](/w/index.php?title=Reflecting_telescope&action=history "Past revisions of this page [h]")
+
+- [ Save](# "Add this page to your saved items")
+
+Tools
+
+move to sidebar hide
+
+Actions
+
+- [ Read](/wiki/Reflecting_telescope)
+
+- [ Edit](/w/index.php?title=Reflecting_telescope&action=edit "Edit the source code of this page [e]")
+
+- [ View history](/w/index.php?title=Reflecting_telescope&action=history "Past revisions of this page [h]")
+
+- [ Save](# "Add this page to your saved items")
+
+General
+
+- [What links here](/wiki/Special:WhatLinksHere/Reflecting_telescope "List of all English Wikipedia pages containing links to this page [j]")
+
+- [Related changes](/wiki/Special:RecentChangesLinked/Reflecting_telescope "Recent changes in pages linked from this page [k]")
+
+- [Upload file](//en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard "Upload files [u]")
+
+- [Permanent link](/w/index.php?title=Reflecting_telescope&oldid=1387707989 "Permanent link to this revision of this page")
+
+- [Page information](/w/index.php?title=Reflecting_telescope&action=info "More information about this page")
+
+- [Cite this page](/w/index.php?title=Special:CiteThisPage&page=Reflecting_telescope&id=1387707989&wpFormIdentifier=titleform "Information on how to cite this page")
+
+- [Get shortened URL](/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FReflecting_telescope)
+
+- [Switch to legacy parser](/w/index.php?title=Reflecting_telescope&useparsoid=0)
+
+Print/export
+
+- [Download as PDF](/w/index.php?title=Special:DownloadAsPdf&page=Reflecting_telescope&action=show-download-screen "Download this page as a PDF file")
+
+- [Printable version](javascript:print\(\); "Printable version of this page [p]")
+
+In other projects
+
+- [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Reflecting_telescopes)
+
+- [Wikidata item](https://www.wikidata.org/wiki/Special:EntityPage/Q35221 "Structured data on this page hosted by Wikidata [g]")
+
+Appearance
+
+move to sidebar hide
+
+From Wikipedia, the free encyclopedia
+
+Telescopes which utilize curved mirrors to form an image
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/SOFIA_2.5M_Primary_Mirror.jpg/250px-SOFIA_2.5M_Primary_Mirror.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:SOFIA_2.5M_Primary_Mirror.jpg)
+
+[Stratospheric Observatory for Infrared Astronomy](https://en.wikipedia.org/wiki/Stratospheric_Observatory_for_Infrared_Astronomy "Stratospheric Observatory for Infrared Astronomy")
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Franklin_reflector_24.jpg/250px-Franklin_reflector_24.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Franklin_reflector_24.jpg)
+
+24-inch convertible Newtonian/Cassegrain reflecting telescope on display at the [Franklin Institute](https://en.wikipedia.org/wiki/Franklin_Institute "Franklin Institute")
+
+A **reflecting telescope** (also called a **reflector**) is a [telescope](https://en.wikipedia.org/wiki/Telescope "Telescope") that uses a single or a combination of [curved mirrors](https://en.wikipedia.org/wiki/Curved_mirror "Curved mirror") that reflect [light](https://en.wikipedia.org/wiki/Light "Light") and form an [image](https://en.wikipedia.org/wiki/Image "Image"). The reflecting telescope was invented in the 17th century by [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton "Isaac Newton") as an alternative to the [refracting telescope](https://en.wikipedia.org/wiki/Refracting_telescope "Refracting telescope") which, at that time, was a design that suffered from severe [chromatic aberration](https://en.wikipedia.org/wiki/Chromatic_aberration "Chromatic aberration"). Although reflecting telescopes produce other types of [optical aberrations](https://en.wikipedia.org/wiki/Optical_aberration "Optical aberration"), it is a design that allows for very large diameter [objectives](https://en.wikipedia.org/wiki/Objective_\(optics\) "Objective (optics)"). Almost all of the major telescopes used in [astronomy](https://en.wikipedia.org/wiki/Astronomy "Astronomy") research are reflectors. Many variant forms are in use and some employ extra optical elements to improve image quality or place the image in a mechanically advantageous position. Since reflecting telescopes use [mirrors](https://en.wikipedia.org/wiki/Mirror "Mirror"), the design is sometimes referred to as a **[catoptric](https://en.wikipedia.org/wiki/Catoptrics "Catoptrics") telescope**.[\[1\]](#cite_note-European_Space_Agency-1)
+
+From the time of Newton to the 19th century, the mirror itself was made of metal – usually [speculum metal](https://en.wikipedia.org/wiki/Speculum_metal "Speculum metal"). This type included Newton's first designs and the largest telescope of the 19th century, the [Leviathan of Parsonstown](https://en.wikipedia.org/wiki/Leviathan_of_Parsonstown "Leviathan of Parsonstown") with a 6 feet (1.8 m) wide metal mirror. However, speculum metal mirrors reflected only about 2⁄3 of the light and tarnished easily, thus requiring frequent re-polishings. By the mid-19th century, the use of [silvered-glass mirrors](https://en.wikipedia.org/wiki/Silvering "Silvering") in reflecting telescopes had become more popular due to their relative cheapness and resistance to tarnish.[\[2\]](#cite_note-2)
+
+Reflecting telescopes have become extraordinarily popular, from famous, large-scale telescopes, such as the [Hubble Space Telescope](https://en.wikipedia.org/wiki/Hubble_Space_Telescope "Hubble Space Telescope"), all the way down to smaller amateur models. In addition, the reflection telescope principle was applied to other electromagnetic wavelengths; for example, [X-ray telescopes](https://en.wikipedia.org/wiki/X-ray_telescope "X-ray telescope") similarly use the reflection principle to make [image-forming optics](https://en.wikipedia.org/wiki/Image-forming_optical_system "Image-forming optical system").
+
+## History
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=1 "Edit section: History")\]
+
+Main article: [History of the telescope](https://en.wikipedia.org/wiki/History_of_the_telescope "History of the telescope")
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Newton_telescope_replica_1668.jpg/250px-Newton_telescope_replica_1668.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Newton_telescope_replica_1668.jpg)
+
+A replica of Newton's second reflecting telescope which was presented to the [Royal Society](https://en.wikipedia.org/wiki/Royal_Society "Royal Society") in 1672\.[\[3\]](#cite_note-:1-3)
+
+[![](//thumb.wikimedia.org/wikipedia/en/thumb/f/fe/Great_Telescope%2C_Birr%2C_Offaly_1.jpg/250px-Great_Telescope%2C_Birr%2C_Offaly_1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Great_Telescope,_Birr,_Offaly_1.jpg)
+
+The great telescope of [Birr Castle](https://en.wikipedia.org/wiki/Birr_Castle "Birr Castle"), the [Leviathan of Parsonstown](https://en.wikipedia.org/wiki/Leviathan_of_Parsonstown "Leviathan of Parsonstown"). Modern day remnants of the mirror and support structure.
+
+The idea that [curved mirrors](https://en.wikipedia.org/wiki/Curved_mirrors "Curved mirrors") behave like lenses dates back at least to [Alhazen](https://en.wikipedia.org/wiki/Alhazen "Alhazen")'s 11th century treatise on optics, works that had been widely disseminated in Latin translations in [early modern Europe](https://en.wikipedia.org/wiki/Early_modern_Europe "Early modern Europe").[\[4\]](#cite_note-4) Soon after the invention of the [refracting telescope](https://en.wikipedia.org/wiki/Refracting_telescope "Refracting telescope"), [Galileo Galilei](https://en.wikipedia.org/wiki/Galileo_Galilei "Galileo Galilei"), [Giovanni Francesco Sagredo](https://en.wikipedia.org/wiki/Giovanni_Francesco_Sagredo "Giovanni Francesco Sagredo"), and others, spurred on by their knowledge of the principles of curved mirrors, discussed the idea of building a telescope using a mirror as the image forming objective.[\[5\]](#cite_note-Fred_Watson_2007_109-5) There were reports that the [Bolognese](https://en.wikipedia.org/wiki/Bologna "Bologna") Cesare Caravaggi had constructed one around 1626 and the Italian professor [Niccolò Zucchi](https://en.wikipedia.org/wiki/Niccolò_Zucchi "Niccolò Zucchi"), in a later work, wrote that he had experimented with a concave bronze mirror in 1616, but said it did not produce a satisfactory image.[\[5\]](#cite_note-Fred_Watson_2007_109-5) The potential advantages of using [parabolic mirrors](https://en.wikipedia.org/wiki/Parabolic_reflector "Parabolic reflector"), primarily reduction of [spherical aberration](https://en.wikipedia.org/wiki/Spherical_aberration "Spherical aberration") with no [chromatic aberration](https://en.wikipedia.org/wiki/Chromatic_aberration "Chromatic aberration"), led to many proposed designs for reflecting telescopes. These included one by [James Gregory](https://en.wikipedia.org/wiki/James_Gregory_\(astronomer_and_mathematician\) "James Gregory (astronomer and mathematician)"), published in 1663\. In 1673, experimental scientist [Robert Hooke](https://en.wikipedia.org/wiki/Robert_Hooke "Robert Hooke") was able to build this type of telescope, which became known as the [Gregorian telescope](https://en.wikipedia.org/wiki/Gregorian_telescope "Gregorian telescope").[\[6\]](#cite_note-6)[\[7\]](#cite_note-:0-7)[\[8\]](#cite_note-8)
+
+Five years after Gregory designed his telescope and five years before Hooke built the first such Gregorian telescope, [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton "Isaac Newton") in 1668 built [his own reflecting telescope](https://en.wikipedia.org/wiki/Newton's_reflector "Newton's reflector"), which is considered the first reflecting telescope, as previous designs were never put into practice or ended in failure when attempted.[\[7\]](#cite_note-:0-7)[\[9\]](#cite_note-books.google.com-9)[\[10\]](#cite_note-:172-10) Newton's telescope used a spherically ground metal [primary mirror](https://en.wikipedia.org/wiki/Primary_mirror "Primary mirror") and a small diagonal mirror in an optical configuration that has come to be known as the [Newtonian telescope](https://en.wikipedia.org/wiki/Newtonian_telescope "Newtonian telescope").
+
+Despite the theoretical advantages of the reflector design, the difficulty of construction and the poor performance of the [speculum metal](https://en.wikipedia.org/wiki/Speculum_metal "Speculum metal") mirrors being used at the time meant it took over 100 years for them to become popular. Many of the advances in reflecting telescopes included the perfection of [parabolic mirror](https://en.wikipedia.org/wiki/Parabolic_reflector "Parabolic reflector") fabrication in the 18th century,[\[11\]](#cite_note-11) silver coated glass mirrors in the 19th century (built by [Léon Foucault](https://en.wikipedia.org/wiki/Léon_Foucault "Léon Foucault") in 1858),[\[12\]](#cite_note-12) long-lasting aluminum coatings in the 20th century,[\[13\]](#cite_note-13) [segmented mirrors](https://en.wikipedia.org/wiki/Segmented_mirror "Segmented mirror") to allow larger diameters, and [active optics](https://en.wikipedia.org/wiki/Active_optics "Active optics") to compensate for gravitational deformation. A mid-20th century innovation was [catadioptric](https://en.wikipedia.org/wiki/Catadioptric_system "Catadioptric system") telescopes such as the [Schmidt camera](https://en.wikipedia.org/wiki/Schmidt_camera "Schmidt camera"), which use both a spherical mirror and a lens (called a corrector plate) as primary optical elements, mainly used for wide-field imaging without spherical aberration.
+
+The late 20th century has seen the development of [adaptive optics](https://en.wikipedia.org/wiki/Adaptive_optics "Adaptive optics") and [lucky imaging](https://en.wikipedia.org/wiki/Lucky_imaging "Lucky imaging") to overcome the problems of [seeing](https://en.wikipedia.org/wiki/Astronomical_seeing "Astronomical seeing"), and reflecting telescopes are ubiquitous on [space telescopes](https://en.wikipedia.org/wiki/Space_telescope "Space telescope") and many types of [spacecraft](https://en.wikipedia.org/wiki/Spacecraft "Spacecraft") imaging devices.
+
+## Technical considerations
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=2 "Edit section: Technical considerations")\]
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Gran_Telescopio_Canarias.jpg/250px-Gran_Telescopio_Canarias.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Gran_Telescopio_Canarias.jpg)
+
+[Gran Telescopio Canarias](https://en.wikipedia.org/wiki/Gran_Telescopio_Canarias "Gran Telescopio Canarias")
+
+A curved [primary mirror](https://en.wikipedia.org/wiki/Primary_mirror "Primary mirror") is the reflector telescope's basic optical element that creates an image at the focal plane. The distance from the mirror to the focal plane is called the [focal length](https://en.wikipedia.org/wiki/Focal_length "Focal length"). Film or a digital sensor may be located here to record the image, or a [secondary mirror](https://en.wikipedia.org/wiki/Secondary_mirror "Secondary mirror") may be added to modify the optical characteristics and/or redirect the light to film, digital sensors, or an [eyepiece](https://en.wikipedia.org/wiki/Eyepiece "Eyepiece") for visual observation.
+
+The primary mirror in most modern telescopes is composed of a solid glass [cylinder](https://en.wikipedia.org/wiki/Cylinder_\(geometry\) "Cylinder (geometry)") whose front surface has been ground to a [spherical](https://en.wikipedia.org/wiki/Spherical_reflector "Spherical reflector") or [parabolic](https://en.wikipedia.org/wiki/Paraboloid_reflector "Paraboloid reflector") shape. A thin layer of [aluminum](https://en.wikipedia.org/wiki/Aluminum "Aluminum") is [vacuum deposited](https://en.wikipedia.org/wiki/Vacuum_deposition "Vacuum deposition") onto the mirror, forming a highly reflective [first surface mirror](https://en.wikipedia.org/wiki/First_surface_mirror "First surface mirror").
+
+Some telescopes use primary mirrors which are made differently. Molten glass is rotated to make its surface paraboloidal, and is kept rotating while it cools and solidifies. (See [Rotating furnace](https://en.wikipedia.org/wiki/Rotating_furnace "Rotating furnace").) The resulting mirror shape approximates a desired paraboloid shape that requires minimal grinding and polishing to reach the exact figure needed.[\[14\]](#cite_note-14)
+
+### Optical errors
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=3 "Edit section: Optical errors")\]
+
+Reflecting telescopes, just like any other optical system, do not produce "perfect" images. The need to image objects at distances up to infinity, view them at different wavelengths of light, along with the requirement to have some way to view the image the primary mirror produces, means there is always some compromise in a reflecting telescope's optical design.
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Sirius_A_and_B_Hubble_photo.jpg/250px-Sirius_A_and_B_Hubble_photo.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Sirius_A_and_B_Hubble_photo.jpg)
+
+An image of [Sirius A](https://en.wikipedia.org/wiki/Sirius_A "Sirius A") and [Sirius B](https://en.wikipedia.org/wiki/Sirius_B "Sirius B") by the [Hubble Space Telescope](https://en.wikipedia.org/wiki/Hubble_Space_Telescope "Hubble Space Telescope"), showing [diffraction spikes](https://en.wikipedia.org/wiki/Diffraction_spike "Diffraction spike") and concentric [diffraction rings](https://en.wikipedia.org/wiki/Airy_disk "Airy disk").
+
+Because the primary mirror focuses light to a common point in front of its own reflecting surface almost all reflecting telescope designs have a [secondary mirror](https://en.wikipedia.org/wiki/Secondary_mirror "Secondary mirror"), film holder, or detector near that focal point partially obstructing the light from reaching the primary mirror. Not only does this cause some reduction in the amount of light the system collects, it also causes a loss in contrast in the image due to [diffraction](https://en.wikipedia.org/wiki/Diffraction "Diffraction") effects of the obstruction as well as [diffraction spikes](https://en.wikipedia.org/wiki/Diffraction_spike "Diffraction spike") caused by most secondary support structures.[\[15\]](#cite_note-15)[\[16\]](#cite_note-16)
+
+The use of mirrors avoids [chromatic aberration](https://en.wikipedia.org/wiki/Chromatic_aberration "Chromatic aberration") but they produce other types of [aberrations](https://en.wikipedia.org/wiki/Aberration_in_optical_systems "Aberration in optical systems"). A simple [spherical mirror](https://en.wikipedia.org/wiki/Spherical_mirror "Spherical mirror") cannot bring light from a distant object to a common focus since the reflection of light rays striking the mirror near its edge do not converge with those that reflect from nearer the center of the mirror, a defect called [spherical aberration](https://en.wikipedia.org/wiki/Spherical_aberration "Spherical aberration"). To avoid this problem most reflecting telescopes use [parabolic shaped mirrors](https://en.wikipedia.org/wiki/Parabolic_reflector "Parabolic reflector"), a shape that can focus all the light to a common focus. Parabolic mirrors work well with objects near the center of the image they produce, (light traveling parallel to the mirror's [optical axis](https://en.wikipedia.org/wiki/Optical_axis "Optical axis")), but towards the edge of that same field of view they suffer from off axis aberrations:[\[17\]](#cite_note-17)[\[18\]](#cite_note-18)
+
+- [Coma](https://en.wikipedia.org/wiki/Coma_\(optics\) "Coma (optics)") – an aberration where point sources (stars) at the center of the image are focused to a point but typically appears as "comet-like" radial smudges that get worse towards the edges of the image.
+
+- [Field curvature](https://en.wikipedia.org/wiki/Field_curvature "Field curvature") – The best image plane is in general curved, which may not correspond to the detector's shape and leads to a focus error across the field. It is sometimes corrected by a field flattening lens.
+
+- [Astigmatism](https://en.wikipedia.org/wiki/Astigmatism_\(optical_systems\) "Astigmatism (optical systems)") – an [azimuthal](https://en.wikipedia.org/wiki/Azimuth "Azimuth") variation of focus around the aperture causing point source images off-axis to appear elliptical. Astigmatism is not usually a problem in a narrow [field of view](https://en.wikipedia.org/wiki/Field_of_view "Field of view"), but in a wide field image it gets rapidly worse and varies quadratically with field angle.
+
+- [Distortion](https://en.wikipedia.org/wiki/Distortion_\(optics\) "Distortion (optics)") – Distortion does not affect image quality (sharpness) but does affect object shapes. It is sometimes corrected by image processing.
+
+There are reflecting telescope designs that use modified mirror surfaces (such as the [Ritchey–Chrétien telescope](https://en.wikipedia.org/wiki/Ritchey–Chrétien_telescope "Ritchey–Chrétien telescope")) or some form of correcting lens (such as [catadioptric telescopes](https://en.wikipedia.org/wiki/Catadioptric_system#Catadioptric_telescopes "Catadioptric system")) that correct some of these aberrations.
+
+## Use in astronomical research
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=4 "Edit section: Use in astronomical research")\]
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/James_Webb_Space_Telescope_Revealed_%2826832090085%29.jpg/250px-James_Webb_Space_Telescope_Revealed_%2826832090085%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:James_Webb_Space_Telescope_Revealed_\(26832090085\).jpg)
+
+Main mirror of [James Webb Space Telescope](https://en.wikipedia.org/wiki/James_Webb_Space_Telescope "James Webb Space Telescope") assembled at [Goddard Space Flight Center](https://en.wikipedia.org/wiki/Goddard_Spaceflight_Center "Goddard Spaceflight Center"), May 2016\.
+
+Nearly all large research-grade astronomical telescopes are reflectors. There are several reasons for this:
+
+- Reflectors work in a wider [spectrum of light](https://en.wikipedia.org/wiki/Spectrum_of_light "Spectrum of light") since certain wavelengths are absorbed when passing through glass elements like those found in a [refractor](https://en.wikipedia.org/wiki/Refractor "Refractor") or in a [catadioptric telescope](https://en.wikipedia.org/wiki/Catadioptric_telescope "Catadioptric telescope").
+
+- In a [lens](https://en.wikipedia.org/wiki/Lens_\(optics\) "Lens (optics)") the entire volume of material has to be free of imperfection and inhomogeneities, whereas in a mirror, only one surface has to be perfectly polished.
+
+- Light of different [wavelengths](https://en.wikipedia.org/wiki/Wavelength "Wavelength") travels through a medium other than [vacuum](https://en.wikipedia.org/wiki/Vacuum "Vacuum") at different speeds. This causes [chromatic aberration](https://en.wikipedia.org/wiki/Chromatic_aberration "Chromatic aberration"). Reducing this to acceptable levels usually involves a combination of two or three aperture sized lenses (see [achromat](https://en.wikipedia.org/wiki/Achromat "Achromat") and [apochromat](https://en.wikipedia.org/wiki/Apochromat "Apochromat") for more details). The cost of such systems therefore scales significantly with aperture size. An image obtained from a mirror does not suffer from chromatic aberration to begin with, and the cost of the mirror scales much more modestly with its size.
+
+- There are structural problems involved in manufacturing and manipulating large-aperture lenses. Since a lens can only be held in place by its edge, the center of a large lens will sag due to [gravity](https://en.wikipedia.org/wiki/Gravity "Gravity"), distorting the image it produces. The largest practical lens size in a refracting telescope is around 1 meter.[\[19\]](#cite_note-19) In contrast, a mirror can be supported by the whole side opposite its reflecting face, allowing for reflecting telescope designs that can overcome gravitational sag. The largest reflector designs currently exceed 10 meters in diameter.
+
+## Reflecting telescope designs
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=5 "Edit section: Reflecting telescope designs")\]
+
+### Gregorian
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=6 "Edit section: Gregorian")\]
+
+Main article: [Gregorian telescope](https://en.wikipedia.org/wiki/Gregorian_telescope "Gregorian telescope")
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Gregorian_telescope.svg/500px-Gregorian_telescope.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Gregorian_telescope.svg)
+
+Light path in a Gregorian telescope.
+
+The **[Gregorian telescope](https://en.wikipedia.org/wiki/Gregorian_telescope "Gregorian telescope")**, described by [Scottish](https://en.wikipedia.org/wiki/Scotland "Scotland") astronomer and mathematician [James Gregory](https://en.wikipedia.org/wiki/James_Gregory_\(mathematician\) "James Gregory (mathematician)") in his 1663 book *Optica Promota*, employs a concave secondary mirror that reflects the image back through a hole in the primary mirror. This produces an upright image, useful for terrestrial observations. Some small [spotting scopes](https://en.wikipedia.org/wiki/Spotting_scope "Spotting scope") are still built this way. There are several large modern telescopes that use a Gregorian configuration such as the [Vatican Advanced Technology Telescope](https://en.wikipedia.org/wiki/Vatican_Advanced_Technology_Telescope "Vatican Advanced Technology Telescope"), the [Magellan telescopes](https://en.wikipedia.org/wiki/Magellan_telescopes "Magellan telescopes"), the [Large Binocular Telescope](https://en.wikipedia.org/wiki/Large_Binocular_Telescope "Large Binocular Telescope"), and the [Giant Magellan Telescope](https://en.wikipedia.org/wiki/Giant_Magellan_Telescope "Giant Magellan Telescope").
+
+### Newtonian
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=7 "Edit section: Newtonian")\]
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Newtonian_telescope2.svg/500px-Newtonian_telescope2.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Newtonian_telescope2.svg)
+
+Light path in a Newtonian telescope.
+
+Main article: [Newtonian telescope](https://en.wikipedia.org/wiki/Newtonian_telescope "Newtonian telescope")
+
+See also: [Schmidt–Newton telescope](https://en.wikipedia.org/wiki/Schmidt–Newton_telescope "Schmidt–Newton telescope")
+
+The **[Newtonian telescope](https://en.wikipedia.org/wiki/Newtonian_telescope "Newtonian telescope")** was the first successful reflecting telescope, completed by [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton "Isaac Newton") in 1668\. It usually has a [paraboloid](https://en.wikipedia.org/wiki/Paraboloid "Paraboloid") primary mirror, but at [focal ratios](https://en.wikipedia.org/wiki/F-number "F-number") of about f/10 or longer, a spherical primary mirror can be sufficient for high visual resolution. A flat secondary mirror reflects the light to a focal plane at the side of the top of the telescope tube. It is one of the simplest and least expensive designs for a given size of primary and is popular with [amateur telescope makers](https://en.wikipedia.org/wiki/Amateur_telescope_making "Amateur telescope making") as a home-build project.
+
+### The Cassegrain design and its variations
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=8 "Edit section: The Cassegrain design and its variations")\]
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Cassegrain_Telescope.svg/500px-Cassegrain_Telescope.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Cassegrain_Telescope.svg)
+
+Light path in a Cassegrain telescope.
+
+Main article: [Cassegrain reflector](https://en.wikipedia.org/wiki/Cassegrain_reflector "Cassegrain reflector")
+
+The **Cassegrain telescope** (sometimes called the "Classic Cassegrain") was first published in a 1672 design attributed to [Laurent Cassegrain](https://en.wikipedia.org/wiki/Laurent_Cassegrain "Laurent Cassegrain"). It has a parabolic primary mirror and a hyperbolic secondary mirror that reflects the light back down through a hole in the primary. The folding and diverging effect of the secondary mirror creates a telescope with a long focal length while having a short tube length.
+
+#### Ritchey–Chrétien
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=9 "Edit section: Ritchey–Chrétien")\]
+
+Main article: [Ritchey–Chrétien telescope](https://en.wikipedia.org/wiki/Ritchey–Chrétien_telescope "Ritchey–Chrétien telescope")
+
+The **Ritchey–Chrétien** telescope, invented by [George Willis Ritchey](https://en.wikipedia.org/wiki/George_Willis_Ritchey "George Willis Ritchey") and [Henri Chrétien](https://en.wikipedia.org/wiki/Henri_Chrétien "Henri Chrétien") in the early 1910s, is a specialized Cassegrain reflector which has two hyperbolic mirrors (instead of a parabolic primary). It is free of [coma](https://en.wikipedia.org/wiki/Coma_\(optics\) "Coma (optics)") and spherical aberration at a nearly flat focal plane if the primary and secondary curvature are properly [figured](https://en.wikipedia.org/wiki/Figuring "Figuring"), making it well suited for wide field and photographic observations.[\[20\]](#cite_note-Sacek1-20) Almost every professional reflector telescope in the world is of the Ritchey–Chrétien design.
+
+#### Three-mirror anastigmat
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=10 "Edit section: Three-mirror anastigmat")\]
+
+Main article: [Three-mirror anastigmat](https://en.wikipedia.org/wiki/Three-mirror_anastigmat "Three-mirror anastigmat")
+
+Including a third curved mirror allows correction of the remaining distortion, astigmatism, from the Ritchey–Chrétien design. This allows much larger fields of view.
+
+#### Dall–Kirkham
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=11 "Edit section: Dall–Kirkham")\]
+
+See also: [Modified Dall–Kirkham telescope](https://en.wikipedia.org/wiki/Modified_Dall–Kirkham_telescope "Modified Dall–Kirkham telescope")
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Large_1987_0528_0001_.jpg/250px-Large_1987_0528_0001_.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Large_1987_0528_0001_.jpg)
+
+Dall-Kirkham reflecting telescope, built by Horace Edward Dall
+
+The **Dall–Kirkham** Cassegrain telescope's design was created by [Horace Dall](https://en.wikipedia.org/wiki/Horace_Dall "Horace Dall") in 1928 and took on the name in an article published in *[Scientific American](https://en.wikipedia.org/wiki/Scientific_American "Scientific American")* in 1930 following discussion between amateur astronomer Allan Kirkham and Albert G. Ingalls, the magazine editor at the time. It uses a concave [elliptical](https://en.wikipedia.org/wiki/Ellipse "Ellipse") primary mirror and a convex [spherical](https://en.wikipedia.org/wiki/Spherical "Spherical") secondary. While this system is easier to grind than a classic Cassegrain or Ritchey–Chrétien system, it does not correct for off-axis coma. Field curvature is actually less than a classical Cassegrain. Because this is less noticeable at longer [focal ratios](https://en.wikipedia.org/wiki/Focal_ratio "Focal ratio"), Dall–Kirkhams are seldom faster than f/15.
+
+The [Modified Dall–Kirkham](https://en.wikipedia.org/wiki/Modified_Dall–Kirkham_telescope "Modified Dall–Kirkham telescope") design also includes a small lens group to provide off-axis image correction.
+
+### Off-axis designs
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=12 "Edit section: Off-axis designs")\]
+
+There are several designs that try to avoid obstructing the incoming light by eliminating the secondary or moving any secondary element off the primary mirror's [optical axis](https://en.wikipedia.org/wiki/Optical_axis "Optical axis"), commonly called [off-axis optical systems](https://en.wikipedia.org/wiki/Off-axis_optical_system "Off-axis optical system").
+
+#### Herschelian
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=13 "Edit section: Herschelian")\]
+
+Light paths
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Herschel-Lomonosov_reflecting_telescope.svg/250px-Herschel-Lomonosov_reflecting_telescope.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Herschel-Lomonosov_reflecting_telescope.svg)
+
+Herschelian telescope
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Off-axis_optical_telescope_diagram.svg/250px-Off-axis_optical_telescope_diagram.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Off-axis_optical_telescope_diagram.svg)
+
+Schiefspiegler telescope
+
+The **Herschelian** reflector is named after [William Herschel](https://en.wikipedia.org/wiki/William_Herschel "William Herschel"), who used this design to build very large telescopes including the [40-foot telescope](https://en.wikipedia.org/wiki/40-foot_telescope "40-foot telescope") in 1789\. In the Herschelian reflector the primary mirror is tilted so the observer's head does not block the incoming light. Although this introduces geometrical aberrations, Herschel employed this design to avoid the use of a Newtonian secondary mirror since the [speculum metal](https://en.wikipedia.org/wiki/Speculum_metal "Speculum metal") mirrors of that time [tarnished](https://en.wikipedia.org/wiki/Tarnish "Tarnish") quickly and could only achieve 60% reflectivity.[\[21\]](#cite_note-21)
+
+#### Schiefspiegler
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=14 "Edit section: Schiefspiegler")\]
+
+Main article: [Schiefspiegler](https://en.wikipedia.org/wiki/Schiefspiegler "Schiefspiegler")
+
+A variant of the Cassegrain, the Schiefspiegler telescope ("skewed" or "oblique reflector") uses tilted mirrors to avoid the secondary mirror casting a shadow on the primary. However, while eliminating diffraction patterns this leads to an increase in coma and astigmatism. These defects become manageable at large focal ratios — most Schiefspieglers use f/15 or longer, which tends to restrict useful observations to objects which fit in a moderate field of view. A 6" (150mm) f/15 telescope offers a maximum 0\.75 degree field of view using 1\.25" eyepieces. A number of variations are common, with varying numbers of mirrors of different types. The Kutter (named after its inventor [Anton Kutter](https://en.wikipedia.org/wiki/Anton_Kutter "Anton Kutter")) style uses a single concave primary, a convex secondary and a plano-convex lens between the secondary mirror and the focal plane, when needed (this is the case of the *catadioptric Schiefspiegler*). One variation of a multi-schiefspiegler uses a concave primary, convex secondary and a parabolic tertiary. One of the interesting aspects of some Schiefspieglers is that one of the mirrors can be involved in the light path twice — each light path reflects along a different meridional path.
+
+#### Stevick-Paul
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=15 "Edit section: Stevick-Paul")\]
+
+Stevick-Paul telescopes[\[22\]](#cite_note-22) are off-axis versions of Paul 3-mirror systems[\[23\]](#cite_note-23) with an added flat diagonal mirror. A convex secondary mirror is placed just to the side of the light entering the telescope, and positioned afocally so as to send parallel light on to the tertiary. The concave tertiary mirror is positioned exactly twice as far to the side of the entering beam as was the convex secondary, and its own radius of curvature distant from the secondary. Because the tertiary mirror receives parallel light from the secondary, it forms an image at its focus. The focal plane lies within the system of mirrors, but is accessible to the eye with the inclusion of a flat diagonal. The Stevick-Paul configuration results in all optical aberrations totaling zero to the third-order, except for the Petzval surface which is gently curved.
+
+#### Yolo
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=16 "Edit section: Yolo")\]
+
+The Yolo was developed by Arthur S. Leonard in the mid-1960s.[\[24\]](#cite_note-24) Like the Schiefspiegler, it is an unobstructed, tilted reflector telescope. The original Yolo consists of a primary and secondary concave mirror, with the same curvature, and the same tilt to the main axis. Most Yolos use [toroidal reflectors](https://en.wikipedia.org/wiki/Toroidal_reflector "Toroidal reflector"). The Yolo design eliminates coma, but leaves significant astigmatism, which is reduced by deformation of the secondary mirror by some form of warping harness, or alternatively, polishing a toroidal figure into the secondary. Like Schiefspieglers, many Yolo variations have been pursued. The needed amount of toroidal shape can be transferred entirely or partially to the primary mirror. In large focal ratios optical assemblies, both primary and secondary mirror can be left spherical and a spectacle correcting lens is added between the secondary mirror and the focal plane (*catadioptric Yolo*). The addition of a convex, long focus tertiary mirror leads to Leonard's *Solano* configuration. The Solano telescope doesn't contain any toric surfaces.
+
+### Liquid-mirror telescopes
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=17 "Edit section: Liquid-mirror telescopes")\]
+
+Main article: [Liquid-mirror telescope](https://en.wikipedia.org/wiki/Liquid-mirror_telescope "Liquid-mirror telescope")
+
+One design of telescope uses a rotating mirror consisting of a liquid metal in a tray that is spun at constant speed. As the tray spins, the liquid forms a paraboloidal surface of essentially unlimited size. This allows making very big telescope mirrors (over 6 metres), but they are limited to use by [zenith telescopes](https://en.wikipedia.org/wiki/Zenith_telescope "Zenith telescope").
+
+## Focal planes
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=18 "Edit section: Focal planes")\]
+
+### Prime focus
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=19 "Edit section: Prime focus")\]
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Prime_focus_telescope.svg/250px-Prime_focus_telescope.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Prime_focus_telescope.svg)
+
+A prime focus telescope design. The observer/camera is at the focal point (shown as a red X).
+
+In a *prime focus* design no secondary optics are used, the image is accessed at the [focal point](https://en.wikipedia.org/wiki/Focus_\(optics\) "Focus (optics)") of the [primary mirror](https://en.wikipedia.org/wiki/Primary_mirror "Primary mirror"). At the focal point is some type of structure for holding a film plate or electronic detector. In the past, in very large telescopes, an observer would sit inside the telescope in an "observing cage" to directly view the image or operate a camera.[\[25\]](#cite_note-25) Nowadays [CCD](https://en.wikipedia.org/wiki/Charge-coupled_device "Charge-coupled device") cameras allow for remote operation of the telescope from almost anywhere in the world. The space available at prime focus is severely limited by the need to avoid obstructing the incoming light.[\[26\]](#cite_note-26)
+
+[Radio telescopes](https://en.wikipedia.org/wiki/Radio_telescope "Radio telescope") often have a prime focus design. The mirror is replaced by a metal surface for reflecting [radio waves](https://en.wikipedia.org/wiki/Radio_wave "Radio wave"), and the observer is an [antenna](https://en.wikipedia.org/wiki/Antenna_\(electronics\) "Antenna (electronics)").
+
+See also: [Schmidt camera](https://en.wikipedia.org/wiki/Schmidt_camera "Schmidt camera")
+
+### Cassegrain focus
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=20 "Edit section: Cassegrain focus")\]
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Cassegrain-Teleskop.svg/250px-Cassegrain-Teleskop.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Cassegrain-Teleskop.svg)
+
+Cassegrain design
+
+For telescopes built to the Cassegrain design or other related designs, the image is formed behind the primary mirror, at the focal point of the [secondary mirror](https://en.wikipedia.org/wiki/Secondary_mirror "Secondary mirror"). An observer views through the rear of the telescope, or a camera or other instrument is mounted on the rear. Cassegrain focus is commonly used for amateur telescopes or smaller research telescopes. However, for large telescopes with correspondingly large instruments, an instrument at Cassegrain focus must move with the telescope as it slews; this places additional requirements on the strength of the instrument support structure, and potentially limits the movement of the telescope in order to avoid collision with obstacles such as walls or equipment inside the observatory.
+
+### Nasmyth and coudé focus
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=21 "Edit section: Nasmyth and coudé focus")\]
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Nasmyth-Telescope.svg/250px-Nasmyth-Telescope.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Nasmyth-Telescope.svg)
+
+Nasmyth/coudé light path.
+
+#### Nasmyth
+
+\[[edit](/w/index.php?title=Reflecting_telescope&action=edit&section=22 "Edit section: Nasmyth")\]
+
+Main article: [Nasmyth telescope](https://en.wikipedia.org/wiki/Nasmyth_telescope "Nasmyth telescope")
+
+The Nasmyth design is similar to the Cassegrain except the light is not directed through a hole in the primary mirror; instead, 
+[showing lines 1-583 of 773 (last line cut); full output saved to /tmp/opencode/plan0113/confirmation/null-simpleqa-4000-d2/data/opencode/tool-output/tool_21c5b50850014X127WOEu44OL4]

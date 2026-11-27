@@ -1,0 +1,24 @@
+{
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Gregorian_telescope",
+      "quote": "The Gregorian telescope is a type of reflecting telescope designed by Scottish mathematician and astronomer James Gregory in the 17th century, and first built in 1673 by Robert Hooke.",
+      "locator": "Lead paragraph"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Gregorian_telescope",
+      "quote": "Gregory's early attempts to build the telescope failed, since he had no practical skill himself and could find no optician capable of actually constructing one. It was not until ten years after Gregory's publication, aided by the interest of experimental scientist Robert Hooke, that a working instrument was created.",
+      "locator": "History section"
+    },
+    {
+      "url": "https://www.hsm.ox.ac.uk/gregorian-telescope",
+      "quote": "Unfortunately Gregory didn't have the skills to make the mirrors for the telescope, and it wasn't until 10 years later that he was able to recruit Robert Hooke to help him build it — five years after Newton has successfully built his own reflecting telescope.",
+      "locator": "Gregorian Telescope article body (Lynn Atkin)"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Robert_Hooke",
+      "quote": "Hooke was dissatisfied with refracting telescopes so he built the first practical Gregorian telescope that used a silvered glass mirror.",
+      "locator": "Science > Astronomy section"
+    }
+  ]
+}
