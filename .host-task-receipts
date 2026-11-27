@@ -1538,3 +1538,10 @@
     evidence = harness/rubric: the checker voids a phantom source, a foreign receipt model and a foreign harness; it scores cited-quote support (threshold frozen at 5 of 6), known-answer correctness, must-cover recall, numerals and the host-lint prose lane. probe.py reports 5 checks passed: clean house draw 16.0/16 with citation_pass true; planted phantom citation https://invented.example/claim void; foreign model qwen3.8-27b void; planted wrong answer known_answer=0 and score 12.0/16; planted unsupported quote citation_support=0 and score 10.0/16, below the frozen threshold. Record: plan/0113-host-deep-research-ab/harness/rubric/README.md.
     tool = host-lifecycle@0.64.1
     recorded = 2026-11-27
+
+[receipt "plan/0113#cast-review"]
+    disposition = done
+    verify = every finding is dispositioned in this README or in a follow-up
+    evidence = design-review.md records the five-seat review before any live draw: Mara, Wren, Bly, Orin and Fen returned twenty-one findings, every one dispositioned in the review or in the named plan/contract/rubric record. Accepted fixes: the protocol freezes one 30-draw selection round and 20 confirmation draws, a 1.0-point band, a 1.0-point margin and an 8-of-16 per-task floor; the contract adds fetch-log.jsonl and its validator; the per-arm config overrides the hard-coded weizhena (openai/gpt-5.4, write false) and kanatami (opencode-go/deepseek-v4-flash) agents to qwen3.6-27b and the needed tools; Exa is the search provider; the suite-fit carries a six-row evidence table; the component scaffold carries the harness and model pins. Post-fix checks: contract dryrun 8/8, rubric probe 5/5, task schema check ok, prose clean, refs gate clean.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
