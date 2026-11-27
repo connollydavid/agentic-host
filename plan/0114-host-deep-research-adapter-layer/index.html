@@ -207,6 +207,10 @@ house choices, not arm properties.</li>
 <li><strong>The held-out set is burned.</strong> The plan/0113 confirmation read the sealed
 set; its five tasks are known. A fresh set is required for a fresh
 confirmation.</li>
+<li><strong>The injection went untested.</strong> Plan/0113's first live draw served as the
+test. The corrected plan proves the ledger context injection, and the
+harness, provider, model, isolation, fetch log, receipt and rubric, on a
+smoke draw per arm before any scored draw.</li>
 </ul>
 <p>The artifacts that worked carry: the arm snapshots, the OpenCode v2.4.2 pin,
 the <code>qwen3.8-flash-next</code> route, the contract and its adapters, the selection
@@ -233,6 +237,11 @@ tokens, calls and wall time against the caps.</p>
 held-out set is frozen and sealed with its own key, and its plaintext digest
 and ciphertext digest are recorded before the first draw. The old held-out
 plaintext is archived with plan/0113 as burned evidence, never reused.</p>
+<h3 id="the-smoke-before-the-draws"><a class="header" href="#the-smoke-before-the-draws">The smoke before the draws</a></h3>
+<p>Plan/0113's first live draw served as its test. The smoke task runs one draw
+per arm through the full pipeline and proves the ledger context
+injection, the provider, the model, the isolation, the fetch log, the receipt
+and the rubric. The selection waits for the smoke record.</p>
 <h2 id="the-ab"><a class="header" href="#the-ab">The A/B</a></h2>
 <p>The arms, the rubric, the suite-fit score, the lock rule and the confirmation
 criteria carry from plan/0113. The frozen numbers are re-declared in this
@@ -273,6 +282,17 @@ contract prompt, and the weizhena and samber exclusions are recorded.</p>
 recorded exclusion, and each receipt names the adapter used</li>
 <li>depends: #search-provider, #budget</li>
 </ul>
+<h3 id="smoke-test"><a class="header" href="#smoke-test">Smoke test</a></h3>
+<p>One draw per arm through the full pipeline, with the controls: a planted home
+skill and manual must not load; a wrong digest or version and a foreign model
+or provider must be refused; and a missing ledger is an exclusion or a void,
+never a silent pass.</p>
+<ul>
+<li>verify: the null and each mapped arm produce the contract or the recorded
+exclusion; the harness, model, provider, isolation, fetch-log and rubric
+controls pass; the smoke record is committed</li>
+<li>depends: #live-driver, #search-provider, #budget, #task-sets</li>
+</ul>
 <h3 id="cast-review"><a class="header" href="#cast-review">Cast review</a></h3>
 <p>The design goes to the five seats before any draw: Mara on trust, Wren on
 context and budget, Bly on the records, Orin on the adopter, Fen on the weak
@@ -280,7 +300,7 @@ executor.</p>
 <ul>
 <li>verify: every finding is dispositioned in this README or in a review record,
 and the review is recorded before the selection</li>
-<li>depends: #live-driver, #task-sets</li>
+<li>depends: #smoke-test</li>
 </ul>
 <h3 id="selection"><a class="header" href="#selection">Selection</a></h3>
 <p>The corrected round over the selection set with the frozen numbers, and the
