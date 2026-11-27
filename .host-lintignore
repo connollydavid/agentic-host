@@ -43,3 +43,8 @@ plan/0100-pronoun-form-and-teaching-layer/bench/
 # Bench evidence (plan/0101): the verbatim transcript the external judge
 # produced; same rule, rewording corrupts the record of what it ruled on.
 plan/0101-goal-and-loop-subsystem/bench/
+
+# Draw evidence (plan/0113): the verbatim reports, ledgers and snapshots a
+# selection or confirmation run produced; rewording them would corrupt the
+# record of what was scored.
+plan/0113-host-deep-research-ab/harness/selection/draws/

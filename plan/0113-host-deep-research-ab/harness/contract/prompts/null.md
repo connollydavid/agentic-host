@@ -11,4 +11,5 @@ and `webfetch` tools. Return exactly two files in the output directory:
   per cited source.
 
 Do not cite a source you did not fetch, and do not invent a quote or locator.
-The harness writes the receipt; you write the report and the ledger.
+The harness records `fetch-log.jsonl` and the page snapshots from your web tool
+calls; you write the report and the ledger. The harness writes the receipt.
