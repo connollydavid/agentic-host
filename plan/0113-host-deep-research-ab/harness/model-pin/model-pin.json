@@ -1,0 +1,10 @@
+{
+  "provider": "api.d07yx58.net",
+  "route": "qwen3.6-27b",
+  "backend": "openai/qwen3.8-flash-next",
+  "deployment_id": "159fb72cfac7e532d0c04cd4b32d65eec500fcff4e1d724cc5eef434b5b24969",
+  "max_input_tokens": 500000,
+  "max_output_tokens": 524288,
+  "route_url": "https://api.d07yx58.net/v1/model/info",
+  "bearer_env": "ROPE_BEARER"
+}
