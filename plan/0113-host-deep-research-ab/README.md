@@ -14,7 +14,9 @@ id ([model-pin/README.md](harness/model-pin/README.md)). The run contract and
 its per-arm adapters are recorded
 ([contract/README.md](harness/contract/README.md)). The task sets are frozen,
 with the selection set public and the held-out set sealed
-([tasks/README.md](harness/tasks/README.md)).; active goal since 2026-11-26
+([tasks/README.md](harness/tasks/README.md)). The mechanical rubric and its
+controls are recorded ([rubric/README.md](harness/rubric/README.md)).; active
+goal since 2026-11-26
 
 ## Rulings
 
@@ -271,6 +273,11 @@ draw on a foreign model must be refused.
 
 - verify: the controls pass and each one is recorded with its output
 - depends: #task-sets
+- Landed 2026-11-27: the checker, its gates and five controls; the citation
+  threshold is frozen at 5 of 6. A clean house draw scores 16/16; a phantom
+  citation and a foreign model void; a wrong answer scores 12/16; an
+  unsupported quote falls below the threshold. Record:
+  [harness/rubric/README.md](harness/rubric/README.md).
 
 ### Cast review {#cast-review}
 
