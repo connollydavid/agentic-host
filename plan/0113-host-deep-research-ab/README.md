@@ -1,6 +1,6 @@
 # plan/0113: host-deep-research, the A/B that selects it
 
-**Status: cut 2026-11-26, in build (evolving 2026-11-27)** (operator
+**Status: cut 2026-11-26, in build (updated 2026-11-27)** (operator
 direction: claim a plan and design the A/B for a deep-research integration). The wrapper is ruled
 `host-deep-research`, a house component that shims whichever arm the test
 selects. This milestone is the design and its build sequence, not a shipped
@@ -523,8 +523,8 @@ budget, the judge and the lock rule.
 - **The round sizes are 30 selection draws and 20 confirmation draws**, with the
   contract's caps, the frozen band, margin and per-task floor, and the
   `#selection-redo` and `#confirmation` tasks.
-- **The judge is Opus 5.5**, scoring completeness and creativity subject to the
-  dokimi validity gate.
+- **The judge is Opus 5.5.** It scores completeness and creativity, subject to
+  the dokimi validity gate.
 - The optional sixth arm, if and when a license file appears upstream.
 - Web drift: selection and confirmation run weeks apart, so the benchmark items
   are referenced rather than embedded, and each draw records its fetch log.
