@@ -196,7 +196,8 @@ must-cover lists later.</p>
 <tr><td><code>report.md</code></td><td>Markdown. Every cited source's URL or ledger id appears in the text.</td></tr>
 <tr><td><code>sources.json</code></td><td><code>{"sources": [{"id"?: "...", "url": "https://...", "quote": "verbatim passage", "locator": "section or paragraph"}]}</code></td></tr>
 <tr><td><code>receipt.json</code></td><td>The task, arm, status, harness, model, search provider, budget and config digests.</td></tr>
-<tr><td><code>fetch-log.jsonl</code></td><td>One line per fetch: <code>{"url": "...", "status": 200, "snapshot": "snapshots/&lt;page&gt;.txt"}</code>. A live draw writes it; the rubric's phantom gate and snapshot checks read it.</td></tr>
+<tr><td><code>fetch-log.jsonl</code></td><td>One line per fetch: <code>{"url": "...", "status": 200, "snapshot": "snapshots/&lt;page&gt;.txt"}</code>. A live draw writes it from the run's actual <code>webfetch</code> pages; the rubric's phantom gate and snapshot checks read it.</td></tr>
+<tr><td><code>replies.jsonl</code></td><td>One line per assistant reply: <code>{"provider": "...", "model": "..."}</code>. A live draw writes it from the scratch OpenCode database; the model pre-flight voids a foreign reply, and the receipt carries its digest.</td></tr>
 </tbody></table>
 </div>
 <p>The ledger entry's optional <code>id</code> is the arm's own citation key, for an arm that
@@ -206,7 +207,8 @@ URL in the report has a ledger entry. The quote and locator are required; a
 paraphrase record does not satisfy the contract. A live draw's
 <code>fetch-log.jsonl</code> is the run's own record of what it fetched; every ledger URL
 must appear in it, and a cited URL absent from it is a phantom that voids the
-draw.</p>
+draw. The log is the actual <code>webfetch</code> page from the scratch session database,
+not a paragraph from the report; a report paragraph is not a fetched page.</p>
 <p>The receipt carries:</p>
 <ul>
 <li><code>harness</code>: <code>tag</code> and <code>binary_sha256</code> from the harness pin.</li>

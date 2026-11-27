@@ -213,6 +213,8 @@ arm's native line.</li>
 engine.</li>
 <li>A valid draw must have a live receipt with the frozen caps, a fetch log and a
 scored rubric; an excluded draw must have <code>exclusion.json</code> and a reason.</li>
+<li>A valid draw must have a passing <code>replies.jsonl</code>: the model pre-flight checks
+every assistant reply against the pinned route.</li>
 <li>The isolation probe (<code>../probe.py</code>) must pass; it proves the pinned binary,
 the arm loads and the planted skill/manual controls.</li>
 </ul>
