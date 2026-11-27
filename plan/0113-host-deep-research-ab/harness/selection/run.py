@@ -252,8 +252,8 @@ def merge_fetch_log(draw: Path, parsed: dict) -> None:
             handle.write(json.dumps(entry) + "\n")
 
 
-def run_draw(arm: str, task: dict, force: bool = False) -> dict:
-    name = task["key"].split("/", 1)[1]
+def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -> dict:
+    name = task["key"].split("/", 1)[1] + suffix
     draw = DRAWS / arm / name
     if (draw / "score.json").exists() and not force:
         return json.loads((draw / "score.json").read_text())
@@ -379,11 +379,11 @@ def run_draw(arm: str, task: dict, force: bool = False) -> dict:
     return summary
 
 
-def safe_run_draw(arm: str, task: dict, force: bool = False) -> dict:
+def safe_run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -> dict:
     try:
-        return run_draw(arm, task, force=force)
+        return run_draw(arm, task, force=force, suffix=suffix)
     except Exception as error:  # noqa: BLE001 - a driver crash is a draw finding
-        name = task["key"].split("/", 1)[1]
+        name = task["key"].split("/", 1)[1] + suffix
         draw = DRAWS / arm / name
         draw.mkdir(parents=True, exist_ok=True)
         summary = {

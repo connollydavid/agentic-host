@@ -48,3 +48,7 @@ plan/0101-goal-and-loop-subsystem/bench/
 # selection or confirmation run produced; rewording them would corrupt the
 # record of what was scored.
 plan/0113-host-deep-research-ab/harness/selection/draws/
+
+# Confirmation draw evidence (plan/0113): the same draw record for the held-out
+# round; verbatim, never reworded.
+plan/0113-host-deep-research-ab/harness/confirmation/draws/
