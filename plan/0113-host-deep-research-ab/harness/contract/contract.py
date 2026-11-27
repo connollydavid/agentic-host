@@ -41,6 +41,39 @@ def normalize_url(url: str) -> str:
     return url
 
 
+LINK = re.compile(r"\[([^\]]+)\]\((https?://[^\s)]+)\)")
+SENTENCE = re.compile(r"(?<=[.!?])\s+")
+
+
+def report_entries(report: str) -> list[dict]:
+    """Build a ledger from a report's own inline citations.
+
+    The quote is the link text when it is a passage, otherwise the first
+    sentence of the paragraph that cites the URL; the locator is the paragraph
+    number. The URL still needs a real fetched snapshot in the run's log.
+    """
+    paragraphs = [part.strip() for part in re.split(r"\n\s*\n", report) if part.strip()]
+    entries: list[dict] = []
+    seen: set[str] = set()
+    for index, paragraph in enumerate(paragraphs, 1):
+        links = {
+            normalize_url(match.group(2)): match.group(1).strip()
+            for match in LINK.finditer(paragraph)
+        }
+        for match in CITED.findall(paragraph):
+            url = normalize_url(match)
+            if url in seen:
+                continue
+            seen.add(url)
+            text = links.get(url)
+            if text and len(text) >= 20 and not text.startswith("http"):
+                quote = text
+            else:
+                quote = SENTENCE.split(paragraph, 1)[0].strip() or paragraph
+            entries.append({"url": url, "quote": quote, "locator": f"report paragraph {index}"})
+    return entries
+
+
 class ContractError(Exception):
     pass
 

@@ -41,6 +41,10 @@ def main(argv: list[str]) -> int:
             print(f"skip {draw}: task {summary['task']} is not in the selection set", file=sys.stderr)
             skipped += 1
             continue
+        if not summary.get("valid"):
+            print(f"skip {draw}: draw is not valid", file=sys.stderr)
+            skipped += 1
+            continue
         if not (draw / "report.md").is_file() or not (draw / "sources.json").is_file():
             print(f"skip {draw}: no report or ledger", file=sys.stderr)
             skipped += 1

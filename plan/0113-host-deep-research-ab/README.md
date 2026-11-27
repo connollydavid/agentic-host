@@ -531,8 +531,8 @@ scored.
 ### Adapter layer {#adapter-layer}
 
 The live driver sends each arm its native prompt; the arm's adapter writes the
-contract. The null keeps the frozen contract prompt; the weizhena and samber
-exclusions are recorded.
+contract. The null keeps the frozen contract prompt; the weizhena exclusion is
+recorded and the samber report's inline citations convert.
 
 - verify: the driver runs one draw per arm to the arm's native output; each
   receipt names the adapter; the wrapper postscript is gone; an exclusion whose
@@ -541,9 +541,11 @@ exclusions are recorded.
 - depends: #run-contract, #search-provider, #budget
 - Landed 2026-11-27: the native prompts and `prepare_native` are in `run.py`;
   the adapters dispatch from `contract/adapters/`. The wrapper postscript is
-  gone from the non-null prompts. The contract dry run is 8/8. The live smoke
-  passed: null valid 9.615/16, hffmnnj valid 5.09/16, kanatami valid 9.818/16,
-  weizhena and samber excluded with evidence. The hffmnnj adapter accepts bare
+  gone from the non-null prompts. The contract dry run is 8/8. The first smoke
+  read: null valid 9.615/16, hffmnnj valid 5.09/16, kanatami valid 9.818/16,
+  weizhena excluded, samber excluded; the cast review invalidated the kanatami
+  and samber results, and the samber parser now converts the report's inline
+  citations. The hffmnnj adapter accepts bare
   `rn_...` ids and balanced URL parentheses; the kanatami adapter harvests the
   final report, corpus and run text into workers and the fetch log; a
   pseudo-tool-call transcript is a void. Record:
@@ -666,11 +668,11 @@ budget, the judge and the lock rule.
   `replies.jsonl` from the scratch OpenCode database, calls
   `model-preflight.py --replies`, and puts its digest in the receipt; the
   actual `webfetch` pages from the scratch database replace the
-  report-paragraph fetch log (commit `d6b3e070`). Remaining: the
-  attempts/re-run and `break_class`, the six-row suite-fit and the
-  null-relative/valid-draw gate, the samber and weizhena parsers with the
-  all-arm suspect gate, the append-only smoke and the two-way probe, then the
-  30 draws, the judge and `round-redo.json`.
+  report-paragraph fetch log (commit `d6b3e070`). The attempt/re-run
+  plumbing, the six-row suite-fit and null-relative/valid-draw gate, the
+  samber inline parser and the weizhena report/exclusion are in. Remaining:
+  the corrected all-arm smoke and the two-way probe, then the 30 draws, the
+  judge and `round-redo.json`.
 
 ## Open questions
 

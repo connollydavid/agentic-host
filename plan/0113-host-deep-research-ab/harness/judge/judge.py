@@ -20,6 +20,9 @@ import json
 import re
 import subprocess
 import sys
+import time
+import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -87,18 +90,26 @@ def validate_reply(value: dict) -> dict:
 
 
 def run_claude(prompt: str) -> tuple[dict, dict]:
-    completed = subprocess.run(
-        [CLAUDE, "-p", "--model", "opus", "--output-format", "json", prompt],
-        capture_output=True,
-        text=True,
-        timeout=180,
-    )
-    if completed.returncode != 0:
-        raise ValueError(f"claude exited {completed.returncode}: {completed.stderr[-500:]}")
-    envelope = json.loads(completed.stdout)
-    if envelope.get("is_error"):
-        raise ValueError(f"claude returned an error: {envelope.get('result')}")
-    return envelope, envelope.get("modelUsage") or {}
+    last: Exception | None = None
+    for attempt in range(3):
+        try:
+            completed = subprocess.run(
+                [CLAUDE, "-p", "--model", "opus", "--output-format", "json", prompt],
+                capture_output=True,
+                text=True,
+                timeout=180,
+            )
+            if completed.returncode != 0:
+                raise ValueError(f"claude exited {completed.returncode}: {completed.stderr[-500:]}")
+            envelope = json.loads(completed.stdout)
+            if envelope.get("is_error"):
+                raise ValueError(f"claude returned an error: {envelope.get('result')}")
+            return envelope, envelope.get("modelUsage") or {}
+        except (ValueError, json.JSONDecodeError, subprocess.SubprocessError) as error:
+            last = error
+            if attempt < 2:
+                time.sleep(2)
+    raise ValueError(f"claude failed after 3 attempts: {last}")
 
 
 def judge(question: str, entities: list[str], report: str, ledger: dict) -> dict:
@@ -113,6 +124,8 @@ def judge(question: str, entities: list[str], report: str, ledger: dict) -> dict
         reply = extract_json(envelope.get("result") or "")
         scored = validate_reply(reply)
         model = next(iter(usage), EXPECTED_MODEL)
+        if model != EXPECTED_MODEL:
+            raise ValueError(f"judge model {model!r} is not {EXPECTED_MODEL!r}")
         return {
             "valid": True,
             "route": ROUTE,

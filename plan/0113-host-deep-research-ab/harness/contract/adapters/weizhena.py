@@ -1,9 +1,10 @@
-"""The weizhena exclusion: structured field JSON has no source record.
+"""The weizhena adapter: the report's inline citations, or the exclusion.
 
-The arm writes one JSON file per item against `fields.yaml` and a report
-generated from those fields. The adapter looks for a source URL, quote or
-locator in either the JSON or the report; finding none, it records the
-exclusion the contract's ledger requirement forces.
+The arm writes structured field JSON and a generated report. When the report
+carries inline URL citations with a passage, the adapter builds the ledger from
+them; the run's actual `webfetch` snapshot still has to support the quote. When
+the report has no such citation, the adapter records why the ledger cannot be
+populated and names the URLs the field JSON does carry, if any.
 """
 
 from __future__ import annotations
@@ -11,45 +12,54 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from contract import ContractError, write_json
-
-SOURCE_KEYS = {"url", "quote", "locator", "sources", "source", "citation"}
+from contract import build_receipt, report_entries, validate_report, write_json
 
 
-def source_like(value: object) -> bool:
+def source_urls(value: object) -> list[str]:
+    urls: list[str] = []
     if isinstance(value, dict):
-        keys = {str(key).lower() for key in value}
-        if "url" in keys and ("quote" in keys or "locator" in keys):
-            return True
-        if SOURCE_KEYS & keys and any(source_like(item) for item in value.values()):
-            return True
-        return any(source_like(item) for item in value.values())
-    if isinstance(value, list):
-        return any(source_like(item) for item in value)
-    return False
+        for key, item in value.items():
+            if str(key).lower() == "url" and isinstance(item, str) and item:
+                urls.append(item)
+            else:
+                urls.extend(source_urls(item))
+    elif isinstance(value, list):
+        for item in value:
+            urls.extend(source_urls(item))
+    return urls
 
 
 def convert(fixture: Path, task: dict, out: Path, meta: dict) -> str:
-    results = sorted((fixture / "results").rglob("*.json"))
-    for path in results:
-        if source_like(json.loads(path.read_text())):
-            raise ContractError(f"{path.name} now carries a source record; re-examine the exclusion")
     report = (fixture / "report.md").read_text()
+    entries = report_entries(report)
+    if entries:
+        validate_report(report, entries)
+        (out / "report.md").write_text(report)
+        write_json(out / "sources.json", {"sources": entries})
+        write_json(out / "receipt.json", build_receipt("weizhena", task["key"], meta))
+        return "valid"
+    results = sorted((fixture / "results").rglob("*.json"))
+    urls: list[str] = []
+    for path in results:
+        urls.extend(source_urls(json.loads(path.read_text())))
+    reason = (
+        "The result JSON carries source URLs but the report cites no quote or locator; "
+        "the ledger cannot be populated."
+        if urls
+        else "The field JSON and the report carry no source URL, verbatim quote or locator; "
+        "the ledger cannot be populated."
+    )
     write_json(
         out / "exclusion.json",
         {
             "arm": "weizhena",
             "task": task["key"],
             "status": "excluded",
-            "reason": (
-                "The arm outputs structured field JSON against fields.yaml and a report generated from "
-                "those fields; it carries no source URL, verbatim quote or locator, so the source ledger "
-                "cannot be populated."
-            ),
+            "reason": reason,
             "evidence": (
-                f"results/ carries {len(results)} JSON file(s); none pairs a URL with a quote and locator. "
-                f"report.md is {len(report)} chars and cites {report.count('http')} URL(s); a URL in the "
-                "report is not a per-source quote record, so the ledger cannot be populated."
+                f"results/ carries {len(results)} JSON file(s) with {len(urls)} source URL(s); "
+                f"report.md is {len(report)} chars and cites {report.count('http')} URL(s) without "
+                "a per-source quote and locator."
             ),
         },
     )

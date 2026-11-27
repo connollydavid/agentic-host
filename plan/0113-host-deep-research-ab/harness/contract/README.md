@@ -66,8 +66,8 @@ An arm that cannot satisfy the ledger writes `exclusion.json` instead:
 | `null` | `adapters/null.py` | valid: the frozen prompt returns the report and ledger directly |
 | `hffmnnj` | `adapters/hffmnnj.py` | valid: the report cites `[rn_…]`; the finding note carries `url` and `quote`, and the body carries `locator:` |
 | `kanatami` | `adapters/kanatami.py` | valid: the report cites the worker result URL; the first sentence of `full_text` is the quote and the worker/paragraph is the locator |
-| `weizhena` | `adapters/weizhena.py` | excluded: field JSON and a generated report carry no source URL, quote or locator |
-| `samber` | `adapters/samber.py` | excluded: the claim record carries URL, access date and confidence, not a quote or locator |
+| `weizhena` | `adapters/weizhena.py` | excluded: the report cites no per-source quote/locator; the result JSON URLs are the evidence |
+| `samber` | `adapters/samber.py` | valid: the report's inline `[passage](url)` citations build the ledger |
 
 The optional `verify` arm stays out (no license at its pin), and `gptr-mcp` is
 an optional MCP server whose admission is the selection round's. Neither has an
@@ -89,8 +89,8 @@ carries. A draw whose receipt model is not the pin is void.
 PASS null: valid output and receipt (report 209 chars, sources 1, digests 5)
 PASS hffmnnj: valid output and receipt (report 97 chars, sources 1, digests 4)
 PASS kanatami: valid output and receipt (report 88 chars, sources 1, digests 4)
-PASS weizhena: excluded — The arm outputs structured field JSON against fields.yaml and a report generated from those fields; it carries no source URL, verbatim quote or locator, so the source ledger cannot be populated.
-PASS samber: excluded — The researcher's claim record carries the source URL, access date and confidence, but no verbatim quote or locator; the report cites the URL only, so the ledger's quote and locator cannot be populated.
+PASS weizhena: excluded — The field JSON and the report carry no source URL, verbatim quote or locator; the ledger cannot be populated.
+PASS samber: valid output and receipt (report 88 chars, sources 1, digests 4)
 PASS control: an empty quote is rejected
 PASS control: a foreign model receipt is rejected
 PASS control: a report that cites no ledger source is rejected

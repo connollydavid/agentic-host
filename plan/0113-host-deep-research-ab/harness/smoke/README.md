@@ -1,9 +1,11 @@
 # plan/0113 smoke gate: one draw per arm before any scored draw
 
-**Status: passed 2026-11-27.** The gate is the last check before the redo
-selection. It runs one draw per arm on a dedicated task, through the full
-pipeline: the native prompt, the adapter, the measured search provider, the
-fetch log, the receipt, the rubric and the isolation probe.
+**Status: the first record passed, then the five-seat review invalidated the
+kanatami and samber results; the corrected all-arm smoke is the
+`#selection-redo` run.** The gate is the last check before the redo selection.
+It runs one draw per arm on a dedicated task, through the full pipeline: the
+native prompt, the adapter, the measured search provider, the fetch log, the
+receipt, the rubric and the isolation probe.
 
 ## The result
 

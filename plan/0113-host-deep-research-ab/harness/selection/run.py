@@ -23,6 +23,7 @@ import sys
 import time
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -66,18 +67,22 @@ TASK_KEYS = [
 ARM_LINES = {
     "weizhena": (
         "Use the installed Weizhena research skills: run the research-deep workflow over the question. "
+        "Write your output in the current working directory. "
         "Do not ask clarifying questions; proceed with stated assumptions."
     ),
     "hffmnnj": (
         "Use the installed hffmnnj deep-research plugin and its library: run its workflow over the question. "
+        "Write your output in the current working directory. "
         "Do not ask clarifying questions; proceed with stated assumptions."
     ),
     "kanatami": (
         "Use the installed web-search-deep skill: follow its protocol over the question. "
+        "Write your output in the current working directory. "
         "Do not ask clarifying questions; proceed with stated assumptions."
     ),
     "samber": (
         "Use the installed deep-research skill: follow its workflow over the question. "
+        "Write your output in the current working directory. "
         "Do not ask clarifying questions; proceed with stated assumptions."
     ),
 }
@@ -456,16 +461,44 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
         wall = float(previous.get("wall_seconds", 0))
         exit_code = previous.get("exit_code", 0)
         timed_out = bool(previous.get("timed_out", False))
+        rerun_of = ""
     else:
+        rerun_of = ""
+        prior: dict = {}
         if draw.exists():
-            shutil.rmtree(draw)
+            if force:
+                attempts = DRAWS / arm / "attempts"
+                attempts.mkdir(parents=True, exist_ok=True)
+                number = len(list(attempts.glob(f"{name}-*"))) + 1
+                previous_draw = attempts / f"{name}-{number}"
+                shutil.move(str(draw), str(previous_draw))
+                rerun_of = str(previous_draw.relative_to(DRAWS))
+                score_path = previous_draw / "score.json"
+                if score_path.is_file():
+                    try:
+                        prior = json.loads(score_path.read_text())
+                    except json.JSONDecodeError:
+                        prior = {}
+            else:
+                shutil.rmtree(draw)
         draw.mkdir(parents=True, exist_ok=True)
+        if rerun_of:
+            contract.write_json(
+                draw / "rerun.json",
+                {
+                    "previous": rerun_of,
+                    "reason": prior.get("contract_reason") or prior.get("break_class") or "re-run",
+                    "break_class": prior.get("break_class"),
+                    "recorded": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                },
+            )
         if root.exists():
             shutil.rmtree(root)
         work = prepare(arm, root)
         prompt = prompt_for(arm, task)
         (root / "prompt.txt").write_text(prompt)
         contract.write_json(root / "task.json", task)
+        contract.write_json(work / "task.json", task)
         env = {
             "HOME": str(root / "home"),
             "PATH": "/usr/local/bin:/usr/bin:/bin",
@@ -647,6 +680,7 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
         "adapter_result": adapter_result,
         "excluded": excluded,
         "reused": reuse,
+        "rerun_of": rerun_of,
         "break_class": break_class,
         "exit_code": exit_code,
         "timed_out": timed_out,
@@ -685,6 +719,7 @@ def safe_run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", r
             "adapter_result": "void",
             "excluded": False,
             "reused": reuse,
+            "rerun_of": "",
             "break_class": "harness",
             "exit_code": None,
             "timed_out": False,

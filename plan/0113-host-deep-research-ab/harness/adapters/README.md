@@ -28,8 +28,8 @@ The arm runs its own workflow; the adapter maps the result.
 | `null` | the frozen prompt's `report.md` and `sources.json` | copies and validates |
 | `hffmnnj` | the library notes under `$XDG_DATA_HOME/opencode-deep-research/library/notes` (or `~/.local/share/...`), the report note | resolves `[rn_...]` citations to source records; a direct answer with no note id is an exclusion |
 | `kanatami` | the final report and the worker results; `workers.json` if the arm wrote one, otherwise the run's fetch log | maps each cited URL to its worker result; first sentence is the quote, the worker/paragraph is the locator |
-| `weizhena` | the structured result JSON and the generated report | excludes when no URL+quote+locator pair exists; a pair re-opens the exclusion as a void |
-| `samber` | the claim notes and the report | converts when every claim note carries URL+quote+locator; otherwise records the exclusion |
+| `weizhena` | the structured result JSON and the generated report | builds the ledger from report inline citations; excludes when the report cites no quote/locator; the result URLs are the evidence |
+| `samber` | the report's inline citations and the claim notes | builds the ledger from the report's inline `[passage](url)` citations; excludes when the report has none |
 
 The hffmnnj exclusion is live, not a dry-run assumption: the plugin's effort
 router sends a narrow question to the Quick tier, where the coordinator may

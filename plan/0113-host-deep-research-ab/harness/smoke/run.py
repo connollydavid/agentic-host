@@ -19,6 +19,7 @@ import argparse
 import json
 import subprocess
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -76,6 +77,24 @@ def suspect_exclusion(arm: str, draw: Path) -> str | None:
                 for result in worker.get("results", []):
                     if result.get("url") and (result.get("full_text") or result.get("snippet")):
                         return "the kanatami workers carry a source record; an exclusion is a harness break"
+    if arm == "weizhena":
+        for path in native.rglob("*.json"):
+            try:
+                data = json.loads(path.read_text())
+            except json.JSONDecodeError:
+                continue
+            text = json.dumps(data)
+            if '"quote"' in text and '"locator"' in text:
+                return "the weizhena native results carry a quote and locator; an exclusion is a harness break"
+    if arm == "samber":
+        report = native / "report.md"
+        if report.is_file():
+            try:
+                entries = run.contract.report_entries(report.read_text())
+            except Exception:  # noqa: BLE001 - a parser failure is a smoke finding
+                entries = []
+            if entries:
+                return "the samber native report carries URL citations with paragraphs; an exclusion is a harness break"
     return None
 
 
@@ -129,6 +148,7 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--only", action="append", choices=ARMS)
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--reuse", action="store_true", help="re-process the recorded draw, no model run")
+    parser.add_argument("--parallel", type=int, default=2, help="draws per wave")
     parser.add_argument("--skip-probe", action="store_true")
     parser.add_argument("--record-only", action="store_true")
     args = parser.parse_args(argv)
@@ -148,6 +168,20 @@ def main(argv: list[str]) -> int:
     run.SCRATCH = SCRATCH
     results: dict[str, dict] = {}
     findings: dict[str, list[str]] = {}
+
+    def run_one(arm: str) -> None:
+        print(f"smoke: {arm}", flush=True)
+        result = run.safe_run_draw(arm, task, force=args.force, suffix="-smoke", reuse=args.reuse)
+        results[arm] = result
+        findings[arm] = draw_gate(arm, result)
+        print(
+            f"  {arm:9s} adapter={result['adapter_result']:8s} valid={result['valid']} "
+            f"provider={result['search_provider']} score={result['score']}/{result['rubric'].get('max', '-')} "
+            f"wall={result['wall_seconds']}s"
+            + (f"  findings: {', '.join(findings[arm])}" if findings[arm] else ""),
+            flush=True,
+        )
+
     for arm in arms:
         if args.record_only:
             path = DRAWS / arm / f"{task['key'].split('/', 1)[1]}-smoke" / "score.json"
@@ -164,20 +198,15 @@ def main(argv: list[str]) -> int:
                 + (f"  findings: {', '.join(findings[arm])}" if findings[arm] else ""),
                 flush=True,
             )
-            continue
-        print(f"smoke: {arm}", flush=True)
-        result = run.safe_run_draw(arm, task, force=args.force, suffix="-smoke", reuse=args.reuse)
-        results[arm] = result
-        findings[arm] = draw_gate(arm, result)
-        print(
-            f"  {arm:9s} adapter={result['adapter_result']:8s} valid={result['valid']} "
-            f"provider={result['search_provider']} score={result['score']}/{result['rubric'].get('max', '-')} "
-            f"wall={result['wall_seconds']}s"
-            + (f"  findings: {', '.join(findings[arm])}" if findings[arm] else ""),
-            flush=True,
-        )
+    if not args.record_only:
+        if args.parallel > 1 and len(arms) > 1:
+            with ThreadPoolExecutor(max_workers=args.parallel) as pool:
+                list(pool.map(run_one, arms))
+        else:
+            for arm in arms:
+                run_one(arm)
 
-    passed = probe.get("passed", True) and all(not findings[arm] for arm in arms)
+    passed = bool(probe.get("passed")) and all(not findings[arm] for arm in arms)
     if "null" in results and results["null"]["adapter_result"] != "valid":
         passed = False
         findings.setdefault("null", []).append("the null control did not produce the contract")
@@ -190,7 +219,15 @@ def main(argv: list[str]) -> int:
         "findings": findings,
         "passed": passed,
     }
-    RECORD.write_text(json.dumps(record, indent=2) + "\n")
+    history: list[dict] = []
+    if RECORD.is_file():
+        try:
+            prior = json.loads(RECORD.read_text())
+            history = prior.get("records", [])
+        except json.JSONDecodeError:
+            history = []
+    history.append(record)
+    RECORD.write_text(json.dumps({**record, "records": history}, indent=2) + "\n")
     print(f"smoke: {'PASS' if passed else 'FAIL'} ({RECORD})")
     return 0 if passed else 1
 
