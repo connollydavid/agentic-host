@@ -35,6 +35,10 @@ attempt did not measure the arms. It measured a harness defect.
 - **The held-out set is burned.** The plan/0113 confirmation read the sealed
   set; its five tasks are known. A fresh set is required for a fresh
   confirmation.
+- **The injection went untested.** Plan/0113's first live draw served as the
+  test. The corrected plan proves the ledger context injection, and the
+  harness, provider, model, isolation, fetch log, receipt and rubric, on a
+  smoke draw per arm before any scored draw.
 
 The artifacts that worked carry: the arm snapshots, the OpenCode v2.4.2 pin,
 the `qwen3.8-flash-next` route, the contract and its adapters, the selection
@@ -70,6 +74,13 @@ The plan/0113 selection set carries forward; its held-out set does not. A fresh
 held-out set is frozen and sealed with its own key, and its plaintext digest
 and ciphertext digest are recorded before the first draw. The old held-out
 plaintext is archived with plan/0113 as burned evidence, never reused.
+
+### The smoke before the draws
+
+Plan/0113's first live draw served as its test. The smoke task runs one draw
+per arm through the full pipeline and proves the ledger context
+injection, the provider, the model, the isolation, the fetch log, the receipt
+and the rubric. The selection waits for the smoke record.
 
 ## The A/B
 
@@ -118,6 +129,18 @@ contract prompt, and the weizhena and samber exclusions are recorded.
   recorded exclusion, and each receipt names the adapter used
 - depends: #search-provider, #budget
 
+### Smoke test {#smoke-test}
+
+One draw per arm through the full pipeline, with the controls: a planted home
+skill and manual must not load; a wrong digest or version and a foreign model
+or provider must be refused; and a missing ledger is an exclusion or a void,
+never a silent pass.
+
+- verify: the null and each mapped arm produce the contract or the recorded
+  exclusion; the harness, model, provider, isolation, fetch-log and rubric
+  controls pass; the smoke record is committed
+- depends: #live-driver, #search-provider, #budget, #task-sets
+
 ### Cast review {#cast-review}
 
 The design goes to the five seats before any draw: Mara on trust, Wren on
@@ -126,7 +149,7 @@ executor.
 
 - verify: every finding is dispositioned in this README or in a review record,
   and the review is recorded before the selection
-- depends: #live-driver, #task-sets
+- depends: #smoke-test
 
 ### Selection {#selection}
 
