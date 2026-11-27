@@ -44,7 +44,7 @@ harness, not the arm, failed.
 
 ## Verification
 
-- The contract dry run: `python3 contract/dryrun.py` → 8 checks passed (three
+- The contract dry run: `python3 contract/dryrun.py` returns 8 checks passed (three
   valid, two exclusions, three controls).
 - The live smoke: `python3 smoke/run.py` runs one draw per arm on
   `smoke/house-capital` and checks the native prompt, the adapter, the measured
