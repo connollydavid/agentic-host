@@ -6,8 +6,10 @@ design the A/B for a deep-research integration). The wrapper is ruled
 selects. This milestone is the design and its build sequence, not a shipped
 component. The arm snapshots are pinned with their licenses recorded
 ([arms/README.md](arms/README.md)): the four roster arms qualify, and the
-optional verification pipeline is excluded for a missing license at its pin.;
-active goal since 2026-11-26
+optional verification pipeline is excluded for a missing license at its pin.
+The run harness is pinned at OpenCode v2.4.2, with its draw pre-flight and
+isolation probes recorded ([harness/README.md](harness/README.md)).; active
+goal since 2026-11-26
 
 ## Rulings
 
@@ -207,6 +209,9 @@ planted skill and a planted manual in the home directory must not load.
   loads under the pinned binary; the null arm's resolved configuration lists no
   skill, plugin or instruction
 - depends: #arm-snapshots
+- Landed 2026-11-27: OpenCode `v2.4.2`, its archive `452912…` and binary
+  `523b15…`; the pre-flight, the four arm loads and the isolation probes are
+  recorded in [harness/README.md](harness/README.md).
 
 ### Model pin {#model-pin}
 
