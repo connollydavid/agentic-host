@@ -12,7 +12,7 @@ import json
 import re
 from pathlib import Path
 
-from contract import ContractError, build_receipt, write_json
+from contract import ContractError, build_receipt, validate_report, write_json
 
 NOTE = re.compile(r"\b(rn_[A-Za-z0-9]+)\b")
 LOCATOR = re.compile(r"(?im)^locator:\s*(.+)$")
@@ -100,6 +100,7 @@ def convert(fixture: Path, task: dict, out: Path, meta: dict) -> str:
                     "locator": location,
                 }
             )
+    validate_report(report, entries)
     (out / "report.md").write_text(report)
     write_json(out / "sources.json", {"sources": entries})
     write_json(out / "receipt.json", build_receipt("hffmnnj", task["key"], meta))

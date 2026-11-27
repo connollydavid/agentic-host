@@ -363,53 +363,63 @@ def merge_fetch_log(draw: Path, parsed: dict) -> None:
             handle.write(json.dumps(entry) + "\n")
 
 
-def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -> dict:
+def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse: bool = False) -> dict:
     name = task["key"].split("/", 1)[1] + suffix
     draw = DRAWS / arm / name
-    if (draw / "score.json").exists() and not force:
+    if (draw / "score.json").exists() and not force and not reuse:
         return json.loads((draw / "score.json").read_text())
-    if draw.exists():
-        shutil.rmtree(draw)
-    draw.mkdir(parents=True, exist_ok=True)
     root = SCRATCH / f"{arm}-{name}"
-    if root.exists():
-        shutil.rmtree(root)
-    work = prepare(arm, root)
-    prompt = prompt_for(arm, task)
-    (root / "prompt.txt").write_text(prompt)
-    contract.write_json(root / "task.json", task)
-    env = {
-        "HOME": str(root / "home"),
-        "PATH": "/usr/local/bin:/usr/bin:/bin",
-        "XDG_CONFIG_HOME": str(root / "config"),
-        "XDG_DATA_HOME": str(root / "data"),
-        "XDG_CACHE_HOME": str(root / "cache"),
-        "XDG_STATE_HOME": str(root / "state"),
-        "OPENCODE_DISABLE_AUTOUPDATE": "1",
-        "OPENCODE_DISABLE_MODELS_FETCH": "1",
-        "OPENCODE_ENABLE_EXA": "1",
-        "ROPE_BEARER": os.environ.get("ROPE_BEARER", ""),
-    }
-    started = time.time()
     events_path = root / "events.jsonl"
-    stderr_path = root / "stderr.log"
-    timeout = contract.CAPS["wall_seconds"]
-    with events_path.open("wb") as stdout, stderr_path.open("wb") as stderr:
-        try:
-            completed = subprocess.run(
-                [str(BIN), "run", "--format", "json", "--auto", prompt],
-                cwd=work,
-                env=env,
-                stdout=stdout,
-                stderr=stderr,
-                timeout=timeout,
-            )
-            exit_code = completed.returncode
-            timed_out = False
-        except subprocess.TimeoutExpired:
-            exit_code = 124
-            timed_out = True
-    wall = time.time() - started
+    if reuse:
+        if not (draw / "score.json").is_file() or not events_path.is_file():
+            raise RuntimeError(f"reuse: no recorded draw or event log at {draw}")
+        previous = json.loads((draw / "score.json").read_text())
+        work = root / "work"
+        prompt = (draw / "prompt.txt").read_text()
+        wall = float(previous.get("wall_seconds", 0))
+        exit_code = previous.get("exit_code", 0)
+        timed_out = bool(previous.get("timed_out", False))
+    else:
+        if draw.exists():
+            shutil.rmtree(draw)
+        draw.mkdir(parents=True, exist_ok=True)
+        if root.exists():
+            shutil.rmtree(root)
+        work = prepare(arm, root)
+        prompt = prompt_for(arm, task)
+        (root / "prompt.txt").write_text(prompt)
+        contract.write_json(root / "task.json", task)
+        env = {
+            "HOME": str(root / "home"),
+            "PATH": "/usr/local/bin:/usr/bin:/bin",
+            "XDG_CONFIG_HOME": str(root / "config"),
+            "XDG_DATA_HOME": str(root / "data"),
+            "XDG_CACHE_HOME": str(root / "cache"),
+            "XDG_STATE_HOME": str(root / "state"),
+            "OPENCODE_DISABLE_AUTOUPDATE": "1",
+            "OPENCODE_DISABLE_MODELS_FETCH": "1",
+            "OPENCODE_ENABLE_EXA": "1",
+            "ROPE_BEARER": os.environ.get("ROPE_BEARER", ""),
+        }
+        started = time.time()
+        stderr_path = root / "stderr.log"
+        timeout = contract.CAPS["wall_seconds"]
+        with events_path.open("wb") as stdout, stderr_path.open("wb") as stderr:
+            try:
+                completed = subprocess.run(
+                    [str(BIN), "run", "--format", "json", "--auto", prompt],
+                    cwd=work,
+                    env=env,
+                    stdout=stdout,
+                    stderr=stderr,
+                    timeout=timeout,
+                )
+                exit_code = completed.returncode
+                timed_out = False
+            except subprocess.TimeoutExpired:
+                exit_code = 124
+                timed_out = True
+        wall = time.time() - started
     parsed = parse_events(events_path)
     measured_provider = parsed["websearch"][0]["provider"] if parsed["websearch"] else "none"
     foreign_fetches = [url for url, _ in parsed["fetches"] if is_search_engine(url)]
@@ -507,6 +517,7 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -> dic
         "adapter": arm,
         "adapter_result": adapter_result,
         "excluded": excluded,
+        "reused": reuse,
         "exit_code": exit_code,
         "timed_out": timed_out,
         "wall_seconds": round(wall, 1),
@@ -527,9 +538,9 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -> dic
     return summary
 
 
-def safe_run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -> dict:
+def safe_run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse: bool = False) -> dict:
     try:
-        return run_draw(arm, task, force=force, suffix=suffix)
+        return run_draw(arm, task, force=force, suffix=suffix, reuse=reuse)
     except Exception as error:  # noqa: BLE001 - a driver crash is a draw finding
         name = task["key"].split("/", 1)[1] + suffix
         draw = DRAWS / arm / name
@@ -541,6 +552,7 @@ def safe_run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -
             "adapter": arm,
             "adapter_result": "void",
             "excluded": False,
+            "reused": reuse,
             "exit_code": None,
             "timed_out": False,
             "wall_seconds": 0,
@@ -569,6 +581,7 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--parallel", type=int, default=2, help="draws per task wave")
     parser.add_argument("--draws", default=str(DRAWS))
     parser.add_argument("--scratch", default=str(SCRATCH))
+    parser.add_argument("--reuse", action="store_true", help="re-process the recorded draw, no model run")
     args = parser.parse_args(argv)
     DRAWS = Path(args.draws)
     SCRATCH = Path(args.scratch)
@@ -610,10 +623,10 @@ def main(argv: list[str]) -> int:
     for wave in waves:
         if args.parallel <= 1 or len(wave) == 1:
             for arm, task in wave:
-                report(safe_run_draw(arm, task, force=args.force))
+                report(safe_run_draw(arm, task, force=args.force, reuse=args.reuse))
             continue
         with ThreadPoolExecutor(max_workers=args.parallel) as pool:
-            futures = {pool.submit(safe_run_draw, arm, task, args.force): (arm, task) for arm, task in wave}
+            futures = {pool.submit(safe_run_draw, arm, task, args.force, "", args.reuse): (arm, task) for arm, task in wave}
             for future in as_completed(futures):
                 report(future.result())
     return 0

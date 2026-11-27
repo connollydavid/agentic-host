@@ -126,6 +126,7 @@ def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--only", action="append", choices=ARMS)
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--reuse", action="store_true", help="re-process the recorded draw, no model run")
     parser.add_argument("--skip-probe", action="store_true")
     parser.add_argument("--record-only", action="store_true")
     args = parser.parse_args(argv)
@@ -163,7 +164,7 @@ def main(argv: list[str]) -> int:
             )
             continue
         print(f"smoke: {arm}", flush=True)
-        result = run.safe_run_draw(arm, task, force=args.force, suffix="-smoke")
+        result = run.safe_run_draw(arm, task, force=args.force, suffix="-smoke", reuse=args.reuse)
         results[arm] = result
         findings[arm] = draw_gate(arm, result)
         print(

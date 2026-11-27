@@ -117,6 +117,11 @@ The `hffmnnj` note body's `locator:` label is a house convention over the arm's
 evidence contract; the run prompt asks the agent to keep it. A note without the
 label fails the adapter, and the draw is invalid, not excluded.
 
+A URL is normalized by stripping trailing punctuation and only unbalanced
+closing brackets; a balanced `(...)` is part of the URL. That keeps a
+wikisource citation such as `..._(amended,_2008)` in both the report and the
+ledger, so the report check compares the same string.
+
 ## Reproduce
 
 ```sh
