@@ -25942,6 +25942,9 @@ locked arm from <code>round-redo.json</code>. The cast review re-opened this wir
 the locked arm, the fresh-2 set, <code>--key</code>, the judge and the valid gate are
 the confirmation's remaining work. The old partial draws stay under
 <code>draws/</code>. The verdict is not run yet.</li>
+<li>Pending: the fresh-2 held-out set and the operator-held key; the locked-arm
+read; <code>--key</code>; <code>--check</code> without decryption; the judge on the 20 draws; the
+randomised block order; every draw valid or a recorded re-run.</li>
 </ul>
 <h3 id="fen-acceptance"><a class="header" href="#fen-acceptance">Fen acceptance</a></h3>
 <p>The real Fen runs one task through the component's single command and reaches
@@ -26153,6 +26156,16 @@ suite-fit, the judge score and name order. The first round's <code>round.json</c
 is historical; the corrected round writes <code>round-redo.json</code> with
 <code>--draws draws-redo --out round-redo.json</code>. The cast review's fixes are this
 task's first work, before any scored draw; the round is not run yet.</li>
+<li>Progress 2026-11-27: the caps are enforced at 300000 prompt / 100000
+completion / 60 tools / 10800 wall; the reply pre-flight writes
+<code>replies.jsonl</code> from the scratch OpenCode database, calls
+<code>model-preflight.py --replies</code>, and puts its digest in the receipt; the
+actual <code>webfetch</code> pages from the scratch database replace the
+report-paragraph fetch log (commit <code>d6b3e070</code>). Remaining: the
+attempts/re-run and <code>break_class</code>, the six-row suite-fit and the
+null-relative/valid-draw gate, the samber and weizhena parsers with the
+all-arm suspect gate, the append-only smoke and the two-way probe, then the
+30 draws, the judge and <code>round-redo.json</code>.</li>
 </ul>
 <h2 id="open-questions-6"><a class="header" href="#open-questions-6">Open questions</a></h2>
 <ul>
