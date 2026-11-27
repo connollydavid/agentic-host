@@ -105,9 +105,9 @@ probe: 11 checks passed
 - The hffmnnj plugin loads from the bare snapshot at its pin with no
   dependency install; the pinned binary resolves its `@opencode/plugin`
   import.
-- The house `tools/opencode` remains at v2.2.5. The plan's open question about
-  one authority for the house engine is not settled by this pin; the harness
-  pins v2.4.2 for the experiment and records the split.
+- **The operator ruled 2026-11-27: consider only `v2.4.2`.** The experiment's
+  harness is the pinned release for every draw and check; the house
+  `tools/opencode` pin is not part of this milestone's harness decision.
 - The optional `verify` arm stays excluded (no license at its pin), and
   `gptr-mcp` is an MCP server whose draw belongs to the run contract and the
   selection round, not to this probe.

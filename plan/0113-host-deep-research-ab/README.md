@@ -331,8 +331,9 @@ the held-out set before it ships.
   `qwen3.8-flash-next`. Today that name resolves through a family wildcard, and
   a named entry is a change in `api-litellm`, outside this repository. The
   fallback is the named `qwen3.6-27b` entry with its deployment id recorded.
-- The house OpenCode pin: whether `tools/opencode` moves to the experiment's
-  tag, one authority for the house, with host-loop's tier-2 re-verified there.
+- **Ruled 2026-11-27: the experiment considers only `v2.4.2`.** Every draw and
+  check runs under the pinned `v2.4.2` binary; the house `tools/opencode` pin
+  is outside this milestone's harness decision.
 - The search provider under the pinned harness, chosen once and recorded.
 - The size of each round, in tasks and draws, bounded by cost.
 - The optional sixth arm, if and when a license file appears upstream.
