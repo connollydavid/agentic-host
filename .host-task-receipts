@@ -1510,3 +1510,10 @@
     evidence = OpenCode v2.4.2 pinned: archive sha256 452912288f934d1771bd5bd0d8611ba3a6adc3db3ac3333c37facf373770ba66, binary sha256 523b1502d1d556998b0904235cef65eb1d8cf8362b4e2faa7ae7a170c9a44cd4, version 'opencode v2.4.2'. preflight.sh rejects a tampered digest and a fake v9.9.9 version; probe.py reports 11 checks passed: null resolved config has no skill/plugin/instruction (built-ins only: opencode, report, browser), weizhena loads five skills plus web-search, kanatami loads web-search-deep plus web-search-worker, samber loads deep-research, hffmnnj loads its plugin, skill and three agents, and the decoy home's planted skill and manual are absent from the draw. Record: plan/0113-host-deep-research-ab/harness/README.md.
     tool = host-lifecycle@0.64.1
     recorded = 2026-11-27
+
+[receipt "plan/0113#model-pin"]
+    disposition = done
+    verify = the pre-flight voids a draw that carries one foreign-model reply, and
+    evidence = The reference route is the named qwen3.6-27b entry on api.d07yx58.net: deployment 159fb72cfac7e532d0c04cd4b32d65eec500fcff4e1d724cc5eef434b5b24969, backend openai/qwen3.8-flash-next, 500000 input / 524288 output tokens, read live from /v1/model/info. model-preflight.py passes a clean two-reply ledger and voids one foreign model id, one foreign provider, an empty ledger, the cut's old deployment record (2f886334, backend qwen3.8-27b) and a missing named entry; probe.py reports 7 checks passed. Record: plan/0113-host-deep-research-ab/harness/model-pin/README.md.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
