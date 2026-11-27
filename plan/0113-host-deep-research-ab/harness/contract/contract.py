@@ -141,12 +141,45 @@ def validate_receipt(receipt: object, arm: str, task_key: str, meta: dict, statu
         raise ContractError("receipt config digests do not match the files")
 
 
+def validate_fetch_log(path: Path) -> list[dict]:
+    if not path.is_file():
+        raise ContractError("a live draw needs fetch-log.jsonl")
+    entries = []
+    for number, line in enumerate(path.read_text().splitlines(), 1):
+        if not line.strip():
+            continue
+        try:
+            entry = json.loads(line)
+        except json.JSONDecodeError as error:
+            raise ContractError(f"fetch-log line {number} is not JSON: {error}") from error
+        if not isinstance(entry, dict):
+            raise ContractError(f"fetch-log line {number} is not an object")
+        url = entry.get("url")
+        status = entry.get("status")
+        snapshot = entry.get("snapshot")
+        if not isinstance(url, str) or not URL.match(url):
+            raise ContractError(f"fetch-log line {number} has no http(s) URL")
+        if not isinstance(status, int):
+            raise ContractError(f"fetch-log line {number} has no integer status")
+        if not isinstance(snapshot, str) or not snapshot.strip():
+            raise ContractError(f"fetch-log line {number} has no snapshot")
+        if not (path.parent / snapshot).is_file():
+            raise ContractError(f"fetch-log line {number} snapshot is missing: {snapshot}")
+        entries.append(entry)
+    if not entries:
+        raise ContractError("fetch-log.jsonl carries no fetches")
+    return entries
+
+
 def validate_output(out: Path, arm: str, task_key: str, meta: dict) -> dict:
     report = (out / "report.md").read_text()
     sources = validate_sources(json.loads((out / "sources.json").read_text()))
     validate_report(report, sources)
     receipt = json.loads((out / "receipt.json").read_text())
-    validate_receipt(receipt, arm, task_key, meta)
+    status = receipt.get("status")
+    validate_receipt(receipt, arm, task_key, meta, status=status)
+    if status == "live":
+        validate_fetch_log(out / "fetch-log.jsonl")
     return {"report_chars": len(report), "sources": len(sources), "digests": len(receipt["config_digests"])}
 
 

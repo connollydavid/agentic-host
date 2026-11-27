@@ -15,8 +15,9 @@ its per-arm adapters are recorded
 ([contract/README.md](harness/contract/README.md)). The task sets are frozen,
 with the selection set public and the held-out set sealed
 ([tasks/README.md](harness/tasks/README.md)). The mechanical rubric and its
-controls are recorded ([rubric/README.md](harness/rubric/README.md)).; active
-goal since 2026-11-26
+controls are recorded ([rubric/README.md](harness/rubric/README.md)). The cast
+review is recorded with every finding dispositioned
+([design-review.md](design-review.md)).; active goal since 2026-11-26
 
 ## Rulings
 
@@ -90,15 +91,21 @@ run's receipt.
   router's `/model/info` record is pinned by an exact named entry and its
   deployment id, checked in pre-flight. A draw on a foreign model is void.
 - **Search.** One provider, from the harness's own web tools, recorded once.
-  Every arm uses that provider.
+  Every arm uses that provider. The provider is Exa, with
+  `OPENCODE_ENABLE_EXA=1`; every receipt records `exa`.
 - **Budget.** The same per-draw cap on tokens, tool calls and wall time, and the
-  same prompt for the arm plus the tasks.
+  same prompt for the arm plus the tasks. The contract's caps are 200000 prompt
+  tokens, 50000 completion tokens, 40 tool calls and 1800 wall seconds; every
+  receipt carries the caps and the used counts.
 - **Arm isolation.** Each arm draws in its own scratch tree with its own library
   and its own config. No arm's skills, plugins or notes are shared with another.
 - **Roles.** The reference model is the only subject. Fen drives the component's
   single command in the acceptance task. Any judge that ever scores reports it
   must differ from the reference model and must pass dokimi's validity gate;
-  otherwise the mechanical rubric alone scores.
+  otherwise the mechanical rubric alone scores. The per-arm draw config
+  overrides every agent's model to the reference route; the arm's own files are
+  never edited, because the weizhena and kanatami agents pin foreign models at
+  their commits. The override is part of the config digest.
 
 ### The task sets
 
@@ -145,16 +152,19 @@ With no passing judge, the rubric stands alone, which is the state after the
 
 ### The protocol
 
-- **Selection** is exploratory, with in-round re-baselines. Numbers do not
-  compare across rounds.
+- **Selection** is one frozen round, because the budget bounds it: every arm
+  draws once on every selection task (5 × 6 = 30 draws), interleaved by task.
+  A re-baseline would need a new pre-declared round before its draws; numbers do
+  not compare across rounds.
 - **Lock.** The lock rule is mechanical. Among arms whose pooled selection score
-  is within a pre-declared band of the best, the lock goes to the highest
-  suite-fit score; a remaining tie goes to the arm with fewer tokens, then to
-  name order.
+  is within a band of 1.0 point of the best (the 16-point applicable maximum),
+  the lock goes to the highest suite-fit score; a remaining tie goes to the arm
+  with fewer tokens, then to name order.
 - **Confirmation** pits the locked arm against `null`, on held-out tasks not
-  used in any round, with fresh interleaved draws and randomised order within
-  each task block. The pre-declared criteria: a minimum margin, a per-task
-  floor, zero phantom sources, and no foreign-model reply.
+  used in any round, with two fresh draws per held-out task per arm (2 × 2 × 5 =
+  20 draws) and randomised order within each task block. The pre-declared
+  criteria: a margin of 1.0 point, a per-task floor of 8 of 16, zero phantom
+  sources, and no foreign-model reply.
 - **Ship.** The component ships the confirmed arm when every criterion passes,
   and prints `SHIP`; otherwise it prints `NO-SHIP`, reports the criteria it
   missed, and the incumbent (null) stands. The operator may direct another
@@ -181,6 +191,10 @@ rather than a skill dropped into it.
    lockfile for the runtime, and a license at the pinned commit.
 
 A shippable arm scores at least four, and clears the first and the sixth.
+
+The selection record carries a six-row table, one row per criterion, with the
+evidence for every arm in the band. A suite-fit score without the row is not a
+score.
 
 ### The component's licensing
 
@@ -290,14 +304,21 @@ executor.
 - verify: every finding is dispositioned in this README or in a follow-up
   record, and the review is recorded before the selection round
 - depends: #rubric
+- Landed 2026-11-27: the five-seat review in
+  [design-review.md](design-review.md); the accepted findings froze the
+  protocol numbers, added the fetch log to the contract, added the per-arm
+  model and tool overrides, fixed Exa as the search provider, added the
+  suite-fit evidence table and the component's harness and model pins. Every
+  finding is dispositioned in the review or the named record.
 
 ### Selection {#selection}
 
-Interleaved draws over the selection set, and the lock rule applied
-mechanically.
+Interleaved draws over the selection set, one frozen round of 30, and the lock
+rule applied mechanically.
 
-- verify: every draw's receipt and score are recorded; the locked arm follows
-  from the rule rather than from a judgment made after seeing the table
+- verify: every draw's receipt and score are recorded; the suite-fit table
+  carries one row per criterion with its evidence; the locked arm follows from
+  the rule rather than from a judgment made after seeing the table
 - depends: #cast-review
 
 ### Confirmation {#confirmation}
@@ -324,10 +345,13 @@ baseline.
 
 `host-deep-research` under the `.host-software` recipe: bare store, worktree,
 `Unlicense` plus the third-party notice, the confirmed arm vendored or
-materialised as the arm's licensing requires, and the release gate green.
+materialised as the arm's licensing requires, and the release gate green. The
+component's run contract carries the OpenCode v2.4.2 archive and binary digests
+and the reference model pin; the recipe check reads them.
 
-- verify: `software --check` reads the stanza clean and the artifact re-derives
-  under `software --verify-build`
+- verify: `software --check` reads the stanza clean, the artifact re-derives
+  under `software --verify-build`, and the recorded harness and model pins match
+  the plan's
 - depends: #confirmation
 
 ### Ship {#ship}
@@ -359,8 +383,11 @@ the held-out set before it ships.
 - **Ruled 2026-11-27: the experiment considers only `v2.4.2`.** Every draw and
   check runs under the pinned `v2.4.2` binary; the house `tools/opencode` pin
   is outside this milestone's harness decision.
-- The search provider under the pinned harness, chosen once and recorded.
-- The size of each round, in tasks and draws, bounded by cost.
+- **Settled 2026-11-27: the search provider is Exa**, with
+  `OPENCODE_ENABLE_EXA=1`; every receipt records `exa`.
+- **Settled 2026-11-27: the round sizes are 30 selection draws and 20
+  confirmation draws**, with the contract's caps and the frozen band, margin
+  and per-task floor.
 - The optional sixth arm, if and when a license file appears upstream.
 - Web drift: selection and confirmation run weeks apart, so the benchmark items
   are referenced rather than embedded, and each draw records its fetch log.

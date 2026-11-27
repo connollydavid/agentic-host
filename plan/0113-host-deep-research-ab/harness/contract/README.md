@@ -26,11 +26,13 @@ must-cover lists later.
 | `report.md` | Markdown. Every cited source's URL or ledger id appears in the text. |
 | `sources.json` | `{"sources": [{"id"?: "...", "url": "https://...", "quote": "verbatim passage", "locator": "section or paragraph"}]}` |
 | `receipt.json` | The task, arm, status, harness, model, search provider, budget and config digests. |
+| `fetch-log.jsonl` | One line per fetch: `{"url": "...", "status": 200, "snapshot": "snapshots/<page>.txt"}`. A live draw writes it; the rubric's phantom gate and snapshot checks read it. |
 
 The ledger entry's optional `id` is the arm's own citation key, for an arm that
 cites notes by id rather than URL (hffmnnj's `[rn_…]`). The report check accepts
 the id or the URL. The quote and locator are required; a paraphrase record does
-not satisfy the contract.
+not satisfy the contract. A live draw's `fetch-log.jsonl` is the run's own
+record of what it fetched; a cited URL absent from it voids the draw.
 
 The receipt carries:
 
@@ -63,6 +65,16 @@ An arm that cannot satisfy the ledger writes `exclusion.json` instead:
 The optional `verify` arm stays out (no license at its pin), and `gptr-mcp` is
 an optional MCP server whose admission is the selection round's. Neither has an
 adapter in the roster dry run.
+
+## The model and tool override
+
+The per-arm draw config overrides every agent's model to
+`api.d07yx58.net/qwen3.6-27b` and its tools to the arm's output needs. The arm's
+own files are never edited: the weizhena agent pins `openai/gpt-5.4` and
+`write: false`, and the kanatami worker pins `opencode-go/deepseek-v4-flash`;
+the scratch config supplies the reference route and the write permission the
+draw needs. The override is part of the arm config whose digest the receipt
+carries. A draw whose receipt model is not the pin is void.
 
 ## The dry-run output
 

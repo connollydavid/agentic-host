@@ -33,7 +33,9 @@
 Known-answer and must-cover are alternatives by task kind, so a task's
 applicable maximum is 16: 6 + 4 + (the other 4 is not applicable) + 3 + 3. The
 plan's 20 points are the union of the two task kinds, not one task's maximum.
-Cost is recorded in the receipt, not scored.
+Cost is recorded in the receipt, not scored. The prose lane is
+`host-lint 0.24.1`, the version the controls ran; a later host-lint is a new
+rubric record, not a silent rescore.
 
 ## The controls
 
