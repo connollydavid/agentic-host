@@ -183,8 +183,10 @@ component. The arm snapshots are pinned with their licenses recorded
 (<a href="arms/README.html">arms/README.md</a>): the four roster arms qualify, and the
 optional verification pipeline is excluded for a missing license at its pin.
 The run harness is pinned at OpenCode v2.4.2, with its draw pre-flight and
-isolation probes recorded (<a href="harness/README.html">harness/README.md</a>).; active
-goal since 2026-11-26</p>
+isolation probes recorded (<a href="harness/README.html">harness/README.md</a>), and the
+reference route is pinned at the named <code>qwen3.6-27b</code> entry with its deployment
+id (<a href="harness/model-pin/README.html">model-pin/README.md</a>).; active goal since
+2026-11-26</p>
 <h2 id="rulings"><a class="header" href="#rulings">Rulings</a></h2>
 <p>The operator's rulings of 2026-11-26, and the facts the design rests on.</p>
 <ul>
@@ -377,6 +379,10 @@ reply recorded under another model id.</p>
 <li>verify: the pre-flight voids a draw that carries one foreign-model reply, and
 passes a clean one</li>
 <li>depends: #harness-pin</li>
+<li>Landed 2026-11-27: the named <code>qwen3.6-27b</code> entry (deployment <code>159fb72c…</code>,
+backend <code>openai/qwen3.8-flash-next</code>, 500000/524288) is the reference route;
+the pre-flight voids a foreign reply, an empty ledger and the cut's old
+deployment record. Record: <a href="harness/model-pin/README.html">harness/model-pin/README.md</a>.</li>
 </ul>
 <h3 id="run-contract"><a class="header" href="#run-contract">Run contract</a></h3>
 <p>What <code>host-deep-research</code> runs: one task file in; one report and one source
@@ -472,10 +478,10 @@ confirmation, or the original stays</li>
 </ul>
 <h2 id="open-questions"><a class="header" href="#open-questions">Open questions</a></h2>
 <ul>
-<li>The strata route: the experiment needs an exact named entry,
-<code>qwen3.8-flash-next</code>. Today that name resolves through a family wildcard, and
-a named entry is a change in <code>api-litellm</code>, outside this repository. The
-fallback is the named <code>qwen3.6-27b</code> entry with its deployment id recorded.</li>
+<li><strong>Settled 2026-11-27: the named <code>qwen3.6-27b</code> entry is the reference route</strong>
+(<code>159fb72c…</code>, backend <code>openai/qwen3.8-flash-next</code>). The name
+<code>qwen3.8-flash-next</code> still resolves only through a family wildcard; a named
+entry remains a change in <code>api-litellm</code>, outside this repository.</li>
 <li><strong>Ruled 2026-11-27: the experiment considers only <code>v2.4.2</code>.</strong> Every draw and
 check runs under the pinned <code>v2.4.2</code> binary; the house <code>tools/opencode</code> pin
 is outside this milestone's harness decision.</li>
