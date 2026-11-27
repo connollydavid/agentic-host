@@ -185,7 +185,9 @@ optional verification pipeline is excluded for a missing license at its pin.
 The run harness is pinned at OpenCode v2.4.2, with its draw pre-flight and
 isolation probes recorded (<a href="harness/README.html">harness/README.md</a>), and the
 reference route is pinned at the named <code>qwen3.6-27b</code> entry with its deployment
-id (<a href="harness/model-pin/README.html">model-pin/README.md</a>).; active goal since
+id (<a href="harness/model-pin/README.html">model-pin/README.md</a>). The run contract and
+its per-arm adapters are recorded
+(<a href="harness/contract/README.html">contract/README.md</a>).; active goal since
 2026-11-26</p>
 <h2 id="rulings"><a class="header" href="#rulings">Rulings</a></h2>
 <p>The operator's rulings of 2026-11-26, and the facts the design rests on.</p>
@@ -394,6 +396,10 @@ output shape to the contract, in the arm's own directory.</p>
 <li>verify: every arm's dry run produces a contract-valid output and a receipt;
 an arm whose output cannot satisfy the contract records why in its exclusion</li>
 <li>depends: #harness-pin</li>
+<li>Landed 2026-11-27: the task, report, ledger and receipt contract with the
+five arm adapters; the dry runs pass for <code>null</code>, <code>hffmnnj</code> and <code>kanatami</code>,
+and <code>weizhena</code> and <code>samber</code> record their exclusions (no per-source quote and
+locator). Record: <a href="harness/contract/README.html">harness/contract/README.md</a>.</li>
 </ul>
 <h3 id="task-sets"><a class="header" href="#task-sets">Task sets</a></h3>
 <p>The selection set and the held-out set, each with its key, its must-cover list
