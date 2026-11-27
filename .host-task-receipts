@@ -1517,3 +1517,10 @@
     evidence = The reference route is the named qwen3.6-27b entry on api.d07yx58.net: deployment 159fb72cfac7e532d0c04cd4b32d65eec500fcff4e1d724cc5eef434b5b24969, backend openai/qwen3.8-flash-next, 500000 input / 524288 output tokens, read live from /v1/model/info. model-preflight.py passes a clean two-reply ledger and voids one foreign model id, one foreign provider, an empty ledger, the cut's old deployment record (2f886334, backend qwen3.8-27b) and a missing named entry; probe.py reports 7 checks passed. Record: plan/0113-host-deep-research-ab/harness/model-pin/README.md.
     tool = host-lifecycle@0.64.1
     recorded = 2026-11-27
+
+[receipt "plan/0113#run-contract"]
+    disposition = done
+    verify = every arm's dry run produces a contract-valid output and a receipt;
+    evidence = harness/contract: one task file in; report.md, sources.json and receipt.json out, the receipt carrying harness v2.4.2/digest 523b1502, model qwen3.6-27b/deployment 159fb72c, search provider exa, budget caps/used and the task, harness-pin, model-pin, arm-config and null-prompt digests. dryrun.py reports 8 checks passed: null, hffmnnj and kanatami produce valid output and a receipt (1 source each), weizhena is excluded (field JSON and report carry no source URL/quote/locator), samber is excluded (claim records carry URL/access/confidence, no quote/locator), and the controls reject an empty quote, a foreign model receipt and an uncited ledger. Record: plan/0113-host-deep-research-ab/harness/contract/README.md.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
