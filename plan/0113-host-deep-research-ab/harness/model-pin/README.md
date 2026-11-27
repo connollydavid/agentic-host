@@ -53,6 +53,11 @@ reply:
 present and every reply carries the pinned provider and route. One foreign
 model id, one foreign provider, or an empty ledger voids the draw.
 
+A live completion through the same edge echoes the request's spelling in the
+response's `model` field: `qwen3.6-27b` for the named route and
+`qwen3.8-flash-next` for the wildcard. The ledger's `model` is therefore the
+route name the draw sent, and a wildcard spelling is foreign.
+
 ## The probe output
 
 ```
