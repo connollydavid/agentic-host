@@ -435,6 +435,9 @@ printed verdict.
   the locked arm, the fresh-2 set, `--key`, the judge and the valid gate are
   the confirmation's remaining work. The old partial draws stay under
   `draws/`. The verdict is not run yet.
+- Pending: the fresh-2 held-out set and the operator-held key; the locked-arm
+  read; `--key`; `--check` without decryption; the judge on the 20 draws; the
+  randomised block order; every draw valid or a recorded re-run.
 
 ### Fen acceptance {#fen-acceptance}
 
@@ -658,6 +661,16 @@ budget, the judge and the lock rule.
   is historical; the corrected round writes `round-redo.json` with
   `--draws draws-redo --out round-redo.json`. The cast review's fixes are this
   task's first work, before any scored draw; the round is not run yet.
+- Progress 2026-11-27: the caps are enforced at 300000 prompt / 100000
+  completion / 60 tools / 10800 wall; the reply pre-flight writes
+  `replies.jsonl` from the scratch OpenCode database, calls
+  `model-preflight.py --replies`, and puts its digest in the receipt; the
+  actual `webfetch` pages from the scratch database replace the
+  report-paragraph fetch log (commit `d6b3e070`). Remaining: the
+  attempts/re-run and `break_class`, the six-row suite-fit and the
+  null-relative/valid-draw gate, the samber and weizhena parsers with the
+  all-arm suspect gate, the append-only smoke and the two-way probe, then the
+  30 draws, the judge and `round-redo.json`.
 
 ## Open questions
 
