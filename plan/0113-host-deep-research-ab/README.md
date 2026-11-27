@@ -12,8 +12,9 @@ isolation probes recorded ([harness/README.md](harness/README.md)), and the
 reference route is pinned at the named `qwen3.6-27b` entry with its deployment
 id ([model-pin/README.md](harness/model-pin/README.md)). The run contract and
 its per-arm adapters are recorded
-([contract/README.md](harness/contract/README.md)).; active goal since
-2026-11-26
+([contract/README.md](harness/contract/README.md)). The task sets are frozen,
+with the selection set public and the held-out set sealed
+([tasks/README.md](harness/tasks/README.md)).; active goal since 2026-11-26
 
 ## Rulings
 
@@ -256,6 +257,11 @@ here.
 - verify: every task validates against its key's schema; the digests are
   recorded before the first draw; the held-out set is unread until confirmation
 - depends: #run-contract
+- Landed 2026-11-27: six selection tasks (three SimpleQA rows, three house
+  tasks) and five held-out tasks (two SimpleQA rows, three house tasks); the
+  selection digest is `128d1354…`, the held-out plaintext digest `97c44bd2…`,
+  and the held-out set is sealed in `held-out.json.enc`. Record:
+  [harness/tasks/README.md](harness/tasks/README.md).
 
 ### Rubric {#rubric}
 
