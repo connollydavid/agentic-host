@@ -1,0 +1,8 @@
+{
+  "key": "dry-run/contract",
+  "question": "Does each arm's output satisfy the report, source-ledger and receipt contract?",
+  "must_cover": [
+    { "entity": "source ledger", "aliases": ["ledger"] },
+    { "entity": "receipt", "aliases": ["run receipt"] }
+  ]
+}

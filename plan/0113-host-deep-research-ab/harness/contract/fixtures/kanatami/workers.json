@@ -1,0 +1,16 @@
+{
+  "workers": [
+    {
+      "id": "w1",
+      "query": "contract",
+      "results": [
+        {
+          "title": "Example Domain",
+          "url": "https://example.com/contract",
+          "snippet": "This domain is for use in illustrative examples.",
+          "full_text": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission."
+        }
+      ]
+    }
+  ]
+}

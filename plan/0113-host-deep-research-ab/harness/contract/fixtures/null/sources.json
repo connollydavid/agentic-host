@@ -1,0 +1,9 @@
+{
+  "sources": [
+    {
+      "url": "https://example.com/contract",
+      "quote": "This domain is for use in illustrative examples in documents.",
+      "locator": "Example Domain, first paragraph"
+    }
+  ]
+}
