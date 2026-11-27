@@ -2386,3 +2386,10 @@
     recorded = 2026-11-27
     revision = 35e65c15df117444b5fbe98fd27e86f63a543f25
     conclusion = success
+
+[receipt "goal" "park"]
+    disposition = done
+    reason = the redo review found the confirmation, caps, re-run, suite-fit, kanatami fetch-log and samber-parser blockers; the operator rulings on the aggregate 75-84h, the caps, the 30-versus-18 round, the fresh key and the optional sixth gate the redo
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
+    target = plan/0113-host-deep-research-ab
