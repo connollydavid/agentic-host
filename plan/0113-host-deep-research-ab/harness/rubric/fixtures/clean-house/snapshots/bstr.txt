@@ -1,0 +1,4 @@
+The bstr crate provides BStr and byte string APIs.
+It is licensed under MIT OR Apache-2.0.
+The crate handles non-UTF-8 data.
+Checked 2026.

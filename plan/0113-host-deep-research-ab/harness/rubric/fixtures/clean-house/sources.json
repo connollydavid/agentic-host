@@ -1,0 +1,9 @@
+{
+  "sources": [
+    {
+      "url": "https://example.com/bstr",
+      "quote": "The bstr crate provides BStr and byte string APIs.",
+      "locator": "README, first paragraph"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "sources": [
+    {
+      "url": "https://example.com/award",
+      "quote": "Annick Bricaud received the IEEE Frank Rosenblatt Award in 2010.",
+      "locator": "Award page, first paragraph"
+    }
+  ]
+}
