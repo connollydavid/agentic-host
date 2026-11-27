@@ -187,8 +187,9 @@ isolation probes recorded (<a href="harness/README.html">harness/README.md</a>),
 reference route is pinned at the named <code>qwen3.6-27b</code> entry with its deployment
 id (<a href="harness/model-pin/README.html">model-pin/README.md</a>). The run contract and
 its per-arm adapters are recorded
-(<a href="harness/contract/README.html">contract/README.md</a>).; active goal since
-2026-11-26</p>
+(<a href="harness/contract/README.html">contract/README.md</a>). The task sets are frozen,
+with the selection set public and the held-out set sealed
+(<a href="harness/tasks/README.html">tasks/README.md</a>).; active goal since 2026-11-26</p>
 <h2 id="rulings"><a class="header" href="#rulings">Rulings</a></h2>
 <p>The operator's rulings of 2026-11-26, and the facts the design rests on.</p>
 <ul>
@@ -409,6 +410,11 @@ here.</p>
 <li>verify: every task validates against its key's schema; the digests are
 recorded before the first draw; the held-out set is unread until confirmation</li>
 <li>depends: #run-contract</li>
+<li>Landed 2026-11-27: six selection tasks (three SimpleQA rows, three house
+tasks) and five held-out tasks (two SimpleQA rows, three house tasks); the
+selection digest is <code>128d1354…</code>, the held-out plaintext digest <code>97c44bd2…</code>,
+and the held-out set is sealed in <code>held-out.json.enc</code>. Record:
+<a href="harness/tasks/README.html">harness/tasks/README.md</a>.</li>
 </ul>
 <h3 id="rubric"><a class="header" href="#rubric">Rubric</a></h3>
 <p>The checker, with controls: a planted phantom citation must void its draw, a
