@@ -2338,3 +2338,27 @@
     recorded = 2026-11-27
     revision = 784ca44b2413c0ae5acc1e0c8a6788a331462dce
     conclusion = success
+
+[receipt "ci" "host/check"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/46019989064
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
+    revision = 052b79702bd5bca7f350cf7531abc7fd20b598e4
+    conclusion = success
+
+[receipt "ci" "host/mdbook"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/46019989037
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
+    revision = 052b79702bd5bca7f350cf7531abc7fd20b598e4
+    conclusion = success
+
+[receipt "ci" "host/reproducible-build"]
+    disposition = done
+    evidence = https://github.com/connollydavid/agentic-host/actions/runs/46019989099
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
+    revision = 052b79702bd5bca7f350cf7531abc7fd20b598e4
+    conclusion = success
