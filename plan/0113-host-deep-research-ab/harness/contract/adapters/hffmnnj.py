@@ -14,7 +14,7 @@ from pathlib import Path
 
 from contract import ContractError, build_receipt, write_json
 
-NOTE = re.compile(r"\[(rn_[A-Za-z0-9]+)\]")
+NOTE = re.compile(r"\b(rn_[A-Za-z0-9]+)\b")
 LOCATOR = re.compile(r"(?im)^locator:\s*(.+)$")
 QUOTE = re.compile(r"(?im)^quote:\s*(.+)$")
 EVIDENCE = re.compile(r"(?ims)^##\s+Evidence\s*\n+(.+?)(?=\n##\s|\Z)")

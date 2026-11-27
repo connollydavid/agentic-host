@@ -4,11 +4,17 @@
     "prompt_tokens": 200000,
     "completion_tokens": 50000,
     "tool_calls": 60,
-    "wall_seconds": 3600
+    "wall_seconds": 10800
   },
   "wave_width": 2,
   "draw_order": "two-way, interleaved by task; serial when the provider is under load",
   "cost": "recorded in every receipt, never scored",
+  "revision": {
+    "recorded": "2026-11-27",
+    "from_wall_seconds": 3600,
+    "to_wall_seconds": 10800,
+    "reason": "the kanatami smoke hit 3600s in background_wait after three of its five-to-ten research rounds; the operator ruled the cap up to give the native workflow room"
+  },
   "first_round": {
     "wall_seconds": 1800,
     "tool_calls": 40,

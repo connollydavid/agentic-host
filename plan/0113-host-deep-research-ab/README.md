@@ -127,7 +127,7 @@ run's receipt.
   `#search-provider` task fixes the measurement.
 - **Budget.** The same per-draw cap on tokens, tool calls and wall time, and the
   same prompt for the arm plus the tasks. The contract's caps are 200000 prompt
-  tokens, 50000 completion tokens, 60 tool calls and 3600 wall seconds; the
+  tokens, 50000 completion tokens, 60 tool calls and 10800 wall seconds; the
   draw order is two-way, interleaved by task, and serial when the provider is
   under load. The cost is recorded, never scored.
 - **Arm isolation.** Each arm draws in its own scratch tree with its own library
@@ -455,12 +455,15 @@ scored.
   smoke draw reports the used counts; no lock or tie-break reads them
 - depends: none
 - Landed 2026-11-27: the caps are 200000 prompt tokens, 50000 completion
-  tokens, 60 tool calls and 3600 wall seconds; the draw order is two-way,
+  tokens, 60 tool calls and 10800 wall seconds; the draw order is two-way,
   interleaved by task, serial under provider load. The first round's 1800s cap
   and five-arm waves voided 29 of 30 draws; the one valid draw used 103k
-  prompt tokens, 47 tools and the full 1800s. `contract.CAPS` is the single
-  source; `run.py` reads the wall cap and defaults to two-way. Record:
-  [budget/README.md](harness/budget/README.md).
+  prompt tokens, 47 tools and the full 1800s. The first corrected cap was
+  3600s; the kanatami smoke hit it in `background_wait` after three of the
+  skill's five-to-ten research rounds, so the operator ruled the cap up to
+  10800s.
+  `contract.CAPS` is the single source; `run.py` reads the wall cap and
+  defaults to two-way. Record: [budget/README.md](harness/budget/README.md).
 
 ### Adapter layer {#adapter-layer}
 

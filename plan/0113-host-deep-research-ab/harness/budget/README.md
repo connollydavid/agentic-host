@@ -21,7 +21,7 @@ operator paused it.
 | Prompt tokens | 200000 |
 | Completion tokens | 50000 |
 | Tool calls | 60 |
-| Wall seconds | 3600 |
+| Wall seconds | 10800 |
 | Wave width | 2 |
 | Draw order | two-way, interleaved by task; serial when the provider is under load |
 
@@ -29,6 +29,20 @@ The caps live in `contract.CAPS`. `run.py` reads the wall cap from it, and its
 default wave width is 2. `confirm.py` uses the same two-way default. A draw
 whose budget is exhausted is a void, not a zero-cost success; the receipt's
 used counts and the exit status are the evidence.
+
+## The 3600s revision
+
+The first corrected cap was 3600 seconds. The kanatami smoke hit it while still
+in `background_wait` after three of the skill's five-to-ten research rounds: 79
+events, 75k prompt tokens, 15.7k completion tokens and 20 tools, with five
+rounds of research notes saved and no final synthesis. The operator ruled the
+cap up to 10800 seconds on 2026-11-27: the skill's protocol has no hard upper
+limit, so a smaller cap measures the house's clock rather than the arm. The
+10800 cap is the same maximum for every arm; the null and hffmnnj still finish
+early, so the wall-clock cost lands on the arms whose native workflow is long.
+
+The 3600s kanatami void and the 969.1s hffmnnj exclusion are recorded in the
+smoke history; the final smoke runs every arm under the 10800 cap.
 
 ## What reads the budget
 

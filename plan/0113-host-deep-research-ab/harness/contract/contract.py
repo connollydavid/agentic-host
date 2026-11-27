@@ -17,7 +17,7 @@ CAPS = {
     "prompt_tokens": 200000,
     "completion_tokens": 50000,
     "tool_calls": 60,
-    "wall_seconds": 3600,
+    "wall_seconds": 10800,
 }
 
 HEX = re.compile(r"^[0-9a-f]{64}$")

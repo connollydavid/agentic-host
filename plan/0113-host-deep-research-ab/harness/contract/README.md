@@ -44,8 +44,9 @@ The receipt carries:
   pin.
 - `search_provider`: the provider the draw used; the dry run records `exa`.
 - `budget`: the caps (200000 prompt tokens, 50000 completion tokens, 60 tool
-  calls, 3600 wall seconds; the first round used the original 40/1800) and the
-  used counts. The dry run's used counts are zero.
+  calls, 10800 wall seconds; the first round used the original 40/1800, and
+  the first corrected 3600s cap was raised after the kanatami smoke hit it) and
+  the used counts. The dry run's used counts are zero.
 - `config_digests`: the task, harness pin, model pin, arm config, and (for the
   null arm) the frozen prompt.
 

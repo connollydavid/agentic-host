@@ -1594,3 +1594,17 @@
     evidence = harness/search-provider: Exa is selected in the per-draw config (websearch.provider=exa with OPENCODE_ENABLE_EXA=1); the live probe returned 8 results with provider exa in 62.2s; the driver reads the provider from the completed websearch event metadata and voids any search-engine fetch, even alongside a websearch call. test_gate.py: 8 checks passed. Records: search-provider/README.md, probe.json, test_gate.py.
     tool = host-lifecycle@0.64.1
     recorded = 2026-11-27
+
+[receipt "plan/0113#budget"]
+    disposition = done
+    verify = the caps and the wave width are recorded before the first draw; a
+    evidence = harness/budget: caps 200000 prompt, 50000 completion, 60 tool calls, 10800 wall seconds; two-way draw order, serial under load. The first corrected 3600s cap was raised after the kanatami smoke hit it in background_wait at cycle 3 of its 5-10 cycle protocol (79 events, 75k prompt + 15.7k completion tokens, 20 tools, five cycles of notes, no final synthesis). contract.CAPS is the single source; run.py reads the wall cap and defaults --parallel 2; confirm.py defaults 2. The null smoke used 55777 prompt + 1814 completion tokens, 10 tools and 435.6s; hffmnnj excluded at 969.1s. Records: budget/README.md, budget/budget.json.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
+
+[receipt "plan/0113#budget"]
+    disposition = done
+    verify = the caps and the wave width are recorded before the first draw; a
+    evidence = harness/budget: caps 200000 prompt, 50000 completion, 60 tool calls, 10800 wall seconds; two-way draw order, serial under load. The first corrected 3600s cap was raised after the kanatami smoke reached three of its five-to-ten research rounds in background_wait (79 events, 75k prompt + 15.7k completion tokens, 20 tools, five rounds of notes, no final synthesis). contract.CAPS is the single source; run.py reads the wall cap and defaults --parallel 2; confirm.py defaults 2. The null smoke used 55777 prompt + 1814 completion tokens, 10 tools and 435.6s; hffmnnj excluded at 969.1s before the citation-form fix. Records: budget/README.md, budget/budget.json.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
