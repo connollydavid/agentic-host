@@ -23,6 +23,7 @@ import time
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+from urllib.parse import urlparse
 
 HERE = Path(__file__).resolve().parent
 HARNESS = HERE.parent
@@ -59,10 +60,17 @@ ARM_LINES = {
     "samber": "Use the installed deep-research skill: follow its workflow over the question, then satisfy the contract below.",
 }
 WINDOWS_PATH = re.compile(r"[^A-Za-z0-9._/-]+")
+SEARCH_PROVIDER = "exa"
+SEARCH_ENGINES = ("duckduckgo.com", "google.com", "bing.com", "search.yahoo.com")
 
 
 def sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode()).hexdigest()
+
+
+def is_search_engine(url: str) -> bool:
+    host = (urlparse(url).hostname or "").lower()
+    return any(host == engine or host.endswith("." + engine) for engine in SEARCH_ENGINES)
 
 
 def read_pin_env() -> dict[str, str]:
@@ -128,6 +136,7 @@ def arm_config(arm: str) -> dict:
         },
         "lsp": False,
         "plugins": [],
+        "websearch": {"provider": SEARCH_PROVIDER},
     }
     if arm == "hffmnnj":
         config["plugins"] = [f"file://{ARMS / 'hffmnnj'}"]
@@ -164,11 +173,19 @@ def prepare(arm: str, root: Path) -> Path:
 def parse_events(path: Path) -> dict:
     text: list[str] = []
     fetches: list[tuple[str, str]] = []
+    websearch: list[dict] = []
     prompt_tokens = 0
     completion_tokens = 0
     tool_calls = 0
     if not path.exists():
-        return {"text": "", "fetches": fetches, "prompt_tokens": 0, "completion_tokens": 0, "tool_calls": 0}
+        return {
+            "text": "",
+            "fetches": fetches,
+            "websearch": websearch,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "tool_calls": 0,
+        }
     for line in path.read_text(errors="replace").splitlines():
         if not line.strip():
             continue
@@ -191,9 +208,18 @@ def parse_events(path: Path) -> dict:
                 output = state.get("output") or ""
                 if url:
                     fetches.append((url, output))
+            if part.get("tool") == "websearch" and state.get("status") == "completed":
+                metadata = (state.get("metadata") or {}).get("metadata") or {}
+                websearch.append(
+                    {
+                        "provider": metadata.get("provider"),
+                        "query": (state.get("input") or {}).get("query"),
+                    }
+                )
     return {
         "text": "\n".join(part for part in text if part).strip(),
         "fetches": fetches,
+        "websearch": websearch,
         "prompt_tokens": prompt_tokens,
         "completion_tokens": completion_tokens,
         "tool_calls": tool_calls,
@@ -300,6 +326,8 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -> dic
             timed_out = True
     wall = time.time() - started
     parsed = parse_events(events_path)
+    measured_provider = parsed["websearch"][0]["provider"] if parsed["websearch"] else "none"
+    foreign_fetches = [url for url, _ in parsed["fetches"] if is_search_engine(url)]
     files = copy_agent_files(work, draw)
     if not (draw / "report.md").exists() and parsed["text"]:
         (draw / "report.md").write_text(parsed["text"] + "\n")
@@ -317,7 +345,7 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -> dic
             "max_input_tokens": model["max_input_tokens"],
             "max_output_tokens": model["max_output_tokens"],
         },
-        "search_provider": "exa",
+        "search_provider": measured_provider,
         "caps": contract.CAPS,
         "digests": {
             "task": schema.task_digest(task),
@@ -347,6 +375,10 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -> dic
     contract_reason = ""
     if not (draw / "sources.json").exists():
         contract_reason = "the draw wrote no sources.json"
+    elif foreign_fetches and measured_provider == "none":
+        contract_reason = "search-engine fetch without a websearch call: " + ", ".join(foreign_fetches[:3])
+    elif measured_provider not in (SEARCH_PROVIDER, "none"):
+        contract_reason = f"foreign search provider {measured_provider}; expected {SEARCH_PROVIDER}"
     else:
         try:
             contract.validate_output(draw, arm, task["key"], meta)
@@ -368,6 +400,9 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -> dic
         "prompt_tokens": parsed["prompt_tokens"],
         "completion_tokens": parsed["completion_tokens"],
         "tool_calls": parsed["tool_calls"],
+        "search_provider": measured_provider,
+        "websearch_calls": len(parsed["websearch"]),
+        "search_engine_fetches": foreign_fetches,
         "agent_files": files,
         "contract_ok": contract_ok,
         "contract_reason": contract_reason,
@@ -395,6 +430,9 @@ def safe_run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -
             "prompt_tokens": 0,
             "completion_tokens": 0,
             "tool_calls": 0,
+            "search_provider": "none",
+            "websearch_calls": 0,
+            "search_engine_fetches": [],
             "agent_files": {},
             "contract_ok": False,
             "contract_reason": f"driver error: {error}",
@@ -440,6 +478,7 @@ def main(argv: list[str]) -> int:
             f"{'valid' if summary['valid'] else 'void ':5s} "
             f"{summary['score']}/{summary['rubric'].get('max', '-')} "
             f"contract={'ok' if summary['contract_ok'] else 'no'} "
+            f"provider={summary.get('search_provider', 'none')} "
             f"tokens={summary['prompt_tokens']}+{summary['completion_tokens']} "
             f"tools={summary['tool_calls']} wall={summary['wall_seconds']}s"
             + (f"  ({summary['contract_reason']})" if summary["contract_reason"] else ""),

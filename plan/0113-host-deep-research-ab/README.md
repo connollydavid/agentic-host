@@ -430,6 +430,14 @@ the provider the tool actually called.
 - verify: the provider probe passes; a draw's receipt records the provider the
   fetch log shows; a foreign provider voids
 - depends: none
+- Landed 2026-11-27: Exa is selected in the per-draw config
+  (`"websearch": {"provider": "exa"}` with `OPENCODE_ENABLE_EXA=1`), and the
+  driver takes the provider from the completed `websearch` event's metadata.
+  The live probe returned 8 results with `provider: exa` in 62.2s; a receipt
+  naming another provider and a DuckDuckGo fetch are both void. The first
+  round's receipts said Exa while the cancelled form sent the model to
+  DuckDuckGo. Record:
+  [search-provider/README.md](harness/search-provider/README.md).
 
 ### Budget {#budget}
 
