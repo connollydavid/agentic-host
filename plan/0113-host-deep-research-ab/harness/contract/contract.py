@@ -41,8 +41,16 @@ def load_task(path: Path) -> dict:
     task = json.loads(path.read_text())
     if not isinstance(task.get("key"), str) or not task["key"]:
         raise ContractError("task.key must be a non-empty string")
-    if not isinstance(task.get("question"), str) or not task["question"].strip():
-        raise ContractError("task.question must be a non-empty string")
+    kind = task.get("kind")
+    if kind == "known-answer":
+        source = task.get("source")
+        if not isinstance(source, dict) or not source.get("benchmark"):
+            raise ContractError("a known-answer task needs a source.benchmark")
+        if "question" in task:
+            raise ContractError("a known-answer task must not embed the question")
+    else:
+        if not isinstance(task.get("question"), str) or not task["question"].strip():
+            raise ContractError("task.question must be a non-empty string")
     cover = task.get("must_cover", [])
     if not isinstance(cover, list):
         raise ContractError("task.must_cover must be a list")

@@ -1,0 +1,162 @@
+{
+  "set": "selection",
+  "frozen": "2026-11-27",
+  "tasks": [
+    {
+      "key": "selection/simpleqa-0000",
+      "kind": "known-answer",
+      "source": {
+        "benchmark": "simpleqa",
+        "dataset_url": "https://openaipublic.blob.core.windows.net/simple-evals/simple_qa_test_set.csv",
+        "dataset_sha256": "feee3f7e7db3617e94e8fcf1977b756ec420ef8568f4e0fcbbe0e92e9d5fc032",
+        "row": 0
+      },
+      "must_cover": [],
+      "digest": "d8dfca575a1be6715d2ee2d16357d09126ef3f467f23896287b670bf9592aa01"
+    },
+    {
+      "key": "selection/simpleqa-0002",
+      "kind": "known-answer",
+      "source": {
+        "benchmark": "simpleqa",
+        "dataset_url": "https://openaipublic.blob.core.windows.net/simple-evals/simple_qa_test_set.csv",
+        "dataset_sha256": "feee3f7e7db3617e94e8fcf1977b756ec420ef8568f4e0fcbbe0e92e9d5fc032",
+        "row": 2
+      },
+      "must_cover": [],
+      "digest": "d2292ca0bc985abcb4d1a2bd900692ab8635c127e6e2566d93516e4b98b322ee"
+    },
+    {
+      "key": "selection/simpleqa-1000",
+      "kind": "known-answer",
+      "source": {
+        "benchmark": "simpleqa",
+        "dataset_url": "https://openaipublic.blob.core.windows.net/simple-evals/simple_qa_test_set.csv",
+        "dataset_sha256": "feee3f7e7db3617e94e8fcf1977b756ec420ef8568f4e0fcbbe0e92e9d5fc032",
+        "row": 1000
+      },
+      "must_cover": [],
+      "digest": "d17affbe190377d7c63d028b8e07979c9b0eee52dd0ac03b391dab4f930dc8d7"
+    },
+    {
+      "key": "selection/house-path-crates",
+      "kind": "house",
+      "question": "For a Rust CLI that must classify file paths that are not valid UTF-8, compare the bstr and os_str_bytes crates and decide which the house should adopt. Name the byte-path type each exposes and the license each carries.",
+      "must_cover": [
+        {
+          "entity": "bstr",
+          "aliases": [
+            "BStr",
+            "bstr crate"
+          ]
+        },
+        {
+          "entity": "os_str_bytes",
+          "aliases": [
+            "os-str-bytes"
+          ]
+        },
+        {
+          "entity": "OsStr",
+          "aliases": [
+            "OsString"
+          ]
+        },
+        {
+          "entity": "MIT",
+          "aliases": [
+            "MIT License"
+          ]
+        },
+        {
+          "entity": "Apache-2.0",
+          "aliases": [
+            "Apache 2.0",
+            "Apache License 2.0"
+          ]
+        }
+      ],
+      "digest": "277c1aa981ecfe029c655b851c51ac0525ddacc03476ff088f0f25525cf2c8ee"
+    },
+    {
+      "key": "selection/house-rg-ast-grep",
+      "kind": "house",
+      "question": "Compare ripgrep (rg) and ast-grep (sg) for a repository-wide prose scan. Name each tool's implementation language, license, and query language, and say which one can express a syntax-tree query.",
+      "must_cover": [
+        {
+          "entity": "ripgrep",
+          "aliases": [
+            "rg"
+          ]
+        },
+        {
+          "entity": "ast-grep",
+          "aliases": [
+            "sg"
+          ]
+        },
+        {
+          "entity": "Rust",
+          "aliases": [
+            "rust"
+          ]
+        },
+        {
+          "entity": "Unlicense",
+          "aliases": [
+            "public domain",
+            "The Unlicense"
+          ]
+        },
+        {
+          "entity": "MIT",
+          "aliases": [
+            "MIT License"
+          ]
+        },
+        {
+          "entity": "regular expression",
+          "aliases": [
+            "regex"
+          ]
+        },
+        {
+          "entity": "AST",
+          "aliases": [
+            "abstract syntax tree",
+            "syntax tree"
+          ]
+        }
+      ],
+      "digest": "6540753f98185fef47cf3b05b68074d18c0e4edc8ef77aacc4623b85eca0e5fb"
+    },
+    {
+      "key": "selection/house-host-lint-docs",
+      "kind": "house",
+      "question": "Which host-lint release introduced the --docs repo-wide prose lane, and which rule source does that lane consult? Name the version and the rule source.",
+      "must_cover": [
+        {
+          "entity": "0.8.0",
+          "aliases": [
+            "v0.8.0",
+            "host-lint 0.8.0"
+          ]
+        },
+        {
+          "entity": "--docs",
+          "aliases": [
+            "docs lane"
+          ]
+        },
+        {
+          "entity": "VOCABULARY.md",
+          "aliases": [
+            "VOCABULARY",
+            "VOCABULARY.md"
+          ]
+        }
+      ],
+      "digest": "1e5c87c59be8f75bfbb0e58f720c57b747f4f2407a9e106892e3fba1b974ac67"
+    }
+  ]
+}
