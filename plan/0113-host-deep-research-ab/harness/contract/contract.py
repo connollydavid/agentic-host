@@ -22,6 +22,7 @@ CAPS = {
 
 HEX = re.compile(r"^[0-9a-f]{64}$")
 URL = re.compile(r"^https?://\S+$")
+CITED = re.compile(r"https?://[^\s)\]>\"']+")
 
 
 class ContractError(Exception):
@@ -90,6 +91,11 @@ def validate_report(report: str, sources: list[dict]) -> None:
         key = entry.get("id") or entry["url"]
         if key not in report:
             raise ContractError(f"report.md does not cite source {index} ({key})")
+    ledger = {entry["url"] for entry in sources}
+    report_urls = {match.rstrip(".,;:") for match in CITED.findall(report)}
+    missing = sorted(report_urls - ledger)
+    if missing:
+        raise ContractError(f"report.md cites URL(s) absent from the ledger: {', '.join(missing)}")
 
 
 def build_receipt(arm: str, task_key: str, meta: dict, status: str = "dry-run", used: dict | None = None) -> dict:
@@ -179,7 +185,11 @@ def validate_output(out: Path, arm: str, task_key: str, meta: dict) -> dict:
     status = receipt.get("status")
     validate_receipt(receipt, arm, task_key, meta, status=status)
     if status == "live":
-        validate_fetch_log(out / "fetch-log.jsonl")
+        log = validate_fetch_log(out / "fetch-log.jsonl")
+        logged = {entry["url"] for entry in log}
+        phantom = sorted(entry["url"] for entry in sources if entry["url"] not in logged)
+        if phantom:
+            raise ContractError("phantom source(s) absent from the fetch log: " + ", ".join(phantom))
     return {"report_chars": len(report), "sources": len(sources), "digests": len(receipt["config_digests"])}
 
 

@@ -30,9 +30,12 @@ must-cover lists later.
 
 The ledger entry's optional `id` is the arm's own citation key, for an arm that
 cites notes by id rather than URL (hffmnnj's `[rn_…]`). The report check accepts
-the id or the URL. The quote and locator are required; a paraphrase record does
-not satisfy the contract. A live draw's `fetch-log.jsonl` is the run's own
-record of what it fetched; a cited URL absent from it voids the draw.
+the id or the URL, and it is two-sided: every ledger entry is cited, and every
+URL in the report has a ledger entry. The quote and locator are required; a
+paraphrase record does not satisfy the contract. A live draw's
+`fetch-log.jsonl` is the run's own record of what it fetched; every ledger URL
+must appear in it, and a cited URL absent from it is a phantom that voids the
+draw.
 
 The receipt carries:
 
