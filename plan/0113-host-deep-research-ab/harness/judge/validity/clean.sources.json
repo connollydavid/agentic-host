@@ -1,0 +1,14 @@
+{
+  "sources": [
+    {
+      "url": "https://github.com/connollydavid/agentic-host/blob/main/plan/0113-host-deep-research-ab/harness/README.md",
+      "quote": "Release tag v2.4.2 ... Binary sha256 523b1502d1d556998b0904235cef65eb1d8cf8362b4e2faa7ae7a170c9a44cd4",
+      "locator": "The pin table"
+    },
+    {
+      "url": "https://github.com/connollydavid/agentic-host/blob/main/plan/0113-host-deep-research-ab/harness/model-pin/README.md",
+      "quote": "The reference route is strata's qwen3.8-flash-next ... deployment 64e4a3742445b5bf58b5e6b75f83b9a84b87cfe19b47692b7984419f71804bf6",
+      "locator": "The pin"
+    }
+  ]
+}

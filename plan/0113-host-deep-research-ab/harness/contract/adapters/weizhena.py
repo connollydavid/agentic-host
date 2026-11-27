@@ -18,7 +18,10 @@ SOURCE_KEYS = {"url", "quote", "locator", "sources", "source", "citation"}
 
 def source_like(value: object) -> bool:
     if isinstance(value, dict):
-        if SOURCE_KEYS & {str(key).lower() for key in value}:
+        keys = {str(key).lower() for key in value}
+        if "url" in keys and ("quote" in keys or "locator" in keys):
+            return True
+        if SOURCE_KEYS & keys and any(source_like(item) for item in value.values()):
             return True
         return any(source_like(item) for item in value.values())
     if isinstance(value, list):
@@ -27,13 +30,11 @@ def source_like(value: object) -> bool:
 
 
 def convert(fixture: Path, task: dict, out: Path, meta: dict) -> str:
-    results = sorted((fixture / "results").glob("*.json"))
+    results = sorted((fixture / "results").rglob("*.json"))
     for path in results:
         if source_like(json.loads(path.read_text())):
             raise ContractError(f"{path.name} now carries a source record; re-examine the exclusion")
     report = (fixture / "report.md").read_text()
-    if "http://" in report or "https://" in report:
-        raise ContractError("the report now carries a URL; re-examine the exclusion")
     write_json(
         out / "exclusion.json",
         {
@@ -46,9 +47,9 @@ def convert(fixture: Path, task: dict, out: Path, meta: dict) -> str:
                 "cannot be populated."
             ),
             "evidence": (
-                "results/Item.json holds field values only; report.md carries no URL; the research-deep "
-                "output requirements define JSON fields, an uncertain array and a validation script, not a "
-                "source record."
+                f"results/ carries {len(results)} JSON file(s); none pairs a URL with a quote and locator. "
+                f"report.md is {len(report)} chars and cites {report.count('http')} URL(s); a URL in the "
+                "report is not a per-source quote record, so the ledger cannot be populated."
             ),
         },
     )

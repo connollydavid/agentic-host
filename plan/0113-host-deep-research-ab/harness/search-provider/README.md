@@ -67,10 +67,16 @@ itself; `evidence/events.jsonl` is the full run.
 - A receipt that names another provider while the tool called `exa` is void:
   `provider_of({"search_provider": "parallel"}, "exa")` raises.
 - A fetch to a search engine (`duckduckgo.com`, `google.com`, `bing.com`,
-  `search.yahoo.com`) is a foreign provider: the driver voids a draw whose
-  only search is that fetch, and the probe's `is_search_engine` control covers
-  the DuckDuckGo URL from the defect above.
+  `search.yahoo.com`) is a foreign provider. The driver voids it even when a
+  `websearch` call also ran, because the plan's rule is one provider.
 - A receipt that names the measured provider passes.
+
+`test_gate.py` is the no-model test of that rule:
+
+```sh
+python3 test_gate.py
+# search-provider gate: 8 checks passed
+```
 
 ## The driver change
 
@@ -82,8 +88,8 @@ itself; `evidence/events.jsonl` is the full run.
 - writes that measured provider into the receipt, and records
   `websearch_calls`, `search_provider` and `search_engine_fetches` in
   `score.json`;
-- voids a draw whose measured provider is neither `exa` nor `none`, and a draw
-  that reaches a search engine without a `websearch` call.
+- voids a draw whose measured provider is neither `exa` nor `none`, and any
+  draw that fetches a search engine, even if a `websearch` call also ran.
 
 The confirmation driver imports the same `run` module, so the confirmation
 draws inherit the fix.

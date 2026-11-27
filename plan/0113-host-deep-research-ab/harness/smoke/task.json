@@ -1,0 +1,20 @@
+{
+  "key": "smoke/house-capital",
+  "kind": "house",
+  "question": "What is the capital of France, and which river runs through it?",
+  "must_cover": [
+    {
+      "entity": "Paris",
+      "aliases": [
+        "paris"
+      ]
+    },
+    {
+      "entity": "Seine",
+      "aliases": [
+        "seine river"
+      ]
+    }
+  ],
+  "digest": "5dfd2575f18f2e13fe0724015bfc7962b1eeca13d14aa98e9079f5cb26e14a48"
+}

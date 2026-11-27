@@ -1,0 +1,30 @@
+{
+  "frozen": "2026-11-27",
+  "before_first_draw": true,
+  "benchmark": {
+    "name": "simpleqa",
+    "dataset_url": "https://openaipublic.blob.core.windows.net/simple-evals/simple_qa_test_set.csv",
+    "dataset_sha256": "feee3f7e7db3617e94e8fcf1977b756ec420ef8568f4e0fcbbe0e92e9d5fc032",
+    "rows": 4326,
+    "license": "MIT"
+  },
+  "selection": {
+    "path": "selection.json",
+    "set_digest": "128d135446134687ef6249d9aa902863920bd63c3bdf0130e885e9ed19ede36e",
+    "tasks": 6,
+    "known_answer": 3,
+    "house": 3
+  },
+  "held_out": {
+    "path": "held-out-fresh.json.enc",
+    "plaintext_set_digest": "9c40958960c58d6c1f3e9b2a3b9dcd0f407abe92659826b018f1ff74cadcb5be",
+    "ciphertext_sha256": "bb60b746bddea73fac5c8a99ba70869d178da36c3cb7a5b5df4a7324b099b9c2",
+    "tasks": 5,
+    "known_answer": 2,
+    "house": 3,
+    "sealed": true,
+    "fresh": true,
+    "key_path": "/tmp/opencode/plan0113/held-out-fresh.key",
+    "replaces": "held-out.json.enc (read at the failed confirmation)"
+  }
+}

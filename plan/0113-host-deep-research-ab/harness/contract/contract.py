@@ -16,8 +16,8 @@ from pathlib import Path
 CAPS = {
     "prompt_tokens": 200000,
     "completion_tokens": 50000,
-    "tool_calls": 40,
-    "wall_seconds": 1800,
+    "tool_calls": 60,
+    "wall_seconds": 3600,
 }
 
 HEX = re.compile(r"^[0-9a-f]{64}$")
@@ -102,7 +102,7 @@ def build_receipt(arm: str, task_key: str, meta: dict, status: str = "dry-run", 
     return {
         "task": task_key,
         "arm": arm,
-        "status": status,
+        "status": meta.get("status", status),
         "harness": meta["harness"],
         "model": meta["model"],
         "search_provider": meta["search_provider"],

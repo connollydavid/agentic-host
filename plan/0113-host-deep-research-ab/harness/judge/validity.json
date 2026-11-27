@@ -1,0 +1,31 @@
+{
+  "recorded": "2026-11-27T10:31:45Z",
+  "route": "claude-agent/opus",
+  "expected_model": "claude-opus-5-5",
+  "clean": {
+    "valid": true,
+    "route": "claude-agent/opus",
+    "model": "claude-opus-5-5",
+    "prompt_sha256": "ab6e96dff409afcd3e039863872686873bf26e8bf5eff61092752feaf15fdf84",
+    "reply_sha256": "0e13c4bc6844784e9cff95fab47974e1ef1889d8b590b3a1c77c9b18dcbe115b",
+    "cost_usd": 0.1585144,
+    "completeness": 4,
+    "creativity": 2,
+    "score": 6,
+    "rationale": "The report answers both parts of the question. It names the release (v2.4.2), the full binary digest beginning 523b1502, and the full deployment id beginning 64e4a374. The ledger quotes support all three entities: the harness README pin table covers the release tag and binary sha256, and the model-pin README covers the qwen3.8-flash-next deployment id. Several other claims have no support in the quoted ledger text: that the archive digest is checked before every draw, that a wrong digest refuses the draw, that the name resolves through a `qwen*` wildcard, and that a reply carrying another model id is void. They may be accurate, but the ledger does not show them. That counts against the report's rigor but not against coverage of the required entities. The closing synthesis has some value: the release pin fixes the harness and the deployment pin fixes the model, and drift in either would turn the A/B into an engine comparison. That idea is reasonable but modest. It comes from only two sources, compares no alternatives and adds little beyond restating why pins matter. It is a competent framing rather than a deep synthesis."
+  },
+  "broken": {
+    "valid": true,
+    "route": "claude-agent/opus",
+    "model": "claude-opus-5-5",
+    "prompt_sha256": "178c035c716dd573c63b118c36e8aaedec4af347da90fb1caa02711700ae4386",
+    "reply_sha256": "e8c0c30be012eb6281141005570edadcbcc89f9da6fd802dfbca18606a1f8837",
+    "cost_usd": 0.1173086,
+    "completeness": 0,
+    "creativity": 0,
+    "score": 0,
+    "rationale": "The report doesn't answer the question. It names none of the three must-cover entities: no release version (v2.4.2), no binary digest (523b1502) and no deployment id (64e4a374). The source ledger is empty, so none of its claims has support. It says only that a release and a model are pinned, and calls the release 'recent' and the model 'fast' without evidence. Its claims that the setup is 'good' and the comparison 'fair' are confident but unsupported. It draws on no sources, compares no alternatives and offers no insight, so it is a generic answer with no synthesis."
+  },
+  "malformed_rejected": true,
+  "passed": true
+}

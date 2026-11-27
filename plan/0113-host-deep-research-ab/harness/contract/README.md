@@ -43,9 +43,9 @@ The receipt carries:
 - `model`: provider, route, deployment id, backend and limits from the model
   pin.
 - `search_provider`: the provider the draw used; the dry run records `exa`.
-- `budget`: the caps (200000 prompt tokens, 50000 completion tokens, 40 tool
-  calls, 1800 wall seconds) and the used counts. The dry run's used counts are
-  zero.
+- `budget`: the caps (200000 prompt tokens, 50000 completion tokens, 60 tool
+  calls, 3600 wall seconds; the first round used the original 40/1800) and the
+  used counts. The dry run's used counts are zero.
 - `config_digests`: the task, harness pin, model pin, arm config, and (for the
   null arm) the frozen prompt.
 

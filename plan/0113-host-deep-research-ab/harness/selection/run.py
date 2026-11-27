@@ -43,8 +43,16 @@ sys.path.insert(0, str(HARNESS / "rubric"))
 import contract  # noqa: E402
 import rubric  # noqa: E402
 import schema  # noqa: E402
+from adapters import hffmnnj, kanatami, null as null_adapter, samber, weizhena  # noqa: E402
 
 ARM_NAMES = ["null", "weizhena", "hffmnnj", "kanatami", "samber"]
+ADAPTERS = {
+    "null": null_adapter,
+    "weizhena": weizhena,
+    "hffmnnj": hffmnnj,
+    "kanatami": kanatami,
+    "samber": samber,
+}
 TASK_KEYS = [
     "selection/simpleqa-0000",
     "selection/simpleqa-0002",
@@ -54,10 +62,22 @@ TASK_KEYS = [
     "selection/house-host-lint-docs",
 ]
 ARM_LINES = {
-    "weizhena": "Use the installed Weizhena research skills: run the research-deep workflow over the question, then satisfy the contract below.",
-    "hffmnnj": "Use the installed hffmnnj deep-research plugin and its library: run its workflow over the question, then satisfy the contract below.",
-    "kanatami": "Use the installed web-search-deep skill: follow its protocol over the question, then satisfy the contract below.",
-    "samber": "Use the installed deep-research skill: follow its workflow over the question, then satisfy the contract below.",
+    "weizhena": (
+        "Use the installed Weizhena research skills: run the research-deep workflow over the question. "
+        "Do not ask clarifying questions; proceed with stated assumptions."
+    ),
+    "hffmnnj": (
+        "Use the installed hffmnnj deep-research plugin and its library: run its workflow over the question. "
+        "Do not ask clarifying questions; proceed with stated assumptions."
+    ),
+    "kanatami": (
+        "Use the installed web-search-deep skill: follow its protocol over the question. "
+        "Do not ask clarifying questions; proceed with stated assumptions."
+    ),
+    "samber": (
+        "Use the installed deep-research skill: follow its workflow over the question. "
+        "Do not ask clarifying questions; proceed with stated assumptions."
+    ),
 }
 WINDOWS_PATH = re.compile(r"[^A-Za-z0-9._/-]+")
 SEARCH_PROVIDER = "exa"
@@ -71,6 +91,15 @@ def sha256_text(text: str) -> str:
 def is_search_engine(url: str) -> bool:
     host = (urlparse(url).hostname or "").lower()
     return any(host == engine or host.endswith("." + engine) for engine in SEARCH_ENGINES)
+
+
+def provider_gate(measured: str, foreign_fetches: list[str]) -> str | None:
+    """The one-provider rule: a search-engine fetch or another provider voids."""
+    if foreign_fetches:
+        return "search-engine fetch is a foreign provider: " + ", ".join(foreign_fetches[:3])
+    if measured not in (SEARCH_PROVIDER, "none"):
+        return f"foreign search provider {measured}; expected {SEARCH_PROVIDER}"
+    return None
 
 
 def read_pin_env() -> dict[str, str]:
@@ -101,17 +130,7 @@ def prompt_for(arm: str, task: dict) -> str:
     if arm == "null":
         frozen = (HARNESS / "contract" / "prompts" / "null.md").read_text()
         return f"{frozen}\n\nQuestion: {question}\n"
-    contract_text = f"""{ARM_LINES[arm]}
-
-Produce these files in the current working directory:
-- report.md: a Markdown report. Put the source URL or your arm's citation id beside every cited sentence.
-- sources.json: {{"sources": [{{"url": "https://...", "quote": "<verbatim passage>", "locator": "<section or paragraph>"}}]}}.
-- fetch-log.jsonl: one line per page fetched: {{"url": "https://...", "status": 200, "snapshot": "snapshots/<file>.txt"}}; save the fetched page text under snapshots/.
-Do not write receipt.json; the harness writes it. Cite only pages you fetched, copy every quote from the fetched page, and do not change the model, provider or configuration.
-
-Question: {question}
-"""
-    return contract_text
+    return f"{ARM_LINES[arm]}\n\nQuestion: {question}\n"
 
 
 def arm_config(arm: str) -> dict:
@@ -226,19 +245,85 @@ def parse_events(path: Path) -> dict:
     }
 
 
-def copy_agent_files(work: Path, draw: Path) -> dict:
-    report = work / "report.md"
-    sources = work / "sources.json"
-    fetch_log = work / "fetch-log.jsonl"
-    if report.is_file() and report.read_text().strip():
-        shutil.copyfile(report, draw / "report.md")
-    if sources.is_file():
-        shutil.copyfile(sources, draw / "sources.json")
-    if fetch_log.is_file():
-        shutil.copyfile(fetch_log, draw / "fetch-log.jsonl")
-    if (work / "snapshots").is_dir():
-        shutil.copytree(work / "snapshots", draw / "snapshots", dirs_exist_ok=True)
-    return {"report": report.is_file(), "sources": sources.is_file(), "fetch_log": fetch_log.is_file()}
+def note_front_body(path: Path) -> tuple[dict, str]:
+    text = path.read_text(errors="replace")
+    if not text.startswith("---\n"):
+        return {}, text
+    rest = text[len("---\n"):]
+    if "\n---\n" not in rest:
+        return {}, text
+    front, body = rest.split("\n---\n", 1)
+    try:
+        return json.loads(front), body
+    except json.JSONDecodeError:
+        return {}, body
+
+
+def prepare_native(arm: str, work: Path, root: Path, draw: Path, parsed: dict) -> Path:
+    """Copy the arm's native output into the draw's `native/` audit surface.
+
+    The adapters read this directory; the contract files they write stay in the
+    draw root. The null arm already writes the contract, so its files are copied
+    as-is. Each other arm's documented output shape is collected: the hffmnnj
+    library notes, the kanatami workers, the weizhena result JSON, the samber
+    research notes. A report file or the run's final text is the fallback.
+    """
+    native = draw / "native"
+    native.mkdir(parents=True, exist_ok=True)
+    if arm == "null":
+        for name in ("report.md", "sources.json"):
+            if (work / name).is_file():
+                shutil.copyfile(work / name, native / name)
+        return native
+    if arm == "hffmnnj":
+        candidates = [
+            root / "data" / "opencode-deep-research" / "library" / "notes",
+            root / "home" / ".local" / "share" / "opencode-deep-research" / "library" / "notes",
+        ]
+        library = next((path for path in candidates if path.is_dir()), None)
+        if library is not None:
+            shutil.copytree(library, native / "notes", dirs_exist_ok=True)
+            reports = []
+            for path in library.rglob("*.md"):
+                front, body = note_front_body(path)
+                if front.get("kind") == "report":
+                    reports.append((path.stat().st_mtime, body))
+            if reports:
+                (native / "report.md").write_text(max(reports)[1])
+    elif arm == "kanatami":
+        if (work / "workers.json").is_file():
+            shutil.copyfile(work / "workers.json", native / "workers.json")
+    elif arm == "weizhena":
+        for base in (work / "results", work / "research"):
+            if base.is_dir():
+                shutil.copytree(base, native / "results", dirs_exist_ok=True)
+        for path in work.rglob("*.json"):
+            if native in path.parents:
+                continue
+            target = native / "results" / path.name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(path, target)
+    elif arm == "samber":
+        for base in (work / "research", work / "notes"):
+            if base.is_dir():
+                shutil.copytree(base, native / "notes", dirs_exist_ok=True)
+
+    if not (native / "report.md").exists():
+        candidates = [path for path in work.rglob("*.md") if native not in path.parents]
+        if candidates:
+            report = min(candidates, key=lambda path: (len(path.parts), -path.stat().st_mtime))
+            shutil.copyfile(report, native / "report.md")
+        elif parsed["text"]:
+            (native / "report.md").write_text(parsed["text"] + "\n")
+
+    if arm == "kanatami" and not (native / "workers.json").exists():
+        workers = {
+            "workers": [
+                {"id": "main", "results": [{"url": url, "full_text": output} for url, output in parsed["fetches"]]}
+            ]
+        }
+        contract.write_json(native / "workers.json", workers)
+    return native
 
 
 def merge_fetch_log(draw: Path, parsed: dict) -> None:
@@ -308,7 +393,7 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -> dic
     started = time.time()
     events_path = root / "events.jsonl"
     stderr_path = root / "stderr.log"
-    timeout = 1800
+    timeout = contract.CAPS["wall_seconds"]
     with events_path.open("wb") as stdout, stderr_path.open("wb") as stderr:
         try:
             completed = subprocess.run(
@@ -328,10 +413,6 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -> dic
     parsed = parse_events(events_path)
     measured_provider = parsed["websearch"][0]["provider"] if parsed["websearch"] else "none"
     foreign_fetches = [url for url, _ in parsed["fetches"] if is_search_engine(url)]
-    files = copy_agent_files(work, draw)
-    if not (draw / "report.md").exists() and parsed["text"]:
-        (draw / "report.md").write_text(parsed["text"] + "\n")
-    merge_fetch_log(draw, parsed)
 
     pin = read_pin_env()
     model = json.loads(MODEL_PIN.read_text())
@@ -346,6 +427,7 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -> dic
             "max_output_tokens": model["max_output_tokens"],
         },
         "search_provider": measured_provider,
+        "status": "live",
         "caps": contract.CAPS,
         "digests": {
             "task": schema.task_digest(task),
@@ -355,45 +437,76 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -> dic
             "prompt": sha256_text(prompt),
         },
     }
-    receipt = contract.build_receipt(
-        arm,
-        task["key"],
-        meta,
-        status="live",
-        used={
-            "prompt_tokens": parsed["prompt_tokens"],
-            "completion_tokens": parsed["completion_tokens"],
-            "tool_calls": parsed["tool_calls"],
-            "wall_seconds": round(wall, 1),
-        },
-    )
-    contract.write_json(draw / "receipt.json", receipt)
+
+    native = prepare_native(arm, work, root, draw, parsed)
+    adapter = ADAPTERS[arm]
+    adapter_result = "void"
+    adapter_reason = ""
+    try:
+        adapter_result = adapter.convert(native, task, draw, meta)
+    except contract.ContractError as error:
+        adapter_reason = str(error)
+    merge_fetch_log(draw, parsed)
     contract.write_json(draw / "task.json", task)
     (draw / "prompt.txt").write_text(prompt)
 
+    if adapter_result == "valid":
+        contract.write_json(
+            draw / "receipt.json",
+            contract.build_receipt(
+                arm,
+                task["key"],
+                meta,
+                status="live",
+                used={
+                    "prompt_tokens": parsed["prompt_tokens"],
+                    "completion_tokens": parsed["completion_tokens"],
+                    "tool_calls": parsed["tool_calls"],
+                    "wall_seconds": round(wall, 1),
+                },
+            ),
+        )
+
+    provider_reason = provider_gate(measured_provider, foreign_fetches)
     contract_ok = False
     contract_reason = ""
-    if not (draw / "sources.json").exists():
-        contract_reason = "the draw wrote no sources.json"
-    elif foreign_fetches and measured_provider == "none":
-        contract_reason = "search-engine fetch without a websearch call: " + ", ".join(foreign_fetches[:3])
-    elif measured_provider not in (SEARCH_PROVIDER, "none"):
-        contract_reason = f"foreign search provider {measured_provider}; expected {SEARCH_PROVIDER}"
-    else:
+    excluded = False
+    if provider_reason:
+        contract_reason = provider_reason
+        result = {"status": "void", "reason": provider_reason}
+    elif adapter_result == "valid":
         try:
             contract.validate_output(draw, arm, task["key"], meta)
             contract_ok = True
+            result = rubric.score(draw, task, DATASET)
         except contract.ContractError as error:
             contract_reason = str(error)
-    try:
-        result = rubric.score(draw, task, DATASET)
-    except Exception as error:  # noqa: BLE001 - a rubric crash is a draw finding
-        result = {"status": "void", "reason": f"rubric error: {error}"}
+            result = {"status": "void", "reason": str(error)}
+        except Exception as error:  # noqa: BLE001 - a rubric crash is a draw finding
+            contract_reason = f"rubric error: {error}"
+            result = {"status": "void", "reason": contract_reason}
+    elif adapter_result == "excluded":
+        try:
+            exclusion = contract.validate_exclusion(draw, arm, task["key"])
+            excluded = True
+            contract_reason = exclusion["reason"]
+            result = {"status": "excluded", "reason": exclusion["reason"], "max": 16}
+        except contract.ContractError as error:
+            contract_reason = str(error)
+            result = {"status": "void", "reason": str(error)}
+    else:
+        contract_reason = adapter_reason or "the adapter produced no contract output"
+        result = {"status": "void", "reason": contract_reason}
     valid = contract_ok and result.get("status") == "scored"
     score = result.get("score", 0) if valid else 0
+    native_files = sum(1 for path in native.rglob("*") if path.is_file()) if native.exists() else 0
     summary = {
         "arm": arm,
         "task": task["key"],
+        "draw": name,
+        "adapter": arm,
+        "adapter_result": adapter_result,
+        "excluded": excluded,
         "exit_code": exit_code,
         "timed_out": timed_out,
         "wall_seconds": round(wall, 1),
@@ -403,7 +516,7 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -> dic
         "search_provider": measured_provider,
         "websearch_calls": len(parsed["websearch"]),
         "search_engine_fetches": foreign_fetches,
-        "agent_files": files,
+        "native_files": native_files,
         "contract_ok": contract_ok,
         "contract_reason": contract_reason,
         "rubric": result,
@@ -424,6 +537,10 @@ def safe_run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -
         summary = {
             "arm": arm,
             "task": task["key"],
+            "draw": name,
+            "adapter": arm,
+            "adapter_result": "void",
+            "excluded": False,
             "exit_code": None,
             "timed_out": False,
             "wall_seconds": 0,
@@ -433,7 +550,7 @@ def safe_run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -
             "search_provider": "none",
             "websearch_calls": 0,
             "search_engine_fetches": [],
-            "agent_files": {},
+            "native_files": 0,
             "contract_ok": False,
             "contract_reason": f"driver error: {error}",
             "rubric": {"status": "void", "reason": f"driver error: {error}"},
@@ -445,11 +562,16 @@ def safe_run_draw(arm: str, task: dict, force: bool = False, suffix: str = "") -
 
 
 def main(argv: list[str]) -> int:
+    global DRAWS, SCRATCH
     parser = argparse.ArgumentParser()
     parser.add_argument("--only", help="arm, task name, or arm/task")
     parser.add_argument("--force", action="store_true")
-    parser.add_argument("--parallel", type=int, default=1, help="draws per task wave")
+    parser.add_argument("--parallel", type=int, default=2, help="draws per task wave")
+    parser.add_argument("--draws", default=str(DRAWS))
+    parser.add_argument("--scratch", default=str(SCRATCH))
     args = parser.parse_args(argv)
+    DRAWS = Path(args.draws)
+    SCRATCH = Path(args.scratch)
     if not BIN.is_file():
         raise SystemExit("the pinned binary is missing; run harness/install.sh")
     if not os.environ.get("ROPE_BEARER"):

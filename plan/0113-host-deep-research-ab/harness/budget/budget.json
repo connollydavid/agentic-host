@@ -1,0 +1,19 @@
+{
+  "recorded": "2026-11-27",
+  "caps": {
+    "prompt_tokens": 200000,
+    "completion_tokens": 50000,
+    "tool_calls": 60,
+    "wall_seconds": 3600
+  },
+  "wave_width": 2,
+  "draw_order": "two-way, interleaved by task; serial when the provider is under load",
+  "cost": "recorded in every receipt, never scored",
+  "first_round": {
+    "wall_seconds": 1800,
+    "tool_calls": 40,
+    "wave_width": 5,
+    "valid_draws": 1,
+    "void_draws": 29
+  }
+}

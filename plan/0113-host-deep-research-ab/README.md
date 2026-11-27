@@ -127,8 +127,9 @@ run's receipt.
   `#search-provider` task fixes the measurement.
 - **Budget.** The same per-draw cap on tokens, tool calls and wall time, and the
   same prompt for the arm plus the tasks. The contract's caps are 200000 prompt
-  tokens, 50000 completion tokens, 40 tool calls and 1800 wall seconds. The
-  cost is recorded, never scored, and the draws run serial or two-way.
+  tokens, 50000 completion tokens, 60 tool calls and 3600 wall seconds; the
+  draw order is two-way, interleaved by task, and serial when the provider is
+  under load. The cost is recorded, never scored.
 - **Arm isolation.** Each arm draws in its own scratch tree with its own library
   and its own config. No arm's skills, plugins or notes are shared with another.
 - **Roles.** The reference model is the only subject. Fen drives the component's
@@ -178,10 +179,12 @@ Mechanical where it can be; the hard gate is a count.
 Cost is recorded, not scored: completion and prompt tokens, tool calls, wall
 time, and the exit status and contract compliance of each draw.
 
-The judge is Opus 5.5, a model other than the reference. It scores completeness
-and creativity on the blind report and ledger; its scores enter the pooled
-selection score and break the suite-fit tie, and they count only after the
-dokimi validity gate. With no passing judge, the mechanical rubric stands alone.
+The judge is Opus 5.5 through the host's `claude` CLI (`claude-agent/opus`,
+resolved `claude-opus-5-5`). It scores completeness and creativity, 0-4 each,
+on the blind report and ledger; the judge score is 0-8. The pooled selection
+score is the mechanical score (0-16) plus the judge score (0-24). The validity
+gate passes on the clean and broken samples; with no passing judge, the judge
+contributes 0 and the mechanical score stands alone.
 
 ### The protocol
 
@@ -190,11 +193,10 @@ dokimi validity gate. With no passing judge, the mechanical rubric stands alone.
   A re-baseline would need a new pre-declared round before its draws; numbers do
   not compare across rounds. The first attempt's round is recorded as
   harness-defective; the corrected round is the `#selection-redo` task.
-- **Lock.** The lock rule is mechanical. Among arms whose pooled selection score
-  is within a band of 1.0 point of the best (the 16-point applicable maximum),
-  the lock goes to the highest suite-fit score; a remaining tie goes to the
-  judge's completeness and creativity, then to name order. The token count is
-  recorded, never a tie-break.
+- **Lock.** The pooled selection score is mechanical (0-16) plus judge (0-8),
+  a 24-point maximum. Among arms within 1.5 points of the best, the lock goes
+  to the highest suite-fit score; a remaining tie goes to the judge score, then
+  to name order. The token count is recorded, never a tie-break.
 - **Confirmation** pits the locked arm against `null`, on the fresh held-out
   tasks, with two fresh draws per held-out task per arm (2 × 2 × 5 = 20 draws)
   and randomised order within each task block. The pre-declared criteria: a
@@ -371,13 +373,18 @@ rule applied mechanically.
 
 ### Confirmation {#confirmation}
 
-The locked arm against `null` on the fresh held-out set, fresh and interleaved,
-with the judge's completeness and creativity, and the printed verdict.
+The arm locked by `round-redo.json` against `null` on the fresh held-out set,
+fresh and interleaved, with the judge's completeness and creativity, and the
+printed verdict.
 
 - verify: the verdict prints from the recorded criteria; a `NO-SHIP` records
   every criterion missed; a `SHIP` records margin, per-task floor, the phantom
   count and the judge's completeness and creativity
 - depends: #selection-redo, #fresh-held-out, #judge
+- Wired 2026-11-27: `confirm.py` reads `held-out-fresh.json.enc`,
+  `sets-fresh.json` and the fresh key, writes `draws-fresh/`, and takes the
+  locked arm from `round-redo.json` (null is the control). The old partial
+  draws stay under `draws/`. The verdict is not run yet.
 
 ### Fen acceptance {#fen-acceptance}
 
@@ -447,6 +454,13 @@ scored.
 - verify: the caps and the wave width are recorded before the first draw; a
   smoke draw reports the used counts; no lock or tie-break reads them
 - depends: none
+- Landed 2026-11-27: the caps are 200000 prompt tokens, 50000 completion
+  tokens, 60 tool calls and 3600 wall seconds; the draw order is two-way,
+  interleaved by task, serial under provider load. The first round's 1800s cap
+  and five-arm waves voided 29 of 30 draws; the one valid draw used 103k
+  prompt tokens, 47 tools and the full 1800s. `contract.CAPS` is the single
+  source; `run.py` reads the wall cap and defaults to two-way. Record:
+  [budget/README.md](harness/budget/README.md).
 
 ### Adapter layer {#adapter-layer}
 
@@ -457,6 +471,10 @@ exclusions are recorded.
 - verify: the driver runs one draw per arm to the arm's native output; each
   receipt names the adapter; the wrapper postscript is gone
 - depends: #run-contract, #search-provider, #budget
+- Landed 2026-11-27: the native prompts and `prepare_native` are in `run.py`;
+  the adapters dispatch from `contract/adapters/`. The wrapper postscript is
+  gone from the non-null prompts. The contract dry run is 8/8; the live smoke
+  is the remaining check. Record: [adapters/README.md](harness/adapters/README.md).
 
 ### Judge {#judge}
 
@@ -467,6 +485,13 @@ on the blind report and ledger; the dokimi validity gate must pass.
   are recorded; the dokimi validity gate passes on the clean and broken
   samples; a failing judge is not used
 - depends: none
+- Landed 2026-11-27: the judge runs on `claude-agent/opus`, which resolves to
+  `claude-opus-5-5`; it scores 0-4 completeness and 0-4 creativity from the
+  blind report and ledger. The validity gate passed: clean 6/8, broken 0/8,
+  and a malformed reply is rejected. `judge.json` records the model, the
+  prompt and reply digests, the cost and the scores. A failing judge writes
+  `valid: false` and contributes 0; the mechanical rubric alone scores.
+  Record: [judge/README.md](harness/judge/README.md).
 
 ### Fresh held-out {#fresh-held-out}
 
@@ -476,6 +501,14 @@ and seal it with its own key.
 - verify: every task validates; the fresh set is ciphertext with no plaintext
   in the tree; both set digests are recorded
 - depends: none
+- Landed 2026-11-27: two new SimpleQA rows (10, 50) and three house tasks
+  (serde_json/simd-json, cargo-nextest/cargo test, verify-setup/check); the
+  plaintext set digest is `9c409589…`, the ciphertext `bb60b746…`, sealed in
+  `held-out-fresh.json.enc`; the key is at
+  `/tmp/opencode/plan0113/held-out-fresh.key`, the plaintext is deleted, and
+  `sets-fresh.json` records both digests. The old `held-out.json.enc` and
+  `sets.json` stay as the burned set's history. Record:
+  [tasks/sets-fresh.json](tasks/sets-fresh.json).
 
 ### Smoke test {#smoke-test}
 
@@ -503,10 +536,15 @@ The corrected round with the native adapters, the measured provider, the frozen
 budget, the judge and the lock rule.
 
 - verify: every draw's receipt, adapter, mechanical score and judge score are
-  recorded; the judge's validity gate passed; the lock uses the band, the
-  suite-fit and the judge's completeness and creativity; the cost is recorded,
-  not scored
+  recorded; the judge's validity gate passed; the lock uses the 24-point
+  pooled score, the 1.5-point band, the suite-fit and the judge score; the
+  cost is recorded, not scored
 - depends: #cast-review-redo, #smoke-test, #judge
+- Wired 2026-11-27: `round.py` reads each draw's `judge.json`, pools the
+  mechanical 0-16 with the judge 0-8, and applies the 1.5-point band, the
+  suite-fit, the judge score and name order. The first round's `round.json`
+  is historical; the corrected round writes `round-redo.json` with
+  `--draws draws-redo --out round-redo.json`. The round is not run yet.
 
 ## Open questions
 
@@ -523,8 +561,9 @@ budget, the judge and the lock rule.
 - **The round sizes are 30 selection draws and 20 confirmation draws**, with the
   contract's caps, the frozen band, margin and per-task floor, and the
   `#selection-redo` and `#confirmation` tasks.
-- **The judge is Opus 5.5.** It scores completeness and creativity, subject to
-  the dokimi validity gate.
+- **The judge is Opus 5.5** through `claude-agent/opus` (resolved
+  `claude-opus-5-5`). It scores completeness and creativity, subject to the
+  validity gate.
 - The optional sixth arm, if and when a license file appears upstream.
 - Web drift: selection and confirmation run weeks apart, so the benchmark items
   are referenced rather than embedded, and each draw records its fetch log.

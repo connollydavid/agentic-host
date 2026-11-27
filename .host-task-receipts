@@ -1566,3 +1566,31 @@
     evidence = harness/search-provider: Exa is selected in the per-draw config (websearch.provider=exa with OPENCODE_ENABLE_EXA=1); the live probe returned 8 results with provider exa in 62.2s; the driver reads the provider from the completed websearch event metadata and voids a foreign provider or a search-engine fetch. Record: plan/0113-host-deep-research-ab/harness/search-provider/README.md.
     tool = host-lifecycle@0.64.1
     recorded = 2026-11-27
+
+[receipt "plan/0113#budget"]
+    disposition = done
+    verify = the caps and the wave width are recorded before the first draw; a
+    evidence = harness/budget: caps 200000 prompt, 50000 completion, 60 tool calls, 3600 wall seconds; two-way draw order, serial under load. contract.CAPS is the single source; run.py reads the wall cap and defaults --parallel 2; confirm.py defaults 2. The null smoke draw used 55777 prompt + 1814 completion tokens, 10 tools and 435.6s, inside the caps. Records: budget/README.md, budget/budget.json.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
+
+[receipt "plan/0113#judge"]
+    disposition = done
+    verify = the judge model is Opus 5.5; the prompt and the blind-scoring rule
+    evidence = harness/judge: the route is claude-agent/opus, resolved by the CLI to claude-opus-5-5; the blind judge scores completeness 0-4 and creativity 0-4 from the question, must-cover list, report and ledger, never the arm. The validity gate passed: clean 6/8, broken 0/8, malformed reply rejected; validity.json records it. judge.py writes judge.json; judge_all.py scores a draw set; a failing judge writes valid=false and contributes 0. Records: judge/README.md, judge/validity.json.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
+
+[receipt "plan/0113#fresh-held-out"]
+    disposition = done
+    verify = every task validates; the fresh set is ciphertext with no plaintext
+    evidence = harness/tasks: fresh held-out set of 5 tasks (2 SimpleQA rows 10 and 50, 3 house tasks: serde_json/simd-json, cargo-nextest/cargo test, verify-setup/check). Plaintext set digest 9c40958960c58d6c1f3e9b2a3b9dcd0f407abe92659826b018f1ff74cadcb5be; sealed as held-out-fresh.json.enc with ciphertext bb60b746bddea73fac5c8a99ba70869d178da36c3cb7a5b5df4a7324b099b9c2; key at /tmp/opencode/plan0113/held-out-fresh.key; plaintext deleted; sets-fresh.json records both. schema.py check passes. The old held-out.json.enc stays as the burned set's history.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
+
+[receipt "plan/0113#search-provider"]
+    disposition = done
+    verify = the provider probe passes; a draw's receipt records the provider the
+    evidence = harness/search-provider: Exa is selected in the per-draw config (websearch.provider=exa with OPENCODE_ENABLE_EXA=1); the live probe returned 8 results with provider exa in 62.2s; the driver reads the provider from the completed websearch event metadata and voids any search-engine fetch, even alongside a websearch call. test_gate.py: 8 checks passed. Records: search-provider/README.md, probe.json, test_gate.py.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27

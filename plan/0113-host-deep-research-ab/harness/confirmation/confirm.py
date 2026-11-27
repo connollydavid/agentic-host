@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""The plan/0113 confirmation: the locked arm against null on the held-out set.
+"""The plan/0113 confirmation: the locked arm against null on the fresh held-out set.
 
-The confirmation is the first read of the sealed held-out set. It decrypts
-`tasks/held-out.json.enc` with the operator-held key, validates the five tasks,
-runs two fresh draws per task per arm for `weizhena` and `null`, and prints the
-verdict from the frozen criteria: a 1.0-point margin, an 8-of-16 per-task floor,
-zero phantom sources and no foreign-model receipt.
+The confirmation is the first read of the fresh sealed set. It decrypts
+`tasks/held-out-fresh.json.enc` with the operator-held key, validates the five
+tasks, runs two fresh draws per task per arm for the locked arm and `null`, and
+prints the verdict from the frozen criteria: a 1.0-point margin, an 8-of-16
+per-task floor, zero phantom sources and no foreign-model receipt.
 """
 
 from __future__ import annotations
@@ -26,16 +26,27 @@ import rubric  # noqa: E402
 import run  # noqa: E402
 import schema  # noqa: E402
 
-SEALED = HARNESS / "tasks" / "held-out.json.enc"
-SETS = HARNESS / "tasks" / "sets.json"
-KEY = Path("/tmp/opencode/plan0113/held-out.key")
-PLAIN = Path("/tmp/opencode/plan0113/confirmation/held-out.json")
-DRAWS = HERE / "draws"
-SCRATCH = Path("/tmp/opencode/plan0113/confirmation")
-ARMS = ["weizhena", "null"]
+SEALED = HARNESS / "tasks" / "held-out-fresh.json.enc"
+SETS = HARNESS / "tasks" / "sets-fresh.json"
+KEY = Path("/tmp/opencode/plan0113/held-out-fresh.key")
+PLAIN = Path("/tmp/opencode/plan0113/confirmation/held-out-fresh.json")
+DRAWS = HERE / "draws-fresh"
+SCRATCH = Path("/tmp/opencode/plan0113/confirmation-fresh")
+ROUND = HARNESS / "selection" / "round-redo.json"
 DRAWS_PER_TASK = 2
 MARGIN = 1.0
 FLOOR = 8.0
+
+
+def locked_arm() -> str:
+    if ROUND.is_file():
+        record = json.loads(ROUND.read_text())
+        if isinstance(record.get("locked"), str):
+            return record["locked"]
+    return "weizhena"
+
+
+ARMS = [locked_arm(), "null"]
 
 
 def load_held_out() -> list[dict]:
@@ -68,7 +79,7 @@ def task_mean(arm: str, task: dict) -> float:
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
-    parser.add_argument("--parallel", type=int, default=4)
+    parser.add_argument("--parallel", type=int, default=2)
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args(argv)
     tasks = load_held_out()
@@ -120,9 +131,11 @@ def main(argv: list[str]) -> int:
     for task in tasks:
         for arm in ARMS:
             for n in range(1, DRAWS_PER_TASK + 1):
-                receipt = json.loads(
-                    (DRAWS / arm / (task["key"].split("/", 1)[1] + f"-d{n}") / "receipt.json").read_text()
-                )
+                receipt_path = DRAWS / arm / (task["key"].split("/", 1)[1] + f"-d{n}") / "receipt.json"
+                if not receipt_path.is_file():
+                    foreign += 1
+                    continue
+                receipt = json.loads(receipt_path.read_text())
                 if receipt.get("model") != pinned:
                     foreign += 1
     criteria = {
@@ -135,7 +148,7 @@ def main(argv: list[str]) -> int:
     verdict = "SHIP" if not missed else "NO-SHIP"
     result = {
         "verdict": verdict,
-        "locked": "weizhena",
+        "locked": ARMS[0],
         "control": "null",
         "draws": len(draws),
         "draws_per_task": DRAWS_PER_TASK,
