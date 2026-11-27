@@ -201,9 +201,12 @@ must-cover lists later.</p>
 </div>
 <p>The ledger entry's optional <code>id</code> is the arm's own citation key, for an arm that
 cites notes by id rather than URL (hffmnnj's <code>[rn_…]</code>). The report check accepts
-the id or the URL. The quote and locator are required; a paraphrase record does
-not satisfy the contract. A live draw's <code>fetch-log.jsonl</code> is the run's own
-record of what it fetched; a cited URL absent from it voids the draw.</p>
+the id or the URL, and it is two-sided: every ledger entry is cited, and every
+URL in the report has a ledger entry. The quote and locator are required; a
+paraphrase record does not satisfy the contract. A live draw's
+<code>fetch-log.jsonl</code> is the run's own record of what it fetched; every ledger URL
+must appear in it, and a cited URL absent from it is a phantom that voids the
+draw.</p>
 <p>The receipt carries:</p>
 <ul>
 <li><code>harness</code>: <code>tag</code> and <code>binary_sha256</code> from the harness pin.</li>
