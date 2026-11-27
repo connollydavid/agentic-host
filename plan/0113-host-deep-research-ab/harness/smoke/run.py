@@ -54,6 +54,31 @@ def isolation() -> dict:
     }
 
 
+def suspect_exclusion(arm: str, draw: Path) -> str | None:
+    """An exclusion is a harness break when the native output already carries a source record."""
+    native = draw / "native"
+    if arm == "hffmnnj":
+        for note in native.rglob("rn_*.md"):
+            front, _ = run.note_front_body(note)
+            if front.get("kind") != "finding":
+                continue
+            for source in front.get("sources") or []:
+                if source.get("url") and source.get("quote"):
+                    return "the hffmnnj native notes carry a source record; an exclusion is a harness break"
+    if arm == "kanatami":
+        workers = native / "workers.json"
+        if workers.is_file():
+            try:
+                data = json.loads(workers.read_text())
+            except json.JSONDecodeError:
+                data = {}
+            for worker in data.get("workers", []):
+                for result in worker.get("results", []):
+                    if result.get("url") and (result.get("full_text") or result.get("snippet")):
+                        return "the kanatami workers carry a source record; an exclusion is a harness break"
+    return None
+
+
 def draw_gate(arm: str, summary: dict) -> list[str]:
     findings: list[str] = []
     prompt = (DRAWS / arm / summary["draw"] / "prompt.txt").read_text()
@@ -91,6 +116,9 @@ def draw_gate(arm: str, summary: dict) -> list[str]:
             findings.append("an excluded draw has no exclusion.json")
         if not summary["contract_reason"]:
             findings.append("an exclusion carries no reason")
+        suspect = suspect_exclusion(arm, draw)
+        if suspect:
+            findings.append(suspect)
     return findings
 
 

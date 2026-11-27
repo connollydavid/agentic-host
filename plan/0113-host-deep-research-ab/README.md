@@ -83,6 +83,21 @@ corrections are tasks in this plan's build sequence, not a replacement plan.
   harness-defective; the corrected round is the `#selection-redo` task, and
   the confirmation waits for it.
 
+## The re-run rule
+
+A draw that fails because the harness, an adapter, the search provider or the
+budget broke is a harness break, not an arm result. It is void, the breakage is
+recorded, the harness is fixed, and the draw is re-run under the same task and
+config; the first attempt stays in the record. An arm whose native output shape
+cannot satisfy the contract is an exclusion with evidence. A low score is never
+a re-run reason; this rule is fixed before the redo.
+
+An adapter that excludes a draw whose native output already carries a source
+record is a harness break: hffmnnj finding notes with a URL and quote, or
+kanatami worker results with a URL and `full_text`. The smoke fails it, the
+adapter is fixed, and the draw is re-run. That is the hffmnnj 969.1s case: the
+notes were there, the citation form was not.
+
 ## The A/B design
 
 ### The arms
@@ -379,7 +394,8 @@ printed verdict.
 
 - verify: the verdict prints from the recorded criteria; a `NO-SHIP` records
   every criterion missed; a `SHIP` records margin, per-task floor, the phantom
-  count and the judge's completeness and creativity
+  count and the judge's completeness and creativity; a harness-break draw is
+  re-run before the verdict, and a low score is never a re-run reason
 - depends: #selection-redo, #fresh-held-out, #judge
 - Wired 2026-11-27: `confirm.py` reads `held-out-fresh.json.enc`,
   `sets-fresh.json` and the fresh key, writes `draws-fresh/`, and takes the
@@ -472,7 +488,8 @@ contract. The null keeps the frozen contract prompt; the weizhena and samber
 exclusions are recorded.
 
 - verify: the driver runs one draw per arm to the arm's native output; each
-  receipt names the adapter; the wrapper postscript is gone
+  receipt names the adapter; the wrapper postscript is gone; an exclusion whose
+  native output already carries a source record is a harness break, not a pass
 - depends: #run-contract, #search-provider, #budget
 - Landed 2026-11-27: the native prompts and `prepare_native` are in `run.py`;
   the adapters dispatch from `contract/adapters/`. The wrapper postscript is
@@ -522,7 +539,8 @@ exclusion or a void.
 
 - verify: the null and each mapped arm produce the contract or the recorded
   exclusion; the harness, model, provider, isolation, fetch-log and rubric
-  controls pass; the smoke record is committed
+  controls pass; a suspect exclusion whose native notes or workers carry a
+  source record fails the smoke; the smoke record is committed
 - depends: #adapter-layer, #search-provider, #budget, #harness-pin, #model-pin, #rubric
 
 ### Cast review redo {#cast-review-redo}
@@ -541,7 +559,8 @@ budget, the judge and the lock rule.
 - verify: every draw's receipt, adapter, mechanical score and judge score are
   recorded; the judge's validity gate passed; the lock uses the 24-point
   pooled score, the 1.5-point band, the suite-fit and the judge score; the
-  cost is recorded, not scored
+  cost is recorded, not scored; every harness-break void has a recorded re-run
+  under the same task and config, and no arm is voided for a harness break
 - depends: #cast-review-redo, #smoke-test, #judge
 - Wired 2026-11-27: `round.py` reads each draw's `judge.json`, pools the
   mechanical 0-16 with the judge 0-8, and applies the 1.5-point band, the
