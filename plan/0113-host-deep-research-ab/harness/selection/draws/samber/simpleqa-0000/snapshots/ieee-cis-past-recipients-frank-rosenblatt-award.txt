@@ -1,0 +1,270 @@
+﻿
+ Join IEEE |
+ Donate |
+ Sign In
+ IEEE.org
+ IEEE Xplore®
+ IEEE Standards
+ IEEE Spectrum
+ More Sites
+ More Sites
+ IEEE Xplore®
+ IEEE Standards
+ IEEE Spectrum
+ More Sites
+ Toggle navigation 
+Publications
+Welcome from the Vice President for Publications
+Publications Committee
+IEEE CIS Newsletter
+IEEE Computational Intelligence Magazine
+IEEE Transactions on Neural Networks and Learning Systems
+IEEE Transactions on Evolutionary Computation 
+IEEE Transactions on Fuzzy Systems
+IEEE Transactions on Emerging Topics in Computational Intelligence 
+IEEE Transactions on Games
+IEEE Computational Intelligence Letters
+ IEEE Transactions on Artificial Intelligence
+IEEE Transactions on Cognitive and Developmental Systems
+IEEE Press Book Series
+Other Co-Sponsored Journals
+Social Media
+IEEE PSPB Operations Manual
+Conferences
+Welcome from the Vice President for Conferences
+Conference Calendar
+Getting Involved in Conferences and Events
+Task Forces
+History of CIS Conferences
+Activities
+Technical Activities
+Membership Activities
+Educational Activities 
+Industrial & Governmental Activities 
+Awards
+IEEE CIS Awards
+IEEE Awards
+2027 Award Recipients 
+Past Recipients
+Awards Committee
+Committees 
+IEEE CIS Leadership Appointments and Reappointments at WCCI 2026
+EXCOM-Executive Committee
+ADCOM-Administrative Committee
+Strategic Planning Committee
+Constitution & Bylaws Committee
+Standards Committee
+Technical Committees
+History Committee
+Finance Committee
+Fellows Evaluation Committee
+Other Standing Committees
+About
+Welcome to the IEEE CIS
+President's Message
+Mission/Vision/Field of Interest
+Strategic Plan
+What is Computational Intelligence? 
+How CIS works
+Volunteer Resources
+Contact CIS
+Resource Center 
+ Search IEEE Computational Intelligence Society
+ Search
+ IEEE Computational Intelligence Society 
+ Toggle navigation
+Home
+Awards
+Past Recipients
+CIS Awards
+ Neural Networks Pioneer Award 
+2025: Klaus-Robert Muller
+2024: Johan Suykens
+2023: Donald C. Wunsch II
+2022: Derong Liu
+2021: Sepp Hochreiter
+2019: Yoshua Bengio
+2018: Lee Giles
+2016: Marios M. Polycarpou
+2016: Jürgen Schmidhuber
+2014: Yann LeCun
+2014: Jun Wang
+2013: Frank Lewis
+2011: Jose C. Principe
+2010: Vladimir Vapnik
+2009: John G. Taylor
+2008: Gail Carpenter
+2008: Kumpati S. Narendra
+2007: Michael Jordan
+2006: Erkki Oja
+2006: Donald Specht
+2005: Carver Mead
+2004: Andrew Barto
+2003: Kunihiko Fukushima
+2002: Terrence J. Sejnowski
+2001: James McClelland
+2001: David E. Rumelhart
+2000: Leon Chua
+1999: Robert Hecht-Nielsen
+1998: Geoffrey E. Hinton
+1997: John J. Hopfield
+1995: Michael A. Arbib
+1995: Nils J. Nilsson
+1995: Paul J. Werbos
+1994: Christoph von der Malsburg
+1993: Thomas M. Cover
+1992: Shun-Ichi Amari
+1992: David Willshaw
+1992: Walter Freeman
+1991: Stephen Grossberg
+1991: Teuvo Kohonen
+1991: Bernard Widrow
+ IEEE Awards 
+ IEEE Frank Rosenblatt Award
+Nominations for the next IEEE Frank Rosenblatt Award are due 15 January as part of the IEEE Technical Field Awards nomination cycle.
+Learn more about the IEEE Frank Rosenblatt Award | Submit a nomination
+The IEEE Frank Rosenblatt Award is a Technical Field Award sponsored by the IEEE Computational Intelligence Society.
+The award, established in 2004, is named in honor of Frank Rosenblatt, who is regarded as one of the founders of neural networks. Basing his research on study of fly vision, he developed the single-layer input layer and an output layer of neural cells. Frequent presentation of a pattern or patterns resulted in changes in the input to output connections, facilitating future recognition of these patterns, or memory. His work influenced and anticipated many modern neural network approaches.
+This award will be presented for outstanding contributions o the advancement of the design, practice, techniques or theory in biologically and linguistically motivated computational paradigms including but not limited to neural networks, connectionist systems, evolutionary computation, fuzzy systems, and hybrid intelligent systems in which these paradigms are contained.
+This award may be presented to an individual, multiple recipients, or a team of not more than three members. This award is administered by the Technical Field Awards Council of the IEEE Awards Board. Prize items include a bronze medal, certificate and honorarium.
+ | 
+ | 
+Congratulations to 2027 IEEE Frank Rosenblatt Award Recipient Shun-Ichi Amari!
+The IEEE Computational Intelligence Society (CIS) congratulates Shun-Ichi Amari, recipient of the 2027 IEEE Frank Rosenblatt Award, for his "foundational contributions to neural network theory and information geometry."
+Sponsored by IEEE CIS, the IEEE Frank Rosenblatt Award recognizes outstanding contributions to biologically and linguistically motivated computational paradigms and systems.
+View past IEEE Frank Rosenblatt Award Recipients (PDF)
+ IEEE CIS Neural Networks Pioneer Award Nomination Instructions 
+Individuals interested in submitting a nomination for the IEEE Computational Intelligence Society Neural Networks Pioneer Award are invited to prepare and submit a Nomination Letter (a single PDF file) via the IEEE CIS Awards Nomination online form by April 30. The name of the file must be "surname_of_nominee-NNPioneer.pdf". Self-nominations are not allowed. 
+The Nomination Letter includes all of the following required materials:
+1. Nominator Information
+Provide:
+Name
+Affiliation
+Email address
+2. Nominee Information
+Provide:
+Name
+Affiliation
+Postal address
+Email address
+Webpage/URL
+3. Category of Nomination
+Identify the category of pioneering contribution:
+Fundamental understanding, or
+Engineering application
+Note: The total nomination package should describe how this individual contributed to the advancement of theory, technologies, and/or applications of neural networks by inventing new technologies, creating innovative technical developments, implementing new products, or managing innovative product design or production processes.
+4. Proposed Citation
+Submit a complete, correct, and concise proposed citation for the nominee.
+Note: The Awards Committee reserves the right to revise the citation as needed.
+5. Reference Letters
+Include up to five (5) reference letters supporting the nomination.
+Important:
+Incomplete submissions or missing required materials may negatively affect the evaluation of the nomination.
+Selection/Basis for Judging
+Significance of contribution in the field of neural networks made at least 15 years prior to award date. The Pioneer Award is not a lifetime achievement award and will be judged by the following criteria:
+The technical contribution(s) must have occurred at least 15 years prior to the year of the Award. 
+There shall be between one three major technical contributions, which have realized impact and verifiable evidence. 
+The impact and evidence of those contributions, as well as possible spinoffs (e.g. patents or follow-up papers), might be more recent, but they must be clearly associated with the original contribution. 
+The pioneering nature of cited contribution in light of the category of nomination, the impact on the industry, economy, government, and society, and the impact on neural networks research and development from the point of view of theory, technologies, and/or applications.
+Proposed Citation: The committee will evaluate the citation submitted with the nomination for completeness, accuracy, and succinctness. The Awards Committee reserves the right to make any necessary change to the citation.
+Up to 5 reference letters supporting the nomination will be reviewed.
+ IEEE CIS Fuzzy Systems Pioneer Award Nomination Instructions 
+Individuals interested in submitting a nomination for the IEEE Computational Intelligence Society Fuzzy Systems Pioneer Award are invited to prepare and submit a Nomination Letter (a single PDF file) via the IEEE CIS Awards Nomination online form by April 30. The name of the file must be "surname_of_nominee-FSPioneer.pdf". Self-nominations are not allowed. 
+The Nomination Letter includes all of the following required materials:
+1. Nominator Information
+Provide:
+Name
+Affiliation
+Email address
+2. Nominee Information
+Provide:
+Name
+Affiliation
+Postal address
+Email address
+Webpage/URL
+3. Category of Nomination
+Identify the category of pioneering contribution:
+Fundamental understanding, or
+Engineering application
+Note: The total nomination package should describe how this individual contributed to the advancement of theory, technologies, and/or applications of neural networks by inventing new technologies, creating innovative technical developments, implementing new products, or managing innovative product design or production processes.
+4. Proposed Citation
+Submit a complete, correct, and concise proposed citation for the nominee.
+Note: The Awards Committee reserves the right to revise the citation as needed.
+5. Reference Letters
+Include up to five (5) reference letters supporting the nomination.
+Important:
+Incomplete submissions or missing required materials may negatively affect the evaluation of the nomination.
+Selection/Basis for Judging
+Significance of contribution in the field of fuzzy systems made at least 15 years prior to award date. The Pioneer Award is not a lifetime achievement award and will be judged by the following criteria:
+The technical contribution(s) must have occurred at least 15 years prior to the year of the Award. 
+There shall be between one three major technical contributions, which have realized impact and verifiable evidence. 
+The impact and evidence of those contributions, as well as possible spinoffs (e.g. patents or follow-up papers), might be more recent, but they must be clearly associated with the original contribution. 
+The pioneering nature of cited contribution in light of the category of nomination, the impact on the industry, economy, government, and society, and the impact on fuzzy systems research and development from the point of view of theory, technologies, and/or applications.
+Proposed Citation: The committee will evaluate the citation submitted with the nomination for completeness, accuracy, and succinctness. The Awards Committee reserves the right to make any necessary change to the citation.
+Up to 5 reference letters supporting the nomination will be reviewed.
+ IEEE CIS Evolutionary Computation Pioneer Award Nomination Instructions 
+Individuals interested in submitting a nomination for the IEEE Computational Intelligence Society Evolutionary Computation Pioneer Award are invited to prepare and submit a Nomination Letter (a single PDF file) via the IEEE CIS Awards Nomination online form by April 30. The name of the file must be "surname_of_nominee-ECPioneer.pdf". Self-nominations are not allowed. 
+The Nomination Letter includes all of the following required materials:
+1. Nominator Information
+Provide:
+Name
+Affiliation
+Email address
+2. Nominee Information
+Provide:
+Name
+Affiliation
+Postal address
+Email address
+Webpage/URL
+3. Category of Nomination
+Identify the category of pioneering contribution:
+Fundamental understanding, or
+Engineering application
+Note: The total nomination package should describe how this individual contributed to the advancement of theory, technologies, and/or applications of neural networks by inventing new technologies, creating innovative technical developments, implementing new products, or managing innovative product design or production processes.
+4. Proposed Citation
+Submit a complete, correct, and concise proposed citation for the nominee.
+Note: The Awards Committee reserves the right to revise the citation as needed.
+5. Reference Letters
+Include up to five (5) reference letters supporting the nomination.
+Important:
+Incomplete submissions or missing required materials may negatively affect the evaluation of the nomination.
+Selection/Basis for Judging
+Significance of contribution in the field of evolutionary computation made at least 15 years prior to award date. The Pioneer Award is not a lifetime achievement award and will be judged by the following criteria:
+The technical contribution(s) must have occurred at least 15 years prior to the year of the Award. 
+There shall be between one three major technical contributions, which have realized impact and verifiable evidence. 
+The impact and evidence of those contributions, as well as possible spinoffs (e.g. patents or follow-up papers), might be more recent, but they must be clearly associated with the original contribution. 
+The pioneering nature of cited contribution in light of the category of nomination, the impact on the industry, economy, government, and society, and the impact on evolutionary computation research and development from the point of view of theory, technologies, and/or applications.
+Proposed Citation: The committee will evaluate the citation submitted with the nomination for completeness, accuracy, and succinctness. The Awards Committee reserves the right to make any necessary change to the citation.
+Up to 5 reference letters supporting the nomination will be reviewed.
+ IEEE CIS Meritorious Service Award Nomination Instructions
+ IEEE CIS Transactions on Fuzzy Systems Outstanding Paper Award Nomination Instructions
+ IEEE CIS Transactions on Evolutionary Computation Outstanding Paper Award Nomination Instructions
+ IEEE CIS Transactions on Autonomous Mental Development Outstanding Paper Award Nomination Instructions
+Past Recipients
+IEEE CIS Awards
+IEEE Awards
+2027 Award Recipients 
+Past Recipients
+Awards Committee
+  | 
+ IEEE Transactions on Emerging Topics in Computational Intelligence Volume 10, Issue 6, December 2026
+ IEEE Transactions on Neural Networks and Learning Systems, Volume 37, Issue 11, November 2026
+ IEEE Transactions on Artificial Intelligence, Volume 7, Issue 11, November 2026
+ IEEE Transactions on Fuzzy Systems, Volume 34, Issue 11, November 2026
+ IEEE Transactions on Cognitive and Developmental Systems, Volume 18, Issue 5, October 2026
+ IEEE Transactions on Neural Networks and Learning Systems, Volume 37, Issue 10, October 2026
+ IEEE Transactions on Fuzzy Systems, Volume 34, Issue 10, October 2026
+ IEEE Transactions on Artificial Intelligence, Volume 7, Issue 10, October 2026
+ IEEE Transactions on Evolutionary Computation, Volume 30, Issue 5, October 2025
+ IEEE Transactions on Emerging Topics in Computational Intelligence Volume 10, Issue 6, October 2026
+Home
+Sitemap
+Contact
+Accessibility
+Nondiscrimination Policy
+IEEE Ethics Reporting
+IEEE Privacy Policy
+Terms
+© Copyright 2026 IEEE – All rights reserved. A public charity, IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.

@@ -1,0 +1,1 @@
+This is a single-fact lookup — I'll run the **Quick tier** of the deep-research workflow: library search first, then read authoritative sources myself, save durable findings, and produce the required artifacts.

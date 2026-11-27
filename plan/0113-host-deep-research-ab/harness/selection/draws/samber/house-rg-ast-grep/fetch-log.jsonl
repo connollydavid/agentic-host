@@ -1,0 +1,6 @@
+{"url": "https://ast-grep.github.io/", "status": 200, "snapshot": "snapshots/main-1.txt"}
+{"url": "https://raw.githubusercontent.com/BurntSushi/ripgrep/master/README.md", "status": 200, "snapshot": "snapshots/main-2.txt"}
+{"url": "https://api.github.com/repos/BurntSushi/ripgrep", "status": 200, "snapshot": "snapshots/main-3.txt"}
+{"url": "https://api.github.com/repos/ast-grep/ast-grep", "status": 200, "snapshot": "snapshots/main-4.txt"}
+{"url": "https://github.com/BurntSushi/ripgrep", "status": 200, "snapshot": "snapshots/main-5.txt"}
+{"url": "https://github.com/ast-grep/ast-grep", "status": 200, "snapshot": "snapshots/main-6.txt"}

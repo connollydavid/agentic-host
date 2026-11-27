@@ -1,0 +1,599 @@
+agentic-host plan/0030 host-lint docs markdown lane at DuckDuckGo
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+  
+
+  
+    
+  
+
+  
+    
+
+    
+      
+
+      
+        
+          
+          
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+              All Regions
+            
+              Argentina
+            
+              Australia
+            
+              Austria
+            
+              Belgium (fr)
+            
+              Belgium (nl)
+            
+              Brazil
+            
+              Bulgaria
+            
+              Canada (en)
+            
+              Canada (fr)
+            
+              Catalonia
+            
+              Chile
+            
+              China
+            
+              Colombia
+            
+              Croatia
+            
+              Czech Republic
+            
+              Denmark
+            
+              Estonia
+            
+              Finland
+            
+              France
+            
+              Germany
+            
+              Greece
+            
+              Hong Kong
+            
+              Hungary
+            
+              Iceland
+            
+              India (en)
+            
+              Indonesia (en)
+            
+              Ireland
+            
+              Israel (en)
+            
+              Italy
+            
+              Japan
+            
+              Korea
+            
+              Latvia
+            
+              Lithuania
+            
+              Malaysia (en)
+            
+              Mexico
+            
+              Netherlands
+            
+              New Zealand
+            
+              Norway
+            
+              Pakistan (en)
+            
+              Peru
+            
+              Philippines (en)
+            
+              Poland
+            
+              Portugal
+            
+              Romania
+            
+              Russia
+            
+              Saudi Arabia
+            
+              Singapore
+            
+              Slovakia
+            
+              Slovenia
+            
+              South Africa
+            
+              Spain (ca)
+            
+              Spain (es)
+            
+              Sweden
+            
+              Switzerland (de)
+            
+              Switzerland (fr)
+            
+              Taiwan
+            
+              Thailand (en)
+            
+              Turkey
+            
+              US (English)
+            
+              US (Spanish)
+            
+              Ukraine
+            
+              United Kingdom
+            
+              Vietnam (en)
+            
+          
+        
+
+        
+          
+            
+              Any Time
+            
+              Past Day
+            
+              Past Week
+            
+              Past Month
+            
+              Past Year
+            
+          
+        
+      
+    
+
+    
+
+    
+      
+      
+        
+          
+            
+
+            
+              
+                
+                   
+                    
+                      
+                        agentic-host/plan/0030-prose-hygiene-lane/README.md at main ... - GitHub
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            github.com/connollydavid/agentic-host/blob/main/plan/0030-prose-hygiene-lane/README.md
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        This milestone is what remains: make the prose audit a real, walking, weak-agent-executable gate lane, with immutable records excluded soundly by the existing mechanisms.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        plan/0030: The prose-hygiene lane: a walking docs audit (--docs), weak ...
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            connollydavid.github.io/agentic-host/plan/0030-prose-hygiene-lane/index.html
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        This milestone is what remains: make the prose audit a real, walking, weak-agent-executable gate lane, with immutable records excluded soundly by the existing mechanisms.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        agentic-host/plan/0031-fixable-prose-output/README.md at main ... - GitHub
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            github.com/connollydavid/agentic-host/blob/main/plan/0031-fixable-prose-output/README.md
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        The fix-site fork (engine vs host-lint) that this plan was opened to settle is now resolved by investigation: the defect is a host-lint localization bug, not an engine over-emission, so the whole milestone is host-lint-side (see Diagnosis).
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        PLAN.md - agentic-host
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            connollydavid.github.io/agentic-host/PLAN.html
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        This plan tracks the evolution of the host-* components (each a bare store with worktrees; see call/0010 and .host-software), and the methodology that develops them.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        In Agentic AI, It's All About the Markdown - Visual Studio Magazine
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            visualstudiomagazine.com/articles/2026/02/24/in-agentic-ai-its-all-about-the-markdown.aspx
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        This table focuses on the recent "agentic era" milestones most relevant to Visual Studio Magazine readers, where Markdown is explicitly positioned as an AI customization mechanism in Microsoft tooling.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        Agentic Index | Compare AI Agent Platforms and Tools
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            agenticindex.io
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        Agentic Index is an independent agentic AI vendor research platform where buyers find and compare B2B AI agents: agentic AI platforms, autonomous workflow tools, coding agents, GTM agents, browser agents, and enterprise agentic automation products, with verified feature matrices and pricing research on 1,577 vendors.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        GitHub Agentic Workflows - GitHub Docs
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            docs.github.com/en/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/about-github-agentic-workflows
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        Write markdown instructions instead of building complex procedural scripts for every scenario. Keep human review in the loop. Agentic workflows can generate reviewable outputs, such as issues, comments, and pull requests, while you control approvals and merges. Run agents with layered security.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        Creating GitHub Agentic Workflows - GitHub Docs
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            docs.github.com/en/copilot/how-tos/github-agentic-workflows/creating-github-agentic-workflows
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        To create an agentic workflow, you define the workflow in markdown, compile it into a .lock.yml file, commit both files, then run it through GitHub Actions triggers or the GitHub CLI. This article focuses on the core tasks: creating, updating, and reusing workflows.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        Agentic — solution brief | Hossidark Documentation
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            hossidark.com/docs/why-hossidark/agentic-brief
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        What the Agentic module solves, how it observes and controls AI use across your organisation, and what you get.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        Power BI Agentic Overview - Power BI | Microsoft Learn
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            learn.microsoft.com/en-us/power-bi/developer/agentic/power-bi-agentic-overview
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        Overview of Power BI Agentic — a set of agent skills and tools, packaged in the powerbi-authoring plugin, that improve the experience of developing Power BI with AI coding agents such as GitHub Copilot.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+
+            
+              
+              
+                
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    
+                      
+                    
+                    
+                    
+                    
+                  
+                
+              
+            
+
+            
+              Feedback

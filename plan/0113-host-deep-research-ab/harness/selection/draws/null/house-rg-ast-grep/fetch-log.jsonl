@@ -1,0 +1,10 @@
+{"url": "https://github.com/ast-grep/ast-grep", "status": 200, "snapshot": "snapshots/main-1.txt"}
+{"url": "https://github.com/BurntSushi/ripgrep", "status": 200, "snapshot": "snapshots/main-2.txt"}
+{"url": "https://raw.githubusercontent.com/BurntSushi/ripgrep/master/README.md", "status": 200, "snapshot": "snapshots/main-3.txt"}
+{"url": "https://raw.githubusercontent.com/ast-grep/ast-grep/main/README.md", "status": 200, "snapshot": "snapshots/main-4.txt"}
+{"url": "https://raw.githubusercontent.com/BurntSushi/ripgrep/master/COPYING", "status": 200, "snapshot": "snapshots/main-5.txt"}
+{"url": "https://raw.githubusercontent.com/BurntSushi/ripgrep/master/UNLICENSE", "status": 200, "snapshot": "snapshots/main-6.txt"}
+{"url": "https://ast-grep.github.io/guide/pattern-syntax.html", "status": 200, "snapshot": "snapshots/main-7.txt"}
+{"url": "https://raw.githubusercontent.com/ast-grep/ast-grep/main/LICENSE", "status": 200, "snapshot": "snapshots/main-8.txt"}
+{"url": "https://ast-grep.github.io/advanced/tool-comparison.html", "status": 200, "snapshot": "snapshots/main-9.txt"}
+{"url": "https://ast-grep.github.io/reference/languages.html", "status": 200, "snapshot": "snapshots/main-10.txt"}

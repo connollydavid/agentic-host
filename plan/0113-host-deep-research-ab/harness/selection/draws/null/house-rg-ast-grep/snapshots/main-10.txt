@@ -1,0 +1,442 @@
+[Skip to content](#VPContent)
+
+[![](/logo.svg)ast-grep](/)
+
+SearchK
+
+Main Navigation [Guide](/guide/introduction)
+
+Reference
+
+[Command Line Interface](/reference/cli)
+
+[Rule Config](/reference/yaml)
+
+[Rule Object](/reference/rule)
+
+[Playground Manual](/reference/playground)
+
+Resources
+
+[FAQ](/advanced/faq)
+
+[Rule Examples](/catalog)
+
+[Custom Language](/advanced/custom-language)
+
+[Contributing](/contributing/how-to)
+
+[Blog](/blog)
+
+[Mastering ast-grep](https://leanpub.com/ast-grep)
+
+[Playground](/playground)
+
+[](https://github.com/ast-grep/ast-grep)[](https://discord.com/invite/4YZjf6htSQ)[](https://leanpub.com/ast-grep)
+
+Appearance
+
+[](https://github.com/ast-grep/ast-grep)[](https://discord.com/invite/4YZjf6htSQ)[](https://leanpub.com/ast-grep)
+
+Menu
+
+Return to top
+
+Sidebar Navigation
+
+[](/guide/introduction)
+
+[## Guide](/guide/introduction)
+
+[](/guide/quick-start)
+
+Quick Start
+
+[](/guide/pattern-syntax)
+
+Pattern Syntax
+
+[](/guide/rule-config)
+
+[### Rule Essentials](/guide/rule-config)
+
+[](/guide/rule-config/atomic-rule)
+
+Atomic Rule
+
+[](/guide/rule-config/relational-rule)
+
+Relational Rule
+
+[](/guide/rule-config/composite-rule)
+
+Composite Rule
+
+[](/guide/rule-config/utility-rule)
+
+Utility Rule
+
+[](/guide/scan-project)
+
+[### Project Setup](/guide/scan-project)
+
+[](/guide/project/project-config)
+
+Project Configuration
+
+[](/guide/project/lint-rule)
+
+Lint Rule
+
+[](/guide/test-rule)
+
+Test Your Rule
+
+[](/guide/project/severity)
+
+Error Report
+
+[](/guide/rewrite-code)
+
+[### Rewrite Code](/guide/rewrite-code)
+
+[](/guide/rewrite/transform)
+
+Transform Code
+
+[](/guide/rewrite/rewriter)
+
+Rewriter Rule
+
+[](/guide/tooling-overview)
+
+[### Tooling Overview](/guide/tooling-overview)
+
+[](/guide/outline-code)
+
+Outline Code
+
+[](/guide/tools/editors)
+
+Editor Integration
+
+[](/guide/tools/json)
+
+JSON mode
+
+[](/guide/api-usage)
+
+[### API Usage](/guide/api-usage)
+
+[](/guide/api-usage/js-api)
+
+JavaScript API
+
+[](/guide/api-usage/py-api)
+
+Python API
+
+[](/guide/api-usage/wasm-api)
+
+WebAssembly API
+
+[](/guide/api-usage/performance-tip)
+
+Performance Tip
+
+[](/catalog)
+
+[## Examples](/catalog)
+
+[](/catalog/c/)
+
+C
+
+[](/catalog/cpp/)
+
+C++
+
+[](/catalog/dart/)
+
+Dart
+
+[](/catalog/go/)
+
+Go
+
+[](/catalog/html/)
+
+HTML
+
+[](/catalog/java/)
+
+Java
+
+[](/catalog/kotlin/)
+
+Kotlin
+
+[](/catalog/python/)
+
+Python
+
+[](/catalog/ruby/)
+
+Ruby
+
+[](/catalog/rust/)
+
+Rust
+
+[](/catalog/typescript/)
+
+TypeScript
+
+[](/catalog/tsx/)
+
+TSX
+
+[](/catalog/yaml/)
+
+YAML
+
+## Cheat Sheet
+
+[](/cheatsheet/rule)
+
+Rule Cheat Sheet
+
+[](/cheatsheet/yaml)
+
+Config Cheat Sheet
+
+## Reference
+
+[](/reference/cli)
+
+[### Command Line Interface](/reference/cli)
+
+[](/reference/cli/run)
+
+ast-grep run
+
+[](/reference/cli/scan)
+
+ast-grep scan
+
+[](/reference/cli/test)
+
+ast-grep test
+
+[](/reference/cli/new)
+
+ast-grep new
+
+[](/reference/cli/outline)
+
+ast-grep outline
+
+[](/reference/sgconfig)
+
+Project Config
+
+[](/reference/yaml)
+
+[### Rule Config](/reference/yaml)
+
+[](/reference/yaml/fix)
+
+fix
+
+[](/reference/yaml/transformation)
+
+transformation
+
+[](/reference/yaml/rewriter)
+
+rewriter
+
+[](/reference/rule)
+
+[### Rule Object](/reference/rule)
+
+[](/reference/rule/esquery)
+
+ESQuery Style Kind
+
+[](/reference/outline-rules)
+
+[### Outline Extraction Rules](/reference/outline-rules)
+
+[](/reference/outline-rule-fields)
+
+Field Reference
+
+[](/reference/api)
+
+API Reference
+
+[](/reference/languages)
+
+Language List
+
+[](/reference/playground)
+
+Playground Manual
+
+## Advanced Topics
+
+[](/advanced/prompting)
+
+Using ast-grep with AI
+
+[](/advanced/faq)
+
+Frequently Asked Questions
+
+[](/advanced/how-ast-grep-works)
+
+[### How ast-grep Works](/advanced/how-ast-grep-works)
+
+[](/advanced/core-concepts)
+
+Core Concepts
+
+[](/advanced/pattern-parse)
+
+Pattern Syntax
+
+[](/advanced/match-algorithm)
+
+Pattern Match Algorithm
+
+[](/advanced/find-n-patch)
+
+How Rewrite Works
+
+[](/advanced/custom-language)
+
+Custom Language Support
+
+[](/advanced/language-injection)
+
+Multi-Language Documents
+
+[](/advanced/tool-comparison)
+
+Comparison with Other Tools
+
+## Contributing
+
+[](/contributing/how-to)
+
+Guide
+
+[](/contributing/development)
+
+Development
+
+[](/contributing/add-lang)
+
+Add New Language
+
+## Links
+
+[](https://leanpub.com/ast-grep)
+
+Mastering ast-grep
+
+[](/playground)
+
+Playground
+
+[](/blog)
+
+Blog
+
+[](https://marketplace.visualstudio.com/items?itemName=ast-grep.ast-grep-vscode)
+
+VSCode
+
+[](https://discord.com/invite/4YZjf6htSQ)
+
+Discord
+
+[](https://stackoverflow.com/questions/tagged/ast-grep)
+
+StackOverflow
+
+[](https://www.reddit.com/r/astgrep/)
+
+Reddit
+
+[](https://docs.rs/ast-grep-core/latest/ast_grep_core/)
+
+Docs.rs
+
+[](https://app.codemod.com/studio)
+
+Codemod Studio
+
+On this page
+
+# List of Languages with Built-in Support [​](#list-of-languages-with-built-in-support)
+
+The table below lists all languages that are supported by ast-grep.
+
+**Alias** is the name you can use as an argument in `ast-grep run --lang [alias]` or as a value in YAML rule with `language: [alias]`.
+
+**Extension** specifies the file extensions that ast-grep will look for when scanning the file system. By default, ast-grep uses the file extensions to determine the language.
+
+---
+
+| Language Name | Alias | File Extension |
+| --- | --- | --- |
+| Bash | `bash` | `bash`, `bats`, `cgi`, `command`, `env`, `fcgi`, `ksh`, `sh`, `sh.in`, `tmux`, `tool`, `zsh` |
+| C | `c` | `c`,`h` |
+| Cpp | `cc`, `c++`, `cpp`, `cxx` | `cc`, `hpp`, `cpp`, `c++`, `hh`, `cxx`, `cu`, `ino` |
+| CSharp | `cs`, `csharp` | `cs` |
+| Css | `css` | `css` |
+| Elixir | `ex`, `elixir` | `ex`, `exs` |
+| Go | `go`, `golang` | `go` |
+| Haskell | `hs`, `haskell` | `hs` |
+| Hcl | `hcl` | `hcl` |
+| Html | `html` | `html`, `htm`, `xhtml` |
+| Java | `java` | `java` |
+| JavaScript | `javascript`, `js`, `jsx` | `cjs`, `js`, `mjs`, `jsx` |
+| Json | `json` | `json` |
+| Kotlin | `kotlin`, `kt` | `kt`, `ktm`, `kts` |
+| Lua | `lua` | `lua` |
+| Markdown | `markdown`, `md` | `markdown`, `md` |
+| Nix | `nix` | `nix` |
+| Php | `php` | `php` |
+| Python | `py`, `python` | `py`, `py3`, `pyi`, `bzl` |
+| Ruby | `rb`, `ruby` | `rb`, `rbw`, `gemspec` |
+| Rust | `rs`, `rust` | `rs` |
+| Scala | `scala` | `scala`, `sc`, `sbt` |
+| Solidity | `solidity`, `sol` | `sol` |
+| Swift | `swift` | `swift` |
+| TypeScript | `ts`, `typescript` | `ts`, `cts`, `mts` |
+| Tsx | `tsx` | `tsx` |
+| Yaml | `yml` | `yml`, `yaml` |
+| Zig | `zig` | `zig` |
+
+---
+
+Pro Tips
+
+You can use [`languageGlobs`](/reference/sgconfig#languageglobs) to customize languages' extension mapping.
+
+[ Edit this page](https://github.com/ast-grep/ast-grep.github.io/edit/main/website/reference/languages.md)
+
+Last updated:
+
+Pager
+
+[Previous pageAPI Reference](/reference/api)
+
+[Next pagePlayground Manual](/reference/playground)
+
+Made with ❤️ with Rust
+
+Copyright © 2022-present Herrington Darkholme

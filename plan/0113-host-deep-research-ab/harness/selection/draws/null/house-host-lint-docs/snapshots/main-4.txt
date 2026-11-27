@@ -1,0 +1,261 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+[](/)
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fconnollydavid%2Fhost-lint%2Freleases%2Ftag%2Fv0.8.0)
+
+-
+
+  Products
+
+  -
+
+    Platform
+
+    - [GitHubRepository hosting, code review, and collaboration](https://github.com/platform)
+
+    - [CopilotAI coding agent for tasks, projects, and automated work](https://github.com/features/copilot)
+
+  -
+
+    Build & Ship
+
+    - [ActionsCI/CD and automation](https://github.com/features/actions)
+
+    - [Code QualityQuality analysis, fixes, and enforcement](https://github.com/features/code-quality)
+
+    - [CodespacesCloud development environments](https://github.com/features/codespaces)
+
+  -
+
+    Secure
+
+    - [Code SecurityVulnerability detection and remediation](https://github.com/security/advanced-security/code-security)
+
+    - [Secret ProtectionSecret scanning and leak prevention](https://github.com/security/advanced-security/secret-protection)
+
+  [All Features](https://github.com/features)
+
+-
+
+  Developers
+
+  -
+
+    Learn
+
+    - [Documentation](https://docs.github.com/en)
+
+    - [Training](https://learn.github.com/skills)
+
+    - [Certifications](https://learn.github.com/credentials)
+
+  -
+
+    Build
+
+    - [Build with Copilot](https://github.com/features/ai)
+
+    - [Customize Copilot](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-copilot-overview)
+
+    - [Integrations](https://github.com/marketplace)
+
+  -
+
+    Explore
+
+    - [Trending repos](https://github.com/trending)
+
+    - [GitHub Sponsors](https://github.com/open-source/sponsors)
+
+    - [Developer articles](https://github.com/resources/articles)
+
+  -
+
+    Changelog
+
+    - [ChangelogYour source for the latest features, improvements, and fixes across GitHub products, all in one place.](https://github.blog/changelog/)
+
+-
+
+  Businesses
+
+  -
+
+    By Stage
+
+    - [Enterprises](https://github.com/enterprise)
+
+    - [Team](https://github.com/team)
+
+    - [Startups](https://github.com/enterprise/startups)
+
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+
+  -
+
+    By Industry
+
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+
+    - [Government](https://github.com/solutions/industry/government)
+
+    - [See all industries](https://github.com/solutions/industry)
+
+  -
+
+    Evaluate GitHub
+
+    - [Why GitHub](https://github.com/why-github)
+
+    - [Customer Stories](https://github.com/customer-stories)
+
+    - [Business insights](https://github.com/solutions/executive-insights)
+
+    - [Trust Center](https://github.com/trust-center)
+
+  -
+
+    Add-ons
+
+    - [GitHub Advanced SecurityEnterprise-grade code security](https://github.com/security/advanced-security)
+
+    - [Copilot for businessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/enterprise/premium-support)
+
+-
+
+  Resources
+
+  -
+
+    Learn & Connect
+
+    - [Documentation](https://docs.github.com/en)
+
+    - [Resource center](https://github.com/resources)
+
+    - [Blog](https://github.blog/)
+
+    - [Events & webinars](https://github.com/resources/events)
+
+    - [Community Forum](https://github.com/orgs/community/discussions)
+
+    - [Customer Stories](https://github.com/customer-stories)
+
+    - [Integrations](https://github.com/marketplace)
+
+  -
+
+    Support
+
+    - [Customer support](https://help.github.com/)
+
+    - [Training](https://learn.github.com/skills)
+
+    - [GitHub Status](https://www.githubstatus.com/)
+
+  -
+
+    Company
+
+    - [About](https://github.com/about)
+
+    - [Partners](https://github.com/partners)
+
+    - [Changelog](https://github.blog/changelog/)
+
+  -
+
+    GitHub Universe
+
+    - [GitHub UniverseThe event for developers, by developers — talks, workshops, and what’s next for GitHub.](https://githubuniverse.com/)
+
+- [Pricing](https://github.com/pricing)
+
+Search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fconnollydavid%2Fhost-lint%2Freleases%2Ftag%2Fv0.8.0)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Fshow&source=header-repo&source_repo=connollydavid%2Fhost-lint)
+
+1. [connollydavid](/connollydavid)
+
+2. [host-lint](/connollydavid/host-lint)
+
+## Repository navigation
+
+- [Code](/connollydavid/host-lint)
+
+- [Issues (2)](/connollydavid/host-lint/issues)
+
+- [Pull requests](/connollydavid/host-lint/pulls)
+
+- [Actions](/connollydavid/host-lint/actions)
+
+- [Projects](/connollydavid/host-lint/projects)
+
+- [Security and quality](/connollydavid/host-lint/security)
+
+- [Insights](/connollydavid/host-lint/pulse)
+
+More items
+
+1. [Releases](/connollydavid/host-lint/releases)
+
+2. [v0.8.0](/connollydavid/host-lint/releases/tag/v0.8.0)
+
+# v0.8.0
+
+Compare
+
+# Choose a tag to compare
+
+Filter
+
+[View all tags](/connollydavid/host-lint/tags)
+
+![@github-actions](https://avatars.githubusercontent.com/in/15368?s=40&v=4) [github-actions](/apps/github-actions) released this 21 Jun 23:45
+
+· [ 130 commits](/connollydavid/host-lint/compare/v0.8.0...main) to main since this release
+
+[ v0.8.0](/connollydavid/host-lint/tree/v0.8.0)
+
+[ `e652ffc`](/connollydavid/host-lint/commit/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f)
+
+**Full Changelog**: [v0.7.0...v0.8.0](https://github.com/connollydavid/host-lint/compare/v0.7.0...v0.8.0)
+
+Assets 8
+
+Loading
+
+## Footer
+
+[](https://github.com) © 2026 GitHub, Inc.
+
+### Footer navigation
+
+- [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+
+- [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+
+- [Security](https://github.com/security)
+
+- [Status](https://www.githubstatus.com/)
+
+- [Community](https://github.community/)
+
+- [Docs](https://docs.github.com/)
+
+- [Contact](https://support.github.com?tags=dotcom-footer)
+
+- Manage cookies
+
+- Do not share my personal information

@@ -1,0 +1,18 @@
+# The null arm's frozen prompt
+
+Research the question in the task file with the harness's built-in `websearch`
+and `webfetch` tools. Return exactly two files in the output directory:
+
+- `report.md`: a Markdown report. Put the source URL beside every cited
+  sentence.
+- `sources.json`: one JSON object with a `sources` list. Each entry carries the
+  source `url`, the `quote` copied verbatim from the fetched page, and a
+  `locator` naming the section or paragraph where the quote appears. One entry
+  per cited source.
+
+Do not cite a source you did not fetch, and do not invent a quote or locator.
+The harness records `fetch-log.jsonl` and the page snapshots from your web tool
+calls; you write the report and the ledger. The harness writes the receipt.
+
+
+Question: Who received the IEEE Frank Rosenblatt Award in 2010?

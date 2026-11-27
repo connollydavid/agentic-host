@@ -1,0 +1,173 @@
+{
+  "sha": "e652ffc3fb517ad1bf185e73a6d4a050d8365c7f",
+  "node_id": "C_kwDOSy11ZtoAKGU2NTJmZmMzZmI1MTdhZDFiZjE4NWU3M2E2ZDRhMDUwZDgzNjVjN2Y",
+  "commit": {
+    "author": {
+      "name": "David Connolly",
+      "email": "david@connol.ly",
+      "date": "2026-06-21T23:43:41Z"
+    },
+    "committer": {
+      "name": "David Connolly",
+      "email": "david@connol.ly",
+      "date": "2026-06-21T23:43:41Z"
+    },
+    "message": "host-lint 0.8.0: --docs repo-wide prose lane, plus located, fix-hinted, tiered output\n\nD1 (plan/0030): a single --docs mode walks authored markdown only (git ls-files,\nhonors .host-lintignore, skips code/symlinks), the counterpart to the naming --all.\n\nE1-E4 (plan/0031): the prose output becomes weak-agent-fixable. Occurrence-mapping\nlocates each tell at its real line:col (ten em-dashes no longer collapse onto the\nfirst line); a mechanical fix hint is keyed on the trope id; non-locatable\nwhole-document diagnoses (density, anaphora, bullet patterns) drop to an advisory\nNote tier that does not gate, so clean-to-zero terminates. Case-insensitive matching\nkeeps sentence-initial tells located. Golden tests + the obligations digest re-record.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>",
+    "tree": {
+      "sha": "0c18d47e6b49627a12cf813e7f1aa19d05b5bbc1",
+      "url": "https://api.github.com/repos/connollydavid/host-lint/git/trees/0c18d47e6b49627a12cf813e7f1aa19d05b5bbc1"
+    },
+    "url": "https://api.github.com/repos/connollydavid/host-lint/git/commits/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/connollydavid/host-lint/commits/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f",
+  "html_url": "https://github.com/connollydavid/host-lint/commit/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f",
+  "comments_url": "https://api.github.com/repos/connollydavid/host-lint/commits/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f/comments",
+  "author": {
+    "login": "connollydavid",
+    "id": 266389644,
+    "node_id": "U_kgDOD-DIjA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/266389644?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/connollydavid",
+    "html_url": "https://github.com/connollydavid",
+    "followers_url": "https://api.github.com/users/connollydavid/followers",
+    "following_url": "https://api.github.com/users/connollydavid/following{/other_user}",
+    "gists_url": "https://api.github.com/users/connollydavid/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/connollydavid/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/connollydavid/subscriptions",
+    "organizations_url": "https://api.github.com/users/connollydavid/orgs",
+    "repos_url": "https://api.github.com/users/connollydavid/repos",
+    "events_url": "https://api.github.com/users/connollydavid/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/connollydavid/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "connollydavid",
+    "id": 266389644,
+    "node_id": "U_kgDOD-DIjA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/266389644?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/connollydavid",
+    "html_url": "https://github.com/connollydavid",
+    "followers_url": "https://api.github.com/users/connollydavid/followers",
+    "following_url": "https://api.github.com/users/connollydavid/following{/other_user}",
+    "gists_url": "https://api.github.com/users/connollydavid/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/connollydavid/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/connollydavid/subscriptions",
+    "organizations_url": "https://api.github.com/users/connollydavid/orgs",
+    "repos_url": "https://api.github.com/users/connollydavid/repos",
+    "events_url": "https://api.github.com/users/connollydavid/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/connollydavid/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "bbd068758df7ec59e39e8a2ecc76ed7457e19154",
+      "url": "https://api.github.com/repos/connollydavid/host-lint/commits/bbd068758df7ec59e39e8a2ecc76ed7457e19154",
+      "html_url": "https://github.com/connollydavid/host-lint/commit/bbd068758df7ec59e39e8a2ecc76ed7457e19154"
+    }
+  ],
+  "stats": {
+    "total": 301,
+    "additions": 271,
+    "deletions": 30
+  },
+  "files": [
+    {
+      "sha": "f1afa615c2545d877d50c8bbc370766d8f73baa0",
+      "filename": "Cargo.lock",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "blob_url": "https://github.com/connollydavid/host-lint/blob/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f/Cargo.lock",
+      "raw_url": "https://github.com/connollydavid/host-lint/raw/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f/Cargo.lock",
+      "contents_url": "https://api.github.com/repos/connollydavid/host-lint/contents/Cargo.lock?ref=e652ffc3fb517ad1bf185e73a6d4a050d8365c7f",
+      "patch": "@@ -141,7 +141,7 @@ dependencies = [\n \n [[package]]\n name = \"host-lint\"\n-version = \"0.7.0\"\n+version = \"0.8.0\"\n dependencies = [\n  \"host-grammar\",\n  \"proptest\","
+    },
+    {
+      "sha": "ab1acb3fdc118f254c236262cf24a121e763088f",
+      "filename": "Cargo.toml",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "blob_url": "https://github.com/connollydavid/host-lint/blob/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f/Cargo.toml",
+      "raw_url": "https://github.com/connollydavid/host-lint/raw/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f/Cargo.toml",
+      "contents_url": "https://api.github.com/repos/connollydavid/host-lint/contents/Cargo.toml?ref=e652ffc3fb517ad1bf185e73a6d4a050d8365c7f",
+      "patch": "@@ -1,6 +1,6 @@\n [package]\n name = \"host-lint\"\n-version = \"0.7.0\"\n+version = \"0.8.0\"\n edition = \"2021\"\n description = \"Detect phase-synonym agentic tells in commits, headers, and comments\"\n license = \"Unlicense\""
+    },
+    {
+      "sha": "90992cc35fa079dcce11b2846c1e843f540db3b5",
+      "filename": "host-lint.obligations.digests",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 2,
+      "changes": 4,
+      "blob_url": "https://github.com/connollydavid/host-lint/blob/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f/host-lint.obligations.digests",
+      "raw_url": "https://github.com/connollydavid/host-lint/raw/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f/host-lint.obligations.digests",
+      "contents_url": "https://api.github.com/repos/connollydavid/host-lint/contents/host-lint.obligations.digests?ref=e652ffc3fb517ad1bf185e73a6d4a050d8365c7f",
+      "patch": "@@ -1,4 +1,4 @@\n # host-lifecycle obligations digest ledger (--record-digests).\n # <obligation-id>\\t<git hash-object of declared inputs at re-derivation>\n-rule-success.DetectInternalCodeAsName\t8bd5c8f43a5b3c1dd02827c0ca7663c9d503b60d\n-rule-failure.DetectInternalCodeAsName.1\t8bd5c8f43a5b3c1dd02827c0ca7663c9d503b60d\n+rule-success.DetectInternalCodeAsName\tfc7c832614c9e019142ec930fff9803bcb4bf994\n+rule-failure.DetectInternalCodeAsName.1\tfc7c832614c9e019142ec930fff9803bcb4bf994"
+    },
+    {
+      "sha": "fc7c832614c9e019142ec930fff9803bcb4bf994",
+      "filename": "src/lib.rs",
+      "status": "modified",
+      "additions": 102,
+      "deletions": 20,
+      "changes": 122,
+      "blob_url": "https://github.com/connollydavid/host-lint/blob/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f/src%2Flib.rs",
+      "raw_url": "https://github.com/connollydavid/host-lint/raw/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f/src%2Flib.rs",
+      "contents_url": "https://api.github.com/repos/connollydavid/host-lint/contents/src%2Flib.rs?ref=e652ffc3fb517ad1bf185e73a6d4a050d8365c7f",
+      "patch": "@@ -43,11 +43,18 @@ pub enum Severity {\n     Flag,\n     /// A bare-numeral degenerate form: advisory, asks the author to reconsider (exit 3).\n     Warn,\n+    /// A non-locatable, whole-document prose diagnosis (density, anaphora, bullet\n+    /// patterns): informational only, never gates (exit 0). There is no single span to\n+    /// edit, so it sits outside the clean-to-zero bar.\n+    Note,\n }\n \n pub struct Match {\n     pub file: String,\n     pub line: usize,\n+    /// 1-based character column of the tell on its line; 0 when the tell is line-level\n+    /// (a naming tell) or non-locatable (an advisory whole-document prose diagnosis).\n+    pub col: usize,\n     pub text: String,\n     pub term: String,\n     pub severity: Severity,\n@@ -571,6 +578,7 @@ pub fn scan_text_with_allow_strict(\n             matches.push(Match {\n                 file: source.to_string(),\n                 line: i + 1,\n+                col: 0,\n                 text: line.trim().to_string(),\n                 term,\n                 severity,\n@@ -580,18 +588,59 @@ pub fn scan_text_with_allow_strict(\n     }\n }\n \n-// Best-effort line lookup: the 1-based line of `source` whose text contains the\n-// start of `needle`; 1 when not found (titles and synthetic excerpts).\n-fn locate_line(input: &str, needle: &str) -> usize {\n-    let probe = needle.split_whitespace().take(4).collect::<Vec<_>>().join(\" \");\n+// Push a prose tell as a Match — a free helper so the occurrence-mapping loop reads\n+// cleanly.\n+#[allow(clippy::too_many_arguments)]\n+fn push_tell(\n+    matches: &mut Vec<Match>,\n+    source: &str,\n+    line: usize,\n+    col: usize,\n+    text: &str,\n+    term: &str,\n+    severity: Severity,\n+    cite: &str,\n+) {\n+    matches.push(Match {\n+        file: source.to_string(),\n+        line,\n+        col,\n+        text: text.to_string(),\n+        term: term.to_string(),\n+        severity,\n+        cite: cite.to_string(),\n+    });\n+}\n+\n+// The 1-based (line, column) of byte offset `off` in `input`; the column counts\n+// characters from the line start.\n+fn line_col(input: &str, off: usize) -> (usize, usize) {\n+    let mut line = 1usize;\n+    let mut col = 1usize;\n+    for (i, ch) in input.char_indices() {\n+        if i >= off {\n+            break;\n+        }\n+        if ch == '\\n' {\n+            line += 1;\n+            col = 1;\n+        } else {\n+            col += 1;\n+        }\n+    }\n+    (line, col)\n+}\n+\n+// Best-effort line of a multi-word excerpt the markdown extractor may have normalised\n+// out of the raw source: the 1-based line containing the excerpt's first few words, or\n+// None when even that is absent (a synthetic whole-document diagnosis). Both arguments\n+// are already ascii-lowercased, so the match is case-insensitive.\n+fn probe_line(input_lc: &str, needle_lc: &str) -> Option<usize> {\n+    let probe = needle_lc.split_whitespace().take(4).collect::<Vec<_>>().join(\" \");\n     if probe.is_empty() {\n-        return 1;\n+        return None;\n     }\n-    input\n-        .lines()\n-        .position(|l| l.contains(&probe))\n-        .map(|i| i + 1)\n-        .unwrap_or(1)\n+    input_lc.lines().position(|l| l.contains(&probe)).map(|i| i + 1)\n }\n \n /// Scan `input` as prose for agentic tells (the host-grammar engine), pushing\n@@ -607,15 +656,47 @@ pub fn scan_prose_text(input: &str, source: &str, matches: &mut Vec<Match>) {\n     } else {\n         host_grammar::scan_prose_parallel(input)\n     };\n-    for t in tells {\n-        matches.push(Match {\n-            file: source.to_string(),\n-            line: locate_line(input, &t.excerpt),\n-            text: t.excerpt,\n-            term: t.id.to_string(),\n-            severity: Severity::Warn,\n-            cite: t.cite.to_string(),\n-        });\n+    // Locate each tell. The engine emits one tell per occurrence, but in the markdown\n+    // path tells of the same (id, excerpt) arrive grouped, and a first-occurrence line\n+    // lookup collapses them all onto one line (ten em-dashes → ten records at line 12).\n+    // Occurrence-map instead: assign the k-th tell of an (id, excerpt) to the k-th\n+    // literal occurrence of its excerpt, yielding a precise line:col. A multi-word\n+    // excerpt the markdown extractor normalised away falls back to a probe line (no\n+    // column); one that never appears at all is a non-locatable whole-document\n+    // diagnosis — advisory, emitted once.\n+    let input_lc = input.to_ascii_lowercase();\n+    let mut cursor: std::collections::HashMap<(&str, &str), usize> =\n+        std::collections::HashMap::new();\n+    for t in &tells {\n+        // Match case-insensitively: the engine returns lowercased lexeme phrases, but a\n+        // sentence-initial tell (\"Let's unpack\") is capitalised in the source. Ascii\n+        // lowercasing is byte-length-preserving, so an offset in `input_lc` is valid in\n+        // `input`, and the original-case substring is what the author actually wrote.\n+        let needle = t.excerpt.to_ascii_lowercase();\n+        let key = (t.id, t.excerpt.as_str());\n+        let from = *cursor.get(&key).unwrap_or(&0);\n+        if let Some(rel) = input_lc.get(from..).and_then(|s| s.find(&needle)) {\n+            let off = from + rel;\n+            let end = off + needle.len();\n+            cursor.insert(key, end.max(off + 1));\n+            let (line, col) = line_col(input, off);\n+            push_tell(matches, source, line, col, &input[off..end], t.id, Severity::Warn, t.cite);\n+        } else if from == 0 {\n+            // No literal occurrence from the start: a normalised multi-word excerpt (try\n+            // a probe line) or a synthetic diagnosis (advisory). Mark seen so any repeats\n+            // are dropped, not re-emitted.\n+            cursor.insert(key, usize::MAX);\n+            match probe_line(&input_lc, &needle) {\n+                Some(line) => {\n+                    push_tell(matches, source, line, 0, &t.excerpt, t.id, Severity::Warn, t.cite)\n+                }\n+                None => {\n+                    push_tell(matches, source, 1, 0, &t.excerpt, t.id, Severity::Note, t.cite)\n+                }\n+            }\n+        }\n+        // else: cursor advanced past the real occurrences but no more found → a phantom\n+        // surplus or an already-emitted repeat → drop.\n     }\n     let score = if markdown {\n         host_grammar::tell_score_markdown(input)\n@@ -626,12 +707,13 @@ pub fn scan_prose_text(input: &str, source: &str, matches: &mut Vec<Match>) {\n         matches.push(Match {\n             file: source.to_string(),\n             line: 1,\n+            col: 0,\n             text: format!(\n                 \"agentic-tell density {:.2} across {} sentences ({} tells)\",\n                 score.density, score.sentences, score.tells\n             ),\n             term: \"tell-density\".to_string(),\n-            severity: Severity::Warn,\n+            severity: Severity::Note,\n             cite: \"tropes.fyi: many devices together\".to_string(),\n         });\n     }"
+    },
+    {
+      "sha": "fb97d99f5f00c940433547149f9be47cd9b0044b",
+      "filename": "src/main.rs",
+      "status": "modified",
+      "additions": 87,
+      "deletions": 3,
+      "changes": 90,
+      "blob_url": "https://github.com/connollydavid/host-lint/blob/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f/src%2Fmain.rs",
+      "raw_url": "https://github.com/connollydavid/host-lint/raw/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f/src%2Fmain.rs",
+      "contents_url": "https://api.github.com/repos/connollydavid/host-lint/contents/src%2Fmain.rs?ref=e652ffc3fb517ad1bf185e73a6d4a050d8365c7f",
+      "patch": "@@ -269,18 +269,42 @@ fn scan_file(path: &Path, allow: &[String], strict: bool, matches: &mut Vec<Matc\n \n fn output_text(matches: &[Match]) {\n     for m in matches {\n+        let loc = if m.col > 0 {\n+            format!(\"{}:{}:{}\", m.file, m.line, m.col)\n+        } else {\n+            format!(\"{}:{}\", m.file, m.line)\n+        };\n         let tag = if m.cite.is_empty() {\n             m.term.clone()\n         } else {\n             format!(\"{} — {}\", m.term, m.cite)\n         };\n+        let fix = fix_hint(&m.term, &m.text)\n+            .map(|f| format!(\" [fix: {}]\", f))\n+            .unwrap_or_default();\n         match m.severity {\n-            Severity::Warn => eprintln!(\"{}:{}: warning: {} ({})\", m.file, m.line, m.text, tag),\n-            Severity::Flag => eprintln!(\"{}:{}: {} ({})\", m.file, m.line, m.text, tag),\n+            Severity::Warn => eprintln!(\"{}: warning: {} ({}){}\", loc, m.text, tag, fix),\n+            Severity::Flag => eprintln!(\"{}: {} ({}){}\", loc, m.text, tag, fix),\n+            Severity::Note => eprintln!(\"{}: note: {} ({})\", loc, m.text, tag),\n         }\n     }\n }\n \n+// A mechanical rewrite hint for the tropes a weak agent can fix by a known edit, keyed\n+// on the tell id (and the matched character for decoration). Judgement tropes — reword\n+// a sentence — carry no hint, so only mechanically-fixable tells get one.\n+fn fix_hint(term: &str, text: &str) -> Option<&'static str> {\n+    match term {\n+        \"decoration\" => Some(match text {\n+            \"—\" | \"–\" => \"replace with a comma, period, or parentheses\",\n+            \"“\" | \"”\" | \"‘\" | \"’\" => \"use a straight quote\",\n+            \"→\" => \"replace with a word (to, then, leads to)\",\n+            _ => \"rewrite as plain punctuation\",\n+        }),\n+        _ => None,\n+    }\n+}\n+\n fn output_json(matches: &[Match]) {\n     let json = serde_json_like(matches);\n     println!(\"{}\", json);\n@@ -292,13 +316,18 @@ fn serde_json_like(matches: &[Match]) -> String {\n         out.push_str(\"  {\");\n         out.push_str(&format!(\"\\\"file\\\": \\\"{}\\\", \", escape_json(&m.file)));\n         out.push_str(&format!(\"\\\"line\\\": {}, \", m.line));\n+        out.push_str(&format!(\"\\\"col\\\": {}, \", m.col));\n         out.push_str(&format!(\"\\\"text\\\": \\\"{}\\\", \", escape_json(&m.text)));\n         out.push_str(&format!(\"\\\"term\\\": \\\"{}\\\", \", escape_json(&m.term)));\n         let severity = match m.severity {\n             Severity::Warn => \"warn\",\n             Severity::Flag => \"flag\",\n+            Severity::Note => \"note\",\n         };\n         out.push_str(&format!(\"\\\"severity\\\": \\\"{}\\\"\", severity));\n+        if let Some(f) = fix_hint(&m.term, &m.text) {\n+            out.push_str(&format!(\", \\\"fix\\\": \\\"{}\\\"\", escape_json(f)));\n+        }\n         if !m.cite.is_empty() {\n             out.push_str(&format!(\", \\\"cite\\\": \\\"{}\\\"\", escape_json(&m.cite)));\n         }\n@@ -379,6 +408,57 @@ fn load_ignore(root: &str) -> Vec<String> {\n     }\n }\n \n+// `--docs` is the repo-wide prose lane — the counterpart to the naming `--all`.\n+// Scope determines type: naming tells hide in any file, but prose tropes are a\n+// property of authored narrative, so `--docs` walks `.md` only and never runs the\n+// prose engine over `.rs`/`.toml`/`.sh` (which would flag decoration in code\n+// comments and string literals, with a meaningless clean-to-zero bar over source).\n+// It reuses the `--all` `git ls-files` walk, so gitignored output, vendored deps,\n+// untracked worktrees, and submodules never appear; `.host-lintignore` filters the\n+// rest (e.g. the append-only `MEMORY.md`). Prose tells are advisory (warn, exit 3),\n+// as elsewhere; the `verify` gate's recheck treats that non-zero as a regression.\n+fn run_docs(root: &str, ignore: &[String], matches: &mut Vec<Match>) {\n+    if root.is_empty() {\n+        return;\n+    }\n+    let output = match process::Command::new(\"git\")\n+        .args([\"-C\", root, \"ls-files\", \"-z\"])\n+        .output()\n+    {\n+        Ok(o) if o.status.success() => o,\n+        Ok(o) => {\n+            eprintln!(\n+                \"host-lint: --docs needs a git repository (git ls-files failed: {})\",\n+                String::from_utf8_lossy(&o.stderr).trim()\n+            );\n+            process::exit(2);\n+        }\n+        Err(e) => {\n+            eprintln!(\"host-lint: --docs needs git on PATH: {e}\");\n+            process::exit(2);\n+        }\n+    };\n+    let text = String::from_utf8_lossy(&output.stdout);\n+    for rel in text.split('\\0').filter(|s| !s.is_empty()) {\n+        if !rel.to_ascii_lowercase().ends_with(\".md\") {\n+            continue;\n+        }\n+        if path_ignored(rel, ignore) {\n+            continue;\n+        }\n+        let path = Path::new(root).join(rel);\n+        if fs::symlink_metadata(&path).map(|m| m.file_type().is_symlink()).unwrap_or(false) {\n+            continue;\n+        }\n+        if !path.is_file() {\n+            continue;\n+        }\n+        if let Ok(content) = fs::read_to_string(&path) {\n+            scan_prose_text(&content, rel, matches);\n+        }\n+    }\n+}\n+\n fn run_log(allow: &[String], strict: bool, matches: &mut Vec<Match>) {\n     let output = match process::Command::new(\"git\")\n         .args([\"log\", \"-z\", \"--format=%H%n%B\"])\n@@ -422,6 +502,7 @@ fn main() {\n     let mut all_flag = false;\n     let mut log_flag = false;\n     let mut prose_flag = false;\n+    let mut docs_flag = false;\n     let mut files: Vec<String> = Vec::new();\n \n     for arg in &args[1..] {\n@@ -431,6 +512,7 @@ fn main() {\n             \"--all\" => all_flag = true,\n             \"--log\" => log_flag = true,\n             \"--prose\" => prose_flag = true,\n+            \"--docs\" => docs_flag = true,\n             _ => files.push(arg.clone()),\n         }\n     }\n@@ -459,10 +541,12 @@ fn main() {\n         }\n     } else if all_flag {\n         run_all_files(&root, allow, strict, &load_ignore(&root), &mut matches);\n+    } else if docs_flag {\n+        run_docs(&root, &load_ignore(&root), &mut matches);\n     } else if log_flag {\n         run_log(allow, strict, &mut matches);\n     } else if files.is_empty() {\n-        eprintln!(\"Usage: host-lint [--stdin] [--prose] [--json] [--all] [--log] [files...]\");\n+        eprintln!(\"Usage: host-lint [--stdin] [--prose] [--docs] [--json] [--all] [--log] [files...]\");\n         process::exit(2);\n     } else {\n         // Honor `.host-lintignore` for explicit file args too — the git hook scans"
+    },
+    {
+      "sha": "0b5ac32a9e369016611e48ebf1baf338c92f2656",
+      "filename": "test-integration.sh",
+      "status": "modified",
+      "additions": 31,
+      "deletions": 0,
+      "changes": 31,
+      "blob_url": "https://github.com/connollydavid/host-lint/blob/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f/test-integration.sh",
+      "raw_url": "https://github.com/connollydavid/host-lint/raw/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f/test-integration.sh",
+      "contents_url": "https://api.github.com/repos/connollydavid/host-lint/contents/test-integration.sh?ref=e652ffc3fb517ad1bf185e73a6d4a050d8365c7f",
+      "patch": "@@ -199,6 +199,37 @@ printf 'It'\"'\"'s not a tweak, it'\"'\"'s a revolution, we delve.' | $BINARY --stdi\n [ \"$rc\" -eq 3 ] && ok \"same text as plain prose warns\" || bad \"plain prose warns (rc=$rc)\"\n rm -f \"$md\"\n \n+# --- --docs: repo-wide prose lane (markdown only, honors .host-lintignore) ---\n+echo \"\"\n+echo \"--- --docs (repo-wide prose) ---\"\n+docs=$(mktemp -d)\n+git -C \"$docs\" init -q\n+# An authored doc with prose tropes (negative-parallelism + em-dash + tricolon).\n+printf \"It's not a tweak, it's a revolution, we delve — fast, clean, and robust.\\n\" > \"$docs/guide.md\"\n+# Code with an em-dash in a comment: --docs must NOT prose-scan it (scope = docs).\n+printf 'fn f() {} // a comment — with a dash\\n' > \"$docs/src.rs\"\n+# An immutable record excluded via .host-lintignore.\n+printf 'A frozen note — with a dash.\\n' > \"$docs/RECORD.md\"\n+printf 'RECORD.md\\n' > \"$docs/.host-lintignore\"\n+git -C \"$docs\" add -A\n+git -C \"$docs\" -c user.name=t -c user.email=t@t commit -q -m \"init\"\n+out=$(cd \"$docs\" && \"$BINARY_ABS\" --docs 2>&1) && rc=0 || rc=$?\n+echo \"$out\" | grep -q \"guide.md\" && ok \"--docs flags authored markdown prose\" || bad \"--docs flags authored markdown prose\"\n+[ \"$rc\" -eq 3 ] && ok \"--docs warns (exit 3) on tropes\" || bad \"--docs warns exit 3 (rc=$rc)\"\n+echo \"$out\" | grep -q \"src.rs\" && bad \"--docs must not prose-scan code\" || ok \"--docs skips code (.rs)\"\n+echo \"$out\" | grep -q \"RECORD.md\" && bad \"--docs must honor .host-lintignore\" || ok \"--docs honors .host-lintignore\"\n+rm -rf \"$docs\"\n+\n+# --- plan/0031: prose output is located (line:col) + fix-hinted ---\n+echo \"\"\n+echo \"--- prose output: col + fix hint ---\"\n+pmd=$(mktemp --suffix=.md)\n+printf 'A sentence with a dash — right here in it.\\n' > \"$pmd\"\n+pout=$($BINARY --prose \"$pmd\" 2>&1) || true\n+echo \"$pout\" | grep -qE ':[0-9]+:[0-9]+: warning: — .*\\[fix:' \\\n+    && ok \"decoration carries line:col + fix hint\" || bad \"decoration line:col + fix hint (got: $pout)\"\n+rm -f \"$pmd\"\n+\n # --- Warn output marker and JSON severity ---\n echo \"\"\n echo \"--- Severity in output ---\""
+    },
+    {
+      "sha": "da464689f6a8336abf19bf03dba8c38e79b19d24",
+      "filename": "tests/property_tests.rs",
+      "status": "modified",
+      "additions": 47,
+      "deletions": 3,
+      "changes": 50,
+      "blob_url": "https://github.com/connollydavid/host-lint/blob/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f/tests%2Fproperty_tests.rs",
+      "raw_url": "https://github.com/connollydavid/host-lint/raw/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f/tests%2Fproperty_tests.rs",
+      "contents_url": "https://api.github.com/repos/connollydavid/host-lint/contents/tests%2Fproperty_tests.rs?ref=e652ffc3fb517ad1bf185e73a6d4a050d8365c7f",
+      "patch": "@@ -536,16 +536,60 @@ fn coauthored_by_trailers_are_exempt() {\n \n #[test]\n fn prose_tells_are_advisory_warns() {\n-    // The prose engine emits Warn matches only — never Flag — so a title or\n-    // comment with a tell warns (exit 3) but never blocks a commit.\n+    // Prose tells are advisory — never Flag — so a title or comment with a tell warns\n+    // (locatable, exit 3) or notes (a non-locatable whole-document diagnosis, exit 0)\n+    // but never blocks a commit.\n     let mut m = Vec::new();\n     scan_prose_text(\"Let's unpack this. We delve into the rich tapestry.\", \"stdin\", &mut m);\n     assert!(!m.is_empty(), \"expected prose tells\");\n-    assert!(m.iter().all(|x| x.severity == Severity::Warn));\n+    assert!(m.iter().all(|x| x.severity != Severity::Flag), \"prose never blocks\");\n     assert!(m.iter().any(|x| x.term == \"pedagogical-hook\"));\n     assert!(m.iter().all(|x| !x.cite.is_empty()), \"prose tells carry a citation\");\n }\n \n+#[test]\n+fn decoration_occurrences_map_to_distinct_lines_and_columns() {\n+    // The headline plan/0031 fix: em-dashes on different lines report at their own\n+    // line:col, not all collapsed onto the first occurrence's line (the call/0019 defect\n+    // where ten dashes all reported at line 12).\n+    let input = \"Alpha — one.\\nBeta line here all.\\nGamma — two — three.\\n\";\n+    let mut m = Vec::new();\n+    scan_prose_text(input, \"doc.md\", &mut m);\n+    let dec: Vec<_> = m.iter().filter(|x| x.term == \"decoration\").collect();\n+    assert_eq!(dec.len(), 3, \"three em-dashes → three records\");\n+    let lines: Vec<usize> = dec.iter().map(|x| x.line).collect();\n+    assert!(lines.contains(&1) && lines.contains(&3), \"on their real lines, got {lines:?}\");\n+    assert!(dec.iter().all(|x| x.col > 0), \"each decoration carries a column\");\n+    let mut seen = std::collections::HashSet::new();\n+    assert!(\n+        dec.iter().all(|x| seen.insert((x.line, x.col))),\n+        \"distinct line:col per occurrence\"\n+    );\n+}\n+\n+#[test]\n+fn structural_diagnoses_are_advisory_notes() {\n+    // A whole-document diagnosis (density, anaphora, a self-answered question) has no\n+    // single editable span, so it is advisory (Note, exit 0) — outside the clean-to-zero\n+    // gate — while locatable tropes stay Warn.\n+    let input = \"Let's unpack this. It's not a tweak, it's a revolution. We delve. \\\n+                 We leverage. We harness. The result? Pure synergy. Fast, clean, and robust.\";\n+    let mut m = Vec::new();\n+    scan_prose_text(input, \"stdin\", &mut m);\n+    assert!(\n+        m.iter().any(|x| x.severity == Severity::Note),\n+        \"a structural diagnosis is advisory\"\n+    );\n+    assert!(\n+        m.iter().filter(|x| x.severity == Severity::Note).all(|x| x.col == 0),\n+        \"advisory diagnoses have no column\"\n+    );\n+    assert!(\n+        m.iter().any(|x| x.severity == Severity::Warn),\n+        \"locatable tropes still warn\"\n+    );\n+}\n+\n #[test]\n fn subject_decoration_escalates_to_flag() {\n     // A decoration tell on the commit subject (first line) / a gh title blocks."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "question": "Which host-lint release introduced the --docs repo-wide prose lane, and which rule source does that lane consult? Name the version and the rule source.",
+  "answer": {
+    "version": "0.8.0 (tag v0.8.0, host-lint)",
+    "rule_source": "VOCABULARY.md §6 — \"Prose agentic tells (advisory): a token-free trope adaptation\" (the tropes.fyi adaptation carried by host-grammar's `tells` module)"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/connollydavid/agentic-host/main/plan/0030-prose-hygiene-lane/README.md",
+      "quote": "### D1: `--docs`, a repo-wide prose mode over authored docs *(host-lint, shipped v0.8.0)*",
+      "locator": "plan/0030 README — \"## Deliverables\" section, the \"### D1\" heading (milestone that specifies the `--docs` lane)"
+    },
+    {
+      "url": "https://api.github.com/repos/connollydavid/host-lint/commits/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f",
+      "quote": "host-lint 0.8.0: --docs repo-wide prose lane, plus located, fix-hinted, tiered output",
+      "locator": "commit JSON — `commit.message`, first line (subject) of commit e652ffc, the tagged v0.8.0 commit whose Cargo.toml diff bumps 0.7.0 -> 0.8.0 and whose src/main.rs patch adds run_docs and the `--docs` flag"
+    },
+    {
+      "url": "https://api.github.com/repos/connollydavid/host-lint/releases/tags/v0.8.0",
+      "quote": "\"tag_name\":\"v0.8.0\",\"target_commitish\":\"main\",\"name\":\"v0.8.0\"",
+      "locator": "release JSON for tag v0.8.0 — top-level tag_name / target_commitish / name fields (same object reports \"published_at\":\"2026-06-21T23:45:23Z\")"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/connollydavid/host-lint/v0.8.0/src/main.rs",
+      "quote": "// `--docs` is the repo-wide prose lane — the counterpart to the naming `--all`.",
+      "locator": "src/main.rs at tag v0.8.0 — comment block immediately above `fn run_docs`, whose loop filters to `.md` and calls `scan_prose_text(&content, rel, matches)`"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/connollydavid/host-lint/main/README.md",
+      "quote": "The engine lives in `host-grammar` and runs on titles and drafts (`--stdin`) and on documents (`--prose`, `--docs`); `--all` runs both the naming and the prose lane over the tracked-doc set, so one command matches the host-lifecycle gate. See [VOCABULARY.md](VOCABULARY.md) §6.",
+      "locator": "host-lint README (main) — \"What It Detects\" section, closing paragraph of the prose agentic tells block"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/connollydavid/host-lint/v0.8.0/VOCABULARY.md",
+      "quote": "## 6. Prose agentic tells (advisory): a token-free trope adaptation",
+      "locator": "VOCABULARY.md at tag v0.8.0 — section 6 heading; its opening paragraph adds \"It lives in `host-grammar`'s `tells` module and host-lint calls it.\""
+    }
+  ]
+}

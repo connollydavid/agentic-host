@@ -1,0 +1,52 @@
+{
+  "key": "selection/house-rg-ast-grep",
+  "kind": "house",
+  "question": "Compare ripgrep (rg) and ast-grep (sg) for a repository-wide prose scan. Name each tool's implementation language, license, and query language, and say which one can express a syntax-tree query.",
+  "must_cover": [
+    {
+      "entity": "ripgrep",
+      "aliases": [
+        "rg"
+      ]
+    },
+    {
+      "entity": "ast-grep",
+      "aliases": [
+        "sg"
+      ]
+    },
+    {
+      "entity": "Rust",
+      "aliases": [
+        "rust"
+      ]
+    },
+    {
+      "entity": "Unlicense",
+      "aliases": [
+        "public domain",
+        "The Unlicense"
+      ]
+    },
+    {
+      "entity": "MIT",
+      "aliases": [
+        "MIT License"
+      ]
+    },
+    {
+      "entity": "regular expression",
+      "aliases": [
+        "regex"
+      ]
+    },
+    {
+      "entity": "AST",
+      "aliases": [
+        "abstract syntax tree",
+        "syntax tree"
+      ]
+    }
+  ],
+  "digest": "6540753f98185fef47cf3b05b68074d18c0e4edc8ef77aacc4623b85eca0e5fb"
+}

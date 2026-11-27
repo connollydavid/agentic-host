@@ -1,0 +1,28 @@
+{
+  "key": "selection/house-host-lint-docs",
+  "kind": "house",
+  "question": "Which host-lint release introduced the --docs repo-wide prose lane, and which rule source does that lane consult? Name the version and the rule source.",
+  "must_cover": [
+    {
+      "entity": "0.8.0",
+      "aliases": [
+        "v0.8.0",
+        "host-lint 0.8.0"
+      ]
+    },
+    {
+      "entity": "--docs",
+      "aliases": [
+        "docs lane"
+      ]
+    },
+    {
+      "entity": "VOCABULARY.md",
+      "aliases": [
+        "VOCABULARY",
+        "VOCABULARY.md"
+      ]
+    }
+  ],
+  "digest": "1e5c87c59be8f75bfbb0e58f720c57b747f4f2407a9e106892e3fba1b974ac67"
+}

@@ -72,7 +72,7 @@ def main() -> int:
                 "one_command": True,
                 "vendored": True,
             }
-        suite[arm]["score"] = sum(1 for value in suite[arm].values())
+        suite[arm]["score"] = sum(1 for value in suite[arm].values() if value is True)
 
     ranked = sorted(band_arms, key=lambda arm: (-suite[arm]["score"], tokens[arm], arm))
     locked = ranked[0]

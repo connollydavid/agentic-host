@@ -1,0 +1,23 @@
+{
+  "arm": "kanatami",
+  "task": "selection/house-host-lint-docs",
+  "exit_code": 124,
+  "timed_out": true,
+  "wall_seconds": 1800.0,
+  "prompt_tokens": 55454,
+  "completion_tokens": 1228,
+  "tool_calls": 8,
+  "agent_files": {
+    "report": false,
+    "sources": false,
+    "fetch_log": false
+  },
+  "contract_ok": false,
+  "contract_reason": "the draw wrote no sources.json",
+  "rubric": {
+    "status": "void",
+    "reason": "rubric error: [Errno 2] No such file or directory: '/opt/repo/agentic-host/plan/0113-host-deep-research-ab/harness/selection/draws/kanatami/house-host-lint-docs/sources.json'"
+  },
+  "valid": false,
+  "score": 0
+}

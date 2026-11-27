@@ -1,0 +1,392 @@
+{
+  "round": "selection",
+  "draws": 30,
+  "tasks": 6,
+  "arms": [
+    "null",
+    "weizhena",
+    "hffmnnj",
+    "kanatami",
+    "samber"
+  ],
+  "max": 16.0,
+  "band": 1.0,
+  "pooled": {
+    "null": 2.1666666666666665,
+    "weizhena": 0.0,
+    "hffmnnj": 0.0,
+    "kanatami": 0.0,
+    "samber": 0.0
+  },
+  "valid": {
+    "null": 1,
+    "weizhena": 0,
+    "hffmnnj": 0,
+    "kanatami": 0,
+    "samber": 0
+  },
+  "tokens": {
+    "null": 308926,
+    "weizhena": 182098,
+    "hffmnnj": 228028,
+    "kanatami": 496827,
+    "samber": 482686
+  },
+  "best_candidate": "weizhena",
+  "band_arms": [
+    "weizhena",
+    "hffmnnj",
+    "kanatami",
+    "samber"
+  ],
+  "suite_fit": {
+    "null": {
+      "model": true,
+      "ledger": false,
+      "snapshots": false,
+      "artifacts": true,
+      "one_command": true,
+      "vendored": true,
+      "score": 4
+    },
+    "weizhena": {
+      "model": true,
+      "ledger": false,
+      "snapshots": false,
+      "artifacts": true,
+      "one_command": true,
+      "vendored": true,
+      "score": 4
+    },
+    "hffmnnj": {
+      "model": true,
+      "ledger": false,
+      "snapshots": false,
+      "artifacts": true,
+      "one_command": true,
+      "vendored": true,
+      "score": 4
+    },
+    "kanatami": {
+      "model": true,
+      "ledger": false,
+      "snapshots": false,
+      "artifacts": true,
+      "one_command": true,
+      "vendored": true,
+      "score": 4
+    },
+    "samber": {
+      "model": true,
+      "ledger": false,
+      "snapshots": false,
+      "artifacts": true,
+      "one_command": true,
+      "vendored": true,
+      "score": 4
+    }
+  },
+  "locked": "weizhena",
+  "draws_detail": [
+    {
+      "arm": "null",
+      "task": "selection/simpleqa-0000",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "null",
+      "task": "selection/simpleqa-0002",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "null",
+      "task": "selection/simpleqa-1000",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "null",
+      "task": "selection/house-path-crates",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "null",
+      "task": "selection/house-rg-ast-grep",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "null",
+      "task": "selection/house-host-lint-docs",
+      "valid": true,
+      "score": 13.0,
+      "max": 16,
+      "contract_ok": true,
+      "contract_reason": "",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "weizhena",
+      "task": "selection/simpleqa-0000",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "weizhena",
+      "task": "selection/simpleqa-0002",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "weizhena",
+      "task": "selection/simpleqa-1000",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "weizhena",
+      "task": "selection/house-path-crates",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "weizhena",
+      "task": "selection/house-rg-ast-grep",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "weizhena",
+      "task": "selection/house-host-lint-docs",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "hffmnnj",
+      "task": "selection/simpleqa-0000",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.1
+    },
+    {
+      "arm": "hffmnnj",
+      "task": "selection/simpleqa-0002",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "hffmnnj",
+      "task": "selection/simpleqa-1000",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "hffmnnj",
+      "task": "selection/house-path-crates",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "hffmnnj",
+      "task": "selection/house-rg-ast-grep",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "hffmnnj",
+      "task": "selection/house-host-lint-docs",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "kanatami",
+      "task": "selection/simpleqa-0000",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1649.1
+    },
+    {
+      "arm": "kanatami",
+      "task": "selection/simpleqa-0002",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.1
+    },
+    {
+      "arm": "kanatami",
+      "task": "selection/simpleqa-1000",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "kanatami",
+      "task": "selection/house-path-crates",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "kanatami",
+      "task": "selection/house-rg-ast-grep",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 917.0
+    },
+    {
+      "arm": "kanatami",
+      "task": "selection/house-host-lint-docs",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "samber",
+      "task": "selection/simpleqa-0000",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "samber",
+      "task": "selection/simpleqa-0002",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.1
+    },
+    {
+      "arm": "samber",
+      "task": "selection/simpleqa-1000",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "samber",
+      "task": "selection/house-path-crates",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "samber",
+      "task": "selection/house-rg-ast-grep",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    },
+    {
+      "arm": "samber",
+      "task": "selection/house-host-lint-docs",
+      "valid": false,
+      "score": 0,
+      "max": null,
+      "contract_ok": false,
+      "contract_reason": "the draw wrote no sources.json",
+      "wall_seconds": 1800.0
+    }
+  ]
+}

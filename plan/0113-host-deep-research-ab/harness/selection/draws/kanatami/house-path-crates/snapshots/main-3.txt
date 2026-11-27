@@ -1,0 +1,376 @@
+os_str_bytes - Rust
+
+
+
+
+
+    
+        
+            
+
+                
+                
+                    
+                    Docs.rs
+                
+    
+            
+                
+                os_str_bytes-7.2.1
+            
+                
+                
+                    
+                        os_str_bytes 7.2.1
+                        
+                    
+                         Permalink
+                        
+                    
+                        
+                             Docs.rs crate page
+                        
+                    
+                            
+                            MIT OR Apache-2.0
+                        
+                            
+                                 22 November 2026
+                            
+                        
+
+                
+                    
+                        
+                            Links
+
+                            
+                                    
+                                         Repository
+                                    
+                                
+                                
+                                     crates.io
+                                
+                            
+
+                            
+                            
+                                
+                                     Source
+                                
+                            
+                        
+                    
+                        
+                            Owners
+                                    
+                                         dylni
+                                    
+                                
+                    
+                
+
+                
+                    
+                        
+                            Dependencies
+
+                            
+                            
+                                
+                                    
+                                        
+                memchr ^2.3.5
+                
+                    normal
+                    
+                        optional
+                    
+                
+            
+        
+                fastrand ^2.0
+                
+                    dev
+                    
+                
+            
+        
+                lazy_static ^1.0.3
+                
+                    dev
+                    
+                
+            
+        
+                tempfile ^3.8
+                
+                    dev
+                    
+                
+            
+        
+                                    
+                                
+                            
+                        
+                    
+
+                    
+                        
+                            Versions
+
+                            
+                                
+                                    
+                                
+                            
+                        
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                                
+                                    
+                                        100%
+                                        of the crate is documented
+                                    
+                                
+                            
+                        
+                    
+        
+                
+                    
+                    Platform
+                
+
+                
+                
+            x86_64-unknown-linux-gnu
+        
+            
+                
+                    
+                    Feature flags
+                
+            
+        
+    
+    
+
+                
+                
+
+                
+                    
+                        docs.rs
+                         About docs.rs Badges Builds Metadata Shorthand URLs Download Rustdoc JSON Build queue Privacy policy
+                        
+                    
+                
+                
+                        Rust
+                        
+                            Rust website
+                            The Book
+
+                            Standard Library API Reference
+
+                            Rust by Example
+
+                            The Cargo Guide
+
+                            Clippy Documentation
+                        
+                    
+                
+                
+                
+                    
+                        
+                    
+
+                    
+                    
+                    
+                
+            
+        
+    
+
+
+
+
+
+
+Skip to main contentCrate os_str_bytesos_str_bytes7.2.1All ItemsSectionsUsageUser InputFeaturesDefault FeaturesOptional FeaturesImplementationEncoding ConversionsRelated CratesExamplesCrate ItemsModulesStructsTraitsCrate os_str_bytes Copy item pathSource Expand descriptionThis crate provides additional functionality for OsStr and
+OsString, without resorting to panics or corruption for invalid UTF-8.
+Thus, familiar methods from str and String can be used.
+§Usage
+The most important trait included is OsStrBytesExt, which provides
+methods analogous to those of str but for OsStr. These methods will
+never panic for invalid UTF-8 in a platform string, so they can be used to
+manipulate OsStr values with the same simplicity possible for str.
+Additionally, the following wrappers are provided. They are primarily
+legacy types from when this crate needed to perform more frequent encoding
+conversions. However, they may be useful for their trait implementations.
+
+RawOsStr is a wrapper for OsStr.
+RawOsString is a wrapper for OsString.
+
+§User Input
+Most methods in this crate should not be used to convert byte sequences
+that did not originate from OsStr or a related struct. The encoding
+used by this crate is an implementation detail, so it does not make sense
+to expose it to users.
+For user input with an unknown encoding similar to UTF-8, use the following
+IO-safe methods, which avoid errors when writing to streams on
+Windows. These methods will not accept or return
+byte sequences that are invalid for input and output streams. Therefore,
+they can be used to convert between bytes strings exposed to users and
+platform strings.
+
+OsStrBytes::from_io_bytes
+OsStrBytes::to_io_bytes
+OsStrBytes::to_io_bytes_lossy
+OsStringBytes::from_io_vec
+OsStringBytes::into_io_vec
+OsStringBytes::into_io_vec_lossy
+
+§Features
+These features are optional and can be enabled or disabled in a
+“Cargo.toml” file.
+§Default Features
+
+
+memchr -
+Changes the implementation to use crate memchr for better performance.
+This feature is useless when the “raw_os_str” feature is disabled.
+For more information, see OsStrBytesExt.
+
+
+raw_os_str -
+Provides:
+
+iter
+NonUnicodeOsStr
+OsStrBytesExt
+OsUnit
+Pattern
+RawOsStr
+RawOsStrCow
+RawOsString
+
+
+
+§Optional Features
+
+
+checked_conversions -
+Provides:
+
+EncodingError
+OsStrBytes::from_raw_bytes
+OsStringBytes::from_raw_vec
+RawOsStr::cow_from_raw_bytes
+RawOsString::from_raw_vec
+
+Because this feature should not be used in libraries, the
+“OS_STR_BYTES_CHECKED_CONVERSIONS” environment variable must be
+defined during compilation.
+
+
+conversions -
+Provides methods that require encoding conversion and may be expensive:
+
+OsStrBytesExt::ends_with_os
+OsStrBytesExt::starts_with_os
+RawOsStr::assert_cow_from_raw_bytes
+RawOsStr::ends_with_os
+RawOsStr::starts_with_os
+RawOsStr::to_raw_bytes
+RawOsString::assert_from_raw_vec
+RawOsString::into_raw_vec
+OsStrBytes::assert_from_raw_bytes
+OsStrBytes::to_raw_bytes
+OsStringBytes::assert_from_raw_vec
+OsStringBytes::into_raw_vec
+
+For more information, see Encoding Conversions.
+
+
+§Implementation
+Some methods return Cow to account for platform differences. However,
+no guarantee is made that the same variant of that enum will always be
+returned for the same platform. Whichever can be constructed most
+efficiently will be returned.
+All traits are sealed, meaning that they can only be implemented by this
+crate. Otherwise, backward compatibility would be more difficult to
+maintain for new features.
+§Encoding Conversions
+Methods provided by the “conversions” feature use an intentionally
+unspecified encoding. It may vary for different platforms, so defining it
+would run contrary to the goal of generic string handling. However, the
+following invariants will always be upheld:
+
+
+The encoding will be compatible with UTF-8. In particular, splitting an
+encoded byte sequence by a UTF-8–encoded character always produces
+other valid byte sequences. They can be re-encoded without error using
+RawOsString::into_os_string and similar methods.
+
+
+All characters valid in platform strings are representable. OsStr and
+OsString can always be losslessly reconstructed from extracted bytes.
+
+
+Note that the chosen encoding may not match how OsStr stores these
+strings internally, which is undocumented. For instance, the result of
+calling OsStr::len will not necessarily match the number of bytes this
+crate uses to represent the same string. However, unlike the encoding used
+by OsStr, the encoding used by this crate can be validated safely using
+the following methods:
+
+OsStrBytes::assert_from_raw_bytes
+RawOsStr::assert_cow_from_raw_bytes
+RawOsString::assert_from_raw_vec
+
+Concatenation may yield unexpected results without a UTF-8 separator. If
+two platform strings need to be concatenated, the only safe way to do so is
+using OsString::push. This limitation also makes it undesirable to use
+the bytes in interchange.
+Since this encoding can change between versions and platforms, it should
+not be used for storage. The standard library provides implementations of
+OsStrExt and OsStringExt for various platforms, which should be
+preferred for that use case.
+§Related Crates
+
+
+print_bytes -
+Used to print byte and platform strings as losslessly as possible.
+
+
+uniquote -
+Used to display paths using escapes instead of replacement characters.
+
+
+§Examples
+use std::env;
+use std::fs;
+
+use os_str_bytes::OsStrBytesExt;
+
+for file in env::args_os().skip(1) {
+    if !file.starts_with('-') {
+        let string = "Hello, world!";
+        fs::write(&file, string)?;
+        assert_eq!(string, fs::read_to_string(file)?);
+    }
+}Modules§iterraw_os_strIterators provided by this crate.Structs§EncodingErrorchecked_conversionsThe error that occurs when a byte sequence is not representable in the
+platform encoding.NonUnicodeOsStrraw_os_strA container for platform strings containing no unicode characters.OsUnitraw_os_strThe smallest unit of an unspecified platform-specific encoding permissible
+for interchange.RawOsStrraw_os_strA container providing additional functionality for OsStr.RawOsStringraw_os_strA container for owned byte strings converted by this crate.Traits§OsStrBytesA platform agnostic variant of OsStrExt.OsStrBytesExtraw_os_strAn extension trait providing additional methods to OsStr.OsStringBytesA platform agnostic variant of OsStringExt.Patternraw_os_strAllows a type to be used for searching by RawOsStr and RawOsString.RawOsStrCowraw_os_strExtensions to Cow<RawOsStr> for additional conversions.

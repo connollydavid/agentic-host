@@ -1,0 +1,69 @@
+
+ Explore
+Browse by Subject
+Encyclopedia
+Oral Histories
+First Hand Histories
+Landmarks/Milestones
+Archives
+Personal Narratives
+Museums
+Random page
+Special pages
+Recent changes
+New pages
+ Help
+Contents
+Contact us
+ Tools
+What links here
+Related changes
+Special pages
+Printable version
+Permanent link
+Page information
+Browse properties
+Talk
+View source
+View history
+Refresh
+English
+Log in
+Request account
+IEEE Frank Rosenblatt Award
+From ETHW
+Jump to:navigation, search
+About Award
+The IEEE Frank Rosenblatt Award was established in 2004.
+The award is named in honor of Frank Rosenblatt, who is widely regarded as one of the founders of neural networks. Basing his research on study of fly vision, he developed the single-layer input layer and an output layer of neural cells. Frequent presentation of a pattern or patterns resulted in changes in the input to output connections, facilitating future recognition of these patterns, or memory. His work influenced and even anticipated many modern neural network approaches.
+Recipient selection is administered through the Technical Field Awards Council of the IEEE Awards Board.
+Award Recipients
+Lawrence J. Fogel, 2006
+James C. Bezdek, 2007
+Teuvo Kohonen, 2008
+John J. Hopfield, 2009
+Michio Sugeno, 2010
+Hans-Paul Schwefel, 2011
+Vladimir N. Vapnik, 2012
+Terrence Sejnowski, 2013
+Geoffrey E. Hinton, 2014
+Marco Dorigo, 2015
+Ronald R. Yager, 2016
+Stephen Grossberg, 2017
+Enrique H. Ruspini, 2018
+Erkki Oja, 2019
+Xin Yao, 2020
+Jim Keller, 2021
+Paul John Werbos, 2022
+Marios Polycarpou, 2023
+Bernadette Bouchon-Meunier, 2024
+Yaochu Jin, 2025
+Retrieved from "https://ethw.org/w/index.php?title=IEEE_Frank_Rosenblatt_Award&oldid=203607"
+Categories: 
+IEEE
+Awards & fellow activities
+ This page was last edited on 2 December 2024, at 19:35.
+About ETHW
+Policies and disclaimers
+WikiTeq Terms & Privacy
+Manage cookie preferences

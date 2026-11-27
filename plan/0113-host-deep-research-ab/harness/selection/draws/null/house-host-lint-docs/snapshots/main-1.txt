@@ -1,0 +1,599 @@
+"host-lint" VOCABULARY.md docs lane at DuckDuckGo
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+  
+
+  
+    
+  
+
+  
+    
+
+    
+      
+
+      
+        
+          
+          
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+              All Regions
+            
+              Argentina
+            
+              Australia
+            
+              Austria
+            
+              Belgium (fr)
+            
+              Belgium (nl)
+            
+              Brazil
+            
+              Bulgaria
+            
+              Canada (en)
+            
+              Canada (fr)
+            
+              Catalonia
+            
+              Chile
+            
+              China
+            
+              Colombia
+            
+              Croatia
+            
+              Czech Republic
+            
+              Denmark
+            
+              Estonia
+            
+              Finland
+            
+              France
+            
+              Germany
+            
+              Greece
+            
+              Hong Kong
+            
+              Hungary
+            
+              Iceland
+            
+              India (en)
+            
+              Indonesia (en)
+            
+              Ireland
+            
+              Israel (en)
+            
+              Italy
+            
+              Japan
+            
+              Korea
+            
+              Latvia
+            
+              Lithuania
+            
+              Malaysia (en)
+            
+              Mexico
+            
+              Netherlands
+            
+              New Zealand
+            
+              Norway
+            
+              Pakistan (en)
+            
+              Peru
+            
+              Philippines (en)
+            
+              Poland
+            
+              Portugal
+            
+              Romania
+            
+              Russia
+            
+              Saudi Arabia
+            
+              Singapore
+            
+              Slovakia
+            
+              Slovenia
+            
+              South Africa
+            
+              Spain (ca)
+            
+              Spain (es)
+            
+              Sweden
+            
+              Switzerland (de)
+            
+              Switzerland (fr)
+            
+              Taiwan
+            
+              Thailand (en)
+            
+              Turkey
+            
+              US (English)
+            
+              US (Spanish)
+            
+              Ukraine
+            
+              United Kingdom
+            
+              Vietnam (en)
+            
+          
+        
+
+        
+          
+            
+              Any Time
+            
+              Past Day
+            
+              Past Week
+            
+              Past Month
+            
+              Past Year
+            
+          
+        
+      
+    
+
+    
+
+    
+      
+      
+        
+          
+            
+
+            
+              
+                
+                   
+                    
+                      
+                        host-lint/VOCABULARY.md at main · connollydavid/host-lint
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            github.com/connollydavid/host-lint/blob/main/VOCABULARY.md
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        Anti-slop linter: detects phase-synonym agentic tells in commit messages, headers, and comments. Rust CLI + agent skill. - host-lint/VOCABULARY.md at main · connollydavid/host-lint
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        agentic-host/plan/0089-lem-lane-and-mcp at main - GitHub
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            github.com/connollydavid/agentic-host/tree/main/plan/0089-lem-lane-and-mcp
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        Landed in host-lint: the paradigm as rule data, the nine matchers, the section exclusion, spine-governed activation with the directive override, the oracle, and the MCP mode.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        plan/0089 lem lane and MCP: the pronoun contract checked at every ...
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            connollydavid.github.io/agentic-host/plan/0089-lem-lane-and-mcp/index.html
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        The manual's own exemplar block is the one corpus that must contain the forms: fenced, per the host-lint:ignore contract, and the fence is validated file-by-file.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        plan/0034: the hygiene grammar grows by reflective practice (fixes host ...
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            connollydavid.github.io/agentic-host/plan/0034-grammar-grows-by-reflective-practice/index.html
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        The naming noun set (FLAG_TERMS) and VOCABULARY.md are host-lint's own. host-lint consumes host-grammar only for the numeral helper and the prose-trope engine. A positional reference is a naming tell, so it graduates into host-lint, not host-grammar.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        host-lint | Code Review AI Agent Skill | SkillsCat
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            skills.cat/skills/connollydavid/host-lint
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        Detects numbered phase-synonym patterns that signal LLM-generated plan language bleeding into commits, headers, and comments. Implements the rules in VOCABULARY.md.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        agentic-host/plan/0089-lem-lane-and-mcp/README.md at main ... - GitHub
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            github.com/connollydavid/agentic-host/blob/main/plan/0089-lem-lane-and-mcp/README.md
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        The manual's own exemplar block is the one corpus that must contain the forms: fenced, per the host-lint:ignore contract, and the fence is validated file-by-file.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        host-lint/README.md at main · connollydavid/host-lint · GitHub
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            github.com/connollydavid/host-lint/blob/main/README.md
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        # host-lint: strict — this committed directive escalates the identifier/reference warn tier to a blocking flag. The rationale: once a project can declare its legitimate tell-shaped tokens, an un declared one is a hard signal, not merely advisory.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        0006-host-lint-sanctioned-vocabulary-allow-list.md - GitHub
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            github.com/connollydavid/agentic-host/blob/main/call/0006-host-lint-sanctioned-vocabulary-allow-list.md
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        The standing preference is still to name work after its content (host-lint 's VOCABULARY.md); the allow file is the escape hatch for genuine vocabulary, sized so it cannot quietly silence a real tell.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        agentic-host/plan/0055-host-lint-review/README.md at main ... - GitHub
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            github.com/connollydavid/agentic-host/blob/main/plan/0055-host-lint-review/README.md
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        This milestone records a maximum-effort review of host-lint, the prose-and-naming detector that gates this repository and every adopter project, and the remediation decided for it.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+              
+                
+                   
+                    
+                      
+                        host-lint exempts sanctioned vocabulary via a repo-root allow file
+                      
+
+                    
+
+                    
+                      
+                        
+                          
+                            
+                              
+                            
+                          
+                          
+                            connollydavid.github.io/agentic-host/call/0006-host-lint-sanctioned-vocabulary-allow-list.html
+                          
+                          
+                        
+                      
+                    
+
+                    
+                      
+                        The standing preference is still to name work after its content (host-lint 's VOCABULARY.md); the allow file is the escape hatch for genuine vocabulary, sized so it cannot quietly silence a real tell.
+                      
+                    
+
+                    
+                  
+                
+              
+            
+
+            
+              
+              
+                
+                  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    
+                      
+                    
+                    
+                    
+                    
+                  
+                
+              
+            
+
+            
+              Feedback

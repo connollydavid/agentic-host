@@ -1,0 +1,129 @@
+[Skip to content](#VPContent)
+
+[![](/logo.svg)ast-grep](/)
+
+SearchK
+
+Main Navigation [Guide](/guide/introduction)
+
+Reference
+
+[Command Line Interface](/reference/cli)
+
+[Rule Config](/reference/yaml)
+
+[Rule Object](/reference/rule)
+
+[Playground Manual](/reference/playground)
+
+Resources
+
+[FAQ](/advanced/faq)
+
+[Rule Examples](/catalog)
+
+[Custom Language](/advanced/custom-language)
+
+[Contributing](/contributing/how-to)
+
+[Blog](/blog)
+
+[Mastering ast-grep](https://leanpub.com/ast-grep)
+
+[Playground](/playground)
+
+[](https://github.com/ast-grep/ast-grep)[](https://discord.com/invite/4YZjf6htSQ)[](https://leanpub.com/ast-grep)
+
+Appearance
+
+[](https://github.com/ast-grep/ast-grep)[](https://discord.com/invite/4YZjf6htSQ)[](https://leanpub.com/ast-grep)
+
+# AST-GREPFind Code by Syntax
+
+ast-grep(sg) is a fast and polyglot tool for code structural search, lint, rewriting at large scale.
+
+[Quickstart](/guide/quick-start)
+
+[Intro](/guide/introduction)
+
+[Examples](/catalog/)
+
+[With AI](/advanced/prompting)
+
+![ast-grep](./logo.svg)
+
+-
+
+  ---
+
+  ## Search and Rewrite
+
+  ast-grep is a code tool for [structural search and replace](/guide/quick-start). It is like syntax-aware grep/sed! You can write code [patterns](/guide/pattern-syntax) to locate and modify code, based on AST, in thousands of files, [interactively](/guide/tooling-overview#interactive-mode).
+
+` ast-grep -p '$A && $A()' -r '$A?.()'  `
+
+  ![](/image/search-replace.png)
+
+-
+
+  ---
+
+  ## Scan as Linter
+
+  ast-grep is a versatile and flexible tool for [linting](/guide/scan-project) code with AST patterns. You can easily add new customized rules with [intuitive syntax](/guide/rule-config) and enjoy pretty error reporting out of box.
+
+` ast-grep scan  `
+
+  ![](/image/yaml-scan.png)
+
+-
+
+  ---
+
+  ## Programmatic Usage
+
+  ast-grep also provides [node-js binding](/guide/api-usage/js-api) to access syntax trees programmatically. You can use jQuery like [utility methods](/reference/api#napi) to traverse syntax tree nodes. Node API also has opt-in [type safety](/blog/typed-napi).
+
+`  npm install @ast-grep/napi `
+
+  ![](/image/sg-napi.png)
+
+---
+
+⚡️
+
+## Performant
+
+Blazing fast search and replace across thousands of source code files, powered by parallel Rust.
+
+📚
+
+## Polyglot
+
+Supports many programming languages out of box! You can also register your own tree-sitter parsers by dynamic loading.
+
+👟
+
+## Progressive
+
+Supports multiple forms of usages from one-line command to fully programmatic interface, scaling to different scenarios.
+
+🛠️
+
+## Pragmatic
+
+Not a toy but a batteries-included tool with interactive codemod, language server and testing tool.
+
+# 20+ Supported Languages
+
+[![](/icons/C.svg)](/catalog/c/)![](/icons/CSharp.svg)[![](/icons/Go.svg)](/catalog/go/)[![](/icons/Java.svg)](/catalog/java/)[![](/icons/JS.svg)](/catalog/tsx/)[![](/icons/Kotlin.svg)](/catalog/kotlin/)[![](/icons/Python.svg)](/catalog/python/)[![](/icons/Rust.svg)](/catalog/rust/)[![](/icons/TS.svg)](/catalog/typescript/)
+
+See more in the [full list](/reference/languages). Custom languages are also [loadable](/advanced/custom-language).
+
+# Who is using ast-grep
+
+[![](https://avatars.githubusercontent.com/u/26715726?s=200&v=4)](https://swc.rs "SWC")[![](https://raw.githubusercontent.com/baiwusanyu-c/unplugin-vue-cssvars/master/public/logo.png)](https://github.com/unplugin/unplugin-vue-cssvars#readme "unplugin-vue-cssvars")[![](/logos/hydrogen.svg)](https://hydrogen.shopify.dev/ "Hydrogen")[![](https://avatars.githubusercontent.com/u/120662729?s=200&v=4)](https://github.com/vue-macros/vue-macros-cli "vue-macros")[![](https://avatars.githubusercontent.com/u/126793605?s=200&v=4)](https://modernjs.dev/ "Modern.js")[![](https://avatars.githubusercontent.com/in/347564?s=200&v=4)](https://coderabbit.ai/ "CodeRabbit")[![](https://avatars.githubusercontent.com/u/78830094?s=200&v=4)](https://codemod.com/ "Codemod")[![](https://avatars.githubusercontent.com/u/180226629?s=200&v=4)](https://opennext.js.org/cloudflare "OpenNext")[![](https://avatars.githubusercontent.com/u/127165244)](https://dify.ai "Dify")
+
+Made with ❤️ with Rust
+
+Copyright © 2022-present Herrington Darkholme

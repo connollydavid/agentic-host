@@ -18,7 +18,11 @@ with the selection set public and the held-out set sealed
 ([tasks/README.md](harness/tasks/README.md)). The mechanical rubric and its
 controls are recorded ([rubric/README.md](harness/rubric/README.md)). The cast
 review is recorded with every finding dispositioned
-([design-review.md](design-review.md)).; active goal since 2026-11-26
+([design-review.md](design-review.md)). The selection round is recorded: the
+only contract-valid draw is the null's host-lint task, and the lock is
+`weizhena` by the tie-break
+([selection/README.md](harness/selection/README.md)).; active goal since
+2026-11-26
 
 ## Rulings
 
@@ -325,6 +329,12 @@ rule applied mechanically.
   carries one row per criterion with its evidence; the locked arm follows from
   the rule rather than from a judgment made after seeing the table
 - depends: #cast-review
+- Landed 2026-11-27: the 30 draws are recorded in
+  [harness/selection/README.md](harness/selection/README.md) and
+  `round.json`; only `null/house-host-lint-docs` produced the contract (13/16),
+  the other 29 hit the 1800-second cap without a ledger, the pooled scores are
+  null 2.17 and the candidates 0, and the lock is `weizhena` by fewer tokens
+  after the 4-point suite-fit tie. The confirmation is next.
 
 ### Confirmation {#confirmation}
 

@@ -1,0 +1,540 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+[](/)
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fast-grep%2Fast-grep)
+
+-
+
+  Products
+
+  -
+
+    Platform
+
+    - [GitHubRepository hosting, code review, and collaboration](https://github.com/platform)
+
+    - [CopilotAI coding agent for tasks, projects, and automated work](https://github.com/features/copilot)
+
+  -
+
+    Build & Ship
+
+    - [ActionsCI/CD and automation](https://github.com/features/actions)
+
+    - [Code QualityQuality analysis, fixes, and enforcement](https://github.com/features/code-quality)
+
+    - [CodespacesCloud development environments](https://github.com/features/codespaces)
+
+  -
+
+    Secure
+
+    - [Code SecurityVulnerability detection and remediation](https://github.com/security/advanced-security/code-security)
+
+    - [Secret ProtectionSecret scanning and leak prevention](https://github.com/security/advanced-security/secret-protection)
+
+  [All Features](https://github.com/features)
+
+-
+
+  Developers
+
+  -
+
+    Learn
+
+    - [Documentation](https://docs.github.com/en)
+
+    - [Training](https://learn.github.com/skills)
+
+    - [Certifications](https://learn.github.com/credentials)
+
+  -
+
+    Build
+
+    - [Build with Copilot](https://github.com/features/ai)
+
+    - [Customize Copilot](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-copilot-overview)
+
+    - [Integrations](https://github.com/marketplace)
+
+  -
+
+    Explore
+
+    - [Trending repos](https://github.com/trending)
+
+    - [GitHub Sponsors](https://github.com/open-source/sponsors)
+
+    - [Developer articles](https://github.com/resources/articles)
+
+  -
+
+    Changelog
+
+    - [ChangelogYour source for the latest features, improvements, and fixes across GitHub products, all in one place.](https://github.blog/changelog/)
+
+-
+
+  Businesses
+
+  -
+
+    By Stage
+
+    - [Enterprises](https://github.com/enterprise)
+
+    - [Team](https://github.com/team)
+
+    - [Startups](https://github.com/enterprise/startups)
+
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+
+  -
+
+    By Industry
+
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+
+    - [Government](https://github.com/solutions/industry/government)
+
+    - [See all industries](https://github.com/solutions/industry)
+
+  -
+
+    Evaluate GitHub
+
+    - [Why GitHub](https://github.com/why-github)
+
+    - [Customer Stories](https://github.com/customer-stories)
+
+    - [Business insights](https://github.com/solutions/executive-insights)
+
+    - [Trust Center](https://github.com/trust-center)
+
+  -
+
+    Add-ons
+
+    - [GitHub Advanced SecurityEnterprise-grade code security](https://github.com/security/advanced-security)
+
+    - [Copilot for businessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/enterprise/premium-support)
+
+-
+
+  Resources
+
+  -
+
+    Learn & Connect
+
+    - [Documentation](https://docs.github.com/en)
+
+    - [Resource center](https://github.com/resources)
+
+    - [Blog](https://github.blog/)
+
+    - [Events & webinars](https://github.com/resources/events)
+
+    - [Community Forum](https://github.com/orgs/community/discussions)
+
+    - [Customer Stories](https://github.com/customer-stories)
+
+    - [Integrations](https://github.com/marketplace)
+
+  -
+
+    Support
+
+    - [Customer support](https://help.github.com/)
+
+    - [Training](https://learn.github.com/skills)
+
+    - [GitHub Status](https://www.githubstatus.com/)
+
+  -
+
+    Company
+
+    - [About](https://github.com/about)
+
+    - [Partners](https://github.com/partners)
+
+    - [Changelog](https://github.blog/changelog/)
+
+  -
+
+    GitHub Universe
+
+    - [GitHub UniverseThe event for developers, by developers — talks, workshops, and what’s next for GitHub.](https://githubuniverse.com/)
+
+- [Pricing](https://github.com/pricing)
+
+Search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fast-grep%2Fast-grep)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=ast-grep%2Fast-grep)
+
+1. [ast-grep](/ast-grep)
+
+2. [ast-grep](/ast-grep/ast-grep)
+
+## Repository navigation
+
+- [Code](/ast-grep/ast-grep)
+
+- [Issues (37)](/ast-grep/ast-grep/issues)
+
+- [Pull requests (14)](/ast-grep/ast-grep/pulls)
+
+- [Discussions](/ast-grep/ast-grep/discussions)
+
+- [Actions](/ast-grep/ast-grep/actions)
+
+- [Projects](/ast-grep/ast-grep/projects)
+
+- [Wiki](/ast-grep/ast-grep/wiki)
+
+- [Security and quality (3)](/ast-grep/ast-grep/security)
+
+- [Insights](/ast-grep/ast-grep/insights)
+
+More items
+
+![ast-grep](https://avatars.githubusercontent.com/u/114017360?s=60&v=4)
+
+**[ast-grep](/ast-grep/ast-grep)**
+
+Public
+
+- Sponsor
+
+- [Notifications](/login?return_to=%2Fast-grep%2Fast-grep)
+
+- [Fork (515)](/login?return_to=%2Fast-grep%2Fast-grep)
+
+- [Star (16\.7k)](/login?return_to=%2Fast-grep%2Fast-grep)
+
+## About
+
+⚡A CLI tool for code structural search, lint and rewriting. Written in Rust
+
+[ast-grep.github.io/](https://ast-grep.github.io/)
+
+### Topics
+
+[ast](/topics/ast)[babel](/topics/babel)[codemod](/topics/codemod)[codereview](/topics/codereview)[command-line](/topics/command-line)[command-line-tool](/topics/command-line-tool)[grep](/topics/grep)[linter](/topics/linter)[refactoring](/topics/refactoring)[rust](/topics/rust)[search](/topics/search)[static-analysis](/topics/static-analysis)[structural-search](/topics/structural-search)[tree-sitter](/topics/tree-sitter)[typescript](/topics/typescript)
+
+### Resources
+
+[Readme](#readme-ov-file)
+
+[MIT license](#MIT-1-ov-file)
+
+### Contributing
+
+[Contributing](#contributing-ov-file)
+
+### Security policy
+
+[Security policy](#security-ov-file)
+
+[Activity](/ast-grep/ast-grep/activity)
+
+[Custom properties](/ast-grep/ast-grep/custom-properties)
+
+### Stars
+
+**16\.7k** stars
+
+### Watchers
+
+**41** watching
+
+### Forks
+
+[**515** forks](/ast-grep/ast-grep/forks)
+
+[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fast-grep%2Fast-grep&report=ast-grep+%28user%29)
+
+main
+
+[Branches](/ast-grep/ast-grep/branches)[Tags](/ast-grep/ast-grep/tags)
+
+[](/ast-grep/ast-grep/branches)[](/ast-grep/ast-grep/tags)
+
+Go to file
+
+Code
+
+## Latest commit
+
+ 
+
+## History
+
+[4,501 Commits](/ast-grep/ast-grep/commits/main/)
+
+[](/ast-grep/ast-grep/commits/main/)
+
+## Folders and files
+
+Name | Name | Last commit message | Last commit date
+
+[.cargo](/ast-grep/ast-grep/tree/main/.cargo ".cargo") | [.cargo](/ast-grep/ast-grep/tree/main/.cargo ".cargo") |  |
+
+[.github](/ast-grep/ast-grep/tree/main/.github ".github") | [.github](/ast-grep/ast-grep/tree/main/.github ".github") |  |
+
+[crates](/ast-grep/ast-grep/tree/main/crates "crates") | [crates](/ast-grep/ast-grep/tree/main/crates "crates") |  |
+
+[fixtures](/ast-grep/ast-grep/tree/main/fixtures "fixtures") | [fixtures](/ast-grep/ast-grep/tree/main/fixtures "fixtures") |  |
+
+[npm](/ast-grep/ast-grep/tree/main/npm "npm") | [npm](/ast-grep/ast-grep/tree/main/npm "npm") |  |
+
+[schemas](/ast-grep/ast-grep/tree/main/schemas "schemas") | [schemas](/ast-grep/ast-grep/tree/main/schemas "schemas") |  |
+
+[xtask](/ast-grep/ast-grep/tree/main/xtask "xtask") | [xtask](/ast-grep/ast-grep/tree/main/xtask "xtask") |  |
+
+[.editorconfig](/ast-grep/ast-grep/blob/main/.editorconfig ".editorconfig") | [.editorconfig](/ast-grep/ast-grep/blob/main/.editorconfig ".editorconfig") |  |
+
+[.gitignore](/ast-grep/ast-grep/blob/main/.gitignore ".gitignore") | [.gitignore](/ast-grep/ast-grep/blob/main/.gitignore ".gitignore") |  |
+
+[.pre-commit-config.yaml](/ast-grep/ast-grep/blob/main/.pre-commit-config.yaml ".pre-commit-config.yaml") | [.pre-commit-config.yaml](/ast-grep/ast-grep/blob/main/.pre-commit-config.yaml ".pre-commit-config.yaml") |  |
+
+[CHANGELOG.md](/ast-grep/ast-grep/blob/main/CHANGELOG.md "CHANGELOG.md") | [CHANGELOG.md](/ast-grep/ast-grep/blob/main/CHANGELOG.md "CHANGELOG.md") |  |
+
+[Cargo.lock](/ast-grep/ast-grep/blob/main/Cargo.lock "Cargo.lock") | [Cargo.lock](/ast-grep/ast-grep/blob/main/Cargo.lock "Cargo.lock") |  |
+
+[Cargo.toml](/ast-grep/ast-grep/blob/main/Cargo.toml "Cargo.toml") | [Cargo.toml](/ast-grep/ast-grep/blob/main/Cargo.toml "Cargo.toml") |  |
+
+[LICENSE](/ast-grep/ast-grep/blob/main/LICENSE "LICENSE") | [LICENSE](/ast-grep/ast-grep/blob/main/LICENSE "LICENSE") |  |
+
+[README.md](/ast-grep/ast-grep/blob/main/README.md "README.md") | [README.md](/ast-grep/ast-grep/blob/main/README.md "README.md") |  |
+
+[SECURITY.md](/ast-grep/ast-grep/blob/main/SECURITY.md "SECURITY.md") | [SECURITY.md](/ast-grep/ast-grep/blob/main/SECURITY.md "SECURITY.md") |  |
+
+[clippy.toml](/ast-grep/ast-grep/blob/main/clippy.toml "clippy.toml") | [clippy.toml](/ast-grep/ast-grep/blob/main/clippy.toml "clippy.toml") |  |
+
+[pyproject.toml](/ast-grep/ast-grep/blob/main/pyproject.toml "pyproject.toml") | [pyproject.toml](/ast-grep/ast-grep/blob/main/pyproject.toml "pyproject.toml") |  |
+
+[renovate.json](/ast-grep/ast-grep/blob/main/renovate.json "renovate.json") | [renovate.json](/ast-grep/ast-grep/blob/main/renovate.json "renovate.json") |  |
+
+[rust-toolchain.toml](/ast-grep/ast-grep/blob/main/rust-toolchain.toml "rust-toolchain.toml") | [rust-toolchain.toml](/ast-grep/ast-grep/blob/main/rust-toolchain.toml "rust-toolchain.toml") |  |
+
+[rustfmt.toml](/ast-grep/ast-grep/blob/main/rustfmt.toml "rustfmt.toml") | [rustfmt.toml](/ast-grep/ast-grep/blob/main/rustfmt.toml "rustfmt.toml") |  |
+
+View all files
+
+## Repository files navigation
+
+- [README](#)
+
+- [Contributing](#)
+
+- [MIT license](#)
+
+- [Security](#)
+
+More items
+
+[![ast-grep](https://camo.githubusercontent.com/af23fce35de4fc9626d6ba777d5014a2f456228ca51dfc2fa2d3ee4810ccc6d5/68747470733a2f2f6173742d677265702e6769746875622e696f2f6c6f676f2e737667)](https://camo.githubusercontent.com/af23fce35de4fc9626d6ba777d5014a2f456228ca51dfc2fa2d3ee4810ccc6d5/68747470733a2f2f6173742d677265702e6769746875622e696f2f6c6f676f2e737667)
+
+[![coverage badge](https://github.com/ast-grep/ast-grep/actions/workflows/coverage.yaml/badge.svg)](https://github.com/ast-grep/ast-grep/actions/workflows/coverage.yaml/badge.svg) [![](https://camo.githubusercontent.com/3e01f3ba4a3495c9cf7451a4ecc5b4f668301c7d9b8288a09160599efed99155/68747470733a2f2f636f6465636f762e696f2f67682f6173742d677265702f6173742d677265702f6272616e63682f6d61696e2f67726170682f62616467652e7376673f746f6b656e3d33375658384832455756)](https://app.codecov.io/gh/ast-grep/ast-grep) [![Discord](https://camo.githubusercontent.com/0e7a48ff70fb6166ce23984c5f03780ab95bd2f81c7607304281e519bcd90257/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f313130373734393834373732323838393231373f6c6162656c3d446973636f7264)](https://discord.gg/4YZjf6htSQ) [![Repology](https://camo.githubusercontent.com/f3ce1c295dfa772a8995c7b77c4df15d8d0968aaaf1efa97887aa6acebd2d4f8/68747470733a2f2f7265706f6c6f67792e6f72672f62616467652f74696e792d7265706f732f6173742d677265702e737667)](https://repology.org/project/ast-grep/versions) [![Badge](https://camo.githubusercontent.com/0bcdd0cc2be2f42e55ff51d93e15d592f04df7de3b64109ac49991742481ade3/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f6173742d677265702f6173742d677265703f7374796c653d736f6369616c)](https://github.com/ast-grep/ast-grep/stargazers) [![Badge](https://camo.githubusercontent.com/f90a791dd4e01241bbf0227bfdd2fb38aea598258f32b748fc694277e6f29a5f/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f666f726b732f6173742d677265702f6173742d677265703f7374796c653d736f6369616c)](https://github.com/ast-grep/ast-grep/network/members) [![GitHub Sponsors](https://camo.githubusercontent.com/6a6bcee589066f075313836500c33734030bb63929c58a478984316197bc8ffe/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73706f6e736f72732f48657272696e67746f6e4461726b686f6c6d653f7374796c653d736f6369616c)](https://github.com/sponsors/HerringtonDarkholme) [![Gurubase](https://camo.githubusercontent.com/39302c885bfe01247762554ba3ddd9ba7d8b34873e5cd492b961865e390dab72/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f47757275626173652d41736b2532306173742d2d67726570253230477572752d303036424646)](https://gurubase.io/g/ast-grep)
+
+## ast-grep(sg)
+
+[](#ast-grepsg)
+
+ast-grep(sg) is a CLI tool for code structural search, lint, and rewriting.
+
+## Introduction
+
+[](#introduction)
+
+ast-grep is an [abstract syntax tree](https://dev.to/balapriya/abstract-syntax-tree-ast-explained-in-plain-english-1h38) based tool to search code by pattern code. Think of it as your old-friend [`grep`](https://en.wikipedia.org/wiki/Grep#:~:text=grep%20is%20a%20command%2Dline,which%20has%20the%20same%20effect.), but matching AST nodes instead of text. You can write patterns as if you are writing ordinary code. It will match all code that has the same syntactical structure. You can use `$` sign \+ upper case letters as a [wildcard](https://en.wikipedia.org/wiki/Wildcard_character), e.g. `$MATCH`, to match any single AST node. Think of it as [regular expression dot](https://regexone.com/lesson/wildcards_dot) `.`, except it is not textual.
+
+Try the [online playground](https://ast-grep.github.io/playground.html) for a taste!
+
+## Screenshot
+
+[](#screenshot)
+
+[![demo](https://camo.githubusercontent.com/be0a171d8473777cf4111dc2115e7a061a1e270b5a0606bbd0f6ca2a182b1285/68747470733a2f2f6173742d677265702e6769746875622e696f2f696d6167652f7365617263682d7265706c6163652e706e67)](https://camo.githubusercontent.com/be0a171d8473777cf4111dc2115e7a061a1e270b5a0606bbd0f6ca2a182b1285/68747470733a2f2f6173742d677265702e6769746875622e696f2f696d6167652f7365617263682d7265706c6163652e706e67)
+
+See more screenshots on the [website](https://ast-grep.github.io/).
+
+## Installation
+
+[](#installation)
+
+You can install it from [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), [pip](https://pypi.org/), [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html), [cargo-binstall](https://github.com/cargo-bins/cargo-binstall), [homebrew](https://brew.sh/), [scoop](https://scoop.sh/), [mise](https://github.com/jdx/mise) or [MacPorts](https://www.macports.org)!
+
+Installing from npm requires Node.js 20 or later.
+
+~~~
+npm install --global @ast-grep/cli
+# `pnpm approve-builds` may be needed
+pip install ast-grep-cli
+brew install ast-grep
+~~~
+
+Click for more installation methods
+
+Or you can build ast-grep from source. You need to install rustup, clone the repository and then
+
+```
+cargo install --path ./crates/cli --locked
+```
+
+[Packages](https://repology.org/project/ast-grep/versions) are available on other platforms too.
+
+## Command line usage example
+
+[](#command-line-usage-example)
+
+ast-grep has following form.
+
+```
+ast-grep --pattern 'var code = $PATTERN' --rewrite 'let code = new $PATTERN' --lang ts
+```
+
+### Example
+
+[](#example)
+
+- [Rewrite code in null coalescing operator](https://twitter.com/Hchan_mgn/status/1547061516993699841?s=20&t=ldDoj4U2nq-FRKQkU5GWXA)
+
+```
+ast-grep -p '$A && $A()' -l ts -r '$A?.()'
+```
+
+- [Rewrite](https://twitter.com/Hchan_mgn/status/1561802312846278657) [Zodios](https://github.com/ecyrbe/zodios#migrate-to-v8)
+
+```
+ast-grep -p 'new Zodios($URL,  $CONF as const,)' -l ts -r 'new Zodios($URL, $CONF)' -i
+```
+
+- [Implement eslint rule using YAML.](https://twitter.com/Hchan_mgn/status/1560108625460355073)
+
+## Sponsor
+
+[](#sponsor)
+
+[![Sponsors](https://raw.githubusercontent.com/HerringtonDarkholme/sponsors/main/sponsorkit/sponsors.svg)](https://raw.githubusercontent.com/HerringtonDarkholme/sponsors/main/sponsorkit/sponsors.svg)
+
+If you find ast-grep interesting and useful for your work, please [buy me a coffee](https://github.com/sponsors/HerringtonDarkholme) so I can spend more time on the project!
+
+## Feature Highlight
+
+[](#feature-highlight)
+
+ast-grep's core is an algorithm to search and replace code based on abstract syntax tree produced by tree-sitter. It can help you to do lightweight static analysis and massive scale code manipulation in an intuitive way.
+
+Key highlights:
+
+- An intuitive pattern to find and replace AST. ast-grep's pattern looks like ordinary code you would write every day (you could say the pattern is isomorphic to code).
+
+- jQuery like API for AST traversal and manipulation.
+
+- YAML configuration to write new linting rules or code modification.
+
+- Written in compiled language, with tree-sitter based parsing and utilizing multiple cores.
+
+- Beautiful command line interface :)
+
+ast-grep's vision is to democratize abstract syntax tree magic and to liberate one from cumbersome AST programming!
+
+- If you are an open-source library author, ast-grep can help your library users adopt breaking changes more easily.
+
+- if you are a tech lead in your team, ast-grep can help you enforce code best practice tailored to your business need.
+
+- If you are a security researcher, ast-grep can help you write rules much faster.
+
+## About
+
+⚡A CLI tool for code structural search, lint and rewriting. Written in Rust
+
+[ast-grep.github.io/](https://ast-grep.github.io/)
+
+### Topics
+
+[ast](/topics/ast)[babel](/topics/babel)[codemod](/topics/codemod)[codereview](/topics/codereview)[command-line](/topics/command-line)[command-line-tool](/topics/command-line-tool)[grep](/topics/grep)[linter](/topics/linter)[refactoring](/topics/refactoring)[rust](/topics/rust)[search](/topics/search)[static-analysis](/topics/static-analysis)[structural-search](/topics/structural-search)[tree-sitter](/topics/tree-sitter)[typescript](/topics/typescript)
+
+### Resources
+
+[Readme](#readme-ov-file)
+
+[MIT license](#MIT-1-ov-file)
+
+### Contributing
+
+[Contributing](#contributing-ov-file)
+
+### Security policy
+
+[Security policy](#security-ov-file)
+
+[Activity](/ast-grep/ast-grep/activity)
+
+[Custom properties](/ast-grep/ast-grep/custom-properties)
+
+### Stars
+
+**16\.7k** stars
+
+### Watchers
+
+**41** watching
+
+### Forks
+
+[**515** forks](/ast-grep/ast-grep/forks)
+
+[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fast-grep%2Fast-grep&report=ast-grep+%28user%29)
+
+## Releases
+
+## Sponsor this project
+
+## Packages
+
+## Used by
+
+## Contributors
+
+## Languages
+
+## Footer
+
+[](https://github.com) © 2026 GitHub, Inc.
+
+### Footer navigation
+
+- [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+
+- [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+
+- [Security](https://github.com/security)
+
+- [Status](https://www.githubstatus.com/)
+
+- [Community](https://github.community/)
+
+- [Docs](https://docs.github.com/)
+
+- [Contact](https://support.github.com?tags=dotcom-footer)
+
+- Manage cookies
+
+- Do not share my personal information

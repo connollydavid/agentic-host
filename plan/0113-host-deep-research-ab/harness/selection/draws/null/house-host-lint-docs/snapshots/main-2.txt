@@ -1,0 +1,611 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+[](/)
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fconnollydavid%2Fhost-lint%2Freleases)
+
+-
+
+  Products
+
+  -
+
+    Platform
+
+    - [GitHubRepository hosting, code review, and collaboration](https://github.com/platform)
+
+    - [CopilotAI coding agent for tasks, projects, and automated work](https://github.com/features/copilot)
+
+  -
+
+    Build & Ship
+
+    - [ActionsCI/CD and automation](https://github.com/features/actions)
+
+    - [Code QualityQuality analysis, fixes, and enforcement](https://github.com/features/code-quality)
+
+    - [CodespacesCloud development environments](https://github.com/features/codespaces)
+
+  -
+
+    Secure
+
+    - [Code SecurityVulnerability detection and remediation](https://github.com/security/advanced-security/code-security)
+
+    - [Secret ProtectionSecret scanning and leak prevention](https://github.com/security/advanced-security/secret-protection)
+
+  [All Features](https://github.com/features)
+
+-
+
+  Developers
+
+  -
+
+    Learn
+
+    - [Documentation](https://docs.github.com/en)
+
+    - [Training](https://learn.github.com/skills)
+
+    - [Certifications](https://learn.github.com/credentials)
+
+  -
+
+    Build
+
+    - [Build with Copilot](https://github.com/features/ai)
+
+    - [Customize Copilot](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-copilot-overview)
+
+    - [Integrations](https://github.com/marketplace)
+
+  -
+
+    Explore
+
+    - [Trending repos](https://github.com/trending)
+
+    - [GitHub Sponsors](https://github.com/open-source/sponsors)
+
+    - [Developer articles](https://github.com/resources/articles)
+
+  -
+
+    Changelog
+
+    - [ChangelogYour source for the latest features, improvements, and fixes across GitHub products, all in one place.](https://github.blog/changelog/)
+
+-
+
+  Businesses
+
+  -
+
+    By Stage
+
+    - [Enterprises](https://github.com/enterprise)
+
+    - [Team](https://github.com/team)
+
+    - [Startups](https://github.com/enterprise/startups)
+
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+
+  -
+
+    By Industry
+
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+
+    - [Government](https://github.com/solutions/industry/government)
+
+    - [See all industries](https://github.com/solutions/industry)
+
+  -
+
+    Evaluate GitHub
+
+    - [Why GitHub](https://github.com/why-github)
+
+    - [Customer Stories](https://github.com/customer-stories)
+
+    - [Business insights](https://github.com/solutions/executive-insights)
+
+    - [Trust Center](https://github.com/trust-center)
+
+  -
+
+    Add-ons
+
+    - [GitHub Advanced SecurityEnterprise-grade code security](https://github.com/security/advanced-security)
+
+    - [Copilot for businessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/enterprise/premium-support)
+
+-
+
+  Resources
+
+  -
+
+    Learn & Connect
+
+    - [Documentation](https://docs.github.com/en)
+
+    - [Resource center](https://github.com/resources)
+
+    - [Blog](https://github.blog/)
+
+    - [Events & webinars](https://github.com/resources/events)
+
+    - [Community Forum](https://github.com/orgs/community/discussions)
+
+    - [Customer Stories](https://github.com/customer-stories)
+
+    - [Integrations](https://github.com/marketplace)
+
+  -
+
+    Support
+
+    - [Customer support](https://help.github.com/)
+
+    - [Training](https://learn.github.com/skills)
+
+    - [GitHub Status](https://www.githubstatus.com/)
+
+  -
+
+    Company
+
+    - [About](https://github.com/about)
+
+    - [Partners](https://github.com/partners)
+
+    - [Changelog](https://github.blog/changelog/)
+
+  -
+
+    GitHub Universe
+
+    - [GitHub UniverseThe event for developers, by developers — talks, workshops, and what’s next for GitHub.](https://githubuniverse.com/)
+
+- [Pricing](https://github.com/pricing)
+
+Search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fconnollydavid%2Fhost-lint%2Freleases)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Findex&source=header-repo&source_repo=connollydavid%2Fhost-lint)
+
+1. [connollydavid](/connollydavid)
+
+2. [host-lint](/connollydavid/host-lint)
+
+## Repository navigation
+
+- [Code](/connollydavid/host-lint)
+
+- [Issues (2)](/connollydavid/host-lint/issues)
+
+- [Pull requests](/connollydavid/host-lint/pulls)
+
+- [Actions](/connollydavid/host-lint/actions)
+
+- [Projects](/connollydavid/host-lint/projects)
+
+- [Security and quality](/connollydavid/host-lint/security)
+
+- [Insights](/connollydavid/host-lint/pulse)
+
+More items
+
+[Releases](/connollydavid/host-lint/releases)
+
+[Tags](/connollydavid/host-lint/tags)
+
+## On this page
+
+[v0.24.1](#release-v0.24.1)
+
+[vendor-v21](#release-vendor-v21)
+
+[vendor-v19](#release-vendor-v19)
+
+[vendor-v18](#release-vendor-v18)
+
+[vendor-v17](#release-vendor-v17)
+
+[vendor-v15](#release-vendor-v15)
+
+[vendor-v13](#release-vendor-v14)
+
+[vendor-v12](#release-vendor-v12)
+
+[vendor-v11](#release-vendor-v11)
+
+[vendor-v9](#release-vendor-v9)
+
+Collapse sidebar
+
+# Releases
+
+## v0.24.1
+
+[v0.24.1](/connollydavid/host-lint/releases/tag/v0.24.1) [Latest](/connollydavid/host-lint/releases/latest)
+
+[Latest](/connollydavid/host-lint/releases/latest)
+
+Compare
+
+# Choose a tag to compare
+
+Filter
+
+[View all tags](/connollydavid/host-lint/tags)
+
+![@github-actions](https://avatars.githubusercontent.com/in/15368?s=40&v=4) [github-actions](/apps/github-actions) released this 29 Oct 14:23
+
+Immutable release. Only release title and notes can be modified.
+
+[ v0.24.1](/connollydavid/host-lint/tree/v0.24.1)
+
+[ `db4a0d2`](/connollydavid/host-lint/commit/db4a0d2026596ac21c3e089bf11d3738fb2d3b78)
+
+**Full Changelog**: [v0.24.0...v0.24.1](https://github.com/connollydavid/host-lint/compare/v0.24.0...v0.24.1)
+
+Assets 15
+
+-
+
+  [ host-lint-darwin-amd64](/connollydavid/host-lint/releases/download/v0.24.1/host-lint-darwin-amd64)
+
+  sha256:1961b9475b56504fe097ab80391d52d488252ebfd5ff5500eb00bfe9b98c6edd
+
+  1\.13 MB 2026-10-29T14:23:01Z
+
+-
+
+  [ host-lint-darwin-arm64](/connollydavid/host-lint/releases/download/v0.24.1/host-lint-darwin-arm64)
+
+  sha256:4c085f3891c51960f53e6a4820b7ba29e3df696a193e962a2ff39c33eb349867
+
+  1\.08 MB 2026-10-29T14:23:02Z
+
+-
+
+  [ host-lint-ffmpeg-darwin-amd64](/connollydavid/host-lint/releases/download/v0.24.1/host-lint-ffmpeg-darwin-amd64)
+
+  sha256:a20759e8b5869873f97c04b59e601f14a83b1af9dbcb08503445c6a95446c456
+
+  687 KB 2026-10-29T14:23:01Z
+
+-
+
+  [ host-lint-ffmpeg-darwin-arm64](/connollydavid/host-lint/releases/download/v0.24.1/host-lint-ffmpeg-darwin-arm64)
+
+  sha256:55d710fbb173c9b0db75963b9c99bcc233691f540032a0a0f9c0395679089203
+
+  680 KB 2026-10-29T14:23:01Z
+
+-
+
+  [ host-lint-ffmpeg-linux-amd64](/connollydavid/host-lint/releases/download/v0.24.1/host-lint-ffmpeg-linux-amd64)
+
+  sha256:fcf917a8c6df87a4c26efa2363f7841bcd75808d6fe575a4d81780315eb356fe
+
+  853 KB 2026-10-29T14:23:01Z
+
+-
+
+  [ host-lint-ffmpeg-linux-arm64](/connollydavid/host-lint/releases/download/v0.24.1/host-lint-ffmpeg-linux-arm64)
+
+  sha256:57c01c0284c02d50bf5524a0bc5f5c302cc7cd013375883167a71821cf8b8382
+
+  772 KB 2026-10-29T14:23:02Z
+
+-
+
+  [ host-lint-ffmpeg-windows-amd64.exe](/connollydavid/host-lint/releases/download/v0.24.1/host-lint-ffmpeg-windows-amd64.exe)
+
+  sha256:5d8ed6519f1160d6c3918690daada78066edb7d9e6c6672f5d393feaa91c87f7
+
+  605 KB 2026-10-29T14:23:02Z
+
+-
+
+  [ host-lint-ffmpeg-windows-arm64.exe](/connollydavid/host-lint/releases/download/v0.24.1/host-lint-ffmpeg-windows-arm64.exe)
+
+  sha256:5e06d52275f7576e48f7de094c3e7de0f055bc3f21c8f0aad866450387bc5f84
+
+  534 KB 2026-10-29T14:23:02Z
+
+-
+
+  [ host-lint-linux-amd64](/connollydavid/host-lint/releases/download/v0.24.1/host-lint-linux-amd64)
+
+  sha256:65b0eee78b000e4d726279f0e6303053cf600c35acd87511beb9408f0499bbfd
+
+  1\.42 MB 2026-10-29T14:23:02Z
+
+-
+
+  [ host-lint-linux-arm64](/connollydavid/host-lint/releases/download/v0.24.1/host-lint-linux-arm64)
+
+  sha256:cdbac13035a7a0023881334401f5234ce28cf5e16453ff6766723011a9c724ff
+
+  1\.19 MB 2026-10-29T14:23:02Z
+
+-
+
+  [ Source code (zip)](/connollydavid/host-lint/archive/refs/tags/v0.24.1.zip)
+
+  2026-10-29T13:55:31Z
+
+-
+
+  [ Source code (tar.gz)](/connollydavid/host-lint/archive/refs/tags/v0.24.1.tar.gz)
+
+  2026-10-29T13:55:31Z
+
+-
+
+  [ Release attestation (json)](/connollydavid/host-lint/attestations/61328578/download)
+
+  2026-10-29T13:55:31Z
+
+-
+
+  Show all 15 assets
+
+## vendor-v21
+
+[vendor-v21](/connollydavid/host-lint/releases/tag/vendor-v21)
+
+Compare
+
+# Choose a tag to compare
+
+Filter
+
+[View all tags](/connollydavid/host-lint/tags)
+
+![@connollydavid](https://avatars.githubusercontent.com/u/266389644?s=40&v=4) [connollydavid](/connollydavid) released this 29 Oct 13:05
+
+Immutable release. Only release title and notes can be modified.
+
+[ vendor-v21](/connollydavid/host-lint/tree/vendor-v21)
+
+[ `cb58793`](/connollydavid/host-lint/commit/cb58793a3d276139575448539eec724af1bd5b3d)
+
+deps-bundle for grammar 435960cac32f6ecfd40d4da8b92ec49583414bf0 (plan/0105); v20 was born with a misnamed asset on an immutable release
+
+Assets 4
+
+## vendor-v19
+
+[vendor-v19](/connollydavid/host-lint/releases/tag/vendor-v19)
+
+Compare
+
+# Choose a tag to compare
+
+Filter
+
+[View all tags](/connollydavid/host-lint/tags)
+
+![@connollydavid](https://avatars.githubusercontent.com/u/266389644?s=40&v=4) [connollydavid](/connollydavid) released this 26 Sep 22:19
+
+Immutable release. Only release title and notes can be modified.
+
+[ vendor-v19](/connollydavid/host-lint/tree/vendor-v19)
+
+[ `a0d2205`](/connollydavid/host-lint/commit/a0d220558359fa27fd85f82d24dcb6e756ec7599)
+
+vendored-dependency bundle: host-grammar adopted at 6cd41c3 (the allium-lane fix), lint v0.22.2's recorded toolchain input
+
+Assets 4
+
+## vendor-v18
+
+[vendor-v18](/connollydavid/host-lint/releases/tag/vendor-v18)
+
+Compare
+
+# Choose a tag to compare
+
+Filter
+
+[View all tags](/connollydavid/host-lint/tags)
+
+![@connollydavid](https://avatars.githubusercontent.com/u/266389644?s=40&v=4) [connollydavid](/connollydavid) released this 26 Sep 22:05
+
+Immutable release. Only release title and notes can be modified.
+
+[ vendor-v18](/connollydavid/host-lint/tree/vendor-v18)
+
+[ `a0d2205`](/connollydavid/host-lint/commit/a0d220558359fa27fd85f82d24dcb6e756ec7599)
+
+vendored-dependency bundle: host-grammar adopted at 6cd41c3 (the allium-lane fix), lint v0.22.2's recorded toolchain input
+
+Assets 4
+
+## vendor-v17
+
+[vendor-v17](/connollydavid/host-lint/releases/tag/vendor-v17)
+
+Compare
+
+# Choose a tag to compare
+
+Filter
+
+[View all tags](/connollydavid/host-lint/tags)
+
+![@connollydavid](https://avatars.githubusercontent.com/u/266389644?s=40&v=4) [connollydavid](/connollydavid) released this 26 Sep 22:04
+
+Immutable release. Only release title and notes can be modified.
+
+[ vendor-v17](/connollydavid/host-lint/tree/vendor-v17)
+
+[ `a0d2205`](/connollydavid/host-lint/commit/a0d220558359fa27fd85f82d24dcb6e756ec7599)
+
+vendored-dependency bundle: host-grammar adopted at 6cd41c3 (the allium-lane fix), lint v0.22.2's recorded toolchain input
+
+Assets 4
+
+## vendor-v15
+
+[vendor-v15](/connollydavid/host-lint/releases/tag/vendor-v15)
+
+Compare
+
+# Choose a tag to compare
+
+Filter
+
+[View all tags](/connollydavid/host-lint/tags)
+
+![@connollydavid](https://avatars.githubusercontent.com/u/266389644?s=40&v=4) [connollydavid](/connollydavid) released this 14 Sep 19:15
+
+Immutable release. Only release title and notes can be modified.
+
+[ vendor-v15](/connollydavid/host-lint/tree/vendor-v15)
+
+[ `b2f20c0`](/connollydavid/host-lint/commit/b2f20c0dbd5a7f302a4b110723b0bb44e927f9d8)
+
+dependency bundle: host-grammar b9cace1 (0.7.0), with vendor-config.toml
+
+Assets 4
+
+## vendor-v13
+
+[vendor-v13](/connollydavid/host-lint/releases/tag/vendor-v14)
+
+Compare
+
+# Choose a tag to compare
+
+Filter
+
+[View all tags](/connollydavid/host-lint/tags)
+
+![@connollydavid](https://avatars.githubusercontent.com/u/266389644?s=40&v=4) [connollydavid](/connollydavid) released this 14 Sep 19:05
+
+Immutable release. Only release title and notes can be modified.
+
+[ vendor-v14](/connollydavid/host-lint/tree/vendor-v14)
+
+[ `b2f20c0`](/connollydavid/host-lint/commit/b2f20c0dbd5a7f302a4b110723b0bb44e927f9d8)
+
+dependency bundle: host-grammar b9cace1 (0.7.0)
+
+Assets 4
+
+## vendor-v12
+
+[vendor-v12](/connollydavid/host-lint/releases/tag/vendor-v12)
+
+Compare
+
+# Choose a tag to compare
+
+Filter
+
+[View all tags](/connollydavid/host-lint/tags)
+
+![@connollydavid](https://avatars.githubusercontent.com/u/266389644?s=40&v=4) [connollydavid](/connollydavid) released this 05 Sep 23:51
+
+Immutable release. Only release title and notes can be modified.
+
+[ vendor-v12](/connollydavid/host-lint/tree/vendor-v12)
+
+[ `ff0516a`](/connollydavid/host-lint/commit/ff0516ad210323d1d23c2bfbaf2d7c49f1e3a1b1)
+
+deps-bundle for host-lint v0.19.0: grammar e5ac04cb embed, complete per-source vendor config (v11 carried an incomplete config and is burned)
+
+Assets 4
+
+## vendor-v11
+
+[vendor-v11](/connollydavid/host-lint/releases/tag/vendor-v11)
+
+Compare
+
+# Choose a tag to compare
+
+Filter
+
+[View all tags](/connollydavid/host-lint/tags)
+
+![@connollydavid](https://avatars.githubusercontent.com/u/266389644?s=40&v=4) [connollydavid](/connollydavid) released this 05 Sep 23:36
+
+Immutable release. Only release title and notes can be modified.
+
+[ vendor-v11](/connollydavid/host-lint/tree/vendor-v11)
+
+[ `ff0516a`](/connollydavid/host-lint/commit/ff0516ad210323d1d23c2bfbaf2d7c49f1e3a1b1)
+
+deps-bundle for host-lint v0.18.2: grammar embed bumped to e5ac04cb (the markdown-block-structure-before-mask fix). Supersedes the interrupted vendor-v10.
+
+Assets 4
+
+## vendor-v9
+
+[vendor-v9](/connollydavid/host-lint/releases/tag/vendor-v9)
+
+Compare
+
+# Choose a tag to compare
+
+Filter
+
+[View all tags](/connollydavid/host-lint/tags)
+
+![@connollydavid](https://avatars.githubusercontent.com/u/266389644?s=40&v=4) [connollydavid](/connollydavid) released this 10 Aug 17:08
+
+Immutable release. Only release title and notes can be modified.
+
+[ vendor-v9](/connollydavid/host-lint/tree/vendor-v9)
+
+[ `0d2e4c5`](/connollydavid/host-lint/commit/0d2e4c5694e8a7e31d3e5491a06b0e499465524a)
+
+Vendored dependency bundle for the offline canonical build. Regenerated for host-grammar e5ac04c, which supersedes 7f73dfa in vendor-v8.
+
+Assets 4
+
+Previous [1](/connollydavid/host-lint/releases?page=1) [2](/connollydavid/host-lint/releases?page=2) [3](/connollydavid/host-lint/releases?page=3) [4](/connollydavid/host-lint/releases?page=4) [5](/connollydavid/host-lint/releases?page=5) [6](/connollydavid/host-lint/releases?page=6) [Next](/connollydavid/host-lint/releases?page=2)
+
+Previous [Next](/connollydavid/host-lint/releases?page=2)
+
+## Footer
+
+[](https://github.com) © 2026 GitHub, Inc.
+
+### Footer navigation
+
+- [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+
+- [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+
+- [Security](https://github.com/security)
+
+- [Status](https://www.githubstatus.com/)
+
+- [Community](https://github.community/)
+
+- [Docs](https://docs.github.com/)
+
+- [Contact](https://support.github.com?tags=dotcom-footer)
+
+- Manage cookies
+
+- Do not share my personal information

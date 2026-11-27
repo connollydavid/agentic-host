@@ -1,0 +1,23 @@
+{
+  "arm": "kanatami",
+  "task": "selection/simpleqa-0000",
+  "exit_code": 1,
+  "timed_out": false,
+  "wall_seconds": 1649.1,
+  "prompt_tokens": 21104,
+  "completion_tokens": 804,
+  "tool_calls": 5,
+  "agent_files": {
+    "report": false,
+    "sources": false,
+    "fetch_log": false
+  },
+  "contract_ok": false,
+  "contract_reason": "the draw wrote no sources.json",
+  "rubric": {
+    "status": "void",
+    "reason": "rubric error: [Errno 2] No such file or directory: '/opt/repo/agentic-host/plan/0113-host-deep-research-ab/harness/selection/draws/kanatami/simpleqa-0000/sources.json'"
+  },
+  "valid": false,
+  "score": 0
+}

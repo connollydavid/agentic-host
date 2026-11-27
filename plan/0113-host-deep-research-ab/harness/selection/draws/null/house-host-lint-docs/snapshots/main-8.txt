@@ -1,0 +1,1087 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+[](/)
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fconnollydavid%2Fhost-lint%2Fcommit%2Fe652ffc3fb517ad1bf185e73a6d4a050d8365c7f)
+
+-
+
+  Products
+
+  -
+
+    Platform
+
+    - [GitHubRepository hosting, code review, and collaboration](https://github.com/platform)
+
+    - [CopilotAI coding agent for tasks, projects, and automated work](https://github.com/features/copilot)
+
+  -
+
+    Build & Ship
+
+    - [ActionsCI/CD and automation](https://github.com/features/actions)
+
+    - [Code QualityQuality analysis, fixes, and enforcement](https://github.com/features/code-quality)
+
+    - [CodespacesCloud development environments](https://github.com/features/codespaces)
+
+  -
+
+    Secure
+
+    - [Code SecurityVulnerability detection and remediation](https://github.com/security/advanced-security/code-security)
+
+    - [Secret ProtectionSecret scanning and leak prevention](https://github.com/security/advanced-security/secret-protection)
+
+  [All Features](https://github.com/features)
+
+-
+
+  Developers
+
+  -
+
+    Learn
+
+    - [Documentation](https://docs.github.com/en)
+
+    - [Training](https://learn.github.com/skills)
+
+    - [Certifications](https://learn.github.com/credentials)
+
+  -
+
+    Build
+
+    - [Build with Copilot](https://github.com/features/ai)
+
+    - [Customize Copilot](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-copilot-overview)
+
+    - [Integrations](https://github.com/marketplace)
+
+  -
+
+    Explore
+
+    - [Trending repos](https://github.com/trending)
+
+    - [GitHub Sponsors](https://github.com/open-source/sponsors)
+
+    - [Developer articles](https://github.com/resources/articles)
+
+  -
+
+    Changelog
+
+    - [ChangelogYour source for the latest features, improvements, and fixes across GitHub products, all in one place.](https://github.blog/changelog/)
+
+-
+
+  Businesses
+
+  -
+
+    By Stage
+
+    - [Enterprises](https://github.com/enterprise)
+
+    - [Team](https://github.com/team)
+
+    - [Startups](https://github.com/enterprise/startups)
+
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+
+  -
+
+    By Industry
+
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+
+    - [Government](https://github.com/solutions/industry/government)
+
+    - [See all industries](https://github.com/solutions/industry)
+
+  -
+
+    Evaluate GitHub
+
+    - [Why GitHub](https://github.com/why-github)
+
+    - [Customer Stories](https://github.com/customer-stories)
+
+    - [Business insights](https://github.com/solutions/executive-insights)
+
+    - [Trust Center](https://github.com/trust-center)
+
+  -
+
+    Add-ons
+
+    - [GitHub Advanced SecurityEnterprise-grade code security](https://github.com/security/advanced-security)
+
+    - [Copilot for businessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/enterprise/premium-support)
+
+-
+
+  Resources
+
+  -
+
+    Learn & Connect
+
+    - [Documentation](https://docs.github.com/en)
+
+    - [Resource center](https://github.com/resources)
+
+    - [Blog](https://github.blog/)
+
+    - [Events & webinars](https://github.com/resources/events)
+
+    - [Community Forum](https://github.com/orgs/community/discussions)
+
+    - [Customer Stories](https://github.com/customer-stories)
+
+    - [Integrations](https://github.com/marketplace)
+
+  -
+
+    Support
+
+    - [Customer support](https://help.github.com/)
+
+    - [Training](https://learn.github.com/skills)
+
+    - [GitHub Status](https://www.githubstatus.com/)
+
+  -
+
+    Company
+
+    - [About](https://github.com/about)
+
+    - [Partners](https://github.com/partners)
+
+    - [Changelog](https://github.blog/changelog/)
+
+  -
+
+    GitHub Universe
+
+    - [GitHub UniverseThe event for developers, by developers — talks, workshops, and what’s next for GitHub.](https://githubuniverse.com/)
+
+- [Pricing](https://github.com/pricing)
+
+Search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fconnollydavid%2Fhost-lint%2Fcommit%2Fe652ffc3fb517ad1bf185e73a6d4a050d8365c7f)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fcommit%2Fshow&source=header-repo&source_repo=connollydavid%2Fhost-lint)
+
+1. [connollydavid](/connollydavid)
+
+2. [host-lint](/connollydavid/host-lint)
+
+## Repository navigation
+
+- [Code](/connollydavid/host-lint)
+
+- [Issues (2)](/connollydavid/host-lint/issues)
+
+- [Pull requests](/connollydavid/host-lint/pulls)
+
+- [Actions](/connollydavid/host-lint/actions)
+
+- [Projects](/connollydavid/host-lint/projects)
+
+- [Security and quality](/connollydavid/host-lint/security)
+
+- [Insights](/connollydavid/host-lint/pulse)
+
+More items
+
+# Commit e652ffc
+
+[Browse files](/connollydavid/host-lint/tree/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f)[](/connollydavid/host-lint/tree/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f)
+
+![connollydavid](https://avatars.githubusercontent.com/u/266389644?v=4&size=40)![claude](https://avatars.githubusercontent.com/u/81847?v=4&size=40)
+
+[connollydavid](/connollydavid/host-lint/commits?author=connollydavid)
+
+and
+
+[claude](/connollydavid/host-lint/commits?author=claude)
+
+committed
+
+host-lint 0\.8.0: \--docs repo-wide prose lane, plus located, fix-hinted, tiered output
+
+D1 (plan/0030): a single \--docs mode walks authored markdown only (git ls-files, honors .host-lintignore, skips code/symlinks), the counterpart to the naming \--all. E1-E4 (plan/0031): the prose output becomes weak-agent-fixable. Occurrence-mapping locates each tell at its real line:col (ten em-dashes no longer collapse onto the first line); a mechanical fix hint is keyed on the trope id; non-locatable whole-document diagnoses (density, anaphora, bullet patterns) drop to an advisory Note tier that does not gate, so clean-to-zero terminates. Case-insensitive matching keeps sentence-initial tells located. Golden tests \+ the obligations digest re-record. Co-Authored-By: Claude Opus 4\.8 \<noreply@anthropic.com\>
+
+```
+1 parent bbd0687 commit e652ffc
+```
+
+7 files changed
+
+Lines changed: 271 additions & 30 deletions
+
+## File tree
+
+-
+
+  [Cargo.lock](#diff-13ee4b2252c9e516a0547f2891aa2105c3ca71c6d7a1e682c69be97998dfc87e)
+
+-
+
+  [Cargo.toml](#diff-2e9d962a08321605940b5a657135052fbcef87b5e360662bb527c96d9a615542)
+
+-
+
+  [host-lint.obligations.digests](#diff-ef96c3fe2a4574d36002d6ca03eeb16cd996dde7c30e1e46f5612cd84bbf349a)
+
+-
+
+  src
+
+  -
+
+    [lib.rs](#diff-b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759)
+
+  -
+
+    [main.rs](#diff-42cb6807ad74b3e201c5a7ca98b911c5fa08380e942be6e4ac5807f8377f87fc)
+
+-
+
+  [test-integration.sh](#diff-49bf477293c994752d679aa9f1155d8bc2aac628082aecde877983fa2f9e6a78)
+
+-
+
+  tests
+
+  -
+
+    [property\_tests.rs](#diff-04999c0e12a3b26d362fe94e227a7705d900543c35c1e692b7b82557fe654424)
+
+### [`‎Cargo.lock‎`](#diff-13ee4b2252c9e516a0547f2891aa2105c3ca71c6d7a1e682c69be97998dfc87e)
+
+Lines changed: 1 addition & 1 deletion
+
+Load diffSome generated files are not rendered by default. Learn more about [customizing how changed files appear on GitHub.](https://docs.github.com/github/administering-a-repository/customizing-how-changed-files-appear-on-github)
+
+### [`‎Cargo.toml‎`](#diff-2e9d962a08321605940b5a657135052fbcef87b5e360662bb527c96d9a615542)
+
+Lines changed: 1 addition & 1 deletion
+
+Original file line number | Diff line number | Diff line change
+
+`@@ -1,6 +1,6 @@`
+
+`1` | `1` | `[package]`
+
+`2` | `2` | `name = "host-lint"`
+
+`3` |  | `-version = "0.7.0"`
+
+ | `3` | `+version = "0.8.0"`
+
+`4` | `4` | `edition = "2021"`
+
+`5` | `5` | `description = "Detect phase-synonym agentic tells in commits, headers, and comments"`
+
+`6` | `6` | `license = "Unlicense"`
+
+### [`‎host-lint.obligations.digests‎`](#diff-ef96c3fe2a4574d36002d6ca03eeb16cd996dde7c30e1e46f5612cd84bbf349a)
+
+Lines changed: 2 additions & 2 deletions
+
+Original file line number | Diff line number | Diff line change
+
+`@@ -1,4 +1,4 @@`
+
+`1` | `1` | `# host-lifecycle obligations digest ledger (--record-digests).`
+
+`2` | `2` | `# <obligation-id>\t<git hash-object of declared inputs at re-derivation>`
+
+`3` |  | `-rule-success.DetectInternalCodeAsName 8bd5c8f43a5b3c1dd02827c0ca7663c9d503b60d`
+
+`4` |  | `-rule-failure.DetectInternalCodeAsName.1 8bd5c8f43a5b3c1dd02827c0ca7663c9d503b60d`
+
+ | `3` | `+rule-success.DetectInternalCodeAsName fc7c832614c9e019142ec930fff9803bcb4bf994`
+
+ | `4` | `+rule-failure.DetectInternalCodeAsName.1 fc7c832614c9e019142ec930fff9803bcb4bf994`
+
+### [`‎src/lib.rs‎`](#diff-b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759)
+
+Lines changed: 102 additions & 20 deletions
+
+Original file line number | Diff line number | Diff line change
+
+`@@ -43,11 +43,18 @@ pub enum Severity {`
+
+`43` | `43` | ` Flag, `
+
+`44` | `44` | ` /// A bare-numeral degenerate form: advisory, asks the author to reconsider (exit 3). `
+
+`45` | `45` | ` Warn, `
+
+ | `46` | `+ /// A non-locatable, whole-document prose diagnosis (density, anaphora, bullet`
+
+ | `47` | `+ /// patterns): informational only, never gates (exit 0). There is no single span to`
+
+ | `48` | `+ /// edit, so it sits outside the clean-to-zero bar.`
+
+ | `49` | `+ Note,`
+
+`46` | `50` | `}`
+
+`47` | `51` |
+
+`48` | `52` | `pub struct Match {`
+
+`49` | `53` | ` pub file: String, `
+
+`50` | `54` | ` pub line: usize, `
+
+ | `55` | `+ /// 1-based character column of the tell on its line; 0 when the tell is line-level`
+
+ | `56` | `+ /// (a naming tell) or non-locatable (an advisory whole-document prose diagnosis).`
+
+ | `57` | `+ pub col: usize,`
+
+`51` | `58` | ` pub text: String, `
+
+`52` | `59` | ` pub term: String, `
+
+`53` | `60` | ` pub severity: Severity, `
+
+`@@ -571,6 +578,7 @@ pub fn scan_text_with_allow_strict(`
+
+`571` | `578` | ` matches.push(Match { `
+
+`572` | `579` | ` file: source.to_string(), `
+
+`573` | `580` | ` line: i + 1, `
+
+ | `581` | `+ col: 0,`
+
+`574` | `582` | ` text: line.trim().to_string(), `
+
+`575` | `583` | ` term, `
+
+`576` | `584` | ` severity, `
+
+`@@ -580,18 +588,59 @@ pub fn scan_text_with_allow_strict(`
+
+`580` | `588` | ` } `
+
+`581` | `589` | `}`
+
+`582` | `590` |
+
+`583` |  | ``-// Best-effort line lookup: the 1-based line of `source` whose text contains the``
+
+`584` |  | ``-// start of `needle`; 1 when not found (titles and synthetic excerpts).``
+
+`585` |  | `-fn locate_line(input: &str, needle: &str) -> usize {`
+
+`586` |  | `- let probe = needle.split_whitespace().take(4).collect::<Vec<_>>().join(" ");`
+
+ | `591` | `+// Push a prose tell as a Match — a free helper so the occurrence-mapping loop reads`
+
+ | `592` | `+// cleanly.`
+
+ | `593` | `+#[allow(clippy::too_many_arguments)]`
+
+ | `594` | `+fn push_tell(`
+
+ | `595` | `+ matches: &mut Vec<Match>,`
+
+ | `596` | `+ source: &str,`
+
+ | `597` | `+ line: usize,`
+
+ | `598` | `+ col: usize,`
+
+ | `599` | `+ text: &str,`
+
+ | `600` | `+ term: &str,`
+
+ | `601` | `+ severity: Severity,`
+
+ | `602` | `+ cite: &str,`
+
+ | `603` | `+) {`
+
+ | `604` | `+ matches.push(Match {`
+
+ | `605` | `+ file: source.to_string(),`
+
+ | `606` | `+ line,`
+
+ | `607` | `+ col,`
+
+ | `608` | `+ text: text.to_string(),`
+
+ | `609` | `+ term: term.to_string(),`
+
+ | `610` | `+ severity,`
+
+ | `611` | `+ cite: cite.to_string(),`
+
+ | `612` | `+ });`
+
+ | `613` | `+}`
+
+ | `614` | `+`
+
+ | `615` | ``+// The 1-based (line, column) of byte offset `off` in `input`; the column counts``
+
+ | `616` | `+// characters from the line start.`
+
+ | `617` | `+fn line_col(input: &str, off: usize) -> (usize, usize) {`
+
+ | `618` | `+ let mut line = 1usize;`
+
+ | `619` | `+ let mut col = 1usize;`
+
+ | `620` | `+ for (i, ch) in input.char_indices() {`
+
+ | `621` | `+ if i >= off {`
+
+ | `622` | `+ break;`
+
+ | `623` | `+ }`
+
+ | `624` | `+ if ch == '\n' {`
+
+ | `625` | `+ line += 1;`
+
+ | `626` | `+ col = 1;`
+
+ | `627` | `+ } else {`
+
+ | `628` | `+ col += 1;`
+
+ | `629` | `+ }`
+
+ | `630` | `+ }`
+
+ | `631` | `+ (line, col)`
+
+ | `632` | `+}`
+
+ | `633` | `+`
+
+ | `634` | `+// Best-effort line of a multi-word excerpt the markdown extractor may have normalised`
+
+ | `635` | `+// out of the raw source: the 1-based line containing the excerpt's first few words, or`
+
+ | `636` | `+// None when even that is absent (a synthetic whole-document diagnosis). Both arguments`
+
+ | `637` | `+// are already ascii-lowercased, so the match is case-insensitive.`
+
+ | `638` | `+fn probe_line(input_lc: &str, needle_lc: &str) -> Option<usize> {`
+
+ | `639` | `+ let probe = needle_lc.split_whitespace().take(4).collect::<Vec<_>>().join(" ");`
+
+`587` | `640` | ` if probe.is_empty() { `
+
+`588` |  | `- return 1;`
+
+ | `641` | `+ return None;`
+
+`589` | `642` | ` } `
+
+`590` |  | `- input`
+
+`591` |  | `- .lines()`
+
+`592` |  | `- .position(\|l\| l.contains(&probe))`
+
+`593` |  | `- .map(\|i\| i + 1)`
+
+`594` |  | `- .unwrap_or(1)`
+
+ | `643` | `+ input_lc.lines().position(\|l\| l.contains(&probe)).map(\|i\| i + 1)`
+
+`595` | `644` | `}`
+
+`596` | `645` |
+
+`597` | `646` | ``/// Scan `input` as prose for agentic tells (the host-grammar engine), pushing``
+
+`@@ -607,15 +656,47 @@ pub fn scan_prose_text(input: &str, source: &str, matches: &mut Vec<Match>) {`
+
+`607` | `656` | ` } else { `
+
+`608` | `657` | ` host_grammar::scan_prose_parallel(input) `
+
+`609` | `658` | ` }; `
+
+`610` |  | `- for t in tells {`
+
+`611` |  | `- matches.push(Match {`
+
+`612` |  | `- file: source.to_string(),`
+
+`613` |  | `- line: locate_line(input, &t.excerpt),`
+
+`614` |  | `- text: t.excerpt,`
+
+`615` |  | `- term: t.id.to_string(),`
+
+`616` |  | `- severity: Severity::Warn,`
+
+`617` |  | `- cite: t.cite.to_string(),`
+
+`618` |  | `- });`
+
+ | `659` | `+ // Locate each tell. The engine emits one tell per occurrence, but in the markdown`
+
+ | `660` | `+ // path tells of the same (id, excerpt) arrive grouped, and a first-occurrence line`
+
+ | `661` | `+ // lookup collapses them all onto one line (ten em-dashes → ten records at line 12).`
+
+ | `662` | `+ // Occurrence-map instead: assign the k-th tell of an (id, excerpt) to the k-th`
+
+ | `663` | `+ // literal occurrence of its excerpt, yielding a precise line:col. A multi-word`
+
+ | `664` | `+ // excerpt the markdown extractor normalised away falls back to a probe line (no`
+
+ | `665` | `+ // column); one that never appears at all is a non-locatable whole-document`
+
+ | `666` | `+ // diagnosis — advisory, emitted once.`
+
+ | `667` | `+ let input_lc = input.to_ascii_lowercase();`
+
+ | `668` | `+ let mut cursor: std::collections::HashMap<(&str, &str), usize> =`
+
+ | `669` | `+ std::collections::HashMap::new();`
+
+ | `670` | `+ for t in &tells {`
+
+ | `671` | `+ // Match case-insensitively: the engine returns lowercased lexeme phrases, but a`
+
+ | `672` | `+ // sentence-initial tell ("Let's unpack") is capitalised in the source. Ascii`
+
+ | `673` | ``+ // lowercasing is byte-length-preserving, so an offset in `input_lc` is valid in``
+
+ | `674` | ``+ // `input`, and the original-case substring is what the author actually wrote.``
+
+ | `675` | `+ let needle = t.excerpt.to_ascii_lowercase();`
+
+ | `676` | `+ let key = (t.id, t.excerpt.as_str());`
+
+ | `677` | `+ let from = *cursor.get(&key).unwrap_or(&0);`
+
+ | `678` | `+ if let Some(rel) = input_lc.get(from..).and_then(\|s\| s.find(&needle)) {`
+
+ | `679` | `+ let off = from + rel;`
+
+ | `680` | `+ let end = off + needle.len();`
+
+ | `681` | `+ cursor.insert(key, end.max(off + 1));`
+
+ | `682` | `+ let (line, col) = line_col(input, off);`
+
+ | `683` | `+ push_tell(matches, source, line, col, &input[off..end], t.id, Severity::Warn, t.cite);`
+
+ | `684` | `+ } else if from == 0 {`
+
+ | `685` | `+ // No literal occurrence from the start: a normalised multi-word excerpt (try`
+
+ | `686` | `+ // a probe line) or a synthetic diagnosis (advisory). Mark seen so any repeats`
+
+ | `687` | `+ // are dropped, not re-emitted.`
+
+ | `688` | `+ cursor.insert(key, usize::MAX);`
+
+ | `689` | `+ match probe_line(&input_lc, &needle) {`
+
+ | `690` | `+ Some(line) => {`
+
+ | `691` | `+ push_tell(matches, source, line, 0, &t.excerpt, t.id, Severity::Warn, t.cite)`
+
+ | `692` | `+ }`
+
+ | `693` | `+ None => {`
+
+ | `694` | `+ push_tell(matches, source, 1, 0, &t.excerpt, t.id, Severity::Note, t.cite)`
+
+ | `695` | `+ }`
+
+ | `696` | `+ }`
+
+ | `697` | `+ }`
+
+ | `698` | `+ // else: cursor advanced past the real occurrences but no more found → a phantom`
+
+ | `699` | `+ // surplus or an already-emitted repeat → drop.`
+
+`619` | `700` | ` } `
+
+`620` | `701` | ` let score = if markdown { `
+
+`621` | `702` | ` host_grammar::tell_score_markdown(input) `
+
+`@@ -626,12 +707,13 @@ pub fn scan_prose_text(input: &str, source: &str, matches: &mut Vec<Match>) {`
+
+`626` | `707` | ` matches.push(Match { `
+
+`627` | `708` | ` file: source.to_string(), `
+
+`628` | `709` | ` line: 1, `
+
+ | `710` | `+ col: 0,`
+
+`629` | `711` | ` text: format!( `
+
+`630` | `712` | ` "agentic-tell density {:.2} across {} sentences ({} tells)", `
+
+`631` | `713` | ` score.density, score.sentences, score.tells `
+
+`632` | `714` | ` ), `
+
+`633` | `715` | ` term: "tell-density".to_string(), `
+
+`634` |  | `- severity: Severity::Warn,`
+
+ | `716` | `+ severity: Severity::Note,`
+
+`635` | `717` | ` cite: "tropes.fyi: many devices together".to_string(), `
+
+`636` | `718` | ` }); `
+
+`637` | `719` | ` } `
+
+### [`‎src/main.rs‎`](#diff-42cb6807ad74b3e201c5a7ca98b911c5fa08380e942be6e4ac5807f8377f87fc)
+
+Lines changed: 87 additions & 3 deletions
+
+Original file line number | Diff line number | Diff line change
+
+`@@ -269,18 +269,42 @@ fn scan_file(path: &Path, allow: &[String], strict: bool, matches: &mut Vec<Matc`
+
+`269` | `269` |
+
+`270` | `270` | `fn output_text(matches: &[Match]) {`
+
+`271` | `271` | ` for m in matches { `
+
+ | `272` | `+ let loc = if m.col > 0 {`
+
+ | `273` | `+ format!("{}:{}:{}", m.file, m.line, m.col)`
+
+ | `274` | `+ } else {`
+
+ | `275` | `+ format!("{}:{}", m.file, m.line)`
+
+ | `276` | `+ };`
+
+`272` | `277` | ` let tag = if m.cite.is_empty() { `
+
+`273` | `278` | ` m.term.clone() `
+
+`274` | `279` | ` } else { `
+
+`275` | `280` | ` format!("{} — {}", m.term, m.cite) `
+
+`276` | `281` | ` }; `
+
+ | `282` | `+ let fix = fix_hint(&m.term, &m.text)`
+
+ | `283` | `+ .map(\|f\| format!(" [fix: {}]", f))`
+
+ | `284` | `+ .unwrap_or_default();`
+
+`277` | `285` | ` match m.severity { `
+
+`278` |  | `- Severity::Warn => eprintln!("{}:{}: warning: {} ({})", m.file, m.line, m.text, tag),`
+
+`279` |  | `- Severity::Flag => eprintln!("{}:{}: {} ({})", m.file, m.line, m.text, tag),`
+
+ | `286` | `+ Severity::Warn => eprintln!("{}: warning: {} ({}){}", loc, m.text, tag, fix),`
+
+ | `287` | `+ Severity::Flag => eprintln!("{}: {} ({}){}", loc, m.text, tag, fix),`
+
+ | `288` | `+ Severity::Note => eprintln!("{}: note: {} ({})", loc, m.text, tag),`
+
+`280` | `289` | ` } `
+
+`281` | `290` | ` } `
+
+`282` | `291` | `}`
+
+`283` | `292` |
+
+ | `293` | `+// A mechanical rewrite hint for the tropes a weak agent can fix by a known edit, keyed`
+
+ | `294` | `+// on the tell id (and the matched character for decoration). Judgement tropes — reword`
+
+ | `295` | `+// a sentence — carry no hint, so only mechanically-fixable tells get one.`
+
+ | `296` | `+fn fix_hint(term: &str, text: &str) -> Option<&'static str> {`
+
+ | `297` | `+ match term {`
+
+ | `298` | `+ "decoration" => Some(match text {`
+
+ | `299` | `+ "—" \| "–" => "replace with a comma, period, or parentheses",`
+
+ | `300` | `+ "“" \| "”" \| "‘" \| "’" => "use a straight quote",`
+
+ | `301` | `+ "→" => "replace with a word (to, then, leads to)",`
+
+ | `302` | `+ _ => "rewrite as plain punctuation",`
+
+ | `303` | `+ }),`
+
+ | `304` | `+ _ => None,`
+
+ | `305` | `+ }`
+
+ | `306` | `+}`
+
+ | `307` | `+`
+
+`284` | `308` | `fn output_json(matches: &[Match]) {`
+
+`285` | `309` | ` let json = serde_json_like(matches); `
+
+`286` | `310` | ` println!("{}", json); `
+
+`@@ -292,13 +316,18 @@ fn serde_json_like(matches: &[Match]) -> String {`
+
+`292` | `316` | ` out.push_str(" {"); `
+
+`293` | `317` | ` out.push_str(&format!("\"file\": \"{}\", ", escape_json(&m.file))); `
+
+`294` | `318` | ` out.push_str(&format!("\"line\": {}, ", m.line)); `
+
+ | `319` | `+ out.push_str(&format!("\"col\": {}, ", m.col));`
+
+`295` | `320` | ` out.push_str(&format!("\"text\": \"{}\", ", escape_json(&m.text))); `
+
+`296` | `321` | ` out.push_str(&format!("\"term\": \"{}\", ", escape_json(&m.term))); `
+
+`297` | `322` | ` let severity = match m.severity { `
+
+`298` | `323` | ` Severity::Warn => "warn", `
+
+`299` | `324` | ` Severity::Flag => "flag", `
+
+ | `325` | `+ Severity::Note => "note",`
+
+`300` | `326` | ` }; `
+
+`301` | `327` | ` out.push_str(&format!("\"severity\": \"{}\"", severity)); `
+
+ | `328` | `+ if let Some(f) = fix_hint(&m.term, &m.text) {`
+
+ | `329` | `+ out.push_str(&format!(", \"fix\": \"{}\"", escape_json(f)));`
+
+ | `330` | `+ }`
+
+`302` | `331` | ` if !m.cite.is_empty() { `
+
+`303` | `332` | ` out.push_str(&format!(", \"cite\": \"{}\"", escape_json(&m.cite))); `
+
+`304` | `333` | ` } `
+
+`@@ -379,6 +408,57 @@ fn load_ignore(root: &str) -> Vec<String> {`
+
+`379` | `408` | ` } `
+
+`380` | `409` | `}`
+
+`381` | `410` |
+
+ | `411` | ``+// `--docs` is the repo-wide prose lane — the counterpart to the naming `--all`.``
+
+ | `412` | `+// Scope determines type: naming tells hide in any file, but prose tropes are a`
+
+ | `413` | ``+// property of authored narrative, so `--docs` walks `.md` only and never runs the``
+
+ | `414` | ``+// prose engine over `.rs`/`.toml`/`.sh` (which would flag decoration in code``
+
+ | `415` | `+// comments and string literals, with a meaningless clean-to-zero bar over source).`
+
+ | `416` | ``+// It reuses the `--all` `git ls-files` walk, so gitignored output, vendored deps,``
+
+ | `417` | ``+// untracked worktrees, and submodules never appear; `.host-lintignore` filters the``
+
+ | `418` | ``+// rest (e.g. the append-only `MEMORY.md`). Prose tells are advisory (warn, exit 3),``
+
+ | `419` | ``+// as elsewhere; the `verify` gate's recheck treats that non-zero as a regression.``
+
+ | `420` | `+fn run_docs(root: &str, ignore: &[String], matches: &mut Vec<Match>) {`
+
+ | `421` | `+ if root.is_empty() {`
+
+ | `422` | `+ return;`
+
+ | `423` | `+ }`
+
+ | `424` | `+ let output = match process::Command::new("git")`
+
+ | `425` | `+ .args(["-C", root, "ls-files", "-z"])`
+
+ | `426` | `+ .output()`
+
+ | `427` | `+ {`
+
+ | `428` | `+ Ok(o) if o.status.success() => o,`
+
+ | `429` | `+ Ok(o) => {`
+
+ | `430` | `+ eprintln!(`
+
+ | `431` | `+ "host-lint: --docs needs a git repository (git ls-files failed: {})",`
+
+ | `432` | `+ String::from_utf8_lossy(&o.stderr).trim()`
+
+ | `433` | `+ );`
+
+ | `434` | `+ process::exit(2);`
+
+ | `435` | `+ }`
+
+ | `436` | `+ Err(e) => {`
+
+ | `437` | `+ eprintln!("host-lint: --docs needs git on PATH: {e}");`
+
+ | `438` | `+ process::exit(2);`
+
+ | `439` | `+ }`
+
+ | `440` | `+ };`
+
+ | `441` | `+ let text = String::from_utf8_lossy(&output.stdout);`
+
+ | `442` | `+ for rel in text.split('\0').filter(\|s\| !s.is_empty()) {`
+
+ | `443` | `+ if !rel.to_ascii_lowercase().ends_with(".md") {`
+
+ | `444` | `+ continue;`
+
+ | `445` | `+ }`
+
+ | `446` | `+ if path_ignored(rel, ignore) {`
+
+ | `447` | `+ continue;`
+
+ | `448` | `+ }`
+
+ | `449` | `+ let path = Path::new(root).join(rel);`
+
+ | `450` | `+ if fs::symlink_metadata(&path).map(\|m\| m.file_type().is_symlink()).unwrap_or(false) {`
+
+ | `451` | `+ continue;`
+
+ | `452` | `+ }`
+
+ | `453` | `+ if !path.is_file() {`
+
+ | `454` | `+ continue;`
+
+ | `455` | `+ }`
+
+ | `456` | `+ if let Ok(content) = fs::read_to_string(&path) {`
+
+ | `457` | `+ scan_prose_text(&content, rel, matches);`
+
+ | `458` | `+ }`
+
+ | `459` | `+ }`
+
+ | `460` | `+}`
+
+ | `461` | `+`
+
+`382` | `462` | `fn run_log(allow: &[String], strict: bool, matches: &mut Vec<Match>) {`
+
+`383` | `463` | ` let output = match process::Command::new("git") `
+
+`384` | `464` | ` .args(["log", "-z", "--format=%H%n%B"]) `
+
+`@@ -422,6 +502,7 @@ fn main() {`
+
+`422` | `502` | ` let mut all_flag = false; `
+
+`423` | `503` | ` let mut log_flag = false; `
+
+`424` | `504` | ` let mut prose_flag = false; `
+
+ | `505` | `+ let mut docs_flag = false;`
+
+`425` | `506` | ` let mut files: Vec<String> = Vec::new(); `
+
+`426` | `507` |
+
+`427` | `508` | ` for arg in &args[1..] { `
+
+`@@ -431,6 +512,7 @@ fn main() {`
+
+`431` | `512` | ` "--all" => all_flag = true, `
+
+`432` | `513` | ` "--log" => log_flag = true, `
+
+`433` | `514` | ` "--prose" => prose_flag = true, `
+
+ | `515` | `+ "--docs" => docs_flag = true,`
+
+`434` | `516` | ` _ => files.push(arg.clone()), `
+
+`435` | `517` | ` } `
+
+`436` | `518` | ` } `
+
+`@@ -459,10 +541,12 @@ fn main() {`
+
+`459` | `541` | ` } `
+
+`460` | `542` | ` } else if all_flag { `
+
+`461` | `543` | ` run_all_files(&root, allow, strict, &load_ignore(&root), &mut matches); `
+
+ | `544` | `+ } else if docs_flag {`
+
+ | `545` | `+ run_docs(&root, &load_ignore(&root), &mut matches);`
+
+`462` | `546` | ` } else if log_flag { `
+
+`463` | `547` | ` run_log(allow, strict, &mut matches); `
+
+`464` | `548` | ` } else if files.is_empty() { `
+
+`465` |  | `- eprintln!("Usage: host-lint [--stdin] [--prose] [--json] [--all] [--log] [files...]");`
+
+ | `549` | `+ eprintln!("Usage: host-lint [--stdin] [--prose] [--docs] [--json] [--all] [--log] [files...]");`
+
+`466` | `550` | ` process::exit(2); `
+
+`467` | `551` | ` } else { `
+
+`468` | `552` | `` // Honor `.host-lintignore` for explicit file args too — the git hook scans ``
+
+### [`‎test-integration.sh‎`](#diff-49bf477293c994752d679aa9f1155d8bc2aac628082aecde877983fa2f9e6a78)
+
+Lines changed: 31 additions & 0 deletions
+
+Original file line number | Diff line number | Diff line change
+
+`@@ -199,6 +199,37 @@ printf 'It'"'"'s not a tweak, it'"'"'s a revolution, we delve.' \| $BINARY --stdi`
+
+`199` | `199` | `[ "$rc" -eq 3 ] && ok "same text as plain prose warns" \|\| bad "plain prose warns (rc=$rc)"`
+
+`200` | `200` | `rm -f "$md"`
+
+`201` | `201` |
+
+ | `202` | `+# --- --docs: repo-wide prose lane (markdown only, honors .host-lintignore) ---`
+
+ | `203` | `+echo ""`
+
+ | `204` | `+echo "--- --docs (repo-wide prose) ---"`
+
+ | `205` | `+docs=$(mktemp -d)`
+
+ | `206` | `+git -C "$docs" init -q`
+
+ | `207` | `+# An authored doc with prose tropes (negative-parallelism + em-dash + tricolon).`
+
+ | `208` | `+printf "It's not a tweak, it's a revolution, we delve — fast, clean, and robust.\n" > "$docs/guide.md"`
+
+ | `209` | `+# Code with an em-dash in a comment: --docs must NOT prose-scan it (scope = docs).`
+
+ | `210` | `+printf 'fn f() {} // a comment — with a dash\n' > "$docs/src.rs"`
+
+ | `211` | `+# An immutable record excluded via .host-lintignore.`
+
+ | `212` | `+printf 'A frozen note — with a dash.\n' > "$docs/RECORD.md"`
+
+ | `213` | `+printf 'RECORD.md\n' > "$docs/.host-lintignore"`
+
+ | `214` | `+git -C "$docs" add -A`
+
+ | `215` | `+git -C "$docs" -c user.name=t -c user.email=t@t commit -q -m "init"`
+
+ | `216` | `+out=$(cd "$docs" && "$BINARY_ABS" --docs 2>&1) && rc=0 \|\| rc=$?`
+
+ | `217` | `+echo "$out" \| grep -q "guide.md" && ok "--docs flags authored markdown prose" \|\| bad "--docs flags authored markdown prose"`
+
+ | `218` | `+[ "$rc" -eq 3 ] && ok "--docs warns (exit 3) on tropes" \|\| bad "--docs warns exit 3 (rc=$rc)"`
+
+ | `219` | `+echo "$out" \| grep -q "src.rs" && bad "--docs must not prose-scan code" \|\| ok "--docs skips code (.rs)"`
+
+ | `220` | `+echo "$out" \| grep -q "RECORD.md" && bad "--docs must honor .host-lintignore" \|\| ok "--docs honors .host-lintignore"`
+
+ | `221` | `+rm -rf "$docs"`
+
+ | `222` | `+`
+
+ | `223` | `+# --- plan/0031: prose output is located (line:col) + fix-hinted ---`
+
+ | `224` | `+echo ""`
+
+ | `225` | `+echo "--- prose output: col + fix hint ---"`
+
+ | `226` | `+pmd=$(mktemp --suffix=.md)`
+
+ | `227` | `+printf 'A sentence with a dash — right here in it.\n' > "$pmd"`
+
+ | `228` | `+pout=$($BINARY --prose "$pmd" 2>&1) \|\| true`
+
+ | `229` | `+echo "$pout" \| grep -qE ':[0-9]+:[0-9]+: warning: — .*\[fix:' \`
+
+ | `230` | `+ && ok "decoration carries line:col + fix hint" \|\| bad "decoration line:col + fix hint (got: $pout)"`
+
+ | `231` | `+rm -f "$pmd"`
+
+ | `232` | `+`
+
+`202` | `233` | `# --- Warn output marker and JSON severity ---`
+
+`203` | `234` | `echo ""`
+
+`204` | `235` | `echo "--- Severity in output ---"`
+
+## 0 commit comments
+
+Comments
+
+ (0)
+
+## Footer
+
+[](https://github.com) © 2026 GitHub, Inc.
+
+### Footer navigation
+
+- [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+
+- [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+
+- [Security](https://github.com/security)
+
+- [Status](https://www.githubstatus.com/)
+
+- [Community](https://github.community/)
+
+- [Docs](https://docs.github.com/)
+
+- [Contact](https://support.github.com?tags=dotcom-footer)
+
+- Manage cookies
+
+- Do not share my personal information

@@ -1,0 +1,317 @@
+[ Docs.rs](/)
+
+- [ os\_str\_bytes-7.2.1](# "Lossless functionality for platform-native strings")
+
+  - os\_str\_bytes 7\.2.1
+
+  - [ Permalink](/os_str_bytes/7.2.1/os_str_bytes/ "Get a link to this specific version")
+
+  - [ Docs.rs crate page](/crate/os_str_bytes/latest "See os_str_bytes in docs.rs")
+
+  - [MIT](https://spdx.org/licenses/MIT) OR [Apache-2.0](https://spdx.org/licenses/Apache-2.0)
+
+  - 22 November 2026
+
+  - Links
+
+  - [ Repository](https://github.com/dylni/os_str_bytes)
+
+  - [ crates.io](https://crates.io/crates/os_str_bytes "See os_str_bytes in crates.io")
+
+  - [ Source](/crate/os_str_bytes/latest/source/ "Browse source of os_str_bytes-7.2.1")
+
+  - Owners
+
+  - [ dylni](https://crates.io/users/dylni)
+
+  - Dependencies
+
+  -
+
+    - [ memchr ^2.3.5 *normal* *optional*](/memchr/^2.3.5/)
+
+    - [ fastrand ^2.0 *dev*](/fastrand/^2.0/)
+
+    - [ lazy\_static ^1.0.3 *dev*](/lazy_static/^1.0.3/)
+
+    - [ tempfile ^3.8 *dev*](/tempfile/^3.8/)
+
+  - Versions
+
+  -
+
+  - [ **100%** of the crate is documented](/crate/os_str_bytes/latest)
+
+- [ Platform](#)
+
+  - [x86\_64-unknown-linux-gnu](/crate/os_str_bytes/latest/target-redirect/os_str_bytes/)
+
+- [ Feature flags](/crate/os_str_bytes/latest/features "Browse available feature flags of os_str_bytes-7.2.1")
+
+-
+
+- [docs.rs](#)
+
+  - [ About docs.rs](/about)
+
+  - [ Badges](/about/badges)
+
+  - [ Builds](/about/builds)
+
+  - [ Metadata](/about/metadata)
+
+  - [ Shorthand URLs](/about/redirections)
+
+  - [ Download](/about/download)
+
+  - [ Rustdoc JSON](/about/rustdoc-json)
+
+  - [ Build queue](/releases/queue)
+
+  - [ Privacy policy](https://foundation.rust-lang.org/policies/privacy-policy/#docs.rs)
+
+- [Rust](#)
+
+  - [Rust website](https://www.rust-lang.org/)
+
+  - [The Book](https://doc.rust-lang.org/book/)
+
+  - [Standard Library API Reference](https://doc.rust-lang.org/std/)
+
+  - [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
+
+  - [The Cargo Guide](https://doc.rust-lang.org/cargo/guide/)
+
+  - [Clippy Documentation](https://doc.rust-lang.org/nightly/clippy)
+
+[Skip to main content](#main-content)
+
+## [Crate os\_str\_bytes](#)
+
+## [os\_str\_bytes](../os_str_bytes/index.html)7\.2.1
+
+- [All Items](all.html)
+
+### [Sections](#)
+
+- [Usage](#usage "Usage")
+
+- [User Input](#user-input "User Input")
+
+- [Features](#features "Features")
+
+  - [Default Features](#default-features "Default Features")
+
+  - [Optional Features](#optional-features "Optional Features")
+
+- [Implementation](#implementation "Implementation")
+
+- [Encoding Conversions](#encoding-conversions "Encoding Conversions")
+
+- [Related Crates](#related-crates "Related Crates")
+
+- [Examples](#examples "Examples")
+
+### [Crate Items](#modules)
+
+- [Modules](#modules "Modules")
+
+- [Structs](#structs "Structs")
+
+- [Traits](#traits "Traits")
+
+# Crate os\_str\_bytes Copy item path
+
+[Source](../src/os_str_bytes/lib.rs.html#1-937)
+
+Expand description
+
+This crate provides additional functionality for [`OsStr`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsStr.html "struct std::ffi::os_str::OsStr") and [`OsString`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsString.html "struct std::ffi::os_str::OsString"), without resorting to panics or corruption for invalid UTF-8. Thus, familiar methods from [`str`](https://doc.rust-lang.org/nightly/std/primitive.str.html "primitive str") and [`String`](https://doc.rust-lang.org/nightly/alloc/string/struct.String.html "struct alloc::string::String") can be used.
+
+## [§](#usage)Usage
+
+The most important trait included is [`OsStrBytesExt`](trait.OsStrBytesExt.html "trait os_str_bytes::OsStrBytesExt"), which provides methods analogous to those of [`str`](https://doc.rust-lang.org/nightly/std/primitive.str.html "primitive str") but for [`OsStr`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsStr.html "struct std::ffi::os_str::OsStr"). These methods will never panic for invalid UTF-8 in a platform string, so they can be used to manipulate [`OsStr`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsStr.html "struct std::ffi::os_str::OsStr") values with the same simplicity possible for [`str`](https://doc.rust-lang.org/nightly/std/primitive.str.html "primitive str").
+
+Additionally, the following wrappers are provided. They are primarily legacy types from when this crate needed to perform more frequent encoding conversions. However, they may be useful for their trait implementations.
+
+- [`RawOsStr`](struct.RawOsStr.html "struct os_str_bytes::RawOsStr") is a wrapper for [`OsStr`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsStr.html "struct std::ffi::os_str::OsStr").
+
+- [`RawOsString`](struct.RawOsString.html "struct os_str_bytes::RawOsString") is a wrapper for [`OsString`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsString.html "struct std::ffi::os_str::OsString").
+
+## [§](#user-input)User Input
+
+Most methods in this crate should not be used to convert byte sequences that did not originate from [`OsStr`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsStr.html "struct std::ffi::os_str::OsStr") or a related struct. The encoding used by this crate is an implementation detail, so it does not make sense to expose it to users.
+
+For user input with an unknown encoding similar to UTF-8, use the following IO-safe methods, which avoid errors when [writing to streams on Windows](https://doc.rust-lang.org/std/io/struct.Stdout.html#note-windows-portability-considerations). These methods will not accept or return byte sequences that are invalid for input and output streams. Therefore, they can be used to convert between bytes strings exposed to users and platform strings.
+
+- [`OsStrBytes::from_io_bytes`](trait.OsStrBytes.html#tymethod.from_io_bytes "associated function os_str_bytes::OsStrBytes::from_io_bytes")
+
+- [`OsStrBytes::to_io_bytes`](trait.OsStrBytes.html#tymethod.to_io_bytes "method os_str_bytes::OsStrBytes::to_io_bytes")
+
+- [`OsStrBytes::to_io_bytes_lossy`](trait.OsStrBytes.html#tymethod.to_io_bytes_lossy "method os_str_bytes::OsStrBytes::to_io_bytes_lossy")
+
+- [`OsStringBytes::from_io_vec`](trait.OsStringBytes.html#tymethod.from_io_vec "associated function os_str_bytes::OsStringBytes::from_io_vec")
+
+- [`OsStringBytes::into_io_vec`](trait.OsStringBytes.html#tymethod.into_io_vec "method os_str_bytes::OsStringBytes::into_io_vec")
+
+- [`OsStringBytes::into_io_vec_lossy`](trait.OsStringBytes.html#tymethod.into_io_vec_lossy "method os_str_bytes::OsStringBytes::into_io_vec_lossy")
+
+## [§](#features)Features
+
+These features are optional and can be enabled or disabled in a “Cargo.toml” file.
+
+#### [§](#default-features)Default Features
+
+- **memchr** \- Changes the implementation to use crate [memchr](https://crates.io/crates/memchr) for better performance. This feature is useless when the “raw\_os\_str” feature is disabled.
+
+  For more information, see [`OsStrBytesExt`](trait.OsStrBytesExt.html#complexity "trait os_str_bytes::OsStrBytesExt").
+
+- **raw\_os\_str** \- Provides:
+
+  - [`iter`](iter/index.html "mod os_str_bytes::iter")
+
+  - [`NonUnicodeOsStr`](struct.NonUnicodeOsStr.html "struct os_str_bytes::NonUnicodeOsStr")
+
+  - [`OsStrBytesExt`](trait.OsStrBytesExt.html "trait os_str_bytes::OsStrBytesExt")
+
+  - [`OsUnit`](struct.OsUnit.html "struct os_str_bytes::OsUnit")
+
+  - [`Pattern`](trait.Pattern.html "trait os_str_bytes::Pattern")
+
+  - [`RawOsStr`](struct.RawOsStr.html "struct os_str_bytes::RawOsStr")
+
+  - [`RawOsStrCow`](trait.RawOsStrCow.html "trait os_str_bytes::RawOsStrCow")
+
+  - [`RawOsString`](struct.RawOsString.html "struct os_str_bytes::RawOsString")
+
+#### [§](#optional-features)Optional Features
+
+- **checked\_conversions** \- Provides:
+
+  - [`EncodingError`](struct.EncodingError.html "struct os_str_bytes::EncodingError")
+
+  - [`OsStrBytes::from_raw_bytes`](trait.OsStrBytes.html#tymethod.from_raw_bytes "associated function os_str_bytes::OsStrBytes::from_raw_bytes")
+
+  - [`OsStringBytes::from_raw_vec`](trait.OsStringBytes.html#tymethod.from_raw_vec "associated function os_str_bytes::OsStringBytes::from_raw_vec")
+
+  - [`RawOsStr::cow_from_raw_bytes`](struct.RawOsStr.html#method.cow_from_raw_bytes "associated function os_str_bytes::RawOsStr::cow_from_raw_bytes")
+
+  - [`RawOsString::from_raw_vec`](struct.RawOsString.html#method.from_raw_vec "associated function os_str_bytes::RawOsString::from_raw_vec")
+
+  Because this feature should not be used in libraries, the “OS\_STR\_BYTES\_CHECKED\_CONVERSIONS” environment variable must be defined during compilation.
+
+- **conversions** \- Provides methods that require encoding conversion and may be expensive:
+
+  - [`OsStrBytesExt::ends_with_os`](trait.OsStrBytesExt.html#tymethod.ends_with_os "method os_str_bytes::OsStrBytesExt::ends_with_os")
+
+  - [`OsStrBytesExt::starts_with_os`](trait.OsStrBytesExt.html#tymethod.starts_with_os "method os_str_bytes::OsStrBytesExt::starts_with_os")
+
+  - [`RawOsStr::assert_cow_from_raw_bytes`](struct.RawOsStr.html#method.assert_cow_from_raw_bytes "associated function os_str_bytes::RawOsStr::assert_cow_from_raw_bytes")
+
+  - [`RawOsStr::ends_with_os`](struct.RawOsStr.html#method.ends_with_os "method os_str_bytes::RawOsStr::ends_with_os")
+
+  - [`RawOsStr::starts_with_os`](struct.RawOsStr.html#method.starts_with_os "method os_str_bytes::RawOsStr::starts_with_os")
+
+  - [`RawOsStr::to_raw_bytes`](struct.RawOsStr.html#method.to_raw_bytes "method os_str_bytes::RawOsStr::to_raw_bytes")
+
+  - [`RawOsString::assert_from_raw_vec`](struct.RawOsString.html#method.assert_from_raw_vec "associated function os_str_bytes::RawOsString::assert_from_raw_vec")
+
+  - [`RawOsString::into_raw_vec`](struct.RawOsString.html#method.into_raw_vec "method os_str_bytes::RawOsString::into_raw_vec")
+
+  - [`OsStrBytes::assert_from_raw_bytes`](trait.OsStrBytes.html#tymethod.assert_from_raw_bytes "associated function os_str_bytes::OsStrBytes::assert_from_raw_bytes")
+
+  - [`OsStrBytes::to_raw_bytes`](trait.OsStrBytes.html#tymethod.to_raw_bytes "method os_str_bytes::OsStrBytes::to_raw_bytes")
+
+  - [`OsStringBytes::assert_from_raw_vec`](trait.OsStringBytes.html#tymethod.assert_from_raw_vec "associated function os_str_bytes::OsStringBytes::assert_from_raw_vec")
+
+  - [`OsStringBytes::into_raw_vec`](trait.OsStringBytes.html#tymethod.into_raw_vec "method os_str_bytes::OsStringBytes::into_raw_vec")
+
+  For more information, see [Encoding Conversions](#encoding-conversions).
+
+## [§](#implementation)Implementation
+
+Some methods return [`Cow`](https://doc.rust-lang.org/nightly/alloc/borrow/enum.Cow.html "enum alloc::borrow::Cow") to account for platform differences. However, no guarantee is made that the same variant of that enum will always be returned for the same platform. Whichever can be constructed most efficiently will be returned.
+
+All traits are [sealed](https://rust-lang.github.io/api-guidelines/future-proofing.html#c-sealed), meaning that they can only be implemented by this crate. Otherwise, backward compatibility would be more difficult to maintain for new features.
+
+## [§](#encoding-conversions)Encoding Conversions
+
+Methods provided by the “conversions” feature use an intentionally unspecified encoding. It may vary for different platforms, so defining it would run contrary to the goal of generic string handling. However, the following invariants will always be upheld:
+
+- The encoding will be compatible with UTF-8. In particular, splitting an encoded byte sequence by a UTF-8–encoded character always produces other valid byte sequences. They can be re-encoded without error using [`RawOsString::into_os_string`](struct.RawOsString.html#method.into_os_string "method os_str_bytes::RawOsString::into_os_string") and similar methods.
+
+- All characters valid in platform strings are representable. [`OsStr`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsStr.html "struct std::ffi::os_str::OsStr") and [`OsString`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsString.html "struct std::ffi::os_str::OsString") can always be losslessly reconstructed from extracted bytes.
+
+Note that the chosen encoding may not match how [`OsStr`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsStr.html "struct std::ffi::os_str::OsStr") stores these strings internally, which is undocumented. For instance, the result of calling [`OsStr::len`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsStr.html#method.len "method std::ffi::os_str::OsStr::len") will not necessarily match the number of bytes this crate uses to represent the same string. However, unlike the encoding used by [`OsStr`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsStr.html "struct std::ffi::os_str::OsStr"), the encoding used by this crate can be validated safely using the following methods:
+
+- [`OsStrBytes::assert_from_raw_bytes`](trait.OsStrBytes.html#tymethod.assert_from_raw_bytes "associated function os_str_bytes::OsStrBytes::assert_from_raw_bytes")
+
+- [`RawOsStr::assert_cow_from_raw_bytes`](struct.RawOsStr.html#method.assert_cow_from_raw_bytes "associated function os_str_bytes::RawOsStr::assert_cow_from_raw_bytes")
+
+- [`RawOsString::assert_from_raw_vec`](struct.RawOsString.html#method.assert_from_raw_vec "associated function os_str_bytes::RawOsString::assert_from_raw_vec")
+
+Concatenation may yield unexpected results without a UTF-8 separator. If two platform strings need to be concatenated, the only safe way to do so is using [`OsString::push`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsString.html#method.push "method std::ffi::os_str::OsString::push"). This limitation also makes it undesirable to use the bytes in interchange.
+
+Since this encoding can change between versions and platforms, it should not be used for storage. The standard library provides implementations of [`OsStrExt`](https://doc.rust-lang.org/nightly/std/os/unix/ffi/os_str/trait.OsStrExt.html "trait std::os::unix::ffi::os_str::OsStrExt") and [`OsStringExt`](https://doc.rust-lang.org/nightly/std/os/unix/ffi/os_str/trait.OsStringExt.html "trait std::os::unix::ffi::os_str::OsStringExt") for various platforms, which should be preferred for that use case.
+
+## [§](#related-crates)Related Crates
+
+- [print\_bytes](https://crates.io/crates/print_bytes) \- Used to print byte and platform strings as losslessly as possible.
+
+- [uniquote](https://crates.io/crates/uniquote) \- Used to display paths using escapes instead of replacement characters.
+
+## [§](#examples)Examples
+
+```
+use std::env;
+use std::fs;
+
+use os_str_bytes::OsStrBytesExt;
+
+for file in env::args_os().skip(1) {
+    if !file.starts_with('-') {
+        let string = "Hello, world!";
+        fs::write(&file, string)?;
+        assert_eq!(string, fs::read_to_string(file)?);
+    }
+}
+```
+
+## Modules[§](#modules)
+
+**[iter](iter/index.html "mod os_str_bytes::iter")`raw_os_str`**
+: Iterators provided by this crate.
+
+## Structs[§](#structs)
+
+**[EncodingError](struct.EncodingError.html "struct os_str_bytes::EncodingError")`checked_conversions`**
+: The error that occurs when a byte sequence is not representable in the platform encoding.
+
+**[NonUnicodeOsStr](struct.NonUnicodeOsStr.html "struct os_str_bytes::NonUnicodeOsStr")`raw_os_str`**
+: A container for platform strings containing no unicode characters.
+
+**[OsUnit](struct.OsUnit.html "struct os_str_bytes::OsUnit")`raw_os_str`**
+: The smallest unit of an unspecified platform-specific encoding permissible for interchange.
+
+**[RawOsStr](struct.RawOsStr.html "struct os_str_bytes::RawOsStr")`raw_os_str`**
+: A container providing additional functionality for [`OsStr`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsStr.html "struct std::ffi::os_str::OsStr").
+
+**[RawOsString](struct.RawOsString.html "struct os_str_bytes::RawOsString")`raw_os_str`**
+: A container for owned byte strings converted by this crate.
+
+## Traits[§](#traits)
+
+**[OsStrBytes](trait.OsStrBytes.html "trait os_str_bytes::OsStrBytes")**
+: A platform agnostic variant of [`OsStrExt`](https://doc.rust-lang.org/nightly/std/os/unix/ffi/os_str/trait.OsStrExt.html "trait std::os::unix::ffi::os_str::OsStrExt").
+
+**[OsStrBytesExt](trait.OsStrBytesExt.html "trait os_str_bytes::OsStrBytesExt")`raw_os_str`**
+: An extension trait providing additional methods to [`OsStr`](https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsStr.html "struct std::ffi::os_str::OsStr").
+
+**[OsStringBytes](trait.OsStringBytes.html "trait os_str_bytes::OsStringBytes")**
+: A platform agnostic variant of [`OsStringExt`](https://doc.rust-lang.org/nightly/std/os/unix/ffi/os_str/trait.OsStringExt.html "trait std::os::unix::ffi::os_str::OsStringExt").
+
+**[Pattern](trait.Pattern.html "trait os_str_bytes::Pattern")`raw_os_str`**
+: Allows a type to be used for searching by [`RawOsStr`](struct.RawOsStr.html "struct os_str_bytes::RawOsStr") and [`RawOsString`](struct.RawOsString.html "struct os_str_bytes::RawOsString").
+
+**[RawOsStrCow](trait.RawOsStrCow.html "trait os_str_bytes::RawOsStrCow")`raw_os_str`**
+: Extensions to [`Cow<RawOsStr>`](https://doc.rust-lang.org/nightly/alloc/borrow/enum.Cow.html "enum alloc::borrow::Cow") for additional conversions.

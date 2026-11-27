@@ -1,0 +1,9 @@
+Use the installed web-search-deep skill: follow its protocol over the question, then satisfy the contract below.
+
+Produce these files in the current working directory:
+- report.md: a Markdown report. Put the source URL or your arm's citation id beside every cited sentence.
+- sources.json: {"sources": [{"url": "https://...", "quote": "<verbatim passage>", "locator": "<section or paragraph>"}]}.
+- fetch-log.jsonl: one line per page fetched: {"url": "https://...", "status": 200, "snapshot": "snapshots/<file>.txt"}; save the fetched page text under snapshots/.
+Do not write receipt.json; the harness writes it. Cite only pages you fetched, copy every quote from the fetched page, and do not change the model, provider or configuration.
+
+Question: Compare ripgrep (rg) and ast-grep (sg) for a repository-wide prose scan. Name each tool's implementation language, license, and query language, and say which one can express a syntax-tree query.

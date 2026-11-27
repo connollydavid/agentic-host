@@ -1,0 +1,9 @@
+Use the installed hffmnnj deep-research plugin and its library: run its workflow over the question, then satisfy the contract below.
+
+Produce these files in the current working directory:
+- report.md: a Markdown report. Put the source URL or your arm's citation id beside every cited sentence.
+- sources.json: {"sources": [{"url": "https://...", "quote": "<verbatim passage>", "locator": "<section or paragraph>"}]}.
+- fetch-log.jsonl: one line per page fetched: {"url": "https://...", "status": 200, "snapshot": "snapshots/<file>.txt"}; save the fetched page text under snapshots/.
+Do not write receipt.json; the harness writes it. Cite only pages you fetched, copy every quote from the fetched page, and do not change the model, provider or configuration.
+
+Question: For a Rust CLI that must classify file paths that are not valid UTF-8, compare the bstr and os_str_bytes crates and decide which the house should adopt. Name the byte-path type each exposes and the license each carries.

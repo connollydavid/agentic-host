@@ -1,0 +1,15 @@
+{"url": "https://html.duckduckgo.com/html/?q=%22host-lint%22+VOCABULARY.md+docs+lane", "status": 200, "snapshot": "snapshots/main-1.txt"}
+{"url": "https://github.com/connollydavid/host-lint/releases", "status": 200, "snapshot": "snapshots/main-2.txt"}
+{"url": "https://raw.githubusercontent.com/connollydavid/host-lint/main/README.md", "status": 200, "snapshot": "snapshots/main-3.txt"}
+{"url": "https://github.com/connollydavid/host-lint/releases/tag/v0.8.0", "status": 200, "snapshot": "snapshots/main-4.txt"}
+{"url": "https://html.duckduckgo.com/html/?q=%22host-lint%22+%22--docs%22+repo-wide+prose", "status": 200, "snapshot": "snapshots/main-5.txt"}
+{"url": "https://html.duckduckgo.com/html/?q=%22host-lint%22+%22--docs%22+0.8.0+prose+lane", "status": 200, "snapshot": "snapshots/main-6.txt"}
+{"url": "https://api.github.com/repos/connollydavid/host-lint/contents/", "status": 200, "snapshot": "snapshots/main-7.txt"}
+{"url": "https://github.com/connollydavid/host-lint/commit/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f", "status": 200, "snapshot": "snapshots/main-8.txt"}
+{"url": "https://raw.githubusercontent.com/connollydavid/host-lint/v0.8.0/VOCABULARY.md", "status": 200, "snapshot": "snapshots/main-9.txt"}
+{"url": "https://api.github.com/repos/connollydavid/host-lint/commits/e652ffc3fb517ad1bf185e73a6d4a050d8365c7f", "status": 200, "snapshot": "snapshots/main-10.txt"}
+{"url": "https://html.duckduckgo.com/html/?q=agentic-host+plan%2F0030+host-lint+docs+markdown+lane", "status": 200, "snapshot": "snapshots/main-11.txt"}
+{"url": "https://raw.githubusercontent.com/connollydavid/agentic-host/main/plan/0030-prose-hygiene-lane/README.md", "status": 200, "snapshot": "snapshots/main-12.txt"}
+{"url": "https://api.github.com/repos/connollydavid/host-lint/releases/tags/v0.8.0", "status": 200, "snapshot": "snapshots/main-14.txt"}
+{"url": "https://raw.githubusercontent.com/connollydavid/host-lint/v0.8.0/src/main.rs", "status": 200, "snapshot": "snapshots/main-17.txt"}
+{"url": "https://raw.githubusercontent.com/connollydavid/host-lint/v0.8.0/src/lib.rs", "status": 200, "snapshot": "snapshots/main-18.txt"}

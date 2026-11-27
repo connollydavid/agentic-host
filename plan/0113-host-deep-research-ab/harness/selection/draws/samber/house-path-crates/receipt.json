@@ -1,0 +1,39 @@
+{
+  "task": "selection/house-path-crates",
+  "arm": "samber",
+  "status": "live",
+  "harness": {
+    "tag": "v2.4.2",
+    "binary_sha256": "523b1502d1d556998b0904235cef65eb1d8cf8362b4e2faa7ae7a170c9a44cd4"
+  },
+  "model": {
+    "provider": "api.d07yx58.net",
+    "route": "qwen3.8-flash-next",
+    "deployment_id": "64e4a3742445b5bf58b5e6b75f83b9a84b87cfe19b47692b7984419f71804bf6",
+    "backend": "openai/qwen3.8-flash-next",
+    "max_input_tokens": 500000,
+    "max_output_tokens": 524288
+  },
+  "search_provider": "exa",
+  "budget": {
+    "caps": {
+      "prompt_tokens": 200000,
+      "completion_tokens": 50000,
+      "tool_calls": 40,
+      "wall_seconds": 1800
+    },
+    "used": {
+      "prompt_tokens": 7354,
+      "completion_tokens": 30,
+      "tool_calls": 1,
+      "wall_seconds": 1800.0
+    }
+  },
+  "config_digests": {
+    "task": "277c1aa981ecfe029c655b851c51ac0525ddacc03476ff088f0f25525cf2c8ee",
+    "harness_pin": "c2c6f5eae1741fa4bcee1f5c4aa4025b4ac4fbdec8268bd721a4638247680208",
+    "model_pin": "f4d8b9a05eb22c1945487aff5cd66b2ffd2680fe619c5d4982022d5e819a386b",
+    "arm_config": "60325c53ca7370de402a0ecef019a49b079d0adcf396ad642afb6b63fd1d9fe7",
+    "prompt": "45e379176edb58d627e223d02edf6e3dd6455136816fb5c8bac41bacdc70b864"
+  }
+}
