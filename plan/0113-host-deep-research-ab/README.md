@@ -10,7 +10,9 @@ optional verification pipeline is excluded for a missing license at its pin.
 The run harness is pinned at OpenCode v2.4.2, with its draw pre-flight and
 isolation probes recorded ([harness/README.md](harness/README.md)), and the
 reference route is pinned at the named `qwen3.6-27b` entry with its deployment
-id ([model-pin/README.md](harness/model-pin/README.md)).; active goal since
+id ([model-pin/README.md](harness/model-pin/README.md)). The run contract and
+its per-arm adapters are recorded
+([contract/README.md](harness/contract/README.md)).; active goal since
 2026-11-26
 
 ## Rulings
@@ -240,6 +242,10 @@ output shape to the contract, in the arm's own directory.
 - verify: every arm's dry run produces a contract-valid output and a receipt;
   an arm whose output cannot satisfy the contract records why in its exclusion
 - depends: #harness-pin
+- Landed 2026-11-27: the task, report, ledger and receipt contract with the
+  five arm adapters; the dry runs pass for `null`, `hffmnnj` and `kanatami`,
+  and `weizhena` and `samber` record their exclusions (no per-source quote and
+  locator). Record: [harness/contract/README.md](harness/contract/README.md).
 
 ### Task sets {#task-sets}
 
