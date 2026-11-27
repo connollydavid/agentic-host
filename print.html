@@ -28271,6 +28271,11 @@ selection or held-out sets.</p>
 <li>The null arm must produce the contract; a null void is a harness failure.</li>
 <li>Every mapped arm must produce the contract or a recorded exclusion. A void
 fails.</li>
+<li>An exclusion is suspect when the native notes or workers already carry a
+source record; the smoke fails it and the draw is re-run after the adapter
+fix.</li>
+<li>A pseudo-tool-call transcript (<code>&lt;tool_call&gt;</code> or <code>&lt;function=</code>) is a void, not
+an exclusion; the plugin tools were not invoked, so the draw is re-run.</li>
 <li>The non-null prompt must not carry the wrapper postscript; it must carry the
 arm's native line.</li>
 <li>The search provider must be <code>exa</code> or <code>none</code>, and no draw may fetch a search
