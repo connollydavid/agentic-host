@@ -21,6 +21,7 @@ import subprocess
 import sys
 import time
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -378,19 +379,48 @@ def run_draw(arm: str, task: dict, force: bool = False) -> dict:
     return summary
 
 
+def safe_run_draw(arm: str, task: dict, force: bool = False) -> dict:
+    try:
+        return run_draw(arm, task, force=force)
+    except Exception as error:  # noqa: BLE001 - a driver crash is a draw finding
+        name = task["key"].split("/", 1)[1]
+        draw = DRAWS / arm / name
+        draw.mkdir(parents=True, exist_ok=True)
+        summary = {
+            "arm": arm,
+            "task": task["key"],
+            "exit_code": None,
+            "timed_out": False,
+            "wall_seconds": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "tool_calls": 0,
+            "agent_files": {},
+            "contract_ok": False,
+            "contract_reason": f"driver error: {error}",
+            "rubric": {"status": "void", "reason": f"driver error: {error}"},
+            "valid": False,
+            "score": 0,
+        }
+        contract.write_json(draw / "score.json", summary)
+        return summary
+
+
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--only", help="arm, task name, or arm/task")
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--parallel", type=int, default=1, help="draws per task wave")
     args = parser.parse_args(argv)
     if not BIN.is_file():
         raise SystemExit("the pinned binary is missing; run harness/install.sh")
     if not os.environ.get("ROPE_BEARER"):
         raise SystemExit("ROPE_BEARER is unset")
     tasks = {task["key"]: task for task in json.loads(TASKS.read_text())["tasks"]}
-    pairs = []
+    waves: list[list[tuple[str, dict]]] = []
     for key in TASK_KEYS:
         name = key.split("/", 1)[1]
+        selected = []
         for arm in ARM_NAMES:
             if args.only:
                 selector = args.only
@@ -400,11 +430,13 @@ def main(argv: list[str]) -> int:
                         continue
                 elif selector != arm and selector != name:
                     continue
-            pairs.append((arm, tasks[key]))
-    for arm, task in pairs:
-        summary = run_draw(arm, task, force=args.force)
+            selected.append((arm, tasks[key]))
+        if selected:
+            waves.append(selected)
+
+    def report(summary: dict) -> None:
         print(
-            f"{arm:9s} {task['key'].split('/', 1).pop():24s} "
+            f"{summary['arm']:9s} {summary['task'].split('/', 1).pop():24s} "
             f"{'valid' if summary['valid'] else 'void ':5s} "
             f"{summary['score']}/{summary['rubric'].get('max', '-')} "
             f"contract={'ok' if summary['contract_ok'] else 'no'} "
@@ -413,6 +445,16 @@ def main(argv: list[str]) -> int:
             + (f"  ({summary['contract_reason']})" if summary["contract_reason"] else ""),
             flush=True,
         )
+
+    for wave in waves:
+        if args.parallel <= 1 or len(wave) == 1:
+            for arm, task in wave:
+                report(safe_run_draw(arm, task, force=args.force))
+            continue
+        with ThreadPoolExecutor(max_workers=args.parallel) as pool:
+            futures = {pool.submit(safe_run_draw, arm, task, args.force): (arm, task) for arm, task in wave}
+            for future in as_completed(futures):
+                report(future.result())
     return 0
 
 
