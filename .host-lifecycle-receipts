@@ -2240,3 +2240,16 @@
     tool = host-lifecycle@0.64.1
     recorded = 2026-11-27
     target = plan/0113-host-deep-research-ab
+
+[receipt "goal" "abandon"]
+    disposition = done
+    reason = the live harness injected the ledger in the wrapper prompt instead of the arm's native prompt and adapter; the selection and confirmation draws are void and the A/B data is invalid; re-cut at the adapter layer
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
+    target = plan/0113-host-deep-research-ab
+
+[receipt "goal" "set"]
+    disposition = done
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
+    target = plan/0114-host-deep-research-adapter-layer
