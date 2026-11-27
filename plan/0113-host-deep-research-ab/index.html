@@ -291,7 +291,7 @@ attempt declared Exa while the draws fetched DuckDuckGo; the
 <code>#search-provider</code> task fixes the measurement.</li>
 <li><strong>Budget.</strong> The same per-draw cap on tokens, tool calls and wall time, and the
 same prompt for the arm plus the tasks. The contract's caps are 200000 prompt
-tokens, 50000 completion tokens, 60 tool calls and 3600 wall seconds; the
+tokens, 50000 completion tokens, 60 tool calls and 10800 wall seconds; the
 draw order is two-way, interleaved by task, and serial when the provider is
 under load. The cost is recorded, never scored.</li>
 <li><strong>Arm isolation.</strong> Each arm draws in its own scratch tree with its own library
@@ -596,12 +596,15 @@ scored.</p>
 smoke draw reports the used counts; no lock or tie-break reads them</li>
 <li>depends: none</li>
 <li>Landed 2026-11-27: the caps are 200000 prompt tokens, 50000 completion
-tokens, 60 tool calls and 3600 wall seconds; the draw order is two-way,
+tokens, 60 tool calls and 10800 wall seconds; the draw order is two-way,
 interleaved by task, serial under provider load. The first round's 1800s cap
 and five-arm waves voided 29 of 30 draws; the one valid draw used 103k
-prompt tokens, 47 tools and the full 1800s. <code>contract.CAPS</code> is the single
-source; <code>run.py</code> reads the wall cap and defaults to two-way. Record:
-<a href="harness/budget/README.html">budget/README.md</a>.</li>
+prompt tokens, 47 tools and the full 1800s. The first corrected cap was
+3600s; the kanatami smoke hit it in <code>background_wait</code> after three of the
+skill's five-to-ten research rounds, so the operator ruled the cap up to
+10800s.
+<code>contract.CAPS</code> is the single source; <code>run.py</code> reads the wall cap and
+defaults to two-way. Record: <a href="harness/budget/README.html">budget/README.md</a>.</li>
 </ul>
 <h3 id="adapter-layer"><a class="header" href="#adapter-layer">Adapter layer</a></h3>
 <p>The live driver sends each arm its native prompt; the arm's adapter writes the

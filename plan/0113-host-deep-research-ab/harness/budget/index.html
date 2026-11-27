@@ -191,7 +191,7 @@ operator paused it.</p>
 <tr><td>Prompt tokens</td><td>200000</td></tr>
 <tr><td>Completion tokens</td><td>50000</td></tr>
 <tr><td>Tool calls</td><td>60</td></tr>
-<tr><td>Wall seconds</td><td>3600</td></tr>
+<tr><td>Wall seconds</td><td>10800</td></tr>
 <tr><td>Wave width</td><td>2</td></tr>
 <tr><td>Draw order</td><td>two-way, interleaved by task; serial when the provider is under load</td></tr>
 </tbody></table>
@@ -200,6 +200,17 @@ operator paused it.</p>
 default wave width is 2. <code>confirm.py</code> uses the same two-way default. A draw
 whose budget is exhausted is a void, not a zero-cost success; the receipt's
 used counts and the exit status are the evidence.</p>
+<h2 id="the-3600s-revision"><a class="header" href="#the-3600s-revision">The 3600s revision</a></h2>
+<p>The first corrected cap was 3600 seconds. The kanatami smoke hit it while still
+in <code>background_wait</code> after three of the skill's five-to-ten research rounds: 79
+events, 75k prompt tokens, 15.7k completion tokens and 20 tools, with five
+rounds of research notes saved and no final synthesis. The operator ruled the
+cap up to 10800 seconds on 2026-11-27: the skill's protocol has no hard upper
+limit, so a smaller cap measures the house's clock rather than the arm. The
+10800 cap is the same maximum for every arm; the null and hffmnnj still finish
+early, so the wall-clock cost lands on the arms whose native workflow is long.</p>
+<p>The 3600s kanatami void and the 969.1s hffmnnj exclusion are recorded in the
+smoke history; the final smoke runs every arm under the 10800 cap.</p>
 <h2 id="what-reads-the-budget"><a class="header" href="#what-reads-the-budget">What reads the budget</a></h2>
 <ul>
 <li>The receipt: <code>budget.caps</code> and <code>budget.used</code> (prompt tokens, completion
