@@ -1503,3 +1503,10 @@
     evidence = plan/0113-host-deep-research-ab/arms/README.md: weizhena@6ce38f60 (2026-08-23), hffmnnj@d9773015 (2026-11-13), kanatami@9f46968 (2026-07-06) and samber@50a33836 (2026-11-01) each resolve with an MIT LICENSE at the pin (sha256 1883a89d, b560f06c, 1126322e, a6735e38) and a verified root tree (476c2298, a6d0795b, e5a4948c, 9fca485f); 199-biotechnologies/claude-deep-research-skill@f2f2c0fa (2026-04-11) has no license path and is excluded; gptr-mcp@63884773 (2025-11-07) carries MIT as the licensed alternative.
     tool = host-lifecycle@0.64.1
     recorded = 2026-11-26
+
+[receipt "plan/0113#harness-pin"]
+    disposition = done
+    verify = the pre-flight rejects a wrong digest and a wrong version; every arm
+    evidence = OpenCode v2.4.2 pinned: archive sha256 452912288f934d1771bd5bd0d8611ba3a6adc3db3ac3333c37facf373770ba66, binary sha256 523b1502d1d556998b0904235cef65eb1d8cf8362b4e2faa7ae7a170c9a44cd4, version 'opencode v2.4.2'. preflight.sh rejects a tampered digest and a fake v9.9.9 version; probe.py reports 11 checks passed: null resolved config has no skill/plugin/instruction (built-ins only: opencode, report, browser), weizhena loads five skills plus web-search, kanatami loads web-search-deep plus web-search-worker, samber loads deep-research, hffmnnj loads its plugin, skill and three agents, and the decoy home's planted skill and manual are absent from the draw. Record: plan/0113-host-deep-research-ab/harness/README.md.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
