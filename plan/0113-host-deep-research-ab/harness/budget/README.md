@@ -1,4 +1,4 @@
-# plan/0113 budget: two-way draws, 3600 seconds, 60 tools
+# plan/0113 budget: two-way draws, 10800 seconds, 60 tools
 
 **Status: landed 2026-11-27.** The corrected budget is fixed before the redo
 selection and the smoke gate. The cost is recorded in every receipt; no lock,
@@ -18,8 +18,8 @@ operator paused it.
 
 | Constant | Value |
 |---|---|
-| Prompt tokens | 200000 |
-| Completion tokens | 50000 |
+| Prompt tokens | 300000 |
+| Completion tokens | 100000 |
 | Tool calls | 60 |
 | Wall seconds | 10800 |
 | Wave width | 2 |
@@ -43,6 +43,15 @@ early, so the wall-clock cost lands on the arms whose native workflow is long.
 
 The 3600s kanatami void and the 969.1s hffmnnj exclusion are recorded in the
 smoke history; the final smoke runs every arm under the 10800 cap.
+
+## The approved caps
+
+The operator approved the token caps at 300000 prompt / 100000 completion /
+60 tools / 10800 wall on 2026-11-27, after the kanatami smoke used 198518
+prompt and 61492 completion tokens. The caps are enforced: `run.py` and
+`contract.validate_receipt` compare the used counts, an over-cap draw is a
+void with the used counts, and it is never re-run. The aggregate 75-84 hour
+round is approved.
 
 ## What reads the budget
 

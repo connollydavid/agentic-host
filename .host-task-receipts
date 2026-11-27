@@ -1629,3 +1629,10 @@
     evidence = design-review-redo.md: the five seats returned 30 findings (M5-M10, W6-W11, B5-B10, O5-O10, F5-F10); all are dispositioned. The blockers are the hard-wired confirmation, the unenforced caps, the re-run/attempt rule, the zero-valid lock and four-constant suite-fit, the self-referential kanatami fetch log, the samber parser miss, the declaration-only model/provider and the burned fresh set. The accepted fixes are folded into #selection-redo, #confirmation and #component-scaffold; the operator rulings (aggregate, caps, 30-vs-18, fresh key, optional sixth) gate the redo.
     tool = host-lifecycle@0.64.1
     recorded = 2026-11-27
+
+[receipt "plan/0113#budget"]
+    disposition = done
+    verify = the caps and the wave width are recorded before the first draw; a
+    evidence = budget: the operator approved enforceable caps at 300000 prompt / 100000 completion / 60 tools / 10800 wall and the 75-84 hour aggregate on 2026-11-27. contract.CAPS carries the values; contract.validate_receipt rejects used > caps; run.py checks the used counts and records a budget void with the used counts; the budget README/budget.json/contract README carry the values and the ruling. The smoke redo runs under the new caps.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27

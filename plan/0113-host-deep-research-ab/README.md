@@ -23,7 +23,7 @@ as harness-defective: the only contract-valid draw is the null's host-lint
 task, so its lock carries no measurement of the arms
 ([selection/README.md](harness/selection/README.md)). The corrections are the
 new tasks in the build sequence, and the redo selection follows the smoke test
-and the redo cast review.; parked (the redo review found the confirmation, caps, re-run, suite-fit, kanatami fetch-log and samber-parser blockers; the operator rulings on the aggregate 75-84h, the caps, the 30-versus-18 round, the fresh key and the optional sixth gate the redo) since 2026-11-27
+and the redo cast review.; active goal since 2026-11-27
 
 ## Rulings
 
@@ -143,14 +143,11 @@ run's receipt.
   attempt declared Exa while the draws fetched DuckDuckGo; the
   `#search-provider` task fixes the measurement.
 - **Budget.** The same per-draw cap on tokens, tool calls and wall time, and the
-  same prompt for the arm plus the tasks. The contract's caps are 200000 prompt
-  tokens, 50000 completion tokens, 60 tool calls and 10800 wall seconds; the
-  draw order is two-way, interleaved by task, and serial when the provider is
-  under load. The caps are enforced, and the values and the aggregate wall
-  clock are the operator ruling recorded in
-  [design-review-redo.md](design-review-redo.md); the smoke's kanatami draw
-  used 198518 prompt and 61492 completion tokens, so the 50000 completion cap
-  is under review. The cost is recorded, never scored.
+  same prompt for the arm plus the tasks. The operator-approved caps are
+  300000 prompt tokens, 100000 completion tokens, 60 tool calls and 10800 wall
+  seconds; the draw order is two-way, interleaved by task, and serial when the
+  provider is under load. The caps are enforced, and the 75-84 hour aggregate
+  is approved. The cost is recorded, never scored.
 - **Arm isolation.** Each arm draws in its own scratch tree with its own library
   and its own config. No arm's skills, plugins or notes are shared with another.
 - **Roles.** The reference model is the only subject. Fen drives the component's
@@ -459,9 +456,9 @@ and the reference model pin; the recipe check reads them.
 
 - verify: `software --check` reads the stanza clean, the artifact re-derives
   under `software --verify-build`, the recorded harness and model pins match
-  the plan's; the hffmnnj embedding and each arm's native search are pinned or
-  off with a license and digest; the third-party notice and the build include
-  them; the optional `gptr-mcp` is recorded in or out
+  the plan's; the hffmnnj embedding is off or pinned with a license and
+  digest; each arm's native search is recorded; the third-party notice and the
+  build include them; the optional `gptr-mcp` is recorded out
 - depends: #confirmation
 
 ### Ship {#ship}
@@ -509,22 +506,23 @@ scored.
 - verify: the caps and the wave width are recorded before the first draw; a
   smoke draw reports the used counts; no lock or tie-break reads them
 - depends: none
-- Landed 2026-11-27: the caps are 200000 prompt tokens, 50000 completion
-  tokens, 60 tool calls and 10800 wall seconds; the draw order is two-way,
-  interleaved by task, serial under provider load. The first round's 1800s cap
-  and five-arm waves voided 29 of 30 draws; the one valid draw used 103k
-  prompt tokens, 47 tools and the full 1800s. The first corrected cap was
-  3600s; the kanatami smoke hit it in `background_wait` after three of the
-  skill's five-to-ten research rounds, so the operator ruled the cap up to
-  10800s.
+- Landed 2026-11-27: the first corrected caps were 200000 prompt / 50000
+  completion / 60 tools / 10800 wall; the operator approved 300000 / 100000 /
+  60 / 10800 on 2026-11-27 after the smoke's kanatami draw used 198518 prompt
+  and 61492 completion tokens. The draw order is two-way, interleaved by task,
+  serial under provider load. The first round's 1800s cap and five-arm waves
+  voided 29 of 30 draws; the one valid draw used 103k prompt tokens, 47 tools
+  and the full 1800s. The first corrected wall cap was 3600s; the kanatami
+  smoke hit it in `background_wait` after three of the skill's five-to-ten
+  research rounds, so the operator ruled the cap up to 10800s.
   `contract.CAPS` is the single source; `run.py` reads the wall cap and
   defaults to two-way. Record: [budget/README.md](harness/budget/README.md).
 - Reopened 2026-11-27 by the cast review: the caps are declared but not
   enforced (the kanatami smoke records 61492 completion tokens against the
-  50000 cap), the budget README title still says 3600 seconds, and the
-  75-84 hour aggregate is not approved. The caps, aggregate and enforcement
-  are the operator ruling in
-  [design-review-redo.md](design-review-redo.md); the fix is in
+  first 50000 cap), the budget README title still says 3600 seconds, and the
+  75-84 hour aggregate was not approved. The operator approved enforceable
+  caps at 300000 prompt / 100000 completion / 60 tools / 10800 wall and the
+  aggregate on 2026-11-27; the enforcement is in
   [selection-redo](#selection-redo).
 
 ### Adapter layer {#adapter-layer}
@@ -643,15 +641,16 @@ The corrected round with the native adapters, the measured provider, the frozen
 budget, the judge and the lock rule.
 
 - verify: the review's blockers are closed before a scored draw: the caps
-  enforced at the operator-ruled values; `replies.jsonl` and the model
-  pre-flight; the attempt and re-run rule; the six-row suite-fit; the actual
-  kanatami fetch capture; the samber and weizhena parsers; the two-way probe;
-  the smoke redo. Every draw's receipt, adapter, mechanical score and judge
-  score are recorded; every harness-break void has a recorded re-run;
-  budget exhaustion is an arm result, not a re-run; the judge's model, route
-  and validity gate passed; the lock uses the valid floor, the null-relative
-  gate, the 24-point pooled score, the 1.5-point band, the six-row suite-fit
-  and the judge score; the cost is recorded, not scored
+  enforced at 300000 prompt / 100000 completion / 60 tools / 10800 wall;
+  `replies.jsonl` and the model pre-flight; the attempt and re-run rule; the
+  six-row suite-fit; the actual kanatami fetch capture; the samber and
+  weizhena parsers; the two-way probe; the smoke redo. Every draw's receipt,
+  adapter, mechanical score and judge score are recorded; every harness-break
+  void has a recorded re-run; budget exhaustion is an arm result, not a
+  re-run; the judge's model, route and validity gate passed; the lock uses the
+  valid floor, the null-relative gate, the 24-point pooled score, the
+  1.5-point band, the six-row suite-fit and the judge score; the cost is
+  recorded, not scored
 - depends: #cast-review-redo, #smoke-test, #judge, #budget, #adapter-layer
 - Wired 2026-11-27: `round.py` reads each draw's `judge.json`, pools the
   mechanical 0-16 with the judge 0-8, and applies the 1.5-point band, the

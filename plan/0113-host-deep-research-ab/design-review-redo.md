@@ -141,23 +141,21 @@ with new SimpleQA rows and new house tasks is sealed with a new key; the
 operator holds it and passes `--key`; `--check` reads only the sealed digests;
 the first fresh set is recorded as read and burned.
 
-## Operator rulings needed
+## Operator rulings (approved 2026-11-27)
 
-1. **The aggregate wall clock.** 30 selection + 20 confirmation draws at
-   10800s two-way is 75-84 hours. Approve, or cut the round to 18 draws.
-2. **The caps.** Enforceable budgets, raised to 300000 prompt / 100000
-   completion / 60 tools / 10800 wall, or recorded costs with the “cap” claim
-   removed. L recommends enforceable budgets at the raised values.
-3. **The weizhena and samber arms.** Parse their native reports (the latitude
-   direction) and keep 30 draws, or exclude them at the round level and run
-   18. L recommends the parsers; if a parser cannot recover the record, the
-   arm is excluded with evidence.
-4. **The fresh key.** The operator holds the new set's key; the driver takes
-   `--key` and never reads a default path.
-5. **The optional sixth and the one-provider claim.** Record whether
-   `gptr-mcp` enters; pin or turn off the hffmnnj embedding; scope the
-   one-provider claim to the measured null/search or record each arm's native
-   route.
+1. **The aggregate wall clock.** The 75-84 hour round is approved.
+2. **The caps.** Enforceable budgets at 300000 prompt / 100000 completion /
+   60 tools / 10800 wall. `used <= caps` is checked in the driver, the receipt
+   and the smoke; an over-cap draw is a void with the used counts.
+3. **The weizhena and samber arms.** Keep the 30 draws. Parse their native
+   reports and capture the subagent's actual fetches; an arm whose parser
+   cannot recover the record is excluded with evidence, not silently passed.
+4. **The fresh key.** The operator holds the fresh-2 set's key; the driver
+   takes `--key` and never reads a default path.
+5. **The optional sixth and the one-provider claim.** `gptr-mcp` stays out with
+   a recorded line; the hffmnnj embedding is off or pinned with a digest and
+   license; the one-provider claim is scoped to the measured null/search and
+   each arm's native route is recorded.
 
 ## Dispositions
 

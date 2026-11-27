@@ -1,8 +1,8 @@
 {
   "recorded": "2026-11-27",
   "caps": {
-    "prompt_tokens": 200000,
-    "completion_tokens": 50000,
+    "prompt_tokens": 300000,
+    "completion_tokens": 100000,
     "tool_calls": 60,
     "wall_seconds": 10800
   },
@@ -13,7 +13,15 @@
     "recorded": "2026-11-27",
     "from_wall_seconds": 3600,
     "to_wall_seconds": 10800,
-    "reason": "the kanatami smoke hit 3600s in background_wait after three of its five-to-ten research rounds; the operator ruled the cap up to give the native workflow room"
+    "from_caps": {
+      "prompt_tokens": 200000,
+      "completion_tokens": 50000
+    },
+    "to_caps": {
+      "prompt_tokens": 300000,
+      "completion_tokens": 100000
+    },
+    "reason": "the kanatami smoke hit 3600s in background_wait after three of its five-to-ten research rounds and used 198518 prompt / 61492 completion tokens; the operator approved 10800s and the raised caps"
   },
   "first_round": {
     "wall_seconds": 1800,

@@ -2393,3 +2393,9 @@
     tool = host-lifecycle@0.64.1
     recorded = 2026-11-27
     target = plan/0113-host-deep-research-ab
+
+[receipt "goal" "unpark"]
+    disposition = done
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
+    target = plan/0113-host-deep-research-ab

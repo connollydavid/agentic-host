@@ -14,8 +14,8 @@ import re
 from pathlib import Path
 
 CAPS = {
-    "prompt_tokens": 200000,
-    "completion_tokens": 50000,
+    "prompt_tokens": 300000,
+    "completion_tokens": 100000,
     "tool_calls": 60,
     "wall_seconds": 10800,
 }
@@ -153,6 +153,9 @@ def validate_receipt(receipt: object, arm: str, task_key: str, meta: dict, statu
     for key, value in used.items():
         if not isinstance(value, (int, float)) or value < 0:
             raise ContractError(f"receipt budget used.{key} is not a non-negative number")
+        cap = meta["caps"].get(key)
+        if cap is not None and value > cap:
+            raise ContractError(f"receipt budget used.{key} {value} exceeds the cap {cap}")
     digests = receipt.get("config_digests")
     if not isinstance(digests, dict) or not digests:
         raise ContractError("receipt has no config digests")

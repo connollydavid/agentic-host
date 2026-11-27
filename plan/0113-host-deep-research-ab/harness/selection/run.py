@@ -481,6 +481,13 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
                 if isinstance(url, str) and isinstance(text, str) and text.strip():
                     parsed["fetches"].append((url, text))
     adapter = ADAPTERS[arm]
+    used = {
+        "prompt_tokens": parsed["prompt_tokens"],
+        "completion_tokens": parsed["completion_tokens"],
+        "tool_calls": parsed["tool_calls"],
+        "wall_seconds": round(wall, 1),
+    }
+    over = [key for key, cap in contract.CAPS.items() if used.get(key, 0) > cap]
     adapter_result = "void"
     adapter_reason = ""
     try:
@@ -499,12 +506,7 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
                 task["key"],
                 meta,
                 status="live",
-                used={
-                    "prompt_tokens": parsed["prompt_tokens"],
-                    "completion_tokens": parsed["completion_tokens"],
-                    "tool_calls": parsed["tool_calls"],
-                    "wall_seconds": round(wall, 1),
-                },
+                used=used,
             ),
         )
 
@@ -512,7 +514,15 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
     contract_ok = False
     contract_reason = ""
     excluded = False
-    if provider_reason:
+    if timed_out:
+        contract_reason = "budget exhausted: wall seconds exceeded the cap"
+        result = {"status": "void", "reason": contract_reason}
+    elif over:
+        contract_reason = "budget exhausted: " + ", ".join(
+            f"{key} {used[key]} > {contract.CAPS[key]}" for key in over
+        )
+        result = {"status": "void", "reason": contract_reason}
+    elif provider_reason:
         contract_reason = provider_reason
         result = {"status": "void", "reason": provider_reason}
     elif adapter_result == "valid":
@@ -540,6 +550,24 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
         result = {"status": "void", "reason": contract_reason}
     valid = contract_ok and result.get("status") == "scored"
     score = result.get("score", 0) if valid else 0
+    if timed_out or over:
+        break_class = "budget"
+    elif exit_code not in (0,):
+        break_class = "harness"
+    elif valid:
+        break_class = "none"
+    elif adapter_result == "excluded":
+        break_class = "arm"
+    else:
+        reason = contract_reason.lower()
+        arm_tokens = ("report.md cites", "the report cites", "phantom", "no worker result", "no fetched", "no url")
+        harness_tokens = ("pseudo tool calls", "driver error", "budget exhausted")
+        if any(token in reason for token in arm_tokens):
+            break_class = "arm"
+        elif any(token in reason for token in harness_tokens):
+            break_class = "harness"
+        else:
+            break_class = "harness"
     native_files = sum(1 for path in native.rglob("*") if path.is_file()) if native.exists() else 0
     summary = {
         "arm": arm,
@@ -549,6 +577,7 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
         "adapter_result": adapter_result,
         "excluded": excluded,
         "reused": reuse,
+        "break_class": break_class,
         "exit_code": exit_code,
         "timed_out": timed_out,
         "wall_seconds": round(wall, 1),
@@ -584,6 +613,7 @@ def safe_run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", r
             "adapter_result": "void",
             "excluded": False,
             "reused": reuse,
+            "break_class": "harness",
             "exit_code": None,
             "timed_out": False,
             "wall_seconds": 0,
