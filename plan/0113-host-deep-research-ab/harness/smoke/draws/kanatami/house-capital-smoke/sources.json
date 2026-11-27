@@ -1,0 +1,169 @@
+{
+  "sources": [
+    {
+      "url": "https://www.culture.fr/franceterme/terme/AFET263",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 1 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000181509",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 2 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006530034",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 3 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.conseil-constitutionnel.fr/les-constitutions-dans-l-histoire/constitution-de-1875-iiie-republique",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 4 full_text paragraph 1"
+    },
+    {
+      "url": "https://web.archive.org/web/20210123171121/http://www.sandre.eaufrance.fr/geo/CoursEau/----0010",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 5 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.eaufrance.fr/les-rivieres",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 6 full_text paragraph 1"
+    },
+    {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-français/",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 7 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.hydro.eaufrance.fr/stationhydro/F700000103/synthese",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 8 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.eau-seine-normandie.fr/agence-de-leau/le-bassin-de-la-seine",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 9 full_text paragraph 1"
+    },
+    {
+      "url": "https://whc.unesco.org/en/list/600/",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 10 full_text paragraph 1"
+    },
+    {
+      "url": "https://whc.unesco.org/fr/decisions/8631/",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 11 full_text paragraph 1"
+    },
+    {
+      "url": "https://whc.unesco.org/document/208528",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 12 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 13 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.paris.fr/dossiers/la-seine-coeur-battant-de-paris-216",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 14 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.paris.fr/pages/crues-5472",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 15 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.paris.fr/pages/tmp-canaux-7834",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 16 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.paris.fr/pages/les-secrets-enfouis-de-la-bievre-riviere-parisienne-16900",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 17 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.paris.fr/pages/baignade-en-seine-toutes-les-questions-que-vous-vous-posez-31533",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 18 full_text paragraph 1"
+    },
+    {
+      "url": "https://cdn.paris.fr/paris/2026-10-02/bulletin-qualite-eau-seine-2026-08-smy5.pdf",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 19 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.prefectures-regions.gouv.fr/ile-de-france/",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 20 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.ccomptes.fr/sites/default/files/2025-11/IDR2025-51_0.pdf",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 21 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.parisetmetropole-amenagement.fr/fr/bievre-paris-13e",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 22 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.smbvb.fr/la-bievre/historique/",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 23 full_text paragraph 1"
+    },
+    {
+      "url": "https://en.chateauversailles.fr/discover/history/key-dates/versailles-capital-kingdom-1682",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 24 full_text paragraph 1"
+    },
+    {
+      "url": "https://essentiels.bnf.fr/",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 25 full_text paragraph 1"
+    },
+    {
+      "url": "https://gallica.bnf.fr/accueil/fr/html/lhistoire-tourmentee-dune-riviere-quand-la-bievre-disparait",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 26 full_text paragraph 1"
+    },
+    {
+      "url": "https://european-union.europa.eu/principles-countries-history/eu-countries/france_en",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 27 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.coe.int/en/web/interculturalcities/paris",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 28 full_text paragraph 1"
+    },
+    {
+      "url": "http://anom.archivesnationales.culture.gouv.fr/geo.php?",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 29 full_text paragraph 1"
+    },
+    {
+      "url": "https://water.jrc.ec.europa.eu/pdf/seine-fs.pdf",
+      "quote": "### Official / institutional\n1.",
+      "locator": "worker run result 30 full_text paragraph 1"
+    },
+    {
+      "url": "https://www.persee.fr/doc/ihtp_1256-5733_1995_num_8_1_1928",
+      "quote": "### Academic\n31.",
+      "locator": "worker run result 31 full_text paragraph 1"
+    },
+    {
+      "url": "https://doi.org/10.4324/9781003366461-2",
+      "quote": "### Academic\n31.",
+      "locator": "worker run result 32 full_text paragraph 1"
+    },
+    {
+      "url": "https://hal.science/hal-04014374",
+      "quote": "### Academic\n31.",
+      "locator": "worker run result 33 full_text paragraph 1"
+    }
+  ]
+}

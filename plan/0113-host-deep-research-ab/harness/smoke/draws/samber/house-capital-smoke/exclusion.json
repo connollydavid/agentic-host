@@ -1,0 +1,7 @@
+{
+  "arm": "samber",
+  "task": "smoke/house-capital",
+  "status": "excluded",
+  "reason": "The researcher's claim record carries the source URL, access date and confidence, but no verbatim quote or locator; the report cites the URL only, so the ledger's quote and locator cannot be populated.",
+  "evidence": "4 claim note(s) carry URL, accessed and confidence; none carries a quote: and locator: pair; report.md cites the URL without a passage or locator."
+}

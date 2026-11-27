@@ -52,3 +52,7 @@ plan/0113-host-deep-research-ab/harness/selection/draws/
 # Confirmation draw evidence (plan/0113): the same draw record for the held-out
 # round; verbatim, never reworded.
 plan/0113-host-deep-research-ab/harness/confirmation/draws/
+
+# Smoke draw evidence (plan/0113): the per-arm live smoke reports, ledgers,
+# snapshots and native outputs; verbatim, never reworded.
+plan/0113-host-deep-research-ab/harness/smoke/draws/

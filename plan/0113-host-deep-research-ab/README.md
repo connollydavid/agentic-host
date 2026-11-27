@@ -494,8 +494,13 @@ exclusions are recorded.
 - depends: #run-contract, #search-provider, #budget
 - Landed 2026-11-27: the native prompts and `prepare_native` are in `run.py`;
   the adapters dispatch from `contract/adapters/`. The wrapper postscript is
-  gone from the non-null prompts. The contract dry run is 8/8; the live smoke
-  is the remaining check. Record: [adapters/README.md](harness/adapters/README.md).
+  gone from the non-null prompts. The contract dry run is 8/8. The live smoke
+  passed: null valid 9.615/16, hffmnnj valid 5.09/16, kanatami valid 9.818/16,
+  weizhena and samber excluded with evidence. The hffmnnj adapter accepts bare
+  `rn_...` ids and balanced URL parentheses; the kanatami adapter harvests the
+  final report, corpus and run text into workers and the fetch log; a
+  pseudo-tool-call transcript is a void. Record:
+  [adapters/README.md](harness/adapters/README.md).
 
 ### Judge {#judge}
 
@@ -543,6 +548,12 @@ exclusion or a void.
   controls pass; a suspect exclusion whose native notes or workers carry a
   source record fails the smoke; the smoke record is committed
 - depends: #adapter-layer, #search-provider, #budget, #harness-pin, #model-pin, #rubric
+- Landed 2026-11-27: `smoke/smoke.json` PASS. The isolation probe is 11/11;
+  null valid 9.615/16 (5021.9s, provider exa), hffmnnj valid 5.09/16 (928.8s,
+  reused recorded draw), kanatami valid 9.818/16 (8231.4s, reused recorded
+  draw), weizhena excluded 7204.8s and samber excluded 6514.2s with evidence.
+  The suspect-exclusion and pseudo-tool-call gates pass. Record:
+  [smoke/smoke.json](harness/smoke/smoke.json).
 
 ### Cast review redo {#cast-review-redo}
 

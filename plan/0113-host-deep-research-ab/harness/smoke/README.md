@@ -1,9 +1,24 @@
 # plan/0113 smoke gate: one draw per arm before any scored draw
 
-**Status: the live smoke is running.** The gate is the last check before the
-redo selection. It runs one draw per arm on a dedicated task, through the full
+**Status: passed 2026-11-27.** The gate is the last check before the redo
+selection. It runs one draw per arm on a dedicated task, through the full
 pipeline: the native prompt, the adapter, the measured search provider, the
 fetch log, the receipt, the rubric and the isolation probe.
+
+## The result
+
+| Arm | Outcome | Wall |
+|---|---|---|
+| `null` | valid, 9.615/16, provider `exa` | 5021.9s |
+| `hffmnnj` | valid, 5.09/16, recorded-draw reuse | 928.8s |
+| `kanatami` | valid, 9.818/16, recorded-draw reuse | 8231.4s |
+| `weizhena` | excluded, structured field JSON/report | 7204.8s |
+| `samber` | excluded, claim notes without quote/locator | 6514.2s |
+
+The isolation probe is 11/11. Every valid draw has a live receipt with the
+200000/50000/60/10800 caps, a fetch log and a scored rubric. The
+suspect-exclusion and pseudo-tool-call gates pass. The record is
+`smoke/smoke.json`.
 
 ## The task
 

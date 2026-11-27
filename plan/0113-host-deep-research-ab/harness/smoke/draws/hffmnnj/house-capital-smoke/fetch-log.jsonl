@@ -1,0 +1,6 @@
+{"url": "https://en.wikipedia.org/wiki/Seine", "status": 200, "snapshot": "snapshots/agent-0-agent-0-main-1.txt"}
+{"url": "https://en.wikipedia.org/wiki/Paris", "status": 200, "snapshot": "snapshots/agent-1-agent-1-main-2.txt"}
+{"url": "https://en.wikipedia.org/wiki/Constitution_of_France", "status": 200, "snapshot": "snapshots/agent-2-agent-2-main-3.txt"}
+{"url": "https://en.wikisource.org/wiki/Constitution_of_the_Fifth_French_Republic", "status": 200, "snapshot": "snapshots/agent-3-agent-3-main-4.txt"}
+{"url": "https://en.wikisource.org/wiki/Constitution_of_the_Fifth_French_Republic_(amended,_2008)", "status": 200, "snapshot": "snapshots/agent-4-agent-4-main-5.txt"}
+{"url": "https://whc.unesco.org/en/list/600/", "status": 200, "snapshot": "snapshots/agent-5-agent-5-main-6.txt"}

@@ -1,0 +1,18 @@
+HIGHEST-TIER EVIDENCE:
+- E1. **FranceTerme / Ministry of Culture (OFFICIAL, Journal officiel du 24/09/2008)** — https://www.culture.fr/franceterme/terme/AFET263
+  ```
+  France (la), f.  —  Domaine : TOPONYMIE
+  Nom de l'État forme longue : la République française
+  Nom des habitants : Français, -e, n.
+  Capitale : Paris [Parisien, -ienne, n.]
+  Licence etalab-2.0
+  ```
+- E2. **EU official member-state page (OFFICIAL)** — european-union.europa.eu/.../france_en: "# France — Overview — Capital: Paris. Official EU language(s): French. EU Member State: since 1 January 1958. Population: 69 112 309 (Eurostat 2026)."
+- E3. **Council of Europe Intercultural Cities (OFFICIAL)** — coe.int: "Paris is the capital and most populous city of France. **Situated on the Seine River**, in the north of the country, it is in the centre of the Île-de-France region."
+- E4. **Archives nationales d'outre-mer (OFFICIAL)** — "Capitale de la France, Paris est une commune à statut particulier. Depuis 1968, avec la suppression du département de la Seine, elle constitue une collectivité associant la commune et le département."
+- E5. **fr.wikipedia "Capitale de la France"** (page modified 29 Oct 2026, heavily referenced to legifrance/UN/EU) — KEY CONSTITUTIONAL FINDING: "**La Constitution de la Ve République ne définit pas la capitale de la France.** Cependant, le statut hors-norme de Paris... la désignent de manière incontestable comme capitale depuis le XIIe siècle. De plus, l'**arrêté du 4 novembre 1993** relatif à la terminologie des noms d'États et de capitales définit pour la France Paris comme «capitale ou siège du gouvernement». Cet arrêté abroge l'arrêté du 14 octobre 1985..." Also: "bien d'autres organismes internationaux considèrent Paris comme la capitale de la France, en premier lieu l'ONU et l'UE."
+- E6. TLFi definition cited: "capitale = Ville principale d'un État... qui est le siège du gouvernement et/ou de l'administration centrale."
+- E7. Fifth Republic ordinance provides both parliamentary chambers sit in Paris, but government may transfer "le siège des pouvoirs publics" to another city in emergency — "ce qui ne constituerait pas nécessairement un changement de capitale." (Crucial legal distinction: seat of powers ≠ capital.)
+- E8. Institutions seated in Paris: presidency (Élysée), PM (Matignon), ministries, Assemblée nationale (Palais Bourbon), Sénat (Palais du Luxembourg).
+- E9. fr.wiki: "Aux XVe et XVIe siècles, la chancellerie royale désigne Paris comme «capitale de la France»"; "le retour du roi à Paris en 1789 réaffirme le statut de capitale politique de Paris, qui se poursuit aujourd'hui."
+- E10. en.wiki France infobox: "Capital and largest city | Paris 48°51′N 2°21′E / 48.850°N 2.350°E". BBC News profile: "Capital: Paris — Area: 643,801 sq km".

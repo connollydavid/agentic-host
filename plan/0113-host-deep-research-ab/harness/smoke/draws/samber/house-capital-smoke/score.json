@@ -1,0 +1,27 @@
+{
+  "arm": "samber",
+  "task": "smoke/house-capital",
+  "draw": "house-capital-smoke",
+  "adapter": "samber",
+  "adapter_result": "excluded",
+  "excluded": true,
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 6514.2,
+  "prompt_tokens": 172449,
+  "completion_tokens": 16474,
+  "tool_calls": 16,
+  "search_provider": "none",
+  "websearch_calls": 0,
+  "search_engine_fetches": [],
+  "native_files": 5,
+  "contract_ok": false,
+  "contract_reason": "The researcher's claim record carries the source URL, access date and confidence, but no verbatim quote or locator; the report cites the URL only, so the ledger's quote and locator cannot be populated.",
+  "rubric": {
+    "status": "excluded",
+    "reason": "The researcher's claim record carries the source URL, access date and confidence, but no verbatim quote or locator; the report cites the URL only, so the ledger's quote and locator cannot be populated.",
+    "max": 16
+  },
+  "valid": false,
+  "score": 0
+}

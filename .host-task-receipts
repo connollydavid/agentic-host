@@ -1608,3 +1608,17 @@
     evidence = harness/budget: caps 200000 prompt, 50000 completion, 60 tool calls, 10800 wall seconds; two-way draw order, serial under load. The first corrected 3600s cap was raised after the kanatami smoke reached three of its five-to-ten research rounds in background_wait (79 events, 75k prompt + 15.7k completion tokens, 20 tools, five rounds of notes, no final synthesis). contract.CAPS is the single source; run.py reads the wall cap and defaults --parallel 2; confirm.py defaults 2. The null smoke used 55777 prompt + 1814 completion tokens, 10 tools and 435.6s; hffmnnj excluded at 969.1s before the citation-form fix. Records: budget/README.md, budget/budget.json.
     tool = host-lifecycle@0.64.1
     recorded = 2026-11-27
+
+[receipt "plan/0113#adapter-layer"]
+    disposition = done
+    verify = the driver runs one draw per arm to the arm's native output; each
+    evidence = smoke: one draw per arm through the native prompt and adapter; null valid 9.615/16, hffmnnj valid 5.09/16, kanatami valid 9.818/16, weizhena excluded 7204.8s, samber excluded 6514.2s. Every score.json names its adapter; the non-null prompts carry the native line and no wrapper postscript; the hffmnnj bare-rn/bracket and balanced-parenthesis fixes and the kanatami final-report/corpus/event-text harvest are in; the pseudo-tool-call and suspect-exclusion gates pass. Record: plan/0113-host-deep-research-ab/harness/adapters/README.md, smoke/smoke.json.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27
+
+[receipt "plan/0113#smoke-test"]
+    disposition = done
+    verify = the null and each mapped arm produce the contract or the recorded
+    evidence = smoke/smoke.json PASS: isolation probe 11 checks passed; null valid 9.615/16 (5021.9s, provider exa); hffmnnj valid 5.09/16 (928.8s, reused recorded draw); kanatami valid 9.818/16 (8231.4s, reused recorded draw); weizhena excluded 7204.8s and samber excluded 6514.2s with evidence. Every valid draw has a live receipt with the 200000/50000/60/10800 caps, a fetch log and a scored rubric; suspect exclusions and pseudo-tool-call transcripts fail the gate. Record: plan/0113-host-deep-research-ab/harness/smoke/smoke.json, smoke/README.md.
+    tool = host-lifecycle@0.64.1
+    recorded = 2026-11-27

@@ -1,0 +1,6 @@
+**OFFICIAL HYDROGRAPHIC REFERENCE — SANDRE (OFB / eaufrance), code `----0010`.** Live fiche at sandre.eaufrance.fr/geo/CoursEau/----0010 redirects to the id.eaufrance.fr landing page and **could not be read live**; the official record was recovered from a **2021 Internet Archive capture** (web.archive.org/web/20210123171121/http://www.sandre.eaufrance.fr/geo/CoursEau/----0010):
+> "JEUX DE DONNEES DE REFERENCE / Cours d'eau
+> **La Seine — Longueur: 775 km**
+> **Code Sandre : ----0010 — Statut : Validé**"
+> Dataset definition (verbatim): "Un cours d'eau ou entité hydrographique linéaire est une entité hydrographique appartenant au réseau hydrographique... Il possède une source (ou une origine) et un confluent ou embouchure... **L'identification et la définition des entités hydrographiques relève de la responsabilité des Agences de l'Eau.**"
+⚠️ The fiche HTML carries **only** name / length / code / status — basin area, discharge and coordinates live only in the downloadable BD Topage/CarThAge SHP/JSON/GML (not attempted).

@@ -1,6 +1,6 @@
 # plan/0113 adapter layer: native prompts, adapter-written contracts
 
-**Status: landed 2026-11-27; the live smoke is the gate.** The live driver sends
+**Status: landed 2026-11-27; the live smoke passed.** The live driver sends
 each arm its own workflow prompt and lets the arm's adapter write the contract.
 The wrapper postscript is gone. The null arm keeps the frozen contract prompt,
 because it is the control, not an arm with a native output shape.

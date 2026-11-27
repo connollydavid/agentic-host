@@ -1,0 +1,27 @@
+{
+  "arm": "weizhena",
+  "task": "smoke/house-capital",
+  "draw": "house-capital-smoke",
+  "adapter": "weizhena",
+  "adapter_result": "excluded",
+  "excluded": true,
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 7204.8,
+  "prompt_tokens": 137102,
+  "completion_tokens": 6281,
+  "tool_calls": 20,
+  "search_provider": "none",
+  "websearch_calls": 0,
+  "search_engine_fetches": [],
+  "native_files": 3,
+  "contract_ok": false,
+  "contract_reason": "The arm outputs structured field JSON against fields.yaml and a report generated from those fields; it carries no source URL, verbatim quote or locator, so the source ledger cannot be populated.",
+  "rubric": {
+    "status": "excluded",
+    "reason": "The arm outputs structured field JSON against fields.yaml and a report generated from those fields; it carries no source URL, verbatim quote or locator, so the source ledger cannot be populated.",
+    "max": 16
+  },
+  "valid": false,
+  "score": 0
+}
