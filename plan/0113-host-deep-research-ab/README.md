@@ -8,8 +8,10 @@ component. The arm snapshots are pinned with their licenses recorded
 ([arms/README.md](arms/README.md)): the four roster arms qualify, and the
 optional verification pipeline is excluded for a missing license at its pin.
 The run harness is pinned at OpenCode v2.4.2, with its draw pre-flight and
-isolation probes recorded ([harness/README.md](harness/README.md)).; active
-goal since 2026-11-26
+isolation probes recorded ([harness/README.md](harness/README.md)), and the
+reference route is pinned at the named `qwen3.6-27b` entry with its deployment
+id ([model-pin/README.md](harness/model-pin/README.md)).; active goal since
+2026-11-26
 
 ## Rulings
 
@@ -222,6 +224,10 @@ reply recorded under another model id.
 - verify: the pre-flight voids a draw that carries one foreign-model reply, and
   passes a clean one
 - depends: #harness-pin
+- Landed 2026-11-27: the named `qwen3.6-27b` entry (deployment `159fb72c…`,
+  backend `openai/qwen3.8-flash-next`, 500000/524288) is the reference route;
+  the pre-flight voids a foreign reply, an empty ledger and the cut's old
+  deployment record. Record: [harness/model-pin/README.md](harness/model-pin/README.md).
 
 ### Run contract {#run-contract}
 
@@ -327,10 +333,10 @@ the held-out set before it ships.
 
 ## Open questions
 
-- The strata route: the experiment needs an exact named entry,
-  `qwen3.8-flash-next`. Today that name resolves through a family wildcard, and
-  a named entry is a change in `api-litellm`, outside this repository. The
-  fallback is the named `qwen3.6-27b` entry with its deployment id recorded.
+- **Settled 2026-11-27: the named `qwen3.6-27b` entry is the reference route**
+  (`159fb72c…`, backend `openai/qwen3.8-flash-next`). The name
+  `qwen3.8-flash-next` still resolves only through a family wildcard; a named
+  entry remains a change in `api-litellm`, outside this repository.
 - **Ruled 2026-11-27: the experiment considers only `v2.4.2`.** Every draw and
   check runs under the pinned `v2.4.2` binary; the house `tools/opencode` pin
   is outside this milestone's harness decision.
