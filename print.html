@@ -26031,8 +26031,8 @@ aggregate on 2026-11-27; the enforcement is in
 </ul>
 <h3 id="adapter-layer"><a class="header" href="#adapter-layer">Adapter layer</a></h3>
 <p>The live driver sends each arm its native prompt; the arm's adapter writes the
-contract. The null keeps the frozen contract prompt; the weizhena and samber
-exclusions are recorded.</p>
+contract. The null keeps the frozen contract prompt; the weizhena exclusion is
+recorded and the samber report's inline citations convert.</p>
 <ul>
 <li>verify: the driver runs one draw per arm to the arm's native output; each
 receipt names the adapter; the wrapper postscript is gone; an exclusion whose
@@ -26041,9 +26041,11 @@ and a pseudo-tool-call transcript is a void</li>
 <li>depends: #run-contract, #search-provider, #budget</li>
 <li>Landed 2026-11-27: the native prompts and <code>prepare_native</code> are in <code>run.py</code>;
 the adapters dispatch from <code>contract/adapters/</code>. The wrapper postscript is
-gone from the non-null prompts. The contract dry run is 8/8. The live smoke
-passed: null valid 9.615/16, hffmnnj valid 5.09/16, kanatami valid 9.818/16,
-weizhena and samber excluded with evidence. The hffmnnj adapter accepts bare
+gone from the non-null prompts. The contract dry run is 8/8. The first smoke
+read: null valid 9.615/16, hffmnnj valid 5.09/16, kanatami valid 9.818/16,
+weizhena excluded, samber excluded; the cast review invalidated the kanatami
+and samber results, and the samber parser now converts the report's inline
+citations. The hffmnnj adapter accepts bare
 <code>rn_...</code> ids and balanced URL parentheses; the kanatami adapter harvests the
 final report, corpus and run text into workers and the fetch log; a
 pseudo-tool-call transcript is a void. Record:
@@ -26161,11 +26163,11 @@ completion / 60 tools / 10800 wall; the reply pre-flight writes
 <code>replies.jsonl</code> from the scratch OpenCode database, calls
 <code>model-preflight.py --replies</code>, and puts its digest in the receipt; the
 actual <code>webfetch</code> pages from the scratch database replace the
-report-paragraph fetch log (commit <code>d6b3e070</code>). Remaining: the
-attempts/re-run and <code>break_class</code>, the six-row suite-fit and the
-null-relative/valid-draw gate, the samber and weizhena parsers with the
-all-arm suspect gate, the append-only smoke and the two-way probe, then the
-30 draws, the judge and <code>round-redo.json</code>.</li>
+report-paragraph fetch log (commit <code>d6b3e070</code>). The attempt/re-run
+plumbing, the six-row suite-fit and null-relative/valid-draw gate, the
+samber inline parser and the weizhena report/exclusion are in. Remaining:
+the corrected all-arm smoke and the two-way probe, then the 30 draws, the
+judge and <code>round-redo.json</code>.</li>
 </ul>
 <h2 id="open-questions-6"><a class="header" href="#open-questions-6">Open questions</a></h2>
 <ul>
@@ -26717,8 +26719,8 @@ The arm runs its own workflow; the adapter maps the result.</p>
 <tr><td><code>null</code></td><td>the frozen prompt's <code>report.md</code> and <code>sources.json</code></td><td>copies and validates</td></tr>
 <tr><td><code>hffmnnj</code></td><td>the library notes under <code>$XDG_DATA_HOME/opencode-deep-research/library/notes</code> (or <code>~/.local/share/...</code>), the report note</td><td>resolves <code>[rn_...]</code> citations to source records; a direct answer with no note id is an exclusion</td></tr>
 <tr><td><code>kanatami</code></td><td>the final report and the worker results; <code>workers.json</code> if the arm wrote one, otherwise the run's fetch log</td><td>maps each cited URL to its worker result; first sentence is the quote, the worker/paragraph is the locator</td></tr>
-<tr><td><code>weizhena</code></td><td>the structured result JSON and the generated report</td><td>excludes when no URL+quote+locator pair exists; a pair re-opens the exclusion as a void</td></tr>
-<tr><td><code>samber</code></td><td>the claim notes and the report</td><td>converts when every claim note carries URL+quote+locator; otherwise records the exclusion</td></tr>
+<tr><td><code>weizhena</code></td><td>the structured result JSON and the generated report</td><td>builds the ledger from report inline citations; excludes when the report cites no quote/locator; the result URLs are the evidence</td></tr>
+<tr><td><code>samber</code></td><td>the report's inline citations and the claim notes</td><td>builds the ledger from the report's inline <code>[passage](url)</code> citations; excludes when the report has none</td></tr>
 </tbody></table>
 </div>
 <p>The hffmnnj exclusion is live, not a dry-run assumption: the plugin's effort
@@ -26962,8 +26964,8 @@ null arm) the frozen prompt.</li>
 <tr><td><code>null</code></td><td><code>adapters/null.py</code></td><td>valid: the frozen prompt returns the report and ledger directly</td></tr>
 <tr><td><code>hffmnnj</code></td><td><code>adapters/hffmnnj.py</code></td><td>valid: the report cites <code>[rn_…]</code>; the finding note carries <code>url</code> and <code>quote</code>, and the body carries <code>locator:</code></td></tr>
 <tr><td><code>kanatami</code></td><td><code>adapters/kanatami.py</code></td><td>valid: the report cites the worker result URL; the first sentence of <code>full_text</code> is the quote and the worker/paragraph is the locator</td></tr>
-<tr><td><code>weizhena</code></td><td><code>adapters/weizhena.py</code></td><td>excluded: field JSON and a generated report carry no source URL, quote or locator</td></tr>
-<tr><td><code>samber</code></td><td><code>adapters/samber.py</code></td><td>excluded: the claim record carries URL, access date and confidence, not a quote or locator</td></tr>
+<tr><td><code>weizhena</code></td><td><code>adapters/weizhena.py</code></td><td>excluded: the report cites no per-source quote/locator; the result JSON URLs are the evidence</td></tr>
+<tr><td><code>samber</code></td><td><code>adapters/samber.py</code></td><td>valid: the report's inline <code>[passage](url)</code> citations build the ledger</td></tr>
 </tbody></table>
 </div>
 <p>The optional <code>verify</code> arm stays out (no license at its pin), and <code>gptr-mcp</code> is
@@ -26981,8 +26983,8 @@ carries. A draw whose receipt model is not the pin is void.</p>
 <pre><code>PASS null: valid output and receipt (report 209 chars, sources 1, digests 5)
 PASS hffmnnj: valid output and receipt (report 97 chars, sources 1, digests 4)
 PASS kanatami: valid output and receipt (report 88 chars, sources 1, digests 4)
-PASS weizhena: excluded — The arm outputs structured field JSON against fields.yaml and a report generated from those fields; it carries no source URL, verbatim quote or locator, so the source ledger cannot be populated.
-PASS samber: excluded — The researcher's claim record carries the source URL, access date and confidence, but no verbatim quote or locator; the report cites the URL only, so the ledger's quote and locator cannot be populated.
+PASS weizhena: excluded — The field JSON and the report carry no source URL, verbatim quote or locator; the ledger cannot be populated.
+PASS samber: valid output and receipt (report 88 chars, sources 1, digests 4)
 PASS control: an empty quote is rejected
 PASS control: a foreign model receipt is rejected
 PASS control: a report that cites no ledger source is rejected
@@ -27055,8 +27057,9 @@ confidence: Medium</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="dry-run-report-4"><a class="header" href="#dry-run-report-4">Dry-run report</a></h1>
 <p>The research fields describe the contract in prose.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-null-arms-frozen-prompt"><a class="header" href="#the-null-arms-frozen-prompt">The null arm's frozen prompt</a></h1>
-<p>Research the question in the task file with the harness's built-in <code>websearch</code>
-and <code>webfetch</code> tools. Return exactly two files in the output directory:</p>
+<p>Research the question in the task file <code>task.json</code> in the current working
+directory with the harness's built-in <code>websearch</code> and <code>webfetch</code> tools. Return
+exactly two files in the current working directory:</p>
 <ul>
 <li><code>report.md</code>: a Markdown report. Put the source URL beside every cited
 sentence.</li>
@@ -28513,10 +28516,12 @@ ripgrep sources look solid. Now inspect the ast-grep and homepage snapshots for 
 <div style="break-before: page; page-break-before: always;"></div><p>The working directory is empty — no outline exists yet. Let me load the <code>research</code> skill to generate the outline that <code>research-deep</code> requires.</p>
 <div style="break-before: page; page-break-before: always;"></div><p>The deep-research agent is running. Meanwhile, I'll do the contract-required fetching work: locating and fetching the citable pages myself.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0113-smoke-gate-one-draw-per-arm-before-any-scored-draw"><a class="header" href="#plan0113-smoke-gate-one-draw-per-arm-before-any-scored-draw">plan/0113 smoke gate: one draw per arm before any scored draw</a></h1>
-<p><strong>Status: passed 2026-11-27.</strong> The gate is the last check before the redo
-selection. It runs one draw per arm on a dedicated task, through the full
-pipeline: the native prompt, the adapter, the measured search provider, the
-fetch log, the receipt, the rubric and the isolation probe.</p>
+<p><strong>Status: the first record passed, then the five-seat review invalidated the
+kanatami and samber results; the corrected all-arm smoke is the
+<code>#selection-redo</code> run.</strong> The gate is the last check before the redo selection.
+It runs one draw per arm on a dedicated task, through the full pipeline: the
+native prompt, the adapter, the measured search provider, the fetch log, the
+receipt, the rubric and the isolation probe.</p>
 <h2 id="the-result"><a class="header" href="#the-result">The result</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Arm</th><th>Outcome</th><th>Wall</th></tr></thead><tbody>
 <tr><td><code>null</code></td><td>valid, 9.615/16, provider <code>exa</code></td><td>5021.9s</td></tr>

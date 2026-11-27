@@ -199,8 +199,8 @@ The arm runs its own workflow; the adapter maps the result.</p>
 <tr><td><code>null</code></td><td>the frozen prompt's <code>report.md</code> and <code>sources.json</code></td><td>copies and validates</td></tr>
 <tr><td><code>hffmnnj</code></td><td>the library notes under <code>$XDG_DATA_HOME/opencode-deep-research/library/notes</code> (or <code>~/.local/share/...</code>), the report note</td><td>resolves <code>[rn_...]</code> citations to source records; a direct answer with no note id is an exclusion</td></tr>
 <tr><td><code>kanatami</code></td><td>the final report and the worker results; <code>workers.json</code> if the arm wrote one, otherwise the run's fetch log</td><td>maps each cited URL to its worker result; first sentence is the quote, the worker/paragraph is the locator</td></tr>
-<tr><td><code>weizhena</code></td><td>the structured result JSON and the generated report</td><td>excludes when no URL+quote+locator pair exists; a pair re-opens the exclusion as a void</td></tr>
-<tr><td><code>samber</code></td><td>the claim notes and the report</td><td>converts when every claim note carries URL+quote+locator; otherwise records the exclusion</td></tr>
+<tr><td><code>weizhena</code></td><td>the structured result JSON and the generated report</td><td>builds the ledger from report inline citations; excludes when the report cites no quote/locator; the result URLs are the evidence</td></tr>
+<tr><td><code>samber</code></td><td>the report's inline citations and the claim notes</td><td>builds the ledger from the report's inline <code>[passage](url)</code> citations; excludes when the report has none</td></tr>
 </tbody></table>
 </div>
 <p>The hffmnnj exclusion is live, not a dry-run assumption: the plugin's effort
