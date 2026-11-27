@@ -108,6 +108,8 @@ def draw_gate(arm: str, summary: dict) -> list[str]:
                 findings.append("receipt caps do not match the frozen budget")
         if not (draw / "fetch-log.jsonl").is_file():
             findings.append("a valid draw has no fetch log")
+        if summary.get("replies", 0) <= 0 or summary.get("model_preflight") != "ok":
+            findings.append("a valid draw has no passing reply ledger")
         if summary["rubric"].get("status") != "scored":
             findings.append("a valid draw has no scored rubric")
     if summary["adapter_result"] == "excluded":

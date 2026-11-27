@@ -43,6 +43,8 @@ selection or held-out sets.
   engine.
 - A valid draw must have a live receipt with the frozen caps, a fetch log and a
   scored rubric; an excluded draw must have `exclusion.json` and a reason.
+- A valid draw must have a passing `replies.jsonl`: the model pre-flight checks
+  every assistant reply against the pinned route.
 - The isolation probe (`../probe.py`) must pass; it proves the pinned binary,
   the arm loads and the planted skill/manual controls.
 

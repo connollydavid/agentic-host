@@ -196,6 +196,31 @@ def validate_fetch_log(path: Path) -> list[dict]:
     return entries
 
 
+def validate_replies(path: Path, model: dict) -> int:
+    if not path.is_file():
+        raise ContractError("a live draw needs replies.jsonl")
+    replies = []
+    for number, line in enumerate(path.read_text().splitlines(), 1):
+        if not line.strip():
+            continue
+        try:
+            reply = json.loads(line)
+        except json.JSONDecodeError as error:
+            raise ContractError(f"replies line {number} is not JSON: {error}") from error
+        if not isinstance(reply, dict):
+            raise ContractError(f"replies line {number} is not an object")
+        if reply.get("provider") != model["provider"] or reply.get("model") != model["route"]:
+            raise ContractError(
+                f"foreign model reply at line {number}: "
+                f"{reply.get('provider')!r}/{reply.get('model')!r}, "
+                f"pinned {model['provider']!r}/{model['route']!r}"
+            )
+        replies.append(reply)
+    if not replies:
+        raise ContractError("replies.jsonl carries no replies")
+    return len(replies)
+
+
 def validate_output(out: Path, arm: str, task_key: str, meta: dict) -> dict:
     report = (out / "report.md").read_text()
     sources = validate_sources(json.loads((out / "sources.json").read_text()))
@@ -203,13 +228,15 @@ def validate_output(out: Path, arm: str, task_key: str, meta: dict) -> dict:
     receipt = json.loads((out / "receipt.json").read_text())
     status = receipt.get("status")
     validate_receipt(receipt, arm, task_key, meta, status=status)
+    replies = 0
     if status == "live":
+        replies = validate_replies(out / "replies.jsonl", meta["model"])
         log = validate_fetch_log(out / "fetch-log.jsonl")
         logged = {entry["url"] for entry in log}
         phantom = sorted(entry["url"] for entry in sources if entry["url"] not in logged)
         if phantom:
             raise ContractError("phantom source(s) absent from the fetch log: " + ", ".join(phantom))
-    return {"report_chars": len(report), "sources": len(sources), "digests": len(receipt["config_digests"])}
+    return {"report_chars": len(report), "sources": len(sources), "digests": len(receipt["config_digests"]), "replies": replies}
 
 
 def validate_exclusion(out: Path, arm: str, task_key: str) -> dict:

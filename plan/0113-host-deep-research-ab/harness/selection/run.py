@@ -17,6 +17,7 @@ import json
 import os
 import re
 import shutil
+import sqlite3
 import subprocess
 import sys
 import time
@@ -35,6 +36,7 @@ SCRATCH = Path("/tmp/opencode/plan0113/selection")
 DRAWS = HERE / "draws"
 PIN_ENV = HARNESS / "pin.env"
 MODEL_PIN = HARNESS / "model-pin" / "model-pin.json"
+MODEL_PREFLIGHT = HARNESS / "model-pin" / "model-preflight.py"
 
 sys.path.insert(0, str(HARNESS / "contract"))
 sys.path.insert(0, str(HARNESS / "tasks"))
@@ -86,6 +88,30 @@ SEARCH_ENGINES = ("duckduckgo.com", "google.com", "bing.com", "search.yahoo.com"
 
 def sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode()).hexdigest()
+
+
+def read_replies(root: Path) -> list[dict]:
+    """Read every assistant reply's provider/model from the scratch OpenCode DB."""
+    db = root / "data" / "opencode" / "opencode.db"
+    if not db.is_file():
+        return []
+    connection = None
+    try:
+        connection = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
+        rows = connection.execute(
+            "SELECT json_extract(data, '$.model.providerID'), "
+            "json_extract(data, '$.model.id'), json_extract(data, '$.role') FROM message"
+        ).fetchall()
+    except sqlite3.Error:
+        return []
+    finally:
+        if connection is not None:
+            connection.close()
+    replies: list[dict] = []
+    for provider, model, role in rows:
+        if role == "assistant" and isinstance(provider, str) and isinstance(model, str):
+            replies.append({"provider": provider, "model": model})
+    return replies
 
 
 def is_search_engine(url: str) -> bool:
@@ -187,6 +213,38 @@ def prepare(arm: str, root: Path) -> Path:
     elif arm == "samber":
         shutil.copytree(ARMS / "samber" / "skills" / "deep-research", skills / "deep-research")
     return root / "work"
+
+
+def read_fetches(root: Path) -> list[tuple[str, str]]:
+    """Read every completed webfetch page from the scratch OpenCode DB."""
+    db = root / "data" / "opencode" / "opencode.db"
+    if not db.is_file():
+        return []
+    connection = None
+    try:
+        connection = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
+        rows = connection.execute(
+            "SELECT data FROM session_part WHERE data LIKE '%\"name\":\"webfetch\"%'"
+        ).fetchall()
+    except sqlite3.Error:
+        return []
+    finally:
+        if connection is not None:
+            connection.close()
+    fetches: list[tuple[str, str]] = []
+    for (raw,) in rows:
+        try:
+            part = json.loads(raw)
+        except json.JSONDecodeError:
+            continue
+        state = part.get("state") or {}
+        if state.get("status") != "completed":
+            continue
+        url = (state.get("input") or {}).get("url")
+        output = state.get("output")
+        if isinstance(url, str) and isinstance(output, str) and output.strip():
+            fetches.append((url, output))
+    return fetches
 
 
 def parse_events(path: Path) -> dict:
@@ -440,8 +498,21 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
                 timed_out = True
         wall = time.time() - started
     parsed = parse_events(events_path)
+    parsed["fetches"].extend(read_fetches(root))
     measured_provider = parsed["websearch"][0]["provider"] if parsed["websearch"] else "none"
     foreign_fetches = [url for url, _ in parsed["fetches"] if is_search_engine(url)]
+    replies = read_replies(root)
+    replies_path = draw / "replies.jsonl"
+    replies_path.write_text("".join(json.dumps(reply) + "\n" for reply in replies))
+    preflight_reason = ""
+    if MODEL_PREFLIGHT.is_file():
+        preflight = subprocess.run(
+            [sys.executable, str(MODEL_PREFLIGHT), "--replies", str(replies_path)],
+            capture_output=True,
+            text=True,
+        )
+        if preflight.returncode != 0:
+            preflight_reason = preflight.stderr.strip() or "model pre-flight failed"
 
     pin = read_pin_env()
     model = json.loads(MODEL_PIN.read_text())
@@ -464,22 +535,11 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
             "model_pin": schema.sha256_file(MODEL_PIN),
             "arm_config": schema.sha256_file(root / "config" / "opencode" / "opencode.json"),
             "prompt": sha256_text(prompt),
+            "replies": schema.sha256_file(replies_path),
         },
     }
 
     native = prepare_native(arm, work, root, draw, parsed)
-    workers_path = native / "workers.json"
-    if workers_path.is_file():
-        try:
-            workers = json.loads(workers_path.read_text())
-        except json.JSONDecodeError:
-            workers = {}
-        for worker in workers.get("workers", []):
-            for result in worker.get("results", []):
-                url = result.get("url")
-                text = result.get("full_text") or result.get("snippet")
-                if isinstance(url, str) and isinstance(text, str) and text.strip():
-                    parsed["fetches"].append((url, text))
     adapter = ADAPTERS[arm]
     used = {
         "prompt_tokens": parsed["prompt_tokens"],
@@ -525,6 +585,9 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
     elif provider_reason:
         contract_reason = provider_reason
         result = {"status": "void", "reason": provider_reason}
+    elif preflight_reason:
+        contract_reason = preflight_reason
+        result = {"status": "void", "reason": preflight_reason}
     elif adapter_result == "valid":
         try:
             contract.validate_output(draw, arm, task["key"], meta)
@@ -561,7 +624,14 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
     else:
         reason = contract_reason.lower()
         arm_tokens = ("report.md cites", "the report cites", "phantom", "no worker result", "no fetched", "no url")
-        harness_tokens = ("pseudo tool calls", "driver error", "budget exhausted")
+        harness_tokens = (
+            "pseudo tool calls",
+            "driver error",
+            "budget exhausted",
+            "foreign model reply",
+            "model pre-flight",
+            "replies:",
+        )
         if any(token in reason for token in arm_tokens):
             break_class = "arm"
         elif any(token in reason for token in harness_tokens):
@@ -587,6 +657,8 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
         "search_provider": measured_provider,
         "websearch_calls": len(parsed["websearch"]),
         "search_engine_fetches": foreign_fetches,
+        "replies": len(replies),
+        "model_preflight": preflight_reason or "ok",
         "native_files": native_files,
         "contract_ok": contract_ok,
         "contract_reason": contract_reason,
@@ -623,6 +695,8 @@ def safe_run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", r
             "search_provider": "none",
             "websearch_calls": 0,
             "search_engine_fetches": [],
+            "replies": 0,
+            "model_preflight": "harness",
             "native_files": 0,
             "contract_ok": False,
             "contract_reason": f"driver error: {error}",

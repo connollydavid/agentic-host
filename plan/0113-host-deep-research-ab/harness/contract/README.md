@@ -26,7 +26,8 @@ must-cover lists later.
 | `report.md` | Markdown. Every cited source's URL or ledger id appears in the text. |
 | `sources.json` | `{"sources": [{"id"?: "...", "url": "https://...", "quote": "verbatim passage", "locator": "section or paragraph"}]}` |
 | `receipt.json` | The task, arm, status, harness, model, search provider, budget and config digests. |
-| `fetch-log.jsonl` | One line per fetch: `{"url": "...", "status": 200, "snapshot": "snapshots/<page>.txt"}`. A live draw writes it; the rubric's phantom gate and snapshot checks read it. |
+| `fetch-log.jsonl` | One line per fetch: `{"url": "...", "status": 200, "snapshot": "snapshots/<page>.txt"}`. A live draw writes it from the run's actual `webfetch` pages; the rubric's phantom gate and snapshot checks read it. |
+| `replies.jsonl` | One line per assistant reply: `{"provider": "...", "model": "..."}`. A live draw writes it from the scratch OpenCode database; the model pre-flight voids a foreign reply, and the receipt carries its digest. |
 
 The ledger entry's optional `id` is the arm's own citation key, for an arm that
 cites notes by id rather than URL (hffmnnj's `[rn_…]`). The report check accepts
@@ -35,7 +36,8 @@ URL in the report has a ledger entry. The quote and locator are required; a
 paraphrase record does not satisfy the contract. A live draw's
 `fetch-log.jsonl` is the run's own record of what it fetched; every ledger URL
 must appear in it, and a cited URL absent from it is a phantom that voids the
-draw.
+draw. The log is the actual `webfetch` page from the scratch session database,
+not a paragraph from the report; a report paragraph is not a fetched page.
 
 The receipt carries:
 
