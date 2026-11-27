@@ -259,6 +259,20 @@ def note_front_body(path: Path) -> tuple[dict, str]:
         return {}, body
 
 
+def text_sources(text: str) -> list[tuple[str, str]]:
+    """Pair each URL in the run text with the paragraph that carries it."""
+    paragraphs = [part.strip() for part in re.split(r"\n\s*\n", text) if part.strip()]
+    pairs: list[tuple[str, str]] = []
+    seen: set[str] = set()
+    for paragraph in paragraphs:
+        for url in re.findall(r"https?://[^\s)\]>\"']+", paragraph):
+            url = url.rstrip(".,;:")
+            if url not in seen:
+                seen.add(url)
+                pairs.append((url, paragraph))
+    return pairs
+
+
 def prepare_native(arm: str, work: Path, root: Path, draw: Path, parsed: dict) -> Path:
     """Copy the arm's native output into the draw's `native/` audit surface.
 
@@ -293,6 +307,8 @@ def prepare_native(arm: str, work: Path, root: Path, draw: Path, parsed: dict) -
     elif arm == "kanatami":
         if (work / "workers.json").is_file():
             shutil.copyfile(work / "workers.json", native / "workers.json")
+        if (work / "final-report.md").is_file():
+            shutil.copyfile(work / "final-report.md", native / "report.md")
     elif arm == "weizhena":
         for base in (work / "results", work / "research"):
             if base.is_dir():
@@ -316,13 +332,16 @@ def prepare_native(arm: str, work: Path, root: Path, draw: Path, parsed: dict) -
         elif parsed["text"]:
             (native / "report.md").write_text(parsed["text"] + "\n")
 
-    if arm == "kanatami" and not (native / "workers.json").exists():
-        workers = {
-            "workers": [
-                {"id": "main", "results": [{"url": url, "full_text": output} for url, output in parsed["fetches"]]}
-            ]
-        }
-        contract.write_json(native / "workers.json", workers)
+    if arm == "kanatami" and not (work / "workers.json").is_file():
+        text = parsed["text"]
+        corpus = work / "research-corpus.md"
+        if corpus.is_file():
+            text = corpus.read_text() + "\n\n" + text
+        report_file = work / "final-report.md"
+        if report_file.is_file():
+            text = report_file.read_text() + "\n\n" + text
+        results = [{"url": url, "full_text": paragraph} for url, paragraph in text_sources(text)]
+        contract.write_json(native / "workers.json", {"workers": [{"id": "run", "results": results}]})
     return native
 
 
@@ -449,6 +468,18 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
     }
 
     native = prepare_native(arm, work, root, draw, parsed)
+    workers_path = native / "workers.json"
+    if workers_path.is_file():
+        try:
+            workers = json.loads(workers_path.read_text())
+        except json.JSONDecodeError:
+            workers = {}
+        for worker in workers.get("workers", []):
+            for result in worker.get("results", []):
+                url = result.get("url")
+                text = result.get("full_text") or result.get("snippet")
+                if isinstance(url, str) and isinstance(text, str) and text.strip():
+                    parsed["fetches"].append((url, text))
     adapter = ADAPTERS[arm]
     adapter_result = "void"
     adapter_reason = ""
