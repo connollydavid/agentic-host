@@ -25989,7 +25989,8 @@ exclusions are recorded.</p>
 <ul>
 <li>verify: the driver runs one draw per arm to the arm's native output; each
 receipt names the adapter; the wrapper postscript is gone; an exclusion whose
-native output already carries a source record is a harness break, not a pass</li>
+native output already carries a source record is a harness break, not a pass,
+and a pseudo-tool-call transcript is a void</li>
 <li>depends: #run-contract, #search-provider, #budget</li>
 <li>Landed 2026-11-27: the native prompts and <code>prepare_native</code> are in <code>run.py</code>;
 the adapters dispatch from <code>contract/adapters/</code>. The wrapper postscript is
@@ -26481,7 +26482,9 @@ The arm runs its own workflow; the adapter maps the result.</p>
 <p>The hffmnnj exclusion is live, not a dry-run assumption: the plugin's effort
 router sends a narrow question to the Quick tier, where the coordinator may
 answer without saving notes. The smoke records that outcome instead of
-pretending the note ledger exists.</p>
+pretending the note ledger exists. A report that contains <code>&lt;tool_call&gt;</code> or
+<code>&lt;function=</code> is a pseudo-tool-call transcript, not a direct answer: the plugin
+tools were not invoked, the adapter raises a void, and the draw is re-run.</p>
 <h2 id="the-null-control"><a class="header" href="#the-null-control">The null control</a></h2>
 <p>The null arm's frozen prompt asks for the contract directly, so its adapter is
 a shape check and a copy. It must be valid in the smoke; a null void means the

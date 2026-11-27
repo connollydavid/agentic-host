@@ -626,7 +626,8 @@ exclusions are recorded.</p>
 <ul>
 <li>verify: the driver runs one draw per arm to the arm's native output; each
 receipt names the adapter; the wrapper postscript is gone; an exclusion whose
-native output already carries a source record is a harness break, not a pass</li>
+native output already carries a source record is a harness break, not a pass,
+and a pseudo-tool-call transcript is a void</li>
 <li>depends: #run-contract, #search-provider, #budget</li>
 <li>Landed 2026-11-27: the native prompts and <code>prepare_native</code> are in <code>run.py</code>;
 the adapters dispatch from <code>contract/adapters/</code>. The wrapper postscript is
