@@ -34,7 +34,9 @@ The arm runs its own workflow; the adapter maps the result.
 The hffmnnj exclusion is live, not a dry-run assumption: the plugin's effort
 router sends a narrow question to the Quick tier, where the coordinator may
 answer without saving notes. The smoke records that outcome instead of
-pretending the note ledger exists.
+pretending the note ledger exists. A report that contains `<tool_call>` or
+`<function=` is a pseudo-tool-call transcript, not a direct answer: the plugin
+tools were not invoked, the adapter raises a void, and the draw is re-run.
 
 ## The null control
 

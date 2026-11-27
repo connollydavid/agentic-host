@@ -47,6 +47,11 @@ def quote_for(source: dict, body: str) -> str:
 
 def convert(fixture: Path, task: dict, out: Path, meta: dict) -> str:
     report = (fixture / "report.md").read_text()
+    if "<tool_call>" in report or "<function=" in report:
+        raise ContractError(
+            "the run emitted pseudo tool calls; the plugin tools were not invoked, "
+            "so this is a harness break, not an arm exclusion"
+        )
     ids = list(dict.fromkeys(NOTE.findall(report)))
     if not ids:
         notes = list(fixture.rglob("rn_*.md"))
