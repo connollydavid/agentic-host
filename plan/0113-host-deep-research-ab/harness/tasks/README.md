@@ -1,5 +1,9 @@
 # plan/0113 task sets: the frozen selection set and the sealed held-out set
 
+**Status: the selection set stands; the first held-out set is burned.** Its
+plaintext was read at the failed confirmation, so `#fresh-held-out` freezes and
+seals a fresh set before any corrected confirmation.
+
 - Frozen 2026-11-27, before the first draw. The selection round is later, and
   nothing in this record was produced by a draw.
 - The schema is `schema.py`. A task carries its key, kind and digest; a set

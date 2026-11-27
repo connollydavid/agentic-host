@@ -1,7 +1,7 @@
 # plan/0113: host-deep-research, the A/B that selects it
 
-**Status: cut 2026-11-26, in build** (operator direction: claim a plan and
-design the A/B for a deep-research integration). The wrapper is ruled
+**Status: cut 2026-11-26, in build (evolving 2026-11-27)** (operator
+direction: claim a plan and design the A/B for a deep-research integration). The wrapper is ruled
 `host-deep-research`, a house component that shims whichever arm the test
 selects. This milestone is the design and its build sequence, not a shipped
 component. The arm snapshots are pinned with their licenses recorded
@@ -18,11 +18,12 @@ with the selection set public and the held-out set sealed
 ([tasks/README.md](harness/tasks/README.md)). The mechanical rubric and its
 controls are recorded ([rubric/README.md](harness/rubric/README.md)). The cast
 review is recorded with every finding dispositioned
-([design-review.md](design-review.md)). The selection round is recorded: the
-only contract-valid draw is the null's host-lint task, and the lock is
-`weizhena` by the tie-break
-([selection/README.md](harness/selection/README.md)).; active goal since
-2026-11-26; abandoned 2026-11-27 (owed; see PLAN.md)
+([design-review.md](design-review.md)). The first selection round is recorded
+as harness-defective: the only contract-valid draw is the null's host-lint
+task, so its lock carries no measurement of the arms
+([selection/README.md](harness/selection/README.md)). The corrections are the
+new tasks in the build sequence, and the redo selection follows the smoke test
+and the redo cast review.
 
 ## Rulings
 
@@ -58,6 +59,29 @@ The endpoint that carried the installed research skills retired in November, so
 the house has no working deep-research tool. The incumbent is therefore the null
 arm, and a candidate that cannot beat a plain agent with the built-in web tools
 has not earned the vendoring, the dependency tree and the token cost.
+
+## The first attempt's corrections
+
+The first round ran before its ledger injection was smoke-tested. The
+corrections are tasks in this plan's build sequence, not a replacement plan.
+
+- **The ledger's layer.** The live driver sends each arm its native prompt,
+  and the arm's adapter writes the contract. The wrapper postscript is gone.
+- **The smoke test.** One draw per arm through the full pipeline, gating the
+  ledger injection, the harness, model, provider, isolation, fetch log,
+  receipt and rubric before any scored draw.
+- **The measured provider.** One provider is configured and probed; the
+  receipt records the provider the tool actually called. The first attempt's
+  receipts said Exa while the draws fetched DuckDuckGo.
+- **The budget and the waves.** The cost is recorded, never scored; the draws
+  run serial or two-way, not the five-arm waves.
+- **The judge.** Opus 5.5 scores completeness and creativity, subject to the
+  dokimi validity gate. The token count no longer breaks the lock.
+- **The fresh held-out set.** The first held-out set was read at the failed
+  confirmation; a fresh set is sealed with its own key.
+- **The selection and confirmation.** The first selection is recorded as
+  harness-defective; the corrected round is the `#selection-redo` task, and
+  the confirmation waits for it.
 
 ## The A/B design
 
@@ -97,28 +121,30 @@ run's receipt.
   through the `qwen*` entry, and the pin is that entry's deployment id, checked
   in pre-flight. A draw on a foreign model is void. The legacy `qwen3.6-27b`
   name is foreign.
-- **Search.** One provider, from the harness's own web tools, recorded once.
-  Every arm uses that provider. The provider is Exa, with
-  `OPENCODE_ENABLE_EXA=1`; every receipt records `exa`.
+- **Search.** One provider, measured and probed. Every arm uses that provider,
+  and every receipt records the provider the tool actually called. The first
+  attempt declared Exa while the draws fetched DuckDuckGo; the
+  `#search-provider` task fixes the measurement.
 - **Budget.** The same per-draw cap on tokens, tool calls and wall time, and the
   same prompt for the arm plus the tasks. The contract's caps are 200000 prompt
-  tokens, 50000 completion tokens, 40 tool calls and 1800 wall seconds; every
-  receipt carries the caps and the used counts.
+  tokens, 50000 completion tokens, 40 tool calls and 1800 wall seconds. The
+  cost is recorded, never scored, and the draws run serial or two-way.
 - **Arm isolation.** Each arm draws in its own scratch tree with its own library
   and its own config. No arm's skills, plugins or notes are shared with another.
 - **Roles.** The reference model is the only subject. Fen drives the component's
-  single command in the acceptance task. Any judge that ever scores reports it
-  must differ from the reference model and must pass dokimi's validity gate;
-  otherwise the mechanical rubric alone scores. The per-arm draw config
-  overrides every agent's model to the reference route; the arm's own files are
-  never edited, because the weizhena and kanatami agents pin foreign models at
-  their commits. The override is part of the config digest.
+  single command in the acceptance task. A judge other than the reference,
+  Opus 5.5, scores completeness and creativity; its scores count only after
+  dokimi's validity gate. The per-arm draw config overrides every agent's model
+  to the reference route; the arm's own files are never edited, because the
+  weizhena and kanatami agents pin foreign models at their commits. The override
+  is part of the config digest.
 
 ### The task sets
 
 Two sets, frozen before any draw: a selection set for the rounds, and a held-out
 set read for the first time in confirmation. The held-out set is never run
-during selection.
+during selection. The first held-out set was read at the failed confirmation;
+the fresh set is frozen and sealed with its own key.
 
 - **Known-answer tasks** come from a public short-answer benchmark, referenced
   by item id and fetched at run time rather than embedded, so the dataset's own
@@ -152,26 +178,28 @@ Mechanical where it can be; the hard gate is a count.
 Cost is recorded, not scored: completion and prompt tokens, tool calls, wall
 time, and the exit status and contract compliance of each draw.
 
-An optional judge may score citation support as well. It must be a model other
-than the reference, and its scores count only if it passes the validity gate.
-With no passing judge, the rubric stands alone, which is the state after the
-2026-10-20 verdict.
+The judge is Opus 5.5, a model other than the reference. It scores completeness
+and creativity on the blind report and ledger; its scores enter the pooled
+selection score and break the suite-fit tie, and they count only after the
+dokimi validity gate. With no passing judge, the mechanical rubric stands alone.
 
 ### The protocol
 
 - **Selection** is one frozen round, because the budget bounds it: every arm
   draws once on every selection task (5 × 6 = 30 draws), interleaved by task.
   A re-baseline would need a new pre-declared round before its draws; numbers do
-  not compare across rounds.
+  not compare across rounds. The first attempt's round is recorded as
+  harness-defective; the corrected round is the `#selection-redo` task.
 - **Lock.** The lock rule is mechanical. Among arms whose pooled selection score
   is within a band of 1.0 point of the best (the 16-point applicable maximum),
-  the lock goes to the highest suite-fit score; a remaining tie goes to the arm
-  with fewer tokens, then to name order.
-- **Confirmation** pits the locked arm against `null`, on held-out tasks not
-  used in any round, with two fresh draws per held-out task per arm (2 × 2 × 5 =
-  20 draws) and randomised order within each task block. The pre-declared
-  criteria: a margin of 1.0 point, a per-task floor of 8 of 16, zero phantom
-  sources, and no foreign-model reply.
+  the lock goes to the highest suite-fit score; a remaining tie goes to the
+  judge's completeness and creativity, then to name order. The token count is
+  recorded, never a tie-break.
+- **Confirmation** pits the locked arm against `null`, on the fresh held-out
+  tasks, with two fresh draws per held-out task per arm (2 × 2 × 5 = 20 draws)
+  and randomised order within each task block. The pre-declared criteria: a
+  margin of 1.0 point, a per-task floor of 8 of 16, zero phantom sources, no
+  foreign-model reply, and the judge's completeness and creativity recorded.
 - **Ship.** The component ships the confirmed arm when every criterion passes,
   and prints `SHIP`; otherwise it prints `NO-SHIP`, reports the criteria it
   missed, and the incumbent (null) stands. The operator may direct another
@@ -285,7 +313,9 @@ here.
 - Landed 2026-11-27: six selection tasks (three SimpleQA rows, three house
   tasks) and five held-out tasks (two SimpleQA rows, three house tasks); the
   selection digest is `128d1354…`, the held-out plaintext digest `97c44bd2…`,
-  and the held-out set is sealed in `held-out.json.enc`. Record:
+  and the held-out set is sealed in `held-out.json.enc`. The held-out plaintext
+  was read at the failed confirmation, so that set is burned and
+  `#fresh-held-out` seals a fresh one. Record:
   [harness/tasks/README.md](harness/tasks/README.md).
 
 ### Rubric {#rubric}
@@ -316,9 +346,11 @@ executor.
 - Landed 2026-11-27: the five-seat review in
   [design-review.md](design-review.md); the accepted findings froze the
   protocol numbers, added the fetch log to the contract, added the per-arm
-  model and tool overrides, fixed Exa as the search provider, added the
+  model and tool overrides, named Exa as the search provider, added the
   suite-fit evidence table and the component's harness and model pins. Every
-  finding is dispositioned in the review or the named record.
+  finding is dispositioned in the review or the named record. The provider
+  finding is superseded by `#search-provider`: the receipts and the fetch log
+  disagreed, so the provider is measured rather than named.
 
 ### Selection {#selection}
 
@@ -329,22 +361,23 @@ rule applied mechanically.
   carries one row per criterion with its evidence; the locked arm follows from
   the rule rather than from a judgment made after seeing the table
 - depends: #cast-review
-- Landed 2026-11-27: the 30 draws are recorded in
+- Landed 2026-11-27, **harness-defective**: the 30 draws are recorded in
   [harness/selection/README.md](harness/selection/README.md) and
   `round.json`; only `null/house-host-lint-docs` produced the contract (13/16),
   the other 29 hit the 1800-second cap without a ledger, the pooled scores are
   null 2.17 and the candidates 0, and the lock is `weizhena` by fewer tokens
-  after the 4-point suite-fit tie. The confirmation is next.
+  after the 4-point suite-fit tie. The round measured the wrapper prompt and
+  the waves, not the arms; `#selection-redo` is the corrected round.
 
 ### Confirmation {#confirmation}
 
-The locked arm against `null` on the held-out set, fresh and interleaved, and
-the printed verdict.
+The locked arm against `null` on the fresh held-out set, fresh and interleaved,
+with the judge's completeness and creativity, and the printed verdict.
 
 - verify: the verdict prints from the recorded criteria; a `NO-SHIP` records
-  every criterion missed; a `SHIP` records margin, per-task floor and the
-  phantom count
-- depends: #selection
+  every criterion missed; a `SHIP` records margin, per-task floor, the phantom
+  count and the judge's completeness and creativity
+- depends: #selection-redo, #fresh-held-out, #judge
 
 ### Fen acceptance {#fen-acceptance}
 
@@ -389,20 +422,101 @@ the held-out set before it ships.
   confirmation, or the original stays
 - depends: #ship
 
+### Search provider {#search-provider}
+
+Configure and probe one provider under the pinned harness; the receipt records
+the provider the tool actually called.
+
+- verify: the provider probe passes; a draw's receipt records the provider the
+  fetch log shows; a foreign provider voids
+- depends: none
+
+### Budget {#budget}
+
+Re-decide the per-draw caps and the draw order; the cost is recorded, never
+scored.
+
+- verify: the caps and the wave width are recorded before the first draw; a
+  smoke draw reports the used counts; no lock or tie-break reads them
+- depends: none
+
+### Adapter layer {#adapter-layer}
+
+The live driver sends each arm its native prompt; the arm's adapter writes the
+contract. The null keeps the frozen contract prompt; the weizhena and samber
+exclusions are recorded.
+
+- verify: the driver runs one draw per arm to the arm's native output; each
+  receipt names the adapter; the wrapper postscript is gone
+- depends: #run-contract, #search-provider, #budget
+
+### Judge {#judge}
+
+Opus 5.5, a model other than the reference, scores completeness and creativity
+on the blind report and ledger; the dokimi validity gate must pass.
+
+- verify: the judge model is Opus 5.5; the prompt and the blind-scoring rule
+  are recorded; the dokimi validity gate passes on the clean and broken
+  samples; a failing judge is not used
+- depends: none
+
+### Fresh held-out {#fresh-held-out}
+
+The first held-out set was read at the failed confirmation; freeze a fresh set
+and seal it with its own key.
+
+- verify: every task validates; the fresh set is ciphertext with no plaintext
+  in the tree; both set digests are recorded
+- depends: none
+
+### Smoke test {#smoke-test}
+
+One draw per arm through the full pipeline and the controls: the ledger
+injection, the harness, model, provider, isolation, fetch log, receipt and
+rubric; a planted skill and manual must not load; a missing ledger is an
+exclusion or a void.
+
+- verify: the null and each mapped arm produce the contract or the recorded
+  exclusion; the harness, model, provider, isolation, fetch-log and rubric
+  controls pass; the smoke record is committed
+- depends: #adapter-layer, #search-provider, #budget, #harness-pin, #model-pin, #rubric
+
+### Cast review redo {#cast-review-redo}
+
+The corrected design goes to the five seats before the redo selection.
+
+- verify: every finding is dispositioned in this README or in the review
+  record; the review is recorded before the redo selection
+- depends: #smoke-test, #judge, #fresh-held-out
+
+### Selection redo {#selection-redo}
+
+The corrected round with the native adapters, the measured provider, the frozen
+budget, the judge and the lock rule.
+
+- verify: every draw's receipt, adapter, mechanical score and judge score are
+  recorded; the judge's validity gate passed; the lock uses the band, the
+  suite-fit and the judge's completeness and creativity; the cost is recorded,
+  not scored
+- depends: #cast-review-redo, #smoke-test, #judge
+
 ## Open questions
 
 - **Ruled 2026-11-27: the reference route is strata's `qwen3.8-flash-next`.**
   The name resolves through the `qwen*` wildcard (deployment `64e4a374…`); an
   exact named entry remains a change in `api-litellm`, outside this repository.
   The legacy `qwen3.6-27b` name is not the route.
+- **The provider is measured in `#search-provider`.** The first attempt's
+  receipts said Exa while the draws fetched DuckDuckGo; the corrected task
+  records the provider the tool actually called.
 - **Ruled 2026-11-27: the experiment considers only `v2.4.2`.** Every draw and
   check runs under the pinned `v2.4.2` binary; the house `tools/opencode` pin
   is outside this milestone's harness decision.
-- **Settled 2026-11-27: the search provider is Exa**, with
-  `OPENCODE_ENABLE_EXA=1`; every receipt records `exa`.
-- **Settled 2026-11-27: the round sizes are 30 selection draws and 20
-  confirmation draws**, with the contract's caps and the frozen band, margin
-  and per-task floor.
+- **The round sizes are 30 selection draws and 20 confirmation draws**, with the
+  contract's caps, the frozen band, margin and per-task floor, and the
+  `#selection-redo` and `#confirmation` tasks.
+- **The judge is Opus 5.5**, scoring completeness and creativity subject to the
+  dokimi validity gate.
 - The optional sixth arm, if and when a license file appears upstream.
 - Web drift: selection and confirmation run weeks apart, so the benchmark items
   are referenced rather than embedded, and each draw records its fetch log.

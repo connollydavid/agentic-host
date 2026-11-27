@@ -1,9 +1,11 @@
-# plan/0113 selection: the frozen 30-draw round
+# plan/0113 selection: the first 30-draw round, harness-defective
 
-**Status: complete 2026-11-27.** The 30 draws are recorded. Only
+**Status: harness-defective, 2026-11-27.** The 30 draws are recorded. Only
 `null/house-host-lint-docs` produced the contract; the other 29 hit the
 1800-second cap without a `sources.json`. The lock is `weizhena` by the frozen
-tie-break; the confirmation is next.
+tie-break, but the round measured the wrapper prompt and the draw waves rather
+than the arms, so the lock carries no selection verdict. `#selection-redo` is
+the corrected round; the confirmation waits for it.
 
 ## The frozen protocol
 
@@ -89,11 +91,22 @@ The best candidate pooled score is 0.00; all four candidates are within the
 `weizhena` 182098, `hffmnnj` 228028, `samber` 482686, `kanatami` 496827. The
 lock is **`weizhena`**.
 
-The lock follows the frozen rule on the recorded scores. The data is a harness
-finding as much as an arm finding: the 1800-second cap and the five-way waves
-leave the reference model unable to finish the ledger, and the null's one
-valid draw is the only contract-valid output. The confirmation against `null`
-on the held-out set is the guard; the selection does not declare a winner.
+The lock follows the frozen rule on the recorded scores, but it is not a
+selection verdict: the data is a harness finding as much as an arm finding. The
+1800-second cap and the five-way waves left the reference model unable to finish
+the ledger, and the null's one valid draw is the only contract-valid output.
+The confirmation against `null` on the held-out set is the guard; the selection
+does not declare a winner.
+
+## Superseded by the evolution
+
+- The lock's token tie-break is retired. The corrected rule is the band, then
+  the suite-fit, then the Opus 5.5 judge's completeness and creativity, then
+  name order; the token count is recorded, never scored.
+- The Exa declaration is contradicted by the null's fetch log, which goes to
+  `html.duckduckgo.com`; `#search-provider` measures the provider instead.
+- The 1800-second cap and the five-arm waves are re-frozen by `#budget`; the
+  corrected draws run serial or two-way.
 
 ## The driver
 
