@@ -26103,11 +26103,6 @@ confirmation uses a fresh-2 set sealed with an operator-held key by
 <code>tasks/seal.py</code>; the plaintext task text stays outside the repository and
 <code>--check</code> reads only the ciphertext. Record:
 <a href="plan/0113-host-deep-research-ab/harness/confirmation/README.html">confirmation/README.md</a>.</li>
-<li>Reopened 2026-11-27 by the cast review: this fresh set was read by
-<code>confirm.py --check</code>, which decrypts before checking the lock, and its key
-sits under <code>/tmp</code>. The set is burned. The confirmation seals a fresh-2 set
-with new tasks and a new operator-held key; <code>--check</code> will read only the
-sealed digests.</li>
 </ul>
 <h3 id="smoke-test"><a class="header" href="#smoke-test">Smoke test</a></h3>
 <p>One draw per arm through the full pipeline and the controls: the ledger
@@ -26128,9 +26123,16 @@ The suspect-exclusion and pseudo-tool-call gates pass. Record:
 <a href="plan/0113-host-deep-research-ab/harness/smoke/smoke.json">smoke/smoke.json</a>.</li>
 <li>Reopened 2026-11-27 by the cast review: the kanatami fetch log is
 self-referential, the samber parser missed inline citations, the isolation
-probe can be skipped, and the <code>--only</code> run overwrites the all-arm record.
-The smoke is re-run under the corrected machinery in
-<a href="plan/0113-host-deep-research-ab/index.html#selection-redo">selection-redo</a>; this record is history, not a pass.</li>
+probe can be skipped, and the <code>--only</code> run overwrites the all-arm record.</li>
+<li>Re-ran 2026-11-28: the corrected machinery reads replies from
+<code>session_message</code> and fetched pages from <code>session_part</code> (<code>state.content</code>),
+keeps the record append-only, requires the isolation probe and refuses a
+partial <code>--only</code> write. The fresh two-way run passes 11/11 isolation: null
+valid 5.714/16 (238.9s, exa), hffmnnj valid 4.0/16 (181.7s, embedding off),
+kanatami a terminal budget result (342,455 prompt tokens, 44 tools,
+6117.3s), weizhena excluded (21 result URLs, no quote/locator) and samber
+excluded (47 citations, 9 fetched). The 2026-11-27 record is history; this
+re-run is the pass. Record: <a href="plan/0113-host-deep-research-ab/harness/smoke/smoke.json">smoke/smoke.json</a>.</li>
 </ul>
 <h3 id="cast-review-redo"><a class="header" href="#cast-review-redo">Cast review redo</a></h3>
 <p>The corrected design goes to the five seats before the redo selection.</p>
@@ -26179,10 +26181,11 @@ The attempt/re-run plumbing, the six-row suite-fit and null-relative/valid-
 draw gate, the samber inline parser and the weizhena report/exclusion are in;
 the hffmnnj plugin runs with embedding off, and the per-arm config and
 receipt record it; a research arm's native search route is recorded and the
-null's provider is the measured one. The recorded live draws pass the
-corrected smoke gate: null valid, hffmnnj valid, kanatami a recorded budget
-result, weizhena and samber excluded with evidence. Remaining: the fresh
-all-arm smoke record, then the 30 draws, the judge and <code>round-redo.json</code>.</li>
+null's provider is the measured one. The fresh two-way smoke passed 11/11
+isolation: null valid, hffmnnj valid with embedding off, kanatami a terminal
+budget result, weizhena and samber excluded with evidence. The 30 interleaved
+draws are running now; the judge and <code>round-redo.json</code> follow. The
+confirmation waits for the locked arm and the operator-held fresh-2 key.</li>
 </ul>
 <h2 id="open-questions-6"><a class="header" href="#open-questions-6">Open questions</a></h2>
 <ul>
@@ -26711,11 +26714,10 @@ selection round, not to this probe.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0113-adapter-layer-native-prompts-adapter-written-contracts"><a class="header" href="#plan0113-adapter-layer-native-prompts-adapter-written-contracts">plan/0113 adapter layer: native prompts, adapter-written contracts</a></h1>
 <p><strong>Status: landed 2026-11-27; the five-seat review re-opened the smoke, and the
-corrected machinery passes on the recorded live draws pending the fresh
-all-arm record.</strong> The live driver sends each arm its own workflow prompt and
-lets the arm's adapter write the contract. The wrapper postscript is gone. The
-null arm keeps the frozen contract prompt, because it is the control, not an
-arm with a native output shape.</p>
+corrected fresh all-arm smoke passed 2026-11-28.</strong> The live driver sends each
+arm its own workflow prompt and lets the arm's adapter write the contract. The
+wrapper postscript is gone. The null arm keeps the frozen contract prompt,
+because it is the control, not an arm with a native output shape.</p>
 <h2 id="the-flow"><a class="header" href="#the-flow">The flow</a></h2>
 <ol>
 <li><code>run.py</code> prepares the arm's scratch tree and writes the native prompt.</li>
@@ -27039,7 +27041,7 @@ null arm) the frozen prompt.</li>
 <h2 id="the-adapters"><a class="header" href="#the-adapters">The adapters</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Arm</th><th>Adapter</th><th>Dry-run result</th></tr></thead><tbody>
 <tr><td><code>null</code></td><td><code>adapters/null.py</code></td><td>valid: the frozen prompt returns the report and ledger directly</td></tr>
-<tr><td><code>hffmnnj</code></td><td><code>adapters/hffmnnj.py</code></td><td>valid: the report cites <code>[rn_…]</code>; the finding note carries <code>url</code> and <code>quote</code>, and the body carries <code>locator:</code></td></tr>
+<tr><td><code>hffmnnj</code></td><td><code>adapters/hffmnnj.py</code></td><td>valid: finding notes carry <code>url</code> and <code>quote</code>; source, plan and report notes are provenance and are skipped</td></tr>
 <tr><td><code>kanatami</code></td><td><code>adapters/kanatami.py</code></td><td>valid: the report cites the worker result URL; the first sentence of <code>full_text</code> is the quote and the worker/paragraph is the locator</td></tr>
 <tr><td><code>weizhena</code></td><td><code>adapters/weizhena.py</code></td><td>excluded: the report cites no per-source quote/locator; the result JSON URLs are the evidence</td></tr>
 <tr><td><code>samber</code></td><td><code>adapters/samber.py</code></td><td>valid when every report-cited URL is in the fetch log; excluded with the missing count otherwise</td></tr>
@@ -27051,6 +27053,10 @@ adapter in the roster dry run.</p>
 <p>The hffmnnj plugin runs with its embedding mode off: the per-arm config passes
 <code>options.embedding.mode = "off"</code>, so the arm uses keyword search and makes no
 local model download. The config digest in the receipt covers the choice.</p>
+<p>A Wikipedia revision permalink, the action API, the REST summary endpoint and
+the canonical article URL are one fetched page. The contract and rubric
+compare them through <code>canonical_url</code>, so an arm that cites a permalink is not
+a phantom when the run fetched the article or its API.</p>
 <h2 id="the-model-and-tool-override"><a class="header" href="#the-model-and-tool-override">The model and tool override</a></h2>
 <p>The per-arm draw config overrides every agent's model to
 <code>api.d07yx58.net/qwen3.8-flash-next</code> and its tools to the arm's output needs. The arm's
@@ -28614,29 +28620,30 @@ ripgrep sources look solid. Now inspect the ast-grep and homepage snapshots for 
 <div style="break-before: page; page-break-before: always;"></div><p>The working directory is empty — no outline exists yet. Let me load the <code>research</code> skill to generate the outline that <code>research-deep</code> requires.</p>
 <div style="break-before: page; page-break-before: always;"></div><p>The deep-research agent is running. Meanwhile, I'll do the contract-required fetching work: locating and fetching the citable pages myself.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0113-smoke-gate-one-draw-per-arm-before-any-scored-draw"><a class="header" href="#plan0113-smoke-gate-one-draw-per-arm-before-any-scored-draw">plan/0113 smoke gate: one draw per arm before any scored draw</a></h1>
-<p><strong>Status: the corrected machinery passes on the recorded live draws; the fresh
-all-arm run is the <code>#selection-redo</code> record.</strong> The gate is the last check before
-the redo selection. It runs one draw per arm on a dedicated task, through the
-full pipeline: the native prompt, the adapter, the measured search provider,
-the fetch log, the receipt, the rubric and the isolation probe.</p>
-<p>The review found that the first record read the wrong OpenCode tables: replies
-came from a <code>message</code> table that does not exist in the v2.4.2 schema, and
-fetches read <code>state.output</code> while the scratch database stores the page as
-<code>state.content</code>. The corrected reader uses <code>session_message</code> for replies and
-<code>session_part</code> for fetches (including subagent sessions), and the report's
-prose is no longer a fetch fallback. The recorded live draws now yield:</p>
+<p><strong>Status: PASS 2026-11-28.</strong> The five arms were first run live in one two-way
+smoke; the hffmnnj draw was a harness break on URL identity (the plugin read
+the article through an API or permalink while the fetch log held another
+spelling), so after the canonical fix it was re-run once under the same task
+and config. The other four draws are from that two-way run. The isolation
+probe is 11/11. The review found the first record read the wrong OpenCode
+tables: replies came from a <code>message</code> table that does not exist in the v2.4.2
+schema, and fetches read <code>state.output</code> while the scratch database stores the
+page as <code>state.content</code>. The corrected reader uses <code>session_message</code> for
+replies and <code>session_part</code> for fetches (including subagent sessions), and the
+report's prose is no longer a fetch fallback.</p>
+<p>The fresh result:</p>
 <div class="table-wrapper"><table><thead><tr><th>Arm</th><th>Outcome</th><th>Evidence</th></tr></thead><tbody>
-<tr><td><code>null</code></td><td>valid, 4.0/16</td><td>provider <code>exa</code>, 22 replies, 4 fetched pages</td></tr>
-<tr><td><code>hffmnnj</code></td><td>valid, 16.0/16</td><td>10 replies, 1 fetched page, no websearch; the fresh run turns embedding off</td></tr>
-<tr><td><code>kanatami</code></td><td>budget</td><td>1,264,094 prompt tokens, 72 tools, wall 10,800s; native route <code>html.duckduckgo.com</code> recorded</td></tr>
-<tr><td><code>weizhena</code></td><td>excluded</td><td>26 result URLs, report cites no quote or locator</td></tr>
-<tr><td><code>samber</code></td><td>excluded</td><td>49 report citations, 2 fetched; the ledger cannot carry the rest</td></tr>
+<tr><td><code>null</code></td><td>valid, 5.714/16</td><td>provider <code>exa</code>, 9 replies, 4 fetched pages, 238.9s</td></tr>
+<tr><td><code>hffmnnj</code></td><td>valid, 4.0/16</td><td>embedding off, 11 replies, 2 fetched pages, 181.7s</td></tr>
+<tr><td><code>kanatami</code></td><td>budget</td><td>342,455 prompt tokens &gt; 300,000, 44 tools, 6117.3s</td></tr>
+<tr><td><code>weizhena</code></td><td>excluded</td><td>21 result URLs, report cites no quote or locator</td></tr>
+<tr><td><code>samber</code></td><td>excluded</td><td>47 report citations, 9 fetched; the ledger cannot carry the rest</td></tr>
 </tbody></table>
 </div>
-<p>The fresh record supersedes this table. The isolation probe is 11/11. A valid
-draw has a live receipt with the 300000/100000/60/10800 caps, a fetch log, a
-reply ledger and a scored rubric. The record is <code>smoke/smoke.json</code>; its
-<code>records</code> list is append-only.</p>
+<p>A valid draw has a live receipt with the 300000/100000/60/10800 caps, a fetch
+log, a reply ledger and a scored rubric. The record is <code>smoke/smoke.json</code>; its
+<code>records</code> list is append-only and now carries the legacy PASS, the failed run
+and this PASS.</p>
 <h2 id="the-task"><a class="header" href="#the-task">The task</a></h2>
 <p><code>smoke/house-capital</code>: "What is the capital of France, and which river runs
 through it?" with <code>Paris</code> and <code>Seine</code> as must-cover. It is deliberately simple:

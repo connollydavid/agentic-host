@@ -229,7 +229,7 @@ null arm) the frozen prompt.</li>
 <h2 id="the-adapters"><a class="header" href="#the-adapters">The adapters</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Arm</th><th>Adapter</th><th>Dry-run result</th></tr></thead><tbody>
 <tr><td><code>null</code></td><td><code>adapters/null.py</code></td><td>valid: the frozen prompt returns the report and ledger directly</td></tr>
-<tr><td><code>hffmnnj</code></td><td><code>adapters/hffmnnj.py</code></td><td>valid: the report cites <code>[rn_…]</code>; the finding note carries <code>url</code> and <code>quote</code>, and the body carries <code>locator:</code></td></tr>
+<tr><td><code>hffmnnj</code></td><td><code>adapters/hffmnnj.py</code></td><td>valid: finding notes carry <code>url</code> and <code>quote</code>; source, plan and report notes are provenance and are skipped</td></tr>
 <tr><td><code>kanatami</code></td><td><code>adapters/kanatami.py</code></td><td>valid: the report cites the worker result URL; the first sentence of <code>full_text</code> is the quote and the worker/paragraph is the locator</td></tr>
 <tr><td><code>weizhena</code></td><td><code>adapters/weizhena.py</code></td><td>excluded: the report cites no per-source quote/locator; the result JSON URLs are the evidence</td></tr>
 <tr><td><code>samber</code></td><td><code>adapters/samber.py</code></td><td>valid when every report-cited URL is in the fetch log; excluded with the missing count otherwise</td></tr>
@@ -241,6 +241,10 @@ adapter in the roster dry run.</p>
 <p>The hffmnnj plugin runs with its embedding mode off: the per-arm config passes
 <code>options.embedding.mode = "off"</code>, so the arm uses keyword search and makes no
 local model download. The config digest in the receipt covers the choice.</p>
+<p>A Wikipedia revision permalink, the action API, the REST summary endpoint and
+the canonical article URL are one fetched page. The contract and rubric
+compare them through <code>canonical_url</code>, so an arm that cites a permalink is not
+a phantom when the run fetched the article or its API.</p>
 <h2 id="the-model-and-tool-override"><a class="header" href="#the-model-and-tool-override">The model and tool override</a></h2>
 <p>The per-arm draw config overrides every agent's model to
 <code>api.d07yx58.net/qwen3.8-flash-next</code> and its tools to the arm's output needs. The arm's

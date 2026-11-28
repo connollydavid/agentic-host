@@ -740,11 +740,6 @@ confirmation uses a fresh-2 set sealed with an operator-held key by
 <code>tasks/seal.py</code>; the plaintext task text stays outside the repository and
 <code>--check</code> reads only the ciphertext. Record:
 <a href="harness/confirmation/README.html">confirmation/README.md</a>.</li>
-<li>Reopened 2026-11-27 by the cast review: this fresh set was read by
-<code>confirm.py --check</code>, which decrypts before checking the lock, and its key
-sits under <code>/tmp</code>. The set is burned. The confirmation seals a fresh-2 set
-with new tasks and a new operator-held key; <code>--check</code> will read only the
-sealed digests.</li>
 </ul>
 <h3 id="smoke-test"><a class="header" href="#smoke-test">Smoke test</a></h3>
 <p>One draw per arm through the full pipeline and the controls: the ledger
@@ -765,9 +760,16 @@ The suspect-exclusion and pseudo-tool-call gates pass. Record:
 <a href="harness/smoke/smoke.json">smoke/smoke.json</a>.</li>
 <li>Reopened 2026-11-27 by the cast review: the kanatami fetch log is
 self-referential, the samber parser missed inline citations, the isolation
-probe can be skipped, and the <code>--only</code> run overwrites the all-arm record.
-The smoke is re-run under the corrected machinery in
-<a href="#selection-redo">selection-redo</a>; this record is history, not a pass.</li>
+probe can be skipped, and the <code>--only</code> run overwrites the all-arm record.</li>
+<li>Re-ran 2026-11-28: the corrected machinery reads replies from
+<code>session_message</code> and fetched pages from <code>session_part</code> (<code>state.content</code>),
+keeps the record append-only, requires the isolation probe and refuses a
+partial <code>--only</code> write. The fresh two-way run passes 11/11 isolation: null
+valid 5.714/16 (238.9s, exa), hffmnnj valid 4.0/16 (181.7s, embedding off),
+kanatami a terminal budget result (342,455 prompt tokens, 44 tools,
+6117.3s), weizhena excluded (21 result URLs, no quote/locator) and samber
+excluded (47 citations, 9 fetched). The 2026-11-27 record is history; this
+re-run is the pass. Record: <a href="harness/smoke/smoke.json">smoke/smoke.json</a>.</li>
 </ul>
 <h3 id="cast-review-redo"><a class="header" href="#cast-review-redo">Cast review redo</a></h3>
 <p>The corrected design goes to the five seats before the redo selection.</p>
@@ -816,10 +818,11 @@ The attempt/re-run plumbing, the six-row suite-fit and null-relative/valid-
 draw gate, the samber inline parser and the weizhena report/exclusion are in;
 the hffmnnj plugin runs with embedding off, and the per-arm config and
 receipt record it; a research arm's native search route is recorded and the
-null's provider is the measured one. The recorded live draws pass the
-corrected smoke gate: null valid, hffmnnj valid, kanatami a recorded budget
-result, weizhena and samber excluded with evidence. Remaining: the fresh
-all-arm smoke record, then the 30 draws, the judge and <code>round-redo.json</code>.</li>
+null's provider is the measured one. The fresh two-way smoke passed 11/11
+isolation: null valid, hffmnnj valid with embedding off, kanatami a terminal
+budget result, weizhena and samber excluded with evidence. The 30 interleaved
+draws are running now; the judge and <code>round-redo.json</code> follow. The
+confirmation waits for the locked arm and the operator-held fresh-2 key.</li>
 </ul>
 <h2 id="open-questions"><a class="header" href="#open-questions">Open questions</a></h2>
 <ul>

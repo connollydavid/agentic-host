@@ -176,11 +176,10 @@
                     <main>
                         <h1 id="plan0113-adapter-layer-native-prompts-adapter-written-contracts"><a class="header" href="#plan0113-adapter-layer-native-prompts-adapter-written-contracts">plan/0113 adapter layer: native prompts, adapter-written contracts</a></h1>
 <p><strong>Status: landed 2026-11-27; the five-seat review re-opened the smoke, and the
-corrected machinery passes on the recorded live draws pending the fresh
-all-arm record.</strong> The live driver sends each arm its own workflow prompt and
-lets the arm's adapter write the contract. The wrapper postscript is gone. The
-null arm keeps the frozen contract prompt, because it is the control, not an
-arm with a native output shape.</p>
+corrected fresh all-arm smoke passed 2026-11-28.</strong> The live driver sends each
+arm its own workflow prompt and lets the arm's adapter write the contract. The
+wrapper postscript is gone. The null arm keeps the frozen contract prompt,
+because it is the control, not an arm with a native output shape.</p>
 <h2 id="the-flow"><a class="header" href="#the-flow">The flow</a></h2>
 <ol>
 <li><code>run.py</code> prepares the arm's scratch tree and writes the native prompt.</li>
