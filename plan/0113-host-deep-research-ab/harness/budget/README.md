@@ -41,8 +41,11 @@ limit, so a smaller cap measures the house's clock rather than the arm. The
 10800 cap is the same maximum for every arm; the null and hffmnnj still finish
 early, so the wall-clock cost lands on the arms whose native workflow is long.
 
-The 3600s kanatami void and the 969.1s hffmnnj exclusion are recorded in the
-smoke history; the final smoke runs every arm under the 10800 cap.
+The 3600s kanatami void and the 969.1s hffmnnj exclusion were overwritten by
+the 2026-11-27 PASS before the append-only fix. The design review records them;
+the smoke record now migrates that legacy single record into its `records`
+list and appends each later run, so the history is no longer overwritten. The
+final smoke runs every arm under the 10800 cap.
 
 ## The approved caps
 

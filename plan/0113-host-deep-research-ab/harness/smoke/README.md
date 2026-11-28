@@ -16,7 +16,7 @@ prose is no longer a fetch fallback. The recorded live draws now yield:
 | Arm | Outcome | Evidence |
 |---|---|---|
 | `null` | valid, 4.0/16 | provider `exa`, 22 replies, 4 fetched pages |
-| `hffmnnj` | valid, 16.0/16 | 10 replies, 1 fetched page, no websearch |
+| `hffmnnj` | valid, 16.0/16 | 10 replies, 1 fetched page, no websearch; the fresh run turns embedding off |
 | `kanatami` | budget | 1,264,094 prompt tokens, 72 tools, wall 10,800s; native route `html.duckduckgo.com` recorded |
 | `weizhena` | excluded | 26 result URLs, report cites no quote or locator |
 | `samber` | excluded | 49 report citations, 2 fetched; the ledger cannot carry the rest |
