@@ -83,6 +83,10 @@ def convert(fixture: Path, task: dict, out: Path, meta: dict) -> str:
         if path is None:
             raise ContractError(f"the report cites {note_id} with no saved note")
         note, body = read_note(path)
+        if note.get("kind") != "finding":
+            # A source, plan or report note is library provenance, not a claim
+            # record; the finding notes carry the URL, quote and locator.
+            continue
         locator = LOCATOR.search(body)
         location = locator.group(1).strip() if locator else str(note.get("title") or note_id)
         sources = note.get("sources") or []

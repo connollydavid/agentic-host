@@ -101,10 +101,10 @@ def suspect_exclusion(arm: str, draw: Path) -> str | None:
                         if not line.strip():
                             continue
                         try:
-                            fetched.add(run.contract.normalize_url(json.loads(line).get("url") or ""))
+                            fetched.add(run.contract.canonical_url(json.loads(line).get("url") or ""))
                         except json.JSONDecodeError:
                             continue
-                if all(run.contract.normalize_url(entry["url"]) in fetched for entry in entries):
+                if all(run.contract.canonical_url(entry["url"]) in fetched for entry in entries):
                     return "the samber native report cites only fetched pages; an exclusion is a harness break"
     return None
 

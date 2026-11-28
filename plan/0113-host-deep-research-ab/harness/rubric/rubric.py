@@ -77,7 +77,11 @@ def dataset_answer(path: Path, row: int) -> str:
 
 
 def fetch_snapshot(draw: Path, log: list[dict], url: str) -> str:
-    entry = next((item for item in log if item.get("url") == url), None)
+    wanted = contract.canonical_url(url)
+    entry = next(
+        (item for item in log if contract.canonical_url(item.get("url") or "") == wanted),
+        None,
+    )
     if entry is None:
         raise RubricError(f"no fetch-log entry for {url}")
     path = draw / str(entry.get("snapshot", ""))
@@ -102,12 +106,12 @@ def score(draw: Path, task: dict, dataset: Path) -> dict:
     except contract.ContractError as error:
         return void(f"contract: {error}")
 
-    report_urls = {contract.normalize_url(match) for match in contract.citation_urls(report)}
-    ledger_urls = {contract.normalize_url(entry["url"]) for entry in sources}
+    report_urls = {contract.canonical_url(match) for match in contract.citation_urls(report)}
+    ledger_urls = {contract.canonical_url(entry["url"]) for entry in sources}
     if not report_urls <= ledger_urls:
         return void("the report cites a URL absent from the ledger")
     log = [json.loads(line) for line in (draw / "fetch-log.jsonl").read_text().splitlines() if line.strip()]
-    logged = {contract.normalize_url(item.get("url") or "") for item in log}
+    logged = {contract.canonical_url(item.get("url") or "") for item in log}
     phantom = sorted((report_urls | ledger_urls) - logged)
     if phantom:
         return void("phantom source: " + ", ".join(phantom))

@@ -12,6 +12,7 @@ import hashlib
 import json
 import re
 from pathlib import Path
+from urllib.parse import parse_qs, urlparse
 
 CAPS = {
     "prompt_tokens": 300000,
@@ -38,6 +39,37 @@ def normalize_url(url: str) -> str:
     for opener, closer in (("(", ")"), ("[", "]"), ("{", "}")):
         while url.endswith(closer) and url.count(opener) < url.count(closer):
             url = url[:-1]
+    return url
+
+
+def canonical_url(url: str) -> str:
+    """The page a Wikipedia citation resolves to.
+
+    A revision permalink, the action API, the REST summary endpoint and the
+    canonical article URL are one fetched page. The ledger keeps the URL the
+    arm wrote; the fetch-log comparison uses this key so a real page read is not
+    a phantom because the arm cited its permalink.
+    """
+    url = normalize_url(url)
+    parsed = urlparse(url)
+    host = (parsed.hostname or "").lower()
+    if not (host == "wikipedia.org" or host.endswith(".wikipedia.org")):
+        return url
+    if parsed.path.startswith("/wiki/"):
+        return f"https://{host}/wiki/{parsed.path[len('/wiki/'):]}"
+    marker = "/api/rest_v1/page/summary/"
+    if marker in parsed.path:
+        title = parsed.path.split(marker, 1)[1]
+        return f"https://{host}/wiki/{title}" if title else url
+    query = parse_qs(parsed.query)
+    if parsed.path.endswith("/w/api.php"):
+        titles = query.get("titles") or []
+        if titles and titles[0].strip():
+            return f"https://{host}/wiki/{titles[0].strip().replace(' ', '_')}"
+    if parsed.path.endswith("/w/index.php"):
+        titles = query.get("title") or []
+        if titles and titles[0].strip():
+            return f"https://{host}/wiki/{titles[0].strip().replace(' ', '_')}"
     return url
 
 
@@ -165,8 +197,8 @@ def validate_report(report: str, sources: list[dict]) -> None:
         key = entry.get("id") or entry["url"]
         if key not in report:
             raise ContractError(f"report.md does not cite source {index} ({key})")
-    ledger = {normalize_url(entry["url"]) for entry in sources}
-    report_urls = {normalize_url(match) for match in citation_urls(report)}
+    ledger = {canonical_url(entry["url"]) for entry in sources}
+    report_urls = {canonical_url(match) for match in citation_urls(report)}
     missing = sorted(report_urls - ledger)
     if missing:
         raise ContractError(f"report.md cites URL(s) absent from the ledger: {', '.join(missing)}")
@@ -292,8 +324,10 @@ def validate_output(out: Path, arm: str, task_key: str, meta: dict) -> dict:
     if status == "live":
         replies = validate_replies(out / "replies.jsonl", meta["model"])
         log = validate_fetch_log(out / "fetch-log.jsonl")
-        logged = {entry["url"] for entry in log}
-        phantom = sorted(entry["url"] for entry in sources if entry["url"] not in logged)
+        logged = {canonical_url(entry["url"]) for entry in log}
+        phantom = sorted(
+            entry["url"] for entry in sources if canonical_url(entry["url"]) not in logged
+        )
         if phantom:
             raise ContractError("phantom source(s) absent from the fetch log: " + ", ".join(phantom))
     return {"report_chars": len(report), "sources": len(sources), "digests": len(receipt["config_digests"]), "replies": replies}

@@ -25,7 +25,7 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 
 HERE = Path(__file__).resolve().parent
 HARNESS = HERE.parent
@@ -283,6 +283,31 @@ def read_fetches(root: Path) -> list[tuple[str, str]]:
         if isinstance(url, str) and output.strip():
             fetches.append((url, output))
     return fetches
+
+
+def fetch_aliases(url: str) -> list[str]:
+    """The canonical page URL for a fetched API record.
+
+    The hffmnnj plugin reads Wikipedia through the REST summary endpoint or the
+    action API and records the canonical article URL in its notes. The page
+    content is the same fetch; recording the canonical URL beside the API URL
+    keeps the ledger's citation in the fetch log without inventing a second
+    fetch.
+    """
+    parsed = urlparse(url)
+    host = (parsed.hostname or "").lower()
+    if not (host == "wikipedia.org" or host.endswith(".wikipedia.org")):
+        return []
+    marker = "/api/rest_v1/page/summary/"
+    if marker in parsed.path:
+        title = parsed.path.split(marker, 1)[1]
+        if title:
+            return [f"https://{host}/wiki/{title}"]
+    if parsed.path.endswith("/w/api.php"):
+        titles = parse_qs(parsed.query).get("titles") or []
+        if titles and titles[0].strip():
+            return [f"https://{host}/wiki/{titles[0].strip().replace(' ', '_')}"]
+    return []
 
 
 def read_websearch(root: Path) -> list[dict]:
@@ -601,6 +626,11 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
         wall = time.time() - started
     parsed = parse_events(events_path)
     parsed["fetches"].extend(read_fetches(root))
+    expanded: list[tuple[str, str]] = []
+    for url, output in parsed["fetches"]:
+        expanded.append((url, output))
+        expanded.extend((alias, output) for alias in fetch_aliases(url))
+    parsed["fetches"] = expanded
     websearch = read_websearch(root) or parsed["websearch"]
     parsed["websearch"] = websearch
     providers = sorted({call["provider"] for call in websearch if isinstance(call.get("provider"), str) and call["provider"]})

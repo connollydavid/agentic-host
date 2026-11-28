@@ -15,7 +15,7 @@ from pathlib import Path
 
 from contract import (
     build_receipt,
-    normalize_url,
+    canonical_url,
     report_entries,
     validate_report,
     write_json,
@@ -25,8 +25,8 @@ from contract import (
 def convert(fixture: Path, task: dict, out: Path, meta: dict) -> str:
     report = (fixture / "report.md").read_text()
     entries = report_entries(report)
-    fetched = {normalize_url(url) for url in meta.get("fetches") or []}
-    missing = [entry["url"] for entry in entries if normalize_url(entry["url"]) not in fetched]
+    fetched = {canonical_url(url) for url in meta.get("fetches") or []}
+    missing = [entry["url"] for entry in entries if canonical_url(entry["url"]) not in fetched]
     if entries and not missing:
         validate_report(report, entries)
         (out / "report.md").write_text(report)
