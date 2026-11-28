@@ -26801,8 +26801,11 @@ cap up to 10800 seconds on 2026-11-27: the skill's protocol has no hard upper
 limit, so a smaller cap measures the house's clock rather than the arm. The
 10800 cap is the same maximum for every arm; the null and hffmnnj still finish
 early, so the wall-clock cost lands on the arms whose native workflow is long.</p>
-<p>The 3600s kanatami void and the 969.1s hffmnnj exclusion are recorded in the
-smoke history; the final smoke runs every arm under the 10800 cap.</p>
+<p>The 3600s kanatami void and the 969.1s hffmnnj exclusion were overwritten by
+the 2026-11-27 PASS before the append-only fix. The design review records them;
+the smoke record now migrates that legacy single record into its <code>records</code>
+list and appends each later run, so the history is no longer overwritten. The
+final smoke runs every arm under the 10800 cap.</p>
 <h2 id="the-approved-caps"><a class="header" href="#the-approved-caps">The approved caps</a></h2>
 <p>The operator approved the token caps at 300000 prompt / 100000 completion /
 60 tools / 10800 wall on 2026-11-27, after the kanatami smoke used 198518
@@ -28624,7 +28627,7 @@ fetches read <code>state.output</code> while the scratch database stores the pag
 prose is no longer a fetch fallback. The recorded live draws now yield:</p>
 <div class="table-wrapper"><table><thead><tr><th>Arm</th><th>Outcome</th><th>Evidence</th></tr></thead><tbody>
 <tr><td><code>null</code></td><td>valid, 4.0/16</td><td>provider <code>exa</code>, 22 replies, 4 fetched pages</td></tr>
-<tr><td><code>hffmnnj</code></td><td>valid, 16.0/16</td><td>10 replies, 1 fetched page, no websearch</td></tr>
+<tr><td><code>hffmnnj</code></td><td>valid, 16.0/16</td><td>10 replies, 1 fetched page, no websearch; the fresh run turns embedding off</td></tr>
 <tr><td><code>kanatami</code></td><td>budget</td><td>1,264,094 prompt tokens, 72 tools, wall 10,800s; native route <code>html.duckduckgo.com</code> recorded</td></tr>
 <tr><td><code>weizhena</code></td><td>excluded</td><td>26 result URLs, report cites no quote or locator</td></tr>
 <tr><td><code>samber</code></td><td>excluded</td><td>49 report citations, 2 fetched; the ledger cannot carry the rest</td></tr>
