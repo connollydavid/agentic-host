@@ -7,6 +7,24 @@ tie-break, but the round measured the wrapper prompt and the draw waves rather
 than the arms, so the lock carries no selection verdict. `#selection-redo` is
 the corrected round; the confirmation waits for it.
 
+## The redo
+
+The corrected round writes `draws-redo/` and `round-redo.json`:
+
+```sh
+cd plan/0113-host-deep-research-ab/harness/selection
+python3 run.py --draws draws-redo --parallel 2 --order interleaved
+python3 ../judge/judge_all.py --draws draws-redo
+python3 round.py --draws draws-redo --out round-redo.json
+```
+
+`--order interleaved` takes one draw per task in rotation instead of a
+five-arm task wave, so the two workers usually hold different tasks. The
+locked arm is the highest six-row suite-fit among the candidates within 1.5
+points of the best pooled score that also clears the valid floor, the judged
+floor and the null; then the judge score, then name order. The token count is
+recorded, never a tie-break.
+
 ## The frozen protocol
 
 One selection round, frozen at the cast review: five arms (null plus the four
@@ -110,11 +128,12 @@ does not declare a winner.
 
 ## The driver
 
-- `run.py`: one draw or the full round; the waves; it writes
-  `draws/<arm>/<task>/` with the report, ledger, fetch log, snapshots, receipt
-  and `score.json`.
+- `run.py`: one draw or the full round; `--order interleaved` is the redo's
+  task rotation; it writes `draws-redo/<arm>/<task>/` with the report, ledger,
+  fetch log, snapshots, receipt and `score.json`.
 - `round.py`: reads the 30 draws, pools each arm's score, computes the band,
-  fills the suite-fit table and writes `round.json`.
+  applies the valid floor, the judged floor, the null-relative gate and the
+  six-row `suite-fit.json`, and writes `round-redo.json`.
 
 `round.json` carries the draws, the pooled scores, the suite-fit and the lock.
 The draw directories are the audit surface; `.host-lintignore` excludes them

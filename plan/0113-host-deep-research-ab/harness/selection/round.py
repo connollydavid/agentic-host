@@ -155,6 +155,8 @@ def main(argv: list[str]) -> int:
                 "adapter": draw.get("adapter_result"),
                 "break_class": draw.get("break_class"),
                 "rerun_of": draw.get("rerun_of"),
+                "search_provider": draw.get("search_provider"),
+                "native_search": draw.get("native_search", []),
                 "mechanical": draw["score"],
                 "judge": draw["_judge"],
                 "judge_valid": draw["_judge_valid"],

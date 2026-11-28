@@ -432,15 +432,18 @@ printed verdict.
   `NO-SHIP` records every criterion missed; a `SHIP` records margin, floor,
   phantom count and judge scores; a low score is never a re-run reason
 - depends: #selection-redo, #fresh-held-out, #judge
-- Wired 2026-11-27: `confirm.py` reads `held-out-fresh.json.enc`,
-  `sets-fresh.json` and the fresh key, writes `draws-fresh/`, and takes the
-  locked arm from `round-redo.json`. The cast review re-opened this wiring:
-  the locked arm, the fresh-2 set, `--key`, the judge and the valid gate are
-  the confirmation's remaining work. The old partial draws stay under
-  `draws/`. The verdict is not run yet.
-- Pending: the fresh-2 held-out set and the operator-held key; the locked-arm
-  read; `--key`; `--check` without decryption; the judge on the 20 draws; the
-  randomised block order; every draw valid or a recorded re-run.
+- Wired 2026-11-28: `confirm.py` requires `--key`, decrypts fresh-2 to memory,
+  reads the locked arm from `round-redo.json`, shuffles the four draws within
+  each task block, re-runs one harness break, judges every valid draw, and
+  writes `verdict.json` from the six criteria. `--check` reads the ciphertext
+  digest, the `Salted__` header and the absence of plaintext without taking a
+  key. `tasks/seal.py` seals an operator-supplied plaintext set with the
+  operator-held key; it never creates a key. The code is tested against a
+  temporary one-task seal. The verdict is not run yet.
+- Pending: the fresh-2 held-out set and the operator-held key; the locked arm
+  from the selection round; the 20 live draws; the judge on those draws. A
+  missing key or an unlocked selection refuses, and the operator's `goal
+  accept` remains the milestone.
 
 ### Fen acceptance {#fen-acceptance}
 
@@ -594,11 +597,15 @@ and seal it with its own key.
 - Landed 2026-11-27: two new SimpleQA rows (10, 50) and three house tasks
   (serde_json/simd-json, cargo-nextest/cargo test, verify-setup/check); the
   plaintext set digest is `9c409589…`, the ciphertext `bb60b746…`, sealed in
-  `held-out-fresh.json.enc`; the key is at
-  `/tmp/opencode/plan0113/held-out-fresh.key`, the plaintext is deleted, and
-  `sets-fresh.json` records both digests. The old `held-out.json.enc` and
-  `sets.json` stay as the burned set's history. Record:
+  `held-out-fresh.json.enc`; `sets-fresh.json` records both digests. The old
+  `held-out.json.enc` and `sets.json` stay as the burned set's history. Record:
   [tasks/sets-fresh.json](tasks/sets-fresh.json).
+- Reopened 2026-11-28: the old `confirm.py --check` decrypted this fresh set,
+  so it is burned too. The key was outside the tree and is gone. The
+  confirmation uses a fresh-2 set sealed with an operator-held key by
+  `tasks/seal.py`; the plaintext task text stays outside the repository and
+  `--check` reads only the ciphertext. Record:
+  [confirmation/README.md](harness/confirmation/README.md).
 - Reopened 2026-11-27 by the cast review: this fresh set was read by
   `confirm.py --check`, which decrypts before checking the lock, and its key
   sits under `/tmp`. The set is burned. The confirmation seals a fresh-2 set

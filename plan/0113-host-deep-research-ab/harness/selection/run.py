@@ -829,7 +829,8 @@ def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--only", help="arm, task name, or arm/task")
     parser.add_argument("--force", action="store_true")
-    parser.add_argument("--parallel", type=int, default=2, help="draws per task wave")
+    parser.add_argument("--parallel", type=int, default=2, help="draws in flight")
+    parser.add_argument("--order", choices=("interleaved", "task"), default="interleaved")
     parser.add_argument("--draws", default=str(DRAWS))
     parser.add_argument("--scratch", default=str(SCRATCH))
     parser.add_argument("--reuse", action="store_true", help="re-process the recorded draw, no model run")
@@ -841,22 +842,6 @@ def main(argv: list[str]) -> int:
     if not os.environ.get("ROPE_BEARER"):
         raise SystemExit("ROPE_BEARER is unset")
     tasks = {task["key"]: task for task in json.loads(TASKS.read_text())["tasks"]}
-    waves: list[list[tuple[str, dict]]] = []
-    for key in TASK_KEYS:
-        name = key.split("/", 1)[1]
-        selected = []
-        for arm in ARM_NAMES:
-            if args.only:
-                selector = args.only
-                if "/" in selector:
-                    wanted_arm, wanted_task = selector.split("/", 1)
-                    if arm != wanted_arm or name != wanted_task:
-                        continue
-                elif selector != arm and selector != name:
-                    continue
-            selected.append((arm, tasks[key]))
-        if selected:
-            waves.append(selected)
 
     def report(summary: dict) -> None:
         print(
@@ -871,15 +856,47 @@ def main(argv: list[str]) -> int:
             flush=True,
         )
 
-    for wave in waves:
-        if args.parallel <= 1 or len(wave) == 1:
-            for arm, task in wave:
+    def run_jobs(jobs: list[tuple[str, dict]]) -> None:
+        if args.parallel <= 1 or len(jobs) == 1:
+            for arm, task in jobs:
                 report(safe_run_draw(arm, task, force=args.force, reuse=args.reuse))
-            continue
+            return
         with ThreadPoolExecutor(max_workers=args.parallel) as pool:
-            futures = {pool.submit(safe_run_draw, arm, task, args.force, "", args.reuse): (arm, task) for arm, task in wave}
+            futures = {
+                pool.submit(safe_run_draw, arm, task, args.force, "", args.reuse): (arm, task)
+                for arm, task in jobs
+            }
             for future in as_completed(futures):
                 report(future.result())
+
+    if args.only or args.order == "task":
+        waves: list[list[tuple[str, dict]]] = []
+        for key in TASK_KEYS:
+            name = key.split("/", 1)[1]
+            selected = []
+            for arm in ARM_NAMES:
+                if args.only:
+                    selector = args.only
+                    if "/" in selector:
+                        wanted_arm, wanted_task = selector.split("/", 1)
+                        if arm != wanted_arm or name != wanted_task:
+                            continue
+                    elif selector != arm and selector != name:
+                        continue
+                selected.append((arm, tasks[key]))
+            if selected:
+                waves.append(selected)
+        for wave in waves:
+            run_jobs(wave)
+        return 0
+
+    queues = {key: list(ARM_NAMES) for key in TASK_KEYS}
+    jobs: list[tuple[str, dict]] = []
+    while any(queues[key] for key in TASK_KEYS):
+        for key in TASK_KEYS:
+            if queues[key]:
+                jobs.append((queues[key].pop(0), tasks[key]))
+    run_jobs(jobs)
     return 0
 
 

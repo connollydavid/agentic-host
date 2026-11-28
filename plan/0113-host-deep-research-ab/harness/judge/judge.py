@@ -21,8 +21,6 @@ import re
 import subprocess
 import sys
 import time
-import subprocess
-import sys
 from datetime import datetime, timezone
 from pathlib import Path
 

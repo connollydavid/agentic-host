@@ -1,17 +1,22 @@
-# plan/0113 task sets: the frozen selection set and the sealed held-out set
+# plan/0113 task sets: the frozen selection set and the sealed held-out sets
 
-**Status: the selection set stands; the first held-out set is burned.** Its
-plaintext was read at the failed confirmation, so `#fresh-held-out` freezes and
-seals a fresh set before any corrected confirmation.
+**Status: the selection set stands; both earlier held-out sets are burned.**
+The first held-out set was read at the failed confirmation. The fresh set was
+then decrypted by the old `confirm.py --check`, so it is burned too. The
+confirmation uses a fresh-2 set sealed with an operator-held key; `seal.py`
+seals it and `confirm.py --check` reads only the ciphertext.
 
 - Frozen 2026-11-27, before the first draw. The selection round is later, and
   nothing in this record was produced by a draw.
 - The schema is `schema.py`. A task carries its key, kind and digest; a set
   carries a digest over its task list.
 - `selection.json` is the selection set and is read by the selection round.
-- `held-out.json.enc` is the held-out set, stored as ciphertext. Its plaintext
-  was validated before sealing and deleted. `sets.json` carries its plaintext
-  set digest and ciphertext digest.
+- `held-out.json.enc` and `held-out-fresh.json.enc` are burned. Their
+  plaintexts were read at the failed confirmations. `sets.json` and
+  `sets-fresh.json` stay as history.
+- `held-out-fresh2.json.enc` and `sets-fresh2.json` are the confirmation's
+  set. They are written by `seal.py` from an operator-supplied plaintext set
+  and key.
 
 ## The benchmark
 
@@ -52,38 +57,42 @@ flag and the rule source. Each entity carries its aliases.
 The selection set digest is
 `128d135446134687ef6249d9aa902863920bd63c3bdf0130e885e9ed19ede36e`.
 
-## The held-out set
+## The burned held-out sets
 
-Five tasks: two known-answer rows and three house tasks. The plaintext set
-digest is
-`97c44bd2fef9ed2394104bf19e3f05bf43fc937f527db13b78604bd75d038888`;
-the ciphertext digest is
+The first held-out set carried five tasks (two known-answer, three house). Its
+plaintext digest was
+`97c44bd2fef9ed2394104bf19e3f05bf43fc937f527db13b78604bd75d038888`
+and its ciphertext digest
 `a8efb99765315c888ac5ad3a0cc7d799afdf173d8bce07d115f453e607b1d42c`.
+The old confirmation read the plaintext, so it is history.
 
-The held-out task keys and questions are not in this record. They are in the
-ciphertext only. The freeze validated the plaintext before sealing: `ok
-held-out: 5 tasks (2 known-answer, 3 house), digest
-97c44bd2fef9ed2394104bf19e3f05bf43fc937f527db13b78604bd75d038888`. The
-selection round reads `selection.json`; it does not read `held-out.json.enc` or
-the key, and the selection harness records that constraint. The confirmation
-round decrypts the file, validates the set and compares the recovered set
-digest with `sets.json`.
+The fresh set carried five tasks (two known-answer, three house). Its plaintext
+digest is
+`9c40958960c58d6c1f3e9b2a3b9dcd0f407abe92659826b018f1ff74cadcb5be`
+and its ciphertext digest
+`bb60b746bddea73fac5c8a99ba70869d178da36c3cb7a5b5df4a7324b099b9c2`.
+The old `confirm.py --check` decrypted it, so it is burned as well. Both
+plaintext task texts are absent from the tree.
 
-## The seal
+## The fresh-2 set
 
-The held-out plaintext was written under `/tmp`, validated by
-`schema.validate_set`, encrypted with:
+The confirmation set is authored outside the repository, validated by
+`schema.validate_set`, and sealed with an operator-held key:
 
 ```sh
-openssl enc -aes-256-cbc -pbkdf2 -salt -in held-out.json -out held-out.json.enc -pass file:<key>
+cd plan/0113-host-deep-research-ab/harness/tasks
+python3 seal.py --set /tmp/fresh2/tasks.json --key /path/to/operator.key \
+  --sealed held-out-fresh2.json.enc --sets sets-fresh2.json
 ```
 
-The key is a 32-byte hex string at `/tmp/opencode/plan0113/held-out.key`, mode
-600, outside the repository, and the plaintext was deleted. The operator should
-move the key to their own custody. The selection round must not read it; that
-is the protocol's rule, and the mechanical part is the ciphertext with no
-plaintext in the tree. The authoring script was a one-off under `/tmp` and is
-not committed, because it carries the held-out task text.
+`seal.py` refuses a plaintext set inside the repository, refuses to overwrite
+an existing seal without `--force`, writes the ciphertext and the record, and
+deletes the plaintext. It never creates a key. The plaintext task text is not
+committed.
+
+`sets-fresh2.json` records the selection digest, the benchmark, the plaintext
+set digest, the ciphertext digest and the task counts. It records the key as
+operator-held, not a path; the confirmation takes `--key` explicitly.
 
 ## The checks
 
@@ -93,33 +102,23 @@ python3 schema.py validate selection.json
 python3 schema.py check selection.json held-out.json.enc sets.json
 ```
 
-```
-ok selection: 6 tasks (3 known-answer, 3 house), digest 128d135446134687ef6249d9aa902863920bd63c3bdf0130e885e9ed19ede36e
-ok selection: 6 tasks, 3 known-answer, 3 house
-ok selection digest: 128d135446134687ef6249d9aa902863920bd63c3bdf0130e885e9ed19ede36e
-ok held-out: 5 tasks sealed, ciphertext a8efb99765315c888ac5ad3a0cc7d799afdf173d8bce07d115f453e607b1d42c
-ok held-out plaintext digest recorded: 97c44bd2fef9ed2394104bf19e3f05bf43fc937f527db13b78604bd75d038888
-ok frozen before the first draw (sets.json recorded before the selection round)
-```
-
 The check reads the selection set, validates every task's digest and the set
 digest, matches the ciphertext digest, asserts the OpenSSL `Salted__` header,
-and asserts no plaintext held-out file sits beside it. It does not decrypt the
-held-out set.
+and asserts no plaintext held-out file sits beside it. It does not decrypt.
 
-At confirmation:
+`confirm.py --check` is the fresh-2 equivalent:
 
 ```sh
-python3 schema.py decrypt held-out.json.enc <key> /tmp/held-out.json
-python3 schema.py validate /tmp/held-out.json
+cd plan/0113-host-deep-research-ab/harness/confirmation
+python3 confirm.py --check
 ```
 
-The decrypted set's digest is compared with
-`sets.json.held_out.plaintext_set_digest`.
+It does not take a key and does not write a plaintext. A run takes
+`--key /path/to/operator.key`, decrypts to memory, and compares the recovered
+set digest with `sets-fresh2.json.held_out.plaintext_set_digest`.
 
 ## What is still open
 
-The number of draws per task and the per-draw budget are the protocol's open
-questions. The set sizes are fixed here at six selection tasks and five
-held-out tasks; changing them after a draw would require a new freeze and a
-recorded reason.
+The fresh-2 set and key are operator-held. The confirmation cannot run until
+the key is supplied and the selection has locked an arm. The draw protocol is
+fixed at two fresh draws per held-out task per arm: 20 confirmation draws.
