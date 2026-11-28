@@ -211,10 +211,10 @@ out. A cited page that the run did not fetch is a phantom and voids the run.</li
 <li>The default arm is the arm the confirmation ships. On a <code>NO-SHIP</code>, the
 default is <code>null</code>; the selection's incumbent stands. <code>--arm</code> selects the
 other bundled arm for replay.</li>
-<li>The <code>hffmnnj</code> embedding is off, so the arm uses keyword search and makes no
-local model download. Its native search route is <code>none</code>; the null's is
-<code>exa</code>. <code>gptr-mcp</code> stays out: it has no license at its pin and is an MCP
-server, not a deep-research arm.</li>
+<li>The <code>hffmnnj</code> embedding is off, so the arm makes no local model download.
+The <code>hffmnnj</code> arm uses keyword search. The null arm's native route is
+<code>exa</code>. <code>gptr-mcp</code> stays out: the pin carries no license, and the role is an
+MCP server.</li>
 <li>The component is released through <code>host-lifecycle release</code>, so the artifact
 hash comes from the recorded musl toolchain, not an ambient build. The
 host recipe pins the released commit and the re-derived artifact hash.</li>

@@ -25970,6 +25970,7 @@ and the reference model pin; the recipe check reads them. The component and its
 one-arm boundary are authorized by
 <a href="plan/0113-host-deep-research-ab/../call/0062-a-deep-research-component-carries-one-arm.html">call/0062</a>.</p>
 <ul>
+<li>inputs: software/host-deep-research/main/src/main.rs</li>
 <li>verify: <code>software --check</code> reads the stanza clean, the artifact re-derives
 under <code>software --verify-build</code>, the recorded harness and model pins match
 the plan's; the hffmnnj embedding is off or pinned with a license and
@@ -31003,6 +31004,12 @@ draws per held-out task per arm.</p>
 <li>pin: <code>b634012dab4d54a9725c79c3babafc42813e1792</code></li>
 <li>worktrees: none (single canonical line)</li>
 </ul>
+<h2 id="host-deep-research"><a class="header" href="#host-deep-research">host-deep-research</a></h2>
+<ul>
+<li>url: https://github.com/connollydavid/host-deep-research.git</li>
+<li>pin: <code>734ca90b7c4e61f8feeb3d3fd70155c51a2d6b55</code></li>
+<li>worktrees: none (single canonical line)</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="reserve-agentic-host-for-this-repository-scrub-the-collision-by-a-one-time-history-rewrite"><a class="header" href="#reserve-agentic-host-for-this-repository-scrub-the-collision-by-a-one-time-history-rewrite">Reserve <code>agentic-host</code> for this repository; scrub the collision by a one-time history rewrite</a></h1>
 <ul>
 <li>Status: accepted</li>
@@ -33744,10 +33751,10 @@ out. A cited page that the run did not fetch is a phantom and voids the run.</li
 <li>The default arm is the arm the confirmation ships. On a <code>NO-SHIP</code>, the
 default is <code>null</code>; the selection's incumbent stands. <code>--arm</code> selects the
 other bundled arm for replay.</li>
-<li>The <code>hffmnnj</code> embedding is off, so the arm uses keyword search and makes no
-local model download. Its native search route is <code>none</code>; the null's is
-<code>exa</code>. <code>gptr-mcp</code> stays out: it has no license at its pin and is an MCP
-server, not a deep-research arm.</li>
+<li>The <code>hffmnnj</code> embedding is off, so the arm makes no local model download.
+The <code>hffmnnj</code> arm uses keyword search. The null arm's native route is
+<code>exa</code>. <code>gptr-mcp</code> stays out: the pin carries no license, and the role is an
+MCP server.</li>
 <li>The component is released through <code>host-lifecycle release</code>, so the artifact
 hash comes from the recorded musl toolchain, not an ambient build. The
 host recipe pins the released commit and the re-derived artifact hash.</li>
@@ -34464,7 +34471,7 @@ repo's <code>call/</code> is its own Why room; do not read it as normative. See 
 <h2 id="concepts"><a class="header" href="#concepts">Concepts</a></h2>
 <p>The methodology concepts this project defines once and points at from everywhere else. Each has a stable <code>{#id}</code> anchor; other docs link to it rather than restate it.</p>
 <h3 id="components"><a class="header" href="#components">Components</a></h3>
-<p>The <code>host-*</code> components under development: host-lint, host-lifecycle, host-prove, host-grammar, host-loop (the opencode goal-loop plugin, a repo-only source on the host-grammar precedent), host-reference, host-reference-ocr (the out-of-process OCR helper host-reference runs at arm's length, carrying the engine and the CC-BY-SA-4.0 models behind that boundary, call/0034), and host-reference-openscad (the out-of-process OpenSCAD helper, carrying the GPL-3.0 openscad-rs parser behind that same boundary, call/0033). Each is a bare store with worktrees under <code>software/&lt;name&gt;/main/</code>, pinned in <code>.host-software</code>. The single-file <code>host</code> entrance is set apart (it is the <code>member</code> of the <code>[entrance]</code> stanza), not a component; agentic-host, the development environment, is not one either.</p>
+<p>The <code>host-*</code> components under development: host-lint, host-lifecycle, host-prove, host-grammar, host-loop (the opencode goal-loop plugin, a repo-only source on the host-grammar precedent), host-deep-research (the plan/0113 deep-research shim, call/0062), host-reference, host-reference-ocr (the out-of-process OCR helper host-reference runs at arm's length, carrying the engine and the CC-BY-SA-4.0 models behind that boundary, call/0034), and host-reference-openscad (the out-of-process OpenSCAD helper, carrying the GPL-3.0 openscad-rs parser behind that same boundary, call/0033). Each is a bare store with worktrees under <code>software/&lt;name&gt;/main/</code>, pinned in <code>.host-software</code>. The single-file <code>host</code> entrance is set apart (it is the <code>member</code> of the <code>[entrance]</code> stanza), not a component; agentic-host, the development environment, is not one either.</p>
 <h3 id="verifiers"><a class="header" href="#verifiers">Verifiers</a></h3>
 <p>The verification ladder's drivers, base to deep: host-lint (naming hygiene), allium (requirements and property-based testing), specula (bounded timing via TLA+), host-prove (the deeper symbolic, proof, and conformance rungs).</p>
 <h3 id="software-root"><a class="header" href="#software-root">Software-root</a></h3>
