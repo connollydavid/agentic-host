@@ -1,0 +1,3 @@
+{"url": "https://en.wikipedia.org/wiki/Paris", "status": 200, "snapshot": "snapshots/agent-0-agent-0-agent-0-main-1.txt"}
+{"url": "https://en.wikipedia.org/wiki/Seine", "status": 200, "snapshot": "snapshots/agent-1-agent-1-agent-1-main-2.txt"}
+{"url": "https://whc.unesco.org/en/list/600/", "status": 200, "snapshot": "snapshots/agent-2-agent-2-agent-2-main-3.txt"}

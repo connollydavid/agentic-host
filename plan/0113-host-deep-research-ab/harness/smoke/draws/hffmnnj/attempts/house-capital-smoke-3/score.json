@@ -1,0 +1,32 @@
+{
+  "arm": "hffmnnj",
+  "task": "smoke/house-capital",
+  "draw": "house-capital-smoke",
+  "adapter": "hffmnnj",
+  "adapter_result": "void",
+  "excluded": false,
+  "reused": false,
+  "rerun_of": "hffmnnj/attempts/house-capital-smoke-2",
+  "break_class": "harness",
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 123.2,
+  "prompt_tokens": 27504,
+  "completion_tokens": 3846,
+  "tool_calls": 13,
+  "search_provider": "none",
+  "native_search": [],
+  "websearch_calls": 0,
+  "search_engine_fetches": [],
+  "replies": 11,
+  "model_preflight": "ok",
+  "native_files": 6,
+  "contract_ok": false,
+  "contract_reason": "rn_mwzwyjyz3xgt carries no source record",
+  "rubric": {
+    "status": "void",
+    "reason": "rn_mwzwyjyz3xgt carries no source record"
+  },
+  "valid": false,
+  "score": 0
+}

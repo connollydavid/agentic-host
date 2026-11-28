@@ -1,31 +1,1522 @@
-### Official / institutional
-1. FranceTerme, Ministère de la Culture — "France (la)", *J.O.* 24/09/2008 — https://www.culture.fr/franceterme/terme/AFET263
-2. Arrêté du 4 novembre 1993 relatif à la terminologie des noms d'États et de capitales, *J.O.* 25/01/1994 pp. 1288–1295 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000181509 (403; via index)
-3. Ordonnance n° 58-1100 du 17 novembre 1958, art. 1 — https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006530034
-4. Conseil constitutionnel — Constitution de 1875, IIIe République — https://www.conseil-constitutionnel.fr/les-constitutions-dans-l-histoire/constitution-de-1875-iiie-republique
-5. SANDRE / OFB / eaufrance — "La Seine", code `----0010` — via https://web.archive.org/web/20210123171121/http://www.sandre.eaufrance.fr/geo/CoursEau/----0010
-6. Eaufrance — "Les rivières" — https://www.eaufrance.fr/les-rivieres
-7. Ministère de l'Intérieur, Formation civique — "Les fleuves français" (map: IGN 2012) — https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-français/
-8. HydroPortail / Vigicrues — station F700 0001 03 "La Seine à Paris – Austerlitz", data calculated 27/11/2026 — https://www.hydro.eaufrance.fr/stationhydro/F700000103/synthese
-9. Agence de l'Eau Seine-Normandie — "Le bassin de la Seine" — https://www.eau-seine-normandie.fr/agence-de-leau/le-bassin-de-la-seine
-10. UNESCO World Heritage Centre — "Paris, Banks of the Seine" (dossier 600bis) — https://whc.unesco.org/en/list/600/
-11. UNESCO — Décision 46 COM 8B.39 (2024) — https://whc.unesco.org/fr/decisions/8631/
-12. ICOMOS evaluation WHC/24/46.COM/INF.8B1.Add — https://whc.unesco.org/document/208528
-13. Ville de Paris — "Paris et ses ponts, toute une histoire" — https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466
-14. Ville de Paris — "La Seine, cœur battant de Paris" — https://www.paris.fr/dossiers/la-seine-coeur-battant-de-paris-216
-15. Ville de Paris — "Crues" / "Le Zouave, baromètre de la montée des eaux" — https://www.paris.fr/pages/crues-5472
-16. Ville de Paris — "Les canaux de Paris" (updated 26/11/2026) — https://www.paris.fr/pages/tmp-canaux-7834
-17. Ville de Paris — "Les secrets enfouis de la Bièvre, rivière parisienne" — https://www.paris.fr/pages/les-secrets-enfouis-de-la-bievre-riviere-parisienne-16900
-18. Ville de Paris — "La Seine s'ouvre à la baignade" / "Baignade en Seine : toutes les questions" — https://www.paris.fr/pages/baignade-en-seine-toutes-les-questions-que-vous-vous-posez-31533
-19. Ville de Paris — Eau de Paris, *Bulletin qualité de l'eau de la Seine*, Aug 2026 — https://cdn.paris.fr/paris/2026-10-02/bulletin-qualite-eau-seine-2026-08-smy5.pdf
-20. DRIEAT Île-de-France / Préfecture — Dossier de presse "Plan Baignade", Aug 2024 — https://www.prefectures-regions.gouv.fr/ile-de-france/...
-21. Cour des comptes / CRC Île-de-France — IDR2025-51, délibéré 22/07/2025 — https://www.ccomptes.fr/sites/default/files/2025-11/IDR2025-51_0.pdf
-22. Paris & Métropole Aménagement — "La Bièvre (Paris 13e)" — https://www.parisetmetropole-amenagement.fr/fr/bievre-paris-13e
-23. SMBVB — Syndicat Mixte du Bassin Versant de la Bièvre, "Historique" — https://www.smbvb.fr/la-bievre/historique/
-24. Château de Versailles (public establishment) — "Versailles, 'capital' of the kingdom, 1682" — https://en.chateauversailles.fr/discover/history/key-dates/versailles-capital-kingdom-1682
-25. BnF, Essentiels — "De Lutèce à la capitale" — https://essentiels.bnf.fr/...
-26. BnF Gallica — "L'histoire tourmentée d'une rivière : quand la Bièvre disparaît" — https://gallica.bnf.fr/accueil/fr/html/lhistoire-tourmentee-dune-riviere-quand-la-bievre-disparait
-27. European Union — "France", EU member state overview — https://european-union.europa.eu/principles-countries-history/eu-countries/france_en
-28. Council of Europe, Intercultural Cities — "Paris, France" — https://www.coe.int/en/web/interculturalcities/paris
-29. Archives nationales d'outre-mer — "Paris (France)" — http://anom.archivesnationales.culture.gouv.fr/geo.php?...
-30. European Commission JRC — "FACT SHEET: Seine River Basin" — https://water.jrc.ec.europa.eu/pdf/seine-fs.pdf
+La Seine, cœur battant de Paris - Ville de Paris
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+    
+    
+
+    
+
+  
+
+  
+
+  
+    
+  Aller au contenu
+  Aller à la navigation
+
+
+
+    
+      
+  
+    
+      
+        
+          
+  Ville de Paris
+  
+
+
+    
+  
+
+  
+    Fermer
+      
+
+  
+    
+      
+        Menu
+        
+  
+  
+  
+  
+
+
+              
+      
+    
+  
+
+  
+    
+      
+          
+              
+                                  Services
+
+              
+                
+                  
+                                      
+                  Services
+                
+                
+                  
+                
+              
+          
+          
+          
+              
+                                  Vie citoyenne
+
+              
+                
+                  
+                                      
+                  Vie citoyenne
+                
+                
+                  
+                
+              
+          
+          
+          
+              
+                                  Que faire à Paris ?
+
+              
+                
+                  
+                                      
+                  Que faire à Paris ?
+                
+                
+                  
+                
+              
+          
+          
+          
+              
+                                                                      Rechercher
+
+              
+                
+                  
+                                      
+                  Rechercher
+                
+                
+                  
+                
+              
+          
+          
+          
+              
+                                                Affichage
+
+              
+                
+                  
+                                      
+                  Affichage
+                
+                
+                  
+                
+              
+          
+          
+      
+
+      
+        Accès rapides
+        
+        
+      
+
+      
+            
+            
+      
+        Paramètres d'affichage
+      
+
+
+      
+    
+
+
+    
+  
+     Rechercher
+    
+      
+  
+    
+        
+              une information
+              une actualité
+              une activité
+              un lieu
+              un évènement
+              une sortie
+              un service
+              une démarche
+          une information
+        
+        
+    
+
+
+      
+              
+    
+
+    
+
+
+      
+        
+          Vos dernières recherches
+          
+        
+      
+
+        
+          
+          
+        
+    
+
+    
+      
+        
+      
+      Tapez 3 caractères ou plus pour lancer une recherche
+        
+          
+            Infos
+            
+          
+          
+          
+            Toutes les infos          
+        
+          
+            Lieux
+            
+          
+          
+          
+            Tous les lieux          
+        
+          
+            Sorties
+            
+          
+          
+          
+            Toutes les sorties          
+        
+          
+            Activités
+            
+          
+          
+          
+            Toutes les activités          
+    
+
+    Fermer
+  
+
+
+  
+
+      
+      
+
+      
+        
+        
+
+  
+  
+
+    
+  
+      
+  La Seine, cœur battant de Paris
+
+
+      
+    Dossier
+  
+
+  
+
+    
+  
+  Mise à jour le 03/07/2025
+
+
+
+
+
+
+      
+        
+        
+          
+            Crédit photo : Guillaume Bontemps / Ville de Paris 
+          
+      
+  
+
+
+
+
+  
+
+      
+          
+  
+          
+  
+    
+    
+      
+            
+                              
+  Sommaire
+
+
+              
+                              
+            
+      
+
+      
+        
+          
+              
+                Petites et grandes histoires d'un fleuve
+              
+              
+                La Seine, on s'y jette à l'eau
+              
+              
+                Un réservoir de biodiversité à protéger…
+              
+              
+                … et des sautes d'humeur à anticiper
+              
+              
+                Un lieu de culture et de loisirs
+              
+              
+                Des idées pour en faire notre alliée
+              
+              
+                Une inspiration pour les artistes
+              
+          
+        
+      
+
+      
+        
+          Revenir en haut
+        
+      
+    
+  
+
+      
+      
+                
+
+
+  
+
+          Vivier de biodiversité, lieu de promenades chargées d’histoire, fleuve nourricier, source de loisirs ou muse olympique, la Seine, c’est tout cela à la fois ! Tantôt bucolique, tantôt festive, parfois capricieuse, elle fait vibrer la capitale le long de ses 37 ponts répartis sur les 13 kilomètres qu’elle parcourt intra-muros. Et comme un juste retour des choses, la Seine est aujourd’hui offerte en héritage à tous les Parisiens, qui pourront s’y baigner dès l’été 2025. On va même bientôt lui octroyer des droits et un statut juridique ! Au fil de l’eau, plongez dans son passé, son présent… et son futur.
+
+          
+    
+        
+  La Seine à Paris c'est :
+
+
+    
+      13 km (sur un total de 777 km de longueur entre le plateau de Langres et l'estuaire du Havre)De 30 mètres de largeur au quai Montebello (5e) jusqu'à 200 mètres de largeur au pont de Grenelle (15e)37 ponts traversantUne profondeur entre 3,40 et 5,70 mètres8,62 mètres de hauteur maximale des eaux au pont d'Austerlitz en 1910, lors de la plus grande crue moderne. En temps normal, la hauteur est comprise entre 1 et 2 mètres.Un débit, en temps normal, d'environ 330 m3/s et qui est monté jusqu'à 2400 m3/s lors de la crue de 1910
+    
+      
+
+  
+      
+        
+
+            
+              
+        
+
+                        Baignade dans la Seine en juillet 2024.
+
+              
+                Crédit photo :
+                Guillaume Bontemps / Ville de Paris
+              
+      
+      
+        
+
+            
+              
+        
+
+                        Vue depuis la rive droite sur le quartier de Beaugrenelle (15e) et la tour Eiffel.
+
+              
+                Crédit photo :
+                Jean-Baptiste Gurliat/Ville de Paris
+              
+      
+      
+        
+
+            
+              
+        
+
+                        Arbre remarquable, saule-pleureur, square du vert galant.
+
+              
+                Crédit photo :
+                Joséphine Brueder / Ville de Paris
+              
+      
+      
+        
+
+            
+              
+        
+
+                        Une joggeuse se repose au soleil, sur les rives de Seine.
+
+              
+                Crédit photo :
+                Guillaume Bontemps / Ville de Paris
+              
+      
+      
+        
+
+            
+              
+        
+
+                        Rives de Seine
+
+              
+                Crédit photo :
+                Joséphine Brueder / Ville de Paris
+              
+      
+      
+        
+
+            
+              
+        
+
+                        Les berges sous le soleil.
+
+              
+                Crédit photo :
+                Joséphine Brueder / Ville de Paris
+              
+      
+      
+        
+
+            
+              
+        
+
+                        Jogging hivernal sur les berges de Seine.
+
+              
+                Crédit photo :
+                Joséphine Brueder / Ville de Paris
+              
+      
+      
+        
+
+            
+              
+        
+
+                        Le pont Neuf.
+
+              
+                Crédit photo :
+                Jean-Baptiste Gurliat / Mairie de Paris
+              
+      
+  
+
+  
+        
+            
+
+        
+            
+
+  
+
+
+    
+        
+  Petites et grandes histoires d'un fleuve
+
+
+    
+      
+  
+      
+  
+    
+        
+      La Seine aurait plus de 14 000 ans… et autres anecdotes surprenantes sur le fleuve
+
+      
+
+            
+    Le saviez-vous ?
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      Source-Seine : un petit bout de Paris se cache en Côte-d’Or…
+
+      
+
+            
+    Le saviez-vous ?
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      Baignade dans la Seine : un juste retour aux sources ! Visionnez cette vidéo de l'INA
+
+      
+
+            
+    Focus
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      Paris et ses ponts, toute une histoire
+
+      
+
+            
+    Le saviez-vous ?
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      Sous les ponts de Paris
+
+      
+
+            
+    13 photos
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+  
+
+
+    
+      La Seine en 5 dates clés : - 1923 : un arrêté préfectoral interdit la baignade- 1967 : la voie express rive droite est livrée : c'est l'apogée du « tout voiture »- 2018 : la piétonnisation des berges de Seine s'achève avec la création du « Parc Rives de Seine »- 2024 : la Seine accueille des épreuves de triathlon et de natation lors des Jeux de Paris 2024- 2025 : la baignade s'ouvre aux Parisiens dans trois sites ouverts pendant l'été
+    
+        
+  La Seine, on s'y jette à l'eau
+
+
+    
+      
+  
+      
+  
+    
+        
+      Tout ce que vous devez savoir sur la baignade dans la Seine
+
+      
+
+            
+    Dossier
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      Jeux de Paris 2024 : Triathlon dans la Seine ? Une promesse tenue !
+
+      
+
+            
+    Reportage
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      On a testé… la baignade dans la Seine
+
+      
+
+            
+    Découvrir
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+  
+
+
+    
+        
+  Un réservoir de biodiversité à protéger…
+
+
+    
+      
+  
+      
+  
+    
+        
+      La Seine regorge de vie, préservons-la !
+
+      
+
+            
+    Le saviez-vous ?
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      Et si la Seine avait ses propres droits ? Entretien avec Marine Calmet, présidente de Wild Legal
+
+      
+
+            
+    Rencontre
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      Convention citoyenne : « Cela m’a vraiment fait plaisir que l’on sollicite mon avis sur la Seine »
+
+      
+
+            
+    Reportage
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      Paul Watson : « Paris est une ville refuge pour les défenseurs de l'environnement »
+
+      
+
+            
+    Rencontre
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+  
+
+
+    
+        
+  … et des sautes d'humeur à anticiper
+
+
+    
+      
+  
+      
+  
+    
+        
+      Tout le monde est-il concerné par les crues de la Seine et les inondations ?
+
+      
+
+            
+    Vrai / Faux
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      Que faire en cas de crue de la Seine ? Inscrivez-vous à nos formations !
+
+      
+
+            
+    Actualité
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      Pour répondre aux nouvelles crises, la stratégie de résilience de Paris évolue
+
+      
+
+            
+    Actualité
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+  
+
+
+    
+        
+  Un lieu de culture et de loisirs
+
+
+    
+      
+  
+      
+  
+    
+        
+      Nos sept péniches préférées à Paris
+
+      
+
+            
+    Sélection
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      Nicolas Laugero Lasserre, la Seine comme deuxième maison
+
+      
+
+            
+    Portrait
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      Les bouquinistes et Paris, histoire d'Amour en capitale
+
+      
+
+            
+    Focus
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      3 idées de randos dépaysantes pour se sentir presque en vacances !
+
+      
+
+            
+    Découvrir
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      La Seine à vélo : rejoignez la mer en un coup de pédale !
+
+      
+
+            
+    Découvrir
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+  
+
+
+    
+        
+  Des idées pour en faire notre alliée
+
+
+    
+      
+  
+      
+  
+    
+        
+      Seine nourricière : emprunter le fleuve pour mieux nourrir Paris
+
+      
+
+            
+    Actualité
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      AgriParis Seine, une union pour nourrir Paris de façon durable
+
+      
+
+            
+    Actualité
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+    
+        
+      Sur « l'Axe Seine », les villes s'entendent pour stimuler les énergies renouvelables
+
+      
+
+            
+    Actualité
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+  
+
+
+    
+        
+  Une inspiration pour les artistes
+
+
+    
+      
+  
+      
+  
+    
+        
+      8 romans dont la Seine est l'héroïne
+
+      
+
+            
+    Actualité
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+  
+
+
+
+
+                
+      ?
+      
+        Vous avez une question à nous poser ?
+              
+            
+        Contacter un service de la Ville
+      
+
+
+      
+    
+
+
+
+      
+
+  
+
+
+
+    
+      
+        À lire aussi
+      
+
+      
+
+          
+  
+    
+        
+      Tout savoir sur l'arbre à Paris
+
+      
+
+            
+    Service
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+
+          
+  
+    
+        
+      Place Saint-Gervais, ce jardin mémoriel rend hommage aux victimes du 13-Novembre
+
+      
+
+            
+    Actualité
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+
+          
+  
+    
+        
+      La Ferme de Paris
+
+      
+
+            
+    Focus
+  
+
+      
+
+  
+
+
+    
+      
+        
+      
+    
+
+  
+
+      
+  
+
+
+        
+      
+
+      
+  
+    
+
+        
+          
+    
+  Vous êtes...
+
+
+
+  Accédez à des actualités et informations pratiques par profil
+
+  
+      
+        
+              
+            
+        Professionnel
+      
+
+
+      
+      
+        
+              
+            
+        Association
+      
+
+
+      
+      
+        
+              
+            
+        Jeune
+      
+
+
+      
+  
+
+
+
+
+
+
+        
+
+        
+          
+              
+  Les newsletters de Paris
+
+
+
+            
+              Recevez directement par email l'actualité de vos centres d'intérêt
+            
+
+                              
+            
+        S'inscrire
+      
+
+
+          
+        
+
+      
+          
+      
+        Sur les réseaux
+      
+
+    
+      
+                  
+      
+      
+                  
+      
+      
+                  
+      
+      
+                  
+      
+      
+                  
+      
+      
+                  
+      
+    
+  
+
+      
+
+        
+            
+  Une question ?
+
+
+
+          
+            
+                                  
+            
+        Contactez-nous
+      
+
+
+            
+          
+        
+
+    
+  
+
+      
+        
+
+          
+            Retrouvez les actualités de votre arrondissement
+          
+
+          
+            
+              Sélectionnez votre mairie
+                
+                  Mairie de Paris Centre
+                
+                
+                  Mairie du 5ᵉ arrondissement
+                
+                
+                  Mairie du 6ᵉ arrondissement
+                
+                
+                  Mairie du 7ᵉ arrondissement
+                
+                
+                  Mairie du 8ᵉ arrondissement
+                
+                
+                  Mairie du 9ᵉ arrondissement
+                
+                
+                  Mairie du 10ᵉ arrondissement
+                
+                
+                  Mairie du 11ᵉ arrondissement
+                
+                
+                  Mairie du 12ᵉ arrondissement
+                
+                
+                  Mairie du 13ᵉ arrondissement
+                
+                
+                  Mairie du 14ᵉ arrondissement
+                
+                
+                  Mairie du 15ᵉ arrondissement
+                
+                
+                  Mairie du 16ᵉ arrondissement
+                
+                
+                  Mairie du 17ᵉ arrondissement
+                
+                
+                  Mairie du 18ᵉ arrondissement
+                
+                
+                  Mairie du 19ᵉ arrondissement
+                
+                
+                  Mairie du 20ᵉ arrondissement
+                
+            
+            
+          
+        
+      
+
+  
+    
+        
+          Mentions légales
+        
+        
+          Accessibilité : partiellement conforme
+        
+        
+          Presse
+        
+        
+          Open Data
+        
+        
+          Politique de cookies
+        
+        
+          Plan du site

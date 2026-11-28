@@ -1,0 +1,2 @@
+
+Run rr_mwzwyjyq, Quick tier, 0 researchers. Findings: rn_mwzwyjz1lsql (Paris is the capital), rn_mwzwyjz38pxf (Seine runs through Paris), sourced from rn_mwzwyjyz3xgt. Research.audit: 2 citations, both resolved, confidence 'checked', no stale/disputed flags. Limits: corroboration attempts failed (Britannica HTTP 403, Larousse JS shell), so checks are labeled non-independent; acceptable for an uncontested, stable fact. Full report file written to the session working directory (deep-research-report.md).

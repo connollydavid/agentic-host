@@ -1,31 +1,107 @@
-### Official / institutional
-1. FranceTerme, Ministère de la Culture — "France (la)", *J.O.* 24/09/2008 — https://www.culture.fr/franceterme/terme/AFET263
-2. Arrêté du 4 novembre 1993 relatif à la terminologie des noms d'États et de capitales, *J.O.* 25/01/1994 pp. 1288–1295 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000181509 (403; via index)
-3. Ordonnance n° 58-1100 du 17 novembre 1958, art. 1 — https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006530034
-4. Conseil constitutionnel — Constitution de 1875, IIIe République — https://www.conseil-constitutionnel.fr/les-constitutions-dans-l-histoire/constitution-de-1875-iiie-republique
-5. SANDRE / OFB / eaufrance — "La Seine", code `----0010` — via https://web.archive.org/web/20210123171121/http://www.sandre.eaufrance.fr/geo/CoursEau/----0010
-6. Eaufrance — "Les rivières" — https://www.eaufrance.fr/les-rivieres
-7. Ministère de l'Intérieur, Formation civique — "Les fleuves français" (map: IGN 2012) — https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-français/
-8. HydroPortail / Vigicrues — station F700 0001 03 "La Seine à Paris – Austerlitz", data calculated 27/11/2026 — https://www.hydro.eaufrance.fr/stationhydro/F700000103/synthese
-9. Agence de l'Eau Seine-Normandie — "Le bassin de la Seine" — https://www.eau-seine-normandie.fr/agence-de-leau/le-bassin-de-la-seine
-10. UNESCO World Heritage Centre — "Paris, Banks of the Seine" (dossier 600bis) — https://whc.unesco.org/en/list/600/
-11. UNESCO — Décision 46 COM 8B.39 (2024) — https://whc.unesco.org/fr/decisions/8631/
-12. ICOMOS evaluation WHC/24/46.COM/INF.8B1.Add — https://whc.unesco.org/document/208528
-13. Ville de Paris — "Paris et ses ponts, toute une histoire" — https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466
-14. Ville de Paris — "La Seine, cœur battant de Paris" — https://www.paris.fr/dossiers/la-seine-coeur-battant-de-paris-216
-15. Ville de Paris — "Crues" / "Le Zouave, baromètre de la montée des eaux" — https://www.paris.fr/pages/crues-5472
-16. Ville de Paris — "Les canaux de Paris" (updated 26/11/2026) — https://www.paris.fr/pages/tmp-canaux-7834
-17. Ville de Paris — "Les secrets enfouis de la Bièvre, rivière parisienne" — https://www.paris.fr/pages/les-secrets-enfouis-de-la-bievre-riviere-parisienne-16900
-18. Ville de Paris — "La Seine s'ouvre à la baignade" / "Baignade en Seine : toutes les questions" — https://www.paris.fr/pages/baignade-en-seine-toutes-les-questions-que-vous-vous-posez-31533
-19. Ville de Paris — Eau de Paris, *Bulletin qualité de l'eau de la Seine*, Aug 2026 — https://cdn.paris.fr/paris/2026-10-02/bulletin-qualite-eau-seine-2026-08-smy5.pdf
-20. DRIEAT Île-de-France / Préfecture — Dossier de presse "Plan Baignade", Aug 2024 — https://www.prefectures-regions.gouv.fr/ile-de-france/...
-21. Cour des comptes / CRC Île-de-France — IDR2025-51, délibéré 22/07/2025 — https://www.ccomptes.fr/sites/default/files/2025-11/IDR2025-51_0.pdf
-22. Paris & Métropole Aménagement — "La Bièvre (Paris 13e)" — https://www.parisetmetropole-amenagement.fr/fr/bievre-paris-13e
-23. SMBVB — Syndicat Mixte du Bassin Versant de la Bièvre, "Historique" — https://www.smbvb.fr/la-bievre/historique/
-24. Château de Versailles (public establishment) — "Versailles, 'capital' of the kingdom, 1682" — https://en.chateauversailles.fr/discover/history/key-dates/versailles-capital-kingdom-1682
-25. BnF, Essentiels — "De Lutèce à la capitale" — https://essentiels.bnf.fr/...
-26. BnF Gallica — "L'histoire tourmentée d'une rivière : quand la Bièvre disparaît" — https://gallica.bnf.fr/accueil/fr/html/lhistoire-tourmentee-dune-riviere-quand-la-bievre-disparait
-27. European Union — "France", EU member state overview — https://european-union.europa.eu/principles-countries-history/eu-countries/france_en
-28. Council of Europe, Intercultural Cities — "Paris, France" — https://www.coe.int/en/web/interculturalcities/paris
-29. Archives nationales d'outre-mer — "Paris (France)" — http://anom.archivesnationales.culture.gouv.fr/geo.php?...
-30. European Commission JRC — "FACT SHEET: Seine River Basin" — https://water.jrc.ec.europa.eu/pdf/seine-fs.pdf
+---
+description: Paris is the capital city of France, as well as the country's largest city.
+title: What is the Capital of France?
+image: https://www.worldatlas.com/r/w1200-q80/upload/71/61/3a/shutterstock-111362132.jpg
+---
+
+![Tourism has always been a major source of income for Paris. ](https://www.worldatlas.com/r/w1200/upload/71/61/3a/shutterstock-111362132.jpg)
+
+*Tourism has always been a major source of income for Paris.*
+
+Paris is the capital city of [France](https://www.worldatlas.com/maps/france). The city has an approximate area of 41 square miles with a population of 2,206,488 people as of 2018. Contrary to popular belief, the name of the city did not come from the Paris in Greek myths. Instead, the name Paris is derived from the city’s initial inhabitants who were part of the Celtic Parisii tribe. Sometimes, the city is called the City of Light for two reasons; it was among the first cities to adopt gas for lighting the streets and its role during the Age of Enlightenment.
+
+## Geography and Climate
+
+Located in the north of Central France, the city is relatively flat with the highest point being 427 feet (which is Montmartre) above sea level while the lowest point is 115 feet above the sea level. In a sentence, the climate of Paris can be described as being between mild and moderately wet throughout the year. Typical summer temperatures range between 59°F and 77°F or sometimes higher in case things like solar flares occur. Winter is decidedly cold although the temperatures stay above freezing point at around 37°F. On rare occasions, light snow may be seen although it never settles on the ground. The highest documented temperature for Paris is 104.7°F (1947) while the lowest is 11.0°F (1879).
+
+## Economy
+
+Services and commerce are the two main contributors to the prosperity of the city. The top 10 French Fortune Global 500 companies have their headquarters in or close to the city. With a GDP of approximately $850 billion, Paris is the country’s leader for economic activities. In 2011, the city emerged fourth in per-capita GDP rankings in Europe while it ranked second among Europe’s regions. Data from 2017 shows that the city is the seventh most expensive to live in globally and second in Europe with Zurich coming first.
+
+## Tourism
+
+Tourism has always been a major source of income for Paris. However, after terrorists attacked the city in 2015 and 2016, the sector has been adversely affected with tourism dropping by 11.5% in 2016. Tourists are attracted to Paris because of the rich history the city has including its monuments and sights. In 2016, the most popular tourist destination was the [Notre Dame Cathedral](https://www.worldatlas.com/articles/architectural-buildings-of-the-world-notre-dame-cathedral.html) with 12 million visitors. The popular museum, The [Louvre](https://www.worldatlas.com/articles/architectural-buildings-of-the-world-musee-du-louvre.html), came in second with around 7 million visitors. Others include the likes of the National Museum of Natural History, the Centre Pompidou, the Basilique du Sacré-Cœur, the [Eiffel Tower](https://www.worldatlas.com/articles/when-was-the-eiffel-tower-built.html), and many more.
+
+## Administration
+
+As the capital city of France, the city plays host to the national government of France. Even the official residence of the president is in the city at the Élysée Palace while the Prime Minister is housed at the Hôtel Matignon. The Senate or the upper house meets at the Palais du Luxembourg while the Palais Bourbon is the meeting point for the Assemblée Nationale. The second highest public official after the President of France, the President of the Senate, stays at the Petit Luxembourg. International organizations who have headquarters in Paris include the likes of UNESCO, the International Chamber of Commerce, the International Federation for Human Rights, and a few others.
+
+**Share**
+
+-
+-
+-
+-
+-
+-
+-
+
+[Ferdinand Bada](https://www.worldatlas.com/contributor/ferdinand-bada) June 29 2018 in [World Facts](https://www.worldatlas.com/world-facts/)
+
+1. [Home](https://www.worldatlas.com/)
+2. [World Facts](https://www.worldatlas.com/world-facts/)
+3. What is the Capital of France?
+
+## Related
+
+[![Australia's parliament in Canberra, ACT. ](https://www.worldatlas.com/r/w1200/upload/0e/b3/13/shutterstock-111507746.jpg)](https://www.worldatlas.com/articles/what-is-the-capital-of-the-australian-capital-territory.html)
+
+### [What Is The Capital Of The Australian Capital Territory?](https://www.worldatlas.com/articles/what-is-the-capital-of-the-australian-capital-territory.html)
+
+[![It is estimated that France has the third-largest nuclear weapon stockpile globally. ](https://www.worldatlas.com/r/w1200/upload/ff/0b/e0/shutterstock-528921493.jpg)](https://www.worldatlas.com/articles/does-france-have-nuclear-weapons.html)
+
+### [Does France Have Nuclear Weapons?](https://www.worldatlas.com/articles/does-france-have-nuclear-weapons.html)
+
+## More in [World Facts](https://www.worldatlas.com/world-facts/)
+
+[![Olympic Flag. Image credit: Ververidis Vasilis/Shutterstock](https://www.worldatlas.com/r/w1200/upload/cb/45/d9/olympic-flag-ververidis-vasilis.jpg)](https://www.worldatlas.com/articles/olympic-games-history.html)
+
+### [Olympic Games History](https://www.worldatlas.com/articles/olympic-games-history.html)
+
+[![Map and flag of Australia](https://www.worldatlas.com/r/w1200/upload/1a/7c/1b/shutterstock-1326727757.jpg)](https://www.worldatlas.com/articles/is-australia-a-country-or-a-continent.html)
+
+### [Is Australia A Country Or A Continent?](https://www.worldatlas.com/articles/is-australia-a-country-or-a-continent.html)
+
+[![The United States holds a lot of power in deciding the sovereign status of countries. ](https://www.worldatlas.com/r/w1200/upload/33/c0/10/shutterstock-796210414.jpg)](https://www.worldatlas.com/articles/how-many-countries-does-the-united-states-recognize.html)
+
+### [How Many Countries Are Recognized By The United States?](https://www.worldatlas.com/articles/how-many-countries-does-the-united-states-recognize.html)
+
+[![CIS flag. ](https://www.worldatlas.com/r/w1200/upload/7c/10/d8/cis-s-e.jpg)](https://www.worldatlas.com/articles/commonwealth-of-independent-states.html)
+
+### [Commonwealth Of Independent States](https://www.worldatlas.com/articles/commonwealth-of-independent-states.html)
+
+[![Map of Central America](https://www.worldatlas.com/r/w1200/upload/fb/a3/ac/central-america-map.png)](https://www.worldatlas.com/articles/is-central-america-considered-north-america.html)
+
+### [Is Central America Part Of North America?](https://www.worldatlas.com/articles/is-central-america-considered-north-america.html)
+
+[![The Caribbean islands are popular tourist destinations for people from around the world.](https://www.worldatlas.com/r/w1200/upload/1f/ee/24/shutterstock-263348471.jpg)](https://www.worldatlas.com/articles/where-is-the-caribbean.html)
+
+### [Where Is The Caribbean?](https://www.worldatlas.com/articles/where-is-the-caribbean.html)
+
+[![Dhaka, the capital of Bangladesh is a heavily populated city with high population density.](https://www.worldatlas.com/r/w1200/upload/01/de/c1/shutterstock-1173247633.jpg)](https://www.worldatlas.com/articles/the-most-densely-populated-countries.html)
+
+### [The 10 Most Densely Populated Countries In The World](https://www.worldatlas.com/articles/the-most-densely-populated-countries.html)
+
+[![The 10 most populated countries in the world.](https://www.worldatlas.com/r/w1200/upload/9b/61/de/10-most-populated-countries-in-the-world-3.png)](https://www.worldatlas.com/articles/most-populated-countries-in-the-world.html)
+
+### [The 10 Most Populated Countries In The World](https://www.worldatlas.com/articles/most-populated-countries-in-the-world.html)
+
+[![Population density](https://www.worldatlas.com/r/w1200/upload/8b/d3/f5/artboard-2.png)](https://www.worldatlas.com/articles/countries-by-population-density.html)
+
+### [Countries By Population Density](https://www.worldatlas.com/articles/countries-by-population-density.html)
+
+[![Worldwide obesity rates](https://www.worldatlas.com/r/w1200/upload/1c/ef/12/shutterstock-20163661.jpg)](https://www.worldatlas.com/articles/countries-by-obesity.html)
+
+### [Countries By Obesity](https://www.worldatlas.com/articles/countries-by-obesity.html)
+
+[![The 10 Most Populated Countries In Europe](https://www.worldatlas.com/r/w1200/upload/c2/de/91/the-10-most-populated-countries-in-europe.png)](https://www.worldatlas.com/articles/the-10-most-populated-countries-in-europe.html)
+
+### [The 10 Most Populated Countries In Europe](https://www.worldatlas.com/articles/the-10-most-populated-countries-in-europe.html)
+
+[![The Capitol building in San Juan, Puerto Rico, displaying both the American and Puerto Rican flags.](https://www.worldatlas.com/r/w1200/upload/08/89/08/capitol-building-san-juan-puerto-rico-us-sean-pavone.jpg)](https://www.worldatlas.com/articles/is-puerto-rico-a-country.html)
+
+### [Is Puerto Rico A Country?](https://www.worldatlas.com/articles/is-puerto-rico-a-country.html)
+
+```json
+{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.worldatlas.com/articles/what-is-the-capital-of-france.html"},"headline":"What is the Capital of France?","image":{"@type":"ImageObject","url":"https://www.worldatlas.com/r/w2560-q80/upload/71/61/3a/shutterstock-111362132.jpg","width":2560,"height":1818},"datePublished":"2018-06-29T15:23:00-04:00","dateModified":"2018-06-29T15:23:46-04:00","articleSection":"Articles","description":"Paris is the capital city of France, as well as the country's largest city.","author":{"@type":"Person","name":"Ferdinand Bada","@id":"https://www.worldatlas.com/contributor/ferdinand-bada","sameAs":"https://www.worldatlas.com/contributor/ferdinand-bada"},"publisher":{"@type":"Organization","@id":"https://www.worldatlas.com/","name":"WorldAtlas","sameAs":["https://www.facebook.com/worldatlas","https://twitter.com/worldatlas","https://www.pinterest.ca/worldatlas/","https://www.linkedin.com/company/world-atlas"],"logo":{"@type":"ImageObject","url":"https://worldatlas.com/nwa_assets/img/site/wa_2_logo_text_primary_amp.png","height":60,"width":326,"caption":"WorldAtlas Logo"}},"hasPart":{"@type":"WebPageElement","value":"Paris is the capital city of France. The city has an approximate area of 41 square miles with a population of 2,206,488 people as of 2018. Contrary to popular belief, the name of the city did not come from the Paris in Greek myths. Instead, the name Paris is derived from the city\u2019s initial inhabitants who were part of the Celtic Parisii tribe. Sometimes, the city is called the City of Light for two reasons; it was among the first cities to adopt gas for lighting the streets and its role during the Age of Enlightenment.  Geography and Climate  Located in the north of Central France, the city is relatively flat with the highest point being 427 feet (which is Montmartre) above sea level while the lowest point is 115 feet above the sea level. In a sentence, the climate of Paris can be described as being between mild and moderately wet throughout the year. Typical summer temperatures range between 59\u00b0F and 77\u00b0F or sometimes higher in case things like solar flares occur. Winter is decidedly cold although the temperatures stay above freezing point at around 37\u00b0F. On rare occasions, light snow may be seen although it never settles on the ground. The highest documented temperature for Paris is 104.7\u00b0F (1947) while the lowest is 11.0\u00b0F (1879).  Economy  Services and commerce are the two main contributors to the prosperity of the city. The top 10 French Fortune Global 500 companies have their headquarters in or close to the city. With a GDP of approximately $850 billion, Paris is the country\u2019s leader for economic activities. In 2011, the city emerged fourth in per-capita GDP rankings in Europe while it ranked second among Europe\u2019s regions. Data from 2017 shows that the city is the seventh most expensive to live in globally and second in Europe with Zurich coming first.  Tourism  Tourism has always been a major source of income for Paris. However, after terrorists attacked the city in 2015 and 2016, the sector has been adversely affected with tourism dropping by 11.5% in 2016. Tourists are attracted to Paris because of the rich history the city has including its monuments and sights. In 2016, the most popular tourist destination was the Notre Dame Cathedral with 12 million visitors. The popular museum, The Louvre, came in second with around 7 million visitors. Others include the likes of the National Museum of Natural History, the Centre Pompidou, the Basilique du Sacr\u00e9-C\u0153ur, the Eiffel Tower, and many more.  Administration  As the capital city of France, the city plays host to the national government of France. Even the official residence of the president is in the city at the \u00c9lys\u00e9e Palace while the Prime Minister is housed at the H\u00f4tel Matignon. The Senate or the upper house meets at the Palais du Luxembourg while the Palais Bourbon is the meeting point for the Assembl\u00e9e Nationale. The second highest public official after the President of France, the President of the Senate, stays at the Petit Luxembourg. International organizations who have headquarters in Paris include the likes of UNESCO, the International Chamber of Commerce, the International Federation for Human Rights, and a few others."},"isAccessibleForFree":"http://schema.org/True"}
+```

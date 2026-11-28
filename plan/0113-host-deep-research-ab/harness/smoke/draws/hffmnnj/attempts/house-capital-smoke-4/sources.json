@@ -1,0 +1,16 @@
+{
+  "sources": [
+    {
+      "id": "rn_mwzx21atizxh",
+      "url": "https://en.wikipedia.org/wiki/Paris",
+      "quote": "Paris is the capital and largest city of France ... Located on the Seine in the centre of the Île-de-France region",
+      "locator": "Paris is the capital of France"
+    },
+    {
+      "id": "rn_mwzx21atlds3",
+      "url": "https://en.wikipedia.org/wiki/Paris",
+      "quote": "Paris is the capital and largest city of France ... Located on the Seine in the centre of the Île-de-France region",
+      "locator": "The river Seine runs through Paris"
+    }
+  ]
+}

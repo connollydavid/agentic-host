@@ -1,7 +1,3 @@
-{"url": "https://en.wikipedia.org/wiki/Paris", "status": 200, "snapshot": "snapshots/main-1.txt"}
-{"url": "https://whc.unesco.org/en/list/600/", "status": 200, "snapshot": "snapshots/main-2.txt"}
-{"url": "https://www.worldatlas.com/articles/which-river-runs-through-paris.html", "status": 200, "snapshot": "snapshots/main-3.txt"}
-{"url": "https://en.wikipedia.org/wiki/Seine", "status": 200, "snapshot": "snapshots/main-4.txt"}
-{"url": "https://en.wikipedia.org/api/rest_v1/page/summary/Paris", "status": 200, "snapshot": "snapshots/main-5.txt"}
-{"url": "https://en.wikipedia.org/api/rest_v1/page/summary/Seine", "status": 200, "snapshot": "snapshots/main-6.txt"}
-{"url": "https://www.paris.fr/dossiers/la-seine-coeur-battant-de-paris-216", "status": 200, "snapshot": "snapshots/main-7.txt"}
+{"url": "https://en.wikipedia.org/wiki/Seine", "status": 200, "snapshot": "snapshots/main-1.txt"}
+{"url": "https://en.wikipedia.org/wiki/Paris", "status": 200, "snapshot": "snapshots/main-2.txt"}
+{"url": "https://whc.unesco.org/en/list/600/", "status": 200, "snapshot": "snapshots/main-3.txt"}

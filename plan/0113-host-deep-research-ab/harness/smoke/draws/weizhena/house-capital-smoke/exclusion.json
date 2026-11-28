@@ -2,6 +2,6 @@
   "arm": "weizhena",
   "task": "smoke/house-capital",
   "status": "excluded",
-  "reason": "The arm outputs structured field JSON against fields.yaml and a report generated from those fields; it carries no source URL, verbatim quote or locator, so the source ledger cannot be populated.",
-  "evidence": "results/ carries 2 JSON file(s); none pairs a URL with a quote and locator. report.md is 4546 chars and cites 0 URL(s); a URL in the report is not a per-source quote record, so the ledger cannot be populated."
+  "reason": "The result JSON carries 21 source URL(s) but the report cites no quote or locator; the ledger cannot be populated.",
+  "evidence": "results/ carries 3 JSON file(s) with 21 source URL(s); report.md is 2982 chars and cites 0 URL(s) without a per-source quote and locator."
 }

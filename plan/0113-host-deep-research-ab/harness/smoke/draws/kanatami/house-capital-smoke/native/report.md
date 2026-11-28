@@ -1,296 +1,217 @@
 # The Capital of France and the River That Runs Through It
+### Final Deep-Research Report — web-search-deep protocol
 
-**Deep research report — web-search-deep protocol**
-Produced 27 November 2026 · 8 search workers · 3 search cycles · ~50 web searches · 30 pages fetched · ~150 sources screened
-
----
-
-## 1. Executive summary
-
-**The capital of France is Paris. The river that runs through it is the Seine** (French: *la Seine*; pronounced [sɛn]).
-
-Both answers are unambiguous and confirmed by France's own government at the highest level:
-
-- **Paris** is listed as the capital in **FranceTerme**, the terminology database of the French Ministry of Culture, published in the *Journal officiel* of 24 September 2008 (`Capitale : Paris`), and on the European Union's official member-state page. No source found anywhere claims any other city is France's capital today.
-- The **Seine** is listed as flowing through Paris by the **French Ministry of the Interior's** own civic-education atlas ("*Grandes villes traversées : Troyes, Paris, Rouen et Le Havre*"), by the **Agence de l'Eau Seine-Normandie** (the state water agency named for it), by **UNESCO** ("*The city of Paris is built along a bend in the River Seine*"), and by the **Ville de Paris**, which publishes the river's statistics for the city's own 13 km stretch.
-
-Two findings go materially beyond the textbook answer:
-
-1. **No French constitution or statute has ever declared Paris to be the capital.** The Fifth Republic's Constitution is silent; no French constitutional text since 1791 names a capital. Paris's status rests on constitutional silence plus ordinary law (the *ordonnance* of 17 November 1958, which states simply that "the National Assembly and the Senate sit in Paris"), administrative custom, and universal recognition. Versailles (1682–1789) and Vichy (1940–44) were seats of government only — Paris never lost the title, even when occupied.
-2. **The Seine is France's *second*-longest river, not its longest** — the Loire is, by roughly 230 km. Within Paris the Seine carries only ~43,800 km² of its catchment and about a third of its mouth discharge, and the **Bièvre**, buried since 1912, is the only natural tributary that ever joined it inside the city.
+**Question:** *What is the capital of France, and which river runs through it?*
+**Date of research:** 2026-11-28 · **Cycles:** Phase 2 (5 parallel queries) + Phase 4 feedback loops 1–5 (8 workers) · **Distinct sources consulted:** ≈95 (≈55 fetched or verbatim-captured)
+**Corpus:** `research/01-plan.md`, `research/02-raw/*` (9 worker dumps), `research/03-intermediate.md`, `research/04-loops/loop-01…05.md`
 
 ---
 
-## 2. Background and scope
+## 1. Executive Summary (TL;DR)
 
-The question is a two-part factual query. It was investigated anyway under the full five-phase protocol, because two of its terms are less stable than they appear: "capital" has no statutory definition in France, and "runs through it" has a legitimate second referent (the Bièvre). The research therefore set out to (a) verify both facts against primary official sources, (b) establish the legal and historical basis for the first, and (c) resolve the ambiguity in the second.
-
-### Methodology and stated deviations from the protocol
-
-The protocol was followed through all five phases — planning, parallel search, intermediate synthesis, a feedback loop, and final synthesis. Two deliberate deviations are disclosed:
-
-- **Loop count.** The protocol sets a minimum of five feedback loops. **Three search cycles were run** (initial parallel batch of 5 workers, loop 1 of 4 workers, loop 2 of 2 workers + 1 empty), then search was stopped. By the end of cycle 1 both core facts were confirmed at official-government tier with zero dissenting sources; further cycles could only raise confidence in the *supporting detail*, never in the answer. Continuing to five loops would have spent quota re-confirming settled facts.
-- **Report length.** The protocol's 10,000-character / 7,000-word floor was not treated as binding. The character floor is met with real sourced content; padding to 7,000 words on a two-fact question would have meant inventing filler.
-
-Workers ran on the available `web-search-worker` subagent rather than the `opencode-go/*` model IDs hard-coded in the skill, which are not resolvable in this environment.
+**The capital of France is Paris, and the river that runs through it is the Seine (la Seine).** Across five research cycles and roughly 95 sources — including the European Union's official country page, the French government's terminology decree of 4 November 1993, the official City of Paris dossier on the Seine, the Sandre national hydrography registry, and UNESCO's World Heritage documentation — the answer was unanimous and uncontested. Paris, population 2.05 million in the city proper and 13.3 million in its metropolitan area, has been France's capital since at latest the 12th century; the Seine, 775–777 km long, rises in the Langres plateau, divides Paris into its famous Left and Right Banks over 13 intra-muros kilometres spanned by 37 bridges, and empties into the English Channel at Le Havre–Honfleur. The research also stress-tested the answer against every plausible complication — the buried Bièvre, the tributary Marne, Versailles and Vichy as rival seats of government, constitutional silence on capitals, and conflicting river statistics — and each was resolved without shaking the core result.
 
 ---
 
-## 3. Key findings with evidence mapping
+## 2. Background / Context
 
-| # | Finding | Strongest evidence | Confidence |
+The question joins two elementary geographical facts, but elementary facts deserve verification, and their full answers carry genuine subtlety:
+
+1. **"Capital" is not constitutionally defined in France.** The Fifth Republic's constitution (4 October 1958) names no capital; no French constitution since 1791 has done so (Delledonne 2024; Council of Europe report CPL(14)4REP). Paris's status rests on a stack of statutory, terminological, historical and conventional foundations — which the protocol's loops were designed to map.
+2. **"The river of Paris" invites disambiguation.** The Seine's two largest tributaries touch the city's thresholds (Marne) or historically ran inside it (Bièvre, now subterranean), and open-data datasets can mislabel arrondissement centroids as riverside towns. A rigorous answer must show the Seine is the *unique* correct reading.
+
+Methodology per the web-search-deep protocol: Phase 1 planning (5 must-have queries, gap-driven nice-to-haves); Phase 2 parallel search by 5 `web-search-worker` subagents; Phase 3 intermediate synthesis with contradiction ledger (C1–C9) and gap list (G1–G7); Phase 4 five feedback loops (official capital sources, Sandre registry, river ranking, edge-case rivers, historical intermezzos, UNESCO/current-status closure); Phase 5 this synthesis. Stated deviation: the English report target of 7,000 words is disproportionate to a two-fact question; per the plan's documented assumption, the deliverable meets the ≥10,000-character floor at full evidentiary density instead of filler.
+
+---
+
+## 3. Key Findings (with evidence mapping)
+
+**KF-1. Paris is the capital of France. — Confidence: Very High (unanimous; ≥7 independent source classes).**
+Evidence: EU official country page, "Capital: Paris" (updated 16 Oct 2026) [P2-Q1.1]; EN Wikipedia, "Paris is the capital and largest city of France… 2,047,602 (Jan 2026)… metro 13.32 million (2023)" [P2-Q1.2]; French State — *arrêté du 4 novembre 1993* annex, column "CAPITALE ou siège du gouvernement": "France (la) … **Paris**" [L1a.1–5]; Ministère de l'Intérieur civic-training dossier: "Paris est la capitale de la France" [L1a.7]; Île-de-France prefecture dossier [L1a.8]; Sénat, minister 2016: "ville-capitale, siège des institutions de la République" [L1a.12]; MEAE/CILF toponym recommendation, JO 2008 & 2019 [L1a.6]; WorldAtlas [P2-Q1.4]; National Geographic [P2-Q1.5]. Contradictions found: **zero.**
+
+**KF-2. The Seine is the river that runs through Paris. — Confidence: Very High (unanimous).**
+Evidence is anchored by the City of Paris itself: "la Seine… fait vibrer **la capitale** le long de ses **37 ponts** répartis sur les **13 kilomètres** qu'elle parcourt intra-muros" [P2-Q2.1]. Corroborated by EN/FR Wikipedia [P2-Q2.2, L1b.5], Larousse [P2-Q3.3], ESA satellite imagery ("the most defining geographical feature is the Seine River… winds through the centre") [P2-Q2.5], UNESCO SOUV ("The city of Paris is built along a bend in the River Seine") [P2-Q5.1], Ministère de l'Intérieur ("grandes villes traversées : Troyes, **Paris**, Rouen et Le Havre") [P2-Q3.7]. The Marne joins only at Charenton/Alfortville, outside city limits [L3b]; the Bièvre has been buried since 1912 [L3a]; no source anywhere in the corpus dissents.
+
+**KF-3. The Seine in Paris — key verified parameters.**
+13 km intra-muros; width 30 m (quai Montebello) to 200 m (pont de Grenelle); depth 3.40–5.70 m; 37 bridges; normal discharge ≈330 m³/s (HydroPortail interannual 309–317 m³/s); normal gauge height at Austerlitz 1–2 m; record modern flood 8.62 m (28 Jan 1910; peak discharge ~2,400–2,650 m³/s) [P2-Q2.1, L2a]. The widely repeated "average depth 9.5 m" is a low-authority outlier (en.wikipedia→Britannica chain, amplified only by content aggregators) — **rejected in favour of the official 3.40–5.70 m band.**
+
+**KF-4. The Seine overall — key verified parameters.**
+Length 775–777 km (Sandre registry fiche "----0010": 775 km / 774.76 km depending on vintage; commonly cited 777); source at Source-Seine, Côte-d'Or, Langres plateau (~446–471 m, sources vary); mouth in the English Channel between Le Havre and Honfleur; basin ≈75,000–79,000 km²; main stem crosses 12–13 départements and 4 regions; navigable by ocean vessels to Rouen, by barge from Marcilly-sur-Seine; principal tributaries Yonne, **Marne** (longest, 514.26 km, supplying ~⅓ of the Seine's flow at Paris), **Oise**, Aube, Loing, Eure; name from Gaulish *Sēquana*, the Celtic river goddess whose statues were found at the source [P2-Q2.2, P2-Q3.1/3.2, L1b, L2b, L3b].
+
+**KF-5. Paris's capital status: three complementary senses, all pointing to Paris.**
+(i) *Popular/historical*: capital from Clovis (508), with prior Frankish seats Tournai and Soissons acknowledged; (ii) *Scholarly/administrative*: capital "incontestably since the 12th century", crystallising under Philippe Auguste (Louvre, royal archives fixed at the Palais de la Cité, sedentarised *Curia regis*); first use *caput regni* (Rigord; Guillaume le Breton, 1224); (iii) *Legal*: constitution silent, but ordonnance n° 58-1100 art. 1er fixes both chambers in Paris, the 1993 arrêté recommends "Paris" as France's capital, and government may transfer the *seat of public powers* in emergencies "without that necessarily constituting a change of capital" [P2-Q1.3, P2-Q4.1–5, L1a, L4b].
+
+**KF-6. Historical seat-of-government shifts never displaced Paris's capital status.**
+Versailles was the seat of government 1682–1715, 1722–1789 and again 1871–1879 — "sans que Paris ne perde son titre de capitale" (Château de Versailles, official) — and the 1875 constitutional law even fixed the seat at Versailles until abrogated in 1879, the return justified as "rendre à la France **sa capitale séculaire, sa capitale nécessaire**" (Assemblée nationale, rapport 2226). Wartime withdrawals (Tours/Bordeaux 1870, 1914, 1940; Vichy 1940–44 "capitale de facto… Paris reste toujours capitale de jure"; Free France's Brazzaville/Alger; Bayeux 1944) likewise left the capital untouched; the GPRF returned definitively on 31 August 1944 [L4a, L4b].
+
+**KF-7. The Seine defines Paris physically and legally — UNESCO "Paris, Banks of the Seine".**
+Inscribed 1991 under criteria (i)(ii)(iv); the 2024 minor boundary modification (Decision **46 COM 8B.39**, New Delhi) expanded the property from 365 ha to 531 ha (538 ha as recorded on the List page), now running from the viaduc d'Austerlitz to the pont de Bir-Hakeim and including the Île aux Cygnes, with a 3,194 ha buffer zone following roughly the Wall of the Ferme Générale; a dedicated management plan remains a standing Committee demand [P2-Q5.1–2, L5a].
+
+**KF-8. The Seine today: post-Olympic renaissance.**
+Swimming — banned since 1923 — reopened in Paris on 5 July 2025 at Bercy, Grenelle and the Bras Marie; 2026 saw eight permanent sites across Île-de-France, ≈260,000 swimmers in natural zones (116,000–120,000 in Paris, +20%), the Plan Baignade at €1.1–1.4 billion invested since 2016, and a new €850 M downstream programme to 2040; ecological recovery: 36 fish species vs 14 in 1990 [P2-Q2.1, L5b].
+
+---
+
+## 4. Detailed Analysis by Sub-topic
+
+### 4.1 Paris as capital — identity and institutions
+Paris is the capital and largest city of France (2,047,602 inhabitants, 1 January 2026, in 105.4 km²; urban 11.0 M; metropolitan 13.3 M — 1st in France, 9th in Europe), prefecture of the Île-de-France region, a unique combined commune-département split into 20 arrondissements. The president (Élysée), prime minister (Matignon), both parliamentary chambers (Bourbon, Luxembourg) and international bodies (UNESCO, OECD, BIPM, IEA, OIF, ESA, EBA, ESMA) sit there. Its capital trajectory runs: Parisii settlement on the Seine c. 250–225 BC → Roman Lutetia (defeated 52 BC by Labienus; *Civitas Parisiorum* by 305 AD; briefly a western-imperial seat under Julian 360) → Clovis makes it the Frankish capital (508; buried there 511; kept as undivided dynastic symbol by his successors) → Carolingian neglect (Aachen) → Capetian recovery (987), decisive under **Philippe Auguste** (1180–1223) → English occupation and Loire-valley absence, restored by **François I (1528)** → Versailles shadow (1682–1789) → revolutionary return (October 1789) → revolutionary/republican convulsions (Commune 1871; Versailles interlude to 1879) → unambiguous national capital from 1944–58 onward, formally *not* a capital of the "V Republic" any more or less than of any regime — "the only capital of France since 1944: Paris", as the French wiki chronology puts it, with Vichy dismissed as never legally capital.
+
+Legally, France is the archetype of the "conventional capital" (Council of Europe phrasing): silent constitutions + statutory seat (art. 1, ord. 58-1100) + terminological designation (arrêté 1993 "recommandée", carried forward by CILF lists of 2008/2019) + administrative usage (Ministère de l'Intérieur civic teaching materials) + universal international recognition (UN, EU). Emergency transfer of the *siège des pouvoirs publics* is constitutionally anticipated (via that ordonnance and art. 16 practice) yet never invoked under the Fifth Republic — no historical case was found.
+
+### 4.2 The Seine — hydrography of "la Traversée de Paris"
+The Seine is a northern-French river rising in the commune of Source-Seine (Côte-d'Or), ~30 km NW of Dijon, on the Langres plateau (grotto laid out over the spring; property of the City of Paris since 1864; Gallo-Roman sanctuary of *dea Sequana*). The registry lineage (Sandre code ----0010, spanning two hydrographic regions, hence the "----" prefix) records ~775 km; guidebooks and older encyclopedias give up to 781 km. The river's course is conventionally five-part: Petite Seine, Haute Seine (Montereau→Paris), **Traversée de Paris**, Basse Seine (Paris→Rouen), Seine maritime (Rouen→estuary). Within Paris the Seine's gentle gradient (only ~24 m above sea level even 446 km inland) produces the slow, tamed, lock-regulated reach the city built its identity on: 13 km, 30–200 m wide, 3.40–5.70 m deep, ~330 m³/s, regime oceanic-pluvial (winter highs, summer lows; reservoirs of the Seine Grands Lacs maintain ≥~60 m³/s in drought). Flood memory: 1910 (8.62 m at Austerlitz, the *crue de référence*/PHEC), 1924 (7.32 m), 1945, 1955, 1982, 2016 (6.10 m), 2018 (5.88 m); July 2026 marked the lowest monthly flow since 1900 (69 m³/s). The river divides into Rive Droite (north — historically commerce and institutions) and Rive Gauche (south — the Latin Quarter, universities, artists), linked by 37 bridges from the medieval Pont Neuf (completed 1607) to the Simone-de-Beauvoir footbridge (2006), and punctuated by three islands: the Île de la Cité (cradle of Paris — Notre-Dame, Sainte-Chapelle), the Île Saint-Louis, and the artificial Île aux Cygnes.
+
+Navigational and economic weight: ocean-going ships reach Rouen (123 km of Seine maritime); barges ply from Marcilly; the Port of Paris handles ~20 Mt; the estuary between Le Havre and Honfleur (Pont de Normandie) carries a quarter of French maritime traffic. Ecologically, the Seine–Normandie water agency district covers 94,500 km² (18% of national territory) and 18.9 M inhabitants; the Seine watershed alone ~75–79,000 km².
+
+### 4.3 Disambiguation — why no other river answers the question
+- **Marne** (514.26 km, longest tributary; ~⅓ of the Seine's Paris flow): joins at Charenton-le-Pont/Alfortville, entirely outside the commune of Paris, immediately upstream ("just upstream from Paris" — en.wikipedia; Larousse: "dans la banlieue de Paris"). A single open-data atlas lists "Paris 12e" among its bank towns — an artifact of arrondissement-centroid proximity (the Bois de Vincennes borders the lower Marne); flagged and rejected against eight institutional sources.
+- **Bièvre** (34.6–36 km): the only natural tributary ever to join the Seine *within* Paris (5 km across the 5e/13e, outfall at today's place Valhubert near Gare d'Austerlitz — "seul affluent naturel de la Seine dans Paris", Paris & Métropole Aménagement). progressively culverted from the 1820s and fully buried intra-muros by 1912; its waters now run to the Achères treatment plant via the sewer system. Present-tense answers exclude it; historically it was "Paris's second river", and partial daylighting is under active study (parc Kellermann feasibility programme; SMBVB Contrat 2026–2030).
+- **Oise, Essonne, Epte, Seine tributaries beyond the city**: meet the Seine strictly outside Paris.
+Verdict: "the Seine" is the only correct answer, with the Bièvre a footnote and the Marne an at-threshold neighbour.
+
+### 4.4 The river as patrimonial and civic spine
+UNESCO's OUV frames Paris as "a river city" — since prehistoric settlements and the Parisii, "the Seine has played both a defensive and an economic role"; the inscribed ensemble (bridges, quays, banks, two islands, now 531/538 ha, buffer 3,194 ha) is "an outstanding urban architectural ensemble, united by a grandiose river landscape… illustrating most of the styles… employed over nearly eight centuries" — Notre-Dame and the Sainte-Chapelle (Gothic diffusion), Pont Neuf (Renaissance), classical Louvre–Invalides–École militaire axis, Haussmann boulevards that "inspired the construction of the great cities of the New World", and the Eiffel Tower ("a universally recognized icon"). Management instruments: the 1999 *Cahier des prescriptions* for the banks, seasonal-use specifications (2015), and the definitive closure of the lower quays to cars (Left Bank 2014, Right Bank 2016) that created the Parc Rives de Seine. The bouquinistes green boxes — "a living cultural corridor" — and, since summer 2025, legalized public swimming (post-2024-Olympics flagship: 3 Paris sites, €1.1–1.4 Md Plan Baignade, daily ColiMinder water surveillance, €68 fine for out-of-zone swimming since Aug 2026, €850 M downstream extension decided Nov 2026) complete the picture of a river that remains the capital's beating heart — literally "cœur battant", as the Ville de Paris dossier titled it.
+
+---
+
+## 5. Comparison / Evaluation Matrices
+
+**5.1 Candidate rivers for "runs through Paris"**
+
+| River | Touches Paris city? | Joins Seine where | Surface water in Paris today? | Verdict |
+|---|---|---|---|---|
+| **Seine** | Yes — 13 km intra-muros | — (is the river) | Yes | **THE answer** |
+| Bièvre | Yes (historically, 5 km) | Place Valhubert (5e/13e) | No — culverted 1912 | Historical footnote only |
+| Marne | No (limitrophe, upstream) | Charenton–Alfortville (Val-de-Marne) | No | Ruling-out evidence |
+| Oise / Essonne / Epte | No | Conflans / Seine-Amont / near Gisors | No | Not applicable |
+
+**5.2 "Capital" senses (all satisfied by Paris; none by any alternative city)**
+
+| Sense | Basis | Paris? | Contenders? |
 |---|---|---|---|
-| **F1** | **Paris is the capital of France** | FranceTerme, Ministry of Culture, *J.O.* 24/09/2008; EU official member page; Council of Europe; ANOM | **Certain** — 9 official sources, 0 dissenting |
-| **F2** | **The Seine is the river that runs through Paris** | Ministry of the Interior civic atlas; Agence de l'Eau Seine-Normandie; UNESCO; Ville de Paris; SANDRE | **Certain** — 10 official sources, 0 dissenting |
-| F3 | No constitutional or statutory text names Paris as capital | Delledonne (2024), Renaudie (RDP 2019), Grabowski (2017), France Culture; *ordonnance* 58-1100 art. 1 | **Certain** — 4 independent academic + primary law text |
-| F4 | Versailles and Vichy were *de facto* seats only | Château de Versailles (official): "Paris never ceased to be the official capital" | **Certain** |
-| F5 | Paris has been the capital continuously since 1944; first became one under Clovis in 508 | fr.wiki *Capitale de la France*; BnF; Château de Versailles | High |
-| F6 | The Seine is France's **2nd**-longest river; the Loire is 1st | Min. Intérieur: "La Loire... C'est le plus long fleuve de France"; PPRI: "La Seine, deuxième fleuve français par sa longueur" | **Certain** |
-| F7 | Official Seine length ≈ **775 km** (cited variously 773–777) | **SANDRE fiche `----0010`: "Longueur: 775 km — Statut : Validé"** | High (see §6) |
-| F8 | The **Bièvre** is the only natural tributary of the Seine *within* Paris; buried since 1912 | Paris & Métropole Aménagement; Ville de Paris; National Geographic | **Certain** |
-| F9 | The Seine lies **entirely inside** the Paris commune; it is not the city's boundary | fr.wiki *Pont Amont*: the Ivry/Charenton limit "se situe à quelques mètres en amont" — it crosses the river | High (inferential; see §6) |
-| F10 | Banks of the Seine in Paris = UNESCO World Heritage since 1991, extended 2024 | whc.unesco.org/list/600; Décision 46 COM 8B.39 | **Certain** |
-| F11 | Swimming in the Seine was banned by prefectural ordinance on **17 April 1923**; reopened to the public in **July 2025** after a €1.4 billion clean-up | CRC Île-de-France IDR2025-51; Ville de Paris; DRIEAT | **Certain** |
+| Constitutional text | None exists (Vth Rep; all const. since 1791) | n/a | none |
+| Statutory seat | Ord. 58-1100 art. 1er (1958) | Yes | Versailles 1871–79 (law then said seat there) — abrogated |
+| Terminology (State) | Arrêté 4 Nov 1993 + CILF JO 2008/2019 | Yes ("Paris") | none |
+| Institutional presence | Presidency, PM, both chambers, ministries | Yes | Vichy 1940–44 (de facto, never de jure) |
+| International recognition | UN, EU, Council of Europe lists | Yes | none |
+| Historical/cultural | "caput regni" since 12th c. | Yes | Clovis-era Tournai/Soissons (predecessor seats) |
 
----
+**5.3 Seine statistics — spread and adopted values**
 
-## 4. Detailed analysis
-
-### 4.1 The capital: what "Paris is the capital" actually means legally
-
-The striking result of digging past the first page of any reference work is that **French law has never said it**. Giacomo Delledonne puts it plainly in *Perspectives on Federalism* (2024): "the Constitution of 4 October 1958 does not make reference to Paris as the capital of the French Republic. This was also the case with the previous regimes: **the capital city is not mentioned in any of the constitutions enacted since 1791**." Olivier Renaudie, in the *Revue du droit public* (2019), notes that Paris is absent both from Article 2 (state symbols) and from Title XII (local government), and that this "**constitutional silence**" leaves Paris's status entirely to the legislator's discretion.
-
-What does exist is a careful legal distinction between **capital** and **seat of government**:
-
-- **Ordonnance n° 58-1100 of 17 November 1958**, Article 1, which has force of law: "*L'Assemblée nationale et le Sénat siègent à Paris. Lorsque les circonstances exigent le transfert du siège des pouvoirs publics dans une autre ville...*" — the word *capitale* does not appear. Crucially, the emergency transfer of the seat of government "would not necessarily constitute a change of capital."
-- The constitutional laws of 1875 likewise used only *siège*: Article 9 of the law of 25 February 1875 read "*Le siège du pouvoir exécutif et des deux chambres est à Versailles*" — abrogated on 21 June 1879. Since then, **no constitutional text fixes the seat at all**.
-- The **arrêté of 4 November 1993** (the "arrêté Juppé", *J.O.* of 25 January 1994, pp. 1288–1295) is a terminology regulation made under the 1975 law on the use of French. Its Article 1 says the listed forms "*sont recommandées*" — **recommended, not fixed**. Its annexed table's column heading is "*CAPITALE ou siège du gouvernement*"; the France row reads `France (la) | République française (la) | Français | Paris | Parisien`. Notably, France carries **no** observation note, whereas the rows for Benin, Bolivia and the Netherlands spell out the distinction between their capital and their seat of government.
-
-The operative official statement therefore comes from **FranceTerme**, the Ministry of Culture's terminology portal, whose entry "France (la)" published in the *Journal officiel* of 24 September 2008 lists, under the heading TOPONYMIE, simply: `Capitale : Paris`. A 2019 recommendation from the Commission d'enrichissement de la langue française repeats it.
-
-The word *capitale* does appear incidentally in legislation — CGCT Article L2512-11, inserted by the law of 28 February 2017 on the status of Paris, lets the city contract with foreign public bodies "pour développer le rayonnement international **de la capitale**" — but this is functional phrasing, not a designation. As France Culture summarised it: "In France, a centralising state, the question of the capital does not even arise. To the point that **no law and no paragraph of the Constitution stipulates that the capital must be Paris**. It is self-evident; it is a matter of tradition and national culture."
-
-### 4.2 The capital: how Paris got the title, and kept it through five interruptions
-
-The chronology is genuinely contested in detail but unanimous in outcome.
-
-**Clovis I** made Paris the capital of the Frankish kingdom from **508**, having taken it in 486 (some sources say by 494) and dying there in 511. But Paris did not hold the title continuously after him: the Merovingian and Carolingian kings were itinerant, and the *List of capitals of France* runs Tournai → Soissons (486–936) → Laon (936–987), skipping the Merovingian Paris period altogether. Charlemagne governed from Aachen. The decisive moment was the election of **Hugh Capet, Count of Paris, in 987** — "as Count of Paris, he made the city his power centre." Even then, the Capetians spent little time there; it was **Philip II Augustus** (r. 1180–1223) who installed the royal archives, treasury and courts in the Palais de la Cité, after which, per Wikipedia's medieval article, "the city functioned, except for brief periods, as the capital of the kingdom of France." The Bibliothèque nationale de France puts it directly: "*c'est véritablement Philippe Auguste qui fait de Paris la capitale du royaume*." By the end of the 12th century, Paris was the political, economic, religious and cultural capital, with 200,000 inhabitants by 1328 — Europe's largest city, against London's 80,000.
-
-Five times power sat elsewhere, and in every case the sources are careful to say this did **not** transfer the capital:
-
-| Period | Seat of government | Status of Paris |
+| Parameter | Spread observed | Adopted (rationale) |
 |---|---|---|
-| 1419–1444 | Troyes, then Bourges | Charles VII forced to flee Paris during the Hundred Years' War; Paris occupied by the English 1420–1436 |
-| **6 May 1682 – 1789** | **Versailles** | Official Château de Versailles site: "Versailles became the headquarters of the government. **Although Paris never ceased to be the official capital**, the decision made Versailles the de facto centre of the kingdom until 1789." |
-| March 1871 – Nov 1879 | Versailles | Third Republic's provisional seat after the Paris Commune; the Chambers returned to the Palais-Bourbon and Luxembourg in 1879 |
-| June–Aug 1940 | Tours → Bordeaux → Clermont-Ferrand → **Vichy** | "**Vichy becomes the new de facto capital of the country, but Paris always remains the capital de jure**" |
-| 1940–1944 (Free France) | Brazzaville, then Algiers | De Gaulle designated Brazzaville "capital of Free France" in October 1940 |
+| Total length | 773 / 774.76 / 775 / 776 / 776.6 / 777 / 781 km | **≈775–777 km** (Sandre registry lineage vs common citation) |
+| Rank among French rivers | 2nd (length on metropolitan soil) / 5th (total lengths incl. Rhine, Meuse…) | **2nd after the Loire**, convention-dependent (overseas rivers never displace it) |
+| Length in Paris | 8 mi = 13 km (multiple) | **13 km** |
+| Width in Paris | 30–200 m | **30–200 m** |
+| Depth in Paris | 3.40–5.70 m vs 9.5 m | **3.40–5.70 m** (official consensus; 9.5 m = documented outlier) |
+| Discharge at Paris | 300–336 m³/s; QJ0.5 ≈ 228 | **~330 m³/s normal** |
+| 1910 flood | 8.62 m; 2,400–2,650 m³/s | **8.62 m / ~2,400–2,650 m³/s** |
+| Departments (main stem) | 12 / 13 (Marne-edge; Calvados "longé") | **12–13** |
+| Basin | 75,000–79,000 km² (94,500 = agency district) | **≈78,000 km² (watershed)** |
+| UNESCO property | 365→531 ha (ICOMOS) / 538 ha (List page); buffer 3,157 (proposed) → 3,194 ha (approved) | **531 (or 538) ha, buffer 3,194 ha, per Decision 46 COM 8B.39** |
 
-Paris's status was finally reaffirmed at the Liberation: liberated on **25 August 1944**, the Provisional Government installed there on **31 August 1944**, and it has been the capital ever since. Its institutions sit within a few kilometres of each other on the river: the presidency at the Élysée, the premiership at Matignon, the National Assembly at the Palais-Bourbon, the Senate at the Luxembourg — and, by a footnote of the 1958 ordinance, joint sessions of Congress still convene at **Versailles**.
+---
 
-**Population today:** 2,047,602 in the city (January 2026) across 105.4 km², making it the most densely populated major city in the EU; 11,013,774 in the urban area and 13,320,752 in the metropolitan attraction zone (2023) — **19.6% of France's entire population**. Both are the largest in the EU and the Eurozone respectively. Paris is below its 1921 peak of 2.9 million.
+## 6. Gaps and Limitations
 
-### 4.3 The river: the Seine's official identity
+1. **Fetch-blocking artefacts:** legifrance.gouv.fr, Britannica, culture.gouv.fr PDFs, Le Parisien and some .gouv.fr pages return 403 to non-browser clients; canonical texts (the 1993 annex row; ord. 58-1100 art. 1) were verified through official mirrors (Université Laval; senat.fr) and verbatim search-index captures of the blocked pages. PDF content types (ICOMOS evaluations, Sandre metadata) were captured via search index, not parsed natively.
+2. **Live Sandre UI** is a JS SPA; the registry record came from a 2021 Wayback capture plus a 2026 BD-TOPAGE-derived secondary — authoritative but not same-day. The exact "776.6 vs 774.76 vs 775" cannot be pinned without the current downloadable geodata.
+3. **Minor unresolved numerical variances**, all immaterial to the answer: 531 vs 538 ha property area; 116k vs 120k 2026 Paris swimmers (DRIEAT vs Ville/Apur); source-elevation spread (446–471 m); a blog's "October 2024" for a July 2024 decision.
+4. **The 1877 "seize de Mai" relocation rumour** investigated and *not* evidenced (documented negative finding).
+5. **Scope limits:** metropolitan France assumed (per plan); "runs through" read as municipal boundary, not metro area; complete 37-bridge inventory, 2026 Kellermann daylighting construction status, and Free-France ordonnance primaries were left as acknowledged, non-material gaps.
 
-The **SANDRE** reference database — France's official national hydrographic register, maintained by the Office Français de la Biodiversité and the eaufrance information system — carries the Seine under code **`----0010`** with the status *Validé* and a length of **775 km**. (The live fiche redirects to a landing page; the official record was recovered from an Internet Archive capture of `sandre.eaufrance.fr/geo/CoursEau/----0010`.)
+---
 
-| Attribute | Value | Source |
+## 7. Recommendations / Future Directions
+
+- **For answering this question directly:** "The capital of France is **Paris**, and the river that runs through it is the **Seine**" — optionally enriched: 13 km/37 bridges intra-muros; 775+ km to the English Channel.
+- **For citation hygiene:** prefer Sandre/BD-TOPAGE, Ville de Paris, DRIEAT/préfecture, UNESCO SOUV over travel-aggregator echo chambers (the 9.5 m depth and "fifth longest" figures propagate almost exclusively through them).
+- **If extended later:** monitor (a) the Seine–Banks management plan now due to WHC (updated SOC report by 1 Feb 2027, 49th session), (b) the downstream baignade programme (€850 M, new sites ~2030), (c) any Bièvre daylighting ground-breaking at parc Kellermann, and (d) Le Monde's reported 2026 initiative to *reduce* the heritage perimeter — the only live pressure found on any fact in this report.
+
+---
+
+## 8. Complete Source List
+
+**Official / institutional (EU, French State, City, UNESCO, agencies):**
+1. european-union.europa.eu — France country page — https://european-union.europa.eu/principles-countries-history/eu-countries/france_en
+2. Ville de Paris — "La Seine, cœur battant de Paris" — https://www.paris.fr/dossiers/la-seine-coeur-battant-de-paris-216
+3. Ville de Paris — "Les secrets enfouis de la Bièvre" — https://www.paris.fr/pages/les-secrets-enfouis-de-la-bievre-riviere-parisienne-16900
+4. Ville de Paris — Baignade FAQ — https://www.paris.fr/pages/baignade-en-seine-toutes-les-questions-que-vous-vous-posez-31533
+5. presse.paris.fr — "8 sites ouverts pour la saison 2026" — https://presse.paris.fr/communiques/reouverture-des-sites-de-baignade-en-ile-de-france-8-sites-ouverts-pour-la-saison-2026
+6. Légifrance — Arrêté du 4 novembre 1993 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000181509/ ; https://www.legifrance.gouv.fr/loda/id/LEGITEXT000005615170/ ; art. 2 — https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006546206
+7. Université Laval/AXL — Arrêté 1993 + annexe (France→Paris) — https://www.axl-cefan.cstip.ulaval.ca/europe/france_arrete-1993.htm (+ liste annexée page)
+8. culture.gouv.fr — Recommandation de toponymie MEAE/CILF (JO 2008/2019) — https://www.culture.gouv.fr/Media/Thematiques/Langue-francaise-et-langues-de-France/Infolettres/JUILLET-2019/Liste-complete-des-toponymes
+9. formation-civique.interieur.gouv.fr — "Les fleuves français" — https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-français/
+10. bouches-du-rhone.gouv.fr — Formation civique module 1 (PDF) — https://www.bouches-du-rhone.gouv.fr/content/download/22931/139092/file/module%201_Valeurs-et-institutions.pdf
+11. prefectures-regions.gouv.fr — Île-de-France dossier — https://www.prefectures-regions.gouv.fr/ile-de-france/layout/set/print/Region-et-institutions/Portrait-de-la-region/Histoire/L-Ile-de-France ; post-JOP Plan Baignade — …/Le-Plan-Baignade-poursuit-sa-dynamique-post-JOP-2024-vers-une-Seine-et-une-Marne-baignables
+12. sénat.fr — Règlement → Ordonnance n° 58-1100, art. 1er — https://www.senat.fr/reglement/reglement142.html ; séance 7 nov 2016 — https://www.senat.fr/seances/s201611/s20161107/s20161107006.html
+13. info.gouv.fr — Le Premier ministre — https://www.info.gouv.fr/le-premier-ministre ; vie-publique.fr — présidence — https://www.vie-publique.fr/fiches/19414-…
+14. whc.unesco.org — Paris, Banks of the Seine — https://whc.unesco.org/en/list/600/ ; maps — /en/list/600/maps/ ; Urban Heritage Atlas — /en/urban-heritage-atlas/Paris/ ; Decision 46 COM 8B.39 — /en/decisions/8631/ ; ICOMOS eval WHC/24/46.COM/INF.8B1.Add — /document/208527 ; 8B.Add — /document/206974 ; 46 COM 7B.7 — /en/decisions/8533/
+15. Sandre (Office français de la biodiversité network) — fiche cours d'eau "La Seine" ----0010 — live: https://www.sandre.eaufrance.fr/geo/CoursEau/----0010 ; capture: https://web.archive.org/web/20210123171121/http:/www.sandre.eaufrance.fr/geo/CoursEau/----0010 ; OIEau code-method PDF — https://www.sandre.eaufrance.fr/sites/default/files/IMG/pdf/Point_CodeHydrographique.pdf
+16. eaufrance.fr — "Les rivières" — https://www.eaufrance.fr/les-rivieres
+17. Agence de l'Eau Seine-Normandie — "Le bassin de la Seine" — https://www.eau-seine-normandie.fr/agence-de-leau/le-bassin-de-la-seine
+18. HydroPortail/Vigicrues — station F700000103 La Seine à Paris-Austerlitz — https://www.hydro.eaufrance.fr/stationhydro/F700000103/fiche
+19. VNF — crue guide (PDF) — https://www.vnf.fr/vnf/app/uploads/2020/03/Guide-information-recommandations-en-cas-de-crue.pdf
+20. DRIEAT Île-de-France — 1910 bilan (PDF) — https://www.drieat.ile-de-france.developpement-durable.gouv.fr/IMG/pdf/bilan_1910_cle7c8919.pdf ; baignade 2026 bilan — https://www.drieat.ile-de-france.developpement-durable.gouv.fr/qualite-de-l-eau-de-la-seine-et-de-la-marne-bilan-a13652.html ; method page — /baignade-dans-la-seine-et-dans-la-marne-a13617.html
+21. ARS Île-de-France — eaux de baignade — https://www.iledefrance.ars.sante.fr/la-qualite-des-eaux-de-baignade-en-ile-de-france
+22. Château de Versailles — "Versailles, capitale du royaume" — https://www.chateauversailles.fr/decouvrir/histoire/grandes-dates/versailles-capitale-royaume ; "Histoire de la République à Versailles" — …/histoire-republique-versailles ; IIIe Rép. — …/iiie-republique-versailles
+23. Assemblée nationale — crise du 16 mai 1877 — https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/troisieme-republique/la-crise-du-16-mai-1877 ; rapport n° 2226 — https://www.assemblee-nationale.fr/12/rapports/r2226.asp
+24. Musée Carnavalet — "The Seine, from 1977 to the present days" — https://carnavalet.paris.fr/en/exhibitions/seine-1977-present-days
+25. BnF Essentiels — "De Lutèce à la capitale" — https://essentiels.bnf.fr/fr/histoire/moyen-age/99f01b1e-76a4-42f6-bfd0-1700e9ebbf99-ville-moyen-age/article/3835a75d-9077-4cd1-95a1-11d9446dcd33-lutece-la-capitale ; Gallica feature — https://gallica.bnf.fr/accueil/fr/html/lhistoire-tourmentee-dune-riviere-quand-la-bievre-disparait
+26. archeologie.culture.gouv.fr — "La Bièvre" / "The Gallic Lutetia" — https://archeologie.culture.gouv.fr/paris/fr/la-bievre
+27. SMBVB — Historique Bièvre — https://www.smbvb.fr/la-bievre/historique/ ; Paris & Métropole Aménagement — https://www.parisetmetropole-amenagement.fr/fr/bievre-paris-13e ; APUR (2001 PDF) — https://www.apur.org/sites/default/files/documents/40.pdf
+28. SAGE Marne Confluence — https://www.sage-marne-confluence.fr/le-territoire-du-sage-et-ses-enjeux/caracteristiques-du-territoire/ ; eau.seine-et-marne.fr ; Val-de-Marne Tourisme — La Marne
+29. archives.allier.fr — "Vichy capitale" ; ESA — SPOT-7 Paris image — https://earth.esa.int/eogateway/gallery/paris-france-as-seen-by-spot-7
+30. seinegrandslacs.fr — EPTB presentation — https://www.seinegrandslacs.fr/seine-grands-lacs
+
+**Reference / encyclopedic:**
+31. en.wikipedia.org — Paris · Seine · History of Paris · Lutetia · Marne (river) · Seine River (Britannica-cited depth claim)
+32. fr.wikipedia.org — Capitale de la France · Seine · Marne (rivière) · Bièvre (affluent de la Seine) · Crue de la Seine de 1910 · Charenton-le-Pont · Versailles · Rives de la Seine à Paris · Liste des cours d'eau de France par longueur · Liste de fleuves de France · Régime de Vichy
+33. Larousse en ligne — la Seine · Versailles · Marne — https://www.larousse.fr/encyclopedie/riviere-lac/la_Seine/143800 etc.
+34. Britannica Kids/Students (snippets; fetch 403) — kids.britannica.com ; main article britannica.com/place/Seine-River (blocked)
+35. Council of Europe — "Status of capital cities" CPL(14)4REP (2007) — rm.coe.int ; Delledonne, *Perspectives on Federalism* (2024) — iris.sssup.it ; Lefèvre, *Social, economic and spatial history of the Île-de-France metropolis* (Cambridge Core)
+
+**Media / community / commercial (used for corroboration or flagged):**
+36. WorldAtlas — What is the Capital of France? / Which River Runs Through Paris?
+37. National Geographic Kids — France profile
+38. French Moments — Top 10 bridges — https://frenchmoments.eu/top-10-most-beautiful-bridges-of-paris/
+39. Paris Perfect — Seine guide ; Rick Steves/PBS (snippet)
+40. Paris je t'aime (tourism; 403) — bridges & Rives de Seine articles (snippets)
+41. EuroCanals — https://www.eurocanals.com/Rivers/seine-river-france.html
+42. carnetsdici.fr ; fleuves.org (×2) ; OSM wiki France/Cours d'eau ; riveryas.com (flagged artifact)
+43. Initiatives Rivers/AFSU Seine synopsis PDF (snippet)
+44. lemondefou.fr ; caminteresse.fr ; geogir.fr (rankings, snippet)
+45. info-paris.fr — crues table ; meteo-npdc.fr (Hub'Eau mirror)
+46. Le Point du Jour — baignade bilan (07/10/2026) — https://lepointdujour.fr/energie-environnement/8301-baignade-seine-bilan-saisons/
+47. Le Parisien — €850 M aval (05/11/2026, paywalled snippet) ; Les Echos — Versailles 1871 ; Revue des Deux Mondes (snippet) ; paris-historique.org ; edgepedia.org ; parisjetaime snippets
+48. paris-city.fr (flagged low-authority, anachronisms) ; various Légifrance mirrors (Jurisfac/Juriblio/LibreJustice, Portail législatif)
+
+---
+
+## 9. Appendix — Raw Search Queries per Cycle
+
+| Cycle | Worker | Query |
 |---|---|---|
-| Official length | **775 km** (SANDRE); 776 km (Eaufrance, Min. Intérieur); 777 km (Ville de Paris) | SANDRE `----0010` |
-| Rank in France | **2nd longest**, after the Loire (1,006–1,020 km) | PPRI notice: "*deuxième fleuve français par sa longueur*" |
-| Basin | ~75,000–78,910 km²; **3rd-largest** French basin after the Loire and Rhône | PIREN-Seine |
-| Source | Source-Seine, Côte-d'Or, Plateau de Langres, ~30 km NW of Dijon; 446–471 m | AESN; Larousse |
-| Mouth | The English Channel (*la Manche*) between **Le Havre and Honfleur**; 49°26′N 0°12′E | SANDRE/Wikipedia |
-| Discharge | 480 m³/s at the mouth (Eaufrance); **316 m³/s measured at Paris–Austerlitz** | HydroPortail station F700 0001 03 |
-| Navigation | Ocean-going vessels reach Rouen, 120 km inland | Wikipedia |
-| Name | From Gaulish **Sēquana**, the Gallo-Roman goddess of the river; statues of the *dea Sequana* are held in the Dijon museum | Wikipedia |
+| Phase 2 | Q1 | capital of France |
+| Phase 2 | Q2 | river that runs through Paris France |
+| Phase 2 | Q3 | Seine River length source mouth geography France |
+| Phase 2 | Q4 | Paris history capital of France Lutetia Clovis |
+| Phase 2 | Q5 | Seine River Paris bridges Left Bank Right Bank UNESCO World Heritage banks of the Seine |
+| Loop 1 | L1a | arrêté du 4 novembre 1993 relatif à la terminologie des noms d'États et de capitales legifrance Paris; site:gouvernement.fr Paris capitale de la France; fallback vie-publique query (+2 supplementary) |
+| Loop 1 | L1b | Sandre fiche cours d'eau La Seine 0----0010 longueur; La Seine fleuve 776,6 km source embouchure départements traversés (+site-restricted) |
+| Loop 2 | L2a | profondeur moyenne de la Seine à Paris mètres étiage crue (+EN & Vigicrues variants) |
+| Loop 2 | L2b | le plus long fleuve de France classement Loire Seine Maroni Rhin kilomètres |
+| Loop 3 | L3a | Bièvre rivière Paris souterraine affluent de la Seine histoire |
+| Loop 3 | L3b | la Marne fleuve confluent Seine Paris Charenton bois de Vincennes traverse (+EN variant) |
+| Loop 4 | L4a | Versailles siège du gouvernement 1682 1789 1871 1879 Paris capitale (+seize de Mai follow-up) |
+| Loop 4 | L4b | régime de Vichy 1940 capitale de facto Vichy Paris capitale de jure; ordonnance n° 58-1100 du 17 novembre 1958 article 1er Parlement siège Paris transfert siège des pouvoirs publics |
+| Loop 5 | L5a | "Paris Banks of the Seine" UNESCO 2024 minor boundary modification decision buffer zone World Heritage (+FR variants) |
+| Loop 5 | L5b | baignade Seine Paris 2026 qualité eau projets Bras marie Hélie Saint-Léger milliards |
 
-Two details worth noting. The **source has been owned by the city of Paris since 1864** — the capital literally owns the spring of the river that runs through it. And no source in the entire corpus used the phrase "Gulf of England": every English source says *English Channel*, every French one *la Manche*.
-
-The **Ministry of the Interior's** official civic-education atlas states it most cleanly for the question at hand: "*La Seine prend sa source en Bourgogne, près de Dijon, et se jette dans la Manche. Longueur : 776 kilomètres. Affluents majeurs : l'Aube, la Marne, l'Yonne et l'Oise. **Grandes villes traversées : Troyes, Paris, Rouen et Le Havre**. "*
-
-### 4.4 The river inside Paris
-
-The Ville de Paris publishes the figure: the Seine runs **13 km intra-muros** of its 777 km total, spanned by **37 bridges**. It widens from **30 metres at the quai de Montebello (5th) to 200 metres at the pont de Grenelle (15th)**, with an official depth of **3.40–5.70 m**.
-
-> **Correction to a widely-reproduced figure:** the English Wikipedia claim that the Seine's "average depth in Paris today is approximately 9.5 meters" is contradicted by **two official French sources** — Ville de Paris and the Centre des monuments nationaux — both giving 3.40–5.70 m. The French official figure is preferred.
-
-**Direction.** Six independent sources agree: the Seine runs **southeast to northwest** overall, and **east to west** across Paris, bowing north in the centre. The Larousse encyclopedia records it resuming "*une direction S.-E.-N.-O.*" on entering the Île-de-France; an INSHEA ministry map states "*La Seine coule du sud-est au nord-ouest, deux flèches en indiquent le sens*." It enters at the **pont amont** (12th arrondissement right bank, 13th left) and leaves at the **pont aval** (between the 15th and 16th), with Boulogne-Billancourt the first commune downstream.
-
-**The two banks.** Because banks are named facing downstream, **north = Rive droite, south = Rive gauche**. Four arrondissements are on the right bank's side but only **nine actually border the river**: 12, 4, 1, 8, 16 on the right; 13, 5, 6, 7, 15 on the left (the 14th is left-bank but does not touch the water). The islands belong to neither bank. Some 32.9% of Parisians live on the Left Bank.
-
-**The Seine is not Paris's border.** This is a common misconception. The commune's limit is the "artificial frontier" of the **boulevard périphérique**, and at the upstream end the boundary with Ivry and Charenton lies "a few metres upstream" of the pont amont — i.e. it **crosses the river transversally** rather than following it. The medieval "thalweg = boundary" clauses of the decree of 19 January 1790 applied to the old *département de la Seine* (1790–1968) on its western and northern flanks, not to today's commune. The Seine's only boundary function inside Paris is natural: it divides the *Pays de France* from the *Hurepoix*. Within the city, the river separates the 12th from the 13th.
-
-**Islands.** Only "two true islands" exist: the **Île de la Cité** (site of Notre-Dame and the Sainte-Chapelle, where Paris began as the Gallo-Roman *Lutèce*) and the **Île Saint-Louis**, formed in the early 17th century by joining the Île Notre-Dame and the Île aux Vaches. The **Île aux Cygnes** is not an island at all but a **dike built in 1825** during construction of the pont de Grenelle.
-
-**Floods.** The reference gauge is the **échelle du pont d'Austerlitz**, installed in **1876**, whose zero sits at 25.92 m NGF-IGN69. Normal height is 1–2 m at ~330 m³/s. The alert ladder: **2.50 m vigilance → 3.20 m alert → 3.30 m quays close → 4.30 m navigation halts → 5.10 m RER C closes → 6.00 m red alert → 7.20 m water reaches the métro platforms**. The record **Great Flood of 1910** crested at **8.62 m / 2,400 m³/s** on 28 January after a nine-day rise, inundating over 7 km of quays, affecting ~150,000 people and damaging 30,000 buildings. The **Zouave statue on the pont de l'Alma** — a 5.20 m figure used as an informal flood gauge since 1856 — had water to its shoulders. Later threats: 1924, 1955, 1982, 1999–2000, June 2016 (6.10 m), January 2018 (5.86 m). After a 2003 alert, ~100,000 artworks were moved out of Paris, the largest art relocation since the Second World War.
-
-**Heritage.** UNESCO inscribed **Paris, Banks of the Seine** as a World Heritage site in **1991** under criteria (i), (ii) and (iv), on the basis that "the city of Paris is built along a bend in the River Seine, between the confluence of the Marne and the Oise Rivers," and that "from the Louvre to the Eiffel Tower... the evolution of Paris and its history can be seen from the River Seine." The original 365 ha core ran between the pont de Sully and the pont d'Iéna; a **2024 boundary extension** (Décision 46 COM 8B.39) stretched it from the viaduc d'Austerlitz to the pont de Bir-Hakeim, including the Île aux Cygnes, bringing it to **538 ha per UNESCO** — though ICOMOS and the Ville de Paris both give **531 ha**. The lower riverbank roads were closed to cars in 2014 (Left Bank) and 2016 (Right Bank). Along those quays, **240 bouquinistes** keep roughly 1,000 green boxes over about 3 km — the count settled at 240 at the moment of UNESCO inscription in 1991.
-
-### 4.5 Which river? The case of the Bièvre
-
-One genuine ambiguity had to be adjudicated. The Seine's tributary list includes **la Bièvre**, shown as joining at Paris itself. The evidence confirms it is a real river — not a canal — and that it genuinely ran inside the city:
-
-> **Paris & Métropole Aménagement** (public development agency): "**La Bièvre est le seul affluent naturel de la Seine dans Paris.**"
-> **National Geographic**: "the Bièvre — **its only tributary to flow through Paris**."
-> **Ville de Paris**: "la Bièvre **entrait dans Paris** par la Poterne des Peupliers (13e). Sur **5 kilomètres**, elle serpentait à travers le 13e et le 5e arrondissements avant de se jeter dans la Seine, au niveau de la gare d'Austerlitz."
-
-So there is a defensible second answer. But it is a historical one. The Bièvre (SANDRE length 34.6 km, mean flow a negligible 0.2 m³/s, never more than 3 m wide, never navigable) was used for centuries by tanneries, dyers and the Gobelins tapestry works, became an open sewer, and was culverted progressively from 1828 under Haussmann and Belgrand, with the **last open stretches in Paris covered in 1912**. Its condition today is stated by the City of Paris's own Directorate of Cleanliness and Water without hedging: its water no longer even reaches the river — "***à Paris, elle est inexistante***." It lost its legal status as a watercourse and only regained it in 2007. Sections have been daylighted in the suburbs (Fresnes 2003, Cachan 2006, L'Haÿ-les-Roses 2016, Arcueil–Gentilly 2022), and the 2020 municipal majority pledged to reopen 2,300 m inside Paris, but a costed feasibility study put the bill above €100 million.
-
-**Verdict:** the answer to the question as asked remains **the Seine**, singularly. The Bièvre belongs in the answer as a footnote, not as a co-equal.
-
-### 4.6 The Seine today: from banned to swum
-
-The river's present condition is the single most interesting development in its relationship with the city. Swimming in the Seine was banned by the **prefect's ordinance of 17 April 1923**, on grounds of navigation hazards and pollution, and that decree **remains in force**. Generations of Parisians swam anyway — the *Traversée de Paris à la nage* ran from 1905 and drew a near-million spectators in 1926 — until the water made it untenable in the 1960s.
-
-On **28 November 1988** the Mayor of Paris, **Jacques Chirac**, made the famous wager: "*J'irai me baigner dans la Seine devant témoins pour prouver que la Seine est devenue un fleuve propre*" — naming 1994 as his deadline. He never did it. The cleaner water came instead through the swimming events of the **2024 Paris Olympics**, and a **more than €1.4 billion** clean-up programme launched in 2015, of which the Seine-Normandie water agency funded about €700 million (55%). Works included an 8.8 km high-capacity collector between Athis-Mons and Valenton, reconnection of 263 moored boats, remediation of ~23,000 improper sewer connections upstream, and the **Austerlitz stormwater basin** — a tank 50 m in diameter and 30 m deep holding 50,000 m³, "the equivalent of twenty Olympic pools," commissioned in May 2024.
-
-The results were mixed and are worth stating precisely. **Anne Hidalgo swam the Seine on 17 July 2024**, days before the Games — though E. coli at the Bras Marie that day measured 985 CFU/100 ml, above the 900 threshold. The **men's triathlon was postponed a day**, from 30 to 31 July, after a 3:30 a.m. inspection found pollution too high; E. coli readings ranged 980–1,553 against the "sufficient" ceiling of 900. The audit court was equivocal: water quality at the events "was compliant with the standards set by the international federations, even though some postponements of events were necessary." Politico reported an enterococci reading of 436 CFU/100 ml two hours before the mixed relay, and that **no data was ever released for the two marathon-swimming days**.
-
-Then the legacy promise was kept. **From 5 July 2025 — for the first time since 1923 — the Seine was opened to free public swimming** at three supervised sites: the **Bras Marie** (Paris Centre, opposite the Île Saint-Louis, between the pont Louis-Philippe and pont Marie), the **Bras de Grenelle** (15th), and **Bercy** (12th, below the parc de Bercy opposite the BnF). Over **100,000 people** swam that first summer, despite 13 closure days in 30. The regional audit court nonetheless calculated the three sites cost €13.5 million to build and €4 million a year to run, making the cost per swimmer **three times that of a public swimming pool**, and observed that "no bacteriological data allows the water to be ranked in compliance with the thresholds of the 2006 bathing-water directive." The 2026 season (4 July–30 August) ended prematurely when heavy rain on 27 August caused major overflows in Seine-et-Marne.
+**Protocol compliance:** Phase 1 plan ✓ · Phase 2 five parallel workers ✓ · Phase 3 intermediate synthesis + gap ledger ✓ · Phase 4 five loops ≥ minimum, decision per cycle recorded in `04-loops/` ✓ · Phase 5 report ≥10,000 characters with all nine required sections ✓ (7,000-word English variant explicitly deviated from, as stated in §2).
 
 ---
 
-## 5. Comparison matrices
-
-### 5.1 French rivers — where the Seine ranks
-
-| Rank | River | Length (French territory) | Basin (km²) | Mouth | Flows through Paris? |
-|---|---|---|---|---|---|
-| 1 | **Loire** | 1,006–1,020 km | 117,000 | Atlantic | **No** |
-| **2** | **Seine** | **775–777 km** | **~76,500–78,910** | **English Channel** | **YES** |
-| 3 | Rhône | 544 km in France (812 total) | 95,500 | Mediterranean | No |
-| 4 | Garonne | 529 km in France (647 total) | 55,000 | Atlantic | No |
-| 5 | Marne | 514 km | — | *Seine tributary* | No — joins just outside Paris |
-
-*Note: the Loire is longer and drains a far larger basin, but the Seine carries far more traffic and passes through the capital — hence the Ministry of the Interior atlas calls the Seine's waterway the densest between Paris and the sea.*
-
-### 5.2 The two banks compared
-
-| | **Rive droite** (north) | **Rive gauche** (south) |
-|---|---|---|
-| Arrondissements in the zone | 14 (1, 2, 3, 4, 8, 9, 10, 11, 12, 16, 17, 18, 19, 20) | 6 (5, 6, 7, 13, 14, 15) |
-| Which actually border the Seine | 12, 4, 1, 8, 16 | 13, 5, 6, 7, 15 |
-| Share of Parisians | ~67% | ~32.9% |
-| Traditional character | Commerce, finance, grand boulevards; UNESCO notes "royal, and subsequently aristocratic Paris" downstream | Latin Quarter, universities, administration |
-| Natural region | Pays de France | Hurepoix |
-
-### 5.3 Cities that have held the title or the government
-
-| City | As seat of government | Ever the *capital*? |
-|---|---|---|
-| **Paris** | 508– (with gaps), 987– , 1789– , 1879– , 1944– | **Yes, continuously since 1944; de jure throughout all gaps** |
-| Versailles | 1682–1715, 1722–1789, 1871–1879 | No — "de facto centre... Paris never ceased to be the official capital" |
-| Vichy | 1940–1944 | No — "capitale de facto... Paris reste toujours capitale de jure" |
-| Tournai / Soissons / Laon | pre-486 / 486–936 / 936–987 | Yes, as Frankish royal seats before the Capetian fix on Paris |
-| Tours / Bourges | 1444–1527 / 1422–1444 | No — wartime royal retreats |
-| Bordeaux | Sept 1914; June 1940 | No — provisional wartime relocations |
-| Brazzaville / Algiers | 1940–1943 / 1943–1944 | Only as capitals of *Free France* |
-
----
-
-## 6. Gaps and limitations of this research
-
-1. **Legifrance blocked (HTTP 403).** The primary legal texts — the 1993 arrêté, the 1958 ordonnance, the original scanned *Journal officiel* of 25 January 1994 — could not be fetched directly. Their text was recovered verbatim from Légifrance's own search-index capture, cross-confirmed against the Université Laval AXL-CEFAN mirror and French Wikipedia, with no discrepancies between the three. This is secondary access to a primary source, which is the report's main evidentiary weakness.
-2. **The SANDRE official record is a 2021 archive capture.** The live fiche at `sandre.eaufrance.fr/geo/CoursEau/----0010` now redirects to a resolver landing page. The current BD Topage 2026 figure was not obtained; the 775 km value is the validated record as of January 2021. This also explains the length spread (774.76 / 775 / 776 / 777 km): successive référentiel versions re-measure the river.
-3. **UNESCO inscribed area is genuinely split between two official figures** — 538 ha (UNESCO's own list and GIS pages) versus 531 ha (ICOMOS's 2024 evaluation and the Ville de Paris 2025 PLU deliberation). Both are reported; neither is dismissed.
-4. **F9 (the Seine is not Paris's boundary) rests on inference**, not on a single explicit statement. It is assembled from the pont amont and pont aval articles plus the 1859 annexation law; no IGN *Admin Express* contour or prefectural boundary decree was retrieved for the extreme downstream tip near the Île Saint-Germain.
-5. **Two items could not be closed.** The EU bathing-water directive's exact number and imperative thresholds were confirmed only indirectly ("the 2006 European Union directive"; "la directive baignade de 2006"), and the oft-repeated **de Gaulle 1970 swimming promise was never verified** — every search attempt hit rate limits, and the verified promise is unambiguously **Chirac's of 1988**. The de Gaulle attribution should be treated as unsubstantiated.
-6. **Depth of the loop, not of the question.** Three cycles were used, not the mandated five; some supporting figures rest on a single official source where corroboration would have been preferable.
-7. **Reproducibility caveat.** Several search-engine 429 rate limits forced retries and left some supporting figures at snippet level rather than full-page fetch.
-
----
-
-## 7. Recommendations and future directions
-
-- **If answering in an exam or quiz context:** "Paris; the Seine." Nothing else is needed, and nothing else is correct.
-- **If precision matters:** add that Paris's capital status is conventional rather than constitutional, and that the Seine is France's second-longest river — the two most common errors are "the Seine is France's longest river" and "a law declares Paris the capital."
-- **Avoid** "Gulf of England" for the mouth (no source uses it; *English Channel* / *la Manche*); avoid 9.5 m for the Seine's depth in Paris (3.40–5.70 m is the official figure); avoid the de Gaulle swimming anecdote (unverified — it is Chirac, 1988).
-- **For further research:** the official BD Topage 2026 geometry would settle the Seine's length definitively; the prefectural ordinance of 17 April 1923 is a primary legal text still in force, now being undone by policy, which makes an interesting study in itself; and the Bièvre's promised 2,300 m Paris reopening is a live municipal project.
-
----
-
-## 8. Sources
-
-### Official / institutional
-1. FranceTerme, Ministère de la Culture — "France (la)", *J.O.* 24/09/2008 — https://www.culture.fr/franceterme/terme/AFET263
-2. Arrêté du 4 novembre 1993 relatif à la terminologie des noms d'États et de capitales, *J.O.* 25/01/1994 pp. 1288–1295 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000181509 (403; via index)
-3. Ordonnance n° 58-1100 du 17 novembre 1958, art. 1 — https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006530034
-4. Conseil constitutionnel — Constitution de 1875, IIIe République — https://www.conseil-constitutionnel.fr/les-constitutions-dans-l-histoire/constitution-de-1875-iiie-republique
-5. SANDRE / OFB / eaufrance — "La Seine", code `----0010` — via https://web.archive.org/web/20210123171121/http://www.sandre.eaufrance.fr/geo/CoursEau/----0010
-6. Eaufrance — "Les rivières" — https://www.eaufrance.fr/les-rivieres
-7. Ministère de l'Intérieur, Formation civique — "Les fleuves français" (map: IGN 2012) — https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-français/
-8. HydroPortail / Vigicrues — station F700 0001 03 "La Seine à Paris – Austerlitz", data calculated 27/11/2026 — https://www.hydro.eaufrance.fr/stationhydro/F700000103/synthese
-9. Agence de l'Eau Seine-Normandie — "Le bassin de la Seine" — https://www.eau-seine-normandie.fr/agence-de-leau/le-bassin-de-la-seine
-10. UNESCO World Heritage Centre — "Paris, Banks of the Seine" (dossier 600bis) — https://whc.unesco.org/en/list/600/
-11. UNESCO — Décision 46 COM 8B.39 (2024) — https://whc.unesco.org/fr/decisions/8631/
-12. ICOMOS evaluation WHC/24/46.COM/INF.8B1.Add — https://whc.unesco.org/document/208528
-13. Ville de Paris — "Paris et ses ponts, toute une histoire" — https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466
-14. Ville de Paris — "La Seine, cœur battant de Paris" — https://www.paris.fr/dossiers/la-seine-coeur-battant-de-paris-216
-15. Ville de Paris — "Crues" / "Le Zouave, baromètre de la montée des eaux" — https://www.paris.fr/pages/crues-5472
-16. Ville de Paris — "Les canaux de Paris" (updated 26/11/2026) — https://www.paris.fr/pages/tmp-canaux-7834
-17. Ville de Paris — "Les secrets enfouis de la Bièvre, rivière parisienne" — https://www.paris.fr/pages/les-secrets-enfouis-de-la-bievre-riviere-parisienne-16900
-18. Ville de Paris — "La Seine s'ouvre à la baignade" / "Baignade en Seine : toutes les questions" — https://www.paris.fr/pages/baignade-en-seine-toutes-les-questions-que-vous-vous-posez-31533
-19. Ville de Paris — Eau de Paris, *Bulletin qualité de l'eau de la Seine*, Aug 2026 — https://cdn.paris.fr/paris/2026-10-02/bulletin-qualite-eau-seine-2026-08-smy5.pdf
-20. DRIEAT Île-de-France / Préfecture — Dossier de presse "Plan Baignade", Aug 2024 — https://www.prefectures-regions.gouv.fr/ile-de-france/...
-21. Cour des comptes / CRC Île-de-France — IDR2025-51, délibéré 22/07/2025 — https://www.ccomptes.fr/sites/default/files/2025-11/IDR2025-51_0.pdf
-22. Paris & Métropole Aménagement — "La Bièvre (Paris 13e)" — https://www.parisetmetropole-amenagement.fr/fr/bievre-paris-13e
-23. SMBVB — Syndicat Mixte du Bassin Versant de la Bièvre, "Historique" — https://www.smbvb.fr/la-bievre/historique/
-24. Château de Versailles (public establishment) — "Versailles, 'capital' of the kingdom, 1682" — https://en.chateauversailles.fr/discover/history/key-dates/versailles-capital-kingdom-1682
-25. BnF, Essentiels — "De Lutèce à la capitale" — https://essentiels.bnf.fr/...
-26. BnF Gallica — "L'histoire tourmentée d'une rivière : quand la Bièvre disparaît" — https://gallica.bnf.fr/accueil/fr/html/lhistoire-tourmentee-dune-riviere-quand-la-bievre-disparait
-27. European Union — "France", EU member state overview — https://european-union.europa.eu/principles-countries-history/eu-countries/france_en
-28. Council of Europe, Intercultural Cities — "Paris, France" — https://www.coe.int/en/web/interculturalcities/paris
-29. Archives nationales d'outre-mer — "Paris (France)" — http://anom.archivesnationales.culture.gouv.fr/geo.php?...
-30. European Commission JRC — "FACT SHEET: Seine River Basin" — https://water.jrc.ec.europa.eu/pdf/seine-fs.pdf
-
-### Academic
-31. G. Delledonne, "Paris: Epitome or Blind Spot of the Constitutional Identity of France?", *Perspectives on Federalism* 16(3), 2024
-32. O. Renaudie, "Paris : capitale ou grande ville ?", *Revue du droit public* 2019/6, p. 1465
-33. R. Grabowski, "The Systemic Importance of the Constitutional Establishment of the Capital...", *Przegląd Prawa Konstytucyjnego* 6(40)/2017
-34. C. Levisse-Touzé, "Le rôle particulier de Paris pendant la Seconde Guerre mondiale", *Bulletins de l'IHTP* 8(1), 1995 — https://www.persee.fr/doc/ihtp_1256-5733_1995_num_8_1_1928
-35. P. N. Balchin, "The Emergence of Paris in the High Middle Ages", Routledge, 2023 — https://doi.org/10.4324/9781003366461-2
-36. C. Noizet & O. Gautier, "Paris, La Seine", in *Villes et rivières de France*, CNRS Éditions 2019 — https://hal.science/hal-04014374
-37. PIREN-Seine (CNRS) — "Hydrologie du bassin de la Seine en quelques chiffres clefs"
-38. Flipo et al., "Trajectories of the Seine River Basin", *Handbook of Environmental Chemistry*, Springer 2020
-39. Bibliothèque de l'Institut de France — "La Seine en crue, XVIIe–XXe siècle"
-40. N. Montel, "L'agrandissement de Paris en 1860 : un projet controversé", HAL-ENPC
-
-### Reference / journalism
-41. Wikipedia (en) — Paris; France; Seine; Source-Seine; List of capitals of France; List of rivers of France; Île de la Cité; Île Saint-Louis; List of bridges in Paris; Vichy; Hugh Capet; Versailles, Yvelines; Paris in the Middle Ages; Paris in World War II; Bièvre (river)
-42. Wikipedia (fr) — Capitale de la France; Seine; Seine à Paris; Rives de la Seine à Paris; Rive droite (Paris); Rive gauche (Paris); Bièvre (affluent de la Seine); Canaux parisiens; Port de l'Arsenal; Bouquinistes de Paris; Loi du 16 juin 1859 sur l'extension des limites de Paris; Seine (département); Pont Amont; Pont Aval; Ivry-sur-Seine; Neuilly-sur-Seine
-43. Encyclopédie Larousse — "la Seine" (143800); "la Loire" (130237)
-44. Encyclopædia Britannica Kids — "Seine River"; "Loire River"; "Paris"; "Versailles" (main Britannica article returned HTTP 403)
-45. BBC News — "France country profile"
-46. AP News, Reuters, The Guardian, NPR, CBS News, POLITICO — 2024 Olympic triathlon postponement coverage
-47. Courrier international / France Culture / Le Point du Jour / INA / Public Sénat / The Conversation / Sciences et Avenir / National Geographic / Le Parisien / France 3 / Ouest-France / Geo.fr / APUR
-
----
-
-## 9. Appendix — search queries by cycle
-
-**Cycle 1 (Phase 2, 5 parallel workers, 21 queries)**
-- Capital of France · Paris capital of France official · France capitals history
-- River that flows through Paris · Seine river Paris length source mouth · Seine river facts kilometers Source-Seine Gulf of England
-- Paris became capital of France Clovis 508 · Hugh Capet Paris capital 987 · Versailles capital of France periods [429 → retried] · Vichy government seat
-- Longest river in France Loire length · Seine basin area square kilometers · Seine tributaries Marne Aube Yonne Oise · Main rivers of France list ranking
-- Seine bridges Paris Pont Neuf number · Île de la Cité Île Saint-Louis Seine islands · Paris Banks of the Seine UNESCO World Heritage 1991 · Seine flood Paris 1910 Zouave [429 → retried] · Canal Saint-Martin Saint-Denis Paris [429 → retried]
-
-**Cycle 2 (Phase 4 loop 1, 4 parallel workers)**
-- arrêté du 4 novembre 1993 terminologie noms d'États et de capitales legifrance · Constitution Ve République siège des pouvoirs publics ordonnance 1958 Paris · loi constitutionnelle 1875 siège du gouvernement Paris Versailles · "aucune disposition constitutionnelle capitale Paris"
-- la Bièvre rivière de Paris enterrée · Bièvre river Paris buried tributary Seine arrondissements · Bièvre source Antony confluence Seine · Bièvre canonisation voie des Marais 13e
-- sandre.eaufrance.fr fiche cours d'eau La Seine · SANDRE code cours d'eau Seine 0010 · site:eaufrance.fr La Seine longueur bassin versant débit · débit moyen Seine Paris échelle d'Austerlitz
-- Seine direction d'écoulement Paris sud-est nord-ouest · Seine sépare Paris rive droite rive gauche arrondissements · Seine entre dans Paris 12e 13e sort 15e 16e · confluence Marne Seine Paris 12e [429 → retried] · confluence Seine Oise Conflans Sainte-Honorine · Paris Banks of the Seine UNESCO river bend
-
-**Cycle 3 (Phase 4 loop 2, 2 parallel workers)**
-- baignade Seine Paris 2025 sites ouverts Grenelle Bercy bras Marie · Seine water quality Paris 2024 Olympics swimming · Paris La Seine qualité eau bactériologiques E coli résultats · Seine dépollution milliards euros · interdiction baignade Seine Paris 1900 · [promesse de Gaulle 1970 — 4 attempts, all 429]
-- Seine limite séparative Paris Ivry Charenton · Seine limite département 75 92 pont de Sèvres · loi du 16 juin 1859 extension limites de Paris Seine · Canaux parisiens confluence Seine port de l'Arsenal · canal Saint-Denis rejoint Seine aval · écluse de la Briche · UNESCO Paris rives Seine 531 538 ha · bouquinistes nombre emplacements
-
-**Final attempt (orchestrator direct, 2 queries — both HTTP 429, unresolved)**
-- "de Gaulle" promesse "baigner dans la Seine" 1970 ministre des charges
-- directive 2006/98/CE eaux de baignade seuils Escherichia coli 900 entérocoques intestinaux 330
-
----
-
-### Full raw corpus
-The complete evidence trail — every verbatim excerpt, all ~40 logged contradictions and their resolutions, per-worker source-reliability tallies, and follow-up keywords — is preserved in `research-corpus.md` alongside this report.
+*Prepared 2026-11-28. Answer in one line: **Paris — the Seine.***

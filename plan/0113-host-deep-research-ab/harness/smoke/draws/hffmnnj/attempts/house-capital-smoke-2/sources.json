@@ -1,0 +1,28 @@
+{
+  "sources": [
+    {
+      "id": "rn_mwzt4r9iubnu",
+      "url": "https://en.wikipedia.org/wiki/Paris",
+      "quote": "Paris is the capital and largest city of France",
+      "locator": "Paris is the capital of France"
+    },
+    {
+      "id": "rn_mwzt4r9j4vnz",
+      "url": "https://en.wikipedia.org/wiki/Seine",
+      "quote": "flowing through Paris and into the English Channel at Le Havre",
+      "locator": "The river Seine runs through Paris"
+    },
+    {
+      "id": "rn_mwzt4r95u5sf",
+      "url": "https://en.wikipedia.org/wiki/Paris",
+      "quote": "Paris is the capital and largest city of France... Located on the Seine in the centre of the Île-de-France region.",
+      "locator": "Wikipedia: Paris (lead extract, rev 1387772859)"
+    },
+    {
+      "id": "rn_mwzt4r9g2k7v",
+      "url": "https://en.wikipedia.org/wiki/Seine",
+      "quote": "The Seine is a 777-kilometre-long (483 mi) river in northern France... flowing through Paris and into the English Channel at Le Havre.",
+      "locator": "Wikipedia: Seine (lead extract, rev 1384649318)"
+    }
+  ]
+}

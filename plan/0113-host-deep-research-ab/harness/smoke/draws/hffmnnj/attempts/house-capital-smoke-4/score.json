@@ -1,0 +1,32 @@
+{
+  "arm": "hffmnnj",
+  "task": "smoke/house-capital",
+  "draw": "house-capital-smoke",
+  "adapter": "hffmnnj",
+  "adapter_result": "valid",
+  "excluded": false,
+  "reused": false,
+  "rerun_of": "hffmnnj/attempts/house-capital-smoke-3",
+  "break_class": "arm",
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 136.5,
+  "prompt_tokens": 7555,
+  "completion_tokens": 3141,
+  "tool_calls": 13,
+  "search_provider": "none",
+  "native_search": [],
+  "websearch_calls": 0,
+  "search_engine_fetches": [],
+  "replies": 13,
+  "model_preflight": "ok",
+  "native_files": 5,
+  "contract_ok": false,
+  "contract_reason": "phantom source(s) absent from the fetch log: https://en.wikipedia.org/wiki/Paris, https://en.wikipedia.org/wiki/Paris",
+  "rubric": {
+    "status": "void",
+    "reason": "phantom source(s) absent from the fetch log: https://en.wikipedia.org/wiki/Paris, https://en.wikipedia.org/wiki/Paris"
+  },
+  "valid": false,
+  "score": 0
+}

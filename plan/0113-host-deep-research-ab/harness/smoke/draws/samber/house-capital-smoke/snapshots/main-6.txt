@@ -1,0 +1,682 @@
+[Aller au contenu principal](#wrapper)
+
+[ ![Agence de l'eau Seine Normandie](/sites/public_file/eau-seine-normandie_0.png)](/)
+
+## Simple Menu
+
+[REDEVANCES](#block-visible-redevance)
+
+- [ REDEVANCES \+](javascrip:void\(0\))
+
+  [Connaître les redevances](https://programme-eau-climat.eau-seine-normandie.fr/les-redevances-taux-et-modes-de-calcul) [Formulaires de redevance](https://www.lesagencesdeleau.fr/les-formulaires-redevances/) [Télédéclaration des redevances](https://teleservices.lesagencesdeleau.fr/Accueil.aspx?ReturnUrl=%2FTeleservices%2FLogin%2FLogin.aspx) [test 1](https://www.linkedin.com/company/agence-de-l-eau-seine-normandie/)
+
+  [AIDES](#block-visible-aides)
+
+- [ AIDES \+](javascrip:void\(0\))
+
+  [Actions internationales](https://www.eau-seine-normandie.fr/domaines-d-action/cooperation-internationale) [Formulaire de demande d'aide](/formulaire%20s_aides) [Connaître les aides](https://programme-eau-climat.eau-seine-normandie.fr/) [Les appels à projet](/appels_a_projets) [Démarches simplifiées](/Demarche-numerique) [Test NH](https://www.eau-seine-normandie.fr/) [Spécifications](/specifications)
+
+  [DOCUMENTS STRATEGIQUES](#block-visible-documents)
+
+- [ DOCUMENTS STRATEGIQUES \+](javascrip:void\(0\))
+
+  [SDAGE, actions pour 6 ans](/domaines-d-action/sdage) [Le programme “Eau & Climat” 2019-2024](/programm%20e_eau_climat_seine_normandie) [Stratégie d'adaptation au changement climatique](/domaines-d-action/strategie_adaptation_climatique) [L'état des lieux](/domaines-d-action/sdage/etat-%20des-lieux)
+
+  [LOUPE](#search "Chercher sur le site")
+
+## responsive-menu-main
+
+[]()
+
+Menu principal
+
+[ x](javascript:void\(0\))
+
+- [ REDEVANCES \+](javascrip:void\(0\))
+
+  -
+
+    [Les redevances](/reforme-redevance-2025)
+
+  -
+
+    [Formulaires de redevance](https://cdi.eau-rhin-meuse.fr/GEIDEFile/notices_redevances.pdf?Archive=262624608080&File=notices_redevances_pdf)
+
+  -
+
+    [Télédéclaration des redevances](https://teleservices.lesagencesdeleau.fr/Accueil.aspx?ReturnUrl=%2FTeleservices%2FLogin%2FLogin.aspx)
+
+  -
+
+    [Informations sur la facturation des abonnés](/reforme-redevance-2025/informations_facturation_abonnes)
+
+- [ AIDES \+](javascrip:void\(0\))
+
+  -
+
+    [Les aides](/les-aides-du-programme-eau-climat-et-biodiversite-2025-2030)
+
+  -
+
+    [Les aides pour le littoral](/les-aides-du-programme-eau-climat-et-biodiversite-2025-2030/aides_pour_le_littoral)
+
+  -
+
+    [RIVAGE, nouvelle plateforme de gestion des aides](/Rivage_nouvelle_plateforme_de_gestion_des_aides)
+
+  -
+
+    [Demande d'aide](/formulaires_aides)
+
+  -
+
+    [Paiement des aides](https://www.eau-seine-normandie.fr/paiement_des_aides)
+
+  -
+
+    [Démarche numérique \- Démarches simplifiées](/Demarche-numerique)
+
+  -
+
+    [L'animation territoriale](/aides/animation_territoriale)
+
+  -
+
+    [Le contrat de territoire](/programme-eau-climat-biodiversite-2025-2030/Le_contrat_de_territoire)
+
+  -
+
+    [Le contrat de partenariat](/programme-eau-climat-biodiversite-2025-2030/Le_contrat-de-partenariat)
+
+  -
+
+    [Les appels à projets](/appels_a_projets)
+
+  -
+
+    [La solidarité internationale](/aides/la_solidarite_internationale)
+
+  -
+
+    [Les spécifications techniques réseaux](/specifications)
+
+  -
+
+    [Les aides attribuées (Commission des aides)](/agence-de-leau/les-dossiers-d-aides)
+
+- [ Documents stratégiques \+](javascrip:void\(0\))
+
+  -
+
+    [Le SDAGE 2022-2027 et son programme de mesure](/domaines-d-action/sdage)
+
+  -
+
+    [Le programme "Eau, climat & biodiversité" 2025-2030](/programme-eau-climat-biodiversite-2025-2030)
+
+  -
+
+    [La stratégie d'adaptation au changement climatique](/domaines-d-action/strategie_adaptation_climatique)
+
+  -
+
+    [L'état des lieux 2025](/documents-strategiques/Etat-des-lieux-2025)
+
+  -
+
+    [Le projet de SDAGE 2028-2033](/documents-strategiques/Projet-SDAGE_2028-2033)
+
+  -
+
+    [Le contrat d'objectifs et de performances](https://www.calameo.com/agence-de-l-eau-seine-normandie/read/004001913e662cff35616)
+
+- [ Recrutement \+](javascrip:void\(0\))
+
+  -
+
+    [Travailler à l'agence de l'eau](/travailler-a-l-agence-de-l-eau)
+
+  -
+
+    [Nos offres d'emploi](https://www.profileau.fr/fr?c-agence-cd=seine-normandie-aesn)
+
+  -
+
+    [Nos stages](https://www.profileau.fr/fr?type-contrat=stage&c-agence-cd=seine-normandie-aesn)
+
+-
+
+  button-search-desktop
+
+- [ ![Facebook](/themes/custom/basis/images/responsive-menu-facebook.png)](https://www.facebook.com/AgenceeauSeinenormandie)
+
+- [ ![Twitter](/themes/custom/basis/images/responsive-menu-insta.png)](https://www.instagram.com/eauseinenormandie/)
+
+- [ ![Youtube](/themes/custom/basis/images/responsive-menu-youtube.png)](https://www.youtube.com/channel/UCEPte1vFEs1AsQPLzv6FuhA)
+
+- [ ![Linkedin](/themes/custom/basis/images/responsive-menu-linkedin.png)](https://www.linkedin.com/company/agence-de-l-eau-seine-normandie/)
+
+## secondary\_nav
+
+Vous êtes
+
+- [ Vous êtes \+](javascrip:void\(0\))
+
+  Vous êtes [Une collectivité](/collectivite) [Une entreprise](/entreprises) [Un agriculteur](/agriculteur) [Un formateur](/enseignants-formateurs) [Une association](/association)
+
+  [L'agence de l'eau](/)
+
+- [ L'agence de l'eau \+](javascrip:void\(0\))
+
+  L'agence de l'eau [Nos missions](/agence-de-leau/nos_missions) [Le bassin de la Seine, notre territoire d’action](/agence-de-leau/le-bassin-de-la-seine) [Notre organisation](/directions-territoriales) [Nos évaluations](https://www.eau-seine-normandie.fr/agence-de-leau/nos-evaluations-des-politiques-publiques) [Nos données](/agence-de-leau/donnees-sur-l-eau) [Notre portail cartographique : Géo Seine-Normandie](/Portail-cartographique-geo-seine-normandie) [Notre politique RSE](/agence-de-leau/RSE)
+
+  [Gouvernance](/)
+
+- [ Gouvernance \+](javascrip:void\(0\))
+
+  Gouvernance [Le conseil d’administration](/agence-de-leau/le-conseil-d-administration) [Le comité de bassin](/le-comite-de-bassin/presentation) [La commission de labellisation territoriale](https://www.eau-seine-normandie.fr/gouvernance/commission_labellisation_territoriale) [Le conseil scientifique](/le-comite-de-bassin/le-conseil-scientifique) [Les commissions territoriales](/le-comite-de-bassin/les-commissions-territoriales) [Les forums des acteurs de l’eau](/le-comite-de-bassin/forum_des_acteurs_eau) [Les SAGE](/domaines-d-action/politique-territoriale) [Les délibérations](/le-comite-de-bassin/deliberations)
+
+  [La qualité des eaux](/)
+
+- [ La qualité des eaux \+](javascrip:void\(0\))
+
+  [La qualité des eaux souterraines ](/qualite-de-l-eau/qualite-des-eaux-souterraines) [La qualité des eaux superficielles ](/qualite-de-l-eau/qualite-des-eaux-superficielles) [La qualité des eaux littorales ](/qualite-de-l-eau/qualite-des-eaux-littorales) [Les programmes de recherche](/domaines-d-action/Les_programmes_de_recherche) [Les études](https://www.eau-seine-normandie.fr/domaines-d-action/etudes)
+
+  Recrutement
+
+- [ Recrutement \+](javascrip:void\(0\))
+
+  [Travailler à l'agence de l'eau](/travailler-a-l-agence-de-l-eau) [Nos offres d'emploi](https://www.profileau.fr/fr?c-agence-cd=seine-normandie-aesn) [Nos stages](https://www.profileau.fr/fr?type-contrat=stage&c-agence-cd=seine-normandie-aesn)
+
+L’agence de l'eau
+
+[Missions et organisation](/agence-de-leau/presentation-et-competences)
+
+- [Nos métiers](/Nos_metiers)
+
+- [Notre politique RSE](/agence-de-leau/RSE)
+
+- [Nos offres d'emploi](https://www.profileau.fr/fr?c-agence-cd=seine-normandie-aesn)
+
+- [Nos stages](http://www.eau-seine-normandie.fr/offres-de-stage)
+
+- [Nos actualités](http://www.eau-seine-normandie.fr/actualites)
+
+[Le Conseil d'Administration](/agence-de-leau/le-conseil-d-administration)
+
+- [Les aides attribuées](/agence-de-leau/les-dossiers-d-aides)
+
+- [Les délibérations](/le-comite-de-bassin/deliberations)
+
+[Directions Territoriales](/agence-de-leau/directions_territoriales)
+
+[Le bassin de la Seine](/agence-de-leau/le-bassin-de-la-seine)
+
+![Carte des directions territoriales](/sites/public_file/styles/image_menu/public/2021-04/CARTE%20AGENCE%20DE%20L%27EAU%20SEINE-NORMANDIE%202021_TERRITOIRES.png?itok=ayGSlb1P)
+
+Espace Partenaires
+
+Cet espace est réservé pour les téléservices de l'agence de l'eau Seine-Normandie. Vous pourrez trouver, ici, les liens qui vous permettront de vous rendre dans les différents espaces extranet de l'agence de l'eau (dépôt de fichiers DEQUADO, Justificatif de paiement…)
+
+[Accéder à l'espace Partenaires](https://www.espace-prive.eau-seine-normandie.fr/PortailExtranet/)
+
+Contactez votre direction territoriale
+
+Si vous souhaitez avoir un appui technique et financier pour vos projets ou obtenir des informations sur les primes et les redevances, la direction territoriale de votre secteur peut vous apporter une réponse. N’hésitez pas à la contacter.
+
+[Contactez nous !](http://www.eau-seine-normandie.fr/agence-de-leau/directions_territoriales)
+
+Redevances et Aides
+
+[Les redevances du programme "Eau et Climat" 2019-2024](https://programme-eau-climat.eau-seine-normandie.fr/%20)
+
+[Les aides du programme "Eau et Climat" 2019-2024](https://programme-eau-climat.eau-seine-normandie.fr/)
+
+[Prime et Autosurveillance](/les-aides-et-redevances/Prime_et_autosurveillance)
+
+[Les appels à projets](http://www.eau-seine-normandie.fr/appels_a_projets)
+
+[Spécifications de l'agence de l'eau](http://www.eau-seine-normandie.fr/specifications)
+
+[Formulaires des redevances](http://www.lesagencesdeleau.fr/les-agences-de-leau/les-formulaires-redevances/)
+
+[Télédéclaration des redevances](https://teleservices.lesagencesdeleau.fr/Accueil.aspx?ReturnUrl=%2fTeleservices%2fLogin%2fLogin.aspx)
+
+[Formulaires de demande d'aide et justificatifs de paiement](/formulaires_aides)
+
+[Démarches simplifiées](/Demarche-numerique)
+
+Le comité de bassin
+
+[Présentation](/le-comite-de-bassin/presentation)
+
+- [Les délibérations](/le-comite-de-bassin/deliberations)
+
+- [Les communiqués de presse](/le-comite-de-bassin/presentation/communiques-de-presse)
+
+[Le conseil scientifique](http://www.eau-seine-normandie.fr/node/3931)
+
+[Les commissions Territoriales](/le-comite-de-bassin/les-commissions-territoriales)
+
+- [Seine Amont](/le-comite-de-bassin/les-commissions-territoriales/comiter-seine-amont)
+
+- [Vallées de Marne](/le-comite-de-bassin/les-commissions-territoriales/comiter-vallees-de-marne)
+
+- [Vallées d'Oise](/le-comite-de-bassin/les-commissions-territoriales/comiter-vallees-d-oise)
+
+- [Rivières île-de-France](/le-comite-de-bassin/les-commissions-territoriales/comiter-rivieres-d-ile-de-france-paris-petite-couronne)
+
+- [Seine aval et rivières normandes](http://www.eau-seine-normandie.fr/le-comite-de-bassin/les-commissions-territoriales/comiter-seine-aval-et-rivieres-normandes)
+
+[Les forums des acteurs de l'eau](http://www.eau-seine-normandie.fr/le-comite-de-bassin/forum_des_acteurs_eau)
+
+Cycles de l’eau
+
+[L'eau dans la nature](/les-cycles-de-l-eau/le-grand-cycle-de-l-eau)
+
+- [Les rivières](/les-cycles-de-l-eau/le-grand-cycle-de-l-eau/le-fonctionnement-des-rivieres)
+
+- [Les zones humides](/les-cycles-de-l-eau/le-grand-cycle-de-l-eau/les-zones-humides)
+
+[L'eau potable](/les-cycles-de-l-eau/L_eau_potable)
+
+[L'assainissement collectif](/les-cycles-de-l-eau/L_assainissement_collectif)
+
+[L'assainissement non collectif](/les-cycles-de-l-eau/L_assainissement_non_collectif)
+
+[Le prix de l'eau](/les-cycles-de-l-eau/le-prix-de-l-eau)
+
+Domaines d’action
+
+[S'adapter au changement climatique](/domaines-d-action/adaptation-au-changement-climatique)
+
+[La préservation des milieux aquatiques et de la biodiversité](http://www.eau-seine-normandie.fr/domaines-d-action/preservation_milieux_biodiversite)
+
+[La réduction des pollutions](/domaines-d-action/reduction_des_pollutions)
+
+[La prévention des inondations](/domaines-d-action/Prevention_inondation)
+
+[L'approvisionnement en eau potable](http://www.eau-seine-normandie.fr/domaines-d-action/approvisionnement_eau_potable)
+
+[La protection du littoral](/domaines-d-action/Protection_littoral)
+
+[Information citoyenne et éducation à l'environnement](/domaines-d-action/information_citoyenne_education_environnement)
+
+[La solidarité internationale](http://www.eau-seine-normandie.fr/domaines-d-action/cooperation-internationale)
+
+- [Le programme "Eau et Climat" 2019-2024](/programme_eau_climat_seine_normandie)
+
+- [Les priorités du bassin de la Seine (SDAGE)](/domaines-d-action/sdage)
+
+- [Etat des lieux](http://www.eau-seine-normandie.fr/domaines-d-action/sdage/etat-des-lieux)
+
+- [La stratégie d'adaptation au changement climatique](/domaines-d-action/strategie_adaptation_climatique)
+
+- [Les contrats de territoire "eau & climat"](http://www.eau-seine-normandie.fr/domaines-d-action/Contrat_territoire_eau_climat)
+
+- [Les contrats de partenariat "eau & climat"](http://www.eau-seine-normandie.fr/entreprises/contrat_de_partenariat)
+
+- [Les SAGE et l'animation des territoires](http://www.eau-seine-normandie.fr/domaines-d-action/politique-territoriale)
+
+- [Les programmes de recherche et les études](http://www.eau-seine-normandie.fr/domaines-d-action/etudes)
+
+Espace documentaire
+
+[Retrouvez les publications de l'agence de l'eau](https://fr.calameo.com/accounts/4001913#subscriptions)
+
+Communication
+
+[Découvrez les campagnes de l'agence de l'eau](/domaines-d-action/campagnes_de_communication)
+
+Qualité de l’eau
+
+[La qualité des eaux souterraines](/qualite-de-l-eau/qualite-des-eaux-souterraines)
+
+[La qualité des eaux superficielles](/qualite-de-l-eau/qualite-des-eaux-superficielles)
+
+[La qualité des eaux littorales](/qualite-de-l-eau/qualite-des-eaux-littorales)
+
+[Application "Qualité rivière"](/qualite-de-l-eau/appli-riviere)
+
+Portail de Bassin
+
+L’agence de l’eau Seine-Normandie met à disposition ses données via le portail de bassin
+
+[Portail du bassin](https://seine-normandie.eaufrance.fr/)
+
+Données sur la qualité des eaux superficielles
+
+L’agence de l’eau Seine-Normandie met à disposition ses données de suivi de qualité des eaux superficielles
+
+[Naiades](http://www.naiades.eaufrance.fr/)
+
+![bulles d'eau](/sites/public_file/inline-images/no_slider_img_0_1.png)
+
+## Fil d'Ariane
+
+- [Agence de l'eau Seine Normandie](/)
+
+- Current: La Seine sous l’effet du changement climatique
+
+![rivière la Seine à pothieres](/sites/public_file/inline-images/riviere_1.jpg)
+
+ 
+
+## Se documenter sur le sujet
+
+-
+
+  *picture\_as\_pdf*
+
+  [Rapport au premier ministre sur l'hydrologie de la Seine](https://www.eau-seine-normandie.fr/sites/public_file/inline-files/Rapport_PM_hydrologie_Seine_2016_VF.pdf)
+
+-
+
+  *computer*
+
+  [Eau et Climat : Ils s'engagent et témoignent](https://www.eau-seine-normandie.fr/domaines-d-action/adaptation-au-changement-climatique)
+
+-
+
+  *picture\_as\_pdf*
+
+  [Scénarios sécheresse ( Etude CERFACS \- 2018)](http://www.eau-seine-normandie.fr/sites/public_file/inline-files/Scenarios_secheresse_SN_Cerfacs_2018_synthese.pdf)
+
+Stratégie d’adaptation au changement climatique
+
+![Document de la stratégie d’adaptation au changement climatique du bassin Seine-Normandie](/sites/public_file/2017-03/Strategie_CC.JPG)
+
+[Consulter le document](http://fr.calameo.com/read/00400191392b397ff45dd)
+
+# La Seine sous l’effet du changement climatique
+
+[ facebook](http://www.facebook.com/sharer.php?u=http://www.eau-seine-normandie.fr/La-Seine-sous-l-effet-du-changement-climatique&title=La%20Seine%20sous%20l’effet%20du%20changement%20climatique%20)
+
+[ imprimer](javascript:window.print\(\))
+
+[ contact](mailto:?subject=La%20Seine%20sous%20l’effet%20du%20changement%20climatique%20-%20Agence%20de%20l’Eau%20Seine-Normandie&body=Partager%20la%20page%20La%20Seine%20sous%20l’effet%20du%20changement%20climatique%20:%20http://www.eau-seine-normandie.fr/La-Seine-sous-l-effet-du-changement-climatique)
+
+[plus](/)
+
+[ instagram](https://www.instagram.com/eauseinenormandie/)
+
+**La Seine est le plus petit des grands fleuves français et européens ! Beaucoup plus petit que le Rhône, par exemple. Elle est, de surcroît, sous pression de trois métropoles majeures : Paris, Rouen et Le Havre. A cette vulnérabilité, se greffent les effets du changement climatique d’ores et déjà sensibles, malgré le soutien des grands lacs en amont. Quelles sont les solutions pour rendre la Seine et son bassin versant plus résilients, mieux préparés aux événements climatiques extrêmes.**
+
+---
+
+-
+
+  #### [**Un fleuve alimenté par la pluie et les lacs réservoirs**](#fleuve_pluie)** **
+
+-
+
+  #### [**Moins d'eau plus de pollutions**](#moins-d-eau)
+
+-
+
+  #### [**Faune et flore en souffrance **](#faune_flore)
+
+-
+
+  #### [**La résilience de la Seine passe essentiellement par l’infiltration des eaux de pluie**](#Resilience)
+
+---
+
+[]()
+
+![trois photos superposées de la Seine ](/sites/public_file/inline-images/Design%20sans%20titre%20%284%29_0.png)
+
+La Seine à Pothières (21) , Paris (75), et Rouen (76)
+
+#### Un fleuve alimenté par la pluie et des lacs-réservoirs
+
+La Seine est un fleuve de plaine qui prend sa source à 446 m d’altitude sur le plateau de Langres, dans la commune de Source-Seine (Côte d’Or). Son cours est de 777 kilomètres avant l’arrivée à son estuaire en Normandie.
+
+Le fleuve est alimenté par les eaux de son bassin versant. Dépourvu de montagnes et donc de glaciers, le bassin de la Seine est alimenté presque exclusivement par les eaux de pluie. Ce territoire de 77 000 km² draine les pluies qui s’infiltrent vers les nappes d’eau souterraine ou s’écoulent vers les cours d’eau et les nombreux affluents du fleuve, situés en amont de Paris \- l’Aube, l’Yonne, la Marne et l’Oise \- et en Normandie, l’Epte, l’Andelle, l’Eure, la Risle... Outre l’évaporation immédiate, les conditions météorologiques (précipitations, humidité, rayonnement, vent) ainsi que l'occupation des sols (urbanisation) conduisent à de forts taux d'évaporation : seulement 30 % des précipitations conduisent à l'écoulement sur le bassin (contre 50 % sur le Rhône).
+
+[]()Le débit de la Seine est également soutenu par 4 grands lacs-réservoirs situés en amont de Paris : Marne, Seine, Aube et Pannecière. Ces vastes étendues d’eau fermées par des digues ont été construites pour écrêter les crues en période hivernale et soutenir le débit de la Seine, les mois où son niveau d’eau est au plus bas (période d’étiage) en ajoutant un débit supplémentaire obtenu en déstockant leur réserve d’eau.
+
+Les flux qui transitent par les aquifères souterrains, quant à eux, peuvent contribuer jusqu’à 25 % du débit annuel de la Seine. *(Source : GIP-Seine-aval \- Contextes climatique, morphologique & hydro-sédimentaire : Apports en eau douce à l’estuaire de la Seine)*
+
+---
+
+Le 1er mars 2023, les lacs-réservoirs totalisent un volume de 480 millions de m³ (60 % de la capacité normale de stockage), inférieur de 105 millions de m³ à l’objectif de gestion (objectif de 73 %). En mars, les précipitations observées sont supérieures aux normales de saison d’en moyenne 50 %. Le 1er avril les lacs-réservoirs totalisent un volume de 664 millions de m³ (82 % de la capacité normale de stockage), inférieur de 13 millions de m³ à l’objectif de gestion.
+
+---
+
+![Graphe avec des colonnes bleues et oranges  sur le premplissage des lac reservoirs ](/sites/public_file/inline-images/Graphe_reservoirs.png)
+
+#### Moins d’eau et plus de pollutions
+
+En période de sécheresse, habituellement en été, les plus faibles débits de la Seine, soutenus par les lacs-réservoirs, oscillent entre 75 et 90 m3/seconde sur une période maximum de 15 jours. En 2022, cette période sévère d’étiage s’est étendue sur trois mois. Par ailleurs des sécheresses peuvent avoir lieu en automne et en hiver, comme on l’a également observé en 2022\. La hausse de la température atmosphérique va naturellement accroitre l’évaporation, y compris sur les lacs-réservoirs, ce qui risque d’affecter le soutien d’étiage. En conséquence, en 2030-2060, les débits dans le bassin de la Seine pourraient être réduits de 10 à 30%. Pour ce qui concerne les eaux souterraines, les précipitations efficaces sur le fonctionnement des hydrosystèmes souterrains, plus rares, entraîneraient une baisse de la recharge annuelle des nappes d’environ 16 % au milieu du siècle. Le bassin devrait connaître une réduction des précipitations de 6 % d’ici 2050\.
+
+![rivière asséchée](/sites/public_file/inline-images/secheresse_0.jpg)
+
+Sécheresse 
+
+La baisse des débits entraîne une plus forte concentration des polluants. Car même si les rejets dans le cours d’eau restent inchangés (volume et contamination), la baisse du débit du cours d’eau entraîne mécaniquement une baisse de la capacité de dilution des rejets par les cours d’eau et le fleuve. Leur capacité d’[autoépuration](https://www.eau-seine-normandie.fr/node/507) s’en trouve donc affectée. De plus, la très forte pression de l’agglomération parisienne sur la Seine, dont le débit est faible par habitant, induit déjà un pouvoir de dilution faible aujourd’hui : de 700 l/jour/habitant quand celui du Rhône est de 17 000 l/j/habitant. Or la Seine draine environ 76 % de l’azote total du bassin. Ainsi la combinaison d’une augmentation de température et de la concentration de certains polluants comme le phosphore et l’azote pourrait entraîner un risque accru d’[eutrophisation](https://www.eau-seine-normandie.fr/node/601), impactant aussi la qualité de l’eau, comme déjà observé dans l’estuaire de la Seine, en fin d’été, avec des blooms phytoplanctoniques parfois toxiques.
+
+Le bassin devrait également connaître des épisodes de pluies plus intenses.  
+Or, le ruissellement des eaux de pluie en zone rurale transporte des nutriments issus de l’érosion des sols, et des matières en suspension. Ces apports entraînent un risque accru de pollution, d’eutrophisation et de colmatage des rivières. Sans parler des risques accrus de coulées de boues, susceptibles de provoquer des dégâts matériels et environnementaux.
+
+![crue de la seine ](/sites/public_file/inline-images/inondation_seine_1.jpg)
+
+Crue de la Seine 
+
+En ville, les ruissellements, du fait de l’imperméabilisation des sols (routes, parkings…), provoquent des inondations avec des conséquences économiques lourdes et préjudiciables pour les habitants et l’environnement. Par exemple, la montée des eaux cause diverses contaminations par les hydrocarbures ou les produits entreposés dans des zones inondées qui se répandent dans les milieux et les eaux souterraines, ou encore des débordements de réseaux d’assainissement et des rejets directs à la rivière.
+
+[]()Dans l’estuaire, les intrusions marines dues à l’élévation du niveau de la mer représentent un risque majeur de pollution pour les aquifères littoraux qui sont des réservoirs stratégiques, avec pour conséquences une pénurie à venir pour les usages de l’eau. Ce risque s’accentue en raison de l’accroissement de la fréquence et de l’intensité des périodes de sécheresses et de canicules qui entraîne l’abaissement des nappes d’eau souterraines, auxquels s’ajoute l’augmentation importante de la population vivant en zone côtière, et la submersion progressive des terres côtières.
+
+#### Faune et flore en souffrance
+
+![chabot ](/sites/public_file/inline-images/chabot.jpg)
+
+Chabot
+
+Aux baisses de débit s’ajoute la hausse des températures : un écart de 2°C a déjà été constaté sur la Seine et la Marne. Et la température devrait continuer à augmenter avec le réchauffement atmosphérique jusqu’à des pics en été lors de canicules. Ce contexte peut avoir de graves répercussions pour certains poissons : par exemple, les salmonidés, qui migrent en été, ne supportent pas des températures de plus de 20°C. Des simulations montrent que d’ici la fin du siècle, la température de l’eau de la Seine pourrait dépasser le seuil de tolérance durant leur migration estivale. En outre, à forte température l’oxygène se dilue moins bien dans l’eau et sa concentration pourrait être insuffisante, passant sous le seuil de tolérance de l’espèce. D’autres poissons seraient moins touchés comme la grande alose qui migre au printemps. Plus largement, sur le bassin de la Seine, des espèces comme le chabot pourraient régresser rapidement alors que le réchauffement des eaux favorisera les espèces appréciant les eaux plus chaudes.  
+[]()L’impact principal des inondations sur les milieux est la pollution par les polluants des eaux de ruissellement. Ces pollutions peuvent engendrer des mortalités de la faune et de la flore, et une pollution des milieux qui peut perdurer longtemps après le retrait des eaux.  
+Les submersions marines, quant à elles, ont pour conséquence des pertes d’habitats et de fonctionnalités écologiques. De plus, l’apport important d’eau de mer entraîne la salinisation d’écosystèmes qui ne sont pas adaptés au sel.
+
+#### La résilience de la Seine passe essentiellement par l’infiltration des eaux de pluie
+
+Face à l’accroissement probable de la fréquence des pluies intenses d’une part et à la multiplication des sécheresses et des étiages sévères d’autre part, la stratégie d’adaptation au changement climatique du bassin préconise un ensemble de « réponses stratégiques » qui repose pour l’essentiel sur l’infiltration des eaux de pluie dans le sol. Car le sol assure, entre autres services, la filtration des contaminants, la rétention des eaux et la recharge des nappes dont le bassin est largement doté. C’est sur l’ensemble du bassin versant de la Seine qu’il faut agir.
+
+![vaches normandes sous un pommier](/sites/public_file/inline-images/agroforesterie.jpg)
+
+Agroforesterie
+
+**En milieu rural,** les eaux pluviales doivent être gérées le plus en amont possible grâce aux techniques d’hydraulique douce et d’agroécologie qui favorisent leur infiltration lente et réduisent les ruissellements et l’érosion. Ces techniques s’appuient sur la mise en place de petits aménagements comme les haies (qui ont également un effet anti-desséchant), bosquets, arbres isolés et alignés, bandes tampons, prairies gérées de manière extensive, murets, banquettes, mares, vergers….  
+Le développement généralisé de ces techniques favorise la rétention d’eau dans les sols, l’infiltration vers la nappe d’une eau non chargée en résidus ou polluants dus au ruissellement, et soutient les étiages en période estivale par leur écoulement souterrain vers les rivières du bassin.
+
+![photo de méandre d'une rivière](/sites/public_file/inline-images/riviere_0.jpg)
+
+Créer des zones d'expansion de crues
+
+Les zones d’expansion des crues jouent un rôle majeur dans la prévention des inondations : elles stockent et infiltrent l’eau, réduisant ainsi les débits vers l’aval ; elles amortissent l’onde de crue en allongeant la durée des écoulements. Par leur capacité de rétention de l’eau, elles soutiennent les débits des cours d’eau en période d’étiage et contribuent à recharger les nappes. Enfin, restaurer l’écoulement des cours d’eau par l’effacement des barrages et des seuils, tout en restaurant la ripisylve, permet de limiter l’échauffement de la surface de l’eau et ainsi de contribuer à préserver sa qualité, sa faune et sa flore.  
+ 
+
+![photo d'une noue ](/sites/public_file/inline-images/chauss%C3%A9e%20poreuse.jpg)
+
+En ville,  multiplier les espaces végétalisés où cela  
+est possible.
+
+**En ville,** les trois règles d’or sont : profiter de la pluie là où elle tombe, multiplier les espaces et les aménagements végétalisés (parvis, parkings…) et redonner de la perméabilité aux surfaces partout où cela est possible. Concrètement, cela signifie aménager des jardins de pluie, des noues ou encore des espaces verts en creux grâce à des matériaux ou structures perméables. Les aménagements végétalisés doivent être conçus avec des espèces adaptées au climat local, résilientes et faciles d’entretien. Certaines infrastructures, comme par exemple, la mise en place de chaussées poreuses pour absorber les eaux de pluie, apportent une réduction significative de l’évaporation et limite le lessivage des chaussées et donc les eaux de ruissellement chargées de polluants. Cependant il est préférable que les eaux infiltrées s’écoulent ensuite plutôt que d’être canalisées. L'ensemble de ces aménagements permet de réduire voire de supprimer les rejets d'eaux pluviales vers le réseau d’assainissement, grâce à leur infiltration.
+
+**Sur le littoral,** réduire les prélèvements d’eau souterraine en se reportant sur une autre ressource ou en maîtrisant mieux les besoins permet de limiter le risque d’intrusions salées.
+
+  
+Plus globalement, l’ensemble des usagers sont invités à évoluer vers beaucoup plus de sobriété en eau, mais également vers une forte réduction de leurs rejets polluants. Ainsi, c’est une véritable transformation du territoire que nous sommes invités à opérer, pour permettre le maintien de son habitabilité malgré les changements qui s’amorcent. Il s’agit à présent de massifier l’adaptation au changement climatique en tenant compte des fortes incertitudes, donc en privilégiant[ les actions « sans regret »](https://www.eau-seine-normandie.fr/node/4420).
+
+[ ![Agence de l'eau Seine Normandie](/sites/public_file/eau-seine-normandie_0.png)](/)
+
+## Contact
+
+![](/themes/custom/basis/images/footer/phone.png)
+
+### ![](/themes/custom/basis/images/footer/phone.png)Téléphone
+
+[Nous contacter](/nous_contacter)
+
+01 41 20 16 00
+
+[Nous contacter](/nous_contacter)
+
+![](/themes/custom/basis/images/footer/location.png)
+
+### ![](/themes/custom/basis/images/footer/location.png) Adresse
+
+12 rue de l’Industrie  
+CS 80148  
+92416 Courbevoie Cedex
+
+[Nous rejoindre](/nouvelle-adresse)
+
+## Liens
+
+## footer\_menu
+
+- Liens rapides
+
+  - [Bloc marque de l'agence de l'eau](https://www.eau-seine-normandie.fr/bloc-marque)
+
+  - [Les délégations](http://www.eau-seine-normandie.fr/agence-de-leau/presentation-et-competences/les-delegations-de-signature)
+
+  - [Marchés publics](/marches-publics)
+
+- Site web
+
+  - [Plan du site](/plan-du-site)
+
+  - [Mentions légales](/mentions-legales)
+
+  - [Accessibilité](https://www.eau-seine-normandie.fr/Accessibilite)
+
+- Espace partenaire
+
+  - [Espace Partenaire](https://www.espace-prive.eau-seine-normandie.fr/WebCas/login;jsessionid=DA543FEAAE1A555FF16B560A63FC5F38?service=https%3A%2F%2Fwww.espace-prive.eau-seine-normandie.fr%2FPortailExtranet%2Fj_spring_cas_security_check)
+
+## secondary\_nav
+
+Vous êtes
+
+- [ Vous êtes \+](javascrip:void\(0\))
+
+  Vous êtes [Une collectivité](/collectivite) [Une entreprise](/entreprises) [Un agriculteur](/agriculteur) [Un formateur](/enseignants-formateurs) [Une association](/association)
+
+  [L'agence de l'eau](/)
+
+- [ L'agence de l'eau \+](javascrip:void\(0\))
+
+  L'agence de l'eau [Nos missions](/agence-de-leau/nos_missions) [Le bassin de la Seine, notre territoire d’action](/agence-de-leau/le-bassin-de-la-seine) [Notre organisation](/directions-territoriales) [Nos évaluations](https://www.eau-seine-normandie.fr/agence-de-leau/nos-evaluations-des-politiques-publiques) [Nos données](/agence-de-leau/donnees-sur-l-eau) [Notre portail cartographique : Géo Seine-Normandie](/Portail-cartographique-geo-seine-normandie) [Notre politique RSE](/agence-de-leau/RSE)
+
+  [Gouvernance](/)
+
+- [ Gouvernance \+](javascrip:void\(0\))
+
+  Gouvernance [Le conseil d’administration](/agence-de-leau/le-conseil-d-administration) [Le comité de bassin](/le-comite-de-bassin/presentation) [La commission de labellisation territoriale](https://www.eau-seine-normandie.fr/gouvernance/commission_labellisation_territoriale) [Le conseil scientifique](/le-comite-de-bassin/le-conseil-scientifique) [Les commissions territoriales](/le-comite-de-bassin/les-commissions-territoriales) [Les forums des acteurs de l’eau](/le-comite-de-bassin/forum_des_acteurs_eau) [Les SAGE](/domaines-d-action/politique-territoriale) [Les délibérations](/le-comite-de-bassin/deliberations)
+
+  [La qualité des eaux](/)
+
+- [ La qualité des eaux \+](javascrip:void\(0\))
+
+  [La qualité des eaux souterraines ](/qualite-de-l-eau/qualite-des-eaux-souterraines) [La qualité des eaux superficielles ](/qualite-de-l-eau/qualite-des-eaux-superficielles) [La qualité des eaux littorales ](/qualite-de-l-eau/qualite-des-eaux-littorales) [Les programmes de recherche](/domaines-d-action/Les_programmes_de_recherche) [Les études](https://www.eau-seine-normandie.fr/domaines-d-action/etudes)
+
+  Recrutement
+
+- [ Recrutement \+](javascrip:void\(0\))
+
+  [Travailler à l'agence de l'eau](/travailler-a-l-agence-de-l-eau) [Nos offres d'emploi](https://www.profileau.fr/fr?c-agence-cd=seine-normandie-aesn) [Nos stages](https://www.profileau.fr/fr?type-contrat=stage&c-agence-cd=seine-normandie-aesn)
+
+## Guide eviter-reduire-compenser
+
+![dessin représentant une ville sur une éponge ](/sites/public_file/2024-01/GUIDE%20ERC%20Imperm%C3%A9abilisation%20des%20sols%20-%20VF.jpg)
+
+Guide "Éviter, Réduire, Compenser"
+
+Ce guide a pour objectif d’aider les collectivités à limiter l’imperméabilisation voire désimperméabiliser leur territoire grâce à une méthodologie concrète privilégiant les solutions fondées sur la nature, en application de la disposition 3\.2.2 du SDAGE.
+
+[Découvrez le guide !](https://www.eau-seine-normandie.fr/actualites/publication-du-guide-Eviter-Reduire-Compenser)
+
+## enquetelectorat
+
+![dessin représentant une femme debout et un homme assis sur un canape](/sites/public_file/2024-02/enquete_newsletter.jpg)
+
+Enquête lectorat
+
+Donnez-nous votre avis sur la newsletter numérique Confluence : **3 minutes suffisent pour répondre** !  
+Merci de participer à l'amélioration de votre newsletter ! 
+
+[Répondez dès maintenant !](https://www.ecins-enquete.fr/newsletter_112dh/Confluence.html)
+
+## Confluence Dossier Sol
+
+![couverture rose et bleue avec un dessin représentant un jardinier ](/sites/public_file/2023-05/Confkuence%20Dossier%20.png)
+
+Eau et sol
+
+Découvrez les rôles insoupçonnés et essentiels du sol dans ce numéro de Confluence !
+
+[Téléchargez le magazine](https://www.calameo.com/agence-de-l-eau-seine-normandie/read/00400191370b432e6e470)
+
+## Nouvelle adresse
+
+![dessin de déménagement ](/sites/public_file/2023-01/Pastille%20demenagement-Texte%20et%20fond.png)
+
+Nouvelle adresse
+
+Le siège de l’agence de l’eau et la direction territoriale Seine Francilienne déménagent au :
+
+12 rue de l’Industrie  
+CS 80148  
+92416 Courbevoie Cedex
+
+[Nous rejoindre](/nouvelle-adresse)
+
+## Popup\_webinaire
+
+![bandeau webinaire](/sites/public_file/2023-08/Bandeau%20SIGNATURE%20MAIL.png)
+
+Webinaire " L'eau dans les documents d'urbanisme"
+
+L’agence de l’eau Seine-Normandie organise  le jeudi 19 octobre 2023 , de 10h00 à 12h30, un forum dédié à l’intégration des enjeux de l’eau dans les documents d'urbanisme.
+
+[Connectez-vous !](https://www.forum-aesn-eau-urbanisme.fr/live)
+
+## Rapport d'activité 2022
+
+![couverture du rapport d'activité 2022](/sites/public_file/2023-05/Rapport_activite-2023_1.png)
+
+Rapport d'activité 2022
+
+Découvrez les actions marquantes de l'année 2022 !
+
+[Téléchargez le document](https://www.calameo.com/agence-de-l-eau-seine-normandie/read/00400191399290f52c0be)
+
+## Stratégie CC
+
+![coquelicots ](/sites/public_file/2023-10/Design%20sans%20titre%20%281%29_1.jpg)
+
+stratégie d'adaptation au changement climatique
+
+Le 5 octobre 2023, le comité de bassin Seine-Normandie a voté à l'unanimité la stratégie d'adaptation au changement climatique.  
+ 
+
+[Découvrez la stratégie du bassin Seine-Normandie](https://www.eau-seine-normandie.fr/domaines-d-action/strategie_adaptation_climatique)
+
+## Programme\_eau\_climat\_biodiversite
+
+![logo du 12e programme](/sites/public_file/2025-01/AESN_12E%20PROGRAMME_LOGOTYPE_COULEUR_RVB.jpg)
+
+L’agence de l’eau Seine-Normandie lance son programme d’intervention pour 6 ans : le programme "Eau, climat & biodiversité" 2025-2030 !
+
+[Découvrez les aides financières](https://www.eau-seine-normandie.fr/programme-eau-climat-biodiversite-2025-2030)
+
+## Rapport d'activité 2023
+
+![couverture du rapport d'activité 2023](/sites/public_file/2024-07/rapport_actiivte_2023.PNG)
+
+Le rapport d'activité vient de paraître
+
+Découvrez les grands chiffres de l'année 2023 pour l'agence de l'eau Seine-Normandie !
+
+[Consultez le rapport](https://www.calameo.com/agence-de-l-eau-seine-normandie/read/004001913549904459f23)

@@ -1,0 +1,73 @@
+{
+  "arm": "hffmnnj",
+  "task": "smoke/house-capital",
+  "draw": "house-capital-smoke",
+  "adapter": "hffmnnj",
+  "adapter_result": "valid",
+  "excluded": false,
+  "reused": true,
+  "rerun_of": "",
+  "break_class": "none",
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 236.4,
+  "prompt_tokens": 52135,
+  "completion_tokens": 5193,
+  "tool_calls": 16,
+  "search_provider": "none",
+  "native_search": [],
+  "websearch_calls": 0,
+  "search_engine_fetches": [],
+  "replies": 13,
+  "model_preflight": "ok",
+  "native_files": 7,
+  "contract_ok": true,
+  "contract_reason": "",
+  "rubric": {
+    "status": "scored",
+    "task": "smoke/house-capital",
+    "kind": "house",
+    "components": {
+      "citation_support": 0.0,
+      "known_answer": null,
+      "must_cover": 4.0,
+      "numerals": 1,
+      "prose": 3
+    },
+    "max": 16,
+    "score": 8.0,
+    "citation_pass": false,
+    "notes": {
+      "cited_sentences": 2,
+      "supported_sentences": 0,
+      "numerals": [
+        "1",
+        "6",
+        "2",
+        "6",
+        "0",
+        "2026",
+        "11",
+        "28",
+        "1387772859",
+        "6",
+        "1384649318",
+        "6",
+        "3",
+        "600",
+        "6",
+        "7",
+        "403,",
+        "404",
+        "37"
+      ],
+      "unsupported_numerals": [
+        "403,",
+        "404"
+      ],
+      "prose_matches": 0
+    }
+  },
+  "valid": true,
+  "score": 8.0
+}

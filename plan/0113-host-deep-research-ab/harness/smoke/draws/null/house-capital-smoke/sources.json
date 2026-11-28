@@ -1,39 +1,19 @@
 {
   "sources": [
     {
-      "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Paris",
-      "quote": "Paris is the capital and largest city of France, with an estimated city population of 2.04 million in an area of 105.4 km2 (40.7 sq mi), as of January 2026, and a metropolitan population of 13.3 million (2023). Located on the Seine in the centre of the Île-de-France region, it is the largest metropolitan area and fourth-most populous city in the European Union (EU).",
-      "locator": "JSON response, \"extract\" field: article lead summary, first two sentences (the same text appears in \"extract_html\", and the \"description\" field reads \"Capital and largest city of France\")"
-    },
-    {
       "url": "https://en.wikipedia.org/wiki/Paris",
-      "quote": "By the end of the 12th century, Paris had become the political, economic, religious, and cultural capital of France.",
-      "locator": "Section 2 History, subsection 2.2 \"High and Late Middle Ages to Louis XIV\", second paragraph of that subsection (revision oldid=1387772859). The same article backs two further verbatim spans used in the report: \"As the capital of France\" (Section 4 Administration, subsection 4.4 National government, first sentence) and \"Paris is spread widely on both banks of the river.\" (Section 3 Geography, first paragraph, final sentence)"
-    },
-    {
-      "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Seine",
-      "quote": "It rises at Source-Seine, 30 kilometres (19 mi) northwest of Dijon in northeastern France in the Langres plateau, flowing through Paris and into the English Channel at Le Havre.",
-      "locator": "JSON response, \"extract\" field: article lead summary, third sentence (same text in \"extract_html\")"
+      "quote": "Paris is the capital and largest city of France, with an estimated city population of 2.04 million in an area of 105.4 km2 (40.7 sq mi), as of January 2026, and a metropolitan population of 13.3 million (2023). Located on the Seine in the centre of the Île-de-France region, it is the largest metropolitan area and fourth-most populous city in the European Union (EU).",
+      "locator": "Lead paragraph (introduction), under the heading \"Paris\""
     },
     {
       "url": "https://en.wikipedia.org/wiki/Seine",
-      "quote": "offer sightseeing tours of the river banks in the capital city, Paris",
-      "locator": "Article lead, first paragraph, final sentence (revision oldid=1384649318). The same article backs two further verbatim spans used in the report: \"At Paris, there are 37 bridges.\" (Section 3 Navigation, second paragraph) and \"the Seine-Normandy watershed experiences the highest human impacts of any hydrographic basin in France\" (Section 6 Water quality, first paragraph)"
+      "quote": "It rises at Source-Seine, 30 kilometres (19 mi) northwest of Dijon in northeastern France in the Langres plateau, flowing through Paris and into the English Channel at Le Havre (and Honfleur on the left bank).",
+      "locator": "Lead paragraph (introduction), under the heading \"Seine\""
     },
     {
       "url": "https://whc.unesco.org/en/list/600/",
       "quote": "The city of Paris is built along a bend in the River Seine, between the confluence of the Marne and the Oise Rivers.",
-      "locator": "\"Outstanding Universal Value\" section, subheading \"Brief synthesis\", first sentence of the first paragraph. The same section's next paragraph contains the other two spans cited in the report: \"the different layers of the history of Paris, the capital city of one of the first great nation states of Europe\" and \"an exceptional and unique example of urban riverside architecture\""
-    },
-    {
-      "url": "https://www.worldatlas.com/articles/which-river-runs-through-paris.html",
-      "quote": "Paris is the largest city and the capital city of France. Paris is on the River Seine, or the Seine River.",
-      "locator": "Untitled introductory paragraph directly beneath the image caption \"Paris is on the River Seine.\"; reproduced verbatim in the page's schema.org JSON-LD block at hasPart.value, where the sentence \"The River Seine flows 8.078 miles through the city from east to west.\" also appears"
-    },
-    {
-      "url": "https://www.paris.fr/dossiers/la-seine-coeur-battant-de-paris-216",
-      "quote": "13 km (sur un total de 777 km de longueur entre le plateau de Langres et l'estuaire du Havre)",
-      "locator": "First bullet of the list under the heading \"La Seine à Paris c'est :\", in the introduction of the dossier \"La Seine, cœur battant de Paris\" (page note \"Mise à jour le 03/07/2025\"); the report also paraphrases the introductory paragraph's phrase \"fait vibrer la capitale\" from the same block"
+      "locator": "Section \"Outstanding Universal Value\", subsection \"Brief synthesis\""
     }
   ]
 }

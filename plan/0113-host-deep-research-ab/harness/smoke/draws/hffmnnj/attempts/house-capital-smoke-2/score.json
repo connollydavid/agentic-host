@@ -1,0 +1,32 @@
+{
+  "arm": "hffmnnj",
+  "task": "smoke/house-capital",
+  "draw": "house-capital-smoke",
+  "adapter": "hffmnnj",
+  "adapter_result": "valid",
+  "excluded": false,
+  "reused": false,
+  "rerun_of": "hffmnnj/attempts/house-capital-smoke-1",
+  "break_class": "arm",
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 231.9,
+  "prompt_tokens": 9019,
+  "completion_tokens": 3349,
+  "tool_calls": 11,
+  "search_provider": "none",
+  "native_search": [],
+  "websearch_calls": 0,
+  "search_engine_fetches": [],
+  "replies": 8,
+  "model_preflight": "ok",
+  "native_files": 5,
+  "contract_ok": false,
+  "contract_reason": "phantom source(s) absent from the fetch log: https://en.wikipedia.org/wiki/Paris, https://en.wikipedia.org/wiki/Paris, https://en.wikipedia.org/wiki/Seine, https://en.wikipedia.org/wiki/Seine",
+  "rubric": {
+    "status": "void",
+    "reason": "phantom source(s) absent from the fetch log: https://en.wikipedia.org/wiki/Paris, https://en.wikipedia.org/wiki/Paris, https://en.wikipedia.org/wiki/Seine, https://en.wikipedia.org/wiki/Seine"
+  },
+  "valid": false,
+  "score": 0
+}

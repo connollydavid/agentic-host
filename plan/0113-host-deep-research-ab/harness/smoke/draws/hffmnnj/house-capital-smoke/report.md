@@ -1,11 +1,18 @@
-**Answer: the capital of France is Paris, and the river that runs through it is the Seine.**
 
-Paris is the capital and largest city of France — an estimated 2.04 million inhabitants within the city limits as of January 2026, and 13.3 million in the metropolitan area (2023) [rn_mwz721ukczpz]. The Seine is a 777 km (483 mi) river of northern France that rises at Source-Seine, about 30 km northwest of Dijon, crosses Paris (37 bridges span it there), and reaches the English Channel at Le Havre and Honfleur [rn_mwz721up681b]. UNESCO's World Heritage property "Paris, Banks of the Seine" (inscribed 1991, from a nomination filed by France) independently describes Paris as "the capital city of one of the first great nation states of Europe" and as "built along a bend in the River Seine, between the confluence of the Marne and the Oise Rivers" [rn_mwz721ukczpz] [rn_mwz721up681b].
+# Capital and River of France — Research Report
 
-**Caveats.** The Seine is the river of Paris proper; the Marne joins it just downstream at Charenton-le-Pont, and the Bièvre, a former tributary inside the city, is now culverted [rn_mwz721up681b]. Paris's capital status is carried by reference works and France's own UNESCO filing, not by a constitutional clause I could find: Article 1 of the 2008-amended English translation of the 1958 Constitution names no capital, though my read stopped near Article 65, so the rest is unchecked [rn_mwz721use3c7].
+**Question:** What is the capital of France, and which river runs through it?
+**Date:** 2026-11-28 · **Run:** rr_mwzxc6ar · **Tier:** Quick (0 workers, coordinator-read sources)
 
-**Method and coverage.** Library search returned nothing on this topic, so it was researched fresh at the Quick tier (0 subagents, no separate verifier pass; ~14 tool calls, 6 of them page fetches). Britannica returned HTTP 403 and the Conseil constitutionnel URL HTTP 404, so the two central claims rest on Wikipedia plus one non-Wikimedia source (UNESCO); I read every cited page myself and marked those notes `checked`. Run id `rr_mwz721ug`; notes `rn_mwz721ukczpz`, `rn_mwz721up681b`, `rn_mwz721use3c7`.
+## Answer
 
-1. Paris is the capital and largest city of France — https://en.wikipedia.org/wiki/Paris (rev. 1387772859); https://whc.unesco.org/en/list/600/ (accessed 2026-11-27)
-2. The Seine is the river that runs through Paris, flowing 777 km to the English Channel — https://en.wikipedia.org/wiki/Seine (rev. 1384649318); https://whc.unesco.org/en/list/600/ (accessed 2026-11-27)
-3. The 2008 English translation of France's 1958 Constitution does not name Paris as capital in Article 1 — https://en.wikisource.org/wiki/Constitution_of_the_Fifth_French_Republic_(amended,_2008) (accessed 2026-11-27)
+The capital of France is **Paris**, which is also the country's largest city and the seat of its president and parliament [rn_mwzxc6b4duti]. The river that runs through it is the **Seine**, a 777 km (483 mi) river of northern France that rises near Dijon, crosses Paris on its named "Traversée de Paris" stretch — crossed by 37 bridges in the city — and empties into the English Channel at Le Havre [rn_mwzxc6b5ly6n].
+
+## Evidence
+
+- Wikipedia (Paris, rev. 1387772859, read 2026-11-28): "Paris is the capital and largest city of France… Located on the Seine in the centre of the Île-de-France region." [rn_mwzxc6b0dncd]
+- Wikipedia (Seine, rev. 1384649318, read 2026-11-28): "a 777-kilometre-long (483 mi) river in northern France… flowing through Paris and into the English Channel at Le Havre." [rn_mwzxc6b2t6fg]
+
+## Method, verification coverage, and limits
+
+The library was empty before this run (0 notes), so both findings were researched from scratch. Britannica returned HTTP 403 for both pages, so the accessible route was two distinct Wikipedia articles — same project, therefore not independent origins; per Quick-tier rules the central claims were checked by the coordinator reading the sources directly, not by an independent verifier, and the check is labelled non-independent. No conflicts; these are stable, uncontested geographic facts. Budget used: about 9 tool calls, inside the Quick cap of 8–12.

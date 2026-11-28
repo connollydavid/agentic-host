@@ -1,663 +1,1082 @@
-[ ![UNESCO logo](/assets/images/logo.svg?2026)](/) [ World Heritage Convention](/)
+[Jump to content](#bodyContent)
 
-- [Help preserve sites now!](/en/donation)
+Main menu
 
-- [Explore UNESCO](https://www.unesco.org)
+move to sidebar hide
 
--
+Navigation
 
-  [English](#)
+- [Main page](/wiki/Main_Page "Visit the main page [z]")
 
-  -
+- [Contents](/wiki/Wikipedia:Contents "Guides to browsing Wikipedia")
 
-    English
+- [Current events](/wiki/Portal:Current_events "Articles related to current events")
 
-  - [Français](/fr/list/600/)
+- [Random article](/wiki/Special:Random "Visit a randomly selected article [x]")
 
-- [Login](/en/register/)
+- [About Wikipedia](/wiki/Wikipedia:About "Learn about Wikipedia and how it works")
 
-- [Our expertise](/en/about)
+- [Contact us](//en.wikipedia.org/wiki/Wikipedia:Contact_us "How to contact Wikipedia")
 
-  [About World Heritage](/en/about/)
+Contribute
 
-  [News](/en/news/)
+- [Help](/wiki/Help:Contents "Guidance on how to use and edit Wikipedia")
 
-  [Events](/en/events/)
+- [Learn to edit](/wiki/Help:Introduction "Learn how to edit Wikipedia")
 
-  [The Convention](/en/convention/)
+- [Community portal](/wiki/Wikipedia:Community_portal "The hub for editors")
 
-  [Convention Text](/en/conventiontext/)
+- [Recent changes](/wiki/Special:RecentChanges "A list of recent changes to Wikipedia [r]")
 
-  [Basic Texts](/en/basictexts/)
+- [Upload file](/wiki/Wikipedia:File_upload_wizard "Add images or other media for use on Wikipedia")
 
-  [Operational Guidelines](/en/guidelines/)
+- [Special pages](/wiki/Special:SpecialPages "A list of all special pages [q]")
 
-  [Policy Compendium](/en/compendium/)
+[ ![Wikipedia](/static/images/mobile/copyright/wikipedia-wordmark-en-25.svg) ![The Free Encyclopedia](/static/images/mobile/copyright/wikipedia-tagline-en-25.svg)](/wiki/Main_Page)
 
-  [Declaration of principles to promote international solidarity and cooperation to preserve World Heritage](/en/declaration-of-principles)
+[ Search](/wiki/Special:Search "Search Wikipedia [f]")
 
-  [Governing Bodies](/en/governingbodies/)
+Search
 
-  [The General Assembly](/en/ga/)
+- [Donate](https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=en.wikipedia.org&uselang=en)
 
-  [The Committee](/en/committee/)
+- [Create account](/w/index.php?title=Special:CreateAccount&returnto=Paris "You are encouraged to create an account and log in; however, it is not mandatory")
 
-  [Resolutions / Decisions](/en/decisions/)
+- [Log in](/w/index.php?title=Special:UserLogin&returnto=Paris "You're encouraged to log in; however, it's not mandatory. [o]")
 
-  [Sessions since 1976](/en/sessions/)
+- [ Donate](https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=en.wikipedia.org&uselang=en)
 
-  [The States Parties](/en/statesparties/)
+- [ Create account](/w/index.php?title=Special:CreateAccount&returnto=Paris "You are encouraged to create an account and log in; however, it is not mandatory")
 
-  [The Advisory Bodies](/en/advisorybodies/)
+- [ Log in](/w/index.php?title=Special:UserLogin&returnto=Paris "You're encouraged to log in; however, it's not mandatory. [o]")
 
-  [Funding](/en/funding/)
+## Contents
 
-  [World Heritage Fund](/en/world-heritage-fund/)
+move to sidebar hide
 
-  [Financial regulations](/en/financialregulations/)
+- [](#)
 
-  [International Assistance](/en/intassistance/)
+  (Top)
 
-  [The Emblem](/en/emblem/)
+- [](#Etymology)
 
-  [Questions and answers](/en/faq/)
+  1 Etymology
 
-  [The Centre](/en/world-heritage-centre/)
+- [](#History)
 
-  [Employment & Internships](/en/employment/)
+  2 History
 
-  [Who's Who / Contacts](/en/whoswho/)
+  Toggle History subsection
 
-  [Director of the World Heritage Centre](/en/director/)
+  - [](#Origins)
 
-  [Africa](/en/africa/)
+    2\.1 Origins
 
-  [Arab States](/en/arabstates/)
+  - [](#High_and_Late_Middle_Ages_to_Louis_XIV)
 
-  [Asia & Pacific](/en/asia-pacific/)
+    2\.2 High and Late Middle Ages to Louis XIV
 
-  [Europe & North America](/en/eur-na/)
+  - [](#18th_and_19th_centuries)
 
-  [Latin America and the Caribbean](/en/lac/)
+    2\.3 18th and 19th centuries
 
-- [The List](/en/list/)
+  - [](#20th_and_21st_centuries)
 
-  [Global Strategy](/en/globalstrategy/)
+    2\.4 20th and 21st centuries
 
-  [Criteria](/en/criteria/)
+- [](#Geography)
 
-  [Upstream Process](/en/upstreamprocess/)
+  3 Geography
 
-  [Tentative Lists](/en/tentativelists/)
+  Toggle Geography subsection
 
-  [World Heritage List Nominations](/en/nominations/)
+  - [](#Climate)
 
-  [World Heritage List](/en/list/)
+    3\.1 Climate
 
-  [New Inscribed Properties](/en/newproperties/)
+- [](#Administration)
 
-  [UNESCO Sites Navigator](/en/wh-gis/)
+  4 Administration
 
-  [Interactive Map](/en/interactive-map/)
+  Toggle Administration subsection
 
-  [World Heritage in Danger](/en/danger/)
+  - [](#City_government)
 
-  [The List in Danger](/en/danger-list/)
+    4\.1 City government
 
-  [Reporting & Monitoring](/en/118/)
+  - [](#Métropole_du_Grand_Paris)
 
-  [State of Conservation](/en/soc/)
+    4\.2 Métropole du Grand Paris
 
-  [Periodic Reporting](/en/periodicreporting/)
+  - [](#Regional_government)
 
-  [Questionnaires 2026-2030](/en/prcycle4/)
+    4\.3 Regional government
 
-  [Questionnaires 2018-2024](/en/prcycle3/)
+  - [](#National_government)
 
-  [Questionnaires 2008-2015](/en/pr-questionnaire/)
+    4\.4 National government
 
-  [Reactive Monitoring](/en/reactive-monitoring/)
+  - [](#Police_force)
 
-  [List of factors affecting the properties](/en/factors/)
+    4\.5 Police force
 
-  [Success Stories](/en/success-stories/)
+- [](#Cityscape)
 
-  [Examples of the Convention at work](/en/canopy/)
+  5 Cityscape
 
-- [Activities](/en/activities/)
+  Toggle Cityscape subsection
 
-  [Activites](/en/activities/)
+  - [](#Urbanism_and_architecture)
 
-  The World Heritage Centre is at the forefront of the international community’s efforts to protect and preserve.
+    5\.1 Urbanism and architecture
 
-  [Browse all activities](/en/activities/)
+  - [](#Housing)
 
-  [World Heritage Canopy](/en/canopy/) [ Heritage Solutions for Sustainable Futures](/en/canopy/)
+    5\.2 Housing
 
-  [Browse case studies](/en/canopy/)
+  - [](#Suburbs)
 
-  [Featured Activities](/en/activities/)
+    5\.3 Suburbs
 
-  [Indicators Culture\|2030](/en/culture2030indicators/)
+- [](#Demographics)
 
-  [World Heritage Cities Programme](/en/cities/)
+  6 Demographics
 
-  [Recommendation on the Historic Urban Landscape](/en/hul/)
+  Toggle Demographics subsection
 
-  [Cultural Landscapes](/en/culturallandscape/)
+  - [](#Migration)
 
-  [Capacity Building](/en/capacity-building/)
+    6\.1 Migration
 
-  [Category 2 Centres](/en/category2centres/)
+  - [](#Religion)
 
-  [Natural World Heritage](/en/natural-world-heritage/)
+    6\.2 Religion
 
-  [Climate Change and World Heritage](/en/climatechange/)
+- [](#Economy)
 
-  [World Heritage Marine Programme](/en/marine-programme/)
+  7 Economy
 
-  [World Heritage and Biodiversity](/en/biodiversity/)
+  Toggle Economy subsection
 
-  [Corporate sector and the World Heritage ‘no-go’ commitment](/en/no-go-commitment/)
+  - [](#Employment_and_income)
 
-  [Reducing Disasters Risks at World Heritage Properties](/en/disaster-risk-reduction/)
+    7\.1 Employment and income
 
-  [World Heritage and Indigenous Peoples](/en/activities/496/)
+  - [](#Tourism)
 
-  [World Heritage Education Programme](/en/wheducation/)
+    7\.2 Tourism
 
-  [World Heritage Volunteers Initiative](/en/whvolunteers/)
+- [](#Culture)
 
-  [World Heritage and Sustainable Development](/en/sustainabledevelopment/)
+  8 Culture
 
-  [Sustainable Tourism Programme](/en/tourism/)
+  Toggle Culture subsection
 
-  [World Heritage Programme for Small Island Developing States (SIDS)](/en/sids/)
+  - [](#Painting_and_sculpture)
 
-  [Initiative on Heritage of Religious Interest](/en/religious-sacred-heritage/)
+    8\.1 Painting and sculpture
 
-- [Partnerships](/en/partnerships)
+  - [](#Museums)
 
-  World Heritage partnerships for conservation
+    8\.2 Museums
 
-  Ensuring that World Heritage sites sustain their outstanding universal value is an increasingly challenging mission in today’s complex world, where sites are vulnerable to the effects of uncontrolled urban development, unsustainable tourism practices, neglect, natural calamities, pollution, political instability, and conflict.
+  - [](#Theatre)
 
-  [Our Partners](/en/partners/) [Donate](/en/donation/)
+    8\.3 Theatre
 
-  - [ ![Partnerships](https://whc.unesco.org/document/128912/t=3by2sm&extension=webp) Partnerships](/en/partnerships/)
+  - [](#Literature)
 
-  - [ ![Marketplace](https://whc.unesco.org/document/190295/t=3by2sm&extension=webp) Marketplace](/en/marketplace/)
+    8\.4 Literature
 
-  - [ ![Our Partners](https://whc.unesco.org/document/128241/t=3by2sm&extension=webp) Our Partners](/en/partners/)
+  - [](#Music)
 
-  - [ ![Civil Society](https://whc.unesco.org/document/226224/t=3by2sm&extension=webp) Civil Society](/en/civil-society/)
+    8\.5 Music
 
-  - [ ![Donate](https://whc.unesco.org/document/190344/t=3by2sm&extension=webp) Donate](/en/donation/)
+  - [](#Cinema)
 
-- [Publications](/en/publications/)
+    8\.6 Cinema
 
-  [Publications](/en/publications/)
+  - [](#Restaurants_and_cuisine)
 
-  [Paper Series](/en/series/)
+    8\.7 Restaurants and cuisine
 
-  [Urban Notebooks](/en/urbannotebooks/)
+  - [](#Fashion)
 
-  [Brochures & Info kits](/en/176/)
+    8\.8 Fashion
 
-  [Resource Manuals](/en/resourcemanuals/)
+  - [](#Photography)
 
-  [Other materials](/en/othermaterials/)
+    8\.9 Photography
 
-  [Newsletter](/en/newsletter/)
+  - [](#Media)
 
-  [Review](/en/review/)
+    8\.10 Media
 
-  [Wall Map](/en/map/)
+  - [](#Holidays_and_festivals)
 
-  [Documents](/en/documents/)
+    8\.11 Holidays and festivals
 
-  [Collections](/en/collections/)
+  - [](#Libraries)
 
-  [Resources](/en/resources/)
+    8\.12 Libraries
 
-  [Search](/en/search/)
+- [](#Sports)
 
-  [Glossary](/en/glossary/)
+  9 Sports
 
-  [About this Website](/en/disclaimer/)
+- [](#Infrastructure)
 
-  [Terms / Policies](/en/disclaimer/)
+  10 Infrastructure
 
-  [Syndication](/en/syndication/)
+  Toggle Infrastructure subsection
 
-  [Site Map](/en/sitemap/)
+  - [](#Transport)
 
-  [Useful Websites](/en/219/)
+    10\.1 Transport
 
-- [Search search](#multiSearch "Search")
+    - [](#Walking)
 
-[ ![UNESCO Logo](/assets/images/logo.svg?2026)](/) [ World Heritage Convention](/)
+      10\.1.1 Walking
 
-[close](#multiSearch)
+    - [](#Railways)
 
-Searchsearch
+      10\.1.2 Railways
 
-Take advantage of the search to browse through the World Heritage Centre information.
+    - [](#Air)
 
-search
+      10\.1.3 Air
 
-tune Filter
+    - [](#Motorways)
 
-By Properties
+      10\.1.4 Motorways
 
-By States Parties
+    - [](#Waterways)
 
-By Regions
+      10\.1.5 Waterways
 
-Danger Site
+    - [](#Cycling)
 
-Delisted
+      10\.1.6 Cycling
 
-Transboundary / Transnational
+  - [](#Electricity)
 
-Year Inscribed
+    10\.2 Electricity
 
-Themes
+  - [](#Water_and_sanitation)
 
-All
+    10\.3 Water and sanitation
 
-Cities
+  - [](#Parks_and_gardens)
 
-Cultural Landscape
+    10\.4 Parks and gardens
 
-Forest
+  - [](#Cemeteries)
 
-Marine & coastal
+    10\.5 Cemeteries
 
-Earthen Architecture
+  - [](#Education)
 
-Criteria
+    10\.6 Education
 
-with only with
+  - [](#Healthcare)
 
-Cultural Criteria:
+    10\.7 Healthcare
 
-| i | ii | iii | iv | v | vi |
-| --- | --- | --- | --- | --- | --- |
+- [](#International_relations)
 
-Natural Criteria:  
+  11 International relations
 
-| vii | viii | ix | x |  |  |
-| --- | --- | --- | --- | --- | --- |
+  Toggle International relations subsection
 
-Keywords
+  - [](#International_organisations)
 
-Category
+    11\.1 International organisations
 
-Cultural
+  - [](#Twin_towns_–_sister_cities)
 
-Natural
+    11\.2 Twin towns – sister cities
 
-Mixed
+  - [](#Other_relationships)
 
-Media
+    11\.3 Other relationships
 
-All
+- [](#In_popular_culture)
 
-With videos
+  12 In popular culture
 
-With photo gallery
+- [](#See_also)
 
-Display with the brief description
+  13 See also
 
-Without
+- [](#Notes)
 
-With
+  14 Notes
 
-Display component parts
+- [](#References)
 
-Less component parts
+  15 References
 
-All Component parts
+  Toggle References subsection
 
-Order by
+  - [](#Citations)
 
-Country
+    15\.1 Citations
 
-Region
+  - [](#Sources)
 
-Year
+    15\.2 Sources
 
-Name of the property
+- [](#Further_reading)
 
-Search 
+  16 Further reading
 
-[The List](/en/list/) [Paris, Banks of the Seine](/en/list/600/)
+- [](#External_links)
 
-[]()
+  17 External links
 
-[Print](/pg_friendly_print.cfm?cid=31&id_site=600 "print")
+# Paris
 
-###### Share on social media
+- [Acèh](https://ace.wikipedia.org/wiki/Paris "Paris – Acehnese")
 
-[Facebook](#) [Twitter](#)
+- [Адыгабзэ](https://ady.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Adyghe")
 
-###### UNESCO social media
+- [Afrikaans](https://af.wikipedia.org/wiki/Parys "Parys – Afrikaans")
 
-[Facebook](https://www.facebook.com/unesco) [Youtube](https://www.youtube.com/unesco) [Twitter](https://www.twitter.com/unesco)
+- [Alemannisch](https://als.wikipedia.org/wiki/Paris "Paris – Alemannic")
 
-[RSS World Heritage](/en/syndication)
+- [አማርኛ](https://am.wikipedia.org/wiki/%E1%8D%93%E1%88%AA%E1%88%B5 "ፓሪስ – Amharic")
 
-[Terms / Policies](/en/disclaimer/) [Syndication](/en/syndication/)
+- [Aragonés](https://an.wikipedia.org/wiki/Par%C3%ADs "París – Aragonese")
 
-# Paris, Banks of the Seine
+- [Ænglisc](https://ang.wikipedia.org/wiki/Paris "Paris – Old English")
 
-- [Description](/en/list/600/)
+- [अंगिका](https://anp.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पेरिस – Angika")
 
-- [Maps](/en/list/600/maps/)
+- [العربية](https://ar.wikipedia.org/wiki/%D8%A8%D8%A7%D8%B1%D9%8A%D8%B3 "باريس – Arabic")
 
-- [Documents](/en/list/600/documents/)
+- [ܐܪܡܝܐ](https://arc.wikipedia.org/wiki/%DC%A6%DC%90%DC%AA%DC%9D%DC%A3 "ܦܐܪܝܣ – Aramaic")
 
-- [Gallery](/en/list/600/gallery/)
+- [الدارجة](https://ary.wikipedia.org/wiki/%D8%A8%D8%A7%D8%B1%D9%8A%D8%B2 "باريز – Moroccan Arabic")
 
-- [Video](/en/list/600/video/)
+- [مصرى](https://arz.wikipedia.org/wiki/%D8%A8%D8%A7%D8%B1%D9%8A%D8%B3 "باريس – Egyptian Arabic")
 
-- [Indicators](/en/list/600/indicators/)
+- [অসমীয়া](https://as.wikipedia.org/wiki/%E0%A6%AA%E0%A7%87%E0%A7%B0%E0%A6%BF%E0%A6%9B "পেৰিছ – Assamese")
 
-###### Paris, Banks of the Seine
+- [Asturianu](https://ast.wikipedia.org/wiki/Par%C3%ADs "París – Asturian")
 
-From the Louvre to the Eiffel Tower, from the Place de la Concorde to the Grand and Petit Palais, the evolution of Paris and its history can be seen from the River Seine. The Cathedral of Notre-Dame and the Sainte Chapelle are architectural masterpieces while Haussmann's wide squares and boulevards influenced late 19th- and 20th-century town planning the world over.
+- [Atikamekw](https://atj.wikipedia.org/wiki/Paris "Paris – Atikamekw")
 
-Description is available under license [CC-BY-SA IGO 3\.0](/en/licenses/6)
+- [Авар](https://av.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Avaric")
 
-###### Paris, rives de la Seine
+- [Kotava](https://avk.wikipedia.org/wiki/Paris "Paris – Kotava")
 
-Du Louvre jusqu'à la tour Eiffel, ou de la place de la Concorde au Grand Palais et au Petit Palais, on peut voir l'évolution de Paris et son histoire depuis la Seine. La cathédrale Notre-Dame et la Sainte-Chapelle sont des chefs-d'œuvre d'architecture. Quant aux larges places et avenues construites par Haussmann, elles ont influencé l'urbanisme de la fin du XIXe et du XXe siècle dans le monde entier.
+- [अवधी](https://awa.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A5%80%E0%A4%B8 "पेरीस – Awadhi")
 
-Description is available under license [CC-BY-SA IGO 3\.0](/en/licenses/6)
+- [Aymar aru](https://ay.wikipedia.org/wiki/Paris "Paris – Aymara")
 
-###### باريس، ضفاف نهر السين
+- [Azərbaycanca](https://az.wikipedia.org/wiki/Paris "Paris – Azerbaijani")
 
-من متحف اللوفر إلى برج إيفيل، أو من ساحة الكونكورد إلى القصر الكبير والقصر الصغير، يمكن رؤية تطور باريس وتاريخها من نهر السين. وتُعتبر كارتدرائية نوتر دام، ووكنيستها  تحفتين من التُحف الهندسية. أما الساحات الواسعة والجادات التي شيّدها هوسمان، فقد خلّفت تأثيرها على تنظيم المُدن منذ أواخر القرن التاسع عشر حتى القرن العشرين في كافة بقاع العالم.
+- [تۆرکجه](https://azb.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B1%DB%8C%D8%B3 "پاریس – South Azerbaijani")
 
-source: UNESCO/CPE  
-Description is available under license [CC-BY-SA IGO 3\.0](/en/licenses/6)
+- [Башҡортса](https://ba.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Bashkir")
 
-###### 巴黎塞纳河畔
+- [Basa Bali](https://ban.wikipedia.org/wiki/Paris "Paris – Balinese")
 
-从卢浮宫到埃菲尔铁塔，从协和广场到大小王宫，巴黎的历史变迁从塞纳河可见一斑。巴黎圣母院和圣礼拜堂堪称建筑杰作，而土耳其宽阔的广场和林荫道则影响着19世纪末和20世纪全世界的城市规划。
+- [Boarisch](https://bar.wikipedia.org/wiki/Paris "Paris – Bavarian")
 
-source: UNESCO/CPE  
-Description is available under license [CC-BY-SA IGO 3\.0](/en/licenses/6)
+- [Žemaitėška](https://bat-smg.wikipedia.org/wiki/Par%C4%AB%C5%BEios "Parīžios – Samogitian")
 
-###### Берега Сены в Париже
+- [Bikol Central](https://bcl.wikipedia.org/wiki/Paris "Paris – Central Bikol")
 
-Эволюция Парижа и вся его история могут быть прослежены на берегах реки Сена – от Лувра до Эйфелевой башни, и от площади Согласия до Большого и Малого дворцов. Собор Парижской Богоматери и Сент-Шапель являются шедеврами архитектуры, а широкие площади и бульвары Оссмана оказали влияние на градостроительство XIX-XX вв. по всему миру.
+- [Беларуская (тарашкевіца)](https://be-tarask.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D1%8B%D0%B6 "Парыж – Belarusian (Taraškievica orthography)")
 
-source: UNESCO/CPE  
-Description is available under license [CC-BY-SA IGO 3\.0](/en/licenses/6)
+- [Беларуская](https://be.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D1%8B%D0%B6 "Парыж – Belarusian")
 
-###### París (orillas del Sena)
+- [Betawi](https://bew.wikipedia.org/wiki/Par%C3%A8s "Parès – Betawi")
 
-La evolución de la ciudad de París y su historia se pueden contemplar recorriendo las orillas del Sena desde el museo del Louvre hasta la Torre Eiffel, pasando por la Plaza de la Concordia, el Grand Palais y el Petit Palais. Junto al río se alzan también la catedral de Notre-Dame y la Sainte Chapelle, dos obras maestras de la arquitectura gótica. Las amplias plazas y avenidas trazadas en otras partes de la ciudad con arreglo al plan urbanístico de Haussmann sirvieron de modelo al ordenamiento urbano de muchas ciudades del mundo, a finales del siglo XIX y en el siglo XX.
+- [Български](https://bg.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Bulgarian")
 
-source: UNESCO/CPE  
-Description is available under license [CC-BY-SA IGO 3\.0](/en/licenses/6)
+- [भोजपुरी](https://bh.wikipedia.org/wiki/%E0%A4%AA%E0%A5%88%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पैरिस – Bhojpuri")
 
-###### パリのセーヌ河岸
+- [Bislama](https://bi.wikipedia.org/wiki/Paris "Paris – Bislama")
 
-パリは市街を流れるセーヌ河岸を中心に広がり、両岸には古代ローマ時代以後の建築物が連なっている。川中のシテ島はパリ発祥の地。サン・ルイ島の東端にかかるシュリ橋から、左岸にエッフェル塔をのぞむイエナ橋までが、世界遺産に登録されている。ノートル-ダム大聖堂をはじめ、ルーブル宮殿、エリゼ宮、シャイヨー宮、アンバリッド廃兵院、フランス学士院、市役所、公園などが長い年月をかけて建設された。
+- [Banjar](https://bjn.wikipedia.org/wiki/Paris "Paris – Banjar")
 
-source: [NFUAJ](https://www.unesco.or.jp/activities/isan/worldheritagelist/)
+- [বাংলা](https://bn.wikipedia.org/wiki/%E0%A6%AA%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B0%E0%A6%BF%E0%A6%B8 "প্যারিস – Bangla")
 
-###### Parijs, oevers van de Seine
+- [བོད་ཡིག](https://bo.wikipedia.org/wiki/%E0%BD%95%E0%BC%8B%E0%BD%A2%E0%BD%B2%E0%BC%8D "ཕ་རི། – Tibetan")
 
-Vanaf de rivier de Seine kan men de ontwikkeling van Parijs en haar geschiedenis zien; van het Louvre tot de Eiffeltoren en van de Place de la Concorde tot het Grand en Petit Palais. De kathedraal van Notre-Dame en de Sainte Chapelle zijn architectonische meesterwerken, terwijl de grote pleinen en boulevards van Haussmann de stedenbouw aan het einde van de 19e en 20e eeuw over de hele wereld beïnvloed hebben. Parijs is een rivierstad, al sinds de eerste menselijke nederzettingen – van de prehistorische dagen en het dorp van de Parisii stammen – heeft de Seine zowel een defensieve als een economische rol gespeeld.
+- [Brezhoneg](https://br.wikipedia.org/wiki/Pariz "Pariz – Breton")
 
-Source: [unesco.nl](http://unesco.nl/erfgoed/parijs-oevers-van-de-seine)
+- [Bosanski](https://bs.wikipedia.org/wiki/Pariz "Pariz – Bosnian")
 
-- [English](#contentdes_en)
+- [Буряад](https://bxr.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D1%81 "Парис – Russia Buriat")
 
-- [French](#contentdes_fr)
+- [Català](https://ca.wikipedia.org/wiki/Par%C3%ADs "París – Catalan")
 
-- [Arabic](#contentdes_ar)
+- [Chavacano de Zamboanga](https://cbk-zam.wikipedia.org/wiki/Paris "Paris – Chavacano")
 
-- [Chinese](#contentdes_zh)
+- [閩東語 / Mìng-dĕ̤ng-ngṳ̄](https://cdo.wikipedia.org/wiki/B%C4%83-l%C3%A0%CC%A4 "Bă-là̤ – Mindong")
 
-- [Russian](#contentdes_ru)
+- [Нохчийн](https://ce.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Chechen")
 
-- [Spanish](#contentdes_es)
+- [Cebuano](https://ceb.wikipedia.org/wiki/Paris "Paris – Cebuano")
 
-- [Japanese](#contentdes_ja)
+- [Chamoru](https://ch.wikipedia.org/wiki/Paris "Paris – Chamorro")
 
-- [Dutch](#contentdes_nl)
+- [Tsetsêhestâhese](https://chy.wikipedia.org/wiki/Paris "Paris – Cheyenne")
 
-[ ![](https://whc.unesco.org/uploads/thumbs/site_0600_0061-400-400-20190417100817-q35.webp "Paris, Banks of the Seine")](/en/list/600/gallery/)
+- [کوردی](https://ckb.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B1%DB%8C%D8%B3 "پاریس – Central Kurdish")
 
-[![](https://whc.unesco.org/uploads/thumbs/site_0600_0012-40-40-20151104122427-q35.webp "Paris, Banks of the Seine")](/en/list/600/gallery/) [![](https://whc.unesco.org/uploads/thumbs/site_0600_0010-40-40-20151104122451-q35.webp "Paris, Banks of the Seine")](/en/list/600/gallery/) [![](https://whc.unesco.org/uploads/thumbs/site_0600_0013-40-40-20151104122531-q35.webp "Paris, Banks of the Seine")](/en/list/600/gallery/) [![](https://whc.unesco.org/uploads/thumbs/site_0600_0011-40-40-20151104122509-q35.webp "Paris, Banks of the Seine")](/en/list/600/gallery/) [![](https://whc.unesco.org/uploads/thumbs/site_0600_0017-40-40-20151104122649-q35.webp "Paris, Banks of the Seine")](/en/list/600/gallery/) [![](https://whc.unesco.org/uploads/thumbs/site_0600_0015-40-40-20151104122614-q35.webp "Paris, Banks of the Seine")](/en/list/600/gallery/) [add](/en/list/600/gallery/ "More images")
+- [Corsu](https://co.wikipedia.org/wiki/Parighji "Parighji – Corsican")
 
-## Outstanding Universal Value
+- [Qırımtatarca](https://crh.wikipedia.org/wiki/Paris "Paris – Crimean Tatar")
 
-**Brief synthesis**
+- [Čeština](https://cs.wikipedia.org/wiki/Pa%C5%99%C3%AD%C5%BE "Paříž – Czech")
 
-The city of Paris is built along a bend in the River Seine, between the confluence of the Marne and the Oise Rivers. The property comprises bridges, quays and the banks of the Seine in the historic part of its course (between the Pont de Sully and the Pont d’Iéna) and the Ile de la Cité and the Ile St Louis. The mastery of the architecture and town planning along the river is evident in the articulation of the Ile de la Cité and Ile St Louis with its banks, the creation of North-South thoroughfares, the installations along the river course, the construction of quays and the channelling of the river. The ensemble, regarded as a geographical and historical entity, forms an exceptional and unique example of urban riverside architecture, where the different layers of the history of Paris, the capital city of one of the first great nation states of Europe, are harmoniously superposed.
+- [Kaszëbsczi](https://csb.wikipedia.org/wiki/Pariz "Pariz – Kashubian")
 
-From the Ile St Louis to the Pont Neuf, from the Louvre to the Eiffel Tower, and the Place de la Concorde to the Grand and Petit Palais, the evolution of Paris and its history can be seen from the River Seine. A large number of major monuments of the French capital are built alongside the river and on the perspectives overlooking it. The Cathedral of Notre-Dame and the Sainte Chapelle are architectural masterpieces of the Middle Ages; the Pont Neuf illustrates the spirit of French Renaissance; the coherence of the districts of the Marais and the Ile-Saint-Louis testify to Parisian town planning of the 17th and 18th centuries; finally, the banks of the river comprise the most masterful constructions of French classicism, with the Palais de Louvre, the Invalides, the Ecole Militaire and the Monnaie (the Mint). The conserved buildings of the Universal Exhibitions that took place in Paris in the 19th and 20th centuries are numerous on the banks of the River Seine. Heading the list is the Eiffel Tower, a universally recognized icon of Paris and of iron architecture. The Ile Saint Louis, the Quai Malaquais and the Quai Voltaire offer examples of coherent architectural and urban ensembles, with very significant examples of Parisian construction of the 17th and 18th centuries. The large squares and avenues built by Haussmann at the time of Napoleon III have influenced town planning throughout the world.
+- [Словѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ](https://cu.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6%D1%8C "Парижь – Church Slavic")
 
-**Criterion (i)**** ****:** The banks of the Seine are studded with a succession of architectural and urban masterpieces built from the Middle Ages to the 20th century, including the Cathedral of Notre-Dame and the Sainte Chapelle, the Louvre, the Palais de l’Institut, the Hôtel des Invalides, Place de la Concorde, Ecole Militaire, the Monnaie (the Mint), the Grand Palais of the Champs Elysées, the Eiffel Tower and the Palais de Chaillot.
+- [Чӑвашла](https://cv.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Chuvash")
 
-**Criterion (ii)**** ****:** Buildings along the Seine, such as Notre-Dame and the Sainte Chapelle, became the source of the spread of Gothic architecture, while the Place de la Concorde and the vista at the Invalides exerted influence on urban development of European capitals. Haussmann’s urban planning, which marks the western part of the city, inspired the construction of the great cities of the New World, in particular in Latin America. Finally, the Eiffel Tower and the Grand and Petit Palais, the Pont Alexandre III and the Palais de Chaillot are the living testimony of the universal exhibitions, which were of such great importance in the 19th and 20th centuries.
+- [Cymraeg](https://cy.wikipedia.org/wiki/Paris "Paris – Welsh")
 
-**Criterion (iv)**** ****:** United by a grandiose river landscape, the monuments, the architecture and the representative buildings along the banks of the Seine in Paris each illustrate with perfection, most of the styles, decorative arts and building methods employed over nearly eight centuries.
+- [Dansk](https://da.wikipedia.org/wiki/Paris "Paris – Danish")
 
-**Integrity**
+- [Dagbanli](https://dag.wikipedia.org/wiki/Paris "Paris – Dagbani")
 
-Paris is a river city. Ever since the first human settlements, from prehistoric times to the Parisii tribes, the Seine has played both a defensive and an economic role. The present historic city, which developed between the 16th and 20th centuries, expresses the evolution of the relationship between the river and the city. The well-defined area between the Pont de Sully and the Pont d’Iéna is based on the age-old distinction between upstream and downstream. Upstream, the port and river transport; downstream, royal and aristocratic Paris. It is this latter section of the Seine, where functions of the capital city have developed, that was inscribed. The presence of the State through its achievements and legislation has enabled the preservation of the property in its entire integrity.
+- [Deutsch](https://de.wikipedia.org/wiki/Paris "Paris – German")
 
-**Authenticity**
+- [Zazaki](https://diq.wikipedia.org/wiki/Paris "Paris – Dimli")
 
-The completion and consolidation of the riverside, urban and monumental vistas of Paris date from the first half of the 20th century, with the Palais de Tokyo and the Palais de Chaillot. The urban and visual integrity of the site (wide perspectives from the banks) is vulnerable to the pressures of urban development, traffic pollution and tourism, and requires a rigorous control to maintain intact its Outstanding Universal Value.
+- [Dolnoserbski](https://dsb.wikipedia.org/wiki/Paris "Paris – Lower Sorbian")
 
-**Protection and management requirements**
+- [Kadazandusun](https://dtp.wikipedia.org/wiki/Paris "Paris – Central Dusun")
 
-The ensemble of the property enjoys the highest level of legal protection (Heritage Code, Town Planning Code, Environment Code). The property is in an inscribed site, and further comprises six listed sites, notably the Invalides, as well as the Champs de Mars and the Jardins de Trocadéro. Regarding the Historic Monuments, all the important monuments are fully listed.
+- [डोटेली](https://dty.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पेरिस – Doteli")
 
-The State owns, directly or through its public establishments, the quays of the Seine (fluvial public domain), the majority of the monuments and their associated spaces. The city of Paris owns the public areas, the Hôtel de Ville, the parish churches and numerous other plots of land and buildings.
+- [ཇོང་ཁ](https://dz.wikipedia.org/wiki/%E0%BD%94%E0%BD%BA%E0%BC%8B%E0%BD%A2%E0%BD%B2%E0%BD%A6%E0%BC%8D "པེ་རིས། – Dzongkha")
 
-There is no management plan or management authority specifically devoted to the World Heritage property. However, due to the legal and regutory protection, management by the owner or tenants is scientifically and technically controlled by the State. 
+- [Eʋegbe](https://ee.wikipedia.org/wiki/Paris "Paris – Ewe")
 
-The “Cahier des prescriptions urbaines et paysagères pour la mise en valeur des Berges de la Seine dans Paris” (Urban and Landscape Requirements for the Enhancement of the Banks of the Seine in Paris), prepared in 1999 by the city, the State and the autonomous Port, is the reference document for all activity and installations on the banks. The “Specifications de prescription des installations saisonnières” (Seasonal Installation Requirements), approved in 2015, aims to control the temporary use and occupation of the thoroughfares of the lower quays of the banks of the Seine in Paris. The definitive closing of the lower quays to automobile traffic over nearly the whole area of the property, since 2014 on the Left Bank and 2016 on the Right Bank, as part of the development of the banks of the Seine, contributes to preserving its authenticity and integrity.
+- [Ελληνικά](https://el.wikipedia.org/wiki/%CE%A0%CE%B1%CF%81%CE%AF%CF%83%CE%B9 "Παρίσι – Greek")
 
-## Links
+- [Emiliàn e rumagnòl](https://eml.wikipedia.org/wiki/Par%C3%AC "Parì – Emiliano-Romagnolo")
 
-- [ Tourism office](https://parisjetaime.com/eng/article/paris-the-Seine-with-its-bridges-and-footbridges-a025)  
+- [Esperanto](https://eo.wikipedia.org/wiki/Parizo "Parizo – Esperanto")
 
-- [ ![ourplace](/graphics/button_ourplace.gif) View photos from OUR PLACE the World Heritage collection](http://www.ourplaceworldheritage.com/custom.cfm?action=WHsite&whsiteid=600)  
+- [Español](https://es.wikipedia.org/wiki/Par%C3%ADs "París – Spanish")
 
-- [ Website of the city of Paris](http://www.paris.fr/english)  
+- [Eesti](https://et.wikipedia.org/wiki/Pariis "Pariis – Estonian")
 
-Activities 2
+- [Euskara](https://eu.wikipedia.org/wiki/Paris "Paris – Basque")
 
-[]()
+- [Estremeñu](https://ext.wikipedia.org/wiki/Par%C3%ADs "París – Extremaduran")
 
-[](/en/cities/)
+- [فارسی](https://fa.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B1%DB%8C%D8%B3 "پاریس – Persian")
 
-![](https://whc.unesco.org/uploads/thumbs/activity_47-384-216-20251110133619.webp)
+- [Fulfulde](https://ff.wikipedia.org/wiki/Pari "Pari – Fula")
 
-[World Heritage Cities Programme](/en/cities/)
+- [Suomi](https://fi.wikipedia.org/wiki/Pariisi "Pariisi – Finnish")
 
-[UNESCO Urban Heritage Atlas: Cultural mapping of historic cities and settlements\| Paris, Banks of the Seine (France)](/en/urban-heritage-atlas/Paris/)
+- [Võro](https://fiu-vro.wikipedia.org/wiki/Pariis "Pariis – Võro")
 
-News [![rss](/graphics/icons/rss.png "RSS")](/en/news/?action=list&id_sites=600&mode=rss) 7
+- [Na Vosa Vakaviti](https://fj.wikipedia.org/wiki/Parisi "Parisi – Fijian")
 
-[]()
+- [Føroyskt](https://fo.wikipedia.org/wiki/Paris "Paris – Faroese")
 
-[](/en/news/2826/)
+- [Fɔ̀ngbè](https://fon.wikipedia.org/wiki/Paris "Paris – Fon")
 
-![](https://whc.unesco.org/uploads/thumbs/news_2826-384-216-20251031215207.webp)
+- [Français](https://fr.wikipedia.org/wiki/Paris "Paris – French")
 
-[Advancing People- and Heritage-Centred Smart Cities: New case studies on the UNESCO Urban Heritage Atlas](/en/news/2826/)
+- [Arpetan](https://frp.wikipedia.org/wiki/Paris "Paris – Arpitan")
 
-31 October 2025
+- [Nordfriisk](https://frr.wikipedia.org/wiki/Pariis "Pariis – Northern Frisian")
 
-[](/en/news/2500/)
+- [Furlan](https://fur.wikipedia.org/wiki/Par%C3%AEs "Parîs – Friulian")
 
-![](https://whc.unesco.org/uploads/thumbs/news_2500-384-216-20221208152507.webp)
+- [Frysk](https://fy.wikipedia.org/wiki/Parys "Parys – Western Frisian")
 
-[Fire and water: Notre Dame and Decorated Farmhouses of Hälsingland united by artist Mikaela Steby Stenfalk](/en/news/2500/)
+- [Gaeilge](https://ga.wikipedia.org/wiki/P%C3%A1ras "Páras – Irish")
 
-8 December 2022
+- [Gagauz](https://gag.wikipedia.org/wiki/Parij "Parij – Gagauz")
 
-[](/en/news/2421/)
+- [贛語](https://gan.wikipedia.org/wiki/%E5%B7%B4%E9%BB%8E "巴黎 – Gan")
 
-![](https://whc.unesco.org/uploads/thumbs/news_2421-384-216-20230710095240.webp)
+- [Kriyòl gwiyannen](https://gcr.wikipedia.org/wiki/Pari "Pari – Guianan Creole")
 
-[UNESCO to conduct an Advisory mission to Notre Dame Cathedral in Paris](/en/news/2421/)
+- [Gàidhlig](https://gd.wikipedia.org/wiki/Paris "Paris – Scottish Gaelic")
 
-25 March 2022
+- [Galego](https://gl.wikipedia.org/wiki/Par%C3%ADs "París – Galician")
 
-[](/en/news/2102/)
+- [گیلکی](https://glk.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B1%D9%8A%D8%B3 "پاريس – Gilaki")
 
-![](https://whc.unesco.org/uploads/thumbs/news_2102-384-216-20220325162636.webp)
+- [Avañe'ẽ](https://gn.wikipedia.org/wiki/Par%C3%ADs "París – Guarani")
 
-[Notre Dame: One year after the fire](/en/news/2102/)
+- [गोंयची कोंकणी / Gõychi Konknni](https://gom.wikipedia.org/wiki/Paris "Paris – Goan Konkani")
 
-14 April 2020
+- [𐌲𐌿𐍄𐌹𐍃𐌺](https://got.wikipedia.org/wiki/%F0%90%8D%80%F0%90%8C%B0%F0%90%8D%82%F0%90%8C%B4%F0%90%8C%B9%F0%90%8D%83 "𐍀𐌰𐍂𐌴𐌹𐍃 – Gothic")
 
-More add
+- [ગુજરાતી](https://gu.wikipedia.org/wiki/%E0%AA%AA%E0%AB%87%E0%AA%B0%E0%AA%BF%E0%AA%B8 "પેરિસ – Gujarati")
 
-[](/en/news/1956/)
+- [Gungbe](https://guw.wikipedia.org/wiki/Paris "Paris – Gun")
 
-![](https://whc.unesco.org/uploads/thumbs/news_1956-384-216-20220325162300.webp)
+- [Gaelg](https://gv.wikipedia.org/wiki/Paarys "Paarys – Manx")
 
-[Fire ravages Notre Dame Cathedral in Paris, a UNESCO World Heritage Site](/en/news/1956/)
+- [Hausa](https://ha.wikipedia.org/wiki/Faris "Faris – Hausa")
 
-16 April 2019
+- [客家語 / Hak-kâ-ngî](https://hak.wikipedia.org/wiki/P%C3%A2-l%C3%AC "Pâ-lì – Hakka Chinese")
 
-[](/en/news/570/)
+- [Hawaiʻi](https://haw.wikipedia.org/wiki/Palika "Palika – Hawaiian")
 
-![](https://whc.unesco.org/uploads/thumbs/news_570-384-216-20150213100639.webp)
+- [עברית](https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%99%D7%96 "פריז – Hebrew")
 
-[Google and UNESCO announce alliance to provide virtual visits of several World Heritage sites](/en/news/570/)
+- [हिन्दी](https://hi.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पेरिस – Hindi")
 
-3 December 2009
+- [Fiji Hindi](https://hif.wikipedia.org/wiki/Paris "Paris – Fiji Hindi")
 
-[Final “Sharing our Heritages” (SOH) master class in France and Belgium](/en/news/398/)
+- [Hrvatski](https://hr.wikipedia.org/wiki/Pariz "Pariz – Croatian")
 
-3 December 2007
+- [Hornjoserbsce](https://hsb.wikipedia.org/wiki/Paris "Paris – Upper Sorbian")
 
-[]()
+- [Kreyòl ayisyen](https://ht.wikipedia.org/wiki/Pari "Pari – Haitian Creole")
 
-##### Media
+- [Magyar](https://hu.wikipedia.org/wiki/P%C3%A1rizs "Párizs – Hungarian")
 
-[play\_arrow NHK World Heritage 100 Series](https://whc.unesco.org/en/list/600/video)
+- [Հայերեն](https://hy.wikipedia.org/wiki/%D5%93%D5%A1%D6%80%D5%AB%D5%A6 "Փարիզ – Armenian")
 
-[play\_arrow Paris, Banks of the Seine (UNESCO/NHK)](https://whc.unesco.org/en/list/600/video)
+- [Արեւմտահայերէն](https://hyw.wikipedia.org/wiki/%D5%93%D5%A1%D6%80%D5%AB%D5%A6 "Փարիզ – Western Armenian")
 
-[play\_arrow Paris, Banks of the Seine (UNESCO/NHK)](https://whc.unesco.org/en/list/600/video)
+- [Interlingua](https://ia.wikipedia.org/wiki/Paris "Paris – Interlingua")
 
-![](/uploads/states/svg-min/fr.svg)
+- [Jaku Iban](https://iba.wikipedia.org/wiki/Paris "Paris – Iban")
 
-[**France**](/en/statesparties/fr)
+- [Bahasa Indonesia](https://id.wikipedia.org/wiki/Paris "Paris – Indonesian")
 
-**Date of Inscription:** 1991
+- [Interlingue](https://ie.wikipedia.org/wiki/Paris "Paris – Interlingue")
 
-**Minor boundary modification inscribed year:** 2024
+- [Igala](https://igl.wikipedia.org/wiki/Paris "Paris – Igala")
 
-**Criteria:** [(i)(ii)(iv)](/en/criteria/)
+- [Ilokano](https://ilo.wikipedia.org/wiki/Paris "Paris – Iloko")
 
-**Property :** 538 ha  
+- [ГӀалгӀай](https://inh.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B0%D0%B6 "Параж – Ingush")
 
-**Buffer zone:** 3,194 ha
+- [Ido](https://io.wikipedia.org/wiki/Paris "Paris – Ido")
 
-**Dossier:** 600bis
+- [Íslenska](https://is.wikipedia.org/wiki/Par%C3%ADs "París – Icelandic")
 
-Ile de France
+- [Italiano](https://it.wikipedia.org/wiki/Parigi "Parigi – Italian")
 
-N48 51 55\.8 E2 19 16\.1
+- [ᐃᓄᒃᑎᑐᑦ / inuktitut](https://iu.wikipedia.org/wiki/%E1%90%B1%E1%90%85%E1%95%86%E1%94%85 "ᐱᐅᕆᔅ – Inuktitut")
 
-Web Browser not supported for ESRI ArcGIS API version 4\.10. WebGL must be enable, [see documentation](https://developers.arcgis.com/javascript/latest/guide/system-requirements/index.html)
+- [日本語](https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%AA "パリ – Japanese")
 
-Disclaimer
+- [Patois](https://jam.wikipedia.org/wiki/Paris "Paris – Jamaican Creole English")
 
-The Nomination files produced by the States Parties are published by the World Heritage Centre at its website and/or in working documents in order to ensure transparency, access to information and to facilitate the preparations of comparative analysis by other nominating States Parties.
+- [La .lojban.](https://jbo.wikipedia.org/wiki/paris "paris – Lojban")
 
-The sole responsibility for the content of each Nomination file lies with the State Party concerned. The publication of the Nomination file, including the maps and names, does not imply the expression of any opinion whatsoever of the World Heritage Committee or of the Secretariat of UNESCO concerning the history or legal status of any country, territory, city or area or of its boundaries.
+- [Jawa](https://jv.wikipedia.org/wiki/Paris "Paris – Javanese")
 
-##### State of Conservation (SOC)
+- [ქართული](https://ka.wikipedia.org/wiki/%E1%83%9E%E1%83%90%E1%83%A0%E1%83%98%E1%83%96%E1%83%98 "პარიზი – Georgian")
 
-by year
+- [Qaraqalpaqsha](https://kaa.wikipedia.org/wiki/Parij "Parij – Kara-Kalpak")
 
-[2026](/en/soc/5015) [2025](/en/soc/4748) [2024](/en/soc/4586) [2023](/en/soc/4365) [2021](/en/soc/4098) [2019](/en/soc/4004) [2000](/en/soc/3082) [1992](/en/soc/1684)
+- [Taqbaylit](https://kab.wikipedia.org/wiki/Paris_\(Fransa\) "Paris (Fransa) – Kabyle")
 
-##### Protections  
-by other conservation instruments
+- [Karai-karai](https://kai.wikipedia.org/wiki/Paris "Paris – Karekare")
 
-1 protection / 2 elements
+- [Адыгэбзэ](https://kbd.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Kabardian")
 
-**2003 Convention for the Safeguarding of the Intangible Cultural Heritage (2 elements)**  
+- [Kabɩyɛ](https://kbp.wikipedia.org/wiki/Paarii "Paarii – Kabiye")
 
-- [Scribing tradition in French timber framing](https://ich.unesco.org/en/RL/00251)
+- [Tyap](https://kcg.wikipedia.org/wiki/Pari%CC%B1t "Pari̱t – Tyap")
 
-- [The art of glass beads](https://ich.unesco.org/en/RL/01591)
+- [Kongo](https://kg.wikipedia.org/wiki/Paris "Paris – Kongo")
 
-[Read more about synergies](/en/synergies)
+- [Kumoring](https://kge.wikipedia.org/wiki/Paris "Paris – Komering")
 
-![logo](https://whc.unesco.org/graphics/2026-unesco-whc-en.svg)
+- [Қазақша](https://kk.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Kazakh")
 
-[ Committee sessions](/en/sessions/) [ Statutory Documents](/en/documents/) [ Committee decisions](/en/decisions/) [ 48th session (2026)](/en/sessions/48COM/) [ 47th session (2025)](/en/sessions/47COM/)
+- [ភាសាខ្មែរ](https://km.wikipedia.org/wiki/%E1%9E%94%E1%9F%89%E1%9E%B6%E1%9E%9A%E1%9E%B8%E1%9E%9F "ប៉ារីស – Khmer")
 
-[ General Assembly](/en/ga) [ 26th GA (2027)](/en/sessions/26GA) [ 25th GA (2025)](/en/sessions/25GA)
+- [ಕನ್ನಡ](https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%AF%E0%B2%BE%E0%B2%B0%E0%B2%BF%E0%B2%B8%E0%B3%8D "ಪ್ಯಾರಿಸ್ – Kannada")
 
-[ About World Heritage](/en/about/) [ The Convention](/en/convention/) [ Convention Text](/en/conventiontext/) [ Policy Compendium](/en/compendium/) [ Declaration of principles](/en/declaration-of-principles) [ Operational Guidelines](/en/guidelines/) [ The Emblem](/en/emblem/) [ The States Parties](/en/statesparties/) [ The Advisory Bodies](/en/advisorybodies/) [ The Centre](/en/world-heritage-centre/) [ Employment & Internships](/en/employment/) [ Who's Who](/en/whoswho/)
+- [Yerwa Kanuri](https://knc.wikipedia.org/wiki/Paris "Paris – Central Kanuri")
 
-[ The List](/en/list/) [ World Heritage List](/en/list/) [ World Heritage in Danger](/en/danger/) [ New Inscriptions](/en/newproperties/) [ Criteria for Selection](/en/criteria/) [ Tentative Lists](/en/tentativelists/) [ World Heritage List Nominations](/en/nominations/)
+- [한국어](https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_\(%ED%94%84%EB%9E%91%EC%8A%A4\) "파리 (프랑스) – Korean")
 
-[ Reporting & Monitoring](/en/118/) [ State of Conservation (SOC)](/en/soc/) [ Periodic Reporting](/en/periodicreporting/) [ Questionnaires 2018-2024](/en/prcycle3/) [ Questionnaires 2008-2015](/en/pr-questionnaire/) [ Reactive Monitoring](/en/173/) [ Africa](/en/africa/) [ Arab States](/en/arabstates/) [ Asia & Pacific](/en/asia-pacific/) [ Latin America and the Caribbean](/en/lac/) [ Europe and North America](/en/eur-na/)
+- [Перем коми](https://koi.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Komi-Permyak")
 
-[ Partnerships](/en/partnerships/) [ Become a Partner](/en/become-partner/) [ What Partners Do](/en/rolepartenaires/) [ Our Partners](/en/partners/)
+- [Къарачай-малкъар](https://krc.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Karachay-Balkar")
 
-[ Activities](/en/activities/) [ All our activities](/en/activities/) [ Volunteer](/en/volunteer/)
+- [کٲشُر](https://ks.wikipedia.org/wiki/%D9%BE%DB%8C%D8%B1%D9%90%D8%B3 "پیرِس – Kashmiri")
 
-[ Publications](/en/publications/) [ World Heritage Review](/en/review/) [ Series](/en/series/) [ Resource Manuals](/en/resourcemanuals/) [ World Heritage wall map](/en/map/) [ More publications ...](/en/publications/)
+- [Kurdî](https://ku.wikipedia.org/wiki/Par%C3%AEs "Parîs – Kurdish")
 
-[ Funding](/en/funding/) [ World Heritage Fund](/en/world-heritage-fund/) [ International Assistance](/en/intassistance)
+- [Коми](https://kv.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Komi")
 
-[ More](##) [ Contacts](/en/contacts/) [ Site Map](/en/sitemap/) [ Become a member](/en/register) [ Donate Now!](/en/donation/)
+- [Kernowek](https://kw.wikipedia.org/wiki/Paris "Paris – Cornish")
 
-[ UNESCO](https://www.unesco.org/en/) [ UNESCO Latest News](https://www.unesco.org/en/newsroom) [ Take Action](https://www.unesco.org/en/take-action) [ Ideas & Data](https://www.unesco.org/en/ideas-data) [ Our Impact](https://www.unesco.org/en/impact) [ Our expertise](https://www.unesco.org/en/our-expertise) [ Core Data Portal](https://core.unesco.org/) [ Subscribe to our newsletters](http://eepurl.com/i1UpgI)
+- [Кыргызча](https://ky.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Kyrgyz")
 
-[ Terms of use](https://www.unesco.org/en/terms-use) [ Terms of Use](https://www.unesco.org/en/terms-use) [ UNESCO Name & Logo](https://www.unesco.org/en/logo-patronage) [ UNESCO FAQ](https://www.unesco.org/en/faq) [ Report fraud, abuse, misconduct](https://www.unesco.org/en/ios/report-wrongdoing) [ Scam alert](https://www.unesco.org/en/scamalert)
+- [Latina](https://la.wikipedia.org/wiki/Lutetia "Lutetia – Latin")
 
-[ Policies](https://www.unesco.org/en/legal-affairs/) [ Protection of human rights  
-(Procedure 104)](https://www.unesco.org/en/legal-affairs/cr-committee/104-procedure) [ Access to Information](https://www.unesco.org/en/unesco-access-information-policy) [ Website Privacy Notice](https://www.unesco.org/en/website-privacy-notice) [ Events Privacy Notice](https://www.unesco.org/en/events-privacy-notice) [ Data Protection and Privacy](https://www.unesco.org/en/privacy-policy) [ Environmental and Social Policies](https://www.unesco.org/en/environmental-commitment-and-policy)
+- [Ladino](https://lad.wikipedia.org/wiki/Paris "Paris – Ladino")
 
-Follow us
+- [Lëtzebuergesch](https://lb.wikipedia.org/wiki/Par%C3%A4is "Paräis – Luxembourgish")
 
-[ Facebook](https://www.facebook.com/unesco) [ Instagram](https://instagram.com/unesco/) [ Twitter](https://twitter.com/unesco/) [ Youtube](https://www.youtube.com/user/unesco) [ Linkedin](https://www.linkedin.com/company/unesco) [ Syndication RSS](/en/syndication)
+- [Лезги](https://lez.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Lezghian")
 
-1. [UNESCO](https://www.unesco.org)
+- [Lingua Franca Nova](https://lfn.wikipedia.org/wiki/Paris "Paris – Lingua Franca Nova")
 
-2. [Culture](https://www.unesco.org/en/culture)
+- [Luganda](https://lg.wikipedia.org/wiki/Paris "Paris – Ganda")
 
-3. [World Heritage Centre](/)
+- [Limburgs](https://li.wikipedia.org/wiki/Paries "Paries – Limburgish")
 
-4. [The List](/en/list/)
+- [Ligure](https://lij.wikipedia.org/wiki/Pariggi "Pariggi – Ligurian")
 
-5. [World Heritage List](/en/list/)
+- [Ladin](https://lld.wikipedia.org/wiki/Paris "Paris – Ladin")
 
-[© UNESCO World Heritage Centre 1992-2026](/en/disclaimer/)
+- [Lombard](https://lmo.wikipedia.org/wiki/Paris "Paris – Lombard")
 
-![](https://www.unesco.org/sites/default/files/p.png)
+- [Lingála](https://ln.wikipedia.org/wiki/Pari "Pari – Lingala")
 
-[top](#top)
+- [ລາວ](https://lo.wikipedia.org/wiki/%E0%BA%9B%E0%BA%B2%E0%BA%A3%E0%BA%B5 "ປາຣີ – Lao")
 
-##### Login
+- [Lietuvių](https://lt.wikipedia.org/wiki/Pary%C5%BEius "Paryžius – Lithuanian")
 
-Please enter your username Your password
+- [Latgaļu](https://ltg.wikipedia.org/wiki/Pari%C5%BEa "Pariža – Latgalian")
 
-remember my profile
+- [Latviešu](https://lv.wikipedia.org/wiki/Par%C4%ABze "Parīze – Latvian")
 
-[Forgot your username or password?](/en/31/?msg=forgotlogin) [Become a member](/en/register/)
+- [Madhurâ](https://mad.wikipedia.org/wiki/Paris "Paris – Madurese")
 
-Previous  Next  Login
+- [मगही](https://mag.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पेरिस – Magahi")
+
+- [मैथिली](https://mai.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पेरिस – Maithili")
+
+- [Мокшень](https://mdf.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B7 "Париз – Moksha")
+
+- [Malagasy](https://mg.wikipedia.org/wiki/Paris "Paris – Malagasy")
+
+- [Олык марий](https://mhr.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Eastern Mari")
+
+- [Māori](https://mi.wikipedia.org/wiki/Par%C4%AB "Parī – Māori")
+
+- [Minangkabau](https://min.wikipedia.org/wiki/Paris "Paris – Minangkabau")
+
+- [Македонски](https://mk.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B7 "Париз – Macedonian")
+
+- [മലയാളം](https://ml.wikipedia.org/wiki/%E0%B4%AA%E0%B4%BE%E0%B4%B0%E0%B4%BF%E0%B4%B8%E0%B5%8D "പാരിസ് – Malayalam")
+
+- [Монгол](https://mn.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D1%81 "Парис – Mongolian")
+
+- [मराठी](https://mr.wikipedia.org/wiki/%E0%A4%AA%E0%A5%85%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पॅरिस – Marathi")
+
+- [Кырык мары](https://mrj.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Western Mari")
+
+- [Bahasa Melayu](https://ms.wikipedia.org/wiki/Paris "Paris – Malay")
+
+- [Malti](https://mt.wikipedia.org/wiki/Pari%C4%A1i "Pariġi – Maltese")
+
+- [Mirandés](https://mwl.wikipedia.org/wiki/Paris "Paris – Mirandese")
+
+- [မြန်မာဘာသာ](https://my.wikipedia.org/wiki/%E1%80%95%E1%80%AB%E1%80%9B%E1%80%AE%E1%80%99%E1%80%BC%E1%80%AD%E1%80%AF%E1%80%B7 "ပါရီမြို့ – Burmese")
+
+- [Эрзянь](https://myv.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6_%D0%BE%D1%88 "Париж ош – Erzya")
+
+- [مازِرونی](https://mzn.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B1%DB%8C%D8%B3 "پاریس – Mazanderani")
+
+- [Napulitano](https://nap.wikipedia.org/wiki/Parigge "Parigge – Neapolitan")
+
+- [Nedersaksies](https://nds-nl.wikipedia.org/wiki/Paries "Paries – Low Saxon")
+
+- [Plattdüütsch](https://nds.wikipedia.org/wiki/Paris "Paris – Low German")
+
+- [नेपाली](https://ne.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पेरिस – Nepali")
+
+- [नेपाल भाषा](https://new.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पेरिस – Newari")
+
+- [Nederlands](https://nl.wikipedia.org/wiki/Parijs "Parijs – Dutch")
+
+- [Norsk nynorsk](https://nn.wikipedia.org/wiki/Paris "Paris – Norwegian Nynorsk")
+
+- [Norsk bokmål](https://no.wikipedia.org/wiki/Paris "Paris – Norwegian Bokmål")
+
+- [Novial](https://nov.wikipedia.org/wiki/Paris "Paris – Novial")
+
+- [Nouormand](https://nrm.wikipedia.org/wiki/Paris "Paris – Norman")
+
+- [Nupe](https://nup.wikipedia.org/wiki/Paris "Paris – Nupe")
+
+- [Diné bizaad](https://nv.wikipedia.org/wiki/W%C3%B3t%CA%BC%C3%A1%C3%A1h_Y%C3%AD%CA%BC%C3%A1h%C3%AD "Wótʼááh Yíʼáhí – Navajo")
+
+- [Chi-Chewa](https://ny.wikipedia.org/wiki/Paris "Paris – Nyanja")
+
+- [Occitan](https://oc.wikipedia.org/wiki/Par%C3%ADs "París – Occitan")
+
+- [Livvinkarjala](https://olo.wikipedia.org/wiki/Parii%C5%BEu "Pariižu – Livvi-Karelian")
+
+- [Oromoo](https://om.wikipedia.org/wiki/Paaris "Paaris – Oromo")
+
+- [ଓଡ଼ିଆ](https://or.wikipedia.org/wiki/%E0%AC%AA%E0%AD%8D%E0%AD%9F%E0%AC%BE%E0%AC%B0%E0%AC%BF%E0%AC%B8 "ପ୍ୟାରିସ – Odia")
+
+- [Ирон](https://os.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Ossetic")
+
+- [ਪੰਜਾਬੀ](https://pa.wikipedia.org/wiki/%E0%A8%AA%E0%A9%88%E0%A8%B0%E0%A8%BF%E0%A8%B8 "ਪੈਰਿਸ – Punjabi")
+
+- [Kapampangan](https://pam.wikipedia.org/wiki/Paris "Paris – Pampanga")
+
+- [Papiamentu](https://pap.wikipedia.org/wiki/Paris "Paris – Papiamento")
+
+- [Picard](https://pcd.wikipedia.org/wiki/Paris "Paris – Picard")
+
+- [Deitsch](https://pdc.wikipedia.org/wiki/Paris "Paris – Pennsylvania German")
+
+- [Polski](https://pl.wikipedia.org/wiki/Pary%C5%BC "Paryż – Polish")
+
+- [Piemontèis](https://pms.wikipedia.org/wiki/Paris "Paris – Piedmontese")
+
+- [پنجابی](https://pnb.wikipedia.org/wiki/%D9%BE%DB%8C%D8%B1%D8%B3 "پیرس – Western Punjabi")
+
+- [Ποντιακά](https://pnt.wikipedia.org/wiki/%CE%A0%CE%B1%CF%81%CE%AF%CF%83%CE%B9 "Παρίσι – Pontic")
+
+- [پښتو](https://ps.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B1%DB%8C%D8%B3 "پاریس – Pashto")
+
+- [Português](https://pt.wikipedia.org/wiki/Paris "Paris – Portuguese")
+
+- [Pinayuanan](https://pwn.wikipedia.org/wiki/paris "paris – Paiwan")
+
+- [Runa Simi](https://qu.wikipedia.org/wiki/Paris "Paris – Quechua")
+
+- [Rumantsch](https://rm.wikipedia.org/wiki/Paris "Paris – Romansh")
+
+- [Romani čhib](https://rmy.wikipedia.org/wiki/Paris "Paris – Vlax Romani")
+
+- [Ikirundi](https://rn.wikipedia.org/wiki/Paris "Paris – Rundi")
+
+- [Română](https://ro.wikipedia.org/wiki/Paris "Paris – Romanian")
+
+- [Armãneashti](https://roa-rup.wikipedia.org/wiki/Parij "Parij – Aromanian")
+
+- [Tarandíne](https://roa-tara.wikipedia.org/wiki/Parigge "Parigge – Tarantino")
+
+- [Руски](https://rsk.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B7 "Париз – Pannonian Rusyn")
+
+- [Русский](https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Russian")
+
+- [Русиньскый](https://rue.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D1%96%D0%B6 "Паріж – Rusyn")
+
+- [Ikinyarwanda](https://rw.wikipedia.org/wiki/Paris "Paris – Kinyarwanda")
+
+- [Саха тыла](https://sah.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Yakut")
+
+- [ᱥᱟᱱᱛᱟᱲᱤ](https://sat.wikipedia.org/wiki/%E1%B1%AF%E1%B1%AE%E1%B1%A8%E1%B1%A4%E1%B1%A5 "ᱯᱮᱨᱤᱥ – Santali")
+
+- [Sardu](https://sc.wikipedia.org/wiki/Parigi "Parigi – Sardinian")
+
+- [Sicilianu](https://scn.wikipedia.org/wiki/Pariggi "Pariggi – Sicilian")
+
+- [Scots](https://sco.wikipedia.org/wiki/Paris "Paris – Scots")
+
+- [سنڌي](https://sd.wikipedia.org/wiki/%D9%BE%D9%8A%D8%B1%D8%B3 "پيرس – Sindhi")
+
+- [Davvisámegiella](https://se.wikipedia.org/wiki/Paris "Paris – Northern Sami")
+
+- [Sängö](https://sg.wikipedia.org/wiki/Paris "Paris – Sango")
+
+- [Srpskohrvatski / српскохрватски](https://sh.wikipedia.org/wiki/Pariz "Pariz – Serbo-Croatian")
+
+- [Taclḥit](https://shi.wikipedia.org/wiki/Bariz "Bariz – Tachelhit")
+
+- [සිංහල](https://si.wikipedia.org/wiki/%E0%B6%B4%E0%B7%90%E0%B6%BB%E0%B7%92%E0%B7%83%E0%B7%8A "පැරිස් – Sinhala")
+
+- [Simple English](https://simple.wikipedia.org/wiki/Paris "Paris – Simple English")
+
+- [Slovenčina](https://sk.wikipedia.org/wiki/Par%C3%AD%C5%BE "Paríž – Slovak")
+
+- [سرائیکی](https://skr.wikipedia.org/wiki/%D9%BE%DB%8C%D8%B1%D8%B3 "پیرس – Saraiki")
+
+- [Slovenščina](https://sl.wikipedia.org/wiki/Pariz "Pariz – Slovenian")
+
+- [Gagana Samoa](https://sm.wikipedia.org/wiki/Parisi "Parisi – Samoan")
+
+- [Anarâškielâ](https://smn.wikipedia.org/wiki/Pariisi "Pariisi – Inari Sami")
+
+- [ChiShona](https://sn.wikipedia.org/wiki/Paris "Paris – Shona")
+
+- [Soomaaliga](https://so.wikipedia.org/wiki/Baariis "Baariis – Somali")
+
+- [Shqip](https://sq.wikipedia.org/wiki/Parisi "Parisi – Albanian")
+
+- [Српски / srpski](https://sr.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B7 "Париз – Serbian")
+
+- [Sranantongo](https://srn.wikipedia.org/wiki/Paris "Paris – Sranan Tongo")
+
+- [SiSwati](https://ss.wikipedia.org/wiki/Paris "Paris – Swati")
+
+- [Sesotho](https://st.wikipedia.org/wiki/Paris "Paris – Southern Sotho")
+
+- [Seeltersk](https://stq.wikipedia.org/wiki/Paris_\(St%C3%A4%C3%A4d\) "Paris (Stääd) – Saterland Frisian")
+
+- [Sunda](https://su.wikipedia.org/wiki/Paris "Paris – Sundanese")
+
+- [Svenska](https://sv.wikipedia.org/wiki/Paris "Paris – Swedish")
+
+- [Kiswahili](https://sw.wikipedia.org/wiki/Paris "Paris – Swahili")
+
+- [Ślůnski](https://szl.wikipedia.org/wiki/Pary%C5%BC "Paryż – Silesian")
+
+- [தமிழ்](https://ta.wikipedia.org/wiki/%E0%AE%AA%E0%AE%BE%E0%AE%B0%E0%AE%BF%E0%AE%9A%E0%AF%81 "பாரிசு – Tamil")
+
+- [తెలుగు](https://te.wikipedia.org/wiki/%E0%B0%AA%E0%B0%BE%E0%B0%B0%E0%B0%BF%E0%B0%B8%E0%B1%8D "పారిస్ – Telugu")
+
+- [Tetun](https://tet.wikipedia.org/wiki/Par%C3%ADs "París – Tetum")
+
+- [Тоҷикӣ](https://tg.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Tajik")
+
+- [ไทย](https://th.wikipedia.org/wiki/%E0%B8%9B%E0%B8%B2%E0%B8%A3%E0%B8%B5%E0%B8%AA "ปารีส – Thai")
+
+- [Türkmençe](https://tk.wikipedia.org/wiki/Pari%C5%BE "Pariž – Turkmen")
+
+- [Tagalog](https://tl.wikipedia.org/wiki/Paris "Paris – Tagalog")
+
+- [Tolışi](https://tly.wikipedia.org/wiki/Paris "Paris – Talysh")
+
+- [Lea faka-Tonga](https://to.wikipedia.org/wiki/Palesi "Palesi – Tongan")
+
+- [Toki pona](https://tok.wikipedia.org/wiki/ma_tomo_Paki "ma tomo Paki – Toki Pona")
+
+- [Tok Pisin](https://tpi.wikipedia.org/wiki/Paris "Paris – Tok Pisin")
+
+- [Türkçe](https://tr.wikipedia.org/wiki/Paris "Paris – Turkish")
+
+- [Татарча / tatarça](https://tt.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Tatar")
+
+- [ChiTumbuka](https://tum.wikipedia.org/wiki/Paris "Paris – Tumbuka")
+
+- [Twi](https://tw.wikipedia.org/wiki/Paris "Paris – Twi")
+
+- [Reo tahiti](https://ty.wikipedia.org/wiki/Paris "Paris – Tahitian")
+
+- [Тыва дыл](https://tyv.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Tuvinian")
+
+- [Удмурт](https://udm.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Udmurt")
+
+- [ئۇيغۇرچە / Uyghurche](https://ug.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B1%D9%89%DA%98 "پارىژ – Uyghur")
+
+- [Українська](https://uk.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Ukrainian")
+
+- [اردو](https://ur.wikipedia.org/wiki/%D9%BE%DB%8C%D8%B1%D8%B3 "پیرس – Urdu")
+
+- [Oʻzbekcha / ўзбекча](https://uz.wikipedia.org/wiki/Parij "Parij – Uzbek")
+
+- [Vèneto](https://vec.wikipedia.org/wiki/Parize "Parize – Venetian")
+
+- [Vepsän kel’](https://vep.wikipedia.org/wiki/Pari%C5%BE "Pariž – Veps")
+
+- [Tiếng Việt](https://vi.wikipedia.org/wiki/Paris "Paris – Vietnamese")
+
+- [West-Vlams](https://vls.wikipedia.org/wiki/Parys "Parys – West Flemish")
+
+- [Volapük](https://vo.wikipedia.org/wiki/Paris "Paris – Volapük")
+
+- [Walon](https://wa.wikipedia.org/wiki/Paris "Paris – Walloon")
+
+- [Winaray](https://war.wikipedia.org/wiki/Paris "Paris – Waray")
+
+- [Wolof](https://wo.wikipedia.org/wiki/Pari "Pari – Wolof")
+
+- [吴语](https://wuu.wikipedia.org/wiki/%E5%B7%B4%E9%BB%8E "巴黎 – Wu")
+
+- [IsiXhosa](https://xh.wikipedia.org/wiki/Paris "Paris – Xhosa")
+
+- [მარგალური](https://xmf.wikipedia.org/wiki/%E1%83%9E%E1%83%90%E1%83%A0%E1%83%98%E1%83%96%E1%83%98 "პარიზი – Mingrelian")
+
+- [ייִדיש](https://yi.wikipedia.org/wiki/%D7%A4%D7%90%D7%A8%D7%99%D7%96 "פאריז – Yiddish")
+
+- [Yorùbá](https://yo.wikipedia.org/wiki/Parisi "Parisi – Yoruba")
+
+- [Vahcuengh](https://za.wikipedia.org/wiki/Bahliz "Bahliz – Zhuang")
+
+- [Zeêuws](https://zea.wikipedia.org/wiki/Paries "Paries – Zeelandic")
+
+- [ⵜⴰⵎⴰⵣⵉⵖⵜ ⵜⴰⵏⴰⵡⴰⵢⵜ](https://zgh.wikipedia.org/wiki/%E2%B4%B1%E2%B4%B0%E2%B5%94%E2%B5%89%E2%B5%A3 "ⴱⴰⵔⵉⵣ – Standard Moroccan Tamazight")
+
+- [文言](https://zh-classical.wikipedia.org/wiki/%E5%B7%B4%E9%BB%8E "巴黎 – Literary Chinese")
+
+- [閩南語 / Bân-lâm-gí](https://zh-min-nan.wikipedia.org/wiki/Pa-l%C3%AD "Pa-lí – Minnan")
+
+- [粵語](https://zh-yue.wikipedia.org/wiki/%E5%B7%B4%E9%BB%8E "巴黎 – Cantonese")
+
+- [中文](https://zh.wikipedia.org/wiki/%E5%B7%B4%E9%BB%8E "巴黎 – Chinese")
+
+- [IsiZulu](https://zu.wikipedia.org/wiki/IParisi "IParisi – Zulu")
+
+[Edit links](https://www.wikidata.org/wiki/Special:EntityPage/Q90#sitelinks-wikipedia "Edit interlanguage links")
+
+- [Article](/wiki/Paris "View the content page [c]")
+
+- [Talk](/wiki/Talk:Paris "Discuss improvements to the content page [t]")
+
+- [Read](/wiki/Paris)
+
+- [View source](/w/index.php?title=Paris&action=edit "This page is protected. You can view its source [e]")
+
+- [View history](/w/index.php?title=Paris&action=history "Past revisions of this page [h]")
+
+- [ Save](# "Add this page to your saved items")
+
+Tools
+
+move to sidebar hide
+
+Actions
+
+- [ Read](/wiki/Paris)
+
+- [ View source](/w/index.php?title=Paris&action=edit "This page is protected. You can view its source [e]")
+
+- [ View history](/w/index.php?title=Paris&action=history "Past revisions of this page [h]")
+
+- [ Save](# "Add this page to your saved items")
+
+General
+
+- [What links here](/wiki/Special:WhatLinksHere/Paris "List of all English Wikipedia pages containing links to this page [j]")
+
+- [Related changes](/wiki/Special:RecentChangesLinked/Paris "Recent changes in pages linked from this page [k]")
+
+- [Upload file](//en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard "Upload files [u]")
+
+- [Permanent link](/w/index.php?title=Paris&oldid=1387772859 "Permanent link to this revision of this page")
+
+- [Page information](/w/index.php?title=Paris&action=info "More information about this page")
+
+- [Cite this page](/w/index.php?title=Special:CiteThisPage&page=Paris&id=1387772859&wpFormIdentifier=titleform "Information on how to cite this page")
+
+- [Get shortened URL](/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FParis)
+
+- [Switch to legacy parser](/w/index.php?title=Paris&useparsoid=0)
+
+Print/export
+
+- [Download as PDF](/w/index.php?title=Special:DownloadAsPdf&page=Paris&action=show-download-screen "Download this page as a PDF file")
+
+- [Printable version](javascript:print\(\); "Printable version of this page [p]")
+
+In other projects
+
+- [Abstract Wikipedia](https://abstract.wikipedia.org/wiki/Q90)
+
+- [Wikimedia Commons](https://commons.wikimedia.org/wiki/Paris)
+
+- [Wikinews](https://en.wikinews.org/wiki/Category:Paris)
+
+- [Wikiquote](https://en.wikiquote.org/wiki/Paris)
+
+- [Wikivoyage](https://en.wikivoyage.org/wiki/Paris)
+
+- [Wikidata item](https://www.wikidata.org/wiki/Special:EntityPage/Q90 "Structured data on this page hosted by Wikidata [g]")
+
+Appearance
+
+move to sidebar hide
+
+[Coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system "Geographic coordinate system"): [48°51′24″N 2°21′08″E﻿ / ﻿48\.8567°N 2\.3522°E﻿ / 48\.8567; 2\.3522](https://geohack.toolforge.org/geohack.php?pagename=Paris&params=48.8567_N_2.3522_E_type:city\(2,100,000\)_region:FR-75C)
+
+[![Page semi-protected](//thumb.wikimedia.org/wikipedia/en/thumb/1/1b/Semi-protection-shackle.svg/20px-Semi-protection-shackle.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/Wikipedia:Protection_policy#semi "This article is semi-protected.")
+
+From Wikipedia, the free encyclopedia
+
+Capital and largest city of France
+
+This article is about the capital city of France. For other uses, see [Paris (disambiguation)](https://en.wikipedia.org/wiki/Paris_\(disambiguation\) "Paris (disambiguation)").
+
+"Parisien" redirects here. For other uses, see [Parisien (disambiguation)](https://en.wikipedia.org/wiki/Parisien_\(disambiguation\) "Parisien (disambiguation)").
+
+Capital city in Île-de-France, France
+
+Paris
+
+[Capital city](https://en.wikipedia.org/wiki/Capital_city "Capital city")[\[a\]](#cite_note-1)
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/330px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques,_Paris_août_2014_\(2\).jpg) [Eiffel Tower](https://en.wikipedia.org/wiki/Eiffel_Tower "Eiffel Tower") and the [Seine](https://en.wikipedia.org/wiki/Seine "Seine") from [Tour Saint-Jacques](https://en.wikipedia.org/wiki/Tour_Saint-Jacques "Tour Saint-Jacques") [![](//thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Notre-Dame_de_Paris_2013-07-24.jpg/120px-Notre-Dame_de_Paris_2013-07-24.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Notre-Dame_de_Paris_2013-07-24.jpg) [Notre-Dame](https://en.wikipedia.org/wiki/Notre-Dame_de_Paris "Notre-Dame de Paris") [![](//thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre%2C_Paris_18e_140223_2.jpg/120px-Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre%2C_Paris_18e_140223_2.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Basilique_du_Sacré-Cœur_de_Montmartre,_Paris_18e_140223_2.jpg) [Sacré-Cœur](https://en.wikipedia.org/wiki/Sacré-Cœur,_Paris "Sacré-Cœur, Paris") [![](//thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Panth%C3%A9on_-_Paris_V_%28FR75%29_-_2025-03-29_-_1.jpg/120px-Panth%C3%A9on_-_Paris_V_%28FR75%29_-_2025-03-29_-_1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Panthéon_-_Paris_V_\(FR75\)_-_2025-03-29_-_1.jpg) [Panthéon](https://en.wikipedia.org/wiki/Panthéon "Panthéon") [![](//thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Arc_de_Triomphe_HDR_2007.jpg/250px-Arc_de_Triomphe_HDR_2007.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Arc_de_Triomphe_HDR_2007.jpg) [Arc de Triomphe](https://en.wikipedia.org/wiki/Arc_de_Triomphe "Arc de Triomphe") [![](//thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Palais_Garnier_-_Paris_IX_%28FR75%29_-_2022-01-22_-_1.jpg/250px-Palais_Garnier_-_Paris_IX_%28FR75%29_-_2022-01-22_-_1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Palais_Garnier_-_Paris_IX_\(FR75\)_-_2022-01-22_-_1.jpg) [Palais Garnier](https://en.wikipedia.org/wiki/Palais_Garnier "Palais Garnier") [![](//thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Louvre_Courtyard%2C_Looking_West.jpg/330px-Louvre_Courtyard%2C_Looking_West.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Louvre_Courtyard,_Looking_West.jpg) The [Louvre](https://en.wikipedia.org/wiki/Louvre "Louvre")
+
+[![Flag of Paris](//thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Drapeau_des_armes_de_la_ville_de_Paris.svg/120px-Drapeau_des_armes_de_la_ville_de_Paris.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Drapeau_des_armes_de_la_ville_de_Paris.svg "Flag of Paris") [Flag](https://en.wikipedia.org/wiki/Flag_of_Paris "Flag of Paris") [![Coat of arms of Paris](//thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Armoiries_de_la_ville_de_Paris_%281949%29.svg/120px-Armoiries_de_la_ville_de_Paris_%281949%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Armoiries_de_la_ville_de_Paris_\(1949\).svg "Coat of arms of Paris") [Coat of arms](https://en.wikipedia.org/wiki/Coat_of_arms_of_Paris "Coat of arms of Paris") [![Official logo of Paris](//thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Ville_de_Paris_logo.svg/120px-Ville_de_Paris_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Ville_de_Paris_logo.svg "Official logo of Paris") [Logo](https://en.wikipedia.org/wiki/Logo "Logo")
+
+Motto(s):  *[Fluctuat nec mergitur](https://en.wikipedia.org/wiki/Fluctuat_nec_mergitur "Fluctuat nec mergitur")* "Tossed by the waves but never sunk"
+
+[![Map](https://maps.wikimedia.org/img/osm-intl,a,a,a,250x200.png?lang=en&domain=en.wikipedia.org&title=Paris&revid=1387772859&groups=_01828ba465efe76ba204c129697a3dd79598df1b&parser=parsoid)]() Location of Paris
+
+[![Paris is located in France](//thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/France_relief_location_map.jpg/330px-France_relief_location_map.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](/wiki/Special:Map/6/48.8567/2.3522/en) ![](//thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Codex_icon_map_color-base.svg/20px-Codex_icon_map_color-base.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail) [Map credit](https://en.wikipedia.org/wiki/File:France_relief_location_map.jpg "File:France relief location map.jpg") ![Paris](//thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Red_pog.svg/20px-Red_pog.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail) Paris Location within France Show map of France [![Paris is located in Île-de-France (region)](//thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Ile-de-France_region_relief_location_map.jpg/330px-Ile-de-France_region_relief_location_map.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](/wiki/Special:Map/9/48.8567/2.3522/en) ![](//thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Codex_icon_map_color-base.svg/20px-Codex_icon_map_color-base.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail) [Map credit](https://en.wikipedia.org/wiki/File:Ile-de-France_region_relief_location_map.jpg "File:Ile-de-France region relief location map.jpg") ![Paris](//thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Red_pog.svg/20px-Red_pog.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail) Paris Location within Île-de-France (region) Show map of Île-de-France (region)
+
+Coordinates: [48°51′24″N 2°21′08″E﻿ / ﻿48\.8567°N 2\.3522°E﻿ / 48\.8567; 2\.3522](https://geohack.toolforge.org/geohack.php?pagename=Paris&params=48.8567_N_2.3522_E_type:city\(2,100,000\)_region:FR-75C)
+
+Country | [France](https://en.wikipedia.org/wiki/France "France")
+
+[Region](https://en.wikipedia.org/wiki/Regions_of_France "Regions of France") | [Île-de-France](https://en.wikipedia.org/wiki/Île-de-France "Île-de-France")
+
+[Department](https://en.wikipedia.org/wiki/Departments_of_France "Departments of France") | Paris
+
+[Arrondissement](https://en.wikipedia.org/wiki/Arrondissements_of_France "Arrondissements of France") | [Paris](https://en.wikipedia.org/wiki/Arrondissement_of_Paris "Arrondissement of Paris")
+
+[Intercommunality](https://en.wikipedia.org/wiki/Communes_of_France#Intercommunality "Communes of France") | [Métropole du Grand Paris](https://en.wikipedia.org/wiki/Grand_Paris "Grand Paris")
+
+[Subdivisions](https://en.wikipedia.org/wiki/Administrative_division "Administrative division") | 20 [arrondissements](https://en.wikipedia.org/wiki/Arrondissements_of_Paris "Arrondissements of Paris")
+
+Government
+
+• Mayor (2026–32) | [Emmanuel Grégoire](https://en.wikipedia.org/wiki/Emmanuel_Grégoire "Emmanuel Grégoire")[\[1\]](#cite_note-2)[\[2\]](#cite_note-3) ([PS](https://en.wikipedia.org/wiki/Socialist_Party_\(France\) "Socialist Party (France)"))
+
+Area **1**[\[3\]](#cite_note-Comparateur_de_territoires.INSEE-4) | 105\.4 km2 (40.7 sq mi)
+
+• [Urban](https://en.wikipedia.org/wiki/Urban_area "Urban area")  ([\[3\]](#cite_note-Comparateur_de_territoires.INSEE-4)) | 2,824.2 km2 (1,090.4 sq mi)
+
+• Metro  ([\[3\]](#cite_note-Comparateur_de_territoires.INSEE-4)) | 18,940.7 km2 (7,313.0 sq mi)
+
+Elevation | 78 m (256 ft)
+
+Highest elevation | 131 m (430 ft)
+
+Lowest elevation | 28 m (92 ft)
+
+Population  (Jan 2026[\[4\]](#cite_note-Pop.Paris-5)) | 2,047,602
+
+• Rank | [9th](https://en.wikipedia.org/wiki/List_of_European_cities_by_population_within_city_limits "List of European cities by population within city limits") in Europe [1st](https://en.wikipedia.org/wiki/List_of_communes_in_France_with_over_20,000_inhabitants "List of communes in France with over 20,000 inhabitants") in France
+
+• Density | 19,430/km2 (50,320/sq mi)
+
+• [Urban](https://en.wikipedia.org/wiki/Urban_area "Urban area")  (2023) | 11,013,774[\[3\]](#cite_note-Comparateur_de_territoires.INSEE-4)
+
+• Urban density | 3,899.8/km2 (10,100/sq mi)
+
+• [Metro](https://en.wikipedia.org/wiki/Metropolitan_area "Metropolitan area")  (2023) | 13,320,752[\[3\]](#cite_note-Comparateur_de_territoires.INSEE-4)
+
+• Metro density | 703\.287/km2 (1,821.51/sq mi)
+
+[Demonym(s)](https://en.wikipedia.org/wiki/Demonym "Demonym") | Parisian(s) ([en](https://en.wikipedia.org/wiki/English_language "English language")) *Parisien(s)* (masc.), *Parisienne(s)* (fem.) ([fr](https://en.wikipedia.org/wiki/French_language "French language")), *Parigot(s)* (masc.), "Parigote(s)" (fem.) (fr, colloquial)
+
+GDP (nominal, 2024) [\[5\]](#cite_note-6)
+
+• Capital City | [€](https://en.wikipedia.org/wiki/Euro "Euro")279\.938 billion
+
+• Metro | [€](https://en.wikipedia.org/wiki/Euro "Euro")865\.652 billion
+
+[Time zone](https://en.wikipedia.org/wiki/Time_zone "Time zone") | [UTC+01:00](https://en.wikipedia.org/wiki/UTC+01:00 "UTC+01:00") ([CET](https://en.wikipedia.org/wiki/Central_European_Time "Central European Time"))
+
+• Summer ([DST](https://en.wikipedia.org/wiki/Daylight_saving_time "Daylight saving time")) | [UTC+02:00](https://en.wikipedia.org/wiki/UTC+02:00 "UTC+02:00") ([CEST](https://en.wikipedia.org/wiki/Central_European_Summer_Time "Central European Summer Time"))
+
+[INSEE](https://en.wikipedia.org/wiki/INSEE_code "INSEE code")/Postal code | [75056](https://www.insee.fr/fr/statistiques/1405599?geo=COM-75056) /75001–75020, 75116
+
+Website | [www.paris.fr](https://www.paris.fr/) [![Edit this at Wikidata](//thumb.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://www.wikidata.org/wiki/Q90#P856 "Edit this at Wikidata")
+
+**1** French Land Register data, which excludes lakes, ponds, glaciers \> 1 km2 (0.386 sq mi or 247 acres) and river estuaries.
+
+**Paris**[\[b\]](#cite_note-8) is the [capital](https://en.wikipedia.org/wiki/Capital_city "Capital city") and [largest city](https://en.wikipedia.org/wiki/List_of_communes_in_France_with_over_20,000_inhabitants "List of communes in France with over 20,000 inhabitants") of [France](https://en.wikipedia.org/wiki/France "France"), with an estimated city population of 2\.04 million in an area of 105\.4 km2 (40.7 sq mi), as of January 2026[\[update\]](https://en.wikipedia.org/w/index.php?title=Paris&action=edit),[\[4\]](#cite_note-Pop.Paris-5) and a metropolitan population of 13\.3 million (2023). Located on the [Seine](https://en.wikipedia.org/wiki/Seine "Seine") in the centre of the [Île-de-France](https://en.wikipedia.org/wiki/Île-de-France "Île-de-France") region, it is the [largest metropolitan area](https://en.wikipedia.org/wiki/List_of_metropolitan_areas_in_Europe "List of metropolitan areas in Europe") and [fourth-most populous city](https://en.wikipedia.org/wiki/List_of_cities_in_the_European_Union_by_population_within_city_limits "List of cities in the European Union by population within city limits") in the [European Union](https://en.wikipedia.org/wiki/European_Union "European Union") (EU). Paris is nicknamed the "City of Light" mainly due to its leading role in the [Age of Enlightenment](https://en.wikipedia.org/wiki/Age_of_Enlightenment "Age of Enlightenment").
+
+Administratively, Paris is divided into [twenty arrondissements](https://en.wikipedia.org/wiki/Arrondissements_of_Paris "Arrondissements of Paris") (districts), each with their own cultural identity. [Haussmann's renovation of Paris](https://en.wikipedia.org/wiki/Haussmann's_renovation_of_Paris "Haussmann's renovation of Paris"), which created new boulevards, parks, and public works, gave birth to a modern city known as the "[capital of the 19th century](https://en.wikipedia.org/wiki/Paris,_Capital_of_the_19th_Century "Paris, Capital of the 19th Century")". Paris is a major railway, motorway, and air-transport hub; in 2024 [Charles de Gaulle Airport](https://en.wikipedia.org/wiki/Charles_de_Gaulle_Airport "Charles de Gaulle Airport") was the EU's [busiest airport](https://en.wikipedia.org/wiki/List_of_the_busiest_airports_in_Europe "List of the busiest airports in Europe"). Paris has one of the most [sustainable transportation](https://en.wikipedia.org/wiki/Sustainable_transportation "Sustainable transportation") systems in the world and is one of only two cities that have received the [Sustainable Transport Award](https://en.wikipedia.org/wiki/Sustainable_Transport_Award "Sustainable Transport Award") twice. Its [Art Nouveau](https://en.wikipedia.org/wiki/Art_Nouveau "Art Nouveau")\-decorated [Métro](https://en.wikipedia.org/wiki/Paris_Métro "Paris Métro") has become a symbol of the city. Paris is known for its museums and architectural landmarks: the [Louvre](https://en.wikipedia.org/wiki/Louvre "Louvre") is the largest and most-visited museum in the world; the [Musée d'Orsay](https://en.wikipedia.org/wiki/Musée_d'Orsay "Musée d'Orsay"), [Musée Marmottan Monet](https://en.wikipedia.org/wiki/Musée_Marmottan_Monet "Musée Marmottan Monet"), and [Musée de l'Orangerie](https://en.wikipedia.org/wiki/Musée_de_l'Orangerie "Musée de l'Orangerie") are noted for their collections of French [Impressionist](https://en.wikipedia.org/wiki/Impressionism "Impressionism") art, while the [Musée National d'Art Moderne](https://en.wikipedia.org/wiki/Musée_National_d'Art_Moderne "Musée National d'Art Moderne"), [Musée Rodin](https://en.wikipedia.org/wiki/Musée_Rodin "Musée Rodin"), and [Musée Picasso](https://en.wikipedia.org/wiki/Musée_Picasso "Musée Picasso") are noted for their collections of [modern](https://en.wikipedia.org/wiki/Modern_art "Modern art") and [contemporary art](https://en.wikipedia.org/wiki/Contemporary_art "Contemporary art"). Parts of the city along the Seine have been designated a [UNESCO](https://en.wikipedia.org/wiki/UNESCO "UNESCO") [World Heritage Site](https://en.wikipedia.org/wiki/World_Heritage_Site "World Heritage Site") since 1991[\[update\]](https://en.wikipedia.org/w/index.php?title=Paris&action=edit).
+
+The [president of France](https://en.wikipedia.org/wiki/President_of_France "President of France") and both houses of the [French Parliament](https://en.wikipedia.org/wiki/French_Parliament "French Parliament") sit in Paris. Paris is home to several [United Nations](https://en.wikipedia.org/wiki/United_Nations "United Nations") organisations, including UNESCO, as well as other international organisations such as the [OECD](https://en.wikipedia.org/wiki/OECD "OECD"), the [International Bureau of Weights and Measures](https://en.wikipedia.org/wiki/International_Bureau_of_Weights_and_Measures "International Bureau of Weights and Measures") (in neighbouring [Saint-Cloud](https://en.wikipedia.org/wiki/Saint-Cloud "Saint-Cloud")), the [International Energy Agency](https://en.wikipedia.org/wiki/International_Energy_Agency "International Energy Agency"), the [Organisation i
+[showing lines 1-1081 of 3100 (last line cut); full output saved to /tmp/opencode/plan0113/smoke/null-house-capital-smoke/data/opencode/tool-output/tool_2200955fe001XbtWeZ6PwJLO3I]

@@ -1,0 +1,3024 @@
+Schéma
+d’aménagement ﬂuvial
+de la Seine
+Fascicule stratégique
+Mai 2019
+
+Direction régionale et interdépartementale de l’Équipement et de l’Aménagement d’Île-de-France
+www.driea.ile-de-france.developpement-durable.gouv.fr
+
+2
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+Sommaire
+Synthèse ...........................................................................................................................................................................................................3
+Introduction ................................................................................................................................................................................................7
+1 - La Seine, une ressource majeure de la métropole francilienne ...................9
+1.1 - Des caractéristiques géographiques contraignantes ..................................................................................................................................9
+1.2 - La Seine et Paris, une longue histoire ............................................................................................................................................................9
+
+2 - Des usages et des enjeux multiples .....................................................................................................11
+2.1 - Des usages en forte évolution ....................................................................................................................................................................11
+2.1.1 - L'ouverture des berges et du ﬂeuve à tous, une forte attente de la société ........................................................................11
+2.1.2 - Le transport ﬂuvial, une activité dynamique qui nécessite de préserver les ports de marchandises..................................11
+2.1.3 - Le tourisme ﬂuvial, une activité en plein développement .....................................................................................................11
+2.2 - Des enjeux partiellement traduits dans les documents d’urbanisme et de planification ..................................................15
+2.2.1 - La gestion du risque inondation ...............................................................................................................................................15
+2.2.2 - La préservation de la condition écologique des eaux du ﬂeuve et de ses abords ................................................................17
+2.2.3 - Le développement du transport ﬂuvial de marchandises.......................................................................................................20
+2.2.4 - L’ouverture de la Seine et de ses berges à la population.......................................................................................................21
+2.2.5 - Le développement de navettes ﬂuviales.................................................................................................................................21
+2.2.6 - Un enjeu paysager et patrimonial d’exception dans le cœur de la capitale .........................................................................22
+
+3 - Favoriser la cohabitation des usages pour permettre
+leurs développements ................................................................................................................................23
+3.1 - Les JOP 2024, catalyseurs de la démarche collective ..........................................................................................................23
+3.1.1 - Les JOP 2024, test en vraie grandeur pour la conciliation des usages ..................................................................................23
+3.1.2 - Développer des sites de baignade sécurisés dans un ﬂeuve et sur des berges écologiquement préservés......................24
+3.2 - Maintenir la continuité et la sécurité de la navigation.......................................................................................................25
+3.2.1 - Fiabiliser les infrastructures ﬂuviales.......................................................................................................................................25
+3.2.2 - Mieux anticiper les manifestations nautiques ........................................................................................................................26
+3.2.3 - Prendre en compte le développement de la plaisance..........................................................................................................27
+3.3 - Favoriser l’équilibre et la mixité des usages ........................................................................................................................28
+3.3.1 - Favoriser l’implantation d’activités économiques le long de la Seine...................................................................................28
+3.3.2 - Favoriser la mixité des usages économiques et la logistique urbaine ..................................................................................29
+3.3.3 - Poursuivre l’intégration des activités portuaires et industrielles dans le tissu urbain..........................................................30
+3.3.4 - Poursuivre l’ouverture de la ville sur le ﬂeuve .......................................................................................................................31
+3.3.5 - Poursuivre le développement de la croisière ﬂuviale avec hébergement............................................................................32
+3.3.6 - Mener une réﬂexion autour du périmètre accordé à l’habitat ﬂuvial....................................................................................32
+3.4 - Faire de la Seine une vitrine de l’innovation et des mobilités propres ...........................................................................33
+3.4.1 - Adapter les règles et les outils de navigation aux enjeux et aux transports de demain .....................................................33
+3.4.2 - Mettre en place les conditions locales pour accompagner les innovations techniques .......................................................34
+
+Conclusion ............................................................................................................................................................................36
+Annexe 1 : références ........................................................................................................................................................................37
+Annexe 2 : sites classés au titre de Code de l’environnement concernant les berges de la Seine en île-de-France.........38
+
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+3
+
+Synthèse
+1 - Le schéma d’aménagement ﬂuvial de la Seine :
+contenu et objectifs
+Élaboré de manière concertée, dans le cadre des travaux
+du comité des usages ﬂuviaux de la Seine instauré par le
+préfet de Région en décembre 2017, le schéma d’aménagement ﬂuvial de la Seine vise à préciser les grandes
+orientations stratégiques qui doivent gouverner l’usage
+partagé de la Seine et de ses berges. Son objectif est
+d’expliciter les enjeux d’usage et de valorisation dont le
+ﬂeuve est porteur sur les territoires concernés, ainsi que
+les ambitions largement partagées pour répondre à ces
+enjeux et à ceux du transport ﬂuvial.
+Le schéma d’aménagement ﬂuvial est composé du
+présent fascicule stratégique, complété de schémas
+d’orientation des berges.
+Le « fascicule stratégique » synthétise les prescriptions
+des multiples documents de planiﬁcation qui concernent
+la Seine et ses berges, identiﬁe les grands enjeux et
+précise les grandes orientations de la politique de conciliation
+et de développement des usages ﬂuviaux : transport de
+
+personnes et de marchandises, activités économiques sur
+berges, activités récréatives et culturelles, tourisme, habitat
+ﬂuvial, etc...
+Son périmètre concerne l’ensemble du linéaire ﬂuvial
+francilien, une attention particulière étant nécessaire, au
+vu de la densité des acteurs et des usages, sur la partie
+centrale située entre les ports de Bonneuil-sur-Marne et
+de Gennevilliers.
+Il constitue un « dire de l’État » porté à la connaissance de
+l’ensemble des décideurs publics et des porteurs de projets
+privés, actuels et futurs, qui souhaitent mettre en place
+ou développer des activités ayant une incidence sur
+l’usage du ﬂeuve ou de ses berges.
+L’État et ses opérateurs réafﬁrment à travers ce document
+la nécessité de préserver la Seine et ses berges comme
+support d’un transport ﬂuvial et d’activités performantes
+et durables.
+
+2.1 - État des lieux des usages
+La Seine n’a jamais cessé de constituer un axe majeur
+pour les échanges commerciaux. Cette réalité est illustrée
+par la formule de Napoléon Bonaparte « Paris, Rouen, Le
+Havre, une seule et même ville dont la Seine est la
+grande rue ». Support d’un moyen de transport sûr, ﬁable
+et silencieux, la voie d’eau dessert aujourd’hui un des
+plus gros marchés de consommation européens (12 millions
+d’habitants en Île-de-France) et le premier ensemble
+portuaire de France.
+La part modale du transport ﬂuvial de marchandises en
+Île-de-France reste pour autant sensiblement inférieure
+à ce qu’elle devrait être. Elle est aujourd’hui stabilisée autour de 7 %, contre 2,3 % pour l’ensemble de la France,
+13 % en Allemagne, 18 % en Belgique et 37 % aux PaysBas. Le bassin de la Seine assure 50 % du fret ﬂuvial total
+français dont les matériaux de construction représentent
+l’essentiel (63 %), suivis des produits agricoles (12 %),
+des conteneurs (8 %) et des hydrocarbures (4,5 %). Pour
+autant, le fret ﬂuvial s’ouvre, notamment en Île-deFrance, sur de nouvelles activités en lien notamment avec
+la logistique urbaine et le transport de produits manufacturés à haute valeur ajoutée ou encore autour des
+ﬁlières dites émergentes que sont le transport de biomasse, de déchets ou encore de colis exceptionnels.
+
+En ce qui concerne l’emploi, les activités économiques
+implantées sur les 10 ports les plus importants d’Île-deFrance employaient, ﬁn 2014, 15600 salariés, dont 5300
+à Gennevilliers. À l’échelle de la vallée de la Seine, les
+activités portuaires représentent 64 100 emplois directs
+et 6 milliards d’euros de richesse annuelle dégagée.
+Le transport de passagers sur la Seine est composé de
+deux activités distinctes : le transport touristique de proximité et de courte durée, avec ou sans restauration, et la
+croisière ﬂuviale, déplacement de longue distance et sur
+plusieurs jours, avec hébergement.
+Pour le tourisme ﬂuvial de proximité, Paris est aujourd’hui
+le premier port au monde avec plus de 7,5 millions de
+passagers transportés sur la Seine en 2017 auxquels s’ajoutent 1,5 million de passagers sur les canaux. Ainsi,
+80 % du traﬁc national de passagers par la voie d’eau est
+concentré à Paris. Plus d’un visiteur sur trois de la capitale
+effectuant un déplacement en bateau, la Seine est
+aujourd’hui le deuxième site touristique payant le plus
+visité de Paris, juste après le Louvre et devant la tour Eiffel.
+Cet engouement qui ne cesse de se conﬁrmer pour une
+découverte de la capitale par la voie d’eau est révélateur
+
+4
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+des enjeux paysagers et patrimoniaux qui s’attachent au
+ﬂeuve et à ses rives et qui leur ont valu en 1991, dans le
+centre historique, une inscription au patrimoine mondial
+de l’Unesco.
+S’agissant de la croisière ﬂuviale, elle représente aujourd’hui environ 200 000 voyages et dispose d’un potentiel
+de développement important entre Le Havre/Rouen et
+Paris. Elle génère aujourd’hui une activité économique
+dont la valeur est comparable à celle du transport de
+proximité à usage touristique.
+Au-delà des activités de transport ﬂuvial, la Seine et ses
+berges accueillent de nombreux usages d’une grande
+variété pour lesquels la demande est croissante. On
+trouve ainsi, implantés par exemple sur des bateaux et
+pontons stationnaires amarrés le long des berges, des
+
+logements et activités de toutes natures (bureaux,
+restaurants, boites de nuit, commerces…). Les berges
+servent pour leur part aujourd’hui très largement au
+cheminement des piétons et des vélos et à l’accueil
+d’évènements et de diverses manifestations ponctuels
+ou récurrents.
+En 2018, du point de vue de l’usage des berges dans
+Paris, les activités économiques de type logistiques et
+industrielles occupent une place réduite à environ 12 %
+des quais et terre-pleins, 48% du linéaire étant consacrés
+aux activités d’animation et de loisirs, 15% aux activités
+de transport de passagers et environ 10 % à l’habitat
+ﬂuvial, l’espace résiduel étant aujourd’hui inexploitable
+en l’état pour des raisons d’accessibilité, de présence de
+voies routières, etc...
+
+2.2 - État des lieux des enjeux
+Les enjeux ﬂuviaux sont déjà en partie traduits et portés
+par les documents d’urbanisme et de planiﬁcation : gestion du risque inondation que les crues de 2016 et 2018
+ont rappelé (PGRI et PPRi), enjeux écologiques de préservation de la qualité des eaux et de la biodiversité du
+ﬂeuve et de ses abords (SDAGE, SRCE, SDRIF), développement des infrastructures, de la logistique et préservation
+foncière pour le transport ﬂuvial de marchandises,
+ouverture de la Seine et de ses berges à la population,
+développement des navettes ﬂuviales (SDRIF, PDUIF,
+SRCAE, SRDEII, PLU).
+Les différents usages de la Seine et de ses berges
+soulèvent aujourd’hui des enjeux multiples de sécurité,
+de préservation ou encore de partage d’un domaine
+limité et souvent à haute valeur patrimoniale. Se posent
+dès lors des questions d’articulation et de priorisation
+avec une acuité d’autant plus vive que l’on assiste sur la
+Seine à une demande toujours plus importante de mobilisation du ﬂeuve et de ses berges pour des usages sans
+lien direct avec l’usage ﬂuvial et à un renouveau du
+transport ﬂuvial sous l’effet notamment :
+des travaux du Grand Paris Express, de ceux liés à
+Eole, aux lignes de tramway, aux JOP 2024 et d’une
+
+manière plus générale à l’activité de BTP dans la
+capitale et dans la métropole et qui exigent des
+capacités très élevées de stockage et de transport
+que la voie d’eau peut offrir en contribuant à
+limiter les nuisances ;
+des besoins croissants en matière de transport
+massiﬁé pour des raisons notamment de compétitivité des produits céréaliers en provenance de
+l’Aube, de Seine-et-Marne, de la Marne ou encore
+de l’Essonne et à destination des ports de Rouen
+et du Havre et pour lesquels la voie d’eau est
+clairement le mode le mieux adapté ;
+des demandes croissantes de recours à la voie
+d’eau dans l’organisation de la logistique des
+derniers kilomètres sous l’effet conjugué du
+développement du e-commerce, des problèmes de
+congestion urbaine et d’une sensibilité croissante à
+la performance environnementale et sociétale de
+la chaîne de transport, qui nécessite également
+une profonde évolution de la motorisation de la
+ﬂotte.
+
+2.3 - Perspectives et ambitions
+L’organisation institutionnelle des acteurs ﬂuviaux, à l’instar
+de l’activité sur la Seine et les berges, est en mutation :
+création d’un établissement portuaire unique sur l’axe
+Seine, réﬂexion relative à la mise en œuvre d’une interprofession de la ﬁlière ﬂuviale,..
+Dans ce contexte, l’objectif commun de l’État et de ses
+opérateurs est de favoriser une cohabitation équilibrée
+des usages pour permettre leurs développements.
+Le fascicule stratégique du schéma d’aménagement
+ﬂuvial permettra de mettre à disposition des acteurs
+ﬂuviaux les orientations de la politique de conciliation des
+
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+usages portée par l’État aﬁn de faire du recours à la voie
+d’eau un réﬂexe naturel et durable.
+Les schémas d’orientation des berges établis par les
+opérateurs (Ports de Paris, VNF, …) constituent pour leur
+part des documents qui déﬁnissent l’usage privilégié
+actuel ou futur des berges du ﬂeuve en cohérence avec
+les orientations du fascicule stratégique.
+Les orientations du fascicule stratégique sont concrétisées
+par des « ambitions » explicitées ci-après. Leur mise en
+œuvre fera l’objet d’un suivi régulier dans le cadre du
+comité des usages ﬂuviaux au moyen d’indicateurs
+déﬁnis en concertation avec l’ensemble des acteurs.
+
+5
+
+Synthèse des ambitions du fascicule stratégique
+3.1 - Les enjeux 2024, catalyseurs de la démarche collective
+3.1.1 - Les JOP 2024, test en vraie grandeur pour la
+conciliation des usages
+Préparer les décisions relatives à l’organisation des
+JOP (épreuves de natation et village olympique) et
+à leurs conséquences sur les usages du ﬂeuve en
+prenant en compte les intérêts de l’ensemble des
+acteurs publics et privés ; organiser les mesures de
+sûreté liées à l’implantation du village olympique
+sur l’Île St-Denis.
+Favoriser le recours à la logistique ﬂuviale pour les
+constructions du village olympique et les installations temporaires à l’instar de ce qui se fait pour
+les travaux du Grand Paris Express avec la SGP.
+
+3.1.2 -Développer des sites de baignade sécurisés dans
+un fleuve et sur des berges écologiquement
+préservés
+Pour les sites d’étude retenus, déﬁnir les emplacements précis et les aménagements nécessaires à
+l’installation des sites de baignade dans le respect
+de la sécurité des baigneurs et des activités de
+navigation.
+Aménager les berges de Seine avec des installations récréatives préservant leurs fonctions
+écologiques.
+Accompagner la mise en œuvre des mesures requises
+pour permettre de disposer de la qualité des eaux
+nécessaire à la baignade en Seine.
+
+3.2 -Maintenir la continuité et la sécurité de la navigation
+3.2.1 - Fiabiliser les infrastructures fluviales
+Moderniser les ouvrages et équipements de navigation.
+Dans le cadre des schémas d’orientation des
+berges, renforcer les capacités de la Seine, en
+particulier en traversée de la métropole du Grand
+Paris, à répondre au développement actuel et à
+venir du transport ﬂuvial :
+- développer les services de distribution d’eau
+potable et d’électricité ;
+- identiﬁer, préserver et reconquérir les zones
+nécessaires à l’accueil de nouveaux chantiers
+et activités ﬂuviales.
+
+3.2.2 - Mieux anticiper les manifestations nautiques
+Améliorer l’anticipation de la gestion des manifestations : mise à jour régulière du site internet de la
+DRIEA, élaboration de documents de cadrage pour
+les organisateurs, rédaction de ﬁches réﬂexes pour
+les services instructeurs.
+Mettre en place un comité des usages consacré aux
+fédérations sportives pour coordonner l’organisation de leurs manifestations sur la Seine.
+Dans Paris, mettre en œuvre les conditions nécessaires à l’utilisation préférentielle du bras de
+Grenelle pour les manifestations nautiques.
+Renforcer la reconnaissance de la valeur économique
+du transport ﬂuvial en mettant en place une tariﬁcation des interruptions et arrêts de navigation en
+relation avec le service rendu.
+3.2.3 - Prendre en compte le développement de la
+plaisance
+Examiner avec les collectivités publiques riveraines
+de la Seine la création de zones de stationnement
+destinées à la plaisance.
+
+3.3 - Favoriser l’équilibre et la mixité des usages
+3.3.1 - Favoriser l’implantation d’activités économiques
+le long de la Seine
+Dans le cadre des schémas d’orientation des
+berges :
+- identiﬁer le foncier en friche ou en mutation
+en bord de voie d’eau, et analyser son potentiel d’accueil d’activités ﬂuviales ;
+- accompagner les investissements dans l’immobilier logistique (entrepôts) de la voie d’eau
+(incitation à utiliser les liens maritimes,...) ;
+
+- augmenter la proportion d’activités en bord de
+voie d’eau ayant recours au mode ﬂuvial ou
+participant au système économique portuaire
+et développer les ﬂux maritimes ;
+- accompagner la réalisation des travaux du Grand
+Paris en créant, selon les besoins et avec une gestion appropriée, des emplacements permettant
+d’accueillir des barges industrielles, de préférence
+entre Gennevilliers et Vitry-sur-Seine ;
+- préserver les enjeux liés aux sites portuaires
+dans tous les documents de planiﬁcation et
+d’urbanisme.
+
+6
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+3.3.2 - Favoriser la mixité des usages économiques et
+la logistique urbaine
+Soutenir les projets de logistique urbaine ﬂuviale
+pour inciter au report modal en lien avec les
+armateurs et les professionnels de la logistique, en
+mettant si besoin à proﬁt la mixité des usages
+(escales ou quais en temps partagé par exemple).
+Poursuivre l’adaptation des modalités de l’occupation du DPF aﬁn d’accompagner au mieux le
+développement du transport ﬂuvial.
+À l’occasion de rénovations signiﬁcatives de ports
+urbains, analyser systématiquement l’opportunité
+de recours à la mixité fonctionnelle, spatiale et
+temporelle des usages, et la mettre en œuvre en
+tant que de besoin.
+Intégrer, dans les marchés publics de construction,
+une clause de recours à la voie d’eau pour
+l’évacuation des déblais et l’apport des matériaux
+de construction.
+3.3.3 - Poursuivre l’intégration des activités portuaires
+et industrielles dans le tissu urbain
+Dans le cadre des schémas d’orientation des
+berges :
+- identiﬁer, préserver et le cas échéant reconquérir
+les zones nécessaires à l’accueil des activités
+industrielles et logistiques ﬂuviales dans le
+tissu urbain ;
+- déﬁnir des modalités d’intégration dans le tissu
+urbain des activités de logistique ﬂuviale en
+bord de voie d’eau : documents de cadrage,
+élaboration de règles partagées…
+Continuer les actions de communication et de
+pédagogie vers le citoyen sur l’utilité des activités
+industrielles ﬂuviales.
+
+3.3.4 - Poursuivre l’ouverture de la ville sur le fleuve
+Mettre en place des mesures adaptées de sécurisation des quais de Seine dans Paris.
+3.3.5 - Poursuivre le développement de la croisière
+fluviale avec hébergement
+Dans le cadre des schémas d’orientation des
+berges :
+- favoriser l’implantation de nouveaux postes de
+stationnement et d’hivernage en dehors de
+Paris ;
+- poursuivre les travaux sur les équipements à
+quai pour répondre aux besoins en électricité,
+eau et évacuation des déchets des bateaux en
+stationnement.
+Créer des zones de transbordement (des bateaux
+de croisière vers les bateaux à passagers) et inciter
+les compagnies de croisière à leur développement.
+3.3.6 - Mener une réflexion autour du périmètre
+accordé à l’habitat fluvial
+Dans le cadre des schémas d’orientation des
+berges, travailler à une politique coordonnée en
+matière d’habitat ﬂuvial et cohérente avec les
+usages prioritaires du ﬂeuve
+
+3.4 - Faire de la Seine une vitrine de l’innovation et des mobilités
+3.4.1 - Adapter les règles et les outils de navigation aux
+enjeux et aux transports de demain
+Adapter le RPP aux nouveaux enjeux et aux capacités
+du transport ﬂuvial.
+Conforter la performance de la navigation sur l’axe
+Seine en renforçant le lien entre gestionnaires de
+réseau, gestionnaires portuaires et transporteurs
+par la mise en place de services d’information
+ﬂuviale.
+Étudier la faisabilité de nouveaux modes de transport ﬂuviaux.
+
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+3.4.2 - Mettre en place les conditions locales pour
+accompagner les innovations techniques
+Contribuer à l’émergence d’un secteur professionnel
+à la pointe de l’innovation technique et de la sécurité.
+Accompagner le transport ﬂuvial dans ses
+démarches de verdissement de ses motorisations :
+- proposer des évolutions réglementaires pour
+faciliter les expérimentations relatives à la
+motorisation ;
+- accompagner au niveau européen (CESNI) les
+projets de bateaux avec des motorisations à
+faibles émissions (électriques, piles à combustible) ;
+- étudier la faisabilité réglementaire des solutions
+d’avitaillement en hydrogène et en gaz par la
+voie ﬂuviale ; contribuer au déploiement de la
+ﬁlière hydrogène en Île-de-France en accompagnant le projet Déploiement de l’hydrogène en
+Vallée de Seine (Delplhy), piloté par
+Normandie Énergies et ﬁnancé dans le cadre
+du CPIER Vallée de Seine.
+
+7
+
+Introduction
+
+L
+
+e schéma d’aménagement ﬂuvial est issu de la
+volonté du préfet de région d’Île-de-France, préfet
+de Paris, de réaliser un document ensemblier synthétisant les politiques et orientations dans le domaine ﬂuvial
+à l’échelle de l’Île-de-France. Ces dernières sont en effet
+portées par une pluralité d’acteurs, représentatifs de la
+diversité des usages du ﬂeuve et de ses berges, une
+situation qui impacte leur capacité à appréhender de
+manière équilibrée les enjeux ﬂuviaux dans leur diversité.
+
+Le préfet a ainsi institué en 2017 un comité des usages
+ﬂuviaux de la Seine, instance de concertation qui réunit
+périodiquement les services de sécurité de la navigation,
+les opérateurs en charge de l’exploitation des berges et
+du ﬂeuve, des représentants des transporteurs ﬂuviaux,
+les représentants de la ville de Paris, des propriétaires
+d’habitations ﬂuviales ou encore des plaisanciers. Dans
+ce cadre, les enjeux de politique publique et d’aménagement susceptibles d’avoir un impact pour ces
+différents acteurs sont abordés aﬁn de favoriser une
+meilleure coordination des enjeux et la prise en compte
+des intérêts et besoins de chacun.
+L’organisation institutionnelle des acteurs ﬂuviaux, à l’instar
+de l’activité sur la Seine et les berges, est en pleine
+mutation : après le renforcement de la coordination des
+ports du Havre, de Rouen et de Paris au sein du groupement d’intérêt économique HAROPA en 2012, la fusion
+des trois organismes, annoncée au Comité interministériel
+de la Mer du 15 novembre 2018, est prévue pour le
+1er janvier 2021 au plus tard et la structuration d’une
+démarche interprofessionnelle est en construction sous
+le pilotage du délégué interministériel au développement
+de la vallée de la Seine.
+La réﬂexion qui a conduit à la production d’un schéma
+d’aménagement ﬂuvial s’inscrit dans un contexte récent
+où les enjeux de conciliation des usages du ﬂeuve se sont
+intensiﬁés. Les volontés de réappropriation de la Seine et
+de ses berges par la population, ont conduit à l’organisation de nombreux appels à projets et événements pour
+son animation. La cohabitation et la coordination entre le
+développement récent de certaines activités et pratiques
+du ﬂeuve (plaisance, transport de passagers, croisières
+ﬂuviales, établissements ﬂottants recevant du public) et
+ses usages historiques (transport ﬂuvial, promenade
+commerciale, alimentation en eau potable) doit aujourd’hui être organisée à la fois par les pouvoirs publics et
+les acteurs privés, pour imprimer à leurs dynamiques une
+direction qui les fasse concorder avec l’intérêt général. De
+manière plus importante qu’ailleurs, la densité de l’activité
+humaine dans l’agglomération parisienne inﬂue sur les
+conditions de navigation et sur la contrainte qui pèse sur
+le foncier ainsi que sur le linéaire des berges.
+
+Le périmètre du présent fascicule stratégique du schéma
+d’aménagement ﬂuvial concerne l’ensemble du linéaire
+ﬂuvial francilien, une attention particulière étant nécessaire, au vu de la densité des acteurs et des usages, sur
+la partie centrale située entre les ports de Bonneuil-surMarne et de Gennevilliers.
+La démarche a ensuite vocation à être étendue à toute la
+Seine francilienne, ainsi qu’à la Marne et à l’Oise. En
+particulier, les objectifs du fascicule stratégique seront
+déclinés de manière prospective et opérationnelle dans
+un schéma d’orientation des berges (SOB), à une échelle
+plus ou moins ﬁne selon l’importance des enjeux. Le
+schéma d’orientation des berges et des ports dans Paris
+(2011) dont la révision est en cours, les décline sur les
+rives parisiennes et sera étendu à l’ensemble du bief de
+Paris. Cette démarche est portée par HAROPA-Ports de
+Paris, validée par son Conseil d’Administration ; VNF et
+Ports de Paris mènent un travail identique sur l’ensemble
+de l’axe Seine en Île-de-France, avec une maille qui sera
+moins resserrée.
+Le fascicule stratégique réalise un état des lieux des
+enjeux portés par l’ensemble des activités liées au ﬂeuve,
+dans l’objectif de prévenir de manière structurelle les
+oppositions et conﬂits d’usages en améliorant la perception
+de la diversité des activités ﬂuviales par les acteurs liés à
+la Seine et en tenant compte des enjeux environnementaux
+associés à la préservation du ﬂeuve. Mal évaluées, les
+conséquences de certaines activités peuvent avoir un impact
+économique et social sur d’autres. Pour les acteurs
+économiques du ﬂeuve, les implications ﬁnancières de la
+diminution de leur activité peuvent être importantes : la
+Communauté portuaire de Paris, qui regroupe les
+exploitants du ﬂeuve et des berges, estime le chiffre
+d’affaires cumulé de ses membres à environ 1,5 Mds€
+annuels. L’enjeu environnemental et logistique est également
+primordial : face à la congestion routière des grands axes
+de la métropole parisienne et des nuisances de toutes
+natures qui en résultent, le fret ﬂuvial permet de rationaliser les conditions d’approvisionnement d’une part importante des marchandises du territoire et de réduire en
+conséquence les nuisances subies par les populations.
+Une politique équilibrée de développement des activités
+ﬂuviales doit prendre en compte la diversité des enjeux
+existants. À l’image de la diversité des documents de
+planiﬁcation l’abordant, la Seine s’observe sous plusieurs
+angles. Une grille de lecture complète et exhaustive doit
+considérer le ﬂeuve dans la diversité de ses aspects :
+économique pour les entreprises (pour de multiples
+raisons : tourisme, prélèvements d’eau,...) ou ont recours
+à lui pour le transport de leurs produits et pour les territoires qui recueillent ces bénéﬁces économiques, social
+
+8
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+pour leurs salariés et leurs dirigeants, environnemental
+pour la qualité de l’eau, la faune et la ﬂore qui l’habitent,
+sanitaire et aménitaire pour les populations qui bénéﬁcient des aménagements de loisirs et des axes de circulation douce et des avantages du report modal vers la
+voie d’eau, patrimonial avec notamment l’inscription des
+rives de la Seine dans le cœur de Paris sur la liste du
+patrimoine mondial de l’Unesco.
+Face à la multiplication des demandes parfois contradictoires d’utilisation de la Seine et de ses berges en lien
+avec un renouveau de l’intérêt que porte l’ensemble des
+acteurs concernés au ﬂeuve, il apparaît nécessaire que
+les porteurs de projets puissent s’appuyer sur un
+document présentant les enjeux actuels et futurs d’une
+politique ﬂuviale harmonieuse à l’échelle francilienne,
+objectif renforcé par l’organisation des Jeux olympiques
+et paralympiques en 2024 dont le dossier de candidature
+a placé la Seine au cœur de cet évènement.
+
+Figure 1 - La Seine à Suresnes - Source : Wikipedia/Pline.
+
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+Le fascicule stratégique, partagé au sein du comité des
+usages ﬂuviaux de la Seine, poursuit l’objectif d’assurer
+un développement ﬂuvial équilibré à l’échelle métropolitaine en anticipant l’apparition d’éventuels conﬂits
+d’usages.
+Le fascicule stratégique constitue ainsi un « dire de
+l’État » porté à connaissance des décideurs publics et des
+porteurs de projets privés, actuels et futurs, qui
+souhaiteront mettre en place ou développer des activités
+ayant une incidence sur le transport ﬂuvial.
+L’État et ses opérateurs réafﬁrment à travers ce document
+la nécessité de mieux faire connaître et valoir les enjeux
+et besoins de la Seine comme support d’un transport
+ﬂuvial économiquement, socialement et environnementalement performant.
+
+9
+
+1 - La Seine, une ressource majeure
+de la métropole francilienne
+
+P
+
+remier axe ﬂuvial français, premier ﬂeuve mondial pour la promenade commerciale du fait
+de l’attractivité touristique de Paris, la Seine représente une source de développement
+historique et d’échanges pour les populations installées de Nogent-sur-Seine au Havre. Ports de
+Paris est ainsi le premier port intérieur français et le deuxième à l’échelle européenne après
+Duisbourg. Des bateaux tirés par la force animale ou humaine depuis les chemins de halage
+jusqu’à la logistique ﬂuviale urbaine modernisée, la Seine n’a jamais cessé de constituer un moyen
+sécurisé et ﬁable d’assurer les échanges commerciaux desservant aujourd’hui un des plus gros
+marchés de consommation européens (12 millions d’habitants pour l’Île-de-France).
+
+1.1 - Des caractéristiques géographiques contraignantes
+La bonne tenue globale du transport ﬂuvial francilien par
+rapport au reste du territoire national baigné par des
+voies ﬂuviales doit s’analyser au vu des caractéristiques
+géographiques de la Seine pourtant contraignantes pour
+le fret ﬂuvial. En premier lieu, le caractère sinueux du
+ﬂeuve allonge les temps de parcours des transporteurs
+par rapport aux liaisons routières et ferroviaires, en
+particulier en aval de Paris ou plus d’une dizaine de
+méandres de plusieurs kilomètres serpentent jusqu’à
+l’estuaire du Havre. Si le gabarit du ﬂeuve peut sembler
+relativement grand au regard de l’ensemble du réseau
+ﬂuvial français, en amont de Rouen, sa largeur, sa profondeur et la hauteur de ses ponts interdisent les convois
+d’un tonnage supérieur à 5000 tonnes. À titre de comparaison, la largeur et la profondeur du Rhin et du
+Danube autorisent sur une partie notable de leurs
+linéaires la navigation de convois pouvant aller jusqu’à
+18 000 tonnes. La Seine constitue un axe commercial
+naturel entre l’interface maritime normande et le bassin
+
+parisien qui offre de réelles possibilités de report modal
+et de massiﬁcation sans aléa sur sa navigabilité en
+période d’étiage du fait de son aménagement et de son
+fonctionnement par biefs.
+En effet, outre le maintien des niveaux d’eau par les
+barrages de navigation, le débit de la Seine est pour plus
+de 50 % soutenu à l’étiage par les grands lacs de Seine
+qui permettent de maintenir un débit sufﬁsant pour les
+différents usages du ﬂeuve : navigation, prélèvements en
+eau, refroidissement, dilution des rejets des systèmes
+d’assainissement.
+Les grands lacs remplissent également une importante
+fonction d’écrêtement des crues. En dehors des crues
+d’ordre décennal ou plus rares, la Seine reste entièrement
+navigable en aval de Paris et largement navigable en
+amont pour le transport de fret.
+
+1.2 -La Seine et Paris, une longue histoire1
+Dès les origines de Paris, la corporation des Nautes de la
+tribu des Parisii à Lutèce développe les échanges entre
+Lutèce et le monde antique via la voie d’eau. Les romains
+déplacent la cité historique de Nanterre sur l’Île de la Cité,
+qui constitue par la suite un carrefour ﬂuvial et commercial dans la Gaule du Nord. La Seine a abrité le foyer de
+la vie parisienne avec de très nombreuses activités :
+moulins sur bateaux vers le pont au Change, débardeurs
+de bois, charpentiers, cultivateurs de chanvre et cordiers,
+éleveurs de chevaux, forgerons, bateaux lavoirs… Très tôt
+donc, l’écosystème naturel ﬂuvial a été maîtrisé par
+l’homme, qui a su exploiter ses caractéristiques physiques
+
+pour le transport ainsi que la proximité abondante d’eau
+nécessaire à de nombreuses activités artisanales puis industrielles.
+Le ﬂeuve est le lieu d'une activité intense. Outre le traﬁc
+commercial, on y pêche le poisson qui est conservé et
+commercialisé dans les viviers, on y lave le linge dans de
+grands bateaux lavoirs, on y abreuve et on y baigne les
+chevaux. Bien des petits métiers vivent alors directement
+de la rivière : passeurs et bachoteurs, porteurs d'eau,
+laveurs et cardeurs de matelas, déchireurs de bateaux,
+"plumets" porteurs de charbon, "crocheteurs", porteurs
+1
+
+Voir : Jean Favier, Paris, deux mille ans d’histoire, Fayard, 1997.
+
+10
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+de bois de "maule"2. La Seine a une telle importance pour
+Paris à cette époque que le baron Haussmann, préfet de
+la Seine, a choisi ofﬁciellement la navigation ﬂuviale
+comme emblème et devise pour la ville en 1853.
+Par la suite, le transport ﬂuvial ne cessera de prouver son
+efﬁcacité par rapport à la calèche et la mule, permettant
+le transport massiﬁé de marchandises et de personnes. À
+la ﬁn du XIXe siècle, Paris est le premier port de France
+pour le tonnage devant Le Havre et Marseille, avec 5,5 Mt
+manutentionnées (canaux et Seine confondus). Il
+représente le quart du traﬁc portuaire maritime. Les
+matières transportées sont en majorité des pondéreux à
+faible valeur ajoutée adaptés à la massiﬁcation : les bois
+de toute espèce, les pierres de taille, le plâtre, la chaux,
+le ciment, les pavés, le sable, la houille, le charbon, les
+grains, la farine. Importés de Lyon à l’occasion de l’Exposition universelle de 1867, les bateaux à vapeur sont les
+premiers transports urbains de masse. On dénombre 108
+compagnies en 1886 qui transportent annuellement plus
+de 21 millions de passagers3.
+Le ﬂeuve permet en outre d’envoyer les marchandises à
+l’export vers les ports du Havre et de Rouen.
+
+Napoléon Bonaparte illustra cette réalité géographique
+en 1802 par la formule suivante : « Paris, Rouen, Le
+Havre, une seule et même ville dont la Seine est la
+grande rue ».
+Dans les années 60, le traﬁc ﬂuvial à Paris bénéﬁcie
+pleinement de l’effort d’urbanisation du bassin parisien.
+Les grandes industries historiques se sont positionnées à
+proximité de la voie d’eau, autour de Javel, Bercy et
+Jussieu notamment. En 1970, le traﬁc du port de
+Gennevilliers atteint son apogée avec 9 millions de
+tonnes, principalement des hydrocarbures, du charbon,
+des voitures et des produits industriels4.
+Les investissements massifs dirigés vers le routier à partir
+de cette période ainsi que la baisse des besoins en
+charbon face au développement de l’énergie nucléaire
+détourneront progressivement le transport de marchandises vers le mode routier.
+La part modale du transport ﬂuvial de marchandises en
+Île-de-France est aujourd’hui stabilisée autour de 7 %,
+contre 2,3 % pour l’ensemble de la France5 mais 13 % en
+Allemagne, 18 % en Belgique et 37 % aux Pays-Bas6.
+En 2017, le bassin de la Seine rassemble 50 % du fret ﬂuvial
+français et 66 % du transport de passagers.
+
+Figure 2 - avant la motorisation de la ﬂotte ﬂuviale, la force animale.
+
+2
+
+https://www.paris-pittoresque.com/rues/85.htm, d’après Auguste VITU, Paris, 450 dessins inédits d’après nature, 1890.
+Idem.
+4
+https://fr.wikipedia.org/wiki/Port_de_Gennevilliers.
+5
+Commissariat général au développement durable, « Les infrastructures linéaires de transport : évolutions depuis 25 ans ».
+6
+Eurostat.
+3
+
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+11
+
+2 - Des usages et des enjeux multiples
+2.1 - Des usages en forte évolution
+2.1.1 - L'ouverture des berges et du
+ﬂeuve à tous, une forte
+attente de la société
+La volonté de rendre le plus possible les berges des
+ﬂeuves à la population est un enjeu pour les grandes
+métropoles depuis près de vingt ans.
+
+La ville de Paris s’est engagée en 2002 dans cette voie
+avec la création de l’évènement « Paris Plages » et a
+poursuivi son action par la piétonisation des voies sur
+berges. Cette politique se prolongera au-delà des JOP
+2024 avec le projet d’ouverture de la baignade à tout
+public à partir de 2025 dans la Seine, interdite depuis
+1923 pour des raisons de sécurité et de santé publique.
+
+Des berges de nouveau accessibles
+« Paris Plages » rencontre un très grand succès auprès de la population. Uniquement autorisée sur la rive droite de
+la Seine au départ, l’opération s’est étendue depuis au parc Rives de Seine et au bassin de la Villette. Durant l’été
+2018, ce sont plus de 300 000 personnes qui ont participé aux activités sportives et ludiques proposées sur les bords
+de la Seine et des canaux de la ville de Paris.
+La piétonisation d’une partie des berges en rive droite de la Seine est une des expressions les plus emblématiques
+de cette volonté de reconquête. En septembre 2016, la voie Georges Pompidou a été fermée à la circulation sur
+3,3 km, de l'entrée du tunnel des Tuileries à la sortie du tunnel Henri IV. Selon la ville de Paris, plus de 1,5 million
+de piétons et de cyclistes l’auront empruntée en dix-huit mois.
+En proposant l’accès à 1800 m² de jardins ﬂottants, de lieux de restauration, d’équipements sportifs, de jeux pour
+enfants, de lieux culturels et d’espaces de repos éloignés de la circulation automobile, les quais dirigés vers
+l’animation et les loisirs participent d’une extension de l’offre de lieux réservés aux piétons dans une métropole
+disposant d’une superﬁcie d’espaces verts limitée.
+
+HAROPA Ports de Paris et VNF sont partenaires de cette
+ambition d’ouverture. En particulier, depuis plusieurs
+années, des opérations de réaménagement de ports urbains sont conduites. Elles soignent particulièrement la
+mixité fonctionnelle et spatiale, voire temporelle, des
+usages. Cette évolution de la politique d’aménagement
+de Ports de Paris permet de répondre aux enjeux de
+réappropriation des espaces portuaires par la population
+tout en conservant des fonctionnalités liées au transport
+et à la navigation. Par ailleurs, depuis une vingtaine
+d’années, Ports de Paris a permis l’émergence d’une offre
+importante installations à caractère d'animation et de
+loisirs (ICAL) au cœur de la capitale, aﬁn de consolider le
+lien entre la ville et son ﬂeuve. À titre d’exemple, l’appel
+à projets « Réinventer la Seine » lancé en 2016 concerne
+9 sites portuaires à Paris, aménagés pour offrir aux
+Franciliens de nouveaux espaces expérimentaux et innovants, qui doivent permettre de valoriser de manière
+novatrice les berges de Seine en tant qu’espace de vie, de
+travail et de déplacement.
+
+2.1.2 - Le transport ﬂuvial, une
+activité dynamique qui
+nécessite de préserver les
+ports de marchandises
+Les activités portuaires franciliennes représentent un
+poids économique important. Les activités économiques
+implantées sur les 10 ports les plus importants d’Île-deFrance employaient, ﬁn 2014, 15600 salariés, dont 5300
+à Gennevilliers. À l’échelle de la vallée de la Seine, cela
+représente 64 100 emplois directs et 6 milliards d’euros
+de richesse annuelle dégagée. En 2017, le traﬁc ﬂuvial
+en Île-de-France a augmenté de 5 % par rapport à 2016
+et s’établit à 21,2 millions de tonnes (29 millions sur
+l’ensemble de la vallée de la Seine). Les matériaux de
+construction représentent aujourd’hui l’essentiel du fret
+avec 63 % du fret total de la vallée de la Seine, suivis des
+produits agricoles (12 %), des conteneurs (8 %) et des
+hydrocarbures (4,5 %). Les deux ports les plus importants
+sont ceux de Gennevilliers (3,6 millions de tonnes manutentionnées et 120 000 conteneurs), et de Bonneuil-surMarne (1 million de tonnes manutentionnées et 34 000
+conteneurs) et de Limay (1,1 million de tonnes manutentionnées et 4 000 conteneurs). Dans Paris intra-muros,
+le traﬁc de marchandises s’établissait à 4 millions de
+tonnes en 2017.
+
+12
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+tonnes-kilomètres). Fait notable, le transport des matériaux
+de construction a augmenté de 10,5 % en tonneskilomètres en 2017 sur le bassin de la Seine7.
+
+!
+
+Avec 3440 millions de tonnes-kilomètres en 2017, le
+bassin de la Seine se démarque aujourd’hui au niveau
+national en assurant 50 % du fret ﬂuvial total français (en
+
++.
+
+Figure 3 - le réseau portuaire parisien - Source : Haropa-Ports de Paris
+
+l’essor du e-commerce et des besoins associés en livraison
+dans un contexte de grande sensibilité à la performance
+environnementale des entreprises, constituent des opportunités uniques de développement de la voie d’eau
+en Île-de-France.
+
+Le transport ﬂuvial permettant une massiﬁcation importante,
+source de compétitivité pour l’acheminement des matériaux
+à faible valeur ajoutée, il constitue le mode de transport
+historique des granulats, des céréales, et de certains déchets.
+Pour autant, le transport ﬂuvial évolue et s’ouvre de plus
+en plus au transport de conteneurs et à la logistique
+urbaine en circuit court bénéﬁciant, par rapport à une
+route largement congestionnée, d’une efﬁcience de premier
+plan. Le maintien des capacités du transport ﬂuvial est
+donc nécessaire à l’équilibre et au développement de ces
+secteurs économiques, pour lesquels il n’existe parfois
+pas de solutions de substitution économiquement
+pérennes.
+
+La préservation des espaces réservés aux activités industrielles et portuaires situés le long des berges de
+l’agglomération parisienne revêt dans ce contexte
+plusieurs enjeux. Dans le secteur du BTP, dont l’activité
+est notamment soutenue par la réalisation du Grand Paris
+Express et du prolongement de la ligne E du RER, les centrales à béton consomment un volume d’eau important qui
+justiﬁe leur proximité avec le ﬂeuve. L’intégration des
+matériaux biosourcés au secteur de la construction étant
+toujours en gestation, la place du béton dans le BTP
+demeure centrale. En outre, les matériaux pondéreux du
+BTP s’acheminent plus économiquement par transport
+ﬂuvial massiﬁé, ce qui évite la présence supplémentaire
+de poids lourds dans une agglomération déjà fortement
+congestionnée. Les centrales à béton les plus importantes
+peuvent consommer quotidiennement jusqu’à 2500
+tonnes de granulats. Un tel volume de matériaux ne pouvant
+pas raisonnablement s’acheminer que par la route, il
+apparaît indispensable que ces centrales puissent continuer
+à trouver leur place à proximité du ﬂeuve. À lui seul, le
+port de Tolbiac traite aujourd’hui 280 000 tonnes de
+matériaux par an (principalement des granulats) et
+permet de soustraire ainsi au moins 14 000 camions des
+rues de Paris.
+
+Les différents modes de transports sont complémentaires.
+Ainsi, si le transport routier perdure sur les parcours ﬁnaux
+ou les courtes distances (moins de 150 km) en dehors
+des environnements urbains, le transport ﬂuvial est très
+efﬁcace sur de grandes distances et de plus en plus en
+milieu urbain lorsque la voie d’eau y est présente. Il est
+également en développement dans le domaine de la
+logistique urbaine pour lequel les distances sont courtes.
+Peu bruyant, le transport ﬂuvial permet de réduire
+l’exposition au bruit des transports qui constitue la première source de nuisance sonore perçue par les Franciliens à leur domicile8. 1,74 million de Franciliens (15 %
+de la population) restent aujourd’hui en effet exposés à
+des niveaux de bruit généré par le traﬁc routier supérieurs
+à la limite réglementaire ﬁxée à 68 dB9.
+Les travaux du Grand Paris Express, d’Éole, de lignes de
+tramway (T3 notamment), des JOP 2024 ou encore
+7
+
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+VNF, « Transport et tourisme ﬂuvial – Les chiffres clés 2017 du bassin de la Seine »
+8
+IFOP pour MEDDE, 2014
+9
+https://www.bruitparif.fr/chiffres-cle-en-ile-de-france1/
+
+13
+
+Au-delà, l’essentiel des nouveaux projets de report modal
+sur la voie d’eau identiﬁés aujourd’hui dans l’agglomération parisienne porte sur trois secteurs. Tout d’abord, à
+l’échelle de l’axe Seine, les stratégies de développement
+des ports du Havre et de Rouen, notamment en matière
+de logistique conteneurisée et de transport de céréales,
+intègrent une perspective de développement du traﬁc
+ﬂuvial francilien. Ensuite, à l’échelle métropolitaine, la
+perspective de fort développement du transport de produits valorisables issus des déblais et déchets des
+chantiers BTP du Grand Paris est avérée. Une massiﬁcation de ces ﬂux permet en effet un recours avantageux au
+mode ﬂuvial. Enﬁn, à une échelle géographique plus
+réduite, d’importantes perspectives de développement
+
+de la logistique urbaine se font jour. La congestion
+routière et la perspective de l’interdiction des véhicules
+roulant au diesel en 2024 puis à l’essence en 2030, la
+prise de conscience croissante des acteurs économiques
+en matière de transition écologique sont autant d’éléments qui incitent de plus en plus d’entreprises à se
+tourner vers le transport ﬂuvial. Plus de 300 magasins
+Franprix de Paris sont ainsi approvisionnés depuis 2012
+par voie d’eau avec une barge quotidienne transportant
+45 caisses mobiles qui circule entre les ports de Bonneuilsur-Marne (Val-de-Marne) et de la Bourdonnais (Paris –
+7e), représentant près de 4000 camions en moins dans
+les rues de la capitale chaque année.
+
+Convention
+/
+. 2018 pour un transport ﬂuvial au>service du Grand?Paris Express 3
+;
+?
+La préfecture
+la Société du Grand
+de
+2 de région,
++
+= Paris,
+2 la ville
+!"*de Paris, Haropa-Ports de Paris et Voies navigables
+.
+France ont signé le 4 octobre 2018 une convention de partenariat
+pour
+favoriser
+l’utilisation
+de
+la
+voie
+d’eau
+pour
+2
+>
+1'
+#=
+l’évacuation des déblais
+et l’approvisionnement
+des chantiers
+& du Grand Paris Express (45 millions de tonnes estimées)
+>
+1'
+,@
+*
+du Grand Paris Express. Un potentiel de 8 millions de tonnes, soit l’équivalent de 400 000 camions, sera ainsi sous(
+=!! !!!
+,
+trait de la route.
+
+Figure 4 - signature de la convention de partenariat le 4 octobre 2018 - Source : VNF
+2018.
+!
+
+2.1.3 - Le tourisme ﬂuvial,
+une activité en plein
+développement
+Bénéﬁciant de sa renommée
+architecturale et culturelle,
+!"%& '(
+"
+Paris se hisse aujourd’hui à la première place mondiale
+*! $
+des ports pour le tourisme ﬂuvial avec plus de 7,5 millions
+.. la Seine en croisières
+de passagers transportés sur
+( » en )2017 (en hausse de 22 % par rapport
+« promenades
+à 2016) auxquels s’ajoutent 1,5 million2de passagers
+ayant emprunté les canaux10, soit au total 80 % du transport
+.
+de passagers
+en France. Aujourd’hui, plus d’un visiteur
+$ de la !capitale effectue un déplacement
+!"
+( la
+sur !
+trois
+sur
+!""
+!"
+,
+3-45
+6
+Seine, ce qui en fait, le deuxième site touristique payant
+le plus7visité
+$ de Paris, juste après le Louvre
+2 et devant la
+tour Eiffel.
+,
+
+Par ailleurs, la croisière avec hébergement sur plusieurs
+jours le long de la Seine présente le plus fort potentiel
+de développement avec une augmentation de l’activité
+prévisionnelle de 50 % en 2022 par rapport à 2017, alors
+que le nombre de paquebots
+a doublé entre$
+!" ﬂuviaux
+#
+2011 et 2017. HAROPA – Ports de Paris enregistre un taux"!
+)
+'
+de remplissage du réseau d’escales de 95% entre avril et
++
+, - en évidence le point de limite atteint
+septembre,
+mettant
+( actuelles.
+.
+' tourispar les capacités d’accueil
+Si ce produit
+tique, fondé
+impressionnistes
+/ sur la Seine des 0
+1
+.. , et la
+destination ﬁnale de Paris, a rassemblé seulement 77 500
+passagers en 2017, le prix unitaire des croisières atteint
+en moyenne plusieurs milliers d’euros pour aboutir à
+environ2130 millions
+d’euros de retombées
+économiques
+( 2
+'
+2
+Les plus grands bateaux dédiés à la croisière
+annuelles11. '
+avec hébergement en exploitation sur la Seine atteignent
+135 mètres.
+
+(
+
+2
+
+"8!
+
+2
+2
+
+-
+
+)
+
+..
+
+9: ;
+
+.
+
+!!
+
+!"
+2
+2
+
+10
+
+(
+
+'
+;+
+
+"
+
+VNF : « Transport et tourisme ﬂuvial – Les chiffres clés 2017
+du bassin de la Seine ""
+».
+11
+
+Chiffres VNF de 2015.
+
+,/
+
+"8
+"
+
+,
+"
+
+'
+
+'
+
+14
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+Actuellement, la Seine offre en Île-de-France un réseau
+de 17 escales et 21 places pour l’accueil de bateaux de
+croisières, ces escales n’ayant pas toutes la capacité
+d’accueillir des paquebots ﬂuviaux. Dans Paris, 3 escales
+partagées permettent l’accueil de 4 paquebots et
+
+2 espaces amodiés 4 autres bateaux. En parallèle, un
+réseau de 35 escales de courtes durées permet aux
+compagnies ﬂuviales de développer en Île-de-France des
+activités touristiques, de transport en commun ou
+d’événements sur la Seine.
+
+Le schéma directeur pour le développement de la croisière ﬂuviale avec hébergement
+Face à l’augmentation continue de la demande et du nombre de paquebots ﬂuviaux, des investissements dirigés
+vers l’extension des capacités portuaires d’accueil sont nécessaires. Le développement de cette activité est soutenu
+par le schéma directeur pour le développement de la croisière ﬂuviale avec hébergement sur l’axe Seine aval, qui
+planiﬁe les investissements de VNF et de HAROPA – Ports de Paris. Sur le périmètre du Grand Paris, les escales sont
+situées à Paris-Bercy, Paris XVe, Issy-les-Moulineaux, Courbevoie et Saint-Denis. Une escale supplémentaire pourrait
+être créée à moyen terme à Longchamp (Bois de Boulogne), un site dont la proximité directe avec le cœur de
+Paris constitue un réel avantage. En grande couronne, les escales sont situées à Poissy, le Pecq, Conﬂans-SainteHonorine, Mantes-la-Jolie et La Roche-Guyon.
+Certaines de ces escales vont évoluer pour pouvoir accueillir de nouveaux services (distribution d’eau et d’électricité),
+voire accueillir des bateaux de plus grande taille pouvant aller jusqu’à 135 m (125 m dans Paris).
+
+Figure 5 - Schéma directeur pour le développement de la croisière ﬂuviale avec hébergement - Haropa Ports de Paris – VNF 2017
+
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+15
+
+2.2 - Des enjeux partiellement traduits dans les documents
+d’urbanisme et de planiﬁcation
+2.2.1 - La gestion du risque
+inondation
+Le risque d’inondation est la conséquence de deux composantes, un aléa – la présence d’eau hors du lit mineur
+de la rivière – et des enjeux – la présence de personnes
+et de biens.
+Les récentes crues de mai 2016 et de janvier 2018 l’ont
+montré : le risque inondation à Paris est réel et doit être
+anticipé de la meilleure des manières. 2,3 millions
+d’habitants et 1,8 million d’emplois sont aujourd’hui
+situés dans des zones jugées inondables. Malgré les
+travaux de protection réalisés au cours du XXe siècle
+(digues, murettes anti-crues, grands lacs-réservoirs),
+l’urbanisation croissante de la métropole et l’installation
+
+de nombreuses activités et réseaux (transports, eaux,
+électricité) à proximité du ﬂeuve ont accru la vulnérabilité
+du territoire. Aﬁn de ne pas accroître l’impact des crues,
+il appartient aux pouvoirs publics et aux collectivités
+locales de respecter les servitudes d’utilité publique prescrites par l’autorité administrative, dans la mise en
+œuvre de leurs stratégies de délivrance des permis de
+construire, notamment pour permettre le bon écoulement des eaux et éviter d’exposer des populations
+supplémentaires aux risques les plus élevés. Les enjeux
+économiques sont immenses : une étude de l’OCDE datée
+de janvier 2014 estime que l’impact d’une crue centennale serait de 3 à 30 milliards d’euros pour les dommages
+directs, et une réduction du PIB sur 5 ans de 0,1 % à 3 %
+en cumulé, selon la gravité de la crue.
+
+!
+%
+&
+
+Figure 6 - Les zones inondables en proche agglomération parisienne - Source : IGN BD-Topo, Altares 2014, Préfecture de Paris DULE.
+
+16
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+Plus circonscrit, l’impact sur les activités ﬂuviales n’en est
+pas moins important : l’arrêt de la navigation et de
+l’exploitation des établissements sur berge entraîne des
+pertes économiques signiﬁcatives pour les entreprises
+concernées. Ainsi sur la période de janvier à mai 2018, la
+navigation de passagers a été arrêtée sur le bief parisien
+durant 56 jours et réduite pendant 86 jours, avec seulement 7 jours de conditions normales de navigation. Le
+Comité des armateurs ﬂuviaux (CAF) estime que les
+exploitants du bassin de la Seine ont vu leurs recettes
+
+baisser de 17 % par rapport à la même période de l’année
+précédente. En matière de marchandises, si l’impact a été
+moindre en termes de jours d’arrêt, ce sont toutefois 2,15
+millions de tonnes de marchandises qui ont été reportées
+sur le transport routier. La dernière crue de 2018 a mis
+en exergue le caractère vital des sites industriels des
+berges pour certains secteurs comme celui des matériaux
+BTP : certains chantiers parisiens ont été momentanément
+arrêtés face à la pénurie de béton prêt à l’emploi issu des
+centrales de bord de Seine.
+
+Le plan de gestion des risques d’inondation (PGRI)
+Les dispositions prévues par le PGRI ont permis de poursuivre la dynamique de réduction des enjeux et de l’aléa
+qui composent le risque inondation. Ce document retient 4 objectifs : réduire la vulnérabilité des territoires, agir
+sur l’aléa pour réduire le coût des dommages, raccourcir fortement le délai de retour à la normale des territoires
+sinistrés, mobiliser tous les acteurs pour consolider les gouvernances adaptées et la culture du risque. Il rappelle
+également que le moyen le plus simple de prévenir les dommages liés aux inondations est de maîtriser l’urbanisation des zones inondables. Dans un second temps, les pratiques suivantes permettent de réduire l’intensité des
+crues :
+l’instauration de dispositifs de rétention des eaux pluviales « à la source » en cas d’imperméabilisation des
+sols en zone urbaine ;
+le développement de dispositifs de ralentissement dynamique des crues (c’est-à-dire le déplacement de
+l’aléa dans des zones à faible enjeu à travers l’aménagement des berges) ;
+le classement au titre de la sécurité des ouvrages hydrauliques et la gestion des ouvrages les plus importants
+pour la sécurité publique.
+La stratégie locale de gestion des risques d’inondation (SLGRI) du territoire à risque important d’inondation (TRI)
+de la métropole francilienne concrétise à l’échelle locale les orientations du PGRI et la mise en œuvre de la
+prévention du risque inondation en arrêtant les mesures mises en place par les services déconcentrés de l’État en
+Île-de-France et les collectivités locales.
+
+Les plans de prévention des risques d’inondation (PPRi)
+En matière d’urbanisme, les PPRi départementaux édictent les servitudes d’utilité publique que les collectivités
+doivent respecter. Les PPRi découpent les territoires situés en zone inondable en plusieurs secteurs. Les berges de
+Seine sont ainsi situées en «zone rouge», c’est-à-dire la zone d’écoulement principal du ﬂeuve en période de crue.
+Les contraintes réglementaires associées à la zone rouge ont pour objet de protéger les biens et les personnes en
+évitant leur implantation dans cette zone, de ne pas réduire la capacité d’écoulement du ﬂeuve, aﬁn de ne pas
+aggraver les conséquences des inondations. Il est rappelé que les installations, ouvrages, travaux et activités,
+permanents ou temporaires, présents dans le lit majeur du cours d’eau sont susceptibles de nuire au libre écoulement
+des eaux. À ce titre, et indépendamment des dispositions prévues au titre du PPRi ou du code de l'urbanisme,
+elles sont soumises à autorisation ou déclaration en application de l'article L. 214-3 du code de l'environnement.
+Les installations, ouvrages, travaux et activités permanents sont par conséquent soumis à la réalisation d'une étude
+d'incidence qui doit notamment porter sur l'écoulement du ﬂeuve.
+Les PPRI listent précisément le type d’activités autorisées en zone rouge, dont la liste est spéciﬁque à chaque
+département : à Paris, la zone rouge doit être limitée aux seules activités liées au port, au ﬂeuve ou aux berges ;
+en petite couronne, les sous-sols dédiés au stationnement ou les locaux techniques de gestion des réseaux de
+ﬂuides peuvent y être implantés.
+
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+17
+
+2.2.2 - La préservation de la condition
+écologique des eaux du
+ﬂeuve et de ses abords
+La préservation des écosystèmes aquatiques recouvre des
+enjeux associés à la qualité de l’eau et à la biodiversité.
+
+La politique de préservation de la qualité de l’eau et des
+milieux aquatiques française adapte et transpose les
+dispositions de la directive cadre sur l’eau du 23 octobre
+2000. Celle-ci dresse un cadre pour une politique communautaire dans le domaine de l’eau.
+
+Le schéma directeur d’aménagement et de gestion des eaux (SDAGE)
+Le SDAGE est la traduction en droit interne (loi n°2004-338 du 21 avril 2004) de la directive-cadre sur l'eau. Le bassin
+de la Seine y est découpé en « masses d’eau » dont les caractéristiques et le fonctionnement écologique sont
+homogènes. L’objectif afﬁché par le SDAGE 2016-2021 était d’atteindre, grâce à ses 191 mesures, 100 % des
+masses d’eau en bon état écologique d’ici 2027 (31 % en 2015), aﬁn de renforcer la biodiversité et de diminuer les
+impacts négatifs de l’activité humaine sur l’eau.
+Cependant, le SDAGE 2016-2021 ayant été annulé par décision du tribunal administratif de Paris du 26 décembre
+2018 pour vice de forme, c’est le SDAGE 2010-2015 qui est remis provisoirement en vigueur.
+Le plan d’action de la mission interdépartementale inter-services de l’eau de Paris proche couronne (MIISEN PPC)
+vaut plan d’actions opérationnel territorialisé (PAOT) et constitue la déclinaison territoriale du programme de
+mesures du SDAGE.
+L’amélioration de l’assainissement des eaux usées est
+nécessaire au bon état écologique des masses d’eau
+franciliennes et au retour de la baignade en Marne et en
+Seine.
+Sur le périmètre du fascicule stratégique, 9 sites de baignade,
+héritage des Jeux olympiques et paralympiques, sont envisagés à terme, après étude de faisabilité12. Le comité
+de pilotage pour la reconquête de la qualité de l’eau en
+Marne et en Seine en vue de la baignade regroupe les
+collectivités locales de la petite couronne aﬁn d’atteindre
+un seuil bactériologique assez bas autorisant la baignade
+dans le ﬂeuve. Son action porte sur les rejets des stations
+d’épuration, l’amélioration de la collecte des eaux usées
+(notamment la résorption des mauvais branchements des
+rejets d’habitations au réseau d’eaux usées), la gestion
+des eaux pluviales à la source et le raccordement des
+bateaux et des établissements ﬂottants au réseau
+d’assainissement.
+En particulier, la loi du 26 mars 2018 relative à l'organisation des Jeux olympiques et paralympiques de 2024
+interdit les rejets d’eaux usées des bateaux ou établissements ﬂottants destinés à l’habitation en obligeant
+les propriétaires à Paris à se raccorder au réseau
+d’assainissement des eaux usées de la ville dans les deux
+ans suivant son installation. HAROPA prévoit d’équiper
+l’ensemble des ports parisiens à l’amont du Trocadéro
+d’un réseau d’assainissement d’ici 2022.
+L’amélioration de la qualité de la Seine et de la Marne
+s’appuie également sur la limitation des pollutions accidentelles en huiles et hydrocarbures : 133 cas de pollutions accidentelles ont été relevés par la DRIEE depuis
+2005 sur la petite couronne.
+
+La température de l’eau est également un paramètre
+important pour la vie piscicole : les usages de l’eau pour
+le refroidissement industriel et les rejets d’eau chaude
+peuvent avoir une incidence particulière sur la faune et la
+ﬂore aquatique en cas de fortes chaleurs
+Dans un contexte d’une augmentation prévisible de la
+température des eaux de l’ordre de 2° à l’horizon 210013
+sur l’ensemble du bassin de la Seine et de la baisse des
+débits de 10 à 30 %, ces enjeux pourraient s’avérer cruciaux pour la Seine et ses usagers.
+Au-delà de la température, si l’axe Seine bénéﬁcie
+aujourd’hui largement du soutien d’étiage apporté par
+les grands lacs de Seine, certains usages du ﬂeuve
+pourraient connaître des difﬁcultés liées aux étiages
+sévères (navigation, alimentation en eau potable,
+refroidissement industriel, milieux naturels,...). Des études
+des conséquences des étiages sévères sont en cours dans
+le cadre de la stratégie d’adaptation au changement
+climatique du bassin Seine-Normandie pilotée par
+l’Agence de l’eau Seine-Normandie et la DRIEE.
+
+12
+
+13
+
+https://www.apur.org/fr/nos-travaux/sites-baignade-seine-marne-heritagejo-paris-2024-presentation-sites-issus-manifestation.
+
+Stratégie d’adaptation au changement climatique du bassin Seine-Normandie.
+
+18
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+'
+(
+)
+*&&
+*+
+
+Figure 7 - Une amélioration globale de la qualité de l’eau de la Seine depuis 1998 - Source : DRIEE/SPE.
+
+La production d’eau potable
+En vue de la production d’eau potable, l’agglomération parisienne présente la particularité en France d’avoir comme
+sources d’approvisionnement majoritaires des eaux de surfaces plutôt que des eaux souterraines. Près de 65 % de
+l’eau distribuée sur le territoire métropolitain est en provenance de la Seine, la Marne et l’Oise.
+La prise d’eau potable de Suresnes alimente l’usine du Mont-Valérien exploitée par le Syndicat des eaux de la
+Presqu’île de Gennevilliers, qui distribue l’eau potable à près de 600 000 usagers.
+L’arrêté interpréfectoral n°2012-128 du 17 juillet 2012 modiﬁé portant déclaration d’utilité publique des périmètres de
+protection de la prise d’eau en Seine de Suresnes déﬁnit les périmètres de protection de la prise d’eau et
+réglemente les usages au sein de ces périmètres (par ex : interdiction d’amarrage de bateaux ou amarrage sous conditions, interdiction de stockage d’hydrocarbures, obligation d’assainissement des bateaux et établissements ﬂottants,...).
+Les actions visant à l’amélioration de la qualité de l’eau contribuent au maintien d’une qualité de l’eau compatible
+avec la production d’eau potable.
+En ce qui concerne la préservation des écosystèmes liés
+au ﬂeuve, le schéma régional de cohérence écologique
+(SRCE) pose un cadre de référence à l’échelle régionale
+pour la mise en œuvre d’actions de préservation et de
+
+remise en bon état des continuités écologiques. Son plan
+d’action stratégique doit permettre aux acteurs locaux
+d’intégrer les objectifs du SRCE dans leurs activités, leurs
+politiques ou leurs ﬁnancements.
+
+Recommandations du SRCE
+Au titre des berges, en complément du SDAGE et en s’appuyant sur le schéma environnemental des berges des
+voies navigables de l’IAU, le SRCE recommande :
+de favoriser la reconquête et la renaturation des berges ;
+d’assurer le maintien ou la restauration de la continuité sur l’une des deux berges au minimum lors de
+reconstructions ou restructurations urbaines. La préservation d’une zone tampon non bâtie est nécessaire, aﬁn
+de laisser la place pour aménager et « renaturer » les abords de ﬂeuves ou rivières affectés par le mitage
+des berges ;
+de conforter les berges selon des techniques de génie végétal et y réaliser des interventions d’entretien
+minimales et respectueuses de la ripisylve, dans le respect des autres usages des cours d’eau.
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+19
+
+En tant que cours d’eau, la Seine présente plusieurs
+enjeux de biodiversité :
+des enjeux de continuité longitudinale liée au milieu aquatique lui-même ;
+des enjeux de continuité transversale pour les
+espèces aquatiques (frayères) et terrestres.
+La réhabilitation des berges se traduit à Paris par des
+actions sur des sites dédiés, en raison du contexte
+contraint des berges imperméabilisées. Les berges du
+centre de Paris étant inscrites au patrimoine mondial de
+l’Unesco au titre de leur caractère minéral, il y est difﬁcile
+d’y conduire des aménagements de grande ampleur.
+
+Des actions sont poursuivies dans les Hauts-de-Seine, où
+les berges de Nanterre, Boulogne ou Sèvres font l’objet
+de projets de revégétalisation.
+Une liste des frayères piscicoles et amphibiennes potentielles a été établie. Un suivi des frayères artiﬁcielles
+reconstituées au titre de mesures compensatoires est
+mené (Port du Point du Jour à Paris, Pont d’Iéna, berges
+d’Alfortville).
+HAROPA-Ports de Paris prévoit également de mener une
+opération de réhabilitation et renaturation écologique des
+berges amont du port de Bonneuil-sur-Marne.
+
+Les continuités aquatiques
+La Seine est un cours d’eau classé en liste 1 et 2 au titre de l’article L. 214-17-1 du code de l’environnement. Les
+conséquences de ce classement sont les suivantes :
+1) tout nouvel obstacle à la continuité écologique ne pourra être autorisé et le renouvellement de l’autorisation des ouvrages existants est conditionné au maintien du bon état écologique des eaux et de la
+protection des poissons migrateurs ;
+2) la compatibilité des ouvrages existants avec les objectifs de continuité écologique doit être assurée
+dans un délai de 5 ans à compter du classement, ainsi que le transport des sédiments et la circulation
+des poissons migrateurs, amphihalins ou non.
+Si le barrage de navigation de Saint-Maurice est équipé d’un dispositif de franchissement piscicole, les barrages de
+navigation de Suresnes, Port-à-l’Anglais et Créteil ne le sont pas encore.
+L’étude Consacre (Continuité écologique de la Seine et intérêt des acteurs pour sa restauration), portée par le GIP
+Seine-aval, l’Irstea, l’Agence de l’eau Seine-Normandie et les régions Île-de-France et Normandie, a pour
+objectif d’étudier l’état de la continuité écologique sur le bassin de la Seine aﬁn de proposer des stratégies
+d’intervention pérennes et efﬁcaces.
+
+Le SDRIF identiﬁe également plusieurs secteurs du ﬂeuve
+comme des continuités écologiques. Il reconnaît la fonction
+écologique des berges14 qui doit être respectée,
+préservée ou rétablie, en particulier celle des berges non
+imperméabilisées.
+Enﬁn, plusieurs collectivités mènent des actions en lien
+notamment avec la Seine dont il faudrait faire l’inventaire pour les valoriser ou mieux les accompagner voire
+renforcer leurs actions. Par exemple :
+la mise en valeur des berges par la ville de Paris15 ;
+le schéma des berges et la promenade bleue du
+Conseil départemental des Hauts-de-Seine ;
+la véloroute « la Seine à vélo » réalisée par les
+Départements de Paris au Havre qui devrait
+générer de nouveaux usages le long du ﬂeuve ;
+la démarche de protection, de valorisation et de
+gestion des berges de seine d’Épinay-Sur-Seine ;
+le plan paysage de Marne Conﬂuence16 ;
+la charte Trame verte et bleue des Plaines et
+Coteaux de la Seine centrale urbaine issue des
+réﬂexions conduites par l’association Espaces17 en
+lien avec la DRIEE et le Conseil régional.
+De son côté, l’Agence de l’eau Seine-Normandie et le
+Conseil régional subventionnent des opérations d’aménagements écologiques en lien avec la Seine.
+
+14
+Orientations réglementaires p.47.
+https://www.paris.fr/biodiversite#le-plan-biodiversite-2018-2024_16
+16
+http://www.sage-marne-conﬂuence.fr/Plan-paysage-Marne-Conﬂuence.
+17
+http://www.seine-centrale-urbaine.org/charte-tvb/demarche-faveur-de-tvb/
+15
+
+20
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+2.2.3 - Le développement du transport
+ﬂuvial de marchandises
+De nombreux documents de programmation régionaux
+portent l’objectif de l’accroissement du transport ﬂuvial,
+pour des raisons notamment écologiques.
+Les plus prescriptifs à l’échelle régionale pour la conduite
+des politiques locales sont le SDRIF (schéma directeur
+régional d’Île-de-France) et le PDUIF (plan de déplacements urbains d’Île-de-France) qui s’imposent dans un
+rapport de compatibilité aux documents locaux d’urbanisme.
+Le SDRIF afﬁche comme objectif la relocalisation des activités logistiques le long de la Seine, la modernisation
+du système ﬂuvial actuel, la préservation des ports dédiés
+concomitamment au maintien de l’accessibilité aux ports
+partagés. L’intermodalité « eau-fer-route » devra être
+privilégiée pour favoriser les échanges entre les plateformes multimodales, les ports urbains et le reste du territoire. Pour assurer le dernier kilomètre en cœur dense,
+il encourage la conception de nouveaux schémas de
+desserte, basés sur des centres de distribution et des
+plateformes localisées en zone urbaine dense, au plus
+près des lieux de consommation. Enﬁn, la valorisation des
+sites majeurs d’activités riveraines du ﬂeuve et la réhabilitation des sites d’activités en friche est encouragée,
+pour maintenir le caractère stratégique du corridor ﬂuvial.
+Conformément à la loi de programmation relative à la
+mise en œuvre du Grenelle de l’environnement de 2009
+(loi Grenelle n°1), le PDUIF porte l’objectif d’augmenter
+la part modale du fret non routier à 25 % à l’horizon 2022
+(contre 12,9 % en 2015). Aﬁn de conserver les possibilités
+
+d’un report modal plus important, de nombreux sites
+portuaires parisiens devront être préservés : Austerlitz,
+Bercy Amont, Bercy Aval, Champs-Élysées, Grenelle, Gros
+Caillou, Javel-bas, Javel-haut, la Rapée, National, Henri IV,
+Point du Jour, Pont Neuf, Saints-Pères, Tolbiac, Victor. Il en
+est de même pour les ports urbains franciliens comme
+ceux de Saint-Denis-l’Etoile, Clichy, Boulogne-Billancourt,
+Issy-les-Moulineaux, Charenton, Ivry-sur-Seine. Dans cette
+perspective, est également conﬁrmé l’objectif d’inclure,
+dans les critères d’évaluation des offres de marchés
+publics de construction, une clause d’éco-responsabilité
+visant à favoriser le report modal du transport de matériaux.
+Les infrastructures portuaires existantes dans les zones
+urbaines doivent ainsi être pérennisées. Les collectivités
+devront ainsi favoriser l’évacuation par voie d’eau des
+déblais des chantiers situés à moins de 3 km d’un point
+d’accès à la voie d’eau. L’évacuation par voie d’eau des
+déblais des chantiers liés à la construction des projets
+d’infrastructures collectives doit également être favorisée.
+En grande couronne, le PDUIF vise à préserver les possibilités de développement de sites multimodaux existants,
+d'enjeux nationaux et métropolitains et à créer de
+nouvelles plateformes multimodales (Montereau, Limay,
+Corbeil, Évry, Bruyères-sur-Oise, Saint-Ouen-l'Aumône,
+Port Seine Métropole Ouest).
+Le PDUIF demande également d’étudier la possibilité
+d'intégrer des ports urbains dans les opérations d'aménagement, d’exploiter lors de l'élaboration ou la révision
+des SCoT et PLU les possibilités d'utilisation de la voie
+d'eau pour l'approvisionnement et l'évacuation des
+marchandises et des déchets et d’identiﬁer les ﬂux transférables de la route vers la voie d'eau.
+
+Le schéma régional du climat, de l’air et de l’énergie (SRCAE) ﬁxe comme objectif de porter, dans la continuité du
+PDUIF, à l’horizon 2050 à 50 % la part modale du transport de marchandises utilisant le fer, le ﬂeuve ou des véhicules
+décarbonés.
+Le schéma régional de développement économique d’innovation et d’internationalisation (SRDEII) a pour objectifs
+de développer les infrastructures de pointe et les grands projets des territoires, en renforçant notamment l’armature
+portuaire et le fret ﬂuvial, dans le cadre inter-régional de la vallée de la Seine, pour permettre une logistique
+multimodale indispensable au développement économique de l’Île-de-France et sa connexion aux grands ﬂux
+mondiaux. Au travers du SRDEII, la Région réafﬁrme donc l’objectif de renforcer les infrastructures, notamment
+portuaires et ﬂuviales, pour faciliter la circulation des marchandises au sein du territoire.
+
+Au sein du PLU de la ville de Paris (plan local d’urbanisme),
+le PADD (projet d’aménagement et de développement
+durable) considère comme «indispensable» le développement du transport ﬂuvial et prévoit la préservation des
+emprises foncières qui lui sont dédiées. Les zones dédiées
+aux activités de BTP, de logistique, de transport de
+marchandises sont ainsi regroupées au sein de la « Zone
+de grands services urbains » et ne peuvent accueillir des
+
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+activités non liées aux objectifs d’amélioration de « la
+réception, la diffusion et l’enlèvement de marchandises
+de toute nature ». En complément, HAROPA – Ports de
+Paris recense, dans le schéma d’orientation des berges
+de Paris, les activités économiques correspondant à ces
+grands services urbains. Ils occupent à l’heure actuelle de
+l’ordre de 12 % des quais et terre-pleins dans Paris.
+
+21
+
+À titre d’exemple, les PLU de la ville de Gennevilliers et de
+Bonneuil-sur-Marne destinent aussi les emprises foncières
+de leurs ports aux activités portées par HAROPA – Ports de
+Paris. Sans être aussi précis et directifs que le document
+parisien, ils réservent ces zones à l’installation des activités
+industrielles, de services, et artisanales. La spéciﬁcité de
+l’activité des deux plus gros espaces portuaires de
+l’agglomération parisienne est ainsi préservée.
+À noter que l’étude de récolement des 131 PLU des communes de la Métropole du Grand Paris réalisée par l’APUR
+en 201818 a identiﬁé des ruptures de zonage en limites
+communales. Selon les villes, un tronçon de berge de Seine
+est classé en zone naturelle ou pas, non en raison de son
+aspect actuel mais en fonction de son histoire industrielle
+(pas de zonage spéciﬁque des berges de Seine à SaintDenis), résidentielle (Épinay-sur-Seine) ou campagnarde
+(pas de zonage à l’Île-Saint-Denis mais une berge réellement naturelle) ou encore en fonction du projet porté pour
+son avenir (Saint-Ouen).
+Enﬁn, HAROPA-Ports de Paris a mis en place un schéma
+d’aménagement et de développement durable sur le port
+de Bonneuil-sur-Marne, et un schéma d’orientation et de
+développement durable sur le port de Gennevilliers. Ces
+documents visent à planiﬁer et mettre en cohérence les
+interventions et investissements de Ports de Paris à horizon
+de 15 ans sur ces plateformes multimodales.
+
+2.2.4 - L’ouverture de la Seine et de
+ses berges à la population
+Le SDRIF souligne le patrimoine paysager et architectural
+exceptionnel que constituent la Seine, ses principaux
+afﬂuents et les canaux. Les espaces bordant la voie d’eau
+sont également des lieux de pratiques culturelles,
+sociales et sportives. À ce titre, la réappropriation
+éphémère ou pérenne des berges par les habitants doit
+être encouragée à travers de nombreuses initiatives
+favorisant le développement d’une culture de l’eau en
+ville : piétonisation des berges, plages urbaines, bases
+nautiques, compétitions sportives, représentations artistiques,...
+
+aux promeneurs hors période de fonctionnement est
+rappelée. Des dispositions particulières concernant
+l’aspect extérieur des constructions et des aménagements sont applicables au domaine ﬂuvial. Ils doivent
+respecter le paysage des berges et ne pas revêtir de
+signaux ou superstructures qui, par leur nature,
+porteraient atteinte au caractère du site. En qualité de
+gestionnaire des berges, HAROPA – Ports de Paris, VNF, la
+ville de Paris et les entreprises présentes sur les berges
+doivent respecter ces dispositions dans leurs décisions
+d’aménagements.
+
+2.2.5 - Le développement de
+navettes ﬂuviales
+Le PDUIF précise que "le développement de navettes
+ﬂuviales peut être envisagé comme un mode de desserte
+complémentaire du réseau pour des déplacements non
+contraints par des impératifs horaires ou pour la promenade".
+Il s'agit donc, dans l'esprit de ce texte, d'une offre de
+transport d'intérêt local à distinguer de l’offre de tourisme
+ﬂuvial.
+Comme le souligne le PDUIF, le réseau de transports
+collectifs n'a pas été conçu pour desservir le ﬂeuve et les
+canaux, rendant ainsi les correspondances avec
+d'éventuelles navettes difﬁciles. Le transport ﬂuvial de
+personnes peut être intéressant pour les liaisons mal
+desservies par les systèmes de transport existants. Ceci
+explique par exemple le grand succès des navettes mises
+en place en 2007 par la société Icade sur le canal de
+Saint-Denis entre le parc de La Villette (métro Corentin
+Cariou) et le centre commercial du Millénaire à Aubervilliers
+(plus d'un million de passagers par an).
+Le PDUIF envisageait d'étudier la possibilité de mettre en
+place une navette ﬂuviale entre l'écluse de Port-àl'Anglais et le pont de Suresnes, une autre sur le canal de
+l'Ourcq, entre le bassin de la Villette et Les-Pavillons-sousBois, et enﬁn une troisième entre Saint-Denis et La
+Défense, en lien avec les projets de transports collectifs
+portés par le Grand Paris.
+
+Sur le plan réglementaire, le PLU de la ville de Paris
+indique une volonté de poursuivre l’aménagement des
+berges entamé avec la piétonisation de certaines
+portions, en soutenant la création de lieux de vie en bord
+de Seine, d’équipements collectifs, sportifs, d’activités
+temporaires et festives, d’esplanades, de supports
+d’animation, etc.
+Il prévoit l’aménagement d’un itinéraire de contournement
+pendant les horaires d’ouverture des installations industrielles et logistiques ainsi que l’aménagement d’un
+« cheminement confortable » pour les promeneurs et les
+cyclistes. La nécessité de prévoir l’accessibilité des berges
+
+18
+
+https://www.apur.org/fr/nos-travaux/recolement-general-plu-131-communesmetropole
+
+22
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+L’importance des alignements d’arbres est bien soulignée
+dans le rapport de classement.
+
+2.2.6 - Un enjeu paysager
+et patrimonial d’exception
+dans le cœur de la capitale
+Paris présente la particularité de voir les rives de son centre
+historique, du pont de Sully au pont d’Iéna (rive
+gauche)
++,)-,
+et de Bir-Hakeim (rive droite), inscrites au patrimoine
+&0
+mondial de l’Unesco depuis 1991. « L’ensemble,
+appréhendé comme une entité géographique et
+#
+2
+historique, forme un exemple exceptionnel et unique
+d’architecture urbaine en bordure d’un ﬂeuve, où les
+strates successives de l’histoire de Paris, ville capitale de
+l’un des premiers grands États-nations d’Europe, se sont
+harmonieusement superposées.»19.
+8
+
+;
+
+<
+
+L’ajout de volumes construits pourrait empêcher la
+perception de leur unité et régularité, réduire leur
+ensoleillement, leur apport hydrique et les endommager.
+
+"
+
+.
+
+)/,+
+$
+
+3
+&0
+456 1 -
+
+1
+
+-7
+
+=
+
+(
+
+9
+
+"
+
+<
+)/,>
+#
+L’inscription au patrimoine de l’Unesco
+L’article L612-1 du code du patrimoine, modiﬁé par la loi du 7 juillet 2016, rappelle la responsabilité de l’État, des
+établissements publics et des collectivités territoriales dans la conservation et la mise en valeur des biens inscrits
+2
+au patrimoine mondial de l’Unesco. Il prévoit d’une part une zone « tampon » assurant la protection de l’environ!
+nement visuel immédiat des sites, d’autre part la rédaction d’un plan de gestion comprenant les mesures de
+,???
+&0
+'!46<*
+9
+<
+6
+<
+protection, de conservation et de mise en valeur des sites par l’État et les collectivités locales concernées.
+
+"
+
+<
+
+<
+
+La proposition issue d’une étude de la DRAC Île-de-France
+d’extension du périmètre Unesco aﬁn d’y inclure le
+Muséum national d’histoire naturelle, les théâtres du
+Châtelet et de la Ville, la tour St-Jacques, le palais d’Iéna,
+ainsi que les façades et toitures des édiﬁces situés en limite
+du périmètre a été approuvée par le Conseil de Paris en
+novembre 2018. La zone tampon sera déﬁnie à l’issue d’une
+étude paysagère.
+Le plan de gestion de ce patrimoine pourrait s’appuyer sur
+le « cahier des prescriptions architecturales et paysagères
+pour la mise en valeur des berges de la Seine dans Paris »
+élaboré en 1999 par l’État (SDAP), la ville de Paris, l’Apur et
+le Port autonome de Paris et qui encadre l’évolution des
+berges et des installations occupant le plan d’eau.
+Figure 8 - Quais de la Seine à Paris.
+Source : © OUR PLACE The World. Auteur : Geoff Steven.
+
+Cet espace des berges présente un aspect unitaire qui
+perdrait de ses qualités à être décomposé ou bâti. Or, il faut
+souligner la caractéristique forte de la Seine, #
+peu encaissée
+et dont les tabliers des ponts introduisent, par leur planéité
+et leur ﬁnesse, la perception de lignes horizontales basses
+ménageant une ouverture au ciel importante et des vues
+dégagées.
+Cette séquence se prolonge dans des dispositions assez
+similaires en amont et aval de la zone inscrite au patrimoine
+mondial de l’Unesco.
+
+Le paysage des berges de Seine, en plus de la protection !
+par l’Unesco, l’est également par une série de sites classés"
+au titre du code de l’environnement pour leur caractère
+paysager emblématique du patrimoine national. Les
+#
+périmètres précis de ces protections couvrent
+un linéaire
+conséquent des $%&!
+berges franciliennes (voir liste des sites en
+annexe 2).
+
+!
+
+$%&!
+
+'
+
+( )*
+19
+
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+Source : Site internet de l’UNESCO
+
+23
+
+3 - Favoriser la cohabitation des usages
+pour permettre leurs développements
+
+L
+
+a Seine structure la géographie parisienne de façon bien identiﬁée et constitue un axe central
+pour l’identité de la ville et son attractivité ; il s’agit à présent de reconnaître et valoriser cet
+axe à l’échelle du Grand Paris, et d’accompagner les dynamiques qui se font jour autour du ﬂeuve
+en conciliant des usages parfois contradictoires et en veillant à conjuguer ces usages avec une
+exigence environnementale forte et une protection patrimoniale et paysagère prégnante, en
+particulier à Paris.
+Cette approche doit regrouper les enjeux actuels et futurs d’une politique ﬂuviale harmonieuse à
+l’échelle francilienne, objectif renforcé par l’organisation des jeux olympiques et paralympiques
+(JOP) en 2024 dont le dossier de candidature a placé la Seine au cœur de cet évènement.
+Cette démarche s’inscrit autour de plusieurs points d’avenir : favoriser la logistique et le report
+modal, optimiser la gestion de l’espace public, ouvrir la ville sur le ﬂeuve et faire de la Seine un
+centre de l’innovation ﬂuviale en Europe.
+
+En outre, il importe de renforcer la croisière ﬂuviale et de maintenir la continuité et la sécurité de
+la navigation en intégrant les activités de plaisance, d’habitat, de baignade et les manifestations
+nautiques.
+
+3.1 - Les JOP 2024, catalyseurs de la démarche collective
+3.1.1 - Les JOP 2024, test en vraie
+grandeur pour la conciliation
+des usages
+Les jeux olympiques et paralympiques de Paris (du 26
+juillet au 11 août et du 28 août au 8 septembre 2024)
+seront une véritable opportunité pour nombre d’acteurs
+de la Seine, hors exposition médiatique et attractivité
+particulière de la capitale, avant, pendant et après les
+Jeux, tant d’un point de vue économique pour les acteurs
+du ﬂeuve (construction, logistique, tourisme,..) que pour
+les habitants de l’agglomération (sites en héritage et projets
+de baignade).
+Dans le même temps, les JOP de Paris sont une légitime
+préoccupation pour les professionnels du ﬂeuve puisqu’ils
+constituent un changement majeur dans l’usage habituel
+de la Seine et génèrent de potentiels conﬂits d’usage en
+combinant des enjeux d’occupation de l’espace, d’image
+et de sûreté.
+La localisation du village olympique et de certaines
+infrastructures accueillant les athlètes sur l’Île-SaintDenis, Saint-Denis et Saint-Ouen a conduit à prévoir la
+fermeture du bras principal du ﬂeuve durant la période
+d’activation du village pour les jeux olympiques, voire
+également pendant les jeux paralympiques.
+
+Aﬁn de reporter une partie du traﬁc ﬂuvial sur le bras de
+Gennevilliers (petit bras de l’Île Saint-Denis), des travaux
+d’aménagement et de dragages sont nécessaires dans ce
+bras qui est rarement utilisé et ne permet pas en l’état le
+passage simultané dans les deux sens de navigation. Les
+bateaux dont la taille est supérieure à 80 mètres auront
+des difﬁcultés à naviguer dans ce bras secondaire en
+raison de son étroitesse, ce qui nécessite la mise en place
+d’un alternat. La poursuite durant les JOP de la navigation
+dans le bras de Gennevilliers des paquebots de croisière
+et des bateaux de marchandises d’une longueur allant
+jusqu’à 135 m doit être recherchée. Par ailleurs, la conservation de certains équipements ﬂottants sera étudiée
+dans le cadre de l’héritage des JOP aﬁn de planiﬁer leur
+maintien en place ou leur transfert dans des localisations
+plus appropriées à leur exploitation.
+
+24
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+Si les JOP se traduiront par d’importantes contraintes pour
+la navigation en Île-de-France, c’est aussi une occasion
+unique pour les professions liées au ﬂeuve de bénéﬁcier
+d’une exposition médiatique intense, en particulier pour
+le transport ﬂuvial qui demeure largement méconnu de
+la population et, au cours de la phase des chantiers
+préparatoires, de proﬁter des opportunités de développement du mode ﬂuvial par rapport aux autres modes de
+transport de matériaux. Au cours du déroulement des JOP,
+l’intendance générale des JOP utilisera des établissements ﬂottants et installations sur berges. Le tourisme
+
+ﬂuvial devrait être soutenu par l’afﬂux de nouveaux
+visiteurs, qui nécessitera une adaptation des professionnels et des aménagements de sécurisation des quais.
+Pour répondre à l’ensemble de ces enjeux et préserver
+au mieux les intérêts de chacun, l’État a mis en place trois
+groupes de travail très en amont du projet, sur le pont
+d’Iéna, sur le bras de Gennevilliers, et sur les impacts
+économiques des restrictions de navigation. Ils
+associeront l’ensemble des acteurs concernés.
+
+Ambitions :
+préparer les décisions relatives à l’organisation des JOP (épreuves de natation et village olympique) et à
+leurs conséquences sur les usages du ﬂeuve en prenant en compte les intérêts de l’ensemble des acteurs
+publics et privés ; organiser les mesures de sûreté liées à l’implantation du village olympique sur l’Île St-Denis ;
+favoriser le recours à la logistique ﬂuviale pour les constructions du village olympique et les installations
+temporaires à l’instar de ce qui se fait pour les travaux du Grand Paris Express avec la SGP.
+
+3.1.2 - Développer des sites de
+baignade sécurisés dans un
+ﬂeuve et sur des berges
+écologiquement préservés
+La ville de Paris, en association avec les services de l’État,
+ambitionne de léguer en héritage des JOP 2024 la
+possibilité de se baigner dans la Seine pour tous les
+publics. Le comité de pilotage pour la reconquête d’une
+qualité de l’eau en Marne et Seine compatible avec la
+baignade est chargé d’organiser l’amélioration de la qualité
+bactériologique de la Seine et de la Marne. Le syndicat
+mixte Marne Vive également associé vise pour sa part
+l’ouverture de trois sites de baignade sur la Marne dès
+2022.
+La déﬁnition des sites de baignade doit tenir compte des
+contraintes liées aux usages préexistants et à venir
+(navigation, infrastructures portuaires, alimentation en
+eau potable, accessibilité, etc...). S’agissant de la navigation,
+il s’agit en premier lieu de préserver le périmètre du
+chenal pour ne pas représenter une gêne à la navigation,
+et de conserver les zones d’arrêt d’urgence, de manœuvre
+ou de stationnement nécessaires à la sécurité des
+utilisateurs du ﬂeuve et à la bonne marche du ﬂeuve
+comme infrastructure de transport. Outre la proximité du
+chenal, les critères pris en compte sont la courbure du
+chenal, la densité du traﬁc, la présence de zones d'alternat,
+de demi-tour ou d'arrêt d'urgence et la proximité
+d'ouvrages. Les contraintes peuvent être analysées plus
+ﬁnement par des études de trajectographie ou par la
+déﬁnition d'horaires de baignade compatibles avec la
+densité du traﬁc ﬂuvial. En second lieu, il importe que la
+sécurité des baigneurs soit garantie : de préférence, par
+un balisage explicite et une surveillance renforcée ou si
+cela s'impose, par des infrastructures renforcées et
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+sécurisées, présentant une charge ﬁnancière d'investissement et d'entretien pour les communes.
+Plus largement, et au-delà des dispositions des documents
+de planiﬁcation sur les enjeux de préservation écologique
+de la Seine et de ses berges décrites précédemment
+(SDAGE, SRCE), les enjeux principaux portent sur l’amélioration de la qualité de l’eau en assurant une collecte et
+une épuration des eaux usées (y compris des bateaux et
+établissements ﬂottants), la gestion des eaux pluviales à
+la source et la prévention des pollutions accidentelles,
+ainsi que l’amélioration du fonctionnement des écosystèmes aquatiques, au travers de la reconquête et la
+renaturation des berges, du maintien ou de la restauration
+de la continuité sur l’une des deux berges au minimum
+lors de reconstructions ou restructurations urbaines, du
+confortement des berges selon des techniques de génie
+végétal et des interventions d’entretien minimales et
+respectueuses de la ripisylve, dans le respect des autres
+usages des cours d’eau, du rétablissement de la continuité
+écologique au niveau des ouvrages de navigation.
+La carte des 26 sites d’études retenus pour la baignade
+sur la Seine et sur la Marne a été dévoilée le 18 octobre
+2018 (page suivante).
+
+25
+
+Figure 9 - Sites d’études de baignade conﬁrmés à l’issue de la manifestation d’intérêt (APUR).
+Source : APUR 2018.
+
+Ambitions :
+pour les sites d’étude retenus, déﬁnir les emplacements précis et les aménagements nécessaires à l’installation
+des sites de baignade dans le respect de la sécurité des baigneurs et des activités de navigation ;
+aménager les berges de Seine avec des installations récréatives préservant leurs fonctions écologiques ;
+accompagner la mise en œuvre des mesures requises pour permettre de disposer de la qualité des eaux
+nécessaire à la baignade en Seine.
+
+3.2 - Maintenir la continuité et la sécurité de la navigation
+3.2.1 - Fiabiliser les infrastructures
+ﬂuviales
+L’une des caractéristiques qui fonde la compétitivité du
+transport ﬂuvial est la ﬁabilité des temps de transport, un
+paramètre essentiel de la ﬁlière logistique. À la différence
+du réseau routier, le réseau ﬂuvial n’est pas saturé et les
+temps de transports sont globalement prévisibles, sauf
+incident sur un ouvrage de navigation, une manifestation
+nautique ou terrestre, qui entraîne un arrêt ou un ralentissement de la navigation. Il n’existe en effet pas
+d’itinéraire de contournement court dans le bassin de la
+Seine pour les bateaux qui rencontrent une interruption
+de la navigation sur les voies ﬂuviales à grand gabarit.
+Dans ce contexte, la rénovation et la modernisation des
+ouvrages de navigation (écluses, barrages, digues) sont
+essentielles : la dernière crue de 2018 a mis en exergue
+ce fort besoin d’investissement de rénovation et de
+
+modernisation des infrastructures ﬂuviales notamment
+sur le bassin de la Seine avec les problèmes rencontrés
+sur l’écluse principale de Vives-Eaux et le barrage de
+Champagne. Aujourd’hui, si l’écluse double de Méricourt
+en Seine aval qui montre des signaux inquiétants de
+faiblesse venait à rompre, cela stopperait toute navigation entre Le Havre et Paris pour une durée de plusieurs
+mois avec des conséquences économiques et environnementales considérables à court terme par report du
+traﬁc sur le réseau routier et à moyen terme par perte de
+crédibilité du mode ﬂuvial.
+Le montant des travaux nécessaires à la régénération et
+à la modernisation des ouvrages d’art est estimé à un
+peu plus de 200 M€ sur la Seine à l’aval de Paris et à
+45M€ sur la Seine amont. Or, moins de la moitié du montant des travaux nécessaires est actuellement inscrite aux
+CPER Île-de-France et CPiER Vallée de la Seine (102 M€).
+
+'
+(
+
+'
+
+26
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+)** !+
+
+&
+
+Pour pouvoir accueillir la ﬂotte existante et en prévision
+des ﬂux à venir liés aux travaux du Grand Paris Express et
+des Jeux olympiques et paralympiques, il est fondamental de développer l’offre en garages à bateaux pour les
+bateaux de marchandises. L’offre en chantiers ﬂuviaux
+doit également s’adapter aux nouveaux besoins liés à
+
+2
+
+& /
+
+,-!+
+
+&
+
+l’arrivée récente de bateaux de grandes dimensions, au
+renouvellement de la ﬂotte sur le bassin, aux travaux du
+Grand Paris et pour apporter aux armateurs des réponses
+satisfaisantes en matière de respect des réglementations
+techniques et d’innovation.
+
+34*) !+5
+
+Figure 10 - L’écluse de Méricourt (Yvelines) - Source : VNF.
+
+Ambitions :
+moderniser les ouvrages et équipements de navigation ;
+dans le cadre des schémas d’orientation des berges, renforcer les capacités de la Seine, en particulier en traversée
+de la métropole du Grand Paris, à répondre au développement actuel et à venir du transport ﬂuvial :
+- développer les services de distribution d’eau potable et d’électricité ;
+- identiﬁer, préserver et reconquérir les zones nécessaires à l’accueil de nouveaux chantiers et activités ﬂuviales.
+
+'
+
+&
+
+'
+
+7
+
+##
+
+.(
+
+"
+
+'
+
+(
+
+"
+
+#
+
+'
+3.2.2 - Mieux anticiper les
+manifestations nautiques
+"
+
+!
+8
+
+&
+
+L’autorisation d’événements nautiques ou à proximité de
+la voie d’eau à usages récréatifs ou commerciaux qui
+conduisent à des arrêts ou restrictions de navigation
+constitue un moyen de favoriser la réappropriation de la
+Seine par la population portée par les collectivités locales.
+
+"
+
+Les impacts ﬁnanciers et économiques que génèrent ces
+événements sur les utilisateurs du ﬂeuve (chargeurs,
+
+6
+#
+
+transporteurs) sont réels et doivent être pris en compte
+dans l’arbitrage qui conduit à les autoriser. Ces événements peuvent parfois entraîner une fermeture totale de
+la circulation ﬂuviale pendant plusieurs heures, ou la
+réduction du périmètre du chenal dédié à la navigation,
+avec des conséquences directes pour les bateaux à
+passagers comme de fret. Les transporteurs ﬂuviaux sont
+alors souvent contraints de rattraper le retard accumulé
+en naviguant de nuit, ou de ne pas respecter les délais
+ﬁxés par leurs clients, une situation qui concerne plus
+souvent les bateaux en direction des ports de Rouen ou
+
+'
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+'
+
+"
+
+"
+
+:
+
+9
+
+#
+6
+
+&
+
+27
+
+du Havre qui doivent composer avec les horaires de
+marée. Le simple arrêt de quelques heures de la navigation peut donc avoir des conséquences importantes pour
+les transporteurs et leurs clients. Au-delà, il peut
+contribuer à déstabiliser une chaîne logistique complexe
+et inciter les chargeurs à recourir à la route, jugée plus
+souple, plutôt qu’à la voie d’eau pour le transport de
+marchandises.
+Les événements organisés sur les berges de Seine qui
+nécessitent l’arrêt des activités économiques au sol ou
+sur le plan d’eau ou ceux qui restreignent les facilités
+d’accès aux quais bas par les piétons ou les véhicules
+routiers doivent de la même manière faire l’objet d’un
+compromis semblable entre les intérêts des professionnels travaillant sur le ﬂeuve et sur ses berges et l’usage
+récréatif qui peut en être fait.
+En vue du développement de ces évènements, le bras de
+Grenelle, seul bras du ﬂeuve à Paris non essentiel à la
+navigation, et situé dans une perspective visuelle
+emblématique de la capitale, devrait préférentiellement
+être utilisé pour les grandes manifestations nautiques.
+De manière générale, l’insertion des manifestations
+nautiques sur la Seine serait facilitée, si les acteurs
+économiques du ﬂeuve étaient plus étroitement associés
+à leur mise en œuvre et si la valeur du ﬂeuve, en tant
+que voie économique de premier plan, était mieux
+considérée. VNF travaille dans ce contexte sur une revalorisation sensible des tarifs des autorisations, qu’il peut être
+conduit à délivrer notamment pour les événements à
+portée commerciale.
+
+La communication en amont des événements et de leurs
+impacts sur la navigation et les exploitations situées sur
+les berges est de nature à favoriser l’anticipation par les
+acteurs économiques. Les modalités et délais d’obtention
+des autorisations, ainsi que la liste actualisée des manifestations prévues sont disponibles sur le site internet de
+la Driea20.
+Dans tous les cas, une meilleure coordination avec les
+exploitants du ﬂeuve offre la possibilité de mieux caler
+les horaires des manifestations et des événements
+prenant place sur les quais et de les déplacer le cas
+échéant aux endroits ou aux moments où l’activité est la
+plus faible. Le cas des fédérations sportives devra faire
+l’objet d’une concertation adaptée pour prendre en
+compte et coordonner leurs demandes.
+En particulier, il est indispensable que les organisateurs
+de manifestations intègrent dans leur projet les délais de
+concertation avec les autorités et d’information des
+professionnels de la voie d’eau.
+Les projets doivent intégrer dès la conception l’objectif
+de limiter le plus possible, temporellement et spatialement, leurs impacts sur la navigation ﬂuviale.
+Sans régler totalement les désagréments induits par
+l’arrêt momentané de l’activité des exploitants, une telle
+coordination et une reconnaissance de la juste valeur
+économique du ﬂeuve devraient faciliter l’articulation
+entre besoins de manifestations sur l’eau ou à proximité
+et contraintes de la navigation.
+
+Ambitions :
+améliorer l’anticipation de la gestion des manifestations : mise à jour régulière du site internet de la DRIEA,
+élaboration de documents de cadrage pour les organisateurs, rédaction de ﬁches réﬂexes pour les services
+instructeurs ;
+mettre en place un comité des usages consacré aux fédérations sportives pour coordonner l’organisation de
+leurs manifestations sur la Seine ;
+dans Paris, mettre en œuvre les conditions nécessaires à l’utilisation préférentielle du bras de Grenelle pour les
+manifestations nautiques ;
+renforcer la reconnaissance de la valeur économique du transport ﬂuvial en mettant en place une tariﬁcation des
+interruptions et arrêts de navigation en relation avec le service rendu.
+
+3.2.3 - Prendre en compte le
+développement
+de la plaisance
+La plaisance ﬂuviale est une pratique en développement
+qui participe à l’animation du ﬂeuve et de ses rives et au
+développement touristique. Pour autant, elle ne fait pas
+l’objet d’attention particulière dans les documents
+
+d’urbanisme ou de planiﬁcation. Les disponibilités de
+stationnement sont extrêmement comptées dans la
+capitale et les possibilités d’arrêts de courte durée sont
+inexistantes. Sur d’autres parties du ﬂeuve, cette dimension
+commence à être prise en compte par des comités du
+tourisme de départements à la recherche du développement d’une offre touristique intégrée tournée vers la
+Seine.
+20
+http://www.driea.ile-de-france.developpement-durable.gouv.fr/manifestationsnautiques-et-autres-evenements-r2354.html
+
+28
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+Une trentaine d’années après l’ouverture du port de plaisance à Cergy dans le Val-d’Oise, de nombreuses collectivités locales ayant prise sur la Seine envisagent
+d’aménager des marinas ou des ports de plaisance, qui
+représentent de potentielles sources de dynamisme
+économique. Une douzaine de projets pouvant accueillir
+de 50 à 200 bateaux sont actuellement en cours, pour un
+total de plus de 750 nouvelles places21. Le développement du traﬁc ﬂuvial sur la Seine en Île-de-France ne
+constitue pas une difﬁculté en soi : VNF estime que le
+réseau ﬂuvial peut accueillir 3 à 4 fois plus de bateaux. En
+revanche, si ces nouveaux bateaux de plaisance devaient
+se concentrer momentanément sur certaines zones du
+ﬂeuve à l’occasion d’événements particuliers, les conditions de navigation et la cohabitation avec de plus gros
+bateaux pourraient poser des problèmes de sécurité en
+particulier au cœur de Paris. Des situations dangereuses
+impliquant des voiliers ont pu ainsi être rapportées par
+les bateliers22. Une étude réalisée par VNF souligne l’inégale
+répartition actuelle du traﬁc ﬂuvial des bateaux de plaisance. L’écluse la plus empruntée par les plaisanciers sur
+le bassin de la Seine est celle de Suresnes (2600 passages
+en 2013) avec près de 1000 passages supplémentaires
+par rapport à l’écluse d’Andrésy, qui arrive en deuxième
+position, témoignant de l’attrait qu’exerce le bief
+parisien, où la circulation ﬂuviale est plus dense
+qu’ailleurs23.
+
+quartier par des ﬁnancements privés), la volonté de
+soutenir de manière équilibrée le développement des
+activités ﬂuviales implique de prendre en considération
+l’ensemble des caractéristiques de la navigation de
+plaisance et les potentielles conséquences que pourrait
+impliquer une expansion incontrôlée.
+Il importe donc que les instances de travail sur le
+développement de la Seine, dans les domaines du transport,
+du tourisme, ou portuaire, intègrent la plaisance ﬂuviale
+dans leurs réﬂexions pour favoriser la cohabitation de
+tous les usages, en utilisant des possibilités de stationnements de courte durée dédiés à la plaisance.
+Les règles particulières relatives aux sports nautiques sont
+précisées par les schémas directeurs des sports
+nautiques, annexés aux règlements particuliers de police
+d’itinéraire.
+
+Si ces questions peuvent sembler mineures au regard des
+retombées économiques attendues de la création d’un
+port de plaisance (souvent associée à l’aménagement du
+Ambition :
+examiner avec les collectivités publiques riveraines de la Seine la création de zones de stationnement destinées
+à la plaisance.
+
+3.3 - Favoriser l’équilibre et la mixité des usages
+3.3.1 - Favoriser l’implantation
+d’activités économiques
+le long de la Seine
+Le choix du transport ﬂuvial en logistique urbaine trouve
+le plus souvent sa pertinence lorsque la destination ou le
+stockage de la marchandise mais aussi l’origine de la
+marchandise transportée se situent à proximité de la voie
+d’eau. Face au transport routier qui bénéﬁcie de plus de
+densité et de souplesse, la voie d’eau est difﬁcilement
+compétitive d’autant plus lorsque les distances de
+pré-et post-acheminement jusqu’au port sont grandes et
+entraînent des ruptures de charge nécessaires à
+l’acheminement des marchandises.
+
+grands entrepôts logistiques (préconisée par le SDRIF et
+dont les grandes orientations sont déclinées par les
+nouvelles orientations de la procédure d’agrément, qui
+vient en anticipation du dépôt du permis de construire en
+Île-de-France pour les entrepôts de plus de 5 000 m²) et
+des sites industriels au bord de la voie d’eau, qui présente
+en Île-de-France la caractéristique d’être reliée à un grand
+nombre de débouchés commerciaux à travers le bassin
+de consommation parisien et l’estuaire de la Seine. Il
+s’agit en effet de contribuer également au développement des ﬂux maritimes. L’enjeu est réel : l’analyse des
+créations de surfaces d’entrepôts entre 1984 et 201324 en
+Île-de-France montre que les zones de concentration des
+surfaces logistiques sont assez éloignées des voies d’eau
+franciliennes.
+
+Ainsi, l’amélioration de la part modale de la voie d’eau
+dépend dans une certaine mesure de la relocalisation des
+21
+Voies Navigables de France.
+Entretien avec le président de la Chambre Nationale de la Batellerie Artisanale (CNBA).
+23
+VNF, « Étude sur les retombées économiques – La plaisance privée en France », Mars 2015.
+24
+Géokit3 Sitadel2 en date réelle au 30-04-2015 (SDRIF).
+22
+
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+29
+
+Aﬁn de ne pas compromettre ces nouveaux projets de
+logistique urbaine ﬂuviale, il convient de favoriser le renforcement d'un réseau de pôles logistiques au bord de la
+voie d'eau et de préserver le foncier dédié en zone
+urbaine dense. Cette exigence devra évidemment
+s'opérer en veillant à l’intégration urbaine et paysagère
+des sites et respectant les prescriptions des PPRi en zone
+inondable.
+Dans cette optique, VNF mobilise 20 M€ dans le cadre du
+Plan d’aide au report modal 2018-2022 pour inciter les
+entreprises qui le souhaitent à opter pour le mode ﬂuvial.
+À cet égard, l’État doit également développer une
+stratégie globale et partagée avec l’ensemble des acteurs
+lorsque la mutation d’une très grande parcelle ou friche
+située le long d’un cours d’eau est envisagée (exemple
+de la centrale électrique EDF de Porcheville). Ces
+
+mutations foncières représentent des opportunités importantes qui peuvent être mobilisées au service de
+plusieurs politiques publiques majeures liées au ﬂeuve
+(utilisation en zone d’expansion des crues, zones portuaires, zones dédiées à la biodiversité,...). Seule une
+analyse coordonnée entre l’État, les collectivités territoriales
+et les parties prenantes permettra de déﬁnir au mieux
+les priorités d’aménagement à donner à la reconversion
+des sites.
+Il apparaît dès lors nécessaire de créer des surfaces de
+stockage et les infrastructures adaptées à proximité des
+voies d’eau. Il faut également évaluer les opportunités
+de grands projets de mutation urbaine comme les « Réinventer » lorsqu’ils sont à proximité de la Seine, au regard
+de ce qu’ils peuvent apporter pour le transport ﬂuvial et
+les activités en bord de ﬂeuve.
+
+Ambitions :
+dans le cadre des schémas d’orientation des berges :
+- identiﬁer le foncier en friche ou en mutation en bord de voie d’eau, et analyser son potentiel d’accueil
+d’activités ﬂuviales ;
+- accompagner les investissements dans l’immobilier logistique (entrepôts) de la voie d’eau (incitation à
+utiliser les liens maritimes,...) ;
+- augmenter la proportion d’activités en bord de voie d’eau ayant recours au mode ﬂuvial ou participant au
+système économique portuaire et développer les ﬂux maritimes ;
+- accompagner la réalisation des travaux du Grand Paris en créant, selon les besoins et avec une gestion
+appropriée, des emplacements permettant d’accueillir des barges industrielles, de préférence entre
+Gennevilliers et Vitry-sur-Seine ;
+- préserver les enjeux liés aux sites portuaires dans tous les documents de planiﬁcation et d’urbanisme.
+
+3.3.2 - Favoriser la mixité des
+usages économiques et la
+logistique urbaine
+Aﬁn de ne pas compromettre les nouveaux projets de
+logistique urbaine ﬂuviale, il convient de préserver les
+espaces fonciers existants, voire à terme d’en développer
+de nouveaux. La logistique urbaine ﬂuviale n’a en effet
+d’intérêt que si elle permet un déchargement au plus
+près des clients et donc dans le centre de Paris, limitant
+par la suite la distance parcourue sur le réseau routier par
+les marchandises. La hauteur variable des quais parisiens
+est cependant un frein au développement de logistique
+urbaine.
+Les quais à usage partagé (QUP), composante importante
+de la stratégie de HAROPA – Ports de Paris pour le
+maillage des services portuaires, constituent une solution
+efﬁcace. Ce type de quais permet la cohabitation d’activités
+différentes à divers moments de la journée, l’utilisation
+des espaces est ainsi optimisée. La multiplication des
+projets d’exploitation et les politiques publiques volontaristes ont porté, dans Paris, à 48% la proportion du
+linéaire de quai consacré aux activités d’animation et de
+
+loisirs25. Dans le même temps, la dernière décennie a
+connu une expansion des projets de logistique urbaine
+ﬂuviale dont l’enjeu est désormais la mise en œuvre. Plus
+concrètement, sur certains sites portuaires parisiens, le
+dépôt de marchandises le matin devient compatible avec
+la desserte pour le transport de passagers l’après-midi et
+la libération des quais pour la promenade piétonne ou la
+pratique de la pêche le soir et le week-end. Sur ces sites,
+l’équilibre entre la réappropriation des berges par la
+population et les activités économiques est préservé par
+l’usage non exclusif qui en est fait par les acteurs. De
+même , les quais consacrés aux activités de loisirs doivent
+pouvoir être partagés avec des activités de transport de
+proximité ou de plaisance.
+À certains de ces équipements sont ajoutés des postes
+« à colis lourds » assurant une partie des transports
+exceptionnels et soulageant l’usage de la route.
+Sur le plan économique, les QUP favorisent le développement de solutions logistiques de courte durée. Peu
+d’investissements de base étant nécessaires pour les
+exploitants, l’engagement comme le retrait des entreprises est facilité.
+25
+
+Ports de Paris – SOB - 2018
+
+30
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+Le maillage des 44 quais à usage partagé du territoire
+francilien assure ainsi une disponibilité foncière sufﬁsamment
+souple pour s’adapter aux évolutions des usages.
+À la différence des terre-pleins logistiques du type du port
+de la Bourdonnais, les QUP nécessitent des aménagements moins lourds sur les quais et surtout n’impliquent
+pas la présence d’engins de déchargements volumineux
+à terre. L'utilisation de bateaux auto-déchargeants (avec
+grue embarquée à bord) ou le recours à des barges
+roulières (roll-on/roll-off) permettra d’exploiter le maximum de leur potentiel. Les aménagements à réaliser sur
+la voirie sont aussi limités dans la mesure où les solutions
+logistiques actuellement imaginées n’associent pas l’in-
+
+tervention de poids lourds et prévoient le chargement et
+déchargement de véhicules utilitaires légers qui vont directement livrer chez le destinataire. Un espace sufﬁsant
+permettant le stationnement de véhicules à proximité du
+QUP dans l’attente du déchargement ainsi qu’un linéaire
+assez long pour accueillir les plus gros gabarits de bateaux
+restent toutefois nécessaires à l’exploitation logistique du
+site.
+Les gestionnaires de la voie d'eau se doivent de répondre
+aux enjeux liés à une augmentation de la demande des
+usages du domaine qu'ils gèrent par des dispositifs innovants et juridiquement garants du correct usage du
+domaine public quant à sa destination.
+
+Ambitions :
+soutenir les projets de logistique urbaine ﬂuviale pour inciter au report modal en lien avec les armateurs et les
+professionnels de la logistique, en mettant si besoin à proﬁt la mixité des usages (escales ou quais en temps
+partagé par exemple) ;
+poursuivre l’adaptation des modalités de l’occupation du DPF aﬁn d’accompagner au mieux le développement
+du transport ﬂuvial ;
+à l’occasion de rénovations signiﬁcatives de ports urbains, analyser systématiquement l’opportunité de recours
+à la mixité fonctionnelle, spatiale et temporelle des usages, et la mettre en œuvre en tant que de besoin ;
+intégrer, dans les marchés publics de construction, une clause de recours à la voie d’eau pour l’évacuation des
+déblais et l’apport des matériaux de construction.
+
+3.3.3 - Poursuivre l’intégration
+des activités portuaires
+et industrielles dans le tissu
+urbain
+La réalisation des grands projets métropolitains nécessite
+a minima la préservation des installations locales de BTP
+sur berges telles que les centrales à béton et le
+développement des activités de fret ﬂuvial. Cette
+démarche doit également s’adapter au contexte urbain
+en limitant son impact sur la qualité de vie des riverains
+d’une part et en améliorant la communication autour des
+bénéﬁces écologiques des activités.
+En particulier, le caractère concurrentiel des activités portuaires nécessite une prise en compte de leur intégration
+dans le réseau urbain très en amont de leur conception,
+et notamment pour la gestion du dernier kilomètre. Dans
+un contexte de fort attrait du ﬂeuve et pour une meilleure
+insertion des activités portuaires dans les tissus urbains,
+HAROPA – Ports de Paris, la ville de Paris et leurs parte-
+
+naires, ont souhaité réunir leurs démarches de progrès
+dans une Charte d’amélioration des ports (CAP - 2017).
+Elle s’applique aux ports de la région Île-de-France gérés
+par HAROPA - Ports de Paris, accueillant des installations
+relevant des ﬁlières du BTP et/ou des produits valorisables.
+Elle institue une démarche de progrès visant l’amélioration continue de l’intégration urbaine, architecturale et
+paysagère des sites et installations portuaires, la maîtrise
+de leurs impacts environnementaux et l’information
+régulière des publics concernés.
+Sur les ports industriels, la démarche de progrès repose
+sur la réalisation d’audits annuels des installations donnant
+lieu à l’élaboration d’un plan d’actions et au suivi de sa
+réalisation.
+Plusieurs documents (SDRIF, PDUIF) préconisent l’autorisation du déplacement des piétons le long des sites
+accueillant des activités de BTP et au transport de
+marchandises lorsque cela est possible au vu des
+contraintes de sécurité et d’exploitation, ou a minima en
+dehors des horaires d’ouvertures.
+
+Ambitions :
+dans le cadre des schémas d’orientation des berges :
+- identiﬁer, préserver et le cas échéant reconquérir les zones nécessaires à l’accueil des activités industrielles
+et logistiques ﬂuviales dans le tissu urbain ;
+- déﬁnir des modalités d’intégration dans le tissu urbain des activités de logistique ﬂuviale en bord de voie
+d’eau: documents de cadrage, élaboration de règles partagées,…
+continuer les actions de communication et de pédagogie vers le citoyen sur l’utilité des activités industrielles
+ﬂuviales.
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+31
+
+3.3.4 - Poursuivre l’ouverture de la
+ville sur le ﬂeuve
+Depuis trois mandatures, la ville de Paris s'est engagée
+en faveur d'une diminution de la place de la voiture en
+ville, et vers une diversiﬁcation à la fois des offres de
+transport alternatives à la voiture particulière, et la création
+d'espaces de circulations dédiés aux modes actifs. Par
+ailleurs, la volonté de la ville a été clairement afﬁchée, à
+travers le slogan "les berges sont à vous!", de permettre
+à la population parisienne de reprendre place autour et
+sur le ﬂeuve qui traverse la capitale. Cette volonté
+politique, combinée à des initiatives diverses émanant
+directement de la ville ou à son initiative en direction
+d'investisseurs privés, est une des lignes fortes permettant
+de déﬁnir la relation de la ville de Paris au ﬂeuve et à ses
+acteurs publics ou privés.
+Cette orientation semble plutôt bien suivie par les habitants de la ville de Paris, bien que les questions liées à la
+circulation et les répercussions des reports de circulation
+sur d'autres voies dans et hors de Paris soient discutées.
+Il n'en reste pas moins que les initiatives à vocation
+festives, culturelles ou de loisirs, qu'il s'agisse des
+opérations ponctuelles ou des activités récréatives qui se
+développent sur et près des quais, concernent un nombre
+important d'utilisateurs. Beaucoup peuvent se développer
+en complémentarité ou cohabitation avec des usages
+existants. Aﬁn de promouvoir le recours à la logistique
+ﬂuviale, il convient d’intégrer une liaison entre les voies
+de circulation le long de l’eau et le ﬂeuve, dans la
+perspective d’essaimer des petits véhicules à faible
+empreinte environnementale à partir des chargements
+ﬂuviaux.
+Cette ouverture vers le ﬂeuve doit également intégrer les
+enjeux de sécurisation des espaces publics sur l’ensemble
+du linéaire d’activité et de déplacements. Ces enjeux
+doivent être intégrés dès l’origine des réﬂexions au
+regard de leur importance pour le développement des
+activités et des usages, de la nécessité d’une cohérence
+entre les dispositifs de la ville de Paris, de Ports de Paris
+et des autres opérateurs sur l’ensemble du linéaire, et de
+leurs liens avec le ﬂeuve et la ville.
+
+Seine » dont l’objectif est la mise en œuvre de mesures
+de sécurisation sur l’aménagement, l’accès et l’occupation
+des quais, en coordination avec les actions de Ports de
+Paris et de la ville de Paris. Par exemple, le balisage
+hectométrique des berges permettrait de faciliter le
+repérage par les services de secours.
+Si l’accès piéton et cyclable aux berges est un enjeu
+structurant, la construction de nouvelles passerelles
+permettant une communication douce entre les berges
+du ﬂeuve doit être intégrée à ces réﬂexions concernant
+l’ouverture de la ville sur la Seine.
+La Seine a très longtemps été considérée comme un
+vecteur de développement économique et social de la
+ville avant que les politiques du "tout automobile" en
+transforment les abords en obstacles pour les piétons. Il
+est donc assez logique que cette inversion de politique
+incite les Parisiens à renouer le lien naturel entre la ville
+et son ﬂeuve. C’est ainsi que les multiples activités
+sportives et de loisirs (plaisance, aviron, canoë-kayak,
+paddle, ski nautique, pêche,...) retrouvent naturellement
+une place sur le ﬂeuve, les canaux ou leurs berges, le
+projet d’ouverture des berges ayant suscité la mobilisation de nombre d’acteurs publics et privés aﬁn de
+proposer ces activités à destination de tous les publics.
+Il convient alors d’accompagner le développement
+d’activités économiques en lien avec les pratiques
+sportives, l’économie sociale et solidaire et la vie
+culturelle sur les berges et à proximité. Il s’agit également de faire des berges un lieu phare du commerce
+responsable. Les enjeux évoqués doivent permettre de
+donner une place dans les temps de concertation aux
+acteurs du ﬂeuve et de ses abords non associés traditionnellement (associations de cyclistes, de promeneurs,
+d’acteurs de la biodiversité, etc).
+L'objectif pour les pouvoirs publics, est de permettre la
+réalisation de ce mouvement naturel et souhaité, en
+respectant les enjeux patrimoniaux sur le secteur Unesco,
+tout en permettant d'assurer un équilibre avec les activités
+économiques qui perdurent sur le ﬂeuve et de rendre
+possible et durable son amélioration écologique.
+
+À cet égard, la préfecture de Police a récemment mis en
+place un « groupe de travail opérationnel des quais de
+
+Ambition :
+mettre en place des mesures adaptées de sécurisation des quais de Seine dans Paris.
+
+32
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+3.3.5 - Poursuivre le développement
+de la croisière ﬂuviale avec
+hébergement
+Pour des raisons de sécurité de la navigation, les caractéristiques physiques de la Seine et des ponts à Paris ou
+encore les besoins de retournement limitant en longueur
+et en hauteur la taille des bateaux qui peuvent y circuler,
+la taille maximale des bateaux de transports de passagers autorisée au cœur de Paris était jusqu’à présent
+de 110 mètres. En 2019, après des études qui ont permis
+de vériﬁer sa faisabilité, la modiﬁcation du règlement
+particulier de police de Paris (RPP) ouvrira l’accès aux
+bateaux de 125 mètres au cœur de la capitale, comme
+c’est aujourd’hui le cas pour les bateaux de marchandises.
+Les caractéristiques physiques de la Seine et des ponts à
+Paris limitent toutefois en longueur et en hauteur la taille
+des bateaux qui y naviguent. Pour améliorer la continuité de la desserte ﬂuviale, le recours au transbordement
+sur des bateaux plus appropriés aux croisières dans Paris
+notamment devrait être encouragé ; il permettrait une
+meilleure coordination avec les acteurs locaux de la
+Seine. Cette orientation nécessitera d’associer l’ensemble
+des partenaires concernés par cette évolution aﬁn que
+cela s’opère dans un cadre prenant en compte les
+contraintes particulières de ces différents partenaires.
+
+Avec 700 km de voies navigables et une diversité
+culturelle, paysagère et architecturale remarquable, les
+communes de l’Île-de-France possédant un accès à la
+voie d’eau sont en mesure de bénéﬁcier pleinement de
+l’expansion attendue de ce tourisme ﬂuvial dans les
+prochaines années. Si les mesures identiﬁées dans le
+schéma directeur pour le développement de la croisière
+ﬂuviale avec hébergement sont restreintes à la Seine en
+aval de Paris, l’Oise, la Seine amont et la Marne peuvent
+constituer des perspectives de développement inexplorées du secteur à moyen terme. La coopération entre
+les opérateurs et les communes-étapes doit cependant
+être renforcée pour que les passagers des croisières
+contribuent à l’économie locale.
+La réduction de l’empreinte environnementale des
+croisières ﬂuviales est également nécessaire à leur
+acceptation par les élus locaux et les populations. Le
+déploiement de bornes électriques aux escales est indispensable. Les opérateurs doivent ainsi être exemplaires dans
+la gestion de leurs déchets.
+De nouveaux postes de stationnement en amont de Paris
+sont nécessaires, y compris hors du bief notamment pour
+permettre le positionnement des bateaux en périodes de
+crues et en périodes d’hivernage.
+
+Ambitions :
+dans le cadre des schémas d’orientation des berges :
+- Favoriser l’implantation de nouveaux postes de stationnement et d’hivernage en dehors de Paris ;
+- Poursuivre les travaux sur les équipements à quai pour répondre aux besoins en électricité, eau et évacuation
+des déchets des bateaux en stationnement ;
+créer des zones de transbordement (des bateaux de croisière vers les bateaux à passagers) et inciter les
+compagnies de croisière à leur développement.
+
+3.3.6 - Mener une réﬂexion autour
+du périmètre accordé
+à l’habitat ﬂuvial
+
+constructions ﬂottantes dont l’emplacement est recherché
+interroge les pouvoirs publics sur la captation par des
+particuliers d’une rente liée à l’emplacement privilégié
+de leurs logements sur le domaine public.
+
+Environ 10 % du linéaire des berges de Seine à Paris est
+aujourd’hui occupé par des bateaux de plaisance et
+établissements ﬂottants à usage d’habitation (« bateauxlogements »). Les tarifs de l’occupation du domaine
+public ﬂuvial ﬁxés par HAROPA-Ports de Paris et VNF, du
+fait du caractère révocable de cette occupation et des
+coûts d’entretien, sont faibles par rapport au prix de
+l’habitat dans l’agglomération parisienne26 : à Paris et
+dans les Hauts-de-Seine, la redevance, ﬁxée après de
+longues concertations en s’appuyant sur la valeur locative moyenne de l’agglomération, correspond au tiers
+environ des tarifs appliqués aux installations d’animation
+et de loisirs. En outre, le prix de vente élevé de ces
+
+Au-delà de cet aspect, les berges occupées pourraient
+être sollicitées à court et moyen terme pour des projets
+de logistique urbaine ﬂuviale par exemple. Or, de tels
+projets bénéﬁcieraient de manière plus importante
+aux citoyens parisiens à travers ses caractéristiques
+écologiques que l’accueil d’habitat ﬂuvial. Dans ce contexte, si la contribution que l’habitat ﬂuvial peut apporter
+à la mise en valeur paysagère de la Seine est réelle, son
+intégration dans des zones à forts enjeux économiques
+devra être interrogée, en concertation avec les collectivités
+concernées.
+
+Ambition :
+dans le cadre des schémas d’orientation des berges, travailler à une politique coordonnée en matière d’habitat
+ﬂuvial et cohérente avec les usages prioritaires du ﬂeuve.
+26
+
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+7e chambre de la Cour des comptes, rapport particulier sur le Port autonome
+de Paris, 2016.
+
+33
+
+3.4 - Faire de la Seine une vitrine de l’innovation
+et des mobilités propres
+3.4.1 - Adapter les règles
+et les outils de navigation
+aux enjeux et aux transports
+de demain
+L’objectif est de renforcer la productivité et l'attractivité
+de la voie d'eau pour répondre aux demandes du marché
+de demain. En effet, les bateaux et les équipements de
+navigation se sont modernisés et offrent des possibilités
+nouvelles, ce qui justiﬁe le réexamen des limites réglementaires du règlement particulier de police (RPP) et leur
+pertinence, notamment pour celles portant sur la vitesse
+et les dimensions des bateaux.
+La révision du RPP de l’itinéraire Seine-Yonne a fait
+l’objet d’une consultation du 27 avril au 31 juillet 2018
+auprès de la ville de Paris, des conseils départementaux,
+des représentants des usagers et des services de l’État.
+Concernant la traversée de Paris, le projet de RPP prévoit
+l’augmentation de la longueur maximale pour les paquebots
+à Paris, en traversée et dans le bras de Grenelle (125 m au
+lieu de 110 m), l’assouplissement des contraintes de
+vitesse pour les bateaux avalant en période de crue pour
+rester manœuvrant et la réduction des secteurs imposant
+une vitesse minimale aux seuls endroits où le dépassement
+est interdit. L’ambition est de disposer d’une première
+version révisée début 2019.
+
+La mise en place des services d’information ﬂuviale (SIF)
+sur l’axe Seine permettra de mettre à disposition des
+transporteurs ﬂuviaux de passagers et de marchandises
+toutes les informations nécessaires pour conforter la
+performance de la navigation sur l’organisation des
+déplacements, l’identiﬁcation des services disponibles et
+de l’accessibilité de la voie d’eau en temps quasi-réel,
+ainsi que la mise à disposition d’informations et de
+prévisions de niveaux d’eau.
+En ce qui concerne le transport de passagers et pour
+accompagner l’évolution des mobilités urbaines, l’offre
+est amenée à connaître des évolutions, avec des attentes
+du public vers des modes touristiques plus souples et plus
+conviviaux sous la forme de bateaux à passagers de
+petites capacités. L’intérêt de développer une ligne de
+navettes ﬂuviales à Paris comprenant des espaces de
+cotravail devrait être intégré dans l’ensemble des réﬂexions
+concernant les modes de navigation sur le ﬂeuve et la
+valorisation de cet axe encore assez peu utilisé au regard
+d’autres grandes villes comparables.
+
+Dans un second temps, une étude doit être menée sur
+les conditions de navigation notamment dans la traversée de Paris pour intégrer certaines demandes issues de
+la concertation. Les principaux points étudiés seront les
+suivants : limitation de vitesse, longueur et largeur des
+bateaux autorisés, restrictions de navigation en cas de
+crue. Les résultats de cette étude devraient être
+disponibles en 2019. En termes de télécommunications et
+de systèmes d’information, la couverture par l’AIS
+(système d’identiﬁcation automatique) à Paris reste
+améliorable sur certaines zones. Une convention entre le
+ministère de la Transition écologique et solidaire et
+l’Agence nationale des fréquences pour contrôler les
+sociétés installatrices de stations AIS sur les bateaux sera
+signée en 2019 et permettra de lever certains
+dysfonctionnements. La navigation souffre également
+encore de la mauvaise couverture des réseaux de télécommunications.
+Ambitions :
+adapter le RPP aux nouveaux enjeux et aux capacités du transport ﬂuvial ;
+conforter la performance de la navigation sur l’axe Seine en renforçant le lien entre gestionnaires de réseau,
+gestionnaires portuaires et transporteurs par la mise en place de services d’information ﬂuviale ;
+étudier la faisabilité de nouveaux modes de transport ﬂuviaux.
+
+34
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+3.4.2 - Mettre en place les conditions
+locales pour accompagner les
+innovations techniques
+Le transport de marchandises est la première source
+d’émissions d’oxyde d’azote et de gaz à effet de serre
+(GES) en Île-de-France. Il émet 56 % des oxydes d’azote,
+28 % des particules ﬁnes (PM10) et 32 % des émissions
+de GES27. Pour répondre aux enjeux majeurs d’atténuation
+des causes du changement climatique et de préservation
+de la qualité de l’air, le transport ﬂuvial peut jouer un rôle
+indéniable dans la lutte contre les émissions de GES et de
+particules par la massiﬁcation des transports dans les
+zones congestionnées. Il s’inscrit par ailleurs comme un
+complément aux côtés de l’évolution de la motorisation
+du transport routier vers des modèles plus écologiques.
+En effet, un convoi ﬂuvial de 3800 tonnes peut transporter l’équivalent de 127 camions semi-remorques de
+30 tonnes et de 66 wagons ferroviaires de 58 tonnes avec
+des nuisances sonores réduites. Particulièrement adapté
+aux marchandises massiﬁées en ﬂux non tendus et aux
+longues distances, le transport ﬂuvial est plus écologique
+que le transport routier : il émet 2,4 fois moins de CO2
+par kilomètre parcouru pour un chargement de 1000
+tonnes28. Il est également économe en énergie : un
+bateau de navigation intérieure peut transporter une
+tonne de marchandise près de quatre fois plus loin qu’un
+camion pour une même consommation d’énergie29. Il est
+également 4,5 à 5 fois moins coûteux par tonne transportée que le transport routier lorsque la distance est
+supérieure à 200 km30, puisque la consommation de
+carburant est mieux amortie.
+Cependant, face aux rapides évolutions de la motorisation
+des poids lourds, le transport ﬂuvial doit veiller à ne pas
+perdre son avantage écologique. Le renouvellement des
+motorisations ﬂuviales est relativement plus long (10 à
+20 ans) par rapport à la motorisation routière (10 ans)
+dont les progrès en termes d’émissions de GES et de
+particules sont plus rapides. VNF accompagne ainsi
+l’adaptation des transporteurs aux nouvelles exigences
+environnementales à travers le Plan d’aide à la
+modernisation et à l’innovation (PAMI) à hauteur de 1,33 M€
+en 2017 (pour 33 projets). La ville de Paris propose également
+une aide (plafonnée à 9 000 € et un tiers du coût du
+projet) dont l’articulation avec le PAMI renforcerait
+l’efﬁcacité puisqu’elle semble méconnue des professionnels.
+À ce jour, des difﬁcultés réglementaires ne sont pas
+encore levées : l’application des nouvelles normes
+d’émissions des engins mobiles non routiers (EMNR)
+prévues par le règlement européen 2016/1628 paraît
+difﬁcile de mise en œuvre aux yeux des transporteurs
+ﬂuviaux en raison du retard pris par les fabricants de
+moteurs et d’une réglementation restrictive. Si l’utilisation
+du gaz de pétrole liquéﬁé (GPL) est autorisée, l’utilisation
+des technologies au gaz naturel compressé (GNC),
+
+comme sur les bus de transport en commun, reste
+interdite pour des raisons techniques par la directive technique relative aux bateaux. La performance économique
+des batteries électriques doit encore faire ses preuves
+pour le transport ﬂuvial français de marchandises, et la
+dernière génération de moteurs routiers (norme Euro 6)
+marinisés sur les bateaux n’est utilisable que sur les
+unités de moyenne gamme. Une évolution de la réglementation, le déploiement de bornes d’alimentation en
+électricité, gaz et hydrogène sur les ports et les escales
+aﬁn de développer une offre d’avitaillement cohérente
+avec le besoin, les contraintes et les ambitions afﬁchées,
+des améliorations techniques et un soutien renforcé à
+l’innovation dans le domaine de la motorisation ﬂuviale
+doivent donc être envisagés. Il convient d’anticiper de
+manière prospective le sujet particulier de l’avitaillement
+en énergies nouvelles pour pouvoir expérimenter des
+solutions novatrices (électricité, hydrogène...).
+Ces évolutions s’inscrivent dans la dynamique actuelle de
+développement des nouvelles formes et d’axes de
+mobilité et de travail en milieu urbain qui se tournent
+davantage vers les berges et le ﬂeuve.
+Les croisiéristes sont aussi engagés dans un processus de
+réduction des émissions de CO2 de la ﬂotte encourageant
+pour l’ensemble du secteur de la navigation ﬂuviale. En
+partenariat avec HAROPA - Ports de Paris le bateau
+"Energy Observer", pionnier de la navigation propre, a fait
+escale pendant l'été au Havre, à Rouen puis à Paris. Le
+prototype qui utilise l'hydrogène, le solaire et l'éolien
+pour se déplacer prouve qu'un navire peut se passer de
+carburant fossile. Certaines compagnies de promenade
+ﬂuviale se sont également engagées dans la recherche
+de nouveaux modes de motorisation propres fonctionnant au GTL (gaz-to-liquid, plus propre que le gas-oil).
+S’agissant des bateaux de fret dont les déplacements
+s’opèrent sur de longues distances, la motorisation
+électrique est peu adaptée même si des prototypes sont
+en cours de développement sur le réseau rhénan. La ville
+de Paris pourrait poursuivre son engagement pour le
+soutien des innovations en encourageant la ﬁlière de
+production d’engins de transport et de navigation.
+Le secteur ﬂuvial d'Île-de-France doit pouvoir répondre
+d'une part à des enjeux exogènes liés par exemple à la
+qualité de l'air, au dégagement de marges supplémentaires, et à une concurrence touristique internationale
+vers les autres destinations, et d'autre part à des enjeux
+endogènes concernant la mobilisation des acteurs privés
+et publics, l'appui nécessaire sur un milieu professionnalisé
+pour l'ensemble de la chaîne de production des bateaux :
+chantiers, fournisseurs, investisseurs, designers, organismes
+de contrôle et armateurs.
+
+28
+29
+
+27
+Airparif 2015
+Chiffres clés air climat énergie , Bilan 2015 de l’ADEME.
+
+Cour des comptes européenne, Le transport ﬂuvial en Europe :
+aucune amélioration signiﬁcative de la part modale
+et des conditions de navigabilité depuis 2001/2015.
+30
+
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+Idem.
+
+35
+
+L’enjeu relatif à la qualité de l’air est lié au changement
+de motorisation en accélérant la sortie du diesel et au report modal vers le transport ﬂuvial et a de multiples
+avantages pour tous les habitants. Plusieurs initiatives en
+cours permettent de porter cette politique d’innovation
+en matière de transition écologique :
+- le plan national de déploiement de l’hydrogène
+pour la Transition énergétique (juin 2018 –
+ministère de la Transition écologique et solidaire) ;
+Il recommande d’introduire 10 % d’hydrogène
+décarboné dans l’hydrogène industriel d’ici à 2023
+et 20 à 40% d’ici 2028 et de déployer des écosystèmes territoriaux de mobilité (bus, camions,
+trains, bateaux et construction de 100 stations à
+l’horizon 2023 - mesure 1) et de proposer des
+évolutions réglementaires de simpliﬁcation et
+d’harmonisation des procédures d’autorisation et
+d’homologation des bateaux et des solutions
+d’avitaillement hydrogène associées (mesure 9) ;
+
+- le projet de recherche européen sur 3 ans H2SHIPS
+qui associe EDF, la ville d’Issy-les-Moulineaux, le
+Syctom et Haropa-Ports de Paris pour tester la
+production et la distribution d’hydrogène pour les
+bateaux à passagers à partir de l’énergie produite
+par l’incinérateur de déchets Isséane d’Issy ;
+- l’étude portée par la communauté portuaire de
+Paris, ﬁnancée dans le cadre du CPIER, qui vise à
+identiﬁer les meilleures solutions techniques pour
+les nouvelles motorisations et les montages
+économiques en fonction de chaque usage de
+bateau.
+
+Ambitions :
+contribuer à l’émergence d’un secteur professionnel à la pointe de l’innovation technique et de la sécurité ;
+accompagner le transport ﬂuvial dans ses démarches de verdissement de ses motorisations :
+- proposer des évolutions réglementaires pour faciliter les expérimentations relatives à la motorisation ;
+- accompagner au niveau européen (CESNI) les projets de bateaux avec des motorisations à faibles émissions
+(électriques, piles à combustible) ;
+- étudier la faisabilité réglementaire des solutions d’avitaillement en hydrogène et en gaz par la voie
+ﬂuviale ; contribuer au déploiement de la ﬁlière hydrogène en Île-de-France en accompagnant le projet de
+déploiement de l’hydrogène en vallée de Seine (Delplhy), piloté par Normandie énergies et ﬁnancé dans le
+cadre du CPIER Vallée de Seine.
+
+Figure 11 - L’Energy Observer à Paris - Source : Energy-Observer.
+
+36
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+Conclusion
+
+L
+
+a compréhension des enjeux entourant un axe ﬂuvial majeur tel la Seine serait partielle si l’on
+omettait d’évoquer les paramètres plus larges sur lesquels ils reposent. Les ﬂux de la navigation
+ﬂuviale enregistrés en agglomération parisienne dépendent en effet des évolutions du commerce
+maritime via le port du Havre, ou encore du développement des infrastructures portuaires dédiées
+à la croisière ﬂuviale.
+
+La part modale du transport ﬂuvial en Île-de-France demeure plus élevée que sur le reste du
+territoire. L’amélioration de la coordination et de la coopération des acteurs ﬂuviaux, facilitée par
+la réunion régulière du comité des usages ﬂuviaux, devra dans un premier temps permettre de
+lever les obstacles et d’organiser les choix liés à l’usage de la Seine plutôt que de les subir.
+Le présent fascicule stratégique pourra également servir de référence dans les réﬂexions plus locales
+telles que celles qui sont initiées à l’échelle départementale ou communale. L’état d’avancement
+de la réalisation des ambitions précisées dans le présent fascicule fera l’objet d’un tableau de bord
+de suivi et d’un bilan annuel.
+En particulier, les schémas d’orientation des berges de Ports de Paris et de VNF déclineront en 2020
+les enjeux et objectifs du fascicule stratégique du schéma d’aménagement ﬂuvial de la Seine, en
+concertation avec les collectivités locales. Ces documents permettront de mettre à disposition des
+acteurs ﬂuviaux les éléments d’une base commune de politique de conciliation des usages dans le
+respect des objectifs environnementaux et de préservation des paysages.
+Dans cette optique, le schéma d’aménagement ﬂuvial sera également enrichi par les travaux
+engagés depuis janvier 2019 dans le cadre de l’Atelier Seine, piloté par la ville de Paris et
+accompagné par l’APUR. Cette instance réunit l’ensemble des parties prenantes concernées par le
+ﬂeuve et ses berges aﬁn de coordonner leurs visions et de travailler sur des projets concrets, avec
+pour objectif la production d’ici la ﬁn 2019 d’un livre blanc de l’évolution architecturale et paysagère
+du site de la Seine.
+L’intensiﬁcation des usages ﬂuviaux conduira à imaginer de nouvelles formes de coopération,
+tissant des liens plus directs et plus forts entre les acteurs.
+Maintenir la place de Paris comme premier port ﬂuvial à passagers du monde, augmenter la part
+modale du transport ﬂuvial, replacer la Seine au cœur des activités et des déplacements de la
+métropole, nécessitera pour l'avenir une capacité d'innovation et d'originalité tant dans les choix
+techniques que dans les prestations offertes à la diversité des usagers, qu'ils soient professionnels,
+habitants ou visiteurs.
+C'est pourquoi, en lien avec l'organisation d'une interprofession ﬂuviale, l'idée de la mise en place
+d'une ﬁlière d'excellence technique, en particulier sur la transition vers l’énergie hydrogène, doit
+être envisagée et soutenue par l'ensemble des acteurs, pour faire de la Seine un des pôles
+européens de l’innovation ﬂuviale et du recours à la voie d’eau un réﬂexe naturel et durable.
+
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+37
+
+Annexe 1 : réferences
+Bibliographie
+Jean Favier, « Paris, deux mille ans d’histoire », Fayard, 1997.
+Auguste Vitu, « Paris », 450 dessins inédits d’après nature, 1890.
+Commissariat général au développement durable, « Les infrastructures linéaires de transport : évolutions depuis
+25 ans », 2017.
+Cour des comptes européenne, Le transport ﬂuvial en Europe : aucune amélioration signiﬁcative de la part modale
+et des conditions de navigabilité depuis 2001, 2015.
+Insee Analyses Île-de-France, n°65 septembre 2017, « 15 600 emplois dans les principaux ports d’Île-de-France »
+VNF, « Les chiffres du transport ﬂuvial en 2017 ».
+VNF, « Transport et tourisme ﬂuvial – Les chiffres clés 2017 du bassin de la Seine ».
+VNF, « Étude sur les retombées économiques – La plaisance privée en France », Mars 2015.
+Chiffres clés air climat énergie , Bilan 2015 de l’ADEME.
+7e chambre de la cour des comptes, « rapport particulier sur le port autonome de Paris, 2016 ».
+
+Documents réglementaires et documents de programmation
+Schéma directeur d’aménagement et de gestion des eaux du bassin de la Seine-Normandie, 2015.
+Stratégie d’adaptation au changement climatique du bassin Seine-Normandie, 2010 et 2016.
+Plan de déploiement de l’hydrogène pour la transition énergétique, 2018.
+Plan d’actions stratégique 2016-2018 de la mission interdépartementale inter-services de l’eau et de la nature Paris
+proche couronne.
+Schéma régional de cohérence écologique d’Île-de-France, 2013.
+Schéma régional du climat, de l’air et de l’énergie, 2012.
+Schéma directeur régional d’Île-de-France, 2014.
+Plan de déplacements urbains d’Île-de-France, 2014.
+Schéma régional de développement économique d’innovation et d’internationalisation, 2016.
+Plan de gestion du risque inondation du bassin Seine-Normandie, 2015.
+Stratégie locale de gestion des risques d’inondation (SLGRI) du territoire à risque important d’inondation (TRI) de
+la métropole francilienne, 2016.
+Plan de prévention du risque inondation de Paris, 2007.
+Plan de prévention du risque inondation des Hauts-de-Seine, 2004.
+Plan de prévention du risque inondation de Seine-Saint-Denis, 2010.
+Plan de prévention du risque inondation du Val-de-Marne, 2007.
+Plan local d’urbanisme de Paris.
+Plan local d’urbanisme de Gennevilliers.
+Plan local d’urbanisme de Bonneuil-sur-Marne.
+Cahier des prescriptions architecturales et paysagères pour la mise en valeur des Berges de la Seine dans Paris ,1999.
+CPER Île-de-France, 2015.
+CPIER Vallée de la Seine, 2015.
+Schéma environnemental des berges des voies navigables d’Île-de-France, 2012.
+Plan biodiversité de la ville de Paris, 2018 .
+Schéma directeur pour le développement de la croisière ﬂuviale avec hébergement sur l'axe Seine-aval, 2017.
+Schéma de services portuaires d'Île-de-France, 2013.
+Schéma d’aménagement et de développement durable du port de Bonneuil-sur-Marne.
+Schéma d’orientation et de développement durable de Gennevilliers.
+
+38
+Schéma d’aménagement fluvial de la Seine - Fascicule stratégique
+
+Annexe 2 : sites classés au titre du code de l’environnement
+concernant les berges de la Seine en Île-de-France
+Les sites classés au titre du code de l’environnement sont des espaces faisant l’objet d’une protection pour leur
+caractère paysager emblématique du patrimoine national. La politique des « sites classés » née en 1906 a été
+renforcée par la loi de 1930 sur les monuments naturels et les sites de caractère artistique, historique, scientiﬁque,
+légendaire ou pittoresque. Cette mission qui relève de la responsabilité du ministère de la Transition écologique et
+solidaire, est localement assurée en co-instruction entre l’inspection régionale des sites de la DRIEE et l’architecte
+des bâtiments de France territorialement compétent dans les unités départementales de l’architecture et du
+patrimoine dépendant de la DRAC Île-de-France.
+Dans ces espaces souvent protégés au titre du paysage qu’offre la Seine et ses boucles et promontoires, un regard
+particulier est porté par les services instructeurs sur la préservation de leurs qualités spatiales et paysagères. La
+protection au titre des sites consiste à conserver les caractéristiques du lieu et à le préserver de toute atteinte signiﬁcative. Les travaux y sont soumis à autorisation et selon leur importance, à autorisation préalable du préfet ou du
+ministre.
+Les périmètres précis de ces protections qui couvrent un linéaire conséquent des berges franciliennes sont consultables
+sur la plateforme Carmen31 ou Atlas des patrimoines32 en ligne.
+
+Liste des sites de l’amont vers l’aval
+Seine-et-Marne :
+Conﬂuent de la Seine et du Loing classé par décret du 5 mai 1987.
+Butte de Samoreau et Île Saint-Aubin inscrites par arrêté du 6 mars 1947.
+Îles de la Seine inscrites par arrêté du 31 juillet 1931 à Samois-sur-Seine.
+Forêt domaniale de Fontainebleau classée par arrêté du 2 juillet 1965.
+Site des abords du Ru de la Gaudinel classé par décret du 18 novembre 1986.
+Ensemble formé par le château de Vaux-le-Pénil, son parc, la promenade de Vaux, la propriété située
+vis-à-vis du château et les rives de la Seine inscrit par arrêté du 19 avril 1947 à Melun.
+Château et partie de son parc classés à Melun par arrêté du 8 décembre 1964.
+Pré-Chamblain et ses plantations à Melun classés par arrêté du 19 avril 1947.
+Préfecture, ses jardins et ses abords à Melun classés par arrêté du 3 mars 1947.
+Propriété des Îles à Seine-Port classé par arrêté du 26 septembre 1989.
+Boucles de la Seine et vallon du ru de Balory de 783 hectares classés par décret du 15 décembre 1994.
+Essonne :
+Rives de la Seine près de 3455 hectares inscrites par décret du 26 juin 1985.
+Paris :
+Le site inscrit de l’Ensemble urbain à Paris inscrit le 6 août 1975 couvre les deux tiers de Paris et l’ensemble des berges
+de Paris et leurs ponts hormis ceux construits après 1975 et trois linéaires de 2 km environ de la rive gauche est et
+ouest en entrée de Paris et 2 autres km en rive droite en limite de Seine est de Paris. Un site classé participe directement des quais de Seine : le square Henri IV ou du Vert-Galant, site classé par arrêté du 14 mars 1958, en pointe
+de l’Île de la Cité.
+À l’intérieur de Paris et participant du périmètre Unesco, sept sites classés se trouvent au contact des quais de Seine
+avec d’ouest en est :
+Champs-de-Mars par arrêté du 22 octobre 1956.
+Jardins du Palais de Chaillot par arrêté du 31 août 1981.
+Cours Albert 1er par arrêté du 27 mars 1958.
+Partie des Champs-Élysées avec le Cours de la Reine par arrêté du 19 novembre 1910.
+Esplanade des Invalides par arrêté du 19 novembre 1910.
+Square René Viviani par arrêté du 13 décembre 1957.
+Jardin des Plantes par arrêté du 25 février 1974.
+Le Bois de Boulogne classé par arrêté du 23 septembre 1957 intéresse un linéaire important de plus de
+3 km de berges de Seine.
+31
+
+Direction régionale et interdépartementale de l’Équipement
+et de l’Aménagement d’Île-de-France
+
+http://carmen.developpement-durable.gouv.fr/18/Nature_Paysage.map
+32
+
+http://atlas.patrimoines.culture.fr/atlas/trunk/
+
+39
+
+Hauts-de-Seine :
+Colline de Brimborion inscrite par arrêté du 20 octobre 1941 à Sèvres.
+Château et parc de Béarn inscrit par arrêté du 21 mai 1953 à Saint-Cloud.
+Île Monsieur classée par décret du 28 octobre 1942 à Sèvres.
+Ensemble du bois de Saint-Cloud et du parc de Villeneuve-l'Étang classé par arrêté du 3 mars 1923 à Sèvres.
+Parc du château de Boulogne classé par arrêté du 12 décembre 1951.
+Parc du Château de Suresnes classé par arrêté du 27 mai 1987.
+Entrée du bois de Boulogne aux abords du pont de Suresnes classée par arrêté du 11 juillet 1922.
+Partie de l'île de Puteaux à Puteaux (appartenant à Madame Lebaudy) classée par arrêté du 20 juillet 1937.
+Parc du château de Bécon classé par arrêté du 13 mai 1941.
+Cimetière des chiens et parc de l'Île Robinson inscrits par arrêté du 25 juin 1987 à Asnières-sur-Seine.
+Yvelines :
+Jardins de la mairie à Carrières-sur-Seine classés par arrêté du 9 août 1945.
+À Chatou :
+Grande-Île (parcelles 541 à 545) à Chatou classée par arrêté du 3 janvier 1951 et inscrite par arrêté du
+5 novembre 1943.
+Nymphée et ses abords inscrits par arrêté du 21 décembre 1939.
+Quai de l’Amiral Mouchez inscrit par arrêté du 3 novembre 1943.
+Île du Chiard inscrite par arrêté du 3 novembre 1943.
+Belle-rive inscrite par arrêté du 22 janvier 1947.
+À Croissy et communes riveraines :
+Rives de la Seine inscrites par arrêté du 22 mars 1946.
+Site de la Grenouillère dans l'île de Croissy classé par décret du 19 novembre 1986.
+Îles de la Loge et de Croissy inscrites par arrêté du 22 mars 1946.
+Berges de la Seine inscrites par arrêté du 22 mars 1946.
+Terrasse communale à Port-Marly inscrite par arrêté du 22 mars 1946.
+Golf de Port-Marly inscrit par arrêté du 22 mars 1946.
+Panorama de la terrasse de Saint-Germain-en-Laye inscrit par arrêté du 18 aout 1933.
+Île Corbière (parcelles 60 et 61) classée par décret du 27 octobre 1938.
+Île et berges de la Seine à Maisons-Lafﬁtte inscrites par arrêté du 27 avril 1942.
+Sites hippiques de Maisons-Lafﬁtte classés par décret du 21 décembre 1994.
+Partie de l'Île Gévelot appartenant à la commune à Conﬂans-Sainte-Honorine classée et inscrite par arrêté
+du 25 août 1931.
+Vue panoramique du parc municipal et château inscrits par arrêté du 28 octobre 1942 à Conﬂans-SainteHonorine.
+Rives de la Seine à Poissy inscrites par arrêté du 30 juillet 1976.
+Rives de la Seine, île de la Motte-des-Braies, île d'Hernières et île du Platais inscrites par arrêté du 2 mars
+1945 à Médan et communes riveraines.
+Pavillon d'Artois et son parc sur l’Île de Vaux classés par arrêté du 20 septembre 1973.
+Rive droite de la Seine et île de Vaux inscrites par arrêté du 28 juillet 1944.
+Rives et îles de la Seine dont Île-Belle à Meulan en Yvelines et communes riveraines inscrites par arrêté
+du 8 mai 1944.
+Île-aux-Dames à Mantes-la-Jolie inscrite par arrêté du 28 août 1942.
+Cathédrale à Mantes-la-Jolie et abords inscrits par arrêté du 15 décembre 1942.
+Boucles de la Seine de Moisson à Guernes inscrites par arrêté du 18 janvier 1971 et Boucle de Guernes
+inscrite par arrêté du 24 novembre 1972.
+Site Giverny-Claude-Monet, conﬂuent de la Seine et de l'Epte de 1460 hectares classé par décret du
+9 septembre 1985.
+Val d’Oise :
+Bords de la Seine inscrits par arrêté du 21 octobre 1947.
+Église et ses abords classés par arrêté du 21 octobre 1947 à la Frettes-sur-Seine.
+Vue panoramique sur la vallée de la Seine et les îles d'Herblay et du Motteau à Herblay inscrite par arrêté
+du 9 mars 1943.
+Val d’Oise et Yvelines :
+Site des falaises de la Roche-Guyon et de la forêt de Moisson de 1655 hectares classé par décret du 16 juillet
+1990.
+
+SBN : 978-2-11-152766-9 - Mai 2019
+Maquette/mise en page : DRIEA/Communication
+
+

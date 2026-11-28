@@ -1,31 +1,592 @@
-### Official / institutional
-1. FranceTerme, Ministère de la Culture — "France (la)", *J.O.* 24/09/2008 — https://www.culture.fr/franceterme/terme/AFET263
-2. Arrêté du 4 novembre 1993 relatif à la terminologie des noms d'États et de capitales, *J.O.* 25/01/1994 pp. 1288–1295 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000181509 (403; via index)
-3. Ordonnance n° 58-1100 du 17 novembre 1958, art. 1 — https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006530034
-4. Conseil constitutionnel — Constitution de 1875, IIIe République — https://www.conseil-constitutionnel.fr/les-constitutions-dans-l-histoire/constitution-de-1875-iiie-republique
-5. SANDRE / OFB / eaufrance — "La Seine", code `----0010` — via https://web.archive.org/web/20210123171121/http://www.sandre.eaufrance.fr/geo/CoursEau/----0010
-6. Eaufrance — "Les rivières" — https://www.eaufrance.fr/les-rivieres
-7. Ministère de l'Intérieur, Formation civique — "Les fleuves français" (map: IGN 2012) — https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-français/
-8. HydroPortail / Vigicrues — station F700 0001 03 "La Seine à Paris – Austerlitz", data calculated 27/11/2026 — https://www.hydro.eaufrance.fr/stationhydro/F700000103/synthese
-9. Agence de l'Eau Seine-Normandie — "Le bassin de la Seine" — https://www.eau-seine-normandie.fr/agence-de-leau/le-bassin-de-la-seine
-10. UNESCO World Heritage Centre — "Paris, Banks of the Seine" (dossier 600bis) — https://whc.unesco.org/en/list/600/
-11. UNESCO — Décision 46 COM 8B.39 (2024) — https://whc.unesco.org/fr/decisions/8631/
-12. ICOMOS evaluation WHC/24/46.COM/INF.8B1.Add — https://whc.unesco.org/document/208528
-13. Ville de Paris — "Paris et ses ponts, toute une histoire" — https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466
-14. Ville de Paris — "La Seine, cœur battant de Paris" — https://www.paris.fr/dossiers/la-seine-coeur-battant-de-paris-216
-15. Ville de Paris — "Crues" / "Le Zouave, baromètre de la montée des eaux" — https://www.paris.fr/pages/crues-5472
-16. Ville de Paris — "Les canaux de Paris" (updated 26/11/2026) — https://www.paris.fr/pages/tmp-canaux-7834
-17. Ville de Paris — "Les secrets enfouis de la Bièvre, rivière parisienne" — https://www.paris.fr/pages/les-secrets-enfouis-de-la-bievre-riviere-parisienne-16900
-18. Ville de Paris — "La Seine s'ouvre à la baignade" / "Baignade en Seine : toutes les questions" — https://www.paris.fr/pages/baignade-en-seine-toutes-les-questions-que-vous-vous-posez-31533
-19. Ville de Paris — Eau de Paris, *Bulletin qualité de l'eau de la Seine*, Aug 2026 — https://cdn.paris.fr/paris/2026-10-02/bulletin-qualite-eau-seine-2026-08-smy5.pdf
-20. DRIEAT Île-de-France / Préfecture — Dossier de presse "Plan Baignade", Aug 2024 — https://www.prefectures-regions.gouv.fr/ile-de-france/...
-21. Cour des comptes / CRC Île-de-France — IDR2025-51, délibéré 22/07/2025 — https://www.ccomptes.fr/sites/default/files/2025-11/IDR2025-51_0.pdf
-22. Paris & Métropole Aménagement — "La Bièvre (Paris 13e)" — https://www.parisetmetropole-amenagement.fr/fr/bievre-paris-13e
-23. SMBVB — Syndicat Mixte du Bassin Versant de la Bièvre, "Historique" — https://www.smbvb.fr/la-bievre/historique/
-24. Château de Versailles (public establishment) — "Versailles, 'capital' of the kingdom, 1682" — https://en.chateauversailles.fr/discover/history/key-dates/versailles-capital-kingdom-1682
-25. BnF, Essentiels — "De Lutèce à la capitale" — https://essentiels.bnf.fr/...
-26. BnF Gallica — "L'histoire tourmentée d'une rivière : quand la Bièvre disparaît" — https://gallica.bnf.fr/accueil/fr/html/lhistoire-tourmentee-dune-riviere-quand-la-bievre-disparait
-27. European Union — "France", EU member state overview — https://european-union.europa.eu/principles-countries-history/eu-countries/france_en
-28. Council of Europe, Intercultural Cities — "Paris, France" — https://www.coe.int/en/web/interculturalcities/paris
-29. Archives nationales d'outre-mer — "Paris (France)" — http://anom.archivesnationales.culture.gouv.fr/geo.php?...
-30. European Commission JRC — "FACT SHEET: Seine River Basin" — https://water.jrc.ec.europa.eu/pdf/seine-fs.pdf
+The Seine, from 1977 to the present days | Musée Carnavalet - Histoire de Paris
+      
+      
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      
+
+
+
+
+
+      
+  
+  
+  
+    
+    
+      
+      
+
+  Go to menu
+  Go to content
+  Go to search
+
+
+  
+    
+    Menu
+  
+      
+        
+      
+  
+  
+    
+      
+        You are
+
+        
+      
+      
+        
+              En famille
+          Disabled visitors
+          Teachers and activity leaders
+          Tourism professionals
+          Liaison with social domain
+          Journalist
+          Museums professionals
+          A business / private event
+    
+  
+
+
+      
+    
+  
+  
+    Schedule
+  
+
+  Tickets 
+
+  
+    
+      
+         Close
+      
+    
+
+    
+      
+        
+          
+            You are
+            
+          
+          
+              
+              En famille
+          Disabled visitors
+          Teachers and activity leaders
+          Tourism professionals
+          Liaison with social domain
+          Journalist
+          Museums professionals
+          A business / private event
+    
+  
+
+
+            
+        
+        
+
+  
+    EN
+    
+  
+  
+          FR
+          ES
+              ALL
+          JP
+          CH
+      
+
+
+      
+    
+    
+      
+        
+          Search on the website
+          
+        
+      
+      
+              
+                  
+                          Visit 
+                                
+                  
+            Pratical information
+          
+                  
+            Plan your visit
+          
+                  
+            Cultural offerings
+          
+                  
+            Restaurant 
+          
+              
+      
+                      
+                  
+                          Exhibitions 
+                                
+                  
+            On air
+          
+                  
+            Coming soon
+          
+                  
+            Archives
+          
+              
+      
+                      
+                  
+                          The museum 
+                                
+                  
+            The history
+          
+                  
+            The pathway
+          
+              
+      
+                      
+                  
+                          Collections 
+                                
+                  
+            The essential artworks
+          
+                  
+            Publications
+          
+                  
+            Collections
+          
+                  
+            La collection Henriette Bouvier léguée au musée
+          
+              
+      
+                      
+                  
+                          Support 
+                                
+                  
+            Why support us?
+          
+                  
+            Businesses and partners
+          
+                  
+            Individual giving
+          
+              
+      
+                      
+              
+          
+
+
+
+      
+        Tickets 
+      
+
+                    
+          Newsletter
+          Recevez toute l'actualité du musée Carnavalet - Histoire de Paris dans votre boîte mail ! 
+           S'inscrire 
+        
+                          
+          Contacts
+          Need more info ? 
+           Contact us
+        
+          
+  
+  
+
+
+
+
+
+  
+      
+
+  
+    
+          
+        
+                  
+      
+                              
+            Accueil
+                    
+                              
+            Exhibitions
+                    
+                              
+            The Seine, from 1977 to the present days
+                    
+              
+    
+  
+    
+      
+        
+  Share
+  
+    Facebook
+  
+
+
+        The Seine, from 1977 to the present days Layout in the permanent collections
+                  Layout from 02.04.2024 to 29.06.2025
+              
+
+      
+        
+    
+
+
+
+
+      
+
+      
+        
+          
+            23 rue de Sévigné
+75003 Paris 
+          
+
+          The museum is open from 10 am to 6 pm from Tuesday to Sunday.
+
+Close on monday.
+
+Free entry.
+              
+                  
+        
+      
+    
+  
+
+  
+    
+      
+        
+                    
+
+      The Seine holds a special place in the history of the capital as well as in the life and in the fantasies of Parisians. On some 13 kilometers, 37 bridges connect its two banks. The most recent of them, the Simone-de-Beauvoir footbridge, was inaugurated in 2006. If the river shaped Paris, its uses changed and developed which also transformed it. The Seine was used as resources, commercial axis, patrimonial space, and, increasingly as a place turned towards leisure activities, all the while remaining a natural site to be protected. In 1991, the banks of the Seine became a Unesco World Heritage Site: from the pont de Sully to the pont d’Iéna, on the right bank and until the pont de Bir-Hakeim on the left bank. On this same bank, closed to cars in 2016, a 2.3 kilometers walk was built for pedestrians and cyclists, from the musée d’Orsay to the pont de l’Alma. The focal point of the 2024 Olympic Games, the Seine is, on this occasion, inaugurated by athletes as a place for swimming.Photography : Corinne Vionnet, #50, 2020 from the series Paris Paris Paris © Corinne Vionnet
+  
+
+
+      
+  
+
+        
+      
+    
+  <
+
+        
+      
+        
+          
+
+  
+    
+      
+        
+    
+
+
+
+
+      
+      
+        The pathway
+      
+    
+  
+
+
+
+  
+    
+      
+        
+    
+
+
+
+
+      
+      
+        Pratical information
+      
+    
+  
+
+
+
+  
+    
+      
+        
+    
+
+
+
+
+      
+      
+        Collections
+      
+    
+  
+
+
+
+  
+    
+      
+        
+    
+
+
+
+
+      
+      
+        Publications
+      
+    
+  
+
+
+        
+      
+    
+  
+
+
+  
+
+  
+    
+  
+    
+      
+        All museums of the City of Paris
+      
+    
+    
+      
+        
+          
+            
+                            Discover the 14 museums of the City of Paris
+                        
+                    
+                    
+                        
+                            
+                                Musée d'Art Moderne de Paris
+                                Balzac's house
+                                Bourdelle museum
+                                Carnavalet museum -  History of Paris
+                                The catacombs
+                                Cernuschi museum,  Museum of asian art
+                                Cognacq-Jay museum,  museum of 18th century art
+                            
+                        
+                        
+                            
+                                Archaeological crypt  of Notre-Dame
+                                Palais Galliera, museum of fashion
+                                Musée Jean Moulin => General Leclerc museum,  Jean Moulin museum
+                                Petit Palais,  museum of fine arts
+                                Museum of romantics
+                                Victor Hugo's houses
+                                Zadkine museum
+                            
+                        
+                    
+                
+                
+                    
+                        
+                            
+                        
+                        
+                            Explore Paris Musées !
+                            Discover the collections of all City of Paris museums
+                            Explore
+                             Access the Paris Musées website
+                        
+                    
+                
+            
+        
+    
+  
+
+
+  
+    
+      
+        
+      
+      
+        
+                      
+              Twitter
+            
+                                
+              Facebook
+            
+                                
+              Instagram
+            
+                  
+      
+    
+
+    
+      
+                    23, rue Madame de Sévigné
+75003 Paris
+33 +1 44 59 58 58
+
+              
+      
+        
+          
+                  
+      
+      
+                          
+            Newsletter
+            Recevez toute l'actualité du musée Carnavalet - Histoire de Paris dans votre boîte mail ! 
+            S'inscrire  
+          
+              
+    
+  
+
+  
+    
+      
+        
+              Contact
+              Press
+              Accessibility
+              A museum from the City of Paris
+              Credits & Legal information
+              The archeological crypt of the Île de la Cité 
+            Display cookies management
+    
+  
+
+
+              2026 Musée Carnavalet - Histoire de Paris. All rights reserved.
+            
+        
+        
+      
+    
+  
+
+
+
+
+  
+
+  
+        
+  
+    
+      
+        Schedule
+      
+
+      
+        
+  
+Filtres
+
+  
+    
+      Choose a date 
+      
+    
+
+    Activities  
+    
+      
+        
+                                    
+                
+                Ateliers
+              
+                                                
+                
+                Conte
+              
+                                                
+                
+                Evénements
+              
+                                                
+                
+                Promenade
+              
+                                                
+                
+                Visites
+              
+                              
+      
+    
+
+    Audience 
+    
+      
+        
+                                    
+                
+                Adulte
+              
+                                                
+                
+                En famille
+              
+                                                
+                
+                En situation de handicap

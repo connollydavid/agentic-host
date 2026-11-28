@@ -40,15 +40,15 @@ Search
 
 - [Donate](https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=en.wikipedia.org&uselang=en)
 
-- [Create account](/w/index.php?title=Special:CreateAccount&returnto=Paris "You are encouraged to create an account and log in; however, it is not mandatory")
+- [Create account](/w/index.php?title=Special:CreateAccount&returnto=Seine "You are encouraged to create an account and log in; however, it is not mandatory")
 
-- [Log in](/w/index.php?title=Special:UserLogin&returnto=Paris "You're encouraged to log in; however, it's not mandatory. [o]")
+- [Log in](/w/index.php?title=Special:UserLogin&returnto=Seine "You're encouraged to log in; however, it's not mandatory. [o]")
 
 - [ Donate](https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=en.wikipedia.org&uselang=en)
 
-- [ Create account](/w/index.php?title=Special:CreateAccount&returnto=Paris "You are encouraged to create an account and log in; however, it is not mandatory")
+- [ Create account](/w/index.php?title=Special:CreateAccount&returnto=Seine "You are encouraged to create an account and log in; however, it is not mandatory")
 
-- [ Log in](/w/index.php?title=Special:UserLogin&returnto=Paris "You're encouraged to log in; however, it's not mandatory. [o]")
+- [ Log in](/w/index.php?title=Special:UserLogin&returnto=Seine "You're encouraged to log in; however, it's not mandatory. [o]")
 
 ## Contents
 
@@ -58,873 +58,337 @@ move to sidebar hide
 
   (Top)
 
-- [](#Etymology)
+- [](#River_sources)
 
-  1 Etymology
+  1 River sources
+
+- [](#Course)
+
+  2 Course
+
+- [](#Navigation)
+
+  3 Navigation
+
+  Toggle Navigation subsection
+
+  - [](#Dredging)
+
+    3\.1 Dredging
+
+- [](#Dams_and_flood_control)
+
+  4 Dams and flood control
+
+  Toggle Dams and flood control subsection
+
+  - [](#Flooding)
+
+    4\.1 Flooding
+
+  - [](#2018_Paris_flood)
+
+    4\.2 2018 Paris flood
+
+- [](#Watershed)
+
+  5 Watershed
+
+  Toggle Watershed subsection
+
+  - [](#Tributaries)
+
+    5\.1 Tributaries
+
+- [](#Water_quality)
+
+  6 Water quality
 
 - [](#History)
 
-  2 History
+  7 History
 
-  Toggle History subsection
+- [](#At_the_Olympics)
 
-  - [](#Origins)
+  8 At the Olympics
 
-    2\.1 Origins
+  Toggle At the Olympics subsection
 
-  - [](#High_and_Late_Middle_Ages_to_Louis_XIV)
+  - [](#1900_and_1924_Summer_Olympics)
 
-    2\.2 High and Late Middle Ages to Louis XIV
+    8\.1 1900 and 1924 Summer Olympics
 
-  - [](#18th_and_19th_centuries)
+  - [](#2024_Summer_Olympics)
 
-    2\.3 18th and 19th centuries
+    8\.2 2024 Summer Olympics
 
-  - [](#20th_and_21st_centuries)
+- [](#World_Heritage_Sites)
 
-    2\.4 20th and 21st centuries
+  9 World Heritage Sites
 
-- [](#Geography)
+- [](#In_art)
 
-  3 Geography
-
-  Toggle Geography subsection
-
-  - [](#Climate)
-
-    3\.1 Climate
-
-- [](#Administration)
-
-  4 Administration
-
-  Toggle Administration subsection
-
-  - [](#City_government)
-
-    4\.1 City government
-
-  - [](#Métropole_du_Grand_Paris)
-
-    4\.2 Métropole du Grand Paris
-
-  - [](#Regional_government)
-
-    4\.3 Regional government
-
-  - [](#National_government)
-
-    4\.4 National government
-
-  - [](#Police_force)
-
-    4\.5 Police force
-
-- [](#Cityscape)
-
-  5 Cityscape
-
-  Toggle Cityscape subsection
-
-  - [](#Urbanism_and_architecture)
-
-    5\.1 Urbanism and architecture
-
-  - [](#Housing)
-
-    5\.2 Housing
-
-  - [](#Suburbs)
-
-    5\.3 Suburbs
-
-- [](#Demographics)
-
-  6 Demographics
-
-  Toggle Demographics subsection
-
-  - [](#Migration)
-
-    6\.1 Migration
-
-  - [](#Religion)
-
-    6\.2 Religion
-
-- [](#Economy)
-
-  7 Economy
-
-  Toggle Economy subsection
-
-  - [](#Employment_and_income)
-
-    7\.1 Employment and income
-
-  - [](#Tourism)
-
-    7\.2 Tourism
-
-- [](#Culture)
-
-  8 Culture
-
-  Toggle Culture subsection
-
-  - [](#Painting_and_sculpture)
-
-    8\.1 Painting and sculpture
-
-  - [](#Museums)
-
-    8\.2 Museums
-
-  - [](#Theatre)
-
-    8\.3 Theatre
-
-  - [](#Literature)
-
-    8\.4 Literature
-
-  - [](#Music)
-
-    8\.5 Music
-
-  - [](#Cinema)
-
-    8\.6 Cinema
-
-  - [](#Restaurants_and_cuisine)
-
-    8\.7 Restaurants and cuisine
-
-  - [](#Fashion)
-
-    8\.8 Fashion
-
-  - [](#Photography)
-
-    8\.9 Photography
-
-  - [](#Media)
-
-    8\.10 Media
-
-  - [](#Holidays_and_festivals)
-
-    8\.11 Holidays and festivals
-
-  - [](#Libraries)
-
-    8\.12 Libraries
-
-- [](#Sports)
-
-  9 Sports
-
-- [](#Infrastructure)
-
-  10 Infrastructure
-
-  Toggle Infrastructure subsection
-
-  - [](#Transport)
-
-    10\.1 Transport
-
-    - [](#Walking)
-
-      10\.1.1 Walking
-
-    - [](#Railways)
-
-      10\.1.2 Railways
-
-    - [](#Air)
-
-      10\.1.3 Air
-
-    - [](#Motorways)
-
-      10\.1.4 Motorways
-
-    - [](#Waterways)
-
-      10\.1.5 Waterways
-
-    - [](#Cycling)
-
-      10\.1.6 Cycling
-
-  - [](#Electricity)
-
-    10\.2 Electricity
-
-  - [](#Water_and_sanitation)
-
-    10\.3 Water and sanitation
-
-  - [](#Parks_and_gardens)
-
-    10\.4 Parks and gardens
-
-  - [](#Cemeteries)
-
-    10\.5 Cemeteries
-
-  - [](#Education)
-
-    10\.6 Education
-
-  - [](#Healthcare)
-
-    10\.7 Healthcare
-
-- [](#International_relations)
-
-  11 International relations
-
-  Toggle International relations subsection
-
-  - [](#International_organisations)
-
-    11\.1 International organisations
-
-  - [](#Twin_towns_–_sister_cities)
-
-    11\.2 Twin towns – sister cities
-
-  - [](#Other_relationships)
-
-    11\.3 Other relationships
-
-- [](#In_popular_culture)
-
-  12 In popular culture
+  10 In art
 
 - [](#See_also)
 
-  13 See also
-
-- [](#Notes)
-
-  14 Notes
+  11 See also
 
 - [](#References)
 
-  15 References
+  12 References
 
-  Toggle References subsection
+# Seine
 
-  - [](#Citations)
+- [Afrikaans](https://af.wikipedia.org/wiki/Seine "Seine – Afrikaans")
 
-    15\.1 Citations
+- [Alemannisch](https://als.wikipedia.org/wiki/Seine "Seine – Alemannic")
 
-  - [](#Sources)
+- [አማርኛ](https://am.wikipedia.org/wiki/%E1%88%B0%E1%8A%95_%E1%8B%88%E1%8A%95%E1%8B%9D "ሰን ወንዝ – Amharic")
 
-    15\.2 Sources
+- [Aragonés](https://an.wikipedia.org/wiki/R%C3%ADo_Sena "Río Sena – Aragonese")
 
-- [](#Further_reading)
+- [Ænglisc](https://ang.wikipedia.org/wiki/Sigen "Sigen – Old English")
 
-  16 Further reading
+- [العربية](https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B3%D9%8A%D9%86_\(%D9%86%D9%87%D8%B1\) "السين (نهر) – Arabic")
 
-- [](#External_links)
+- [ܐܪܡܝܐ](https://arc.wikipedia.org/wiki/%DC%A3%DC%A2_\(%DC%A2%DC%97%DC%AA%DC%90\) "ܣܢ (ܢܗܪܐ) – Aramaic")
 
-  17 External links
+- [مصرى](https://arz.wikipedia.org/wiki/%D8%B3%D9%8A%D9%86_\(%D9%86%D9%87%D8%B1_%D9%81%D9%89_%D9%81%D8%B1%D9%86%D8%B3%D8%A7\) "سين (نهر فى فرنسا) – Egyptian Arabic")
 
-# Paris
+- [Asturianu](https://ast.wikipedia.org/wiki/R%C3%ADu_Sena "Ríu Sena – Asturian")
 
-- [Acèh](https://ace.wikipedia.org/wiki/Paris "Paris – Acehnese")
+- [Azərbaycanca](https://az.wikipedia.org/wiki/Sena_%C3%A7ay%C4%B1 "Sena çayı – Azerbaijani")
 
-- [Адыгабзэ](https://ady.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Adyghe")
+- [تۆرکجه](https://azb.wikipedia.org/wiki/%D8%B3%D8%A6%D9%86_%DA%86%D8%A7%DB%8C%DB%8C "سئن چایی – South Azerbaijani")
 
-- [Afrikaans](https://af.wikipedia.org/wiki/Parys "Parys – Afrikaans")
+- [Basa Bali](https://ban.wikipedia.org/wiki/Tukad_Seine "Tukad Seine – Balinese")
 
-- [Alemannisch](https://als.wikipedia.org/wiki/Paris "Paris – Alemannic")
+- [Беларуская (тарашкевіца)](https://be-tarask.wikipedia.org/wiki/%D0%A1%D1%8D%D0%BD%D0%B0 "Сэна – Belarusian (Taraškievica orthography)")
 
-- [አማርኛ](https://am.wikipedia.org/wiki/%E1%8D%93%E1%88%AA%E1%88%B5 "ፓሪስ – Amharic")
+- [Беларуская](https://be.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D0%B0_\(%D1%80%D0%B0%D0%BA%D0%B0\) "Сена (рака) – Belarusian")
 
-- [Aragonés](https://an.wikipedia.org/wiki/Par%C3%ADs "París – Aragonese")
+- [Български](https://bg.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D0%B0 "Сена – Bulgarian")
 
-- [Ænglisc](https://ang.wikipedia.org/wiki/Paris "Paris – Old English")
+- [বাংলা](https://bn.wikipedia.org/wiki/%E0%A6%B8%E0%A7%87%E0%A6%A8_%E0%A6%A8%E0%A6%A6%E0%A7%80 "সেন নদী – Bangla")
 
-- [अंगिका](https://anp.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पेरिस – Angika")
+- [བོད་ཡིག](https://bo.wikipedia.org/wiki/%E0%BD%A6%E0%BD%BA%E0%BC%8B%E0%BD%93%E0%BC%8B%E0%BD%82%E0%BD%99%E0%BD%84%E0%BC%8B%E0%BD%94%E0%BD%BC%E0%BC%8D "སེ་ན་གཙང་པོ། – Tibetan")
 
-- [العربية](https://ar.wikipedia.org/wiki/%D8%A8%D8%A7%D8%B1%D9%8A%D8%B3 "باريس – Arabic")
+- [Brezhoneg](https://br.wikipedia.org/wiki/Saena "Saena – Breton")
 
-- [ܐܪܡܝܐ](https://arc.wikipedia.org/wiki/%DC%A6%DC%90%DC%AA%DC%9D%DC%A3 "ܦܐܪܝܣ – Aramaic")
+- [Bosanski](https://bs.wikipedia.org/wiki/Sena_\(rijeka\) "Sena (rijeka) – Bosnian")
 
-- [الدارجة](https://ary.wikipedia.org/wiki/%D8%A8%D8%A7%D8%B1%D9%8A%D8%B2 "باريز – Moroccan Arabic")
+- [Català](https://ca.wikipedia.org/wiki/Sena "Sena – Catalan")
 
-- [مصرى](https://arz.wikipedia.org/wiki/%D8%A8%D8%A7%D8%B1%D9%8A%D8%B3 "باريس – Egyptian Arabic")
+- [Нохчийн](https://ce.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD_\(%D0%A1%D0%B5%D0%BD%D0%B0_%D0%B0,_%D0%9C%D0%B0%D0%B3%D3%80%D0%BD%D0%B0_%D0%B0\) "Сен (Сена а, МагӀна а) – Chechen")
 
-- [অসমীয়া](https://as.wikipedia.org/wiki/%E0%A6%AA%E0%A7%87%E0%A7%B0%E0%A6%BF%E0%A6%9B "পেৰিছ – Assamese")
+- [Cebuano](https://ceb.wikipedia.org/wiki/Seine_\(suba_sa_Pransiya,_Haute-Normandie\) "Seine (suba sa Pransiya, Haute-Normandie) – Cebuano")
 
-- [Asturianu](https://ast.wikipedia.org/wiki/Par%C3%ADs "París – Asturian")
+- [کوردی](https://ckb.wikipedia.org/wiki/%DA%95%D9%88%D9%88%D8%A8%D8%A7%D8%B1%DB%8C_%D8%B3%DB%8C%D9%86 "ڕووباری سین – Central Kurdish")
 
-- [Atikamekw](https://atj.wikipedia.org/wiki/Paris "Paris – Atikamekw")
+- [Čeština](https://cs.wikipedia.org/wiki/Seina "Seina – Czech")
 
-- [Авар](https://av.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Avaric")
+- [Kaszëbsczi](https://csb.wikipedia.org/wiki/Sekwana "Sekwana – Kashubian")
 
-- [Kotava](https://avk.wikipedia.org/wiki/Paris "Paris – Kotava")
+- [Чӑвашла](https://cv.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D0%B0_\(%D1%8E%D1%85%D0%B0%D0%BD%D1%88%D1%8B%D0%B2\) "Сена (юханшыв) – Chuvash")
 
-- [अवधी](https://awa.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A5%80%E0%A4%B8 "पेरीस – Awadhi")
+- [Cymraeg](https://cy.wikipedia.org/wiki/Afon_Seine "Afon Seine – Welsh")
 
-- [Aymar aru](https://ay.wikipedia.org/wiki/Paris "Paris – Aymara")
+- [Dansk](https://da.wikipedia.org/wiki/Seinen "Seinen – Danish")
 
-- [Azərbaycanca](https://az.wikipedia.org/wiki/Paris "Paris – Azerbaijani")
+- [Deutsch](https://de.wikipedia.org/wiki/Seine "Seine – German")
 
-- [تۆرکجه](https://azb.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B1%DB%8C%D8%B3 "پاریس – South Azerbaijani")
+- [Ελληνικά](https://el.wikipedia.org/wiki/%CE%A3%CE%B7%CE%BA%CE%BF%CF%85%CE%AC%CE%BD%CE%B1%CF%82 "Σηκουάνας – Greek")
 
-- [Башҡортса](https://ba.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Bashkir")
+- [Esperanto](https://eo.wikipedia.org/wiki/Sejno "Sejno – Esperanto")
 
-- [Basa Bali](https://ban.wikipedia.org/wiki/Paris "Paris – Balinese")
+- [Español](https://es.wikipedia.org/wiki/R%C3%ADo_Sena "Río Sena – Spanish")
 
-- [Boarisch](https://bar.wikipedia.org/wiki/Paris "Paris – Bavarian")
+- [Eesti](https://et.wikipedia.org/wiki/Seine "Seine – Estonian")
 
-- [Žemaitėška](https://bat-smg.wikipedia.org/wiki/Par%C4%AB%C5%BEios "Parīžios – Samogitian")
+- [Euskara](https://eu.wikipedia.org/wiki/Sena "Sena – Basque")
 
-- [Bikol Central](https://bcl.wikipedia.org/wiki/Paris "Paris – Central Bikol")
+- [فارسی](https://fa.wikipedia.org/wiki/%D8%B1%D9%88%D8%AF_%D8%B3%D9%86 "رود سن – Persian")
 
-- [Беларуская (тарашкевіца)](https://be-tarask.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D1%8B%D0%B6 "Парыж – Belarusian (Taraškievica orthography)")
+- [Suomi](https://fi.wikipedia.org/wiki/Seine "Seine – Finnish")
 
-- [Беларуская](https://be.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D1%8B%D0%B6 "Парыж – Belarusian")
+- [Na Vosa Vakaviti](https://fj.wikipedia.org/wiki/Seine "Seine – Fijian")
 
-- [Betawi](https://bew.wikipedia.org/wiki/Par%C3%A8s "Parès – Betawi")
+- [Français](https://fr.wikipedia.org/wiki/Seine "Seine – French")
 
-- [Български](https://bg.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Bulgarian")
+- [Nordfriisk](https://frr.wikipedia.org/wiki/Seine "Seine – Northern Frisian")
 
-- [भोजपुरी](https://bh.wikipedia.org/wiki/%E0%A4%AA%E0%A5%88%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पैरिस – Bhojpuri")
+- [Frysk](https://fy.wikipedia.org/wiki/Seine_\(rivier\) "Seine (rivier) – Western Frisian")
 
-- [Bislama](https://bi.wikipedia.org/wiki/Paris "Paris – Bislama")
+- [Gaeilge](https://ga.wikipedia.org/wiki/An_tS%C3%A9in "An tSéin – Irish")
 
-- [Banjar](https://bjn.wikipedia.org/wiki/Paris "Paris – Banjar")
+- [Galego](https://gl.wikipedia.org/wiki/R%C3%ADo_Sena "Río Sena – Galician")
 
-- [বাংলা](https://bn.wikipedia.org/wiki/%E0%A6%AA%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B0%E0%A6%BF%E0%A6%B8 "প্যারিস – Bangla")
+- [Hawaiʻi](https://haw.wikipedia.org/wiki/Seine "Seine – Hawaiian")
 
-- [བོད་ཡིག](https://bo.wikipedia.org/wiki/%E0%BD%95%E0%BC%8B%E0%BD%A2%E0%BD%B2%E0%BC%8D "ཕ་རི། – Tibetan")
+- [עברית](https://he.wikipedia.org/wiki/%D7%A1%D7%9F "סן – Hebrew")
 
-- [Brezhoneg](https://br.wikipedia.org/wiki/Pariz "Pariz – Breton")
+- [हिन्दी](https://hi.wikipedia.org/wiki/%E0%A4%B8%E0%A5%80%E0%A4%A8 "सीन – Hindi")
 
-- [Bosanski](https://bs.wikipedia.org/wiki/Pariz "Pariz – Bosnian")
+- [Hrvatski](https://hr.wikipedia.org/wiki/Seine "Seine – Croatian")
 
-- [Буряад](https://bxr.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D1%81 "Парис – Russia Buriat")
+- [Magyar](https://hu.wikipedia.org/wiki/Szajna "Szajna – Hungarian")
 
-- [Català](https://ca.wikipedia.org/wiki/Par%C3%ADs "París – Catalan")
+- [Հայերեն](https://hy.wikipedia.org/wiki/%D5%8D%D5%A5%D5%B6_\(%D5%A3%D5%A5%D5%BF\) "Սեն (գետ) – Armenian")
 
-- [Chavacano de Zamboanga](https://cbk-zam.wikipedia.org/wiki/Paris "Paris – Chavacano")
+- [Արեւմտահայերէն](https://hyw.wikipedia.org/wiki/%D5%8D%D5%A5%D5%B6_\(%D4%B3%D5%A5%D5%BF\) "Սեն (Գետ) – Western Armenian")
 
-- [閩東語 / Mìng-dĕ̤ng-ngṳ̄](https://cdo.wikipedia.org/wiki/B%C4%83-l%C3%A0%CC%A4 "Bă-là̤ – Mindong")
+- [Interlingua](https://ia.wikipedia.org/wiki/Sena "Sena – Interlingua")
 
-- [Нохчийн](https://ce.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Chechen")
+- [Jaku Iban](https://iba.wikipedia.org/wiki/Sungai_Seine "Sungai Seine – Iban")
 
-- [Cebuano](https://ceb.wikipedia.org/wiki/Paris "Paris – Cebuano")
+- [Bahasa Indonesia](https://id.wikipedia.org/wiki/Sungai_Seine "Sungai Seine – Indonesian")
 
-- [Chamoru](https://ch.wikipedia.org/wiki/Paris "Paris – Chamorro")
+- [Interlingue](https://ie.wikipedia.org/wiki/Seine "Seine – Interlingue")
 
-- [Tsetsêhestâhese](https://chy.wikipedia.org/wiki/Paris "Paris – Cheyenne")
+- [Ido](https://io.wikipedia.org/wiki/Seine "Seine – Ido")
 
-- [کوردی](https://ckb.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B1%DB%8C%D8%B3 "پاریس – Central Kurdish")
+- [Íslenska](https://is.wikipedia.org/wiki/Signa "Signa – Icelandic")
 
-- [Corsu](https://co.wikipedia.org/wiki/Parighji "Parighji – Corsican")
+- [Italiano](https://it.wikipedia.org/wiki/Senna "Senna – Italian")
 
-- [Qırımtatarca](https://crh.wikipedia.org/wiki/Paris "Paris – Crimean Tatar")
+- [日本語](https://ja.wikipedia.org/wiki/%E3%82%BB%E3%83%BC%E3%83%8C%E5%B7%9D "セーヌ川 – Japanese")
 
-- [Čeština](https://cs.wikipedia.org/wiki/Pa%C5%99%C3%AD%C5%BE "Paříž – Czech")
+- [Jawa](https://jv.wikipedia.org/wiki/Kali_Seine "Kali Seine – Javanese")
 
-- [Kaszëbsczi](https://csb.wikipedia.org/wiki/Pariz "Pariz – Kashubian")
+- [ქართული](https://ka.wikipedia.org/wiki/%E1%83%A1%E1%83%94%E1%83%9C%E1%83%90_\(%E1%83%9B%E1%83%93%E1%83%98%E1%83%9C%E1%83%90%E1%83%A0%E1%83%94\) "სენა (მდინარე) – Georgian")
 
-- [Словѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ](https://cu.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6%D1%8C "Парижь – Church Slavic")
+- [Қазақша](https://kk.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D0%B0 "Сена – Kazakh")
 
-- [Чӑвашла](https://cv.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Chuvash")
+- [한국어](https://ko.wikipedia.org/wiki/%EC%84%BC%EA%B0%95 "센강 – Korean")
 
-- [Cymraeg](https://cy.wikipedia.org/wiki/Paris "Paris – Welsh")
+- [Kurdî](https://ku.wikipedia.org/wiki/S%C3%AAn_\(%C3%A7em\) "Sên (çem) – Kurdish")
 
-- [Dansk](https://da.wikipedia.org/wiki/Paris "Paris – Danish")
+- [Кыргызча](https://ky.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D0%B0 "Сена – Kyrgyz")
 
-- [Dagbanli](https://dag.wikipedia.org/wiki/Paris "Paris – Dagbani")
+- [Latina](https://la.wikipedia.org/wiki/Sequana "Sequana – Latin")
 
-- [Deutsch](https://de.wikipedia.org/wiki/Paris "Paris – German")
+- [Lëtzebuergesch](https://lb.wikipedia.org/wiki/Seine "Seine – Luxembourgish")
 
-- [Zazaki](https://diq.wikipedia.org/wiki/Paris "Paris – Dimli")
+- [Lietuvių](https://lt.wikipedia.org/wiki/Sena "Sena – Lithuanian")
 
-- [Dolnoserbski](https://dsb.wikipedia.org/wiki/Paris "Paris – Lower Sorbian")
+- [Latviešu](https://lv.wikipedia.org/wiki/S%C4%93na "Sēna – Latvian")
 
-- [Kadazandusun](https://dtp.wikipedia.org/wiki/Paris "Paris – Central Dusun")
+- [Malagasy](https://mg.wikipedia.org/wiki/Seine_\(renirano\) "Seine (renirano) – Malagasy")
 
-- [डोटेली](https://dty.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पेरिस – Doteli")
+- [Македонски](https://mk.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D0%B0 "Сена – Macedonian")
 
-- [ཇོང་ཁ](https://dz.wikipedia.org/wiki/%E0%BD%94%E0%BD%BA%E0%BC%8B%E0%BD%A2%E0%BD%B2%E0%BD%A6%E0%BC%8D "པེ་རིས། – Dzongkha")
+- [മലയാളം](https://ml.wikipedia.org/wiki/%E0%B4%B8%E0%B5%80%E0%B5%BB_%E0%B4%A8%E0%B4%A6%E0%B4%BF "സീൻ നദി – Malayalam")
 
-- [Eʋegbe](https://ee.wikipedia.org/wiki/Paris "Paris – Ewe")
+- [Монгол](https://mn.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D0%B0_%D0%BC%D3%A9%D1%80%D3%A9%D0%BD "Сена мөрөн – Mongolian")
 
-- [Ελληνικά](https://el.wikipedia.org/wiki/%CE%A0%CE%B1%CF%81%CE%AF%CF%83%CE%B9 "Παρίσι – Greek")
+- [मराठी](https://mr.wikipedia.org/wiki/%E0%A4%B8%E0%A5%87%E0%A4%A8_%E0%A4%A8%E0%A4%A6%E0%A5%80 "सेन नदी – Marathi")
 
-- [Emiliàn e rumagnòl](https://eml.wikipedia.org/wiki/Par%C3%AC "Parì – Emiliano-Romagnolo")
+- [Bahasa Melayu](https://ms.wikipedia.org/wiki/Sungai_Seine "Sungai Seine – Malay")
 
-- [Esperanto](https://eo.wikipedia.org/wiki/Parizo "Parizo – Esperanto")
+- [မြန်မာဘာသာ](https://my.wikipedia.org/wiki/%E1%80%85%E1%80%AD%E1%80%94%E1%80%BA%E1%80%B8%E1%80%99%E1%80%BC%E1%80%85%E1%80%BA "စိန်းမြစ် – Burmese")
 
-- [Español](https://es.wikipedia.org/wiki/Par%C3%ADs "París – Spanish")
+- [مازِرونی](https://mzn.wikipedia.org/wiki/%D8%B3%D9%86 "سن – Mazanderani")
 
-- [Eesti](https://et.wikipedia.org/wiki/Pariis "Pariis – Estonian")
+- [नेपाली](https://ne.wikipedia.org/wiki/%E0%A4%B8%E0%A5%87%E0%A4%A8_%E0%A4%A8%E0%A4%A6%E0%A5%80 "सेन नदी – Nepali")
 
-- [Euskara](https://eu.wikipedia.org/wiki/Paris "Paris – Basque")
+- [Nederlands](https://nl.wikipedia.org/wiki/Seine "Seine – Dutch")
 
-- [Estremeñu](https://ext.wikipedia.org/wiki/Par%C3%ADs "París – Extremaduran")
+- [Norsk nynorsk](https://nn.wikipedia.org/wiki/Seinen "Seinen – Norwegian Nynorsk")
 
-- [فارسی](https://fa.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B1%DB%8C%D8%B3 "پاریس – Persian")
+- [Norsk bokmål](https://no.wikipedia.org/wiki/Seinen "Seinen – Norwegian Bokmål")
 
-- [Fulfulde](https://ff.wikipedia.org/wiki/Pari "Pari – Fula")
+- [Nouormand](https://nrm.wikipedia.org/wiki/Seine "Seine – Norman")
 
-- [Suomi](https://fi.wikipedia.org/wiki/Pariisi "Pariisi – Finnish")
+- [Occitan](https://oc.wikipedia.org/wiki/S%C3%A8ina "Sèina – Occitan")
 
-- [Võro](https://fiu-vro.wikipedia.org/wiki/Pariis "Pariis – Võro")
+- [Ирон](https://os.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%C3%A6 "Сенæ – Ossetic")
 
-- [Na Vosa Vakaviti](https://fj.wikipedia.org/wiki/Parisi "Parisi – Fijian")
+- [ਪੰਜਾਬੀ](https://pa.wikipedia.org/wiki/%E0%A8%B8%E0%A9%88%E0%A8%A8_%E0%A8%A6%E0%A8%B0%E0%A8%BF%E0%A8%86 "ਸੈਨ ਦਰਿਆ – Punjabi")
 
-- [Føroyskt](https://fo.wikipedia.org/wiki/Paris "Paris – Faroese")
+- [Polski](https://pl.wikipedia.org/wiki/Sekwana "Sekwana – Polish")
 
-- [Fɔ̀ngbè](https://fon.wikipedia.org/wiki/Paris "Paris – Fon")
+- [Piemontèis](https://pms.wikipedia.org/wiki/Sen-a "Sen-a – Piedmontese")
 
-- [Français](https://fr.wikipedia.org/wiki/Paris "Paris – French")
+- [پنجابی](https://pnb.wikipedia.org/wiki/%D8%AF%D8%B1%DB%8C%D8%A7%D8%A6%DB%92_%D8%B3%DB%8C%D9%86 "دریائے سین – Western Punjabi")
 
-- [Arpetan](https://frp.wikipedia.org/wiki/Paris "Paris – Arpitan")
+- [Português](https://pt.wikipedia.org/wiki/Rio_Sena "Rio Sena – Portuguese")
 
-- [Nordfriisk](https://frr.wikipedia.org/wiki/Pariis "Pariis – Northern Frisian")
+- [Română](https://ro.wikipedia.org/wiki/Sena "Sena – Romanian")
 
-- [Furlan](https://fur.wikipedia.org/wiki/Par%C3%AEs "Parîs – Friulian")
+- [Русский](https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D0%B0 "Сена – Russian")
 
-- [Frysk](https://fy.wikipedia.org/wiki/Parys "Parys – Western Frisian")
+- [Русиньскый](https://rue.wikipedia.org/wiki/%D0%A1%D0%B5%D0%B9%D0%BD%D0%B0 "Сейна – Rusyn")
 
-- [Gaeilge](https://ga.wikipedia.org/wiki/P%C3%A1ras "Páras – Irish")
+- [Саха тыла](https://sah.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D0%B0 "Сена – Yakut")
 
-- [Gagauz](https://gag.wikipedia.org/wiki/Parij "Parij – Gagauz")
+- [Sicilianu](https://scn.wikipedia.org/wiki/Senna "Senna – Sicilian")
 
-- [贛語](https://gan.wikipedia.org/wiki/%E5%B7%B4%E9%BB%8E "巴黎 – Gan")
+- [Scots](https://sco.wikipedia.org/wiki/Seine "Seine – Scots")
 
-- [Kriyòl gwiyannen](https://gcr.wikipedia.org/wiki/Pari "Pari – Guianan Creole")
+- [Srpskohrvatski / српскохрватски](https://sh.wikipedia.org/wiki/Seine "Seine – Serbo-Croatian")
 
-- [Gàidhlig](https://gd.wikipedia.org/wiki/Paris "Paris – Scottish Gaelic")
+- [Simple English](https://simple.wikipedia.org/wiki/Seine "Seine – Simple English")
 
-- [Galego](https://gl.wikipedia.org/wiki/Par%C3%ADs "París – Galician")
+- [Slovenčina](https://sk.wikipedia.org/wiki/Seina "Seina – Slovak")
 
-- [گیلکی](https://glk.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B1%D9%8A%D8%B3 "پاريس – Gilaki")
+- [Slovenščina](https://sl.wikipedia.org/wiki/Sena "Sena – Slovenian")
 
-- [Avañe'ẽ](https://gn.wikipedia.org/wiki/Par%C3%ADs "París – Guarani")
+- [Shqip](https://sq.wikipedia.org/wiki/Lumi_i_Sen%C3%ABs "Lumi i Senës – Albanian")
 
-- [गोंयची कोंकणी / Gõychi Konknni](https://gom.wikipedia.org/wiki/Paris "Paris – Goan Konkani")
+- [Српски / srpski](https://sr.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D0%B0 "Сена – Serbian")
 
-- [𐌲𐌿𐍄𐌹𐍃𐌺](https://got.wikipedia.org/wiki/%F0%90%8D%80%F0%90%8C%B0%F0%90%8D%82%F0%90%8C%B4%F0%90%8C%B9%F0%90%8D%83 "𐍀𐌰𐍂𐌴𐌹𐍃 – Gothic")
+- [Sunda](https://su.wikipedia.org/wiki/Walungan_Seine "Walungan Seine – Sundanese")
 
-- [ગુજરાતી](https://gu.wikipedia.org/wiki/%E0%AA%AA%E0%AB%87%E0%AA%B0%E0%AA%BF%E0%AA%B8 "પેરિસ – Gujarati")
+- [Svenska](https://sv.wikipedia.org/wiki/Seine "Seine – Swedish")
 
-- [Gungbe](https://guw.wikipedia.org/wiki/Paris "Paris – Gun")
+- [Kiswahili](https://sw.wikipedia.org/wiki/Mto_Seine "Mto Seine – Swahili")
 
-- [Gaelg](https://gv.wikipedia.org/wiki/Paarys "Paarys – Manx")
+- [தமிழ்](https://ta.wikipedia.org/wiki/%E0%AE%9A%E0%AF%86%E0%AE%AF%E0%AF%8D%E0%AE%A9%E0%AF%8D_%E0%AE%86%E0%AE%B1%E0%AF%81 "செய்ன் ஆறு – Tamil")
 
-- [Hausa](https://ha.wikipedia.org/wiki/Faris "Faris – Hausa")
+- [ไทย](https://th.wikipedia.org/wiki/%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%81%E0%B8%8B%E0%B8%99 "แม่น้ำแซน – Thai")
 
-- [客家語 / Hak-kâ-ngî](https://hak.wikipedia.org/wiki/P%C3%A2-l%C3%AC "Pâ-lì – Hakka Chinese")
+- [Tagalog](https://tl.wikipedia.org/wiki/Ilog_Sena "Ilog Sena – Tagalog")
 
-- [Hawaiʻi](https://haw.wikipedia.org/wiki/Palika "Palika – Hawaiian")
+- [Türkçe](https://tr.wikipedia.org/wiki/Sen_Nehri "Sen Nehri – Turkish")
 
-- [עברית](https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%99%D7%96 "פריז – Hebrew")
+- [Татарча / tatarça](https://tt.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D0%B0 "Сена – Tatar")
 
-- [हिन्दी](https://hi.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पेरिस – Hindi")
+- [Українська](https://uk.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D0%B0 "Сена – Ukrainian")
 
-- [Fiji Hindi](https://hif.wikipedia.org/wiki/Paris "Paris – Fiji Hindi")
+- [اردو](https://ur.wikipedia.org/wiki/%D8%AF%D8%B1%DB%8C%D8%A7%D8%A6%DB%92_%D8%B3%DB%8C%D9%86 "دریائے سین – Urdu")
 
-- [Hrvatski](https://hr.wikipedia.org/wiki/Pariz "Pariz – Croatian")
+- [Oʻzbekcha / ўзбекча](https://uz.wikipedia.org/wiki/Sena_\(daryo\) "Sena (daryo) – Uzbek")
 
-- [Hornjoserbsce](https://hsb.wikipedia.org/wiki/Paris "Paris – Upper Sorbian")
+- [Tiếng Việt](https://vi.wikipedia.org/wiki/S%C3%B4ng_Seine "Sông Seine – Vietnamese")
 
-- [Kreyòl ayisyen](https://ht.wikipedia.org/wiki/Pari "Pari – Haitian Creole")
+- [West-Vlams](https://vls.wikipedia.org/wiki/Seine "Seine – West Flemish")
 
-- [Magyar](https://hu.wikipedia.org/wiki/P%C3%A1rizs "Párizs – Hungarian")
+- [Winaray](https://war.wikipedia.org/wiki/Salog_Seine "Salog Seine – Waray")
 
-- [Հայերեն](https://hy.wikipedia.org/wiki/%D5%93%D5%A1%D6%80%D5%AB%D5%A6 "Փարիզ – Armenian")
+- [吴语](https://wuu.wikipedia.org/wiki/%E5%A1%9E%E7%BA%B3%E6%B2%B3 "塞纳河 – Wu")
 
-- [Արեւմտահայերէն](https://hyw.wikipedia.org/wiki/%D5%93%D5%A1%D6%80%D5%AB%D5%A6 "Փարիզ – Western Armenian")
+- [მარგალური](https://xmf.wikipedia.org/wiki/%E1%83%A1%E1%83%94%E1%83%9C%E1%83%90_\(%E1%83%AC%E1%83%A7%E1%83%90%E1%83%A0%E1%83%9B%E1%83%90%E1%83%9A%E1%83%A3\) "სენა (წყარმალუ) – Mingrelian")
 
-- [Interlingua](https://ia.wikipedia.org/wiki/Paris "Paris – Interlingua")
+- [ⵜⴰⵎⴰⵣⵉⵖⵜ ⵜⴰⵏⴰⵡⴰⵢⵜ](https://zgh.wikipedia.org/wiki/%E2%B4%B0%E2%B5%99%E2%B5%89%E2%B4%BC_%E2%B5%8F_%E2%B5%99%E2%B5%99%E2%B5%89%E2%B5%8F "ⴰⵙⵉⴼ ⵏ ⵙⵙⵉⵏ – Standard Moroccan Tamazight")
 
-- [Jaku Iban](https://iba.wikipedia.org/wiki/Paris "Paris – Iban")
+- [閩南語 / Bân-lâm-gí](https://zh-min-nan.wikipedia.org/wiki/Seine_H%C3%B4 "Seine Hô – Minnan")
 
-- [Bahasa Indonesia](https://id.wikipedia.org/wiki/Paris "Paris – Indonesian")
+- [粵語](https://zh-yue.wikipedia.org/wiki/%E5%A1%9E%E7%B4%8D%E6%B2%B3 "塞納河 – Cantonese")
 
-- [Interlingue](https://ie.wikipedia.org/wiki/Paris "Paris – Interlingue")
+- [中文](https://zh.wikipedia.org/wiki/%E5%A1%9E%E7%BA%B3%E6%B2%B3 "塞纳河 – Chinese")
 
-- [Igala](https://igl.wikipedia.org/wiki/Paris "Paris – Igala")
+[Edit links](https://www.wikidata.org/wiki/Special:EntityPage/Q1471#sitelinks-wikipedia "Edit interlanguage links")
 
-- [Ilokano](https://ilo.wikipedia.org/wiki/Paris "Paris – Iloko")
+- [Article](/wiki/Seine "View the content page [c]")
 
-- [ГӀалгӀай](https://inh.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B0%D0%B6 "Параж – Ingush")
+- [Talk](/wiki/Talk:Seine "Discuss improvements to the content page [t]")
 
-- [Ido](https://io.wikipedia.org/wiki/Paris "Paris – Ido")
+- [Read](/wiki/Seine)
 
-- [Íslenska](https://is.wikipedia.org/wiki/Par%C3%ADs "París – Icelandic")
+- [Edit](/w/index.php?title=Seine&action=edit "Edit the source code of this page [e]")
 
-- [Italiano](https://it.wikipedia.org/wiki/Parigi "Parigi – Italian")
-
-- [ᐃᓄᒃᑎᑐᑦ / inuktitut](https://iu.wikipedia.org/wiki/%E1%90%B1%E1%90%85%E1%95%86%E1%94%85 "ᐱᐅᕆᔅ – Inuktitut")
-
-- [日本語](https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%AA "パリ – Japanese")
-
-- [Patois](https://jam.wikipedia.org/wiki/Paris "Paris – Jamaican Creole English")
-
-- [La .lojban.](https://jbo.wikipedia.org/wiki/paris "paris – Lojban")
-
-- [Jawa](https://jv.wikipedia.org/wiki/Paris "Paris – Javanese")
-
-- [ქართული](https://ka.wikipedia.org/wiki/%E1%83%9E%E1%83%90%E1%83%A0%E1%83%98%E1%83%96%E1%83%98 "პარიზი – Georgian")
-
-- [Qaraqalpaqsha](https://kaa.wikipedia.org/wiki/Parij "Parij – Kara-Kalpak")
-
-- [Taqbaylit](https://kab.wikipedia.org/wiki/Paris_\(Fransa\) "Paris (Fransa) – Kabyle")
-
-- [Karai-karai](https://kai.wikipedia.org/wiki/Paris "Paris – Karekare")
-
-- [Адыгэбзэ](https://kbd.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Kabardian")
-
-- [Kabɩyɛ](https://kbp.wikipedia.org/wiki/Paarii "Paarii – Kabiye")
-
-- [Tyap](https://kcg.wikipedia.org/wiki/Pari%CC%B1t "Pari̱t – Tyap")
-
-- [Kongo](https://kg.wikipedia.org/wiki/Paris "Paris – Kongo")
-
-- [Kumoring](https://kge.wikipedia.org/wiki/Paris "Paris – Komering")
-
-- [Қазақша](https://kk.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Kazakh")
-
-- [ភាសាខ្មែរ](https://km.wikipedia.org/wiki/%E1%9E%94%E1%9F%89%E1%9E%B6%E1%9E%9A%E1%9E%B8%E1%9E%9F "ប៉ារីស – Khmer")
-
-- [ಕನ್ನಡ](https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%AF%E0%B2%BE%E0%B2%B0%E0%B2%BF%E0%B2%B8%E0%B3%8D "ಪ್ಯಾರಿಸ್ – Kannada")
-
-- [Yerwa Kanuri](https://knc.wikipedia.org/wiki/Paris "Paris – Central Kanuri")
-
-- [한국어](https://ko.wikipedia.org/wiki/%ED%8C%8C%EB%A6%AC_\(%ED%94%84%EB%9E%91%EC%8A%A4\) "파리 (프랑스) – Korean")
-
-- [Перем коми](https://koi.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Komi-Permyak")
-
-- [Къарачай-малкъар](https://krc.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Karachay-Balkar")
-
-- [کٲشُر](https://ks.wikipedia.org/wiki/%D9%BE%DB%8C%D8%B1%D9%90%D8%B3 "پیرِس – Kashmiri")
-
-- [Kurdî](https://ku.wikipedia.org/wiki/Par%C3%AEs "Parîs – Kurdish")
-
-- [Коми](https://kv.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Komi")
-
-- [Kernowek](https://kw.wikipedia.org/wiki/Paris "Paris – Cornish")
-
-- [Кыргызча](https://ky.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Kyrgyz")
-
-- [Latina](https://la.wikipedia.org/wiki/Lutetia "Lutetia – Latin")
-
-- [Ladino](https://lad.wikipedia.org/wiki/Paris "Paris – Ladino")
-
-- [Lëtzebuergesch](https://lb.wikipedia.org/wiki/Par%C3%A4is "Paräis – Luxembourgish")
-
-- [Лезги](https://lez.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Lezghian")
-
-- [Lingua Franca Nova](https://lfn.wikipedia.org/wiki/Paris "Paris – Lingua Franca Nova")
-
-- [Luganda](https://lg.wikipedia.org/wiki/Paris "Paris – Ganda")
-
-- [Limburgs](https://li.wikipedia.org/wiki/Paries "Paries – Limburgish")
-
-- [Ligure](https://lij.wikipedia.org/wiki/Pariggi "Pariggi – Ligurian")
-
-- [Ladin](https://lld.wikipedia.org/wiki/Paris "Paris – Ladin")
-
-- [Lombard](https://lmo.wikipedia.org/wiki/Paris "Paris – Lombard")
-
-- [Lingála](https://ln.wikipedia.org/wiki/Pari "Pari – Lingala")
-
-- [ລາວ](https://lo.wikipedia.org/wiki/%E0%BA%9B%E0%BA%B2%E0%BA%A3%E0%BA%B5 "ປາຣີ – Lao")
-
-- [Lietuvių](https://lt.wikipedia.org/wiki/Pary%C5%BEius "Paryžius – Lithuanian")
-
-- [Latgaļu](https://ltg.wikipedia.org/wiki/Pari%C5%BEa "Pariža – Latgalian")
-
-- [Latviešu](https://lv.wikipedia.org/wiki/Par%C4%ABze "Parīze – Latvian")
-
-- [Madhurâ](https://mad.wikipedia.org/wiki/Paris "Paris – Madurese")
-
-- [मगही](https://mag.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पेरिस – Magahi")
-
-- [मैथिली](https://mai.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पेरिस – Maithili")
-
-- [Мокшень](https://mdf.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B7 "Париз – Moksha")
-
-- [Malagasy](https://mg.wikipedia.org/wiki/Paris "Paris – Malagasy")
-
-- [Олык марий](https://mhr.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Eastern Mari")
-
-- [Māori](https://mi.wikipedia.org/wiki/Par%C4%AB "Parī – Māori")
-
-- [Minangkabau](https://min.wikipedia.org/wiki/Paris "Paris – Minangkabau")
-
-- [Македонски](https://mk.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B7 "Париз – Macedonian")
-
-- [മലയാളം](https://ml.wikipedia.org/wiki/%E0%B4%AA%E0%B4%BE%E0%B4%B0%E0%B4%BF%E0%B4%B8%E0%B5%8D "പാരിസ് – Malayalam")
-
-- [Монгол](https://mn.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D1%81 "Парис – Mongolian")
-
-- [मराठी](https://mr.wikipedia.org/wiki/%E0%A4%AA%E0%A5%85%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पॅरिस – Marathi")
-
-- [Кырык мары](https://mrj.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Western Mari")
-
-- [Bahasa Melayu](https://ms.wikipedia.org/wiki/Paris "Paris – Malay")
-
-- [Malti](https://mt.wikipedia.org/wiki/Pari%C4%A1i "Pariġi – Maltese")
-
-- [Mirandés](https://mwl.wikipedia.org/wiki/Paris "Paris – Mirandese")
-
-- [မြန်မာဘာသာ](https://my.wikipedia.org/wiki/%E1%80%95%E1%80%AB%E1%80%9B%E1%80%AE%E1%80%99%E1%80%BC%E1%80%AD%E1%80%AF%E1%80%B7 "ပါရီမြို့ – Burmese")
-
-- [Эрзянь](https://myv.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6_%D0%BE%D1%88 "Париж ош – Erzya")
-
-- [مازِرونی](https://mzn.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B1%DB%8C%D8%B3 "پاریس – Mazanderani")
-
-- [Napulitano](https://nap.wikipedia.org/wiki/Parigge "Parigge – Neapolitan")
-
-- [Nedersaksies](https://nds-nl.wikipedia.org/wiki/Paries "Paries – Low Saxon")
-
-- [Plattdüütsch](https://nds.wikipedia.org/wiki/Paris "Paris – Low German")
-
-- [नेपाली](https://ne.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पेरिस – Nepali")
-
-- [नेपाल भाषा](https://new.wikipedia.org/wiki/%E0%A4%AA%E0%A5%87%E0%A4%B0%E0%A4%BF%E0%A4%B8 "पेरिस – Newari")
-
-- [Nederlands](https://nl.wikipedia.org/wiki/Parijs "Parijs – Dutch")
-
-- [Norsk nynorsk](https://nn.wikipedia.org/wiki/Paris "Paris – Norwegian Nynorsk")
-
-- [Norsk bokmål](https://no.wikipedia.org/wiki/Paris "Paris – Norwegian Bokmål")
-
-- [Novial](https://nov.wikipedia.org/wiki/Paris "Paris – Novial")
-
-- [Nouormand](https://nrm.wikipedia.org/wiki/Paris "Paris – Norman")
-
-- [Nupe](https://nup.wikipedia.org/wiki/Paris "Paris – Nupe")
-
-- [Diné bizaad](https://nv.wikipedia.org/wiki/W%C3%B3t%CA%BC%C3%A1%C3%A1h_Y%C3%AD%CA%BC%C3%A1h%C3%AD "Wótʼááh Yíʼáhí – Navajo")
-
-- [Chi-Chewa](https://ny.wikipedia.org/wiki/Paris "Paris – Nyanja")
-
-- [Occitan](https://oc.wikipedia.org/wiki/Par%C3%ADs "París – Occitan")
-
-- [Livvinkarjala](https://olo.wikipedia.org/wiki/Parii%C5%BEu "Pariižu – Livvi-Karelian")
-
-- [Oromoo](https://om.wikipedia.org/wiki/Paaris "Paaris – Oromo")
-
-- [ଓଡ଼ିଆ](https://or.wikipedia.org/wiki/%E0%AC%AA%E0%AD%8D%E0%AD%9F%E0%AC%BE%E0%AC%B0%E0%AC%BF%E0%AC%B8 "ପ୍ୟାରିସ – Odia")
-
-- [Ирон](https://os.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Ossetic")
-
-- [ਪੰਜਾਬੀ](https://pa.wikipedia.org/wiki/%E0%A8%AA%E0%A9%88%E0%A8%B0%E0%A8%BF%E0%A8%B8 "ਪੈਰਿਸ – Punjabi")
-
-- [Kapampangan](https://pam.wikipedia.org/wiki/Paris "Paris – Pampanga")
-
-- [Papiamentu](https://pap.wikipedia.org/wiki/Paris "Paris – Papiamento")
-
-- [Picard](https://pcd.wikipedia.org/wiki/Paris "Paris – Picard")
-
-- [Deitsch](https://pdc.wikipedia.org/wiki/Paris "Paris – Pennsylvania German")
-
-- [Polski](https://pl.wikipedia.org/wiki/Pary%C5%BC "Paryż – Polish")
-
-- [Piemontèis](https://pms.wikipedia.org/wiki/Paris "Paris – Piedmontese")
-
-- [پنجابی](https://pnb.wikipedia.org/wiki/%D9%BE%DB%8C%D8%B1%D8%B3 "پیرس – Western Punjabi")
-
-- [Ποντιακά](https://pnt.wikipedia.org/wiki/%CE%A0%CE%B1%CF%81%CE%AF%CF%83%CE%B9 "Παρίσι – Pontic")
-
-- [پښتو](https://ps.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B1%DB%8C%D8%B3 "پاریس – Pashto")
-
-- [Português](https://pt.wikipedia.org/wiki/Paris "Paris – Portuguese")
-
-- [Pinayuanan](https://pwn.wikipedia.org/wiki/paris "paris – Paiwan")
-
-- [Runa Simi](https://qu.wikipedia.org/wiki/Paris "Paris – Quechua")
-
-- [Rumantsch](https://rm.wikipedia.org/wiki/Paris "Paris – Romansh")
-
-- [Romani čhib](https://rmy.wikipedia.org/wiki/Paris "Paris – Vlax Romani")
-
-- [Ikirundi](https://rn.wikipedia.org/wiki/Paris "Paris – Rundi")
-
-- [Română](https://ro.wikipedia.org/wiki/Paris "Paris – Romanian")
-
-- [Armãneashti](https://roa-rup.wikipedia.org/wiki/Parij "Parij – Aromanian")
-
-- [Tarandíne](https://roa-tara.wikipedia.org/wiki/Parigge "Parigge – Tarantino")
-
-- [Руски](https://rsk.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B7 "Париз – Pannonian Rusyn")
-
-- [Русский](https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Russian")
-
-- [Русиньскый](https://rue.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D1%96%D0%B6 "Паріж – Rusyn")
-
-- [Ikinyarwanda](https://rw.wikipedia.org/wiki/Paris "Paris – Kinyarwanda")
-
-- [Саха тыла](https://sah.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Yakut")
-
-- [ᱥᱟᱱᱛᱟᱲᱤ](https://sat.wikipedia.org/wiki/%E1%B1%AF%E1%B1%AE%E1%B1%A8%E1%B1%A4%E1%B1%A5 "ᱯᱮᱨᱤᱥ – Santali")
-
-- [Sardu](https://sc.wikipedia.org/wiki/Parigi "Parigi – Sardinian")
-
-- [Sicilianu](https://scn.wikipedia.org/wiki/Pariggi "Pariggi – Sicilian")
-
-- [Scots](https://sco.wikipedia.org/wiki/Paris "Paris – Scots")
-
-- [سنڌي](https://sd.wikipedia.org/wiki/%D9%BE%D9%8A%D8%B1%D8%B3 "پيرس – Sindhi")
-
-- [Davvisámegiella](https://se.wikipedia.org/wiki/Paris "Paris – Northern Sami")
-
-- [Sängö](https://sg.wikipedia.org/wiki/Paris "Paris – Sango")
-
-- [Srpskohrvatski / српскохрватски](https://sh.wikipedia.org/wiki/Pariz "Pariz – Serbo-Croatian")
-
-- [Taclḥit](https://shi.wikipedia.org/wiki/Bariz "Bariz – Tachelhit")
-
-- [සිංහල](https://si.wikipedia.org/wiki/%E0%B6%B4%E0%B7%90%E0%B6%BB%E0%B7%92%E0%B7%83%E0%B7%8A "පැරිස් – Sinhala")
-
-- [Simple English](https://simple.wikipedia.org/wiki/Paris "Paris – Simple English")
-
-- [Slovenčina](https://sk.wikipedia.org/wiki/Par%C3%AD%C5%BE "Paríž – Slovak")
-
-- [سرائیکی](https://skr.wikipedia.org/wiki/%D9%BE%DB%8C%D8%B1%D8%B3 "پیرس – Saraiki")
-
-- [Slovenščina](https://sl.wikipedia.org/wiki/Pariz "Pariz – Slovenian")
-
-- [Gagana Samoa](https://sm.wikipedia.org/wiki/Parisi "Parisi – Samoan")
-
-- [Anarâškielâ](https://smn.wikipedia.org/wiki/Pariisi "Pariisi – Inari Sami")
-
-- [ChiShona](https://sn.wikipedia.org/wiki/Paris "Paris – Shona")
-
-- [Soomaaliga](https://so.wikipedia.org/wiki/Baariis "Baariis – Somali")
-
-- [Shqip](https://sq.wikipedia.org/wiki/Parisi "Parisi – Albanian")
-
-- [Српски / srpski](https://sr.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B7 "Париз – Serbian")
-
-- [Sranantongo](https://srn.wikipedia.org/wiki/Paris "Paris – Sranan Tongo")
-
-- [SiSwati](https://ss.wikipedia.org/wiki/Paris "Paris – Swati")
-
-- [Sesotho](https://st.wikipedia.org/wiki/Paris "Paris – Southern Sotho")
-
-- [Seeltersk](https://stq.wikipedia.org/wiki/Paris_\(St%C3%A4%C3%A4d\) "Paris (Stääd) – Saterland Frisian")
-
-- [Sunda](https://su.wikipedia.org/wiki/Paris "Paris – Sundanese")
-
-- [Svenska](https://sv.wikipedia.org/wiki/Paris "Paris – Swedish")
-
-- [Kiswahili](https://sw.wikipedia.org/wiki/Paris "Paris – Swahili")
-
-- [Ślůnski](https://szl.wikipedia.org/wiki/Pary%C5%BC "Paryż – Silesian")
-
-- [தமிழ்](https://ta.wikipedia.org/wiki/%E0%AE%AA%E0%AE%BE%E0%AE%B0%E0%AE%BF%E0%AE%9A%E0%AF%81 "பாரிசு – Tamil")
-
-- [తెలుగు](https://te.wikipedia.org/wiki/%E0%B0%AA%E0%B0%BE%E0%B0%B0%E0%B0%BF%E0%B0%B8%E0%B1%8D "పారిస్ – Telugu")
-
-- [Tetun](https://tet.wikipedia.org/wiki/Par%C3%ADs "París – Tetum")
-
-- [Тоҷикӣ](https://tg.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Tajik")
-
-- [ไทย](https://th.wikipedia.org/wiki/%E0%B8%9B%E0%B8%B2%E0%B8%A3%E0%B8%B5%E0%B8%AA "ปารีส – Thai")
-
-- [Türkmençe](https://tk.wikipedia.org/wiki/Pari%C5%BE "Pariž – Turkmen")
-
-- [Tagalog](https://tl.wikipedia.org/wiki/Paris "Paris – Tagalog")
-
-- [Tolışi](https://tly.wikipedia.org/wiki/Paris "Paris – Talysh")
-
-- [Lea faka-Tonga](https://to.wikipedia.org/wiki/Palesi "Palesi – Tongan")
-
-- [Toki pona](https://tok.wikipedia.org/wiki/ma_tomo_Paki "ma tomo Paki – Toki Pona")
-
-- [Tok Pisin](https://tpi.wikipedia.org/wiki/Paris "Paris – Tok Pisin")
-
-- [Türkçe](https://tr.wikipedia.org/wiki/Paris "Paris – Turkish")
-
-- [Татарча / tatarça](https://tt.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Tatar")
-
-- [ChiTumbuka](https://tum.wikipedia.org/wiki/Paris "Paris – Tumbuka")
-
-- [Twi](https://tw.wikipedia.org/wiki/Paris "Paris – Twi")
-
-- [Reo tahiti](https://ty.wikipedia.org/wiki/Paris "Paris – Tahitian")
-
-- [Тыва дыл](https://tyv.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Tuvinian")
-
-- [Удмурт](https://udm.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Udmurt")
-
-- [ئۇيغۇرچە / Uyghurche](https://ug.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B1%D9%89%DA%98 "پارىژ – Uyghur")
-
-- [Українська](https://uk.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B8%D0%B6 "Париж – Ukrainian")
-
-- [اردو](https://ur.wikipedia.org/wiki/%D9%BE%DB%8C%D8%B1%D8%B3 "پیرس – Urdu")
-
-- [Oʻzbekcha / ўзбекча](https://uz.wikipedia.org/wiki/Parij "Parij – Uzbek")
-
-- [Vèneto](https://vec.wikipedia.org/wiki/Parize "Parize – Venetian")
-
-- [Vepsän kel’](https://vep.wikipedia.org/wiki/Pari%C5%BE "Pariž – Veps")
-
-- [Tiếng Việt](https://vi.wikipedia.org/wiki/Paris "Paris – Vietnamese")
-
-- [West-Vlams](https://vls.wikipedia.org/wiki/Parys "Parys – West Flemish")
-
-- [Volapük](https://vo.wikipedia.org/wiki/Paris "Paris – Volapük")
-
-- [Walon](https://wa.wikipedia.org/wiki/Paris "Paris – Walloon")
-
-- [Winaray](https://war.wikipedia.org/wiki/Paris "Paris – Waray")
-
-- [Wolof](https://wo.wikipedia.org/wiki/Pari "Pari – Wolof")
-
-- [吴语](https://wuu.wikipedia.org/wiki/%E5%B7%B4%E9%BB%8E "巴黎 – Wu")
-
-- [IsiXhosa](https://xh.wikipedia.org/wiki/Paris "Paris – Xhosa")
-
-- [მარგალური](https://xmf.wikipedia.org/wiki/%E1%83%9E%E1%83%90%E1%83%A0%E1%83%98%E1%83%96%E1%83%98 "პარიზი – Mingrelian")
-
-- [ייִדיש](https://yi.wikipedia.org/wiki/%D7%A4%D7%90%D7%A8%D7%99%D7%96 "פאריז – Yiddish")
-
-- [Yorùbá](https://yo.wikipedia.org/wiki/Parisi "Parisi – Yoruba")
-
-- [Vahcuengh](https://za.wikipedia.org/wiki/Bahliz "Bahliz – Zhuang")
-
-- [Zeêuws](https://zea.wikipedia.org/wiki/Paries "Paries – Zeelandic")
-
-- [ⵜⴰⵎⴰⵣⵉⵖⵜ ⵜⴰⵏⴰⵡⴰⵢⵜ](https://zgh.wikipedia.org/wiki/%E2%B4%B1%E2%B4%B0%E2%B5%94%E2%B5%89%E2%B5%A3 "ⴱⴰⵔⵉⵣ – Standard Moroccan Tamazight")
-
-- [文言](https://zh-classical.wikipedia.org/wiki/%E5%B7%B4%E9%BB%8E "巴黎 – Literary Chinese")
-
-- [閩南語 / Bân-lâm-gí](https://zh-min-nan.wikipedia.org/wiki/Pa-l%C3%AD "Pa-lí – Minnan")
-
-- [粵語](https://zh-yue.wikipedia.org/wiki/%E5%B7%B4%E9%BB%8E "巴黎 – Cantonese")
-
-- [中文](https://zh.wikipedia.org/wiki/%E5%B7%B4%E9%BB%8E "巴黎 – Chinese")
-
-- [IsiZulu](https://zu.wikipedia.org/wiki/IParisi "IParisi – Zulu")
-
-[Edit links](https://www.wikidata.org/wiki/Special:EntityPage/Q90#sitelinks-wikipedia "Edit interlanguage links")
-
-- [Article](/wiki/Paris "View the content page [c]")
-
-- [Talk](/wiki/Talk:Paris "Discuss improvements to the content page [t]")
-
-- [Read](/wiki/Paris)
-
-- [View source](/w/index.php?title=Paris&action=edit "This page is protected. You can view its source [e]")
-
-- [View history](/w/index.php?title=Paris&action=history "Past revisions of this page [h]")
+- [View history](/w/index.php?title=Seine&action=history "Past revisions of this page [h]")
 
 - [ Save](# "Add this page to your saved items")
 
@@ -934,149 +398,317 @@ move to sidebar hide
 
 Actions
 
-- [ Read](/wiki/Paris)
+- [ Read](/wiki/Seine)
 
-- [ View source](/w/index.php?title=Paris&action=edit "This page is protected. You can view its source [e]")
+- [ Edit](/w/index.php?title=Seine&action=edit "Edit the source code of this page [e]")
 
-- [ View history](/w/index.php?title=Paris&action=history "Past revisions of this page [h]")
+- [ View history](/w/index.php?title=Seine&action=history "Past revisions of this page [h]")
 
 - [ Save](# "Add this page to your saved items")
 
 General
 
-- [What links here](/wiki/Special:WhatLinksHere/Paris "List of all English Wikipedia pages containing links to this page [j]")
+- [What links here](/wiki/Special:WhatLinksHere/Seine "List of all English Wikipedia pages containing links to this page [j]")
 
-- [Related changes](/wiki/Special:RecentChangesLinked/Paris "Recent changes in pages linked from this page [k]")
+- [Related changes](/wiki/Special:RecentChangesLinked/Seine "Recent changes in pages linked from this page [k]")
 
 - [Upload file](//en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard "Upload files [u]")
 
-- [Permanent link](/w/index.php?title=Paris&oldid=1387772859 "Permanent link to this revision of this page")
+- [Permanent link](/w/index.php?title=Seine&oldid=1384649318 "Permanent link to this revision of this page")
 
-- [Page information](/w/index.php?title=Paris&action=info "More information about this page")
+- [Page information](/w/index.php?title=Seine&action=info "More information about this page")
 
-- [Cite this page](/w/index.php?title=Special:CiteThisPage&page=Paris&id=1387772859&wpFormIdentifier=titleform "Information on how to cite this page")
+- [Cite this page](/w/index.php?title=Special:CiteThisPage&page=Seine&id=1384649318&wpFormIdentifier=titleform "Information on how to cite this page")
 
-- [Get shortened URL](/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FParis)
+- [Get shortened URL](/w/index.php?title=Special:UrlShortener&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FSeine)
 
-- [Switch to legacy parser](/w/index.php?title=Paris&useparsoid=0)
+- [Switch to legacy parser](/w/index.php?title=Seine&useparsoid=0)
 
 Print/export
 
-- [Download as PDF](/w/index.php?title=Special:DownloadAsPdf&page=Paris&action=show-download-screen "Download this page as a PDF file")
+- [Download as PDF](/w/index.php?title=Special:DownloadAsPdf&page=Seine&action=show-download-screen "Download this page as a PDF file")
 
 - [Printable version](javascript:print\(\); "Printable version of this page [p]")
 
 In other projects
 
-- [Abstract Wikipedia](https://abstract.wikipedia.org/wiki/Q90)
+- [Abstract Wikipedia](https://abstract.wikipedia.org/wiki/Q1471)
 
-- [Wikimedia Commons](https://commons.wikimedia.org/wiki/Paris)
+- [Wikimedia Commons](https://commons.wikimedia.org/wiki/Seine)
 
-- [Wikinews](https://en.wikinews.org/wiki/Category:Paris)
+- [Wikivoyage](https://en.wikivoyage.org/wiki/Seine_Valley)
 
-- [Wikiquote](https://en.wikiquote.org/wiki/Paris)
-
-- [Wikivoyage](https://en.wikivoyage.org/wiki/Paris)
-
-- [Wikidata item](https://www.wikidata.org/wiki/Special:EntityPage/Q90 "Structured data on this page hosted by Wikidata [g]")
+- [Wikidata item](https://www.wikidata.org/wiki/Special:EntityPage/Q1471 "Structured data on this page hosted by Wikidata [g]")
 
 Appearance
 
 move to sidebar hide
 
-[Coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system "Geographic coordinate system"): [48°51′24″N 2°21′08″E﻿ / ﻿48\.8567°N 2\.3522°E﻿ / 48\.8567; 2\.3522](https://geohack.toolforge.org/geohack.php?pagename=Paris&params=48.8567_N_2.3522_E_type:city\(2,100,000\)_region:FR-75C)
-
-[![Page semi-protected](//thumb.wikimedia.org/wikipedia/en/thumb/1/1b/Semi-protection-shackle.svg/20px-Semi-protection-shackle.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/Wikipedia:Protection_policy#semi "This article is semi-protected.")
+[Coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system "Geographic coordinate system"): [49°26′02″N 0°12′24″E﻿ / ﻿49\.43389°N 0\.20667°E﻿ / 49\.43389; 0\.20667](https://geohack.toolforge.org/geohack.php?pagename=Seine&params=49_26_02_N_0_12_24_E_type:river)
 
 From Wikipedia, the free encyclopedia
 
-Capital and largest city of France
+Major river in northern France
 
-This article is about the capital city of France. For other uses, see [Paris (disambiguation)](https://en.wikipedia.org/wiki/Paris_\(disambiguation\) "Paris (disambiguation)").
+"Seine River" redirects here. For other uses, see [Seine (disambiguation)](https://en.wikipedia.org/wiki/Seine_\(disambiguation\) "Seine (disambiguation)") and [Seine River (disambiguation)](https://en.wikipedia.org/wiki/Seine_River_\(disambiguation\) "Seine River (disambiguation)"). Not to be confused with [Seyne](https://en.wikipedia.org/wiki/Seyne "Seyne"), [Sienne (river)](https://en.wikipedia.org/wiki/Sienne_\(river\) "Sienne (river)"), [Seym (river)](https://en.wikipedia.org/wiki/Seym_\(river\) "Seym (river)"), or [Senne (river)](https://en.wikipedia.org/wiki/Senne_\(river\) "Senne (river)").
 
-"Parisien" redirects here. For other uses, see [Parisien (disambiguation)](https://en.wikipedia.org/wiki/Parisien_\(disambiguation\) "Parisien (disambiguation)").
+Seine
 
-Capital city in Île-de-France, France
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Bercy%2C_Paris_01.jpg/250px-Bercy%2C_Paris_01.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Bercy,_Paris_01.jpg) The Seine in [Paris](https://en.wikipedia.org/wiki/Paris "Paris")
 
-Paris
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Bassin_Seine.png/250px-Bassin_Seine.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Bassin_Seine.png) Topographic map of the Seine [basin](https://en.wikipedia.org/wiki/Drainage_basin "Drainage basin")
 
-[Capital city](https://en.wikipedia.org/wiki/Capital_city "Capital city")[\[a\]](#cite_note-1)
+[![Map](https://maps.wikimedia.org/img/osm-intl,5,a,a,250x250.png?lang=en&domain=en.wikipedia.org&title=Seine&revid=1384649318&groups=_ddd2200000594eead771ef62ed5df5006787129a&parser=parsoid)]()
 
-[![](//thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/330px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques,_Paris_août_2014_\(2\).jpg) [Eiffel Tower](https://en.wikipedia.org/wiki/Eiffel_Tower "Eiffel Tower") and the [Seine](https://en.wikipedia.org/wiki/Seine "Seine") from [Tour Saint-Jacques](https://en.wikipedia.org/wiki/Tour_Saint-Jacques "Tour Saint-Jacques") [![](//thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Notre-Dame_de_Paris_2013-07-24.jpg/120px-Notre-Dame_de_Paris_2013-07-24.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Notre-Dame_de_Paris_2013-07-24.jpg) [Notre-Dame](https://en.wikipedia.org/wiki/Notre-Dame_de_Paris "Notre-Dame de Paris") [![](//thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre%2C_Paris_18e_140223_2.jpg/120px-Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre%2C_Paris_18e_140223_2.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Basilique_du_Sacré-Cœur_de_Montmartre,_Paris_18e_140223_2.jpg) [Sacré-Cœur](https://en.wikipedia.org/wiki/Sacré-Cœur,_Paris "Sacré-Cœur, Paris") [![](//thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Panth%C3%A9on_-_Paris_V_%28FR75%29_-_2025-03-29_-_1.jpg/120px-Panth%C3%A9on_-_Paris_V_%28FR75%29_-_2025-03-29_-_1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Panthéon_-_Paris_V_\(FR75\)_-_2025-03-29_-_1.jpg) [Panthéon](https://en.wikipedia.org/wiki/Panthéon "Panthéon") [![](//thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Arc_de_Triomphe_HDR_2007.jpg/250px-Arc_de_Triomphe_HDR_2007.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Arc_de_Triomphe_HDR_2007.jpg) [Arc de Triomphe](https://en.wikipedia.org/wiki/Arc_de_Triomphe "Arc de Triomphe") [![](//thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Palais_Garnier_-_Paris_IX_%28FR75%29_-_2022-01-22_-_1.jpg/250px-Palais_Garnier_-_Paris_IX_%28FR75%29_-_2022-01-22_-_1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Palais_Garnier_-_Paris_IX_\(FR75\)_-_2022-01-22_-_1.jpg) [Palais Garnier](https://en.wikipedia.org/wiki/Palais_Garnier "Palais Garnier") [![](//thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Louvre_Courtyard%2C_Looking_West.jpg/330px-Louvre_Courtyard%2C_Looking_West.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Louvre_Courtyard,_Looking_West.jpg) The [Louvre](https://en.wikipedia.org/wiki/Louvre "Louvre")
+Native name | *la Seine* ([French](https://en.wikipedia.org/wiki/French_language "French language"))
 
-[![Flag of Paris](//thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Drapeau_des_armes_de_la_ville_de_Paris.svg/120px-Drapeau_des_armes_de_la_ville_de_Paris.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Drapeau_des_armes_de_la_ville_de_Paris.svg "Flag of Paris") [Flag](https://en.wikipedia.org/wiki/Flag_of_Paris "Flag of Paris") [![Coat of arms of Paris](//thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Armoiries_de_la_ville_de_Paris_%281949%29.svg/120px-Armoiries_de_la_ville_de_Paris_%281949%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Armoiries_de_la_ville_de_Paris_\(1949\).svg "Coat of arms of Paris") [Coat of arms](https://en.wikipedia.org/wiki/Coat_of_arms_of_Paris "Coat of arms of Paris") [![Official logo of Paris](//thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Ville_de_Paris_logo.svg/120px-Ville_de_Paris_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Ville_de_Paris_logo.svg "Official logo of Paris") [Logo](https://en.wikipedia.org/wiki/Logo "Logo")
-
-Motto(s):  *[Fluctuat nec mergitur](https://en.wikipedia.org/wiki/Fluctuat_nec_mergitur "Fluctuat nec mergitur")* "Tossed by the waves but never sunk"
-
-[![Map](https://maps.wikimedia.org/img/osm-intl,a,a,a,250x200.png?lang=en&domain=en.wikipedia.org&title=Paris&revid=1387772859&groups=_01828ba465efe76ba204c129697a3dd79598df1b&parser=parsoid)]() Location of Paris
-
-[![Paris is located in France](//thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/France_relief_location_map.jpg/330px-France_relief_location_map.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](/wiki/Special:Map/6/48.8567/2.3522/en) ![](//thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Codex_icon_map_color-base.svg/20px-Codex_icon_map_color-base.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail) [Map credit](https://en.wikipedia.org/wiki/File:France_relief_location_map.jpg "File:France relief location map.jpg") ![Paris](//thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Red_pog.svg/20px-Red_pog.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail) Paris Location within France Show map of France [![Paris is located in Île-de-France (region)](//thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Ile-de-France_region_relief_location_map.jpg/330px-Ile-de-France_region_relief_location_map.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](/wiki/Special:Map/9/48.8567/2.3522/en) ![](//thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Codex_icon_map_color-base.svg/20px-Codex_icon_map_color-base.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail) [Map credit](https://en.wikipedia.org/wiki/File:Ile-de-France_region_relief_location_map.jpg "File:Ile-de-France region relief location map.jpg") ![Paris](//thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Red_pog.svg/20px-Red_pog.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail) Paris Location within Île-de-France (region) Show map of Île-de-France (region)
-
-Coordinates: [48°51′24″N 2°21′08″E﻿ / ﻿48\.8567°N 2\.3522°E﻿ / 48\.8567; 2\.3522](https://geohack.toolforge.org/geohack.php?pagename=Paris&params=48.8567_N_2.3522_E_type:city\(2,100,000\)_region:FR-75C)
+Location
 
 Country | [France](https://en.wikipedia.org/wiki/France "France")
 
-[Region](https://en.wikipedia.org/wiki/Regions_of_France "Regions of France") | [Île-de-France](https://en.wikipedia.org/wiki/Île-de-France "Île-de-France")
+Physical characteristics
 
-[Department](https://en.wikipedia.org/wiki/Departments_of_France "Departments of France") | Paris
+Source |
 
-[Arrondissement](https://en.wikipedia.org/wiki/Arrondissements_of_France "Arrondissements of France") | [Paris](https://en.wikipedia.org/wiki/Arrondissement_of_Paris "Arrondissement of Paris")
+• location | [Source-Seine](https://en.wikipedia.org/wiki/Source-Seine "Source-Seine")
 
-[Intercommunality](https://en.wikipedia.org/wiki/Communes_of_France#Intercommunality "Communes of France") | [Métropole du Grand Paris](https://en.wikipedia.org/wiki/Grand_Paris "Grand Paris")
+[Mouth](https://en.wikipedia.org/wiki/River_mouth "River mouth") | [English Channel](https://en.wikipedia.org/wiki/English_Channel "English Channel") ([French](https://en.wikipedia.org/wiki/French_language "French language"): *la Manche*)
 
-[Subdivisions](https://en.wikipedia.org/wiki/Administrative_division "Administrative division") | 20 [arrondissements](https://en.wikipedia.org/wiki/Arrondissements_of_Paris "Arrondissements of Paris")
+• location | [Le Havre](https://en.wikipedia.org/wiki/Le_Havre "Le Havre")/[Honfleur](https://en.wikipedia.org/wiki/Honfleur "Honfleur")
 
-Government
+• coordinates | [49°26′02″N 0°12′24″E﻿ / ﻿49\.43389°N 0\.20667°E﻿ / 49\.43389; 0\.20667](https://geohack.toolforge.org/geohack.php?pagename=Seine&params=49_26_02_N_0_12_24_E_type:river)
 
-• Mayor (2026–32) | [Emmanuel Grégoire](https://en.wikipedia.org/wiki/Emmanuel_Grégoire "Emmanuel Grégoire")[\[1\]](#cite_note-2)[\[2\]](#cite_note-3) ([PS](https://en.wikipedia.org/wiki/Socialist_Party_\(France\) "Socialist Party (France)"))
+• elevation | 0 m (0 ft)
 
-Area **1**[\[3\]](#cite_note-Comparateur_de_territoires.INSEE-4) | 105\.4 km2 (40.7 sq mi)
+Length | 777 km (483 mi)
 
-• [Urban](https://en.wikipedia.org/wiki/Urban_area "Urban area")  ([\[3\]](#cite_note-Comparateur_de_territoires.INSEE-4)) | 2,824.2 km2 (1,090.4 sq mi)
+Basin size | 79,000 km2 (31,000 sq mi)
 
-• Metro  ([\[3\]](#cite_note-Comparateur_de_territoires.INSEE-4)) | 18,940.7 km2 (7,313.0 sq mi)
+Discharge |
 
-Elevation | 78 m (256 ft)
+• location | [Le Havre](https://en.wikipedia.org/wiki/Le_Havre "Le Havre")
 
-Highest elevation | 131 m (430 ft)
+• average | 560 m3/s (20,000 cu ft/s)
 
-Lowest elevation | 28 m (92 ft)
+Basin features
 
-Population  (Jan 2026[\[4\]](#cite_note-Pop.Paris-5)) | 2,047,602
+[River system](https://en.wikipedia.org/wiki/Drainage_basin "Drainage basin") | Seine basin
 
-• Rank | [9th](https://en.wikipedia.org/wiki/List_of_European_cities_by_population_within_city_limits "List of European cities by population within city limits") in Europe [1st](https://en.wikipedia.org/wiki/List_of_communes_in_France_with_over_20,000_inhabitants "List of communes in France with over 20,000 inhabitants") in France
+Tributaries |
 
-• Density | 19,430/km2 (50,320/sq mi)
+• left | [Yonne](https://en.wikipedia.org/wiki/Yonne_\(river\) "Yonne (river)"), [Loing](https://en.wikipedia.org/wiki/Loing "Loing"), [Eure](https://en.wikipedia.org/wiki/Eure_\(river\) "Eure (river)"), [Risle](https://en.wikipedia.org/wiki/Risle "Risle")
 
-• [Urban](https://en.wikipedia.org/wiki/Urban_area "Urban area")  (2023) | 11,013,774[\[3\]](#cite_note-Comparateur_de_territoires.INSEE-4)
+• right | [Ource](https://en.wikipedia.org/wiki/Ource "Ource"), [Aube](https://en.wikipedia.org/wiki/Aube_\(river\) "Aube (river)"), [Marne](https://en.wikipedia.org/wiki/Marne_\(river\) "Marne (river)"), [Oise](https://en.wikipedia.org/wiki/Oise_\(river\) "Oise (river)"), [Epte](https://en.wikipedia.org/wiki/Epte "Epte")
 
-• Urban density | 3,899.8/km2 (10,100/sq mi)
+The **Seine** ([/seɪn, sɛn/](https://en.wikipedia.org/wiki/Help:IPA/English "Help:IPA/English") [*sayn, sen*](https://en.wikipedia.org/wiki/Help:Pronunciation_respelling_key "Help:Pronunciation respelling key");[\[1\]](#cite_note-1) French: [\[sɛn\]](https://en.wikipedia.org/wiki/Help:IPA/French "Help:IPA/French") [](//upload.wikimedia.org/wikipedia/commons/transcoded/2/22/Fr.Seine.ogg/Fr.Seine.ogg.mp3 "Play audio")[ⓘ](/wiki/File:Fr.Seine.ogg "File:Fr.Seine.ogg")) is a 777-kilometre-long (483 mi) [river](https://en.wikipedia.org/wiki/River "River") in northern [France](https://en.wikipedia.org/wiki/France "France").[\[2\]](#cite_note-sandre-2) Its [drainage basin](https://en.wikipedia.org/wiki/Drainage_basin "Drainage basin") is in the [Paris Basin](https://en.wikipedia.org/wiki/Paris_Basin "Paris Basin") (a geological relative lowland) covering most of northern France.[\[3\]](#cite_note-Fluvi1-3) It rises at [Source-Seine](https://en.wikipedia.org/wiki/Source-Seine "Source-Seine"), 30 kilometres (19 mi) northwest of [Dijon](https://en.wikipedia.org/wiki/Dijon "Dijon") in northeastern France in the [Langres](https://en.wikipedia.org/wiki/Langres "Langres") plateau, flowing through [Paris](https://en.wikipedia.org/wiki/Paris "Paris") and into the [English Channel](https://en.wikipedia.org/wiki/English_Channel "English Channel") at [Le Havre](https://en.wikipedia.org/wiki/Le_Havre "Le Havre") (and [Honfleur](https://en.wikipedia.org/wiki/Honfleur "Honfleur") on the left bank).[\[4\]](#cite_note-4) It is navigable by ocean-going vessels as far as [Rouen](https://en.wikipedia.org/wiki/Rouen "Rouen"), 120 kilometres (75 mi) from the sea. Over 60 percent of its length, as far as [Burgundy](https://en.wikipedia.org/wiki/Burgundy_\(region\) "Burgundy (region)"), is negotiable by large barges and most tour boats, and nearly its whole length is available for recreational boating; [excursion boats](https://en.wikipedia.org/wiki/Bateaux_Mouches "Bateaux Mouches") offer sightseeing tours of the river banks in the capital city, Paris.[\[5\]](#cite_note-ParisDigest-5)
 
-• [Metro](https://en.wikipedia.org/wiki/Metropolitan_area "Metropolitan area")  (2023) | 13,320,752[\[3\]](#cite_note-Comparateur_de_territoires.INSEE-4)
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/2007_Paris_Seine.jpg/250px-2007_Paris_Seine.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:2007_Paris_Seine.jpg)
 
-• Metro density | 703\.287/km2 (1,821.51/sq mi)
+View over the Seine in Paris, Pont des Invalides in the foreground, Eiffel tower in the background
 
-[Demonym(s)](https://en.wikipedia.org/wiki/Demonym "Demonym") | Parisian(s) ([en](https://en.wikipedia.org/wiki/English_language "English language")) *Parisien(s)* (masc.), *Parisienne(s)* (fem.) ([fr](https://en.wikipedia.org/wiki/French_language "French language")), *Parigot(s)* (masc.), "Parigote(s)" (fem.) (fr, colloquial)
+There are 37 [bridges in Paris](https://en.wikipedia.org/wiki/List_of_bridges_in_Paris#Seine "List of bridges in Paris") across the Seine (the most famous of which are the [Pont Alexandre III](https://en.wikipedia.org/wiki/Pont_Alexandre_III "Pont Alexandre III") and the [Pont Neuf](https://en.wikipedia.org/wiki/Pont_Neuf "Pont Neuf")) and dozens [more](https://en.wikipedia.org/wiki/List_of_crossings_of_the_River_Seine "List of crossings of the River Seine") outside the city.[\[6\]](#cite_note-6)
 
-GDP (nominal, 2024) [\[5\]](#cite_note-6)
+## River sources
 
-• Capital City | [€](https://en.wikipedia.org/wiki/Euro "Euro")279\.938 billion
+\[[edit](/w/index.php?title=Seine&action=edit&section=1 "Edit section: River sources")\]
 
-• Metro | [€](https://en.wikipedia.org/wiki/Euro "Euro")865\.652 billion
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Source_Seine.jpg/250px-Source_Seine.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Source_Seine.jpg)
 
-[Time zone](https://en.wikipedia.org/wiki/Time_zone "Time zone") | [UTC+01:00](https://en.wikipedia.org/wiki/UTC+01:00 "UTC+01:00") ([CET](https://en.wikipedia.org/wiki/Central_European_Time "Central European Time"))
+The source of the Seine
 
-• Summer ([DST](https://en.wikipedia.org/wiki/Daylight_saving_time "Daylight saving time")) | [UTC+02:00](https://en.wikipedia.org/wiki/UTC+02:00 "UTC+02:00") ([CEST](https://en.wikipedia.org/wiki/Central_European_Summer_Time "Central European Summer Time"))
+The Seine rises in the [commune](https://en.wikipedia.org/wiki/Communes_of_France "Communes of France") of [Source-Seine](https://en.wikipedia.org/wiki/Source-Seine "Source-Seine"), about 30 kilometres (19 mi) northwest of [Dijon](https://en.wikipedia.org/wiki/Dijon "Dijon"). The source has been owned by the city of Paris since 1864\. A number of closely associated small ditches or depressions provide the source waters, with an artificial [grotto](https://en.wikipedia.org/wiki/Grotto "Grotto") laid out to highlight and contain a deemed main source. The grotto includes a statue of a nymph, a dog, and a dragon. On the same site are the buried remains of a [Gallo-Roman temple](https://en.wikipedia.org/wiki/Glossary_of_ancient_Roman_religion#fanum "Glossary of ancient Roman religion"). Small statues of the *dea Sequana* "Seine goddess" and other [ex-votos](https://en.wikipedia.org/wiki/Ex-voto "Ex-voto") found at the same place are now exhibited in the Dijon archaeological museum.\[*[citation needed ](https://en.wikipedia.org/wiki/Wikipedia:Citation_needed "Wikipedia:Citation needed")*\]
 
-[INSEE](https://en.wikipedia.org/wiki/INSEE_code "INSEE code")/Postal code | [75056](https://www.insee.fr/fr/statistiques/1405599?geo=COM-75056) /75001–75020, 75116
+## Course
 
-Website | [www.paris.fr](https://www.paris.fr/) [![Edit this at Wikidata](//thumb.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://www.wikidata.org/wiki/Q90#P856 "Edit this at Wikidata")
+\[[edit](/w/index.php?title=Seine&action=edit&section=2 "Edit section: Course")\]
 
-**1** French Land Register data, which excludes lakes, ponds, glaciers \> 1 km2 (0.386 sq mi or 247 acres) and river estuaries.
+The Seine can artificially be divided into five parts:
 
-**Paris**[\[b\]](#cite_note-8) is the [capital](https://en.wikipedia.org/wiki/Capital_city "Capital city") and [largest city](https://en.wikipedia.org/wiki/List_of_communes_in_France_with_over_20,000_inhabitants "List of communes in France with over 20,000 inhabitants") of [France](https://en.wikipedia.org/wiki/France "France"), with an estimated city population of 2\.04 million in an area of 105\.4 km2 (40.7 sq mi), as of January 2026[\[update\]](https://en.wikipedia.org/w/index.php?title=Paris&action=edit),[\[4\]](#cite_note-Pop.Paris-5) and a metropolitan population of 13\.3 million (2023). Located on the [Seine](https://en.wikipedia.org/wiki/Seine "Seine") in the centre of the [Île-de-France](https://en.wikipedia.org/wiki/Île-de-France "Île-de-France") region, it is the [largest metropolitan area](https://en.wikipedia.org/wiki/List_of_metropolitan_areas_in_Europe "List of metropolitan areas in Europe") and [fourth-most populous city](https://en.wikipedia.org/wiki/List_of_cities_in_the_European_Union_by_population_within_city_limits "List of cities in the European Union by population within city limits") in the [European Union](https://en.wikipedia.org/wiki/European_Union "European Union") (EU). Paris is nicknamed the "City of Light" mainly due to its leading role in the [Age of Enlightenment](https://en.wikipedia.org/wiki/Age_of_Enlightenment "Age of Enlightenment").
+- the *Petite Seine*, "Small Seine" from the sources to [Montereau-Fault-Yonne](https://en.wikipedia.org/wiki/Montereau-Fault-Yonne "Montereau-Fault-Yonne")
 
-Administratively, Paris is divided into [twenty arrondissements](https://en.wikipedia.org/wiki/Arrondissements_of_Paris "Arrondissements of Paris") (districts), each with their own cultural identity. [Haussmann's renovation of Paris](https://en.wikipedia.org/wiki/Haussmann's_renovation_of_Paris "Haussmann's renovation of Paris"), which created new boulevards, parks, and public works, gave birth to a modern city known as the "[capital of the 19th century](https://en.wikipedia.org/wiki/Paris,_Capital_of_the_19th_Century "Paris, Capital of the 19th Century")". Paris is a major railway, motorway, and air-transport hub; in 2024 [Charles de Gaulle Airport](https://en.wikipedia.org/wiki/Charles_de_Gaulle_Airport "Charles de Gaulle Airport") was the EU's [busiest airport](https://en.wikipedia.org/wiki/List_of_the_busiest_airports_in_Europe "List of the busiest airports in Europe"). Paris has one of the most [sustainable transportation](https://en.wikipedia.org/wiki/Sustainable_transportation "Sustainable transportation") systems in the world and is one of only two cities that have received the [Sustainable Transport Award](https://en.wikipedia.org/wiki/Sustainable_Transport_Award "Sustainable Transport Award") twice. Its [Art Nouveau](https://en.wikipedia.org/wiki/Art_Nouveau "Art Nouveau")\-decorated [Métro](https://en.wikipedia.org/wiki/Paris_Métro "Paris Métro") has become a symbol of the city. Paris is known for its museums and architectural landmarks: the [Louvre](https://en.wikipedia.org/wiki/Louvre "Louvre") is the largest and most-visited museum in the world; the [Musée d'Orsay](https://en.wikipedia.org/wiki/Musée_d'Orsay "Musée d'Orsay"), [Musée Marmottan Monet](https://en.wikipedia.org/wiki/Musée_Marmottan_Monet "Musée Marmottan Monet"), and [Musée de l'Orangerie](https://en.wikipedia.org/wiki/Musée_de_l'Orangerie "Musée de l'Orangerie") are noted for their collections of French [Impressionist](https://en.wikipedia.org/wiki/Impressionism "Impressionism") art, while the [Musée National d'Art Moderne](https://en.wikipedia.org/wiki/Musée_National_d'Art_Moderne "Musée National d'Art Moderne"), [Musée Rodin](https://en.wikipedia.org/wiki/Musée_Rodin "Musée Rodin"), and [Musée Picasso](https://en.wikipedia.org/wiki/Musée_Picasso "Musée Picasso") are noted for their collections of [modern](https://en.wikipedia.org/wiki/Modern_art "Modern art") and [contemporary art](https://en.wikipedia.org/wiki/Contemporary_art "Contemporary art"). Parts of the city along the Seine have been designated a [UNESCO](https://en.wikipedia.org/wiki/UNESCO "UNESCO") [World Heritage Site](https://en.wikipedia.org/wiki/World_Heritage_Site "World Heritage Site") since 1991[\[update\]](https://en.wikipedia.org/w/index.php?title=Paris&action=edit).
+- the *Haute Seine*, "Upper Seine" from Montereau-Fault-Yonne to Paris
 
-The [president of France](https://en.wikipedia.org/wiki/President_of_France "President of France") and both houses of the [French Parliament](https://en.wikipedia.org/wiki/French_Parliament "French Parliament") sit in Paris. Paris is home to several [United Nations](https://en.wikipedia.org/wiki/United_Nations "United Nations") organisations, including UNESCO, as well as other international organisations such as the [OECD](https://en.wikipedia.org/wiki/OECD "OECD"), the [International Bureau of Weights and Measures](https://en.wikipedia.org/wiki/International_Bureau_of_Weights_and_Measures "International Bureau of Weights and Measures") (in neighbouring [Saint-Cloud](https://en.wikipedia.org/wiki/Saint-Cloud "Saint-Cloud")), the [International Energy Agency](https://en.wikipedia.org/wiki/International_Energy_Agency "International Energy Agency"), the [Organisation i
-[showing lines 1-1081 of 3100 (last line cut); full output saved to /tmp/opencode/plan0113/smoke/null-house-capital-smoke/data/opencode/tool-output/tool_21cf70c03001TvXIEnVlCfWKLW]
+- the *Traversée de Paris*, "the Paris waterway"
+
+- the *Basse Seine*, "Lower Seine" from Paris to Rouen
+
+- the *Seine maritime*, "Maritime Seine" from Rouen to the English channel.
+
+Below Rouen, the river passes through the *Parc Naturel Régional des Boucles de la Seine Normande*, one of [France's regional nature parks](https://en.wikipedia.org/wiki/Regional_nature_parks_of_France "Regional nature parks of France").
+
+## Navigation
+
+\[[edit](/w/index.php?title=Seine&action=edit&section=3 "Edit section: Navigation")\]
+
+The Seine is dredged and ocean-going vessels can dock at [Rouen](https://en.wikipedia.org/wiki/Rouen "Rouen"), 120 kilometres (75 mi) from the sea. Commercial craft (barges and push-tows) can use the river beginning at [Marcilly-sur-Seine](https://en.wikipedia.org/wiki/Marcilly-sur-Seine "Marcilly-sur-Seine"), 516 kilometres (321 mi) to its mouth.[\[7\]](#cite_note-7)
+
+At Paris, there are 37 bridges.[\[8\]](#cite_note-8) The river is only 24 metres (79 ft) above sea level 446 kilometres (277 mi) from its mouth, making it slow flowing and thus easily navigable.[\[9\]](#cite_note-9)
+
+The Seine Maritime, 123 kilometres (76 mi) from the English Channel at [Le Havre](https://en.wikipedia.org/wiki/Le_Havre "Le Havre") to Rouen, is the only portion of the Seine used by ocean-going craft.[\[10\]](#cite_note-Fluvi2-10) The tidal section of the Seine Maritime is followed by a canalized section (*Basse Seine*) with four large multiple locks until the mouth of the [Oise](https://en.wikipedia.org/wiki/Oise_\(river\) "Oise (river)") at [Conflans-Sainte-Honorine](https://en.wikipedia.org/wiki/Conflans-Sainte-Honorine "Conflans-Sainte-Honorine") (170 km \[110 mi\]). Smaller locks at [Bougival](https://en.wikipedia.org/wiki/Bougival "Bougival") and at [Suresnes](https://en.wikipedia.org/wiki/Suresnes "Suresnes") lift the vessels to the level of the river in Paris, where the junction with the [Canal Saint-Martin](https://en.wikipedia.org/wiki/Canal_Saint-Martin "Canal Saint-Martin") is located. The distance from the mouth of the Oise is 72 km (45 mi).[\[11\]](#cite_note-11)
+
+The *Haute Seine*, from Paris to [Montereau-Fault-Yonne](https://en.wikipedia.org/wiki/Montereau-Fault-Yonne "Montereau-Fault-Yonne"), is 98 km (61 mi) long and has 8 locks.[\[12\]](#cite_note-12) At [Charenton-le-Pont](https://en.wikipedia.org/wiki/Charenton-le-Pont "Charenton-le-Pont") is the mouth of the [Marne](https://en.wikipedia.org/wiki/Marne_\(river\) "Marne (river)"). Upstream from Paris seven locks ensure navigation to [Saint Mammès](https://en.wikipedia.org/wiki/Saint_Mammès "Saint Mammès"), where the [Loing](https://en.wikipedia.org/wiki/Loing "Loing") mouth is situated. Through an eighth lock the river [Yonne](https://en.wikipedia.org/wiki/Yonne_\(river\) "Yonne (river)") is reached at Montereau-Fault-Yonne. From the mouth of the Yonne, larger ships can continue upstream to [Nogent-sur-Seine](https://en.wikipedia.org/wiki/Nogent-sur-Seine "Nogent-sur-Seine") (48 km \[30 mi\], 7 locks).[\[13\]](#cite_note-13) From there on, the river is navigable only by small craft to [Marcilly-sur-Seine](https://en.wikipedia.org/wiki/Marcilly-sur-Seine "Marcilly-sur-Seine") (19 km \[12 mi\], 4 locks).[\[3\]](#cite_note-Fluvi1-3) At Marcilly-sur-Seine the 19th century [Canal de la Haute-Seine](https://en.wikipedia.org/wiki/Canal_de_la_Haute-Seine "Canal de la Haute-Seine") used to allow vessels to continue all the way to [Troyes](https://en.wikipedia.org/wiki/Troyes "Troyes"). This canal has been abandoned since 1957\.[\[14\]](#cite_note-14)
+
+The Seine's average depth in Paris today is approximately 9\.5 meters (31 feet). Until locks were installed to raise the level in the 1800s, the river was much shallower within the city, and consisted of a small channel of continuous flow bordered by sandy banks (depicted in many illustrations of the period). Today the depth is tightly controlled and the entire width of the river between the built-up banks on either side is normally filled with water. The average flow of the river is very low, only a few cubic metres per second, but much higher flows are possible during periods of heavy runoff.
+
+### Dredging
+
+\[[edit](/w/index.php?title=Seine&action=edit&section=4 "Edit section: Dredging")\]
+
+[Dredging](https://en.wikipedia.org/wiki/Dredging "Dredging") in the 1960s mostly eliminated [tidal bores](https://en.wikipedia.org/wiki/Tidal_bore "Tidal bore") on the lower river, known in French as *"le mascaret."*[\[15\]](#cite_note-15)
+
+## Dams and flood control
+
+\[[edit](/w/index.php?title=Seine&action=edit&section=5 "Edit section: Dams and flood control")\]
+
+Four large storage reservoirs have been built since 1950 on the Seine as well as its tributaries Yonne, Marne, and Aube. These help in maintaining a constant level for the river through the city, but cannot prevent significant increases in river level during periods of extreme runoff. The dams are [Lac d’Orient](https://en.wikipedia.org/wiki/Orient_Forest_Regional_Natural_Park "Orient Forest Regional Natural Park"), [Lac des Settons](https://en.wikipedia.org/wiki/Lac_des_Settons "Lac des Settons"), [Lake Der-Chantecoq](https://en.wikipedia.org/wiki/Lake_Der-Chantecoq "Lake Der-Chantecoq"), and Auzon-Temple and Amance, respectively.[\[16\]](#cite_note-16)
+
+### Flooding
+
+\[[edit](/w/index.php?title=Seine&action=edit&section=6 "Edit section: Flooding")\]
+
+A [very severe period of high water](https://en.wikipedia.org/wiki/1910_Great_Flood_of_Paris "1910 Great Flood of Paris") in January 1910 resulted in extensive flooding throughout the city of Paris. The Seine again rose to threatening levels in 1924, 1955, 1982, 1999–2000, June 2016, and January 2018\.[\[17\]](#cite_note-17)[\[18\]](#cite_note-theguardian-18) After a first-level flood alert in 2003, about 100,000 works of art were moved out of Paris, the largest relocation of art since [World War II](https://en.wikipedia.org/wiki/World_War_II "World War II"). Much of the art in Paris is kept in underground storage rooms that would have been flooded.[\[19\]](#cite_note-nyt2003-19)
+
+A 2002 report by the French government stated the worst-case Seine flood scenario would cost 10 billion euros and cut telephone service for a million Parisians, leaving 200,000 without electricity and 100,000 without gas.[\[20\]](#cite_note-20)
+
+### 2018 Paris flood
+
+\[[edit](/w/index.php?title=Seine&action=edit&section=7 "Edit section: 2018 Paris flood")\]
+
+In January 2018 the Seine again flooded, reaching a flood level of 5\.84 metres (19 ft 2 in) on 29 January.[\[21\]](#cite_note-21) An official warning was issued on 24 January that heavy rainfall was likely to cause the river to flood.[\[18\]](#cite_note-theguardian-18) By 27 January, the river was rising.[\[22\]](#cite_note-22) The Deputy Mayor of Paris [Colombe Brossel](https://en.wikipedia.org/wiki/Colombe_Brossel "Colombe Brossel") warned that the heavy rain was caused by [climate change](https://en.wikipedia.org/wiki/Climate_change "Climate change"). She added that "We have to understand that climatic change is not a word, it's a reality."[\[23\]](#cite_note-23)
+
+## Watershed
+
+\[[edit](/w/index.php?title=Seine&action=edit&section=8 "Edit section: Watershed")\]
+
+The basin area, including a part of Belgium, is 78,910 square kilometres (30,470 mi2),[\[24\]](#cite_note-earthtrends-24) 2 percent of which is forest and 78 percent cultivated land. In addition to Paris, three other cities with a population over 100,000 are in the Seine watershed: Le Havre at the estuary, Rouen in the Seine valley and [Reims](https://en.wikipedia.org/wiki/Reims "Reims") at the northern limit—with an annual urban growth rate of 0\.2 percent.[\[24\]](#cite_note-earthtrends-24) The population density is 201 per square kilometer.
+
+### Tributaries
+
+\[[edit](/w/index.php?title=Seine&action=edit&section=9 "Edit section: Tributaries")\]
+
+Tributaries of the Seine are, from source to mouth:[\[2\]](#cite_note-sandre-2)
+
+- [Ource](https://en.wikipedia.org/wiki/Ource "Ource") (right)
+
+- [Barse](https://en.wikipedia.org/wiki/Barse "Barse") (right)
+
+- [Aube](https://en.wikipedia.org/wiki/Aube_\(river\) "Aube (river)") (right)
+
+- [Yonne](https://en.wikipedia.org/wiki/Yonne_\(river\) "Yonne (river)") (left)
+
+- [Loing](https://en.wikipedia.org/wiki/Loing "Loing") (left)
+
+- [Almont](https://en.wikipedia.org/wiki/Almont_\(river\) "Almont (river)") (right)
+
+- [Essonne](https://en.wikipedia.org/wiki/Essonne_\(river\) "Essonne (river)") (left)
+
+- [Orge](https://en.wikipedia.org/wiki/Orge "Orge") (left)
+
+- [Yerres](https://en.wikipedia.org/wiki/Yerres_\(river\) "Yerres (river)") (right)
+
+- [Marne](https://en.wikipedia.org/wiki/Marne_\(river\) "Marne (river)") (right)
+
+- [Bièvre](https://en.wikipedia.org/wiki/Bièvre_\(river\) "Bièvre (river)") (left)
+
+- [Oise](https://en.wikipedia.org/wiki/Oise_\(river\) "Oise (river)") (right)
+
+- [Aubette de Meulan](https://en.wikipedia.org/wiki/Aubette_de_Meulan "Aubette de Meulan") (right)
+
+- [Mauldre](https://en.wikipedia.org/wiki/Mauldre "Mauldre") (left)
+
+- [Vaucouleurs](https://en.wikipedia.org/wiki/Vaucouleurs_\(river\) "Vaucouleurs (river)") (left)
+
+- [Epte](https://en.wikipedia.org/wiki/Epte "Epte") (right)
+
+- [Andelle](https://en.wikipedia.org/wiki/Andelle "Andelle") (right)
+
+- [Eure](https://en.wikipedia.org/wiki/Eure_\(river\) "Eure (river)") (left)
+
+- [Oison](https://en.wikipedia.org/wiki/Oison_\(river\) "Oison (river)") (left)
+
+- [Aubette](https://en.wikipedia.org/wiki/Aubette_\(Seine-Maritime\) "Aubette (Seine-Maritime)") (right)
+
+- [Cailly](https://en.wikipedia.org/wiki/Cailly_\(river\) "Cailly (river)") (right)
+
+- [Austreberthe](https://en.wikipedia.org/wiki/Austreberthe "Austreberthe") (right)
+
+- [Commerce](https://en.wikipedia.org/wiki/Commerce_\(river\) "Commerce (river)") (right)
+
+- [Risle](https://en.wikipedia.org/wiki/Risle "Risle") (left)
+
+- [Lézarde](https://en.wikipedia.org/wiki/Lézarde_\(Seine\) "Lézarde (Seine)") (right)
+
+## Water quality
+
+\[[edit](/w/index.php?title=Seine&action=edit&section=10 "Edit section: Water quality")\]
+
+Due to concentrated levels of industry, agriculture and urban populations of Paris and its surroundings, the Seine-Normandy watershed experiences the highest human impacts of any hydrographic basin in France. Compared to most other large European rivers, the ability of the Seine to dilute urban sewage and farmland runoff is very low. Low oxygen levels, high concentrations of ammonia, nitrites and faecal bacteria, extending from Paris to the estuary, have been issues for over a century. The advent of nitrogenous fertilizers in the 1960s marked an upturn in agricultural pollution due to land use changes that had previously scaled with population growth. Heavy industries near Paris and along the Oise River discharged virtually untreated wastewaters from the turn of the 19th century, causing concentrations of toxins in the river that were ignored until the late 1980s. Major French laws to address water quality were passed in 1898, 1964, 1996, and 2006\.[\[25\]](#cite_note-Flipo_Lestel_Labadie_Meybeck_2020-25)
+
+At the beginning of the 20th century, most domestic sewage was [used as fertilizer](https://en.wikipedia.org/wiki/Reuse_of_excreta "Reuse of excreta") for nearby croplands. As populations grew, the agricultural capacity to absorb those wastewaters was exceeded. Large-scale construction of waste water treatment plants (WWTPs) began in 1940 to meet demand; however, by 1970, about 60% of urban sewage was allowed to flow into the river untreated. The resulting oxygen depletion reduced the number of fish species to three. Measures taken in the early 2000s due to the [Water Framework Directive](https://en.wikipedia.org/wiki/Water_Framework_Directive "Water Framework Directive") led to significant reductions of organic carbon, phosphorus and ammonium, which in turn decreased the occurrence and severity of phytoplankton blooms. Continued WWTP construction and new treatment methods improved environmental conditions.[\[26\]](#cite_note-Garnier_Marescaux_Guillon_Vilmin_2020-26) In 2009, it was announced that [Atlantic salmon](https://en.wikipedia.org/wiki/Atlantic_salmon "Atlantic salmon") had returned to the Seine.[\[27\]](#cite_note-27) By the early 2020s, the number of fish species near Paris had rebounded to 32\.[\[26\]](#cite_note-Garnier_Marescaux_Guillon_Vilmin_2020-26)
+
+Periodically the [sewage systems of Paris](https://en.wikipedia.org/wiki/Paris_sewers "Paris sewers") experience a failure known as [sanitary sewer overflow](https://en.wikipedia.org/wiki/Sanitary_sewer_overflow "Sanitary sewer overflow"), often in periods of high rainfall. Under these conditions, untreated residential and industrial [sewage](https://en.wikipedia.org/wiki/Sewage "Sewage") is discharged into the Seine to prevent [backflow](https://en.wikipedia.org/wiki/Backflow "Backflow"). This is due in large part to Paris's "single system" drainage scheme dating from the 19th century, which combines street runoff and sewage.[\[28\]](#cite_note-28)[\[29\]](#cite_note-Schofield_2023_f780-29) The resulting [oxygen](https://en.wikipedia.org/wiki/Oxygen "Oxygen") deficit is principally caused by [allochthonous](https://en.wikipedia.org/wiki/Allochthonous "Allochthonous") bacteria larger than one micrometre in size. The specific activity of these sewage bacteria is typically three to four times greater than that of the autochthonous (background) bacterial population. Heavy metal concentrations in the Seine are relatively high.[\[30\]](#cite_note-30) The pH level of the Seine at Pont Neuf has been measured to be 8\.46. Despite this, the water quality has improved significantly over what several historians at various times in the past called an "open sewer".[\[31\]](#cite_note-31)
+
+In 1988, then-mayor of Paris and future president [Jacques Chirac](https://en.wikipedia.org/wiki/Jacques_Chirac "Jacques Chirac") first called for the lifting of a swimming ban that had been in place since 1923 due to polluted waters.[\[32\]](#cite_note-32) In 2018, a €1.4 billion ($1.55 billion) cleanup programme called the "Swimming Plan" was launched with the aim of making the river safe to use for the [2024 Summer Olympics](https://en.wikipedia.org/wiki/2024_Summer_Olympics "2024 Summer Olympics"). The project included constructing a basin to store rainwater, which would then be slowly released into the sewer system, preventing overflow. Plans also call for several public swimming areas to be made available by 2025, bringing an end to a century-old ban.[\[33\]](#cite_note-Jack_Guy_2023_g211-33) These efforts have produced mixed results, as *[E. coli](https://en.wikipedia.org/wiki/Escherichia_coli "Escherichia coli")* levels have often been found to be far higher than what is safe to swim in, though this could depend on the season.[\[34\]](#cite_note-34)[\[35\]](#cite_note-Guy-35) At the same time, the fish population in the river has surged, from just two species to over 30\.[\[35\]](#cite_note-Guy-35) To demonstrate the river's improved cleanliness, Mayor [Anne Hidalgo](https://en.wikipedia.org/wiki/Anne_Hidalgo "Anne Hidalgo") and President [Emmanuel Macron](https://en.wikipedia.org/wiki/Emmanuel_Macron "Emmanuel Macron") both pledged to take a swim in the waters,[\[36\]](#cite_note-36) and Hidalgo did so on July 17, 2024\.[\[37\]](#cite_note-37)
+
+During the Summer Olympics, the date of the triathlon was postponed due to water quality issues,[\[38\]](#cite_note-38) as the earlier rainstorm during the opening ceremony had driven some untreated rainwater back into the Seine.[\[39\]](#cite_note-39) However, the triathlon proceeded the following day, after testing found the water quality to be sufficient for swimming.[\[40\]](#cite_note-40)
+
+In July 2025, the Seine was reopened for swimming after a ban lasting almost 100 years.[\[41\]](#cite_note-41)
+
+During the European heatwaves [in 2025](https://en.wikipedia.org/wiki/2025_European_heatwaves "2025 European heatwaves") and [in 2026](https://en.wikipedia.org/wiki/2026_European_heatwaves "2026 European heatwaves"), many people did so.[\[42\]](#cite_note-42)
+
+## History
+
+\[[edit](/w/index.php?title=Seine&action=edit&section=11 "Edit section: History")\]
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Chatillon-sur-Seine_-_Mus%C3%A9e_du_Pays_chatillonnais_-_Crat%C3%A8re_de_Vix_-_012_%28cropped%29.jpg/250px-Chatillon-sur-Seine_-_Mus%C3%A9e_du_Pays_chatillonnais_-_Crat%C3%A8re_de_Vix_-_012_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Chatillon-sur-Seine_-_Musée_du_Pays_chatillonnais_-_Cratère_de_Vix_-_012_\(cropped\).jpg)
+
+The gigantic [Cratère de Vix](https://en.wikipedia.org/wiki/Cratère_de_Vix "Cratère de Vix") \- at 1\.64 meters high, the largest bronze vessel of all antiquity, c. 500 BC \[*[clarification needed](https://en.wikipedia.org/wiki/Wikipedia:Please_clarify "Wikipedia:Please clarify")*\]
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Paris_expo_1937_Seine.jpg/250px-Paris_expo_1937_Seine.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Paris_expo_1937_Seine.jpg)
+
+The Seine in Paris during the [World Expo in 1937](https://en.wikipedia.org/wiki/Exposition_Internationale_des_Arts_et_Techniques_dans_la_Vie_Moderne "Exposition Internationale des Arts et Techniques dans la Vie Moderne")
+
+[![](//thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Seine_by_Eiffel.jpg/250px-Seine_by_Eiffel.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://en.wikipedia.org/wiki/File:Seine_by_Eiffel.jpg)
+
+The Seine and Eiffel Tower
+
+The name *Seine* comes from Gaulish *[Sēquana](https://en.wikipedia.org/wiki/Sequana "Sequana")*, from the Celtic [Gallo-Roman](https://en.wikipedia.org/wiki/Gallo-Roman_religion "Gallo-Roman religion") goddess of the river, as offerings for her were found at the source. Sometimes it is incorrectly associated with Latin *sequor* 'follow', but the Celtic word rather seems to derive from the same root as English *sea*, namely [Proto-Indo-European](https://en.wikipedia.org/wiki/Proto-Indo-European "Proto-Indo-European") *\*seikw\-*, signifying 'to flow' or 'to pour forth'.[\[43\]](#cite_note-43)
+
+On 28 or 29 March 845, an army of [Vikings](https://en.wikipedia.org/wiki/Vikings "Vikings") led by a chieftain named Reginherus, which is possibly another name for [Ragnar Lothbrok](https://en.wikipedia.org/wiki/Ragnar_Lothbrok "Ragnar Lothbrok"), sailed up the River Seine with siege towers and [sacked Paris](https://en.wikipedia.org/wiki/Siege_of_Paris_\(845\) "Siege of Paris (845)").
+
+On 25 November 885, another Viking expedition led by [Rollo](https://en.wikipedia.org/wiki/Rollo "Rollo") traveled up the River Seine to [attack Paris again](https://en.wikipedia.org/wiki/Siege_of_Paris_\(885-886\) "Siege of Paris (885-886)").
+
+In March 1314, King [Philip IV of France](https://en.wikipedia.org/wiki/Philip_IV_of_France "Philip IV of France") had [Jacques de Molay](https://en.wikipedia.org/wiki/Jacques_de_Molay "Jacques de Molay"), last [Grand Master](https://en.wikipedia.org/wiki/Grand_Masters_of_the_Knights_Templar "Grand Masters of the Knights Templar") of the [Knights Templar](https://en.wikipedia.org/wiki/Knights_Templar "Knights Templar"), [burned on a scaffold](https://en.wikipedia.org/wiki/Execution_by_burning "Execution by burning") on an [island](https://en.wikipedia.org/wiki/Île_aux_Juifs "Île aux Juifs") in the River Seine in front of [Notre Dame de Paris](https://en.wikipedia.org/wiki/Notre_Dame_de_Paris "Notre Dame de Paris").[\[44\]](#cite_note-Middle_Ages_Vol_1888,_p._325-44)
+
+Following the [burning](https://en.wikipedia.org/wiki/Execution_by_burning "Execution by burning") of [Joan of Arc](https://en.wikipedia.org/wiki/Joan_of_Arc "Joan of Arc") in 1431, her ashes were thrown into the Seine from the medieval stone Mathilde Bridge at [Rouen](https://en.wikipedia.org/wiki/Rouen "Rouen"), though unsupported counter-claims persist.[\[45\]](#cite_note-45)
+
+[![](//upload.wikimedia.org/wikipedia/commons/4/40/Fulton_Plaque.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled)](https://en.wikipedia.org/wiki/File:Fulton_Plaque.jpg)
+
+Plaque commemorating Robert Fulton's first successful trial of the steamboat in the Seine
+
+On 9 August 1803, [Robert Fulton](https://en.wikipedia.org/wiki/Robert_Fulton "Robert Fulton"), American painter and marine engineer, made his first successful test of his [steamboat](https://en.wikipedia.org/wiki/Steamboat "Steamboat") in the Seine beside the [Tuileries Garden](https://en.wikipedia.org/wiki/Tuileries_Garden "Tuileries Garden"). Having a length of sixty-six feet and an eight-foot beam Fulton's steamboat attained speeds of three to four miles per hour against the Seine's current.[\[46\]](#cite_note-46)
+
+Reaching the Seine was one of the original objectives of [Operation Overlord](https://en.wikipedia.org/wiki/Operation_Overlord "Operation Overlord"), during the [Second World War](https://en.wikipedia.org/wiki/Second_World_War "Second World War"), in 1944\. The Allies' intention was to reach the Seine by 90 days after [D-Day](https://en.wikipedia.org/wiki/D-Day "D-Day"). That objective was met. An anticipated assault crossing of the river never materialized as German resistance in France crumbled by early September 1944\. However, the [First Canadian Army](https://en.wikipedia.org/wiki/First_Canadian_Army "First Canadian Army") did encounter resistance immediately west of the Seine and fighting occurred in the Forêt de la Londe as Allied [troops](https://en.wikipedia.org/wiki/Troops "Troops") attempted to cut off the escape across the river of parts of the German 7th Army in the closing phases of the [Battle of Normandy](https://en.wikipedia.org/wiki/Battle_of_Normandy "Battle of Normandy").
+
+Some of the Algerian victims of the [1961 Paris massacre](https://en.wikipedia.org/wiki/1961_Paris_massacre "1961 Paris massacre") drowned in the Seine after being thrown by French policemen from the [Pont Saint-Michel](https://en.wikipedia.org/wiki/Pont_Saint-Michel "Pont Saint-Michel") and other locations in Paris.[\[47\]](#cite_note-47)
+
+## At the Olympics
+
+\[[edit](/w/index.php?title=Seine&action=edit&section=12 "Edit section: At the Olympics")\]
+
+### 1900 and 1924 Summer Olympics
+
+\[[edit](/w/index.php?title=Seine&action=edit&section=13 "Edit section: 1900 and 1924 Summer Olympics")\]
+
+At the [1900 Summer Olympics](https://en.wikipedia.org/wiki/1900_Summer_Olympics "1900 Summer Olympics"), the river hosted the [rowing](https://en.wikipedia.org/wiki/Rowing_at_the_1900_Summer_Olympics "Rowing at the 1900 Summer Olympics"), [swimming](https://en.wikipedia.org/wiki/Swimming_at_the_1900_Summer_Olympics "Swimming at the 1900 Summer Olympics"), and [water polo](https://en.wikipedia.org/wiki/Water_polo_at_the_1900_Summer_Olympics "Water polo at the 1900 Summer Olympics") events.[\[48\]](#cite_note-48) [Twenty-four years later](https://en.wikipedia.org/wiki/1924_Summer_Olympics "1924 Summer Olympics"), it hosted the [rowing](https://en.wikipedia.org/wiki/Rowing_at_the_1924_Summer_Olympics "Rowing at the 1924 Summer Olympics") events again at Bassin d'Argenteuil, along the Seine north of Paris.[\[49\]](#cite_note-49)
+
+### 2024 Summer Olympics
+
+\[[edit](/w/index.php?title=Seine&action=edit&section=14 "Edit section: 2024 Summer Olympics")\]
+
+See also: [Concerns and controversies at the 2024 Summer Olympics § Water pollution of the Seine and uncertain role in the wider Games](https://en.wikipedia.org/wiki/Concerns_and_controversies_at_the_2024_Summer_Olympics#Water_pollution_of_the_Seine_and_uncertain_role_in_the_wider_Games "Concerns and controversies at the 2024 Summer Olympics")
+
+More than a century later, during the [2024 Summer Olympics](https://en.wikipedia.org/wiki/2024_Summer_Olympics "2024 Summer Olympics"), the Seine hosted a boat parade with boats for each national delegation during the [opening ceremony](https://en.wikipedia.org/wiki/Olympic_games_opening_ceremony "Olympic games opening ceremony").[\[50\]](#cite_note-50)
+
+The river was also the site of the men's and women's event for [marathon swimming](https://en.wikipedia.org/wiki/Swimming_at_the_2024_Summer_Olympics_–_Men's_marathon_10_kilometre "Swimming at the 2024 Summer Olympics – Men's marathon 10 kilometre"), as well as the swimming portion of the [triathlon](https://en.wikipedia.org/wiki/Triathlon_at_the_2024_Summer_Olympics "Triathlon at the 2024 Summer Olympics").[\[51\]](#cite_note-51) Although swimming in the Seine had been banned since 1923, a €1.4 billion cleanup effort by the French government sought to reduce bacterial levels in the river to those safe for swimming.[\[52\]](#cite_note-52) During the Olympics, daily tests of the water quality were taken to determine if it was safe for swimming; this caused the triathlon to be delayed by a day, before being allowed to proceed on July
+[showing lines 1-713 of 1137 (last line cut); full output saved to /tmp/opencode/plan0113/smoke/null-house-capital-smoke/data/opencode/tool-output/tool_220095595001sVtLa14B4HZ01l]

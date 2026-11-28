@@ -1,18 +1,389 @@
-HIGHEST-TIER EVIDENCE:
-- E1. **FranceTerme / Ministry of Culture (OFFICIAL, Journal officiel du 24/09/2008)** — https://www.culture.fr/franceterme/terme/AFET263
-  ```
-  France (la), f.  —  Domaine : TOPONYMIE
-  Nom de l'État forme longue : la République française
-  Nom des habitants : Français, -e, n.
-  Capitale : Paris [Parisien, -ienne, n.]
-  Licence etalab-2.0
-  ```
-- E2. **EU official member-state page (OFFICIAL)** — european-union.europa.eu/.../france_en: "# France — Overview — Capital: Paris. Official EU language(s): French. EU Member State: since 1 January 1958. Population: 69 112 309 (Eurostat 2026)."
-- E3. **Council of Europe Intercultural Cities (OFFICIAL)** — coe.int: "Paris is the capital and most populous city of France. **Situated on the Seine River**, in the north of the country, it is in the centre of the Île-de-France region."
-- E4. **Archives nationales d'outre-mer (OFFICIAL)** — "Capitale de la France, Paris est une commune à statut particulier. Depuis 1968, avec la suppression du département de la Seine, elle constitue une collectivité associant la commune et le département."
-- E5. **fr.wikipedia "Capitale de la France"** (page modified 29 Oct 2026, heavily referenced to legifrance/UN/EU) — KEY CONSTITUTIONAL FINDING: "**La Constitution de la Ve République ne définit pas la capitale de la France.** Cependant, le statut hors-norme de Paris... la désignent de manière incontestable comme capitale depuis le XIIe siècle. De plus, l'**arrêté du 4 novembre 1993** relatif à la terminologie des noms d'États et de capitales définit pour la France Paris comme «capitale ou siège du gouvernement». Cet arrêté abroge l'arrêté du 14 octobre 1985..." Also: "bien d'autres organismes internationaux considèrent Paris comme la capitale de la France, en premier lieu l'ONU et l'UE."
-- E6. TLFi definition cited: "capitale = Ville principale d'un État... qui est le siège du gouvernement et/ou de l'administration centrale."
-- E7. Fifth Republic ordinance provides both parliamentary chambers sit in Paris, but government may transfer "le siège des pouvoirs publics" to another city in emergency — "ce qui ne constituerait pas nécessairement un changement de capitale." (Crucial legal distinction: seat of powers ≠ capital.)
-- E8. Institutions seated in Paris: presidency (Élysée), PM (Matignon), ministries, Assemblée nationale (Palais Bourbon), Sénat (Palais du Luxembourg).
-- E9. fr.wiki: "Aux XVe et XVIe siècles, la chancellerie royale désigne Paris comme «capitale de la France»"; "le retour du roi à Paris en 1789 réaffirme le statut de capitale politique de Paris, qui se poursuit aujourd'hui."
-- E10. en.wiki France infobox: "Capital and largest city | Paris 48°51′N 2°21′E / 48.850°N 2.350°E". BBC News profile: "Capital: Paris — Area: 643,801 sq km".
+France – EU country | European Union
+    
+
+
+
+
+
+
+
+    
+  
+  
+          Skip to main content
+
+            
+
+      
+          
+  
+      
+      
+        
+          
+            
+                    
+                                  
+
+
+              
+                  EnglishSelect your languageCloseEU official languagesbgбългарскиesespañolcsčeštinadadanskdeDeutscheteestielελληνικάenEnglishfrfrançaisgaGaeilgehrhrvatskiititalianolvlatviešultlietuviųhumagyarmtMaltinlNederlandsplpolskiptportuguêsroromânăskslovenčinaslslovenščinafisuomisvsvenskaOther languagesruрусскийukyкраїнська
+
+  
+  
+SearchSearch
+  
+
+
+
+              
+            
+          
+        
+      
+    
+          
+        
+                    European Union
+        
+    
+        
+  
+    
+       
+
+      
+      
+      
+                    
+      
+                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                      
+      
+          
+      
+                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                      
+      
+          
+      
+                  
+            
+                                  
+            
+                                  
+            
+                      
+      
+          
+      
+                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                      
+      
+          
+      
+                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                      
+      
+          
+      
+                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                                  
+            
+                      
+      
+          
+          MenuCloseMenuBackPrevious itemsNext itemsHomePrinciples, countries, historyPrinciples and valuesFacts and figures on the European Union EU countriesEU enlargementAchievementsHistory of the EUEurope DaySymbolsLanguagesSee allInstitutions, law, budgetInstitutions and bodiesLeadership LawBudgetThe EuroSee allPriorities and actionsEU prioritiesActions by topicEU support for UkraineSee allLive, work, studyLiving in the EUTravelling in the EUParticipate, interact, voteImmigration to the EUWorking in the EUDoing business in the EUImport and exportFunding, grants, subsidiesPublic contractsStudying and training in the EUJobs and traineeships in EU institutionsSee allNews and eventsFeatured newsLatest news from EU institutions and bodiesEventsVisual storiesSee allContact the EUWrite to usCall usMeet usContact details: institutions, bodies and agenciesVisit a European Union institutionEurope and worldwide officesMake a complaintPress contactsSocial media channelsSee all  
+
+
+  
+
+
+
+
+            
+    
+  
+    
+      
+  
+    
+      
+      
+               
+    
+  
+
+
+  
+    
+      
+      
+               
+    
+  
+
+
+  
+
+  
+
+    
+            
+  
+    
+      
+                
+  
+
+
+Home…Principles, countries, historyEU countriesFranceFrance
+  
+
+
+  
+
+  
+    
+      
+        
+            
+    
+  
+
+        
+      
+      
+        
+                      
+  
+    
+      
+
+  
+    
+
+  
+  
+    
+
+  
+  
+  
+    
+    
+
+
+
+    
+  
+
+                                                            
+
+  
+    Overview  
+  
+
+Capital: Paris  Official EU language(s): French  EU Member State: since 1 January 1958Currency: euro (€)Euro area: member since 1 January 1999Schengen: member since 26 March 1995  Figures:  Geographical size: 638 475 km2 Population: 69 112 309(Source: Eurostat  - 2026 figures for geographical size and population)   
+
+
+  
+
+    
+  
+    
+      
+          
+  Political system
+
+France is a semi-presidential republic with a prime minister, who is the head of government, appointed by the president who is the directly elected head of state.France’s territory consists of 18 administrative regions: 13 metropolitan (i.e. Continental France) and 5 overseas regions. All 5 of the overseas regions, as well as Saint-Martin (a French territory in the Caribbean), are considered part of the EU (with the status of outermost region).Strasbourg is one of the three official seats of the European institutions. The others are Brussels and Luxembourg City.
+
+      
+
+  
+
+    
+  
+    
+      
+          
+  Trade and economy
+
+France's GDP per capita of €40 700 ranks just below the EU average (€41 600). It accounts for 15.9% of the EU's total GDP. (Source: Eurostat - 2025 figures for GDP per capita and GDP) 
+
+      
+
+  
+
+    
+  
+    
+      
+          
+  
+      
+            
+
+      
+  
+
+      
+
+  
+
+    
+  
+    
+      
+          (Source: Eurostat - 2025 figures for exports and imports)   
+
+      
+
+  
+
+    
+  
+    
+      
+          France in the EU  
+
+      
+
+  
+
+    
+  
+    
+    
+              
+European Parliament              There are 81 representatives from France in the European Parliament. Find out who these Members of the European Parliament are and follow the activities of the European Parliament’s office in France.   Council of the EU              In the Council of the EU, national ministers meet regularly to adopt EU laws and coordinate policies. Representatives from the French government attend Council meetings focused on their area of responsibility several times a year.  Presidency of the Council of the EU              The Council of the EU does not have a permanent, single-person president (like the Commission or Parliament). Instead, its work is led by the country holding the Council presidency, which rotates every 6 months.   During these 6 months, ministers from that country's government chair and help determine the agenda of Council meetings in the different policy areas, and facilitate dialogue with the other EU institutions.   Dates of French presidencies:   Jan-Jun 1959 | Jan-Jun 1962 | Jan-Jun 1965 | Jan-Jun 1968 | Jan-Jun 1971 | Jul-Dec 1974 | Jan-Jun 1979 | Jan-Jun 1984 | Jul-Dec 1989 | Jan-Jun 1995 | Jul-Dec 2000 | Jan-Jun 2008 | Jan-Jun 2022 European Commission              The European Commissioner nominated by France is Stéphane Séjourné who is the Executive Vice-President for Prosperity and Industrial Strategy.The Commission is represented in each EU country by a local office, called a "representation". Find out more about the Commission's representation in France. European Economic and Social Committee              France has 24 representatives on the European Economic and Social Committee. This advisory body – representing employers, workers and other interest groups – is consulted on proposed laws, to get a better idea of the possible changes to work and social situations in different countries.   European Committee of the Regions              France has 24 representatives on the European Committee of the Regions, the EU's assembly of regional and local representatives. This advisory body is consulted on proposed laws, to ensure these laws take account of the perspective from each region of the EU.  Permanent representation to the EU              France also communicates with the EU institutions through its permanent representation in Brussels. As France's "embassy to the EU", its main task is to ensure that the country's interests and policies are heard and pursued as much as possible in the EU.   
+  
+
+    
+  
+    
+      
+          
+  Budgets and funding
+
+How does France benefit from the EU budget?The EU budget is the tool to ensure that Europe remains a democratic, peaceful, prosperous and competitive force. The EU uses it to finance its priorities and big projects that most individual EU countries could not finance on their own.The benefits of EU membership significantly exceed the size of the EU budget contributions and the examples are many. All Member States benefit from being part of the Single Market, a shared approach to the common challenges of migration, terrorism and climate change, and concrete gains like better transport infrastructure, modernised and digitalised public services and cutting-edge medical treatment.How much each EU country pays into the EU budget is calculated fairly. The larger your country's economy, the more it pays – and vice versa.The EU budget is not about giving and taking – it’s about collectively contributing to making Europe and the world a better place for us all.    EU budget spending and revenue per country and per year  EU-funded projects in France   Money from the EU budget helps fund programmes and projects in all EU countries – for example to build roads, subsidise researchers and protect the environment.   Find out more about how France benefits from EU funding and recovery funds in your country or region.  
+
+      
+
+  
+
+              
+          Related links
+              
+                  
+  
+    
+            
+Government of FranceStatistics about France Tourism in France
+
+
+
+              
+      
+
+      
+              This page was last updated on 16 October 2026
+          
+  
+  
+
+
+
+  
+
+            
+                  
+      
+      
+        
+          
+          
+        
+      
+    
+  
+
+        
+  
+    
+      
+
+  
+  
+
+
+This site is managed by:Directorate-General for CommunicationContact the EUCall us 00 800 6 7 8 9 10 11Use other telephone optionsWrite to us via our contact formMeet us at one of the EU centresSocial mediaSearch for EU social media channelsLegalLanguages on our websitesPrivacy policyLegal noticeCookiesAccessibilityEU institutions and bodiesSearch all EU institutions and bodies

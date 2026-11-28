@@ -1,31 +1,746 @@
-### Official / institutional
-1. FranceTerme, Ministère de la Culture — "France (la)", *J.O.* 24/09/2008 — https://www.culture.fr/franceterme/terme/AFET263
-2. Arrêté du 4 novembre 1993 relatif à la terminologie des noms d'États et de capitales, *J.O.* 25/01/1994 pp. 1288–1295 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000181509 (403; via index)
-3. Ordonnance n° 58-1100 du 17 novembre 1958, art. 1 — https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006530034
-4. Conseil constitutionnel — Constitution de 1875, IIIe République — https://www.conseil-constitutionnel.fr/les-constitutions-dans-l-histoire/constitution-de-1875-iiie-republique
-5. SANDRE / OFB / eaufrance — "La Seine", code `----0010` — via https://web.archive.org/web/20210123171121/http://www.sandre.eaufrance.fr/geo/CoursEau/----0010
-6. Eaufrance — "Les rivières" — https://www.eaufrance.fr/les-rivieres
-7. Ministère de l'Intérieur, Formation civique — "Les fleuves français" (map: IGN 2012) — https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-français/
-8. HydroPortail / Vigicrues — station F700 0001 03 "La Seine à Paris – Austerlitz", data calculated 27/11/2026 — https://www.hydro.eaufrance.fr/stationhydro/F700000103/synthese
-9. Agence de l'Eau Seine-Normandie — "Le bassin de la Seine" — https://www.eau-seine-normandie.fr/agence-de-leau/le-bassin-de-la-seine
-10. UNESCO World Heritage Centre — "Paris, Banks of the Seine" (dossier 600bis) — https://whc.unesco.org/en/list/600/
-11. UNESCO — Décision 46 COM 8B.39 (2024) — https://whc.unesco.org/fr/decisions/8631/
-12. ICOMOS evaluation WHC/24/46.COM/INF.8B1.Add — https://whc.unesco.org/document/208528
-13. Ville de Paris — "Paris et ses ponts, toute une histoire" — https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466
-14. Ville de Paris — "La Seine, cœur battant de Paris" — https://www.paris.fr/dossiers/la-seine-coeur-battant-de-paris-216
-15. Ville de Paris — "Crues" / "Le Zouave, baromètre de la montée des eaux" — https://www.paris.fr/pages/crues-5472
-16. Ville de Paris — "Les canaux de Paris" (updated 26/11/2026) — https://www.paris.fr/pages/tmp-canaux-7834
-17. Ville de Paris — "Les secrets enfouis de la Bièvre, rivière parisienne" — https://www.paris.fr/pages/les-secrets-enfouis-de-la-bievre-riviere-parisienne-16900
-18. Ville de Paris — "La Seine s'ouvre à la baignade" / "Baignade en Seine : toutes les questions" — https://www.paris.fr/pages/baignade-en-seine-toutes-les-questions-que-vous-vous-posez-31533
-19. Ville de Paris — Eau de Paris, *Bulletin qualité de l'eau de la Seine*, Aug 2026 — https://cdn.paris.fr/paris/2026-10-02/bulletin-qualite-eau-seine-2026-08-smy5.pdf
-20. DRIEAT Île-de-France / Préfecture — Dossier de presse "Plan Baignade", Aug 2024 — https://www.prefectures-regions.gouv.fr/ile-de-france/...
-21. Cour des comptes / CRC Île-de-France — IDR2025-51, délibéré 22/07/2025 — https://www.ccomptes.fr/sites/default/files/2025-11/IDR2025-51_0.pdf
-22. Paris & Métropole Aménagement — "La Bièvre (Paris 13e)" — https://www.parisetmetropole-amenagement.fr/fr/bievre-paris-13e
-23. SMBVB — Syndicat Mixte du Bassin Versant de la Bièvre, "Historique" — https://www.smbvb.fr/la-bievre/historique/
-24. Château de Versailles (public establishment) — "Versailles, 'capital' of the kingdom, 1682" — https://en.chateauversailles.fr/discover/history/key-dates/versailles-capital-kingdom-1682
-25. BnF, Essentiels — "De Lutèce à la capitale" — https://essentiels.bnf.fr/...
-26. BnF Gallica — "L'histoire tourmentée d'une rivière : quand la Bièvre disparaît" — https://gallica.bnf.fr/accueil/fr/html/lhistoire-tourmentee-dune-riviere-quand-la-bievre-disparait
-27. European Union — "France", EU member state overview — https://european-union.europa.eu/principles-countries-history/eu-countries/france_en
-28. Council of Europe, Intercultural Cities — "Paris, France" — https://www.coe.int/en/web/interculturalcities/paris
-29. Archives nationales d'outre-mer — "Paris (France)" — http://anom.archivesnationales.culture.gouv.fr/geo.php?...
-30. European Commission JRC — "FACT SHEET: Seine River Basin" — https://water.jrc.ec.europa.eu/pdf/seine-fs.pdf
+UNESCO Urban Heritage Atlas: Cultural mapping of historic cities and settlements| Paris, Banks of the Seine (France) - UNESCO World Heritage Centre
+
+
+
+    
+
+
+	
+	
+    
+        
+            
+                
+                    
+                
+                
+                    World Heritage Convention
+                
+            
+            
+                
+                
+                
+            
+            
+                
+       
+        
+        
+            Help preserve sites now!
+        
+        
+            Explore UNESCO
+        
+        
+             
+                
+                    English
+                    
+                        
+                            
+                                English
+                            
+                            
+                                Français
+                            
+                        
+                    
+                
+            
+        
+    
+        Login
+        
+  
+
+
+
+Our expertiseAbout World HeritageNewsEventsThe ConventionConvention TextBasic TextsOperational GuidelinesPolicy CompendiumDeclaration of principles to promote international solidarity and cooperation to preserve World HeritageGoverning BodiesThe General AssemblyThe CommitteeResolutions / DecisionsSessions since 1976The States PartiesThe Advisory BodiesFundingWorld Heritage FundFinancial regulationsInternational AssistanceThe EmblemQuestions and answersThe CentreEmployment & InternshipsWho's Who / ContactsDirector of the World Heritage CentreAfricaArab StatesAsia & PacificEurope & North AmericaLatin America and the CaribbeanThe ListGlobal StrategyCriteriaUpstream ProcessTentative ListsWorld Heritage List NominationsWorld Heritage ListNew Inscribed PropertiesUNESCO Sites NavigatorInteractive MapWorld Heritage in DangerThe List in DangerReporting & MonitoringState of ConservationPeriodic ReportingQuestionnaires 2026-2030Questionnaires 2018-2024Questionnaires 2008-2015Reactive MonitoringList of factors affecting the propertiesSuccess StoriesExamples of the Convention at workActivitiesActivitesThe World Heritage Centre is at the forefront of the international community’s efforts to protect and preserve.Browse all activitiesWorld Heritage Canopy  Heritage Solutions for Sustainable FuturesBrowse case studiesFeatured ActivitiesIndicators Culture|2030World Heritage Cities ProgrammeRecommendation on the Historic Urban LandscapeCultural LandscapesCapacity BuildingCategory 2 CentresNatural World HeritageClimate Change and World HeritageWorld Heritage Marine ProgrammeWorld Heritage and BiodiversityCorporate sector and the World Heritage ‘no-go’ commitmentReducing Disasters Risks at World Heritage PropertiesWorld Heritage and Indigenous PeoplesWorld Heritage Education ProgrammeWorld Heritage Volunteers InitiativeWorld Heritage and Sustainable DevelopmentSustainable Tourism ProgrammeWorld Heritage Programme for Small Island Developing States (SIDS)Initiative on Heritage of Religious InterestPartnershipsWorld Heritage partnerships for conservationEnsuring that World Heritage sites sustain their outstanding universal value is an increasingly challenging mission in today’s complex world, where sites are vulnerable to the effects of uncontrolled urban development, unsustainable tourism practices, neglect, natural calamities, pollution, political instability, and conflict.Our Partners  Donate      Partnerships       Marketplace       Our Partners       Civil Society       Donate PublicationsPublicationsPaper SeriesUrban NotebooksBrochures & Info kitsResource ManualsOther materialsNewsletterReviewWall MapDocumentsCollectionsResourcesSearchGlossary About this WebsiteTerms / PoliciesSyndicationSite MapUseful WebsitesSearch search 
+            
+        
+        
+            
+                
+                    
+                        
+                    
+                    
+                         World Heritage Convention
+                    
+                
+                
+                    
+                
+            
+        
+        
+            
+                
+                    close
+                
+                
+                    
+                        
+                            
+                        
+                        
+                            Searchsearch
+                        
+                        
+                            Take advantage of the search to browse through the World Heritage Centre information.
+                        
+                    
+                
+            
+            
+ 
+
+
+	
+		
+
+
+
+
+Paris, Banks of the Seine (France)
+UNESCO Urban Heritage Atlas: Cultural mapping of historic cities and settlements
+
+
+
+
+© Leif Niemczik/ Unsplash
+
+
+
+
+
+
+
+ OUV 
+ Historic Buildings 
+ Urban Elements 
+ Wider context 
+ Intangible Heritage Dimension 
+ Interactive Mapping 
+
+
+
+
+
+
+
+
+
+World Heritage Cities
+UNESCO Urban Heritage Atlas
+Paris, Banks of the Seine (France)
+
+
+
+
+
+
+"From the Louvre to the Eiffel Tower, from the Place de la Concorde to the Grand and Petit Palais, the evolution of Paris and its history can be seen from the River Seine. The Cathedral of Notre-Dame and the Sainte Chapelle are architectural masterpieces while Haussmann's wide squares and boulevards influenced late 19th- and 20th-century town planning the world over."
+Statement of Outstanding Universal Value (SOUV)
+
+
+
+
+
+		
+		
+	
+
+
+
+Distinctive character of historic buildings
+
+
+
+
+
+
+The banks of the Seine are studded with a succession of architectural and urban masterpieces built from the Middle Ages to the 20th century, including the Cathedral of Notre-Dame and the Sainte Chapelle, the Louvre, the Palais de l’Institut, the Hôtel des Invalides, Place de la Concorde, Ecole Militaire, the Monnaie (the Mint), the Grand Palais of the Champs Elysées, the Eiffel Tower and the Palais de Chaillot offer an unbroken visual narrative of the city's historical and artistic evolution. These structures have played an integral role in shaping Parisian identity. Buildings along the Seine, such as Notre-Dame and the Sainte Chapelle, became the source of the spread of Gothic architecture.
+ Statements of Outstanding Universal Value 41st session WHC/17/41.COM/8E, p. 9
+
+
+Eiffel Tower
+
+"A universally recognized icon of Paris and of iron architecture."
+Statement of Outstanding Universal Value (SOUV)
+
+The Eiffel Tower is an iconic shaped‑iron lattice structure on the Champ de Mars in Paris, originally built for the 1889 Exposition Universelle (World’s Fair) to celebrate the centennial of the French Revolution. Designed by Gustave Eiffel’s engineering company, it stands at 324 meters tall and consists of more than 18,000 metallic parts fastened together with approximately 2.5 million rivets. The tower’s height can vary by up to 15 centimetres due to thermal expansion, and it sways slightly in strong winds, demonstrating the sophistication of its engineering. Initially met with criticism from some prominent artists and intellectuals of its time, the structure has since become a symbol of modern engineering and France’s industrial era.
+The Eiffel Tower is a landmark example of construction in puddled iron. Puddling is a process used to purify the metal and remove excess carbon. A thick layer of special paint covers the entire iron structure, making it more resistant to weathering. To ensure its long-term preservation, the Eiffel Tower must be completely repainted approximately every seven years. It is currently undergoing its twentieth painting campaign. 
+
+
+
+Eiffel Tower. 1889 © Studio de Photographie Chevojon / Centre d'archives d'architecture contemporaine de la Cité de l'Architecture et du Patrimoine.
+
+
+
+
+International Exhibition of Arts and Technology In Paris, 1937. Perspective From The 1st Floor Of The Eiffel Tower. 1935-1937 © André Granet / Fonds André Granet.
+
+
+
+Louvre museum
+Originally constructed as a medieval fortress, the Louvre evolved through successive phases from royal palace to a museum. Its grand façades, extensive courtyards, and the juxtaposition of classical and modern interventions reflect centuries of political and artistic change in Paris (Babelon, 1989; Wilson, 1996).
+
+
+
+Modern Paris, the Tuileries, the Louvre and Rue De Rivoli, View From The Tuileries Gardens. 1860. © Charles Fichot/ United States Library of Congress's Prints and Photographs division
+
+
+
+
+Engraving of the interior View Of the Great Gallery at the Louvre, with tourists and painters. 1844 © Thomas Allom and J.B. Allen/ British Museum Public Domain
+
+
+
+
+
+
+The Louvre Museum is facing the Tuileries Garden in Paris, France. DiscoA340, CC BY-SA 4.0, via Wikimedia Commons.
+
+
+
+
+Cour Marly, Louvre Museum from Paris by Wilfredo Rafael Rodriguez Hernandez, CC0, via Wikimedia Commons.
+
+
+
+The Cathedral of Notre-Dame
+
+"The Cathedral of Notre-Dame and the Sainte Chapelle are architectural masterpieces of the Middle Ages."
+Joint Advisory mission report (WHC/ICOMOS/ICCROM (2022) p.37
+
+
+The Cathedral of Notre-Dame is a masterpiece of French Gothic architecture. Its construction, which began around 1163 and was largely completed by the 14th century, introduced innovative structural elements such as ribbed vaults and flying buttresses that allowed for vast stained-glass windows and a bright interior. The cathedral’s sculpted façade with its detailed carvings, gargoyles, and iconography reflects the medieval focus on both religious symbolism and artistic expression.Throughout its history, Notre Dame has not only served as a spiritual centre but also as a setting for significant events, from royal coronations to revolutionary upheavals. The extensive restoration efforts undertaken after the 2019 fire have also renewed scholarly debate on the complexities of preserving an irreplaceable cultural monument (Pérouse de Montclos, 1997; Wilson, 1996).
+
+
+
+Notre Dame De Paris, Ali Sabbagh, CC0, via Wikimedia Commons
+
+
+
+
+Arrival of Napoleon at the east end of Notre-Dame for his Coronation as Emperor of the French on 2 December 1804, © Charles Percier and Pierre-François Léonard Fontaine/ Public domain.
+
+
+
+
+
+
+Contribution of DRAC Île-de-France and the French Ministry of Culture:
+Like most cathedrals in France, Notre-Dame Cathedral in Paris is owned by the State, which is responsible for its maintenance and restoration. In accordance with the law of 29 July 2019, the public establishment responsible for the conservation and restoration of Notre-Dame Cathedral (EPRNDP) was created by decree on 28 November 2019.
+
+
+
+Other important buildings
+Religious buildings
+
+
+
+
+
+Sainte-Chapelle
+Sainte-Chapelle, located in the medieval Palais de la Cité, is known for its stained-glass windows, which cover almost its entire height and fill the interior with vibrant light. It was part of the former royal palace, built between 1242 and 1248 by King Louis IX, as a prime example of Rayonnant Gothic architecture. The palace was designed to house Christian relics, including the Crown of Thorns. The combination of light, ribbed vaults, and tracery creates a spiritual atmosphere and influences Gothic design. This integration of glass and stone reflects the medieval goal of expressing divine presence through architecture. (Mâle, 1944; Wilson, 1996)
+
+
+Holy Chapel - Upper Chapel, Paris, France by Didier B, CC BY-SA 2.5, via Wikimedia Commons
+
+
+
+Plan of the altar and its surroundings from the Sainte Chapelle Haute in Paris. From the Dictionary of French architecture from the 11th to the 16th century, by Eugène Viollet-Le-Duc, 1856.
+
+
+Covered porch on the terrace with a balustrade composed of small columns carrying a firm and simple arcade, by Eugène Viollet-Le-Duc, 1856.. 
+
+
+
+
+
+Église Saint-Julien-le-Pauvre 
+Located in the heart of the Latin Quarter, the church is one of the oldest surviving ecclesiastical buildings in Paris, with origins dating back to the 11th or early 12th century. Its Romanesque design, with a relatively plain façade and simple interior, contrasts with the later, more elaborate Gothic churches of the city (Zerner, 1998). 
+
+Church of Saint-Julien the Poor, Paris. Chabe01, CC BY-SA 4.0, via Wikimedia Commons
+
+
+
+
+
+Monuments representative of civic architecture
+
+
+
+
+
+École Militaire (The Military school) 
+The École Militaire is a leading example of 18th-century French neoclassical architecture in Paris. Commissioned by King Louis XV and designed by Ange-Jacques Gabriel, it was constructed between 1752 and 1760. Its symmetrical façade, marked by a central colonnade and restrained decoration, reflects Enlightenment values of rationality, civic virtue, and military order. Founded as a military academy, the École Militaire has played a central role in the training of French officers and continues to operate today. Its design influenced later military and civic architecture in Paris and stands as a key expression of the broader neoclassical movement in Europe (Davis, 1999).
+
+
+
+Ange-Jacques Gabriel's initial project for the Ecole Militaire. 1751, French National Library 
+
+
+
+
+View of the École Militaire in Paris from the Eiffel Tower. Alf van Beem, CC0, via Wikimedia Commons
+
+
+
+
+
+Palais de Justice  
+The Palais de Justice de Paris is a historic judicial complex on the Île de la Cité. Its origins date to the medieval period, when it served as the seat of royal justice, and over time, it was expanded and remodelled to accommodate changing legal and political functions. The building’s classical façade, with its balanced proportions and ornate detailing, reflects the authority of the French judicial system. Today, it remains a central symbol of state power and legal tradition, continuing to house major judicial institutions (Sauvagnat, 2005).
+
+Palais de Justice and the Seine in Paris in 1850. According to Boisseau, Israel Silvestre, Public domain, via Wikimedia Commons
+
+
+
+Palais de Justice de Paris, by Carlos Delgado, CC BY-SA 3.0, via Wikimedia Commons
+
+
+
+
+Palais de Justice de Paris - Courtroom of the First Civil Chamber of the Court of Cassation. Tiradentes, CC BY-SA 4.0, via Wikimedia Commons
+
+
+
+
+
+Hôtel de Ville  
+Paris City Hall, located in the 4th arrondissement on the right bank of the Seine, houses the municipal institutions of the City of Paris. Originally built during the Renaissance, it served as an administrative centre for centuries until much of the building was destroyed by fire during the Paris Commune in 1871. The current structure, rebuilt between 1874 and 1882 under the direction of architect Théodore Ballu, adopts an ornate Second Empire style. Its richly decorated façade, elaborate interiors, and expansive public spaces symbolize civic pride and reflect the political aspirations of post-Commune Paris and its commitment to republican ideals (Champenois, 2005).
+
+
+
+The town hall of Paris, after the great fire in the city in 1871. Charles Marville, Public domain, via Wikimedia Commons
+
+
+
+
+Paris Hotel de Ville 2014 reconstruction after the fire. Dietmar Rabich / Wikimedia Commons / CC BY-SA 4.0 
+
+
+
+
+
+Tribunal de Commerce  
+The Tribunal de commerce de Paris is a specialised court responsible for resolving commercial disputes, including cases involving business contracts, bankruptcy, and other trade-related conflicts. Established in the 19th century, it reflects France’s distinctive approach to commercial justice by appointing judges with business experience rather than traditional legal training, ensuring decisions are informed by practical expertise. Its procedures emphasise efficiency and mediation, aligning with the demands of commercial activity in Paris, one of Europe’s leading economic centres (Chevallier, 2004).
+
+Paris Tribunal de Commerce (Commercial court) Arthur Weidmann, CC BY-SA 4.0, via Wikimedia Commons
+
+
+Palais de l’Alma (1861) 
+The Palais de l'Alma is a 19th‑century public building located in the 7th arrondissement near the Place de l'Alma and the Seine. Erected during the Second Empire, it exemplifies the era’s neoclassical revival, characterised by a balanced façade featuring pilasters, cornices, and symmetrical window arrangements. Originally constructed as part of a broader urban redevelopment to modernise Paris’s administrative and civic structures, the Palais de l'Alma has served various official functions over the years. Its design reflects the Second Empire’s ambition to harmonise historic urban fabric with modern administrative needs, combining classical order with functional versatility (Dussourd, 1998).
+
+Grand Palais and Petit Palais 
+Constructed for the 1900 Exposition Universelle, these two exhibition halls illustrate the Beaux‑Arts approach to monumental design. The Grand Palais is celebrated for its vast glass‑and‑steel dome, while the Petit Palais, with its delicate ornamentation and intimate spaces, offers a contrasting, refined setting for art exhibitions (Chevallier, 2004; Davis, 1999).
+
+
+
+Display of balloons and aeroplanes at the Exposition Internationale de la Locomotion Aérienne in the Grand Palais in Paris, 1909. via Wikimedia Commons
+
+
+
+
+The Petit Palais, an art museum in the 8th arrondissement of Paris, France. Built for the 1900 Exposition Universelle, it now houses the City of Paris Museum of Fine Arts. Guilhem Vellut from Paris, France, CC BY 2.0, via Wikimedia Commons
+
+
+
+
+
+
+The nave during the "The nave is yours" event, open days, Grand Palais, June 2018. Ibex73, CC BY-SA 4.0, via Wikimedia Commons
+
+
+
+
+Petit Palais Paris. Chabe01, CC BY-SA 4.0, via Wikimedia Commons
+
+
+
+
+
+Musée d’Orsay
+Housed in a former Beaux‑Arts railway station, the Musée d’Orsay is famed for its collection of Impressionist and Post‑Impressionist art. The adaptive reuse of the station’s grand interior, marked by a vast glass roof and elegant ironwork, exemplifies the transformative potential of industrial architecture (Wilson, 1996; Babelon, 1989).
+
+
+
+Monumental station clock. Large interior clock of the former Gare d'Orsay, Musée d'Orsay, 7th arrondissement, Paris, France.Nicolas Sanchez, CC BY-SA 2.5, via Wikimedia Commons
+
+
+
+
+The Musée d'Orsay is dedicated to the visual arts of the 19th century. It occupies the former Orsay railway station building and houses the largest collection of Impressionist works in the world. Edgardo W. Olivera from Montevideo, Uruguay, CC BY 2.0, via Wikimedia Commons
+
+
+
+
+
+Monnaie de Paris (Paris Mint)
+One of France’s oldest institutions, the Monnaie de Paris, has occupied a historic building that has evolved from a medieval mint to a modern centre for art and heritage. Its richly detailed interiors and decorative schemes narrate the history of French numismatics and royal patronage (Chauveau, 2005; Babelon, 1989).
+
+Samaritaine Building
+La Samaritaine, founded in 1870 by Ernest Cognacq and Marie-Louise Jaÿ, is a historic Paris department store known for its blend of Art Nouveau and Art Deco design. Architects Frantz Jourdain and Henri Sauvage shaped its distinctive look, including the grand staircase decorated with 16,000 gold leaves. Closed in 2005 for safety reasons, it was restored by the luxury group Moët Hennessy Louis Vuitton (LVMH) and reopened in 2021 as a mixed-use complex combining retail, hospitality, and public spaces. (Clausen, 1987; Cabestan et al., 2011). The Samaritaine complex is composed of three sections: Store I (Pont Neuf), built in 1885 by architect Frantz Jourdain; Store II, in the Art Nouveau style, built between 1905 and 1910; and, from 1918 onward, the building facing the Seine in the Art Deco style, designed by architect Henri Sauvage.
+
+
+
+The Samaritaine, seen from the Pont Neuf, Paris, France. By boat, CC BY-SA 3.0, via Wikimedia Commons
+
+
+
+
+The Samaritaine - Facade 'Rue de la Monnaie' - Sketch - 1922-25
+
+
+
+
+
+
+
+
+Royal and Institutional Palaces
+
+
+
+
+
+Palais de l’Alma (architect Jean-Martin Tétaz – 1861)
+The Palais de l’Alma is a 19th-century national palace located in the 7th arrondissement near the Place de l’Alma and the Seine. Built under the Second Empire, it exemplifies the neoclassical revival of the period, with a balanced façade featuring pilasters, cornices, and symmetrical openings. Constructed as part of a broad program to modernize Paris’s administrative and civic structures, the Palais de l’Alma has served various official functions over time. Its design reflects the Second Empire’s ambition to harmonize the historic urban fabric with modern administrative needs, combining classical order with functional versatility (Dussourd, 1998). Formerly the imperial stables of Napoleon III’s household, the palace now hosts the offices of the Presidency of the Republic.
+
+Hôtel de Salm (architect Pierre Rousseau – 1782) 
+The Hôtel de Salm is an elegant townhouse that exemplifies aristocratic architecture through its classical façade, elaborate interiors, and refined decorative program. It reflects the wealth and cultural ambitions of its elite former occupants (Babelon, 1989; Chevallier, 2004). It currently houses the Grand Chancery of the Legion of Honour.
+
+Le quai d'Orsay devant l'hôtel de Salm et la Cour des comptes en 1839, Villeret, François-Étienne (en 1800 - en 1866), Public domain, via Wikimedia Commons
+
+
+
+
+
+Hôtel Lambert (1640) 
+Located on Île Saint-Louis, the Hôtel Lambert dates from the 17th century and was later modified in the 18th century. Its ornate interiors and picturesque courtyard trace the evolution of Parisian noble residences and reflect the refined cultural world of the French émigré community. (Babelon, 1989; Guilbert, 2003). 
+
+
+
+
+Palais de Chaillot 
+Built for the 1937 Exposition, the Palais de Chaillot in the 16th arrondissement blends interwar modernism with classical form. Its broad terraces and grand galleries were designed to frame the Eiffel Tower, expressing both national pride and international ambition in civic architecture. (Davis, 2000; Fraser, 2002).  
+
+Palais de Chaillot seen from Eiffel Villeret, Pedro J. Pacheco, CC BY-SA 4.0, via Wikimedia Commons
+
+
+
+
+Palais de l'Institut  
+Often called the Palais de l’Institut de France, this building houses the nation’s scholarly academies. Its neoclassical façade and ornate interiors represent the enduring legacy of French intellectual and cultural life. (Babelon, 1989; Chevallier, 2004).
+
+
+
+
+Residential buildings
+17th-century Paris: the Hôtel Particulier
+The hôtel particulier is a grand townhouse set around an inner courtyard. Its balanced proportions, ornate façades, and formal layout reflect Renaissance and early Baroque ideals. These residences mark Paris’s rise in the 17th century as a centre of culture and social hierarchy. (Babelon, 1989; Mendell, 1995).
+19th Century Paris: Haussmann's architecture
+The Haussmannian apartment building defines 19th-century Paris. With uniform stone façades, mansard roofs, and ground-floor shops, these multi-storey blocks were central to Baron Haussmann’s urban renewal. Their regular design shaped a unified cityscape and met the housing demands of the growing middle class. (Chevallier, 2004; Davis, 1999).
+This Haussmannian building type shows the system’s capacity for diversity through its horizontal program divisions. Originally built for the middle class, with generous rooms and high ceilings, it was converted into offices in the 1970s thanks to its regular structure, central layout, and natural light from the inner courtyard. In 2000, the top two floors were easily adapted into social housing, demonstrating the block’s lasting flexibility and ability to evolve.
+Roof forms
+Parisian roof typologies range from steep, pitched medieval roofs to the distinctive mansard roofs of Haussmannian buildings. These varied forms not only meet climatic and functional needs but also contribute to the city’s iconic skyline (Babelon, 1989; Chevallier, 2004).
+
+
+
+The Four Main Mansard Roof Types, Paris, Sketch based on photograph by Léa Kayrouz, 2025
+
+
+
+
+View of the roof under construction, Francis Isoz, arch. 1899-1904. (photo by Edmond Bornand and anonymous).
+
+
+
+Visual aspects
+Color Palette
+The urban colour palette of Paris is dominated by warm hues—limestone yellows, ochres, and reds, accented by stone and metal details. This consistent palette helps create a cohesive visual identity that has evolved through centuries of architectural interventions (Lamarque, 2001).
+Decorations or motifs
+Ornamental details in Paris range from intricate stone carvings and wrought‑iron balconies to elaborate sculptural motifs. These decorative elements are rooted in classical tradition yet often adapted to local tastes, enhancing the overall urban fabric (Babelon, 1989; Davis, 1999)
+
+
+Crenellations on the ballustrades. Dictionary of French architecture from the 11th to the 16th century/Bouton, B. Bance, 1854 (vol. 2)
+
+
+Button Dictionary of French architecture from the 11th to the 16th century/Bouton, B. Bance, 1854 (vol. 2)
+
+
+Keystones with simple leafy rosette projecting heads in the re-entrant angles.Dictionary of French architecture from the 11th to the 16th century/Bouton, B. Bance, 1854 (vol. 2)
+
+
+Distinctive character of urban elements
+
+The completion and consolidation of the riverside, urban and monumental vistas of Paris date from the first half of the 20th century, with the Palais de Tokyo and the Palais de Chaillot. The urban and visual integrity of the site (wide perspectives from the banks) is vulnerable to the pressures of urban development, traffic pollution and tourism, and requires a rigorous control to maintain intact its Outstanding Universal Value.
+ “Statements of Outstanding Universal Value” 41st session WHC/17/41.COM/8E, p. 7
+
+The River Seine as an unifying element
+The Seine’s banks define the spatial organisation of Paris, acting as a connector between historic urban elements serving as both a cultural and commercial artery through the centuries. The urban section of the Banks of the Seine is remarkable for its cohesive landscape, consisting, in its Parisian stretch, of the waterway, the lower vertical quay wall or embankment, the platform of varying width, and the upper quay wall. This ensemble forms the foundation of the city’s urban space.
+
+The banks host fixed, occasional, and seasonal installations, serving both exchanges with the river and recreational and leisure activities. The morphology of the banks, complementing the Seine, is further enhanced by the foliage along the lower and upper quays, as well as by a collection of built façades that have been enriched over the centuries.
+ Translation from “Cahier Des Prescriptions architecturales, paysagères et environnementales des berges de seine dans paris” by Haropa Port, Vnf, Ville de Paris and Apur, p.6
+
+
+Banks of the river Seine (near Pont Neuf), Paris, France. Dietmar Rabich / CC BY-SA 4.0 / Wikimedia Commons
+Key zones
+Île Saint-Louis (Residential area) 
+This small residential island in the Seine contains 17th- and 18th-century architecture, characterised by uniform townhouses and narrow streets. Its historical layout and buildings have been preserved within the urban context of Paris. (Guilbert, 2003).
+
+
+
+Plan of the Île Saint-Louis - detail of the plan of Paris by Charles Dyonnet 1839, Charles Dyonnet, CC0, via Wikimedia Commons
+
+
+
+
+Plan de Paris dit Plan de Turgot, dessiné par Louis Bretez, gravé en 1739. Détail : l'île Saint-Louis (plan de Turgot), Public domain, via Wikimedia Commons
+
+
+
+Île de la Cité (urban ensemble)
+Île de la Cité, the historic centre of Paris, features religious and civic landmarks such as Notre-Dame and Sainte-Chapelle. Its medieval street patterns and monumental buildings reflect the city's early development and role as a centre of power. (Davis, 1999; Babelon, 1989)
+
+
+
+Ile de la Cité Jewish Island and Gourdaine Islet, Map of Paris around 1550, Olivier Truschet and Germain Hoyau, Public domain, via Wikimedia Commons
+
+
+
+
+Plan de Paris dit Plan de Turgot, dessiné par Louis Bretez, gravé en 1739. Détail : l'île aint-Louis (plan de Turgot), Public domain, via Wikimedia Commons
+
+
+
+Rive Droite and Rive Gauche (Riverbank)
+The Right Bank (Rive Droite) and Left Bank (Rive Gauche) are defined not only by geography but by distinct cultural and urban histories. The former is associated with commerce and formal institutions, while the latter has long been a hub for intellectuals and artists (Chevallier, 2004; Fraser, 2002).
+Open spaces
+
+Gardens and parks
+Paris’s gardens, such as the Jardin des Plantes, Champ de Mars, and Tuileries, shape the city’s spatial and ecological identity. Predating many landmarks, they serve as spaces for recreation, education, and flood mitigation, acting as natural “sponges” to absorb rainwater and reduce infrastructure strain. Their design blends historical landscape innovation with accessibility.
+
+
+
+
+
+Tuileries Gardens
+The Tuileries Gardens, designed in the formal French style by André Le Nôtre in the 17th century, predate the Louvre’s transformation into a museum and have served as a stage for both royal ceremonies and revolutionary gatherings. The gardens were opened to the public in 1667, marking one of the earliest examples of public urban parks in Europe. (Wikimedia Commons, 1867)
+
+Tuileries Gardens, Afternoon, Sun (1900) by Camille Pissarro, oil on canvas, 73 x 92 cm, Israel Museum. Public domain, via Wikimedia Commons
+
+Octagonal basin in the Jardin des Tuileries in the 1st arrondissement of Paris, France. Moonik, CC BY-SA 3.0, via Wikimedia Commons 
+
+
+
+
+Champ de Mars
+The Champ de Mars, originally a military parade ground in the 18th century, later became the site of monumental exhibitions such as the 1889 World’s Fair, which introduced the Eiffel Tower to the world. (Bibliothèque Historique de la Ville de Paris, 1910)
+
+The young Second French Republic celebrates the “Festival of Concord” (Fête de la Concorde) on May 21, 1848. Professional associations arrive at the Champ-de-Mars. Jules Gaildrau, Public domain, via Wikimedia Commons
+
+Panorama of the Champs de Mars taken from the Eiffel Tower, Paris. In the distance, you can see the Tour Montparnasse, while the building on the left is the Hôtel des Invalides. Diliff, edited by Fir0002, CC BY-SA 3.0, via Wikimedia Commons 
+
+
+
+
+Jardin des Plantes
+The Jardin des Plantes, created by order of Louis XIII, includes the National Museum of Natural History, the Grande Galerie de l’Évolution, the large greenhouses, specialised gardens, and the labyrinth. It is proposed to also include the Museum’s buildings and gardens, whose grand perspective, laid out during the Ancien Régime, symbolizes, through the clarity of its composition adjacent to the Seine, the permanence and ambition of a scientific approach, with the extension limited to the boundaries of the garden’s fences: Rue Cuvier, Rue Geoffroy Saint-Hilaire, and Rue Buffon. (Paris Musées)
+
+Port Saint-Bernard and Quai Saint-Bernard (including Jardin Tino Rossi)
+These historic riverfront areas highlight Paris’s connection to the Seine, serving as hubs for commercial activity and urban transit. They reflect the city’s long history of integrating its waterways into the urban landscape (Miller, 2008).
+
+View of the quay and the Porte Saint Bernard, Silvestre, Israel (Nancy, 03–08–1621 - Paris, 11–10–1691), designer, CC0, via Wikimedia Commons
+
+
+
+
+Place des Martyrs Juifs du Vélodrome d’Hiver and Port Suffren.
+This commemorative square honours the memory of Jewish martyrs associated with the Vélodrome d’Hiver during World War II, serving as a poignant reminder of Paris’s turbulent history during the Nazi occupation (Kershaw, 2001).
+
+
+
+
+
+Squares and civic places
+The city’s squares, including Place de la Concorde and Place des Vosges, are vibrant public spaces that host markets, celebrations, and protests, reflecting Paris’s civic and cultural life. Together, the bridges, gardens, and squares form a cohesive network that embodies the city’s history, resilience, and dynamic character.
+
+
+
+
+
+Place de la Concorde
+
+The Place de la Concorde and the view toward Les Invalides have influenced the urban development of European capitals
+Joint World Heritage Centre / ICOMOS / ICCROM Advisory Mission Report (2022), p. 37
+
+The Place de la Concorde, the last of the five royal squares laid out in Paris and born from the initiative of the city and its leaders, has remained the largest of all Parisian squares to this day. First dedicated to Louis XV, then to the Revolution, before being consecrated to restored concord, it encapsulates the history of Paris as much as it belongs to the history of France. Designed by Ange-Jacques Gabriel in the 18th century and later redesigned by Jacques Ignace Hittorff in the 19th century, it is one of the most emblematic squares in Paris, renowned for its expansive classical layout and its central role in national celebrations. Over time, the square has become a vibrant site for gatherings and public festivities. On Bastille Day, it comes alive with light shows, fireworks, and performances celebrating French pride. In 1944, it was the heart of the Liberation festivities, as Parisians came together in a powerful moment of unity after years of occupation. Today, Place de la Concorde remains a major stage for public events, linking its historic past to its contemporary role as a symbol of collective life and national identity.
+
+Concordia Square, created in honour of Louis XV. In the foreground, the Fountain of the Rivers, the Egyptian obelisk decorated with hieroglyphics celebrating the reign of Pharaoh Ramses III, in the background, the Fountain of the Seas.
+
+
+
+
+Place Saint-Michel and Fontaine Saint-Michel (1858-1860)
+A key Haussmannian composition by architect Gabriel Davioud, 1858-1860. The Place Saint-Michel is a historic public square in the Latin Quarter of Paris that marks the meeting point between the 5th and 6th arrondissements along the left bank of the Seine and serves as a gateway to the Île de la Cité via the nearby Pont Saint-Michel. (Alessandri, 2012)
+
+Print shows a view of the Fontaine Saint-Michel and the boulevard with pedestrians and horse-drawn carriages. Library of Congress Prints and Photographs Division Washington, D.C. 20540
+
+
+
+
+Expansion of the protected Esplanade des Invalides
+The recent expansion reflects efforts to modernise and enlarge historic military memorial spaces, integrating contemporary design with the monumentality of the Invalides complex (Chevallier, 2004).
+
+
+
+Place du Châtelet
+Located at the intersection of the city’s major historic axes, the grand Haussmann-era central composition of Place du Châtelet (including the Sarah Bernhardt and Châtelet theatres, the Tour Saint-Jacques, Avenue Victoria, and the Quai de Grève and Quai de la Mégisserie) is a lively public square that links historic architecture with modern cultural venues, illustrating the dynamic urban evolution of Paris (Babelon, 1989; Davis, 1999). 
+
+Place Dauphine
+A small, tranquil garden square, Square René Viviani offers a respite from urban bustle. Its design reflects early 20th‑century initiatives to incorporate green public spaces within dense city environments (Dussault, 1997). 
+
+Place Dauphine in autumn. Photo by Jean françois bonachera, CC BY-NC-ND 2.0
+
+
+
+
+Rond-Point des Champs-Élysées (1860)
+This circular junction is integral to the design of the Champs‑Élysées, providing a geometric counterpoint to the avenue’s linearity and contributing to the overall coherence of Paris’s urban planning (Fraser, 2002). 
+
+Square René Viviani
+Named after the French statesman René Viviani, this small, tranquil garden square exemplifies early 20th‑century Parisian public space design. Its design reflects broader urban planning trends that aimed to incorporate green spaces into the dense urban environment, thereby enhancing community interaction and quality of life. (Frantz, 2003).
+
+Square René Viviani from Notre-Dame de Paris. Shadowgate from Novara, ITALY, CC BY 2.0, via Wikimedia Commons
+
+
+
+
+
+Street Patterns
+The Haussmannian urban plan, implemented under the direction of Napoleon III and Baron Haussmann in the mid‑19th century, reconfigured the urban layout of Paris by replacing a network of narrow medieval streets with long, straight boulevards. These broad avenues were designed to facilitate circulation, improve sanitary conditions, and provide clear lines of sight, resulting in a more regular urban layout. Key nodes, such as Place de l’Étoile, with the Arc de Triomphe, and Place de la Bastille, Bibliothèque nationale de France, function as radial intersections that structure the city’s network and symbolise the modernity and grandeur of Paris (Babelon, 1989).
+
+New Paris. - General view of the Etoile roundabout from The Star and the Arc de Triomphe, drawing by M. Bertrand. - See page 610.
+Moreover, many of these boulevards trace the routes of former defensive walls, including the Mur des Fermiers Généraux, which originally demarcated the city’s limits. This reappropriation of historical boundaries not only facilitated urban expansion but also played a pivotal role in defining the modern arrondissement layout of Paris (Chevallier, 2004; Fraser, 2002).
+Bridges and River Edge
+Pont Neuf
+The Pont Neuf is the oldest standing bridge across the Seine River in Paris, completed in 1607 under the reign of King Henry IV. Despite its name, it’s an iconic landmark in the heart of the city, admired for its Renaissance-style architecture and historic significance. The bridge was revolutionary for its time, being the first in Paris to be built without houses lining its edges, offering open walkways with views of the Seine. Spanning the western tip of the Île de la Cité, it has become a symbol of Parisian heritage, featuring 381 stone masks carved along its sides and a statue of Henry IV that honours the king who initiated its construction (Christo and Jeanne-Claude Foundation, 1985) 
+
+Pont Neuf in 1615. Detail of Mérian’s plan. Mérian, Public domain, via Wikimedia Commons 
+Pont Alexandre III
+An Art Nouveau masterpiece, symbolising Franco-Russian relations, The Pont Alexandre III, inaugurated in 1900 for the Paris Exposition Universelle, spans the Seine and connects the Champs-Élysées to the Invalides. It is renowned for its ornate Art Nouveau design, featuring elaborate sculptures, gilded statues, and intricate ironwork. Dedicated to Franco-Russian friendship, it was named after Tsar Alexander III and symbolises the alliance between France and Russia in the late 19th century. (Georges Souillet,1900)
+Pont de Bir-Hakeim (1905) 
+This modern bridge features a two-tiered structure that blends engineering efficiency with elegant design, offering sweeping views of the Seine and the Eiffel Tower. (Wilson, 1996).
+
+Eiffel Tower and Pont de Bir-Hakeim as seen from a bateaux mouche, Paris.Shadowgate from Novara, ITALY, CC BY 2.0, via Wikimedia Commons
+Île aux Cygnes and Statue of Liberty
+On the Île aux Cygnes, visitors find a smaller replica of the Statue of Liberty, a gift symbolising Franco‑American friendship, set amid an artificial island that enhances the scenic quality of the Seine (Fraser, 2002).
+City Walls
+Remains of the Wall of Philippe Auguste
+Visible at multiple locations, marking medieval fortifications.
+
+
+Under the Louvre Museum lies a large section of the Wall of Philippe Auguste (Wikimedia Commons, 2007)
+
+
+Segments of the Wall of Philippe Auguste, here shown, serve as a backdrop for a playground and multi-purpose recreational space in Rue des Jardins Saint-Paul in Paris. (Wikimedia Commons, 2007)
+
+
+A segment of the Wall of Philippe Auguste, here shown, lies in the parking Mazarine, rue de l’Ancienne-Comédie (Wikimedia Commons 2005)
+
+
+Historical Role of the Seine’s Edge 
+The banks of the Seine have played a central role in the urban, economic, and political history of Paris, serving as a hub for trade, transportation, and cultural exchange since antiquity. By the medieval period, the riverbanks were vital for commerce, with port activities and markets shaping the city's development (Schnakenbourg, 2010).
+In the 19th century, Haussmann’s urban reforms transformed the Seine’s embankments into structured quays, reinforcing their function as both infrastructural and symbolic spaces (Jordan, 2004). Today, they remain a UNESCO World Heritage site, reflecting their enduring historical significance. The edge of the Seine is defined by two main typologies: vertical walls, designed to facilitate boat mooring, and sloped embankments, known as Perrés, which do not serve this function.
+
+
+
+Section Through Diagonal Edges (Or Perrés) Of The Seine. APUR (Atelier Parisien d'Urbanism) 2022.
+
+
+
+
+Section Through Vertical Edges (murs verticaux) Of The Seine that facilitate boat mooring. APUR (Atelier Parisien d'Urbanism) 2022.
+
+
+
+Transportation and Infrastructure
+Gare d’Austerlitz (1862-1867) 
+Gare d’Austerlitz or Viaduc d’Austerlitz, one of Paris’s historic railway stations with an elevated railway viaduct (bridge), highlights the impact of 19th-century industrial expansion on Paris’s urban mobility and architecture. As a key element of the city’s transportation network, it not only facilitated the integration into national and international rail systems but also exemplifies the adaptation of industrial engineering to urban aesthetics.
+Austerlitz Metro Station is in the PO train station. Photo from 1906, public domain
+
+Interactive mapping
+Use the interactive mapping tool to explore the different layers that compose Paris's urban heritage. Browse through the tabs to navigate through the different scales of the city and the attributes of its urban heritage identity. Expand the legend in the bottom corner to discover more. Click on the icons to open pop-ups and learn more about the different elements.
+Launch full screen
+
+
+
+
+
+
+
+
+Distinctive character of the wider context
+
+"Paris developed in concentric growth rings, with the Seine always acting as its core organizing element." -SOUV
+
+Urban Development and Morphology
+The city of Paris has expanded significantly since its foundation as a small settlement on the Île de la Cité during the Roman era. Over centuries, it grew outward in concentric rings, annexing surrounding villages and suburbs, particularly during the 19th century under Baron Haussmann’s urban transformations, which modernised its infrastructure, redefining the urban landscape with wide boulevards and uniform facades and solidifying its status as a metropolis.
+The maps attempt to illustrate the growth of Paris and show historical changes until the date of publication.
+
+The eight-map series from Traité de la police (Treatise on the Police) represents one of the earliest attempts to illustrate historical change through cartography, depicting Paris’s development from Roman times to 1705, the year of publication.
+
+
+By the 19th century, critics had identified numerous historical inaccuracies in the maps from Traité de la police. This four-volume work on urban administration, authored by Paris magistrate Nicolas de La Mare (1639–1723), is regarded as a foundational text in the field. The first volume, published in 1705, included eight maps supporting discussions on the city’s historical plans. Subsequent volumes were released in 1710, 1719, and 1738. These maps gained popularity and were frequently reproduced. Around 1715, cartographer de Fer is believed to have reproduced and published the entire series under his name, resulting in some confusion over authorship. By the 19th century, the maps were described by critics as “fanciful” and “imaginary” due to their numerous inaccuracies.
+
+
+
+Map of Paris in the early 18th century by Antoine Coquart, Le Mare and Nicolas de Fer. Title: "Huitième Plan de Paris Divisé en ses Vingts Quartiers" (Translation: Eighth plan of Paris divided into its twenty boroughs). The orientation of the map is north top. The scale is 1:9.500, the physical size of the map is 55x44 cm. Geo-referenced map from the collection of the Bibliothèque historique de la Ville de Paris (Salle de lecture - carte, plan, atlas) (open access).
+Map 2 shows the situation after the floods of 1740. A flood closely monitored by renowned hydrologist Philippe Buache.
+
+The flood drew significant attention among Parisians. In response, the Academy of Sciences appointed hydrologist Philippe Buache to oversee its monitoring and track its progression. Accompanied by assistants, he navigated the city, measuring water levels daily at multiple locations. Drawing on these measurements, Buache produced a detailed map of the flooded areas. Beyond marking where the river had overflowed, the map also identified zones affected by underground flooding and those submerged due to sewer blockages. In his observations, Buache highlighted that water levels varied along different sections of the river within Paris.
+
+
+The water levels tended to rise more significantly along the right bank, due to the slightly higher elevation of the left bank. Additionally, the forces acting on the river during a flood differ from those present under normal conditions.
+
+
+
+Map of Paris in ca. 1740 by Philippe Buache. The orientation of the map is north top. The physical size of the map is 20.5x27.5 cm. Plan du cours de la Seine dans la traversée de Paris relatif aux observations faites (translation: Map of the course of the Seine as it flows through Paris, based on the observations of the author) from the collection of the National Library of France, department of Maps and Plans.
+
+
+The historic evolution of Paris can be traced through its riverbanks, linking landmarks from different eras in a continuous visual and spatial narrative.
+
+
+Influence of the Seine’s Geography – Urban expansion followed the natural contours of the river. The Seine plays a central role in shaping Paris’s identity, serving as a historic and cultural artery. 
+
+
+Haussmann’s Urban Plan – Haussmann’s redesign modernised Paris through strategic demolition and reconstruction, introducing a new urban aesthetic by introducing wide boulevards and squares that influenced urban planning globally.
+
+
+Montmartre’s Southern Slopes – Important for panoramic views and part of the buffer zone.
+
+
+Urban Expansion and Buffer Zone:
+The buffer zone of the World Heritage property Paris, Banks of Seine (France) now extends to 3,157 ha, incorporating more viewpoints of the Seine. It aligns with historical city growth rings, including remnants of the Fermiers Généraux wall, Montmartre’s southern slopes that preserve long-distance views and integration of administrative and cultural quarters like the Morland administrative centre and Bibliothèque de l’Arsenal.
+Landforms and Natural Features
+Paris is shaped by key natural features, most notably the Seine River, which bisects the city and has historically influenced its settlement and development. The city's topography is also marked by prominent hills, such as Montmartre (130m) and Belleville (128m), which have played strategic and cultural roles since antiquity (Pinchemel, 1988). Additionally, the Bièvre River, now mostly covered, once contributed to the city's hydrology and industrial activity (Clout, 2005). These landforms continue to shape Paris’s urban landscape and historical identity.
+
+Map of Paris and the department of the Seine, including: the old walls of Paris, the layout of the aqueducts: Roman of Auteuil, Roman of Arcueil, Arcueil (Marie de Médicis), Pré Saint - Gervais, Belleville, the distribution of ancient waters, the old public fountains, the arrival in Paris of the Ourcq canal, the Dhuis aqueduct, the Vanne aqueduct, the Ceinture aqueduct, the discharge pipes of the machines and the reservoirs, the distribution of the Boulogne and Vincennes woods. Eugene Belgrand, CC0, via Wikimedia Commons
+ 
+Mobility and Transportation Networks
+Paris has historically served as the political and economic centre of the Île-de-France region, maintaining extensive connections with surrounding settlements through trade, infrastructure, and governance. The city’s influence traditionally extended via river transport along the Seine and its tributaries, linking it to towns such as Rouen and Meaux (Bourillon, 2005). The development of road and rail networks, particularly the Grand Ceinture and RER systems, has further integrated suburban centres like Versailles and Saint-Denis into the metropolitan area, reinforcing Paris’s central role within Île-de-France. (Zembri, 2013).
+Urban Views and Vistas
+Paris features carefully planned vistas and historic infrastructure that extend its visual and spatial influence across the wider Île-de-France region. The city’s axial alignments, such as the Voie Triomphale, linking the Louvre, Champs-Élysées, Arc de Triomphe, and La Défense, illustrate a longstanding practice of controlled urban perspectives. (Choay, 1992). Beyond the city, large-scale infrastructures such as the aqueducts of Arcueil and the historic road networks connecting to sites like Versailles and Fontainebleau illustrate the spatial integration of Paris within the wider context and its historical patterns of regional planning. (Roche, 2000).
+Intangible heritage dimension
+
+"The Seine is not just a physical space but a living cultural corridor, where traditions like the bouquinistes persist across centuries."
+UNESCO World Heritage Nomination Dossiers 600 (1991) 
+
+Traditional Crafts
+Know-how of Parisian roofers–zinc workers and ornamentalists
+Paris is home to several traditions that reflect the richness of its cultural and craft heritage, including one that was inscribed on UNESCO’s Representative List of the Intangible Cultural Heritage of Humanity in 2024. This refers to the know-how of roofers–zinc workers (couvreurs-zingueurs) and ornamentalists (ornemanistes), who have played a fundamental role in shaping the city’s rooftops. Roofers–zinc workers specialize in producing the blue-grey roofs that have become a hallmark of Paris work, which requires highly skilled techniques to ensure durability, insulation, and aesthetic harmony. Ornamentalists add intricate details to façades and other architectural elements, combining artistry wit
+[showing lines 1-745 of 1307 (last line cut); full output saved to /tmp/opencode/plan0113/smoke/kanatami-house-capital-smoke/data/opencode/tool-output/tool_220102504001kQluo6amd6l5zj]

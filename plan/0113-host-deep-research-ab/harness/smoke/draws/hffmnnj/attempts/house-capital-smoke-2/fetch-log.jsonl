@@ -1,0 +1,2 @@
+{"url": "https://en.wikipedia.org/api/rest_v1/page/summary/Paris", "status": 200, "snapshot": "snapshots/main-1.txt"}
+{"url": "https://en.wikipedia.org/api/rest_v1/page/summary/Seine", "status": 200, "snapshot": "snapshots/main-2.txt"}

@@ -1,31 +1,356 @@
-### Official / institutional
-1. FranceTerme, Ministère de la Culture — "France (la)", *J.O.* 24/09/2008 — https://www.culture.fr/franceterme/terme/AFET263
-2. Arrêté du 4 novembre 1993 relatif à la terminologie des noms d'États et de capitales, *J.O.* 25/01/1994 pp. 1288–1295 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000181509 (403; via index)
-3. Ordonnance n° 58-1100 du 17 novembre 1958, art. 1 — https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006530034
-4. Conseil constitutionnel — Constitution de 1875, IIIe République — https://www.conseil-constitutionnel.fr/les-constitutions-dans-l-histoire/constitution-de-1875-iiie-republique
-5. SANDRE / OFB / eaufrance — "La Seine", code `----0010` — via https://web.archive.org/web/20210123171121/http://www.sandre.eaufrance.fr/geo/CoursEau/----0010
-6. Eaufrance — "Les rivières" — https://www.eaufrance.fr/les-rivieres
-7. Ministère de l'Intérieur, Formation civique — "Les fleuves français" (map: IGN 2012) — https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-français/
-8. HydroPortail / Vigicrues — station F700 0001 03 "La Seine à Paris – Austerlitz", data calculated 27/11/2026 — https://www.hydro.eaufrance.fr/stationhydro/F700000103/synthese
-9. Agence de l'Eau Seine-Normandie — "Le bassin de la Seine" — https://www.eau-seine-normandie.fr/agence-de-leau/le-bassin-de-la-seine
-10. UNESCO World Heritage Centre — "Paris, Banks of the Seine" (dossier 600bis) — https://whc.unesco.org/en/list/600/
-11. UNESCO — Décision 46 COM 8B.39 (2024) — https://whc.unesco.org/fr/decisions/8631/
-12. ICOMOS evaluation WHC/24/46.COM/INF.8B1.Add — https://whc.unesco.org/document/208528
-13. Ville de Paris — "Paris et ses ponts, toute une histoire" — https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466
-14. Ville de Paris — "La Seine, cœur battant de Paris" — https://www.paris.fr/dossiers/la-seine-coeur-battant-de-paris-216
-15. Ville de Paris — "Crues" / "Le Zouave, baromètre de la montée des eaux" — https://www.paris.fr/pages/crues-5472
-16. Ville de Paris — "Les canaux de Paris" (updated 26/11/2026) — https://www.paris.fr/pages/tmp-canaux-7834
-17. Ville de Paris — "Les secrets enfouis de la Bièvre, rivière parisienne" — https://www.paris.fr/pages/les-secrets-enfouis-de-la-bievre-riviere-parisienne-16900
-18. Ville de Paris — "La Seine s'ouvre à la baignade" / "Baignade en Seine : toutes les questions" — https://www.paris.fr/pages/baignade-en-seine-toutes-les-questions-que-vous-vous-posez-31533
-19. Ville de Paris — Eau de Paris, *Bulletin qualité de l'eau de la Seine*, Aug 2026 — https://cdn.paris.fr/paris/2026-10-02/bulletin-qualite-eau-seine-2026-08-smy5.pdf
-20. DRIEAT Île-de-France / Préfecture — Dossier de presse "Plan Baignade", Aug 2024 — https://www.prefectures-regions.gouv.fr/ile-de-france/...
-21. Cour des comptes / CRC Île-de-France — IDR2025-51, délibéré 22/07/2025 — https://www.ccomptes.fr/sites/default/files/2025-11/IDR2025-51_0.pdf
-22. Paris & Métropole Aménagement — "La Bièvre (Paris 13e)" — https://www.parisetmetropole-amenagement.fr/fr/bievre-paris-13e
-23. SMBVB — Syndicat Mixte du Bassin Versant de la Bièvre, "Historique" — https://www.smbvb.fr/la-bievre/historique/
-24. Château de Versailles (public establishment) — "Versailles, 'capital' of the kingdom, 1682" — https://en.chateauversailles.fr/discover/history/key-dates/versailles-capital-kingdom-1682
-25. BnF, Essentiels — "De Lutèce à la capitale" — https://essentiels.bnf.fr/...
-26. BnF Gallica — "L'histoire tourmentée d'une rivière : quand la Bièvre disparaît" — https://gallica.bnf.fr/accueil/fr/html/lhistoire-tourmentee-dune-riviere-quand-la-bievre-disparait
-27. European Union — "France", EU member state overview — https://european-union.europa.eu/principles-countries-history/eu-countries/france_en
-28. Council of Europe, Intercultural Cities — "Paris, France" — https://www.coe.int/en/web/interculturalcities/paris
-29. Archives nationales d'outre-mer — "Paris (France)" — http://anom.archivesnationales.culture.gouv.fr/geo.php?...
-30. European Commission JRC — "FACT SHEET: Seine River Basin" — https://water.jrc.ec.europa.eu/pdf/seine-fs.pdf
+France: Arr�t� du 14 novembre 1993 
+
+
+
+
+
+  
+  
+    
+      
+      
+      
+      
+
+
+
+
+R�publique
+fran�aise
+
+      
+
+
+      
+
+
+
+
+
+
+
+
+									Arr�t� du 4 novembre 1993 
+
+relatif � 
+									la terminologie des noms d'�tats et de 
+									capitales  
+
+									
+									
+								
+
+									(Version consolid�e au 13 d�cembre 1998 
+								)
+    
+  
+  
+
+
+
+
+
+
+	
+		L'arr�t� du 4 novembre 1993 (Journal officiel du 25 janvier 1994), 
+		aussi appel� �arr�t� Jupp�, est 
+	reproduit dans le Dictionnaire des termes officiels de la langue 
+	fran�aise �dit� par le Journal officiel. La pr�sente page ne contient pas la 
+	liste annex�e � l'arr�t�; il faut parcourir la page suivante pour lire la 
+		liste annex�e: 
+		
+		Liste annex�e � 
+						l'arr�t� du 4 novembre 1993. 
+		
+	
+	
+
+
+
+
+	
+		
+			
+			
+				
+					
+						
+							
+								
+									 
+										Le ministre des Affaires �trang�res et 
+										le ministre de l'�ducation nationale,
+										
+										
+											Vu la loi no 75-1349 du 31 d�cembre 
+										1975 relative � l'emploi de la langue 
+										fran�aise ;  
+											Vu le d�cret no 86-439 du 11 mars 
+										1986 relatif � l'enrichissement de la 
+										langue fran�aise ;  
+											Vu le d�cret no 89-403 du 2 juin 1989 
+										instituant un Conseil sup�rieur de la 
+										langue fran�aise et une D�l�gation 
+										g�n�rale � la langue fran�aise ;  
+											Vu l'arr�t� du 5 septembre 1990 
+										portant cr�ation de la commission de 
+										terminologie du minist�re des Affaires 
+										�trang�res ;  
+										
+										Sur proposition de ladite commission 
+										;  
+										
+											Apr�s avis favorable de la D�l�gation 
+										g�n�rale � la langue fran�aise et du 
+										Conseil international de la langue 
+										fran�aise, 
+ 
+										
+										
+									
+									
+									
+									
+										
+										
+										
+											
+												
+												Article 1er
+											
+											La forme et l'orthographe des 
+											noms d'�tats et de capitales 
+											inscrits sur la liste annex�e au 
+											pr�sent arr�t� sont recommand�es.
+											
+										
+										
+										
+										
+										
+											
+												Article 2
+											Les principes retenus par la 
+											commission pour le choix des formes 
+											recommand�es sont les suivants : 
+											 
+											
+											1)  
+											La forme recommand�e pour la 
+											d�signation des pays et des 
+											capitales est la forme fran�aise 
+											(exonyme) existant du fait de 
+											traditions culturelles ou 
+											historiques francophones �tablies.
+											
+											
+											
+											2) En l'absence d'exonyme 
+											fran�ais attest�, on emploiera la 
+											forme locale actuellement en usage.
+											
+											
+											Pour les pays qui n'utilisent pas 
+											l'alphabet latin, la graphie 
+											recommand�e est celle qui r�sulte 
+											d'une translitt�ration ou d'une 
+											transcription en caract�res latins, 
+											conforme � la phon�tique fran�aise.
+											
+											
+											
+											3) Les noms de pays et de villes 
+											�tant des noms propres, il est 
+											recommand� de respecter la graphie 
+											locale en usage, translitt�r�e ou 
+											non. On ne portera cependant pas les 
+											signes diacritiques particuliers 
+											s'ils n'existent pas dans l'�criture 
+											du fran�ais.  
+											Quand la graphie locale d'un nom 
+											de pays ou de capitale, utilis�e en 
+											fran�ais, ne comporte pas d'accent 
+											sur des "e" prononc�s "�" ou "�", cette graphie sera conserv�e en 
+											fran�ais sans accent ; en revanche, 
+											les adjectifs et noms d�riv�s seront 
+											normalement accentu�s en "�" ou "�" (ex. : "Venezuela", mais "V�n�zu�lien"). 
+											 
+											
+											4) L'emploi des traits d'union 
+											dans les noms compos�s de pays et de 
+											capitales ob�it aux principes 
+											suivants :  
+											
+												lorsqu'on utilise en fran�ais le 
+											nom local, la graphie locale est 
+											conserv�e, en g�n�ral sans trait 
+											d'union ;  
+												lorsqu'il existe un exonyme 
+											fran�ais :  
+												on portera un trait d'union entre 
+											les composants juxtapos�s, apr�s un 
+											adjectif, apr�s le mot "Saint" et 
+											avant et apr�s la conjonction "et" 
+											indiquant que plusieurs entit�s 
+											constituent un seul �tat ;  
+												on ne portera pas de trait 
+											d'union apr�s un article ni devant 
+											un adjectif. En vertu de l'usage, le 
+											trait d'union sera maintenu pour les 
+											quatre pays suivants : Cap-Vert, 
+												�tats-Unis, Pays-Bas et Royaume-Uni.
+												
+												
+											
+											
+											5) Lorsqu'un �tat est constitu� 
+											par une �le ou un archipel et que 
+											l'usage n'en a pas fix� le genre, de 
+											mani�re apparente ou non, il est 
+											recommand� d'utiliser le f�minin, 
+											singulier ou pluriel selon le cas 
+											(ex. : Madagascar, Maurice, les 
+											Fidji).  
+											
+											6)  
+											Lorsqu'il existe plusieurs 
+											villes ayant rang de capitale, celle 
+											qui est indiqu�e en priorit� est le 
+											si�ge actuel du gouvernement et/ou 
+											des repr�sentations �trang�res. 
+											 
+											
+											7) La forme recommand�e pour la 
+											d�signation des habitants et les 
+											adjectifs d�riv�s des noms de pays, 
+											appel�s � �tre adopt�s pour leur 
+											usage dans la langue fran�aise, se 
+											conforme le plus possible aux r�gles 
+											de morphologie, d'orthographe et de 
+											prononciation du fran�ais, 
+											permettant de marquer les variations 
+											en genre et en nombre. Il convient 
+											de noter qu'il n'a pas toujours �t� 
+											possible de faire figurer de nom 
+											recommand� pour les habitants de 
+											certaines capitales, en raison de 
+											l'absence d'usage fran�ais ou 
+											francophone en la mati�re. 
+											 
+											
+											8) L'adjectif de nationalit� est 
+											identique au nom des habitants. La 
+											Suisse fait exception � cette r�gle 
+											(nom f�minin : "Suissesse", 
+											adjectif f�minin : "suisse").
+											
+											
+											
+											9) L'adjectif de nationalit� 
+											s'�crit sans majuscule. 
+											 
+											
+											10)  
+											Des variantes sont 
+											mentionn�es dans les principaux cas 
+											de divergences avec les formes 
+											recommand�es par d'autres 
+											institutions publiant des listes 
+											analogues (particuli�rement O.N.U., 
+											A.F.N.O.R., I.N.S.E.E., I.G.N.). 
+										
+										
+										
+										
+										
+										
+											
+												Article 3
+											
+											L'arr�t� du 14 octobre 1985 
+											relatif � la terminologie des noms 
+											d'�tats et de capitales est abrog�.
+											
+										
+										
+										
+										
+										
+											
+												
+												Article 4 (abrog� au 13 d�cembre 
+												1998)
+											Le pr�sent arr�t� sera publi� au 
+											Journal officiel de la R�publique 
+											fran�aise.  
+											Fait � Paris, le 4 novembre 1993.
+											
+											Article Annexe
+											
+											[Tableau non 
+											reproduit. 
+											Voir Journal officiel 
+											de la R�publique fran�aise du 25 
+											janvier 1994 p. 1288.]
+									
+										
+										
+											Le ministre des Affaires 
+										�trang�res,  
+											ALAIN JUPP� 
+											 
+											Le ministre de l'�ducation nationale,
+											
+											
+											FRAN�OIS BAYROU 
+											 
+										
+									 
+								
+							
+						
+					
+				
+			
+			
+		
+	
+
+
+
+    
+    
+
+  
+  
+    
+      
+      
+      
+      
+      Page pr�c�dente 
+      
+    
+  
+  
+
+ 
+
+
+France
+
+ 
+
+
+
+  
+  
+    
+      
+       
+      
+      
+      
+      
+      Accueil: am�nagement linguistique dans le 
+      monde

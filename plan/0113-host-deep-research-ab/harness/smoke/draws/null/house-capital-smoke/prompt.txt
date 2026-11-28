@@ -1,7 +1,8 @@
 # The null arm's frozen prompt
 
-Research the question in the task file with the harness's built-in `websearch`
-and `webfetch` tools. Return exactly two files in the output directory:
+Research the question in the task file `task.json` in the current working
+directory with the harness's built-in `websearch` and `webfetch` tools. Return
+exactly two files in the current working directory:
 
 - `report.md`: a Markdown report. Put the source URL beside every cited
   sentence.

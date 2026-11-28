@@ -15,18 +15,20 @@
     "max_output_tokens": 524288
   },
   "search_provider": "exa",
+  "native_search": [],
+  "arm_options": {},
   "budget": {
     "caps": {
-      "prompt_tokens": 200000,
-      "completion_tokens": 50000,
+      "prompt_tokens": 300000,
+      "completion_tokens": 100000,
       "tool_calls": 60,
       "wall_seconds": 10800
     },
     "used": {
-      "prompt_tokens": 135585,
-      "completion_tokens": 8492,
-      "tool_calls": 33,
-      "wall_seconds": 5021.9
+      "prompt_tokens": 45360,
+      "completion_tokens": 2272,
+      "tool_calls": 12,
+      "wall_seconds": 238.9
     }
   },
   "config_digests": {
@@ -34,6 +36,7 @@
     "harness_pin": "c2c6f5eae1741fa4bcee1f5c4aa4025b4ac4fbdec8268bd721a4638247680208",
     "model_pin": "f4d8b9a05eb22c1945487aff5cd66b2ffd2680fe619c5d4982022d5e819a386b",
     "arm_config": "b39279b63585ccf09bfd6ceb44ae7de8dba0f4415ecd327a8cf1b79c12e2f251",
-    "prompt": "334e637dd1744f9e2dd5516c25397a268603f42ab48816a91d0636d7e9fe9348"
+    "prompt": "97157f7601b5324a551f3cd3ea1f210641027a85cec40cd3f8236f0506eb7e32",
+    "replies": "97bc1da4ad8c26d5c8bf5403674fe926362e8e4405f85e224b8ce73fb8f5d462"
   }
 }

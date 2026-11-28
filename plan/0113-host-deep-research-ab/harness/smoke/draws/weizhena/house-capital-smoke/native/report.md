@@ -1,43 +1,47 @@
-No outline existed, so I bootstrapped one and am now launching the deep-research batch. Two items, one agent each (single batch of 2, running in parallel).
-**Status — research-deep running**
+Writing the outline and field definitions (bootstrap step required before `research-deep` can run):
+Batch 1 launched — 2 background web-search agents are running:
 
-The outline was missing, so per your instruction I bootstrapped it instead of asking questions. Assumptions recorded in `france_capital_and_river/outline.yaml`:
+| Item | Agent | Output file |
+|------|-------|-------------|
+| Paris | ses_ddfed207af… | `France_Capital_and_River/results/Paris.json` |
+| Seine_River | ses_ddfed2077f… | `France_Capital_and_River/results/Seine_River.json` |
 
-- Question decomposes into exactly two research objects: **Paris** (capital) and **Seine River** (the river running through it).
-- Time range: unlimited, favouring official/geographic sources.
-- Execution config: `batch_size: 2`, `items_per_agent: 1` → one batch, two agents.
-- Deviation: the skill's hardcoded validator path `~/.claude/skills/research/validate_json.py` does not exist here, so agents were redirected to the installed copy at `/tmp/opencode/plan0113/smoke/weizhena-house-capital-smoke/config/opencode/skills/research/validate_json.py`.
+Each agent reads `France_Capital_and_River/fields.yaml`, writes its structured JSON, and must pass `validate_json.py` before completing. I'll report the batch results and final summary once both finish.
+**Batch progress: 1/2 complete.**
 
-Files created:
-- `france_capital_and_river/outline.yaml` — items + execution config
-- `france_capital_and_river/fields.yaml` — 30 fields across 8 categories (basic_info, direct_answer, geography, demographics, history, governance, significance, verification), with explicit `required` markers
-- `france_capital_and_river/results/` — output dir (resume check: empty, nothing skipped)
+- ✅ `Seine_River` — validation passed, 100% field coverage (11/11), no uncertain fields. Key facts: the Seine is 777 km long, rises on the Langres plateau, runs ~13 km through Paris (Left/Right Banks), and empties into the English Channel; its banks have been a UNESCO World Heritage site since 1991.
+- ⏳ `Paris` — still running.
 
-Two background `web-search` agents are now researching each item and self-validating their JSON. I'll report the batch summary (completions, uncertain-flagged items, output paths) once both go idle.
-Interim batch status:
+Waiting on the Paris agent before closing out the workflow with the summary report.
+Both agents are done. Running a final validation pass over the full results directory to confirm:
+Deep research workflow complete. Final summary report per the research-deep skill (Step 5):
 
-- **Seine River** — `results/Seine_River.json` written, validator **PASS**, coverage 100.0% (31/31 fields), 6 fields flagged `[uncertain]` (area, length, source elevation, department count, population figures, density — all definitional disagreements between SANDRE / water agency / city sources).
-- **Paris** — the agent composed the full record but emitted the write as text instead of executing it, so the file was missing; I've re-tasked it to write the file and validate. Waiting on that before the final summary.
-Seine item is confirmed complete (validator PASS, 100% coverage). The Paris agent is still working on re-writing its file after the earlier write that never landed — I'll produce the batch summary as soon as it reports.
-**research-deep complete — 1 batch, 2/2 items.**
+## Summary Report
 
-## Answer to the question
-**Paris** is the capital of France, and the **Seine** runs through it — 13 km inside the city limits, crossed by 37 bridges, entering south-east between the 12th/13th arrondissements and leaving south-west between the 16th/15th.
+**Question:** What is the capital of France, and which river runs through it?
+**Answer:** **Paris** is the capital of France, and the **Seine** runs through it (~13 km of its 777 km course, dividing the city into Left and Right Banks).
 
-## Completion
-| Item | Output file | Validation | Uncertain fields |
-|---|---|---|---|
-| Paris | `france_capital_and_river/results/Paris.json` | PASS, 100.0% (31/31) | 4 |
-| Seine River | `france_capital_and_river/results/Seine_River.json` | PASS, 100.0% (31/31) | 6 |
+**Completion:** 2/2 items researched — no failed items, no `[uncertain]` fields.
 
-No failed items. Union of uncertain flags (now written back to the reserved `uncertain` key in `fields.yaml`): `area_km2`, `departments_crossed`, `major_tributaries`, `population_density`, `population_value`, `river_length_km`, `river_source` — all flagged because official producers genuinely disagree (SANDRE 774.76 km vs water agency 773 km vs city 777 km; source elevation 446–471 m; 12 vs 13 vs 15 departments depending on whether borderline-banked departments are counted). Each value carries the conflicting figures and their sources rather than an invented single number.
+| Item | Output | Validation | Uncertain |
+|------|--------|------------|-----------|
+| Paris | `France_Capital_and_River/results/Paris.json` | PASS — 100% (11/11) | none |
+| Seine_River | `France_Capital_and_River/results/Seine_River.json` | PASS — 100% (11/11) | none |
 
-## Non-obvious findings worth noting
-- **The capital is conventional, not constitutional.** No French constitution since 1791 names a capital. The status rests on the constitutional law of 21 June 1879 repealing the Versailles seat, the ordinary law of 22 July 1879 fixing both chambers and the executive in Paris, the 1993 ministerial order on state/capital terminology, and art. 1 of ordinance 58-1100 — with the French Congress and High Court still meeting at Versailles.
-- **Hydrographic technicality:** at Montereau the Yonne carries more water than the Seine, so on strict discharge-based naming rules the water flowing past Paris is the Yonne's continuation.
-- Freshest official figures: INSEE reference population 2023 (decree of 26 Dec 2025, in force 1 Jan 2026) — 2,103,778 inhabitants, 19,959.9 hab/km²; Île-de-France GDP €865.7 bn in 2024 = 30.2% of metropolitan French GDP.
+**Required coverage check:** entities `Paris` and `Seine` are covered in both result files.
 
-## Output directory
-`/tmp/opencode/plan0113/smoke/weizhena-house-capital-smoke/work/france_capital_and_river/` — `outline.yaml`, `fields.yaml`, `results/*.json`.
+**Output directory:** `France_Capital_and_River/` in the working directory
+```
+France_Capital_and_River/
+├── outline.yaml          # items + execution config (bootstrap, since none existed)
+├── fields.yaml           # 11 field definitions (8 required, 3 optional)
+└── results/
+    ├── Paris.json
+    └── Seine_River.json
+```
 
-Run `/research-report` if you want these merged into a single prose markdown report.
+**Assumptions made** (no clarifying questions, per your instruction):
+- Bootstrapped the outline from the question with 2 items (Paris, Seine) and defaults `batch_size: 2`, `items_per_agent: 1`, time range unlimited.
+- The validator script wasn't at the template's hardcoded `~/.claude/skills/research/validate_json.py`, so I symlinked the installed script there to run the workflow's validation as written.
+
+**Notable findings:** Paris has been France's capital since Clovis I (508), effectively permanent from the Capetians (987); the Seine's banks in Paris have been a UNESCO World Heritage site since 1991. One recorded range rather than a single value: the Seine basin area varies by source (75,000–79,000 km²).

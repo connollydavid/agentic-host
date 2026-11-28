@@ -1,31 +1,67 @@
-### Official / institutional
-1. FranceTerme, Ministère de la Culture — "France (la)", *J.O.* 24/09/2008 — https://www.culture.fr/franceterme/terme/AFET263
-2. Arrêté du 4 novembre 1993 relatif à la terminologie des noms d'États et de capitales, *J.O.* 25/01/1994 pp. 1288–1295 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000181509 (403; via index)
-3. Ordonnance n° 58-1100 du 17 novembre 1958, art. 1 — https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006530034
-4. Conseil constitutionnel — Constitution de 1875, IIIe République — https://www.conseil-constitutionnel.fr/les-constitutions-dans-l-histoire/constitution-de-1875-iiie-republique
-5. SANDRE / OFB / eaufrance — "La Seine", code `----0010` — via https://web.archive.org/web/20210123171121/http://www.sandre.eaufrance.fr/geo/CoursEau/----0010
-6. Eaufrance — "Les rivières" — https://www.eaufrance.fr/les-rivieres
-7. Ministère de l'Intérieur, Formation civique — "Les fleuves français" (map: IGN 2012) — https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-français/
-8. HydroPortail / Vigicrues — station F700 0001 03 "La Seine à Paris – Austerlitz", data calculated 27/11/2026 — https://www.hydro.eaufrance.fr/stationhydro/F700000103/synthese
-9. Agence de l'Eau Seine-Normandie — "Le bassin de la Seine" — https://www.eau-seine-normandie.fr/agence-de-leau/le-bassin-de-la-seine
-10. UNESCO World Heritage Centre — "Paris, Banks of the Seine" (dossier 600bis) — https://whc.unesco.org/en/list/600/
-11. UNESCO — Décision 46 COM 8B.39 (2024) — https://whc.unesco.org/fr/decisions/8631/
-12. ICOMOS evaluation WHC/24/46.COM/INF.8B1.Add — https://whc.unesco.org/document/208528
-13. Ville de Paris — "Paris et ses ponts, toute une histoire" — https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466
-14. Ville de Paris — "La Seine, cœur battant de Paris" — https://www.paris.fr/dossiers/la-seine-coeur-battant-de-paris-216
-15. Ville de Paris — "Crues" / "Le Zouave, baromètre de la montée des eaux" — https://www.paris.fr/pages/crues-5472
-16. Ville de Paris — "Les canaux de Paris" (updated 26/11/2026) — https://www.paris.fr/pages/tmp-canaux-7834
-17. Ville de Paris — "Les secrets enfouis de la Bièvre, rivière parisienne" — https://www.paris.fr/pages/les-secrets-enfouis-de-la-bievre-riviere-parisienne-16900
-18. Ville de Paris — "La Seine s'ouvre à la baignade" / "Baignade en Seine : toutes les questions" — https://www.paris.fr/pages/baignade-en-seine-toutes-les-questions-que-vous-vous-posez-31533
-19. Ville de Paris — Eau de Paris, *Bulletin qualité de l'eau de la Seine*, Aug 2026 — https://cdn.paris.fr/paris/2026-10-02/bulletin-qualite-eau-seine-2026-08-smy5.pdf
-20. DRIEAT Île-de-France / Préfecture — Dossier de presse "Plan Baignade", Aug 2024 — https://www.prefectures-regions.gouv.fr/ile-de-france/...
-21. Cour des comptes / CRC Île-de-France — IDR2025-51, délibéré 22/07/2025 — https://www.ccomptes.fr/sites/default/files/2025-11/IDR2025-51_0.pdf
-22. Paris & Métropole Aménagement — "La Bièvre (Paris 13e)" — https://www.parisetmetropole-amenagement.fr/fr/bievre-paris-13e
-23. SMBVB — Syndicat Mixte du Bassin Versant de la Bièvre, "Historique" — https://www.smbvb.fr/la-bievre/historique/
-24. Château de Versailles (public establishment) — "Versailles, 'capital' of the kingdom, 1682" — https://en.chateauversailles.fr/discover/history/key-dates/versailles-capital-kingdom-1682
-25. BnF, Essentiels — "De Lutèce à la capitale" — https://essentiels.bnf.fr/...
-26. BnF Gallica — "L'histoire tourmentée d'une rivière : quand la Bièvre disparaît" — https://gallica.bnf.fr/accueil/fr/html/lhistoire-tourmentee-dune-riviere-quand-la-bievre-disparait
-27. European Union — "France", EU member state overview — https://european-union.europa.eu/principles-countries-history/eu-countries/france_en
-28. Council of Europe, Intercultural Cities — "Paris, France" — https://www.coe.int/en/web/interculturalcities/paris
-29. Archives nationales d'outre-mer — "Paris (France)" — http://anom.archivesnationales.culture.gouv.fr/geo.php?...
-30. European Commission JRC — "FACT SHEET: Seine River Basin" — https://water.jrc.ec.europa.eu/pdf/seine-fs.pdf
+Seine — Fiche de cours d’eau | Fleuves.org
+  
+      
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+
+
+Aller au contenu
+
+  
+    FFLEUVES.ORGL’ATLAS VIVANT DES COURS D’EAU
+    ☰
+    AtlasFranceMondeComprendreClassementsComparerEnjeux
+    Observatoire
+  
+
+
+Accueil›Fiche de cours d’eau›SeineFiche de cours d’eau · Seine et affluentsSeineFleuve de plaine très urbanisé, la Seine organise le Bassin parisien avant de devenir estuarienne bien en amont de la Manche. La fiche suit le tracé du repère « Plateau de Langres, Côte-d’Or » au repère « Manche, entre Le Havre et Honfleur » et sépare les éléments stables des valeurs dépendantes d’une station ou d’une convention.✓ Dossier publié · contrôle éditorial effectuéContrôle éditorial : 20 août 2026Sources accessibles ci-dessous  MÉDIA ÉDITORIAL EN PRÉPARATIONIllustration spécifiqueprochainement disponibleUn visuel propre à « Seine » remplacera cet écran après vérification documentaire.Fleuves.org · aucune illustration générique présentée comme spécifique
+
+
+
+    RÉPONSE IMMÉDIATECe qu’il faut retenirla Seine se situe en France. Son repère de source est « Plateau de Langres, Côte-d’Or » et son exutoire documenté est « Manche, entre Le Havre et Honfleur ».Point de méthode : Les débits diffèrent fortement entre l’amont, Paris et l’estuaire.NIVEAU DOCUMENTAIREObjetFiche de cours d’eauEnsembleSeine et affluentsSourcesPrimaires privilégiéesStatutPublié · sources contrôlées
+
+    
+  LONGUEUR DE RÉFÉRENCEenviron 775 kmvaleur arrondie et sourcéeBASSIN VERSANTenviron 79 000 km²périmètre selon référentielDÉBITmesuré sur plusieurs stationsstation et période indispensablesEXUTOIREManche, entre Le Havre et Honfleurdestination des eaux    
+  PREUVES À PROXIMITÉ DES AFFIRMATIONSCe qui est affirmé, et où le vérifierLe lien mène à la référence et précise son rôle documentaire ; il ne transforme pas une source générale en preuve d’une propriété qu’elle ne contient pas.01Tracé et longueurPlateau de Langres, Côte-d’Or → Manche, entre Le Havre et Honfleur · environ 775 kmSANDRE-BD-TOPAGE-2.2Identité, géométrie et relations des cours d’eau du référentiel national ↓02Bassin de référenceenviron 79 000 km²SANDRE-BD-TOPAGE-2.2Identité, géométrie et relations des cours d’eau du référentiel national ↓03Lecture hydrologiquemesuré sur plusieurs stationsHYDROPORTAILStations, séries validées, statistiques et exports hydrométriques français ↓
+  
+  SOURCE / AMONTPlateau de Langres, Côte-d’Or→COURS PRINCIPALSeine5 affluents majeurs affichés→EXUTOIRE / AVALManche, entre Le Havre et Honfleur
+    
+
+  
+  01Le parcours singulier de la SeineDepuis le plateau de Langres, la Seine suit une vallée à pente modérée, traverse l’agglomération parisienne puis dessine de grands méandres normands. À l’aval, marée et salinité modifient progressivement son fonctionnement.Le tracé de la Seine retenu par cette fiche commence au repère « Plateau de Langres, Côte-d’Or » et se termine au repère « Manche, entre Le Havre et Honfleur ». Entre ces points, la pente, la largeur du lit et les apports évoluent ; les valeurs restent donc reliées à une convention et à une source. Le repère de longueur publié est environ 775 km.La bonne lectureRelief, hiérarchie des affluents, ruptures de pente, plaine alluviale et forme de l’embouchure doivent être lus ensemble : aucun chiffre isolé ne résume un système fluvial.
+
+  02Le réseau qui alimente la SeineYonne, Marne et Oise apportent trois grandes branches aux origines distinctes. Leur ordre d’arrivée et le stockage dans les nappes du Bassin parisien influencent la propagation des hautes eaux jusqu’à Paris.Marne, Oise, Yonne, Aube, Eure figurent parmi les relations majeures affichées. Le bassin de référence — environ 79 000 km² — reste lié à l’exutoire et au référentiel retenus.AFFLUENTS ET RELATIONS DOCUMENTÉS5 entités liéesMarneVoir la relation →OiseVoir la relation →YonneVoir la relation →AubeVoir la relation →EureVoir la relation →
+
+  03Le rythme hydrologique de la SeineLes pluies océaniques, le soutien des nappes et l’action des lacs-réservoirs amont modulent les débits. Une mesure à Paris n’est représentative ni des têtes de bassin ni de l’estuaire soumis à la marée.Le repère publié est « mesuré sur plusieurs stations ». Il doit conserver sa station, sa période et sa nature statistique : moyenne, crue et étiage ne décrivent pas le même état du fleuve.01Ce qui est établiIdentité canonique, groupe documentaire et relations validées.02Ce qui peut varierTracé, période, station, résolution et convention de mesure.03Usage prudentRetrouver la source primaire avant toute décision technique.PropriétéValeurStatutMéthodeIdentitéSeinePubliéeEntité canoniqueGroupeSeine et affluentsValidéTaxonomie V2MesuresVoir les repères de la ficheContextualiséSource + période
+
+  04Les arbitrages propres de la SeineMétropole dense, navigation, eau potable, rejets urbains, ports, inondations et restauration écologique coexistent sur un axe où chaque intervention doit être replacée dans le bassin entier.Les débits diffèrent fortement entre l’amont, Paris et l’estuaire.Lire le bassinComprendre le débitComparer les fleuvesVoir les classements
+
+  05Questions fréquentesLa Seine est-elle déjà un estuaire à Rouen ?Oui, la marée remonte largement dans la Seine aval. La limite pertinente dépend toutefois de ce que l’on observe : niveau d’eau, salinité, sédiments ou habitats estuariens.Quelle est la longueur de la Seine ?environ 775 km. Cette valeur reste liée au tracé et à la source documentaire retenus.Comment interpréter le débit de la Seine ?Le repère disponible est « mesuré sur plusieurs stations ». Une comparaison rigoureuse doit conserver la station, la période et le type de valeur.
+
+  POURSUIVRE L’EXPLORATIONPages directement reliées à Seine01Bassin versantBassin de la SeineBassin versant associéOuvrir la fiche →02Comparaison éditorialeLoire ou SeineComparaison directeOuvrir la fiche →03Comparaison éditorialeSeine ou TamiseComparaison directeOuvrir la fiche →04Classement documentéLes principaux affluents de la SeineRepère quantitatifOuvrir la fiche →05Guide hydrologiqueQu’est-ce qu’un estuaire ?Notion utile à la lectureOuvrir la fiche →06Enjeu et usageRivières urbaines : couvrir, canaliser ou renaturerEnjeu relié à ce systèmeOuvrir la fiche →
+
+  SOURCES ET MÉTHODERéférences mobilisées pour Seine3 références documentent les affirmations principales de ce dossier. Pour chacune, Fleuves.org affiche le producteur, le rôle exact, la version et la date de consultation ; une source générale n’est jamais présentée comme preuve d’une propriété qu’elle ne contient pas.01BD TOPAGE® — référentiel hydrographique françaisSandre / OFB / IGN · Identité, géométrie et relations des cours d’eau du référentiel nationalScénario d’échange v2.2, publié le 4 juin 2026 · consulté le 20 août 202602HydroPortail — données hydrométriques publiquesService central Vigicrues · Stations, séries validées, statistiques et exports hydrométriques françaisService national en ligne · consulté le 20 août 202603API Hydrométrie Hub’EauEaufrance / Service central Vigicrues · Observations hydrométriques quasi temps réel et métadonnées de stationsAPI publique en service · consulté le 19 août 2026Consulter le registre complet des sources →
+
+  CITER CETTE FICHERéférence conseillée« Seine », Équipe éditoriale Fleuves.org, version 17.0, vérifiée le 20 août 2026.https://www.fleuves.org/cours-eau/seine/Conserver l’unité et le périmètre de chaque valeur.Associer la propriété citée à sa source affichée ci-dessus.Pour une donnée opérationnelle, ouvrir le producteur primaire.
+  FEDOCUMENTATION ET CONTRÔLE ÉDITORIALÉquipe éditoriale Fleuves.orgCette fiche a été structurée à partir des références affichées ci-dessus, avec contrôle des unités, du périmètre et des limites. Nicolas Belotti assure la direction de la publication ; aucune relecture scientifique externe n’est revendiquée sans attribution nominative.Responsabilités éditoriales →Direction de la publication →
+DANS CETTE FICHE01Le parcours singulier de la Seine02Le réseau qui alimente la Seine03Le rythme hydrologique de la Seine04Les arbitrages propres de la Seine05Questions fréquentes06Sources et méthodeFICHE DOCUMENTÉEValeurs contextualisées, sources primaires privilégiées et corrections historisées.Signaler une correction
+
+
+
+  
+    FLEUVES.ORGL’atlas vivant des fleuves et rivières du monde.Notre méthode éditoriale →
+    EXPLORERAtlasFranceMondeComprendre
+    COMPARERClassementsFace-à-faceObservatoire
+    CONFIANCESourcesAuteursCorrectionsÀ propos
+    LÉGALMentions légalesConfidentialitéAccessibilité
+    FFLEUVES.ORGL’ATLAS VIVANT DES COURS D’EAUUne publication du réseau Semantiak.© 2026 Fleuves.org

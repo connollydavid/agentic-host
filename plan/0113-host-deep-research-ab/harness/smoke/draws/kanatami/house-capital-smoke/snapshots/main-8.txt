@@ -1,31 +1,99 @@
-### Official / institutional
-1. FranceTerme, Ministère de la Culture — "France (la)", *J.O.* 24/09/2008 — https://www.culture.fr/franceterme/terme/AFET263
-2. Arrêté du 4 novembre 1993 relatif à la terminologie des noms d'États et de capitales, *J.O.* 25/01/1994 pp. 1288–1295 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000181509 (403; via index)
-3. Ordonnance n° 58-1100 du 17 novembre 1958, art. 1 — https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006530034
-4. Conseil constitutionnel — Constitution de 1875, IIIe République — https://www.conseil-constitutionnel.fr/les-constitutions-dans-l-histoire/constitution-de-1875-iiie-republique
-5. SANDRE / OFB / eaufrance — "La Seine", code `----0010` — via https://web.archive.org/web/20210123171121/http://www.sandre.eaufrance.fr/geo/CoursEau/----0010
-6. Eaufrance — "Les rivières" — https://www.eaufrance.fr/les-rivieres
-7. Ministère de l'Intérieur, Formation civique — "Les fleuves français" (map: IGN 2012) — https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-français/
-8. HydroPortail / Vigicrues — station F700 0001 03 "La Seine à Paris – Austerlitz", data calculated 27/11/2026 — https://www.hydro.eaufrance.fr/stationhydro/F700000103/synthese
-9. Agence de l'Eau Seine-Normandie — "Le bassin de la Seine" — https://www.eau-seine-normandie.fr/agence-de-leau/le-bassin-de-la-seine
-10. UNESCO World Heritage Centre — "Paris, Banks of the Seine" (dossier 600bis) — https://whc.unesco.org/en/list/600/
-11. UNESCO — Décision 46 COM 8B.39 (2024) — https://whc.unesco.org/fr/decisions/8631/
-12. ICOMOS evaluation WHC/24/46.COM/INF.8B1.Add — https://whc.unesco.org/document/208528
-13. Ville de Paris — "Paris et ses ponts, toute une histoire" — https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466
-14. Ville de Paris — "La Seine, cœur battant de Paris" — https://www.paris.fr/dossiers/la-seine-coeur-battant-de-paris-216
-15. Ville de Paris — "Crues" / "Le Zouave, baromètre de la montée des eaux" — https://www.paris.fr/pages/crues-5472
-16. Ville de Paris — "Les canaux de Paris" (updated 26/11/2026) — https://www.paris.fr/pages/tmp-canaux-7834
-17. Ville de Paris — "Les secrets enfouis de la Bièvre, rivière parisienne" — https://www.paris.fr/pages/les-secrets-enfouis-de-la-bievre-riviere-parisienne-16900
-18. Ville de Paris — "La Seine s'ouvre à la baignade" / "Baignade en Seine : toutes les questions" — https://www.paris.fr/pages/baignade-en-seine-toutes-les-questions-que-vous-vous-posez-31533
-19. Ville de Paris — Eau de Paris, *Bulletin qualité de l'eau de la Seine*, Aug 2026 — https://cdn.paris.fr/paris/2026-10-02/bulletin-qualite-eau-seine-2026-08-smy5.pdf
-20. DRIEAT Île-de-France / Préfecture — Dossier de presse "Plan Baignade", Aug 2024 — https://www.prefectures-regions.gouv.fr/ile-de-france/...
-21. Cour des comptes / CRC Île-de-France — IDR2025-51, délibéré 22/07/2025 — https://www.ccomptes.fr/sites/default/files/2025-11/IDR2025-51_0.pdf
-22. Paris & Métropole Aménagement — "La Bièvre (Paris 13e)" — https://www.parisetmetropole-amenagement.fr/fr/bievre-paris-13e
-23. SMBVB — Syndicat Mixte du Bassin Versant de la Bièvre, "Historique" — https://www.smbvb.fr/la-bievre/historique/
-24. Château de Versailles (public establishment) — "Versailles, 'capital' of the kingdom, 1682" — https://en.chateauversailles.fr/discover/history/key-dates/versailles-capital-kingdom-1682
-25. BnF, Essentiels — "De Lutèce à la capitale" — https://essentiels.bnf.fr/...
-26. BnF Gallica — "L'histoire tourmentée d'une rivière : quand la Bièvre disparaît" — https://gallica.bnf.fr/accueil/fr/html/lhistoire-tourmentee-dune-riviere-quand-la-bievre-disparait
-27. European Union — "France", EU member state overview — https://european-union.europa.eu/principles-countries-history/eu-countries/france_en
-28. Council of Europe, Intercultural Cities — "Paris, France" — https://www.coe.int/en/web/interculturalcities/paris
-29. Archives nationales d'outre-mer — "Paris (France)" — http://anom.archivesnationales.culture.gouv.fr/geo.php?...
-30. European Commission JRC — "FACT SHEET: Seine River Basin" — https://water.jrc.ec.europa.eu/pdf/seine-fs.pdf
+---
+description: The Seine River flows through Paris, France.
+title: Which River Runs Through Paris?
+image: https://www.worldatlas.com/r/w1200-q80/upload/80/2f/db/shutterstock-512810758.jpg
+---
+
+![Paris is on the River Seine. ](https://www.worldatlas.com/r/w1200/upload/80/2f/db/shutterstock-512810758.jpg)
+
+*Paris is on the River Seine.*
+
+Paris is the [largest city](https://www.worldatlas.com/eu/fr/cities-in-france.html) and the [capital city](https://www.worldatlas.com/articles/what-is-the-capital-of-france.html) of France. Paris is on the River Seine, or the Seine River. The Seine River is 483 miles long and gets its water from various [tributaries](https://www.worldatlas.com/articles/what-is-a-tributary.html) including Aube, the Loing, the Yonne, the Eure, the Essonne, the Aisne, and the Marne rivers. The river drains an area covering 30,400 square miles. The River Seine flows 8.078 miles through the city from east to west. The average depth of the river is 31 feet. It is the fifth [longest river in France.](https://www.worldatlas.com/articles/the-longest-rivers-in-france.html) 
+
+## **Historical Significance**
+
+The river bears rich historical significance for the French people. The French monarchy has its roots in the basin of the river. The river also carries a significant amount of French inland waterway traffic making it a vital transportation channel. The river is probably one of the most famous in the world as it snakes through among the [most visited cities](https://www.worldatlas.com/articles/the-most-popular-cities-in-the-world-to-visit.html) in the world. The river has been a source of commerce and sustenance since the Parisii, a tribe of Celtic fishermen who settled on the banks of the river in the 3<sup>rd</sup> century on what is today known as the *Île de La Cité*. The settlement was renamed as Lutetia by the Romans and was the genesis of the sprawling modern day metropolis.
+
+## **Boat Tours on the River **
+
+The river provides a picturesque view for sightseeing cruises. The river has also been a UNESCO World Heritage site since 1991. A boat tour on the River Seine is one of the most popular attractions in Paris as it allows one to view various famous monuments and places in Paris while enjoying a ride. During winter river cruise companies provide indoor heating so that one can enjoy the cruise without having to worry and suffer through icy winds. During summer and spring, the river offers an incredible and relaxed Parisian picnic setting. 
+
+**Share**
+
+-
+-
+-
+-
+-
+-
+-
+
+[Benjamin Elisha Sawe](https://www.worldatlas.com/contributor/benjamin-elisha-sawe) April 16 2019 in [World Facts](https://www.worldatlas.com/world-facts/)
+
+1. [Home](https://www.worldatlas.com/)
+2. [World Facts](https://www.worldatlas.com/world-facts/)
+3. Which River Runs Through Paris?
+
+## Related
+
+[![Paris at night. Image credit: Francisco Diez/Flickr.com](https://www.worldatlas.com/r/w1200/upload/fb/80/25/37294166950-bf79787f99-k.jpg)](https://www.worldatlas.com/articles/how-did-paris-get-its-name.html)
+
+### [How Did Paris Get Its Name?](https://www.worldatlas.com/articles/how-did-paris-get-its-name.html)
+
+[![The Pont Michel, where police officers are said to have thrown protestors off of, leading to their drowning.](https://www.worldatlas.com/r/w1200/upload/fd/d6/2b/shutterstock-386620387.jpg)](https://www.worldatlas.com/articles/what-was-the-paris-massacre.html)
+
+### [What Was the Paris Massacre?](https://www.worldatlas.com/articles/what-was-the-paris-massacre.html)
+
+## More in [World Facts](https://www.worldatlas.com/world-facts/)
+
+[![Olympic Flag. Image credit: Ververidis Vasilis/Shutterstock](https://www.worldatlas.com/r/w1200/upload/cb/45/d9/olympic-flag-ververidis-vasilis.jpg)](https://www.worldatlas.com/articles/olympic-games-history.html)
+
+### [Olympic Games History](https://www.worldatlas.com/articles/olympic-games-history.html)
+
+[![Map and flag of Australia](https://www.worldatlas.com/r/w1200/upload/1a/7c/1b/shutterstock-1326727757.jpg)](https://www.worldatlas.com/articles/is-australia-a-country-or-a-continent.html)
+
+### [Is Australia A Country Or A Continent?](https://www.worldatlas.com/articles/is-australia-a-country-or-a-continent.html)
+
+[![The United States holds a lot of power in deciding the sovereign status of countries. ](https://www.worldatlas.com/r/w1200/upload/33/c0/10/shutterstock-796210414.jpg)](https://www.worldatlas.com/articles/how-many-countries-does-the-united-states-recognize.html)
+
+### [How Many Countries Are Recognized By The United States?](https://www.worldatlas.com/articles/how-many-countries-does-the-united-states-recognize.html)
+
+[![CIS flag. ](https://www.worldatlas.com/r/w1200/upload/7c/10/d8/cis-s-e.jpg)](https://www.worldatlas.com/articles/commonwealth-of-independent-states.html)
+
+### [Commonwealth Of Independent States](https://www.worldatlas.com/articles/commonwealth-of-independent-states.html)
+
+[![Map of Central America](https://www.worldatlas.com/r/w1200/upload/fb/a3/ac/central-america-map.png)](https://www.worldatlas.com/articles/is-central-america-considered-north-america.html)
+
+### [Is Central America Part Of North America?](https://www.worldatlas.com/articles/is-central-america-considered-north-america.html)
+
+[![The Caribbean islands are popular tourist destinations for people from around the world.](https://www.worldatlas.com/r/w1200/upload/1f/ee/24/shutterstock-263348471.jpg)](https://www.worldatlas.com/articles/where-is-the-caribbean.html)
+
+### [Where Is The Caribbean?](https://www.worldatlas.com/articles/where-is-the-caribbean.html)
+
+[![Dhaka, the capital of Bangladesh is a heavily populated city with high population density.](https://www.worldatlas.com/r/w1200/upload/01/de/c1/shutterstock-1173247633.jpg)](https://www.worldatlas.com/articles/the-most-densely-populated-countries.html)
+
+### [The 10 Most Densely Populated Countries In The World](https://www.worldatlas.com/articles/the-most-densely-populated-countries.html)
+
+[![The 10 most populated countries in the world.](https://www.worldatlas.com/r/w1200/upload/9b/61/de/10-most-populated-countries-in-the-world-3.png)](https://www.worldatlas.com/articles/most-populated-countries-in-the-world.html)
+
+### [The 10 Most Populated Countries In The World](https://www.worldatlas.com/articles/most-populated-countries-in-the-world.html)
+
+[![Population density](https://www.worldatlas.com/r/w1200/upload/8b/d3/f5/artboard-2.png)](https://www.worldatlas.com/articles/countries-by-population-density.html)
+
+### [Countries By Population Density](https://www.worldatlas.com/articles/countries-by-population-density.html)
+
+[![Worldwide obesity rates](https://www.worldatlas.com/r/w1200/upload/1c/ef/12/shutterstock-20163661.jpg)](https://www.worldatlas.com/articles/countries-by-obesity.html)
+
+### [Countries By Obesity](https://www.worldatlas.com/articles/countries-by-obesity.html)
+
+[![The 10 Most Populated Countries In Europe](https://www.worldatlas.com/r/w1200/upload/c2/de/91/the-10-most-populated-countries-in-europe.png)](https://www.worldatlas.com/articles/the-10-most-populated-countries-in-europe.html)
+
+### [The 10 Most Populated Countries In Europe](https://www.worldatlas.com/articles/the-10-most-populated-countries-in-europe.html)
+
+[![The Capitol building in San Juan, Puerto Rico, displaying both the American and Puerto Rican flags.](https://www.worldatlas.com/r/w1200/upload/08/89/08/capitol-building-san-juan-puerto-rico-us-sean-pavone.jpg)](https://www.worldatlas.com/articles/is-puerto-rico-a-country.html)
+
+### [Is Puerto Rico A Country?](https://www.worldatlas.com/articles/is-puerto-rico-a-country.html)
+
+```json
+{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.worldatlas.com/articles/which-river-runs-through-paris.html"},"headline":"Which River Runs Through Paris?","image":{"@type":"ImageObject","url":"https://www.worldatlas.com/r/w2560-q80/upload/80/2f/db/shutterstock-512810758.jpg","width":2560,"height":1708},"datePublished":"2019-04-16T13:49:00-04:00","dateModified":"2019-04-16T13:49:06-04:00","articleSection":"Articles","description":"The Seine River flows through Paris, France.","author":{"@type":"Person","name":"Benjamin Elisha Sawe","@id":"https://www.worldatlas.com/contributor/benjamin-elisha-sawe","sameAs":"https://www.worldatlas.com/contributor/benjamin-elisha-sawe"},"publisher":{"@type":"Organization","@id":"https://www.worldatlas.com/","name":"WorldAtlas","sameAs":["https://www.facebook.com/worldatlas","https://twitter.com/worldatlas","https://www.pinterest.ca/worldatlas/","https://www.linkedin.com/company/world-atlas"],"logo":{"@type":"ImageObject","url":"https://worldatlas.com/nwa_assets/img/site/wa_2_logo_text_primary_amp.png","height":60,"width":326,"caption":"WorldAtlas Logo"}},"hasPart":{"@type":"WebPageElement","value":"Paris is the largest city and the capital city of France. Paris is on the River Seine, or the Seine River. The Seine River is 483 miles long and gets its water from various tributaries including Aube, the Loing, the Yonne, the Eure, the Essonne, the Aisne, and the Marne rivers. The river drains an area covering 30,400 square miles. The River Seine flows 8.078 miles through the city from east to west. The average depth of the river is 31 feet. It is the fifth longest river in France.&nbsp;\r\nHistorical Significance\r\nThe river bears rich historical significance for the French people. The French monarchy has its roots in the basin of the river. The river also carries a significant amount of French inland waterway traffic making it a vital transportation channel. The river is probably one of the most famous in the world as it snakes through among the most visited cities in the world. The river has been a source of commerce and sustenance since the Parisii, a tribe of Celtic fishermen who settled on the banks of the river in the 3rd century on what is today known as the &Icirc;le de La Cit&eacute;. The settlement was renamed as Lutetia by the Romans and was the genesis of the sprawling modern day metropolis.\r\nBoat Tours on the River&nbsp;\r\nThe river provides a picturesque view for sightseeing cruises. The river has also been a UNESCO World Heritage site since 1991. A boat tour on the River Seine is one of the most popular attractions in Paris as it allows one to view various famous monuments and places in Paris while enjoying a ride. During winter river cruise companies provide indoor heating so that one can enjoy the cruise without having to worry and suffer through icy winds. During summer and spring, the river offers an incredible and relaxed Parisian picnic setting.&nbsp;"},"isAccessibleForFree":"http://schema.org/True"}
+```

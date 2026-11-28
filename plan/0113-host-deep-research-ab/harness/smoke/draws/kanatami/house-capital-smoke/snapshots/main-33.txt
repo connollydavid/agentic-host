@@ -1,11 +1,2001 @@
-### Academic
-31. G. Delledonne, "Paris: Epitome or Blind Spot of the Constitutional Identity of France?", *Perspectives on Federalism* 16(3), 2024
-32. O. Renaudie, "Paris : capitale ou grande ville ?", *Revue du droit public* 2019/6, p. 1465
-33. R. Grabowski, "The Systemic Importance of the Constitutional Establishment of the Capital...", *Przegląd Prawa Konstytucyjnego* 6(40)/2017
-34. C. Levisse-Touzé, "Le rôle particulier de Paris pendant la Seconde Guerre mondiale", *Bulletins de l'IHTP* 8(1), 1995 — https://www.persee.fr/doc/ihtp_1256-5733_1995_num_8_1_1928
-35. P. N. Balchin, "The Emergence of Paris in the High Middle Ages", Routledge, 2023 — https://doi.org/10.4324/9781003366461-2
-36. C. Noizet & O. Gautier, "Paris, La Seine", in *Villes et rivières de France*, CNRS Éditions 2019 — https://hal.science/hal-04014374
-37. PIREN-Seine (CNRS) — "Hydrologie du bassin de la Seine en quelques chiffres clefs"
-38. Flipo et al., "Trajectories of the Seine River Basin", *Handbook of Environmental Chemistry*, Springer 2020
-39. Bibliothèque de l'Institut de France — "La Seine en crue, XVIIe–XXe siècle"
-40. N. Montel, "L'agrandissement de Paris en 1860 : un projet controversé", HAL-ENPC
+Les rivières | Eaufrance
+    
+
+
+
+
+    
+  
+  
+    
+      
+    
+        
+      Aller au contenu principal
+    
+    
+      
+    
+
+  
+      
+          
+                
+    
+  
+      
+        
+          
+            
+
+
+    
+        
+
+
+
+  
+
+      
+      
+    
+  
+  
+
+
+
+
+      
+        
+        
+          
+            
+            
+
+
+    
+        
+
+
+
+  
+
+      
+      
+    
+  
+  
+
+
+
+
+      
+          
+        
+        
+          
+            Le service public d'information sur l’eau et les milieux aquatiques
+      
+        
+      
+      
+        
+              
+                    
+            
+                Nos sites
+                                    
+                    |
+                        
+            
+                Actualités
+                                    
+                    |
+                                
+                
+                  Vous êtes ?
+                
+                                                      
+                    
+            
+                Professionnel de l'eau
+                                    
+                        
+            
+                Citoyen curieux
+                                    
+                
+  
+                            
+                
+  
+
+
+        
+  
+    
+      
+            
+              
+  
+        Rechercher
+  
+      
+  
+  
+  
+
+
+  
+    
+  
+  
+
+
+
+
+          
+  
+
+
+      
+  
+  
+  
+    
+      
+            
+              
+  
+          
+        
+          Qualité & quantité
+        
+      
+          
+        
+          Usages
+        
+      
+          
+        
+          Référentiels & Méthodes
+        
+      
+          
+        
+          Gestion
+        
+      
+          
+        
+          Services et Outils
+        
+      
+          
+        
+          Bassins
+        
+      
+      
+
+  
+          
+        
+                      
+              
+                
+                Eaux souterraines
+              
+            
+                      
+              
+                
+                Produits phytopharmaceutiques
+              
+            
+                      
+              
+                
+                Hydrométrie
+              
+            
+                      
+              
+                
+                Eaux de surface continentales
+              
+            
+                      
+              
+                
+                Écoulement estival des cours d'eau
+              
+            
+                      
+              
+                
+                Poissons migrateurs
+              
+            
+                      
+              
+                
+                Qualité rivière
+              
+            
+                      
+              
+                
+                Eaux littorales
+              
+            
+                      
+              
+                
+                Vigicrues
+              
+            
+                      
+              
+                
+                VigiEau
+              
+            
+                  
+      
+          
+        
+                      
+              
+                
+                Assainissement collectif
+              
+            
+                      
+              
+                
+                Assainissement non collectif
+              
+            
+                      
+              
+                
+                Conchyliculture
+              
+            
+                      
+              
+                
+                Eau potable
+              
+            
+                      
+              
+                
+                Eaux de baignade
+              
+            
+                      
+              
+                
+                Prélèvements en eau
+              
+            
+                      
+              
+                
+                Services d'eau et d'assainissement (SISPEA)
+              
+            
+                  
+      
+          
+        
+                      
+              
+                
+                Aquaref
+              
+            
+                      
+              
+                
+                Référentiel
+              
+            
+                      
+              
+                
+                Référentiel hydrogéologique
+              
+            
+                  
+      
+          
+        
+                      
+              
+                
+                Économie
+              
+            
+                      
+              
+                
+                Rapportage
+              
+            
+                      
+              
+                
+                SAGE et contrats de rivières
+              
+            
+                  
+      
+          
+        
+                      
+              
+                
+                Catalogue data.eaufrance
+              
+            
+                      
+              
+                
+                Glossaire
+              
+            
+                      
+              
+                
+                API
+              
+            
+                      
+              
+                
+                Documentation Eau & biodiversité
+              
+            
+                      
+              
+                
+                Évaluation des eaux
+              
+            
+                      
+              
+                
+                Milieux humides
+              
+            
+                  
+      
+          
+        
+                      
+              
+                
+                Artois-Picardie
+              
+            
+                      
+              
+                
+                Seine-Normandie
+              
+            
+                      
+              
+                
+                Rhin-Meuse
+              
+            
+                      
+              
+                
+                Loire-Bretagne
+              
+            
+                      
+              
+                
+                Rhône-Méditerranée
+              
+            
+                      
+              
+                
+                Adour-Garonne
+              
+            
+                      
+              
+                
+                Corse
+              
+            
+                      
+              
+                
+                Guadeloupe
+              
+            
+                      
+              
+                
+                Martinique
+              
+            
+                      
+              
+                
+                Réunion
+              
+            
+                      
+              
+                
+                Guyane
+              
+            
+                      
+              
+                
+                Mayotte
+              
+            
+                  
+      
+      
+
+
+          
+  
+
+
+
+
+  
+      
+        
+          
+            
+
+
+    
+        
+
+
+
+  
+
+      
+      
+    
+  
+  
+
+
+
+
+      
+        
+        
+          
+            
+            
+
+
+    
+        
+
+
+
+  
+
+      
+      
+    
+  
+  
+
+
+
+
+      
+          
+        
+        
+        
+      
+  
+
+
+  
+    
+        
+          
+  
+    
+      
+            
+              
+  
+        Rechercher
+  
+      
+  
+  
+  
+
+
+  
+    
+  
+  
+
+
+
+
+          
+  
+
+
+          
+              
+                    
+            
+                Nos sites
+                                    
+                    |
+                        
+            
+                Actualités
+                                    
+                    |
+                                
+                
+                  Vous êtes ?
+                
+                                                      
+                    
+            
+                Professionnel de l'eau
+                                    
+                        
+            
+                Citoyen curieux
+                                    
+                
+  
+                            
+                
+  
+
+
+          
+  
+    
+      
+            
+              
+  
+          
+        
+          Qualité & quantité
+        
+      
+          
+        
+          Usages
+        
+      
+          
+        
+          Référentiels & Méthodes
+        
+      
+          
+        
+          Gestion
+        
+      
+          
+        
+          Services et Outils
+        
+      
+          
+        
+          Bassins
+        
+      
+      
+
+  
+          
+        
+                      
+              
+                
+                Eaux souterraines
+              
+            
+                      
+              
+                
+                Produits phytopharmaceutiques
+              
+            
+                      
+              
+                
+                Hydrométrie
+              
+            
+                      
+              
+                
+                Eaux de surface continentales
+              
+            
+                      
+              
+                
+                Écoulement estival des cours d'eau
+              
+            
+                      
+              
+                
+                Poissons migrateurs
+              
+            
+                      
+              
+                
+                Qualité rivière
+              
+            
+                      
+              
+                
+                Eaux littorales
+              
+            
+                      
+              
+                
+                Vigicrues
+              
+            
+                      
+              
+                
+                VigiEau
+              
+            
+                  
+      
+          
+        
+                      
+              
+                
+                Assainissement collectif
+              
+            
+                      
+              
+                
+                Assainissement non collectif
+              
+            
+                      
+              
+                
+                Conchyliculture
+              
+            
+                      
+              
+                
+                Eau potable
+              
+            
+                      
+              
+                
+                Eaux de baignade
+              
+            
+                      
+              
+                
+                Prélèvements en eau
+              
+            
+                      
+              
+                
+                Services d'eau et d'assainissement (SISPEA)
+              
+            
+                  
+      
+          
+        
+                      
+              
+                
+                Aquaref
+              
+            
+                      
+              
+                
+                Référentiel
+              
+            
+                      
+              
+                
+                Référentiel hydrogéologique
+              
+            
+                  
+      
+          
+        
+                      
+              
+                
+                Économie
+              
+            
+                      
+              
+                
+                Rapportage
+              
+            
+                      
+              
+                
+                SAGE et contrats de rivières
+              
+            
+                  
+      
+          
+        
+                      
+              
+                
+                Catalogue data.eaufrance
+              
+            
+                      
+              
+                
+                Glossaire
+              
+            
+                      
+              
+                
+                API
+              
+            
+                      
+              
+                
+                Documentation Eau & biodiversité
+              
+            
+                      
+              
+                
+                Évaluation des eaux
+              
+            
+                      
+              
+                
+                Milieux humides
+              
+            
+                  
+      
+          
+        
+                      
+              
+                
+                Artois-Picardie
+              
+            
+                      
+              
+                
+                Seine-Normandie
+              
+            
+                      
+              
+                
+                Rhin-Meuse
+              
+            
+                      
+              
+                
+                Loire-Bretagne
+              
+            
+                      
+              
+                
+                Rhône-Méditerranée
+              
+            
+                      
+              
+                
+                Adour-Garonne
+              
+            
+                      
+              
+                
+                Corse
+              
+            
+                      
+              
+                
+                Guadeloupe
+              
+            
+                      
+              
+                
+                Martinique
+              
+            
+                      
+              
+                
+                Réunion
+              
+            
+                      
+              
+                
+                Guyane
+              
+            
+                      
+              
+                
+                Mayotte
+              
+            
+                  
+      
+      
+
+
+          
+  
+
+
+          
+              
+                            
+                                      
+                À propos
+            
+                                  
+                
+                  
+                                                
+                                    
+                                            Le SI Eau en 8 points
+                          
+                        
+                                            Le SI Eau en vidéos
+                          
+                        
+                                            La gouvernance du SI Eau
+                          
+        
+  
+                  
+                
+            
+                          
+                        
+                                      
+                Données et services
+            
+                                  
+                
+                  
+                                                
+                                    
+                                      
+                Les données des sites eaufrance
+            
+            
+            
+                                                                  
+                                    
+                                            À propos des données
+                          
+                        
+                                            Fiches de recommandations sur les pesticides
+                          
+                        
+                                            Règles d’évaluation de l’état des eaux
+                          
+        
+  
+                          
+                        
+                                            Portail des SI Métiers
+                          
+        
+  
+                  
+                
+            
+                          
+                        
+                                      
+                Publications
+            
+                                  
+                
+                  
+                                                
+                                    
+                                            Bulletins - BSH
+                          
+                        
+                                            Synthèses et rapports
+                          
+                        
+                                            La collection mémos
+                          
+        
+  
+                  
+                
+            
+                          
+                        
+                                      
+                Visualisations de données
+            
+                                  
+                
+                  
+                                                
+                                    
+                                            Atlas des BSH
+                          
+                        
+                                            Cartes
+                          
+                        
+                                            Chiffres clés
+                          
+                        
+                                            Datavisualisations
+                          
+        
+  
+                  
+                
+            
+                          
+                        
+                                      
+                Thématiques
+            
+                                  
+                
+                  
+                                                
+                                    
+                                      
+                L'eau et les milieux aquatiques
+            
+            
+            
+                                                                  
+                                    
+                                      
+                Les précipitations
+            
+            
+            
+                                                                  
+                                    
+                                            Les volumes de précipitations
+                          
+                        
+                                            Les précipitations efficaces
+                          
+        
+  
+                          
+                        
+                                      
+                Les rivières
+            
+            
+            
+                                                                  
+                                    
+                                            Des rivières dynamiques, réservoirs de biodiversité
+                          
+                        
+                                            Le niveau d'eau et le débit des rivières
+                          
+                        
+                                            La gestion, la protection et la restauration des cours d’eau
+                          
+                        
+                                            La qualité des rivières
+                          
+        
+  
+                          
+                        
+                                      
+                Les lacs, étangs et plans d’eau
+            
+            
+            
+                                                                  
+                                    
+                                            Lacs et étangs, des écosystèmes riches et dynamiques
+                          
+                        
+                                            La qualité des plans d’eau
+                          
+                        
+                                            La gestion, la protection et la restauration des plans d'eau
+                          
+        
+  
+                          
+                        
+                                      
+                Les estuaires, lagunes et deltas
+            
+            
+            
+                                                                  
+                                    
+                                            Estuaires, lagunes et deltas, des écosystèmes riches en biodiversité
+                          
+                        
+                                            La qualité des estuaires, lagunes et deltas
+                          
+                        
+                                            La gestion et la protection des estuaires, lagunes et deltas
+                          
+        
+  
+                          
+                        
+                                      
+                Les eaux côtières
+            
+            
+            
+                                                                  
+                                    
+                                            Les eaux côtières, écosystèmes riches et diversifiés
+                          
+                        
+                                            La qualité des eaux côtières
+                          
+                        
+                                            La gestion et la préservation des eaux côtières
+                          
+        
+  
+                          
+                        
+                                      
+                Les milieux humides
+            
+            
+            
+                                                                  
+                                    
+                                            Des milieux naturellement humides
+                          
+                        
+                                            L’état des milieux humides
+                          
+                        
+                                            La préservation et la restauration des milieux humides
+                          
+        
+  
+                          
+                        
+                                      
+                Les eaux souterraines
+            
+            
+            
+                                                                  
+                                    
+                                            Les eaux souterraines, des systèmes dynamiques
+                          
+                        
+                                            Le niveau des nappes souterraines
+                          
+                        
+                                            La qualité des eaux souterraines
+                          
+                        
+                                            La gestion et la protection des eaux souterraines
+                          
+        
+  
+                          
+        
+  
+                          
+                        
+                                      
+                Les usages de l'eau et des milieux aquatiques
+            
+            
+            
+                                                                  
+                                    
+                                      
+                La maison et la ville
+            
+            
+            
+                                                                  
+                                    
+                                            La maison et la ville dans le cycle de l'eau
+                          
+                        
+                                            Limiter les impacts liés aux usages domestiques de l’eau
+                          
+        
+  
+                          
+                        
+                                      
+                Les activités industrielles
+            
+            
+            
+                                                                  
+                                    
+                                            Les activités industrielles dans le cycle de l’eau
+                          
+                        
+                                            Limiter les impacts liés aux usages industriels de l’eau
+                          
+        
+  
+                          
+                        
+                                      
+                La production d'électricité
+            
+            
+            
+                                                                  
+                                    
+                                            La production d’électricité dans le cycle de l’eau
+                          
+                        
+                                            Limiter les impacts liés à la production d’électricité
+                          
+        
+  
+                          
+                        
+                                      
+                L'agriculture
+            
+            
+            
+                                                                  
+                                    
+                                            L’agriculture dans le cycle de l’eau
+                          
+                        
+                                            Limiter les impacts liés à l’agriculture
+                          
+        
+  
+                          
+                        
+                                      
+                La pêche professionnelle et l'aquaculture
+            
+            
+            
+                                                                  
+                                    
+                                            La pêche professionnelle et l’aquaculture dans le cycle de l’eau
+                          
+                        
+                                            Limiter les impacts liés à la pêche professionnelle et l’aquaculture
+                          
+        
+  
+                          
+                        
+                                      
+                Le transport fluvial et maritime
+            
+            
+            
+                                                                  
+                                    
+                                            Le transport fluvial et maritime dans le cycle de l’eau
+                          
+                        
+                                            Limiter les impacts liés au transport
+                          
+        
+  
+                          
+                        
+                                      
+                Les loisirs
+            
+            
+            
+                                                                  
+                                    
+                                            Les loisirs dans le cycle de l’eau
+                          
+                        
+                                            Limiter les impacts liés aux loisirs
+                          
+        
+  
+                          
+        
+  
+                          
+                        
+                                      
+                L'eau potable et l'assainissement
+            
+            
+            
+                                                                  
+                                    
+                                            Les services publics d'eau et d'assainissement
+                          
+                        
+                                            L'alimentation en eau potable
+                          
+                        
+                                            L'assainissement des eaux usées domestiques
+                          
+                        
+                                            Le prix de l'eau
+                          
+        
+  
+                          
+                        
+                                      
+                Les pressions et risques dans les milieux aquatiques
+            
+            
+            
+                                                                  
+                                    
+                                      
+                L'artificialisation
+            
+            
+            
+                                                                  
+                                    
+                                            Les impacts de l’artificialisation sur l’eau et les milieux aquatiques
+                          
+                        
+                                            Limiter les impacts de l’artificialisation
+                          
+        
+  
+                          
+                        
+                                      
+                Les prélèvements d’eau
+            
+            
+            
+                                                                  
+                                    
+                                            Les impacts potentiels des prélèvements d’eau
+                          
+                        
+                                            Prévenir et gérer les situations de crise
+                          
+        
+  
+                          
+                        
+                                      
+                La pollution
+            
+            
+            
+                                                                  
+                                    
+                                            Les substances polluantes des milieux aquatiques
+                          
+                        
+                                            Les impacts de la pollution de l’eau
+                          
+                        
+                                            Lutter contre la pollution de l’eau
+                          
+        
+  
+                          
+                        
+                                            Pêche, chasse et autres prélèvements d’espèces
+                          
+                        
+                                            Les espèces invasives
+                          
+                        
+                                      
+                L'érosion
+            
+            
+            
+                                                                  
+                                    
+                                            Les impacts de l’érosion
+                          
+                        
+                                            Limiter l’érosion et ses conséquences
+                          
+        
+  
+                          
+                        
+                                      
+                La sécheresse
+            
+            
+            
+                                                                  
+                                    
+                                            Les impacts de la sécheresse
+                          
+                        
+                                            Anticiper la sécheresse et s’adapter à ses conséquences
+                          
+        
+  
+                          
+                        
+                                      
+                Les inondations et submersions marines
+            
+            
+            
+                                                                  
+                                    
+                                            Les impacts des inondations et des submersions marines
+                          
+                        
+                                            Prévenir le risque d’inondation et de submersion marine
+                          
+        
+  
+                          
+        
+  
+                          
+                        
+                                      
+                La biodiversité des milieux aquatiques
+            
+            
+            
+                                                                  
+                                    
+                                            L'état de la biodiversité aquatique
+                          
+                        
+                                            Une biodiversité aquatique menacée
+                          
+                        
+                                            Préserver et restaurer la biodiversité aquatique
+                          
+                        
+                                            La continuité écologique
+                          
+        
+  
+                          
+                        
+                                      
+                La gestion durable de l'eau
+            
+            
+            
+                                                                  
+                                    
+                                            Vers le bon état des milieux aquatiques
+                          
+                        
+                                            Planifier et programmer
+                          
+                        
+                                            Financer l'eau par l'eau
+                          
+                        
+                                            Prévenir les risques
+                          
+                        
+                                            Réglementer et contrôler
+                          
+                        
+                                            Eaux non conventionnelles
+                          
+                        
+                                            Les principaux textes en vigueur
+                          
+        
+  
+                          
+                        
+                                      
+                Le changement climatique
+            
+            
+            
+                                                                  
+                                    
+                                            Les impacts du changement climatique sur l’eau
+                          
+                        
+                                            Agir pour lutter contre le changement climatique
+                          
+        
+  
+                          
+                        
+                                            L'eau et la santé
+                          
+        
+  
+                  
+                
+            
+                          
+        
+  
+
+
+        
+    
+  
+
+
+  
+
+          
+      
+  
+  
+  
+    
+        
+    
+    
+        
+                            
+              
+                            
+                                      
+                À propos
+            
+                                  
+                
+                  
+                                                
+                                    
+                                            Le SI Eau en 8 points
+                          
+                        
+                                            Le SI Eau en vidéos
+                          
+                        
+                                            La gouvernance du SI Eau
+                          
+        
+  
+                  
+                
+            
+                          
+                        
+                                      
+                Données et services
+            
+                                  
+                
+                  
+                                                
+                                    
+                                      
+                Les données des sites eaufrance
+            
+            
+            
+                                                                  
+                                    
+                                            À propos des données
+                          
+                        
+                                            Fiches de recommandations sur les pesticides
+                          
+                        
+                                            Règles d’évaluation de l’état des eaux
+                          
+        
+  
+                          
+                        
+                                            Portail des SI Métiers
+                          
+        
+  
+                  
+                
+            
+                          
+                        
+                                      
+                Publications
+            
+                                  
+                
+                  
+                                                
+                                    
+                                            Bulletins - BSH
+                          
+                        
+                                            Synthèses et rapports
+                          
+                        
+                                            La collection mémos
+                          
+        
+  
+                  
+                
+            
+                          
+                        
+                                      
+                Visualisations de données
+            
+                                  
+                
+                  
+                                                
+                                    
+                                            Atlas des BSH
+                          
+                        
+                                            Cartes
+                          
+                        
+                                            Chiffres clés
+                          
+                        
+                                            Datavisualisations
+                          
+        
+  
+                  
+                
+            
+                          
+                        
+                                      
+                Thématiques
+            
+                                  
+                
+                  
+                                                
+                                    
+                                      
+                L'eau et les milieux aquatiques
+            
+            
+            
+                                                                  
+                                    
+                                      
+                Les précipitations
+            
+            
+            
+                                                                  
+                                    
+                                            Les volumes de précipitations
+                          
+                        
+                                            Les précipitations efficaces
+                          
+        
+  
+                          
+                        
+                                      
+                Les rivières
+            
+            
+            
+                                                                  
+                                    
+                                            Des rivières dynamiques, réservoirs de biodiversité
+                          
+                        
+                                            Le niveau d'eau et le débit des rivières
+                          
+                        
+                                            La gestion, la protection et la restauration des cours d’eau
+                          
+                        
+                                            La qualité des rivières
+                          
+        
+  
+                          
+                        
+                                      
+                Les lacs, étangs et plans d’eau
+            
+            
+            
+                                                                  
+                                    
+                                            Lacs et étangs, des écosystèmes riches et dynamiques
+                          
+                        
+                                            La qualité des plans d’eau
+                          
+                        
+                                            La gestion, la protection et la restauration des plans d'eau
+                          
+        
+  
+                          
+                        
+                                      
+                Les estuaires, lagunes et deltas
+            
+            
+            
+                                                                  
+                                    
+                                            Estuaires, lagunes et deltas, des écosystèmes riches en biodiversité
+                          
+                        
+                                            La qualité des estuaires, lagunes et deltas
+                          
+                        
+                                            La gestion et la protection des estuaires, lagunes et deltas
+                          
+        
+  
+                          
+                        
+                                      
+                Les eaux côtières
+            
+            
+            
+                                                                  
+                                    
+                                            Les eaux côtières, écosystèmes riches et diversifiés
+                          
+                        
+                                            La qualité des eaux côtières
+                          
+                        
+                                            La gestion et la préservation des eaux côtières
+                          
+        
+  
+                          
+                        
+                                      
+                Les milieux humides
+            
+            
+            
+                                                                  
+                                    
+                                            Des milieux naturellement humides
+                          
+                        
+                                            L’état des milieux humides
+                          
+                        
+                                            La préservation et la restauration des milieux humides
+                          
+        
+  
+                          
+                        
+                                      
+                Les eaux souterraines
+            
+            
+            
+                                                                  
+                                    
+                                            Les eaux souterraines, des systèmes dynamiques
+                          
+                        
+                                            Le niveau des nappes souterraines
+                          
+                        
+                                            La qualité des eaux souterraines
+                          
+                        
+                                            La gestion et la protection des eaux souterraines
+                          
+        
+  
+                          
+        
+  
+                          
+                        
+                                      
+                Les usages de l'eau et des milieux aquatiques
+            
+            
+            
+                                                                  
+                                    
+                                      
+                La maison et la ville
+            
+            
+            
+                                                                  
+                                    
+                                            La maison et la ville dans le cycle de l'eau
+                          
+                        
+                                            Limiter les impacts liés aux usages domestiques de l’eau
+                          
+        
+  
+                          
+                        
+                                      
+                Les activités industrielles
+            
+            
+            
+                                                                  
+                                    
+                                            Les activités industrielles dans le cycle de l’eau
+                          
+                        
+                                            Limiter les impacts liés aux usages industriels de l’eau
+                          
+        
+  
+                          
+                        
+                                      
+                La production d'électricité
+            
+            
+            
+                                                                  
+                                    
+                                            La production d’électricité dans le cycle de l’eau
+                          
+                        
+                                            Limiter les impacts liés à la production d’électricité
+                          
+        
+  
+                          
+                        
+                                      
+                L'agriculture
+            
+            
+            
+                                                                  
+                                    
+                                            L’agriculture dans le cycle de l’eau
+                          
+                        
+                                            Limiter les impacts liés à l’agriculture
+                          
+        
+  
+                          
+                        
+                                      
+                La pêche professionnelle et l'aquaculture
+            
+            
+            
+                                                                  
+                                    
+                                            La pêche professionnelle et l’aquaculture dans le cycle de l’eau
+                          
+                        
+                                            Limiter les impacts liés à la pêche professionnelle et l’aquaculture
+                          
+        
+  
+                          
+                        
+                                      
+                Le transport fluvial et maritime
+            
+            
+            
+                                                                  
+                                    
+                                            Le transport fluvial et maritime dans le cycle de l’eau
+                          
+                        
+                                            Limiter les impacts liés au transport
+                          
+        
+  
+                          
+                        
+                                      
+                Les loisirs
+            
+            
+            
+                                                                  
+                                    
+                                            Les loisirs dans le cycle de l’eau
+                          
+                        
+                                            Limiter les impacts liés aux loisirs
+                          
+        
+  
+                          
+        
+  
+                          
+                        
+                                      
+                L'eau potable et l'assainissement
+            
+            
+            
+                                                                  
+                                    
+                                            Les services publics d'eau et d'assainissement
+                          
+                        
+                                            L'alimentation en eau potable
+                          
+                        
+                                            L'assainissement des eaux usées domestiques
+                          
+                        
+                                            Le prix de l'eau
+                          
+        
+  
+                          
+                        
+                                      
+                Les pressions et risques dans les milieux aquatiques
+            
+            
+            
+                                                                  
+                                    
+                                      
+                L'artificialisation
+            
+            
+            
+                                                                  
+                                    
+                                            Les impacts de l’artificialisation sur l’eau et les milieux aquatiques
+                          
+                        
+                                            Limiter les impacts de l’artificialisation
+                          
+        
+  
+                          
+                        
+                                      
+                Les prélèvements d’eau
+            
+            
+            
+                                                                  
+                                    
+                                            Les impacts potentiels des prélèvements d’eau
+                          
+                        
+                                            Prévenir et gérer les situations de crise
+                          
+        
+  
+                          
+                        
+                                      
+                La pollution
+            
+            
+            
+                                                                  
+                                    
+                                            Les substances polluantes des milieux aquatiques
+                          
+                        
+                                            Les impacts de la pollution de l’eau
+                          
+                        
+                                            Lutter contre la pollution de l’eau
+                          
+        
+  
+                          
+                        
+                                            Pêche, chasse et autres prélèvements d’espèces
+                          
+                        
+                                            Les espèces invasives
+                          
+                        
+                                      
+                L'érosion
+            
+            
+            
+                                                                  
+                                    
+                                            Les impacts de l’érosion
+                          
+[showing lines 1-2000 of 3296; full output saved to /tmp/opencode/plan0113/smoke/kanatami-house-capital-smoke/data/opencode/tool-output/tool_2202b33b2001I4M3i9JUhaaXIf]

@@ -1,0 +1,6 @@
+{
+  "previous": "weizhena/attempts/house-capital-smoke-1",
+  "reason": "The arm outputs structured field JSON against fields.yaml and a report generated from those fields; it carries no source URL, verbatim quote or locator, so the source ledger cannot be populated.",
+  "break_class": null,
+  "recorded": "2026-11-28T02:46:32Z"
+}

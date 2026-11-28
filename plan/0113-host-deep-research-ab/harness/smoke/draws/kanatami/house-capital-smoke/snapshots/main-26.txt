@@ -1,31 +1,214 @@
-### Official / institutional
-1. FranceTerme, Ministère de la Culture — "France (la)", *J.O.* 24/09/2008 — https://www.culture.fr/franceterme/terme/AFET263
-2. Arrêté du 4 novembre 1993 relatif à la terminologie des noms d'États et de capitales, *J.O.* 25/01/1994 pp. 1288–1295 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000181509 (403; via index)
-3. Ordonnance n° 58-1100 du 17 novembre 1958, art. 1 — https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006530034
-4. Conseil constitutionnel — Constitution de 1875, IIIe République — https://www.conseil-constitutionnel.fr/les-constitutions-dans-l-histoire/constitution-de-1875-iiie-republique
-5. SANDRE / OFB / eaufrance — "La Seine", code `----0010` — via https://web.archive.org/web/20210123171121/http://www.sandre.eaufrance.fr/geo/CoursEau/----0010
-6. Eaufrance — "Les rivières" — https://www.eaufrance.fr/les-rivieres
-7. Ministère de l'Intérieur, Formation civique — "Les fleuves français" (map: IGN 2012) — https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-français/
-8. HydroPortail / Vigicrues — station F700 0001 03 "La Seine à Paris – Austerlitz", data calculated 27/11/2026 — https://www.hydro.eaufrance.fr/stationhydro/F700000103/synthese
-9. Agence de l'Eau Seine-Normandie — "Le bassin de la Seine" — https://www.eau-seine-normandie.fr/agence-de-leau/le-bassin-de-la-seine
-10. UNESCO World Heritage Centre — "Paris, Banks of the Seine" (dossier 600bis) — https://whc.unesco.org/en/list/600/
-11. UNESCO — Décision 46 COM 8B.39 (2024) — https://whc.unesco.org/fr/decisions/8631/
-12. ICOMOS evaluation WHC/24/46.COM/INF.8B1.Add — https://whc.unesco.org/document/208528
-13. Ville de Paris — "Paris et ses ponts, toute une histoire" — https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466
-14. Ville de Paris — "La Seine, cœur battant de Paris" — https://www.paris.fr/dossiers/la-seine-coeur-battant-de-paris-216
-15. Ville de Paris — "Crues" / "Le Zouave, baromètre de la montée des eaux" — https://www.paris.fr/pages/crues-5472
-16. Ville de Paris — "Les canaux de Paris" (updated 26/11/2026) — https://www.paris.fr/pages/tmp-canaux-7834
-17. Ville de Paris — "Les secrets enfouis de la Bièvre, rivière parisienne" — https://www.paris.fr/pages/les-secrets-enfouis-de-la-bievre-riviere-parisienne-16900
-18. Ville de Paris — "La Seine s'ouvre à la baignade" / "Baignade en Seine : toutes les questions" — https://www.paris.fr/pages/baignade-en-seine-toutes-les-questions-que-vous-vous-posez-31533
-19. Ville de Paris — Eau de Paris, *Bulletin qualité de l'eau de la Seine*, Aug 2026 — https://cdn.paris.fr/paris/2026-10-02/bulletin-qualite-eau-seine-2026-08-smy5.pdf
-20. DRIEAT Île-de-France / Préfecture — Dossier de presse "Plan Baignade", Aug 2024 — https://www.prefectures-regions.gouv.fr/ile-de-france/...
-21. Cour des comptes / CRC Île-de-France — IDR2025-51, délibéré 22/07/2025 — https://www.ccomptes.fr/sites/default/files/2025-11/IDR2025-51_0.pdf
-22. Paris & Métropole Aménagement — "La Bièvre (Paris 13e)" — https://www.parisetmetropole-amenagement.fr/fr/bievre-paris-13e
-23. SMBVB — Syndicat Mixte du Bassin Versant de la Bièvre, "Historique" — https://www.smbvb.fr/la-bievre/historique/
-24. Château de Versailles (public establishment) — "Versailles, 'capital' of the kingdom, 1682" — https://en.chateauversailles.fr/discover/history/key-dates/versailles-capital-kingdom-1682
-25. BnF, Essentiels — "De Lutèce à la capitale" — https://essentiels.bnf.fr/...
-26. BnF Gallica — "L'histoire tourmentée d'une rivière : quand la Bièvre disparaît" — https://gallica.bnf.fr/accueil/fr/html/lhistoire-tourmentee-dune-riviere-quand-la-bievre-disparait
-27. European Union — "France", EU member state overview — https://european-union.europa.eu/principles-countries-history/eu-countries/france_en
-28. Council of Europe, Intercultural Cities — "Paris, France" — https://www.coe.int/en/web/interculturalcities/paris
-29. Archives nationales d'outre-mer — "Paris (France)" — http://anom.archivesnationales.culture.gouv.fr/geo.php?...
-30. European Commission JRC — "FACT SHEET: Seine River Basin" — https://water.jrc.ec.europa.eu/pdf/seine-fs.pdf
+Accueil | id.eaufrance.fr
+  
+  
+
+  
+
+  
+
+
+  
+  
+
+  
+  
+  
+  
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+  
+
+  
+
+	
+
+
+
+  
+    
+    
+      
+      
+        
+
+
+
+	Accueil
+	
+
+
+
+	SPARQL Endpoint
+	
+
+
+      
+    
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+	
+	  
+	
+		Sandre Id
+
+Services associés aux identifiants uniques
+
+ 
+
+		
+		
+		
+		
+			
+
+
+
+  
+    Rechercher
+  
+  
+    Aide à la construction d'une URI
+  
+
+
+
+
+
+  
+  
+    
+      
+      La recherche est limitée aux jeux de données suivants: "Appellation de taxon", "Interlocuteur",
+        "Nomenclature" et
+        "Paramètre".
+        D'autres jeux de données seront prochainement disponibles. 
+    
+    
+      
+        
+        
+          
+            Loading...
+          
+        
+        
+          
+            
+          
+        
+      
+
+       
+    
+  
+
+  
+  
+    
+      
+      
+        Cet outil vous permet de constituer une URI Sandre. Selectionnez une collection dans la liste déroulante
+        ci-dessous.
+        Structure applicable aux jeux de données : http://id.eaufrance.fr/{identifiant de la
+          collection}/{identifiant de l'item}/{partie}
+        Structure applicable aux documents de spécifications : http://id.eaufrance.fr/{identifiant de la
+          collection}/{identifiant de l'item}/{version}/{partie}
+      
+    
+  
+
+
+
+  
+    
+    
+      http://id.eaufrance.fr/
+    
+
+    
+    
+      
+      [AAC] Aire d'alimentation de captage[BassinDCE] Bassin DCE[BassinHydrographique_Topage2019] Bassin Hydrographique selon la version Topage 2019[BassinHydrographique_Topage2022] Bassin Hydrographique selon la version Topage 2022[BassinHydrographique_Topage2023] Bassin Hydrographique selon la version Topage 2023[BassinHydrographique_Topage2024] Bassin Hydrographique selon la version Topage 2024[BassinHydrographique_Topage2025] Bassin Hydrographique selon la version Topage 2025[BassinHydrographique_Topage2026] Bassin Hydrographique selon la version Topage 2026[BassinVersantTopographique_Topage2019] Bassin versant topographique selon la version Topage 2019[BassinVersantTopographique_Topage2022] Bassin versant topographique selon la version Topage 2022[BassinVersantTopographique_Topage2023] Bassin versant topographique selon la version Topage 2023[BassinVersantTopographique_Topage2024] Bassin versant topographique selon la version Topage 2024[BassinVersantTopographique_Topage2025] Bassin versant topographique selon la version Topage 2025[BassinVersantTopographique_Topage2026] Bassin versant topographique selon la version Topage 2026[CircAdminBassin_2021] Circonscriptions administratives de bassin de 2021[CircAdminBassin_2022] Circonscriptions administratives de bassin de 2022[CircAdminBassin_2023] Circonscriptions administratives de bassin de 2023[CircAdminBassin_2024] Circonscriptions administratives de bassin de 2024[CircAdminBassin_2025] Circonscriptions administratives de bassin de 2025[Commune_2021] Communes de 2021[Commune_2022] Communes de 2022[Commune_2023] Communes de 2023[Commune_2024] Communes de 2024[Commune_2025] Communes de 2025[ContratMilieu] Contrat de milieu[CoursEau_Carthage2017] Cours d'eau selon la version Carthage 2017[CoursEau_Topage2019] Cours d'eau selon la version Topage 2019[CoursEau_Topage2022] Cours d'eau selon la version Topage 2022[CoursEau_Topage2023] Cours d'eau selon la version Topage 2023[CoursEau_Topage2024] Cours d'eau selon la version Topage 2024[CoursEau_Topage2025] Cours d'eau selon la version Topage 2025[CoursEau_Topage2026] Cours d'eau selon la version Topage 2026[Departement_2021] Départements de 2021[Departement_2022] Départements de 2022[Departement_2023] Départements de 2023[Departement_2024] Départements de 2024[Departement_2025] Départements de 2025[EltHydroSurface_Carthage2017] Elément hydrographique de surface selon Carthage 2017[EntiteHydroGeol] Entité hydrogéologique[Hydroecoregion1] Hydroécorégion de niveau 1[Hydroecoregion2] Hydroécorégion de niveau 2[LaisseEaux_Carthage2017] Laisse des eaux selon Carthage 2017[LaisseEaux_Topage2023] Laisse des eaux selon la version Topage 2023[LaisseEaux_Topage2024] Laisse des eaux selon la version Topage 2024[LieuSurvLineaire] Lieu de surveillance linéaire[LieuSurvPonctuel] Lieu de surveillance ponctuel[LieuSurvSurfacique] Lieu de surveillance surfacique[Limite1Nq] Limite des 1 mille de la laisse de basse mer[Limite300m] Limite des 300 mètres de la laisse de basse mer[LimiteTerreEau_Topage2025] Limite terre-eau selon la version Topage 2025[LimiteTerreEau_Topage2026] Limite terre-eau selon la version Topage 2026[LimiteTerreMer_Topage2019] Limite terre mer selon Topage 2019[LimiteTerreMer_Topage2022] Limite terre-mer selon la version Topage 2022[MasseDEauCotiere_VEDL2013] Masse d'eau côtiere version état des lieux 2013[MasseDEauCotiere_VEDL2019] Masse d'eau côtiere version état des lieux 2019[MasseDEauCotiere_VRAP2010] Masse d'eau côtiere version rapportage 2010[MasseDEauCotiere_VRAP2016] Masse d'eau côtiere version rapportage 2016[MasseDEauCotiere_VRAP2022] Masse d'eau côtière version rapportage 2022[MasseDEauPlanDEau_VEDL2013] Masse d'eau de plan d'eau version état des lieux 2013[MasseDEauPlanDEau_VEDL2019] Masse d'eau de plan d'eau  version état des lieux 2019[MasseDEauPlanDEau_VRAP2010] Masse d'eau de plan d'eau version rapportage 2010[MasseDEauPlanDEau_VRAP2016] Masse d'eau de plan d'eau version rapportage 2016[MasseDEauPlanDEau_VRAP2022] Masse d'eau de plan d'eau version rapportage 2022[MasseDEauRiviere_VEDL2013] Masse d'eau de rivière version état des lieux 2013[MasseDEauRiviere_VEDL2019] Masse d'eau de rivière version état des lieux 2019[MasseDEauRiviere_VRAP2010] Masse d'eau de rivière version rapportage 2010[MasseDEauRiviere_VRAP2016] Masse d'eau de rivière version rapportage 2016[MasseDEauRiviere_VRAP2022] Masse d'eau de rivière version rapportage 2022[MasseDEauSouterraine_VEDL2013] Masse d'eau souterraine version état des lieux 2013[MasseDEauSouterraine_VEDL2019] Masse d'eau souterraine version état des lieux 2019[MasseDEauSouterraine_VRAP2010] Masse d'eau souterraine version rapportage 2010[MasseDEauSouterraine_VRAP2016] Masse d'eau souterraine version rapportage 2016[MasseDEauSouterraine_VRAP2022] Masse d'eau souterraine version rapportage 2022[MasseDEauTransition_VEDL2013] Masse d'eau de transition version état des lieux 2013[MasseDEauTransition_VEDL2019] Masse d'eau de transition version état des lieux 2019[MasseDEauTransition_VRAP2010] Masse d'eau de transition version rapportage 2010[MasseDEauTransition_VRAP2016] Masse d'eau de transition version rapportage 2016[MasseDEauTransition_VRAP2022] Masse d'eau de transition version rapportage 2022[NoeudHydrographique_Carthage2017] Noeud hydrographique selon Carthage 2017[NoeudHydrographique_Topage2019] Noeud hydrographique selon Topage 2019[NoeudHydrographique_Topage2022] Nœud hydrographique selon la version Topage 2022[NoeudHydrographique_Topage2023] Nœud hydrographique selon la version Topage 2023[NoeudHydrographique_Topage2024] Nœud hydrographique selon la version Topage 2024[NoeudHydrographique_Topage2025] Nœud hydrographique selon la version Topage 2025[NoeudHydrographique_Topage2026] Nœud hydrographique selon la version Topage 2026[ObstEcoul] Obstacle à l'ecoulement[OuvragePrel] Ouvrage de prélèvement[PlanEau_Carthage2017] Plan d'eau selon Carthage 2017[PlanEau_Topage2019] Plan d'eau selon Topage 2019[PlanEau_Topage2022] Plan d'eau selon la version Topage 2022[PlanEau_Topage2023] Plan d'eau selon la version Topage 2023[PlanEau_Topage2024] Plan d'eau selon la version Topage 2024[PlanEau_Topage2025] Plan d'eau selon la version Topage 2025[PlanEau_Topage2026] Plan d'eau selon la version Topage 2026[PointEauIsole_Carthage2017] Point d'eau isolé Carthage 2017[PointPrelevement] PTP[PolyElementEH] Polygone élémentaire de la pile d'entités hydrogéologiques[PolygMasseDEauSouterraine_VEDL2013] Polygone élémentaire de masse d'eau souterraine version état des lieux 2013[PolygMasseDEauSouterraine_VEDL2019] Polygone élémentaire de masse d'eau souterraine version état des lieux 2019[PolygMasseDEauSouterraine_VRAP2010] Polygone élémentaire de masse d'eau souterraine version rapportage 2010[PolygMasseDEauSouterraine_VRAP2016] Polygone élémentaire de masse d'eau souterraine version rapportage 2016[PortMaritime] Port Maritime[RegionHydro_Carthage2017] Région hydrographique selon Carthage 2017[Region_2021] Régions de 2021[Region_2022] Régions de 2022[Region_2023] Régions de 2023[Region_2024] Régions de 2024[Region_2025] Régions de 2025[Sage] Schéma d'aménagement et de gestion des eaux[SecteurHydro_Carthage2017] Secteur hydrographique selon Carthage 2017[SegClassContinuiteEcoListe1] Segment de classement de continuité écologique_Liste1[SegClassContinuiteEcoListe2] Segment de classement de continuité écologique_Liste2[SegDPF] Segment du domaine public fluvial[SiteHydro] Site Hydrométrique[SousSecteurHydro_Carthage2017] Sous-secteur hydrographique selon Carthage 2017[SsBassinDCEAdmin] Sous bassin DCE administratif[StaEntVigiCru] Station de vigilance crues[StationHydro] Station hydrométrique[StationMesureEauxSurface] Station de mesure de la qualité des eaux de surface[SurfaceElementaire_Topage2022] Surface élémentaire selon la version Topage 2022[SurfaceElementaire_Topage2023] Surface élémentaire selon la version Topage 2023[SurfaceElementaire_Topage2024] Surface élémentaire selon la version Topage 2024[SurfaceElementaire_Topage2025] Surface élémentaire selon la version Topage 2025[SurfaceElementaire_Topage2026] Surface élémentaire selon la version Topage 2026[SysTraitementEauxUsees] Systme de traitement d'eaux usées[TCC] Territoire de Compétence Crues[TerEntVigiCru] Territoire de vigilance crues[TronEntVigiCru] Tronçon de vigilance crues[TronconElemMasseDEauRiviere_VRAP2022] Tronçon élémentaire de masse d'eau cours d'eau version rapportage 2022[TronconHydrograElt_Carthage2017] Tronçon hydrographique élémentaire selon Carthage 2017[TronconHydrographique_Topage2022] Tronçon hydrographique selon la version Topage 2022[TronconHydrographique_Topage2023] Tronçon hydrographique selon la version Topage 2023[TronconHydrographique_Topage2024] Tronçon hydrographique selon la version Topage 2024[TronconHydrographique_Topage2025] Tronçon hydrographique selon la version Topage 2025[TronconHydrographique_Topage2026] Tronçon hydrographique selon la version Topage 2026[ZAR] Zone d'actions renforcées[ZAS] Zones d'alerte sécheresse[ZRE] Zone de répartition des eaux[ZonAlteriteMeuble] Zone alterite meuble[ZonKarstiq] Zone karstique[ZoneHydroTexture_Carthage2017] Zone d'hydrographie de texture selon Carthage 2017[ZoneHydro_Carthage2017] Zone hydrographique selon Carthage 2017[ZonePortuaire] Zone Portuaire [ZoneSensible] Zone Sensible[ColResEnv] Collection des ressources de l'environnement[apt] Appellation de taxon[cmm] Commémoratif[dc] Dispositif de collecte[fan] Fraction analysée[gat] Groupe d'appellation de taxonomique[gpr] Groupe de paramètres[inc] Interlocuteur[int] Intervenant[met] Méthode[nsa] Nomenclature[par] Paramètre[sup] Support[urf] Unité de mesure[AHU] Activités Humaines [DescControles] Descriptif de contrôles[DocAdmin] Document d'administration[ENP] Espace Naturel Protégé[MHE] Milieu Humide Effectif[PGC] Périmètre de gestion collective[PTE] Point d'Eau d'origine souterraine[PTM] Point de mesure en continu[PolygMasseDEauSouterraine_VRAP2022] Polygone élémentaire de masse d'eau souterraine version rapportage 2022[PressRef] Pressions exercées sur la biodiversité[ZPAAC] Zone de protection des aires d'alimentation de captage[ZoneProdConchy] Zone conchylicole[ZoneVulnDelimitation] Zone Vulnérable Délimitation[ZoneVulnDesignation] Zone Vulnérable Désignation[ddd] Dictionnaire de données[note] Note méthodologique[pgd] Document de présentation générales des données[scg] Scénario d'échanges de données géographiques[scn] Scénario d'échanges de données[sct] Scénario de transformation[scw] Scénario de service web
+    
+    
+    
+      /
+    
+    
+    
+      
+      
+
+      
+    
+    
+    
+      /
+    
+    
+    
+      
+    
+    
+    
+      /
+    
+    
+      
+    
+
+    
+    
+
+    
+  
+  
+    
+      
+    
+    
+    
+    
+      
+    
+  
+  
+  
+    Format(s) disponible(s) :

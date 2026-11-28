@@ -1,3 +1,3 @@
-Use the installed deep-research skill: follow its workflow over the question. Do not ask clarifying questions; proceed with stated assumptions.
+Use the installed deep-research skill: follow its workflow over the question. Write your output in the current working directory. Do not ask clarifying questions; proceed with stated assumptions.
 
 Question: What is the capital of France, and which river runs through it?

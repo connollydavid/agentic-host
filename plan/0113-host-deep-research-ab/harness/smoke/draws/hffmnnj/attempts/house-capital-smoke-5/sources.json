@@ -1,0 +1,28 @@
+{
+  "sources": [
+    {
+      "id": "rn_mwzx6nsidoys",
+      "url": "https://en.wikipedia.org/w/index.php?title=Paris&oldid=1387772859",
+      "quote": "Paris is the capital and largest city of France",
+      "locator": "Paris is the capital of France"
+    },
+    {
+      "id": "rn_mwzx6nsidoys",
+      "url": "https://whc.unesco.org/en/list/600/",
+      "quote": "the different layers of the history of Paris, the capital city of one of the first great nation states of Europe, are harmoniously superposed",
+      "locator": "Paris is the capital of France"
+    },
+    {
+      "id": "rn_mwzx6nskd0gk",
+      "url": "https://en.wikipedia.org/w/index.php?title=Seine&oldid=1384649318",
+      "quote": "The Seine is a 777-kilometre-long (483 mi) river in northern France",
+      "locator": "The river Seine runs through Paris"
+    },
+    {
+      "id": "rn_mwzx6nskd0gk",
+      "url": "https://whc.unesco.org/en/list/600/",
+      "quote": "The city of Paris is built along a bend in the River Seine",
+      "locator": "The river Seine runs through Paris"
+    }
+  ]
+}

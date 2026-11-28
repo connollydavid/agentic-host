@@ -2,6 +2,6 @@
   "arm": "samber",
   "task": "smoke/house-capital",
   "status": "excluded",
-  "reason": "The researcher's claim record carries the source URL, access date and confidence, but no verbatim quote or locator; the report cites the URL only, so the ledger's quote and locator cannot be populated.",
-  "evidence": "4 claim note(s) carry URL, accessed and confidence; none carries a quote: and locator: pair; report.md cites the URL without a passage or locator."
+  "reason": "The report cites 47 source URL(s), but the run fetched 9 of them; the ledger cannot carry a quote for a page the run never fetched.",
+  "evidence": "report.md cites 47 URL(s); the fetch log carries 12 URL(s). Missing snapshots: https://www.iris.sssup.it/retrieve/4982be06-23b0-4825-b7f8-e00df0b2256a/PoF_2024_Vol16-3_Symposium_3-Delledonne.pdf, https://bibliotekanauki.pl/articles/941122.pdf, https://rm.coe.int/statut-des-villes-capitales/168071ab77, https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006530034, https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000181509/, https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000019509867."
 }

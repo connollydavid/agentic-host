@@ -1,31 +1,811 @@
-### Official / institutional
-1. FranceTerme, Ministère de la Culture — "France (la)", *J.O.* 24/09/2008 — https://www.culture.fr/franceterme/terme/AFET263
-2. Arrêté du 4 novembre 1993 relatif à la terminologie des noms d'États et de capitales, *J.O.* 25/01/1994 pp. 1288–1295 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000181509 (403; via index)
-3. Ordonnance n° 58-1100 du 17 novembre 1958, art. 1 — https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006530034
-4. Conseil constitutionnel — Constitution de 1875, IIIe République — https://www.conseil-constitutionnel.fr/les-constitutions-dans-l-histoire/constitution-de-1875-iiie-republique
-5. SANDRE / OFB / eaufrance — "La Seine", code `----0010` — via https://web.archive.org/web/20210123171121/http://www.sandre.eaufrance.fr/geo/CoursEau/----0010
-6. Eaufrance — "Les rivières" — https://www.eaufrance.fr/les-rivieres
-7. Ministère de l'Intérieur, Formation civique — "Les fleuves français" (map: IGN 2012) — https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-français/
-8. HydroPortail / Vigicrues — station F700 0001 03 "La Seine à Paris – Austerlitz", data calculated 27/11/2026 — https://www.hydro.eaufrance.fr/stationhydro/F700000103/synthese
-9. Agence de l'Eau Seine-Normandie — "Le bassin de la Seine" — https://www.eau-seine-normandie.fr/agence-de-leau/le-bassin-de-la-seine
-10. UNESCO World Heritage Centre — "Paris, Banks of the Seine" (dossier 600bis) — https://whc.unesco.org/en/list/600/
-11. UNESCO — Décision 46 COM 8B.39 (2024) — https://whc.unesco.org/fr/decisions/8631/
-12. ICOMOS evaluation WHC/24/46.COM/INF.8B1.Add — https://whc.unesco.org/document/208528
-13. Ville de Paris — "Paris et ses ponts, toute une histoire" — https://www.paris.fr/pages/paris-et-ses-ponts-toute-une-histoire-7466
-14. Ville de Paris — "La Seine, cœur battant de Paris" — https://www.paris.fr/dossiers/la-seine-coeur-battant-de-paris-216
-15. Ville de Paris — "Crues" / "Le Zouave, baromètre de la montée des eaux" — https://www.paris.fr/pages/crues-5472
-16. Ville de Paris — "Les canaux de Paris" (updated 26/11/2026) — https://www.paris.fr/pages/tmp-canaux-7834
-17. Ville de Paris — "Les secrets enfouis de la Bièvre, rivière parisienne" — https://www.paris.fr/pages/les-secrets-enfouis-de-la-bievre-riviere-parisienne-16900
-18. Ville de Paris — "La Seine s'ouvre à la baignade" / "Baignade en Seine : toutes les questions" — https://www.paris.fr/pages/baignade-en-seine-toutes-les-questions-que-vous-vous-posez-31533
-19. Ville de Paris — Eau de Paris, *Bulletin qualité de l'eau de la Seine*, Aug 2026 — https://cdn.paris.fr/paris/2026-10-02/bulletin-qualite-eau-seine-2026-08-smy5.pdf
-20. DRIEAT Île-de-France / Préfecture — Dossier de presse "Plan Baignade", Aug 2024 — https://www.prefectures-regions.gouv.fr/ile-de-france/...
-21. Cour des comptes / CRC Île-de-France — IDR2025-51, délibéré 22/07/2025 — https://www.ccomptes.fr/sites/default/files/2025-11/IDR2025-51_0.pdf
-22. Paris & Métropole Aménagement — "La Bièvre (Paris 13e)" — https://www.parisetmetropole-amenagement.fr/fr/bievre-paris-13e
-23. SMBVB — Syndicat Mixte du Bassin Versant de la Bièvre, "Historique" — https://www.smbvb.fr/la-bievre/historique/
-24. Château de Versailles (public establishment) — "Versailles, 'capital' of the kingdom, 1682" — https://en.chateauversailles.fr/discover/history/key-dates/versailles-capital-kingdom-1682
-25. BnF, Essentiels — "De Lutèce à la capitale" — https://essentiels.bnf.fr/...
-26. BnF Gallica — "L'histoire tourmentée d'une rivière : quand la Bièvre disparaît" — https://gallica.bnf.fr/accueil/fr/html/lhistoire-tourmentee-dune-riviere-quand-la-bievre-disparait
-27. European Union — "France", EU member state overview — https://european-union.europa.eu/principles-countries-history/eu-countries/france_en
-28. Council of Europe, Intercultural Cities — "Paris, France" — https://www.coe.int/en/web/interculturalcities/paris
-29. Archives nationales d'outre-mer — "Paris (France)" — http://anom.archivesnationales.culture.gouv.fr/geo.php?...
-30. European Commission JRC — "FACT SHEET: Seine River Basin" — https://water.jrc.ec.europa.eu/pdf/seine-fs.pdf
+la Seine - LAROUSSE
+
+
+    
+    
+    
+                     
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+
+    
+              
+    
+    
+    
+    
+                           
+    
+                             
+                         
+                                    
+
+    
+      
+    
+
+    
+                   
+    
+    
+    
+
+    
+    
+    
+  
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+    
+      
+     
+
+   
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+
+    
+        
+        
+            
+            
+                
+                
+                    
+                         
+                            
+                                EN          
+                                
+                                
+                            
+                                ES          
+                                
+                               
+                            
+                                DE          
+                                
+                                
+                            
+                                IT          
+                                
+                                
+                            
+                         
+                         
+                            
+                             
+                            
+                            
+                            
+                                           
+                        
+                                               
+                            Newsletter
+                           
+                    
+                
+            
+             
+             
+             
+                LAROUSSE
+                
+                    
+                    
+                
+            
+            
+            
+            
+                
+                     
+                            
+                             Toggle navigation
+                             
+                             
+                             
+                         
+                         
+                            LAROUSSE
+                            
+                            
+                            
+                                
+                                
+                            
+                        
+                     
+            
+                     
+                         
+                             LANGUE FRANÇAISE
+                             BILINGUES
+                             FLASHCARDS
+                             TRADUCTEUR
+                             CONJUGATEUR
+                             ENCYCLOPÉDIE
+                             CUISINE
+                             
+                             JEUX
+                             
+                             LIVRES
+                             
+                         
+                                               
+                            Newsletter
+                          
+                        
+                             
+                                Suivez nous:
+                                
+                                  
+                                
+                                
+                                
+                            
+                          
+                        
+                             
+                                EN
+                                ES
+                                DE
+                                IT
+                                
+                           
+                         
+                       
+                
+            
+          
+        
+        
+                
+        
+        
+        
+                Accueil > Encyclopédie [riviere-lac]  > la Seine
+        
+        
+      
+        
+        
+             
+             
+
+        
+        
+        
+          
+    
+         
+         
+         
+        
+        
+          
+    
+    
+
+        
+            
+	
+		la Seine
+	Château-Gaillard
+	
+		Château-Gaillard
+	
+	Fleuve de France, drainant la majeure partie du Bassin parisien ; 776 km (bassin de 78 650 km2).
+	
+	
+	Le cours
+	Née sur le plateau de Langres à 471 m d'altitude, au N.-O. de Saint-Seine-l'Abbaye, la Seine, dans son cours supérieur, traverse d'abord les plateaux du Châtillonnais, mais ne prend véritablement allure de rivière qu'après la douix de Châtillon, qui lui verse en moyenne 600 l/s. Sa pente devient alors beaucoup plus faible, car, à 51 km de sa source, elle n'est plus qu'à 215 m d'altitude ; elle traverse ensuite la côte du Tonnerrois, puis celle du Barrois. Passant en Champagne au-delà de Bar-sur-Seine, elle suit une vallée large aux versants peu inclinés, et son cours, autour de Troyes, forme de multiples faux bras. À l'approche de la côte d'Île-de-France, elle reçoit, à droite, l'Aube, au N. de Romilly-sur-Seine, et son tracé, orienté par un axe tectonique, longe le front de la côte. Sur la rive gauche, l'Yonne, plus importante que la Seine par son débit comme par sa longueur et par l'étendue de son bassin, mais de régime plus irrégulier, conflue à Montereau, puis le Loing, en aval de Moret. La vaste plaine alluviale construite par la Seine dans cette partie de son cours est très humide et parcourue de faux bras, mais les meilleures terres, asséchées, sont le domaine de la grande culture (betterave). Importante zone de passage, elle localise, sur ses parties hautes, une série d'anciennes cités marchandes : Nogent-sur-Seine, Montereau, où se sont développées des industries mécaniques ou chimiques. Au-delà de sa confluence avec l'Yonne, la Seine devient une grande artère de la navigation fluviale. Elle reprend alors une direction S.-E.-N.-O., entre en Brie et atteint Melun.
+	Dans la région parisienne, la Seine, dont la vallée peu à peu se dégage et devient sinueuse, reçoit l'Essonne, l'Orge, l'Yerres et, à droite, la Marne (aux portes de Paris). Dès lors, sa vallée est parcourue de méandres très allongés : 190 km seulement à vol d'oiseau la séparent de la mer, mais la longueur de son cours est presque double. Elle contourne ainsi, dès la sortie de Paris, le bois de Boulogne, puis la plaine de Gennevilliers, la forêt de Saint-Germain, et, après le confluent de l'Oise (rive droite), les hauteurs de l'Hautil. Les industries, les habitations et les cultures maraîchères et fruitières s'y échelonnent, et ce n'est qu'au-delà de l'Hautil que prairies et cultures occupent réellement la vallée jusqu'à son embouchure. En Normandie, les méandres s'interrompent momentanément, sous l'influence directrice d'une faille en aval du confluent de l'Epte. Ailleurs, les lobes concaves ont entaillé le plateau en falaises, et les pentes douces des lobes convexes portent de belles forêts (du Rouvray, de la Londe, de Jumièges). Les ruines grandioses d'anciennes constructions monastiques y jalonnent « la route aux abbayes ». En amont de Rouen, la Seine reçoit, sur sa droite, l'Epte et l'Andelle, venues du pays de Bray, et, sur sa rive gauche, l'Eure.
+	Dès Pont-de-l'Arche, l'influence de la marée se fait sentir et, en aval de Rouen, la basse Seine est d'abord le lieu d'un important trafic maritime. Il a fallu approfondir et entretenir des chenaux pour permettre aux bateaux de remonter jusqu'à Rouen, où se font les derniers transbordements entre la navigation fluviale et la navigation maritime. L'estuaire, long d'une quinzaine de kilomètres entre la mer et Tancarville (où il est enjambé par deux ponts routiers : le pont de Normandie et le pont de Tancarville), occupe une partie de l'ancienne vallée, envahie par la mer ; peu profond, il est encombré de vases et de bancs de sable gênants pour la navigation, mais un chenal de 20 km de longueur a été aménagé dans sa partie sud, pour permettre la remontée de bateaux de 8 à 10 m de tirant d'eau. Un port pour navires porte-conteneurs a été ouvert en 2006. Dans cet estuaire largement ouvert sur la Manche et fréquemment brumeux, la navigation n'est pas sans danger, et les bateaux empruntent au N. le canal de Tancarville. La voie fluviale ouverte par la Seine sur l'une des mers les plus fréquentées du globe et à proximité de la région parisienne connaît un important trafic de transit, qui a permis, entre Rouen et Le Havre, un grand développement industriel. Celui-ci s'est d'abord fait autour de Rouen, à partir d'un travail traditionnel du textile et des industries chimiques. La métallurgie (constructions navales, hauts fourneaux, transformation des métaux) et la pétrochimie sont venues ensuite.
+	Avec 25 % du trafic maritime national, la basse Seine représente aujourd'hui le second complexe portuaire français. Aux deux extrémités, une certaine répartition du trafic intervient entre Le Havre et Rouen.
+	Le régime
+	La Seine est soumise à un régime de hautes eaux d'hiver et de basses eaux d'été (période de plus forte évaporation). Le débit moyen, à Paris, est de 300 m3s ; il peut tomber en période d'étiage à 20 m3s et atteindre 2 500 m3s en période de crue.
+	Seul le cours supérieur, en amont du confluent de l'Yonne, est influencé par la rétention nivale et, dès Melun, les étiages se situent en septembre, les plus hautes eaux, en janvier. L'importance des roches calcaires dans la géologie du Bassin parisien permet un écoulement différé des eaux, et, entre Melun et Mantes, malgré les apports successifs de la Marne et de l'Oise, les oscillations moyennes annuelles s'atténuent. Les crues accidentelles qui affectent la Seine sont dues à des averses océaniques répétées. La superposition des vagues de crue des rivières drainant les différents secteurs du Bassin parisien peut amener, sur la Seine et aux principaux confluents, des inondations redoutables. La plus célèbre est celle qu'a subie Paris en 1910 : le 28 janvier fut atteinte la cote exceptionnelle de 8,62 m. Les quartiers les plus bas de Paris, y compris la gare Saint-Lazare, furent envahis par l'eau. On entreprit alors, à Paris, de rehausser les quais et d'élargir le petit bras en face de la Cité. Les inondations de 1955 amenèrent la décision d'entreprendre l'édification de grands réservoirs écrêteurs de crues sur la Seine et sur la Marne, en complément des ouvrages plus anciens implantés sur les rivières du Morvan (réservoirs des Settons [1858], du Crescent [1932], de Chaumeçon [1934], de Pannesière-Chaumard [1949]). Les réservoirs « Seine » (lac de la forêt d'Orient) et « Aube » (lac du Temple), entre Brienne-le-Château, Bar-sur-Seine et Troyes, mis en eau en 1966 et en 1990, retiennent respectivement 205 millions et 170 millions de m3. Le réservoir « Marne » (lac du Der-Chantecoq), à côté de Saint-Dizier, mis en eau en 1974, retient 350 millions de m3. Ils mettent Paris à l'abri de crues qui auraient les mêmes caractères que celle de 1955 ; ils contribuent aussi à une meilleure alimentation en eau de la région parisienne (ils permettent d'augmenter de 60 m3 le débit d'étiage de la Seine à Paris, alors que l'augmentation due aux anciens ouvrages était de 12 m3 seulement).
+	La navigation et le rôle énergétique
+	La navigation est particulièrement dense entre l'agglomération parisienne et la mer. Le trafic fluvial du port de Paris est de l'ordre de 20 Mt. Les navires de mer de 10 000 t remontent jusqu'à Rouen ; au-delà, le trafic s'effectue par péniches et trains de poussage. Le réseau fluvial de la Seine et les ports du Havre, de Rouen et de Paris sont reliés au réseau navigable du nord de l'Europe par les canaux de Saint-Quentin, du Nord, de la Sambre à l'Oise et de la Marne au Rhin. Ils sont reliés au système rhodanien par le canal de Bourgogne et le canal de la Marne à la Saône et à la Loire par les canaux de Briare et du Nivernais. Les eaux de la Seine sont aussi utilisées pour le refroidissement d'importantes centrales thermiques (notamment Porcheville ) et par la centrale nucléaire de Nogent-sur-Seine.
+
+           
+            
+            
+                
+            
+			
+			
+			
+        
+
+        
+            
+                
+                    
+                    
+                    
+                    PLAN
+                
+                
+                  
+                    
+                        
+	Plan
+	
+		la Seine
+		
+		
+			Le cours
+			
+			Le régime
+			
+			La navigation et le rôle énergétique
+			
+		
+	
+
+                                      
+                    
+                
+            
+            
+            
+                   
+             
+            
+            
+            
+                
+
+	
+	
+	Médias associés
+
+
+	
+		
+		Château-Gaillard
+	
+
+
+	
+	
+	Articles associés
+
+
+	
+		Achères
+		78260. Commune des Yvelines...
+	
+	
+		Andelys (Les)
+		27700. Chef-lieu d'arrondissement de l'Eure, sur la Seine...
+	
+	
+		Andrésy
+		78570. Chef-lieu de canton des Yvelines, sur la Seine, au pied des hauteurs...
+	
+	
+		Aube.
+		Rivière de France, longue de 248 km, affluent de la Seine...
+	
+	
+		Bezons
+		95870. Chef-lieu de canton du Val-d'Oise, sur la Seine, à 8 km au N.-O. de Paris...
+	
+	
+		Bougival
+		78380. Commune des Yvelines, sur la Seine, au N. de Versailles...
+	
+	
+		Boulogne-Billancourt
+		92100. Chef-lieu d'arrondissement des Hauts-de-Seine, banlieue sud-ouest de Paris, dans une boucle...
+	
+	
+		Bourgogne.
+		Ancienne Région administrative de l'est de la France, qui est plus une unité historique que géographique, appartenant depuis 2016 à la Région Bourgogne-Franche-Comté.
+	
+	
+		Brie.
+		Région située à l'E. de Paris, entre les vallées de la...
+	
+	
+		Brotonne (forêt de).
+		Forêt domaniale (6 750 ha) de Seine-Maritime, dans une boucle de la...
+	
+	
+		canal
+		[NAVIGATION] Voie navigable artificielle, comportant une série de biefs dans lesquels...
+	
+	
+		Champagne.
+		Province historique et ensemble géographique de la partie orientale du...
+	
+	
+		Champagne-sur-Seine
+		77430. Commune de Seine-et-Marne...
+	
+	
+		Chanteloup-les-vignes
+		78570. Commune des Yvelines, dans une boucle de la Seine, au N. de...
+	
+	
+		Charenton-le-Pont
+		94220. Chef-lieu de canton du Val-de-Marne, dans la banlieue sud-est de Paris, entre...
+	
+	
+		Chatou
+		78400. Chef-lieu de canton des Yvelines, banlieue ouest de Paris, sur la Seine...
+	
+	
+		Choisy-le-Roi
+		94600. Chef-lieu de canton du Val-de-Marne, au S.-S.-E. de Paris, sur la Seine...
+	
+	
+		Cléon
+		76410. Commune de la Seine-Maritime, dans un méandre de la Seine, au N....
+	
+	
+		Colombes
+		92700. Chef-lieu de canton des Hauts-de-Seine, dans la banlieue nord-ouest de Paris, sur...
+	
+	
+		Conflans-Sainte-Honorine
+		78700. Chef-lieu de canton des Yvelines, sur la Seine, au confluent de l'Oise...
+	
+	
+		Corbeil-Essonnes
+		91100. Chef-lieu de canton de l'Essonne, au confluent de la Seine et de...
+	
+	
+		Courbevoie
+		92400. Chef-lieu de canton des Hauts-de-Seine, banlieue N.-O. de Paris, sur la Seine...
+	
+	
+		craie.
+		Roche calcaire blanche ou très pâle, pulvérulente, traçante.
+	
+	
+		Draveil
+		91210. Chef-lieu de canton de l'Essonne, sur la rive droite de la Seine...
+	
+	
+		Duclair
+		76480. Chef-lieu de canton de la Seine-Maritime, sur la Seine, en aval de...
+	
+	
+		Elbeuf
+		76500. Chef-lieu de canton de la Seine-Maritime, sur la Seine, au S. de Rouen...
+	
+	
+		Épinay-sur-Seine
+		93800. Chef-lieu de canton de la Seine-Saint-Denis, banlieue nord de Paris, sur la...
+	
+	
+		Epte.
+		Affluent de la Seine (rive droite) ; 101 km.
+	
+	
+		Essonne.
+		Rivière du sud du Bassin parisien, affluent de la Seine (rive gauche)...
+	
+	
+		Eure
+		27. Département...
+	
+	
+		Eure.
+		Rivière du Bassin parisien, née dans le Perche et qui passe à...
+	
+	
+		Évry.
+		Chef-lieu du département de l'Essonne, sur la Seine, en aval de Corbeil-Essonnes.
+	
+	
+		fleuve.
+		Cours d'eau finissant dans la mer et souvent formé par...
+	
+	
+		Flins-sur-Seine
+		78410. Commune des Yvelines, à 13 km à l'E.-S.-E. de Mantes-la-Jolie...
+	
+	
+		France.
+		État d'Europe occidentale baigné à l'ouest par l'océan Atlantique et au...
+	
+	
+		Gaillon
+		27600. Chef-lieu de canton de l'Eure, dans la vallée de la Seine...
+	
+	
+		Gennevilliers
+		92230. Chef-lieu de canton des Hauts-de-Seine, banlieue N.-O. de Paris, sur la Seine...
+	
+	
+		Gonfreville-l'Orcher
+		76700. Chef-lieu de canton de la Seine-Maritime, à l'E. du Havre...
+	
+	
+		Grand-Couronne
+		76530. Chef-lieu de canton de la Seine-Maritime, banlieue S.-O. de Rouen, sur la Seine...
+	
+	
+		Grand-Quevilly (Le)
+		76120. Chef-lieu de canton de la Seine-Maritime, sur la Seine, banlieue S.-O. de Rouen...
+	
+	
+		Hauts-de-Seine
+		92. Département...
+	
+	
+		Havre (Le).
+		Chef-lieu d'arrondissement de la Seine-Maritime, sur la rive nord et à...
+	
+	
+		Hève (cap de la).
+		Cap crayeux de la Seine-Maritime, fermant, au N., l'embouchure de...
+	
+	
+		Île-de-France.
+		Région administrative de France, regroupant Paris...
+	
+	
+		Île-Saint-Denis (l')
+		93450. Commune de la Seine-Saint-Denis, sur une île de la Seine, à l'extrémité...
+	
+	
+		Ivry-sur-Seine
+		94200. Chef-lieu de canton du Val-de-Marne, banlieue S.-E. de Paris, sur la Seine (rive gauche)...
+	
+	
+		Langres (plateau de).
+		Région de l’extrémité du Bassin parisien (Côte-d’Or et Haute-Marne)...
+	
+	
+		Limay
+		78520. Chef-lieu de canton des Yvelines, sur la Seine, en face de Mantes-la-Jolie...
+	
+	
+		Loing (le).
+		Rivière du Bassin parisien, affluent de la Seine (rive gauche) ; 166 km...
+	
+	
+		Loiret (le).
+		Rivière du Bassin parisien, affluent de la Loire (rive gauche) ; 12 km.
+	
+	
+		Manche.
+		Mer épicontinentale (donc peu profonde) du nord-ouest de l'Europe...
+	
+	
+		Marly-le-Roi
+		78160. Chef-lieu de canton des Yvelines, au-dessus de la Seine, en bordure de...
+	
+	
+		Marne (Haute-)
+		52. Département...
+	
+	
+		Marne (la).
+		Rivière de France, dans le Bassin parisien, affluent de la Seine (rive droite) ; 525 km...
+	
+	
+		Melun
+		77000. Chef-lieu du département de Seine-et-Marne, à 46 km au S.-E. de Paris, sur la Seine...
+	
+	
+		Montereau-Fault-Yonne
+		77130. Chef-lieu de canton de Seine-et-Marne, au confluent de l'Yonne et de la...
+	
+	
+		Montesson
+		78360. Commune des Yvelines, banlieue ouest de Paris, sur la Seine, en...
+	
+	
+		Mureaux (Les)
+		78130. Commune des Yvelines, sur la Seine, en face de Meulan...
+	
+	
+		Nanterre
+		92000. Chef-lieu du département des Hauts-de-Seine, dans la banlieue ouest de Paris, sur...
+	
+	
+		navigation.
+		Technique du déplacement des navires, du pilotage des avions, des...
+	
+	
+		Neuilly-sur-Marne
+		93330. Chef-lieu de canton de la Seine-Saint-Denis, à 10 km à l'E. de Paris...
+	
+	
+		Neuilly-sur-Seine
+		92200. Chef-lieu de canton des Hauts-de-Seine, dans la banlieue ouest de Paris, en...
+	
+	
+		Nogent-sur-Seine
+		10400. Chef-lieu d'arrondissement de l'Aube, sur la rive gauche de la Seine...
+	
+	
+		Normandie.
+		Ancienne province du nord-ouest de la France et Région administrative...
+	
+	
+		Oise.
+		Rivière du Bassin parisien, affluent de la Seine (rive droite), longue de...
+	
+	
+		Oissel
+		76350. Commune de la Seine-Maritime, sur la Seine, à 11 km au S. de Rouen...
+	
+	
+		Orient (forêt d').
+		Massif forestier de la Champagne (Aube), à l'E. de Troyes...
+	
+	
+		Orléanais.
+		Ancienne province de France, entre l'Île-de-France, la Normandie, le Maine...
+	
+	
+		Paris.
+		Capitale de la France, chef-lieu de la Région Île-de-France, sur la...
+	
+	
+		parisien (Bassin).
+		Unité géologique de France, formée de sédiments...
+	
+	
+		Petit-Couronne
+		76650. Commune de la Seine-Maritime, sur la Seine, banlieue S.-O. de Rouen...
+	
+	
+		Petit-Quevilly (Le)
+		76140. Chef-lieu de canton de la Seine-Maritime, banlieue ouest de Rouen, sur la...
+	
+	
+		Poissy
+		78300. Chef-lieu de canton des Yvelines, en bordure de la forêt de Saint-Germain...
+	
+	
+		Pont-de-l'Arche
+		27340. Chef-lieu de canton de l'Eure, au confluent de l'Eure et de la...
+	
+	
+		Porcheville
+		78440. Commune des Yvelines, sur la Seine, en amont de Mantes-la-Jolie...
+	
+	
+		Port-Jérôme.
+		Section de la commune de Notre-Dame-de-Gravenchon (Seine-Maritime), sur la basse...
+	
+	
+		Puteaux
+		92800. Chef-lieu de canton des Hauts-de-Seine, à l'O. de Paris, sur la Seine...
+	
+	
+		régime.
+		Ensemble des variations subies par le débit d'un cours d'eau.
+	
+	
+		Risle (la).
+		Rivière de Normandie ; 140 km.
+	
+	
+		Romilly-sur-Seine
+		10100. Chef-lieu de canton de l'Aube, dans la vallée de la Seine...
+	
+	
+		Rouen.
+		Chef-lieu de la Région Normandie et du département de la Seine-Maritime...
+	
+	
+		Roumois.
+		Région de Normandie (Eure), entre la Risle et la...
+	
+	
+		Rouvray (forêt domaniale du).
+		Forêt au S. de Rouen, couvrant 3 240 ha et plantée de pins...
+	
+	
+		Saint-Cloud
+		92210. Chef-lieu de canton des Hauts-de-Seine, banlieue ouest de Paris...
+	
+	
+		Saint-Germain-en-Laye
+		78100. Chef-lieu d'arrondissement des Yvelines, à l'ouest de Paris, sur la rive gauche...
+	
+	
+		Saint-Martin (canal).
+		Canal de navigation (4 500 m), joignant le bassin de la...
+	
+	
+		Seine-et-Marne
+		77. Département...
+	
+	
+		Seine-Maritime
+		76. Département...
+	
+	
+		Seine-Saint-Denis
+		93. Département...
+	
+	
+		Settons (lac des).
+		Lac-réservoir du Morvan (Nièvre), alimenté par la Cure.
+	
+	
+		Sèvres
+		92310. Chef-lieu de canton des Hauts-de-Seine, sur la Seine, banlieue S.-O. de Paris...
+	
+	
+		Sotteville-lès-Rouen
+		76300. Chef-lieu de canton de la Seine-Maritime, banlieue sud de Rouen, sur la...
+	
+	
+		Suresnes
+		92150. Chef-lieu de canton des Hauts-de-Seine, banlieue ouest de Paris, sur la Seine...
+	
+	
+		Tancarville (pont de).
+		Pont établi à la tête de l'estuaire de la Seine (1959)...
+	
+	
+		transports.
+		Ensemble des divers modes d'acheminement des marchandises ou des personnes.
+	
+	
+		Troyes
+		10000. Chef-lieu du département de l'Aube, dans la Champagne, sur la Seine, à...
+	
+	
+		Val-de-Marne
+		94. Département...
+	
+	
+		Val-d'Oise
+		95. Département...
+	
+	
+		Vernon
+		27200. Chef-lieu de canton de l'Eure, sur la Seine, entre les forêts de...
+	
+	
+		Vexin.
+		Région de France, bordée à l'O. par la vallée de l'Andelle, à...
+	
+	
+		Vitry-sur-Seine
+		94400. Chef-lieu de canton du Val-de-Marne, banlieue S.-E. de Paris, sur la rive gauche...
+	
+	
+		Yonne.
+		Rivière du Bassin parisien, affluent de la Seine (rive gauche) ; 293 km...
+	
+	
+		Yvelines
+		78. Département...
+	
+	Voir plus
+	
+
+            
+			
+			
+			
+			
+			
+        
+    
+
+    
+    
+        
+            
+	Plan
+	
+		la Seine
+		
+		
+			Le cours
+			
+			Le régime
+			
+			La navigation et le rôle énergétique
+			
+		
+	
+
+         
+        +
+        
+    
+
+
+         
+    
+
+        
+
+        
+        
+            
+        
+        
+        
+        
+        
+
+        
+        
+            
+                Applications mobiles
+                Index
+                
+                Mentions légales et crédits
+                CGU
+                CGV
+                Charte de confidentialité
+                
+                           
+                Cookies          
+                
+                Contact
+                À la une   
+            
+            
+                © Larousse
