@@ -269,9 +269,10 @@ python3 confirm.py --check
 <code>--key /path/to/operator.key</code>, decrypts to memory, and compares the recovered
 set digest with <code>sets-fresh2.json.held_out.plaintext_set_digest</code>.</p>
 <h2 id="what-is-still-open"><a class="header" href="#what-is-still-open">What is still open</a></h2>
-<p>The fresh-2 set and key are operator-held. The confirmation cannot run until
-the key is supplied and the selection has locked an arm. The draw protocol is
-fixed at two fresh draws per held-out task per arm: 20 confirmation draws.</p>
+<p>The fresh-2 set is sealed; its key is outside the repository and the
+confirmation takes <code>--key</code> explicitly. The selection must lock an arm before
+the 20 confirmation draws can run. The draw protocol is fixed at two fresh
+draws per held-out task per arm.</p>
 
                     </main>
 

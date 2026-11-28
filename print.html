@@ -25947,9 +25947,10 @@ digest, the <code>Salted__</code> header and the absence of plaintext without ta
 key. <code>tasks/seal.py</code> seals an operator-supplied plaintext set with the
 operator-held key; it never creates a key. The code is tested against a
 temporary one-task seal. The verdict is not run yet.</li>
-<li>Pending: the fresh-2 held-out set and the operator-held key; the locked arm
-from the selection round; the 20 live draws; the judge on those draws. A
-missing key or an unlocked selection refuses, and the operator's <code>goal accept</code> remains the milestone.</li>
+<li>Pending: the locked arm from the selection round and the 20 live draws. The
+fresh-2 set is sealed (plaintext digest <code>5e056b70…</code>, ciphertext
+<code>3186331c…</code>); its key is outside the repository and the run takes <code>--key</code>.
+A missing key or an unlocked selection refuses, and the operator's <code>goal accept</code> remains the milestone.</li>
 </ul>
 <h3 id="fen-acceptance"><a class="header" href="#fen-acceptance">Fen acceptance</a></h3>
 <p>The real Fen runs one task through the component's single command and reaches
@@ -26886,10 +26887,11 @@ the judge result and the criteria:</p>
 the incumbent (<code>null</code>) stands. The operator's <code>goal accept</code> is the milestone;
 the verdict is evidence, not the acceptance.</p>
 <h2 id="state"><a class="header" href="#state">State</a></h2>
-<p>The fresh-2 set is not sealed yet: the operator holds the key and supplies the
-plaintext set outside the repository. <code>seal.py</code>, <code>confirm.py --check</code> and the
-in-memory decrypt path are tested against a temporary one-task set. The
-selection round must lock an arm before the confirmation can run.</p>
+<p>The fresh-2 set is sealed: five tasks (two known-answer, three house), plaintext
+set digest <code>5e056b70…</code>, ciphertext <code>3186331c…</code>. <code>confirm.py --check</code> passes
+without a key. The key is outside the repository and the run takes <code>--key</code>;
+the plaintext task text is not in the tree. The selection round must lock an
+arm before the confirmation can run.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="who-accompanied-lilian-ngoyi-on-the-illegal-journey-to-lausanne"><a class="header" href="#who-accompanied-lilian-ngoyi-on-the-illegal-journey-to-lausanne">Who accompanied Lilian Ngoyi on the illegal journey to Lausanne?</a></h1>
 <h2 id="answer"><a class="header" href="#answer">Answer</a></h2>
 <p><strong>Dora Tamana</strong> accompanied Lilian Ngoyi on the 1955 illegal journey to Lausanne,
@@ -30937,9 +30939,10 @@ python3 confirm.py --check
 <code>--key /path/to/operator.key</code>, decrypts to memory, and compares the recovered
 set digest with <code>sets-fresh2.json.held_out.plaintext_set_digest</code>.</p>
 <h2 id="what-is-still-open"><a class="header" href="#what-is-still-open">What is still open</a></h2>
-<p>The fresh-2 set and key are operator-held. The confirmation cannot run until
-the key is supplied and the selection has locked an arm. The draw protocol is
-fixed at two fresh draws per held-out task per arm: 20 confirmation draws.</p>
+<p>The fresh-2 set is sealed; its key is outside the repository and the
+confirmation takes <code>--key</code> explicitly. The selection must lock an arm before
+the 20 confirmation draws can run. The draw protocol is fixed at two fresh
+draws per held-out task per arm.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="software-where"><a class="header" href="#software-where">Software: where</a></h1>
 <p>The action this project produces. Each component is a bare object store with worktrees, not committed into this repo; the recipe below is the reproducibility anchor. Materialize the worktrees locally with:</p>
 <pre><code>host-lifecycle software --materialize .

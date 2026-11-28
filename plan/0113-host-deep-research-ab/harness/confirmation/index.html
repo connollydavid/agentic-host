@@ -227,10 +227,11 @@ the judge result and the criteria:</p>
 the incumbent (<code>null</code>) stands. The operator's <code>goal accept</code> is the milestone;
 the verdict is evidence, not the acceptance.</p>
 <h2 id="state"><a class="header" href="#state">State</a></h2>
-<p>The fresh-2 set is not sealed yet: the operator holds the key and supplies the
-plaintext set outside the repository. <code>seal.py</code>, <code>confirm.py --check</code> and the
-in-memory decrypt path are tested against a temporary one-task set. The
-selection round must lock an arm before the confirmation can run.</p>
+<p>The fresh-2 set is sealed: five tasks (two known-answer, three house), plaintext
+set digest <code>5e056b70…</code>, ciphertext <code>3186331c…</code>. <code>confirm.py --check</code> passes
+without a key. The key is outside the repository and the run takes <code>--key</code>;
+the plaintext task text is not in the tree. The selection round must lock an
+arm before the confirmation can run.</p>
 
                     </main>
 

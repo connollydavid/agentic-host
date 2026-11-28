@@ -584,9 +584,10 @@ digest, the <code>Salted__</code> header and the absence of plaintext without ta
 key. <code>tasks/seal.py</code> seals an operator-supplied plaintext set with the
 operator-held key; it never creates a key. The code is tested against a
 temporary one-task seal. The verdict is not run yet.</li>
-<li>Pending: the fresh-2 held-out set and the operator-held key; the locked arm
-from the selection round; the 20 live draws; the judge on those draws. A
-missing key or an unlocked selection refuses, and the operator's <code>goal accept</code> remains the milestone.</li>
+<li>Pending: the locked arm from the selection round and the 20 live draws. The
+fresh-2 set is sealed (plaintext digest <code>5e056b70…</code>, ciphertext
+<code>3186331c…</code>); its key is outside the repository and the run takes <code>--key</code>.
+A missing key or an unlocked selection refuses, and the operator's <code>goal accept</code> remains the milestone.</li>
 </ul>
 <h3 id="fen-acceptance"><a class="header" href="#fen-acceptance">Fen acceptance</a></h3>
 <p>The real Fen runs one task through the component's single command and reaches
