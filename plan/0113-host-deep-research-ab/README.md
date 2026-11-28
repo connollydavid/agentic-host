@@ -462,7 +462,9 @@ baseline.
 `Unlicense` plus the third-party notice, the confirmed arm vendored or
 materialised as the arm's licensing requires, and the release gate green. The
 component's run contract carries the OpenCode v2.4.2 archive and binary digests
-and the reference model pin; the recipe check reads them.
+and the reference model pin; the recipe check reads them. The component and its
+one-arm boundary are authorized by
+[call/0062](../call/0062-a-deep-research-component-carries-one-arm.md).
 
 - verify: `software --check` reads the stanza clean, the artifact re-derives
   under `software --verify-build`, the recorded harness and model pins match
