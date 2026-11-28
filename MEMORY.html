@@ -3275,6 +3275,9 @@ host install mode (cosign), Fen acceptance on the built oneshot/resolve paths.</
 <li>
 <p>2026-11-28 — <strong>The smoke record is append-only and a partial <code>--only</code> run must never overwrite it.</strong> The code now prepends a legacy single record to <code>records</code>, requires the isolation probe for a PASS, and refuses a partial write. The first fresh-2 key and the final <code>goal accept</code> stay with the operator; <code>confirm.py --check</code> reads only the ciphertext digest and never decrypts.</p>
 </li>
+<li>
+<p>2026-11-28 — <strong>The hffmnnj smoke's phantom sources were URL identity, not missing fetches.</strong> The plugin reads Wikipedia through the action API, the REST summary endpoint or a revision permalink and records the canonical (or permalink) article URL in its notes; the fetch log held a different spelling of the same page. <code>contract.canonical_url</code> now maps all four forms to one key for the contract and rubric, and the hffmnnj adapter resolves finding notes only, because source/plan/report notes are provenance. The fresh smoke passes with null 5.714/16, hffmnnj 4.0/16, kanatami a terminal budget result, and the two exclusions.</p>
+</li>
 </ul>
 
                     </main>
