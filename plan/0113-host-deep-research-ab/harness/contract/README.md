@@ -64,7 +64,7 @@ An arm that cannot satisfy the ledger writes `exclusion.json` instead:
 | Arm | Adapter | Dry-run result |
 |---|---|---|
 | `null` | `adapters/null.py` | valid: the frozen prompt returns the report and ledger directly |
-| `hffmnnj` | `adapters/hffmnnj.py` | valid: the report cites `[rn_…]`; the finding note carries `url` and `quote`, and the body carries `locator:` |
+| `hffmnnj` | `adapters/hffmnnj.py` | valid: finding notes carry `url` and `quote`; source, plan and report notes are provenance and are skipped |
 | `kanatami` | `adapters/kanatami.py` | valid: the report cites the worker result URL; the first sentence of `full_text` is the quote and the worker/paragraph is the locator |
 | `weizhena` | `adapters/weizhena.py` | excluded: the report cites no per-source quote/locator; the result JSON URLs are the evidence |
 | `samber` | `adapters/samber.py` | valid when every report-cited URL is in the fetch log; excluded with the missing count otherwise |
@@ -76,6 +76,11 @@ adapter in the roster dry run.
 The hffmnnj plugin runs with its embedding mode off: the per-arm config passes
 `options.embedding.mode = "off"`, so the arm uses keyword search and makes no
 local model download. The config digest in the receipt covers the choice.
+
+A Wikipedia revision permalink, the action API, the REST summary endpoint and
+the canonical article URL are one fetched page. The contract and rubric
+compare them through `canonical_url`, so an arm that cites a permalink is not
+a phantom when the run fetched the article or its API.
 
 ## The model and tool override
 

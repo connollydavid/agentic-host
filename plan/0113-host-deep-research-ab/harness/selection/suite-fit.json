@@ -1,7 +1,7 @@
 {
-  "recorded": "2026-11-27",
+  "recorded": "2026-11-28",
   "source": "smoke/smoke.json, arms/README.md, and the plan's six suite-fit criteria",
-  "note": "A verdict is what the recorded evidence shows, not a judgment made after the table. The kanatami and samber ledger/snapshot verdicts are re-read after the actual smoke redo.",
+  "note": "A verdict is what the recorded evidence shows, not a judgment made after the table. The verdicts are re-read against the fresh smoke; a budget or exclusion draw has no ledger or receipt, so its ledger and snapshot rows stay false.",
   "arms": {
     "null": {
       "model": {"verdict": true, "evidence": "receipt model api.d07yx58.net/qwen3.8-flash-next"},
@@ -13,23 +13,23 @@
     },
     "hffmnnj": {
       "model": {"verdict": true, "evidence": "the per-arm config override; the smoke receipt"},
-      "ledger": {"verdict": true, "evidence": "the hffmnnj smoke valid 5.09/16; finding notes carry URL and quote"},
-      "snapshots": {"verdict": true, "evidence": "the hffmnnj fetch log and the actual page snapshots"},
+      "ledger": {"verdict": true, "evidence": "the fresh smoke valid 4.0/16; finding notes carry URL and quote; the canonical fetch alias matches the permalink"},
+      "snapshots": {"verdict": true, "evidence": "the hffmnnj fetch log and the actual page snapshots under the canonical URL"},
       "artifacts": {"verdict": true, "evidence": "native/report.md and native/notes/"},
       "one_command": {"verdict": true, "evidence": "run.py and the hffmnnj adapter"},
       "vendored": {"verdict": true, "evidence": "MIT; pin d977301; embedding off in the per-arm config"}
     },
     "kanatami": {
       "model": {"verdict": true, "evidence": "the per-arm config override"},
-      "ledger": {"verdict": false, "evidence": "the 9.818 smoke wrote the report's own source list as the log; the actual smoke redo is pending"},
-      "snapshots": {"verdict": false, "evidence": "the same: the report paragraph is not a fetched page"},
+      "ledger": {"verdict": false, "evidence": "the fresh smoke is a terminal budget result (342,455 prompt tokens; 44 tools); no ledger or receipt"},
+      "snapshots": {"verdict": false, "evidence": "the budget result recorded fetches, but no receipt or ledger"},
       "artifacts": {"verdict": true, "evidence": "final-report.md and research-corpus.md"},
       "one_command": {"verdict": true, "evidence": "run.py and the kanatami adapter"},
       "vendored": {"verdict": true, "evidence": "MIT; pin 9f46968"}
     },
     "weizhena": {
       "model": {"verdict": true, "evidence": "the per-arm config override"},
-      "ledger": {"verdict": false, "evidence": "the field JSON carries URLs but no quote or locator"},
+      "ledger": {"verdict": false, "evidence": "21 result URLs, but the report cites no quote or locator"},
       "snapshots": {"verdict": false, "evidence": "no per-source snapshot record"},
       "artifacts": {"verdict": true, "evidence": "results/ and the report"},
       "one_command": {"verdict": true, "evidence": "run.py and the weizhena adapter"},
@@ -37,8 +37,8 @@
     },
     "samber": {
       "model": {"verdict": true, "evidence": "the per-arm config override"},
-      "ledger": {"verdict": false, "evidence": "the claim notes carry URL, access and confidence, not a quote and locator; the inline report parser is pending"},
-      "snapshots": {"verdict": false, "evidence": "no per-source snapshot record"},
+      "ledger": {"verdict": false, "evidence": "47 report citations, 9 fetched; the adapter excludes the phantom rest"},
+      "snapshots": {"verdict": false, "evidence": "9 fetched pages for 47 report citations; no complete ledger"},
       "artifacts": {"verdict": true, "evidence": "the report and notes"},
       "one_command": {"verdict": true, "evidence": "run.py and the samber adapter"},
       "vendored": {"verdict": true, "evidence": "MIT; pin 50a33836"}

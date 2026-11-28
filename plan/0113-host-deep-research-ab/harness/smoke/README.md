@@ -1,30 +1,28 @@
 # plan/0113 smoke gate: one draw per arm before any scored draw
 
-**Status: the corrected machinery passes on the recorded live draws; the fresh
-all-arm run is the `#selection-redo` record.** The gate is the last check before
-the redo selection. It runs one draw per arm on a dedicated task, through the
-full pipeline: the native prompt, the adapter, the measured search provider,
-the fetch log, the receipt, the rubric and the isolation probe.
-
-The review found that the first record read the wrong OpenCode tables: replies
-came from a `message` table that does not exist in the v2.4.2 schema, and
-fetches read `state.output` while the scratch database stores the page as
+**Status: PASS 2026-11-28.** The corrected machinery runs under the pinned
+binary. The five arms were run live in one two-way smoke; the isolation probe
+is 11/11. The review found the first record read the wrong OpenCode tables:
+replies came from a `message` table that does not exist in the v2.4.2 schema,
+and fetches read `state.output` while the scratch database stores the page as
 `state.content`. The corrected reader uses `session_message` for replies and
 `session_part` for fetches (including subagent sessions), and the report's
-prose is no longer a fetch fallback. The recorded live draws now yield:
+prose is no longer a fetch fallback.
+
+The fresh result:
 
 | Arm | Outcome | Evidence |
 |---|---|---|
-| `null` | valid, 4.0/16 | provider `exa`, 22 replies, 4 fetched pages |
-| `hffmnnj` | valid, 16.0/16 | 10 replies, 1 fetched page, no websearch; the fresh run turns embedding off |
-| `kanatami` | budget | 1,264,094 prompt tokens, 72 tools, wall 10,800s; native route `html.duckduckgo.com` recorded |
-| `weizhena` | excluded | 26 result URLs, report cites no quote or locator |
-| `samber` | excluded | 49 report citations, 2 fetched; the ledger cannot carry the rest |
+| `null` | valid, 5.714/16 | provider `exa`, 9 replies, 4 fetched pages, 238.9s |
+| `hffmnnj` | valid, 4.0/16 | embedding off, 11 replies, 2 fetched pages, 181.7s |
+| `kanatami` | budget | 342,455 prompt tokens > 300,000, 44 tools, 6117.3s |
+| `weizhena` | excluded | 21 result URLs, report cites no quote or locator |
+| `samber` | excluded | 47 report citations, 9 fetched; the ledger cannot carry the rest |
 
-The fresh record supersedes this table. The isolation probe is 11/11. A valid
-draw has a live receipt with the 300000/100000/60/10800 caps, a fetch log, a
-reply ledger and a scored rubric. The record is `smoke/smoke.json`; its
-`records` list is append-only.
+A valid draw has a live receipt with the 300000/100000/60/10800 caps, a fetch
+log, a reply ledger and a scored rubric. The record is `smoke/smoke.json`; its
+`records` list is append-only and now carries the legacy PASS, the failed run
+and this PASS.
 
 ## The task
 

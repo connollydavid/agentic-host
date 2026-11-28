@@ -606,11 +606,6 @@ and seal it with its own key.
   `tasks/seal.py`; the plaintext task text stays outside the repository and
   `--check` reads only the ciphertext. Record:
   [confirmation/README.md](harness/confirmation/README.md).
-- Reopened 2026-11-27 by the cast review: this fresh set was read by
-  `confirm.py --check`, which decrypts before checking the lock, and its key
-  sits under `/tmp`. The set is burned. The confirmation seals a fresh-2 set
-  with new tasks and a new operator-held key; `--check` will read only the
-  sealed digests.
 
 ### Smoke test {#smoke-test}
 
@@ -633,8 +628,15 @@ exclusion or a void.
 - Reopened 2026-11-27 by the cast review: the kanatami fetch log is
   self-referential, the samber parser missed inline citations, the isolation
   probe can be skipped, and the `--only` run overwrites the all-arm record.
-  The smoke is re-run under the corrected machinery in
-  [selection-redo](#selection-redo); this record is history, not a pass.
+- Re-ran 2026-11-28: the corrected machinery reads replies from
+  `session_message` and fetched pages from `session_part` (`state.content`),
+  keeps the record append-only, requires the isolation probe and refuses a
+  partial `--only` write. The fresh two-way run passes 11/11 isolation: null
+  valid 5.714/16 (238.9s, exa), hffmnnj valid 4.0/16 (181.7s, embedding off),
+  kanatami a terminal budget result (342,455 prompt tokens, 44 tools,
+  6117.3s), weizhena excluded (21 result URLs, no quote/locator) and samber
+  excluded (47 citations, 9 fetched). The 2026-11-27 record is history; this
+  re-run is the pass. Record: [smoke/smoke.json](harness/smoke/smoke.json).
 
 ### Cast review redo {#cast-review-redo}
 
@@ -685,10 +687,11 @@ budget, the judge and the lock rule.
   draw gate, the samber inline parser and the weizhena report/exclusion are in;
   the hffmnnj plugin runs with embedding off, and the per-arm config and
   receipt record it; a research arm's native search route is recorded and the
-  null's provider is the measured one. The recorded live draws pass the
-  corrected smoke gate: null valid, hffmnnj valid, kanatami a recorded budget
-  result, weizhena and samber excluded with evidence. Remaining: the fresh
-  all-arm smoke record, then the 30 draws, the judge and `round-redo.json`.
+  null's provider is the measured one. The fresh two-way smoke passed 11/11
+  isolation: null valid, hffmnnj valid with embedding off, kanatami a terminal
+  budget result, weizhena and samber excluded with evidence. The 30 interleaved
+  draws are running now; the judge and `round-redo.json` follow. The
+  confirmation waits for the locked arm and the operator-held fresh-2 key.
 
 ## Open questions
 
