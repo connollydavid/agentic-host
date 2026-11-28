@@ -18,6 +18,11 @@ python3 ../judge/judge_all.py --draws draws-redo
 python3 round.py --draws draws-redo --out round-redo.json
 ```
 
+`redo.py` runs the three steps behind one smoke gate: it refuses unless the
+latest `smoke.json` record is a full PASS with the isolation probe, then runs
+the draws, checks all 30 are present, judges the valid draws and applies the
+lock. `--skip-draws` judges and locks an existing round.
+
 `--order interleaved` takes one draw per task in rotation instead of a
 five-arm task wave, so the two workers usually hold different tasks. The
 locked arm is the highest six-row suite-fit among the candidates within 1.5

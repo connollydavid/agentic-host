@@ -95,6 +95,14 @@ def locked_arm() -> str:
 def load_tasks(sealed: Path, sets: Path, key: Path) -> tuple[list[dict], dict, dict]:
     if not key.is_file():
         fail(f"the operator-held key is absent at {key}")
+    record = json.loads(sets.read_text())
+    held = record.get("held_out") or {}
+    if not held.get("sealed"):
+        fail("the fresh-2 set record does not declare the set sealed")
+    if schema.sha256_file(sealed) != held.get("ciphertext_sha256"):
+        fail("the fresh-2 ciphertext digest does not match the record; the seal is damaged")
+    if sealed.read_bytes()[:8] != b"Salted__":
+        fail("the fresh-2 file is not an OpenSSL ciphertext")
     completed = subprocess.run(
         [
             "openssl",
@@ -114,12 +122,13 @@ def load_tasks(sealed: Path, sets: Path, key: Path) -> tuple[list[dict], dict, d
         fail(f"openssl could not decrypt the fresh-2 set: {completed.stderr[-500:]}")
     document = json.loads(completed.stdout)
     summary = schema.validate_set(document)
-    record = json.loads(sets.read_text())
-    held = record.get("held_out") or {}
     if summary["set_digest"] != held.get("plaintext_set_digest"):
         fail("the decrypted fresh-2 set digest does not match the record")
     if summary["tasks"] != held.get("tasks"):
         fail("the decrypted fresh-2 task count does not match the record")
+    names = [task["key"].split("/", 1)[1] for task in document["tasks"]]
+    if len(names) != len(set(names)):
+        fail("two fresh-2 tasks share a draw name")
     print(
         f"ok fresh-2 decrypted: {summary['tasks']} tasks "
         f"({summary['known_answer']} known-answer, {summary['house']} house), "
