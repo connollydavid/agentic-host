@@ -442,7 +442,8 @@ printed verdict.
   temporary one-task seal. The verdict is not run yet.
 - Pending: the locked arm from the selection round and the 20 live draws. The
   fresh-2 set is sealed (plaintext digest `5e056b70…`, ciphertext
-  `3186331c…`); its key is outside the repository and the run takes `--key`.
+  `3186331c…`); its key is outside the repository and the run takes `--key`; the durable
+  custody copy is the private repo `connollydavid/plan0113-fresh2-key`.
   A missing key or an unlocked selection refuses, and the operator's `goal
   accept` remains the milestone.
 

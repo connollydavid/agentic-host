@@ -120,6 +120,7 @@ set digest with `sets-fresh2.json.held_out.plaintext_set_digest`.
 ## What is still open
 
 The fresh-2 set is sealed; its key is outside the repository and the
-confirmation takes `--key` explicitly. The selection must lock an arm before
+confirmation takes `--key` explicitly. The durable custody copy is the private
+repo `connollydavid/plan0113-fresh2-key` (`fresh2.key`). The selection must lock an arm before
 the 20 confirmation draws can run. The draw protocol is fixed at two fresh
 draws per held-out task per arm.

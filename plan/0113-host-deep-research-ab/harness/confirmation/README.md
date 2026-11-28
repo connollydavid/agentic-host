@@ -73,6 +73,7 @@ the verdict is evidence, not the acceptance.
 
 The fresh-2 set is sealed: five tasks (two known-answer, three house), plaintext
 set digest `5e056b70…`, ciphertext `3186331c…`. `confirm.py --check` passes
-without a key. The key is outside the repository and the run takes `--key`;
-the plaintext task text is not in the tree. The selection round must lock an
+without a key. The key is outside the repository and the run takes `--key`; its durable
+custody copy is the private repo `connollydavid/plan0113-fresh2-key`
+(`fresh2.key`). The plaintext task text is not in the tree. The selection round must lock an
 arm before the confirmation can run.
