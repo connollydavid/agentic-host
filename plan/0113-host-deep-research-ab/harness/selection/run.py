@@ -105,18 +105,18 @@ def read_replies(root: Path) -> list[dict]:
         connection = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
         rows = connection.execute(
             "SELECT json_extract(data, '$.model.providerID'), "
-            "json_extract(data, '$.model.id'), json_extract(data, '$.role') FROM message"
+            "json_extract(data, '$.model.id') FROM session_message WHERE type = 'assistant'"
         ).fetchall()
     except sqlite3.Error:
         return []
     finally:
         if connection is not None:
             connection.close()
-    replies: list[dict] = []
-    for provider, model, role in rows:
-        if role == "assistant" and isinstance(provider, str) and isinstance(model, str):
-            replies.append({"provider": provider, "model": model})
-    return replies
+    return [
+        {"provider": provider, "model": model}
+        for provider, model in rows
+        if isinstance(provider, str) and isinstance(model, str)
+    ]
 
 
 def is_search_engine(url: str) -> bool:
@@ -124,8 +124,16 @@ def is_search_engine(url: str) -> bool:
     return any(host == engine or host.endswith("." + engine) for engine in SEARCH_ENGINES)
 
 
-def provider_gate(measured: str, foreign_fetches: list[str]) -> str | None:
-    """The one-provider rule: a search-engine fetch or another provider voids."""
+def provider_gate(measured: str, foreign_fetches: list[str], arm: str) -> str | None:
+    """The scoped one-provider rule.
+
+    The null arm is the measured search control: a search-engine fetch or a
+    provider other than Exa voids it. A research arm may carry its own native
+    search route; that route is recorded in the receipt, not judged against the
+    null's provider.
+    """
+    if arm != "null":
+        return None
     if foreign_fetches:
         return "search-engine fetch is a foreign provider: " + ", ".join(foreign_fetches[:3])
     if measured not in (SEARCH_PROVIDER, "none"):
@@ -220,6 +228,26 @@ def prepare(arm: str, root: Path) -> Path:
     return root / "work"
 
 
+def state_text(state: dict) -> str:
+    """The fetched page text from a tool state.
+
+    The live event stream carries ``state.output``; the scratch database's
+    ``session_part`` rows carry the same page as ``state.content`` parts. Both
+    shapes are real records; a missing one is not a fetched page.
+    """
+    content = state.get("content")
+    if isinstance(content, list):
+        text = "\n".join(
+            part.get("text", "")
+            for part in content
+            if isinstance(part, dict) and isinstance(part.get("text"), str)
+        )
+        if text.strip():
+            return text
+    output = state.get("output")
+    return output if isinstance(output, str) else ""
+
+
 def read_fetches(root: Path) -> list[tuple[str, str]]:
     """Read every completed webfetch page from the scratch OpenCode DB."""
     db = root / "data" / "opencode" / "opencode.db"
@@ -246,10 +274,45 @@ def read_fetches(root: Path) -> list[tuple[str, str]]:
         if state.get("status") != "completed":
             continue
         url = (state.get("input") or {}).get("url")
-        output = state.get("output")
-        if isinstance(url, str) and isinstance(output, str) and output.strip():
+        output = state_text(state)
+        if isinstance(url, str) and output.strip():
             fetches.append((url, output))
     return fetches
+
+
+def read_websearch(root: Path) -> list[dict]:
+    """Read every websearch call's provider and query from the scratch DB."""
+    db = root / "data" / "opencode" / "opencode.db"
+    if not db.is_file():
+        return []
+    connection = None
+    try:
+        connection = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
+        rows = connection.execute(
+            "SELECT data FROM session_part WHERE data LIKE '%\"name\":\"websearch\"%'"
+        ).fetchall()
+    except sqlite3.Error:
+        return []
+    finally:
+        if connection is not None:
+            connection.close()
+    calls: list[dict] = []
+    for (raw,) in rows:
+        try:
+            part = json.loads(raw)
+        except json.JSONDecodeError:
+            continue
+        state = part.get("state") or {}
+        metadata = state.get("metadata") or {}
+        provider = metadata.get("provider") or (metadata.get("metadata") or {}).get("provider")
+        calls.append(
+            {
+                "provider": provider,
+                "query": (state.get("input") or {}).get("query"),
+                "status": state.get("status"),
+            }
+        )
+    return calls
 
 
 def parse_events(path: Path) -> dict:
@@ -287,14 +350,15 @@ def parse_events(path: Path) -> dict:
             state = part.get("state") or {}
             if part.get("tool") == "webfetch" and state.get("status") == "completed":
                 url = ((state.get("input") or {}).get("url") or "").strip()
-                output = state.get("output") or ""
-                if url:
+                output = state_text(state)
+                if url and output.strip():
                     fetches.append((url, output))
             if part.get("tool") == "websearch" and state.get("status") == "completed":
-                metadata = (state.get("metadata") or {}).get("metadata") or {}
+                metadata = state.get("metadata") or {}
+                provider = metadata.get("provider") or (metadata.get("metadata") or {}).get("provider")
                 websearch.append(
                     {
-                        "provider": metadata.get("provider"),
+                        "provider": provider,
                         "query": (state.get("input") or {}).get("query"),
                     }
                 )
@@ -532,8 +596,18 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
         wall = time.time() - started
     parsed = parse_events(events_path)
     parsed["fetches"].extend(read_fetches(root))
-    measured_provider = parsed["websearch"][0]["provider"] if parsed["websearch"] else "none"
+    websearch = read_websearch(root) or parsed["websearch"]
+    parsed["websearch"] = websearch
+    providers = sorted({call["provider"] for call in websearch if isinstance(call.get("provider"), str) and call["provider"]})
+    measured_provider = providers[0] if len(providers) == 1 else (",".join(providers) if providers else "none")
     foreign_fetches = [url for url, _ in parsed["fetches"] if is_search_engine(url)]
+    native_search = sorted(
+        {
+            (urlparse(url).hostname or "").lower()
+            for url, _ in parsed["fetches"]
+            if is_search_engine(url)
+        }
+    )
     replies = read_replies(root)
     replies_path = draw / "replies.jsonl"
     replies_path.write_text("".join(json.dumps(reply) + "\n" for reply in replies))
@@ -560,8 +634,10 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
             "max_output_tokens": model["max_output_tokens"],
         },
         "search_provider": measured_provider,
+        "native_search": native_search,
         "status": "live",
         "caps": contract.CAPS,
+        "fetches": sorted({url for url, _ in parsed["fetches"]}),
         "digests": {
             "task": schema.task_digest(task),
             "harness_pin": schema.sha256_file(PIN_ENV),
@@ -603,17 +679,20 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
             ),
         )
 
-    provider_reason = provider_gate(measured_provider, foreign_fetches)
+    provider_reason = provider_gate(measured_provider, foreign_fetches, arm)
     contract_ok = False
     contract_reason = ""
     excluded = False
-    if timed_out:
-        contract_reason = "budget exhausted: wall seconds exceeded the cap"
-        result = {"status": "void", "reason": contract_reason}
-    elif over:
-        contract_reason = "budget exhausted: " + ", ".join(
-            f"{key} {used[key]} > {contract.CAPS[key]}" for key in over
+    over_detail = [
+        f"{key} {used[key]} > {contract.CAPS[key]}" for key in contract.CAPS if used.get(key, 0) > contract.CAPS[key]
+    ]
+    if timed_out and not any(item.startswith("wall_seconds") for item in over_detail):
+        over_detail.append(
+            f"wall_seconds {used['wall_seconds']} reached {contract.CAPS['wall_seconds']}"
         )
+    budget_reason = "budget exhausted: " + ", ".join(over_detail) if over_detail else ""
+    if timed_out or over:
+        contract_reason = budget_reason
         result = {"status": "void", "reason": contract_reason}
     elif provider_reason:
         contract_reason = provider_reason
@@ -689,6 +768,7 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
         "completion_tokens": parsed["completion_tokens"],
         "tool_calls": parsed["tool_calls"],
         "search_provider": measured_provider,
+        "native_search": native_search,
         "websearch_calls": len(parsed["websearch"]),
         "search_engine_fetches": foreign_fetches,
         "replies": len(replies),
@@ -728,6 +808,7 @@ def safe_run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", r
             "completion_tokens": 0,
             "tool_calls": 0,
             "search_provider": "none",
+            "native_search": [],
             "websearch_calls": 0,
             "search_engine_fetches": [],
             "replies": 0,

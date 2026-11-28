@@ -43,14 +43,36 @@ def normalize_url(url: str) -> str:
 
 LINK = re.compile(r"\[([^\]]+)\]\((https?://[^\s)]+)\)")
 SENTENCE = re.compile(r"(?<=[.!?])\s+")
+NON_CITATION = re.compile(
+    r"\b(?:not\s+(?:a\s+)?(?:cited|used|source)|uncited|fetch(?:ed)?\s+failed|"
+    r"http\s+403|no\s+quotable|returned\s+only|did\s+not\s+yield)\b",
+    re.IGNORECASE,
+)
+
+
+def citation_urls(report: str) -> list[str]:
+    """Return the URLs the report presents as sources.
+
+    A URL in a sentence that says it was not cited, failed to fetch, or
+    returned only page chrome is a provenance note, not a citation. The
+    ledger still has to carry a fetched snapshot for every URL returned here.
+    """
+    urls: list[str] = []
+    for paragraph in re.split(r"\n\s*\n", report):
+        for sentence in SENTENCE.split(paragraph):
+            if NON_CITATION.search(sentence):
+                continue
+            urls.extend(normalize_url(match) for match in CITED.findall(sentence))
+    return urls
 
 
 def report_entries(report: str) -> list[dict]:
     """Build a ledger from a report's own inline citations.
 
-    The quote is the link text when it is a passage, otherwise the first
-    sentence of the paragraph that cites the URL; the locator is the paragraph
-    number. The URL still needs a real fetched snapshot in the run's log.
+    The quote is the link text when it is a passage, otherwise the sentence
+    that cites the URL; the locator is the paragraph number. A sentence that
+    explicitly marks a URL as not cited contributes no entry. The URL still
+    needs a real fetched snapshot in the run's log.
     """
     paragraphs = [part.strip() for part in re.split(r"\n\s*\n", report) if part.strip()]
     entries: list[dict] = []
@@ -60,17 +82,20 @@ def report_entries(report: str) -> list[dict]:
             normalize_url(match.group(2)): match.group(1).strip()
             for match in LINK.finditer(paragraph)
         }
-        for match in CITED.findall(paragraph):
-            url = normalize_url(match)
-            if url in seen:
+        for sentence in SENTENCE.split(paragraph):
+            if NON_CITATION.search(sentence):
                 continue
-            seen.add(url)
-            text = links.get(url)
-            if text and len(text) >= 20 and not text.startswith("http"):
-                quote = text
-            else:
-                quote = SENTENCE.split(paragraph, 1)[0].strip() or paragraph
-            entries.append({"url": url, "quote": quote, "locator": f"report paragraph {index}"})
+            for match in CITED.findall(sentence):
+                url = normalize_url(match)
+                if url in seen:
+                    continue
+                seen.add(url)
+                text = links.get(url)
+                if text and len(text) >= 20 and not text.startswith("http"):
+                    quote = text
+                else:
+                    quote = sentence.strip() or paragraph
+                entries.append({"url": url, "quote": quote, "locator": f"report paragraph {index}"})
     return entries
 
 
@@ -141,7 +166,7 @@ def validate_report(report: str, sources: list[dict]) -> None:
         if key not in report:
             raise ContractError(f"report.md does not cite source {index} ({key})")
     ledger = {normalize_url(entry["url"]) for entry in sources}
-    report_urls = {normalize_url(match) for match in CITED.findall(report)}
+    report_urls = {normalize_url(match) for match in citation_urls(report)}
     missing = sorted(report_urls - ledger)
     if missing:
         raise ContractError(f"report.md cites URL(s) absent from the ledger: {', '.join(missing)}")
@@ -155,6 +180,7 @@ def build_receipt(arm: str, task_key: str, meta: dict, status: str = "dry-run", 
         "harness": meta["harness"],
         "model": meta["model"],
         "search_provider": meta["search_provider"],
+        "native_search": meta.get("native_search", []),
         "budget": {
             "caps": meta["caps"],
             "used": used

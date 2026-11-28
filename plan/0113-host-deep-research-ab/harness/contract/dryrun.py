@@ -84,7 +84,7 @@ def meta_for(arm: str, arm_config: Path) -> dict:
     if arm == "null":
         digests["prompt"] = sha256_file(HERE / "prompts" / "null.md")
     config = json.loads(arm_config.read_text())
-    return {
+    meta = {
         "harness": {
             "tag": pin["OPENCODE_TAG"],
             "binary_sha256": pin["OPENCODE_BINARY_SHA256"],
@@ -98,9 +98,13 @@ def meta_for(arm: str, arm_config: Path) -> dict:
             "max_output_tokens": model["max_output_tokens"],
         },
         "search_provider": config["search_provider"],
+        "native_search": [],
         "caps": CAPS,
         "digests": digests,
     }
+    if arm == "samber":
+        meta["fetches"] = ["https://example.com/contract"]
+    return meta
 
 
 def expect_error(label: str, call) -> None:

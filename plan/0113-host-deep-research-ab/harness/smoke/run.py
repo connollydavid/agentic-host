@@ -94,12 +94,24 @@ def suspect_exclusion(arm: str, draw: Path) -> str | None:
             except Exception:  # noqa: BLE001 - a parser failure is a smoke finding
                 entries = []
             if entries:
-                return "the samber native report carries URL citations with paragraphs; an exclusion is a harness break"
+                log = draw / "fetch-log.jsonl"
+                fetched: set[str] = set()
+                if log.is_file():
+                    for line in log.read_text().splitlines():
+                        if not line.strip():
+                            continue
+                        try:
+                            fetched.add(run.contract.normalize_url(json.loads(line).get("url") or ""))
+                        except json.JSONDecodeError:
+                            continue
+                if all(run.contract.normalize_url(entry["url"]) in fetched for entry in entries):
+                    return "the samber native report cites only fetched pages; an exclusion is a harness break"
     return None
 
 
 def draw_gate(arm: str, summary: dict) -> list[str]:
     findings: list[str] = []
+    budget = summary.get("break_class") == "budget"
     prompt = (DRAWS / arm / summary["draw"] / "prompt.txt").read_text()
     if arm != "null" and "Produce these files" in prompt:
         findings.append("the wrapper postscript is still in the native prompt")
@@ -107,12 +119,19 @@ def draw_gate(arm: str, summary: dict) -> list[str]:
         findings.append("the native arm line is absent from the prompt")
     if summary["adapter"] != arm:
         findings.append(f"the receipt names adapter {summary['adapter']!r}")
-    if summary["adapter_result"] not in ("valid", "excluded"):
+    if summary["adapter_result"] not in ("valid", "excluded") and not (budget and arm != "null"):
         findings.append(f"adapter result is {summary['adapter_result']!r}")
-    if summary["search_provider"] not in (run.SEARCH_PROVIDER, "none"):
+    if budget and arm != "null":
+        if not str(summary.get("contract_reason") or "").startswith("budget exhausted"):
+            findings.append("a budget result carries no used counts")
+        if summary.get("prompt_tokens", 0) <= 0 and summary.get("tool_calls", 0) <= 0:
+            findings.append("a budget result records no usage")
+    if summary["search_provider"] not in (run.SEARCH_PROVIDER, "none") and arm == "null":
         findings.append(f"foreign search provider {summary['search_provider']!r}")
-    if summary["search_engine_fetches"]:
+    if summary["search_engine_fetches"] and arm == "null":
         findings.append("search-engine fetch: " + ", ".join(summary["search_engine_fetches"][:2]))
+    if summary["search_engine_fetches"] and arm != "null" and not summary.get("native_search"):
+        findings.append("the arm's native search route is not recorded")
     if summary["adapter_result"] == "valid":
         draw = DRAWS / arm / summary["draw"]
         if not summary["valid"]:
@@ -210,6 +229,12 @@ def main(argv: list[str]) -> int:
     if "null" in results and results["null"]["adapter_result"] != "valid":
         passed = False
         findings.setdefault("null", []).append("the null control did not produce the contract")
+    if args.only:
+        print(
+            f"smoke: partial {'PASS' if passed else 'FAIL'} ({', '.join(arms)}); "
+            "the all-arm record is unchanged"
+        )
+        return 0 if passed else 1
     record = {
         "recorded": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "task": task,
@@ -224,6 +249,8 @@ def main(argv: list[str]) -> int:
         try:
             prior = json.loads(RECORD.read_text())
             history = prior.get("records", [])
+            if not history and prior.get("recorded"):
+                history = [{key: value for key, value in prior.items() if key != "records"}]
         except json.JSONDecodeError:
             history = []
     history.append(record)

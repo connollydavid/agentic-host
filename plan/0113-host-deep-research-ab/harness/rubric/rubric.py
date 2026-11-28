@@ -31,7 +31,6 @@ import schema  # noqa: E402
 
 PIN_ENV = HARNESS / "pin.env"
 MODEL_PIN = HARNESS / "model-pin" / "model-pin.json"
-URL = contract.CITED
 NUMERAL = re.compile(r"\d[\d,]*(?:\.\d+)?")
 SENTENCE = re.compile(r"(?<=[.!?])\s+")
 CITATION_PASS = 5.0
@@ -103,7 +102,7 @@ def score(draw: Path, task: dict, dataset: Path) -> dict:
     except contract.ContractError as error:
         return void(f"contract: {error}")
 
-    report_urls = {contract.normalize_url(match) for match in URL.findall(report)}
+    report_urls = {contract.normalize_url(match) for match in contract.citation_urls(report)}
     ledger_urls = {contract.normalize_url(entry["url"]) for entry in sources}
     if not report_urls <= ledger_urls:
         return void("the report cites a URL absent from the ledger")

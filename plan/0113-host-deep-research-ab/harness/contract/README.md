@@ -67,7 +67,7 @@ An arm that cannot satisfy the ledger writes `exclusion.json` instead:
 | `hffmnnj` | `adapters/hffmnnj.py` | valid: the report cites `[rn_…]`; the finding note carries `url` and `quote`, and the body carries `locator:` |
 | `kanatami` | `adapters/kanatami.py` | valid: the report cites the worker result URL; the first sentence of `full_text` is the quote and the worker/paragraph is the locator |
 | `weizhena` | `adapters/weizhena.py` | excluded: the report cites no per-source quote/locator; the result JSON URLs are the evidence |
-| `samber` | `adapters/samber.py` | valid: the report's inline `[passage](url)` citations build the ledger |
+| `samber` | `adapters/samber.py` | valid when every report-cited URL is in the fetch log; excluded with the missing count otherwise |
 
 The optional `verify` arm stays out (no license at its pin), and `gptr-mcp` is
 an optional MCP server whose admission is the selection round's. Neither has an
