@@ -17,7 +17,7 @@
       "snapshots": {"verdict": true, "evidence": "the hffmnnj fetch log and the actual page snapshots"},
       "artifacts": {"verdict": true, "evidence": "native/report.md and native/notes/"},
       "one_command": {"verdict": true, "evidence": "run.py and the hffmnnj adapter"},
-      "vendored": {"verdict": true, "evidence": "MIT; pin d977301"}
+      "vendored": {"verdict": true, "evidence": "MIT; pin d977301; embedding off in the per-arm config"}
     },
     "kanatami": {
       "model": {"verdict": true, "evidence": "the per-arm config override"},

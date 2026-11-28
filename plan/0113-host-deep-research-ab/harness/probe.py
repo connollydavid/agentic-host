@@ -305,7 +305,21 @@ def check_skill_arm(
 def check_hffmnnj(builtin_skills: list[str], builtin_agents: list[str]) -> None:
     root = fresh("hffmnnj")
     config = root / "config" / "opencode" / "opencode.json"
-    write(config, json.dumps({"plugins": [f"file://{ARMS / 'hffmnnj'}"]}, indent=2) + "\n")
+    write(
+        config,
+        json.dumps(
+            {
+                "plugins": [
+                    {
+                        "package": f"file://{ARMS / 'hffmnnj'}",
+                        "options": {"embedding": {"mode": "off"}},
+                    }
+                ]
+            },
+            indent=2,
+        )
+        + "\n",
+    )
     with Server.isolated(root) as server:
         deadline = time.time() + 60
         while time.time() < deadline:

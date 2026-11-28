@@ -197,7 +197,12 @@ def arm_config(arm: str) -> dict:
         "websearch": {"provider": SEARCH_PROVIDER},
     }
     if arm == "hffmnnj":
-        config["plugins"] = [f"file://{ARMS / 'hffmnnj'}"]
+        config["plugins"] = [
+            {
+                "package": f"file://{ARMS / 'hffmnnj'}",
+                "options": {"embedding": {"mode": "off"}},
+            }
+        ]
     return config
 
 
@@ -635,6 +640,7 @@ def run_draw(arm: str, task: dict, force: bool = False, suffix: str = "", reuse:
         },
         "search_provider": measured_provider,
         "native_search": native_search,
+        "arm_options": {"embedding": "off"} if arm == "hffmnnj" else {},
         "status": "live",
         "caps": contract.CAPS,
         "fetches": sorted({url for url, _ in parsed["fetches"]}),

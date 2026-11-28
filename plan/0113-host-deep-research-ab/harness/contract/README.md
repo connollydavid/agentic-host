@@ -73,6 +73,10 @@ The optional `verify` arm stays out (no license at its pin), and `gptr-mcp` is
 an optional MCP server whose admission is the selection round's. Neither has an
 adapter in the roster dry run.
 
+The hffmnnj plugin runs with its embedding mode off: the per-arm config passes
+`options.embedding.mode = "off"`, so the arm uses keyword search and makes no
+local model download. The config digest in the receipt covers the choice.
+
 ## The model and tool override
 
 The per-arm draw config overrides every agent's model to

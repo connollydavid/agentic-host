@@ -683,11 +683,12 @@ budget, the judge and the lock rule.
   including subagent sessions, and replace the report-paragraph fetch log.
   The attempt/re-run plumbing, the six-row suite-fit and null-relative/valid-
   draw gate, the samber inline parser and the weizhena report/exclusion are in;
-  a research arm's native search route is recorded and the null's provider is
-  the measured one. The recorded live draws pass the corrected smoke gate:
-  null valid, hffmnnj valid, kanatami a recorded budget result, weizhena and
-  samber excluded with evidence. Remaining: the fresh all-arm smoke record,
-  then the 30 draws, the judge and `round-redo.json`.
+  the hffmnnj plugin runs with embedding off, and the per-arm config and
+  receipt record it; a research arm's native search route is recorded and the
+  null's provider is the measured one. The recorded live draws pass the
+  corrected smoke gate: null valid, hffmnnj valid, kanatami a recorded budget
+  result, weizhena and samber excluded with evidence. Remaining: the fresh
+  all-arm smoke record, then the 30 draws, the judge and `round-redo.json`.
 
 ## Open questions
 

@@ -181,6 +181,7 @@ def build_receipt(arm: str, task_key: str, meta: dict, status: str = "dry-run", 
         "model": meta["model"],
         "search_provider": meta["search_provider"],
         "native_search": meta.get("native_search", []),
+        "arm_options": meta.get("arm_options", {}),
         "budget": {
             "caps": meta["caps"],
             "used": used
