@@ -232,7 +232,7 @@ null arm) the frozen prompt.</li>
 <tr><td><code>hffmnnj</code></td><td><code>adapters/hffmnnj.py</code></td><td>valid: the report cites <code>[rn_…]</code>; the finding note carries <code>url</code> and <code>quote</code>, and the body carries <code>locator:</code></td></tr>
 <tr><td><code>kanatami</code></td><td><code>adapters/kanatami.py</code></td><td>valid: the report cites the worker result URL; the first sentence of <code>full_text</code> is the quote and the worker/paragraph is the locator</td></tr>
 <tr><td><code>weizhena</code></td><td><code>adapters/weizhena.py</code></td><td>excluded: the report cites no per-source quote/locator; the result JSON URLs are the evidence</td></tr>
-<tr><td><code>samber</code></td><td><code>adapters/samber.py</code></td><td>valid: the report's inline <code>[passage](url)</code> citations build the ledger</td></tr>
+<tr><td><code>samber</code></td><td><code>adapters/samber.py</code></td><td>valid when every report-cited URL is in the fetch log; excluded with the missing count otherwise</td></tr>
 </tbody></table>
 </div>
 <p>The optional <code>verify</code> arm stays out (no license at its pin), and <code>gptr-mcp</code> is

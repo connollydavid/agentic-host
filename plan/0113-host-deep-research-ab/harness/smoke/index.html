@@ -175,25 +175,29 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="plan0113-smoke-gate-one-draw-per-arm-before-any-scored-draw"><a class="header" href="#plan0113-smoke-gate-one-draw-per-arm-before-any-scored-draw">plan/0113 smoke gate: one draw per arm before any scored draw</a></h1>
-<p><strong>Status: the first record passed, then the five-seat review invalidated the
-kanatami and samber results; the corrected all-arm smoke is the
-<code>#selection-redo</code> run.</strong> The gate is the last check before the redo selection.
-It runs one draw per arm on a dedicated task, through the full pipeline: the
-native prompt, the adapter, the measured search provider, the fetch log, the
-receipt, the rubric and the isolation probe.</p>
-<h2 id="the-result"><a class="header" href="#the-result">The result</a></h2>
-<div class="table-wrapper"><table><thead><tr><th>Arm</th><th>Outcome</th><th>Wall</th></tr></thead><tbody>
-<tr><td><code>null</code></td><td>valid, 9.615/16, provider <code>exa</code></td><td>5021.9s</td></tr>
-<tr><td><code>hffmnnj</code></td><td>valid, 5.09/16, recorded-draw reuse</td><td>928.8s</td></tr>
-<tr><td><code>kanatami</code></td><td>valid, 9.818/16, recorded-draw reuse</td><td>8231.4s</td></tr>
-<tr><td><code>weizhena</code></td><td>excluded, structured field JSON/report</td><td>7204.8s</td></tr>
-<tr><td><code>samber</code></td><td>excluded, claim notes without quote/locator</td><td>6514.2s</td></tr>
+<p><strong>Status: the corrected machinery passes on the recorded live draws; the fresh
+all-arm run is the <code>#selection-redo</code> record.</strong> The gate is the last check before
+the redo selection. It runs one draw per arm on a dedicated task, through the
+full pipeline: the native prompt, the adapter, the measured search provider,
+the fetch log, the receipt, the rubric and the isolation probe.</p>
+<p>The review found that the first record read the wrong OpenCode tables: replies
+came from a <code>message</code> table that does not exist in the v2.4.2 schema, and
+fetches read <code>state.output</code> while the scratch database stores the page as
+<code>state.content</code>. The corrected reader uses <code>session_message</code> for replies and
+<code>session_part</code> for fetches (including subagent sessions), and the report's
+prose is no longer a fetch fallback. The recorded live draws now yield:</p>
+<div class="table-wrapper"><table><thead><tr><th>Arm</th><th>Outcome</th><th>Evidence</th></tr></thead><tbody>
+<tr><td><code>null</code></td><td>valid, 4.0/16</td><td>provider <code>exa</code>, 22 replies, 4 fetched pages</td></tr>
+<tr><td><code>hffmnnj</code></td><td>valid, 16.0/16</td><td>10 replies, 1 fetched page, no websearch</td></tr>
+<tr><td><code>kanatami</code></td><td>budget</td><td>1,264,094 prompt tokens, 72 tools, wall 10,800s; native route <code>html.duckduckgo.com</code> recorded</td></tr>
+<tr><td><code>weizhena</code></td><td>excluded</td><td>26 result URLs, report cites no quote or locator</td></tr>
+<tr><td><code>samber</code></td><td>excluded</td><td>49 report citations, 2 fetched; the ledger cannot carry the rest</td></tr>
 </tbody></table>
 </div>
-<p>The isolation probe is 11/11. Every valid draw has a live receipt with the
-200000/50000/60/10800 caps, a fetch log and a scored rubric. The
-suspect-exclusion and pseudo-tool-call gates pass. The record is
-<code>smoke/smoke.json</code>.</p>
+<p>The fresh record supersedes this table. The isolation probe is 11/11. A valid
+draw has a live receipt with the 300000/100000/60/10800 caps, a fetch log, a
+reply ledger and a scored rubric. The record is <code>smoke/smoke.json</code>; its
+<code>records</code> list is append-only.</p>
 <h2 id="the-task"><a class="header" href="#the-task">The task</a></h2>
 <p><code>smoke/house-capital</code>: "What is the capital of France, and which river runs
 through it?" with <code>Paris</code> and <code>Seine</code> as must-cover. It is deliberately simple:
@@ -202,33 +206,35 @@ selection or held-out sets.</p>
 <h2 id="the-gate"><a class="header" href="#the-gate">The gate</a></h2>
 <ul>
 <li>The null arm must produce the contract; a null void is a harness failure.</li>
-<li>Every mapped arm must produce the contract or a recorded exclusion. A void
-fails.</li>
-<li>An exclusion is suspect when the native notes or workers already carry a
-source record; the smoke fails it and the draw is re-run after the adapter
-fix.</li>
+<li>Every mapped arm must produce the contract, a recorded exclusion, or a
+recorded budget result. A budget result is a terminal arm result: it is not
+re-run under the same cap. A harness break is a void and re-runs once.</li>
+<li>An exclusion is suspect when the native notes, workers or report already
+carry a source record that the run's fetch log supports; the smoke fails it
+and the draw is re-run after the adapter fix. A report that cites pages the
+run never fetched is a phantom source, not a recoverable record.</li>
 <li>A pseudo-tool-call transcript (<code>&lt;tool_call&gt;</code> or <code>&lt;function=</code>) is a void, not
 an exclusion; the plugin tools were not invoked, so the draw is re-run.</li>
 <li>The non-null prompt must not carry the wrapper postscript; it must carry the
-arm's native line.</li>
-<li>The search provider must be <code>exa</code> or <code>none</code>, and no draw may fetch a search
-engine.</li>
-<li>A valid draw must have a live receipt with the frozen caps, a fetch log and a
-scored rubric; an excluded draw must have <code>exclusion.json</code> and a reason.</li>
-<li>A valid draw must have a passing <code>replies.jsonl</code>: the model pre-flight checks
-every assistant reply against the pinned route.</li>
+arm's native line, and the task file is in the working directory.</li>
+<li>The null's search provider must be <code>exa</code> or <code>none</code>, and the null may not
+fetch a search engine. Each research arm's native search route is recorded,
+not judged against the null's provider.</li>
+<li>A valid draw must have a live receipt with the frozen caps, a fetch log, a
+passing <code>replies.jsonl</code> and a scored rubric; an excluded draw must have
+<code>exclusion.json</code> and a reason.</li>
 <li>The isolation probe (<code>../probe.py</code>) must pass; it proves the pinned binary,
 the arm loads and the planted skill/manual controls.</li>
 </ul>
 <h2 id="run"><a class="header" href="#run">Run</a></h2>
 <pre><code class="language-sh">cd plan/0113-host-deep-research-ab/harness
-python3 smoke/run.py --only null --skip-probe   # one arm
-python3 smoke/run.py --force                    # all arms, serial
+python3 smoke/run.py --only null --skip-probe   # one arm, record unchanged
+python3 smoke/run.py --force --parallel 2       # all arms, two-way
 python3 smoke/run.py --record-only              # consolidate existing draws
 </code></pre>
-<p>The record is <code>smoke/smoke.json</code>; the draws are under <code>smoke/draws/</code>. The
-record carries the task, the isolation result, each draw's summary and the
-findings.</p>
+<p>A partial <code>--only</code> run writes its draw but never the all-arm record. The
+record is <code>smoke/smoke.json</code>; the draws are under <code>smoke/draws/</code>, and a forced
+re-run keeps the prior attempt under <code>attempts/</code> with <code>rerun.json</code>.</p>
 <h2 id="the-smoke-is-not-a-scored-draw"><a class="header" href="#the-smoke-is-not-a-scored-draw">The smoke is not a scored draw</a></h2>
 <p>The smoke scores are not used in the selection. It proves the pipeline and the
 controls; the redo selection runs separately with the frozen budget.</p>

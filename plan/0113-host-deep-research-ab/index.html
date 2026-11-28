@@ -239,9 +239,10 @@ and the arm's adapter writes the contract. The wrapper postscript is gone.</li>
 <li><strong>The smoke test.</strong> One draw per arm through the full pipeline, gating the
 ledger injection, the harness, model, provider, isolation, fetch log,
 receipt and rubric before any scored draw.</li>
-<li><strong>The measured provider.</strong> One provider is configured and probed; the
-receipt records the provider the tool actually called. The first attempt's
-receipts said Exa while the draws fetched DuckDuckGo.</li>
+<li><strong>The measured provider.</strong> The null/search path uses one provider that is
+configured and probed; each research arm's native route is recorded beside
+it. The receipt records the provider the tool actually called. The first
+attempt's receipts said Exa while the draws fetched DuckDuckGo.</li>
 <li><strong>The budget and the waves.</strong> The cost is recorded, never scored; the draws
 run serial or two-way, not the five-arm waves.</li>
 <li><strong>The judge.</strong> Opus 5.5 scores completeness and creativity, subject to the
@@ -263,9 +264,10 @@ cannot satisfy the contract is an exclusion with evidence. A low score is never
 a re-run reason; this rule is fixed before the redo.</p>
 <p>An adapter that excludes a draw whose native output already carries a fetched
 source record is a harness break: hffmnnj finding notes, kanatami worker
-results with a fetched page, or a samber/weizhena report carrying a URL, quote
-and locator. The report's own source list is not a fetched page. The smoke
-fails it, the adapter is fixed, and the draw is re-run.</p>
+results with a fetched page, or a samber/weizhena report whose cited pages are
+in the run's fetch log with a quote and locator. The report's own source list
+is not a fetched page. The smoke fails it, the adapter is fixed, and the draw
+is re-run.</p>
 <h2 id="the-ab-design"><a class="header" href="#the-ab-design">The A/B design</a></h2>
 <h3 id="the-arms"><a class="header" href="#the-arms">The arms</a></h3>
 <p>One driver model, one harness pin, one search provider. The arms differ only in
@@ -299,10 +301,11 @@ router has no exact named <code>qwen3.8-flash-next</code> entry; the name resolv
 through the <code>qwen*</code> entry, and the pin is that entry's deployment id, checked
 in pre-flight. A draw on a foreign model is void. The legacy <code>qwen3.6-27b</code>
 name is foreign.</li>
-<li><strong>Search.</strong> One provider, measured and probed. Every arm uses that provider,
-and every receipt records the provider the tool actually called. The first
-attempt declared Exa while the draws fetched DuckDuckGo; the
-<code>#search-provider</code> task fixes the measurement.</li>
+<li><strong>Search.</strong> One provider, measured and probed, for the null/search path.
+Each research arm records the provider its native route actually called; the
+one-provider claim is scoped to the measured null/search, and the arm routes
+are recorded. The first attempt declared Exa while the draws fetched
+DuckDuckGo; the <code>#search-provider</code> task fixes the measurement.</li>
 <li><strong>Budget.</strong> The same per-draw cap on tokens, tool calls and wall time, and the
 same prompt for the arm plus the tasks. The operator-approved caps are
 300000 prompt tokens, 100000 completion tokens, 60 tool calls and 10800 wall
@@ -629,15 +632,17 @@ confirmation, or the original stays</li>
 the provider the tool actually called.</p>
 <ul>
 <li>verify: the provider probe passes; a draw's receipt records the provider the
-fetch log shows; a foreign provider voids</li>
+fetch log shows; a foreign provider voids the null, while a research arm's
+native route is recorded beside the measured provider</li>
 <li>depends: none</li>
 <li>Landed 2026-11-27: Exa is selected in the per-draw config
 (<code>"websearch": {"provider": "exa"}</code> with <code>OPENCODE_ENABLE_EXA=1</code>), and the
 driver takes the provider from the completed <code>websearch</code> event's metadata.
-The live probe returned 8 results with <code>provider: exa</code> in 62.2s; a receipt
-naming another provider and a DuckDuckGo fetch are both void. The first
-round's receipts said Exa while the cancelled form sent the model to
-DuckDuckGo. Record:
+The live probe returned 8 results with <code>provider: exa</code> in 62.2s; a null
+receipt naming another provider and a null DuckDuckGo fetch are both void,
+while a research arm's native DuckDuckGo route is recorded in the receipt.
+The first round's receipts said Exa while the cancelled form sent the model
+to DuckDuckGo. Record:
 <a href="harness/search-provider/README.html">search-provider/README.md</a>.</li>
 </ul>
 <h3 id="budget"><a class="header" href="#budget">Budget</a></h3>
@@ -795,16 +800,19 @@ suite-fit, the judge score and name order. The first round's <code>round.json</c
 is historical; the corrected round writes <code>round-redo.json</code> with
 <code>--draws draws-redo --out round-redo.json</code>. The cast review's fixes are this
 task's first work, before any scored draw; the round is not run yet.</li>
-<li>Progress 2026-11-27: the caps are enforced at 300000 prompt / 100000
-completion / 60 tools / 10800 wall; the reply pre-flight writes
-<code>replies.jsonl</code> from the scratch OpenCode database, calls
+<li>Progress 2026-11-28: the caps are enforced at 300000 prompt / 100000
+completion / 60 tools / 10800 wall; the reply pre-flight reads
+<code>replies.jsonl</code> from the live <code>session_message</code> table, calls
 <code>model-preflight.py --replies</code>, and puts its digest in the receipt; the
-actual <code>webfetch</code> pages from the scratch database replace the
-report-paragraph fetch log (commit <code>d6b3e070</code>). The attempt/re-run
-plumbing, the six-row suite-fit and null-relative/valid-draw gate, the
-samber inline parser and the weizhena report/exclusion are in. Remaining:
-the corrected all-arm smoke and the two-way probe, then the 30 draws, the
-judge and <code>round-redo.json</code>.</li>
+actual <code>webfetch</code> pages are read from <code>session_part</code> (<code>state.content</code>),
+including subagent sessions, and replace the report-paragraph fetch log.
+The attempt/re-run plumbing, the six-row suite-fit and null-relative/valid-
+draw gate, the samber inline parser and the weizhena report/exclusion are in;
+a research arm's native search route is recorded and the null's provider is
+the measured one. The recorded live draws pass the corrected smoke gate:
+null valid, hffmnnj valid, kanatami a recorded budget result, weizhena and
+samber excluded with evidence. Remaining: the fresh all-arm smoke record,
+then the 30 draws, the judge and <code>round-redo.json</code>.</li>
 </ul>
 <h2 id="open-questions"><a class="header" href="#open-questions">Open questions</a></h2>
 <ul>

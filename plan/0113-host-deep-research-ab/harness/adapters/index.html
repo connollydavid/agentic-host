@@ -175,10 +175,12 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="plan0113-adapter-layer-native-prompts-adapter-written-contracts"><a class="header" href="#plan0113-adapter-layer-native-prompts-adapter-written-contracts">plan/0113 adapter layer: native prompts, adapter-written contracts</a></h1>
-<p><strong>Status: landed 2026-11-27; the live smoke passed.</strong> The live driver sends
-each arm its own workflow prompt and lets the arm's adapter write the contract.
-The wrapper postscript is gone. The null arm keeps the frozen contract prompt,
-because it is the control, not an arm with a native output shape.</p>
+<p><strong>Status: landed 2026-11-27; the five-seat review re-opened the smoke, and the
+corrected machinery passes on the recorded live draws pending the fresh
+all-arm record.</strong> The live driver sends each arm its own workflow prompt and
+lets the arm's adapter write the contract. The wrapper postscript is gone. The
+null arm keeps the frozen contract prompt, because it is the control, not an
+arm with a native output shape.</p>
 <h2 id="the-flow"><a class="header" href="#the-flow">The flow</a></h2>
 <ol>
 <li><code>run.py</code> prepares the arm's scratch tree and writes the native prompt.</li>
@@ -188,9 +190,9 @@ the hffmnnj library notes, the kanatami workers, the weizhena result JSON,
 the samber research notes, or the final report text.</li>
 <li>The arm's adapter (<code>contract/adapters/&lt;arm&gt;.py</code>) reads <code>draw/native/</code> and
 writes <code>report.md</code>, <code>sources.json</code> and the receipt, or <code>exclusion.json</code>.</li>
-<li>The driver merges the event log's <code>webfetch</code> calls into
-<code>fetch-log.jsonl</code> and <code>snapshots/</code>, then validates the contract or the
-exclusion and writes <code>score.json</code>.</li>
+<li>The driver reads every <code>webfetch</code> call from the scratch OpenCode database,
+including subagent sessions, into <code>fetch-log.jsonl</code> and <code>snapshots/</code>, then
+validates the contract or the exclusion and writes <code>score.json</code>.</li>
 </ol>
 <p>The prompt carries no <code>report.md</code>/<code>sources.json</code> postscript for a non-null arm.
 The arm runs its own workflow; the adapter maps the result.</p>
@@ -200,7 +202,7 @@ The arm runs its own workflow; the adapter maps the result.</p>
 <tr><td><code>hffmnnj</code></td><td>the library notes under <code>$XDG_DATA_HOME/opencode-deep-research/library/notes</code> (or <code>~/.local/share/...</code>), the report note</td><td>resolves <code>[rn_...]</code> citations to source records; a direct answer with no note id is an exclusion</td></tr>
 <tr><td><code>kanatami</code></td><td>the final report and the worker results; <code>workers.json</code> if the arm wrote one, otherwise the run's fetch log</td><td>maps each cited URL to its worker result; first sentence is the quote, the worker/paragraph is the locator</td></tr>
 <tr><td><code>weizhena</code></td><td>the structured result JSON and the generated report</td><td>builds the ledger from report inline citations; excludes when the report cites no quote/locator; the result URLs are the evidence</td></tr>
-<tr><td><code>samber</code></td><td>the report's inline citations and the claim notes</td><td>builds the ledger from the report's inline <code>[passage](url)</code> citations; excludes when the report has none</td></tr>
+<tr><td><code>samber</code></td><td>the report's inline citations and the claim notes</td><td>builds the ledger from the report's inline <code>[passage](url)</code> citations only when every cited URL is in the fetch log; otherwise excludes with the missing count</td></tr>
 </tbody></table>
 </div>
 <p>The hffmnnj exclusion is live, not a dry-run assumption: the plugin's effort

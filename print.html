@@ -25602,9 +25602,10 @@ and the arm's adapter writes the contract. The wrapper postscript is gone.</li>
 <li><strong>The smoke test.</strong> One draw per arm through the full pipeline, gating the
 ledger injection, the harness, model, provider, isolation, fetch log,
 receipt and rubric before any scored draw.</li>
-<li><strong>The measured provider.</strong> One provider is configured and probed; the
-receipt records the provider the tool actually called. The first attempt's
-receipts said Exa while the draws fetched DuckDuckGo.</li>
+<li><strong>The measured provider.</strong> The null/search path uses one provider that is
+configured and probed; each research arm's native route is recorded beside
+it. The receipt records the provider the tool actually called. The first
+attempt's receipts said Exa while the draws fetched DuckDuckGo.</li>
 <li><strong>The budget and the waves.</strong> The cost is recorded, never scored; the draws
 run serial or two-way, not the five-arm waves.</li>
 <li><strong>The judge.</strong> Opus 5.5 scores completeness and creativity, subject to the
@@ -25626,9 +25627,10 @@ cannot satisfy the contract is an exclusion with evidence. A low score is never
 a re-run reason; this rule is fixed before the redo.</p>
 <p>An adapter that excludes a draw whose native output already carries a fetched
 source record is a harness break: hffmnnj finding notes, kanatami worker
-results with a fetched page, or a samber/weizhena report carrying a URL, quote
-and locator. The report's own source list is not a fetched page. The smoke
-fails it, the adapter is fixed, and the draw is re-run.</p>
+results with a fetched page, or a samber/weizhena report whose cited pages are
+in the run's fetch log with a quote and locator. The report's own source list
+is not a fetched page. The smoke fails it, the adapter is fixed, and the draw
+is re-run.</p>
 <h2 id="the-ab-design"><a class="header" href="#the-ab-design">The A/B design</a></h2>
 <h3 id="the-arms"><a class="header" href="#the-arms">The arms</a></h3>
 <p>One driver model, one harness pin, one search provider. The arms differ only in
@@ -25662,10 +25664,11 @@ router has no exact named <code>qwen3.8-flash-next</code> entry; the name resolv
 through the <code>qwen*</code> entry, and the pin is that entry's deployment id, checked
 in pre-flight. A draw on a foreign model is void. The legacy <code>qwen3.6-27b</code>
 name is foreign.</li>
-<li><strong>Search.</strong> One provider, measured and probed. Every arm uses that provider,
-and every receipt records the provider the tool actually called. The first
-attempt declared Exa while the draws fetched DuckDuckGo; the
-<code>#search-provider</code> task fixes the measurement.</li>
+<li><strong>Search.</strong> One provider, measured and probed, for the null/search path.
+Each research arm records the provider its native route actually called; the
+one-provider claim is scoped to the measured null/search, and the arm routes
+are recorded. The first attempt declared Exa while the draws fetched
+DuckDuckGo; the <code>#search-provider</code> task fixes the measurement.</li>
 <li><strong>Budget.</strong> The same per-draw cap on tokens, tool calls and wall time, and the
 same prompt for the arm plus the tasks. The operator-approved caps are
 300000 prompt tokens, 100000 completion tokens, 60 tool calls and 10800 wall
@@ -25992,15 +25995,17 @@ confirmation, or the original stays</li>
 the provider the tool actually called.</p>
 <ul>
 <li>verify: the provider probe passes; a draw's receipt records the provider the
-fetch log shows; a foreign provider voids</li>
+fetch log shows; a foreign provider voids the null, while a research arm's
+native route is recorded beside the measured provider</li>
 <li>depends: none</li>
 <li>Landed 2026-11-27: Exa is selected in the per-draw config
 (<code>"websearch": {"provider": "exa"}</code> with <code>OPENCODE_ENABLE_EXA=1</code>), and the
 driver takes the provider from the completed <code>websearch</code> event's metadata.
-The live probe returned 8 results with <code>provider: exa</code> in 62.2s; a receipt
-naming another provider and a DuckDuckGo fetch are both void. The first
-round's receipts said Exa while the cancelled form sent the model to
-DuckDuckGo. Record:
+The live probe returned 8 results with <code>provider: exa</code> in 62.2s; a null
+receipt naming another provider and a null DuckDuckGo fetch are both void,
+while a research arm's native DuckDuckGo route is recorded in the receipt.
+The first round's receipts said Exa while the cancelled form sent the model
+to DuckDuckGo. Record:
 <a href="plan/0113-host-deep-research-ab/harness/search-provider/README.html">search-provider/README.md</a>.</li>
 </ul>
 <h3 id="budget"><a class="header" href="#budget">Budget</a></h3>
@@ -26158,16 +26163,19 @@ suite-fit, the judge score and name order. The first round's <code>round.json</c
 is historical; the corrected round writes <code>round-redo.json</code> with
 <code>--draws draws-redo --out round-redo.json</code>. The cast review's fixes are this
 task's first work, before any scored draw; the round is not run yet.</li>
-<li>Progress 2026-11-27: the caps are enforced at 300000 prompt / 100000
-completion / 60 tools / 10800 wall; the reply pre-flight writes
-<code>replies.jsonl</code> from the scratch OpenCode database, calls
+<li>Progress 2026-11-28: the caps are enforced at 300000 prompt / 100000
+completion / 60 tools / 10800 wall; the reply pre-flight reads
+<code>replies.jsonl</code> from the live <code>session_message</code> table, calls
 <code>model-preflight.py --replies</code>, and puts its digest in the receipt; the
-actual <code>webfetch</code> pages from the scratch database replace the
-report-paragraph fetch log (commit <code>d6b3e070</code>). The attempt/re-run
-plumbing, the six-row suite-fit and null-relative/valid-draw gate, the
-samber inline parser and the weizhena report/exclusion are in. Remaining:
-the corrected all-arm smoke and the two-way probe, then the 30 draws, the
-judge and <code>round-redo.json</code>.</li>
+actual <code>webfetch</code> pages are read from <code>session_part</code> (<code>state.content</code>),
+including subagent sessions, and replace the report-paragraph fetch log.
+The attempt/re-run plumbing, the six-row suite-fit and null-relative/valid-
+draw gate, the samber inline parser and the weizhena report/exclusion are in;
+a research arm's native search route is recorded and the null's provider is
+the measured one. The recorded live draws pass the corrected smoke gate:
+null valid, hffmnnj valid, kanatami a recorded budget result, weizhena and
+samber excluded with evidence. Remaining: the fresh all-arm smoke record,
+then the 30 draws, the judge and <code>round-redo.json</code>.</li>
 </ul>
 <h2 id="open-questions-6"><a class="header" href="#open-questions-6">Open questions</a></h2>
 <ul>
@@ -26695,10 +26703,12 @@ harness is the pinned release for every draw and check; the house
 selection round, not to this probe.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0113-adapter-layer-native-prompts-adapter-written-contracts"><a class="header" href="#plan0113-adapter-layer-native-prompts-adapter-written-contracts">plan/0113 adapter layer: native prompts, adapter-written contracts</a></h1>
-<p><strong>Status: landed 2026-11-27; the live smoke passed.</strong> The live driver sends
-each arm its own workflow prompt and lets the arm's adapter write the contract.
-The wrapper postscript is gone. The null arm keeps the frozen contract prompt,
-because it is the control, not an arm with a native output shape.</p>
+<p><strong>Status: landed 2026-11-27; the five-seat review re-opened the smoke, and the
+corrected machinery passes on the recorded live draws pending the fresh
+all-arm record.</strong> The live driver sends each arm its own workflow prompt and
+lets the arm's adapter write the contract. The wrapper postscript is gone. The
+null arm keeps the frozen contract prompt, because it is the control, not an
+arm with a native output shape.</p>
 <h2 id="the-flow"><a class="header" href="#the-flow">The flow</a></h2>
 <ol>
 <li><code>run.py</code> prepares the arm's scratch tree and writes the native prompt.</li>
@@ -26708,9 +26718,9 @@ the hffmnnj library notes, the kanatami workers, the weizhena result JSON,
 the samber research notes, or the final report text.</li>
 <li>The arm's adapter (<code>contract/adapters/&lt;arm&gt;.py</code>) reads <code>draw/native/</code> and
 writes <code>report.md</code>, <code>sources.json</code> and the receipt, or <code>exclusion.json</code>.</li>
-<li>The driver merges the event log's <code>webfetch</code> calls into
-<code>fetch-log.jsonl</code> and <code>snapshots/</code>, then validates the contract or the
-exclusion and writes <code>score.json</code>.</li>
+<li>The driver reads every <code>webfetch</code> call from the scratch OpenCode database,
+including subagent sessions, into <code>fetch-log.jsonl</code> and <code>snapshots/</code>, then
+validates the contract or the exclusion and writes <code>score.json</code>.</li>
 </ol>
 <p>The prompt carries no <code>report.md</code>/<code>sources.json</code> postscript for a non-null arm.
 The arm runs its own workflow; the adapter maps the result.</p>
@@ -26720,7 +26730,7 @@ The arm runs its own workflow; the adapter maps the result.</p>
 <tr><td><code>hffmnnj</code></td><td>the library notes under <code>$XDG_DATA_HOME/opencode-deep-research/library/notes</code> (or <code>~/.local/share/...</code>), the report note</td><td>resolves <code>[rn_...]</code> citations to source records; a direct answer with no note id is an exclusion</td></tr>
 <tr><td><code>kanatami</code></td><td>the final report and the worker results; <code>workers.json</code> if the arm wrote one, otherwise the run's fetch log</td><td>maps each cited URL to its worker result; first sentence is the quote, the worker/paragraph is the locator</td></tr>
 <tr><td><code>weizhena</code></td><td>the structured result JSON and the generated report</td><td>builds the ledger from report inline citations; excludes when the report cites no quote/locator; the result URLs are the evidence</td></tr>
-<tr><td><code>samber</code></td><td>the report's inline citations and the claim notes</td><td>builds the ledger from the report's inline <code>[passage](url)</code> citations; excludes when the report has none</td></tr>
+<tr><td><code>samber</code></td><td>the report's inline citations and the claim notes</td><td>builds the ledger from the report's inline <code>[passage](url)</code> citations only when every cited URL is in the fetch log; otherwise excludes with the missing count</td></tr>
 </tbody></table>
 </div>
 <p>The hffmnnj exclusion is live, not a dry-run assumption: the plugin's effort
@@ -26965,7 +26975,7 @@ null arm) the frozen prompt.</li>
 <tr><td><code>hffmnnj</code></td><td><code>adapters/hffmnnj.py</code></td><td>valid: the report cites <code>[rn_…]</code>; the finding note carries <code>url</code> and <code>quote</code>, and the body carries <code>locator:</code></td></tr>
 <tr><td><code>kanatami</code></td><td><code>adapters/kanatami.py</code></td><td>valid: the report cites the worker result URL; the first sentence of <code>full_text</code> is the quote and the worker/paragraph is the locator</td></tr>
 <tr><td><code>weizhena</code></td><td><code>adapters/weizhena.py</code></td><td>excluded: the report cites no per-source quote/locator; the result JSON URLs are the evidence</td></tr>
-<tr><td><code>samber</code></td><td><code>adapters/samber.py</code></td><td>valid: the report's inline <code>[passage](url)</code> citations build the ledger</td></tr>
+<tr><td><code>samber</code></td><td><code>adapters/samber.py</code></td><td>valid when every report-cited URL is in the fetch log; excluded with the missing count otherwise</td></tr>
 </tbody></table>
 </div>
 <p>The optional <code>verify</code> arm stays out (no license at its pin), and <code>gptr-mcp</code> is
@@ -28516,25 +28526,29 @@ ripgrep sources look solid. Now inspect the ast-grep and homepage snapshots for 
 <div style="break-before: page; page-break-before: always;"></div><p>The working directory is empty — no outline exists yet. Let me load the <code>research</code> skill to generate the outline that <code>research-deep</code> requires.</p>
 <div style="break-before: page; page-break-before: always;"></div><p>The deep-research agent is running. Meanwhile, I'll do the contract-required fetching work: locating and fetching the citable pages myself.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="plan0113-smoke-gate-one-draw-per-arm-before-any-scored-draw"><a class="header" href="#plan0113-smoke-gate-one-draw-per-arm-before-any-scored-draw">plan/0113 smoke gate: one draw per arm before any scored draw</a></h1>
-<p><strong>Status: the first record passed, then the five-seat review invalidated the
-kanatami and samber results; the corrected all-arm smoke is the
-<code>#selection-redo</code> run.</strong> The gate is the last check before the redo selection.
-It runs one draw per arm on a dedicated task, through the full pipeline: the
-native prompt, the adapter, the measured search provider, the fetch log, the
-receipt, the rubric and the isolation probe.</p>
-<h2 id="the-result"><a class="header" href="#the-result">The result</a></h2>
-<div class="table-wrapper"><table><thead><tr><th>Arm</th><th>Outcome</th><th>Wall</th></tr></thead><tbody>
-<tr><td><code>null</code></td><td>valid, 9.615/16, provider <code>exa</code></td><td>5021.9s</td></tr>
-<tr><td><code>hffmnnj</code></td><td>valid, 5.09/16, recorded-draw reuse</td><td>928.8s</td></tr>
-<tr><td><code>kanatami</code></td><td>valid, 9.818/16, recorded-draw reuse</td><td>8231.4s</td></tr>
-<tr><td><code>weizhena</code></td><td>excluded, structured field JSON/report</td><td>7204.8s</td></tr>
-<tr><td><code>samber</code></td><td>excluded, claim notes without quote/locator</td><td>6514.2s</td></tr>
+<p><strong>Status: the corrected machinery passes on the recorded live draws; the fresh
+all-arm run is the <code>#selection-redo</code> record.</strong> The gate is the last check before
+the redo selection. It runs one draw per arm on a dedicated task, through the
+full pipeline: the native prompt, the adapter, the measured search provider,
+the fetch log, the receipt, the rubric and the isolation probe.</p>
+<p>The review found that the first record read the wrong OpenCode tables: replies
+came from a <code>message</code> table that does not exist in the v2.4.2 schema, and
+fetches read <code>state.output</code> while the scratch database stores the page as
+<code>state.content</code>. The corrected reader uses <code>session_message</code> for replies and
+<code>session_part</code> for fetches (including subagent sessions), and the report's
+prose is no longer a fetch fallback. The recorded live draws now yield:</p>
+<div class="table-wrapper"><table><thead><tr><th>Arm</th><th>Outcome</th><th>Evidence</th></tr></thead><tbody>
+<tr><td><code>null</code></td><td>valid, 4.0/16</td><td>provider <code>exa</code>, 22 replies, 4 fetched pages</td></tr>
+<tr><td><code>hffmnnj</code></td><td>valid, 16.0/16</td><td>10 replies, 1 fetched page, no websearch</td></tr>
+<tr><td><code>kanatami</code></td><td>budget</td><td>1,264,094 prompt tokens, 72 tools, wall 10,800s; native route <code>html.duckduckgo.com</code> recorded</td></tr>
+<tr><td><code>weizhena</code></td><td>excluded</td><td>26 result URLs, report cites no quote or locator</td></tr>
+<tr><td><code>samber</code></td><td>excluded</td><td>49 report citations, 2 fetched; the ledger cannot carry the rest</td></tr>
 </tbody></table>
 </div>
-<p>The isolation probe is 11/11. Every valid draw has a live receipt with the
-200000/50000/60/10800 caps, a fetch log and a scored rubric. The
-suspect-exclusion and pseudo-tool-call gates pass. The record is
-<code>smoke/smoke.json</code>.</p>
+<p>The fresh record supersedes this table. The isolation probe is 11/11. A valid
+draw has a live receipt with the 300000/100000/60/10800 caps, a fetch log, a
+reply ledger and a scored rubric. The record is <code>smoke/smoke.json</code>; its
+<code>records</code> list is append-only.</p>
 <h2 id="the-task"><a class="header" href="#the-task">The task</a></h2>
 <p><code>smoke/house-capital</code>: "What is the capital of France, and which river runs
 through it?" with <code>Paris</code> and <code>Seine</code> as must-cover. It is deliberately simple:
@@ -28543,33 +28557,35 @@ selection or held-out sets.</p>
 <h2 id="the-gate"><a class="header" href="#the-gate">The gate</a></h2>
 <ul>
 <li>The null arm must produce the contract; a null void is a harness failure.</li>
-<li>Every mapped arm must produce the contract or a recorded exclusion. A void
-fails.</li>
-<li>An exclusion is suspect when the native notes or workers already carry a
-source record; the smoke fails it and the draw is re-run after the adapter
-fix.</li>
+<li>Every mapped arm must produce the contract, a recorded exclusion, or a
+recorded budget result. A budget result is a terminal arm result: it is not
+re-run under the same cap. A harness break is a void and re-runs once.</li>
+<li>An exclusion is suspect when the native notes, workers or report already
+carry a source record that the run's fetch log supports; the smoke fails it
+and the draw is re-run after the adapter fix. A report that cites pages the
+run never fetched is a phantom source, not a recoverable record.</li>
 <li>A pseudo-tool-call transcript (<code>&lt;tool_call&gt;</code> or <code>&lt;function=</code>) is a void, not
 an exclusion; the plugin tools were not invoked, so the draw is re-run.</li>
 <li>The non-null prompt must not carry the wrapper postscript; it must carry the
-arm's native line.</li>
-<li>The search provider must be <code>exa</code> or <code>none</code>, and no draw may fetch a search
-engine.</li>
-<li>A valid draw must have a live receipt with the frozen caps, a fetch log and a
-scored rubric; an excluded draw must have <code>exclusion.json</code> and a reason.</li>
-<li>A valid draw must have a passing <code>replies.jsonl</code>: the model pre-flight checks
-every assistant reply against the pinned route.</li>
+arm's native line, and the task file is in the working directory.</li>
+<li>The null's search provider must be <code>exa</code> or <code>none</code>, and the null may not
+fetch a search engine. Each research arm's native search route is recorded,
+not judged against the null's provider.</li>
+<li>A valid draw must have a live receipt with the frozen caps, a fetch log, a
+passing <code>replies.jsonl</code> and a scored rubric; an excluded draw must have
+<code>exclusion.json</code> and a reason.</li>
 <li>The isolation probe (<code>../probe.py</code>) must pass; it proves the pinned binary,
 the arm loads and the planted skill/manual controls.</li>
 </ul>
 <h2 id="run-2"><a class="header" href="#run-2">Run</a></h2>
 <pre><code class="language-sh">cd plan/0113-host-deep-research-ab/harness
-python3 smoke/run.py --only null --skip-probe   # one arm
-python3 smoke/run.py --force                    # all arms, serial
+python3 smoke/run.py --only null --skip-probe   # one arm, record unchanged
+python3 smoke/run.py --force --parallel 2       # all arms, two-way
 python3 smoke/run.py --record-only              # consolidate existing draws
 </code></pre>
-<p>The record is <code>smoke/smoke.json</code>; the draws are under <code>smoke/draws/</code>. The
-record carries the task, the isolation result, each draw's summary and the
-findings.</p>
+<p>A partial <code>--only</code> run writes its draw but never the all-arm record. The
+record is <code>smoke/smoke.json</code>; the draws are under <code>smoke/draws/</code>, and a forced
+re-run keeps the prior attempt under <code>attempts/</code> with <code>rerun.json</code>.</p>
 <h2 id="the-smoke-is-not-a-scored-draw"><a class="header" href="#the-smoke-is-not-a-scored-draw">The smoke is not a scored draw</a></h2>
 <p>The smoke scores are not used in the selection. It proves the pipeline and the
 controls; the redo selection runs separately with the frozen budget.</p>
