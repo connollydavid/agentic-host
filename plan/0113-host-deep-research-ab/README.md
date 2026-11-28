@@ -466,6 +466,7 @@ and the reference model pin; the recipe check reads them. The component and its
 one-arm boundary are authorized by
 [call/0062](../call/0062-a-deep-research-component-carries-one-arm.md).
 
+- inputs: software/host-deep-research/main/src/main.rs
 - verify: `software --check` reads the stanza clean, the artifact re-derives
   under `software --verify-build`, the recorded harness and model pins match
   the plan's; the hffmnnj embedding is off or pinned with a license and

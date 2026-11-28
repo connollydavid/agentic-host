@@ -39,10 +39,10 @@ runner, the contract, the pins and the arm resources.
 - The default arm is the arm the confirmation ships. On a `NO-SHIP`, the
   default is `null`; the selection's incumbent stands. `--arm` selects the
   other bundled arm for replay.
-- The `hffmnnj` embedding is off, so the arm uses keyword search and makes no
-  local model download. Its native search route is `none`; the null's is
-  `exa`. `gptr-mcp` stays out: it has no license at its pin and is an MCP
-  server, not a deep-research arm.
+- The `hffmnnj` embedding is off, so the arm makes no local model download.
+  The `hffmnnj` arm uses keyword search. The null arm's native route is
+  `exa`. `gptr-mcp` stays out: the pin carries no license, and the role is an
+  MCP server.
 - The component is released through `host-lifecycle release`, so the artifact
   hash comes from the recorded musl toolchain, not an ambient build. The
   host recipe pins the released commit and the re-derived artifact hash.

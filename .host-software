@@ -91,6 +91,19 @@
 	pin       = b634012dab4d54a9725c79c3babafc42813e1792
 	worktrees =
 
+[software "host-deep-research"]
+	# the plan/0113 shim (call/0062): one Rust binary embeds the run contract, the
+	# pinned OpenCode v2.4.2 harness, the model pin and the arm. The default arm is
+	# null until the selection/confirmation ships another; the artifact carries the
+	# vendored hffmnnj tree, its MIT notice, the embedding-off choice and the pins.
+	url       = https://github.com/connollydavid/host-deep-research.git
+	pin       = 734ca90b7c4e61f8feeb3d3fd70155c51a2d6b55
+	worktrees =
+	toolchain = docker.io/clux/muslrust:1.95.0-stable@sha256:15a72a4abf1c593b0bea63a4a8f20e95c1e5a0696d7051eca87b9b850b2d7e43
+	build     = RUSTUP_TOOLCHAIN=stable CARGO_INCREMENTAL=0 cargo build --release --locked --offline --target x86_64-unknown-linux-musl
+	deploy    = host-deep-research
+	artifact  = target/x86_64-unknown-linux-musl/release/host-deep-research d0bb24f345459f69356ab629a704f1abbb2d40124252a6a0b290bcba2e924cd3
+
 # The single-file entrance (plan/0043): the `host` member's README, held complete against
 # every concept. A global singleton; `host-lifecycle entrance --check` holds it to the spine.
 [entrance]
