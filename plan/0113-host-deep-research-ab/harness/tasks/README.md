@@ -119,6 +119,7 @@ set digest with `sets-fresh2.json.held_out.plaintext_set_digest`.
 
 ## What is still open
 
-The fresh-2 set and key are operator-held. The confirmation cannot run until
-the key is supplied and the selection has locked an arm. The draw protocol is
-fixed at two fresh draws per held-out task per arm: 20 confirmation draws.
+The fresh-2 set is sealed; its key is outside the repository and the
+confirmation takes `--key` explicitly. The selection must lock an arm before
+the 20 confirmation draws can run. The draw protocol is fixed at two fresh
+draws per held-out task per arm.

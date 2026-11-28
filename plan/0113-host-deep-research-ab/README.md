@@ -440,9 +440,10 @@ printed verdict.
   key. `tasks/seal.py` seals an operator-supplied plaintext set with the
   operator-held key; it never creates a key. The code is tested against a
   temporary one-task seal. The verdict is not run yet.
-- Pending: the fresh-2 held-out set and the operator-held key; the locked arm
-  from the selection round; the 20 live draws; the judge on those draws. A
-  missing key or an unlocked selection refuses, and the operator's `goal
+- Pending: the locked arm from the selection round and the 20 live draws. The
+  fresh-2 set is sealed (plaintext digest `5e056b70…`, ciphertext
+  `3186331c…`); its key is outside the repository and the run takes `--key`.
+  A missing key or an unlocked selection refuses, and the operator's `goal
   accept` remains the milestone.
 
 ### Fen acceptance {#fen-acceptance}

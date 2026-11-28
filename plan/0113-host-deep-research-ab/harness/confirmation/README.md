@@ -71,7 +71,8 @@ the verdict is evidence, not the acceptance.
 
 ## State
 
-The fresh-2 set is not sealed yet: the operator holds the key and supplies the
-plaintext set outside the repository. `seal.py`, `confirm.py --check` and the
-in-memory decrypt path are tested against a temporary one-task set. The
-selection round must lock an arm before the confirmation can run.
+The fresh-2 set is sealed: five tasks (two known-answer, three house), plaintext
+set digest `5e056b70…`, ciphertext `3186331c…`. `confirm.py --check` passes
+without a key. The key is outside the repository and the run takes `--key`;
+the plaintext task text is not in the tree. The selection round must lock an
+arm before the confirmation can run.
