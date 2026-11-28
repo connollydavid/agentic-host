@@ -1,13 +1,16 @@
 # plan/0113 smoke gate: one draw per arm before any scored draw
 
-**Status: PASS 2026-11-28.** The corrected machinery runs under the pinned
-binary. The five arms were run live in one two-way smoke; the isolation probe
-is 11/11. The review found the first record read the wrong OpenCode tables:
-replies came from a `message` table that does not exist in the v2.4.2 schema,
-and fetches read `state.output` while the scratch database stores the page as
-`state.content`. The corrected reader uses `session_message` for replies and
-`session_part` for fetches (including subagent sessions), and the report's
-prose is no longer a fetch fallback.
+**Status: PASS 2026-11-28.** The five arms were first run live in one two-way
+smoke; the hffmnnj draw was a harness break on URL identity (the plugin read
+the article through an API or permalink while the fetch log held another
+spelling), so after the canonical fix it was re-run once under the same task
+and config. The other four draws are from that two-way run. The isolation
+probe is 11/11. The review found the first record read the wrong OpenCode
+tables: replies came from a `message` table that does not exist in the v2.4.2
+schema, and fetches read `state.output` while the scratch database stores the
+page as `state.content`. The corrected reader uses `session_message` for
+replies and `session_part` for fetches (including subagent sessions), and the
+report's prose is no longer a fetch fallback.
 
 The fresh result:
 
