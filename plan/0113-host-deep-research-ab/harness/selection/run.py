@@ -890,12 +890,11 @@ def main(argv: list[str]) -> int:
             run_jobs(wave)
         return 0
 
-    queues = {key: list(ARM_NAMES) for key in TASK_KEYS}
     jobs: list[tuple[str, dict]] = []
-    while any(queues[key] for key in TASK_KEYS):
-        for key in TASK_KEYS:
-            if queues[key]:
-                jobs.append((queues[key].pop(0), tasks[key]))
+    for step in range(len(ARM_NAMES)):
+        for index, key in enumerate(TASK_KEYS):
+            arm = ARM_NAMES[(step + index) % len(ARM_NAMES)]
+            jobs.append((arm, tasks[key]))
     run_jobs(jobs)
     return 0
 
